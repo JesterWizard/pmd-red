@@ -15534,14 +15534,17 @@ static const struct ScriptCommand s_gs1_g51_s0_lives1_dlg2[] = { /* 0x8178c10 */
 
 
 /* Living Square: randomized visitors walk entrance → shop → exit.
- * Dispatcher is a life (not a station): SELECT_ENTITIES only spawns lives/objects,
- * so free-roam SELECT_ENTITIES(53, 0) must select lives that run these loops. */
+ * One coordinator life staggers Kecleon / Bank / Gulpin (+1s each) so all three
+ * can be on the Square at once. Completion is latched in MAP_LOCAL (cues are not),
+ * so the next wave waits until the trio finishes instead of losing a wake.
+ * SELECT_ENTITIES only spawns lives/objects, so free-roam SELECT_ENTITIES(53, 0)
+ * must select a life that runs this loop. */
 static const struct ScriptCommand s_gs1_g53_dispatcher_setup[] = {
     DEBUGINFO_O(0),
     RET,
 };
 
-/* Kecleon-route dispatcher: pick 3 exclusive entrances + species, signal bank, await trio. */
+/* Concurrent trio: exclusive gates, staggered spawns, latched wave barrier. */
 static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     DEBUGINFO_O(0),
   LABEL(0), /* = 0x00 */
@@ -15579,6 +15582,73 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     CANCEL_LIVES(53, 31),
     CANCEL_LIVES(53, 32),
     CANCEL_LIVES(53, 33),
+    CANCEL_LIVES(53, 34),
+    CANCEL_LIVES(53, 35),
+    CANCEL_LIVES(53, 36),
+    CANCEL_LIVES(53, 37),
+    CANCEL_LIVES(53, 38),
+    CANCEL_LIVES(53, 39),
+    CANCEL_LIVES(53, 40),
+    CANCEL_LIVES(53, 41),
+    CANCEL_LIVES(53, 42),
+    CANCEL_LIVES(53, 43),
+    CANCEL_LIVES(53, 44),
+    CANCEL_LIVES(53, 45),
+    CANCEL_LIVES(53, 46),
+    CANCEL_LIVES(53, 47),
+    CANCEL_LIVES(53, 48),
+    CANCEL_LIVES(53, 49),
+    CANCEL_LIVES(53, 50),
+    CANCEL_LIVES(53, 51),
+    CANCEL_LIVES(53, 52),
+    CANCEL_LIVES(53, 53),
+    CANCEL_LIVES(53, 54),
+    CANCEL_LIVES(53, 55),
+    CANCEL_LIVES(53, 56),
+    CANCEL_LIVES(53, 57),
+    CANCEL_LIVES(53, 58),
+    CANCEL_LIVES(53, 59),
+    CANCEL_LIVES(53, 60),
+    CANCEL_LIVES(53, 61),
+    CANCEL_LIVES(53, 62),
+    CANCEL_LIVES(53, 63),
+    CANCEL_LIVES(53, 64),
+    CANCEL_LIVES(53, 65),
+    CANCEL_LIVES(53, 66),
+    CANCEL_LIVES(53, 67),
+    CANCEL_LIVES(53, 68),
+    CANCEL_LIVES(53, 69),
+    CANCEL_LIVES(53, 70),
+    CANCEL_LIVES(53, 71),
+    CANCEL_LIVES(53, 72),
+    CANCEL_LIVES(53, 73),
+    CANCEL_LIVES(53, 74),
+    CANCEL_LIVES(53, 75),
+    CANCEL_LIVES(53, 76),
+    CANCEL_LIVES(53, 77),
+    CANCEL_LIVES(53, 78),
+    CANCEL_LIVES(53, 79),
+    CANCEL_LIVES(53, 80),
+    CANCEL_LIVES(53, 81),
+    CANCEL_LIVES(53, 82),
+    CANCEL_LIVES(53, 83),
+    CANCEL_LIVES(53, 84),
+    CANCEL_LIVES(53, 85),
+    CANCEL_LIVES(53, 86),
+    CANCEL_LIVES(53, 87),
+    CANCEL_LIVES(53, 88),
+    CANCEL_LIVES(53, 89),
+    CANCEL_LIVES(53, 90),
+    CANCEL_LIVES(53, 91),
+    CANCEL_LIVES(53, 92),
+    CANCEL_LIVES(53, 93),
+    CANCEL_LIVES(53, 94),
+    CANCEL_LIVES(53, 95),
+    CANCEL_LIVES(53, 96),
+    CANCEL_LIVES(53, 97),
+    CANCEL_LIVES(53, 98),
+    CANCEL_LIVES(53, 99),
+    UPDATE_VARINT(CALC_SET, MAP_LOCAL, 0), /* bits 0/1/2 = kecleon/bank/gulpin done */
     /* Pack 3 exclusive entrances into EVENT_LOCAL: e0 + 4*e1 + 16*e2
      * (0=N, 1=S, 2=W, 3=E). CONDITION = used-bit mask while picking. */
     UPDATE_VARINT(CALC_SET, CONDITION, 0),
@@ -15661,7 +15731,7 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     UPDATE_VARINT(CALC_SETBIT, CONDITION, 3),
     UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 48),
     JUMP_LABEL(42),
-  LABEL(42), /* = 0x2a pick species */
+  LABEL(42), /* = 0x2a pick kecleon species */
     CJUMP_RANDOM(33),
     COND_EQUAL(0, /* to label */ 1),
     COND_EQUAL(1, /* to label */ 2),
@@ -15794,367 +15864,285 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     JUMP_LABEL(34),
   LABEL(33), /* = 0x21 Hoppip */
     SELECT_ENTITIES(53, 33),
-  LABEL(34), /* = 0x22 signal bank + await kecleon finish */
-    ALERT_CUE(66), /* wake bank dispatcher */
-    AWAIT_CUE(65), /* this kecleon visitor finished full route */
-    JUMP_LABEL(0),
-};
-
-
-/* Bank-route dispatcher: 1s after Kecleon spawn → Felicity Bank. */
-static const struct ScriptCommand s_gs1_g53_bank_dispatcher_loop[] = {
-    DEBUGINFO_O(0),
-  LABEL(0), /* = 0x00 */
-    AWAIT_CUE(66),
-    WAIT(60), /* 1 second behind kecleon */
-    CANCEL_LIVES(53, 34),
-    CANCEL_LIVES(53, 35),
-    CANCEL_LIVES(53, 36),
-    CANCEL_LIVES(53, 37),
-    CANCEL_LIVES(53, 38),
-    CANCEL_LIVES(53, 39),
-    CANCEL_LIVES(53, 40),
-    CANCEL_LIVES(53, 41),
-    CANCEL_LIVES(53, 42),
-    CANCEL_LIVES(53, 43),
-    CANCEL_LIVES(53, 44),
-    CANCEL_LIVES(53, 45),
-    CANCEL_LIVES(53, 46),
-    CANCEL_LIVES(53, 47),
-    CANCEL_LIVES(53, 48),
-    CANCEL_LIVES(53, 49),
-    CANCEL_LIVES(53, 50),
-    CANCEL_LIVES(53, 51),
-    CANCEL_LIVES(53, 52),
-    CANCEL_LIVES(53, 53),
-    CANCEL_LIVES(53, 54),
-    CANCEL_LIVES(53, 55),
-    CANCEL_LIVES(53, 56),
-    CANCEL_LIVES(53, 57),
-    CANCEL_LIVES(53, 58),
-    CANCEL_LIVES(53, 59),
-    CANCEL_LIVES(53, 60),
-    CANCEL_LIVES(53, 61),
-    CANCEL_LIVES(53, 62),
-    CANCEL_LIVES(53, 63),
-    CANCEL_LIVES(53, 64),
-    CANCEL_LIVES(53, 65),
-    CANCEL_LIVES(53, 66),
+  LABEL(34), /* = 0x22 kecleon spawned; stagger bank */
+    WAIT(60),
     CJUMP_RANDOM(33),
-    COND_EQUAL(0, /* to label */ 1),
-    COND_EQUAL(1, /* to label */ 2),
-    COND_EQUAL(2, /* to label */ 3),
-    COND_EQUAL(3, /* to label */ 4),
-    COND_EQUAL(4, /* to label */ 5),
-    COND_EQUAL(5, /* to label */ 6),
-    COND_EQUAL(6, /* to label */ 7),
-    COND_EQUAL(7, /* to label */ 8),
-    COND_EQUAL(8, /* to label */ 9),
-    COND_EQUAL(9, /* to label */ 10),
-    COND_EQUAL(10, /* to label */ 11),
-    COND_EQUAL(11, /* to label */ 12),
-    COND_EQUAL(12, /* to label */ 13),
-    COND_EQUAL(13, /* to label */ 14),
-    COND_EQUAL(14, /* to label */ 15),
-    COND_EQUAL(15, /* to label */ 16),
-    COND_EQUAL(16, /* to label */ 17),
-    COND_EQUAL(17, /* to label */ 18),
-    COND_EQUAL(18, /* to label */ 19),
-    COND_EQUAL(19, /* to label */ 20),
-    COND_EQUAL(20, /* to label */ 21),
-    COND_EQUAL(21, /* to label */ 22),
-    COND_EQUAL(22, /* to label */ 23),
-    COND_EQUAL(23, /* to label */ 24),
-    COND_EQUAL(24, /* to label */ 25),
-    COND_EQUAL(25, /* to label */ 26),
-    COND_EQUAL(26, /* to label */ 27),
-    COND_EQUAL(27, /* to label */ 28),
-    COND_EQUAL(28, /* to label */ 29),
-    COND_EQUAL(29, /* to label */ 30),
-    COND_EQUAL(30, /* to label */ 31),
-    COND_EQUAL(31, /* to label */ 32),
-    COND_EQUAL(32, /* to label */ 33),
-  LABEL(1), /* = 0x01 Marill */
+    COND_EQUAL(0, /* to label */ 71),
+    COND_EQUAL(1, /* to label */ 72),
+    COND_EQUAL(2, /* to label */ 73),
+    COND_EQUAL(3, /* to label */ 74),
+    COND_EQUAL(4, /* to label */ 75),
+    COND_EQUAL(5, /* to label */ 76),
+    COND_EQUAL(6, /* to label */ 77),
+    COND_EQUAL(7, /* to label */ 78),
+    COND_EQUAL(8, /* to label */ 79),
+    COND_EQUAL(9, /* to label */ 80),
+    COND_EQUAL(10, /* to label */ 81),
+    COND_EQUAL(11, /* to label */ 82),
+    COND_EQUAL(12, /* to label */ 83),
+    COND_EQUAL(13, /* to label */ 84),
+    COND_EQUAL(14, /* to label */ 85),
+    COND_EQUAL(15, /* to label */ 86),
+    COND_EQUAL(16, /* to label */ 87),
+    COND_EQUAL(17, /* to label */ 88),
+    COND_EQUAL(18, /* to label */ 89),
+    COND_EQUAL(19, /* to label */ 90),
+    COND_EQUAL(20, /* to label */ 91),
+    COND_EQUAL(21, /* to label */ 92),
+    COND_EQUAL(22, /* to label */ 93),
+    COND_EQUAL(23, /* to label */ 94),
+    COND_EQUAL(24, /* to label */ 95),
+    COND_EQUAL(25, /* to label */ 96),
+    COND_EQUAL(26, /* to label */ 97),
+    COND_EQUAL(27, /* to label */ 98),
+    COND_EQUAL(28, /* to label */ 99),
+    COND_EQUAL(29, /* to label */ 100),
+    COND_EQUAL(30, /* to label */ 101),
+    COND_EQUAL(31, /* to label */ 102),
+    COND_EQUAL(32, /* to label */ 103),
+  LABEL(71), /* = 0x47 Marill */
     SELECT_ENTITIES(53, 34),
-    JUMP_LABEL(34),
-  LABEL(2), /* = 0x02 Azurill */
+    JUMP_LABEL(104),
+  LABEL(72), /* = 0x48 Azurill */
     SELECT_ENTITIES(53, 35),
-    JUMP_LABEL(34),
-  LABEL(3), /* = 0x03 Nincada */
+    JUMP_LABEL(104),
+  LABEL(73), /* = 0x49 Nincada */
     SELECT_ENTITIES(53, 36),
-    JUMP_LABEL(34),
-  LABEL(4), /* = 0x04 Tauros */
+    JUMP_LABEL(104),
+  LABEL(74), /* = 0x4a Tauros */
     SELECT_ENTITIES(53, 37),
-    JUMP_LABEL(34),
-  LABEL(5), /* = 0x05 Torkoal */
+    JUMP_LABEL(104),
+  LABEL(75), /* = 0x4b Torkoal */
     SELECT_ENTITIES(53, 38),
-    JUMP_LABEL(34),
-  LABEL(6), /* = 0x06 Aron */
+    JUMP_LABEL(104),
+  LABEL(76), /* = 0x4c Aron */
     SELECT_ENTITIES(53, 39),
-    JUMP_LABEL(34),
-  LABEL(7), /* = 0x07 Pidgey */
+    JUMP_LABEL(104),
+  LABEL(77), /* = 0x4d Pidgey */
     SELECT_ENTITIES(53, 40),
-    JUMP_LABEL(34),
-  LABEL(8), /* = 0x08 Sunflora */
+    JUMP_LABEL(104),
+  LABEL(78), /* = 0x4e Sunflora */
     SELECT_ENTITIES(53, 41),
-    JUMP_LABEL(34),
-  LABEL(9), /* = 0x09 Bagon */
+    JUMP_LABEL(104),
+  LABEL(79), /* = 0x4f Bagon */
     SELECT_ENTITIES(53, 42),
-    JUMP_LABEL(34),
-  LABEL(10), /* = 0x0a Dragonair */
+    JUMP_LABEL(104),
+  LABEL(80), /* = 0x50 Dragonair */
     SELECT_ENTITIES(53, 43),
-    JUMP_LABEL(34),
-  LABEL(11), /* = 0x0b Furret */
+    JUMP_LABEL(104),
+  LABEL(81), /* = 0x51 Furret */
     SELECT_ENTITIES(53, 44),
-    JUMP_LABEL(34),
-  LABEL(12), /* = 0x0c Gloom */
+    JUMP_LABEL(104),
+  LABEL(82), /* = 0x52 Gloom */
     SELECT_ENTITIES(53, 45),
-    JUMP_LABEL(34),
-  LABEL(13), /* = 0x0d Scizor */
+    JUMP_LABEL(104),
+  LABEL(83), /* = 0x53 Scizor */
     SELECT_ENTITIES(53, 46),
-    JUMP_LABEL(34),
-  LABEL(14), /* = 0x0e Breloom */
+    JUMP_LABEL(104),
+  LABEL(84), /* = 0x54 Breloom */
     SELECT_ENTITIES(53, 47),
-    JUMP_LABEL(34),
-  LABEL(15), /* = 0x0f Taillow */
+    JUMP_LABEL(104),
+  LABEL(85), /* = 0x55 Taillow */
     SELECT_ENTITIES(53, 48),
-    JUMP_LABEL(34),
-  LABEL(16), /* = 0x10 Seviper */
+    JUMP_LABEL(104),
+  LABEL(86), /* = 0x56 Seviper */
     SELECT_ENTITIES(53, 49),
-    JUMP_LABEL(34),
-  LABEL(17), /* = 0x11 Spheal */
+    JUMP_LABEL(104),
+  LABEL(87), /* = 0x57 Spheal */
     SELECT_ENTITIES(53, 50),
-    JUMP_LABEL(34),
-  LABEL(18), /* = 0x12 Snorunt */
+    JUMP_LABEL(104),
+  LABEL(88), /* = 0x58 Snorunt */
     SELECT_ENTITIES(53, 51),
-    JUMP_LABEL(34),
-  LABEL(19), /* = 0x13 Horsea */
+    JUMP_LABEL(104),
+  LABEL(89), /* = 0x59 Horsea */
     SELECT_ENTITIES(53, 52),
-    JUMP_LABEL(34),
-  LABEL(20), /* = 0x14 Mightyena */
+    JUMP_LABEL(104),
+  LABEL(90), /* = 0x5a Mightyena */
     SELECT_ENTITIES(53, 53),
-    JUMP_LABEL(34),
-  LABEL(21), /* = 0x15 Shuppet */
+    JUMP_LABEL(104),
+  LABEL(91), /* = 0x5b Shuppet */
     SELECT_ENTITIES(53, 54),
-    JUMP_LABEL(34),
-  LABEL(22), /* = 0x16 Grimer */
+    JUMP_LABEL(104),
+  LABEL(92), /* = 0x5c Grimer */
     SELECT_ENTITIES(53, 55),
-    JUMP_LABEL(34),
-  LABEL(23), /* = 0x17 Doduo */
+    JUMP_LABEL(104),
+  LABEL(93), /* = 0x5d Doduo */
     SELECT_ENTITIES(53, 56),
-    JUMP_LABEL(34),
-  LABEL(24), /* = 0x18 Volbeat */
+    JUMP_LABEL(104),
+  LABEL(94), /* = 0x5e Volbeat */
     SELECT_ENTITIES(53, 57),
-    JUMP_LABEL(34),
-  LABEL(25), /* = 0x19 Spoink */
+    JUMP_LABEL(104),
+  LABEL(95), /* = 0x5f Spoink */
     SELECT_ENTITIES(53, 58),
-    JUMP_LABEL(34),
-  LABEL(26), /* = 0x1a Magmar */
+    JUMP_LABEL(104),
+  LABEL(96), /* = 0x60 Magmar */
     SELECT_ENTITIES(53, 59),
-    JUMP_LABEL(34),
-  LABEL(27), /* = 0x1b Electabuzz */
+    JUMP_LABEL(104),
+  LABEL(97), /* = 0x61 Electabuzz */
     SELECT_ENTITIES(53, 60),
-    JUMP_LABEL(34),
-  LABEL(28), /* = 0x1c Chansey */
+    JUMP_LABEL(104),
+  LABEL(98), /* = 0x62 Chansey */
     SELECT_ENTITIES(53, 61),
-    JUMP_LABEL(34),
-  LABEL(29), /* = 0x1d Tangela */
+    JUMP_LABEL(104),
+  LABEL(99), /* = 0x63 Tangela */
     SELECT_ENTITIES(53, 62),
-    JUMP_LABEL(34),
-  LABEL(30), /* = 0x1e Electrike */
+    JUMP_LABEL(104),
+  LABEL(100), /* = 0x64 Electrike */
     SELECT_ENTITIES(53, 63),
-    JUMP_LABEL(34),
-  LABEL(31), /* = 0x1f Hitmonchan */
+    JUMP_LABEL(104),
+  LABEL(101), /* = 0x65 Hitmonchan */
     SELECT_ENTITIES(53, 64),
-    JUMP_LABEL(34),
-  LABEL(32), /* = 0x20 Mawile */
+    JUMP_LABEL(104),
+  LABEL(102), /* = 0x66 Mawile */
     SELECT_ENTITIES(53, 65),
-    JUMP_LABEL(34),
-  LABEL(33), /* = 0x21 Hoppip */
+    JUMP_LABEL(104),
+  LABEL(103), /* = 0x67 Hoppip */
     SELECT_ENTITIES(53, 66),
-  LABEL(34), /* = 0x22 signal gulpin + await bank finish */
-    ALERT_CUE(67), /* wake gulpin dispatcher */
-    AWAIT_CUE(64), /* this bank visitor finished full route */
-    JUMP_LABEL(0),
-};
-
-
-/* Gulpin-route dispatcher: 1s after Felicity spawn → Gulpin Link Shop. */
-static const struct ScriptCommand s_gs1_g53_gulpin_dispatcher_loop[] = {
-    DEBUGINFO_O(0),
-  LABEL(0), /* = 0x00 */
-    AWAIT_CUE(67),
-    WAIT(60), /* 1 second behind felicity */
-    CANCEL_LIVES(53, 67),
-    CANCEL_LIVES(53, 68),
-    CANCEL_LIVES(53, 69),
-    CANCEL_LIVES(53, 70),
-    CANCEL_LIVES(53, 71),
-    CANCEL_LIVES(53, 72),
-    CANCEL_LIVES(53, 73),
-    CANCEL_LIVES(53, 74),
-    CANCEL_LIVES(53, 75),
-    CANCEL_LIVES(53, 76),
-    CANCEL_LIVES(53, 77),
-    CANCEL_LIVES(53, 78),
-    CANCEL_LIVES(53, 79),
-    CANCEL_LIVES(53, 80),
-    CANCEL_LIVES(53, 81),
-    CANCEL_LIVES(53, 82),
-    CANCEL_LIVES(53, 83),
-    CANCEL_LIVES(53, 84),
-    CANCEL_LIVES(53, 85),
-    CANCEL_LIVES(53, 86),
-    CANCEL_LIVES(53, 87),
-    CANCEL_LIVES(53, 88),
-    CANCEL_LIVES(53, 89),
-    CANCEL_LIVES(53, 90),
-    CANCEL_LIVES(53, 91),
-    CANCEL_LIVES(53, 92),
-    CANCEL_LIVES(53, 93),
-    CANCEL_LIVES(53, 94),
-    CANCEL_LIVES(53, 95),
-    CANCEL_LIVES(53, 96),
-    CANCEL_LIVES(53, 97),
-    CANCEL_LIVES(53, 98),
-    CANCEL_LIVES(53, 99),
+  LABEL(104), /* = 0x68 bank spawned; stagger gulpin */
+    WAIT(60),
     CJUMP_RANDOM(33),
-    COND_EQUAL(0, /* to label */ 1),
-    COND_EQUAL(1, /* to label */ 2),
-    COND_EQUAL(2, /* to label */ 3),
-    COND_EQUAL(3, /* to label */ 4),
-    COND_EQUAL(4, /* to label */ 5),
-    COND_EQUAL(5, /* to label */ 6),
-    COND_EQUAL(6, /* to label */ 7),
-    COND_EQUAL(7, /* to label */ 8),
-    COND_EQUAL(8, /* to label */ 9),
-    COND_EQUAL(9, /* to label */ 10),
-    COND_EQUAL(10, /* to label */ 11),
-    COND_EQUAL(11, /* to label */ 12),
-    COND_EQUAL(12, /* to label */ 13),
-    COND_EQUAL(13, /* to label */ 14),
-    COND_EQUAL(14, /* to label */ 15),
-    COND_EQUAL(15, /* to label */ 16),
-    COND_EQUAL(16, /* to label */ 17),
-    COND_EQUAL(17, /* to label */ 18),
-    COND_EQUAL(18, /* to label */ 19),
-    COND_EQUAL(19, /* to label */ 20),
-    COND_EQUAL(20, /* to label */ 21),
-    COND_EQUAL(21, /* to label */ 22),
-    COND_EQUAL(22, /* to label */ 23),
-    COND_EQUAL(23, /* to label */ 24),
-    COND_EQUAL(24, /* to label */ 25),
-    COND_EQUAL(25, /* to label */ 26),
-    COND_EQUAL(26, /* to label */ 27),
-    COND_EQUAL(27, /* to label */ 28),
-    COND_EQUAL(28, /* to label */ 29),
-    COND_EQUAL(29, /* to label */ 30),
-    COND_EQUAL(30, /* to label */ 31),
-    COND_EQUAL(31, /* to label */ 32),
-    COND_EQUAL(32, /* to label */ 33),
-  LABEL(1), /* = 0x01 Marill */
+    COND_EQUAL(0, /* to label */ 111),
+    COND_EQUAL(1, /* to label */ 112),
+    COND_EQUAL(2, /* to label */ 113),
+    COND_EQUAL(3, /* to label */ 114),
+    COND_EQUAL(4, /* to label */ 115),
+    COND_EQUAL(5, /* to label */ 116),
+    COND_EQUAL(6, /* to label */ 117),
+    COND_EQUAL(7, /* to label */ 118),
+    COND_EQUAL(8, /* to label */ 119),
+    COND_EQUAL(9, /* to label */ 120),
+    COND_EQUAL(10, /* to label */ 121),
+    COND_EQUAL(11, /* to label */ 122),
+    COND_EQUAL(12, /* to label */ 123),
+    COND_EQUAL(13, /* to label */ 124),
+    COND_EQUAL(14, /* to label */ 125),
+    COND_EQUAL(15, /* to label */ 126),
+    COND_EQUAL(16, /* to label */ 127),
+    COND_EQUAL(17, /* to label */ 128),
+    COND_EQUAL(18, /* to label */ 129),
+    COND_EQUAL(19, /* to label */ 130),
+    COND_EQUAL(20, /* to label */ 131),
+    COND_EQUAL(21, /* to label */ 132),
+    COND_EQUAL(22, /* to label */ 133),
+    COND_EQUAL(23, /* to label */ 134),
+    COND_EQUAL(24, /* to label */ 135),
+    COND_EQUAL(25, /* to label */ 136),
+    COND_EQUAL(26, /* to label */ 137),
+    COND_EQUAL(27, /* to label */ 138),
+    COND_EQUAL(28, /* to label */ 139),
+    COND_EQUAL(29, /* to label */ 140),
+    COND_EQUAL(30, /* to label */ 141),
+    COND_EQUAL(31, /* to label */ 142),
+    COND_EQUAL(32, /* to label */ 143),
+  LABEL(111), /* = 0x6f Marill */
     SELECT_ENTITIES(53, 67),
-    JUMP_LABEL(34),
-  LABEL(2), /* = 0x02 Azurill */
+    JUMP_LABEL(144),
+  LABEL(112), /* = 0x70 Azurill */
     SELECT_ENTITIES(53, 68),
-    JUMP_LABEL(34),
-  LABEL(3), /* = 0x03 Nincada */
+    JUMP_LABEL(144),
+  LABEL(113), /* = 0x71 Nincada */
     SELECT_ENTITIES(53, 69),
-    JUMP_LABEL(34),
-  LABEL(4), /* = 0x04 Tauros */
+    JUMP_LABEL(144),
+  LABEL(114), /* = 0x72 Tauros */
     SELECT_ENTITIES(53, 70),
-    JUMP_LABEL(34),
-  LABEL(5), /* = 0x05 Torkoal */
+    JUMP_LABEL(144),
+  LABEL(115), /* = 0x73 Torkoal */
     SELECT_ENTITIES(53, 71),
-    JUMP_LABEL(34),
-  LABEL(6), /* = 0x06 Aron */
+    JUMP_LABEL(144),
+  LABEL(116), /* = 0x74 Aron */
     SELECT_ENTITIES(53, 72),
-    JUMP_LABEL(34),
-  LABEL(7), /* = 0x07 Pidgey */
+    JUMP_LABEL(144),
+  LABEL(117), /* = 0x75 Pidgey */
     SELECT_ENTITIES(53, 73),
-    JUMP_LABEL(34),
-  LABEL(8), /* = 0x08 Sunflora */
+    JUMP_LABEL(144),
+  LABEL(118), /* = 0x76 Sunflora */
     SELECT_ENTITIES(53, 74),
-    JUMP_LABEL(34),
-  LABEL(9), /* = 0x09 Bagon */
+    JUMP_LABEL(144),
+  LABEL(119), /* = 0x77 Bagon */
     SELECT_ENTITIES(53, 75),
-    JUMP_LABEL(34),
-  LABEL(10), /* = 0x0a Dragonair */
+    JUMP_LABEL(144),
+  LABEL(120), /* = 0x78 Dragonair */
     SELECT_ENTITIES(53, 76),
-    JUMP_LABEL(34),
-  LABEL(11), /* = 0x0b Furret */
+    JUMP_LABEL(144),
+  LABEL(121), /* = 0x79 Furret */
     SELECT_ENTITIES(53, 77),
-    JUMP_LABEL(34),
-  LABEL(12), /* = 0x0c Gloom */
+    JUMP_LABEL(144),
+  LABEL(122), /* = 0x7a Gloom */
     SELECT_ENTITIES(53, 78),
-    JUMP_LABEL(34),
-  LABEL(13), /* = 0x0d Scizor */
+    JUMP_LABEL(144),
+  LABEL(123), /* = 0x7b Scizor */
     SELECT_ENTITIES(53, 79),
-    JUMP_LABEL(34),
-  LABEL(14), /* = 0x0e Breloom */
+    JUMP_LABEL(144),
+  LABEL(124), /* = 0x7c Breloom */
     SELECT_ENTITIES(53, 80),
-    JUMP_LABEL(34),
-  LABEL(15), /* = 0x0f Taillow */
+    JUMP_LABEL(144),
+  LABEL(125), /* = 0x7d Taillow */
     SELECT_ENTITIES(53, 81),
-    JUMP_LABEL(34),
-  LABEL(16), /* = 0x10 Seviper */
+    JUMP_LABEL(144),
+  LABEL(126), /* = 0x7e Seviper */
     SELECT_ENTITIES(53, 82),
-    JUMP_LABEL(34),
-  LABEL(17), /* = 0x11 Spheal */
+    JUMP_LABEL(144),
+  LABEL(127), /* = 0x7f Spheal */
     SELECT_ENTITIES(53, 83),
-    JUMP_LABEL(34),
-  LABEL(18), /* = 0x12 Snorunt */
+    JUMP_LABEL(144),
+  LABEL(128), /* = 0x80 Snorunt */
     SELECT_ENTITIES(53, 84),
-    JUMP_LABEL(34),
-  LABEL(19), /* = 0x13 Horsea */
+    JUMP_LABEL(144),
+  LABEL(129), /* = 0x81 Horsea */
     SELECT_ENTITIES(53, 85),
-    JUMP_LABEL(34),
-  LABEL(20), /* = 0x14 Mightyena */
+    JUMP_LABEL(144),
+  LABEL(130), /* = 0x82 Mightyena */
     SELECT_ENTITIES(53, 86),
-    JUMP_LABEL(34),
-  LABEL(21), /* = 0x15 Shuppet */
+    JUMP_LABEL(144),
+  LABEL(131), /* = 0x83 Shuppet */
     SELECT_ENTITIES(53, 87),
-    JUMP_LABEL(34),
-  LABEL(22), /* = 0x16 Grimer */
+    JUMP_LABEL(144),
+  LABEL(132), /* = 0x84 Grimer */
     SELECT_ENTITIES(53, 88),
-    JUMP_LABEL(34),
-  LABEL(23), /* = 0x17 Doduo */
+    JUMP_LABEL(144),
+  LABEL(133), /* = 0x85 Doduo */
     SELECT_ENTITIES(53, 89),
-    JUMP_LABEL(34),
-  LABEL(24), /* = 0x18 Volbeat */
+    JUMP_LABEL(144),
+  LABEL(134), /* = 0x86 Volbeat */
     SELECT_ENTITIES(53, 90),
-    JUMP_LABEL(34),
-  LABEL(25), /* = 0x19 Spoink */
+    JUMP_LABEL(144),
+  LABEL(135), /* = 0x87 Spoink */
     SELECT_ENTITIES(53, 91),
-    JUMP_LABEL(34),
-  LABEL(26), /* = 0x1a Magmar */
+    JUMP_LABEL(144),
+  LABEL(136), /* = 0x88 Magmar */
     SELECT_ENTITIES(53, 92),
-    JUMP_LABEL(34),
-  LABEL(27), /* = 0x1b Electabuzz */
+    JUMP_LABEL(144),
+  LABEL(137), /* = 0x89 Electabuzz */
     SELECT_ENTITIES(53, 93),
-    JUMP_LABEL(34),
-  LABEL(28), /* = 0x1c Chansey */
+    JUMP_LABEL(144),
+  LABEL(138), /* = 0x8a Chansey */
     SELECT_ENTITIES(53, 94),
-    JUMP_LABEL(34),
-  LABEL(29), /* = 0x1d Tangela */
+    JUMP_LABEL(144),
+  LABEL(139), /* = 0x8b Tangela */
     SELECT_ENTITIES(53, 95),
-    JUMP_LABEL(34),
-  LABEL(30), /* = 0x1e Electrike */
+    JUMP_LABEL(144),
+  LABEL(140), /* = 0x8c Electrike */
     SELECT_ENTITIES(53, 96),
-    JUMP_LABEL(34),
-  LABEL(31), /* = 0x1f Hitmonchan */
+    JUMP_LABEL(144),
+  LABEL(141), /* = 0x8d Hitmonchan */
     SELECT_ENTITIES(53, 97),
-    JUMP_LABEL(34),
-  LABEL(32), /* = 0x20 Mawile */
+    JUMP_LABEL(144),
+  LABEL(142), /* = 0x8e Mawile */
     SELECT_ENTITIES(53, 98),
-    JUMP_LABEL(34),
-  LABEL(33), /* = 0x21 Hoppip */
+    JUMP_LABEL(144),
+  LABEL(143), /* = 0x8f Hoppip */
     SELECT_ENTITIES(53, 99),
-  LABEL(34), /* = 0x22 await gulpin finish */
-    AWAIT_CUE(63), /* this gulpin visitor finished full route */
+  LABEL(144), /* = 0x90 wait until MAP_LOCAL bits 0..2 are set (or timeout) */
+    UPDATE_VARINT(CALC_SET, CONDITION, 0),
+  LABEL(145), /* = 0x91 poll */
+    JUMPIF_EQUAL(MAP_LOCAL, 7, /* to label */ 146),
+    UPDATE_VARINT(CALC_ADD, CONDITION, 1),
+    JUMPIF_EQUAL(CONDITION, 3600, /* to label */ 146), /* ~60s failsafe */
+    WAIT(1),
+    JUMP_LABEL(145),
+  LABEL(146), /* = 0x92 wave done */
     JUMP_LABEL(0),
 };
-
 
 
 /* Kept so sStationScripts[] indices stay stable; sector 0 no longer runs it. */
@@ -16167,6 +16155,8 @@ static const ScriptRef s_gs1_g53_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs1_g53_visitor_setup[] = {
     DEBUGINFO_O(0),
+    /* Intangible from spawn: do not block player / stall WALK_GRID on lives hits. */
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
     RET,
 };
 
@@ -16195,7 +16185,7 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     WALK_GRID(256, 149),
     WALK_GRID(256, 146), /* back to start */
     WALK_RELATIVE(256, 0, -24), /* off north map edge */
-    ALERT_CUE(65), /* kecleon route complete */
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 0), /* kecleon route complete */
     END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
@@ -16210,7 +16200,7 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     WALK_GRID(256, 151),
     WALK_GRID(256, 147), /* back to start */
     WALK_RELATIVE(256, 0, 24), /* off south map edge */
-    ALERT_CUE(65),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 0),
     END_DELETE,
   LABEL(3), /* = 0x03 - west */
     WARP_WAYPOINT(0, 155),
@@ -16223,7 +16213,7 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     WALK_GRID(256, 152),
     WALK_GRID(256, 155), /* back to start */
     WALK_RELATIVE(256, -24, 0), /* off west map edge */
-    ALERT_CUE(65),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 0),
     END_DELETE,
   LABEL(4), /* = 0x04 - east */
     WARP_WAYPOINT(0, 156),
@@ -16236,7 +16226,7 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     WALK_GRID(256, 152),
     WALK_GRID(256, 156), /* back to start */
     WALK_RELATIVE(256, 24, 0), /* off east map edge */
-    ALERT_CUE(65),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 0),
     END_DELETE,
 };
 
@@ -16266,7 +16256,7 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     WALK_GRID(256, 149),
     WALK_GRID(256, 146), /* back to start */
     WALK_RELATIVE(256, 0, -24), /* off north map edge */
-    ALERT_CUE(64), /* bank route complete */
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 1), /* bank route complete */
     END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
@@ -16281,7 +16271,7 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     WALK_GRID(256, 151),
     WALK_GRID(256, 147), /* back to start */
     WALK_RELATIVE(256, 0, 24), /* off south map edge */
-    ALERT_CUE(64),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 1),
     END_DELETE,
   LABEL(3), /* = 0x03 - west */
     WARP_WAYPOINT(0, 155),
@@ -16294,7 +16284,7 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     WALK_GRID(256, 153),
     WALK_GRID(256, 155), /* back to start */
     WALK_RELATIVE(256, -24, 0), /* off west map edge */
-    ALERT_CUE(64),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 1),
     END_DELETE,
   LABEL(4), /* = 0x04 - east */
     WARP_WAYPOINT(0, 156),
@@ -16307,7 +16297,7 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     WALK_GRID(256, 153),
     WALK_GRID(256, 156), /* back to start */
     WALK_RELATIVE(256, 24, 0), /* off east map edge */
-    ALERT_CUE(64),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 1),
     END_DELETE,
 };
 
@@ -16341,7 +16331,7 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     WALK_GRID(256, 149),
     WALK_GRID(256, 146), /* back to start */
     WALK_RELATIVE(256, 0, -24), /* off north map edge */
-    ALERT_CUE(63), /* gulpin route complete */
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 2), /* gulpin route complete */
     END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
@@ -16356,7 +16346,7 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     WALK_GRID(256, 157),
     WALK_GRID(256, 147), /* back to start */
     WALK_RELATIVE(256, 0, 24), /* off south map edge */
-    ALERT_CUE(63),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 2),
     END_DELETE,
   LABEL(3), /* = 0x03 - west */
     WARP_WAYPOINT(0, 155),
@@ -16373,7 +16363,7 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     WALK_GRID(256, 151),
     WALK_GRID(256, 155), /* back to start */
     WALK_RELATIVE(256, -24, 0), /* off west map edge */
-    ALERT_CUE(63),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 2),
     END_DELETE,
   LABEL(4), /* = 0x04 - east */
     WARP_WAYPOINT(0, 156),
@@ -16390,7 +16380,7 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     WALK_GRID(256, 151),
     WALK_GRID(256, 156), /* back to start */
     WALK_RELATIVE(256, 24, 0), /* off east map edge */
-    ALERT_CUE(63),
+    UPDATE_VARINT(CALC_SETBIT, MAP_LOCAL, 2),
     END_DELETE,
 };
 
@@ -18246,19 +18236,12 @@ static const struct GroundLivesData s_gs1_g52_s0_lives[] = { /* 0x817c01c */
 };
 
 
-/* Dispatchers use unique kinds 179 / 213. Visitors 146–178 (Kecleon) and 180–212 (bank). */
+/* Coordinator uses kind 179. Visitors 146–178 (Kecleon), 180–212 (bank), 214–246 (gulpin).
+ * Kinds 213/247 remain reserved in type data but are no longer spawned (one dispatcher). */
 static const struct GroundLivesData s_gs1_g53_s0_lives[] = {
-    /* kecleon dispatcher */ { 179,   0,   0,   0, {   1,   1, 0, CPOS_HALFTILE }, {
+    /* living-square coordinator */ { 179,   0,   0,   0, {   1,   1, 0, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_dispatcher_setup,
         [1] = s_gs1_g53_dispatcher_loop,
-    } },
-    /* bank dispatcher */ { 213,   0,   0,   0, {   1,   2, 0, CPOS_HALFTILE }, {
-        [0] = s_gs1_g53_dispatcher_setup,
-        [1] = s_gs1_g53_bank_dispatcher_loop,
-    } },
-    /* gulpin dispatcher */ { 247,   0,   0,   0, {   1,   3, 0, CPOS_HALFTILE }, {
-        [0] = s_gs1_g53_dispatcher_setup,
-        [1] = s_gs1_g53_gulpin_dispatcher_loop,
     } },
 };
 
