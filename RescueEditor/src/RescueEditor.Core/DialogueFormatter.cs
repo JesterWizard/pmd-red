@@ -301,7 +301,8 @@ public static class DialogueFormatter
         if (string.IsNullOrEmpty(raw))
             return Array.Empty<string>();
 
-        var parts = Regex.Split(raw, @"\{WAIT_PRESS\}", RegexOptions.IgnoreCase);
+        // WAIT_PRESS (#W) and EXTRA_MSG (#P) both advance to the next textbox page.
+        var parts = Regex.Split(raw, @"\{(?:WAIT_PRESS|EXTRA_MSG)\}", RegexOptions.IgnoreCase);
         var pages = new List<string>();
         foreach (var part in parts)
         {
@@ -328,7 +329,8 @@ public static class DialogueFormatter
         context ??= new DialogueFormatContext();
         var text = raw;
         text = text.Replace("{NEW_LINE}", "\n", StringComparison.Ordinal);
-        text = text.Replace("{WAIT_PRESS}", "", StringComparison.Ordinal);
+        text = text.Replace("{WAIT_PRESS}", "", StringComparison.OrdinalIgnoreCase);
+        text = text.Replace("{EXTRA_MSG}", "", StringComparison.OrdinalIgnoreCase);
 
         text = Tag.Replace(text, match =>
         {
@@ -357,6 +359,7 @@ public static class DialogueFormatter
                 "SPEECH_BUBBLE" => "",
                 "TEAM_NAME" => "Team",
                 "WAIT_PRESS" => "",
+                "EXTRA_MSG" => "",
                 "NEW_LINE" => "\n",
                 // Keep unknown macros out of the pixel font (they showed as garbage).
                 _ => "",

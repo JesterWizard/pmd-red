@@ -27,6 +27,7 @@ public sealed class AssetWorkspacePanel : UserControl
     private AssetCatalog? _catalog;
     private SceneDatabase? _scenes;
     private ChangeService? _changes;
+    private PortraitAtlas? _portraitAtlas;
     private bool _useGridView;
     private AssetDescriptor? _selectedAsset;
     private CancellationTokenSource? _thumbnailCts;
@@ -139,6 +140,8 @@ public sealed class AssetWorkspacePanel : UserControl
         _catalog = catalog;
         _scenes = scenes;
         _changes = changes;
+        var root = CatalogBuilder.FindRepositoryRoot(rom.Path);
+        _portraitAtlas = new PortraitAtlas(rom, root);
     }
 
     public void Clear()
@@ -148,6 +151,8 @@ public sealed class AssetWorkspacePanel : UserControl
         _charmap = null;
         _catalog = null;
         _scenes = null;
+        _changes = null;
+        _portraitAtlas = null;
         _selectedAsset = null;
         _assetList.ItemsSource = null;
         _assetGrid.Children.Clear();
@@ -423,6 +428,40 @@ public sealed class AssetWorkspacePanel : UserControl
             MinHeight = 160,
             FontSize = 15,
         };
+
+        var portraitImage = new Image
+        {
+            Stretch = Stretch.None,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            VerticalAlignment = VerticalAlignment.Top,
+            UseLayoutRounding = true,
+            IsVisible = false,
+        };
+        RenderOptions.SetBitmapInterpolationMode(portraitImage, BitmapInterpolationMode.None);
+        Bitmap? portraitBitmap = null;
+        TryShowSpeakerPortrait(asset, portraitImage, ref portraitBitmap);
+
+        var previewImage = new Image
+        {
+            Stretch = Stretch.None,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            VerticalAlignment = VerticalAlignment.Top,
+            UseLayoutRounding = true,
+        };
+        RenderOptions.SetBitmapInterpolationMode(previewImage, BitmapInterpolationMode.None);
+
+        Bitmap? previewBitmap = null;
+        void RefreshPreview()
+        {
+            var png = DialogueTextPreview.RenderPng(editor.Text);
+            using var stream = new MemoryStream(png);
+            var next = new Bitmap(stream);
+            previewImage.Source = next;
+            previewBitmap?.Dispose();
+            previewBitmap = next;
+        }
+        RefreshPreview();
+
         var sizeLabel = new TextBlock
         {
             Foreground = EditorTheme.TextMutedBrush,
@@ -430,13 +469,17 @@ public sealed class AssetWorkspacePanel : UserControl
         };
         void UpdateSize()
         {
-            var len = System.Text.Encoding.ASCII.GetByteCount(editor.Text ?? string.Empty);
+            var len = DialogueEncodedBudget.CountBytes(editor.Text);
             var max = dialogue?.Size ?? asset.Size;
             sizeLabel.Text = $"Encoded size: {len} / {max} bytes";
             sizeLabel.Foreground = len > max ? Brushes.Salmon : EditorTheme.TextMutedBrush;
         }
         UpdateSize();
-        editor.TextChanged += (_, _) => UpdateSize();
+        editor.TextChanged += (_, _) =>
+        {
+            UpdateSize();
+            RefreshPreview();
+        };
 
         var apply = new Button { Content = "Apply (same-size)", Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left };
         apply.Click += (_, _) =>
@@ -464,6 +507,8 @@ public sealed class AssetWorkspacePanel : UserControl
                 Children =
                 {
                     new TextBlock { Text = asset.Name, FontSize = 18, FontWeight = FontWeight.SemiBold },
+                    portraitImage,
+                    previewImage,
                     editor,
                     sizeLabel,
                     apply,
@@ -471,6 +516,33 @@ public sealed class AssetWorkspacePanel : UserControl
                 },
             },
         };
+    }
+
+    private void TryShowSpeakerPortrait(AssetDescriptor asset, Image portraitImage, ref Bitmap? portraitBitmap)
+    {
+        if (_rom is null || _portraitAtlas is null)
+            return;
+        if (!asset.Metadata.TryGetValue("commandOffset", out var cmdText))
+            return;
+
+        var hex = cmdText.StartsWith("0x", StringComparison.OrdinalIgnoreCase) ? cmdText[2..] : cmdText;
+        if (!int.TryParse(hex, System.Globalization.NumberStyles.HexNumber, null, out var commandOffset))
+            return;
+
+        var info = DialogueSpeakerResolver.TryResolve(_rom, commandOffset, _scenes?.Profile, _scenes);
+        if (info is null || info.Value.Species <= 0)
+            return;
+
+        var png = DialoguePortraitPreview.TryRenderPng(_portraitAtlas, info.Value.Species, info.Value.Emotion);
+        if (png is null)
+            return;
+
+        using var stream = new MemoryStream(png);
+        var next = new Bitmap(stream);
+        portraitImage.Source = next;
+        portraitImage.IsVisible = true;
+        portraitBitmap?.Dispose();
+        portraitBitmap = next;
     }
 
     private Control CreateZoomableImagePreview(

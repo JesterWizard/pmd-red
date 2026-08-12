@@ -364,10 +364,11 @@ public static class SceneEditing
         Charmap charmap)
     {
         // Encode via ASCII fallback for same-size safety when charmap encode is unavailable.
-        var encoded = System.Text.Encoding.ASCII.GetBytes(newText);
-        if (encoded.Length > dialogue.Size)
+        // Control macros like {COLOR RED} are editor decoration — exclude them from the budget.
+        var encodedLength = DialogueEncodedBudget.CountBytes(newText);
+        if (encodedLength > dialogue.Size)
             throw new InvalidOperationException(
-                $"Encoded dialogue is {encoded.Length} bytes but only {dialogue.Size} bytes are available in-place.");
+                $"Encoded dialogue is {encodedLength} bytes but only {dialogue.Size} bytes are available in-place.");
 
         var oldText = dialogue.Text;
         changes.Execute(
