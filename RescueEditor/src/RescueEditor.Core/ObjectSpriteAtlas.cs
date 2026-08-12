@@ -2,7 +2,7 @@ namespace RescueEditor.Core;
 
 /// <summary>
 /// Ground object standing frames from <c>graphics/ornament/*/sprite_1.png</c>
-/// keyed by object TypeId (<c>gGroundObjectKinds</c>).
+/// (or AX-assembled / 4bpp+pmdpal fallbacks) keyed by object TypeId (<c>gGroundObjectKinds</c>).
 /// </summary>
 public sealed class ObjectSpriteAtlas
 {
@@ -25,36 +25,76 @@ public sealed class ObjectSpriteAtlas
             return null;
         }
 
-        var path = Path.Combine(_repositoryRoot, "graphics", "ornament", folder, "sprite_1.png");
-        if (!File.Exists(path))
+        var image = TryLoadOrnament(folder);
+        _byType[typeId] = image;
+        return image;
+    }
+
+    private RgbaImage? TryLoadOrnament(string folder)
+    {
+        // Multi-piece / NULL-padded ornaments (Npc01, Titleop1, …) — assemble pose 1.
+        if (AxPoseAssembler.IsMultiPiece(_repositoryRoot, folder, AxGraphicsTree.Ornament))
         {
-            _byType[typeId] = null;
-            return null;
+            var assembled = AxPoseAssembler.TryAssemble(
+                _repositoryRoot, folder, poseNumber: 1, AxGraphicsTree.Ornament);
+            if (assembled is not null)
+                return assembled;
         }
 
-        try
+        var pngPath = Path.Combine(_repositoryRoot, "graphics", "ornament", folder, "sprite_1.png");
+        if (File.Exists(pngPath))
         {
-            var image = RgbaImage.FromPng(File.ReadAllBytes(path));
-            _byType[typeId] = image;
-            return image;
+            try
+            {
+                var image = RgbaImage.FromPng(File.ReadAllBytes(pngPath));
+                // Tiny scraps mean compound VRAM wasn't assembled — try AX render anyway.
+                if (image is not null && image.Width >= 16 && image.Height >= 16)
+                    return image;
+                var fromAx = AxPoseAssembler.TryAssemble(
+                    _repositoryRoot, folder, poseNumber: 1, AxGraphicsTree.Ornament)
+                    ?? AxPoseAssembler.TryRenderOrnamentStandingFrame(_repositoryRoot, folder);
+                if (fromAx is not null)
+                    return fromAx;
+                return image;
+            }
+            catch
+            {
+                // fall through to 4bpp
+            }
         }
-        catch
-        {
-            _byType[typeId] = null;
-            return null;
-        }
+
+        return AxPoseAssembler.TryAssemble(
+                   _repositoryRoot, folder, poseNumber: 1, AxGraphicsTree.Ornament)
+               ?? AxPoseAssembler.TryRenderOrnamentStandingFrame(_repositoryRoot, folder);
     }
 }
 
 /// <summary>Object TypeId → <c>graphics/ornament/&lt;folder&gt;</c> (from gGroundObjectKinds).</summary>
 public static class ObjectSpriteFolders
 {
+    /// <summary>
+    /// Editor-only TypeId for the custom <c>Board01</c> bulletin ornament (not in retail
+    /// <c>gGroundObjectKinds</c>). Used to preview 4bpp-only assets.
+    /// </summary>
+    public const byte BoardPreviewTypeId = 254;
+
     // Kinds 0–25 have NULL fileName in gGroundObjectKinds (invisible / talk zones).
     private static readonly string?[] FoldersByTypeId = Build();
+
+    /// <summary>True when <c>gGroundObjectKinds</c> has no ornament file (talk / trigger zones).</summary>
+    public static bool IsSpriteLessKind(byte typeId) =>
+        typeId != BoardPreviewTypeId &&
+        ((uint)typeId >= (uint)FoldersByTypeId.Length || FoldersByTypeId[typeId] is null);
 
     public static bool TryGetFolder(int typeId, out string? folder)
     {
         folder = null;
+        if (typeId == BoardPreviewTypeId)
+        {
+            folder = "Board01";
+            return true;
+        }
+
         if ((uint)typeId >= (uint)FoldersByTypeId.Length)
             return false;
         folder = FoldersByTypeId[typeId];

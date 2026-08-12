@@ -2,6 +2,15 @@ using System.Text.RegularExpressions;
 
 namespace RescueEditor.Core;
 
+/// <summary>Where AX headers + sprite tiles live under the decomp tree.</summary>
+public enum AxGraphicsTree
+{
+    /// <summary><c>src/data/ax</c> + <c>graphics/ax/mon</c>.</summary>
+    Monster = 0,
+    /// <summary><c>src/data/ornament</c> + <c>graphics/ornament</c>.</summary>
+    Ornament = 1,
+}
+
 /// <summary>
 /// Assembles multi-OAM AX poses from decomp headers + per-piece 4bpp tiles.
 /// Large Pokémon dump each OAM piece separately; compound <c>ax_sprite</c> arrays
@@ -9,6 +18,12 @@ namespace RescueEditor.Core;
 /// </summary>
 public static partial class AxPoseAssembler
 {
+    public static string GraphicsDirectory(string repositoryRoot, string folder, AxGraphicsTree tree) =>
+        tree switch
+        {
+            AxGraphicsTree.Ornament => Path.Combine(repositoryRoot, "graphics", "ornament", folder),
+            _ => Path.Combine(repositoryRoot, "graphics", "ax", "mon", folder),
+        };
     [GeneratedRegex(
         @"AX_POSE\(\s*(-?\d+)\s*,\s*OAM1\(\s*(-?\d+)\s*,\s*ST_OAM_(\w+)\s*,\s*(-?\d+)\s*\)\s*,\s*OAM2\(\s*(-?\d+)\s*,\s*ST_OAM_SIZE_(\d+)\s*,\s*FLIP\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s*,\s*OAM3\(\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*\)",
         RegexOptions.CultureInvariant)]
@@ -39,13 +54,17 @@ public static partial class AxPoseAssembler
 
     private static readonly Dictionary<string, IReadOnlyList<int>?> PoseIdTables = new(StringComparer.OrdinalIgnoreCase);
 
-    private static IReadOnlyList<int>? GetPoseIdTable(string repositoryRoot, string folder)
+    private static IReadOnlyList<int>? GetPoseIdTable(string repositoryRoot, string folder) =>
+        GetPoseIdTable(repositoryRoot, folder, AxGraphicsTree.Monster);
+
+    private static IReadOnlyList<int>? GetPoseIdTable(
+        string repositoryRoot, string folder, AxGraphicsTree tree)
     {
-        var key = repositoryRoot + '\0' + folder;
+        var key = repositoryRoot + '\0' + folder + '\0' + (int)tree;
         if (PoseIdTables.TryGetValue(key, out var cached))
             return cached;
 
-        var header = FindAxHeader(repositoryRoot, folder);
+        var header = FindAxHeader(repositoryRoot, folder, tree);
         if (header is null || !File.Exists(header))
         {
             PoseIdTables[key] = null;
@@ -80,13 +99,16 @@ public static partial class AxPoseAssembler
     /// Includes single-OAM monsters whose sprite arrays use <c>{NULL,pad}</c> or
     /// <c>sprite_N_k</c> chunks (e.g. Ho-Oh 64×64) — sheet PNGs are only strips.
     /// </summary>
-    public static bool IsMultiPieceMonster(string repositoryRoot, string folder)
+    public static bool IsMultiPieceMonster(string repositoryRoot, string folder) =>
+        IsMultiPiece(repositoryRoot, folder, AxGraphicsTree.Monster);
+
+    public static bool IsMultiPiece(string repositoryRoot, string folder, AxGraphicsTree tree)
     {
-        var pieces = ParsePose(repositoryRoot, folder, poseNumber: 1);
+        var pieces = ParsePose(repositoryRoot, folder, poseNumber: 1, tree);
         if (pieces is null || pieces.Count == 0)
             return false;
 
-        var header = FindAxHeader(repositoryRoot, folder);
+        var header = FindAxHeader(repositoryRoot, folder, tree);
         var arrays = header is not null ? ParseSpriteArrays(header) : null;
         foreach (var piece in pieces)
         {
@@ -104,9 +126,9 @@ public static partial class AxPoseAssembler
     /// <summary>Test hook: tile bytes for <c>sprite_N</c> after applying <c>{NULL,pad}</c> gaps.</summary>
     public static int MeasureSpriteTileBytes(string repositoryRoot, string folder, int spriteNum)
     {
-        var header = FindAxHeader(repositoryRoot, folder);
+        var header = FindAxHeader(repositoryRoot, folder, AxGraphicsTree.Monster);
         var arrays = header is not null ? ParseSpriteArrays(header) : null;
-        var spriteDir = Path.Combine(repositoryRoot, "graphics", "ax", "mon", folder);
+        var spriteDir = GraphicsDirectory(repositoryRoot, folder, AxGraphicsTree.Monster);
         var tiles = BuildSpriteTiles(spriteDir, spriteNum, arrays);
         return tiles?.Length ?? 0;
     }
@@ -124,28 +146,36 @@ public static partial class AxPoseAssembler
     }
 
     /// <summary>Map <c>sAxPosesXxx[poseId]</c> → 1-based <c>sXxxPoseN</c> symbol number.</summary>
-    public static int? ResolvePoseNumber(string repositoryRoot, string folder, int poseId)
+    public static int? ResolvePoseNumber(string repositoryRoot, string folder, int poseId) =>
+        ResolvePoseNumber(repositoryRoot, folder, poseId, AxGraphicsTree.Monster);
+
+    public static int? ResolvePoseNumber(
+        string repositoryRoot, string folder, int poseId, AxGraphicsTree tree)
     {
         if (poseId < 0)
             return null;
-        var table = GetPoseIdTable(repositoryRoot, folder);
+        var table = GetPoseIdTable(repositoryRoot, folder, tree);
         if (table is null || poseId >= table.Count)
             return null;
         return table[poseId];
     }
 
     /// <summary>1-based pose index matching <c>sXxxPoseN</c> (Pose1 = south).</summary>
-    public static RgbaImage? TryAssemble(string repositoryRoot, string folder, int poseNumber)
+    public static RgbaImage? TryAssemble(string repositoryRoot, string folder, int poseNumber) =>
+        TryAssemble(repositoryRoot, folder, poseNumber, AxGraphicsTree.Monster);
+
+    public static RgbaImage? TryAssemble(
+        string repositoryRoot, string folder, int poseNumber, AxGraphicsTree tree)
     {
         if (poseNumber <= 0)
             return null;
 
-        var pieces = ParsePose(repositoryRoot, folder, poseNumber);
+        var pieces = ParsePose(repositoryRoot, folder, poseNumber, tree);
         if (pieces is null || pieces.Count == 0)
             return null;
 
-        var spriteDir = Path.Combine(repositoryRoot, "graphics", "ax", "mon", folder);
-        var header = FindAxHeader(repositoryRoot, folder);
+        var spriteDir = GraphicsDirectory(repositoryRoot, folder, tree);
+        var header = FindAxHeader(repositoryRoot, folder, tree);
         var spriteArrays = header is not null ? ParseSpriteArrays(header) : null;
 
         // Retail uploads each pose sprite into a shared OBJ VRAM block; OAM3 tileNum
@@ -156,7 +186,8 @@ public static partial class AxPoseAssembler
 
         var palette = TryLoadIndexedPalette(Path.Combine(spriteDir, $"sprite_{pieces[0].SpriteId + 1}.png"))
             ?? TryLoadIndexedPalette(Path.Combine(spriteDir, $"sprite_{pieces[0].SpriteId + 1}_1.png"))
-            ?? TryLoadIndexedPalette(Path.Combine(spriteDir, "sprite_1.png"));
+            ?? TryLoadIndexedPalette(Path.Combine(spriteDir, "sprite_1.png"))
+            ?? TryLoadOrnamentPmdPal(repositoryRoot, folder, tree);
         if (palette is null)
             return null;
 
@@ -198,9 +229,13 @@ public static partial class AxPoseAssembler
     /// </summary>
     public static int IdlePoseForDirection(int direction) => ((direction & 7) * 3) + 1;
 
-    public static IReadOnlyList<PosePiece>? ParsePose(string repositoryRoot, string folder, int poseNumber)
+    public static IReadOnlyList<PosePiece>? ParsePose(string repositoryRoot, string folder, int poseNumber) =>
+        ParsePose(repositoryRoot, folder, poseNumber, AxGraphicsTree.Monster);
+
+    public static IReadOnlyList<PosePiece>? ParsePose(
+        string repositoryRoot, string folder, int poseNumber, AxGraphicsTree tree)
     {
-        var header = FindAxHeader(repositoryRoot, folder);
+        var header = FindAxHeader(repositoryRoot, folder, tree);
         if (header is null || !File.Exists(header))
             return null;
 
@@ -511,19 +546,109 @@ public static partial class AxPoseAssembler
         }
     }
 
-    private static string? FindAxHeader(string repositoryRoot, string folder)
+    private static string? FindAxHeader(string repositoryRoot, string folder) =>
+        FindAxHeader(repositoryRoot, folder, AxGraphicsTree.Monster);
+
+    private static string? FindAxHeader(string repositoryRoot, string folder, AxGraphicsTree tree)
     {
-        var direct = Path.Combine(repositoryRoot, "src", "data", "ax", folder + ".h");
+        var dataDir = tree switch
+        {
+            AxGraphicsTree.Ornament => Path.Combine(repositoryRoot, "src", "data", "ornament"),
+            _ => Path.Combine(repositoryRoot, "src", "data", "ax"),
+        };
+
+        var direct = Path.Combine(dataDir, folder + ".h");
         if (File.Exists(direct))
             return direct;
 
-        var axDir = Path.Combine(repositoryRoot, "src", "data", "ax");
-        if (!Directory.Exists(axDir))
+        // Folders are often PascalCase (Npc01) while headers are lowercase (npc01.h).
+        var lower = Path.Combine(dataDir, folder.ToLowerInvariant() + ".h");
+        if (File.Exists(lower))
+            return lower;
+
+        if (!Directory.Exists(dataDir))
             return null;
 
-        return Directory.EnumerateFiles(axDir, "*.h")
+        return Directory.EnumerateFiles(dataDir, "*.h")
             .FirstOrDefault(f => Path.GetFileNameWithoutExtension(f)
                 .Equals(folder, StringComparison.OrdinalIgnoreCase));
+    }
+
+    /// <summary>Load <c>graphics/ornament/pal/&lt;folder&gt;.pmdpal</c> when PNGs lack a PLTE.</summary>
+    private static RgbaColor[]? TryLoadOrnamentPmdPal(
+        string repositoryRoot, string folder, AxGraphicsTree tree)
+    {
+        if (tree != AxGraphicsTree.Ornament)
+            return null;
+
+        foreach (var name in new[] { folder.ToLowerInvariant(), folder })
+        {
+            var path = Path.Combine(repositoryRoot, "graphics", "ornament", "pal", name + ".pmdpal");
+            if (!File.Exists(path))
+                continue;
+            try
+            {
+                return ReadPmdPalFile(path);
+            }
+            catch
+            {
+                // try next
+            }
+        }
+
+        return null;
+    }
+
+    private static RgbaColor[] ReadPmdPalFile(string path)
+    {
+        var bytes = File.ReadAllBytes(path);
+        var count = Math.Min(16, bytes.Length / 4);
+        var colors = new RgbaColor[16];
+        for (var i = 0; i < 16; i++)
+        {
+            if (i >= count || i == 0)
+            {
+                colors[i] = new RgbaColor(0, 0, 0, 0);
+                continue;
+            }
+
+            var o = i * 4;
+            colors[i] = new RgbaColor(bytes[o], bytes[o + 1], bytes[o + 2], 255);
+        }
+
+        return colors;
+    }
+
+    /// <summary>
+    /// Render a single OAM from ornament <c>sprite_N.4bpp</c> + palette when no PNG exists
+    /// (e.g. Board01). Uses pose 1 dimensions when an AX header is present.
+    /// </summary>
+    public static RgbaImage? TryRenderOrnamentStandingFrame(string repositoryRoot, string folder)
+    {
+        var spriteDir = GraphicsDirectory(repositoryRoot, folder, AxGraphicsTree.Ornament);
+        var pieces = ParsePose(repositoryRoot, folder, poseNumber: 1, AxGraphicsTree.Ornament);
+        var oamW = 32;
+        var oamH = 32;
+        if (pieces is { Count: > 0 })
+        {
+            oamW = pieces[0].OamW;
+            oamH = pieces[0].OamH;
+        }
+
+        var tiles = TryLoadTiles(Path.Combine(spriteDir, "sprite_1"));
+        if (tiles is null || tiles.Length < 32)
+            return null;
+
+        var palette = TryLoadIndexedPalette(Path.Combine(spriteDir, "sprite_1.png"))
+            ?? TryLoadOrnamentPmdPal(repositoryRoot, folder, AxGraphicsTree.Ornament);
+        if (palette is null)
+            return null;
+
+        var image = RenderOamSprite(tiles, palette, oamW, oamH);
+        if (image is null)
+            return null;
+        GbaChroma.KeyOut(image);
+        return image;
     }
 
     private static int ShapeCode(string name) => name switch

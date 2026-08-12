@@ -530,9 +530,20 @@ public static class SceneCompositor
             var selectedMatch = IsSelected(selected, entity);
             var sprite = objectSprites?.TryGetForObject(entity.TypeId);
             if (sprite is not null)
+            {
                 DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels);
-            else
-                DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0xF0, 0xC0, 0x40);
+                continue;
+            }
+
+            // Talk / trigger zones (gGroundObjectKinds fileName NULL): outline hitbox only so
+            // they are not confused with missing ornament sprites (solid amber fill).
+            if (ObjectSpriteFolders.IsSpriteLessKind(entity.TypeId))
+            {
+                DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0xF0, 0xC0, 0x40, filled: false);
+                continue;
+            }
+
+            DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0xF0, 0xC0, 0x40);
         }
     }
 
@@ -595,12 +606,13 @@ public static class SceneCompositor
         SceneEntity entity,
         bool selectedMatch,
         bool drawLabels,
-        byte r, byte g, byte b)
+        byte r, byte g, byte b,
+        bool filled = true)
     {
         var size = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
         var height = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
         DrawRect(image, entity.PixelX, entity.PixelY, size, height, r, g, b,
-            selectedMatch, filled: true);
+            selectedMatch, filled: filled);
         if (drawLabels)
             DrawIndexLabel(image, entity.PixelX + 1, entity.PixelY + 1, entity.Index, selectedMatch);
     }

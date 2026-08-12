@@ -689,6 +689,45 @@ public sealed class SceneEditorTests
     }
 
     [Fact]
+    public void ObjectSpriteAtlasAssemblesMultiPieceNpcInsteadOfScrapPng()
+    {
+        var repo = FindRepositoryRoot();
+        if (repo is null)
+            return;
+
+        Assert.True(ObjectSpriteFolders.TryGetFolder(62, out var folder));
+        Assert.Equal("Npc01", folder);
+        Assert.True(AxPoseAssembler.IsMultiPiece(repo, folder!, AxGraphicsTree.Ornament));
+
+        var atlas = new ObjectSpriteAtlas(repo);
+        var npc = atlas.TryGetForObject(62);
+        Assert.NotNull(npc);
+        // sprite_1.png alone is an 8×8 VRAM scrap; assembled idle is 32×32.
+        Assert.True(npc!.Width >= 24, $"expected assembled width, got {npc.Width}");
+        Assert.True(npc.Height >= 24, $"expected assembled height, got {npc.Height}");
+        Assert.True(CountOpaque(npc) > 40);
+    }
+
+    [Fact]
+    public void ObjectSpriteAtlasLoadsBoard01From4bppWhenPngMissing()
+    {
+        var repo = FindRepositoryRoot();
+        if (repo is null)
+            return;
+
+        var path4 = Path.Combine(repo, "graphics", "ornament", "Board01", "sprite_1.4bpp");
+        if (!File.Exists(path4))
+            return;
+
+        var atlas = new ObjectSpriteAtlas(repo);
+        var board = atlas.TryGetForObject(ObjectSpriteFolders.BoardPreviewTypeId);
+        Assert.NotNull(board);
+        Assert.True(board!.Width >= 16);
+        Assert.True(board.Height >= 16);
+        Assert.True(CountOpaque(board) > 20);
+    }
+
+    [Fact]
     public void ComposeScenePngDrawsObjectSpritesInsteadOfPlaceholders()
     {
         var baserom = FindUpwards("baserom.gba");
@@ -711,6 +750,16 @@ public sealed class SceneEditorTests
             DisplayName = "Stairs",
             Index = 0,
         });
+        sector.Objects.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Object,
+            TypeId = 62, // Npc01 — multi-piece ornament
+            Width = 1,
+            Height = 1,
+            Position = new CompactPos(20, 8, 0, 0),
+            DisplayName = "Npc01",
+            Index = 1,
+        });
         group.Sectors.Add(sector);
         scene.Groups.Add(group);
 
@@ -721,6 +770,44 @@ public sealed class SceneEditorTests
         var cy = 8 * 8;
         Assert.False(IsObjectMarker(image!, cx, cy), "expected ornament sprite, not amber marker");
         Assert.True(HasNonBackgroundColorNear(image!, cx, cy, radius: 12));
+
+        var npcX = 20 * 8;
+        var npcY = 8 * 8;
+        Assert.False(IsObjectMarker(image!, npcX, npcY), "Npc01 must not fall back to amber marker");
+        Assert.True(HasNonBackgroundColorNear(image!, npcX, npcY, radius: 16));
+    }
+
+    [Fact]
+    public void ComposeSceneDrawsOutlineOnlyForSpritelessObjectKinds()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        var repo = FindRepositoryRoot();
+        if (baserom is null || repo is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var objects = new ObjectSpriteAtlas(repo);
+        var scene = new Scene { MapId = 99, Name = "TalkZoneTest" };
+        var group = new SceneGroup { Index = 0 };
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        sector.Objects.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Object,
+            TypeId = 14, // bulletin talk zone — no gGroundObjectKinds sprite
+            Width = 5,
+            Height = 2,
+            Position = new CompactPos(10, 10, 0, 0),
+            DisplayName = "Board zone",
+            Index = 0,
+        });
+        group.Sectors.Add(sector);
+        scene.Groups.Add(group);
+
+        var image = SceneCompositor.ComposeSceneImage(rom, scene, objectSprites: objects);
+        // Interior of the hitbox must stay background (outline-only), not solid amber fill.
+        var ix = 10 * 8 + 16;
+        var iy = 10 * 8 + 8;
+        Assert.False(IsObjectMarker(image, ix, iy), "sprite-less kinds must not use filled placeholders");
     }
 
     [Fact]
