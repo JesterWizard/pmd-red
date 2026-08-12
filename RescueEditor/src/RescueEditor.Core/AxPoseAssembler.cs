@@ -10,7 +10,7 @@ namespace RescueEditor.Core;
 public static partial class AxPoseAssembler
 {
     [GeneratedRegex(
-        @"AX_POSE\(\s*(-?\d+)\s*,\s*OAM1\(\s*(-?\d+)\s*,\s*ST_OAM_(\w+)\s*,\s*(-?\d+)\s*\)\s*,\s*OAM2\(\s*(-?\d+)\s*,\s*ST_OAM_SIZE_(\d+)\s*,\s*FLIP\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*\)",
+        @"AX_POSE\(\s*(-?\d+)\s*,\s*OAM1\(\s*(-?\d+)\s*,\s*ST_OAM_(\w+)\s*,\s*(-?\d+)\s*\)\s*,\s*OAM2\(\s*(-?\d+)\s*,\s*ST_OAM_SIZE_(\d+)\s*,\s*FLIP\(\s*(\d+)\s*,\s*(\d+)\s*\)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s*,\s*OAM3\(\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*(-?\d+)\s*\)",
         RegexOptions.CultureInvariant)]
     private static partial Regex PosePieceRegex();
 
@@ -25,14 +25,111 @@ public static partial class AxPoseAssembler
     private static partial Regex SpriteArrayRegex();
 
     [GeneratedRegex(
-        @"\{(?:NULL\s*,\s*(\d+)|s\w+Gfx(\d+)(?:_(\d+))?)\s*,",
+        @"\{(?:NULL\s*,\s*(\d+)|s\w+Gfx(\d+)(?:_(\d+))?)[^}]*\}",
         RegexOptions.CultureInvariant)]
     private static partial Regex SpritePartRegex();
 
+    [GeneratedRegex(
+        @"static const ax_pose \*const s\w+Poses\w*\[\]\s*=\s*\{(.*?)\};",
+        RegexOptions.Singleline | RegexOptions.CultureInvariant)]
+    private static partial Regex PoseIdTableRegex();
+
+    [GeneratedRegex(@"s\w+Pose(\d+)", RegexOptions.CultureInvariant)]
+    private static partial Regex PoseSymbolRegex();
+
+    private static readonly Dictionary<string, IReadOnlyList<int>?> PoseIdTables = new(StringComparer.OrdinalIgnoreCase);
+
+    private static IReadOnlyList<int>? GetPoseIdTable(string repositoryRoot, string folder)
+    {
+        var key = repositoryRoot + '\0' + folder;
+        if (PoseIdTables.TryGetValue(key, out var cached))
+            return cached;
+
+        var header = FindAxHeader(repositoryRoot, folder);
+        if (header is null || !File.Exists(header))
+        {
+            PoseIdTables[key] = null;
+            return null;
+        }
+
+        try
+        {
+            var text = File.ReadAllText(header);
+            var match = PoseIdTableRegex().Match(text);
+            if (!match.Success)
+            {
+                PoseIdTables[key] = null;
+                return null;
+            }
+
+            var list = new List<int>();
+            foreach (Match sym in PoseSymbolRegex().Matches(match.Groups[1].Value))
+                list.Add(int.Parse(sym.Groups[1].Value));
+            PoseIdTables[key] = list;
+            return list;
+        }
+        catch
+        {
+            PoseIdTables[key] = null;
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// True when the south idle pose needs compound VRAM assembly (boss-sized /
+    /// multi-OAM monsters). Ordinary single-OAM idle sheets stay on PNG frames.
+    /// </summary>
     public static bool IsMultiPieceMonster(string repositoryRoot, string folder)
     {
         var pieces = ParsePose(repositoryRoot, folder, poseNumber: 1);
-        return pieces is { Count: > 1 };
+        if (pieces is null || pieces.Count <= 1)
+            return false;
+
+        var header = FindAxHeader(repositoryRoot, folder);
+        var arrays = header is not null ? ParseSpriteArrays(header) : null;
+        foreach (var piece in pieces)
+        {
+            var spriteNum = piece.SpriteId + 1;
+            if (arrays is not null &&
+                arrays.TryGetValue(spriteNum, out var parts) &&
+                parts.Any(p => p.IsPadding || !string.IsNullOrEmpty(p.Suffix) || parts.Count > 1))
+                return true;
+        }
+
+        return pieces.Count >= 4;
+    }
+
+    /// <summary>Test hook: tile bytes for <c>sprite_N</c> after applying <c>{NULL,pad}</c> gaps.</summary>
+    public static int MeasureSpriteTileBytes(string repositoryRoot, string folder, int spriteNum)
+    {
+        var header = FindAxHeader(repositoryRoot, folder);
+        var arrays = header is not null ? ParseSpriteArrays(header) : null;
+        var spriteDir = Path.Combine(repositoryRoot, "graphics", "ax", "mon", folder);
+        var tiles = BuildSpriteTiles(spriteDir, spriteNum, arrays);
+        return tiles?.Length ?? 0;
+    }
+
+    /// <summary>
+    /// Assemble by AX pose-table index (<c>sAxPosesXxx[poseId]</c>), resolving
+    /// deduped aliases (e.g. poseId 229 → <c>sMoltresPose230</c>).
+    /// </summary>
+    public static RgbaImage? TryAssemblePoseId(string repositoryRoot, string folder, int poseId)
+    {
+        if (poseId < 0)
+            return null;
+        var poseNumber = ResolvePoseNumber(repositoryRoot, folder, poseId);
+        return poseNumber is int n ? TryAssemble(repositoryRoot, folder, n) : null;
+    }
+
+    /// <summary>Map <c>sAxPosesXxx[poseId]</c> → 1-based <c>sXxxPoseN</c> symbol number.</summary>
+    public static int? ResolvePoseNumber(string repositoryRoot, string folder, int poseId)
+    {
+        if (poseId < 0)
+            return null;
+        var table = GetPoseIdTable(repositoryRoot, folder);
+        if (table is null || poseId >= table.Count)
+            return null;
+        return table[poseId];
     }
 
     /// <summary>1-based pose index matching <c>sXxxPoseN</c> (Pose1 = south).</summary>
@@ -49,10 +146,24 @@ public static partial class AxPoseAssembler
         var header = FindAxHeader(repositoryRoot, folder);
         var spriteArrays = header is not null ? ParseSpriteArrays(header) : null;
 
+        // Retail uploads each pose sprite into a shared OBJ VRAM block; OAM3 tileNum
+        // indexes that block (sprite.c RegisterSpriteParts / AddAxSprite).
+        var vram = BuildSharedVram(spriteDir, pieces, spriteArrays);
+        if (vram is null || vram.Length < 32)
+            return null;
+
+        var palette = TryLoadIndexedPalette(Path.Combine(spriteDir, $"sprite_{pieces[0].SpriteId + 1}.png"))
+            ?? TryLoadIndexedPalette(Path.Combine(spriteDir, $"sprite_{pieces[0].SpriteId + 1}_1.png"))
+            ?? TryLoadIndexedPalette(Path.Combine(spriteDir, "sprite_1.png"));
+        if (palette is null)
+            return null;
+
         var blits = new List<(RgbaImage Image, int X, int Y, bool FlipH, bool FlipV)>();
         foreach (var piece in pieces)
         {
-            var image = TryLoadPieceImage(spriteDir, piece.SpriteId, piece.OamW, piece.OamH, spriteArrays);
+            if (piece.SpriteId < 0)
+                continue;
+            var image = RenderOamFromVram(vram, palette, piece.TileNum, piece.OamW, piece.OamH);
             if (image is null)
                 continue;
             GbaChroma.KeyOut(image);
@@ -116,6 +227,7 @@ public static partial class AxPoseAssembler
                 var flipV = m.Groups[8].Value != "0";
                 var unk1 = int.Parse(m.Groups[9].Value);
                 var unk2 = int.Parse(m.Groups[10].Value);
+                var tileNum = int.Parse(m.Groups[11].Value);
 
                 // Match AddAxSprite: pos += raw - bias (src/sprite.c).
                 var flags1 = (yParam & 0xFF) | ((unk & 0x3) << 8) | (ShapeCode(shapeName) << 14);
@@ -128,7 +240,7 @@ public static partial class AxPoseAssembler
                 var x = (flags2 & 0x1FF) - 0x100;
                 var y = (flags1 & 0x3FF) - 0x200;
                 var (oamW, oamH) = OamDims(ShapeCode(shapeName), size);
-                pieces.Add(new PosePiece(spriteId, x, y, oamW, oamH, flipH, flipV));
+                pieces.Add(new PosePiece(spriteId, x, y, oamW, oamH, flipH, flipV, tileNum));
             }
 
             return pieces;
@@ -138,7 +250,7 @@ public static partial class AxPoseAssembler
     }
 
     public readonly record struct PosePiece(
-        int SpriteId, int X, int Y, int OamW, int OamH, bool FlipH, bool FlipV);
+        int SpriteId, int X, int Y, int OamW, int OamH, bool FlipH, bool FlipV, int TileNum = 0);
 
     private static Dictionary<int, List<SpritePart>>? ParseSpriteArrays(string headerPath)
     {
@@ -184,6 +296,39 @@ public static partial class AxPoseAssembler
         public static SpritePart Padding(int bytes) => new(bytes, 0, "");
         public static SpritePart Gfx(int fileNum, string suffix) => new(0, fileNum, suffix);
         public bool IsPadding => PadBytes > 0;
+    }
+
+    private static byte[]? BuildSharedVram(
+        string spriteDir,
+        IReadOnlyList<PosePiece> pieces,
+        Dictionary<int, List<SpritePart>>? spriteArrays)
+    {
+        using var ms = new MemoryStream();
+        foreach (var piece in pieces)
+        {
+            if (piece.SpriteId < 0)
+                continue;
+            // Retail uploads once per pose piece that references a sprite (in order).
+            var spriteNum = piece.SpriteId + 1;
+            var tiles = BuildSpriteTiles(spriteDir, spriteNum, spriteArrays);
+            if (tiles is null)
+                return null;
+            ms.Write(tiles);
+        }
+
+        return ms.Length > 0 ? ms.ToArray() : null;
+    }
+
+    private static RgbaImage? RenderOamFromVram(
+        byte[] vram, RgbaColor[] palette, int tileNum, int oamW, int oamH)
+    {
+        if (oamW < 8 || oamH < 8 || tileNum < 0)
+            return null;
+        var tileOff = tileNum * 32;
+        if (tileOff >= vram.Length)
+            return null;
+        // Enough remaining bytes for the OAM footprint (missing tail tiles stay blank).
+        return RenderOamSprite(vram.AsSpan(tileOff), palette, oamW, oamH);
     }
 
     private static RgbaImage? TryLoadPieceImage(
@@ -307,7 +452,10 @@ public static partial class AxPoseAssembler
         return null;
     }
 
-    private static RgbaImage? RenderOamSprite(byte[] tiles, RgbaColor[] palette, int oamW, int oamH)
+    private static RgbaImage? RenderOamSprite(byte[] tiles, RgbaColor[] palette, int oamW, int oamH) =>
+        RenderOamSprite(tiles.AsSpan(), palette, oamW, oamH);
+
+    private static RgbaImage? RenderOamSprite(ReadOnlySpan<byte> tiles, RgbaColor[] palette, int oamW, int oamH)
     {
         if (oamW < 8 || oamH < 8 || tiles.Length < 32)
             return null;
@@ -326,7 +474,7 @@ public static partial class AxPoseAssembler
             var tileOff = tileIndex * 32;
             if (tileOff + 32 > tiles.Length)
                 continue;
-            BlitTile(tiles.AsSpan(tileOff, 32), palette, pixels, oamW, tx * 8, ty * 8);
+            BlitTile(tiles.Slice(tileOff, 32), palette, pixels, oamW, tx * 8, ty * 8);
         }
 
         return new RgbaImage(oamW, oamH, pixels);

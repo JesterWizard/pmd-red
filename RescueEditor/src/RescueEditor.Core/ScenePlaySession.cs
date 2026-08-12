@@ -31,6 +31,7 @@ public sealed class ScenePlaySession
     private int _cachedBgSector = int.MinValue;
     private int _cachedBgAnimKey = int.MinValue;
     private readonly BplPaletteAnimation? _mapPalAnim;
+    private readonly DungeonCanmAnimation? _dungeonCanm;
     private RgbaImage? _workFull;
     private RgbaImage? _cameraBuf;
 
@@ -71,6 +72,7 @@ public sealed class ScenePlaySession
         MapHeightPixels = height;
 
         _mapPalAnim = TryLoadMapPaletteAnimation(rom, scene);
+        _dungeonCanm = TryLoadDungeonCanm(rom, scene);
 
         _collision = collision ?? TryLoadCollision(rom, scene);
 
@@ -138,7 +140,8 @@ public sealed class ScenePlaySession
     public int ActiveGroup { get; private set; }
     public int ActiveSector { get; private set; }
     public int AnimTick => _animTick;
-    public bool HasMapPaletteAnimation => _mapPalAnim is { HasAnimations: true };
+    public bool HasMapPaletteAnimation =>
+        _mapPalAnim is { HasAnimations: true } || _dungeonCanm is { HasAnimations: true };
     public int? MusicId { get; private set; }
     public string? Dialogue => _script?.Dialogue;
 
@@ -428,9 +431,11 @@ public sealed class ScenePlaySession
 
     private void EnsureBackgroundCore()
     {
-        var animKey = _mapPalAnim is { HasAnimations: true }
-            ? _mapPalAnim.CacheKey(_animTick)
-            : 0;
+        var animKey = 0;
+        if (_mapPalAnim is { HasAnimations: true })
+            animKey = _mapPalAnim.CacheKey(_animTick);
+        if (_dungeonCanm is { HasAnimations: true })
+            animKey = (animKey * 397) ^ _dungeonCanm.CacheKey(_animTick);
         if (_cachedBg is not null &&
             _cachedBgGroup == ActiveGroup &&
             _cachedBgSector == ActiveSector &&
@@ -856,6 +861,24 @@ public sealed class ScenePlaySession
         }
 
         return null;
+    }
+
+    private static DungeonCanmAnimation? TryLoadDungeonCanm(RomImage rom, Scene scene)
+    {
+        try
+        {
+            var map = scene.Map;
+            if (map is null || map.RenderMode is not (10 or 11))
+                return null;
+            if (!DungeonShellPreview.TryResolveTilesetForMap(rom, map, out var tileset))
+                return null;
+            var canm = DungeonCanmAnimation.TryLoad(rom, tileset);
+            return canm is { HasAnimations: true } ? canm : null;
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     private static bool IsPlayerKind(SceneEntity live) =>

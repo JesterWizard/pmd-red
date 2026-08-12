@@ -112,7 +112,7 @@ public static class ScriptOpcodeNames
         0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0xD5, 0xD6, 0xD7, 0xD8, 0xD9, 0xF6,
     ];
 
-    public static readonly HashSet<byte> TerminatorOps = [0xEE, 0xEF, 0xF0, 0xF1];
+    public static readonly HashSet<byte> TerminatorOps = [0xE9, 0xEE, 0xEF, 0xF0, 0xF1];
 
     public static string GetName(byte op) =>
         Names.TryGetValue(op, out var name) ? name : $"CMD_{op:X2}";

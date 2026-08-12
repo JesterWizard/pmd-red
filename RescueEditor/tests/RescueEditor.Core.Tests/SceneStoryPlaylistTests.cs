@@ -112,12 +112,29 @@ public sealed class SceneStoryPlaylistTests
     }
 
     [Fact]
-    public void ResolvePlayTargetOnlyDefaultsTinyWoodsGroup0()
+    public void ResolvePlayTargetDefaultsEnterControlToFirstCutscene()
     {
-        var scene = new Scene { MapId = ScenePlayPresets.TinyWoodsEntryMapId };
-        Assert.Equal((1, 0), ScenePlayPresets.ResolvePlayTarget(scene, 0, 0));
-        Assert.Equal((2, 0), ScenePlayPresets.ResolvePlayTarget(scene, 2, 0));
-        Assert.Equal((3, 1), ScenePlayPresets.ResolvePlayTarget(scene, 3, 1));
+        var tiny = new Scene { MapId = ScenePlayPresets.TinyWoodsEntryMapId };
+        Assert.Equal((1, 0), ScenePlayPresets.ResolvePlayTarget(tiny, 0, 0));
+        Assert.Equal((2, 0), ScenePlayPresets.ResolvePlayTarget(tiny, 2, 0));
+        Assert.Equal((3, 1), ScenePlayPresets.ResolvePlayTarget(tiny, 3, 1));
+    }
+
+    [Fact]
+    public void JumpScriptTerminatesScriptRead()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var database = SceneGraphParser.Parse(rom, RomProfile.Us10);
+        var scene = database.FindScene(173);
+        Assert.NotNull(scene);
+        var commands = scene!.Groups[0].Sectors[0].Stations[0].Commands;
+        Assert.NotNull(commands);
+        Assert.True(commands!.Count <= 8, $"ENTER script should stop at JUMP_SCRIPT, got {commands.Count}");
+        Assert.Equal(0xE9, commands[^1].Op);
     }
 
     [Fact]

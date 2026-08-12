@@ -47,7 +47,7 @@ public static class DungeonShellPreview
         [18] = 10,
     };
 
-    public static PreviewContent? TryRender(RomImage rom, GroundMapDefinition? map)
+    public static PreviewContent? TryRender(RomImage rom, GroundMapDefinition? map, int animTick = 0)
     {
         if (map is null || map.BmaName is null || !ShellBma.IsMatch(map.BmaName))
             return null;
@@ -60,12 +60,21 @@ public static class DungeonShellPreview
 
         try
         {
-            return RenderEmap(rom, tileset, map);
+            return RenderEmap(rom, tileset, map, animTick);
         }
         catch
         {
             return null;
         }
+    }
+
+    /// <summary>Resolve dungeon tileset for a boss-end shell map, if applicable.</summary>
+    public static bool TryResolveTilesetForMap(RomImage rom, GroundMapDefinition? map, out int tileset)
+    {
+        tileset = 0;
+        if (map is null || !MapToDungeon.TryGetValue(map.MapId, out var loc))
+            return false;
+        return TryResolveTileset(rom, loc.DungeonId, loc.Floor, out tileset);
     }
 
     public static bool TryResolveTileset(RomImage rom, int dungeonId, int floor, out int tileset)
@@ -130,7 +139,8 @@ public static class DungeonShellPreview
         return false;
     }
 
-    private static PreviewContent RenderEmap(RomImage rom, int tileset, GroundMapDefinition map)
+    private static PreviewContent RenderEmap(
+        RomImage rom, int tileset, GroundMapDefinition map, int animTick = 0)
     {
         // gUnknown_8108EC0[tileset] is identity for tileset ≥ 64.
         var fonCelId = tileset;
@@ -143,6 +153,9 @@ public static class DungeonShellPreview
             throw new InvalidDataException("Dungeon tileset asset is truncated.");
 
         var pal = ReadDungeonPalette(palBytes);
+        var canm = DungeonCanmAnimation.TryLoad(rom, tileset);
+        canm?.ApplyTo(pal, animTick);
+
         var (widthChunks, heightChunks) = ResolveShellChunks(map, rom);
         widthChunks = Math.Clamp(widthChunks, 1, 24);
         heightChunks = Math.Clamp(heightChunks, 1, 24);

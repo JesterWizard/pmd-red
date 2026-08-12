@@ -122,6 +122,10 @@ public static class ScenePlayPresets
         if (station?.Commands is null || station.Commands.Count == 0)
             return false;
 
+        // ENTER_CONTROL always free-roams — even if command lists were over-read past JUMP_SCRIPT.
+        if (station.Id == EnterControlScriptId)
+            return false;
+
         if (IsEventCutsceneStation(station))
             return true;
 
@@ -139,13 +143,46 @@ public static class ScenePlayPresets
         station.Id is EventControlScriptId or EventWakeupScriptId or EventStationScriptId;
 
     /// <summary>
-    /// Tiny Woods map header group 0 is a bootstrap station; default Play to the intro cutscene.
-    /// Explicit group/sector (playlist navigator, editor pickers) are preserved.
+    /// Default Play to the first event cutscene when the editor is on an
+    /// <c>ENTER_CONTROL</c> bootstrap station (map header g0). Explicit cutscene
+    /// group/sector picks (playlist navigator, editor pickers) are preserved.
     /// </summary>
     public static (int Group, int Sector) ResolvePlayTarget(Scene scene, int group, int sector)
     {
         if (scene.MapId == TinyWoodsEntryMapId && group == 0 && sector == 0)
             return (TinyWoodsIntroGroup, TinyWoodsIntroSector);
+
+        var station = scene.Groups.ElementAtOrDefault(group)?
+            .Sectors.ElementAtOrDefault(sector)?
+            .Stations.FirstOrDefault();
+        if (station is not null && station.Id == EnterControlScriptId)
+        {
+            var cutscene = FindFirstEventCutsceneStation(scene);
+            if (cutscene is not null)
+                return cutscene.Value;
+        }
+
         return (group, sector);
+    }
+
+    /// <summary>Lowest-index event cutscene station on the map, if any.</summary>
+    public static (int Group, int Sector)? FindFirstEventCutsceneStation(Scene scene)
+    {
+        foreach (var group in scene.Groups.OrderBy(g => g.Index))
+        {
+            foreach (var sector in group.Sectors.OrderBy(s => s.Sector))
+            {
+                var station = sector.Stations.FirstOrDefault();
+                if (station is null)
+                    continue;
+                if (!IsEventCutsceneStation(station))
+                    continue;
+                if (station.Commands is null || station.Commands.Count == 0)
+                    continue;
+                return (group.Index, sector.Sector);
+            }
+        }
+
+        return null;
     }
 }

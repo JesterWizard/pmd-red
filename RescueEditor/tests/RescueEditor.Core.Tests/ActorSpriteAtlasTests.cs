@@ -274,6 +274,72 @@ public class ActorSpriteAtlasTests
     }
 
     [Fact]
+    public void BossMultiPieceAssemblyIncludesVramPadding()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "moltres.h")))
+            return;
+
+        Assert.True(AxPoseAssembler.IsMultiPieceMonster(root, "moltres"));
+        // {NULL,32} pads between gfx chunks — without them body OAM is 448 bytes and gaps appear.
+        Assert.Equal(512, AxPoseAssembler.MeasureSpriteTileBytes(root, "moltres", spriteNum: 1));
+
+        var assembled = AxPoseAssembler.TryAssemble(root, "moltres", poseNumber: 1);
+        Assert.NotNull(assembled);
+        Assert.True(assembled!.Width >= 64, $"Assembled width {assembled.Width}");
+        Assert.True(assembled.Height >= 28, $"Assembled height {assembled.Height}");
+        Assert.True(CountOpaque(assembled) >= 1000, $"Moltres assembly too empty: opaque={CountOpaque(assembled)}");
+    }
+
+    [Fact]
+    public void CharmanderNorthIdleIsFullSquareNotSheetScrap()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "charmander.h")))
+            return;
+
+        var atlas = new ActorSpriteAtlas(root);
+        var north = atlas.TryGetAnimatedSprite(
+            speciesId: 4,
+            animationId: GroundScriptVm.AnimIdle,
+            direction: GroundScriptVm.DirNorth,
+            tickFrames: 0);
+        Assert.NotNull(north);
+        // Sheet sprite_13 is a 16×32 scrap; north idle pose must be full 32×32 OAM.
+        Assert.True(north!.Value.Image.Width >= 24, $"Charmander north too narrow: {north.Value.Image.Width}");
+        Assert.True(north.Value.Image.Height >= 24, $"Charmander north too short: {north.Value.Image.Height}");
+        Assert.True(north.Value.Image.Width * north.Value.Image.Height >= 24 * 24);
+    }
+
+    [Fact]
+    public void SmallPokemonUseSheetFramesNotMultiOamAssembly()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "bulbasaur.h")))
+            return;
+
+        // Dual-OAM poses with a single gfx chunk are normal; only compound VRAM
+        // layouts (NULL pad / sprite_N_1) need AxPoseAssembler.
+        Assert.False(AxPoseAssembler.IsMultiPieceMonster(root, "bulbasaur"));
+        Assert.False(AxPoseAssembler.IsMultiPieceMonster(root, "charmander"));
+        Assert.True(AxPoseAssembler.IsMultiPieceMonster(root, "moltres"));
+
+        var atlas = new ActorSpriteAtlas(root);
+        var bulba = atlas.TryGetAnimatedSprite(
+            speciesId: 1,
+            animationId: GroundScriptVm.AnimIdle,
+            direction: GroundScriptVm.DirSouth,
+            tickFrames: 0);
+        Assert.NotNull(bulba);
+        Assert.True(bulba!.Value.Image.Width <= 40, $"Bulbasaur too wide (boxy): {bulba.Value.Image.Width}");
+        Assert.True(bulba.Value.Image.Height <= 40, $"Bulbasaur too tall: {bulba.Value.Image.Height}");
+        Assert.True(bulba.Value.Image.Width >= 16 && bulba.Value.Image.Height >= 16);
+    }
+
+    [Fact]
     public void MoltresAssemblesMultiPiecePoseLargerThanSingleOam()
     {
         var root = FindRepoRoot();

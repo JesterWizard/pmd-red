@@ -13,6 +13,8 @@ public sealed class ActorSpriteAtlas
     private readonly Dictionary<int, RgbaImage?> _byLiveType = new();
     private readonly Dictionary<byte, short> _liveTypeSpeciesOverrides = new();
     private readonly Dictionary<(int Species, int Pose), RgbaImage?> _assembledPoses = new();
+    private readonly Dictionary<(int Species, int PoseId), RgbaImage?> _assembledPoseIds = new();
+    private readonly Dictionary<(int Species, int AxAnim, int Dir), AxAnimSequence?> _animSequences = new();
     private readonly Dictionary<int, bool?> _multiPiece = new();
     private RomProfile? _profile;
 
@@ -152,8 +154,22 @@ public sealed class ActorSpriteAtlas
             return (img, false);
         }
 
-        // Multi-OAM monsters (Moltres, etc.): composite full poses — raw sheet pieces jitter/clip.
-        if (IsMultiPiece(speciesId))
+        var cycle = isMoving || (animationId != GroundScriptVm.AnimIdle && animationId > 0 && animationId != GroundScriptVm.AnimSleep);
+
+        // Boss / multi-OAM: play mapped AX anim sequences (e.g. Moltres wing flap 22).
+        if (IsMultiPiece(speciesId) &&
+            animationId != GroundScriptVm.AnimIdle &&
+            animationId != GroundScriptVm.AnimSleep &&
+            animationId > 0)
+        {
+            var axFrame = TryGetAxAnimFrame(speciesId, animationId, dir, tickFrames);
+            if (axFrame is not null)
+                return (axFrame, false);
+        }
+
+        // Prefer AX pose assembly: correct OAM size/tile pads (bosses) and avoids
+        // sheet-index scraps (e.g. Charmander north sprite_13 is 16×32, not idle).
+        if (!cycle || IsMultiPiece(speciesId))
         {
             var pose = AxPoseAssembler.IdlePoseForDirection(dir);
             var assembled = TryGetAssembledPose(speciesId, pose);
@@ -162,7 +178,6 @@ public sealed class ActorSpriteAtlas
         }
 
         var (baseIndex, flip) = IdleSpriteForDirection(dir);
-        var cycle = isMoving || (animationId != GroundScriptVm.AnimIdle && animationId > 0 && animationId != GroundScriptVm.AnimSleep);
         var frameOffset = 0;
         if (cycle && FramesHaveUniformSize(speciesId, baseIndex))
         {
@@ -221,6 +236,32 @@ public sealed class ActorSpriteAtlas
         if (folder is not null)
             image = AxPoseAssembler.TryAssemble(_repositoryRoot, folder, poseNumber);
         _assembledPoses[(speciesId, poseNumber)] = image;
+        return image;
+    }
+
+    private RgbaImage? TryGetAxAnimFrame(int speciesId, int scriptAnimId, int direction, int tickFrames)
+    {
+        var folder = ResolveFolder(speciesId);
+        if (folder is null)
+            return null;
+
+        var axAnim = GroundAnimMapping.ToAxAnimIndex(scriptAnimId);
+        var dir = direction & 7;
+        if (!_animSequences.TryGetValue((speciesId, axAnim, dir), out var seq))
+        {
+            seq = AxAnimSequence.TryLoad(_repositoryRoot, folder, axAnim, dir);
+            _animSequences[(speciesId, axAnim, dir)] = seq;
+        }
+
+        if (seq is null || seq.Frames.Count == 0)
+            return null;
+
+        var poseId = seq.PoseIdAtTick(tickFrames);
+        if (_assembledPoseIds.TryGetValue((speciesId, poseId), out var cached))
+            return cached;
+
+        var image = AxPoseAssembler.TryAssemblePoseId(_repositoryRoot, folder, poseId);
+        _assembledPoseIds[(speciesId, poseId)] = image;
         return image;
     }
 

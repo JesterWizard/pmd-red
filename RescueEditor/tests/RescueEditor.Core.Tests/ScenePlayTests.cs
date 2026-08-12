@@ -617,12 +617,77 @@ public sealed class ScenePlayTests
                 new ScriptCommandData { Op = 0x08, Arg1 = 178 },
                 new ScriptCommandData { Op = 0x47 },
                 new ScriptCommandData { Op = 0xE9, ArgShort = 1 },
+                // Garbage past JUMP_SCRIPT (ROM overrun used to fool ShouldScriptPlay).
+                new ScriptCommandData { Op = 0x33, ArgShort = 1 },
             ],
         });
         group.Sectors.Add(sector);
         scene.Groups.Add(group);
 
         Assert.False(ScenePlayPresets.ShouldScriptPlay(scene, 0, 0));
+    }
+
+    [Fact]
+    public void ResolvePlayTargetPrefersFirstEventCutsceneOverEnterControl()
+    {
+        var scene = new Scene { MapId = 173, Name = "Comet" };
+        var enter = new SceneGroup { Index = 0 };
+        var enterSector = new SceneSector { Group = 0, Sector = 0 };
+        enterSector.Stations.Add(new ScriptRefData
+        {
+            Id = ScenePlayPresets.EnterControlScriptId,
+            Type = 1,
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x08, Arg1 = 173 },
+                new ScriptCommandData { Op = 0xE9, ArgShort = 355 },
+            ],
+        });
+        enter.Sectors.Add(enterSector);
+
+        var cutscene = new SceneGroup { Index = 1 };
+        var cutSector = new SceneSector { Group = 1, Sector = 0 };
+        cutSector.Stations.Add(new ScriptRefData
+        {
+            Id = ScenePlayPresets.EventControlScriptId,
+            Type = ScenePlayPresets.EventScriptType,
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x0C, ArgShort = -1, ArgByte = 0 },
+                new ScriptCommandData { Op = 0xDB, ArgShort = 60 },
+                new ScriptCommandData { Op = 0xEF },
+            ],
+        });
+        cutscene.Sectors.Add(cutSector);
+
+        scene.Groups.Add(enter);
+        scene.Groups.Add(cutscene);
+
+        Assert.Equal((1, 0), ScenePlayPresets.ResolvePlayTarget(scene, 0, 0));
+        Assert.Equal((1, 0), ScenePlayPresets.ResolvePlayTarget(scene, 1, 0));
+    }
+
+    [Fact]
+    public void CometPlayFromMapHeaderStartsCutsceneNotInstantEnd()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var database = SceneGraphParser.Parse(rom, RomProfile.Us10);
+        var scene = database.FindScene(173);
+        Assert.NotNull(scene);
+
+        var (group, sector) = ScenePlayPresets.ResolvePlayTarget(scene!, 0, 0);
+        Assert.Equal(1, group);
+        Assert.Equal(0, sector);
+
+        var session = new ScenePlaySession(rom, scene!, group, sector);
+        Assert.True(session.IsScripted);
+        for (var i = 0; i < 8 && session.DialogueMode == PlayDialogueMode.None; i++)
+            session.Tick(1.0 / 60.0);
+        Assert.False(session.ScriptFinished);
     }
 
     [Fact]

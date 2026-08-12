@@ -25,7 +25,7 @@ public static class SceneCompositor
         // non-flat but wrong tile soup from BPC alone, which would otherwise win.
         try
         {
-            var dungeon = DungeonShellPreview.TryRender(rom, scene.Map);
+            var dungeon = DungeonShellPreview.TryRender(rom, scene.Map, animTick);
             if (dungeon is not null && !IsVisuallyFlat(dungeon))
                 return dungeon;
         }
