@@ -35,6 +35,18 @@ public sealed class RomImage
         return new RomImage(System.IO.Path.GetFullPath(path), bytes);
     }
 
+    /// <summary>In-memory ROM view. Does not read or write <paramref name="path"/>.</summary>
+    public static RomImage FromBytes(string path, byte[] bytes)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(path);
+        ArgumentNullException.ThrowIfNull(bytes);
+        if (bytes.Length == 0)
+            throw new InvalidDataException("The ROM image is empty.");
+        var copy = new byte[bytes.Length];
+        bytes.CopyTo(copy, 0);
+        return new RomImage(path, copy);
+    }
+
     public byte ReadByte(int offset) => _bytes[CheckedOffset(offset, 1)];
 
     public ushort ReadUInt16(int offset)

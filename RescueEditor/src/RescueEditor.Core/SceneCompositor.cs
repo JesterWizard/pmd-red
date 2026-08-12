@@ -200,7 +200,8 @@ public static class SceneCompositor
         int group,
         int sector,
         int commandIndex,
-        ScriptRefData? stationOverride = null)
+        ScriptRefData? stationOverride = null,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null)
     {
         var state = new ScenePreviewState
         {
@@ -252,8 +253,9 @@ public static class SceneCompositor
                 case 0x37:
                 case 0x38:
                 case 0x39:
-                    if (rom.TryPointerToOffset(command.ArgPtr, out var textOffset) && charmap is not null)
-                        state.Dialogue = charmap.DecodeRomString(rom, textOffset, 768);
+                    if (DialogueResolver.TryGetText(
+                            command.ArgPtr, dialogue, rom, charmap, out var text))
+                        state.Dialogue = text;
                     break;
                 case 0x44:
                 case 0x45:

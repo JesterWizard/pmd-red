@@ -72,9 +72,12 @@ public sealed class SceneWorkspacePanel : UserControl
     private Control? _effectsRight;
     private Control? _eventsRight;
     private Control? _linksRight;
+    private Control? _scriptRight;
+    private TextBlock? _scriptSummary;
     private string _inspectorMode = "Scene";
 
     private RomImage? _rom;
+    private WorkingRom? _workingRom;
     private Charmap? _charmap;
     private SceneDatabase? _database;
     private ChangeService? _changes;
@@ -166,8 +169,8 @@ public sealed class SceneWorkspacePanel : UserControl
 
         _undoButton = EditorChrome.ToolButton("Undo");
         _redoButton = EditorChrome.ToolButton("Redo");
-        _undoButton.Click += (_, _) => { _changes?.Undo(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
-        _redoButton.Click += (_, _) => { _changes?.Redo(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
+        _undoButton.Click += (_, _) => { _changes?.Undo(); SyncWorkingRom(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
+        _redoButton.Click += (_, _) => { _changes?.Redo(); SyncWorkingRom(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
         var playButton = EditorChrome.ToolButton("Play");
         playButton.Click += async (_, _) => await OpenScenePlayAsync();
 
@@ -490,13 +493,14 @@ public sealed class SceneWorkspacePanel : UserControl
             FontSize = EditorTheme.FontLabel,
             Foreground = EditorTheme.TextMutedBrush,
         };
+        _scriptRight = BuildScriptRightPanel();
 
         _inspectorTabBar = new StackPanel
         {
             Orientation = Orientation.Horizontal,
             Margin = new Thickness(EditorTheme.Space2, EditorTheme.Space1),
         };
-        foreach (var mode in new[] { "Scene", "Map", "Lives", "Objects", "Effects", "Events", "Links" })
+        foreach (var mode in new[] { "Scene", "Map", "Lives", "Objects", "Effects", "Events", "Links", "Script" })
         {
             var tab = EditorChrome.InspectorTab(mode, isChecked: mode == "Scene");
             var captured = mode;
@@ -577,6 +581,7 @@ public sealed class SceneWorkspacePanel : UserControl
             "Effects" => _effectsRight,
             "Events" => _eventsRight,
             "Links" => _linksRight,
+            "Script" => _scriptRight,
             _ => _sceneRight,
         };
         _inspectorContentHost.Children.Clear();
@@ -591,9 +596,11 @@ public sealed class SceneWorkspacePanel : UserControl
         SceneDatabase database,
         ChangeService changes,
         Scene? scene = null,
-        int? selectMapId = null)
+        int? selectMapId = null,
+        WorkingRom? workingRom = null)
     {
-        _rom = rom;
+        _workingRom = workingRom;
+        _rom = workingRom?.View ?? rom;
         _charmap = charmap;
         _database = database;
         _changes = changes;
@@ -613,7 +620,19 @@ public sealed class SceneWorkspacePanel : UserControl
         RefreshAll();
     }
 
-    public void RefreshFromExternal() => RefreshAll();
+    public void RefreshFromExternal()
+    {
+        SyncWorkingRom();
+        RefreshAll();
+    }
+
+    public void SyncWorkingRom()
+    {
+        if (_workingRom is null || _database is null)
+            return;
+        _workingRom.Sync(_database, _charmap);
+        _rom = _workingRom.View;
+    }
 
     private Control BuildSceneRightPanel()
     {
@@ -751,6 +770,43 @@ public sealed class SceneWorkspacePanel : UserControl
         return panel;
     }
 
+    private Control BuildScriptRightPanel()
+    {
+        _scriptSummary = new TextBlock
+        {
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, EditorTheme.Space3),
+            TextWrapping = TextWrapping.Wrap,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextSecondaryBrush,
+            LineHeight = 16,
+        };
+
+        var open = EditorChrome.ToolButton("Open script editor", primary: true);
+        open.HorizontalAlignment = HorizontalAlignment.Left;
+        open.Margin = new Thickness(EditorTheme.Space4, 0, EditorTheme.Space4, EditorTheme.Space3);
+        open.Click += (_, _) => OpenScriptEditor();
+
+        var hint = new TextBlock
+        {
+            Text = "Station scripts as DIALOGUE / MOVE_TO_COORDS source. Add or delete lines, then Apply.",
+            Margin = new Thickness(EditorTheme.Space4, 0, EditorTheme.Space4, EditorTheme.Space3),
+            TextWrapping = TextWrapping.Wrap,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
+
+        return new StackPanel
+        {
+            Children =
+            {
+                EditorChrome.SectionHeader("Script"),
+                _scriptSummary,
+                open,
+                hint,
+            },
+        };
+    }
+
     private void RefreshEntityListForActiveTab()
     {
         var kind = _inspectorMode switch
@@ -790,6 +846,7 @@ public sealed class SceneWorkspacePanel : UserControl
             RefreshMap();
             RefreshMapInfo();
             RefreshEventsTab();
+            RefreshScriptTab();
             UpdateUndoButtons();
         });
     }
@@ -945,6 +1002,21 @@ public sealed class SceneWorkspacePanel : UserControl
         _commandSlider.Maximum = max;
         if (_commandSlider.Value > max)
             _commandSlider.Value = max;
+    }
+
+    private void RefreshScriptTab()
+    {
+        if (_scriptSummary is null)
+            return;
+        if (_scene is null)
+        {
+            _scriptSummary.Text = "Load a scene to edit its station scripts.";
+            return;
+        }
+
+        var stations = _scene.Groups.SelectMany(group => group.Sectors).SelectMany(sector => sector.Stations).ToList();
+        var commands = stations.Sum(station => station.Commands.Count);
+        _scriptSummary.Text = $"{_scene.Name}\n{stations.Count} stations · {commands} commands";
     }
 
     private void RefreshMapInfo()
@@ -1103,7 +1175,8 @@ public sealed class SceneWorkspacePanel : UserControl
         if (_rom is not null && station is not null)
         {
             var preview = SceneCompositor.BuildPreviewState(
-                _rom, _scene, _charmap, g, s, (int)_commandSlider.Value, station);
+                _rom, _scene, _charmap, g, s, (int)_commandSlider.Value, station,
+                _database?.DialogueByOffset);
             hud = preview.Dialogue;
             var note = preview.Notes.Count == 0 ? "" : " | " + preview.Notes[^1];
             var incomplete = preview.SimulationIncomplete ? " | simulation incomplete" : "";
@@ -1318,12 +1391,14 @@ public sealed class SceneWorkspacePanel : UserControl
             case EditorCommandId.Undo:
                 if (_changes is null) return false;
                 _changes.Undo();
+                SyncWorkingRom();
                 RefreshAll();
                 DirtyChanged?.Invoke(this, EventArgs.Empty);
                 return true;
             case EditorCommandId.Redo:
                 if (_changes is null) return false;
                 _changes.Redo();
+                SyncWorkingRom();
                 RefreshAll();
                 DirtyChanged?.Invoke(this, EventArgs.Empty);
                 return true;
@@ -1388,6 +1463,8 @@ public sealed class SceneWorkspacePanel : UserControl
         if (_rom is null || _scene is null || _database is null)
             return;
 
+        SyncWorkingRom();
+
         var group = (int)(_groupBox.Value ?? 0);
         var sector = Math.Max(0, _sectorBox.SelectedIndex);
         var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(_scene, group, sector);
@@ -1426,6 +1503,25 @@ public sealed class SceneWorkspacePanel : UserControl
             play.Show();
     }
 
+    private async void OpenScriptEditor()
+    {
+        if (_scene is null || _changes is null)
+            return;
+
+        var owner = TopLevel.GetTopLevel(this) as Window;
+        var editor = new SceneScriptWindow(_scene, _changes, _database);
+        editor.Applied += (_, _) =>
+        {
+            SyncWorkingRom();
+            RefreshAll();
+            DirtyChanged?.Invoke(this, EventArgs.Empty);
+        };
+        if (owner is not null)
+            await editor.ShowDialog(owner);
+        else
+            editor.Show();
+    }
+
     private ScenePlaySession? CreatePlaySessionForBeat(ScenePlayBeat beat)
     {
         if (_rom is null || _database is null)
@@ -1452,7 +1548,8 @@ public sealed class SceneWorkspacePanel : UserControl
             charmap: _charmap,
             appearance: appearance,
             profile: _database?.Profile,
-            portraits: _portraitAtlas);
+            portraits: _portraitAtlas,
+            dialogue: _database?.DialogueByOffset);
     }
 
     private void UpdateUndoButtons()

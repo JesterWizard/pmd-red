@@ -8,16 +8,28 @@ public sealed class Charmap
     private readonly Dictionary<string, string> _glyphs;
     private readonly Dictionary<string, string> _macros;
     private readonly Dictionary<byte, string> _colors;
+    private readonly Dictionary<string, byte[]> _macroByName;
+    private readonly Dictionary<string, byte> _colorByName;
+    private readonly List<(string Glyph, byte[] Bytes)> _encodeGlyphs;
     private readonly int _maximumSequenceLength;
 
     private Charmap(
         Dictionary<string, string> glyphs,
         Dictionary<string, string> macros,
-        Dictionary<byte, string> colors)
+        Dictionary<byte, string> colors,
+        Dictionary<string, byte[]>? macroByName = null)
     {
         _glyphs = glyphs;
         _macros = macros;
         _colors = colors;
+        _macroByName = macroByName ?? new Dictionary<string, byte[]>(StringComparer.Ordinal);
+        _colorByName = colors.ToDictionary(
+            pair => pair.Value, pair => pair.Key, StringComparer.OrdinalIgnoreCase);
+        _encodeGlyphs = glyphs
+            .Select(pair => (Glyph: pair.Value, Bytes: Convert.FromHexString(pair.Key)))
+            .Where(pair => pair.Glyph.Length > 0 && pair.Glyph is not "\0")
+            .OrderByDescending(pair => pair.Glyph.Length)
+            .ToList();
         _maximumSequenceLength = glyphs.Keys.Concat(macros.Keys)
             .Select(key => key.Length / 2)
             .DefaultIfEmpty(1)
@@ -32,6 +44,7 @@ public sealed class Charmap
         var glyphs = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         var macros = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         var colors = new Dictionary<byte, string>();
+        var macroByName = new Dictionary<string, byte[]>(StringComparer.Ordinal);
 
         foreach (var rawLine in File.ReadLines(path))
         {
@@ -73,12 +86,15 @@ public sealed class Charmap
             }
 
             if (bytes.Length >= 2)
+            {
                 macros[key] = FormatMacro(identifier);
+                macroByName[identifier] = bytes;
+            }
         }
 
         if (glyphs.Count == 0)
             return CreateAsciiFallback();
-        return new Charmap(glyphs, macros, colors);
+        return new Charmap(glyphs, macros, colors, macroByName);
     }
 
     public static Charmap CreateAsciiFallback()
@@ -191,6 +207,91 @@ public sealed class Charmap
                rom.ReadByte(offset + length) != 0)
             length++;
         return Decode(rom.Slice(offset, length));
+    }
+
+    public byte[] Encode(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return [];
+
+        var output = new List<byte>(text.Length);
+        var index = 0;
+        while (index < text.Length)
+        {
+            if (text[index] == '{')
+            {
+                var close = text.IndexOf('}', index + 1);
+                if (close > index && TryAppendMacro(text[(index + 1)..close], output))
+                {
+                    index = close + 1;
+                    continue;
+                }
+            }
+
+            if (text[index] == '\n' && _macroByName.TryGetValue("NEW_LINE", out var newline))
+            {
+                output.AddRange(newline);
+                index++;
+                continue;
+            }
+
+            var remaining = text.AsSpan(index);
+            var matched = false;
+            foreach (var (glyph, bytes) in _encodeGlyphs)
+            {
+                if (remaining.StartsWith(glyph, StringComparison.Ordinal))
+                {
+                    output.AddRange(bytes);
+                    index += glyph.Length;
+                    matched = true;
+                    break;
+                }
+            }
+
+            if (matched)
+                continue;
+
+            output.Add(unchecked((byte)text[index]));
+            index++;
+        }
+
+        return output.ToArray();
+    }
+
+    private bool TryAppendMacro(string inner, List<byte> output)
+    {
+        inner = inner.Trim();
+        if (inner.Length == 0)
+            return false;
+
+        var space = inner.IndexOf(' ');
+        var name = space < 0 ? inner : inner[..space];
+        var arg = space < 0 ? null : inner[(space + 1)..].Trim();
+        if (name.Equals("COLOR", StringComparison.OrdinalIgnoreCase) ||
+            name.Equals("color", StringComparison.OrdinalIgnoreCase))
+        {
+            if (!_macroByName.TryGetValue(name, out var colorMacro) &&
+                !_macroByName.TryGetValue("COLOR", out colorMacro))
+                return false;
+            output.AddRange(colorMacro);
+            if (!string.IsNullOrEmpty(arg))
+            {
+                if (_colorByName.TryGetValue(arg, out var colorByte))
+                    output.Add(colorByte);
+                else if (arg.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
+                         byte.TryParse(arg.AsSpan(2), System.Globalization.NumberStyles.HexNumber,
+                             System.Globalization.CultureInfo.InvariantCulture, out var parsed))
+                    output.Add(parsed);
+            }
+
+            return true;
+        }
+
+        if (!_macroByName.TryGetValue(name, out var bytes) &&
+            !_macroByName.TryGetValue(name.ToUpperInvariant(), out bytes))
+            return false;
+        output.AddRange(bytes);
+        return true;
     }
 
     private static bool IsColorToken(string identifier)

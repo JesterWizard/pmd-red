@@ -1,0 +1,598 @@
+using System.Globalization;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace RescueEditor.Core;
+
+public sealed record ScriptSourceError(int Line, string Message);
+
+public sealed class ScriptSourceCommand
+{
+    public required ScriptCommandData Command { get; init; }
+    public string? DialogueText { get; init; }
+}
+
+public sealed class ScriptSourceSection
+{
+    public string Kind { get; init; } = "commands";
+    public int Group { get; init; } = -1;
+    public int Sector { get; init; } = -1;
+    public int Index { get; init; }
+    public string Name { get; init; } = string.Empty;
+    public List<ScriptSourceCommand> Commands { get; } = new();
+}
+
+public sealed class ScriptSourceParseResult
+{
+    public bool Ok => Errors.Count == 0;
+    public List<ScriptSourceSection> Sections { get; } = new();
+    public List<ScriptSourceError> Errors { get; } = new();
+}
+
+public static class ScriptSource
+{
+    private enum Slot
+    {
+        Byte,
+        Short,
+        Arg1,
+        Arg2,
+        Ptr,
+        String,
+    }
+
+    private sealed record MacroLayout(
+        string Name,
+        Slot[] Slots,
+        byte DefaultByte = 0,
+        short DefaultShort = 0,
+        int DefaultArg1 = 0,
+        int DefaultArg2 = 0,
+        uint DefaultPtr = 0);
+
+    private static readonly Dictionary<byte, MacroLayout> Layouts = new()
+    {
+        [0x08] = new("SELECT_MAP", [Slot.Arg1]),
+        [0x09] = new("SELECT_GROUND", [Slot.Arg1]),
+        [0x0A] = new("SELECT_DUNGEON", [Slot.Arg2, Slot.Arg1, Slot.Short, Slot.Byte]),
+        [0x0B] = new("SELECT_WEATHER", [Slot.Arg1]),
+        [0x0C] = new("SELECT_ENTITIES", [Slot.Short, Slot.Byte]),
+        [0x0D] = new("SELECT_LIVES", [Slot.Short, Slot.Byte]),
+        [0x0E] = new("SELECT_OBJECTS", [Slot.Short, Slot.Byte]),
+        [0x0F] = new("SELECT_EFFECTS", [Slot.Short, Slot.Byte]),
+        [0x10] = new("SELECT_EVENTS", [Slot.Short, Slot.Byte]),
+        [0x19] = new("SPAWN_OBJECT", [Slot.Arg2, Slot.Arg1, Slot.Short, Slot.Byte]),
+        [0x1A] = new("SPAWN_EFFECT", [Slot.Arg2, Slot.Arg1, Slot.Short, Slot.Byte]),
+        [0x1B] = new("EXECUTE_FUNCTION", [Slot.Short]),
+        [0x1C] = new("EXECUTE_SUBROUTINE", [Slot.Short]),
+        [0x1D] = new("EXECUTE_STATION", [Slot.Arg1, Slot.Short, Slot.Byte]),
+        [0x1E] = new("EXECUTE_SUBSTATION", [Slot.Arg1, Slot.Short, Slot.Byte]),
+        [0x22] = new("FADE_IN", [Slot.Byte, Slot.Short]),
+        [0x23] = new("FADE_OUT", [Slot.Byte, Slot.Short]),
+        [0x2E] = new("PORTRAIT", [Slot.Byte, Slot.Short, Slot.Arg1]),
+        [0x2F] = new("PORTRAIT_POS", [Slot.Short, Slot.Arg1, Slot.Arg2]),
+        [0x30] = new("TEXTBOX_CLEAR", []),
+        [0x32] = new("MSG_INSTANT", [Slot.String], DefaultShort: -1),
+        [0x33] = new("MSG_QUIET", [Slot.Short, Slot.String]),
+        [0x34] = new("DIALOGUE", [Slot.Short, Slot.String]),
+        [0x35] = new("MSG_LETTER", [Slot.String], DefaultShort: -1),
+        [0x36] = new("MSG_OVERHEARD", [Slot.String], DefaultShort: -1),
+        [0x37] = new("MSG_ON_BG", [Slot.String], DefaultShort: -1),
+        [0x38] = new("MSG_ON_BG2", [Slot.String], DefaultShort: -1),
+        [0x39] = new("MSG_ON_BG_AUTO", [Slot.Short, Slot.String]),
+        [0x44] = new("BGM_SWITCH", [Slot.Arg1]),
+        [0x45] = new("BGM_FADEIN", [Slot.Short, Slot.Arg1]),
+        [0x46] = new("BGM_QUEUE", [Slot.Arg1]),
+        [0x47] = new("BGM_STOP", []),
+        [0x48] = new("BGM_FADEOUT", [Slot.Short]),
+        [0x49] = new("FANFARE_PLAY", [Slot.Arg1]),
+        [0x54] = new("SELECT_ANIMATION", [Slot.Short]),
+        [0x5B] = new("WARP_WAYPOINT", [Slot.Byte, Slot.Arg1]),
+        [0x6A] = new("MOVE_TO_COORDS", [Slot.Short, Slot.Arg1, Slot.Arg2]),
+        [0x6B] = new("WALK_GRID", [Slot.Short, Slot.Arg1]),
+        [0x7A] = new("WALK_DIRECT", [Slot.Short, Slot.Arg1]),
+        [0x86] = new("CAMERA_PAN", [Slot.Short, Slot.Arg1]),
+        [0x98] = new("CAMERA_INIT_PAN", []),
+        [0x99] = new("CAMERA_END_PAN", []),
+        [0xCF] = new("MSG_VAR", [Slot.Byte, Slot.Short, Slot.Arg1]),
+        [0xD0] = new("VARIANT", [Slot.Short, Slot.String]),
+        [0xD1] = new("VARIANT_DEFAULT", [Slot.String]),
+        [0xD9] = new("CHOICE", [Slot.Short, Slot.String]),
+        [0xDB] = new("WAIT", [Slot.Short]),
+        [0xDC] = new("WAIT_RANDOM", [Slot.Short, Slot.Arg1]),
+        [0xDD] = new("STOP_ANIMATION_ON_CURRENT_FRAME", []),
+        [0xE6] = new("CALL_LABEL", [Slot.Short]),
+        [0xE7] = new("JUMP_LABEL", [Slot.Short]),
+        [0xE8] = new("CALL_SCRIPT", [Slot.Short]),
+        [0xE9] = new("JUMP_SCRIPT", [Slot.Short]),
+        [0xEA] = new("CALL_STATION", [Slot.Short, Slot.Byte], DefaultArg1: -1),
+        [0xEB] = new("JUMP_STATION", [Slot.Short, Slot.Byte], DefaultArg1: -1),
+        [0xEE] = new("RET_DIRECT", []),
+        [0xEF] = new("RET", []),
+        [0xF0] = new("HALT", []),
+        [0xF1] = new("END_DELETE", []),
+        [0xF4] = new("LABEL", [Slot.Short]),
+    };
+
+    private static readonly Regex StationHeader =
+        new(@"^@station\s+g(\d+)/s(\d+)(?:\.(\d+))?(?:\s+(\S+))?\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
+    public static string FormatCommand(
+        ScriptCommandData command,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null)
+    {
+        if (Layouts.TryGetValue(command.Op, out var layout) && MatchesDefaults(command, layout))
+            return FormatNamed(command, layout, dialogue);
+
+        return FormatRaw(command);
+    }
+
+    public static ScriptSourceParseResult Parse(
+        string text,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null)
+    {
+        var result = new ScriptSourceParseResult();
+        var current = new ScriptSourceSection();
+        var lines = text.Replace("\r\n", "\n").Replace('\r', '\n').Split('\n');
+        for (var i = 0; i < lines.Length; i++)
+        {
+            var lineNumber = i + 1;
+            var raw = lines[i];
+            var trimmed = StripComment(raw).Trim();
+            if (trimmed.Length == 0)
+                continue;
+
+            var header = StationHeader.Match(trimmed);
+            if (header.Success)
+            {
+                FlushSection(result, current);
+                current = new ScriptSourceSection
+                {
+                    Kind = "station",
+                    Group = int.Parse(header.Groups[1].Value, CultureInfo.InvariantCulture),
+                    Sector = int.Parse(header.Groups[2].Value, CultureInfo.InvariantCulture),
+                    Index = header.Groups[3].Success
+                        ? int.Parse(header.Groups[3].Value, CultureInfo.InvariantCulture)
+                        : 0,
+                    Name = header.Groups[4].Success ? header.Groups[4].Value : string.Empty,
+                };
+                continue;
+            }
+
+            if (trimmed.StartsWith('@'))
+            {
+                result.Errors.Add(new ScriptSourceError(lineNumber, $"Unknown section header '{trimmed}'."));
+                continue;
+            }
+
+            if (!TryParseCommand(trimmed, dialogue, out var command, out var error))
+            {
+                result.Errors.Add(new ScriptSourceError(lineNumber, error ?? "Invalid command."));
+                continue;
+            }
+
+            current.Commands.Add(command);
+        }
+
+        FlushSection(result, current);
+        if (result.Sections.Count == 0)
+            result.Sections.Add(new ScriptSourceSection());
+        return result;
+    }
+
+    private static void FlushSection(ScriptSourceParseResult result, ScriptSourceSection current)
+    {
+        if (current.Kind == "station" || current.Commands.Count > 0)
+            result.Sections.Add(current);
+    }
+
+    private static string StripComment(string line)
+    {
+        var inString = false;
+        var escape = false;
+        for (var i = 0; i < line.Length; i++)
+        {
+            var ch = line[i];
+            if (inString)
+            {
+                if (escape)
+                {
+                    escape = false;
+                    continue;
+                }
+                if (ch == '\\')
+                {
+                    escape = true;
+                    continue;
+                }
+                if (ch == '"')
+                    inString = false;
+                continue;
+            }
+
+            if (ch == '"')
+            {
+                inString = true;
+                continue;
+            }
+
+            if (ch == '#' || (ch == '/' && i + 1 < line.Length && line[i + 1] == '/'))
+                return line[..i];
+        }
+
+        return line;
+    }
+
+    private static bool TryParseCommand(
+        string line,
+        IReadOnlyDictionary<int, DialogueString>? dialogue,
+        out ScriptSourceCommand command,
+        out string? error)
+    {
+        command = null!;
+        error = null;
+        var open = line.IndexOf('(');
+        string name;
+        string inner;
+        if (open < 0)
+        {
+            name = line.Trim();
+            inner = string.Empty;
+        }
+        else
+        {
+            if (!line.EndsWith(')'))
+            {
+                error = $"Unclosed argument list in '{line}'.";
+                return false;
+            }
+
+            name = line[..open].Trim();
+            inner = line[(open + 1)..^1];
+        }
+
+        if (!ScriptOpcodeNames.TryGetOp(name, out var op))
+        {
+            error = $"Unknown command '{name}'.";
+            return false;
+        }
+
+        var args = SplitArgs(inner);
+        var rawName = name.StartsWith("CMD_", StringComparison.OrdinalIgnoreCase);
+        var layout = !rawName && Layouts.TryGetValue(op, out var named) ? named : RawLayout(op);
+        if (args.Count != layout.Slots.Length)
+        {
+            error = $"{layout.Name} expects {layout.Slots.Length} argument(s), got {args.Count}.";
+            return false;
+        }
+
+        var data = new ScriptCommandData
+        {
+            Op = op,
+            ArgByte = layout.DefaultByte,
+            ArgShort = layout.DefaultShort,
+            Arg1 = layout.DefaultArg1,
+            Arg2 = layout.DefaultArg2,
+            ArgPtr = layout.DefaultPtr,
+        };
+        string? dialogueText = null;
+        for (var i = 0; i < layout.Slots.Length; i++)
+        {
+            if (!TryAssign(data, layout.Slots[i], args[i], dialogue, out var text, out error))
+                return false;
+            if (text is not null)
+                dialogueText = text;
+        }
+
+        command = new ScriptSourceCommand { Command = data, DialogueText = dialogueText };
+        return true;
+    }
+
+    private static MacroLayout RawLayout(byte op) =>
+        new($"CMD_{op:X2}", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.Arg2, Slot.Ptr]);
+
+    private static bool TryAssign(
+        ScriptCommandData command,
+        Slot slot,
+        string raw,
+        IReadOnlyDictionary<int, DialogueString>? dialogue,
+        out string? dialogueText,
+        out string? error)
+    {
+        dialogueText = null;
+        error = null;
+        raw = raw.Trim();
+        if (slot == Slot.String && raw.Length >= 2 && raw[0] == '"')
+        {
+            if (!TryUnquote(raw, out var text, out error))
+                return false;
+            dialogueText = text;
+            command.ArgPtr = FindPointer(text, dialogue);
+            return true;
+        }
+
+        if (!TryParseNumber(raw, out var value))
+        {
+            error = $"Expected a number, got '{raw}'.";
+            return false;
+        }
+
+        switch (slot)
+        {
+            case Slot.Byte:
+                command.ArgByte = (byte)value;
+                break;
+            case Slot.Short:
+                command.ArgShort = (short)value;
+                break;
+            case Slot.Arg1:
+                command.Arg1 = value;
+                break;
+            case Slot.Arg2:
+                command.Arg2 = value;
+                break;
+            case Slot.Ptr:
+            case Slot.String:
+                command.ArgPtr = unchecked((uint)value);
+                break;
+        }
+
+        return true;
+    }
+
+    private static uint FindPointer(string text, IReadOnlyDictionary<int, DialogueString>? dialogue)
+    {
+        if (dialogue is null)
+            return 0;
+        foreach (var entry in dialogue.Values)
+        {
+            if (entry.Text == text && entry.Offset >= 0)
+                return RomPointer.FromOffset(entry.Offset).Value;
+        }
+
+        return 0;
+    }
+
+    private static bool MatchesDefaults(ScriptCommandData command, MacroLayout layout)
+    {
+        var used = new HashSet<Slot>(layout.Slots);
+        if (!used.Contains(Slot.Byte) && command.ArgByte != layout.DefaultByte)
+            return false;
+        if (!used.Contains(Slot.Short) && command.ArgShort != layout.DefaultShort)
+            return false;
+        if (!used.Contains(Slot.Arg1) && command.Arg1 != layout.DefaultArg1)
+            return false;
+        if (!used.Contains(Slot.Arg2) && command.Arg2 != layout.DefaultArg2)
+            return false;
+        if (!used.Contains(Slot.Ptr) && !used.Contains(Slot.String) && command.ArgPtr != layout.DefaultPtr)
+            return false;
+        return true;
+    }
+
+    private static string FormatNamed(
+        ScriptCommandData command,
+        MacroLayout layout,
+        IReadOnlyDictionary<int, DialogueString>? dialogue)
+    {
+        var args = layout.Slots.Select(slot => FormatSlot(command, slot, dialogue));
+        return $"{layout.Name}({string.Join(", ", args)})";
+    }
+
+    private static string FormatRaw(ScriptCommandData command) =>
+        $"CMD_{command.Op:X2}({command.ArgByte}, {command.ArgShort}, {command.Arg1}, {command.Arg2}, 0x{command.ArgPtr:X8})";
+
+    private static string FormatSlot(
+        ScriptCommandData command,
+        Slot slot,
+        IReadOnlyDictionary<int, DialogueString>? dialogue) => slot switch
+    {
+        Slot.Byte => command.ArgByte.ToString(CultureInfo.InvariantCulture),
+        Slot.Short => command.ArgShort.ToString(CultureInfo.InvariantCulture),
+        Slot.Arg1 => command.Arg1.ToString(CultureInfo.InvariantCulture),
+        Slot.Arg2 => command.Arg2.ToString(CultureInfo.InvariantCulture),
+        Slot.Ptr => $"0x{command.ArgPtr:X8}",
+        Slot.String => FormatStringOrPointer(command.ArgPtr, dialogue),
+        _ => "0",
+    };
+
+    private static string FormatStringOrPointer(uint pointer, IReadOnlyDictionary<int, DialogueString>? dialogue)
+    {
+        var offset = PointerToOffset(pointer);
+        if (dialogue is not null &&
+            (dialogue.TryGetValue(offset, out var byOffset) ||
+             dialogue.TryGetValue(unchecked((int)pointer), out byOffset)))
+            return Quote(byOffset.Text);
+        return $"0x{pointer:X8}";
+    }
+
+    private static int PointerToOffset(uint pointer) =>
+        pointer >= RomImage.RomVirtualAddress && pointer < RomImage.RomVirtualAddress + 0x02000000
+            ? (int)(pointer - RomImage.RomVirtualAddress)
+            : unchecked((int)pointer);
+
+    private static List<string> SplitArgs(string inner)
+    {
+        var args = new List<string>();
+        if (string.IsNullOrWhiteSpace(inner))
+            return args;
+
+        var builder = new StringBuilder();
+        var inString = false;
+        var escape = false;
+        foreach (var ch in inner)
+        {
+            if (inString)
+            {
+                builder.Append(ch);
+                if (escape)
+                {
+                    escape = false;
+                    continue;
+                }
+                if (ch == '\\')
+                {
+                    escape = true;
+                    continue;
+                }
+                if (ch == '"')
+                    inString = false;
+                continue;
+            }
+
+            if (ch == '"')
+            {
+                inString = true;
+                builder.Append(ch);
+                continue;
+            }
+
+            if (ch == ',')
+            {
+                args.Add(builder.ToString().Trim());
+                builder.Clear();
+                continue;
+            }
+
+            builder.Append(ch);
+        }
+
+        args.Add(builder.ToString().Trim());
+        return args;
+    }
+
+    private static bool TryParseNumber(string raw, out int value)
+    {
+        value = 0;
+        if (raw.Equals("NULL", StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (raw.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+        {
+            if (!ulong.TryParse(raw.AsSpan(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var hex))
+                return false;
+            value = unchecked((int)hex);
+            return true;
+        }
+
+        return int.TryParse(raw, NumberStyles.Integer, CultureInfo.InvariantCulture, out value);
+    }
+
+    private static bool TryUnquote(string raw, out string text, out string? error)
+    {
+        text = string.Empty;
+        error = null;
+        if (raw.Length < 2 || raw[0] != '"' || raw[^1] != '"')
+        {
+            error = "Unterminated string.";
+            return false;
+        }
+
+        var builder = new StringBuilder();
+        var escape = false;
+        for (var i = 1; i < raw.Length - 1; i++)
+        {
+            var ch = raw[i];
+            if (escape)
+            {
+                builder.Append(ch switch
+                {
+                    'n' => '\n',
+                    'r' => '\r',
+                    't' => '\t',
+                    _ => ch,
+                });
+                escape = false;
+                continue;
+            }
+
+            if (ch == '\\')
+            {
+                escape = true;
+                continue;
+            }
+
+            builder.Append(ch);
+        }
+
+        if (escape)
+        {
+            error = "Unterminated escape in string.";
+            return false;
+        }
+
+        text = builder.ToString();
+        return true;
+    }
+
+    private static string Quote(string text)
+    {
+        var builder = new StringBuilder(text.Length + 2);
+        builder.Append('"');
+        foreach (var ch in text)
+        {
+            switch (ch)
+            {
+                case '\\': builder.Append("\\\\"); break;
+                case '"': builder.Append("\\\""); break;
+                case '\n': builder.Append("\\n"); break;
+                case '\r': builder.Append("\\r"); break;
+                case '\t': builder.Append("\\t"); break;
+                default: builder.Append(ch); break;
+            }
+        }
+
+        builder.Append('"');
+        return builder.ToString();
+    }
+}
+
+public static class SceneScriptSource
+{
+    public static string Format(Scene scene, IReadOnlyDictionary<int, DialogueString>? dialogue = null)
+    {
+        if (!string.IsNullOrEmpty(scene.ScriptSourceText))
+        {
+            var saved = scene.ScriptSourceText.Replace("\r\n", "\n").Replace('\r', '\n');
+            return saved.EndsWith('\n') ? saved : saved + "\n";
+        }
+
+        var builder = new StringBuilder();
+        if (!string.IsNullOrWhiteSpace(scene.Name))
+            builder.AppendLine($"# {scene.Name}");
+
+        var any = false;
+        foreach (var group in scene.Groups)
+        {
+            foreach (var sector in group.Sectors)
+            {
+                foreach (var station in sector.Stations)
+                {
+                    any = true;
+                    if (builder.Length > 0 && builder[^1] != '\n')
+                        builder.AppendLine();
+                    if (any && builder.Length > 0)
+                        builder.AppendLine();
+                    var index = sector.Stations.IndexOf(station);
+                    var indexSuffix = sector.Stations.Count > 1 ? $".{index}" : "";
+                    var nameSuffix = string.IsNullOrEmpty(station.Name) ? "" : $" {station.Name}";
+                    builder.AppendLine($"@station g{sector.Group}/s{sector.Sector}{indexSuffix}{nameSuffix}");
+                    foreach (var command in station.Commands)
+                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue));
+                }
+            }
+        }
+
+        if (!any)
+        {
+            if (builder.Length > 0)
+                builder.AppendLine();
+            builder.AppendLine("# (no station scripts)");
+        }
+
+        return builder.ToString().TrimEnd() + "\n";
+    }
+
+    public static ScriptSourceParseResult Parse(
+        string text,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null) =>
+        ScriptSource.Parse(text, dialogue);
+}

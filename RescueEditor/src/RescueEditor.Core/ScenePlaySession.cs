@@ -22,6 +22,7 @@ public sealed class ScenePlaySession
     private readonly int _startSector;
     private GroundScriptVm? _script;
     private readonly Charmap? _charmap;
+    private readonly IReadOnlyDictionary<int, DialogueString>? _dialogue;
     private readonly RomProfile? _profile;
     private readonly PixelFont _font = PixelFont.Load();
     private int? _lastMusicId;
@@ -50,7 +51,8 @@ public sealed class ScenePlaySession
         PlayAppearance? appearance = null,
         bool? scripted = null,
         RomProfile? profile = null,
-        PortraitAtlas? portraits = null)
+        PortraitAtlas? portraits = null,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null)
     {
         _rom = rom;
         _scene = scene;
@@ -95,6 +97,7 @@ public sealed class ScenePlaySession
         PartnerSpecies = Appearance.PartnerSpecies;
 
         _charmap = charmap;
+        _dialogue = dialogue;
         _profile = profile ?? RomProfile.Us10;
         var useScript = scripted ?? ScenePlayPresets.ShouldScriptPlay(scene, ActiveGroup, ActiveSector);
         _portraits = portraits ?? (useScript ? new PortraitAtlas(rom, repoRoot) : null);
@@ -106,7 +109,8 @@ public sealed class ScenePlaySession
             _script = new GroundScriptVm(
                 rom, scene, ActiveGroup, ActiveSector, charmap,
                 profile: _profile,
-                appearance: Appearance);
+                appearance: Appearance,
+                dialogue: dialogue);
             AllowFreeRoam = false;
             // Emotion SIRO decode is lazy on first NOTICE/etc. — don't PrefetchCommon here.
         }
@@ -215,7 +219,8 @@ public sealed class ScenePlaySession
             _script = new GroundScriptVm(
                 _rom, _scene, ActiveGroup, ActiveSector, _charmap,
                 profile: _profile ?? RomProfile.Us10,
-                appearance: Appearance);
+                appearance: Appearance,
+                dialogue: _dialogue);
             AllowFreeRoam = false;
             SyncPlayerFromLive();
             UpdateCamera();

@@ -479,8 +479,16 @@ public sealed class AssetWorkspacePanel : UserControl
         {
             var len = DialogueEncodedBudget.CountBytes(editor.Text);
             var max = dialogue?.Size ?? asset.Size;
-            sizeLabel.Text = $"Encoded size: {len} / {max} bytes";
-            sizeLabel.Foreground = len > max ? EditorTheme.DangerBrush : EditorTheme.TextMutedBrush;
+            if (len > max)
+            {
+                sizeLabel.Text = $"Encoded size: {len} bytes (original slot {max}; relocates on Build ROM)";
+                sizeLabel.Foreground = EditorTheme.TextMutedBrush;
+            }
+            else
+            {
+                sizeLabel.Text = $"Encoded size: {len} / {max} bytes";
+                sizeLabel.Foreground = EditorTheme.TextMutedBrush;
+            }
         }
         UpdateSize();
         editor.TextChanged += (_, _) =>
@@ -489,7 +497,7 @@ public sealed class AssetWorkspacePanel : UserControl
             RefreshPreview();
         };
 
-        var apply = EditorChrome.ToolButton("Apply (same-size)", primary: true);
+        var apply = EditorChrome.ToolButton("Apply", primary: true);
         apply.Margin = new Thickness(0, EditorTheme.Space3, 0, 0);
         apply.HorizontalAlignment = HorizontalAlignment.Left;
         apply.Click += (_, _) =>
@@ -498,7 +506,7 @@ public sealed class AssetWorkspacePanel : UserControl
                 return;
             try
             {
-                SceneEditing.ReplaceDialogueSameSize(_changes, dialogue, editor.Text ?? string.Empty, _charmap);
+                SceneEditing.ReplaceDialogue(_changes, dialogue, editor.Text ?? string.Empty, _charmap);
                 sizeLabel.Text = "Applied.";
                 sizeLabel.Foreground = EditorTheme.TextMutedBrush;
             }

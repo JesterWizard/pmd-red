@@ -36,7 +36,8 @@ public static class RomBuilder
         RomImage source,
         SceneDatabase database,
         ProjectDocument project,
-        string outputPath)
+        string outputPath,
+        Charmap? charmap = null)
     {
         var report = new RomBuildReport();
         var profile = RomProfile.RequireWritable(source);
@@ -50,6 +51,8 @@ public static class RomBuilder
             return report;
 
         var rom = MutableRom.From(source);
+
+        WriteDirtyDialogue(rom, database, project, report, charmap);
 
         foreach (var scene in database.Scenes)
         {
@@ -93,7 +96,10 @@ public static class RomBuilder
 
                     foreach (var station in sector.Stations)
                     {
-                        if (station.ScriptOffset < 0 || station.Commands.Count == 0)
+                        if (station.ScriptOffset < 0)
+                            continue;
+                        var encoded = ScriptCodec.Encode(station.Commands);
+                        if (encoded.Length == 0 && station.ScriptCapacity == 0)
                             continue;
                         try
                         {
@@ -106,27 +112,6 @@ public static class RomBuilder
                     }
                 }
             }
-        }
-
-        foreach (var dialogue in database.DialogueByOffset.Values)
-        {
-            var edit = project.Edits.LastOrDefault(item =>
-                item.Kind == "dialogue.text" &&
-                item.Target.Equals($"0x{dialogue.Offset:X}", StringComparison.OrdinalIgnoreCase));
-            if (edit is null || !edit.Values.TryGetValue("text", out var text))
-                continue;
-            var bytes = System.Text.Encoding.ASCII.GetBytes(text);
-            if (bytes.Length > dialogue.Size)
-            {
-                report.Errors.Add($"Dialogue 0x{dialogue.Offset:X} does not fit in-place.");
-                continue;
-            }
-            rom.WriteBytes(dialogue.Offset, bytes);
-            if (bytes.Length < dialogue.Size)
-                rom.Fill(dialogue.Offset + bytes.Length, dialogue.Size - bytes.Length, 0x00);
-            if (rom.IsRangeValid(dialogue.Offset + bytes.Length, 1))
-                rom.WriteByte(dialogue.Offset + bytes.Length, 0);
-            report.Changes.Add($"Dialogue @ 0x{dialogue.Offset:X}");
         }
 
         if (!report.Success)
@@ -156,6 +141,83 @@ public static class RomBuilder
 
         _ = profile;
         return report;
+    }
+
+    /// <summary>
+    /// Patches dialogue and station scripts into a mutable ROM for Scene Play.
+    /// Does not write entity lists or save a file.
+    /// </summary>
+    public static void WriteWorkingCopy(
+        MutableRom rom,
+        SceneDatabase database,
+        RomBuildReport report,
+        Charmap? charmap = null)
+    {
+        WriteDirtyDialogue(rom, database, project: null, report, charmap);
+        foreach (var scene in database.Scenes)
+        {
+            foreach (var group in scene.Groups)
+            {
+                foreach (var sector in group.Sectors)
+                {
+                    foreach (var station in sector.Stations)
+                    {
+                        if (station.ScriptOffset < 0)
+                            continue;
+                        var encoded = ScriptCodec.Encode(station.Commands);
+                        if (encoded.Length == 0 && station.ScriptCapacity == 0)
+                            continue;
+                        try
+                        {
+                            WriteStationScript(rom, station, report);
+                        }
+                        catch (Exception exception)
+                        {
+                            report.Errors.Add($"Station '{station.Name}': {exception.Message}");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private static void WriteDirtyDialogue(
+        MutableRom rom,
+        SceneDatabase database,
+        ProjectDocument? project,
+        RomBuildReport report,
+        Charmap? charmap = null)
+    {
+        var commands = DialogueRelocation.AllCommands(database).ToList();
+        foreach (var (oldKey, dialogue) in database.DialogueByOffset.ToList())
+        {
+            var edit = project?.Edits.LastOrDefault(item =>
+                item.Kind == "dialogue.text" &&
+                item.Target.Equals($"0x{dialogue.Offset:X}", StringComparison.OrdinalIgnoreCase));
+            if (edit is not null && edit.Values.TryGetValue("text", out var text))
+                dialogue.Text = text;
+            if (!dialogue.Dirty && edit is null && dialogue.Offset >= 0)
+                continue;
+
+            try
+            {
+                var oldOffset = dialogue.Offset;
+                var result = DialogueRelocation.Write(rom, dialogue, commands, charmap: charmap);
+                if (result.Offset != oldKey)
+                {
+                    database.DialogueByOffset.Remove(oldKey);
+                    database.DialogueByOffset[result.Offset] = dialogue;
+                }
+
+                report.Changes.Add(result.Kind == "relocated"
+                    ? $"Dialogue relocated 0x{oldOffset:X} -> 0x{result.Offset:X}"
+                    : $"Dialogue @ 0x{result.Offset:X}");
+            }
+            catch (Exception exception)
+            {
+                report.Errors.Add($"Dialogue 0x{dialogue.Offset:X}: {exception.Message}");
+            }
+        }
     }
 
     private static void WriteSectorList(MutableRom rom, SceneGroup group, RomBuildReport report)
@@ -241,26 +303,27 @@ public static class RomBuilder
     private static void WriteStationScript(MutableRom rom, ScriptRefData station, RomBuildReport report)
     {
         var encoded = ScriptCodec.Encode(station.Commands);
-        var originalSize = station.Commands.Count * ScriptCommandData.Size;
-        // Prefer original span when available; otherwise use command count * size as capacity hint.
-        var capacity = originalSize;
-        if (station.Commands.Count > 0 && station.Commands[0].RomOffset >= 0)
-            capacity = Math.Max(capacity, station.Commands.Count * ScriptCommandData.Size);
+        var capacity = station.ScriptCapacity > 0
+            ? station.ScriptCapacity
+            : encoded.Length;
 
         if (encoded.Length <= capacity && station.ScriptOffset >= 0)
         {
-            rom.WriteBytes(station.ScriptOffset, encoded);
+            if (encoded.Length > 0)
+                rom.WriteBytes(station.ScriptOffset, encoded);
             if (encoded.Length < capacity)
                 rom.Fill(station.ScriptOffset + encoded.Length, capacity - encoded.Length, 0x00);
             report.Changes.Add($"Script '{station.Name}' @ 0x{station.ScriptOffset:X} (in-place)");
         }
         else
         {
-            var free = FreeSpaceAllocator.FindFreeSpace(rom, encoded.Length);
-            rom.WriteBytes(free, encoded);
+            var free = FreeSpaceAllocator.FindFreeSpace(rom, Math.Max(encoded.Length, 1));
+            if (encoded.Length > 0)
+                rom.WriteBytes(free, encoded);
             if (station.RomOffset >= 0)
                 rom.WritePointer(station.RomOffset + 8, free);
             station.ScriptOffset = free;
+            station.ScriptCapacity = encoded.Length;
             report.Changes.Add($"Script '{station.Name}' relocated -> 0x{free:X}");
         }
     }

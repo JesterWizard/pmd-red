@@ -36,6 +36,7 @@ public sealed class GroundScriptVm
     private readonly RomProfile? _profile;
     private readonly Charmap? _charmap;
     private readonly Scene? _scene;
+    private readonly IReadOnlyDictionary<int, DialogueString>? _dialogue;
     private readonly PlayAppearance? _appearance;
     private readonly List<ScriptActor> _actors = new();
     private readonly Dictionary<int, List<ScriptCommandData>> _functionCache = new();
@@ -92,11 +93,13 @@ public sealed class GroundScriptVm
         int sector,
         Charmap? charmap = null,
         RomProfile? profile = null,
-        PlayAppearance? appearance = null)
+        PlayAppearance? appearance = null,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null)
     {
         _rom = rom;
         _scene = scene;
         _charmap = charmap;
+        _dialogue = dialogue;
         _profile = profile ?? RomProfile.Us10;
         _appearance = appearance;
         ActiveGroup = group;
@@ -1428,10 +1431,9 @@ public sealed class GroundScriptVm
 
     private string? DecodeCommandText(ScriptCommandData cmd)
     {
-        if (_charmap is not null && _rom is not null &&
-            _rom.TryPointerToOffset(cmd.ArgPtr, out var textOffset))
-            return _charmap.DecodeRomString(_rom, textOffset, 768);
-        return null;
+        return DialogueResolver.TryGetText(cmd.ArgPtr, _dialogue, _rom, _charmap, out var text)
+            ? text
+            : null;
     }
 
     private void ConsumeVariantDefault(ScriptActor actor, int speakerId, int textType)
@@ -1455,10 +1457,8 @@ public sealed class GroundScriptVm
                 {
                     var next = actor.Commands[actor.Index];
                     actor.Index++;
-                    if (_charmap is not null && _rom is not null &&
-                        _rom.TryPointerToOffset(next.ArgPtr, out var off))
+                    if (DialogueResolver.TryGetText(next.ArgPtr, _dialogue, _rom, _charmap, out var more))
                     {
-                        var more = _charmap.DecodeRomString(_rom, off, 768);
                         Dialogue = (Dialogue ?? "") + "{WAIT_PRESS}" + more;
                     }
                 }
@@ -1479,15 +1479,10 @@ public sealed class GroundScriptVm
         int? textTypeOverride = null)
     {
         string? raw;
-        if (_charmap is not null && _rom is not null &&
-            _rom.TryPointerToOffset(cmd.ArgPtr, out var textOffset))
-        {
-            raw = _charmap.DecodeRomString(_rom, textOffset, 768);
-        }
+        if (DialogueResolver.TryGetText(cmd.ArgPtr, _dialogue, _rom, _charmap, out var decoded))
+            raw = decoded;
         else
-        {
             raw = $"[{ScriptOpcodeNames.GetName(cmd.Op)}]";
-        }
 
         Dialogue = raw;
         DialogueSpeakerId = speakerOverride ?? cmd.ArgShort;

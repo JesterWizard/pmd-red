@@ -54,6 +54,7 @@ public sealed class MainWindow : Window
     private SceneWorkspacePanel? _sceneWorkspace;
 
     private RomImage? _rom;
+    private WorkingRom? _workingRom;
     private AssetCatalog? _catalog;
     private Charmap? _charmap;
     private SceneDatabase? _scenes;
@@ -474,6 +475,7 @@ public sealed class MainWindow : Window
             EndLoadingOverlay();
 
             _rom = result.rom;
+            _workingRom = new WorkingRom(result.rom);
             _catalog = result.Catalog;
             _charmap = result.Charmap;
             _scenes = result.Scenes;
@@ -593,7 +595,8 @@ public sealed class MainWindow : Window
             _sceneWorkspace.DirtyChanged -= OnSceneDirty;
             _sceneWorkspace.DirtyChanged += OnSceneDirty;
             _sceneWorkspace.Load(_rom, _charmap, _scenes, _changes, scene,
-                asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null);
+                asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null,
+                _workingRom);
             // Scene editor owns center+right (SkyTemple style); hide generic properties.
             _workspaceHost.Child = _sceneWorkspace;
             ApplyDockLayout(sceneOwnsInspector: true);
@@ -863,7 +866,7 @@ public sealed class MainWindow : Window
         if (file is null) return;
         try
         {
-            var report = RomBuilder.Build(_rom, _scenes, _project, file.Path.LocalPath);
+            var report = RomBuilder.Build(_rom, _scenes, _project, file.Path.LocalPath, _charmap);
             var summary = report.Success
                 ? $"Built {file.Path.LocalPath} ({report.Changes.Count} changes)."
                 : $"Build failed with {report.Errors.Count} error(s).";
@@ -927,6 +930,7 @@ public sealed class MainWindow : Window
         _soundCacheWarmer.Stop();
         _soundStreamHost.Reset();
         _rom = null;
+        _workingRom = null;
         _catalog = null;
         _charmap = null;
         _scenes = null;

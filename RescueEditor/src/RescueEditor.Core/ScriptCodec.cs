@@ -116,6 +116,33 @@ public static class ScriptOpcodeNames
 
     public static string GetName(byte op) =>
         Names.TryGetValue(op, out var name) ? name : $"CMD_{op:X2}";
+
+    public static bool TryGetOp(string name, out byte op)
+    {
+        op = 0;
+        if (string.IsNullOrWhiteSpace(name))
+            return false;
+        name = name.Trim();
+        if (Aliases.TryGetValue(name, out op))
+            return true;
+        if (OpsByName.TryGetValue(name, out op))
+            return true;
+        if (name.StartsWith("CMD_", StringComparison.OrdinalIgnoreCase) &&
+            name.Length is >= 5 and <= 6 &&
+            byte.TryParse(name.AsSpan(4), System.Globalization.NumberStyles.HexNumber,
+                System.Globalization.CultureInfo.InvariantCulture, out op))
+            return true;
+        return false;
+    }
+
+    private static readonly Dictionary<string, byte> Aliases = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["DIALOGUE"] = 0x34,
+        ["MOVE_TO_COORDS"] = 0x6A,
+    };
+
+    private static readonly Dictionary<string, byte> OpsByName =
+        Names.ToDictionary(pair => pair.Value, pair => pair.Key, StringComparer.OrdinalIgnoreCase);
 }
 
 public static class ScriptCodec

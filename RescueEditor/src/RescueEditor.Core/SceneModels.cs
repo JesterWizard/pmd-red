@@ -91,6 +91,7 @@ public sealed class ScriptRefData
     public string Name { get; set; } = string.Empty;
     public int NameOffset { get; set; } = -1;
     public int ScriptOffset { get; set; } = -1;
+    public int ScriptCapacity { get; set; }
     public int RomOffset { get; set; } = -1;
     public List<ScriptCommandData> Commands { get; set; } = new();
 
@@ -110,7 +111,10 @@ public sealed class ScriptRefData
             Name = nameOffset >= 0 ? rom.ReadAscii(nameOffset, 64) : string.Empty,
         };
         if (loadCommands && scriptOffset >= 0)
+        {
             data.Commands = ScriptCodec.ReadScript(rom, scriptOffset);
+            data.ScriptCapacity = data.Commands.Count * ScriptCommandData.Size;
+        }
         return data;
     }
 }
@@ -252,6 +256,8 @@ public sealed class Scene
     public List<SceneGroup> Groups { get; } = new();
     public List<SceneLink> Links { get; } = new();
     public List<string> Diagnostics { get; } = new();
+    /// <summary>Last applied script-editor source, including comments. Format prefers this when set.</summary>
+    public string? ScriptSourceText { get; set; }
 
     public IEnumerable<SceneEntity> AllEntities =>
         Groups.SelectMany(group => group.Sectors)
@@ -267,6 +273,8 @@ public sealed class DialogueString
     public int Size { get; set; }
     public string Text { get; set; } = string.Empty;
     public List<int> ReferencedByCommands { get; } = new();
+    /// <summary>True when text changed and the ROM copy needs a rewrite (in-place or relocated).</summary>
+    public bool Dirty { get; set; }
 }
 
 public sealed class SceneDatabase

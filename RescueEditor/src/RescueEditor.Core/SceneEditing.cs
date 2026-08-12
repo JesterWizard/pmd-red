@@ -357,24 +357,26 @@ public static class SceneEditing
             });
     }
 
-    public static void ReplaceDialogueSameSize(
+    public static void ReplaceDialogue(
         ChangeService changes,
         DialogueString dialogue,
         string newText,
-        Charmap charmap)
+        Charmap? charmap = null)
     {
-        // Encode via ASCII fallback for same-size safety when charmap encode is unavailable.
-        // Control macros like {COLOR RED} are editor decoration — exclude them from the budget.
-        var encodedLength = DialogueEncodedBudget.CountBytes(newText);
-        if (encodedLength > dialogue.Size)
-            throw new InvalidOperationException(
-                $"Encoded dialogue is {encodedLength} bytes but only {dialogue.Size} bytes are available in-place.");
-
         var oldText = dialogue.Text;
+        var oldDirty = dialogue.Dirty;
         changes.Execute(
             "Edit dialogue",
-            apply: () => dialogue.Text = newText,
-            revert: () => dialogue.Text = oldText,
+            apply: () =>
+            {
+                dialogue.Text = newText;
+                dialogue.Dirty = true;
+            },
+            revert: () =>
+            {
+                dialogue.Text = oldText;
+                dialogue.Dirty = oldDirty;
+            },
             edit: new ProjectEdit
             {
                 Id = Guid.NewGuid().ToString("N"),
@@ -389,6 +391,196 @@ public static class SceneEditing
             });
         _ = charmap;
     }
+
+    [Obsolete("Use ReplaceDialogue; longer strings relocate on ROM build.")]
+    public static void ReplaceDialogueSameSize(
+        ChangeService changes,
+        DialogueString dialogue,
+        string newText,
+        Charmap charmap) =>
+        ReplaceDialogue(changes, dialogue, newText, charmap);
+
+    public static void ApplySceneScriptSource(
+        ChangeService changes,
+        Scene scene,
+        ScriptSourceParseResult parsed,
+        SceneDatabase? database = null,
+        string? sourceText = null)
+    {
+        if (!parsed.Ok)
+        {
+            var first = parsed.Errors[0];
+            throw new InvalidOperationException($"Script error on line {first.Line}: {first.Message}");
+        }
+
+        var oldSource = scene.ScriptSourceText;
+        var replacements = new List<(ScriptRefData Station, List<ScriptCommandData> Old, List<ScriptCommandData> Next)>();
+        var dialogueEdits = new List<(DialogueString Dialogue, string OldText, string NewText, bool OldDirty)>();
+        var pendingDialogue = new List<(int Offset, DialogueString Dialogue)>();
+
+        foreach (var section in parsed.Sections)
+        {
+            if (section.Kind != "station")
+                continue;
+            var station = FindStation(scene, section.Group, section.Sector, section.Index, section.Name)
+                ?? throw new InvalidOperationException(
+                    $"No station '{section.Name}' at g{section.Group}/s{section.Sector}.");
+            var old = station.Commands.ToList();
+            var next = new List<ScriptCommandData>(section.Commands.Count);
+            var claimedPtrs = new HashSet<uint>();
+            for (var i = 0; i < section.Commands.Count; i++)
+            {
+                var parsedCommand = section.Commands[i];
+                var command = CloneCommand(parsedCommand.Command);
+                if (parsedCommand.DialogueText is not null && command.ArgPtr == 0)
+                    command.ArgPtr = ReuseDialoguePointer(old, command.Op, i, claimedPtrs);
+
+                if (command.ArgPtr != 0)
+                    claimedPtrs.Add(command.ArgPtr);
+
+                if (parsedCommand.DialogueText is not null && database is not null)
+                {
+                    if (command.ArgPtr == 0)
+                    {
+                        var offset = -1;
+                        while (database.DialogueByOffset.ContainsKey(offset) ||
+                               pendingDialogue.Any(item => item.Offset == offset))
+                            offset--;
+                        var created = new DialogueString
+                        {
+                            Offset = offset,
+                            Size = Math.Max(64, DialogueEncodedBudget.CountBytes(parsedCommand.DialogueText) + 16),
+                            Text = parsedCommand.DialogueText,
+                            Dirty = true,
+                        };
+                        command.ArgPtr = unchecked((uint)offset);
+                        pendingDialogue.Add((offset, created));
+                    }
+                    else if (TryGetDialogue(database, command.ArgPtr, out var dialogue) &&
+                             dialogue.Text != parsedCommand.DialogueText)
+                    {
+                        dialogueEdits.Add((dialogue, dialogue.Text, parsedCommand.DialogueText, dialogue.Dirty));
+                    }
+                }
+
+                next.Add(command);
+            }
+
+            replacements.Add((station, old, next));
+        }
+
+        if (replacements.Count == 0 && dialogueEdits.Count == 0 && pendingDialogue.Count == 0 &&
+            sourceText is null)
+            return;
+
+        changes.Execute(
+            "Edit scene script",
+            apply: () =>
+            {
+                foreach (var replacement in replacements)
+                {
+                    replacement.Station.Commands.Clear();
+                    replacement.Station.Commands.AddRange(replacement.Next);
+                }
+                foreach (var edit in dialogueEdits)
+                {
+                    edit.Dialogue.Text = edit.NewText;
+                    edit.Dialogue.Dirty = true;
+                }
+                if (database is not null)
+                {
+                    foreach (var pending in pendingDialogue)
+                        database.DialogueByOffset[pending.Offset] = pending.Dialogue;
+                }
+                if (sourceText is not null)
+                    scene.ScriptSourceText = sourceText;
+            },
+            revert: () =>
+            {
+                foreach (var replacement in replacements)
+                {
+                    replacement.Station.Commands.Clear();
+                    replacement.Station.Commands.AddRange(replacement.Old);
+                }
+                foreach (var edit in dialogueEdits)
+                {
+                    edit.Dialogue.Text = edit.OldText;
+                    edit.Dialogue.Dirty = edit.OldDirty;
+                }
+                if (database is not null)
+                {
+                    foreach (var pending in pendingDialogue)
+                        database.DialogueByOffset.Remove(pending.Offset);
+                }
+                scene.ScriptSourceText = oldSource;
+            },
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "script.source",
+                Target = scene.Name,
+                Description = $"Update {replacements.Count} station script(s)",
+            });
+    }
+
+    private static ScriptRefData? FindStation(Scene scene, int group, int sector, int index, string name)
+    {
+        var sceneGroup = scene.Groups.ElementAtOrDefault(group);
+        var sceneSector = sceneGroup?.Sectors.FirstOrDefault(item => item.Sector == sector)
+            ?? sceneGroup?.Sectors.ElementAtOrDefault(sector);
+        var stations = sceneSector?.Stations;
+        if (stations is null || stations.Count == 0)
+            return null;
+        if (!string.IsNullOrEmpty(name))
+        {
+            var named = stations.FirstOrDefault(station =>
+                string.Equals(station.Name, name, StringComparison.Ordinal));
+            if (named is not null)
+                return named;
+        }
+
+        return index >= 0 && index < stations.Count ? stations[index] : stations[0];
+    }
+
+    private static uint ReuseDialoguePointer(
+        IReadOnlyList<ScriptCommandData> old,
+        byte op,
+        int index,
+        HashSet<uint> claimed)
+    {
+        if (index < old.Count &&
+            old[index].Op == op &&
+            old[index].ArgPtr != 0 &&
+            ScriptOpcodeNames.TextPointerOps.Contains(old[index].Op) &&
+            !claimed.Contains(old[index].ArgPtr))
+            return old[index].ArgPtr;
+
+        var reused = old.FirstOrDefault(candidate =>
+            candidate.Op == op &&
+            candidate.ArgPtr != 0 &&
+            ScriptOpcodeNames.TextPointerOps.Contains(candidate.Op) &&
+            !claimed.Contains(candidate.ArgPtr));
+        return reused?.ArgPtr ?? 0;
+    }
+
+    private static bool TryGetDialogue(SceneDatabase database, uint pointer, out DialogueString dialogue)
+    {
+        var offset = pointer >= RomImage.RomVirtualAddress && pointer < RomImage.RomVirtualAddress + 0x02000000
+            ? (int)(pointer - RomImage.RomVirtualAddress)
+            : unchecked((int)pointer);
+        return database.DialogueByOffset.TryGetValue(offset, out dialogue!);
+    }
+
+    private static ScriptCommandData CloneCommand(ScriptCommandData command) => new()
+    {
+        Op = command.Op,
+        ArgByte = command.ArgByte,
+        ArgShort = command.ArgShort,
+        Arg1 = command.Arg1,
+        Arg2 = command.Arg2,
+        ArgPtr = command.ArgPtr,
+        RomOffset = command.RomOffset,
+    };
 
     private static SceneEntity CreateDefaultEntity(
         SceneEntityKind kind,
