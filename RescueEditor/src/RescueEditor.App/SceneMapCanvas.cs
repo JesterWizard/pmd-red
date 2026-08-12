@@ -5,6 +5,7 @@ using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Threading;
 using RescueEditor.Core;
 
 namespace RescueEditor.App;
@@ -67,10 +68,14 @@ public sealed class SceneMapCanvas : UserControl
     {
         _image = new Image
         {
-            Stretch = Stretch.None,
+            // Fill + explicit size scales the whole bitmap. Stretch.None ignored zoom and
+            // only changed the clip rect (left-stuck zoom-in, chunked zoom-out).
+            Stretch = Stretch.Fill,
             HorizontalAlignment = HorizontalAlignment.Left,
             VerticalAlignment = VerticalAlignment.Top,
+            UseLayoutRounding = false,
         };
+        RenderOptions.SetBitmapInterpolationMode(_image, BitmapInterpolationMode.None);
         _overlay = new Canvas { IsHitTestVisible = false };
         var layer = new Panel { Children = { _image, _overlay } };
         _host = new Border
@@ -80,6 +85,7 @@ public sealed class SceneMapCanvas : UserControl
             Cursor = new Cursor(StandardCursorType.Arrow),
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1),
+            ClipToBounds = true,
         };
         _host.PointerPressed += OnPointerPressed;
         _host.PointerMoved += OnPointerMoved;
@@ -275,12 +281,39 @@ public sealed class SceneMapCanvas : UserControl
 
     private void OnWheel(object? sender, PointerWheelEventArgs e)
     {
+        // Zoom toward cursor (Ctrl+wheel / trackpad pinch-as-wheel with Ctrl).
         if (!e.KeyModifiers.HasFlag(KeyModifiers.Control))
             return;
+        if (Math.Abs(e.Delta.Y) < 0.01)
+            return;
+
+        var oldZoom = _imageScale;
         var factor = e.Delta.Y > 0 ? 1.25 : 1 / 1.25;
-        _imageScale = Math.Clamp(_imageScale * factor, 0.25, 8.0);
+        var nextZoom = Math.Clamp(oldZoom * factor, 0.25, 8.0);
+        if (Math.Abs(nextZoom - oldZoom) < 0.0001)
+        {
+            e.Handled = true;
+            return;
+        }
+
+        var anchor = e.GetPosition(_scroller);
+        var offset = _scroller.Offset;
+        _imageScale = nextZoom;
         ApplyZoom();
-        DrawRulers();
+
+        var (ox, oy) = ZoomViewport.AnchorOffset(
+            offset.X, offset.Y, anchor.X, anchor.Y, oldZoom, nextZoom);
+
+        Dispatcher.UIThread.Post(() =>
+        {
+            var (cx, cy) = ZoomViewport.ClampOffset(
+                ox, oy,
+                _scroller.Extent.Width, _scroller.Extent.Height,
+                _scroller.Viewport.Width, _scroller.Viewport.Height);
+            _scroller.Offset = new Vector(cx, cy);
+            DrawRulers();
+        }, DispatcherPriority.Render);
+
         e.Handled = true;
     }
 

@@ -210,8 +210,9 @@ public sealed class ProjectExplorerPanel : UserControl
             Child = label,
             Tag = node,
             HorizontalAlignment = HorizontalAlignment.Stretch,
-            Padding = new Thickness(0, 2, 0, 2),
+            Padding = new Thickness(0, 0, 0, 0),
             Cursor = new Cursor(StandardCursorType.Hand),
+            Height = EditorTheme.ControlHeight + 2,
         };
         row.PointerPressed += (_, e) =>
         {
@@ -224,9 +225,9 @@ public sealed class ProjectExplorerPanel : UserControl
 
     private static TextBlock CreateHeaderLabel(ExplorerNode node, int depth) => new()
     {
-        Text = Prefix(node) + node.Title,
+        Text = node.Title,
         FontFamily = EditorTheme.UiFont,
-        FontSize = node is CategoryExplorerNode ? EditorTheme.FontBody : EditorTheme.FontLabel,
+        FontSize = EditorTheme.FontLabel,
         FontWeight = node is CategoryExplorerNode ? FontWeight.SemiBold : FontWeight.Normal,
         Foreground = node switch
         {
@@ -236,7 +237,8 @@ public sealed class ProjectExplorerPanel : UserControl
         },
         VerticalAlignment = VerticalAlignment.Center,
         TextTrimming = TextTrimming.CharacterEllipsis,
-        Margin = new Thickness(8 + depth * 12, 4, 8, 4),
+        Margin = new Thickness(EditorTheme.Space3 + depth * EditorTheme.Space4, 0, EditorTheme.Space2, 0),
+        Height = EditorTheme.ControlHeight,
     };
 
     private void SelectControl(Control control, ExplorerNode node)
@@ -312,12 +314,4 @@ public sealed class ProjectExplorerPanel : UserControl
         }
         return result;
     }
-
-    private static string Prefix(ExplorerNode node) => node switch
-    {
-        CategoryExplorerNode => "",
-        SceneGroupExplorerNode => "▾ ",
-        AssetExplorerNode => "◇ ",
-        _ => "",
-    };
 }

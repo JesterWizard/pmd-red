@@ -37,5 +37,5 @@ Then start the next red (the user may say “red green red” to mean continuous
 
 ## Established defaults (keep covered by tests)
 
-- Shortcuts: Ctrl+Z/Y/S, Delete, V/H/G, Ctrl+[ / Ctrl+]
+- Shortcuts: Ctrl+Z/Y/S, Delete, V/H/G, Ctrl+[ / Ctrl+], Ctrl+Shift+U (Output)
 - Dock: `EditorDockLayout` widths/visibility + shell `ApplyDockLayout`

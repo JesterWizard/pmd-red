@@ -18,6 +18,7 @@ public sealed class EditorKeymapTests
     [InlineData("G", false, false, false, EditorCommandId.ToggleGrid)]
     [InlineData("OemOpenBrackets", true, false, false, EditorCommandId.ToggleExplorer)]
     [InlineData("OemCloseBrackets", true, false, false, EditorCommandId.ToggleInspector)]
+    [InlineData("U", true, true, false, EditorCommandId.ToggleOutput)]
     public void ResolvesDefaultBindings(string key, bool ctrl, bool shift, bool alt, EditorCommandId expected)
     {
         Assert.True(_map.TryResolve(new KeyChord(key, ctrl, shift, alt), out var command));

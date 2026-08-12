@@ -36,6 +36,7 @@ public sealed class AssetWorkspacePanel : UserControl
     private AgbplayStreamHost? _soundStreamHost;
     private SoundCacheWarmer? _soundCacheWarmer;
     private Image? _previewImage;
+    private ScrollViewer? _previewScroller;
     private TextBlock? _zoomLabel;
     private double _previewZoom = 1.0;
     private double _previewZoomDefault = 1.0;
@@ -77,16 +78,15 @@ public sealed class AssetWorkspacePanel : UserControl
         {
             Padding = new Thickness(EditorTheme.Space4),
             Background = EditorTheme.CanvasBgBrush,
-            Child = new TextBlock
-            {
-                Text = "Select an asset.",
-                FontFamily = EditorTheme.UiFont,
-                FontSize = EditorTheme.FontBody,
-                Foreground = EditorTheme.TextMutedBrush,
-                VerticalAlignment = VerticalAlignment.Center,
-                HorizontalAlignment = HorizontalAlignment.Center,
-            },
+            Child = EditorChrome.MutedBody("Select an asset to preview."),
         };
+        // Center the empty-state copy in the preview pane.
+        if (_previewHost.Child is TextBlock empty)
+        {
+            empty.VerticalAlignment = VerticalAlignment.Center;
+            empty.HorizontalAlignment = HorizontalAlignment.Center;
+            empty.TextAlignment = TextAlignment.Center;
+        }
 
         _listViewButton = EditorChrome.ToolToggle("List", isChecked: true);
         _gridViewButton = EditorChrome.ToolToggle("Grid");
@@ -256,7 +256,8 @@ public sealed class AssetWorkspacePanel : UserControl
                 Padding = new Thickness(EditorTheme.Space2),
                 BorderBrush = EditorTheme.BorderSubtleBrush,
                 BorderThickness = new Thickness(1),
-                CornerRadius = new CornerRadius(2),
+                CornerRadius = new CornerRadius(0),
+                Background = EditorTheme.PanelBgBrush,
                 Tag = asset,
                 Child = new StackPanel { Spacing = 2, Children = { imageHost, title } },
             };
@@ -303,8 +304,11 @@ public sealed class AssetWorkspacePanel : UserControl
         {
             child.BorderBrush = ReferenceEquals(child, selected)
                 ? EditorTheme.AccentBrush
-                : EditorTheme.BorderBrush;
-            child.BorderThickness = new Thickness(ReferenceEquals(child, selected) ? 2 : 1);
+                : EditorTheme.BorderSubtleBrush;
+            child.BorderThickness = new Thickness(1);
+            child.Background = ReferenceEquals(child, selected)
+                ? EditorTheme.AccentSoftBrush
+                : EditorTheme.PanelBgBrush;
         }
     }
 
@@ -426,8 +430,12 @@ public sealed class AssetWorkspacePanel : UserControl
             AcceptsReturn = true,
             TextWrapping = TextWrapping.Wrap,
             MinHeight = 160,
-            FontSize = 15,
+            FontSize = EditorTheme.FontBody,
+            FontFamily = EditorTheme.MonoFont,
         };
+        EditorChrome.StyleEditor(editor);
+        editor.Height = double.NaN;
+        editor.MinHeight = 160;
 
         var portraitImage = new Image
         {
@@ -472,7 +480,7 @@ public sealed class AssetWorkspacePanel : UserControl
             var len = DialogueEncodedBudget.CountBytes(editor.Text);
             var max = dialogue?.Size ?? asset.Size;
             sizeLabel.Text = $"Encoded size: {len} / {max} bytes";
-            sizeLabel.Foreground = len > max ? Brushes.Salmon : EditorTheme.TextMutedBrush;
+            sizeLabel.Foreground = len > max ? EditorTheme.DangerBrush : EditorTheme.TextMutedBrush;
         }
         UpdateSize();
         editor.TextChanged += (_, _) =>
@@ -481,7 +489,9 @@ public sealed class AssetWorkspacePanel : UserControl
             RefreshPreview();
         };
 
-        var apply = new Button { Content = "Apply (same-size)", Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Left };
+        var apply = EditorChrome.ToolButton("Apply (same-size)", primary: true);
+        apply.Margin = new Thickness(0, EditorTheme.Space3, 0, 0);
+        apply.HorizontalAlignment = HorizontalAlignment.Left;
         apply.Click += (_, _) =>
         {
             if (dialogue is null || _changes is null || _charmap is null)
@@ -490,11 +500,12 @@ public sealed class AssetWorkspacePanel : UserControl
             {
                 SceneEditing.ReplaceDialogueSameSize(_changes, dialogue, editor.Text ?? string.Empty, _charmap);
                 sizeLabel.Text = "Applied.";
+                sizeLabel.Foreground = EditorTheme.TextMutedBrush;
             }
             catch (Exception exception)
             {
                 sizeLabel.Text = exception.Message;
-                sizeLabel.Foreground = Brushes.Salmon;
+                sizeLabel.Foreground = EditorTheme.DangerBrush;
             }
         };
 
@@ -502,17 +513,24 @@ public sealed class AssetWorkspacePanel : UserControl
         {
             Content = new StackPanel
             {
-                Spacing = 8,
-                Margin = new Thickness(4),
+                Spacing = EditorTheme.Space3,
+                Margin = new Thickness(EditorTheme.Space4),
                 Children =
                 {
-                    new TextBlock { Text = asset.Name, FontSize = 18, FontWeight = FontWeight.SemiBold },
+                    EditorChrome.PaneTitle(asset.Name),
                     portraitImage,
                     previewImage,
                     editor,
                     sizeLabel,
                     apply,
-                    new TextBlock { Text = meta, FontSize = 12, Foreground = EditorTheme.TextMutedBrush, TextWrapping = TextWrapping.Wrap },
+                    new TextBlock
+                    {
+                        Text = meta,
+                        FontSize = EditorTheme.FontMeta,
+                        FontFamily = EditorTheme.MonoFont,
+                        Foreground = EditorTheme.TextDimBrush,
+                        TextWrapping = TextWrapping.Wrap,
+                    },
                 },
             },
         };
@@ -571,67 +589,122 @@ public sealed class AssetWorkspacePanel : UserControl
         _zoomLabel = new TextBlock
         {
             VerticalAlignment = VerticalAlignment.Center,
-            Margin = new Thickness(8, 0),
-            MinWidth = 56,
+            Margin = new Thickness(EditorTheme.Space3, 0),
+            MinWidth = 48,
+            FontFamily = EditorTheme.MonoFont,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextMutedBrush,
             Text = $"{_previewZoom * 100:0}%",
         };
-        var zoomOut = new Button { Content = "−", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
-        var zoomIn = new Button { Content = "+", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
-        var zoomReset = new Button
-        {
-            Content = $"{_previewZoomDefault * 100:0}%",
-            Padding = new Thickness(10, 4),
-            Margin = new Thickness(2, 0),
-        };
+        var zoomOut = EditorChrome.IconButton("−", tip: "Zoom out");
+        var zoomIn = EditorChrome.IconButton("+", tip: "Zoom in");
+        var zoomReset = EditorChrome.ToolButton($"{_previewZoomDefault * 100:0}%");
+        ToolTip.SetTip(zoomReset, "Reset zoom");
         zoomOut.Click += (_, _) => AdjustPreviewZoom(zoomIn: false);
         zoomIn.Click += (_, _) => AdjustPreviewZoom(zoomIn: true);
-        zoomReset.Click += (_, _) => SetPreviewZoom(_previewZoomDefault);
+        zoomReset.Click += (_, _) => SetPreviewZoom(_previewZoomDefault, viewportAnchor: null);
+
+        _previewScroller = new ScrollViewer
+        {
+            HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
+            VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+            Background = EditorTheme.ViewportWellBrush,
+            Content = _previewImage,
+        };
+        _previewScroller.PointerWheelChanged += OnPreviewWheel;
 
         return new DockPanel
         {
+            LastChildFill = true,
             Children =
             {
-                new StackPanel
+                new Border
                 {
-                    Orientation = Orientation.Horizontal,
-                    Margin = new Thickness(0, 0, 0, 8),
                     [DockPanel.DockProperty] = Dock.Top,
-                    Children =
+                    Child = EditorChrome.ToolbarHost(new StackPanel
                     {
-                        new TextBlock
+                        Orientation = Orientation.Horizontal,
+                        VerticalAlignment = VerticalAlignment.Center,
+                        Children =
                         {
-                            Text = $"{title}  ({_previewPixelWidth}×{_previewPixelHeight})",
-                            FontWeight = FontWeight.SemiBold,
-                            VerticalAlignment = VerticalAlignment.Center,
-                            Margin = new Thickness(0, 0, 12, 0),
+                            EditorChrome.ToolbarLabel($"{title}  ({_previewPixelWidth}×{_previewPixelHeight})"),
+                            EditorChrome.ToolbarSeparator(),
+                            zoomOut, zoomIn, zoomReset, _zoomLabel,
                         },
-                        zoomOut, zoomIn, zoomReset, _zoomLabel,
-                    },
+                    }),
                 },
-                new ScrollViewer
-                {
-                    HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
-                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-                    Content = _previewImage,
-                },
+                _previewScroller,
             },
         };
     }
 
-    private void AdjustPreviewZoom(bool zoomIn)
+    private void OnPreviewWheel(object? sender, PointerWheelEventArgs e)
     {
-        if (_integerPreviewZoom)
-            SetPreviewZoom(_previewZoom + (zoomIn ? 1 : -1));
-        else
-            SetPreviewZoom(_previewZoom * (zoomIn ? 1.25 : 1 / 1.25));
+        if (_previewScroller is null)
+            return;
+        // Zoom on wheel / trackpad pinch-as-wheel. Leave Shift+wheel for horizontal scroll.
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Shift) && !e.KeyModifiers.HasFlag(KeyModifiers.Control))
+            return;
+        if (Math.Abs(e.Delta.Y) < 0.01)
+            return;
+
+        var factor = e.Delta.Y > 0 ? 1.25 : 1 / 1.25;
+        var anchor = e.GetPosition(_previewScroller);
+        var next = _integerPreviewZoom
+            ? _previewZoom + (factor > 1 ? 1 : -1)
+            : _previewZoom * factor;
+        SetPreviewZoom(next, anchor);
+        e.Handled = true;
     }
 
-    private void SetPreviewZoom(double zoom)
+    private void AdjustPreviewZoom(bool zoomIn)
+    {
+        Point? center = null;
+        if (_previewScroller is not null)
+            center = new Point(_previewScroller.Viewport.Width / 2, _previewScroller.Viewport.Height / 2);
+
+        if (_integerPreviewZoom)
+            SetPreviewZoom(_previewZoom + (zoomIn ? 1 : -1), center);
+        else
+            SetPreviewZoom(_previewZoom * (zoomIn ? 1.25 : 1 / 1.25), center);
+    }
+
+    private void SetPreviewZoom(double zoom, Point? viewportAnchor)
     {
         if (_integerPreviewZoom)
             zoom = Math.Round(zoom);
-        _previewZoom = Math.Clamp(zoom, _integerPreviewZoom ? 1.0 : 0.25, 8.0);
+        var oldZoom = _previewZoom;
+        var nextZoom = Math.Clamp(zoom, _integerPreviewZoom ? 1.0 : 0.25, 8.0);
+        if (Math.Abs(nextZoom - oldZoom) < 0.0001)
+            return;
+
+        var scroller = _previewScroller;
+        var offset = scroller?.Offset ?? default;
+        var anchor = viewportAnchor
+            ?? (scroller is null
+                ? new Point(0, 0)
+                : new Point(scroller.Viewport.Width / 2, scroller.Viewport.Height / 2));
+
+        _previewZoom = nextZoom;
         ApplyPreviewZoom();
+
+        if (scroller is null)
+            return;
+
+        var (ox, oy) = ZoomViewport.AnchorOffset(
+            offset.X, offset.Y, anchor.X, anchor.Y, oldZoom, nextZoom);
+
+        // Offset must be applied after the ScrollViewer measures the new content size.
+        Dispatcher.UIThread.Post(() =>
+        {
+            if (!ReferenceEquals(_previewScroller, scroller))
+                return;
+            var (cx, cy) = ZoomViewport.ClampOffset(
+                ox, oy,
+                scroller.Extent.Width, scroller.Extent.Height,
+                scroller.Viewport.Width, scroller.Viewport.Height);
+            scroller.Offset = new Vector(cx, cy);
+        }, DispatcherPriority.Render);
     }
 
     private void ApplyPreviewZoom()

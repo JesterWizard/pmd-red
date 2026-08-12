@@ -201,8 +201,15 @@ public static class EditorChrome
         }
         else if (editor is ComboBox cb)
         {
-            cb.Height = EditorTheme.ControlHeight;
-            cb.FontSize = EditorTheme.FontLabel;
+            // InstantComboBox already sizes itself; don't clamp it back to ControlHeight (clips text).
+            if (cb is not InstantComboBox)
+            {
+                cb.Height = EditorTheme.ControlHeight + 2;
+                cb.MinHeight = EditorTheme.ControlHeight + 2;
+                cb.FontSize = EditorTheme.FontLabel;
+                cb.Padding = new Thickness(4, 0);
+                cb.VerticalContentAlignment = VerticalAlignment.Center;
+            }
             cb.FontFamily = EditorTheme.UiFont;
             cb.MinWidth = 0;
             cb.Width = double.NaN;
@@ -249,8 +256,8 @@ public static class EditorChrome
             FontSize = EditorTheme.FontToolbar,
             Height = EditorTheme.ControlHeight,
             MinHeight = EditorTheme.ControlHeight,
-            Padding = new Thickness(EditorTheme.Space3, 0),
-            Margin = new Thickness(0, 0, EditorTheme.Space1, 0),
+            Padding = new Thickness(EditorTheme.Space2 + 1, 0),
+            Margin = new Thickness(0, 0, 1, 0),
             VerticalContentAlignment = VerticalAlignment.Center,
             HorizontalContentAlignment = HorizontalAlignment.Center,
             CornerRadius = new CornerRadius(0),
@@ -271,25 +278,53 @@ public static class EditorChrome
 
     public static ToggleButton ToolToggle(string text, bool isChecked = false)
     {
-        return new ToggleButton
+        var button = new ToggleButton
         {
             Content = text,
             IsChecked = isChecked,
             FontFamily = EditorTheme.UiFont,
-            FontSize = EditorTheme.FontToolbar,
+            FontSize = EditorTheme.FontMeta,
             Height = EditorTheme.ControlHeight,
             MinHeight = EditorTheme.ControlHeight,
-            Padding = new Thickness(EditorTheme.Space3, 0),
-            Margin = new Thickness(0, 0, EditorTheme.Space1, 0),
+            Padding = new Thickness(EditorTheme.Space2 + 1, 0),
+            Margin = new Thickness(0, 0, 1, 0),
             VerticalContentAlignment = VerticalAlignment.Center,
             CornerRadius = new CornerRadius(0),
             BorderThickness = new Thickness(0),
+            Background = Brushes.Transparent,
+            Foreground = EditorTheme.TextSecondaryBrush,
         };
+        button.Classes.Add("rt-tool");
+        return button;
     }
 
-    public static Button IconButton(string text, double width = 20)
+    public static ToggleButton WorkspaceTab(string text, bool isChecked = false)
     {
-        return new Button
+        var button = new ToggleButton
+        {
+            Content = text,
+            IsChecked = isChecked,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontLabel,
+            FontWeight = FontWeight.SemiBold,
+            Height = 22,
+            MinHeight = 22,
+            Padding = new Thickness(EditorTheme.Space4, 0),
+            Margin = new Thickness(0),
+            VerticalContentAlignment = VerticalAlignment.Center,
+            CornerRadius = new CornerRadius(0),
+            BorderThickness = new Thickness(0, 0, 0, 1),
+            BorderBrush = Brushes.Transparent,
+            Background = Brushes.Transparent,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
+        button.Classes.Add("rt-workspace-tab");
+        return button;
+    }
+
+    public static Button IconButton(string text, double width = 20, string? tip = null)
+    {
+        var button = new Button
         {
             Content = text,
             Width = width,
@@ -307,6 +342,9 @@ public static class EditorChrome
             Background = Brushes.Transparent,
             Foreground = EditorTheme.TextSecondaryBrush,
         };
+        if (!string.IsNullOrWhiteSpace(tip))
+            ToolTip.SetTip(button, tip);
+        return button;
     }
 
     public static CheckBox ToolCheck(string text, bool isChecked = true)
@@ -355,7 +393,51 @@ public static class EditorChrome
         Background = EditorTheme.ToolbarBgBrush,
         Height = EditorTheme.StatusHeight,
         Padding = new Thickness(EditorTheme.Space4, 0),
+        BorderBrush = EditorTheme.BorderSubtleBrush,
+        BorderThickness = new Thickness(0, 1, 0, 0),
         Child = content,
+    };
+
+    /// <summary>Narrow transparent hit-target; panes supply the hairline edges.</summary>
+    public static GridSplitter ColumnSplitter() => new()
+    {
+        Width = 3,
+        MinWidth = 3,
+        Background = Brushes.Transparent,
+        ResizeDirection = GridResizeDirection.Columns,
+    };
+
+    public static GridSplitter RowSplitter() => new()
+    {
+        Height = 3,
+        MinHeight = 3,
+        Background = Brushes.Transparent,
+        ResizeDirection = GridResizeDirection.Rows,
+    };
+
+    public static void StyleDialogWindow(Window dialog)
+    {
+        dialog.Background = EditorTheme.WindowBgBrush;
+        dialog.FontFamily = EditorTheme.UiFont;
+        dialog.FontSize = EditorTheme.FontBody;
+    }
+
+    public static TextBlock PaneTitle(string text) => new()
+    {
+        Text = text,
+        FontFamily = EditorTheme.UiFont,
+        FontSize = EditorTheme.FontTitle,
+        FontWeight = FontWeight.SemiBold,
+        Foreground = EditorTheme.TextPrimaryBrush,
+    };
+
+    public static TextBlock MutedBody(string text) => new()
+    {
+        Text = text,
+        FontFamily = EditorTheme.UiFont,
+        FontSize = EditorTheme.FontBody,
+        Foreground = EditorTheme.TextMutedBrush,
+        TextWrapping = TextWrapping.Wrap,
     };
 
     public static void StyleList(ListBox list)
@@ -399,20 +481,28 @@ public static class EditorChrome
         return panel;
     }
 
-    public static ToggleButton InspectorTab(string text, bool isChecked = false) => new()
+    public static ToggleButton InspectorTab(string text, bool isChecked = false)
     {
-        Content = text,
-        IsChecked = isChecked,
-        FontFamily = EditorTheme.UiFont,
-        FontSize = EditorTheme.FontLabel,
-        Height = 20,
-        MinHeight = 20,
-        Padding = new Thickness(EditorTheme.Space3, 0),
-        Margin = new Thickness(0, 0, 1, 0),
-        CornerRadius = new CornerRadius(0),
-        BorderThickness = new Thickness(0),
-        VerticalContentAlignment = VerticalAlignment.Center,
-    };
+        var button = new ToggleButton
+        {
+            Content = text,
+            IsChecked = isChecked,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Height = 20,
+            MinHeight = 20,
+            Padding = new Thickness(EditorTheme.Space3, 0),
+            Margin = new Thickness(0),
+            CornerRadius = new CornerRadius(0),
+            BorderThickness = new Thickness(0, 0, 0, 1),
+            BorderBrush = Brushes.Transparent,
+            Background = Brushes.Transparent,
+            Foreground = EditorTheme.TextMutedBrush,
+            VerticalContentAlignment = VerticalAlignment.Center,
+        };
+        button.Classes.Add("rt-workspace-tab");
+        return button;
+    }
 }
 
 /// <summary>Dense spinbox: editable value + compact up/down, Unity/VS style.</summary>

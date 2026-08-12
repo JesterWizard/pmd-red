@@ -32,15 +32,20 @@ public sealed class MainWindow : Window
     private readonly Border _propertiesHost;
     private readonly GridSplitter _leftSplitter;
     private readonly GridSplitter _rightSplitter;
+    private readonly GridSplitter _outputSplitter;
+    private readonly Border _outputHost;
+    private readonly ListBox _outputList;
     private readonly Grid _contentGrid;
     private readonly EditorKeymap _keymap = EditorKeymap.CreateDefault();
     private readonly EditorDockLayout _dock = new();
+    private readonly string _shellSettingsPath;
     private readonly TextBlock _status;
-    private readonly TextBlock _propertiesBody;
+    private readonly StackPanel _propertiesBody;
     private readonly Border _loadingOverlay;
     private readonly TextBlock _loadingStage;
     private readonly TextBlock _loadingElapsed;
     private readonly Grid _root;
+    private bool _forceClose;
 
     private readonly AgbplayStreamHost _soundStreamHost = new();
     private readonly SoundCacheWarmer _soundCacheWarmer = new();
@@ -72,6 +77,12 @@ public sealed class MainWindow : Window
         FontSize = EditorTheme.FontBody;
         AppIcon.Apply(this);
 
+        _shellSettingsPath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "RescueTemple",
+            "shell.json");
+        EditorShellSettingsStore.LoadOrDefault(_shellSettingsPath).ApplyTo(_dock);
+
         _explorer = new ProjectExplorerPanel();
         _explorer.SelectionChanged += ExplorerOnSelectionChanged;
 
@@ -81,23 +92,15 @@ public sealed class MainWindow : Window
             Background = EditorTheme.CanvasBgBrush,
             Child = CreateWelcomePanel(),
         };
-        _propertiesBody = new TextBlock
-        {
-            Text = "Select an asset to inspect its properties.",
-            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
-            TextWrapping = TextWrapping.Wrap,
-            FontFamily = EditorTheme.UiFont,
-            FontSize = EditorTheme.FontBody,
-            Foreground = EditorTheme.TextMutedBrush,
-            LineHeight = 18,
-        };
+        _propertiesBody = new StackPanel { Spacing = 0 };
+        ShowInspectorEmpty();
         var propsHeader = EditorChrome.PanelHeader("Inspector");
         var propsBody = new DockPanel { LastChildFill = true };
         DockPanel.SetDock(propsHeader, Dock.Top);
         propsBody.Children.Add(propsHeader);
         propsBody.Children.Add(new ScrollViewer
         {
-            Padding = new Thickness(0),
+            Padding = new Thickness(0, 0, 0, EditorTheme.Space3),
             Content = _propertiesBody,
         });
         _propertiesHost = new Border
@@ -146,22 +149,12 @@ public sealed class MainWindow : Window
         };
         _assetWorkspace.RequestSceneWorkspace += (_, _) => OpenSelectedScene();
 
-        _leftSplitter = new GridSplitter
-        {
-            Width = 4,
-            Background = EditorTheme.BorderSubtleBrush,
-            ResizeDirection = GridResizeDirection.Columns,
-        };
-        _rightSplitter = new GridSplitter
-        {
-            Width = 4,
-            Background = EditorTheme.BorderSubtleBrush,
-            ResizeDirection = GridResizeDirection.Columns,
-        };
+        _leftSplitter = EditorChrome.ColumnSplitter();
+        _rightSplitter = EditorChrome.ColumnSplitter();
 
         _contentGrid = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.ExplorerWidth},4,*,4,{EditorTheme.InspectorWidth}"),
+            ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.ExplorerWidth},3,*,3,{EditorTheme.InspectorWidth}"),
             Children = { _explorer, _leftSplitter, _workspaceHost, _rightSplitter, _propertiesHost },
         };
         Grid.SetColumn(_explorer, 0);
@@ -169,7 +162,33 @@ public sealed class MainWindow : Window
         Grid.SetColumn(_workspaceHost, 2);
         Grid.SetColumn(_rightSplitter, 3);
         Grid.SetColumn(_propertiesHost, 4);
-        var content = _contentGrid;
+
+        _outputList = new ListBox();
+        EditorChrome.StyleList(_outputList);
+        _outputList.FontFamily = EditorTheme.MonoFont;
+        _outputList.FontSize = EditorTheme.FontMeta;
+        var outputHeader = EditorChrome.PanelHeader("Output");
+        var outputBody = new DockPanel { LastChildFill = true };
+        DockPanel.SetDock(outputHeader, Dock.Top);
+        outputBody.Children.Add(outputHeader);
+        outputBody.Children.Add(_outputList);
+        _outputHost = new Border
+        {
+            Background = EditorTheme.PanelBgBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 1, 0, 0),
+            Child = outputBody,
+        };
+        _outputSplitter = EditorChrome.RowSplitter();
+
+        var mainBody = new Grid
+        {
+            RowDefinitions = new RowDefinitions("*,Auto,Auto"),
+            Children = { _contentGrid, _outputSplitter, _outputHost },
+        };
+        Grid.SetRow(_contentGrid, 0);
+        Grid.SetRow(_outputSplitter, 1);
+        Grid.SetRow(_outputHost, 2);
 
         var menu = CreateMenu();
         var statusBar = EditorChrome.StatusHost(statusInner);
@@ -177,11 +196,11 @@ public sealed class MainWindow : Window
         _root = new Grid
         {
             RowDefinitions = new RowDefinitions("Auto,Auto,*,Auto"),
-            Children = { menu, _breadcrumb, content, statusBar },
+            Children = { menu, _breadcrumb, mainBody, statusBar },
         };
         Grid.SetRow(menu, 0);
         Grid.SetRow(_breadcrumb, 1);
-        Grid.SetRow(content, 2);
+        Grid.SetRow(mainBody, 2);
         Grid.SetRow(statusBar, 3);
 
         _loadingStage = new TextBlock
@@ -201,17 +220,17 @@ public sealed class MainWindow : Window
         _loadingOverlay = new Border
         {
             IsVisible = false,
-            Background = new SolidColorBrush(Color.FromArgb(210, 12, 12, 12)),
+            Background = new SolidColorBrush(Color.FromArgb(200, 0x1B, 0x1B, 0x1C)),
             Child = new Border
             {
-                Width = 360,
-                Padding = new Thickness(EditorTheme.Space6),
+                Width = 320,
+                Padding = new Thickness(EditorTheme.Space5),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
-                Background = EditorTheme.PanelBgRaisedBrush,
-                BorderBrush = EditorTheme.BorderBrush,
+                Background = EditorTheme.PanelBgBrush,
+                BorderBrush = EditorTheme.BorderSubtleBrush,
                 BorderThickness = new Thickness(1),
-                CornerRadius = new CornerRadius(2),
+                CornerRadius = new CornerRadius(0),
                 Child = new StackPanel
                 {
                     Spacing = EditorTheme.Space2,
@@ -223,14 +242,15 @@ public sealed class MainWindow : Window
                             FontSize = EditorTheme.FontTitle,
                             FontWeight = FontWeight.SemiBold,
                             FontFamily = EditorTheme.UiFont,
+                            Foreground = EditorTheme.TextPrimaryBrush,
                         },
                         _loadingStage,
                         _loadingElapsed,
                         new ProgressBar
                         {
                             IsIndeterminate = true,
-                            Height = 3,
-                            Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
+                            Height = 2,
+                            Margin = new Thickness(0, EditorTheme.Space3, 0, 0),
                         },
                     },
                 },
@@ -239,7 +259,9 @@ public sealed class MainWindow : Window
 
         Content = new Panel { Children = { _root, _loadingOverlay } };
         KeyDown += MainWindowOnKeyDown;
+        Closing += OnClosing;
         Opened += OnOpened;
+        ApplyDockLayout(sceneOwnsInspector: false);
     }
 
     private Menu CreateMenu()
@@ -255,7 +277,11 @@ public sealed class MainWindow : Window
         var file = new MenuItem { Header = "_File" };
         var open = new MenuItem { Header = "_Open ROM…" };
         open.Click += OpenButtonOnClick;
-        var saveProject = new MenuItem { Header = "Save _Project…" };
+        var saveProject = new MenuItem
+        {
+            Header = "Save _Project…",
+            InputGesture = new KeyGesture(Key.S, KeyModifiers.Control),
+        };
         saveProject.Click += SaveProjectOnClick;
         var openProject = new MenuItem { Header = "Open Pro_ject…" };
         openProject.Click += OpenProjectOnClick;
@@ -266,7 +292,11 @@ public sealed class MainWindow : Window
         var exportCategory = new MenuItem { Header = "Export _Category…" };
         exportCategory.Click += ExportCategoryOnClick;
         var close = new MenuItem { Header = "_Close ROM" };
-        close.Click += (_, _) => ClearRom();
+        close.Click += async (_, _) =>
+        {
+            if (await ConfirmDiscardIfNeededAsync("Close ROM"))
+                ClearRom();
+        };
         var exit = new MenuItem { Header = "E_xit" };
         exit.Click += (_, _) => Close();
         file.Items.Add(open);
@@ -283,9 +313,17 @@ public sealed class MainWindow : Window
         menu.Items.Add(file);
 
         var edit = new MenuItem { Header = "_Edit" };
-        var undo = new MenuItem { Header = "_Undo" };
+        var undo = new MenuItem
+        {
+            Header = "_Undo",
+            InputGesture = new KeyGesture(Key.Z, KeyModifiers.Control),
+        };
         undo.Click += (_, _) => { _changes.Undo(); _sceneWorkspace?.RefreshFromExternal(); UpdateDirtyTitle(); };
-        var redo = new MenuItem { Header = "_Redo" };
+        var redo = new MenuItem
+        {
+            Header = "_Redo",
+            InputGesture = new KeyGesture(Key.Y, KeyModifiers.Control),
+        };
         redo.Click += (_, _) => { _changes.Redo(); _sceneWorkspace?.RefreshFromExternal(); UpdateDirtyTitle(); };
         edit.Items.Add(undo);
         edit.Items.Add(redo);
@@ -308,8 +346,30 @@ public sealed class MainWindow : Window
         list.Click += (_, _) => _assetWorkspace.SetViewMode(false);
         var grid = new MenuItem { Header = "_Grid" };
         grid.Click += (_, _) => _assetWorkspace.SetViewMode(true);
+        var toggleExplorer = new MenuItem
+        {
+            Header = "_Explorer",
+            InputGesture = new KeyGesture(Key.OemOpenBrackets, KeyModifiers.Control),
+        };
+        toggleExplorer.Click += (_, _) => ExecuteShellCommand(EditorCommandId.ToggleExplorer);
+        var toggleInspector = new MenuItem
+        {
+            Header = "_Inspector",
+            InputGesture = new KeyGesture(Key.OemCloseBrackets, KeyModifiers.Control),
+        };
+        toggleInspector.Click += (_, _) => ExecuteShellCommand(EditorCommandId.ToggleInspector);
+        var toggleOutput = new MenuItem
+        {
+            Header = "_Output",
+            InputGesture = new KeyGesture(Key.U, KeyModifiers.Control | KeyModifiers.Shift),
+        };
+        toggleOutput.Click += (_, _) => ExecuteShellCommand(EditorCommandId.ToggleOutput);
         view.Items.Add(list);
         view.Items.Add(grid);
+        view.Items.Add(new Separator());
+        view.Items.Add(toggleExplorer);
+        view.Items.Add(toggleInspector);
+        view.Items.Add(toggleOutput);
         menu.Items.Add(view);
         return menu;
     }
@@ -354,6 +414,8 @@ public sealed class MainWindow : Window
     private async void OpenButtonOnClick(object? sender, RoutedEventArgs e)
     {
         if (_isLoading) return;
+        if (!await ConfirmDiscardIfNeededAsync("Open ROM"))
+            return;
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             Title = "Open Pokémon Mystery Dungeon ROM",
@@ -375,16 +437,22 @@ public sealed class MainWindow : Window
         _isLoading = true;
         var romName = Path.GetFileName(path);
         SetStatus($"Indexing {romName}…");
+        AppendOutput($"Opening {romName}…");
         BeginLoadingOverlay($"Opening {romName}…");
 
         var progress = new Progress<string>(stage =>
         {
+            void Apply()
+            {
+                _loadingStage.Text = stage;
+                AppendOutput(stage);
+            }
             if (!Dispatcher.UIThread.CheckAccess())
             {
-                Dispatcher.UIThread.Post(() => _loadingStage.Text = stage);
+                Dispatcher.UIThread.Post(Apply);
                 return;
             }
-            _loadingStage.Text = stage;
+            Apply();
         });
 
         IProgress<string> progressSink = progress;
@@ -442,6 +510,7 @@ public sealed class MainWindow : Window
                 : $"  Warnings: {_catalog.Diagnostics.Count}.";
             SetStatus($"{romName}  |  {_rom.Length / 1024 / 1024.0:F2} MiB  |  " +
                       $"{_catalog.Assets.Count:N0} assets in {elapsed.TotalSeconds:0.0}s  |  {counts}{warning}");
+            AppendOutput($"Indexed {romName} — {_catalog.Assets.Count:N0} assets in {elapsed.TotalSeconds:0.0}s.");
         }
         catch (Exception exception) when (exception is IOException or InvalidDataException or ArgumentException)
         {
@@ -551,23 +620,62 @@ public sealed class MainWindow : Window
 
     private void UpdateProperties()
     {
+        _propertiesBody.Children.Clear();
         if (_selectedAsset is null)
         {
-            _propertiesBody.Text = "Select an asset to inspect its properties.";
+            ShowInspectorEmpty();
             return;
         }
+
         var a = _selectedAsset;
-        _propertiesBody.Text =
-            $"{a.DisplayName}\n\n" +
-            $"Kind\t{a.Kind}\n" +
-            $"Category\t{a.Category}\n" +
-            $"Format\t{a.Format}\n" +
-            $"Offset\t0x{a.Offset:X}\n" +
-            $"Size\t0x{a.Size:X}\n\n" +
-            $"{a.Description}";
-        _propertiesBody.FontFamily = EditorTheme.MonoFont;
-        _propertiesBody.FontSize = EditorTheme.FontLabel;
-        _propertiesBody.Foreground = EditorTheme.TextSecondaryBrush;
+        _propertiesBody.Children.Add(EditorChrome.SectionHeader("Asset"));
+        _propertiesBody.Children.Add(InspectorValueRow("Name", a.DisplayName));
+        _propertiesBody.Children.Add(InspectorValueRow("Kind", a.Kind.ToString()));
+        _propertiesBody.Children.Add(InspectorValueRow("Category", a.Category.ToString()));
+        _propertiesBody.Children.Add(InspectorValueRow("Format", a.Format));
+        _propertiesBody.Children.Add(InspectorValueRow("Offset", $"0x{a.Offset:X}"));
+        _propertiesBody.Children.Add(InspectorValueRow("Size", $"0x{a.Size:X}"));
+        if (!string.IsNullOrWhiteSpace(a.Description))
+        {
+            _propertiesBody.Children.Add(EditorChrome.SectionHeader("Notes"));
+            _propertiesBody.Children.Add(new TextBlock
+            {
+                Text = a.Description,
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, 0),
+                TextWrapping = TextWrapping.Wrap,
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontLabel,
+                Foreground = EditorTheme.TextMutedBrush,
+            });
+        }
+    }
+
+    private void ShowInspectorEmpty()
+    {
+        _propertiesBody.Children.Clear();
+        _propertiesBody.Children.Add(new TextBlock
+        {
+            Text = "Select an asset to inspect its properties.",
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
+            TextWrapping = TextWrapping.Wrap,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontBody,
+            Foreground = EditorTheme.TextMutedBrush,
+        });
+    }
+
+    private static Control InspectorValueRow(string label, string value)
+    {
+        var valueBox = new TextBlock
+        {
+            Text = value,
+            FontFamily = EditorTheme.MonoFont,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextPrimaryBrush,
+            VerticalAlignment = VerticalAlignment.Center,
+            TextTrimming = TextTrimming.CharacterEllipsis,
+        };
+        return EditorChrome.PropertyRow(label, valueBox);
     }
 
     private void UpdateDirtyTitle()
@@ -631,6 +739,8 @@ public sealed class MainWindow : Window
 
     private async void OpenProjectOnClick(object? sender, RoutedEventArgs e)
     {
+        if (!await ConfirmDiscardIfNeededAsync("Open Project"))
+            return;
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             Title = "Open RescueTemple Project",
@@ -831,21 +941,22 @@ public sealed class MainWindow : Window
         _breadcrumb.SetPath("RescueTemple");
         Title = "RescueTemple";
         SetStatus("Open a baserom.gba to begin.");
+        AppendOutput("ROM closed.");
     }
 
     private void MainWindowOnKeyDown(object? sender, KeyEventArgs e)
     {
+        var sceneFocused = _sceneWorkspace is not null &&
+            _workspaceHost.Child == _sceneWorkspace &&
+            _sceneWorkspace.IsKeyboardFocusWithin;
+        var focus = EditorShellFocus.Resolve(this, sceneFocused);
         var chord = new KeyChord(
             e.Key.ToString(),
             e.KeyModifiers.HasFlag(KeyModifiers.Control),
             e.KeyModifiers.HasFlag(KeyModifiers.Shift),
             e.KeyModifiers.HasFlag(KeyModifiers.Alt));
-        if (!_keymap.TryResolve(chord, out var command))
+        if (!EditorCommandRouter.TryResolve(_keymap, chord, focus, out var command))
             return;
-
-        var sceneFocused = _sceneWorkspace is not null &&
-            _workspaceHost.Child == _sceneWorkspace &&
-            _sceneWorkspace.IsKeyboardFocusWithin;
 
         if (sceneFocused && _sceneWorkspace!.TryHandleCommand(command))
         {
@@ -853,19 +964,9 @@ public sealed class MainWindow : Window
             return;
         }
 
-        // Scene-only commands (entity nudge, etc.) stay gated to the focused workspace.
-        if (!sceneFocused && IsSceneOnlyCommand(command))
-            return;
-
         if (ExecuteShellCommand(command))
             e.Handled = true;
     }
-
-    private static bool IsSceneOnlyCommand(EditorCommandId command) => command is
-        EditorCommandId.DeleteSelection or
-        EditorCommandId.ToggleGrid or
-        EditorCommandId.SelectTool or
-        EditorCommandId.PanTool;
 
     private bool ExecuteShellCommand(EditorCommandId command)
     {
@@ -887,10 +988,17 @@ public sealed class MainWindow : Window
             case EditorCommandId.ToggleExplorer:
                 _dock.Toggle(DockPanelId.Explorer);
                 ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                PersistShellSettings();
                 return true;
             case EditorCommandId.ToggleInspector:
                 _dock.Toggle(DockPanelId.Inspector);
                 ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                PersistShellSettings();
+                return true;
+            case EditorCommandId.ToggleOutput:
+                _dock.Toggle(DockPanelId.Output);
+                ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                PersistShellSettings();
                 return true;
             default:
                 return false;
@@ -901,6 +1009,7 @@ public sealed class MainWindow : Window
     {
         var explorerW = _dock.EffectiveWidth(DockPanelId.Explorer);
         var inspectorW = sceneOwnsInspector ? 0 : _dock.EffectiveWidth(DockPanelId.Inspector);
+        var outputH = _dock.EffectiveWidth(DockPanelId.Output);
         _contentGrid.ColumnDefinitions[0].Width = new GridLength(explorerW);
         _contentGrid.ColumnDefinitions[4].Width = new GridLength(inspectorW);
         _explorer.IsVisible = explorerW > 0;
@@ -908,6 +1017,109 @@ public sealed class MainWindow : Window
         _propertiesHost.IsVisible = inspectorW > 0;
         _rightSplitter.IsVisible = inspectorW > 0;
         Grid.SetColumnSpan(_workspaceHost, sceneOwnsInspector || inspectorW <= 0 ? 3 : 1);
+
+        var showOutput = outputH > 0;
+        _outputHost.IsVisible = showOutput;
+        _outputSplitter.IsVisible = showOutput;
+        _outputHost.Height = showOutput ? outputH : 0;
+        _outputHost.MinHeight = showOutput ? EditorDockLayout.MinOutputHeight : 0;
+    }
+
+    private void SyncDockFromUi()
+    {
+        var explorerCol = _contentGrid.ColumnDefinitions[0].Width;
+        if (_dock.ExplorerVisible && explorerCol.IsAbsolute && explorerCol.Value >= EditorDockLayout.MinSideWidth)
+            _dock.SetWidth(DockPanelId.Explorer, explorerCol.Value);
+
+        var inspectorCol = _contentGrid.ColumnDefinitions[4].Width;
+        if (_dock.InspectorVisible && inspectorCol.IsAbsolute && inspectorCol.Value >= EditorDockLayout.MinSideWidth)
+            _dock.SetWidth(DockPanelId.Inspector, inspectorCol.Value);
+
+        if (_dock.OutputVisible && _outputHost.Height >= EditorDockLayout.MinOutputHeight)
+            _dock.SetWidth(DockPanelId.Output, _outputHost.Height);
+    }
+
+    private void PersistShellSettings()
+    {
+        try
+        {
+            SyncDockFromUi();
+            EditorShellSettingsStore.Save(_shellSettingsPath, EditorShellSettings.FromDock(_dock));
+        }
+        catch (IOException)
+        {
+        }
+        catch (UnauthorizedAccessException)
+        {
+        }
+    }
+
+    private async void OnClosing(object? sender, WindowClosingEventArgs e)
+    {
+        PersistShellSettings();
+        if (_forceClose)
+            return;
+        if (!UnsavedChangesGate.RequiresConfirmation(_project?.IsDirty == true, _changes.IsDirty))
+            return;
+
+        e.Cancel = true;
+        if (await ConfirmDiscardIfNeededAsync("Exit"))
+        {
+            _forceClose = true;
+            Close();
+        }
+    }
+
+    private async Task<bool> ConfirmDiscardIfNeededAsync(string action)
+    {
+        if (!UnsavedChangesGate.RequiresConfirmation(_project?.IsDirty == true, _changes.IsDirty))
+            return true;
+
+        var dialog = new Window
+        {
+            Title = "Unsaved changes",
+            Width = 420,
+            Height = 150,
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Icon = AppIcon.Get(),
+        };
+        EditorChrome.StyleDialogWindow(dialog);
+        var discard = false;
+        var message = EditorChrome.MutedBody($"You have unsaved changes. {action} anyway?");
+        var cancel = EditorChrome.ToolButton("Cancel");
+        cancel.Click += (_, _) => dialog.Close();
+        var confirm = EditorChrome.ToolButton(action, primary: true);
+        confirm.Click += (_, _) =>
+        {
+            discard = true;
+            dialog.Close();
+        };
+        var buttons = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Spacing = EditorTheme.Space2,
+            Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
+            Children = { cancel, confirm },
+        };
+        dialog.Content = new DockPanel
+        {
+            Margin = new Thickness(EditorTheme.Space5),
+            LastChildFill = true,
+            Children = { buttons, message },
+        };
+        DockPanel.SetDock(buttons, Dock.Bottom);
+        await dialog.ShowDialog(this);
+        return discard;
+    }
+
+    private void AppendOutput(string line)
+    {
+        _outputList.Items.Add(line);
+        while (_outputList.ItemCount > 500)
+            _outputList.Items.RemoveAt(0);
+        if (_outputList.ItemCount > 0)
+            _outputList.ScrollIntoView(_outputList.ItemCount - 1);
     }
 
     private static string? FindDefaultRom()
@@ -926,31 +1138,24 @@ public sealed class MainWindow : Window
         return null;
     }
 
-    private static Control CreateWelcomePanel() => new StackPanel
+    private Control CreateWelcomePanel()
     {
-        Spacing = EditorTheme.Space3,
-        VerticalAlignment = VerticalAlignment.Center,
-        HorizontalAlignment = HorizontalAlignment.Center,
-        Children =
+        var open = EditorChrome.ToolButton("Open ROM…", primary: true);
+        open.MinWidth = 108;
+        open.Click += OpenButtonOnClick;
+        return new StackPanel
         {
-            new TextBlock
+            Spacing = EditorTheme.Space3,
+            VerticalAlignment = VerticalAlignment.Center,
+            HorizontalAlignment = HorizontalAlignment.Center,
+            Children =
             {
-                Text = "RescueTemple",
-                FontSize = 22,
-                FontWeight = FontWeight.SemiBold,
-                FontFamily = EditorTheme.UiFont,
-                Foreground = EditorTheme.TextPrimaryBrush,
-                HorizontalAlignment = HorizontalAlignment.Center,
+                EditorChrome.PaneTitle("No ROM loaded"),
+                EditorChrome.MutedBody("Open baserom.gba to browse scenes, dialogue, and assets."),
+                open,
             },
-            new TextBlock
-            {
-                Text = "Open a baserom.gba to browse and edit assets.",
-                FontFamily = EditorTheme.UiFont,
-                FontSize = EditorTheme.FontBody,
-                Foreground = EditorTheme.TextMutedBrush,
-            },
-        },
-    };
+        };
+    }
 
     private void SetStatus(string text) => _status.Text = text;
 
@@ -960,26 +1165,24 @@ public sealed class MainWindow : Window
         {
             Title = title,
             Width = 480,
-            Height = 260,
+            Height = 240,
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             Icon = AppIcon.Get(),
         };
-        var ok = new Button
-        {
-            Content = "OK",
-            HorizontalAlignment = HorizontalAlignment.Right,
-            Margin = new Thickness(0, 12, 0, 0),
-        };
+        EditorChrome.StyleDialogWindow(dialog);
+        var ok = EditorChrome.ToolButton("OK", primary: true);
+        ok.HorizontalAlignment = HorizontalAlignment.Right;
         ok.Click += (_, _) => dialog.Close();
         dialog.Content = new DockPanel
         {
-            Margin = new Thickness(16),
+            Margin = new Thickness(EditorTheme.Space5),
+            LastChildFill = true,
             Children =
             {
                 ok,
                 new ScrollViewer
                 {
-                    Content = new TextBlock { Text = message, TextWrapping = TextWrapping.Wrap },
+                    Content = EditorChrome.MutedBody(message),
                 },
             },
         };

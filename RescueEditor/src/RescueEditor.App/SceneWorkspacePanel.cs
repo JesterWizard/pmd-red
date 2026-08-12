@@ -11,7 +11,12 @@ namespace RescueEditor.App;
 
 public sealed class SceneWorkspacePanel : UserControl
 {
-    private readonly TabControl _centerTabs;
+    private readonly Border _workspaceShell;
+    private readonly Panel _workspaceContent;
+    private readonly ToggleButton _sceneWorkspaceTab;
+    private readonly ToggleButton _eventsWorkspaceTab;
+    private readonly Control _sceneTabContent;
+    private readonly Control _eventsTabContent;
     private readonly SceneMapCanvas _map;
     private readonly ListBox _sectorList;
     private readonly ListBox _scriptList;
@@ -21,21 +26,21 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly StackPanel _scriptPropertyForm;
     private readonly StackPanel _semanticPropertyHost;
     private readonly StackPanel _rawPropertyHost;
-    private readonly CheckBox _rawFieldsToggle;
+    private readonly ToggleButton _rawFieldsToggle;
     private readonly TextBlock _commandTitle;
     private readonly Border _scriptHeaderRow;
-    private readonly CheckBox _snapToggle;
     private readonly EditorKeymap _keymap = EditorKeymap.CreateDefault();
     private readonly TextBlock _status;
     private readonly TextBlock _mapInfo;
     private readonly CompactSpinBox _groupBox;
     private readonly InstantComboBox _sectorBox;
-    private readonly CheckBox _livesToggle;
-    private readonly CheckBox _objectsToggle;
-    private readonly CheckBox _effectsToggle;
-    private readonly CheckBox _eventsToggle;
-    private readonly CheckBox _linksToggle;
-    private readonly CheckBox _gridToggle;
+    private readonly ToggleButton _livesToggle;
+    private readonly ToggleButton _objectsToggle;
+    private readonly ToggleButton _effectsToggle;
+    private readonly ToggleButton _eventsToggle;
+    private readonly ToggleButton _linksToggle;
+    private readonly ToggleButton _gridToggle;
+    private readonly ToggleButton _snapToggle;
     private readonly ToggleButton _selectTool;
     private readonly ToggleButton _panTool;
     private readonly Button _undoButton;
@@ -51,8 +56,8 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly CompactSpinBox _yBox;
     private readonly CompactSpinBox _wBox;
     private readonly CompactSpinBox _hBox;
-    private readonly CheckBox _halfXToggle;
-    private readonly CheckBox _halfYToggle;
+    private readonly ToggleButton _halfXToggle;
+    private readonly ToggleButton _halfYToggle;
     private readonly CompactSpinBox _opBox;
     private readonly CompactSpinBox _argByteBox;
     private readonly CompactSpinBox _argShortBox;
@@ -110,7 +115,7 @@ public sealed class SceneWorkspacePanel : UserControl
             DirtyChanged?.Invoke(this, EventArgs.Empty);
         };
 
-        _groupBox = EditorChrome.CompactNumeric(0, 255, 52);
+        _groupBox = EditorChrome.CompactNumeric(0, 255, 44);
         _groupBox.Value = 0;
         _groupBox.ValueChanged += (_, _) =>
         {
@@ -119,7 +124,8 @@ public sealed class SceneWorkspacePanel : UserControl
             RebuildSectorCombo();
             RefreshAll();
         };
-        _sectorBox = new InstantComboBox { Width = 110 };
+        _sectorBox = new InstantComboBox { Width = 104 };
+        _sectorBox.VerticalAlignment = VerticalAlignment.Center;
         _sectorBox.SelectionChanged += (_, _) =>
         {
             if (_suppressPropertyEvents)
@@ -127,13 +133,13 @@ public sealed class SceneWorkspacePanel : UserControl
             RefreshAll();
         };
 
-        _livesToggle = EditorChrome.ToolCheck("Lives");
-        _objectsToggle = EditorChrome.ToolCheck("Objects");
-        _effectsToggle = EditorChrome.ToolCheck("Effects");
-        _eventsToggle = EditorChrome.ToolCheck("Events");
-        _linksToggle = EditorChrome.ToolCheck("Links");
-        _gridToggle = EditorChrome.ToolCheck("Grid", isChecked: false);
-        _snapToggle = EditorChrome.ToolCheck("Snap", isChecked: true);
+        _livesToggle = EditorChrome.ToolToggle("Lives", isChecked: true);
+        _objectsToggle = EditorChrome.ToolToggle("Objects", isChecked: true);
+        _effectsToggle = EditorChrome.ToolToggle("Effects", isChecked: true);
+        _eventsToggle = EditorChrome.ToolToggle("Events", isChecked: true);
+        _linksToggle = EditorChrome.ToolToggle("Links", isChecked: true);
+        _gridToggle = EditorChrome.ToolToggle("Grid");
+        _snapToggle = EditorChrome.ToolToggle("Snap", isChecked: true);
         foreach (var toggle in new[] { _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _gridToggle })
             toggle.IsCheckedChanged += (_, _) => RefreshMap();
         _snapToggle.IsCheckedChanged += (_, _) => _map.SnapToGrid = _snapToggle.IsChecked == true;
@@ -196,6 +202,7 @@ public sealed class SceneWorkspacePanel : UserControl
         };
         Grid.SetRow(toolbar, 0);
         Grid.SetRow(_map, 1);
+        _sceneTabContent = sceneTabContent;
 
         _eventsScriptList = new ListBox();
         EditorChrome.StyleList(_eventsScriptList);
@@ -206,7 +213,7 @@ public sealed class SceneWorkspacePanel : UserControl
         {
             Minimum = 0,
             Maximum = 0,
-            Height = 18,
+            Height = 16,
             Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
         };
         _commandSlider.PropertyChanged += (_, e) =>
@@ -230,23 +237,46 @@ public sealed class SceneWorkspacePanel : UserControl
         Grid.SetRow(_eventsScriptList, 0);
         Grid.SetRow(_commandSlider, 1);
         Grid.SetRow(_eventsHud, 2);
+        _eventsTabContent = eventsTabContent;
 
-        _centerTabs = new TabControl
+        _sceneWorkspaceTab = EditorChrome.WorkspaceTab("Scene", isChecked: true);
+        _eventsWorkspaceTab = EditorChrome.WorkspaceTab("Events");
+        _sceneWorkspaceTab.IsCheckedChanged += (_, _) =>
         {
-            FontFamily = EditorTheme.UiFont,
-            FontSize = EditorTheme.FontBody,
-            Padding = new Thickness(0),
-            Items =
+            if (_sceneWorkspaceTab.IsChecked == true)
+                ShowWorkspaceTab(scene: true);
+            else if (_eventsWorkspaceTab.IsChecked != true)
+                _sceneWorkspaceTab.IsChecked = true;
+        };
+        _eventsWorkspaceTab.IsCheckedChanged += (_, _) =>
+        {
+            if (_eventsWorkspaceTab.IsChecked == true)
+                ShowWorkspaceTab(scene: false);
+            else if (_sceneWorkspaceTab.IsChecked != true)
+                _eventsWorkspaceTab.IsChecked = true;
+        };
+
+        _workspaceContent = new Panel { Children = { _sceneTabContent } };
+        var workspaceTabs = new Border
+        {
+            Background = EditorTheme.PanelBgRaisedBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 0, 0, 1),
+            Height = 22,
+            Child = new StackPanel
             {
-                new TabItem { Header = "Scene", Content = sceneTabContent },
-                new TabItem { Header = "Events", Content = eventsTabContent },
+                Orientation = Orientation.Horizontal,
+                Children = { _sceneWorkspaceTab, _eventsWorkspaceTab },
             },
         };
-        _centerTabs.SelectionChanged += (_, _) =>
+        var workspaceBody = new DockPanel { LastChildFill = true };
+        DockPanel.SetDock(workspaceTabs, Dock.Top);
+        workspaceBody.Children.Add(workspaceTabs);
+        workspaceBody.Children.Add(_workspaceContent);
+        _workspaceShell = new Border
         {
-            if (_suppressPropertyEvents || _refreshGate.IsEntered)
-                return;
-            RefreshAll();
+            Background = EditorTheme.CanvasBgBrush,
+            Child = workspaceBody,
         };
 
         _sectorList = new ListBox();
@@ -345,20 +375,8 @@ public sealed class SceneWorkspacePanel : UserControl
         _yBox = EditorChrome.CompactNumeric(0, 255);
         _wBox = EditorChrome.CompactNumeric(0, 64);
         _hBox = EditorChrome.CompactNumeric(0, 64);
-        _halfXToggle = new CheckBox
-        {
-            Content = "Half X",
-            FontSize = EditorTheme.FontMeta,
-            FontFamily = EditorTheme.UiFont,
-            Foreground = EditorTheme.TextMutedBrush,
-        };
-        _halfYToggle = new CheckBox
-        {
-            Content = "Half Y",
-            FontSize = EditorTheme.FontMeta,
-            FontFamily = EditorTheme.UiFont,
-            Foreground = EditorTheme.TextMutedBrush,
-        };
+        _halfXToggle = EditorChrome.ToolToggle("Half X");
+        _halfYToggle = EditorChrome.ToolToggle("Half Y");
         _typeBox.ValueChanged += (_, _) => ApplyEntityProps();
         _dirBox.ValueChanged += (_, _) => ApplyEntityProps();
         _xBox.ValueChanged += (_, _) => ApplyEntityProps();
@@ -426,14 +444,9 @@ public sealed class SceneWorkspacePanel : UserControl
                 EditorChrome.PropertyRow("ArgPtr", _argPtrBox),
             },
         };
-        _rawFieldsToggle = new CheckBox
-        {
-            Content = "Raw fields",
-            FontSize = EditorTheme.FontMeta,
-            FontFamily = EditorTheme.UiFont,
-            Foreground = EditorTheme.TextMutedBrush,
-            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, 0),
-        };
+        _rawFieldsToggle = EditorChrome.ToolToggle("Raw fields");
+        _rawFieldsToggle.Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, 0);
+        _rawFieldsToggle.HorizontalAlignment = HorizontalAlignment.Left;
         _rawFieldsToggle.IsCheckedChanged += (_, _) =>
         {
             _rawPropertyHost.IsVisible = _rawFieldsToggle.IsChecked == true;
@@ -522,26 +535,32 @@ public sealed class SceneWorkspacePanel : UserControl
             Child = inspectorBody,
         };
 
-        var splitter = new GridSplitter
-        {
-            Width = 4,
-            Background = EditorTheme.BorderSubtleBrush,
-            ResizeDirection = GridResizeDirection.Columns,
-        };
+        var splitter = EditorChrome.ColumnSplitter();
 
         var root = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions($"*,4,{EditorTheme.SceneInspectorWidth}"),
+            ColumnDefinitions = new ColumnDefinitions($"*,3,{EditorTheme.SceneInspectorWidth}"),
             Background = EditorTheme.CanvasBgBrush,
-            Children = { _centerTabs, splitter, inspector },
+            Children = { _workspaceShell, splitter, inspector },
         };
-        Grid.SetColumn(_centerTabs, 0);
+        Grid.SetColumn(_workspaceShell, 0);
         Grid.SetColumn(splitter, 1);
         Grid.SetColumn(inspector, 2);
         Content = root;
 
         KeyDown += OnKeyDown;
         Focusable = true;
+    }
+
+    private void ShowWorkspaceTab(bool scene)
+    {
+        _sceneWorkspaceTab.IsChecked = scene;
+        _eventsWorkspaceTab.IsChecked = !scene;
+        _workspaceContent.Children.Clear();
+        _workspaceContent.Children.Add(scene ? _sceneTabContent : _eventsTabContent);
+        if (_suppressPropertyEvents || _refreshGate.IsEntered)
+            return;
+        RefreshAll();
     }
 
     private void SetInspectorMode(string mode)
@@ -598,18 +617,16 @@ public sealed class SceneWorkspacePanel : UserControl
 
     private Control BuildSceneRightPanel()
     {
-        var addSector = EditorChrome.IconButton("+");
-        var removeSector = EditorChrome.IconButton("−");
-        var hideSector = EditorChrome.IconButton("V");
-        var soloSectorBtn = EditorChrome.IconButton("S");
+        var addSector = EditorChrome.IconButton("+", tip: "Add sector");
+        var removeSector = EditorChrome.IconButton("−", tip: "Remove sector");
+        var hideSector = EditorChrome.IconButton("V", tip: "Toggle sector visibility");
+        var soloSectorBtn = EditorChrome.IconButton("S", tip: "Solo sector");
         addSector.Click += (_, _) => AddSector();
         removeSector.Click += (_, _) => RemoveSector();
         hideSector.Click += (_, _) => ToggleSectorVisibility();
         soloSectorBtn.Click += (_, _) => ToggleSectorSolo();
-        ToolTip.SetTip(hideSector, "Toggle sector visibility");
-        ToolTip.SetTip(soloSectorBtn, "Solo sector");
 
-        var sectorHeader = EditorChrome.PanelHeader("Sectors");
+        var sectorHeader = EditorChrome.SectionHeader("Sectors");
         var sectorPanel = new DockPanel();
         DockPanel.SetDock(sectorHeader, Dock.Top);
         sectorPanel.Children.Add(sectorHeader);
@@ -628,7 +645,7 @@ public sealed class SceneWorkspacePanel : UserControl
             },
         };
 
-        var scriptHeader = EditorChrome.PanelHeader("Scripts");
+        var scriptHeader = EditorChrome.SectionHeader("Scripts");
         var scriptPanel = new DockPanel();
         DockPanel.SetDock(scriptHeader, Dock.Top);
         DockPanel.SetDock(_scriptHeaderRow, Dock.Top);
@@ -691,9 +708,10 @@ public sealed class SceneWorkspacePanel : UserControl
             }
         };
 
-        var add = EditorChrome.IconButton("+");
-        var remove = EditorChrome.IconButton("−");
+        var add = EditorChrome.IconButton("+", tip: $"Add {kind}");
+        var remove = EditorChrome.IconButton("−", tip: $"Remove selected {kind}");
         var dup = EditorChrome.ToolButton("Dup");
+        ToolTip.SetTip(dup, $"Duplicate selected {kind}");
         add.Click += (_, _) => AddEntity(kind);
         remove.Click += (_, _) => RemoveSelectedEntity();
         dup.Click += (_, _) => DuplicateSelectedEntity();
@@ -1336,12 +1354,13 @@ public sealed class SceneWorkspacePanel : UserControl
         if (!IsKeyboardFocusWithin || _changes is null)
             return;
 
+        var focus = EditorShellFocus.Resolve(this, sceneCanvasFocused: true);
         var chord = new KeyChord(
             e.Key.ToString(),
             e.KeyModifiers.HasFlag(KeyModifiers.Control),
             e.KeyModifiers.HasFlag(KeyModifiers.Shift),
             e.KeyModifiers.HasFlag(KeyModifiers.Alt));
-        if (_keymap.TryResolve(chord, out var command) &&
+        if (EditorCommandRouter.TryResolve(_keymap, chord, focus, out var command) &&
             TryHandleCommand(command))
         {
             e.Handled = true;
