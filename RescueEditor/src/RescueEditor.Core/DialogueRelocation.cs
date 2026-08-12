@@ -47,13 +47,43 @@ public static class DialogueRelocation
         return new("relocated", dest);
     }
 
-    public static IEnumerable<ScriptCommandData> AllCommands(SceneDatabase database) =>
-        database.Scenes
-            .SelectMany(scene => scene.Groups)
-            .SelectMany(group => group.Sectors)
-            .SelectMany(sector => sector.Stations)
-            .SelectMany(station => station.Commands)
-            .Concat(database.FunctionScripts.SelectMany(script => script.Commands));
+    public static IEnumerable<ScriptCommandData> AllCommands(SceneDatabase database)
+    {
+        foreach (var scene in database.Scenes)
+        {
+            foreach (var sector in scene.Groups.SelectMany(group => group.Sectors))
+            {
+                foreach (var station in sector.Stations)
+                {
+                    foreach (var command in station.Commands)
+                        yield return command;
+                }
+
+                foreach (var entity in sector.Lives.Concat(sector.Objects).Concat(sector.Effects))
+                {
+                    foreach (var slot in entity.Scripts)
+                    {
+                        foreach (var command in slot.Commands)
+                            yield return command;
+                    }
+                }
+
+                foreach (var entity in sector.Events)
+                {
+                    if (entity.EventScript is null)
+                        continue;
+                    foreach (var command in entity.EventScript.Commands)
+                        yield return command;
+                }
+            }
+        }
+
+        foreach (var script in database.FunctionScripts)
+        {
+            foreach (var command in script.Commands)
+                yield return command;
+        }
+    }
 
     private static void Retarget(
         MutableRom rom,

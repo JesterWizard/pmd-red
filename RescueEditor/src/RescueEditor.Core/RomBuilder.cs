@@ -94,21 +94,28 @@ public static class RomBuilder
                         }
                     }
 
-                    foreach (var station in sector.Stations)
+                    try
                     {
-                        if (station.ScriptOffset < 0)
-                            continue;
-                        var encoded = ScriptCodec.Encode(station.Commands);
-                        if (encoded.Length == 0 && station.ScriptCapacity == 0)
-                            continue;
-                        try
+                        if (sector.StationsListDirty)
+                            WriteStationList(rom, sector, report, clearDirty: true);
+                        else
                         {
-                            WriteStationScript(rom, station, report);
+                            foreach (var station in sector.Stations)
+                            {
+                                if (station.ScriptOffset < 0)
+                                    continue;
+                                var encoded = ScriptCodec.Encode(station.Commands);
+                                if (encoded.Length == 0 && station.ScriptCapacity == 0)
+                                    continue;
+                                WriteStationScript(rom, station, report);
+                            }
                         }
-                        catch (Exception exception)
-                        {
-                            report.Errors.Add($"Station '{station.Name}': {exception.Message}");
-                        }
+
+                        WriteEntityScripts(rom, sector, report, clearDirty: true);
+                    }
+                    catch (Exception exception)
+                    {
+                        report.Errors.Add($"Sector {sector.Group}/{sector.Sector} stations: {exception.Message}");
                     }
                 }
             }
@@ -160,21 +167,31 @@ public static class RomBuilder
             {
                 foreach (var sector in group.Sectors)
                 {
-                    foreach (var station in sector.Stations)
+                    try
                     {
-                        if (station.ScriptOffset < 0)
-                            continue;
-                        var encoded = ScriptCodec.Encode(station.Commands);
-                        if (encoded.Length == 0 && station.ScriptCapacity == 0)
-                            continue;
-                        try
+                        if (sector.StationsListDirty)
                         {
-                            WriteStationScript(rom, station, report);
+                            // Keep dirty so each WorkingRom sync (from source) rewrites new stations.
+                            WriteStationList(rom, sector, report, clearDirty: false);
                         }
-                        catch (Exception exception)
+                        else
                         {
-                            report.Errors.Add($"Station '{station.Name}': {exception.Message}");
+                            foreach (var station in sector.Stations)
+                            {
+                                if (station.ScriptOffset < 0)
+                                    continue;
+                                var encoded = ScriptCodec.Encode(station.Commands);
+                                if (encoded.Length == 0 && station.ScriptCapacity == 0)
+                                    continue;
+                                WriteStationScript(rom, station, report);
+                            }
                         }
+
+                        WriteEntityScripts(rom, sector, report, clearDirty: false);
+                    }
+                    catch (Exception exception)
+                    {
+                        report.Errors.Add($"Station list g{sector.Group}/s{sector.Sector}: {exception.Message}");
                     }
                 }
             }
@@ -300,6 +317,183 @@ public static class RomBuilder
         }
     }
 
+    private static void WriteStationList(
+        MutableRom rom,
+        SceneSector sector,
+        RomBuildReport report,
+        bool clearDirty)
+    {
+        if (sector.RomOffset < 0)
+            throw new InvalidOperationException("Sector has no ROM offset.");
+        if (sector.Stations.Count > SceneStations.MaxPerSector)
+        {
+            throw new InvalidOperationException(
+                $"Sector g{sector.Group}/s{sector.Sector} exceeds {SceneStations.MaxPerSector} stations.");
+        }
+
+        foreach (var station in sector.Stations)
+        {
+            EnsureStationName(rom, station, report);
+            // Allocate/write script before ScriptRef so zeroed pointer fields are not
+            // mistaken for free space by FreeSpaceAllocator.
+            WriteStationScript(rom, station, report);
+            EnsureStationScriptRef(rom, station, report);
+        }
+
+        var count = sector.Stations.Count;
+        var table = 0;
+        if (count > 0)
+        {
+            table = FreeSpaceAllocator.FindFreeSpace(rom, count * 4);
+            for (var i = 0; i < count; i++)
+                rom.WritePointer(table + i * 4, sector.Stations[i].RomOffset);
+        }
+
+        rom.WriteInt32(sector.RomOffset + 32, count);
+        if (count == 0)
+            rom.WriteUInt32(sector.RomOffset + 36, 0);
+        else
+            rom.WritePointer(sector.RomOffset + 36, table);
+
+        sector.StationListOffset = count == 0 ? -1 : table;
+        sector.HasStation = count > 0;
+        if (clearDirty)
+            sector.StationsListDirty = false;
+        report.Changes.Add($"Station list g{sector.Group}/s{sector.Sector} -> 0x{table:X} ({count})");
+    }
+
+    private static void EnsureStationName(MutableRom rom, ScriptRefData station, RomBuildReport report)
+    {
+        if (string.IsNullOrEmpty(station.Name))
+            return;
+
+        var nameBytes = System.Text.Encoding.ASCII.GetBytes(station.Name + "\0");
+        if (station.NameOffset < 0)
+        {
+            station.NameOffset = FreeSpaceAllocator.FindFreeSpace(rom, nameBytes.Length);
+            report.Changes.Add($"Allocated station name '{station.Name}' @ 0x{station.NameOffset:X}");
+        }
+
+        if (rom.IsRangeValid(station.NameOffset, nameBytes.Length))
+            rom.WriteBytes(station.NameOffset, nameBytes);
+    }
+
+    private static void EnsureStationScriptRef(MutableRom rom, ScriptRefData station, RomBuildReport report)
+    {
+        if (station.RomOffset < 0)
+        {
+            station.RomOffset = FreeSpaceAllocator.FindFreeSpace(rom, ScriptRefData.Size);
+            report.Changes.Add($"Allocated ScriptRef '{station.Name}' @ 0x{station.RomOffset:X}");
+        }
+
+        rom.WriteInt16(station.RomOffset, station.Id);
+        rom.WriteInt16(station.RomOffset + 2, station.Type);
+        if (station.NameOffset >= 0)
+            rom.WritePointer(station.RomOffset + 4, station.NameOffset);
+        else
+            rom.WriteUInt32(station.RomOffset + 4, 0);
+        if (station.ScriptOffset >= 0)
+            rom.WritePointer(station.RomOffset + 8, station.ScriptOffset);
+        else
+            rom.WriteUInt32(station.RomOffset + 8, 0);
+    }
+
+    private static void WriteEntityScripts(
+        MutableRom rom,
+        SceneSector sector,
+        RomBuildReport report,
+        bool clearDirty)
+    {
+        foreach (var entity in sector.Lives.Concat(sector.Objects).Concat(sector.Effects))
+        {
+            for (var slot = 0; slot < entity.Scripts.Count; slot++)
+            {
+                var script = entity.Scripts[slot];
+                if (!script.Dirty && script.Offset < 0)
+                    continue;
+                if (!script.Dirty && script.Commands.Count == 0)
+                    continue;
+                // Always rewrite dirty slots; also rewrite when offset exists and commands present
+                // for working-copy sync of edited entity dialogue.
+                if (!script.Dirty)
+                    continue;
+
+                try
+                {
+                    WriteEntityScriptSlot(rom, entity, slot, script, report);
+                    if (clearDirty)
+                        script.Dirty = false;
+                }
+                catch (Exception exception)
+                {
+                    report.Errors.Add(
+                        $"{entity.Kind} g{entity.Group}/s{entity.Sector}.{entity.Index} dlg{slot}: {exception.Message}");
+                }
+            }
+        }
+
+        foreach (var entity in sector.Events)
+        {
+            if (entity.EventScript is not { } eventScript)
+                continue;
+            // Event scripts reuse station writer via ScriptRef fields.
+            if (eventScript.ScriptOffset < 0)
+                continue;
+            try
+            {
+                WriteStationScript(rom, eventScript, report);
+            }
+            catch (Exception exception)
+            {
+                report.Errors.Add(
+                    $"Event g{entity.Group}/s{entity.Sector}.{entity.Index}: {exception.Message}");
+            }
+        }
+    }
+
+    private static void WriteEntityScriptSlot(
+        MutableRom rom,
+        SceneEntity entity,
+        int slot,
+        EntityScriptSlot script,
+        RomBuildReport report)
+    {
+        var encoded = ScriptCodec.Encode(script.Commands);
+        var capacity = script.Capacity > 0 ? script.Capacity : encoded.Length;
+        if (encoded.Length <= capacity && script.Offset >= 0)
+        {
+            if (encoded.Length > 0)
+                rom.WriteBytes(script.Offset, encoded);
+            if (encoded.Length < capacity)
+                rom.Fill(script.Offset + encoded.Length, capacity - encoded.Length, 0x00);
+            report.Changes.Add(
+                $"{entity.Kind} g{entity.Group}/s{entity.Sector}.{entity.Index} dlg{slot} @ 0x{script.Offset:X} (in-place)");
+            return;
+        }
+
+        var free = FreeSpaceAllocator.FindFreeSpace(rom, Math.Max(encoded.Length, 1));
+        if (encoded.Length > 0)
+            rom.WriteBytes(free, encoded);
+        script.Offset = free;
+        script.Capacity = encoded.Length;
+        if (slot < entity.ScriptOffsets.Length)
+            entity.ScriptOffsets[slot] = free;
+        if (entity.RomOffset >= 0)
+        {
+            var pointerField = entity.Kind switch
+            {
+                SceneEntityKind.Live or SceneEntityKind.Object => entity.RomOffset + 8 + slot * 4,
+                SceneEntityKind.Effect => entity.RomOffset + 8,
+                _ => -1,
+            };
+            if (pointerField >= 0)
+                rom.WritePointer(pointerField, free);
+        }
+
+        report.Changes.Add(
+            $"{entity.Kind} g{entity.Group}/s{entity.Sector}.{entity.Index} dlg{slot} relocated -> 0x{free:X}");
+    }
+
     private static void WriteStationScript(MutableRom rom, ScriptRefData station, RomBuildReport report)
     {
         var encoded = ScriptCodec.Encode(station.Commands);
@@ -313,6 +507,8 @@ public static class RomBuilder
                 rom.WriteBytes(station.ScriptOffset, encoded);
             if (encoded.Length < capacity)
                 rom.Fill(station.ScriptOffset + encoded.Length, capacity - encoded.Length, 0x00);
+            if (station.RomOffset >= 0)
+                rom.WritePointer(station.RomOffset + 8, station.ScriptOffset);
             report.Changes.Add($"Script '{station.Name}' @ 0x{station.ScriptOffset:X} (in-place)");
         }
         else

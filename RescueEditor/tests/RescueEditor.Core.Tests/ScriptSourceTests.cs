@@ -6,6 +6,144 @@ namespace RescueEditor.Core.Tests;
 public sealed class ScriptSourceTests
 {
     [Fact]
+    public void FormatsAsk3WithQuotedPrompt()
+    {
+        var command = new ScriptCommandData
+        {
+            Op = 0xD5,
+            ArgByte = 1,
+            ArgShort = 0,
+            Arg1 = -1,
+            ArgPtr = 0x08123456,
+        };
+        var dialogue = new Dictionary<int, DialogueString>
+        {
+            [0x123456] = new() { Offset = 0x123456, Size = 32, Text = "Activate the subevent?" },
+        };
+
+        var line = ScriptSource.FormatCommand(command, dialogue);
+
+        Assert.Equal("ASK3(1, 0, -1, \"Activate the subevent?\")", line);
+    }
+
+    [Fact]
+    public void ParsesAsk3RoundTrip()
+    {
+        var dialogue = new Dictionary<int, DialogueString>
+        {
+            [0x123456] = new() { Offset = 0x123456, Size = 32, Text = "Activate the subevent?" },
+        };
+        var parsed = ScriptSource.Parse(
+            "ASK3(1, 0, -1, \"Activate the subevent?\")",
+            dialogue);
+        Assert.True(parsed.Ok, string.Join("; ", parsed.Errors.Select(e => e.Message)));
+        var command = Assert.Single(Assert.Single(parsed.Sections).Commands);
+        Assert.Equal(0xD5, command.Command.Op);
+        Assert.Equal(1, command.Command.ArgByte);
+        Assert.Equal(0, command.Command.ArgShort);
+        Assert.Equal(-1, command.Command.Arg1);
+        Assert.Equal("Activate the subevent?", command.DialogueText);
+    }
+
+    [Fact]
+    public void FormatsSceneLiveScriptsWithPortraitDialogue()
+    {
+        var scene = new Scene { MapId = 191, Name = "Great Canyon" };
+        var group = new SceneGroup { Index = 0 };
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        var live = new SceneEntity
+        {
+            Kind = SceneEntityKind.Live,
+            TypeId = 0,
+            Index = 0,
+            Group = 0,
+            Sector = 0,
+            DisplayName = "Live 0",
+            ScriptOffsets = [-1, -1, -1, -1],
+        };
+        live.Scripts.Add(new EntityScriptSlot
+        {
+            Offset = 0x100,
+            Capacity = 48,
+            Commands =
+            {
+                new ScriptCommandData { Op = 0x2E, ArgByte = 3, ArgShort = 1, Arg1 = 0 },
+                new ScriptCommandData { Op = 0x34, ArgShort = 1, ArgPtr = 0x08123456 },
+                new ScriptCommandData { Op = 0x30 },
+                new ScriptCommandData { Op = 0xF0 },
+            },
+        });
+        live.ScriptOffsets[0] = 0x100;
+        sector.Lives.Add(live);
+        group.Sectors.Add(sector);
+        scene.Groups.Add(group);
+        var dialogue = new Dictionary<int, DialogueString>
+        {
+            [0x123456] = new() { Offset = 0x123456, Size = 64, Text = " This is the Great Canyon..." },
+        };
+
+        var text = SceneScriptSource.Format(scene, dialogue);
+
+        Assert.Contains("@live g0/s0 dlg0", text);
+        Assert.Contains("PORTRAIT(3, 1, 0)", text);
+        Assert.Contains("DIALOGUE(1, \" This is the Great Canyon...\")", text);
+        Assert.Contains("TEXTBOX_CLEAR()", text);
+    }
+
+    [Fact]
+    public void ApplyUpdatesLiveScriptCommands()
+    {
+        var scene = new Scene { MapId = 1, Name = "Toy" };
+        var group = new SceneGroup { Index = 0 };
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        var live = new SceneEntity
+        {
+            Kind = SceneEntityKind.Live,
+            TypeId = 0,
+            Index = 0,
+            Group = 0,
+            Sector = 0,
+            DisplayName = "Live 0",
+            ScriptOffsets = [0x100, -1, -1, -1],
+        };
+        var slot = new EntityScriptSlot
+        {
+            Offset = 0x100,
+            Capacity = 32,
+            Commands =
+            {
+                new ScriptCommandData { Op = 0x34, ArgShort = 1, ArgPtr = 0x08123456 },
+                new ScriptCommandData { Op = 0xEF },
+            },
+        };
+        live.Scripts.Add(slot);
+        sector.Lives.Add(live);
+        group.Sectors.Add(sector);
+        scene.Groups.Add(group);
+        var database = new SceneDatabase();
+        database.DialogueByOffset[0x123456] = new DialogueString
+        {
+            Offset = 0x123456,
+            Size = 64,
+            Text = "Old.",
+        };
+        var changes = new ChangeService();
+
+        var parsed = SceneScriptSource.Parse("""
+            @live g0/s0 dlg0
+            DIALOGUE(1, "New line.")
+            RET()
+            """, database.DialogueByOffset);
+        Assert.True(parsed.Ok, string.Join("; ", parsed.Errors.Select(e => e.Message)));
+        SceneEditing.ApplySceneScriptSource(changes, scene, parsed, database);
+
+        Assert.Equal(2, slot.Commands.Count);
+        Assert.Equal(0x34, slot.Commands[0].Op);
+        Assert.Equal("New line.", database.DialogueByOffset[0x123456].Text);
+        Assert.True(slot.Dirty);
+    }
+
+    [Fact]
     public void FormatsMsgNpcAsDialogueWithQuotedText()
     {
         var command = new ScriptCommandData

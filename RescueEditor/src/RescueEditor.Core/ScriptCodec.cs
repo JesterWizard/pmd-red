@@ -31,6 +31,7 @@ public static class ScriptOpcodeNames
         [0x2E] = "PORTRAIT",
         [0x2F] = "PORTRAIT_POS",
         [0x30] = "TEXTBOX_CLEAR",
+        [0x31] = "TEXTBOX_CLEAR2",
         [0x32] = "MSG_INSTANT",
         [0x33] = "MSG_QUIET",
         [0x34] = "MSG_NPC",
@@ -90,6 +91,8 @@ public static class ScriptOpcodeNames
         [0xDB] = "WAIT",
         [0xDC] = "WAIT_RANDOM",
         [0xDD] = "STOP_ANIMATION_ON_CURRENT_FRAME",
+        [0xE3] = "AWAIT_CUE",
+        [0xE4] = "ALERT_CUE",
         [0xE6] = "CALL_LABEL",
         [0xE7] = "JUMP_LABEL",
         [0xE8] = "CALL_SCRIPT",
@@ -138,6 +141,7 @@ public static class ScriptOpcodeNames
     private static readonly Dictionary<string, byte> Aliases = new(StringComparer.OrdinalIgnoreCase)
     {
         ["DIALOGUE"] = 0x34,
+        ["MSG_NPC"] = 0x34,
         ["MOVE_TO_COORDS"] = 0x6A,
     };
 

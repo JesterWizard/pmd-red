@@ -325,6 +325,62 @@ public static class SceneEditing
         return sector;
     }
 
+    /// <summary>
+    /// Appends an empty station script (RET stub) to the sector. Max <see cref="SceneStations.MaxPerSector"/>.
+    /// Clears <see cref="Scene.ScriptSourceText"/> so the script editor regenerates @station headers.
+    /// </summary>
+    public static ScriptRefData AddStation(
+        ChangeService changes,
+        Scene scene,
+        SceneSector sector,
+        string? name = null)
+    {
+        if (sector.Stations.Count >= SceneStations.MaxPerSector)
+        {
+            throw new InvalidOperationException(
+                $"Sector g{sector.Group}/s{sector.Sector} already has {SceneStations.MaxPerSector} stations.");
+        }
+
+        var station = new ScriptRefData
+        {
+            Name = string.IsNullOrWhiteSpace(name) ? string.Empty : name.Trim(),
+            ScriptOffset = -1,
+            RomOffset = -1,
+            NameOffset = -1,
+            Commands = { new ScriptCommandData { Op = 0xEF } },
+        };
+        var oldSource = scene.ScriptSourceText;
+        changes.Execute(
+            $"Add station g{sector.Group}/s{sector.Sector}",
+            apply: () =>
+            {
+                sector.Stations.Add(station);
+                sector.HasStation = true;
+                sector.StationsListDirty = true;
+                scene.ScriptSourceText = null;
+            },
+            revert: () =>
+            {
+                sector.Stations.Remove(station);
+                sector.HasStation = sector.Stations.Count > 0;
+                sector.StationsListDirty = true;
+                scene.ScriptSourceText = oldSource;
+            },
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "station.add",
+                Target = $"sector:{sector.Group}:{sector.Sector}",
+                Values =
+                {
+                    ["group"] = sector.Group.ToString(),
+                    ["sector"] = sector.Sector.ToString(),
+                    ["index"] = sector.Stations.Count.ToString(),
+                },
+            });
+        return station;
+    }
+
     public static void RemoveSector(ChangeService changes, SceneGroup group, SceneSector sector)
     {
         if (group.Sectors.Count <= 1)
@@ -414,18 +470,46 @@ public static class SceneEditing
         }
 
         var oldSource = scene.ScriptSourceText;
-        var replacements = new List<(ScriptRefData Station, List<ScriptCommandData> Old, List<ScriptCommandData> Next)>();
+        var replacements = new List<(List<ScriptCommandData> Target, List<ScriptCommandData> Old, List<ScriptCommandData> Next, Action? MarkDirty)>();
         var dialogueEdits = new List<(DialogueString Dialogue, string OldText, string NewText, bool OldDirty)>();
         var pendingDialogue = new List<(int Offset, DialogueString Dialogue)>();
 
         foreach (var section in parsed.Sections)
         {
-            if (section.Kind != "station")
+            List<ScriptCommandData>? target = null;
+            Action? markDirty = null;
+            if (section.Kind == "station")
+            {
+                var station = FindStation(scene, section.Group, section.Sector, section.Index, section.Name)
+                    ?? throw new InvalidOperationException(
+                        $"No station '{section.Name}' at g{section.Group}/s{section.Sector}.");
+                target = station.Commands;
+            }
+            else if (section.Kind is "live" or "object" or "effect")
+            {
+                var slot = FindEntityScript(scene, section)
+                    ?? throw new InvalidOperationException(
+                        $"No {section.Kind} script at g{section.Group}/s{section.Sector} dlg{section.ScriptSlot}.");
+                target = slot.Commands;
+                markDirty = () => slot.Dirty = true;
+            }
+            else if (section.Kind == "event")
+            {
+                var eventScript = FindEventScript(scene, section.Group, section.Sector, section.Index, section.Name)
+                    ?? throw new InvalidOperationException(
+                        $"No event script '{section.Name}' at g{section.Group}/s{section.Sector}.");
+                target = eventScript.Commands;
+            }
+            else if (section.Commands.Count == 0)
+            {
                 continue;
-            var station = FindStation(scene, section.Group, section.Sector, section.Index, section.Name)
-                ?? throw new InvalidOperationException(
-                    $"No station '{section.Name}' at g{section.Group}/s{section.Sector}.");
-            var old = station.Commands.ToList();
+            }
+            else
+            {
+                throw new InvalidOperationException($"Unsupported script section kind '{section.Kind}'.");
+            }
+
+            var old = target.ToList();
             var next = new List<ScriptCommandData>(section.Commands.Count);
             var claimedPtrs = new HashSet<uint>();
             for (var i = 0; i < section.Commands.Count; i++)
@@ -466,7 +550,7 @@ public static class SceneEditing
                 next.Add(command);
             }
 
-            replacements.Add((station, old, next));
+            replacements.Add((target, old, next, markDirty));
         }
 
         if (replacements.Count == 0 && dialogueEdits.Count == 0 && pendingDialogue.Count == 0 &&
@@ -479,8 +563,9 @@ public static class SceneEditing
             {
                 foreach (var replacement in replacements)
                 {
-                    replacement.Station.Commands.Clear();
-                    replacement.Station.Commands.AddRange(replacement.Next);
+                    replacement.Target.Clear();
+                    replacement.Target.AddRange(replacement.Next);
+                    replacement.MarkDirty?.Invoke();
                 }
                 foreach (var edit in dialogueEdits)
                 {
@@ -499,8 +584,9 @@ public static class SceneEditing
             {
                 foreach (var replacement in replacements)
                 {
-                    replacement.Station.Commands.Clear();
-                    replacement.Station.Commands.AddRange(replacement.Old);
+                    replacement.Target.Clear();
+                    replacement.Target.AddRange(replacement.Old);
+                    replacement.MarkDirty?.Invoke();
                 }
                 foreach (var edit in dialogueEdits)
                 {
@@ -519,8 +605,52 @@ public static class SceneEditing
                 Id = Guid.NewGuid().ToString("N"),
                 Kind = "script.source",
                 Target = scene.Name,
-                Description = $"Update {replacements.Count} station script(s)",
+                Description = $"Update {replacements.Count} script section(s)",
             });
+    }
+
+    private static EntityScriptSlot? FindEntityScript(Scene scene, ScriptSourceSection section)
+    {
+        var kind = section.Kind switch
+        {
+            "live" => SceneEntityKind.Live,
+            "object" => SceneEntityKind.Object,
+            "effect" => SceneEntityKind.Effect,
+            _ => (SceneEntityKind?)null,
+        };
+        if (kind is null)
+            return null;
+        var sceneGroup = scene.Groups.ElementAtOrDefault(section.Group);
+        var sceneSector = sceneGroup?.Sectors.FirstOrDefault(item => item.Sector == section.Sector)
+            ?? sceneGroup?.Sectors.ElementAtOrDefault(section.Sector);
+        if (sceneSector is null)
+            return null;
+        var list = sceneSector.ListFor(kind.Value);
+        var entity = section.Index >= 0 && section.Index < list.Count
+            ? list[section.Index]
+            : list.FirstOrDefault();
+        return entity?.ScriptSlot(section.ScriptSlot);
+    }
+
+    private static ScriptRefData? FindEventScript(Scene scene, int group, int sector, int index, string name)
+    {
+        var sceneGroup = scene.Groups.ElementAtOrDefault(group);
+        var sceneSector = sceneGroup?.Sectors.FirstOrDefault(item => item.Sector == sector)
+            ?? sceneGroup?.Sectors.ElementAtOrDefault(sector);
+        var events = sceneSector?.Events;
+        if (events is null || events.Count == 0)
+            return null;
+        if (!string.IsNullOrEmpty(name))
+        {
+            var named = events.FirstOrDefault(item =>
+                item.EventScript is not null &&
+                string.Equals(item.EventScript.Name, name, StringComparison.Ordinal));
+            if (named?.EventScript is not null)
+                return named.EventScript;
+        }
+
+        var entity = index >= 0 && index < events.Count ? events[index] : events[0];
+        return entity.EventScript;
     }
 
     private static ScriptRefData? FindStation(Scene scene, int group, int sector, int index, string name)

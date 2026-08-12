@@ -14,11 +14,13 @@ public sealed class ScriptSourceCommand
 
 public sealed class ScriptSourceSection
 {
-    public string Kind { get; init; } = "commands";
-    public int Group { get; init; } = -1;
-    public int Sector { get; init; } = -1;
-    public int Index { get; init; }
-    public string Name { get; init; } = string.Empty;
+    public string Kind { get; set; } = "commands";
+    public int Group { get; set; } = -1;
+    public int Sector { get; set; } = -1;
+    public int Index { get; set; }
+    /// <summary>Dialogue script slot for live/object/effect (dlg0..dlg3).</summary>
+    public int ScriptSlot { get; set; }
+    public string Name { get; set; } = string.Empty;
     public List<ScriptSourceCommand> Commands { get; } = new();
 }
 
@@ -72,6 +74,7 @@ public static class ScriptSource
         [0x2E] = new("PORTRAIT", [Slot.Byte, Slot.Short, Slot.Arg1]),
         [0x2F] = new("PORTRAIT_POS", [Slot.Short, Slot.Arg1, Slot.Arg2]),
         [0x30] = new("TEXTBOX_CLEAR", []),
+        [0x31] = new("TEXTBOX_CLEAR2", []),
         [0x32] = new("MSG_INSTANT", [Slot.String], DefaultShort: -1),
         [0x33] = new("MSG_QUIET", [Slot.Short, Slot.String]),
         [0x34] = new("DIALOGUE", [Slot.Short, Slot.String]),
@@ -92,15 +95,26 @@ public static class ScriptSource
         [0x6B] = new("WALK_GRID", [Slot.Short, Slot.Arg1]),
         [0x7A] = new("WALK_DIRECT", [Slot.Short, Slot.Arg1]),
         [0x86] = new("CAMERA_PAN", [Slot.Short, Slot.Arg1]),
+        [0x8B] = new("SET_DIR_WAIT", [Slot.Byte, Slot.Short]),
+        [0x91] = new("ROTATE_TO", [Slot.Byte, Slot.Short, Slot.Arg1]),
         [0x98] = new("CAMERA_INIT_PAN", []),
         [0x99] = new("CAMERA_END_PAN", []),
         [0xCF] = new("MSG_VAR", [Slot.Byte, Slot.Short, Slot.Arg1]),
         [0xD0] = new("VARIANT", [Slot.Short, Slot.String]),
         [0xD1] = new("VARIANT_DEFAULT", [Slot.String]),
+        [0xD2] = new("ASK_DEBUG", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.String]),
+        [0xD3] = new("ASK1", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.String]),
+        [0xD4] = new("ASK2", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.String]),
+        [0xD5] = new("ASK3", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.String]),
+        [0xD6] = new("ASK1_VAR", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.Arg2]),
+        [0xD7] = new("ASK2_VAR", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.Arg2]),
+        [0xD8] = new("ASK3_VAR", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.Arg2]),
         [0xD9] = new("CHOICE", [Slot.Short, Slot.String]),
         [0xDB] = new("WAIT", [Slot.Short]),
         [0xDC] = new("WAIT_RANDOM", [Slot.Short, Slot.Arg1]),
         [0xDD] = new("STOP_ANIMATION_ON_CURRENT_FRAME", []),
+        [0xE3] = new("AWAIT_CUE", [Slot.Short]),
+        [0xE4] = new("ALERT_CUE", [Slot.Short]),
         [0xE6] = new("CALL_LABEL", [Slot.Short]),
         [0xE7] = new("JUMP_LABEL", [Slot.Short]),
         [0xE8] = new("CALL_SCRIPT", [Slot.Short]),
@@ -114,8 +128,9 @@ public static class ScriptSource
         [0xF4] = new("LABEL", [Slot.Short]),
     };
 
-    private static readonly Regex StationHeader =
-        new(@"^@station\s+g(\d+)/s(\d+)(?:\.(\d+))?(?:\s+(\S+))?\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+    private static readonly Regex SectionHeader =
+        new(@"^@(station|live|object|effect|event)\s+g(\d+)/s(\d+)(?:\.(\d+))?(?:\s+dlg(\d+))?(?:\s+(\S+))?\s*$",
+            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
     public static string FormatCommand(
         ScriptCommandData command,
@@ -142,19 +157,22 @@ public static class ScriptSource
             if (trimmed.Length == 0)
                 continue;
 
-            var header = StationHeader.Match(trimmed);
+            var header = SectionHeader.Match(trimmed);
             if (header.Success)
             {
                 FlushSection(result, current);
                 current = new ScriptSourceSection
                 {
-                    Kind = "station",
-                    Group = int.Parse(header.Groups[1].Value, CultureInfo.InvariantCulture),
-                    Sector = int.Parse(header.Groups[2].Value, CultureInfo.InvariantCulture),
-                    Index = header.Groups[3].Success
-                        ? int.Parse(header.Groups[3].Value, CultureInfo.InvariantCulture)
+                    Kind = header.Groups[1].Value.ToLowerInvariant(),
+                    Group = int.Parse(header.Groups[2].Value, CultureInfo.InvariantCulture),
+                    Sector = int.Parse(header.Groups[3].Value, CultureInfo.InvariantCulture),
+                    Index = header.Groups[4].Success
+                        ? int.Parse(header.Groups[4].Value, CultureInfo.InvariantCulture)
                         : 0,
-                    Name = header.Groups[4].Success ? header.Groups[4].Value : string.Empty,
+                    ScriptSlot = header.Groups[5].Success
+                        ? int.Parse(header.Groups[5].Value, CultureInfo.InvariantCulture)
+                        : 0,
+                    Name = header.Groups[6].Success ? header.Groups[6].Value : string.Empty,
                 };
                 continue;
             }
@@ -567,15 +585,29 @@ public static class SceneScriptSource
                 foreach (var station in sector.Stations)
                 {
                     any = true;
-                    if (builder.Length > 0 && builder[^1] != '\n')
-                        builder.AppendLine();
-                    if (any && builder.Length > 0)
-                        builder.AppendLine();
+                    AppendBlankLine(builder);
                     var index = sector.Stations.IndexOf(station);
                     var indexSuffix = sector.Stations.Count > 1 ? $".{index}" : "";
                     var nameSuffix = string.IsNullOrEmpty(station.Name) ? "" : $" {station.Name}";
                     builder.AppendLine($"@station g{sector.Group}/s{sector.Sector}{indexSuffix}{nameSuffix}");
                     foreach (var command in station.Commands)
+                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue));
+                }
+
+                AppendEntityScripts(builder, sector.Lives, "live", dialogue, ref any);
+                AppendEntityScripts(builder, sector.Objects, "object", dialogue, ref any);
+                AppendEntityScripts(builder, sector.Effects, "effect", dialogue, ref any);
+
+                foreach (var entity in sector.Events)
+                {
+                    if (entity.EventScript is not { Commands.Count: > 0 } eventScript)
+                        continue;
+                    any = true;
+                    AppendBlankLine(builder);
+                    var indexSuffix = sector.Events.Count > 1 ? $".{entity.Index}" : "";
+                    var nameSuffix = string.IsNullOrEmpty(eventScript.Name) ? "" : $" {eventScript.Name}";
+                    builder.AppendLine($"@event g{sector.Group}/s{sector.Sector}{indexSuffix}{nameSuffix}");
+                    foreach (var command in eventScript.Commands)
                         builder.AppendLine(ScriptSource.FormatCommand(command, dialogue));
                 }
             }
@@ -585,10 +617,43 @@ public static class SceneScriptSource
         {
             if (builder.Length > 0)
                 builder.AppendLine();
-            builder.AppendLine("# (no station scripts)");
+            builder.AppendLine("# (no station or entity scripts)");
         }
 
         return builder.ToString().TrimEnd() + "\n";
+    }
+
+    private static void AppendEntityScripts(
+        StringBuilder builder,
+        IReadOnlyList<SceneEntity> entities,
+        string kind,
+        IReadOnlyDictionary<int, DialogueString>? dialogue,
+        ref bool any)
+    {
+        foreach (var entity in entities)
+        {
+            for (var slot = 0; slot < entity.Scripts.Count; slot++)
+            {
+                var script = entity.Scripts[slot];
+                if (script.Commands.Count == 0)
+                    continue;
+                any = true;
+                AppendBlankLine(builder);
+                var indexSuffix = entities.Count > 1 ? $".{entity.Index}" : "";
+                builder.AppendLine($"@{kind} g{entity.Group}/s{entity.Sector}{indexSuffix} dlg{slot}");
+                foreach (var command in script.Commands)
+                    builder.AppendLine(ScriptSource.FormatCommand(command, dialogue));
+            }
+        }
+    }
+
+    private static void AppendBlankLine(StringBuilder builder)
+    {
+        if (builder.Length == 0)
+            return;
+        if (builder[^1] != '\n')
+            builder.AppendLine();
+        builder.AppendLine();
     }
 
     public static ScriptSourceParseResult Parse(

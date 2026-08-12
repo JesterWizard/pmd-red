@@ -304,15 +304,49 @@ public static class SceneGraphParser
             {
                 entity.ScriptOffsets = new int[4];
                 for (var slot = 0; slot < 4; slot++)
-                    entity.ScriptOffsets[slot] = rom.ReadPointerOffset(entryOffset + 8 + slot * 4);
+                {
+                    var scriptOffset = rom.ReadPointerOffset(entryOffset + 8 + slot * 4);
+                    entity.ScriptOffsets[slot] = scriptOffset;
+                    if (scriptOffset >= 0)
+                    {
+                        var commands = ScriptCodec.ReadScript(rom, scriptOffset);
+                        entity.Scripts.Add(new EntityScriptSlot
+                        {
+                            Offset = scriptOffset,
+                            Capacity = commands.Count * ScriptCommandData.Size,
+                            Commands = commands,
+                        });
+                    }
+                    else
+                    {
+                        entity.Scripts.Add(new EntityScriptSlot());
+                    }
+                }
             }
             else if (kind == SceneEntityKind.Effect)
             {
-                entity.ScriptOffsets = [rom.ReadPointerOffset(entryOffset + 8)];
+                var scriptOffset = rom.ReadPointerOffset(entryOffset + 8);
+                entity.ScriptOffsets = [scriptOffset];
+                if (scriptOffset >= 0)
+                {
+                    var commands = ScriptCodec.ReadScript(rom, scriptOffset);
+                    entity.Scripts.Add(new EntityScriptSlot
+                    {
+                        Offset = scriptOffset,
+                        Capacity = commands.Count * ScriptCommandData.Size,
+                        Commands = commands,
+                    });
+                }
+                else
+                {
+                    entity.Scripts.Add(new EntityScriptSlot());
+                }
             }
             else
             {
                 entity.EventScriptRefOffset = rom.ReadPointerOffset(entryOffset + 8);
+                if (entity.EventScriptRefOffset >= 0)
+                    entity.EventScript = ScriptRefData.Read(rom, entity.EventScriptRefOffset, loadCommands: true);
             }
 
             destination.Add(entity);
@@ -328,11 +362,14 @@ public static class SceneGraphParser
 
             foreach (var entity in sector.Lives.Concat(sector.Objects).Concat(sector.Effects))
             {
-                foreach (var scriptOffset in entity.ScriptOffsets.Where(offset => offset >= 0))
-                {
-                    var commands = ScriptCodec.ReadScript(rom, scriptOffset);
-                    CollectDialogueFromCommands(rom, commands, database, charmap);
-                }
+                foreach (var slot in entity.Scripts.Where(item => item.Commands.Count > 0))
+                    CollectDialogueFromCommands(rom, slot.Commands, database, charmap);
+            }
+
+            foreach (var entity in sector.Events)
+            {
+                if (entity.EventScript is { Commands.Count: > 0 } eventScript)
+                    CollectDialogueFromCommands(rom, eventScript.Commands, database, charmap);
             }
         }
     }

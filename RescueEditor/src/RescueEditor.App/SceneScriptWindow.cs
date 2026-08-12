@@ -24,7 +24,13 @@ public sealed class SceneScriptWindow : Window
 
     public event EventHandler? Applied;
 
-    public SceneScriptWindow(Scene scene, ChangeService changes, SceneDatabase? database)
+    public SceneScriptWindow(
+        Scene scene,
+        ChangeService changes,
+        SceneDatabase? database,
+        int? focusGroup = null,
+        int? focusSector = null,
+        int? focusStationIndex = null)
     {
         _scene = scene;
         _changes = changes;
@@ -79,7 +85,7 @@ public sealed class SceneScriptWindow : Window
             Foreground = EditorTheme.TextMutedBrush,
             TextWrapping = TextWrapping.Wrap,
             VerticalAlignment = VerticalAlignment.Center,
-            Text = "DIALOGUE(speaker, \"text\") · MOVE_TO_COORDS(speed, x, y) · Ctrl+/ comments · Ctrl+S Apply.",
+            Text = "DIALOGUE / PORTRAIT / ASK3 / VARIANT · @live dlg slots · Ctrl+/ comments · Ctrl+S Apply.",
         };
 
         var apply = EditorChrome.ToolButton("Apply", primary: true);
@@ -144,6 +150,20 @@ public sealed class SceneScriptWindow : Window
         KeyDown += OnKeyDown;
         _editor.KeyDown += OnKeyDown;
         _editor.TextArea.KeyDown += OnKeyDown;
+
+        if (focusGroup is int group && focusSector is int sector && focusStationIndex is int index)
+            Opened += (_, _) => FocusStation(group, sector, index);
+    }
+
+    public void FocusStation(int group, int sector, int stationIndex)
+    {
+        var line = SceneStations.FindStationHeaderLine(_editor.Text ?? string.Empty, group, sector, stationIndex);
+        if (line < 1)
+            return;
+        var documentLine = _editor.Document.GetLineByNumber(Math.Min(line, _editor.Document.LineCount));
+        _editor.CaretOffset = documentLine.Offset;
+        _editor.ScrollToLine(line);
+        _editor.TextArea.Focus();
     }
 
     private void OnKeyDown(object? sender, KeyEventArgs e)
@@ -225,9 +245,7 @@ public sealed class SceneScriptWindow : Window
 
     private void RefreshCounts()
     {
-        var stations = _scene.Groups.SelectMany(group => group.Sectors).SelectMany(sector => sector.Stations).ToList();
-        var commands = stations.Sum(station => station.Commands.Count);
-        _counts.Text = $"{stations.Count} stations · {commands} commands";
+        _counts.Text = SceneStations.Summarize(_scene);
     }
 
     private sealed class ScriptColorizingTransformer : DocumentColorizingTransformer

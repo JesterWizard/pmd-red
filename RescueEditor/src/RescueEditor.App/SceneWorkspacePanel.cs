@@ -74,7 +74,10 @@ public sealed class SceneWorkspacePanel : UserControl
     private Control? _linksRight;
     private Control? _scriptRight;
     private TextBlock? _scriptSummary;
+    private ListBox? _scriptStationList;
+    private TextBlock? _scriptEmptyHint;
     private string _inspectorMode = "Scene";
+    private SceneStationEntry? _selectedScriptStation;
 
     private RomImage? _rom;
     private WorkingRom? _workingRom;
@@ -774,37 +777,101 @@ public sealed class SceneWorkspacePanel : UserControl
     {
         _scriptSummary = new TextBlock
         {
-            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, EditorTheme.Space3),
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, EditorTheme.Space2),
             TextWrapping = TextWrapping.Wrap,
             FontSize = EditorTheme.FontLabel,
             Foreground = EditorTheme.TextSecondaryBrush,
             LineHeight = 16,
         };
 
+        _scriptStationList = new ListBox();
+        EditorChrome.StyleList(_scriptStationList);
+        _scriptStationList.SelectionChanged += (_, _) =>
+        {
+            if (_suppressPropertyEvents)
+                return;
+            if (_scriptStationList.SelectedItem is ScriptStationListItem item)
+            {
+                _selectedScriptStation = item.Entry;
+                _selectedStation = item.Entry.Station;
+            }
+        };
+        _scriptStationList.DoubleTapped += (_, _) =>
+        {
+            if (_scriptStationList.SelectedItem is ScriptStationListItem item)
+                OpenScriptEditor(item.Entry);
+        };
+
+        _scriptEmptyHint = new TextBlock
+        {
+            Text = "No station scripts in this scene. Add one for the current map sector, or open the full editor.",
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
+            TextWrapping = TextWrapping.Wrap,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextMutedBrush,
+            IsVisible = false,
+        };
+
+        var add = EditorChrome.IconButton("+", tip: "Add station script to current sector");
+        add.Click += (_, _) => AddStationScript();
         var open = EditorChrome.ToolButton("Open script editor", primary: true);
-        open.HorizontalAlignment = HorizontalAlignment.Left;
-        open.Margin = new Thickness(EditorTheme.Space4, 0, EditorTheme.Space4, EditorTheme.Space3);
-        open.Click += (_, _) => OpenScriptEditor();
+        open.Click += (_, _) =>
+        {
+            if (_scriptStationList.SelectedItem is ScriptStationListItem item)
+                OpenScriptEditor(item.Entry);
+            else
+                OpenScriptEditor();
+        };
+
+        var actions = new Border
+        {
+            Background = EditorTheme.PanelBgRaisedBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 1, 0, 0),
+            Padding = new Thickness(EditorTheme.Space2, EditorTheme.Space1),
+            Child = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                Spacing = EditorTheme.Space2,
+                Children = { add, open },
+            },
+        };
 
         var hint = new TextBlock
         {
-            Text = "Station scripts as DIALOGUE / MOVE_TO_COORDS source. Add or delete lines, then Apply.",
-            Margin = new Thickness(EditorTheme.Space4, 0, EditorTheme.Space4, EditorTheme.Space3),
+            Text = "Select a station and open the editor to jump to its @station section. Max 64 stations per sector.",
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, EditorTheme.Space3),
             TextWrapping = TextWrapping.Wrap,
             FontSize = EditorTheme.FontMeta,
             Foreground = EditorTheme.TextMutedBrush,
         };
 
-        return new StackPanel
+        var listHost = new Panel();
+        listHost.Children.Add(_scriptStationList);
+        listHost.Children.Add(_scriptEmptyHint);
+
+        var header = new StackPanel
         {
             Children =
             {
                 EditorChrome.SectionHeader("Script"),
                 _scriptSummary,
-                open,
-                hint,
             },
         };
+
+        var panel = new Grid
+        {
+            RowDefinitions = new RowDefinitions("Auto,*,Auto,Auto"),
+        };
+        panel.Children.Add(header);
+        Grid.SetRow(header, 0);
+        panel.Children.Add(listHost);
+        Grid.SetRow(listHost, 1);
+        panel.Children.Add(actions);
+        Grid.SetRow(actions, 2);
+        panel.Children.Add(hint);
+        Grid.SetRow(hint, 3);
+        return panel;
     }
 
     private void RefreshEntityListForActiveTab()
@@ -1006,17 +1073,81 @@ public sealed class SceneWorkspacePanel : UserControl
 
     private void RefreshScriptTab()
     {
-        if (_scriptSummary is null)
+        if (_scriptSummary is null || _scriptStationList is null)
             return;
         if (_scene is null)
         {
             _scriptSummary.Text = "Load a scene to edit its station scripts.";
+            _scriptStationList.ItemsSource = Array.Empty<ScriptStationListItem>();
+            if (_scriptEmptyHint is not null)
+            {
+                _scriptEmptyHint.IsVisible = false;
+                _scriptStationList.IsVisible = true;
+            }
             return;
         }
 
-        var stations = _scene.Groups.SelectMany(group => group.Sectors).SelectMany(sector => sector.Stations).ToList();
-        var commands = stations.Sum(station => station.Commands.Count);
-        _scriptSummary.Text = $"{_scene.Name}\n{stations.Count} stations · {commands} commands";
+        var entries = SceneStations.Enumerate(_scene);
+        _scriptSummary.Text = $"{_scene.Name}\n{SceneStations.Summarize(_scene)}";
+        _suppressPropertyEvents = true;
+        try
+        {
+            _scriptStationList.ItemsSource = entries.Select(entry => new ScriptStationListItem(entry)).ToArray();
+            if (_selectedScriptStation is { } selected)
+            {
+                var matchIndex = -1;
+                for (var i = 0; i < entries.Count; i++)
+                {
+                    var entry = entries[i];
+                    if (entry.Group == selected.Group &&
+                        entry.Sector == selected.Sector &&
+                        entry.StationIndex == selected.StationIndex)
+                    {
+                        matchIndex = i;
+                        _selectedScriptStation = entry;
+                        break;
+                    }
+                }
+                _scriptStationList.SelectedIndex = matchIndex;
+            }
+        }
+        finally
+        {
+            _suppressPropertyEvents = false;
+        }
+        if (_scriptEmptyHint is not null)
+        {
+            _scriptEmptyHint.IsVisible = entries.Count == 0;
+            _scriptStationList.IsVisible = entries.Count > 0;
+        }
+    }
+
+    private void AddStationScript()
+    {
+        if (_scene is null || _changes is null)
+            return;
+        var sector = CurrentSector();
+        if (sector is null)
+        {
+            _status.Text = "Select a map sector before adding a station script.";
+            return;
+        }
+
+        try
+        {
+            var added = SceneEditing.AddStation(_changes, _scene, sector);
+            var entries = SceneStations.Enumerate(_scene);
+            _selectedScriptStation = entries.FirstOrDefault(entry => entry.Station == added);
+            _selectedStation = added;
+            SyncWorkingRom();
+            RefreshAll();
+            DirtyChanged?.Invoke(this, EventArgs.Empty);
+            _status.Text = $"Added station {_selectedScriptStation?.Identity ?? "g?/s?"} (RET stub).";
+        }
+        catch (InvalidOperationException exception)
+        {
+            _status.Text = exception.Message;
+        }
     }
 
     private void RefreshMapInfo()
@@ -1503,13 +1634,15 @@ public sealed class SceneWorkspacePanel : UserControl
             play.Show();
     }
 
-    private async void OpenScriptEditor()
+    private async void OpenScriptEditor(SceneStationEntry? focus = null)
     {
         if (_scene is null || _changes is null)
             return;
 
         var owner = TopLevel.GetTopLevel(this) as Window;
-        var editor = new SceneScriptWindow(_scene, _changes, _database);
+        var editor = focus is { } entry
+            ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex)
+            : new SceneScriptWindow(_scene, _changes, _database);
         editor.Applied += (_, _) =>
         {
             SyncWorkingRom();
@@ -1579,6 +1712,11 @@ public sealed class SceneWorkspacePanel : UserControl
     private sealed record SectorListItem(int Group, int Sector, string Title, SceneSector Data)
     {
         public override string ToString() => Title;
+    }
+
+    private sealed record ScriptStationListItem(SceneStationEntry Entry)
+    {
+        public override string ToString() => Entry.DisplayLabel;
     }
 
     private sealed record ScriptLineItem(

@@ -119,6 +119,15 @@ public sealed class ScriptRefData
     }
 }
 
+public sealed class EntityScriptSlot
+{
+    public int Offset { get; set; } = -1;
+    public int Capacity { get; set; }
+    public List<ScriptCommandData> Commands { get; set; } = new();
+    /// <summary>True when commands changed and the ROM bytecode needs a rewrite.</summary>
+    public bool Dirty { get; set; }
+}
+
 public sealed class SceneEntity
 {
     public required SceneEntityKind Kind { get; init; }
@@ -132,7 +141,11 @@ public sealed class SceneEntity
     public int Sector { get; set; }
     public int Index { get; set; }
     public int[] ScriptOffsets { get; set; } = [];
+    /// <summary>Loaded script bytecode for each lives/objects/effects dlg slot (parallel to ScriptOffsets).</summary>
+    public List<EntityScriptSlot> Scripts { get; } = new();
     public int EventScriptRefOffset { get; set; } = -1;
+    /// <summary>Loaded ScriptRef for event entities (when EventScriptRefOffset is valid).</summary>
+    public ScriptRefData? EventScript { get; set; }
     public string DisplayName { get; set; } = string.Empty;
     public byte[] RawBytes { get; set; } = [];
     /// <summary>True when this entity was added/moved in a rewritten list and needs ROM allocation.</summary>
@@ -152,6 +165,9 @@ public sealed class SceneEntity
         SceneEntityKind.Live or SceneEntityKind.Object => 24,
         _ => 12,
     };
+
+    public EntityScriptSlot? ScriptSlot(int dlgIndex) =>
+        dlgIndex >= 0 && dlgIndex < Scripts.Count ? Scripts[dlgIndex] : null;
 }
 
 public sealed class SceneSector
@@ -166,6 +182,8 @@ public sealed class SceneSector
     public List<ScriptRefData> Stations { get; } = new();
     public bool HasStation { get; set; }
     public int StationListOffset { get; set; } = -1;
+    /// <summary>When true, the sector's station pointer table needs a ROM rewrite.</summary>
+    public bool StationsListDirty { get; set; }
     public bool LivesListDirty { get; set; }
     public bool ObjectsListDirty { get; set; }
     public bool EffectsListDirty { get; set; }
