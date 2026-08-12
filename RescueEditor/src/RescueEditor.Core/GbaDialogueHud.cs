@@ -321,8 +321,24 @@ public static class GbaDialogueHud
 
             while (DialogueRuns.PlainText(remaining).Length > 0 && lineIndex < maxLines)
             {
+                var centered = DialogueRuns.IsCentered(remaining);
+                var moveX = DialogueRuns.LeadingMoveX(remaining);
                 var (chunk, remainder) = DialogueRuns.TakeWidth(font, remaining, widthBudget);
-                DrawRuns(image, font, chunk, x, cy, onBackground: false);
+                if (centered)
+                {
+                    DrawCenteredRuns(
+                        image, font, chunk,
+                        BoxX + BoxW / 2, cy, onBackground: false);
+                }
+                else if (moveX >= 0)
+                {
+                    var absX = Math.Clamp(BoxX + moveX, bodyLeft, BoxX + BoxW - TextRightPad);
+                    DrawRuns(image, font, chunk, absX, cy, onBackground: false);
+                }
+                else
+                {
+                    DrawRuns(image, font, chunk, x, cy, onBackground: false);
+                }
                 remaining = remainder.TrimStart();
                 cy += LineHeight;
                 lineIndex++;

@@ -24,18 +24,30 @@ public sealed class DialogueFormatContext
         short playerSpecies = 0,
         short partnerSpecies = 0,
         IReadOnlyList<string?>? names = null,
-        IReadOnlyList<string?>? speciesNames = null)
+        IReadOnlyList<string?>? speciesNames = null,
+        string? teamName = null,
+        IReadOnlyList<string?>? values = null,
+        string? friendArea = null,
+        IReadOnlyList<string?>? items = null)
     {
         PlayerSpecies = playerSpecies;
         PartnerSpecies = partnerSpecies;
         Names = names ?? Array.Empty<string?>();
         SpeciesNames = speciesNames ?? Array.Empty<string?>();
+        TeamName = string.IsNullOrWhiteSpace(teamName) ? "Team" : teamName;
+        Values = values ?? Array.Empty<string?>();
+        FriendArea = string.IsNullOrWhiteSpace(friendArea) ? "[Friend Area]" : friendArea;
+        Items = items ?? Array.Empty<string?>();
     }
 
     public short PlayerSpecies { get; }
     public short PartnerSpecies { get; }
     public IReadOnlyList<string?> Names { get; }
     public IReadOnlyList<string?> SpeciesNames { get; }
+    public string TeamName { get; }
+    public IReadOnlyList<string?> Values { get; }
+    public string FriendArea { get; }
+    public IReadOnlyList<string?> Items { get; }
 
     public static DialogueFormatContext FromTeam(short playerSpecies, short partnerSpecies) =>
         new(
@@ -72,6 +84,20 @@ public sealed class DialogueFormatContext
         if (index == 1 && PartnerSpecies > 0)
             return DialogueFormatter.PrettySpeciesName(PartnerSpecies);
         return ResolveName(index);
+    }
+
+    public string ResolveValue(int index)
+    {
+        if (index >= 0 && index < Values.Count && !string.IsNullOrWhiteSpace(Values[index]))
+            return Values[index]!;
+        return "0";
+    }
+
+    public string ResolveItem(int index)
+    {
+        if (index >= 0 && index < Items.Count && !string.IsNullOrWhiteSpace(Items[index]))
+            return Items[index]!;
+        return "[Item]";
     }
 }
 
@@ -127,6 +153,28 @@ public static class DialogueRuns
         foreach (var run in Parse(text))
             sb.Append(run.Text);
         return sb.ToString();
+    }
+
+    /// <summary>True when the line begins with a retained <c>{CENTER_ALIGN}</c> marker.</summary>
+    public static bool IsCentered(string? text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return false;
+        return text.TrimStart().StartsWith("{CENTER_ALIGN}", StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Absolute X from a leading <c>{MOVE_X N}</c> tag, or -1 when absent.
+    /// </summary>
+    public static int LeadingMoveX(string? text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return -1;
+        var match = Regex.Match(
+            text.TrimStart(),
+            @"^\{MOVE_X\s+(\d+)\}",
+            RegexOptions.IgnoreCase);
+        return match.Success && int.TryParse(match.Groups[1].Value, out var x) ? x : -1;
     }
 
     public static int Measure(PixelFont font, string? text)
@@ -353,11 +401,31 @@ public static class DialogueFormatter
                 TryParseIndexed(name, "NAME", out nameIndex))
                 return Colorize(context.ResolveName(nameIndex), SlotColor(nameIndex));
 
+            if (TryParseIndexed(name, "VALUE_", out var valueIndex) ||
+                TryParseIndexed(name, "VALUE", out valueIndex))
+                return context.ResolveValue(valueIndex);
+
+            if (TryParseIndexed(name, "MOVE_ITEM_", out var itemIndex) ||
+                TryParseIndexed(name, "MOVE_ITEM", out itemIndex))
+                return context.ResolveItem(itemIndex);
+
+            if (DialogueIcons.TryResolve(name, out var iconChars))
+                return iconChars;
+
+            if (name.StartsWith("MOVE_X_POSITION_BY_", StringComparison.OrdinalIgnoreCase))
+            {
+                var digits = name["MOVE_X_POSITION_BY_".Length..];
+                if (int.TryParse(digits, out var x))
+                    return "{MOVE_X " + x + "}";
+            }
+
             return name switch
             {
-                "CENTER_ALIGN" or "LETTER_ALIGN" => "",
-                "SPEECH_BUBBLE" => "",
-                "TEAM_NAME" => "Team",
+                "CENTER_ALIGN" => "{CENTER_ALIGN}",
+                "LETTER_ALIGN" => "",
+                "MOVE_X_POSITION" => "",
+                "FRIEND_AREA" => context.FriendArea,
+                "TEAM_NAME" => context.TeamName,
                 "WAIT_PRESS" => "",
                 "EXTRA_MSG" => "",
                 "NEW_LINE" => "\n",
@@ -374,8 +442,8 @@ public static class DialogueFormatter
         text = text.Replace('\u2018', '\'').Replace('\u2019', '\'')
             .Replace('\u201C', '"').Replace('\u201D', '"')
             .Replace('\u2026', '.').Replace('\u2014', '-').Replace('\u2013', '-');
-        // Keep printable ASCII + braces + Latin-1 letters used in dialogue (é in Pokémon, etc.).
-        text = Regex.Replace(text, @"[^\n\r\{\}\x20-\x7E\u00C0-\u00FF]", "");
+        // Keep printable ASCII + braces + Latin-1 + private-use icon glyphs.
+        text = Regex.Replace(text, @"[^\n\r\{\}\x20-\x7E\u00C0-\u00FF\uE100-\uE1FF]", "");
         return text.Trim();
     }
 

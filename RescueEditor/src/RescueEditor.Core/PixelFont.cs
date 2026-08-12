@@ -27,6 +27,8 @@ public sealed class PixelFont
 
     public int Advance(char ch)
     {
+        if (DialogueIcons.IsIcon(ch))
+            return DialogueIcons.Advance(ch);
         ch = NormalizeGlyph(ch);
         if (Pmd2FontData.Glyphs.TryGetValue(ch, out var g))
             return Math.Max(1, g.Advance);
@@ -84,6 +86,19 @@ public sealed class PixelFont
         int shrink = 1)
     {
         shrink = Math.Max(1, shrink);
+        if (DialogueIcons.IsIcon(ch))
+        {
+            if (shrink == 1)
+                DialogueIcons.Draw(image, ch, x, y, r, g, b, shadow);
+            else
+            {
+                // Icons are full-size only; approximate with a filled block when shrunk.
+                SceneCompositor.FillRectPublic(
+                    image, x, y, Math.Max(1, 8 / shrink), Math.Max(1, 8 / shrink), r, g, b, 220);
+            }
+            return;
+        }
+
         var drawAccent = ch is 'é' or 'É';
         ch = NormalizeGlyph(ch);
         if (!Pmd2FontData.Glyphs.TryGetValue(ch, out var glyph))
