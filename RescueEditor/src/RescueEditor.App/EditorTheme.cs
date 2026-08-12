@@ -38,6 +38,7 @@ public static class EditorTheme
     public static readonly Color Selection = Color.FromRgb(0x09, 0x4E, 0x7A);
     public static readonly Color Danger = Color.FromRgb(0xC5, 0x42, 0x42);
     public static readonly Color Warning = Color.FromRgb(0xC9, 0xA2, 0x27);
+    public static readonly Color Success = Color.FromRgb(0x3D, 0xA3, 0x5A);
 
     public static readonly Color ScriptHeader = Color.FromRgb(0x6C, 0xB3, 0xD8);
     public static readonly Color ScriptOpcode = Color.FromRgb(0x7E, 0xC8, 0xA3);
@@ -93,6 +94,8 @@ public static class EditorTheme
     public static SolidColorBrush AccentSoftBrush { get; } = Solid(AccentSoft);
     public static SolidColorBrush SelectionBrush { get; } = Solid(Selection);
     public static SolidColorBrush DangerBrush { get; } = Solid(Danger);
+    public static SolidColorBrush WarningBrush { get; } = Solid(Warning);
+    public static SolidColorBrush SuccessBrush { get; } = Solid(Success);
     public static SolidColorBrush ScriptHeaderBrush { get; } = Solid(ScriptHeader);
     public static SolidColorBrush ScriptOpcodeBrush { get; } = Solid(ScriptOpcode);
     public static SolidColorBrush ScriptStringBrush { get; } = Solid(ScriptString);

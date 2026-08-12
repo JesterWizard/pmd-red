@@ -288,6 +288,7 @@ public static class AssetExportService
         AssetCategory.RawArchives => "raw-archives",
         AssetCategory.GroundMaps => "ground-maps",
         AssetCategory.SoundEffects => "sound-effects",
+        AssetCategory.CPatches => "c-patches",
         _ => category.ToString().ToLowerInvariant(),
     };
 

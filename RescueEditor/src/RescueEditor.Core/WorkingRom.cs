@@ -14,15 +14,20 @@ public sealed class WorkingRom
 
     public RomImage Source { get; }
     public RomImage View { get; private set; }
+    public RuntimeConfigState? RuntimeConfig { get; set; }
 
-    public RomBuildReport Sync(SceneDatabase database, Charmap? charmap = null)
+    public RomBuildReport Sync(
+        SceneDatabase database,
+        Charmap? charmap = null,
+        RuntimeConfigState? runtimeConfig = null)
     {
         var dirty = database.DialogueByOffset.Values
             .Select(dialogue => (Dialogue: dialogue, dialogue.Dirty))
             .ToList();
         var buffer = MutableRom.From(Source);
         var report = new RomBuildReport();
-        RomBuilder.WriteWorkingCopy(buffer, database, report, charmap);
+        RomBuilder.WriteWorkingCopy(
+            buffer, database, report, charmap, runtimeConfig ?? RuntimeConfig);
         foreach (var (dialogue, wasDirty) in dirty)
             dialogue.Dirty = wasDirty;
         View = RomImage.FromBytes(Source.Path, buffer.Copy(0, buffer.Length));

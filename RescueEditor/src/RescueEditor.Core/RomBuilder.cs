@@ -37,88 +37,179 @@ public static class RomBuilder
         SceneDatabase database,
         ProjectDocument project,
         string outputPath,
-        Charmap? charmap = null)
+        Charmap? charmap = null,
+        RuntimeConfigState? runtimeConfig = null,
+        RomImage? cPatchHost = null)
     {
         var report = new RomBuildReport();
-        var profile = RomProfile.RequireWritable(source);
+        var needsCPatches = runtimeConfig is not null &&
+            (runtimeConfig.IsDirty || RuntimeConfigSchema.Fields.Any(f => RuntimeConfigEditing.IsInstalled(runtimeConfig, f.Id)));
+
+        // Retail baserom: apply the feature bundle shipped with RescueTemple (decomp code),
+        // then write the user's C Patch selections. End users never need a decomp repo ROM.
+        if (needsCPatches && source.Info.IsKnownRetailRom)
+        {
+            cPatchHost ??= CPatchFeaturePayload.TryApplyToRetail(source);
+            if (cPatchHost is null)
+            {
+                report.Errors.Add(
+                    "This RescueTemple build is missing the C Patch feature bundle. Reinstall/update the editor — you only need baserom.gba.");
+                return report;
+            }
+
+            report.Changes.Add("Applied bundled decomp features to retail baserom with your C Patch selections.");
+
+            var hostRom = MutableRom.From(cPatchHost);
+            if (!runtimeConfig!.HasRomBacking ||
+                runtimeConfig.RomOffset >= cPatchHost.Length)
+            {
+                var bundle = CPatchFeaturePayload.TryLoadBundle();
+                RuntimeConfigState rebound;
+                if (bundle is not null)
+                    rebound = bundle.LoadConfig(cPatchHost);
+                else
+                    rebound = RuntimeConfigCodec.TryLoad(cPatchHost);
+
+                if (!rebound.HasRomBacking)
+                {
+                    report.Errors.Add("Bundled feature image is missing gRuntimeConfigRom.");
+                    return report;
+                }
+
+                var values = new byte[RuntimeConfigSchema.ByteLength];
+                runtimeConfig.CopyValuesTo(values);
+                rebound.RestoreValues(values);
+                runtimeConfig = rebound;
+            }
+
+            WriteRuntimeConfig(hostRom, runtimeConfig, report);
+            if (!report.Success)
+                return report;
+
+            Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outputPath))!);
+            hostRom.Save(outputPath);
+            report.Changes.Add($"Wrote playable ROM {outputPath}");
+            return report;
+        }
+
+        // Explicit feature host (tests / non-retail stand-in).
+        if (needsCPatches && cPatchHost is not null &&
+            !string.Equals(cPatchHost.Sha1, source.Sha1, StringComparison.OrdinalIgnoreCase))
+        {
+            report.Changes.Add("Applied bundled decomp features with your C Patch selections.");
+            var hostRom = MutableRom.From(cPatchHost);
+            WriteRuntimeConfig(hostRom, runtimeConfig, report);
+            if (!report.Success)
+                return report;
+            Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outputPath))!);
+            hostRom.Save(outputPath);
+            report.Changes.Add($"Wrote playable ROM {outputPath}");
+            return report;
+        }
+
+        var profile = RomProfile.TryMatch(source);
+        var runtimeOnly = profile is null && runtimeConfig is not null;
+        if (profile is null && !runtimeOnly)
+        {
+            report.Errors.Add(
+                "ROM writes require the known US 1.0 baserom, or a custom ROM with a located .runtime_config section.");
+            return report;
+        }
+
         if (!string.Equals(project.BaseRomSha1, source.Sha1, StringComparison.OrdinalIgnoreCase))
             report.Warnings.Add("Project base ROM SHA-1 does not match the open ROM.");
 
-        var lint = SceneLint.Validate(source, database);
-        report.Warnings.AddRange(lint.Warnings);
-        report.Errors.AddRange(lint.Errors);
-        if (!report.Success)
-            return report;
-
         var rom = MutableRom.From(source);
 
-        WriteDirtyDialogue(rom, database, project, report, charmap);
-
-        foreach (var scene in database.Scenes)
+        if (profile is not null)
         {
-            foreach (var group in scene.Groups)
+            var lint = SceneLint.Validate(source, database);
+            report.Warnings.AddRange(lint.Warnings);
+            report.Errors.AddRange(lint.Errors);
+            if (!report.Success)
+                return report;
+
+            WriteDirtyDialogue(rom, database, project, report, charmap);
+
+            foreach (var scene in database.Scenes)
             {
-                if (group.SectorListDirty)
+                foreach (var group in scene.Groups)
                 {
-                    try
-                    {
-                        WriteSectorList(rom, group, report);
-                    }
-                    catch (Exception exception)
-                    {
-                        report.Errors.Add($"Group {group.Index} sector list: {exception.Message}");
-                    }
-                }
-
-                foreach (var sector in group.Sectors)
-                {
-                    if (sector.RomOffset < 0)
-                        continue;
-
-                    foreach (var kind in new[]
-                             {
-                                 SceneEntityKind.Live, SceneEntityKind.Object,
-                                 SceneEntityKind.Effect, SceneEntityKind.Event,
-                             })
+                    if (group.SectorListDirty)
                     {
                         try
                         {
-                            if (sector.IsListDirty(kind))
-                                WriteEntityList(rom, sector, kind, report);
-                            else
-                                WriteEntitiesInPlace(rom, sector.ListFor(kind), report);
+                            WriteSectorList(rom, group, report);
                         }
                         catch (Exception exception)
                         {
-                            report.Errors.Add($"Sector {sector.Group}/{sector.Sector} {kind}: {exception.Message}");
+                            report.Errors.Add($"Group {group.Index} sector list: {exception.Message}");
                         }
                     }
 
-                    try
+                    foreach (var sector in group.Sectors)
                     {
-                        if (sector.StationsListDirty)
-                            WriteStationList(rom, sector, report, clearDirty: true);
-                        else
+                        if (sector.RomOffset < 0)
+                            continue;
+
+                        foreach (var kind in new[]
+                                 {
+                                     SceneEntityKind.Live, SceneEntityKind.Object,
+                                     SceneEntityKind.Effect, SceneEntityKind.Event,
+                                 })
                         {
-                            foreach (var station in sector.Stations)
+                            try
                             {
-                                if (station.ScriptOffset < 0)
-                                    continue;
-                                var encoded = ScriptCodec.Encode(station.Commands);
-                                if (encoded.Length == 0 && station.ScriptCapacity == 0)
-                                    continue;
-                                WriteStationScript(rom, station, report);
+                                if (sector.IsListDirty(kind))
+                                    WriteEntityList(rom, sector, kind, report);
+                                else
+                                    WriteEntitiesInPlace(rom, sector.ListFor(kind), report);
+                            }
+                            catch (Exception exception)
+                            {
+                                report.Errors.Add($"Sector {sector.Group}/{sector.Sector} {kind}: {exception.Message}");
                             }
                         }
 
-                        WriteEntityScripts(rom, sector, report, clearDirty: true);
-                    }
-                    catch (Exception exception)
-                    {
-                        report.Errors.Add($"Sector {sector.Group}/{sector.Sector} stations: {exception.Message}");
+                        try
+                        {
+                            if (sector.StationsListDirty)
+                                WriteStationList(rom, sector, report, clearDirty: true);
+                            else
+                            {
+                                foreach (var station in sector.Stations)
+                                {
+                                    if (station.ScriptOffset < 0)
+                                        continue;
+                                    var encoded = ScriptCodec.Encode(station.Commands);
+                                    if (encoded.Length == 0 && station.ScriptCapacity == 0)
+                                        continue;
+                                    WriteStationScript(rom, station, report);
+                                }
+                            }
+
+                            WriteEntityScripts(rom, sector, report, clearDirty: true);
+                        }
+                        catch (Exception exception)
+                        {
+                            report.Errors.Add($"Sector {sector.Group}/{sector.Sector} stations: {exception.Message}");
+                        }
                     }
                 }
             }
+        }
+        else
+        {
+            report.Warnings.Add("Custom ROM: exporting RuntimeConfig only (scene edits are skipped).");
+        }
+
+        try
+        {
+            WriteRuntimeConfig(rom, runtimeConfig, report);
+        }
+        catch (Exception exception)
+        {
+            report.Errors.Add($"RuntimeConfig: {exception.Message}");
         }
 
         if (!report.Success)
@@ -128,37 +219,40 @@ public static class RomBuilder
         rom.Save(outputPath);
         report.Changes.Add($"Wrote {outputPath}");
 
-        try
+        if (profile is not null)
         {
-            var rebuilt = RomImage.Open(outputPath);
-            foreach (var scene in database.Scenes)
+            try
             {
-                foreach (var entity in scene.AllEntities.Where(item => item.RomOffset >= 0))
+                var rebuilt = RomImage.Open(outputPath);
+                foreach (var scene in database.Scenes)
                 {
-                    var pos = CompactPos.Read(rebuilt, entity.RomOffset + 4);
-                    if (pos.XTiles != entity.Position.XTiles || pos.YTiles != entity.Position.YTiles)
-                        report.Errors.Add($"Verify failed for entity @ 0x{entity.RomOffset:X}");
+                    foreach (var entity in scene.AllEntities.Where(item => item.RomOffset >= 0))
+                    {
+                        var pos = CompactPos.Read(rebuilt, entity.RomOffset + 4);
+                        if (pos.XTiles != entity.Position.XTiles || pos.YTiles != entity.Position.YTiles)
+                            report.Errors.Add($"Verify failed for entity @ 0x{entity.RomOffset:X}");
+                    }
                 }
             }
-        }
-        catch (Exception exception)
-        {
-            report.Errors.Add($"Reopen verification failed: {exception.Message}");
+            catch (Exception exception)
+            {
+                report.Errors.Add($"Reopen verification failed: {exception.Message}");
+            }
         }
 
-        _ = profile;
         return report;
     }
 
     /// <summary>
-    /// Patches dialogue and station scripts into a mutable ROM for Scene Play.
+    /// Patches dialogue, station scripts, and RuntimeConfig into a mutable ROM for Scene Play.
     /// Does not write entity lists or save a file.
     /// </summary>
     public static void WriteWorkingCopy(
         MutableRom rom,
         SceneDatabase database,
         RomBuildReport report,
-        Charmap? charmap = null)
+        Charmap? charmap = null,
+        RuntimeConfigState? runtimeConfig = null)
     {
         WriteDirtyDialogue(rom, database, project: null, report, charmap);
         foreach (var scene in database.Scenes)
@@ -196,6 +290,25 @@ public static class RomBuilder
                 }
             }
         }
+
+        try
+        {
+            WriteRuntimeConfig(rom, runtimeConfig, report);
+        }
+        catch (Exception exception)
+        {
+            report.Errors.Add($"RuntimeConfig: {exception.Message}");
+        }
+    }
+
+    public static void WriteRuntimeConfig(
+        MutableRom rom,
+        RuntimeConfigState? runtimeConfig,
+        RomBuildReport report)
+    {
+        if (runtimeConfig is null)
+            return;
+        RuntimeConfigInstaller.WriteEnsured(rom, runtimeConfig, report);
     }
 
     private static void WriteDirtyDialogue(

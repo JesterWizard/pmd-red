@@ -224,7 +224,12 @@ endif
 ALL_BUILDS := red
 
 # Available targets
-.PHONY: all modern clean compare tidy ground-compress ax-compress ax-dedupe ax-anim-compress title-bg-convert libagbsyscall tools clean-tools FORCE $(TOOLDIRS)
+.PHONY: all modern clean compare tidy ground-compress ax-compress ax-dedupe ax-anim-compress title-bg-convert libagbsyscall tools clean-tools cpatch-payload FORCE $(TOOLDIRS)
+
+# Pack decomp feature code into RescueTemple so end users only need baserom.gba.
+CPATCH_PAYLOAD := RescueEditor/src/RescueEditor.Core/Resources/CPatchFeaturePayload.rcp
+cpatch-payload: $(ROM) $(MAP)
+	python3 tools/pack_cpatch_payload.py --feature-rom $(ROM) --map $(MAP) -o $(CPATCH_PAYLOAD)
 
 # Pretend rules that are actually flags defer to `make all`
 modern: all

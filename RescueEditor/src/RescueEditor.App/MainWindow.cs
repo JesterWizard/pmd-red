@@ -15,6 +15,7 @@ public sealed class MainWindow : Window
     private static readonly (string Name, AssetCategory Category)[] Categories =
     [
         ("Scenes", AssetCategory.Scenes),
+        ("C Patches", AssetCategory.CPatches),
         ("Dialogue", AssetCategory.Dialogue),
         ("Scripts & Animations", AssetCategory.Scripts),
         ("Portraits", AssetCategory.Portraits),
@@ -52,6 +53,7 @@ public sealed class MainWindow : Window
     private readonly ChangeService _changes = new();
     private readonly AssetWorkspacePanel _assetWorkspace;
     private SceneWorkspacePanel? _sceneWorkspace;
+    private CPatchesWorkspacePanel? _cPatchesWorkspace;
 
     private RomImage? _rom;
     private WorkingRom? _workingRom;
@@ -59,6 +61,10 @@ public sealed class MainWindow : Window
     private Charmap? _charmap;
     private SceneDatabase? _scenes;
     private ProjectDocument? _project;
+    private RuntimeConfigState? _runtimeConfig;
+    private RomImage? _cPatchHostRom;
+    private WorkingRom? _cPatchWorkingRom;
+    private bool _cPatchesUseDecompHost;
     private bool _isLoading;
     private AssetDescriptor? _selectedAsset;
     private AssetCategory? _selectedCategory;
@@ -479,6 +485,35 @@ public sealed class MainWindow : Window
             _catalog = result.Catalog;
             _charmap = result.Charmap;
             _scenes = result.Scenes;
+            _cPatchHostRom = null;
+            _cPatchWorkingRom = null;
+            _cPatchesUseDecompHost = false;
+            try
+            {
+                var binding = CPatchFeaturePayload.Bind(
+                    _rom,
+                    editorDirectory: AppContext.BaseDirectory);
+                _cPatchHostRom = binding.FeatureRom;
+                _cPatchesUseDecompHost = binding.UsesPayload;
+                _runtimeConfig = binding.Config;
+                if (_cPatchesUseDecompHost)
+                {
+                    _cPatchWorkingRom = new WorkingRom(_cPatchHostRom) { RuntimeConfig = _runtimeConfig };
+                    AppendOutput(binding.Status);
+                }
+                else
+                {
+                    _workingRom.RuntimeConfig = _runtimeConfig;
+                    AppendOutput(binding.Status);
+                }
+            }
+            catch (InvalidOperationException exception)
+            {
+                _runtimeConfig = RuntimeConfigCodec.TryLoad(_rom);
+                _workingRom.RuntimeConfig = _runtimeConfig;
+                AppendOutput($"C Patches: {exception.Message}");
+            }
+
             _project = ProjectDocument.Create(_rom, _scenes.Profile);
             _changes.Attach(_project, _scenes);
 
@@ -535,7 +570,11 @@ public sealed class MainWindow : Window
         {
             case CategoryExplorerNode category:
                 _selectedCategory = category.Category;
-                if (category.Category == AssetCategory.Scenes)
+                if (category.Category == AssetCategory.CPatches)
+                {
+                    OpenCPatches();
+                }
+                else if (category.Category == AssetCategory.Scenes)
                 {
                     _workspaceHost.Child = _assetWorkspace;
                     ApplyDockLayout(sceneOwnsInspector: false);
@@ -556,6 +595,11 @@ public sealed class MainWindow : Window
                 if (assetNode.Asset.Kind == AssetKind.Scene || assetNode.Scene is not null)
                 {
                     OpenScene(assetNode.Scene, assetNode.Asset);
+                }
+                else if (assetNode.Asset.Kind == AssetKind.RuntimeConfig ||
+                         assetNode.Asset.Category == AssetCategory.CPatches)
+                {
+                    OpenCPatches(assetNode.Asset);
                 }
                 else
                 {
@@ -610,6 +654,35 @@ public sealed class MainWindow : Window
     }
 
     private void OnSceneDirty(object? sender, EventArgs e) => UpdateDirtyTitle();
+
+    private void OpenCPatches(AssetDescriptor? asset = null)
+    {
+        if (_rom is null || _runtimeConfig is null)
+            return;
+
+        _selectedCategory = AssetCategory.CPatches;
+        _selectedAsset = asset ?? _catalog?.ForCategory(AssetCategory.CPatches).FirstOrDefault();
+        var focusField = asset?.Metadata.GetValueOrDefault("fieldId");
+        _cPatchesWorkspace ??= new CPatchesWorkspacePanel();
+        _cPatchesWorkspace.DirtyChanged -= OnSceneDirty;
+        _cPatchesWorkspace.DirtyChanged += OnSceneDirty;
+        _cPatchesWorkspace.Load(
+            _runtimeConfig,
+            _changes,
+            _cPatchesUseDecompHost ? _cPatchWorkingRom : _workingRom,
+            _scenes,
+            _charmap,
+            focusField,
+            hostMode: _cPatchesUseDecompHost ? "retail + decomp features" : null);
+        _workspaceHost.Child = _cPatchesWorkspace;
+        ApplyDockLayout(sceneOwnsInspector: false);
+        UpdateBreadcrumb();
+        UpdateProperties();
+        UpdateDirtyTitle();
+        SetStatus(_cPatchesUseDecompHost
+            ? "C Patches: install options, then Build ROM for a playable patched game"
+            : _runtimeConfig.StatusMessage);
+    }
 
     private void UpdateBreadcrumb()
     {
@@ -854,7 +927,7 @@ public sealed class MainWindow : Window
     {
         if (_rom is null || _scenes is null || _project is null)
         {
-            await ShowErrorAsync("Build ROM", "Open a US 1.0 ROM and project first.");
+            await ShowErrorAsync("Build ROM", "Open a ROM and project first.");
             return;
         }
         var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
@@ -866,7 +939,8 @@ public sealed class MainWindow : Window
         if (file is null) return;
         try
         {
-            var report = RomBuilder.Build(_rom, _scenes, _project, file.Path.LocalPath, _charmap);
+            var report = RomBuilder.Build(
+                _rom, _scenes, _project, file.Path.LocalPath, _charmap, _runtimeConfig, _cPatchHostRom);
             var summary = report.Success
                 ? $"Built {file.Path.LocalPath} ({report.Changes.Count} changes)."
                 : $"Build failed with {report.Errors.Count} error(s).";
@@ -935,7 +1009,12 @@ public sealed class MainWindow : Window
         _charmap = null;
         _scenes = null;
         _project = null;
+        _runtimeConfig = null;
+        _cPatchHostRom = null;
+        _cPatchWorkingRom = null;
+        _cPatchesUseDecompHost = false;
         _sceneWorkspace = null;
+        _cPatchesWorkspace = null;
         _selectedAsset = null;
         _selectedCategory = null;
         _explorer.Clear();
@@ -979,11 +1058,21 @@ public sealed class MainWindow : Window
             case EditorCommandId.Undo:
                 _changes.Undo();
                 _sceneWorkspace?.RefreshFromExternal();
+                _cPatchesWorkspace?.RefreshFromExternal();
+                if (_cPatchesUseDecompHost && _cPatchWorkingRom is not null && _scenes is not null)
+                    _cPatchWorkingRom.Sync(_scenes, _charmap, _runtimeConfig);
+                else if (_workingRom is not null && _scenes is not null)
+                    _workingRom.Sync(_scenes, _charmap, _runtimeConfig);
                 UpdateDirtyTitle();
                 return true;
             case EditorCommandId.Redo:
                 _changes.Redo();
                 _sceneWorkspace?.RefreshFromExternal();
+                _cPatchesWorkspace?.RefreshFromExternal();
+                if (_cPatchesUseDecompHost && _cPatchWorkingRom is not null && _scenes is not null)
+                    _cPatchWorkingRom.Sync(_scenes, _charmap, _runtimeConfig);
+                else if (_workingRom is not null && _scenes is not null)
+                    _workingRom.Sync(_scenes, _charmap, _runtimeConfig);
                 UpdateDirtyTitle();
                 return true;
             case EditorCommandId.Save:

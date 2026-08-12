@@ -5,7 +5,7 @@ namespace RescueEditor.Core;
 /// <summary>Mutable ROM buffer used only for Build ROM output; never mutates the source image.</summary>
 public sealed class MutableRom
 {
-    private readonly byte[] _bytes;
+    private byte[] _bytes;
 
     public MutableRom(RomImage source)
     {
@@ -69,6 +69,42 @@ public sealed class MutableRom
     public bool IsRangeValid(int offset, int length) =>
         offset >= 0 && length >= 0 && offset <= _bytes.Length - length;
 
+    /// <summary>Grow the image to at least <paramref name="newLength"/> bytes (0xFF padding).</summary>
+    public void ExtendTo(int newLength, byte fill = 0xFF)
+    {
+        if (newLength < _bytes.Length)
+            throw new ArgumentOutOfRangeException(nameof(newLength), "ExtendTo cannot shrink the ROM.");
+        if (newLength == _bytes.Length)
+            return;
+        var next = new byte[newLength];
+        _bytes.CopyTo(next, 0);
+        next.AsSpan(_bytes.Length).Fill(fill);
+        _bytes = next;
+    }
+
+    /// <summary>
+    /// Insert <paramref name="count"/> bytes at <paramref name="offset"/>, shifting the tail up.
+    /// Absolute ROM pointers (<c>0x08xxxxxx</c>/<c>0x09xxxxxx</c>) that reference offsets
+    /// at or past the insertion point are adjusted by <paramref name="count"/>.
+    /// Returns the number of absolute pointers adjusted.
+    /// </summary>
+    public int InsertBytes(int offset, int count, byte fill = 0xFF)
+    {
+        if (offset < 0 || offset > _bytes.Length)
+            throw new ArgumentOutOfRangeException(nameof(offset));
+        if (count < 0)
+            throw new ArgumentOutOfRangeException(nameof(count));
+        if (count == 0)
+            return 0;
+
+        var next = new byte[_bytes.Length + count];
+        Buffer.BlockCopy(_bytes, 0, next, 0, offset);
+        next.AsSpan(offset, count).Fill(fill);
+        Buffer.BlockCopy(_bytes, offset, next, offset + count, _bytes.Length - offset);
+        _bytes = next;
+        return RomPointerFixup.AdjustAbsoluteRomPointers(this, offset, count);
+    }
+
     public int PointerToOffset(uint pointer)
     {
         if (pointer < RomImage.RomVirtualAddress)
@@ -91,5 +127,36 @@ public sealed class MutableRom
             throw new ArgumentOutOfRangeException(nameof(offset),
                 $"ROM range 0x{offset:X}+0x{length:X} is outside the image.");
         return offset;
+    }
+}
+
+/// <summary>Adjust absolute GBA ROM pointers after a mid-image insertion/shift.</summary>
+public static class RomPointerFixup
+{
+    public static int AdjustAbsoluteRomPointers(MutableRom rom, int insertOffset, int delta)
+    {
+        if (delta == 0)
+            return 0;
+        var adjusted = 0;
+        var maxPointerOffset = rom.Length - 4;
+        for (var i = 0; i <= maxPointerOffset; i += 4)
+        {
+            var value = rom.ReadUInt32(i);
+            if (value < RomImage.RomVirtualAddress)
+                continue;
+            // ROM window used by this project includes 0x08xxxxxx and 0x09xxxxxx mirrors.
+            if (value >= 0x0A000000)
+                continue;
+            var target = (int)(value - RomImage.RomVirtualAddress);
+            if (target < insertOffset)
+                continue;
+            // Skip the freshly inserted span itself (still fill bytes).
+            if (i >= insertOffset && i < insertOffset + delta)
+                continue;
+            rom.WriteUInt32(i, value + (uint)delta);
+            adjusted++;
+        }
+
+        return adjusted;
     }
 }

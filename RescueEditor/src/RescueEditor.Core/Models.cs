@@ -14,6 +14,7 @@ public enum AssetCategory
     Music,
     SoundEffects,
     RawArchives,
+    CPatches,
 }
 
 public enum AssetKind
@@ -30,6 +31,7 @@ public enum AssetKind
     SoundWave,
     SoundSong,
     Scene,
+    RuntimeConfig,
 }
 
 public sealed class AssetDescriptor
@@ -117,6 +119,11 @@ public sealed class AssetCatalog
                             return songId;
                         return asset.Kind == AssetKind.SoundWave ? 10_000 : 20_000;
                     })
+                    .ThenBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase)
+                    .ToArray(),
+            AssetCategory.CPatches =>
+                items.OrderBy(asset => asset.Metadata.GetValueOrDefault("group", ""), StringComparer.OrdinalIgnoreCase)
+                    .ThenBy(asset => asset.Offset)
                     .ThenBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase)
                     .ToArray(),
             _ => items.OrderBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase).ToArray(),

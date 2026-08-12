@@ -120,6 +120,14 @@ public static class CatalogBuilder
         Report("Indexing music and sound effects…");
         catalog.AddRange(SoundIndexer.Index(repositoryRoot, rom));
 
+        Report("Indexing C Patch offerings…");
+        catalog.AddRange(CPatchCatalog.BuildOfferings());
+        var runtimeConfig = RuntimeConfigCodec.TryLoad(rom, repositoryRoot);
+        if (runtimeConfig.HasRomBacking)
+            diagnostics.Add(runtimeConfig.StatusMessage);
+        else
+            diagnostics.Add(runtimeConfig.StatusMessage);
+
         if (portraits.Length == 0)
             diagnostics.Add("No portraits were found in this ROM.");
         if (archives.Count == 0)
