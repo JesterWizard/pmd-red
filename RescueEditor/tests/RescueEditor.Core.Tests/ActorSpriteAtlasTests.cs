@@ -292,8 +292,41 @@ public class ActorSpriteAtlasTests
         Assert.True(CountOpaque(assembled) >= 1000, $"Moltres assembly too empty: opaque={CountOpaque(assembled)}");
     }
 
+    [Theory]
+    [InlineData("hooh", 275, 64, 64)]
+    [InlineData("articuno", 144, 64, 32)]
+    [InlineData("groudon", 411, 64, 64)]
+    [InlineData("moltres", 146, 64, 28)]
+    public void BossSpeciesSpriteIsFullOamNotSheetScrap(
+        string folder, int speciesId, int minW, int minH)
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", folder + ".h")))
+            return;
+
+        // Single-OAM bosses still use compound {NULL,pad}/sprite_N_k VRAM — must not
+        // be treated as ordinary sheet mons (Ho-Oh sheet_1 is a 56×8 strip).
+        Assert.True(
+            AxPoseAssembler.IsMultiPieceMonster(root, folder),
+            $"{folder} should use compound VRAM assembly");
+
+        var atlas = new ActorSpriteAtlas(root);
+        var species = atlas.TryGetSpeciesSprite(speciesId);
+        Assert.NotNull(species);
+        Assert.True(
+            species!.Width >= minW && species.Height >= minH,
+            $"{folder} species sprite {species.Width}x{species.Height} looks like a sheet scrap (want >={minW}x{minH})");
+
+        var idle = atlas.TryGetAnimatedSprite(
+            speciesId, GroundScriptVm.AnimIdle, GroundScriptVm.DirSouth, tickFrames: 0);
+        Assert.NotNull(idle);
+        Assert.True(idle!.Value.Image.Width >= minW);
+        Assert.True(idle.Value.Image.Height >= minH);
+    }
+
     [Fact]
-    public void CharmanderNorthIdleIsFullSquareNotSheetScrap()
+    public void CharmanderNorthIdleUsesRetailVerticalOamNotSoutheastPose()
     {
         var root = FindRepoRoot();
         if (root is null) return;
@@ -307,10 +340,18 @@ public class ActorSpriteAtlasTests
             direction: GroundScriptVm.DirNorth,
             tickFrames: 0);
         Assert.NotNull(north);
-        // Sheet sprite_13 is a 16×32 scrap; north idle pose must be full 32×32 OAM.
-        Assert.True(north!.Value.Image.Width >= 24, $"Charmander north too narrow: {north.Value.Image.Width}");
-        Assert.True(north.Value.Image.Height >= 24, $"Charmander north too short: {north.Value.Image.Height}");
-        Assert.True(north.Value.Image.Width * north.Value.Image.Height >= 24 * 24);
+
+        // Retail Pose13 is ST_OAM_V_RECTANGLE SIZE_2 → 16×32 (not a sheet scrap).
+        var poseNorth = AxPoseAssembler.TryAssemble(root, "charmander", poseNumber: 13);
+        var poseSe = AxPoseAssembler.TryAssemble(root, "charmander", poseNumber: 5);
+        Assert.NotNull(poseNorth);
+        Assert.NotNull(poseSe);
+        Assert.Equal(16, poseNorth!.Width);
+        Assert.Equal(32, poseNorth.Height);
+        Assert.True(ImagesEqual(north!.Value.Image, poseNorth),
+            "Charmander north idle must use Pose13 (16×32 back view)");
+        Assert.False(ImagesEqual(north.Value.Image, poseSe!),
+            "Charmander north idle must not use SE Pose5");
     }
 
     [Fact]
@@ -481,12 +522,80 @@ public class ActorSpriteAtlasTests
             $"Zapdos pose looks like blue OAM garbage ({blueish}/{opaque})");
     }
 
+    [Theory]
+    [InlineData(0, 1)]   // South → Pose1
+    [InlineData(2, 7)]   // East  → Pose7 (3 frames × dir)
+    [InlineData(4, 13)]  // North → Pose13
+    [InlineData(6, 19)]  // West  → Pose19
+    public void IdlePoseForDirectionUsesThreeFramesPerFacing(int dir, int poseNumber)
+    {
+        // AX idle groups are Pose(1+3d)…Pose(3+3d); first frame is the static idle.
+        Assert.Equal(poseNumber, AxPoseAssembler.IdlePoseForDirection(dir));
+    }
+
+    [Fact]
+    public void BulbasaurNorthIdleMatchesAxNorthPoseNotSoutheast()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "bulbasaur.h")))
+            return;
+
+        var atlas = new ActorSpriteAtlas(root);
+        var north = atlas.TryGetAnimatedSprite(
+            speciesId: 1,
+            animationId: GroundScriptVm.AnimIdle,
+            direction: GroundScriptVm.DirNorth,
+            tickFrames: 0);
+        Assert.NotNull(north);
+
+        // Pose13 = north idle; Pose5 = SE mid-frame (wrong if IdlePoseForDirection was dir+1).
+        var poseNorth = AxPoseAssembler.TryAssemble(root, "bulbasaur", poseNumber: 13);
+        var poseWrong = AxPoseAssembler.TryAssemble(root, "bulbasaur", poseNumber: 5);
+        Assert.NotNull(poseNorth);
+        Assert.NotNull(poseWrong);
+        Assert.True(ImagesEqual(north!.Value.Image, poseNorth!),
+            "North idle must assemble AX Pose13 (back view), not Pose5 (SE)");
+        Assert.False(ImagesEqual(north.Value.Image, poseWrong!),
+            "North idle must not use SE Pose5");
+    }
+
+    [Fact]
+    public void CharmanderJumpSurpriseNorthIsFullPoseNotSheetScrap()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "charmander.h")))
+            return;
+
+        // SELECT_ANIMATION(11) from JUMP_SURPRISE_FUNC — must use AX anim poses,
+        // not north sheet scrap sprite_13 (16×32).
+        var atlas = new ActorSpriteAtlas(root);
+        var jump = atlas.TryGetAnimatedSprite(
+            speciesId: 4,
+            animationId: 11,
+            direction: GroundScriptVm.DirNorth,
+            tickFrames: 0);
+        Assert.NotNull(jump);
+        Assert.True(jump!.Value.Image.Width >= 24,
+            $"Charmander jump north too narrow (sheet scrap?): {jump.Value.Image.Width}");
+        Assert.True(jump.Value.Image.Height >= 24,
+            $"Charmander jump north too short: {jump.Value.Image.Height}");
+    }
+
     [Fact]
     public void DialogueHudFitsThreeTextLines()
     {
         Assert.Equal(3, GbaDialogueHud.MaxTextLines);
         Assert.True(GbaDialogueHud.TextTopPad + GbaDialogueHud.MaxTextLines * GbaDialogueHud.LineHeight
             <= GbaDialogueHud.BoxH);
+    }
+
+    private static bool ImagesEqual(RgbaImage a, RgbaImage b)
+    {
+        if (a.Width != b.Width || a.Height != b.Height)
+            return false;
+        return a.Pixels.AsSpan().SequenceEqual(b.Pixels);
     }
 
     private static int CountOpaque(RgbaImage img)

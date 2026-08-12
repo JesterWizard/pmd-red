@@ -99,6 +99,78 @@ public sealed class AxAnimAndDungeonCanmTests
         Assert.False(
             a.Value.Image.Pixels.SequenceEqual(idle!.Value.Image.Pixels),
             "Anim 22 must not draw idle pose1");
+
+        // Wing span must stay boss-sized (not a 32×24 sheet scrap).
+        Assert.True(a.Value.Image.Width >= 72, $"Wing span too narrow: {a.Value.Image.Width}");
+        Assert.True(CountOpaque(a.Value.Image) >= 600, $"Wing pose too empty: {CountOpaque(a.Value.Image)}");
+    }
+
+    [Fact]
+    public void SingleOamBossMovingDoesNotFallBackToSheetScrap()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "hooh.h")))
+            return;
+
+        var atlas = new ActorSpriteAtlas(root);
+        // Before the compound-VRAM IsMultiPiece fix, moving Ho-Oh returned sprite_1.png (56×8).
+        var moving = atlas.TryGetAnimatedSprite(
+            speciesId: 275,
+            animationId: GroundScriptVm.AnimIdle,
+            direction: GroundScriptVm.DirSouth,
+            tickFrames: 24,
+            isMoving: true);
+        Assert.NotNull(moving);
+        Assert.True(
+            moving!.Value.Image.Width >= 64 && moving.Value.Image.Height >= 64,
+            $"Ho-Oh moving idle is scrap-sized: {moving.Value.Image.Width}x{moving.Value.Image.Height}");
+    }
+
+    [Fact]
+    public void PngOnlyMirrorWithoutAxHeadersCannotAssembleBossSprites()
+    {
+        // Reproduces the Windows sync-and-watch mirror: graphics/ax/mon PNGs without
+        // src/data/ax/*.h or *.4bpp.lz — Scene Play then draws sprite_1.png scraps.
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var header = Path.Combine(root, "src", "data", "ax", "moltres.h");
+        var png = Path.Combine(root, "graphics", "ax", "mon", "moltres", "sprite_1.png");
+        if (!File.Exists(header) || !File.Exists(png))
+            return;
+
+        var tmp = Path.Combine(Path.GetTempPath(), "rescue-temple-png-only-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            var monDir = Path.Combine(tmp, "graphics", "ax", "mon", "moltres");
+            Directory.CreateDirectory(monDir);
+            File.Copy(png, Path.Combine(monDir, "sprite_1.png"));
+            // Species→folder map (otherwise atlas cannot resolve 146 → moltres).
+            var jsonDir = Path.Combine(tmp, "data", "monster");
+            Directory.CreateDirectory(jsonDir);
+            File.Copy(
+                Path.Combine(root, "data", "monster", "monster_data.json"),
+                Path.Combine(jsonDir, "monster_data.json"));
+
+            Assert.False(AxPoseAssembler.IsMultiPieceMonster(tmp, "moltres"));
+            Assert.Null(AxPoseAssembler.TryAssemble(tmp, "moltres", poseNumber: 1));
+
+            var atlas = new ActorSpriteAtlas(tmp);
+            var species = atlas.TryGetSpeciesSprite(146);
+            Assert.NotNull(species);
+            Assert.True(
+                species!.Width * species.Height < 40 * 40,
+                $"PNG-only mirror should yield a scrap, got {species.Width}x{species.Height}");
+
+            // Full decomp tree must still assemble the real boss frame.
+            var full = AxPoseAssembler.TryAssemble(root, "moltres", poseNumber: 1);
+            Assert.NotNull(full);
+            Assert.True(full!.Width >= 64);
+        }
+        finally
+        {
+            try { Directory.Delete(tmp, recursive: true); } catch { /* best-effort */ }
+        }
     }
 
     [Fact]

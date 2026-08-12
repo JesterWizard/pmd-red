@@ -99,6 +99,9 @@ public sealed class ActorSpriteAtlas
     {
         if (speciesId <= 0)
             return null;
+
+        // Boss / padded-OAM idle: prefer assembled frame over sheet scraps
+        // (Ho-Oh sprite_1.png is 56×8; Articuno sheet is 8×8).
         if (IsMultiPiece(speciesId))
         {
             var assembled = TryGetAssembledPose(speciesId, poseNumber: 1);
@@ -156,11 +159,9 @@ public sealed class ActorSpriteAtlas
 
         var cycle = isMoving || (animationId != GroundScriptVm.AnimIdle && animationId > 0 && animationId != GroundScriptVm.AnimSleep);
 
-        // Boss / multi-OAM: play mapped AX anim sequences (e.g. Moltres wing flap 22).
-        if (IsMultiPiece(speciesId) &&
-            animationId != GroundScriptVm.AnimIdle &&
-            animationId != GroundScriptVm.AnimSleep &&
-            animationId > 0)
+        // All species: play mapped AX anim sequences (idle bob, JUMP_SURPRISE, boss wings…).
+        // Avoids sheet scraps (Charmander north sprite_13 is 16×32) and wrong facing groups.
+        if (animationId != GroundScriptVm.AnimSleep && animationId > 0)
         {
             var axFrame = TryGetAxAnimFrame(speciesId, animationId, dir, tickFrames);
             if (axFrame is not null)

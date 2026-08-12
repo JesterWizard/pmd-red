@@ -1,31 +1,31 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.VisualTree;
 using RescueEditor.Core;
 
 namespace RescueEditor.App;
 
 public sealed class ProjectExplorerPanel : UserControl
 {
-    private readonly TreeView _tree;
+    private readonly ScrollViewer _scroller;
+    private readonly StackPanel _host;
     private readonly TextBox _filterBox;
     private List<ExplorerNode> _roots = new();
+    private readonly Dictionary<ExplorerNode, Control> _nodeControls = new();
+    private Control? _selectedControl;
     public event EventHandler<ExplorerNode?>? SelectionChanged;
 
     public ProjectExplorerPanel()
     {
-        _tree = new TreeView { SelectionMode = SelectionMode.Single };
-        EditorChrome.StyleTree(_tree);
-        _tree.SelectionChanged += (_, _) =>
+        _host = new StackPanel { Spacing = 0 };
+        _scroller = new ScrollViewer
         {
-            var node = _tree.SelectedItem switch
-            {
-                ExplorerNode explorerNode => explorerNode,
-                TreeViewItem { Tag: ExplorerNode tagged } => tagged,
-                _ => null,
-            };
-            SelectionChanged?.Invoke(this, node);
+            Content = _host,
+            HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled,
+            VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto,
         };
 
         _filterBox = new TextBox
@@ -54,7 +54,7 @@ public sealed class ProjectExplorerPanel : UserControl
         DockPanel.SetDock(filterHost, Dock.Top);
         body.Children.Add(header);
         body.Children.Add(filterHost);
-        body.Children.Add(_tree);
+        body.Children.Add(_scroller);
 
         Content = EditorChrome.VerticalPane(body, rightEdge: true);
         MinWidth = 180;
@@ -65,8 +65,9 @@ public sealed class ProjectExplorerPanel : UserControl
     {
         _roots = new();
         _filterBox.Text = string.Empty;
-        _tree.ItemsSource = null;
-        _tree.SelectedItem = null;
+        _host.Children.Clear();
+        _nodeControls.Clear();
+        _selectedControl = null;
     }
 
     public void Build(
@@ -136,37 +137,127 @@ public sealed class ProjectExplorerPanel : UserControl
 
     public void SelectAsset(AssetDescriptor asset)
     {
-        if (_tree.ItemsSource is not IEnumerable<TreeViewItem> roots)
-            return;
-        foreach (var root in roots)
+        foreach (var (node, control) in _nodeControls)
         {
-            if (FindAndSelect(root, asset))
+            if (node is AssetExplorerNode assetNode && ReferenceEquals(assetNode.Asset, asset))
+            {
+                ExpandAncestors(control);
+                SelectControl(control, node);
                 return;
+            }
         }
     }
 
     public void SelectScene(int mapId)
     {
-        if (_tree.ItemsSource is not IEnumerable<TreeViewItem> roots)
-            return;
-        foreach (var root in roots)
+        foreach (var (node, control) in _nodeControls)
         {
-            if (FindAndSelectScene(root, mapId))
+            if (node is AssetExplorerNode { Scene: { } scene } && scene.MapId == mapId)
+            {
+                ExpandAncestors(control);
+                SelectControl(control, node);
                 return;
+            }
         }
     }
 
     private void ApplyFilter()
     {
         var query = (_filterBox.Text ?? string.Empty).Trim();
-        if (string.IsNullOrEmpty(query))
+        var roots = string.IsNullOrEmpty(query) ? _roots : FilterNodes(_roots, query);
+        _host.Children.Clear();
+        _nodeControls.Clear();
+        _selectedControl = null;
+        foreach (var node in roots)
+            _host.Children.Add(BuildNodeControl(node, depth: 0, expand: !string.IsNullOrEmpty(query)));
+    }
+
+    private Control BuildNodeControl(ExplorerNode node, int depth, bool expand)
+    {
+        if (node.Children.Count > 0)
         {
-            _tree.ItemsSource = ToTreeItems(_roots, expandMatches: false);
-            return;
+            // Expander: entire header row toggles open/closed (not chevron-only like TreeView).
+            var expander = new Expander
+            {
+                Header = CreateHeaderLabel(node, depth),
+                IsExpanded = expand || (node is CategoryExplorerNode && false),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                Padding = new Thickness(0),
+                Margin = new Thickness(0),
+                Tag = node,
+            };
+            var childHost = new StackPanel { Spacing = 0 };
+            foreach (var child in node.Children)
+                childHost.Children.Add(BuildNodeControl(child, depth + 1, expand));
+            expander.Content = childHost;
+            expander.Expanded += (_, _) => SelectionChanged?.Invoke(this, node);
+            _nodeControls[node] = expander;
+            return expander;
         }
 
-        var filtered = FilterNodes(_roots, query);
-        _tree.ItemsSource = ToTreeItems(filtered, expandMatches: true);
+        var row = CreateSelectableRow(node, depth);
+        _nodeControls[node] = row;
+        return row;
+    }
+
+    private Border CreateSelectableRow(ExplorerNode node, int depth)
+    {
+        var label = CreateHeaderLabel(node, depth);
+        var row = new Border
+        {
+            Background = Brushes.Transparent,
+            Child = label,
+            Tag = node,
+            HorizontalAlignment = HorizontalAlignment.Stretch,
+            Padding = new Thickness(0, 2, 0, 2),
+            Cursor = new Cursor(StandardCursorType.Hand),
+        };
+        row.PointerPressed += (_, e) =>
+        {
+            if (!e.GetCurrentPoint(row).Properties.IsLeftButtonPressed)
+                return;
+            SelectControl(row, node);
+        };
+        return row;
+    }
+
+    private static TextBlock CreateHeaderLabel(ExplorerNode node, int depth) => new()
+    {
+        Text = Prefix(node) + node.Title,
+        FontFamily = EditorTheme.UiFont,
+        FontSize = node is CategoryExplorerNode ? EditorTheme.FontBody : EditorTheme.FontLabel,
+        FontWeight = node is CategoryExplorerNode ? FontWeight.SemiBold : FontWeight.Normal,
+        Foreground = node switch
+        {
+            CategoryExplorerNode => EditorTheme.TextSecondaryBrush,
+            SceneGroupExplorerNode => EditorTheme.TextMutedBrush,
+            _ => EditorTheme.TextPrimaryBrush,
+        },
+        VerticalAlignment = VerticalAlignment.Center,
+        TextTrimming = TextTrimming.CharacterEllipsis,
+        Margin = new Thickness(8 + depth * 12, 4, 8, 4),
+    };
+
+    private void SelectControl(Control control, ExplorerNode node)
+    {
+        if (_selectedControl is Border previous)
+            previous.Background = Brushes.Transparent;
+        _selectedControl = control;
+        if (control is Border border)
+            border.Background = EditorTheme.AccentSoftBrush;
+        SelectionChanged?.Invoke(this, node);
+    }
+
+    private static void ExpandAncestors(Control control)
+    {
+        Visual? current = control;
+        while (current is not null)
+        {
+            if (current is Expander expander)
+                expander.IsExpanded = true;
+            current = current.GetVisualParent();
+        }
     }
 
     private static List<ExplorerNode> FilterNodes(IEnumerable<ExplorerNode> nodes, string query)
@@ -220,84 +311,6 @@ public sealed class ProjectExplorerPanel : UserControl
             result.Add(clone);
         }
         return result;
-    }
-
-    private static bool FindAndSelect(TreeViewItem item, AssetDescriptor asset)
-    {
-        if (item.Tag is AssetExplorerNode node && ReferenceEquals(node.Asset, asset))
-        {
-            item.IsSelected = true;
-            ExpandParents(item);
-            return true;
-        }
-
-        if (item.ItemsSource is IEnumerable<TreeViewItem> children)
-        {
-            foreach (var child in children)
-            {
-                if (FindAndSelect(child, asset))
-                    return true;
-            }
-        }
-        return false;
-    }
-
-    private static bool FindAndSelectScene(TreeViewItem item, int mapId)
-    {
-        if (item.Tag is AssetExplorerNode { Scene: { } scene } && scene.MapId == mapId)
-        {
-            item.IsSelected = true;
-            ExpandParents(item);
-            return true;
-        }
-
-        if (item.ItemsSource is IEnumerable<TreeViewItem> children)
-        {
-            foreach (var child in children)
-            {
-                if (FindAndSelectScene(child, mapId))
-                    return true;
-            }
-        }
-        return false;
-    }
-
-    private static void ExpandParents(TreeViewItem item)
-    {
-        Control? current = item;
-        while (current is not null)
-        {
-            if (current is TreeViewItem tvi)
-                tvi.IsExpanded = true;
-            current = current.Parent as Control;
-        }
-    }
-
-    private static List<TreeViewItem> ToTreeItems(IEnumerable<ExplorerNode> nodes, bool expandMatches)
-    {
-        var items = new List<TreeViewItem>();
-        foreach (var node in nodes)
-        {
-            var item = new TreeViewItem
-            {
-                Header = Prefix(node) + node.Title,
-                Tag = node,
-                IsExpanded = expandMatches && node.Children.Count > 0,
-                FontFamily = EditorTheme.UiFont,
-                FontSize = node is CategoryExplorerNode ? EditorTheme.FontBody : EditorTheme.FontLabel,
-                FontWeight = node is CategoryExplorerNode ? FontWeight.SemiBold : FontWeight.Normal,
-                Foreground = node switch
-                {
-                    CategoryExplorerNode => EditorTheme.TextSecondaryBrush,
-                    SceneGroupExplorerNode => EditorTheme.TextMutedBrush,
-                    _ => EditorTheme.TextPrimaryBrush,
-                },
-            };
-            if (node.Children.Count > 0)
-                item.ItemsSource = ToTreeItems(node.Children, expandMatches);
-            items.Add(item);
-        }
-        return items;
     }
 
     private static string Prefix(ExplorerNode node) => node switch

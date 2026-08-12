@@ -122,39 +122,46 @@ public static class Compression
                 var nibble = source[index] & 0xF;
                 switch (command)
                 {
-                    case 0x1F:
+                    // Four-nibble PX patterns (SkyTemple/kaomado): high nibble of each
+                    // byte is ns[even], low nibble is ns[odd]. Indices 1/5 also shift the
+                    // base before adjusting one slot — cases 0x1E/0x1C/0x18 were wrong.
+                    case 0x1F: // idx 0: [n,n,n,n]
                         index++;
                         AddPair(output, (nibble << 4) | nibble, (nibble << 4) | nibble);
                         break;
-                    case 0x1E:
+                    case 0x1E: // idx 1: [n, n+1, n+1, n+1]
                         index++;
-                        AddPair(output, (nibble << 4) | nibble, ((nibble + 1) & 0xF) * 0x11);
+                        AddPair(output,
+                            (nibble << 4) | ((nibble + 1) & 0xF),
+                            ((nibble + 1) & 0xF) * 0x11);
                         break;
-                    case 0x1D:
+                    case 0x1D: // idx 2: [n, n-1, n, n]
                         index++;
                         AddPair(output, (nibble << 4) | ((nibble - 1) & 0xF), (nibble << 4) | nibble);
                         break;
-                    case 0x1C:
+                    case 0x1C: // idx 3: [n, n, n-1, n]
                         index++;
-                        AddPair(output, (nibble << 4) | nibble, ((nibble - 1) & 0xF) * 0x11 + nibble);
+                        AddPair(output, (nibble << 4) | nibble, (((nibble - 1) & 0xF) << 4) | nibble);
                         break;
-                    case 0x1B:
+                    case 0x1B: // idx 4: [n, n, n, n-1]
                         index++;
                         AddPair(output, (nibble << 4) | nibble, (nibble << 4) | ((nibble - 1) & 0xF));
                         break;
-                    case 0x1A:
+                    case 0x1A: // idx 5: [n, n-1, n-1, n-1]
                         index++;
-                        AddPair(output, (nibble << 4) | ((nibble - 1) & 0xF), ((nibble - 1) & 0xF) * 0x11);
+                        AddPair(output,
+                            (nibble << 4) | ((nibble - 1) & 0xF),
+                            ((nibble - 1) & 0xF) * 0x11);
                         break;
-                    case 0x19:
+                    case 0x19: // idx 6: [n, n+1, n, n]
                         index++;
                         AddPair(output, (nibble << 4) | ((nibble + 1) & 0xF), (nibble << 4) | nibble);
                         break;
-                    case 0x18:
+                    case 0x18: // idx 7: [n, n, n+1, n]
                         index++;
-                        AddPair(output, (nibble << 4) | nibble, ((nibble + 1) & 0xF) * 0x11 + nibble);
+                        AddPair(output, (nibble << 4) | nibble, (((nibble + 1) & 0xF) << 4) | nibble);
                         break;
-                    case 0x17:
+                    case 0x17: // idx 8: [n, n, n, n+1]
                         index++;
                         AddPair(output, (nibble << 4) | nibble, (nibble << 4) | ((nibble + 1) & 0xF));
                         break;

@@ -10,14 +10,17 @@ public sealed class PixelFont
 
     public static PixelFont Load(string? repositoryRoot = null) => Instance;
 
-    public int Measure(string text)
+    public int Measure(string text) => Measure(text, shrink: 1);
+
+    public int Measure(string text, int shrink)
     {
+        shrink = Math.Max(1, shrink);
         var w = 0;
         foreach (var ch in text)
         {
             if (ch is '\n' or '\r')
                 continue;
-            w += Advance(ch);
+            w += (Advance(ch) + shrink - 1) / shrink;
         }
         return w;
     }
@@ -40,15 +43,17 @@ public sealed class PixelFont
         byte r,
         byte g,
         byte b,
-        bool shadow = true)
+        bool shadow = true,
+        int shrink = 1)
     {
+        shrink = Math.Max(1, shrink);
         var cursor = x;
         foreach (var ch in text)
         {
             if (ch is '\n' or '\r')
                 continue;
-            DrawChar(image, ch, cursor, y, r, g, b, shadow);
-            cursor += Advance(ch);
+            DrawChar(image, ch, cursor, y, r, g, b, shadow, shrink);
+            cursor += (Advance(ch) + shrink - 1) / shrink;
         }
     }
 
@@ -59,10 +64,12 @@ public sealed class PixelFont
         int y,
         byte r,
         byte g,
-        byte b)
+        byte b,
+        int shrink = 1)
     {
-        var w = Measure(text);
-        Draw(image, text, centerX - w / 2, y, r, g, b);
+        shrink = Math.Max(1, shrink);
+        var w = Measure(text, shrink);
+        Draw(image, text, centerX - w / 2, y, r, g, b, shadow: true, shrink);
     }
 
     private void DrawChar(
@@ -73,33 +80,37 @@ public sealed class PixelFont
         byte r,
         byte g,
         byte b,
-        bool shadow)
+        bool shadow,
+        int shrink = 1)
     {
+        shrink = Math.Max(1, shrink);
         var drawAccent = ch is 'é' or 'É';
         ch = NormalizeGlyph(ch);
         if (!Pmd2FontData.Glyphs.TryGetValue(ch, out var glyph))
         {
-            SceneCompositor.FillRectPublic(image, x + 1, y + 2, 3, 8, r, g, b, 220);
+            SceneCompositor.FillRectPublic(image, x + 1, y + 2 / shrink, Math.Max(1, 3 / shrink), Math.Max(1, 8 / shrink), r, g, b, 220);
             return;
         }
 
         var bits = glyph.Bits;
-        for (var row = 0; row < GlyphRows; row++)
+        for (var row = 0; row < GlyphRows; row += shrink)
         {
-            for (var col = 0; col < GlyphCols; col++)
+            for (var col = 0; col < GlyphCols; col += shrink)
             {
                 var nibble = bits[row * GlyphCols + col];
                 if (nibble == 0)
                     continue;
+                var px = x + col / shrink;
+                var py = y + row / shrink;
                 if (shadow)
-                    Put(image, x + col + 1, y + row + 1, 0, 0, 0, 160);
-                Put(image, x + col, y + row, r, g, b, 255);
+                    Put(image, px + 1, py + 1, 0, 0, 0, 160);
+                Put(image, px, py, r, g, b, 255);
             }
         }
 
-        if (drawAccent)
+        if (drawAccent && shrink == 1)
         {
-            // Acute accent above the vowel.
+            // Acute accent above the vowel (full-size glyphs only).
             Put(image, x + 3, y + 0, r, g, b, 255);
             Put(image, x + 4, y + 0, r, g, b, 255);
             Put(image, x + 2, y + 1, r, g, b, 255);
@@ -108,6 +119,10 @@ public sealed class PixelFont
                 Put(image, x + 4, y + 1, 0, 0, 0, 160);
                 Put(image, x + 5, y + 1, 0, 0, 0, 160);
             }
+        }
+        else if (drawAccent)
+        {
+            Put(image, x + 1, y, r, g, b, 255);
         }
     }
 

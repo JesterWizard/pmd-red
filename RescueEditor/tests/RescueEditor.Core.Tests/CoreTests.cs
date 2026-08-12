@@ -133,7 +133,7 @@ public sealed class CoreTests
 
         var rom = RomImage.Open(baserom);
         var (catalog, charmap, _) = CatalogBuilder.Build(rom);
-        var portrait = catalog.Assets.First(asset => asset.Kind == AssetKind.KaoPortrait);
+        var portrait = catalog.Assets.First(asset => asset.Kind == AssetKind.KaoPortraitSheet);
         var title = catalog.Assets.First(asset => asset.Kind == AssetKind.TitleBackground);
         var effect = catalog.Assets.First(asset => asset.Kind == AssetKind.Effect);
         var ground = catalog.Assets.First(asset => asset.Kind == AssetKind.GroundMap);

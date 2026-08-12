@@ -36,9 +36,17 @@ function Get-AssetsFingerprint {
     if (Test-Path $monSrc) {
         $monCount = @(Get-ChildItem -Path $monSrc -Directory -ErrorAction SilentlyContinue).Count
     }
+    $axHdr = Join-Path $wslRoot "src\data\ax"
+    $axHdrCount = 0
+    if (Test-Path $axHdr) {
+        $axHdrCount = @(Get-ChildItem -Path $axHdr -Filter "*.h" -File -ErrorAction SilentlyContinue).Count
+    }
     $lines = @(
         "mon_dirs=$monCount",
         "mon_mtime=$(Get-DirMtimeUtcTicks $monSrc)",
+        "ax_headers=$axHdrCount",
+        "ax_hdr_mtime=$(Get-DirMtimeUtcTicks $axHdr)",
+        "anim_lz_mtime=$(Get-DirMtimeUtcTicks (Join-Path $wslRoot 'graphics\ax\anim_lz'))",
         "sound_mtime=$(Get-DirMtimeUtcTicks (Join-Path $wslRoot 'sound'))",
         "ornament_mtime=$(Get-DirMtimeUtcTicks (Join-Path $wslRoot 'graphics\ornament'))",
         "effects_mtime=$(Get-DirMtimeUtcTicks (Join-Path $wslRoot 'data\effects'))"
@@ -70,6 +78,11 @@ function Test-AssetsNeedSync {
         $destCount = @(Get-ChildItem -Path $monDst -Directory -ErrorAction SilentlyContinue).Count
     }
     if ($destCount -lt 100) { return $true }
+    # Boss multi-OAM assembly needs AX pose headers + 4bpp tiles (not just PNGs).
+    $axHdr = Join-Path $winRoot "src\data\ax\moltres.h"
+    if (-not (Test-Path $axHdr)) { return $true }
+    $lzSample = Join-Path $winRoot "graphics\ax\mon\moltres\sprite_1.4bpp.lz"
+    if (-not (Test-Path $lzSample)) { return $true }
     $current = Get-AssetsFingerprint
     $previous = [System.IO.File]::ReadAllText($stampPath)
     return $current -ne $previous
@@ -114,15 +127,35 @@ function Sync-HeavyRepoAssets {
 
     Sync-SmallRepoFiles
 
+    # AX pose headers — required to assemble multi-OAM / padded boss sprites.
+    $axHdrSrc = Join-Path $wslRoot "src\data\ax"
+    $axHdrDst = Join-Path $winRoot "src\data\ax"
+    if (Test-Path $axHdrSrc) {
+        Write-Host "Syncing AX pose headers..."
+        New-Item -ItemType Directory -Force -Path $axHdrDst | Out-Null
+        & robocopy $axHdrSrc $axHdrDst *.h /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+        if ($LASTEXITCODE -ge 8) { throw "robocopy failed for ax headers (exit $LASTEXITCODE)" }
+    }
+
+    # Full actor sprite dumps: PNGs (incl. compound sprite_N_k) + compressed tiles.
+    # PNG-only idle scraps are not enough for bosses (Moltres wing poses, Ho-Oh 64x64).
     $axSrc = Join-Path $wslRoot "graphics\ax\mon"
     $axDst = Join-Path $winRoot "graphics\ax\mon"
     if (Test-Path $axSrc) {
+        Write-Host "Syncing actor sprite PNGs + 4bpp.lz..."
         New-Item -ItemType Directory -Force -Path $axDst | Out-Null
-        $names = @()
-        1..15 | ForEach-Object { $names += "sprite_$_.png" }
-        47..55 | ForEach-Object { $names += "sprite_$_.png" }
-        & robocopy $axSrc $axDst @names /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+        & robocopy $axSrc $axDst *.png *.4bpp.lz /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
         if ($LASTEXITCODE -ge 8) { throw "robocopy failed for actor sprites (exit $LASTEXITCODE)" }
+    }
+
+    # AX animation sequences (SELECT_ANIMATION → wing flap, etc.).
+    $animSrc = Join-Path $wslRoot "graphics\ax\anim_lz"
+    $animDst = Join-Path $winRoot "graphics\ax\anim_lz"
+    if (Test-Path $animSrc) {
+        Write-Host "Syncing AX anim_lz..."
+        New-Item -ItemType Directory -Force -Path $animDst | Out-Null
+        & robocopy $animSrc $animDst /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+        if ($LASTEXITCODE -ge 8) { throw "robocopy failed for anim_lz (exit $LASTEXITCODE)" }
     }
 
     $ornSrc = Join-Path $wslRoot "graphics\ornament"

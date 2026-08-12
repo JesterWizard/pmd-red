@@ -25,4 +25,8 @@
     <ProjectReference Include="..\..\src\RescueEditor.Core\RescueEditor.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Testdata\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>

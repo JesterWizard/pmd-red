@@ -6,6 +6,76 @@ public static class GraphicsRenderers
 {
     public static PreviewContent RenderPortrait(RomImage rom, AssetDescriptor asset)
     {
+        var image = DecodePortraitImage(rom, asset);
+        return new PreviewContent(asset.Name, Png: image.ToPng(), MimeType: "image/png");
+    }
+
+    /// <summary>
+    /// Composite emotion faces into a 4-column labeled sheet at 3× nearest-neighbor face scale
+    /// with full-resolution pixel-font captions (no shrink — avoids glitchy downsampled text).
+    /// </summary>
+    public static PreviewContent RenderPortraitSheet(RomImage rom, AssetDescriptor sheet)
+    {
+        var faces = sheet.Children.Count > 0
+            ? sheet.Children
+            : [sheet];
+        var font = PixelFont.Load();
+        const int scale = PortraitSheetPresentation.DefaultDisplayScale;
+        const int face = PortraitSheetPresentation.FaceSize * scale;
+        const int gapX = 8;
+        const int gapY = 10;
+        const int labelGap = 3;
+        const int labelH = PixelFont.GlyphRows + 2;
+
+        var labels = new string[faces.Count];
+        for (var i = 0; i < faces.Count; i++)
+        {
+            var emotion = faces[i].Metadata.GetValueOrDefault("emotion", $"Emotion{i}");
+            labels[i] = PortraitSheetPresentation.EmotionLabel(i, emotion);
+        }
+
+        var cellW = face;
+        var cellH = face + labelGap + labelH;
+        var cols = PortraitSheetPresentation.ColumnCount(faces.Count);
+        var rows = PortraitSheetPresentation.RowCount(faces.Count);
+        var width = cols * cellW + (cols - 1) * gapX;
+        var height = rows * cellH + (rows - 1) * gapY;
+        var canvas = new RgbaImage(width, height, new byte[width * height * 4]);
+
+        for (var i = 0; i < faces.Count; i++)
+        {
+            RgbaImage image;
+            try
+            {
+                image = PortraitSheetPresentation.ScaleNearest(DecodePortraitImage(rom, faces[i]), scale);
+            }
+            catch
+            {
+                continue;
+            }
+
+            var col = i % cols;
+            var row = i / cols;
+            var cellX = col * (cellW + gapX);
+            var cellY = row * (cellH + gapY);
+            BlitRgba(canvas, image, cellX, cellY);
+            font.DrawCentered(
+                canvas,
+                labels[i],
+                cellX + cellW / 2,
+                cellY + face + labelGap,
+                r: 0xE8, g: 0xE8, b: 0xE8);
+        }
+
+        return new PreviewContent(
+            sheet.Name,
+            Png: canvas.ToPng(),
+            MimeType: "image/png",
+            Text: sheet.Description);
+    }
+
+    private static RgbaImage DecodePortraitImage(RomImage rom, AssetDescriptor asset)
+    {
         var graphics = rom.Copy(asset.Offset, asset.Size);
         if (asset.Metadata.TryGetValue("forcePrefix", out var forcePrefix) &&
             string.Equals(forcePrefix, "true", StringComparison.OrdinalIgnoreCase) ||
@@ -30,8 +100,31 @@ public static class GraphicsRenderers
             }
         }
 
-        return new PreviewContent(asset.Name, Png: new RgbaImage(40, 40, pixels).ToPng(),
-            MimeType: "image/png");
+        return new RgbaImage(40, 40, pixels);
+    }
+
+    private static void BlitRgba(RgbaImage dest, RgbaImage src, int dx, int dy)
+    {
+        for (var y = 0; y < src.Height; y++)
+        {
+            var destY = dy + y;
+            if (destY < 0 || destY >= dest.Height)
+                continue;
+            for (var x = 0; x < src.Width; x++)
+            {
+                var destX = dx + x;
+                if (destX < 0 || destX >= dest.Width)
+                    continue;
+                var si = (y * src.Width + x) * 4;
+                var di = (destY * dest.Width + destX) * 4;
+                if (src.Pixels[si + 3] < 8)
+                    continue;
+                dest.Pixels[di] = src.Pixels[si];
+                dest.Pixels[di + 1] = src.Pixels[si + 1];
+                dest.Pixels[di + 2] = src.Pixels[si + 2];
+                dest.Pixels[di + 3] = src.Pixels[si + 3];
+            }
+        }
     }
 
     public static PreviewContent RenderTitleBackground(RomImage rom, AssetDescriptor asset)

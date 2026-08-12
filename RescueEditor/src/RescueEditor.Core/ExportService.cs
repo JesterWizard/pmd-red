@@ -9,6 +9,7 @@ public static class AssetPreviewer
         return asset.Kind switch
         {
             AssetKind.KaoPortrait => GraphicsRenderers.RenderPortrait(rom, asset),
+            AssetKind.KaoPortraitSheet => GraphicsRenderers.RenderPortraitSheet(rom, asset),
             AssetKind.TitleBackground => GraphicsRenderers.RenderTitleBackground(rom, asset),
             AssetKind.Effect => EffectRenderer.Render(rom, asset),
             AssetKind.GroundMap => GroundMapIndexer.Render(rom, asset),
@@ -137,6 +138,17 @@ public static class AssetExportService
                     GraphicsRenderers.RenderPortrait(rom, asset).Png!, paths);
                 WriteRange(categoryDirectory, stem + ".pal", rom, asset.AuxiliaryOffset,
                     asset.AuxiliarySize, paths);
+                break;
+            case AssetKind.KaoPortraitSheet:
+                WriteFile(categoryDirectory, stem + ".png",
+                    GraphicsRenderers.RenderPortraitSheet(rom, asset).Png!, paths);
+                foreach (var emotion in asset.Children)
+                {
+                    var emotionStem = SanitizeFileName(
+                        $"{asset.Name}-{emotion.Metadata.GetValueOrDefault("emotion", "face")}");
+                    WriteFile(categoryDirectory, emotionStem + ".png",
+                        GraphicsRenderers.RenderPortrait(rom, emotion).Png!, paths);
+                }
                 break;
             case AssetKind.TitleBackground:
                 WriteFile(categoryDirectory, stem + ".png",

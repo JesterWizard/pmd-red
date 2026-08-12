@@ -20,6 +20,7 @@ public enum AssetKind
 {
     Raw,
     KaoPortrait,
+    KaoPortraitSheet,
     TitleBackground,
     Effect,
     GroundFile,
@@ -46,6 +47,8 @@ public sealed class AssetDescriptor
     public string? Description { get; init; }
     public IReadOnlyDictionary<string, string> Metadata { get; init; } =
         new ReadOnlyDictionary<string, string>(new Dictionary<string, string>());
+    /// <summary>Child assets (e.g. emotion faces under a portrait sheet).</summary>
+    public IReadOnlyList<AssetDescriptor> Children { get; init; } = Array.Empty<AssetDescriptor>();
 
     public bool HasRomRange => Offset >= 0 && Size > 0;
 
@@ -100,8 +103,7 @@ public sealed class AssetCatalog
             AssetCategory.Portraits =>
                 items.OrderBy(asset => asset.Metadata.GetValueOrDefault("species", asset.Name),
                         StringComparer.OrdinalIgnoreCase)
-                    .ThenBy(asset => asset.Metadata.GetValueOrDefault("emotion", asset.Name),
-                        StringComparer.OrdinalIgnoreCase)
+                    .ThenBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase)
                     .ToArray(),
             AssetCategory.GroundMaps =>
                 items.OrderBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase)

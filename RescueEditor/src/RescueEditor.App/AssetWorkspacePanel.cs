@@ -37,6 +37,8 @@ public sealed class AssetWorkspacePanel : UserControl
     private Image? _previewImage;
     private TextBlock? _zoomLabel;
     private double _previewZoom = 1.0;
+    private double _previewZoomDefault = 1.0;
+    private bool _integerPreviewZoom;
     private int _previewPixelWidth;
     private int _previewPixelHeight;
 
@@ -259,7 +261,7 @@ public sealed class AssetWorkspacePanel : UserControl
                 await ShowPreviewAsync(asset);
             };
             _assetGrid.Children.Add(card);
-            if (asset.Kind is AssetKind.KaoPortrait or AssetKind.TitleBackground or
+            if (asset.Kind is AssetKind.KaoPortrait or AssetKind.KaoPortraitSheet or AssetKind.TitleBackground or
                 AssetKind.Effect or AssetKind.GroundMap or AssetKind.Scene)
                 _ = LoadThumbnailAsync(asset, imageHost, token);
         }
@@ -359,7 +361,10 @@ public sealed class AssetWorkspacePanel : UserControl
             if (preview.IsImage)
             {
                 using var stream = new MemoryStream(preview.Png!);
-                _previewHost.Child = CreateZoomableImagePreview(preview.Title, new Bitmap(stream));
+                var initialZoom = AssetPreviewZoom.InitialFor(asset.Kind);
+                var integerZoom = asset.Kind is AssetKind.KaoPortrait or AssetKind.KaoPortraitSheet;
+                _previewHost.Child = CreateZoomableImagePreview(
+                    preview.Title, new Bitmap(stream), initialZoom, integerZoom);
             }
             else
             {
@@ -468,9 +473,15 @@ public sealed class AssetWorkspacePanel : UserControl
         };
     }
 
-    private Control CreateZoomableImagePreview(string title, Bitmap bitmap)
+    private Control CreateZoomableImagePreview(
+        string title,
+        Bitmap bitmap,
+        double initialZoom = 1.0,
+        bool integerZoom = false)
     {
-        _previewZoom = 1.0;
+        _integerPreviewZoom = integerZoom;
+        _previewZoomDefault = initialZoom;
+        _previewZoom = integerZoom ? Math.Max(1, Math.Round(initialZoom)) : initialZoom;
         _previewPixelWidth = bitmap.PixelSize.Width;
         _previewPixelHeight = bitmap.PixelSize.Height;
         _previewImage = new Image
@@ -479,21 +490,30 @@ public sealed class AssetWorkspacePanel : UserControl
             Stretch = Stretch.Fill,
             HorizontalAlignment = HorizontalAlignment.Left,
             VerticalAlignment = VerticalAlignment.Top,
+            UseLayoutRounding = true,
         };
+        // Crisp pixel art: nearest-neighbor + DPI-compensated layout (avoids uneven 125%/150% scaling).
+        RenderOptions.SetBitmapInterpolationMode(_previewImage, BitmapInterpolationMode.None);
+        _previewImage.AttachedToVisualTree += (_, _) => ApplyPreviewZoom();
         ApplyPreviewZoom();
         _zoomLabel = new TextBlock
         {
             VerticalAlignment = VerticalAlignment.Center,
             Margin = new Thickness(8, 0),
             MinWidth = 56,
-            Text = "100%",
+            Text = $"{_previewZoom * 100:0}%",
         };
         var zoomOut = new Button { Content = "−", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
         var zoomIn = new Button { Content = "+", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
-        var zoom100 = new Button { Content = "100%", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
-        zoomOut.Click += (_, _) => AdjustPreviewZoom(1 / 1.25);
-        zoomIn.Click += (_, _) => AdjustPreviewZoom(1.25);
-        zoom100.Click += (_, _) => SetPreviewZoom(1.0);
+        var zoomReset = new Button
+        {
+            Content = $"{_previewZoomDefault * 100:0}%",
+            Padding = new Thickness(10, 4),
+            Margin = new Thickness(2, 0),
+        };
+        zoomOut.Click += (_, _) => AdjustPreviewZoom(zoomIn: false);
+        zoomIn.Click += (_, _) => AdjustPreviewZoom(zoomIn: true);
+        zoomReset.Click += (_, _) => SetPreviewZoom(_previewZoomDefault);
 
         return new DockPanel
         {
@@ -513,7 +533,7 @@ public sealed class AssetWorkspacePanel : UserControl
                             VerticalAlignment = VerticalAlignment.Center,
                             Margin = new Thickness(0, 0, 12, 0),
                         },
-                        zoomOut, zoomIn, zoom100, _zoomLabel,
+                        zoomOut, zoomIn, zoomReset, _zoomLabel,
                     },
                 },
                 new ScrollViewer
@@ -526,11 +546,19 @@ public sealed class AssetWorkspacePanel : UserControl
         };
     }
 
-    private void AdjustPreviewZoom(double factor) => SetPreviewZoom(_previewZoom * factor);
+    private void AdjustPreviewZoom(bool zoomIn)
+    {
+        if (_integerPreviewZoom)
+            SetPreviewZoom(_previewZoom + (zoomIn ? 1 : -1));
+        else
+            SetPreviewZoom(_previewZoom * (zoomIn ? 1.25 : 1 / 1.25));
+    }
 
     private void SetPreviewZoom(double zoom)
     {
-        _previewZoom = Math.Clamp(zoom, 0.25, 8.0);
+        if (_integerPreviewZoom)
+            zoom = Math.Round(zoom);
+        _previewZoom = Math.Clamp(zoom, _integerPreviewZoom ? 1.0 : 0.25, 8.0);
         ApplyPreviewZoom();
     }
 
@@ -538,8 +566,9 @@ public sealed class AssetWorkspacePanel : UserControl
     {
         if (_previewImage is null)
             return;
-        _previewImage.Width = _previewPixelWidth * _previewZoom;
-        _previewImage.Height = _previewPixelHeight * _previewZoom;
+        var scaling = TopLevel.GetTopLevel(this)?.RenderScaling ?? 1.0;
+        _previewImage.Width = PixelPerfectLayout.LayoutDipSize(_previewPixelWidth, _previewZoom, scaling);
+        _previewImage.Height = PixelPerfectLayout.LayoutDipSize(_previewPixelHeight, _previewZoom, scaling);
         if (_zoomLabel is not null)
             _zoomLabel.Text = $"{_previewZoom * 100:0}%";
     }

@@ -76,13 +76,14 @@ public static partial class AxPoseAssembler
     }
 
     /// <summary>
-    /// True when the south idle pose needs compound VRAM assembly (boss-sized /
-    /// multi-OAM monsters). Ordinary single-OAM idle sheets stay on PNG frames.
+    /// True when idle drawing needs AX pose assembly (boss-sized / multi-OAM).
+    /// Includes single-OAM monsters whose sprite arrays use <c>{NULL,pad}</c> or
+    /// <c>sprite_N_k</c> chunks (e.g. Ho-Oh 64×64) — sheet PNGs are only strips.
     /// </summary>
     public static bool IsMultiPieceMonster(string repositoryRoot, string folder)
     {
         var pieces = ParsePose(repositoryRoot, folder, poseNumber: 1);
-        if (pieces is null || pieces.Count <= 1)
+        if (pieces is null || pieces.Count == 0)
             return false;
 
         var header = FindAxHeader(repositoryRoot, folder);
@@ -96,6 +97,7 @@ public static partial class AxPoseAssembler
                 return true;
         }
 
+        // Several OAM pieces without compound VRAM still need a shared assemble.
         return pieces.Count >= 4;
     }
 
@@ -190,8 +192,11 @@ public static partial class AxPoseAssembler
         return canvas;
     }
 
-    /// <summary>Idle direction → 1-based pose (Pose1…Pose8).</summary>
-    public static int IdlePoseForDirection(int direction) => (direction & 7) + 1;
+    /// <summary>
+    /// Idle direction → 1-based pose of the first frame in that facing group.
+    /// AX idle packs 3 poses per direction (S…SW): Pose1–3 south, Pose13–15 north, etc.
+    /// </summary>
+    public static int IdlePoseForDirection(int direction) => ((direction & 7) * 3) + 1;
 
     public static IReadOnlyList<PosePiece>? ParsePose(string repositoryRoot, string folder, int poseNumber)
     {

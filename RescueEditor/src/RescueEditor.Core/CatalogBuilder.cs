@@ -35,7 +35,7 @@ public static class CatalogBuilder
                                 rom.IsRangeValid(asset.AuxiliaryOffset, asset.AuxiliarySize))
                 .ToArray();
         }
-        catalog.AddRange(portraits);
+        catalog.AddRange(PortraitSheetGrouping.GroupBySpecies(portraits));
 
         Report("Indexing title backgrounds…");
         catalog.AddRange(TitleBackgroundIndexer.Index()
