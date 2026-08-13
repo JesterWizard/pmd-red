@@ -756,7 +756,7 @@ public sealed class MainWindow : Window
         _workspaceHost.Child = _dataTablesWorkspace;
         ApplyDockLayout(sceneOwnsInspector: true);
         UpdateBreadcrumb();
-        SetStatus("Data tables: edit stats, learnsets, and descriptions. Build ROM to export.");
+            SetStatus("Data tables: edit stats, learnsets, descriptions, and friend areas. Build ROM to export.");
     }
 
     private void OnDataTableSelected(object? sender, AssetDescriptor? asset)
@@ -1143,7 +1143,8 @@ public sealed class MainWindow : Window
         try
         {
             var report = RomBuilder.Build(
-                _rom, _scenes, _project, file.Path.LocalPath, _charmap, _runtimeConfig, _cPatchHostRom);
+                _rom, _scenes, _project, file.Path.LocalPath, _charmap, _runtimeConfig, _cPatchHostRom,
+                workingImage: _workingRom?.View);
             var summary = report.Success
                 ? $"Built {file.Path.LocalPath} ({report.Changes.Count} changes)."
                 : $"Build failed with {report.Errors.Count} error(s).";

@@ -17,7 +17,8 @@ public static class AssetPreviewer
             AssetKind.Dungeon or AssetKind.DungeonFloor => DungeonPreview.Create(rom, asset),
             AssetKind.MonsterTable or AssetKind.MonsterEntry or
                 AssetKind.MoveTable or AssetKind.MoveEntry or
-                AssetKind.ItemTable or AssetKind.ItemEntry => DataTablePreview.Create(rom, asset, charmap),
+                AssetKind.ItemTable or AssetKind.ItemEntry or
+                AssetKind.FriendAreaTable or AssetKind.FriendAreaEntry => DataTablePreview.Create(rom, asset, charmap),
             AssetKind.Dialogue => CreateDialoguePreview(rom, asset, charmap),
             AssetKind.Script => new PreviewContent(asset.Name,
                 Text: ScriptDisassembler.Disassemble(rom, asset.Offset, charmap)),

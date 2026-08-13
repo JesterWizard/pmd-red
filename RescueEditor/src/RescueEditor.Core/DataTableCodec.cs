@@ -9,15 +9,19 @@ public sealed class DataTableTables
     public const int MoveEntrySize = 0x24;
     public const int ItemEntrySize = 0x20;
     public const int LearnsetEntrySize = 8;
-    public const int MonsterCount = 424; // MONSTER_MAX
-    public const int MoveCount = 430; // NUM_MOVE_IDS
-    public const int ItemCount = 240; // NUMBER_OF_ITEM_IDS
-    public const int LearnsetCount = 420; // through MONSTER_DEOXYS_SPEED
+    public const int DefaultMonsterCount = 424; // MONSTER_MAX
+    public const int DefaultMoveCount = 430; // NUM_MOVE_IDS
+    public const int DefaultItemCount = 240; // NUMBER_OF_ITEM_IDS
+    public const int DefaultLearnsetCount = 420; // through MONSTER_DEOXYS_SPEED
 
-    public required int MonsterData { get; init; }
-    public required int MoveData { get; init; }
-    public required int LearnsetData { get; init; }
-    public required int ItemData { get; init; }
+    public required int MonsterData { get; set; }
+    public required int MoveData { get; set; }
+    public required int LearnsetData { get; set; }
+    public required int ItemData { get; set; }
+    public int MonsterCount { get; set; } = DefaultMonsterCount;
+    public int MoveCount { get; set; } = DefaultMoveCount;
+    public int ItemCount { get; set; } = DefaultItemCount;
+    public int LearnsetCount { get; set; } = DefaultLearnsetCount;
 
     public static DataTableTables? TryLoad(RomImage rom)
     {
@@ -187,8 +191,8 @@ public static class DataTableCodec
 
     public static IReadOnlyList<DataTablePick> AlphabeticalMoves(RomImage rom, DataTableTables tables, Charmap? charmap)
     {
-        var picks = new List<DataTablePick>(DataTableTables.MoveCount);
-        for (var id = 0; id < DataTableTables.MoveCount; id++)
+        var picks = new List<DataTablePick>(tables.MoveCount);
+        for (var id = 0; id < tables.MoveCount; id++)
         {
             var name = MoveDisplayName(rom, tables, id, charmap);
             if (string.IsNullOrWhiteSpace(name))
@@ -201,8 +205,8 @@ public static class DataTableCodec
 
     public static IReadOnlyList<DataTablePick> AlphabeticalItems(RomImage rom, DataTableTables tables, Charmap? charmap)
     {
-        var picks = new List<DataTablePick>(DataTableTables.ItemCount);
-        for (var id = 0; id < DataTableTables.ItemCount; id++)
+        var picks = new List<DataTablePick>(tables.ItemCount);
+        for (var id = 0; id < tables.ItemCount; id++)
         {
             var entry = ReadItem(rom, tables, id, charmap);
             var name = entry is null || string.IsNullOrWhiteSpace(entry.Name) ? $"Item {id}" : entry.Name;
@@ -220,7 +224,7 @@ public static class DataTableCodec
         DataTableMonsterPatch patch,
         ICollection<RomSpan>? dirty = null)
     {
-        if ((uint)id >= DataTableTables.MonsterCount)
+        if ((uint)id >= (uint)tables.MonsterCount)
             return false;
         var off = tables.MonsterData + id * DataTableTables.MonsterEntrySize;
         if (!rom.IsRangeValid(off, DataTableTables.MonsterEntrySize))
@@ -253,7 +257,7 @@ public static class DataTableCodec
         DataTableMovePatch patch,
         ICollection<RomSpan>? dirty = null)
     {
-        if ((uint)id >= DataTableTables.MoveCount)
+        if ((uint)id >= (uint)tables.MoveCount)
             return false;
         var off = tables.MoveData + id * DataTableTables.MoveEntrySize;
         if (!rom.IsRangeValid(off, DataTableTables.MoveEntrySize))
@@ -279,7 +283,7 @@ public static class DataTableCodec
         DataTableItemPatch patch,
         ICollection<RomSpan>? dirty = null)
     {
-        if ((uint)id >= DataTableTables.ItemCount)
+        if ((uint)id >= (uint)tables.ItemCount)
             return false;
         var off = tables.ItemData + id * DataTableTables.ItemEntrySize;
         if (!rom.IsRangeValid(off, DataTableTables.ItemEntrySize))
@@ -295,7 +299,7 @@ public static class DataTableCodec
 
     public static MonsterTableEntry? ReadMonster(RomImage rom, DataTableTables tables, int id, Charmap? charmap)
     {
-        if ((uint)id >= DataTableTables.MonsterCount)
+        if ((uint)id >= (uint)tables.MonsterCount)
             return null;
         var off = tables.MonsterData + id * DataTableTables.MonsterEntrySize;
         if (!rom.IsRangeValid(off, DataTableTables.MonsterEntrySize))
@@ -338,7 +342,7 @@ public static class DataTableCodec
 
     public static MoveTableEntry? ReadMove(RomImage rom, DataTableTables tables, int id, Charmap? charmap)
     {
-        if ((uint)id >= DataTableTables.MoveCount)
+        if ((uint)id >= (uint)tables.MoveCount)
             return null;
         var off = tables.MoveData + id * DataTableTables.MoveEntrySize;
         if (!rom.IsRangeValid(off, DataTableTables.MoveEntrySize))
@@ -366,7 +370,7 @@ public static class DataTableCodec
 
     public static ItemTableEntry? ReadItem(RomImage rom, DataTableTables tables, int id, Charmap? charmap)
     {
-        if ((uint)id >= DataTableTables.ItemCount)
+        if ((uint)id >= (uint)tables.ItemCount)
             return null;
         var off = tables.ItemData + id * DataTableTables.ItemEntrySize;
         if (!rom.IsRangeValid(off, DataTableTables.ItemEntrySize))
@@ -391,7 +395,7 @@ public static class DataTableCodec
     private static (IReadOnlyList<LevelUpMove> LevelUp, IReadOnlyList<int> HmTm) ReadLearnset(
         RomImage rom, DataTableTables tables, int species)
     {
-        if (tables.LearnsetData < 0 || (uint)species >= DataTableTables.LearnsetCount)
+        if (tables.LearnsetData < 0 || (uint)species >= (uint)tables.LearnsetCount)
             return ([], []);
         var entry = tables.LearnsetData + species * DataTableTables.LearnsetEntrySize;
         if (!rom.IsRangeValid(entry, DataTableTables.LearnsetEntrySize))
@@ -455,7 +459,7 @@ public static class DataTableCodec
     private static bool WriteLevelUpMoves(
         MutableRom rom, DataTableTables tables, int species, IReadOnlyList<LevelUpMove> moves, ICollection<RomSpan>? dirty)
     {
-        if (tables.LearnsetData < 0 || (uint)species >= DataTableTables.LearnsetCount)
+        if (tables.LearnsetData < 0 || (uint)species >= (uint)tables.LearnsetCount)
             return true;
         var entry = tables.LearnsetData + species * DataTableTables.LearnsetEntrySize;
         var ptr = DataTableTables.ReadRomPointer(rom, entry);

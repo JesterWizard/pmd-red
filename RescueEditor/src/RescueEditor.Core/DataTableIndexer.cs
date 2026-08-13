@@ -40,9 +40,11 @@ public static class DataTableIndexer
     public static IReadOnlyList<AssetDescriptor> Index(
         RomImage rom,
         Charmap charmap,
-        string? repositoryRoot = null)
+        string? repositoryRoot = null,
+        DataTableTables? tables = null,
+        FriendAreaTables? friendTables = null)
     {
-        var tables = DataTableTables.TryLoad(rom);
+        tables ??= DataTableTables.TryLoad(rom);
         if (tables is null)
             return [];
 
@@ -51,14 +53,54 @@ public static class DataTableIndexer
         return
         [
             BuildTable(AssetKind.MonsterTable, "Pokemon", "monspara",
-                DataTableTables.MonsterCount, DataTableTables.MonsterEntrySize, tables.MonsterData,
+                tables.MonsterCount, DataTableTables.MonsterEntrySize, tables.MonsterData,
                 id => CreateMonsterAsset(rom, charmap, tables, labels, id)),
             BuildTable(AssetKind.MoveTable, "Moves", "wazapara",
-                DataTableTables.MoveCount, DataTableTables.MoveEntrySize, tables.MoveData,
+                tables.MoveCount, DataTableTables.MoveEntrySize, tables.MoveData,
                 id => CreateMoveAsset(rom, charmap, tables, labels, id)),
             BuildTable(AssetKind.ItemTable, "Items", "itempara",
-                DataTableTables.ItemCount, DataTableTables.ItemEntrySize, tables.ItemData,
+                tables.ItemCount, DataTableTables.ItemEntrySize, tables.ItemData,
                 id => CreateItemAsset(rom, charmap, tables, labels, id)),
+            .. IndexFriendAreas(rom, friendTables),
+        ];
+    }
+
+    private static IReadOnlyList<AssetDescriptor> IndexFriendAreas(RomImage rom, FriendAreaTables? tables = null)
+    {
+        tables ??= FriendAreaTables.TryLoad(rom);
+        if (tables is null)
+            return [];
+
+        var children = new List<AssetDescriptor>(tables.Count);
+        for (var id = 1; id < tables.Count; id++)
+        {
+            var child = CreateFriendAreaAsset(rom, tables, id);
+            if (child is not null)
+                children.Add(child);
+        }
+
+        if (children.Count == 0)
+            return [];
+
+        return
+        [
+            new AssetDescriptor
+            {
+                Id = "datatable:friendarea",
+                Name = "Friend Areas",
+                Category = AssetCategory.DataTables,
+                Kind = AssetKind.FriendAreaTable,
+                Offset = tables.Settings,
+                Size = tables.Count * FriendAreaTables.SettingsEntrySize,
+                Format = "gFriendAreaSettings",
+                Description = $"{children.Count} friend areas",
+                Metadata = new Dictionary<string, string>
+                {
+                    ["table"] = "friendarea",
+                    ["count"] = children.Count.ToString(CultureInfo.InvariantCulture),
+                },
+                Children = children,
+            },
         ];
     }
 
@@ -206,6 +248,36 @@ public static class DataTableIndexer
         };
     }
 
+    private static AssetDescriptor? CreateFriendAreaAsset(RomImage rom, FriendAreaTables tables, int id)
+    {
+        var entry = FriendAreaCodec.Read(rom, tables, id);
+        if (entry is null)
+            return null;
+        return new AssetDescriptor
+        {
+            Id = $"datatable:friendarea:{id}",
+            Name = $"{id:D3}  {entry.Name}",
+            Category = AssetCategory.DataTables,
+            Kind = AssetKind.FriendAreaEntry,
+            Offset = tables.SettingsOffset(id),
+            Size = FriendAreaTables.SettingsEntrySize,
+            Format = "FriendAreaSettings",
+            Description = $"{entry.Name} — {FriendAreaCodec.UnlockName(entry.Unlock)}",
+            Metadata = new Dictionary<string, string>
+            {
+                ["id"] = id.ToString(CultureInfo.InvariantCulture),
+                ["displayName"] = entry.Name,
+                ["capacity"] = entry.Capacity.ToString(CultureInfo.InvariantCulture),
+                ["unlock"] = FriendAreaCodec.UnlockName(entry.Unlock),
+                ["price"] = entry.Price.ToString(CultureInfo.InvariantCulture),
+                ["location"] = entry.LocationName,
+                ["sceneBma"] = entry.SceneBma,
+                ["mapX"] = entry.MapX.ToString(CultureInfo.InvariantCulture),
+                ["mapY"] = entry.MapY.ToString(CultureInfo.InvariantCulture),
+            },
+        };
+    }
+
     private static string JoinTypes(int a, int b)
     {
         var first = DataTableEnums.TypeName(a);
@@ -274,6 +346,7 @@ public static class DataTablePreview
                 AssetKind.MonsterTable => $"{asset.Children.Count} Pokemon entries (monspara).",
                 AssetKind.MoveTable => $"{asset.Children.Count} move entries (wazapara).",
                 AssetKind.ItemTable => $"{asset.Children.Count} item entries (itempara).",
+                AssetKind.FriendAreaTable => $"{asset.Children.Count} friend area entries.",
                 _ => asset.Description ?? "",
             });
             return builder.ToString();
@@ -338,6 +411,21 @@ public static class DataTablePreview
                 }
 
                 break;
+            }
+        }
+
+        if (asset.Kind == AssetKind.FriendAreaEntry)
+        {
+            var friendTables = FriendAreaTables.TryLoad(rom);
+            var friend = friendTables is null ? null : FriendAreaCodec.Read(rom, friendTables, id);
+            if (friend is not null)
+            {
+                builder.AppendLine($"Name: {friend.Name}");
+                builder.AppendLine($"Unlock: {FriendAreaCodec.UnlockName(friend.Unlock)}");
+                builder.AppendLine($"Price {friend.Price}  Capacity {friend.Capacity}");
+                builder.AppendLine($"Map: {friend.LocationName} ({friend.MapX}, {friend.MapY})");
+                if (!string.IsNullOrWhiteSpace(friend.SceneBma))
+                    builder.AppendLine($"Scene: {friend.SceneBma}");
             }
         }
 

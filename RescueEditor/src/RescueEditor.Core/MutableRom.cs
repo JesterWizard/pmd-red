@@ -105,6 +105,26 @@ public sealed class MutableRom
         return RomPointerFixup.AdjustAbsoluteRomPointers(this, offset, count);
     }
 
+    /// <summary>
+    /// Remove <paramref name="count"/> bytes at <paramref name="offset"/>, shifting the tail down
+    /// and adjusting absolute ROM pointers that pointed past the removed span.
+    /// </summary>
+    public int RemoveBytes(int offset, int count)
+    {
+        if (offset < 0 || offset > _bytes.Length)
+            throw new ArgumentOutOfRangeException(nameof(offset));
+        if (count < 0 || offset + count > _bytes.Length)
+            throw new ArgumentOutOfRangeException(nameof(count));
+        if (count == 0)
+            return 0;
+
+        var next = new byte[_bytes.Length - count];
+        Buffer.BlockCopy(_bytes, 0, next, 0, offset);
+        Buffer.BlockCopy(_bytes, offset + count, next, offset, _bytes.Length - offset - count);
+        _bytes = next;
+        return RomPointerFixup.AdjustAbsoluteRomPointers(this, offset, -count);
+    }
+
     public int PointerToOffset(uint pointer)
     {
         if (pointer < RomImage.RomVirtualAddress)
@@ -148,12 +168,23 @@ public static class RomPointerFixup
             if (value >= 0x0A000000)
                 continue;
             var target = (int)(value - RomImage.RomVirtualAddress);
-            if (target < insertOffset)
+            if (delta > 0)
+            {
+                if (target < insertOffset)
+                    continue;
+                if (i >= insertOffset && i < insertOffset + delta)
+                    continue;
+                rom.WriteUInt32(i, value + (uint)delta);
+                adjusted++;
                 continue;
-            // Skip the freshly inserted span itself (still fill bytes).
-            if (i >= insertOffset && i < insertOffset + delta)
+            }
+
+            var removed = -delta;
+            if (target >= insertOffset && target < insertOffset + removed)
                 continue;
-            rom.WriteUInt32(i, value + (uint)delta);
+            if (target < insertOffset + removed)
+                continue;
+            rom.WriteUInt32(i, value - (uint)removed);
             adjusted++;
         }
 

@@ -15,7 +15,7 @@ public enum CategoryWorkspaceKind
     /// <summary>Dedicated dungeon floors / spawns workspace.</summary>
     Dungeons,
 
-    /// <summary>Read-only monster / move / item tables.</summary>
+    /// <summary>Monster / move / item / friend-area tables.</summary>
     DataTables,
 }
 

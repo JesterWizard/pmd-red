@@ -61,7 +61,7 @@ public sealed class DataTableCatalogTests
         var rom = RomImage.Open(baserom);
         var (catalog, charmap, _) = CatalogBuilder.Build(rom);
         var tables = catalog.ForCategory(AssetCategory.DataTables);
-        Assert.Equal(3, tables.Count);
+        Assert.Equal(4, tables.Count);
 
         var monsters = tables.First(a => a.Kind == AssetKind.MonsterTable);
         Assert.Equal("Pokemon", monsters.Name);

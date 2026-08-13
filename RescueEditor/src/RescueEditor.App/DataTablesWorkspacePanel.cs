@@ -6,6 +6,7 @@ using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.Platform.Storage;
 using RescueEditor.Core;
 
 namespace RescueEditor.App;
@@ -23,12 +24,14 @@ public sealed class DataTablesWorkspacePanel : UserControl
     private readonly ToggleButton _monsterTab;
     private readonly ToggleButton _moveTab;
     private readonly ToggleButton _itemTab;
+    private readonly ToggleButton _friendTab;
 
     private RomImage? _rom;
     private Charmap? _charmap;
     private AssetCatalog? _catalog;
     private WorkingRom? _workingRom;
     private DataTableTables? _tables;
+    private FriendAreaTables? _friendTables;
     private ActorSpriteAtlas? _sprites;
     private DungeonIconAtlas? _icons;
     private IReadOnlyList<DataTablePick> _movePicks = [];
@@ -67,9 +70,11 @@ public sealed class DataTablesWorkspacePanel : UserControl
         _monsterTab = EditorChrome.InspectorTab("Pokemon", isChecked: true);
         _moveTab = EditorChrome.InspectorTab("Moves");
         _itemTab = EditorChrome.InspectorTab("Items");
+        _friendTab = EditorChrome.InspectorTab("Friend Areas");
         _monsterTab.IsCheckedChanged += (_, _) => { if (_monsterTab.IsChecked == true) ShowTableKind(AssetKind.MonsterTable); };
         _moveTab.IsCheckedChanged += (_, _) => { if (_moveTab.IsChecked == true) ShowTableKind(AssetKind.MoveTable); };
         _itemTab.IsCheckedChanged += (_, _) => { if (_itemTab.IsChecked == true) ShowTableKind(AssetKind.ItemTable); };
+        _friendTab.IsCheckedChanged += (_, _) => { if (_friendTab.IsChecked == true) ShowTableKind(AssetKind.FriendAreaTable); };
 
         var toolbarInner = new StackPanel
         {
@@ -91,10 +96,12 @@ public sealed class DataTablesWorkspacePanel : UserControl
                 new StackPanel
                 {
                     Orientation = Orientation.Horizontal,
-                    Children = { _monsterTab, _moveTab, _itemTab },
+                    Children = { _monsterTab, _moveTab, _itemTab, _friendTab },
                 },
                 EditorChrome.ToolbarSeparator(),
                 _filterBox,
+                AddToolbarButton("Add", AddEntry),
+                AddToolbarButton("Delete", DeleteEntry),
                 _status,
             },
         };
@@ -155,6 +162,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
         _sprites = new ActorSpriteAtlas(root);
         _icons = DungeonIconAtlas.TryLoad(ActiveRom, 0);
         _tables = DataTableTables.TryLoad(ActiveRom);
+        _friendTables = FriendAreaTables.TryLoad(ActiveRom);
         if (_tables is not null)
             _movePicks = DataTableCodec.AlphabeticalMoves(ActiveRom, _tables, charmap);
         ShowAsset(asset ?? catalog.ForCategory(AssetCategory.DataTables).FirstOrDefault());
@@ -166,6 +174,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
             return;
 
         var table = asset.Kind is AssetKind.MonsterEntry or AssetKind.MoveEntry or AssetKind.ItemEntry
+            or AssetKind.FriendAreaEntry
             ? ParentTable(asset)
             : asset;
         if (table is null)
@@ -175,11 +184,13 @@ public sealed class DataTablesWorkspacePanel : UserControl
         _monsterTab.IsChecked = table.Kind == AssetKind.MonsterTable;
         _moveTab.IsChecked = table.Kind == AssetKind.MoveTable;
         _itemTab.IsChecked = table.Kind == AssetKind.ItemTable;
+        _friendTab.IsChecked = table.Kind == AssetKind.FriendAreaTable;
         _entries = table.Children;
         _status.Text = table.Description ?? table.Name;
         ApplyFilter();
 
         var focus = asset.Kind is AssetKind.MonsterEntry or AssetKind.MoveEntry or AssetKind.ItemEntry
+            or AssetKind.FriendAreaEntry
             ? asset
             : _entries.FirstOrDefault(e => e.Metadata.GetValueOrDefault("id") == "1") ?? _entries.FirstOrDefault();
         if (focus is not null)
@@ -288,7 +299,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
 
     private void ApplyListSprite(Image image, AssetKind kind, int id)
     {
-        if (kind == AssetKind.MoveEntry)
+        if (kind is AssetKind.MoveEntry or AssetKind.FriendAreaEntry)
         {
             image.Source = null;
             image.Width = 0;
@@ -349,7 +360,10 @@ public sealed class DataTablesWorkspacePanel : UserControl
     {
         _formHost.Children.Clear();
         _learnsetRows.Clear();
-        if (_tables is null || _charmap is null || !int.TryParse(asset.Metadata.GetValueOrDefault("id"), out var id))
+        if (!int.TryParse(asset.Metadata.GetValueOrDefault("id"), out var id))
+            return;
+        if (asset.Kind is AssetKind.MonsterEntry or AssetKind.MoveEntry or AssetKind.ItemEntry &&
+            (_tables is null || _charmap is null))
             return;
 
         _suppress = true;
@@ -363,6 +377,9 @@ public sealed class DataTablesWorkspacePanel : UserControl
                 break;
             case AssetKind.ItemEntry:
                 BuildItemForm(id);
+                break;
+            case AssetKind.FriendAreaEntry:
+                BuildFriendAreaForm(id);
                 break;
         }
 
@@ -468,6 +485,265 @@ public sealed class DataTablesWorkspacePanel : UserControl
         _formHost.Children.Add(DescriptionBox(entry.Description, SaveItem));
     }
 
+    private void BuildFriendAreaForm(int id)
+    {
+        if (_friendTables is null)
+            return;
+        var entry = FriendAreaCodec.Read(ActiveRom, _friendTables, id);
+        if (entry is null)
+            return;
+
+        _formHost.Children.Add(EditorChrome.SectionHeader(entry.Name));
+        _formHost.Children.Add(ComboRow("Unlock", FriendAreaCodec.UnlockPicks, (int)entry.Unlock, SaveFriendArea));
+        _formHost.Children.Add(SpinRow("Price", (int)entry.Price, 0, 99999, SaveFriendArea));
+        _formHost.Children.Add(SpinRow("Capacity", entry.Capacity, 0, 99, SaveFriendArea));
+        _formHost.Children.Add(EditorChrome.SectionHeader("Map placement"));
+        _formHost.Children.Add(ComboRow("Location", FriendAreaCodec.LocationPicks, entry.LocationId, SaveFriendArea));
+        _formHost.Children.Add(SpinRow("Map X", entry.MapX, 0, 512, SaveFriendArea));
+        _formHost.Children.Add(SpinRow("Map Y", entry.MapY, 0, 512, SaveFriendArea));
+        if (!string.IsNullOrWhiteSpace(entry.SceneBma))
+        {
+            _formHost.Children.Add(EditorChrome.PropertyRow("Scene", new TextBlock
+            {
+                Text = GroundMapNames.FormatListName(entry.SceneBma),
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontLabel,
+                Foreground = EditorTheme.TextPrimaryBrush,
+                VerticalAlignment = VerticalAlignment.Center,
+                TextWrapping = TextWrapping.Wrap,
+            }));
+        }
+
+        _formHost.Children.Add(EditorChrome.SectionHeader("Background"));
+        var upload = EditorChrome.ToolButton("Upload new image…");
+        upload.HorizontalAlignment = HorizontalAlignment.Left;
+        upload.Margin = new Thickness(EditorTheme.Space4, 0, 0, EditorTheme.Space2);
+        upload.Click += async (_, _) => await UploadBackgroundAsync(entry.SceneBma);
+        _formHost.Children.Add(upload);
+        _formHost.Children.Add(new TextBlock
+        {
+            Text = FriendAreaBackgroundUpload.RestrictionsText,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            Margin = new Thickness(EditorTheme.Space4, 0, 0, EditorTheme.Space2),
+            TextWrapping = TextWrapping.Wrap,
+        });
+
+        var preview = new Image
+        {
+            Stretch = Stretch.Uniform,
+            HorizontalAlignment = HorizontalAlignment.Left,
+        };
+        RenderOptions.SetBitmapInterpolationMode(preview, BitmapInterpolationMode.None);
+        var rgba = FriendAreaIntroArt.TryLoadSceneBackground(ActiveRom, _catalog, entry.SceneBma);
+        if (rgba is not null)
+        {
+            preview.Source = ToWriteableBitmap(rgba);
+            preview.Width = rgba.Width;
+            preview.Height = rgba.Height;
+        }
+
+        _formHost.Children.Add(new Border
+        {
+            HorizontalAlignment = HorizontalAlignment.Left,
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, 0, EditorTheme.Space4),
+            Background = EditorTheme.InputBgBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(1),
+            ClipToBounds = true,
+            Child = rgba is not null
+                ? preview
+                : new TextBlock
+                {
+                    Text = "No scene map for this friend area.",
+                    FontFamily = EditorTheme.UiFont,
+                    FontSize = EditorTheme.FontMeta,
+                    Foreground = EditorTheme.TextMutedBrush,
+                    TextWrapping = TextWrapping.Wrap,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(EditorTheme.Space3),
+                    Width = 240,
+                    Height = 160,
+                },
+        });
+    }
+
+    private static Button AddToolbarButton(string text, Action click)
+    {
+        var button = EditorChrome.ToolButton(text);
+        button.Click += (_, _) => click();
+        return button;
+    }
+
+    private void AddEntry()
+    {
+        if (_workingRom is null || _table is null)
+            return;
+        var cloneId = _selected is not null && int.TryParse(_selected.Metadata.GetValueOrDefault("id"), out var id)
+            ? id
+            : 1;
+        var buffer = _workingRom.BeginMutate();
+        int newId;
+        try
+        {
+            newId = _table.Kind switch
+            {
+                AssetKind.MonsterTable or AssetKind.MonsterEntry when _tables is not null =>
+                    DataTableListEditing.AddMonster(buffer, _tables, cloneId),
+                AssetKind.MoveTable or AssetKind.MoveEntry when _tables is not null =>
+                    DataTableListEditing.AddMove(buffer, _tables, cloneId),
+                AssetKind.ItemTable or AssetKind.ItemEntry when _tables is not null =>
+                    DataTableListEditing.AddItem(buffer, _tables, cloneId),
+                AssetKind.FriendAreaTable or AssetKind.FriendAreaEntry when _friendTables is not null =>
+                    DataTableListEditing.AddFriendArea(buffer, _friendTables, cloneId),
+                _ => -1,
+            };
+        }
+        catch (Exception exception)
+        {
+            _status.Text = exception.Message;
+            return;
+        }
+
+        if (newId < 0)
+        {
+            _status.Text = "This table cannot add an entry.";
+            return;
+        }
+
+        _workingRom.Adopt(buffer);
+        ReindexAndSelect(newId);
+        _status.Text = $"Added entry {newId:D3} (ROM shifted). Build ROM to export.";
+    }
+
+    private void DeleteEntry()
+    {
+        if (_workingRom is null || _selected is null || _table is null)
+            return;
+        if (!int.TryParse(_selected.Metadata.GetValueOrDefault("id"), out var id) || id <= 0)
+        {
+            _status.Text = "Select an entry to delete.";
+            return;
+        }
+
+        var buffer = _workingRom.BeginMutate();
+        var ok = _table.Kind switch
+        {
+            AssetKind.MonsterTable or AssetKind.MonsterEntry when _tables is not null =>
+                DataTableListEditing.DeleteMonster(buffer, _tables, id),
+            AssetKind.MoveTable or AssetKind.MoveEntry when _tables is not null =>
+                DataTableListEditing.DeleteMove(buffer, _tables, id),
+            AssetKind.ItemTable or AssetKind.ItemEntry when _tables is not null =>
+                DataTableListEditing.DeleteItem(buffer, _tables, id),
+            AssetKind.FriendAreaTable or AssetKind.FriendAreaEntry when _friendTables is not null && _tables is not null =>
+                DataTableListEditing.DeleteFriendArea(buffer, _friendTables, _tables, id),
+            _ => false,
+        };
+        if (!ok)
+        {
+            _status.Text = "Could not delete this entry.";
+            return;
+        }
+
+        _workingRom.Adopt(buffer);
+        ReindexAndSelect(Math.Max(1, id - 1));
+        _status.Text = $"Deleted entry {id:D3}; later IDs shifted down. Build ROM to export.";
+    }
+
+    private async Task UploadBackgroundAsync(string sceneBma)
+    {
+        if (_workingRom is null)
+        {
+            _status.Text = "Open a ROM to upload a background.";
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(sceneBma))
+        {
+            _status.Text = "This friend area has no scene map to replace.";
+            return;
+        }
+
+        var top = TopLevel.GetTopLevel(this);
+        if (top is null)
+            return;
+        var files = await top.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Friend Area background PNG",
+            AllowMultiple = false,
+            FileTypeFilter =
+            [
+                new FilePickerFileType("PNG image") { Patterns = ["*.png"] },
+            ],
+        });
+        var file = files.FirstOrDefault();
+        if (file is null)
+            return;
+
+        await using var stream = await file.OpenReadAsync();
+        using var memory = new MemoryStream();
+        await stream.CopyToAsync(memory);
+        var image = RgbaImage.FromPng(memory.ToArray());
+        if (image is null)
+        {
+            _status.Text = "Could not decode that PNG.";
+            return;
+        }
+
+        var rejected = FriendAreaBackgroundUpload.Validate(image);
+        if (rejected is not null)
+        {
+            _status.Text = rejected;
+            return;
+        }
+
+        var buffer = _workingRom.BeginMutate();
+        var dirty = new List<RomSpan>();
+        var error = FriendAreaBackgroundUpload.TryWrite(buffer, _catalog, sceneBma, image, dirty);
+        if (error is not null)
+        {
+            _status.Text = error;
+            return;
+        }
+
+        if (buffer.Length != _workingRom.View.Length)
+            _workingRom.Adopt(buffer);
+        else
+        {
+            foreach (var span in dirty)
+                _workingRom.Commit(buffer, span.Offset, span.Length);
+        }
+
+        _status.Text = $"Background saved for {sceneBma} (Build ROM to export).";
+        if (_selected is not null)
+            RebuildForm(_selected);
+    }
+
+    private void ReindexAndSelect(int focusId)
+    {
+        if (_catalog is null || _charmap is null)
+            return;
+        var indexed = DataTableIndexer.Index(ActiveRom, _charmap, tables: _tables, friendTables: _friendTables);
+        _catalog.ReplaceCategory(AssetCategory.DataTables, indexed);
+        var kind = _table?.Kind switch
+        {
+            AssetKind.MonsterEntry => AssetKind.MonsterTable,
+            AssetKind.MoveEntry => AssetKind.MoveTable,
+            AssetKind.ItemEntry => AssetKind.ItemTable,
+            AssetKind.FriendAreaEntry => AssetKind.FriendAreaTable,
+            var tableKind => tableKind,
+        };
+        var table = indexed.FirstOrDefault(a => a.Kind == kind)
+                    ?? indexed.FirstOrDefault();
+        if (table is null)
+            return;
+        var focus = table.Children.FirstOrDefault(c => c.Metadata.GetValueOrDefault("id") == focusId.ToString())
+                    ?? table.Children.FirstOrDefault();
+        ShowAsset(focus ?? table);
+    }
+
     private void SaveMonster()
     {
         if (_suppress || _workingRom is null || _tables is null || _selected is null)
@@ -526,6 +802,32 @@ public sealed class DataTablesWorkspacePanel : UserControl
             Category: ComboVal("Category"),
             MoveId: ComboVal("Effect"),
             Description: DescVal()), dirty));
+    }
+
+    private void SaveFriendArea()
+    {
+        if (_suppress || _workingRom is null || _friendTables is null || _selected is null)
+            return;
+        if (!int.TryParse(_selected.Metadata.GetValueOrDefault("id"), out var id))
+            return;
+
+        var locationId = ComboVal("Location");
+        var current = FriendAreaCodec.Read(ActiveRom, _friendTables, id);
+        var moved = current is not null && current.LocationId != locationId;
+        Apply((buffer, dirty) =>
+        {
+            if (!FriendAreaCodec.WriteSettings(buffer, _friendTables, id, new FriendAreaSettingsPatch(
+                    Capacity: IntVal("Capacity"),
+                    Unlock: (FriendAreaUnlock)ComboVal("Unlock"),
+                    Price: (uint)IntVal("Price")), dirty))
+                return false;
+            if (moved)
+                return FriendAreaCodec.WriteLocation(buffer, _friendTables, id, locationId, dirty);
+            return FriendAreaCodec.WriteMapPin(buffer, _friendTables, id, IntVal("Map X"), IntVal("Map Y"), dirty);
+        });
+
+        if (moved && _selected is not null)
+            RebuildForm(_selected);
     }
 
     private void Apply(Func<MutableRom, List<RomSpan>, bool> write)

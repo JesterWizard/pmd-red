@@ -41,6 +41,8 @@ public enum AssetKind
     MoveEntry,
     ItemTable,
     ItemEntry,
+    FriendAreaTable,
+    FriendAreaEntry,
     RuntimeConfig,
 }
 
@@ -157,6 +159,12 @@ public sealed class AssetCatalog
     public void SetDiagnostics(IEnumerable<string> diagnostics)
     {
         Diagnostics = diagnostics.ToArray();
+    }
+
+    public void ReplaceCategory(AssetCategory category, IEnumerable<AssetDescriptor> assets)
+    {
+        _assets.RemoveAll(asset => asset.Category == category);
+        _assets.AddRange(assets);
     }
 }
 

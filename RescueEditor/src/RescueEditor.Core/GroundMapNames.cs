@@ -14,6 +14,28 @@ public static class GroundMapNames
     public static string FormatListName(string romMapName) =>
         GetDisplayName(romMapName) is { } display ? $"{display} ({romMapName})" : romMapName;
 
+    /// <summary>Primary overworld BMA for a Friend Area display name (skips underwater <c>*W</c> maps).</summary>
+    public static string? BmaForDisplayName(string displayName)
+    {
+        string? fallback = null;
+        foreach (var (bma, name) in DisplayNames)
+        {
+            if (!name.Equals(displayName, StringComparison.OrdinalIgnoreCase))
+                continue;
+            if (!bma.StartsWith("H", StringComparison.OrdinalIgnoreCase))
+                continue;
+            if (bma.Contains('W', StringComparison.OrdinalIgnoreCase))
+            {
+                fallback ??= bma;
+                continue;
+            }
+
+            return bma;
+        }
+
+        return fallback;
+    }
+
     private static readonly Dictionary<string, string> DisplayNames = new(StringComparer.OrdinalIgnoreCase)
     {
         ["A01P01m"] = "Personality Test",

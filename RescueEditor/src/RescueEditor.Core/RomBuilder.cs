@@ -39,7 +39,8 @@ public static class RomBuilder
         string outputPath,
         Charmap? charmap = null,
         RuntimeConfigState? runtimeConfig = null,
-        RomImage? cPatchHost = null)
+        RomImage? cPatchHost = null,
+        RomImage? workingImage = null)
     {
         var report = new RomBuildReport();
         var needsCPatches = runtimeConfig is not null &&
@@ -119,7 +120,7 @@ public static class RomBuilder
         if (!string.Equals(project.BaseRomSha1, source.Sha1, StringComparison.OrdinalIgnoreCase))
             report.Warnings.Add("Project base ROM SHA-1 does not match the open ROM.");
 
-        var rom = MutableRom.From(source);
+        var rom = MutableRom.From(workingImage ?? source);
 
         if (profile is not null)
         {

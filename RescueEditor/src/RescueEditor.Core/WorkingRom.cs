@@ -9,11 +9,13 @@ public sealed class WorkingRom
     public WorkingRom(RomImage source)
     {
         Source = source;
+        _seed = source;
         View = RomImage.FromBytes(source.Path, source.Bytes.ToArray());
     }
 
     public RomImage Source { get; }
     public RomImage View { get; private set; }
+    private RomImage _seed;
     public RuntimeConfigState? RuntimeConfig { get; set; }
     private readonly List<(int Offset, byte[] Data)> _overlays = [];
     /// <summary>Immutable parse of the source baserom, taken before project edits.</summary>
@@ -27,7 +29,7 @@ public sealed class WorkingRom
         var dirty = database.DialogueByOffset.Values
             .Select(dialogue => (Dialogue: dialogue, dialogue.Dirty))
             .ToList();
-        var buffer = MutableRom.From(Source);
+        var buffer = MutableRom.From(_seed);
         var report = new RomBuildReport();
         RomBuilder.WriteWorkingCopy(
             buffer, database, report, charmap, runtimeConfig ?? RuntimeConfig);
@@ -52,6 +54,14 @@ public sealed class WorkingRom
 
     public void Commit(MutableRom buffer, int offset, int length) =>
         Overlay(offset, buffer.Copy(offset, length));
+
+    /// <summary>Replace the working image after a structural insert/delete. Clears byte overlays.</summary>
+    public void Adopt(MutableRom buffer)
+    {
+        _seed = RomImage.FromBytes(Source.Path, buffer.Copy(0, buffer.Length));
+        View = _seed;
+        _overlays.Clear();
+    }
 
     private void ApplyOverlays(MutableRom buffer)
     {

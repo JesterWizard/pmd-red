@@ -13,9 +13,10 @@ public sealed class RomArchive
 public sealed class RomArchiveEntry
 {
     public required string Name { get; init; }
-    public required int Offset { get; init; }
+    public required int Offset { get; set; }
     public required int Size { get; set; }
     public required int NamePointerOffset { get; init; }
+    public required int DataPointerOffset { get; init; }
 }
 
 public static class RomArchiveParser
@@ -71,6 +72,7 @@ public static class RomArchiveParser
                     Offset = dataOffset,
                     Size = Math.Max(0, size),
                     NamePointerOffset = namePointer,
+                    DataPointerOffset = candidate.Entries + index * 8 + 4,
                 });
             }
 
