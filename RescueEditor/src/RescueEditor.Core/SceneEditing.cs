@@ -557,6 +557,17 @@ public static class SceneEditing
             sourceText is null)
             return;
 
+        var projectEdit = new ProjectEdit
+        {
+            Id = Guid.NewGuid().ToString("N"),
+            Kind = "script.source",
+            Target = scene.Name,
+            Description = $"Update {replacements.Count} script section(s)",
+            Values = { ["mapId"] = scene.MapId.ToString() },
+        };
+        if (sourceText is not null)
+            projectEdit.Values["source"] = sourceText;
+
         changes.Execute(
             "Edit scene script",
             apply: () =>
@@ -600,13 +611,7 @@ public static class SceneEditing
                 }
                 scene.ScriptSourceText = oldSource;
             },
-            edit: new ProjectEdit
-            {
-                Id = Guid.NewGuid().ToString("N"),
-                Kind = "script.source",
-                Target = scene.Name,
-                Description = $"Update {replacements.Count} script section(s)",
-            });
+            edit: projectEdit);
     }
 
     private static EntityScriptSlot? FindEntityScript(Scene scene, ScriptSourceSection section)

@@ -857,73 +857,9 @@ public sealed class MainWindow : Window
 
     private void ApplyProjectEdits(ProjectDocument project)
     {
-        if (_scenes is null) return;
-        foreach (var edit in project.Edits)
-        {
-            if (edit.Kind == "entity.position" &&
-                edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
-                int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var offset) &&
-                edit.Values.TryGetValue("x", out var xText) &&
-                edit.Values.TryGetValue("y", out var yText) &&
-                byte.TryParse(xText, out var x) &&
-                byte.TryParse(yText, out var y))
-            {
-                var entity = _scenes.Scenes.SelectMany(scene => scene.AllEntities)
-                    .FirstOrDefault(item => item.RomOffset == offset);
-                if (entity is not null)
-                {
-                    byte.TryParse(edit.Values.GetValueOrDefault("xFlags"), out var xf);
-                    byte.TryParse(edit.Values.GetValueOrDefault("yFlags"), out var yf);
-                    entity.Position = new CompactPos(x, y, xf, yf);
-                }
-            }
-            else if (edit.Kind == "entity.type" &&
-                     edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
-                     int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var typeOffset) &&
-                     edit.Values.TryGetValue("typeId", out var typeText) &&
-                     byte.TryParse(typeText, out var typeId))
-            {
-                var entity = _scenes.Scenes.SelectMany(s => s.AllEntities)
-                    .FirstOrDefault(item => item.RomOffset == typeOffset);
-                if (entity is not null)
-                {
-                    entity.TypeId = typeId;
-                    entity.DisplayName = $"{entity.Kind} {typeId}";
-                }
-            }
-            else if (edit.Kind == "dialogue.text" &&
-                     edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
-                     int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var textOffset) &&
-                     edit.Values.TryGetValue("text", out var text) &&
-                     _scenes.DialogueByOffset.TryGetValue(textOffset, out var dialogue))
-            {
-                dialogue.Text = text;
-            }
-            else if (edit.Kind == "script.arg" &&
-                     edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
-                     int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var cmdOffset) &&
-                     edit.Values.TryGetValue("field", out var field) &&
-                     edit.Values.TryGetValue("value", out var valueText) &&
-                     int.TryParse(valueText, out var value))
-            {
-                foreach (var station in _scenes.Scenes.SelectMany(s => s.Groups)
-                             .SelectMany(g => g.Sectors).SelectMany(sec => sec.Stations))
-                {
-                    var cmd = station.Commands.FirstOrDefault(c => c.RomOffset == cmdOffset);
-                    if (cmd is null) continue;
-                    switch (field)
-                    {
-                        case "op": cmd.Op = (byte)value; break;
-                        case "argByte": cmd.ArgByte = (byte)value; break;
-                        case "argShort": cmd.ArgShort = (short)value; break;
-                        case "arg1": cmd.Arg1 = value; break;
-                        case "arg2": cmd.Arg2 = value; break;
-                        case "argPtr": cmd.ArgPtr = unchecked((uint)value); break;
-                    }
-                    break;
-                }
-            }
-        }
+        if (_scenes is null)
+            return;
+        ProjectEditApplier.Apply(project, _scenes);
     }
 
     private async void BuildRomOnClick(object? sender, RoutedEventArgs e)

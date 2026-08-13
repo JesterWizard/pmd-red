@@ -355,6 +355,50 @@ public sealed class ScriptSourceTests
     }
 
     [Fact]
+    public void ApplyStoresScriptSourceOnProjectEdit()
+    {
+        var scene = CreateSceneWithStation("EVENT_TEST",
+            new ScriptCommandData { Op = 0xEF });
+        var database = new SceneDatabase();
+        database.Scenes.Add(scene);
+        var project = new ProjectDocument { Name = "Toy Project" };
+        var changes = new ChangeService();
+        changes.Attach(project, database);
+        var source = """
+            @station g0/s0 EVENT_TEST
+            WAIT(8)
+            RET()
+            """;
+
+        SceneEditing.ApplySceneScriptSource(changes, scene, SceneScriptSource.Parse(source), database, source);
+
+        var edit = Assert.Single(project.Edits);
+        Assert.Equal("script.source", edit.Kind);
+        Assert.Equal(scene.Name, edit.Target);
+        Assert.Equal("1", edit.Values["mapId"]);
+        Assert.Equal(source.Replace("\r\n", "\n").TrimEnd(), edit.Values["source"].Replace("\r\n", "\n").TrimEnd());
+    }
+
+    [Fact]
+    public void ApplyThrowsOnAssembleErrorWithLineAndOpcode()
+    {
+        var scene = CreateSceneWithStation("EVENT_TEST",
+            new ScriptCommandData { Op = 0xEF });
+        var parsed = SceneScriptSource.Parse("""
+            @station g0/s0 EVENT_TEST
+            NOT_A_COMMAND(
+            RET()
+            """);
+        var changes = new ChangeService();
+
+        var error = Assert.Throws<InvalidOperationException>(
+            () => SceneEditing.ApplySceneScriptSource(changes, scene, parsed));
+
+        Assert.Contains("line 2", error.Message, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("NOT_A_COMMAND", error.Message);
+    }
+
+    [Fact]
     public void ApplyUpdatesUnnamedStation()
     {
         var scene = CreateSceneWithStation("",

@@ -56,6 +56,72 @@ public sealed class WorkingRomTests
     }
 
     [Fact]
+    public void AssembleLongerScriptRelocatesAndRoundTripsThroughWorkingRom()
+    {
+        var bytes = new byte[0x12000];
+        Array.Fill(bytes, (byte)0xFF, 0x10000, 0x2000);
+        Encoding.ASCII.GetBytes("Hi").CopyTo(bytes, 0x20);
+        bytes[0x22] = 0;
+
+        var dialogue = new ScriptCommandData
+        {
+            Op = 0x34,
+            ArgShort = 2,
+            ArgPtr = RomPointer.FromOffset(0x20).Value,
+            RomOffset = 0x40,
+        };
+        var ret = new ScriptCommandData { Op = 0xEF, RomOffset = 0x50 };
+        var encoded = ScriptCodec.Encode([dialogue, ret]);
+        encoded.CopyTo(bytes, 0x40);
+        bytes[0x10] = 0;
+        bytes[0x11] = 0;
+        BitConverter.GetBytes(RomPointer.FromOffset(0x40).Value).CopyTo(bytes, 0x18);
+
+        var source = RomImage.FromBytes("/tmp/working-rom-relocate.gba", bytes);
+        var station = new ScriptRefData
+        {
+            Name = "EVENT_TEST",
+            ScriptOffset = 0x40,
+            ScriptCapacity = encoded.Length,
+            RomOffset = 0x10,
+        };
+        station.Commands.AddRange([dialogue, ret]);
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        sector.Stations.Add(station);
+        var group = new SceneGroup { Index = 0 };
+        group.Sectors.Add(sector);
+        var scene = new Scene { MapId = 1, Name = "Toy" };
+        scene.Groups.Add(group);
+        var database = new SceneDatabase();
+        database.Scenes.Add(scene);
+        database.DialogueByOffset[0x20] = new DialogueString { Offset = 0x20, Size = 2, Text = "Hi" };
+
+        var working = new WorkingRom(source);
+        var changes = new ChangeService();
+        var script = """
+            @station g0/s0 EVENT_TEST
+            DIALOGUE(2, "Hi")
+            WAIT(8)
+            WAIT(16)
+            RET()
+            """;
+
+        SceneEditing.ApplySceneScriptSource(
+            changes, scene, SceneScriptSource.Parse(script, database.DialogueByOffset), database, script);
+        var report = working.Sync(database);
+
+        Assert.True(report.Success, string.Join("; ", report.Errors));
+        Assert.True(station.ScriptOffset >= 0x10000, $"expected relocate, got 0x{station.ScriptOffset:X}");
+        Assert.Equal(station.ScriptOffset, working.View.ReadPointerOffset(0x18));
+
+        var commands = ScriptCodec.ReadScript(working.View, station.ScriptOffset);
+        Assert.Equal([0x34, 0xDB, 0xDB, 0xEF], commands.Select(c => (int)c.Op).ToArray());
+        Assert.Equal(8, commands[1].ArgShort);
+        Assert.Equal(16, commands[2].ArgShort);
+        Assert.Equal(source.Sha1, RomImage.FromBytes(source.Path, source.Bytes.ToArray()).Sha1);
+    }
+
+    [Fact]
     public void UndoRestoresWorkingRomDialogue()
     {
         var (source, scene, database) = CreateToy("/tmp/working-rom-undo.gba");
