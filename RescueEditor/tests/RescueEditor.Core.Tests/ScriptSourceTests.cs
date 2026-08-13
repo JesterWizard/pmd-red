@@ -551,6 +551,158 @@ public sealed class ScriptSourceTests
         Assert.Contains("DIALOGUE(2, \"Hello my name is {ACTOR}.\")", text);
     }
 
+    private static ScriptNamedDefinitions TestNames() => new()
+    {
+        Music = new NamedIdCatalog([(7, "MUS_POKEMON_SQUARE"), (12, "MUS_WELCOME_TO_THE_WORLD_OF_POKEMON")]),
+        Fanfare = new NamedIdCatalog([(206, "LEVELUP"), (204, "REWARD")]),
+        Map = new NamedIdCatalog([(0, "MAP_SQUARE"), (1, "MAP_POKEMON_SQUARE")]),
+        Emotion = new NamedIdCatalog([(0, "EMOTION_NORMAL"), (1, "EMOTION_HAPPY"), (12, "EMOTION_SUPRISED")]),
+    };
+
+    [Fact]
+    public void FormatsNamedMusicEmotionMapAndFanfare()
+    {
+        var names = TestNames();
+        Assert.Equal(
+            "BGM_SWITCH(MUS_POKEMON_SQUARE)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x44, Arg1 = 7 }, names: names));
+        Assert.Equal(
+            "PORTRAIT(3, 1, EMOTION_HAPPY)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x2E, ArgByte = 3, ArgShort = 1, Arg1 = 1 }, names: names));
+        Assert.Equal(
+            "SELECT_MAP(MAP_POKEMON_SQUARE)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x08, Arg1 = 1 }, names: names));
+        Assert.Equal(
+            "SELECT_GROUND(MAP_SQUARE)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x09, Arg1 = 0 }, names: names));
+        Assert.Equal(
+            "FANFARE_PLAY(LEVELUP)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x49, Arg1 = 206 }, names: names));
+        Assert.Equal(
+            "BGM_SWITCH(99)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x44, Arg1 = 99 }, names: names));
+    }
+
+    [Fact]
+    public void ParsesNamedArgsAndRawNumbers()
+    {
+        var names = TestNames();
+        var parsed = ScriptSource.Parse("""
+            BGM_SWITCH(MUS_POKEMON_SQUARE)
+            BGM_SWITCH(12)
+            PORTRAIT(2, 5, EMOTION_HAPPY)
+            SELECT_MAP(MAP_POKEMON_SQUARE)
+            FANFARE_PLAY(LEVELUP)
+            """, names: names);
+        Assert.True(parsed.Ok, string.Join("; ", parsed.Errors.Select(e => e.Message)));
+        var commands = Assert.Single(parsed.Sections).Commands;
+        Assert.Equal(7, commands[0].Command.Arg1);
+        Assert.Equal(12, commands[1].Command.Arg1);
+        Assert.Equal(1, commands[2].Command.Arg1);
+        Assert.Equal(1, commands[3].Command.Arg1);
+        Assert.Equal(206, commands[4].Command.Arg1);
+    }
+
+    [Fact]
+    public void NamedFormatParseRoundTrips()
+    {
+        var names = TestNames();
+        var originals = new[]
+        {
+            new ScriptCommandData { Op = 0x44, Arg1 = 7 },
+            new ScriptCommandData { Op = 0x2E, ArgByte = 3, ArgShort = 1, Arg1 = 12 },
+            new ScriptCommandData { Op = 0x08, Arg1 = 1 },
+            new ScriptCommandData { Op = 0x49, Arg1 = 204 },
+        };
+        foreach (var original in originals)
+        {
+            var line = ScriptSource.FormatCommand(original, names: names);
+            var parsed = ScriptSource.Parse(line, names: names);
+            Assert.True(parsed.Ok, line + ": " + string.Join("; ", parsed.Errors.Select(e => e.Message)));
+            var command = Assert.Single(Assert.Single(parsed.Sections).Commands).Command;
+            Assert.Equal(original.Op, command.Op);
+            Assert.Equal(original.ArgByte, command.ArgByte);
+            Assert.Equal(original.ArgShort, command.ArgShort);
+            Assert.Equal(original.Arg1, command.Arg1);
+        }
+    }
+
+    [Fact]
+    public void SuggestsScopedAutocompleteForCurrentArg()
+    {
+        var names = TestNames();
+        var music = names.Suggest(0x44, 0, "MUS_POKE");
+        Assert.Equal(["MUS_POKEMON_SQUARE"], music.Select(e => e.Name).ToArray());
+        var emotion = names.Suggest(0x2E, 2, "EMOTION_H");
+        Assert.Equal(["EMOTION_HAPPY"], emotion.Select(e => e.Name).ToArray());
+        Assert.Empty(names.Suggest(0x44, 0, "EMOTION"));
+        Assert.Empty(names.Suggest(0xDB, 0, "WAIT")); // WAIT has no named catalog
+    }
+
+    [Fact]
+    public void CompletionResolvesCaretToScopedSuggestions()
+    {
+        var names = TestNames();
+        var line = "BGM_SWITCH(MUS_POK";
+        var query = ScriptCompletion.TryGetQuery(line, line.Length);
+        Assert.NotNull(query);
+        Assert.Equal(0x44, query!.Op);
+        Assert.Equal(0, query.ArgIndex);
+        Assert.Equal("MUS_POK", query.Prefix);
+
+        var hits = ScriptCompletion.Suggest(names, "PORTRAIT(2, 5, EMOTION_H", "PORTRAIT(2, 5, EMOTION_H".Length);
+        Assert.Equal(["EMOTION_HAPPY"], hits.Select(e => e.Name).ToArray());
+
+        Assert.Empty(ScriptCompletion.Suggest(names, "WAIT(10", 7));
+        Assert.Empty(ScriptCompletion.Suggest(names, "BGM_SWITCH(MUS_POK", 3)); // caret in opcode name
+    }
+
+    [Fact]
+    public void FormatRewritesSavedSourceTextWithNamedArgs()
+    {
+        var names = TestNames();
+        var scene = CreateSceneWithStation("evt", new ScriptCommandData { Op = 0x2E, ArgByte = 2, ArgShort = 1, Arg1 = 1 });
+        scene.ScriptSourceText = """
+            @station g0/s0 evt
+            PORTRAIT(2, 1, 1)
+            BGM_SWITCH(7)
+            WAIT(15)
+            """;
+
+        var text = SceneScriptSource.Format(scene, names: names);
+
+        Assert.Contains("PORTRAIT(2, 1, EMOTION_HAPPY)", text);
+        Assert.Contains("BGM_SWITCH(MUS_POKEMON_SQUARE)", text);
+        Assert.Contains("WAIT(15)", text);
+        Assert.Contains("@station g0/s0 evt", text);
+    }
+
+    [Fact]
+    public void LoadsPartialCatalogsWhenSomeHeadersMissing()
+    {
+        var temp = Directory.CreateTempSubdirectory("rt-names-");
+        try
+        {
+            var constants = Path.Combine(temp.FullName, "include", "constants");
+            Directory.CreateDirectory(constants);
+            File.WriteAllText(Path.Combine(constants, "emotions.h"), """
+                #define EMOTION_NORMAL 0
+                #define EMOTION_HAPPY 1
+                """);
+
+            var defs = ScriptNamedDefinitions.TryLoadFromRepository(temp.FullName);
+            Assert.NotNull(defs);
+            Assert.True(defs!.Emotion.TryGetId("EMOTION_HAPPY", out var id));
+            Assert.Equal(1, id);
+            Assert.Empty(defs.Music.Entries);
+            Assert.Empty(defs.Map.Entries);
+        }
+        finally
+        {
+            temp.Delete(recursive: true);
+        }
+    }
+
     private static Scene CreateSceneWithStation(string name, params ScriptCommandData[] commands)
     {
         var station = new ScriptRefData { Name = name };

@@ -1640,9 +1640,13 @@ public sealed class SceneWorkspacePanel : UserControl
             return;
 
         var owner = TopLevel.GetTopLevel(this) as Window;
+        var preferredRoot = _rom is not null
+            ? CatalogBuilder.FindRepositoryRoot(_rom.Path)
+            : null;
+        var names = ScriptNamedDefinitions.TryLoadBestEffort(preferredRoot);
         var editor = focus is { } entry
-            ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex)
-            : new SceneScriptWindow(_scene, _changes, _database);
+            ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex, names)
+            : new SceneScriptWindow(_scene, _changes, _database, names: names);
         editor.Applied += (_, _) =>
         {
             SyncWorkingRom();

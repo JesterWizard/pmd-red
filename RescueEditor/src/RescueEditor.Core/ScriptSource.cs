@@ -134,17 +134,20 @@ public static class ScriptSource
 
     public static string FormatCommand(
         ScriptCommandData command,
-        IReadOnlyDictionary<int, DialogueString>? dialogue = null)
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null,
+        ScriptNamedDefinitions? names = null,
+        string? dialogueText = null)
     {
         if (Layouts.TryGetValue(command.Op, out var layout) && MatchesDefaults(command, layout))
-            return FormatNamed(command, layout, dialogue);
+            return FormatNamed(command, layout, dialogue, names, dialogueText);
 
         return FormatRaw(command);
     }
 
     public static ScriptSourceParseResult Parse(
         string text,
-        IReadOnlyDictionary<int, DialogueString>? dialogue = null)
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null,
+        ScriptNamedDefinitions? names = null)
     {
         var result = new ScriptSourceParseResult();
         var current = new ScriptSourceSection();
@@ -183,7 +186,7 @@ public static class ScriptSource
                 continue;
             }
 
-            if (!TryParseCommand(trimmed, dialogue, out var command, out var error))
+            if (!TryParseCommand(trimmed, dialogue, names, out var command, out var error))
             {
                 result.Errors.Add(new ScriptSourceError(lineNumber, error ?? "Invalid command."));
                 continue;
@@ -196,6 +199,87 @@ public static class ScriptSource
         if (result.Sections.Count == 0)
             result.Sections.Add(new ScriptSourceSection());
         return result;
+    }
+
+    /// <summary>
+    /// Re-formats known commands with named args while preserving headers, blanks, and comments.
+    /// Unparseable lines are left unchanged.
+    /// </summary>
+    public static string RewriteWithNamedArgs(
+        string text,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null,
+        ScriptNamedDefinitions? names = null)
+    {
+        if (names is null || !names.HasAny)
+            return text;
+
+        var lines = text.Replace("\r\n", "\n").Replace('\r', '\n').Split('\n');
+        var builder = new StringBuilder();
+        for (var i = 0; i < lines.Length; i++)
+        {
+            if (i > 0)
+                builder.Append('\n');
+
+            var raw = lines[i];
+            var commentStart = FindCommentStart(raw);
+            var code = commentStart < 0 ? raw : raw[..commentStart];
+            var comment = commentStart < 0 ? string.Empty : raw[commentStart..];
+            var trimmed = code.Trim();
+            if (trimmed.Length == 0 || trimmed.StartsWith('@') ||
+                !TryParseCommand(trimmed, dialogue, names, out var command, out _))
+            {
+                builder.Append(raw);
+                continue;
+            }
+
+            var leading = code[..(code.Length - code.TrimStart().Length)];
+            var trailingWs = code.Length > 0 && char.IsWhiteSpace(code[^1])
+                ? code[code.TrimEnd().Length..]
+                : string.Empty;
+            builder.Append(leading);
+            builder.Append(FormatCommand(command.Command, dialogue, names, command.DialogueText));
+            builder.Append(trailingWs);
+            builder.Append(comment);
+        }
+
+        return builder.ToString();
+    }
+
+    private static int FindCommentStart(string line)
+    {
+        var inString = false;
+        var escape = false;
+        for (var i = 0; i < line.Length; i++)
+        {
+            var ch = line[i];
+            if (inString)
+            {
+                if (escape)
+                {
+                    escape = false;
+                    continue;
+                }
+                if (ch == '\\')
+                {
+                    escape = true;
+                    continue;
+                }
+                if (ch == '"')
+                    inString = false;
+                continue;
+            }
+
+            if (ch == '"')
+            {
+                inString = true;
+                continue;
+            }
+
+            if (ch == '#' || (ch == '/' && i + 1 < line.Length && line[i + 1] == '/'))
+                return i;
+        }
+
+        return -1;
     }
 
     private static void FlushSection(ScriptSourceParseResult result, ScriptSourceSection current)
@@ -244,6 +328,7 @@ public static class ScriptSource
     private static bool TryParseCommand(
         string line,
         IReadOnlyDictionary<int, DialogueString>? dialogue,
+        ScriptNamedDefinitions? names,
         out ScriptSourceCommand command,
         out string? error)
     {
@@ -296,7 +381,7 @@ public static class ScriptSource
         string? dialogueText = null;
         for (var i = 0; i < layout.Slots.Length; i++)
         {
-            if (!TryAssign(data, layout.Slots[i], args[i], dialogue, out var text, out error))
+            if (!TryAssign(data, op, i, layout.Slots[i], args[i], dialogue, names, out var text, out error))
                 return false;
             if (text is not null)
                 dialogueText = text;
@@ -311,9 +396,12 @@ public static class ScriptSource
 
     private static bool TryAssign(
         ScriptCommandData command,
+        byte op,
+        int argIndex,
         Slot slot,
         string raw,
         IReadOnlyDictionary<int, DialogueString>? dialogue,
+        ScriptNamedDefinitions? names,
         out string? dialogueText,
         out string? error)
     {
@@ -331,8 +419,14 @@ public static class ScriptSource
 
         if (!TryParseNumber(raw, out var value))
         {
-            error = $"Expected a number, got '{raw}'.";
-            return false;
+            var catalog = names?.CatalogFor(op, argIndex);
+            if (catalog is null || !catalog.TryGetId(raw, out value))
+            {
+                error = catalog is null
+                    ? $"Expected a number, got '{raw}'."
+                    : $"Unknown name '{raw}'.";
+                return false;
+            }
         }
 
         switch (slot)
@@ -390,9 +484,12 @@ public static class ScriptSource
     private static string FormatNamed(
         ScriptCommandData command,
         MacroLayout layout,
-        IReadOnlyDictionary<int, DialogueString>? dialogue)
+        IReadOnlyDictionary<int, DialogueString>? dialogue,
+        ScriptNamedDefinitions? names,
+        string? dialogueText)
     {
-        var args = layout.Slots.Select(slot => FormatSlot(command, slot, dialogue));
+        var args = layout.Slots.Select((slot, index) =>
+            FormatSlot(command, slot, index, dialogue, names, dialogueText));
         return $"{layout.Name}({string.Join(", ", args)})";
     }
 
@@ -402,16 +499,35 @@ public static class ScriptSource
     private static string FormatSlot(
         ScriptCommandData command,
         Slot slot,
-        IReadOnlyDictionary<int, DialogueString>? dialogue) => slot switch
+        int argIndex,
+        IReadOnlyDictionary<int, DialogueString>? dialogue,
+        ScriptNamedDefinitions? names,
+        string? dialogueText)
     {
-        Slot.Byte => command.ArgByte.ToString(CultureInfo.InvariantCulture),
-        Slot.Short => command.ArgShort.ToString(CultureInfo.InvariantCulture),
-        Slot.Arg1 => command.Arg1.ToString(CultureInfo.InvariantCulture),
-        Slot.Arg2 => command.Arg2.ToString(CultureInfo.InvariantCulture),
-        Slot.Ptr => $"0x{command.ArgPtr:X8}",
-        Slot.String => FormatStringOrPointer(command.ArgPtr, dialogue),
-        _ => "0",
-    };
+        if (slot is Slot.Byte or Slot.Short or Slot.Arg1 or Slot.Arg2)
+        {
+            var value = slot switch
+            {
+                Slot.Byte => command.ArgByte,
+                Slot.Short => command.ArgShort,
+                Slot.Arg1 => command.Arg1,
+                _ => command.Arg2,
+            };
+            var catalog = names?.CatalogFor(command.Op, argIndex);
+            if (catalog is not null && catalog.TryGetName(value, out var name))
+                return name;
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        return slot switch
+        {
+            Slot.Ptr => $"0x{command.ArgPtr:X8}",
+            Slot.String => dialogueText is not null
+                ? Quote(dialogueText)
+                : FormatStringOrPointer(command.ArgPtr, dialogue),
+            _ => "0",
+        };
+    }
 
     private static string FormatStringOrPointer(uint pointer, IReadOnlyDictionary<int, DialogueString>? dialogue)
     {
@@ -565,12 +681,17 @@ public static class ScriptSource
 
 public static class SceneScriptSource
 {
-    public static string Format(Scene scene, IReadOnlyDictionary<int, DialogueString>? dialogue = null)
+    public static string Format(
+        Scene scene,
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null,
+        ScriptNamedDefinitions? names = null)
     {
         if (!string.IsNullOrEmpty(scene.ScriptSourceText))
         {
             var saved = scene.ScriptSourceText.Replace("\r\n", "\n").Replace('\r', '\n');
-            return saved.EndsWith('\n') ? saved : saved + "\n";
+            if (!saved.EndsWith('\n'))
+                saved += "\n";
+            return ScriptSource.RewriteWithNamedArgs(saved, dialogue, names);
         }
 
         var builder = new StringBuilder();
@@ -591,12 +712,12 @@ public static class SceneScriptSource
                     var nameSuffix = string.IsNullOrEmpty(station.Name) ? "" : $" {station.Name}";
                     builder.AppendLine($"@station g{sector.Group}/s{sector.Sector}{indexSuffix}{nameSuffix}");
                     foreach (var command in station.Commands)
-                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue));
+                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names));
                 }
 
-                AppendEntityScripts(builder, sector.Lives, "live", dialogue, ref any);
-                AppendEntityScripts(builder, sector.Objects, "object", dialogue, ref any);
-                AppendEntityScripts(builder, sector.Effects, "effect", dialogue, ref any);
+                AppendEntityScripts(builder, sector.Lives, "live", dialogue, names, ref any);
+                AppendEntityScripts(builder, sector.Objects, "object", dialogue, names, ref any);
+                AppendEntityScripts(builder, sector.Effects, "effect", dialogue, names, ref any);
 
                 foreach (var entity in sector.Events)
                 {
@@ -608,7 +729,7 @@ public static class SceneScriptSource
                     var nameSuffix = string.IsNullOrEmpty(eventScript.Name) ? "" : $" {eventScript.Name}";
                     builder.AppendLine($"@event g{sector.Group}/s{sector.Sector}{indexSuffix}{nameSuffix}");
                     foreach (var command in eventScript.Commands)
-                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue));
+                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names));
                 }
             }
         }
@@ -628,6 +749,7 @@ public static class SceneScriptSource
         IReadOnlyList<SceneEntity> entities,
         string kind,
         IReadOnlyDictionary<int, DialogueString>? dialogue,
+        ScriptNamedDefinitions? names,
         ref bool any)
     {
         foreach (var entity in entities)
@@ -642,7 +764,7 @@ public static class SceneScriptSource
                 var indexSuffix = entities.Count > 1 ? $".{entity.Index}" : "";
                 builder.AppendLine($"@{kind} g{entity.Group}/s{entity.Sector}{indexSuffix} dlg{slot}");
                 foreach (var command in script.Commands)
-                    builder.AppendLine(ScriptSource.FormatCommand(command, dialogue));
+                    builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names));
             }
         }
     }
@@ -658,6 +780,7 @@ public static class SceneScriptSource
 
     public static ScriptSourceParseResult Parse(
         string text,
-        IReadOnlyDictionary<int, DialogueString>? dialogue = null) =>
-        ScriptSource.Parse(text, dialogue);
+        IReadOnlyDictionary<int, DialogueString>? dialogue = null,
+        ScriptNamedDefinitions? names = null) =>
+        ScriptSource.Parse(text, dialogue, names);
 }

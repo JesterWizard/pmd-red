@@ -53,6 +53,8 @@ function Get-AssetsFingerprint {
     )
     foreach ($rel in @(
         "include\constants\bg_music.h",
+        "include\constants\emotions.h",
+        "include\constants\ground_map.h",
         "src\sound_names.c",
         "charmap.txt",
         "data\monster\monster_data.json",
@@ -91,6 +93,8 @@ function Test-AssetsNeedSync {
 function Sync-SmallRepoFiles {
     $pairs = @(
         @{ Src = "include\constants\bg_music.h"; Dst = "include\constants\bg_music.h" },
+        @{ Src = "include\constants\emotions.h"; Dst = "include\constants\emotions.h" },
+        @{ Src = "include\constants\ground_map.h"; Dst = "include\constants\ground_map.h" },
         @{ Src = "src\sound_names.c"; Dst = "src\sound_names.c" },
         @{ Src = "charmap.txt"; Dst = "charmap.txt" },
         @{ Src = "data\monster\monster_data.json"; Dst = "data\monster\monster_data.json" },
