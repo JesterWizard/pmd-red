@@ -48,6 +48,8 @@ assets_fingerprint() {
   printf 'effects_mtime=%s\n' "$(stat -c %Y "$repo/data/effects" 2>/dev/null || echo 0)"
   for f in \
     "$repo/include/constants/bg_music.h" \
+    "$repo/include/constants/emotions.h" \
+    "$repo/include/constants/ground_map.h" \
     "$repo/src/sound_names.c" \
     "$repo/charmap.txt" \
     "$repo/data/monster/monster_data.json" \
@@ -84,6 +86,8 @@ sync_small_repo_files() {
   mkdir -p "$win_mirror/include/constants" "$win_mirror/src" \
     "$win_mirror/data/monster" "$win_mirror/graphics/custom" "$win_mirror/data/effects"
   cp -f "$repo/include/constants/bg_music.h" "$win_mirror/include/constants/bg_music.h"
+  cp -f "$repo/include/constants/emotions.h" "$win_mirror/include/constants/emotions.h"
+  cp -f "$repo/include/constants/ground_map.h" "$win_mirror/include/constants/ground_map.h"
   cp -f "$repo/src/sound_names.c" "$win_mirror/src/sound_names.c"
   cp -f "$repo/charmap.txt" "$win_mirror/charmap.txt"
   cp -f "$repo/data/monster/monster_data.json" "$win_mirror/data/monster/monster_data.json"
@@ -148,7 +152,10 @@ start_live_sync() {
     while path="$(inotifywait -r -q -e modify,create,delete,move --format '%w%f' \
       "$root/src" "$root/tests" \
       "$repo/charmap.txt" "$repo/sound" \
-      "$repo/include/constants/bg_music.h" "$repo/src/sound_names.c" \
+      "$repo/include/constants/bg_music.h" \
+      "$repo/include/constants/emotions.h" \
+      "$repo/include/constants/ground_map.h" \
+      "$repo/src/sound_names.c" \
       "$repo/data/monster" "$repo/graphics/custom" "$repo/data/effects" \
       2>/dev/null)"; do
       case "$path" in
@@ -157,7 +164,9 @@ start_live_sync() {
           rsync -a --delete "$repo/sound/" "$win_mirror/sound/" >/dev/null
           assets_fingerprint > "$assets_stamp"
           ;;
-        "$repo/charmap.txt"*|"$repo/include/constants/bg_music.h"*|"$repo/src/sound_names.c"*|\
+        "$repo/charmap.txt"*|"$repo/include/constants/bg_music.h"*|\
+        "$repo/include/constants/emotions.h"*|"$repo/include/constants/ground_map.h"*|\
+        "$repo/src/sound_names.c"*|\
         "$repo/data/monster"*|"$repo/graphics/custom"*|"$repo/data/effects"*)
           sync_small_repo_files >/dev/null
           assets_fingerprint > "$assets_stamp"

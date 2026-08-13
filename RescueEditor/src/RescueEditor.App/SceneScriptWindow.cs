@@ -4,7 +4,9 @@ using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 using AvaloniaEdit;
+using AvaloniaEdit.CodeCompletion;
 using AvaloniaEdit.Document;
+using AvaloniaEdit.Editing;
 using AvaloniaEdit.Rendering;
 using RescueEditor.Core;
 
@@ -16,11 +18,13 @@ public sealed class SceneScriptWindow : Window
     private readonly Scene _scene;
     private readonly SceneDatabase? _database;
     private readonly ChangeService _changes;
+    private readonly ScriptNamedDefinitions? _names;
     private readonly TextEditor _editor;
     private readonly ScriptColorizingTransformer _colorizer;
     private readonly TextBlock _status;
     private readonly TextBlock _counts;
     private IReadOnlyList<ScriptSourceError> _errors = [];
+    private CompletionWindow? _completion;
 
     public event EventHandler? Applied;
 
@@ -30,11 +34,13 @@ public sealed class SceneScriptWindow : Window
         SceneDatabase? database,
         int? focusGroup = null,
         int? focusSector = null,
-        int? focusStationIndex = null)
+        int? focusStationIndex = null,
+        ScriptNamedDefinitions? names = null)
     {
         _scene = scene;
         _changes = changes;
         _database = database;
+        _names = names;
 
         Title = string.IsNullOrWhiteSpace(scene.Name)
             ? "Script"
@@ -59,7 +65,7 @@ public sealed class SceneScriptWindow : Window
         _colorizer = new ScriptColorizingTransformer(() => _errors);
         _editor = new TextEditor
         {
-            Document = new TextDocument(SceneScriptSource.Format(scene, database?.DialogueByOffset)),
+            Document = new TextDocument(SceneScriptSource.Format(scene, database?.DialogueByOffset, names)),
             FontFamily = EditorTheme.MonoFont,
             FontSize = EditorTheme.FontBody,
             Foreground = EditorTheme.TextPrimaryBrush,
@@ -77,6 +83,10 @@ public sealed class SceneScriptWindow : Window
         _editor.TextArea.TextView.LineTransformers.Add(_colorizer);
         _editor.LineNumbersForeground = EditorTheme.TextDimBrush;
         _editor.TextChanged += (_, _) => RefreshHighlights();
+        _editor.TextArea.TextEntered += OnTextEntered;
+        _editor.TextArea.KeyDown += OnEditorKeyDown;
+        _editor.TextArea.TextView.PointerMoved += OnPointerMoved;
+        _editor.TextArea.TextView.PointerExited += (_, _) => ToolTip.SetTip(_editor, null);
 
         _status = new TextBlock
         {
@@ -85,7 +95,9 @@ public sealed class SceneScriptWindow : Window
             Foreground = EditorTheme.TextMutedBrush,
             TextWrapping = TextWrapping.Wrap,
             VerticalAlignment = VerticalAlignment.Center,
-            Text = "DIALOGUE / PORTRAIT / ASK3 / VARIANT · @live dlg slots · Ctrl+/ comments · Ctrl+S Apply.",
+            Text = _names is null
+                ? "No named catalogs loaded (need include/constants/*.h beside the ROM). Numbers only · Ctrl+/ · Ctrl+S."
+                : "Named MUS_/EMOTION_/MAP_/SE args · type or Ctrl+Space for lookup · hover red lines for errors · Ctrl+S Apply.",
         };
 
         var apply = EditorChrome.ToolButton("Apply", primary: true);
@@ -207,7 +219,7 @@ public sealed class SceneScriptWindow : Window
     private void Apply()
     {
         var source = _editor.Text ?? string.Empty;
-        var parsed = SceneScriptSource.Parse(source, _database?.DialogueByOffset);
+        var parsed = SceneScriptSource.Parse(source, _database?.DialogueByOffset, _names);
         _errors = parsed.Errors;
         _editor.TextArea.TextView.Redraw();
         if (!parsed.Ok)
@@ -238,14 +250,128 @@ public sealed class SceneScriptWindow : Window
 
     private void RefreshHighlights()
     {
-        var parsed = SceneScriptSource.Parse(_editor.Text ?? string.Empty, _database?.DialogueByOffset);
+        var parsed = SceneScriptSource.Parse(_editor.Text ?? string.Empty, _database?.DialogueByOffset, _names);
         _errors = parsed.Errors;
         _editor.TextArea.TextView.Redraw();
+    }
+
+    private void OnTextEntered(object? sender, TextInputEventArgs e)
+    {
+        if (_names is null || e.Text is null || e.Text.Length == 0)
+            return;
+        var ch = e.Text[0];
+        if (ch is '(' or ',' || char.IsLetterOrDigit(ch) || ch == '_')
+            ShowCompletion();
+    }
+
+    private void OnEditorKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape && _completion is not null)
+        {
+            _completion.Hide();
+            e.Handled = true;
+            return;
+        }
+
+        if (_names is not null &&
+            e.Key == Key.Space &&
+            e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        {
+            ShowCompletion(force: true);
+            e.Handled = true;
+        }
+    }
+
+    private void OnPointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (_errors.Count == 0)
+        {
+            ToolTip.SetTip(_editor, null);
+            return;
+        }
+
+        var view = _editor.TextArea.TextView;
+        var pos = e.GetPosition(view);
+        pos += view.ScrollOffset;
+        var line = view.GetDocumentLineByVisualTop(pos.Y);
+        if (line is null)
+        {
+            ToolTip.SetTip(_editor, null);
+            return;
+        }
+
+        var messages = _errors
+            .Where(error => error.Line == line.LineNumber)
+            .Select(error => error.Message)
+            .Distinct()
+            .ToArray();
+        ToolTip.SetTip(_editor, messages.Length == 0 ? null : string.Join("\n", messages));
+    }
+
+    private void ShowCompletion(bool force = false)
+    {
+        if (_names is null)
+            return;
+
+        var document = _editor.Document;
+        var offset = _editor.CaretOffset;
+        var line = document.GetLineByOffset(offset);
+        var lineText = document.GetText(line);
+        var column = offset - line.Offset;
+        var query = ScriptCompletion.TryGetQuery(lineText, column);
+        if (query is null || _names.KindFor(query.Op, query.ArgIndex) == ScriptNamedArgKind.None)
+        {
+            _completion?.Hide();
+            return;
+        }
+
+        var hits = _names.Suggest(query.Op, query.ArgIndex, query.Prefix);
+        if (hits.Count == 0 && !force)
+        {
+            _completion?.Hide();
+            return;
+        }
+
+        if (hits.Count == 0)
+            hits = _names.Suggest(query.Op, query.ArgIndex, string.Empty);
+
+        if (hits.Count == 0)
+        {
+            _completion?.Hide();
+            return;
+        }
+
+        _completion?.Hide();
+        _completion = new CompletionWindow(_editor.TextArea);
+        _completion.Closed += (_, _) => _completion = null;
+        var data = _completion.CompletionList.CompletionData;
+        foreach (var hit in hits)
+            data.Add(new NamedIdCompletionData(hit.Name, hit.Id));
+
+        var start = line.Offset + query.ReplacementStart;
+        var length = query.ReplacementLength;
+        _completion.StartOffset = start;
+        _completion.EndOffset = start + length;
+        _completion.Show();
     }
 
     private void RefreshCounts()
     {
         _counts.Text = SceneStations.Summarize(_scene);
+    }
+
+    private sealed class NamedIdCompletionData(string text, int id) : ICompletionData
+    {
+        public string Text { get; } = text;
+        public object Content => Text;
+        public object Description => $"{Text} = {id}";
+        public double Priority => 0;
+        public Avalonia.Media.IImage? Image => null;
+
+        public void Complete(TextArea textArea, ISegment completionSegment, EventArgs insertionRequestEventArgs)
+        {
+            textArea.Document.Replace(completionSegment, Text);
+        }
     }
 
     private sealed class ScriptColorizingTransformer : DocumentColorizingTransformer

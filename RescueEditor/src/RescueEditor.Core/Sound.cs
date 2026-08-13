@@ -22,10 +22,6 @@ public static class SoundIndexer
         @"^\s*song\s+(?<name>seq_(?<id>\d+)|empty_song)\s*,\s*(?<player>\d+)\s*,\s*(?<player2>\d+)",
         RegexOptions.Compiled);
 
-    private static readonly Regex MusicEnumEntry = new(
-        @"^\s*(?<name>MUS_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
-        RegexOptions.Compiled);
-
     private static readonly Regex SfxNameEntry = new(
         @"^\s*\{\s*(?:NULL|""(?<name>[^""]+)"")\s*,",
         RegexOptions.Compiled);
@@ -169,25 +165,8 @@ public static class SoundIndexer
         if (!File.Exists(path))
             return new Dictionary<int, string>();
 
-        var names = new Dictionary<int, string>();
-        int? current = null;
-        foreach (var rawLine in File.ReadLines(path))
-        {
-            var match = MusicEnumEntry.Match(rawLine);
-            if (!match.Success)
-                continue;
-
-            if (match.Groups["value"].Success)
-                current = int.Parse(match.Groups["value"].Value, CultureInfo.InvariantCulture);
-            else if (current is null)
-                continue;
-            else
-                current++;
-
-            names[current.Value] = match.Groups["name"].Value;
-        }
-
-        return names;
+        return NamedIdCatalogs.ParseMusicEnum(File.ReadAllText(path)).Entries
+            .ToDictionary(entry => entry.Id, entry => entry.Name);
     }
 
     private static IReadOnlyList<string?> LoadSfxNames(string repositoryRoot)
