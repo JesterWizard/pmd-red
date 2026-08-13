@@ -23,6 +23,39 @@ cleanup() {
 }
 trap cleanup EXIT INT TERM
 
+# Previous `dev.sh` / `dotnet watch` copies keep spawning extra RescueTemple windows.
+stop_existing_instances() {
+  echo "Stopping previous RescueTemple / hot-reload…"
+  stop_windows_editor
+  local keep="" pid
+  pid="$$"
+  while [[ -n "$pid" && "$pid" -gt 1 ]]; do
+    keep+=" $pid "
+    pid="$(ps -o ppid= -p "$pid" 2>/dev/null | tr -d ' ')"
+  done
+  for pid in $(pgrep -f 'RescueEditor/dev\.sh' || true); do
+    if [[ "$keep" == *" $pid "* ]]; then
+      continue
+    fi
+    kill "$pid" 2>/dev/null || true
+  done
+  pkill -f 'watch run --project .*/RescueEditor\.App/RescueEditor\.App\.csproj' 2>/dev/null || true
+  sleep 0.3
+  stop_windows_editor
+}
+
+stop_windows_editor() {
+  local helper="$win_mirror/RescueEditor/stop-editor.ps1"
+  if [[ ! -f "$helper" ]]; then
+    helper="$root/stop-editor.ps1"
+  fi
+  local powershell="/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
+  if [[ -x "$powershell" && -f "$helper" ]]; then
+    "$powershell" -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$(wslpath -w "$helper")" >/dev/null 2>&1 || true
+  fi
+  /mnt/c/Windows/System32/taskkill.exe /F /IM RescueTemple.exe >/dev/null 2>&1 || true
+}
+
 for arg in "$@"; do
   case "$arg" in
     --force-assets) force_assets=1 ;;
@@ -207,8 +240,7 @@ run_windows_watch() {
     echo "error: sync failed; missing $project_linux" >&2
     exit 1
   fi
-  # Release DLL locks from a previous RescueTemple instance (MSB3027).
-  /mnt/c/Windows/System32/taskkill.exe /F /IM RescueTemple.exe >/dev/null 2>&1 || true
+  stop_existing_instances
   start_live_sync
   echo "Starting Windows hot reload…"
   echo "Project: $project_win"
@@ -232,6 +264,7 @@ run_linux_watch() {
   else
     dotnet_bin="$(command -v dotnet)"
   fi
+  stop_existing_instances
   echo "Starting Linux Avalonia build (software renderer)…"
   local watch_args=(watch run --project "$project")
   if [[ -f "$root/src/RescueEditor.App/obj/project.assets.json" ]]; then

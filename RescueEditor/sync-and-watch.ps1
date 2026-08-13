@@ -201,9 +201,9 @@ $sw.Stop()
 Write-Host ("Mirror sync done in {0:N1}s" -f $sw.Elapsed.TotalSeconds)
 
 $project = Join-Path $winRoot "RescueEditor\src\RescueEditor.App\RescueEditor.App.csproj"
-# Release DLL locks from a previous RescueTemple instance (MSB3027).
-Get-Process -Name "RescueTemple" -ErrorAction SilentlyContinue | Stop-Process -Force
-Start-Sleep -Milliseconds 200
+# One RescueTemple: stop leftover watches for this mirror, then the editor exe.
+& (Join-Path $PSScriptRoot "stop-editor.ps1")
+Start-Sleep -Milliseconds 300
 Write-Host "Starting dotnet watch on Windows path..."
 Write-Host "Project: $project"
 Set-Location (Join-Path $winRoot "RescueEditor")

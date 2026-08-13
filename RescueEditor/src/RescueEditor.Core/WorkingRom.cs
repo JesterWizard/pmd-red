@@ -15,6 +15,8 @@ public sealed class WorkingRom
     public RomImage Source { get; }
     public RomImage View { get; private set; }
     public RuntimeConfigState? RuntimeConfig { get; set; }
+    /// <summary>Immutable parse of the source baserom, taken before project edits.</summary>
+    public SceneDatabase? Baseline { get; set; }
 
     public RomBuildReport Sync(
         SceneDatabase database,

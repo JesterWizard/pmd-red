@@ -499,6 +499,7 @@ public sealed class MainWindow : Window
             _catalog = result.Catalog;
             _charmap = result.Charmap;
             _scenes = result.Scenes;
+            _workingRom.Baseline = SceneClone.Clone(_scenes);
             _cPatchHostRom = null;
             _cPatchWorkingRom = null;
             _cPatchesUseDecompHost = false;

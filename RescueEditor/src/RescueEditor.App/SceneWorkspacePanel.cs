@@ -190,6 +190,8 @@ public sealed class SceneWorkspacePanel : UserControl
         _redoButton.Click += (_, _) => { _changes?.Redo(); SyncWorkingRom(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
         var playButton = EditorChrome.ToolButton("Play");
         playButton.Click += async (_, _) => await OpenScenePlayAsync();
+        var diffButton = EditorChrome.ToolButton("Diff");
+        diffButton.Click += async (_, _) => await OpenSceneDiffAsync();
 
         var toolbarInner = new StackPanel
         {
@@ -208,7 +210,7 @@ public sealed class SceneWorkspacePanel : UserControl
                 EditorChrome.ToolbarSeparator(),
                 _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _collisionToggle,
                 EditorChrome.ToolbarSeparator(),
-                _undoButton, _redoButton, playButton,
+                _undoButton, _redoButton, playButton, diffButton,
             },
         };
         var toolbar = EditorChrome.ToolbarHost(toolbarInner);
@@ -1823,6 +1825,31 @@ public sealed class SceneWorkspacePanel : UserControl
             await play.ShowDialog(owner);
         else
             play.Show();
+    }
+
+    public async Task OpenSceneDiffAsync()
+    {
+        if (_scene is null || _database is null)
+            return;
+
+        var baselineDb = _workingRom?.Baseline;
+        if (baselineDb is null)
+            return;
+
+        var sector = CurrentSector();
+        var filter = sector is null
+            ? null
+            : new SceneDiffFilter(sector.Group, sector.Sector);
+        var name = _scene.Name;
+        if (string.IsNullOrWhiteSpace(name) && _scene.Map is not null)
+            name = GroundMapNames.GetDisplayName(_scene.Map.Name) ?? _scene.Map.Name;
+
+        var owner = TopLevel.GetTopLevel(this) as Window;
+        var window = new SceneDiffWindow(baselineDb, _database, _scene.MapId, name, filter);
+        if (owner is not null)
+            await window.ShowDialog(owner);
+        else
+            window.Show();
     }
 
     public void OpenScriptAt(ScriptAssetHit hit) => OpenScriptEditor(hit: hit);
