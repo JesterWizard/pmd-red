@@ -145,6 +145,9 @@ public static class ScriptOpcodeNames
 
     public static readonly HashSet<byte> TerminatorOps = [0xE9, 0xEE, 0xEF, 0xF0, 0xF1];
 
+    /// <summary>All opcodes with a stable decomp/editor name (not raw CMD_XX).</summary>
+    public static IReadOnlyCollection<byte> NamedOpcodes => Names.Keys;
+
     public static string GetName(byte op) =>
         Names.TryGetValue(op, out var name) ? name : $"CMD_{op:X2}";
 
