@@ -24,7 +24,9 @@ Options requiring a title restart or reboot are:
 
 - `PMD2 font`: applied during font initialization.
 - `Title BG`: loaded when the title screen is created.
-- `Skip intro`: checked during the boot opening sequence.
+- `Skip intro`: checked during the boot opening demos (DEMO_01–03). With the
+  option on, A/B/Start/Select/L/R cancel the demos even when SCENARIO_MAIN is
+  still 0 (fresh / no-save boot).
 
 Options read when starting a new game are:
 

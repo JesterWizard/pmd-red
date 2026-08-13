@@ -138,22 +138,15 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
             sUnknown_20398B9 = TRUE;
             break;
         }
-        case STARTMODE_14: {
-            sUnknown_20398B8 = TRUE;
-            sUnknown_20398B9 = TRUE;
-            break;
-        }
-        case STARTMODE_15: {
-            sUnknown_20398B8 = TRUE;
-            sUnknown_20398B9 = TRUE;
-            break;
-        }
+        case STARTMODE_14:
+        case STARTMODE_15:
         case STARTMODE_16: {
             s32 main;
             u32 sub;
 
             GetScriptVarScenario(SCENARIO_MAIN, &main, &sub);
-            /* Vanilla: intro is unskippable on a fresh/no-save boot (main == 0). */
+            /* Vanilla: boot demos (DEMO_01–03) are unskippable on a fresh/no-save boot
+             * (main == 0). skip_title_intro allows button-cancel for all three. */
             sUnknown_20398B8 = main == 0 && !gRuntimeConfig.skip_title_intro;
             sUnknown_20398B9 = TRUE;
             break;

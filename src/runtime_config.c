@@ -63,5 +63,7 @@ bool8 RestoreRuntimeConfig(const u8 *buffer, u32 bufLen)
     MemoryCopy8(&gRuntimeConfigData, &save->config, sizeof(RuntimeConfig));
     gRuntimeConfigData.debug_menu = gRuntimeConfigRom.debug_menu;
     gRuntimeConfigData.custom_story = gRuntimeConfigRom.custom_story;
+    /* Boot-only ROM patch: keep editor/ROM default across save restore. */
+    gRuntimeConfigData.skip_title_intro = gRuntimeConfigRom.skip_title_intro;
     return TRUE;
 }

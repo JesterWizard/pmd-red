@@ -12,4 +12,20 @@
     <None Include="Resources/CPatchFeaturePayload.rcp" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <!-- Keep C Patches field IDs locked to include/runtime.h when building inside the decomp tree. -->
+  <PropertyGroup>
+    <RepoRoot>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../..'))</RepoRoot>
+    <RuntimeConfigHeader>$(RepoRoot)/include/runtime.h</RuntimeConfigHeader>
+    <RuntimeConfigGenScript>$(RepoRoot)/tools/gen_runtime_config_schema.py</RuntimeConfigGenScript>
+    <RuntimeConfigSnapshot>$(MSBuildProjectDirectory)/Generated/RuntimeConfigHeaderSnapshot.g.cs</RuntimeConfigSnapshot>
+  </PropertyGroup>
+
+  <Target Name="GenerateRuntimeConfigHeaderSnapshot"
+          BeforeTargets="BeforeCompile;CoreCompile"
+          Condition="Exists('$(RuntimeConfigHeader)') And Exists('$(RuntimeConfigGenScript)')"
+          Inputs="$(RuntimeConfigHeader);$(RuntimeConfigGenScript)"
+          Outputs="$(RuntimeConfigSnapshot)">
+    <Exec Command="python3 &quot;$(RuntimeConfigGenScript)&quot; --header &quot;$(RuntimeConfigHeader)&quot; -o &quot;$(RuntimeConfigSnapshot)&quot;" />
+  </Target>
+
 </Project>

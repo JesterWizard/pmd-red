@@ -8,7 +8,8 @@ public enum RuntimeConfigFieldKind
 
 /// <summary>
 /// Schema for <c>RuntimeConfig</c> in <c>include/runtime.h</c>.
-/// Add new fields here when the C struct grows so the C Patches menu stays in sync.
+/// Field order and IDs come from <see cref="RuntimeConfigHeaderSnapshot"/> (generated from the
+/// header). UI metadata below is optional polish; new header fields still appear via auto-stub.
 /// <see cref="VanillaValue"/> is stock retail behavior; <see cref="RecommendedValue"/> is the
 /// Install offering (decomp feature on / sensible numeric default).
 /// </summary>
@@ -41,9 +42,126 @@ public static class RuntimeConfigSchema
         return bytes;
     }
 
+    /// <summary>
+    /// Compare the live <c>include/runtime.h</c> (when present) to the compiled schema/snapshot.
+    /// </summary>
+    public static RuntimeConfigSchemaSyncResult SyncWithHeader(string? headerPath = null)
+    {
+        headerPath ??= RuntimeConfigHeaderParser.TryFindHeaderPath();
+        if (headerPath is null || !File.Exists(headerPath))
+        {
+            // Shipped editor builds have no decomp tree — snapshot already baked the last known header.
+            var snapshotIds = RuntimeConfigHeaderSnapshot.Fields.Select(f => f.Id).ToArray();
+            var schemaIds = Fields.Select(f => f.Id).ToArray();
+            return new RuntimeConfigSchemaSyncResult(
+                InSync: snapshotIds.SequenceEqual(schemaIds, StringComparer.Ordinal),
+                HeaderIds: snapshotIds,
+                SchemaIds: schemaIds,
+                MissingInSchema: Array.Empty<string>(),
+                ExtraInSchema: Array.Empty<string>(),
+                OrderMatches: snapshotIds.SequenceEqual(schemaIds, StringComparer.Ordinal));
+        }
+
+        var headerFields = RuntimeConfigHeaderParser.ParseFile(headerPath);
+        var vsSchema = RuntimeConfigHeaderParser.CompareToSchema(headerFields, Fields);
+        var snapshotIdsLive = RuntimeConfigHeaderSnapshot.Fields.Select(f => f.Id).ToArray();
+        var headerIds = headerFields.Select(f => f.Id).ToArray();
+        if (!headerIds.SequenceEqual(snapshotIdsLive, StringComparer.Ordinal))
+        {
+            return new RuntimeConfigSchemaSyncResult(
+                InSync: false,
+                HeaderIds: headerIds,
+                SchemaIds: Fields.Select(f => f.Id).ToArray(),
+                MissingInSchema: headerIds.Except(snapshotIdsLive, StringComparer.Ordinal).ToArray(),
+                ExtraInSchema: snapshotIdsLive.Except(headerIds, StringComparer.Ordinal).ToArray(),
+                OrderMatches: false);
+        }
+
+        return vsSchema;
+    }
+
     private static IReadOnlyList<RuntimeConfigFieldDef> BuildFields()
     {
-        var fields = new List<RuntimeConfigFieldDef>();
+        var meta = BuildMetadata();
+        var fields = new List<RuntimeConfigFieldDef>(RuntimeConfigHeaderSnapshot.Fields.Length);
+        foreach (var header in RuntimeConfigHeaderSnapshot.Fields)
+        {
+            if (meta.TryGetValue(header.Id, out var info))
+            {
+                fields.Add(new RuntimeConfigFieldDef(
+                    header.Id,
+                    header.Offset,
+                    info.Kind,
+                    info.DisplayName,
+                    info.Group,
+                    info.Description,
+                    info.Vanilla,
+                    info.Recommended,
+                    info.Min,
+                    info.Max));
+            }
+            else
+            {
+                fields.Add(AutoStub(header));
+            }
+        }
+
+        return fields;
+    }
+
+    private static RuntimeConfigFieldDef AutoStub(RuntimeConfigHeaderField header)
+    {
+        var kind = IsNumericField(header.Id) ? RuntimeConfigFieldKind.U8 : RuntimeConfigFieldKind.Toggle;
+        return new RuntimeConfigFieldDef(
+            header.Id,
+            header.Offset,
+            kind,
+            ToDisplayName(header.Id),
+            "Ungrouped",
+            string.IsNullOrWhiteSpace(header.Comment) ? header.Id : header.Comment,
+            VanillaValue: kind == RuntimeConfigFieldKind.U8 && header.Id == "exp_multiplier" ? (byte)1 : (byte)0,
+            RecommendedValue: kind == RuntimeConfigFieldKind.U8 && header.Id == "exp_multiplier" ? (byte)2 : (byte)1,
+            Min: (byte)0,
+            Max: (byte)255);
+    }
+
+    private static bool IsNumericField(string id) =>
+        id.Contains("percent", StringComparison.OrdinalIgnoreCase) ||
+        id.Contains("multiplier", StringComparison.OrdinalIgnoreCase);
+
+    private static string ToDisplayName(string id)
+    {
+        var parts = id.Split('_', StringSplitOptions.RemoveEmptyEntries);
+        for (var i = 0; i < parts.Length; i++)
+        {
+            var part = parts[i];
+            if (part.Length == 0)
+                continue;
+            if (string.Equals(part, "pmd2", StringComparison.OrdinalIgnoreCase))
+            {
+                parts[i] = "PMD2";
+                continue;
+            }
+
+            parts[i] = char.ToUpperInvariant(part[0]) + part[1..].ToLowerInvariant();
+        }
+
+        return string.Join(' ', parts);
+    }
+
+    private sealed record FieldMeta(
+        RuntimeConfigFieldKind Kind,
+        string DisplayName,
+        string Group,
+        string Description,
+        byte Vanilla = 0,
+        byte Recommended = 1,
+        byte Min = 0,
+        byte Max = 255);
+
+    private static Dictionary<string, FieldMeta> BuildMetadata()
+    {
+        var meta = new Dictionary<string, FieldMeta>(StringComparer.Ordinal);
         void Add(
             string id,
             RuntimeConfigFieldKind kind,
@@ -53,12 +171,8 @@ public static class RuntimeConfigSchema
             byte vanilla = 0,
             byte recommended = 1,
             byte min = 0,
-            byte max = 255)
-        {
-            fields.Add(new RuntimeConfigFieldDef(
-                id, fields.Count, kind, displayName, group, description,
-                vanilla, recommended, min, max));
-        }
+            byte max = 255) =>
+            meta[id] = new FieldMeta(kind, displayName, group, description, vanilla, recommended, min, max);
 
         Add("always_run", RuntimeConfigFieldKind.Toggle, "Always Run", "QoL / Cheats",
             "Run in the overworld and dungeons without holding B.");
@@ -169,7 +283,7 @@ public static class RuntimeConfigSchema
         Add("all_makuhita_dojo", RuntimeConfigFieldKind.Toggle, "All Makuhita Dojo", "Story / Unlocks",
             "Unlock every Makuhita Dojo course and show Makuhita.");
         Add("skip_title_intro", RuntimeConfigFieldKind.Toggle, "Skip Title Intro", "QoL / Cheats",
-            "Allow button-skip of the boot opening intro even with no save data.");
+            "Allow button-skip of the boot opening demos even with no save data. Press A/B/Start during the intro.");
         Add("living_square", RuntimeConfigFieldKind.Toggle, "Living Square", "Gameplay",
             "Pokémon Square ambient life: wander routes, visitors, banter.");
         Add("full_party_entry", RuntimeConfigFieldKind.Toggle, "Full Party Entry", "Gameplay",
@@ -177,6 +291,6 @@ public static class RuntimeConfigSchema
         Add("thought_bubbles", RuntimeConfigFieldKind.Toggle, "Thought Bubbles", "Graphics / UI",
             "Ground overworld: L toggles a thought-bubble sprite above the player.");
 
-        return fields;
+        return meta;
     }
 }

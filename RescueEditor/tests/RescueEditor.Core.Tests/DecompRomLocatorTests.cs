@@ -115,6 +115,62 @@ public sealed class DecompRomLocatorTests : IDisposable
         Assert.Equal(feature, loaded.DecompressFeatureRom());
     }
 
+    [Fact]
+    public void BuildFromRetail_WritesSkipTitleIntroIntoFeatureRom()
+    {
+        var baseromPath = FindUpwards("baserom.gba");
+        if (baseromPath is null)
+            return;
+
+        CPatchFeaturePayload.ClearTestBundle();
+        var retail = RomImage.Open(baseromPath);
+        CPatchBinding binding;
+        try
+        {
+            binding = CPatchFeaturePayload.Bind(retail);
+        }
+        catch (InvalidOperationException)
+        {
+            return;
+        }
+
+        Assert.True(binding.UsesPayload);
+        Assert.All(RuntimeConfigSchema.Fields, f =>
+            Assert.False(RuntimeConfigEditing.IsInstalled(binding.Config, f.Id)));
+
+        var field = RuntimeConfigSchema.Find("skip_title_intro")!;
+        Assert.True(
+            binding.Config.IsFieldWritable(field.Id),
+            $"skip_title_intro offset {field.Offset} not writable (capacity {binding.Config.RomCapacity})");
+
+        RuntimeConfigEditing.Install(new ChangeService(), binding.Config, "skip_title_intro");
+        Assert.Equal(1, binding.Config.Get("skip_title_intro"));
+
+        var dir = Path.Combine(Path.GetTempPath(), $"cpatch-skip-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(dir);
+        try
+        {
+            var output = Path.Combine(dir, "out.gba");
+            var report = RomBuilder.Build(
+                retail,
+                new SceneDatabase { Profile = RomProfile.Us10 },
+                ProjectDocument.Create(retail, RomProfile.Us10),
+                output,
+                runtimeConfig: binding.Config);
+
+            Assert.True(report.Success, string.Join("; ", report.Errors));
+            var built = RomImage.Open(output);
+            Assert.True(built.Length < RomImage.ExpectedRetailSize, "expected feature-sized output, not retail");
+            Assert.Equal(1, built.ReadByte(binding.Config.RomOffset + field.Offset));
+            Assert.Equal(0, built.ReadByte(binding.Config.RomOffset + RuntimeConfigSchema.Find("always_run")!.Offset));
+        }
+        finally
+        {
+            Directory.Delete(dir, recursive: true);
+            CPatchFeaturePayload.ClearTestBundle();
+        }
+    }
+
     private static string? FindUpwards(string fileName)
     {
         foreach (var start in new[]

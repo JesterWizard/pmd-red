@@ -6,75 +6,49 @@ namespace RescueEditor.Core.Tests;
 public sealed class RuntimeConfigSchemaTests
 {
     [Fact]
-    public void FieldsCoverEveryRuntimeConfigMemberInOrder()
+    public void SchemaMatchesLiveRuntimeHeader()
     {
-        var ids = RuntimeConfigSchema.Fields.Select(f => f.Id).ToArray();
-        Assert.Equal(
-        [
-            "always_run",
-            "infinite_belly",
-            "exp_multiplier",
-            "recruit_rate_boost",
-            "all_friend_areas",
-            "debug_menu",
-            "disable_something_approaches",
-            "l_to_use_move",
-            "pmd2_battle_info_colors",
-            "custom_graphics",
-            "pmd2_font",
-            "party_leader_switch",
-            "show_dungeon_portraits",
-            "pmd2_training_grounds",
-            "pmd2_rescue_points",
-            "pmd2_send_home",
-            "bank_interest_percent",
-            "pmd2_rank_rewards",
-            "achievements",
-            "compact_kangaskhan_storage",
-            "custom_title_backgrounds",
-            "dungeon_modifiers",
-            "starter_choice_prompt",
-            "starter_confirm_preview",
-            "all_starters_as_partners",
-            "pmd2_casting_starters",
-            "overkill_exp_bonus",
-            "custom_portraits",
-            "outlaw_missions",
-            "refresh_bulletin_on_exit",
-            "unrestricted_bulletin_jobs",
-            "expanded_job_slots",
-            "damage_preview",
-            "keep_allies",
-            "multi_select_selling",
-            "gummis_in_town",
-            "pmd2_gummi_stats",
-            "status_condition_exp",
-            "keep_linked_moves_at_0_pp",
-            "evolution_stat_boost",
-            "custom_iq_skills",
-            "custom_abilities",
-            "rb_complete_dungeon",
-            "spinda_cafe",
-            "perpetual_gummis",
-            "infinite_tms",
-            "physical_special_split",
-            "dungeon_hp_bars",
-            "custom_story",
-            "friend_area_intros",
-            "team_act",
-            "max_level_stats",
-            "all_makuhita_dojo",
-            "skip_title_intro",
-            "living_square",
-            "full_party_entry",
-            "thought_bubbles",
-        ], ids);
+        var headerPath = RuntimeConfigHeaderParser.TryFindHeaderPath();
+        Assert.NotNull(headerPath);
+
+        var result = RuntimeConfigSchema.SyncWithHeader(headerPath);
+        Assert.True(result.InSync, result.FormatError());
+        Assert.Equal(result.HeaderIds.Count, RuntimeConfigSchema.ByteLength);
+    }
+
+    [Fact]
+    public void SnapshotMatchesLiveRuntimeHeader()
+    {
+        var headerPath = RuntimeConfigHeaderParser.TryFindHeaderPath();
+        Assert.NotNull(headerPath);
+        var live = RuntimeConfigHeaderParser.ParseFile(headerPath!).Select(f => f.Id).ToArray();
+        var snapshot = RuntimeConfigHeaderSnapshot.Fields.Select(f => f.Id).ToArray();
+        Assert.Equal(live, snapshot);
+    }
+
+    [Fact]
+    public void ParserReadsRuntimeConfigMembersInOrder()
+    {
+        const string header = """
+            typedef struct {
+                u8 alpha; /* first */
+                /* block comment for beta */
+                u8 beta;
+                u8 gamma; /* third */
+            } RuntimeConfig;
+            """;
+        var fields = RuntimeConfigHeaderParser.Parse(header);
+        Assert.Equal(["alpha", "beta", "gamma"], fields.Select(f => f.Id).ToArray());
+        Assert.Equal("first", fields[0].Comment);
+        Assert.Contains("block comment", fields[1].Comment, StringComparison.Ordinal);
+        Assert.Equal(0, fields[0].Offset);
+        Assert.Equal(2, fields[2].Offset);
     }
 
     [Fact]
     public void ByteOffsetsAreContiguousU8Slots()
     {
-        Assert.Equal(57, RuntimeConfigSchema.ByteLength);
+        Assert.Equal(RuntimeConfigHeaderSnapshot.Fields.Length, RuntimeConfigSchema.ByteLength);
         for (var i = 0; i < RuntimeConfigSchema.Fields.Count; i++)
             Assert.Equal(i, RuntimeConfigSchema.Fields[i].Offset);
     }
@@ -100,5 +74,19 @@ public sealed class RuntimeConfigSchemaTests
             Assert.False(string.IsNullOrWhiteSpace(field.Group));
             Assert.False(string.IsNullOrWhiteSpace(field.Description));
         }
+    }
+
+    [Fact]
+    public void CompareToSchemaDetectsDrift()
+    {
+        var header = RuntimeConfigHeaderParser.Parse("""
+            typedef struct {
+                u8 always_run;
+                u8 brand_new_flag;
+            } RuntimeConfig;
+            """);
+        var result = RuntimeConfigHeaderParser.CompareToSchema(header, RuntimeConfigSchema.Fields);
+        Assert.False(result.InSync);
+        Assert.Contains("brand_new_flag", result.MissingInSchema);
     }
 }

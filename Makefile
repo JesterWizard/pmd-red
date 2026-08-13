@@ -228,7 +228,7 @@ ALL_BUILDS := red
 
 # Pack decomp feature code into RescueTemple so end users only need baserom.gba.
 CPATCH_PAYLOAD := RescueEditor/src/RescueEditor.Core/Resources/CPatchFeaturePayload.rcp
-cpatch-payload: $(ROM) $(MAP)
+cpatch-payload: $(ROM) $(MAP) gen-runtime-config-schema
 	python3 tools/pack_cpatch_payload.py --feature-rom $(ROM) --map $(MAP) -o $(CPATCH_PAYLOAD)
 
 # Pretend rules that are actually flags defer to `make all`
@@ -494,12 +494,19 @@ $(ROM): %.gba: $(ELF)
 	$(OBJCOPY) -O binary --gap-fill 0xFF $(OBJCOPY_PAD_FLAGS) $< $@
 	$(GBAFIX) $@ $(GBAFIX_PAD_FLAGS) --silent
 
-.PHONY: check-save-layout check-palette-owners
+.PHONY: check-save-layout check-palette-owners check-runtime-config-schema gen-runtime-config-schema
 check-save-layout:
 	python3 tools/check_save_layout.py
 
 check-palette-owners:
 	python3 tools/check_palette_owners.py
+
+# Lock RescueTemple C Patches field order to include/runtime.h.
+gen-runtime-config-schema:
+	python3 tools/gen_runtime_config_schema.py
+
+check-runtime-config-schema:
+	python3 tools/gen_runtime_config_schema.py --check
 
 ifeq (,$(filter clean,$(MAKECMDGOALS)))
 -include $(ALL_OBJECTS:.o=.d)
