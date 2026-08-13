@@ -89,6 +89,32 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
+    public void SessionTickDoesNotAdvanceWhileVmPaused()
+    {
+        var scene = MakeEmptyScene(40, 30);
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x54, ArgShort = 6 },
+                new ScriptCommandData { Op = 0xEF },
+            ],
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: true);
+        Assert.NotNull(session.ScriptVm);
+        session.ScriptVm!.Pause();
+        session.Tick(1);
+        Assert.Equal(0, session.ScriptVm.Watch().Actors[0].Index);
+        session.ScriptVm.StepOver();
+        Assert.Equal(6, session.ScriptVm.GetAnimation(0));
+        Assert.Contains("paused", session.ScriptVm.Watch().Format(), StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
     public void SessionSpawnsAtMapCenterWithoutPlayerLive()
     {
         var scene = MakeEmptyScene(mapW: 40, mapH: 30);

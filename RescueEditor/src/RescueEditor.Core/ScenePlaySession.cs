@@ -243,6 +243,9 @@ public sealed class ScenePlaySession
         if (dtSeconds <= 0)
             return;
 
+        if (_script?.IsPaused == true)
+            return;
+
         if (_script is not null && !_script.Finished)
         {
             _script.Tick(dtSeconds);

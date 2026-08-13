@@ -6,6 +6,9 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Threading;
+using AvaloniaEdit;
+using AvaloniaEdit.Document;
+using AvaloniaEdit.Rendering;
 using RescueEditor.Core;
 
 namespace RescueEditor.App;
@@ -72,6 +75,13 @@ public sealed class ScenePlayWindow : Window
     private readonly string? _romPath;
     private readonly ScenePlayAutoProgress _autoProgress = new();
     private readonly CheckBox _autoProgressCheck;
+    private readonly Button? _pauseButton;
+    private readonly TextBlock? _debugHeader;
+    private readonly TextEditor? _debugBody;
+    private readonly Border? _debugPanel;
+    private string? _debugHeaderKey;
+    private string? _debugBodyKey;
+    private DateTime _debugHeaderPaint;
     private GbaButton? _captureTarget;
     private DateTime _lastTick = DateTime.UtcNow;
     private double _simAccum;
@@ -95,8 +105,8 @@ public sealed class ScenePlayWindow : Window
         _bgmStream = new AgbplayStreamPlayer(_bgmHost);
 
         Title = TitleFor(_session);
-        Width = ScenePlaySession.CameraWidth * ViewScale + 48;
-        Height = ScenePlaySession.CameraHeight * ViewScale + 100;
+        Width = ScenePlaySession.CameraWidth * ViewScale + 48 + (_session.IsScripted ? 340 : 0);
+        Height = ScenePlaySession.CameraHeight * ViewScale + 120;
         CanResize = true;
         WindowStartupLocation = WindowStartupLocation.CenterOwner;
         Focusable = true;
@@ -237,6 +247,26 @@ public sealed class ScenePlayWindow : Window
         };
         toolbarChildren.Add(_autoProgressCheck);
 
+        if (_session.IsScripted)
+        {
+            _pauseButton = EditorChrome.ToolButton("Pause");
+            var stepButton = EditorChrome.ToolButton("Step");
+            var breakPc = EditorChrome.ToolButton("Break PC");
+            var clearBp = EditorChrome.ToolButton("Clear BP");
+            _pauseButton.Click += (_, _) => TogglePause();
+            stepButton.Click += (_, _) => StepScript();
+            breakPc.Click += (_, _) => BreakAtCurrentPc();
+            clearBp.Click += (_, _) =>
+            {
+                _session.ScriptVm?.ClearBreakpoints();
+                RefreshDebugWatch(force: true);
+            };
+            toolbarChildren.Add(_pauseButton);
+            toolbarChildren.Add(stepButton);
+            toolbarChildren.Add(breakPc);
+            toolbarChildren.Add(clearBp);
+        }
+
         var toolbar = new StackPanel
         {
             Orientation = Orientation.Horizontal,
@@ -316,6 +346,52 @@ public sealed class ScenePlayWindow : Window
         DockPanel.SetDock(_status, Dock.Bottom);
         root.Children.Add(toolbar);
         root.Children.Add(_status);
+
+        if (_session.IsScripted)
+        {
+            _debugHeader = new TextBlock
+            {
+                FontFamily = EditorTheme.MonoFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextMutedBrush,
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(0, 0, 0, EditorTheme.Space2),
+            };
+            _debugBody = new TextEditor
+            {
+                Document = new TextDocument(),
+                FontFamily = EditorTheme.MonoFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextPrimaryBrush,
+                Background = EditorTheme.InputBgBrush,
+                HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto,
+                VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto,
+                WordWrap = false,
+                IsReadOnly = true,
+                ShowLineNumbers = false,
+            };
+            _debugBody.Options.EnableHyperlinks = false;
+            _debugBody.Options.EnableEmailHyperlinks = false;
+            _debugBody.TextArea.SelectionBrush = EditorTheme.SelectionBrush;
+            _debugBody.TextArea.TextView.LineTransformers.Add(new WatchScriptColorizer());
+            var debugDock = new DockPanel { LastChildFill = true };
+            DockPanel.SetDock(_debugHeader, Dock.Top);
+            debugDock.Children.Add(_debugHeader);
+            debugDock.Children.Add(_debugBody);
+            _debugPanel = new Border
+            {
+                Width = 320,
+                Margin = new Thickness(0, 0, EditorTheme.Space3, 0),
+                Padding = new Thickness(EditorTheme.Space2),
+                Background = EditorTheme.PanelBgBrush,
+                BorderBrush = EditorTheme.BorderSubtleBrush,
+                BorderThickness = new Thickness(1),
+                Child = debugDock,
+            };
+            DockPanel.SetDock(_debugPanel, Dock.Right);
+            root.Children.Add(_debugPanel);
+        }
+
         root.Children.Add(new Border
         {
             Margin = new Thickness(EditorTheme.Space3, 0),
@@ -368,6 +444,99 @@ public sealed class ScenePlayWindow : Window
             return;
         for (var i = 0; i < 8 && _session.DialogueMode == PlayDialogueMode.None; i++)
             _session.Tick(1.0 / TargetFps);
+        RefreshDebugWatch(force: true);
+        SyncPauseButton();
+    }
+
+    private void TogglePause()
+    {
+        var vm = _session.ScriptVm;
+        if (vm is null)
+            return;
+        if (vm.IsPaused)
+            vm.Continue();
+        else
+            vm.Pause();
+        SyncPauseButton();
+        RefreshDebugWatch(force: true);
+        UpdateStatusText();
+    }
+
+    private void StepScript()
+    {
+        var vm = _session.ScriptVm;
+        if (vm is null)
+            return;
+        vm.StepOver();
+        SyncPauseButton();
+        RefreshFrame();
+        RefreshDebugWatch(force: true);
+        UpdateStatusText();
+    }
+
+    private void BreakAtCurrentPc()
+    {
+        var vm = _session.ScriptVm;
+        if (vm is null)
+            return;
+        var current = vm.Watch().CurrentActor;
+        if (current is not { } actor)
+            return;
+        vm.AddBreakpoint(new GroundScriptBreakpoint(
+            CommandIndex: actor.Index,
+            ActorName: actor.Name));
+        RefreshDebugWatch(force: true);
+    }
+
+    private void SyncPauseButton()
+    {
+        if (_pauseButton is null)
+            return;
+        _pauseButton.Content = _session.ScriptVm?.IsPaused == true ? "Continue" : "Pause";
+    }
+
+    private void RefreshDebugWatch(bool force = false)
+    {
+        if (_debugHeader is null || _debugBody is null)
+            return;
+        var vm = _session.ScriptVm;
+        if (vm is null)
+        {
+            if (_debugHeaderKey is not null)
+            {
+                _debugHeader.Text = string.Empty;
+                _debugBody.Document.Text = string.Empty;
+                _debugHeaderKey = null;
+                _debugBodyKey = null;
+            }
+            return;
+        }
+
+        var watch = vm.Watch();
+        var bodyKey = GroundScriptWatchListing.BodyKey(watch);
+        var now = DateTime.UtcNow;
+        var headerDue = force || vm.IsPaused ||
+            (now - _debugHeaderPaint).TotalMilliseconds >= 100;
+        if (headerDue)
+        {
+            var header = GroundScriptWatchListing.FormatHeader(watch);
+            if (_debugHeaderKey != header)
+            {
+                _debugHeaderKey = header;
+                _debugHeader.Text = header;
+            }
+            _debugHeaderPaint = now;
+        }
+
+        if (!force && _debugBodyKey == bodyKey)
+            return;
+
+        var doc = GroundScriptWatchListing.Build(watch);
+        _debugBodyKey = doc.BodyKey;
+        _debugBody.Document.Text = doc.Body;
+        var line = Math.Clamp(doc.ScrollLine, 1, Math.Max(1, _debugBody.Document.LineCount));
+        _debugBody.ScrollToLine(line);
+        _debugBody.TextArea.TextView.Redraw();
     }
 
     private void RebuildControlsMenu()
@@ -421,6 +590,32 @@ public sealed class ScenePlayWindow : Window
             return;
         }
 
+        if (_session.IsScripted && _session.ScriptVm is not null)
+        {
+            if (e.Key == Key.F6)
+            {
+                TogglePause();
+                e.Handled = true;
+                return;
+            }
+
+            if (e.Key == Key.F10)
+            {
+                StepScript();
+                e.Handled = true;
+                return;
+            }
+
+            if (e.Key == Key.F5)
+            {
+                _session.ScriptVm.Continue();
+                SyncPauseButton();
+                RefreshDebugWatch(force: true);
+                e.Handled = true;
+                return;
+            }
+        }
+
         var chord = ToChord(e);
         if (_captureTarget is GbaButton target)
         {
@@ -457,7 +652,8 @@ public sealed class ScenePlayWindow : Window
             return false;
         // Ignore GBA/play keys while typing or navigating toolbar chrome.
         var focused = TopLevel.GetTopLevel(this)?.FocusManager?.GetFocusedElement();
-        return focused is null or Image or ScenePlayWindow or Border;
+        return focused is null or Image or ScenePlayWindow or Border or TextEditor
+            or AvaloniaEdit.Editing.TextArea;
     }
 
     private void OnTick(object? sender, EventArgs e)
@@ -493,6 +689,7 @@ public sealed class ScenePlayWindow : Window
             return;
 
         UpdateStatusText();
+        RefreshDebugWatch();
     }
 
     private void ApplyAutoProgress(double scaledDt)
@@ -522,28 +719,39 @@ public sealed class ScenePlayWindow : Window
         if (_session.IsScripted && _session.ScriptFinished && !_autoProgress.Enabled)
         {
             ShowEndMenu();
-            _status.Text = "Scene complete";
+            SetPlayStatus("Scene complete");
         }
         else if (_session.IsScripted && _session.ScriptFinished && _autoProgress.Enabled)
         {
-            _status.Text = _navigator?.CanGoNext == true
+            SetPlayStatus(_navigator?.CanGoNext == true
                 ? "Auto progress · next scene…"
-                : "Scene complete";
+                : "Scene complete");
             if (_navigator?.CanGoNext != true)
                 ShowEndMenu();
         }
+        else if (_session.IsScripted && _session.ScriptVm?.IsPaused == true)
+        {
+            SetPlayStatus("Paused · F10 step · F5 continue · F6 pause/resume");
+        }
         else if (_session.IsScripted)
         {
-            _status.Text = _autoProgress.Enabled
+            SetPlayStatus(_autoProgress.Enabled
                 ? (_session.WaitingForAdvance ? "Auto progress · advancing…" : "Auto progress · playing…")
                 : (_session.WaitingForChoice
                     ? "↑↓ select · A to choose…"
-                    : (_session.WaitingForAdvance ? "A to continue…" : "Playing cutscene…"));
+                    : (_session.WaitingForAdvance ? "A to continue…" : "Playing cutscene…")));
         }
         else if (_session.AllowFreeRoam)
         {
-            _status.Text = $"Free roam · 240×160 · sp.{_session.PlayerSpecies}/{_session.PartnerSpecies}";
+            SetPlayStatus($"Free roam · 240×160 · sp.{_session.PlayerSpecies}/{_session.PartnerSpecies}");
         }
+    }
+
+    private void SetPlayStatus(string text)
+    {
+        if (_status.Text == text)
+            return;
+        _status.Text = text;
     }
 
     private void ShowEndMenu()
@@ -841,5 +1049,46 @@ public sealed class ScenePlayWindow : Window
         if (chord.Alt) parts.Add("Alt");
         parts.Add(chord.Key);
         return string.Join("+", parts);
+    }
+
+    private sealed class WatchScriptColorizer : DocumentColorizingTransformer
+    {
+        protected override void ColorizeLine(DocumentLine line)
+        {
+            var document = CurrentContext.Document;
+            var text = document.GetText(line);
+            if (text.Length == 0)
+                return;
+
+            if (text[0] == '>')
+            {
+                ChangeLinePart(line.Offset, line.EndOffset, element =>
+                {
+                    element.BackgroundBrush = EditorTheme.SelectionBrush;
+                });
+            }
+
+            foreach (var span in ScriptHighlighter.Highlight(text))
+            {
+                if (span.Length <= 0)
+                    continue;
+                var start = line.Offset + span.Start;
+                var end = Math.Min(line.Offset + span.Start + span.Length, line.EndOffset);
+                if (end <= start)
+                    continue;
+                var brush = span.Kind switch
+                {
+                    ScriptHighlightKind.Header => EditorTheme.ScriptHeaderBrush,
+                    ScriptHighlightKind.Opcode => EditorTheme.ScriptOpcodeBrush,
+                    ScriptHighlightKind.String => EditorTheme.ScriptStringBrush,
+                    ScriptHighlightKind.Number => EditorTheme.ScriptNumberBrush,
+                    ScriptHighlightKind.Comment => EditorTheme.TextDimBrush,
+                    _ => null,
+                };
+                if (brush is null)
+                    continue;
+                ChangeLinePart(start, end, element => element.TextRunProperties.SetForegroundBrush(brush));
+            }
+        }
     }
 }

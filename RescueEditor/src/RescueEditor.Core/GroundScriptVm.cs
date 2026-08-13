@@ -83,6 +83,13 @@ public sealed class GroundScriptVm
     private readonly List<DialogueChoice> _pendingChoices = new();
     private int _choiceIndex;
     private ScriptActor? _choiceOwner;
+    private readonly List<GroundScriptBreakpoint> _breakpoints = new();
+    private readonly Dictionary<int, int> _locals = new();
+    private bool _suppressBreakpoints;
+    private (ScriptActor Actor, int Index, IReadOnlyList<ScriptCommandData> Commands)? _skipBreakpoint;
+    private ScriptActor? _currentActor;
+    private string? _lastTransfer;
+    private Func<bool>? _stepComplete;
 
     public readonly record struct DialogueChoice(int LabelId, string Text);
 
@@ -192,6 +199,161 @@ public sealed class GroundScriptVm
     public int? MusicId { get; private set; }
     public bool Finished { get; private set; }
     public bool HasActors => _actors.Count > 0;
+    public bool IsPaused { get; private set; }
+
+    public void Pause() => IsPaused = true;
+
+    public void Continue()
+    {
+        if (IsPaused && FocusedActor() is { } actor)
+            _skipBreakpoint = (actor, actor.Index, actor.Commands);
+        IsPaused = false;
+    }
+
+    public void AddBreakpoint(GroundScriptBreakpoint breakpoint) =>
+        _breakpoints.Add(breakpoint);
+
+    public void ClearBreakpoints() => _breakpoints.Clear();
+
+    /// <summary>
+    /// Run until the focused actor finishes its current wait/walk/cue, steps over a
+    /// CALL_LABEL/CALL_SCRIPT, or completes one opcode — then pause.
+    /// </summary>
+    public void StepOver()
+    {
+        var actor = FocusedActor();
+        if (actor is null || actor.Done)
+        {
+            IsPaused = true;
+            return;
+        }
+
+        var startIndex = actor.Index;
+        var startCommands = actor.Commands;
+        var startDepth = actor.CallStack.Count;
+        var blocked = actor.WaitFrames > 0 || actor.WalkActive ||
+            actor.AwaitCueId is not null || actor.E5WaitingCue is not null;
+        var overCall = !blocked &&
+            actor.Index >= 0 && actor.Index < actor.Commands.Count &&
+            actor.Commands[actor.Index].Op is 0xE6 or 0xE8;
+
+        _suppressBreakpoints = true;
+        _stepComplete = () =>
+        {
+            if (blocked)
+            {
+                return actor.WaitFrames == 0 && !actor.WalkActive &&
+                    actor.AwaitCueId is null && actor.E5WaitingCue is null;
+            }
+
+            if (overCall)
+            {
+                return actor.CallStack.Count <= startDepth &&
+                    (!ReferenceEquals(actor.Commands, startCommands) || actor.Index != startIndex);
+            }
+
+            return !ReferenceEquals(actor.Commands, startCommands) || actor.Index != startIndex || actor.Done;
+        };
+        IsPaused = false;
+        var guard = 0;
+        while (!Finished && !actor.Done && !IsPaused && guard++ < 100_000)
+            TickOneFrame();
+        _stepComplete = null;
+        _suppressBreakpoints = false;
+        IsPaused = true;
+    }
+
+    public GroundScriptWatchState Watch()
+    {
+        var actors = new List<GroundScriptActorWatch>(_actors.Count);
+        foreach (var a in _actors)
+            actors.Add(DescribeWatch(a));
+        var current = FocusedActor();
+        return new GroundScriptWatchState(
+            Paused: IsPaused,
+            Actors: actors,
+            CurrentActor: current is null ? null : DescribeWatch(current),
+            Cues: _cues.ToArray(),
+            Locals: new Dictionary<int, int>(_locals),
+            LastTransfer: _lastTransfer);
+    }
+
+    private GroundScriptActorWatch DescribeWatch(ScriptActor actor)
+    {
+        byte op = 0;
+        string opName = "EOF";
+        int? branchTarget = null;
+        string? branchKind = null;
+        if (actor.Index >= 0 && actor.Index < actor.Commands.Count)
+        {
+            var cmd = actor.Commands[actor.Index];
+            op = cmd.Op;
+            opName = ScriptOpcodeNames.GetName(cmd.Op);
+            if (cmd.Op is 0xE6 or 0xE7)
+            {
+                branchTarget = FindLabelIndex(actor.Commands, cmd.ArgShort);
+                branchKind = opName;
+            }
+            else if (cmd.Op is 0xE8 or 0xE9)
+                branchKind = opName;
+        }
+
+        return new GroundScriptActorWatch(
+            actor.Name,
+            actor.NpcId,
+            actor.Index,
+            op,
+            opName,
+            actor.WaitFrames,
+            actor.AwaitCueId,
+            actor.CallStack.Count,
+            actor.ObjFlags,
+            actor.Done,
+            branchTarget,
+            branchKind,
+            actor.Commands);
+    }
+
+    private ScriptActor? FocusedActor()
+    {
+        if (_currentActor is { Done: false })
+            return _currentActor;
+        return _actors.FirstOrDefault(a => !a.Done);
+    }
+
+    private bool ShouldBreak(ScriptActor actor, ScriptCommandData cmd)
+    {
+        if (_suppressBreakpoints || _breakpoints.Count == 0)
+            return false;
+
+        foreach (var bp in _breakpoints)
+        {
+            if (bp.ActorName is null && bp.CommandIndex is null && bp.Opcode is null)
+                continue;
+            if (bp.ActorName is not null &&
+                !string.Equals(bp.ActorName, actor.Name, StringComparison.Ordinal))
+                continue;
+            if (bp.CommandIndex is int idx && actor.Index != idx)
+                continue;
+            if (bp.Opcode is byte op && cmd.Op != op)
+                continue;
+
+            if (_skipBreakpoint is { } skip &&
+                ReferenceEquals(skip.Actor, actor) &&
+                skip.Index == actor.Index &&
+                ReferenceEquals(skip.Commands, actor.Commands))
+            {
+                _skipBreakpoint = null;
+                return false;
+            }
+
+            _currentActor = actor;
+            IsPaused = true;
+            return true;
+        }
+
+        return false;
+    }
 
     /// <summary>Debug: per-actor PC / wait / cue state for stall diagnosis.</summary>
     public IReadOnlyList<string> DescribeActors()
@@ -437,6 +599,9 @@ public sealed class GroundScriptVm
 
     private void TickOneFrame()
     {
+        if (IsPaused)
+            return;
+
         if (_actors.Count == 0)
         {
             Finished = true;
@@ -468,11 +633,23 @@ public sealed class GroundScriptVm
             _cuesConsumedThisFrame.Clear();
             foreach (var actor in _actors.ToArray())
             {
+                if (IsPaused)
+                    break;
                 if (actor.Done)
                     continue;
                 if (StepActor(actor))
+                {
                     progressed = true;
+                    if (_stepComplete?.Invoke() == true)
+                    {
+                        IsPaused = true;
+                        break;
+                    }
+                }
             }
+
+            if (IsPaused)
+                break;
 
             // Retail ALERT wakes every waiter on that cue in one unlock pass.
             foreach (var cue in _cuesConsumedThisFrame)
@@ -510,6 +687,8 @@ public sealed class GroundScriptVm
             actor.WaitFrames--;
             if (actor.WaitFrames > 0)
                 return false;
+            if (_stepComplete is not null)
+                return true;
             // Wait elapsed — fall through and run the next opcode this frame.
         }
 
@@ -550,6 +729,10 @@ public sealed class GroundScriptVm
         }
 
         var cmd = actor.Commands[actor.Index];
+        if (ShouldBreak(actor, cmd))
+            return false;
+
+        _currentActor = actor;
         switch (cmd.Op)
         {
             case 0xDB: // WAIT
@@ -622,6 +805,16 @@ public sealed class GroundScriptVm
 
             case 0x2E: // PORTRAIT(place, id, emotion)
                 ApplyPortrait(cmd.ArgByte, cmd.ArgShort, cmd.Arg1);
+                actor.Index++;
+                return true;
+
+            case 0x52: // SET_OBJ_FLAGS
+                actor.ObjFlags |= cmd.Arg1;
+                actor.Index++;
+                return true;
+
+            case 0x53: // CLEAR_OBJ_FLAGS
+                actor.ObjFlags &= ~cmd.Arg1;
                 actor.Index++;
                 return true;
 
@@ -736,6 +929,11 @@ public sealed class GroundScriptVm
                 actor.E5WaitingCue = cueId;
                 return false;
             }
+
+            case 0xA6: // UPDATE_VARINT — watch locals (assign / store immediate)
+                _locals[cmd.ArgShort] = (int)cmd.Arg1;
+                actor.Index++;
+                return true;
 
             case 0xE8: // CALL_SCRIPT
                 return CallScript(actor, cmd.ArgShort);
@@ -986,12 +1184,18 @@ public sealed class GroundScriptVm
                 var target = FindLabelIndex(actor.Commands, labelId);
                 if (target < 0)
                 {
+                    _lastTransfer =
+                        $"{ScriptOpcodeNames.GetName(cmd.Op)}({labelId}) {actor.Name} idx {actor.Index} → missing";
                     actor.Index++;
                     return true;
                 }
 
                 if (cmd.Op == 0xE6)
                     actor.CallStack.Push((actor.Commands, actor.Index + 1));
+
+                _lastTransfer =
+                    $"{ScriptOpcodeNames.GetName(cmd.Op)}({labelId}) {actor.Name} idx {actor.Index} → {target}";
+                _currentActor = actor;
 
                 // Butterfree idle spin: JUMP_LABEL(0) forever — mark looping so the
                 // station can still complete the scene.
@@ -1036,6 +1240,8 @@ public sealed class GroundScriptVm
         }
 
         actor.CallStack.Push((actor.Commands, actor.Index + 1));
+        _lastTransfer = $"CALL_SCRIPT({scriptId}) {actor.Name} idx {actor.Index} → 0";
+        _currentActor = actor;
         actor.Commands = body;
         actor.Index = 0;
         return true;
@@ -1051,6 +1257,8 @@ public sealed class GroundScriptVm
         }
 
         actor.CallStack.Clear();
+        _lastTransfer = $"JUMP_SCRIPT({scriptId}) {actor.Name} idx {actor.Index} → 0";
+        _currentActor = actor;
         actor.Commands = body;
         actor.Index = 0;
         return true;
@@ -1918,6 +2126,7 @@ public sealed class GroundScriptVm
         public bool Done { get; set; }
         public bool WalkActive { get; set; }
         public bool LoopingIdle { get; set; }
+        public int ObjFlags { get; set; }
         public int LabelLoopCount { get; set; }
         public double? WalkTargetX { get; set; }
         public double? WalkTargetY { get; set; }
