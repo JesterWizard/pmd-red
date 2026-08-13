@@ -170,6 +170,18 @@ public sealed class ProjectExplorerPanel : UserControl
         }
     }
 
+    public void ExpandCategory(AssetCategory category)
+    {
+        foreach (var (node, control) in _nodeControls)
+        {
+            if (node is CategoryExplorerNode cat && cat.Category == category && control is Expander expander)
+            {
+                expander.IsExpanded = true;
+                return;
+            }
+        }
+    }
+
     private void ApplyFilter()
     {
         var query = (_filterBox.Text ?? string.Empty).Trim();

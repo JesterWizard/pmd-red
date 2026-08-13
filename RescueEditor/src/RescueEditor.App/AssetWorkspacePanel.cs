@@ -167,7 +167,7 @@ public sealed class AssetWorkspacePanel : UserControl
 
     public void ShowCategory(AssetCategory category, bool selectFirst)
     {
-        if (_catalog is null)
+        if (_catalog is null || !CategoryWorkspace.UsesAssetBrowser(category))
             return;
         var assets = _catalog.ForCategory(category);
         _thumbnailCts?.Cancel();

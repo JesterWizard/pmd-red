@@ -533,10 +533,10 @@ public sealed class MainWindow : Window
 
             _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes);
             _explorer.Build(_catalog, _scenes, Categories);
-            _workspaceHost.Child = _assetWorkspace;
-            ApplyDockLayout(sceneOwnsInspector: false);
             _selectedCategory = AssetCategory.Scenes;
-            _assetWorkspace.ShowCategory(AssetCategory.Scenes, selectFirst: false);
+            _selectedAsset = null;
+            ShowScenesPicker();
+            _explorer.ExpandCategory(AssetCategory.Scenes);
             UpdateBreadcrumb();
             UpdateDirtyTitle();
 
@@ -570,21 +570,21 @@ public sealed class MainWindow : Window
         {
             case CategoryExplorerNode category:
                 _selectedCategory = category.Category;
-                if (category.Category == AssetCategory.CPatches)
+                _selectedAsset = null;
+                switch (CategoryWorkspace.Resolve(category.Category))
                 {
-                    OpenCPatches();
-                }
-                else if (category.Category == AssetCategory.Scenes)
-                {
-                    _workspaceHost.Child = _assetWorkspace;
-                    ApplyDockLayout(sceneOwnsInspector: false);
-                    _assetWorkspace.ShowCategory(category.Category, selectFirst: false);
-                }
-                else
-                {
-                    _workspaceHost.Child = _assetWorkspace;
-                    ApplyDockLayout(sceneOwnsInspector: false);
-                    _assetWorkspace.ShowCategory(category.Category, selectFirst: true);
+                    case CategoryWorkspaceKind.CPatches:
+                        OpenCPatches();
+                        break;
+                    case CategoryWorkspaceKind.SceneExplorer:
+                        ShowScenesPicker();
+                        _explorer.ExpandCategory(AssetCategory.Scenes);
+                        break;
+                    default:
+                        _workspaceHost.Child = _assetWorkspace;
+                        ApplyDockLayout(sceneOwnsInspector: false);
+                        _assetWorkspace.ShowCategory(category.Category, selectFirst: true);
+                        break;
                 }
                 UpdateBreadcrumb();
                 break;
@@ -612,6 +612,9 @@ public sealed class MainWindow : Window
                 break;
 
             case SceneGroupExplorerNode:
+                _selectedCategory = AssetCategory.Scenes;
+                if (_workspaceHost.Child != _sceneWorkspace)
+                    ShowScenesPicker();
                 UpdateBreadcrumb();
                 break;
         }
@@ -1230,6 +1233,25 @@ public sealed class MainWindow : Window
         }
         return null;
     }
+
+    private void ShowScenesPicker()
+    {
+        _workspaceHost.Child = CreateScenesPickerPanel();
+        ApplyDockLayout(sceneOwnsInspector: false);
+        ShowInspectorEmpty();
+    }
+
+    private static Control CreateScenesPickerPanel() => new StackPanel
+    {
+        Spacing = EditorTheme.Space3,
+        VerticalAlignment = VerticalAlignment.Center,
+        HorizontalAlignment = HorizontalAlignment.Center,
+        Children =
+        {
+            EditorChrome.PaneTitle("Scenes"),
+            EditorChrome.MutedBody("Open a scene from the Project panel (Scenes → Story / Friend Areas / Post Game)."),
+        },
+    };
 
     private Control CreateWelcomePanel()
     {
