@@ -2,8 +2,10 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Input.Platform;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.Platform.Storage;
 using AvaloniaEdit;
 using AvaloniaEdit.CodeCompletion;
 using AvaloniaEdit.Document;
@@ -28,6 +30,7 @@ public sealed class SceneScriptWindow : Window
     private readonly TextBlock _commandTip;
     private readonly TextBlock _castRoster;
     private readonly InstantComboBox _commandInfo;
+    private readonly InstantComboBox _exportScope;
     private IReadOnlyList<ScriptSourceError> _errors = [];
     private CompletionWindow? _completion;
 
@@ -172,17 +175,27 @@ public sealed class SceneScriptWindow : Window
             FontFamily = EditorTheme.UiFont,
             FontSize = EditorTheme.FontMeta,
             Foreground = EditorTheme.TextMutedBrush,
-            TextWrapping = TextWrapping.Wrap,
+            TextWrapping = TextWrapping.NoWrap,
+            TextTrimming = TextTrimming.CharacterEllipsis,
             VerticalAlignment = VerticalAlignment.Center,
-            Text = _names is null
-                ? "No named catalogs loaded (need include/constants/*.h beside the ROM). Numbers only · Ctrl+/ · Ctrl+S."
-                : "Named MUS_/GROUND_ANIM_/UPDATE_NAME_/OBJ_FLAG_/EMOTION_EFFECT_/MAP_/SE args · hover opcode for params · cast listed above · Ctrl+Space · Ctrl+S Apply.",
+            MinWidth = 0,
+            Text = "Hover over commands for details",
         };
 
         var apply = EditorChrome.ToolButton("Apply", primary: true);
         apply.Click += (_, _) => Apply();
+        var copyC = EditorChrome.ToolButton("Copy code");
+        copyC.Click += async (_, _) => await CopyCAsync();
+        var saveC = EditorChrome.ToolButton("Download code");
+        saveC.Click += async (_, _) => await SaveCAsync();
         var close = EditorChrome.ToolButton("Close");
         close.Click += (_, _) => Close();
+
+        _exportScope = new InstantComboBox { Width = 132 };
+        _exportScope.Items.Add(new ComboBoxItem { Content = "This script", Tag = DecompScriptExportScope.CurrentScript });
+        _exportScope.Items.Add(new ComboBoxItem { Content = "This sector", Tag = DecompScriptExportScope.CurrentSector });
+        _exportScope.Items.Add(new ComboBoxItem { Content = "Whole scene", Tag = DecompScriptExportScope.WholeScene });
+        _exportScope.SelectedIndex = 0;
 
         var title = new TextBlock
         {
@@ -251,7 +264,8 @@ public sealed class SceneScriptWindow : Window
             Orientation = Orientation.Horizontal,
             Spacing = EditorTheme.Space2,
             VerticalAlignment = VerticalAlignment.Center,
-            Children = { apply, close },
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Children = { _exportScope, copyC, saveC, apply, close },
         };
         DockPanel.SetDock(buttons, Dock.Right);
         var footer = new Border
@@ -259,7 +273,8 @@ public sealed class SceneScriptWindow : Window
             Background = EditorTheme.PanelBgRaisedBrush,
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(0, 1, 0, 0),
-            Padding = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
+            Padding = new Thickness(EditorTheme.Space4, 0),
+            Height = EditorTheme.ToolbarHeight,
             Child = new DockPanel { LastChildFill = true, Children = { buttons, _status } },
         };
 
@@ -359,6 +374,73 @@ public sealed class SceneScriptWindow : Window
         var caret = _editor.CaretOffset;
         document.Text = ScriptSourceComments.ToggleLines(document.Text, startIndex, endIndex);
         _editor.CaretOffset = Math.Clamp(caret, 0, document.TextLength);
+    }
+
+    private DecompScriptExportScope SelectedExportScope() =>
+        _exportScope.SelectedItem is ComboBoxItem { Tag: DecompScriptExportScope scope }
+            ? scope
+            : DecompScriptExportScope.CurrentScript;
+
+    private string BuildCExport()
+    {
+        var source = _editor.Text ?? string.Empty;
+        var line = _editor.TextArea.Caret.Line;
+        var current = DecompScriptExport.FilterFromSourceLine(source, line);
+        var filter = DecompScriptExport.FilterForScope(SelectedExportScope(), current);
+        var parsed = SceneScriptSource.Parse(source, _database?.DialogueByOffset, _names);
+        if (parsed.Ok && parsed.Sections.Count > 0)
+            return DecompScriptExport.Format(_scene.MapId, parsed.Sections, filter, _names);
+        return DecompScriptExport.Format(_scene, filter, _database?.DialogueByOffset, _names);
+    }
+
+    private async Task CopyCAsync()
+    {
+        var text = BuildCExport();
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            _status.Foreground = EditorTheme.DangerBrush;
+            _status.Text = "Nothing to export for this scope.";
+            return;
+        }
+
+        var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
+        if (clipboard is null)
+        {
+            _status.Foreground = EditorTheme.DangerBrush;
+            _status.Text = "Clipboard is not available.";
+            return;
+        }
+
+        await clipboard.SetTextAsync(text);
+        _status.Foreground = EditorTheme.TextMutedBrush;
+        _status.Text = "Copied code to clipboard.";
+    }
+
+    private async Task SaveCAsync()
+    {
+        var text = BuildCExport();
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            _status.Foreground = EditorTheme.DangerBrush;
+            _status.Text = "Nothing to export for this scope.";
+            return;
+        }
+
+        var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
+        {
+            Title = "Download code",
+            SuggestedFileName = DecompScriptExport.SuggestedFileName(_scene),
+            FileTypeChoices =
+            [
+                new FilePickerFileType("C header") { Patterns = ["*.h", "*.c"] },
+            ],
+        });
+        if (file is null)
+            return;
+
+        await File.WriteAllTextAsync(file.Path.LocalPath, text);
+        _status.Foreground = EditorTheme.TextMutedBrush;
+        _status.Text = $"Wrote {file.Path.LocalPath}";
     }
 
     private void Apply()
