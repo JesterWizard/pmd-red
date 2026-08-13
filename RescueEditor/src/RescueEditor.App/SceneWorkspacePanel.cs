@@ -1229,7 +1229,7 @@ public sealed class SceneWorkspacePanel : UserControl
             return;
 
         var fields = ScriptCommandSchema.GetSemanticFields(_selectedCommand.Op);
-        if (fields is null || fields.Count == 0)
+        if (fields is null)
         {
             if (_rawFieldsToggle.IsChecked != true)
             {
@@ -1242,6 +1242,19 @@ public sealed class SceneWorkspacePanel : UserControl
                     TextWrapping = TextWrapping.Wrap,
                 });
             }
+            return;
+        }
+
+        if (fields.Count == 0)
+        {
+            _semanticPropertyHost.Children.Add(new TextBlock
+            {
+                Text = "No parameters.",
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextDimBrush,
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
+                TextWrapping = TextWrapping.Wrap,
+            });
             return;
         }
 
