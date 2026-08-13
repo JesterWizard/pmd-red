@@ -24,7 +24,7 @@ static const struct ScriptCommand s_gs176_g1_s0_station_sref_script[] = { /* 0x8
     AWAIT_CUE(3),
     FLASH_TO(TRUE, PALUTIL_KIND_05, 120, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(90),
-    { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    FADE2_IN(1, 0x0),
     FLASH_FROM(TRUE, PALUTIL_KIND_01, 15, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(90),
     SPECIAL_TEXT(SPECIAL_TEXT_CREDITS_NAME, 0, 200),
@@ -82,8 +82,8 @@ static const struct ScriptCommand s_gs176_g1_s0_station_sref_script[] = { /* 0x8
     SPECIAL_TEXT(SPECIAL_TEXT_CREDITS_NAME, 26, 181),
     WAIT(120),
     BGM_FADEOUT(330),
-    { 0x23, 0x01,  0x0078,  0x00000000,  0x00000000, NULL },
-    { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x78),
+    FADE2_IN(1, 0x0),
     WAIT(210),
     RET,
 };
@@ -92,9 +92,9 @@ static const ScriptRef s_gs176_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE
 
 static const struct ScriptCommand s_gs176_g1_s0_eff1_script[] = { /* 0x822bb50 */
     DEBUGINFO_O(94),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x26, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    FADE2_OUT(1, 0x0),
+    WAIT_FADE,
     WAIT(90),
     TEXTBOX_AUTO_PRESS(180, 180),
     WAIT(60),

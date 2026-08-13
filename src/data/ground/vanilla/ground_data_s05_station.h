@@ -22,12 +22,12 @@ static const struct ScriptCommand s_gs227_g1_s0_station_sref_script[] = { /* 0x8
     BGM_STOP,
     SELECT_MAP(227),
     SELECT_ENTITIES(-1, 0),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     WAIT(180),
     ALERT_CUE(4),
     SET_GROUND_DEBUG_FLAG(1),
     WAIT(3600),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     RET,
 };
 

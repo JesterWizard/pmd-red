@@ -273,6 +273,38 @@ public sealed class ScriptSourceTests
         Assert.Equal(original.ToBytes(), roundTrip.Command.ToBytes());
     }
 
+    [Theory]
+    [InlineData(0x2D, 7, 0, 0, 0, "UPDATE_NAME(7, 0, 0)")]
+    [InlineData(0x52, 0, 0, 0x01000000, 0, "SET_OBJ_FLAGS(16777216)")]
+    [InlineData(0x53, 0, 0, 0x01000000, 0, "CLEAR_OBJ_FLAGS(16777216)")]
+    [InlineData(0x60, 0, 0, 0x88, 0, "SET_HEIGHT(136)")]
+    [InlineData(0x70, 0, 0x0A00, 0, 0, "HEIGHT_TO(2560, 0)")]
+    [InlineData(0x84, 0, 0x80, -24, 0, "WALK_RELATIVE_DIST(128, -24, 0)")]
+    [InlineData(0xDF, 0, 0, 0, 0, "WAIT_FADE()")]
+    [InlineData(0xDE, 0, 0, 0, 0, "WAIT_EFFECT()")]
+    [InlineData(0x56, 0, 0, 0x1A2, 0, "EMOTION_EFFECT(418)")]
+    [InlineData(0x93, 4, 10, 0, 0, "ROTATE_TO_LIVES(4, 10, 0)")]
+    public void SkyTowerOpcodesFormatAndParseByName(
+        byte op, byte argByte, short argShort, int arg1, int arg2, string expected)
+    {
+        var original = new ScriptCommandData
+        {
+            Op = op,
+            ArgByte = argByte,
+            ArgShort = argShort,
+            Arg1 = arg1,
+            Arg2 = arg2,
+        };
+
+        var line = ScriptSource.FormatCommand(original);
+        Assert.Equal(expected, line);
+
+        var parsed = ScriptSource.Parse(line);
+        Assert.True(parsed.Ok, string.Join("; ", parsed.Errors.Select(e => e.Message)));
+        var roundTrip = Assert.Single(Assert.Single(parsed.Sections).Commands);
+        Assert.Equal(original.ToBytes(), roundTrip.Command.ToBytes());
+    }
+
     [Fact]
     public void ParseErrorReportsLineNumber()
     {

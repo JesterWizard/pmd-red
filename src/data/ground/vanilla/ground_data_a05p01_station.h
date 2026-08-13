@@ -21,7 +21,7 @@ static const struct ScriptCommand s_gs175_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(MAP_NIGHT_SKY_1),
     SELECT_ENTITIES(-1, 0),
     SET_CAMERA_OFFSET(0, -2),
-    { 0x22, 0x01,  0x00b4,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0xB4),
     AWAIT_CUE(3),
     WAIT(0),
     FLASH_TO(TRUE, PALUTIL_KIND_01, 30, RGB_U32(0xFF, 0xFF, 0xFF)),
@@ -37,7 +37,7 @@ static const ScriptRef s_gs175_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE
 
 static const struct ScriptCommand s_gs175_g1_s0_eff1_script[] = { /* 0x822b0f4 */
     DEBUGINFO_O(39),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(40),
     BGM_SWITCH(MUS_CREDITS),
     WAIT(300),
@@ -66,13 +66,13 @@ static const struct ScriptCommand s_gs175_g2_s0_station_sref_script[] = { /* 0x8
     SELECT_ENTITIES(-1, 0),
     SET_CAMERA_OFFSET(0, -2),
     BGM_STOP,
-    { 0x22, 0x01,  0x00b4,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0xB4),
     AWAIT_CUE(3),
     FLASH_TO(TRUE, PALUTIL_KIND_01, 60, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(170),
     FLASH_TO(TRUE, PALUTIL_KIND_02, 60, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(90),
-    { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    FADE2_IN(1, 0x0),
     RET,
 };
 
@@ -80,13 +80,13 @@ static const ScriptRef s_gs175_g2_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE
 
 static const struct ScriptCommand s_gs175_g2_s0_eff1_script[] = { /* 0x822b3d0 */
     DEBUGINFO_O(82),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    WAIT_FADE,
     WAIT(120),
     BGM_SWITCH(MUS_TIME_OF_REUNION),
     WAIT(60),
     TEXTBOX_AUTO_PRESS(190, 190),
-    { 0x26, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    FADE2_OUT(1, 0x0),
     WAIT(1),
     MSG_ON_BG_AUTO(30, _("\n{CENTER_ALIGN}I don't want to leave...")),
     WAIT(100),
@@ -96,7 +96,7 @@ static const struct ScriptCommand s_gs175_g2_s0_eff1_script[] = { /* 0x822b3d0 *
     WAIT(100),
     MSG_ON_BG_AUTO(30, _("\n{CENTER_ALIGN}Irreplaceable friend...")),
     WAIT(1),
-    { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
+    FADE2_IN(1, 0x0),
     ALERT_CUE(3),
     HALT,
 };

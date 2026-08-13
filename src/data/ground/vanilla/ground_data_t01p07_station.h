@@ -51,7 +51,7 @@ static const struct ScriptCommand s_gs8_g1_s0_station_sref_script[] = { /* 0x819
     SELECT_MAP(8),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_FILE_SELECT),
-    { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, -1),
     AWAIT_CUE(3),
     SELECT_EVENTS(0, 0),
     RET,
@@ -73,9 +73,9 @@ static const struct ScriptCommand s_gs8_g1_s0_eff0_script[] = { /* 0x819a990 */
 static const struct ScriptCommand s_gs8_g1_s0_lives0_dlg0[] = { /* 0x819aa10 */
     DEBUGINFO_O(74),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     AWAIT_CUE(5),
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     ALERT_CUE(3),
     RET,
 };
@@ -92,20 +92,20 @@ static const ScriptRef s_gs8_g1_s1_station_sref = { EVENT_WAKEUP, SCRIPT_TYPE_07
 
 static const struct ScriptCommand s_gs8_g1_s1_eff0_script[] = { /* 0x819aadc */
     DEBUGINFO_O(94),
-    { 0x56, 0x00,  0x0000,  0x000001b4,  0x00000000, NULL },
+    EMOTION_EFFECT(0x1B4),
     WAIT(30),
     CANCEL_LIVES(-1, 0),
     SELECT_LIVES(-1, 1),
-    { 0xde, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT_EFFECT,
     END_DELETE,
 };
 
 static const struct ScriptCommand s_gs8_g1_s1_lives0_dlg0[] = { /* 0x819ab4c */
     DEBUGINFO_O(104),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     AWAIT_CUE(5),
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     ALERT_CUE(3),
     RET,
 };

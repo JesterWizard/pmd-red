@@ -20,9 +20,9 @@ static const struct ScriptCommand s_gs209_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(MAP_SKY_TOWER_END),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_RAYQUAZAS_DOMAIN),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
-    { 0x23, 0x01,  0x0010,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x10),
     FANFARE_FADEOUT2(16, 512),
     RET,
 };
@@ -35,7 +35,7 @@ static const struct ScriptCommand s_gs209_g1_s0_eff0_script[] = { /* 0x82621bc *
     WAIT(1),
     AWAIT_CUE(4),
     CAMERA_INIT_PAN,
-    { 0x89, 0x20,  0x0500,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(32, 0x500, 0x4),
     AWAIT_CUE(4),
     END_DELETE,
 };
@@ -43,7 +43,7 @@ static const struct ScriptCommand s_gs209_g1_s0_eff0_script[] = { /* 0x82621bc *
 static const struct ScriptCommand s_gs209_g1_s0_lives0_dlg0[] = { /* 0x826223c */
     DEBUGINFO_O(44),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(5),
     MSG_OVERHEARD(_("Gyaaaaaaaaaaaaaaaah!")),
     WAIT(30),
@@ -61,7 +61,7 @@ static const struct ScriptCommand s_gs209_g1_s0_lives0_dlg0[] = { /* 0x826223c *
     FANFARE_PLAY2(848),
     ALERT_CUE(7),
     AWAIT_CUE(5),
-    { 0x2e, 0x0f,  0x0002, -0x00000002,  0x00000000, NULL },
+    PORTRAIT(15, 0x2, -2),
     MSG_OVERHEARD(_(" ...Gwaargh!")),
     WAIT(90),
     TEXTBOX_CLEAR,
@@ -123,7 +123,7 @@ static const struct ScriptCommand s_gs209_g1_s0_lives0_dlg0[] = { /* 0x826223c *
 static const struct ScriptCommand s_gs209_g1_s0_lives1_dlg0[] = { /* 0x826282c */
     DEBUGINFO_O(124),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     AWAIT_CUE(6),
@@ -165,7 +165,7 @@ static const struct ScriptCommand s_gs209_g1_s0_lives3_dlg0[] = { /* 0x82629ac *
 
 static const struct ScriptCommand s_gs209_g1_s0_lives4_dlg0[] = { /* 0x8262a4c */
     DEBUGINFO_O(167),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     SELECT_ANIMATION(9),
     AWAIT_CUE(7),
     SELECT_ANIMATION(23),
@@ -178,25 +178,25 @@ static const struct ScriptCommand s_gs209_g1_s0_lives4_dlg0[] = { /* 0x8262a4c *
     ALERT_CUE(5),
     AWAIT_CUE(7),
     FANFARE_PLAY2(672),
-    { 0x62, 0x00,  0x0100,  0x00000001,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, 0x1, 0x0),
     WAIT(2),
-    { 0x62, 0x00,  0x0100, -0x00000001,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, -1, 0x0),
     WAIT(2),
-    { 0x62, 0x00,  0x0100,  0x00000001,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, 0x1, 0x0),
     WAIT(2),
-    { 0x62, 0x00,  0x0100, -0x00000001,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, -1, 0x0),
     WAIT(20),
     FANFARE_PLAY2(672),
-    { 0x62, 0x00,  0x0100,  0x00000002,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, 0x2, 0x0),
     WAIT(1),
-    { 0x62, 0x00,  0x0100, -0x00000002,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, -2, 0x0),
     WAIT(1),
-    { 0x62, 0x00,  0x0100,  0x00000002,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, 0x2, 0x0),
     WAIT(1),
-    { 0x62, 0x00,  0x0100, -0x00000002,  0x00000000, NULL },
-    { 0x62, 0x00,  0x0100,  0x00000002,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, -2, 0x0),
+    MOVE_RELATIVE(0x100, 0x2, 0x0),
     WAIT(1),
-    { 0x62, 0x00,  0x0100, -0x00000002,  0x00000000, NULL },
+    MOVE_RELATIVE(0x100, -2, 0x0),
     WAIT(30),
     FANFARE_PLAY2(774),
     SELECT_ANIMATION(23),
@@ -220,7 +220,7 @@ static const struct ScriptCommand s_gs209_g1_s0_lives4_dlg0[] = { /* 0x8262a4c *
     SELECT_ANIMATION(2),
     ALERT_CUE(5),
     AWAIT_CUE(7),
-    { 0x54, 0x00,  0x001b,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x1B),
     AWAIT_CUE(7),
     HALT,
 };
@@ -232,7 +232,7 @@ static const struct ScriptCommand s_gs209_g2_s0_station_sref_script[] = { /* 0x8
     BGM_SWITCH(MUS_RAYQUAZAS_DOMAIN),
     { 0x97, 0x00,  0x0002,  0x00000001,  0x00000001, NULL },
     WAIT(15),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
     FLASH_TO(TRUE, PALUTIL_KIND_05, 16, RGB_U32(0xFF, 0xFF, 0xFF)),
     RET,
@@ -247,7 +247,7 @@ static const struct ScriptCommand s_gs209_g2_s0_eff0_script[] = { /* 0x8262ebc *
     AWAIT_CUE(4),
     WAIT(10),
     CAMERA_INIT_PAN,
-    { 0x89, 0x14,  0x0500,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(20, 0x500, 0x4),
     AWAIT_CUE(4),
     END_DELETE,
 };
@@ -255,8 +255,8 @@ static const struct ScriptCommand s_gs209_g2_s0_eff0_script[] = { /* 0x8262ebc *
 static const struct ScriptCommand s_gs209_g2_s0_lives0_dlg0[] = { /* 0x8262f4c */
     DEBUGINFO_O(256),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    WAIT_FADE,
     WAIT(30),
     FANFARE_PLAY2(465),
     ALERT_CUE(7),
@@ -330,7 +330,7 @@ static const struct ScriptCommand s_gs209_g2_s0_lives0_dlg0[] = { /* 0x8262f4c *
 static const struct ScriptCommand s_gs209_g2_s0_lives1_dlg0[] = { /* 0x8263660 */
     DEBUGINFO_O(331),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     HALT,
 };
 
@@ -350,8 +350,8 @@ static const struct ScriptCommand s_gs209_g2_s0_lives3_dlg0[] = { /* 0x82636e0 *
 
 static const struct ScriptCommand s_gs209_g2_s0_lives4_dlg0[] = { /* 0x8263720 */
     DEBUGINFO_O(352),
-    { 0x54, 0x00,  0x001b,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x1B),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     AWAIT_CUE(7),
     CALL_SCRIPT(SHOCK_FUNC),
     ALERT_CUE(5),
@@ -364,7 +364,7 @@ static const struct ScriptCommand s_gs209_g2_s0_lives4_dlg0[] = { /* 0x8263720 *
     ALERT_CUE(5),
     AWAIT_CUE(7),
     ALERT_CUE(8),
-    { 0x54, 0x00,  0x001a,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x1A),
     STOP_ANIMATION_ON_CURRENT_FRAME,
     ALERT_CUE(5),
     AWAIT_CUE(7),
@@ -374,20 +374,20 @@ static const struct ScriptCommand s_gs209_g2_s0_lives4_dlg0[] = { /* 0x8263720 *
 static const struct ScriptCommand s_gs209_g2_s0_eff1_script[] = { /* 0x8263860 */
     DEBUGINFO_O(375),
     AWAIT_CUE(8),
-    { 0x56, 0x00,  0x0000,  0x0000006f,  0x00000000, NULL },
-    { 0xde, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x56, 0x00,  0x0000,  0x00000070,  0x00000000, NULL },
+    EMOTION_EFFECT(0x6F),
+    WAIT_EFFECT,
+    EMOTION_EFFECT(0x70),
     WAIT(120),
     ALERT_CUE(5),
     AWAIT_CUE(8),
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
     WAIT(1),
     AWAIT_CUE(8),
-    { 0x59, 0x00,  0x0000, -0x0000001a,  0x00000000, NULL },
+    MOVE_RELATIVE_POS(0, 0x0, -0x1A),
     WAIT(1),
-    { 0x56, 0x00,  0x0000,  0x00000133,  0x00000000, NULL },
-    { 0xde, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x56, 0x00,  0x0000,  0x00000134,  0x00000000, NULL },
+    EMOTION_EFFECT(0x133),
+    WAIT_EFFECT,
+    EMOTION_EFFECT(0x134),
     AWAIT_CUE(8),
     HALT,
 };
@@ -415,8 +415,8 @@ static const ScriptRef s_gs209_g3_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE
 static const struct ScriptCommand s_gs209_g3_s0_lives0_dlg0[] = { /* 0x8263a7c */
     DEBUGINFO_O(416),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    WAIT_FADE,
     WAIT(30),
     WAIT(30),
     TEXTBOX_AUTO_PRESS(15, 15),
@@ -430,7 +430,7 @@ static const struct ScriptCommand s_gs209_g3_s0_lives0_dlg0[] = { /* 0x8263a7c *
 static const struct ScriptCommand s_gs209_g3_s0_lives1_dlg0[] = { /* 0x8263b44 */
     DEBUGINFO_O(431),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     HALT,
 };
 
@@ -448,14 +448,14 @@ static const struct ScriptCommand s_gs209_g3_s0_lives3_dlg0[] = { /* 0x8263bb4 *
 
 static const struct ScriptCommand s_gs209_g3_s0_lives4_dlg0[] = { /* 0x8263be4 */
     DEBUGINFO_O(450),
-    { 0x54, 0x00,  0x001a,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x1A),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     HALT,
 };
 
 static const struct ScriptCommand s_gs209_g3_s0_eff1_script[] = { /* 0x8263c24 */
     DEBUGINFO_O(457),
-    { 0x56, 0x00,  0x0000,  0x00000134,  0x00000000, NULL },
+    EMOTION_EFFECT(0x134),
     HALT,
 };
 

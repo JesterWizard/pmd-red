@@ -97,7 +97,7 @@ static const struct ScriptCommand s_gs135_g0_s4_lives1_dlg0[] = { /* 0x81ffe68 *
 
 static const struct ScriptCommand s_gs135_g1_s0_lives0_dlg1[] = { /* 0x81ffe98 */
     DEBUGINFO_O(99),
-    { 0x51, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x6),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -108,7 +108,7 @@ static const struct ScriptCommand s_gs135_g1_s0_lives0_dlg2[] = { /* 0x81ffec8 *
 
 static const struct ScriptCommand s_gs135_g1_s0_lives1_dlg1[] = { /* 0x81ffee8 */
     DEBUGINFO_O(110),
-    { 0x51, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x5),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -119,7 +119,7 @@ static const struct ScriptCommand s_gs135_g1_s0_lives1_dlg2[] = { /* 0x81fff18 *
 
 static const struct ScriptCommand s_gs135_g1_s0_lives2_dlg1[] = { /* 0x81fff38 */
     DEBUGINFO_O(121),
-    { 0x51, 0x00,  0x0004,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x4),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -130,7 +130,7 @@ static const struct ScriptCommand s_gs135_g1_s0_lives2_dlg2[] = { /* 0x81fff68 *
 
 static const struct ScriptCommand s_gs135_g1_s0_lives3_dlg1[] = { /* 0x81fff88 */
     DEBUGINFO_O(132),
-    { 0x51, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x3),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -141,7 +141,7 @@ static const struct ScriptCommand s_gs135_g1_s0_lives3_dlg2[] = { /* 0x81fffb8 *
 
 static const struct ScriptCommand s_gs135_g1_s0_lives4_dlg1[] = { /* 0x81fffd8 */
     DEBUGINFO_O(143),
-    { 0x51, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x2),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -152,7 +152,7 @@ static const struct ScriptCommand s_gs135_g1_s0_lives4_dlg2[] = { /* 0x8200008 *
 
 static const struct ScriptCommand s_gs135_g1_s0_lives5_dlg1[] = { /* 0x8200028 */
     DEBUGINFO_O(154),
-    { 0x51, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x1),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -163,7 +163,7 @@ static const struct ScriptCommand s_gs135_g1_s0_lives5_dlg2[] = { /* 0x8200058 *
 
 static const struct ScriptCommand s_gs135_g1_s0_lives6_dlg1[] = { /* 0x8200078 */
     DEBUGINFO_O(165),
-    { 0x51, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x0),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 

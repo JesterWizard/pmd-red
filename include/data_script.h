@@ -13,6 +13,7 @@
 #include "constants/script_dungeon_id.h"
 #include "constants/script_cmd.h"
 #include "constants/script_id.h"
+#include "constants/ground_script_params.h"
 #include "structs/str_ground_script.h"
 #include "ground_place.h"
 #include "portrait_placement.h"
@@ -133,7 +134,11 @@
 
 // TODO: CMD_BYTE_2C
 
-// TODO: CMD_BYTE_2D
+// Bind dialogue substitution buffers gFormatBuffer_Names / gFormatBuffer_Monsters[slot].
+// kind: UpdateNameKind (UPDATE_NAME_*).
+// slot: format buffer index ({NAME_0} …).
+// id: lives type id for UPDATE_NAME_*_TYPE kinds; unused (0) otherwise.
+#define UPDATE_NAME(kind, slot, id)     { CMD_BYTE_2D, kind, slot, id, 0, NULL }
 
 // Sets up portrait data for the specified speaker.
 // place: PortraitPlacementID, or PLACEMENT_KEEP to keep the speaker's last placement/flip.
@@ -356,27 +361,40 @@
 
 #define FANFARE_FADEOUT2(f,i)           { CMD_BYTE_4E, 0, f, i, 0, NULL }
 
-// TODO: CMD_BYTE_4F
+// Clears the running object's hitbox (setHitboxPos null) and cancels a nested scriptData2.
+#define CLEAR_HITBOX                    { CMD_BYTE_4F, 0, 0, 0, 0, NULL }
 
-// TODO: CMD_BYTE_50
+// TODO: CMD_BYTE_50: snap position/direction to partner object
 
-// TODO: CMD_BYTE_51
+// Restrict movement to GroundLink area id (see GroundLink_GetArea).
+// link: area / link index.
+#define SET_POSITION_BOUNDS(link)       { CMD_BYTE_51, 0, link, 0, 0, NULL }
 
-// TODO: CMD_BYTE_52
+// Set bits on the parent object/lives flags (callbacks->setFlags).
+// f: OBJ_FLAG_* bitmask (see constants/ground_script_params.h).
+#define SET_OBJ_FLAGS(f)                { CMD_BYTE_52, 0, 0, f, 0, NULL }
 
-// TODO: CMD_BYTE_53
+// Clear bits on the parent object/lives flags (callbacks->clearFlags).
+// Also cancels nested scriptData2 when f includes OBJ_FLAG_CANCEL_SCRIPT2.
+#define CLEAR_OBJ_FLAGS(f)              { CMD_BYTE_53, 0, 0, f, 0, NULL }
 
 #define SELECT_ANIMATION(id)            { CMD_BYTE_54, 0, id, 0, 0, NULL }
 
 // TODO: CMD_BYTE_55
 
-// TODO: CMD_BYTE_56
+// Attach (or clear with EMOTION_EFFECT_NONE) an over-head emotion effect on the running lives.
+// id: EMOTION_EFFECT_* (NOTICE / QUESTION / SHOCK / SWEAT / SMILE / ANGRY).
+// Pair with WAIT_EFFECT to block until the effect finishes.
+// unk: secondary arg passed to lives callback (usually 0; rarely 3).
+#define EMOTION_EFFECT(id)              { CMD_BYTE_56, 0, 0, id, 0, NULL }
+#define EMOTION_EFFECT_EX(unk, id)      { CMD_BYTE_56, 0, unk, id, 0, NULL }
 
 // TODO: CMD_BYTE_57
 
 // TODO: CMD_BYTE_58
 
-// TODO: CMD_BYTE_59
+// Instantly offset position by (h, v) pixels (stored << 8). wait: pause frames after.
+#define MOVE_RELATIVE_POS(wait, h, v)   { CMD_BYTE_59, wait, h, v, 0, NULL }
 
 // TODO: CMD_BYTE_5A
 
@@ -391,11 +409,16 @@
 
 // TODO: CMD_BYTE_5F
 
-// TODO: CMD_BYTE_60
+// Instantly set sprite height above ground (pixels; engine stores h<<8).
+// wait: frames to pause after (usually 0).
+#define SET_HEIGHT(h)                   { CMD_BYTE_60, 0, 0, h, 0, NULL }
+#define SET_HEIGHT_WAIT(wait, h)        { CMD_BYTE_60, wait, 0, h, 0, NULL }
 
 // TODO: CMD_BYTE_61
 
-// TODO: CMD_BYTE_62
+// Walk toward a relative (h, v) pixel offset at speed spd without updating facing.
+// (Pair of WALK_RELATIVE / CMD_BYTE_6A, which does update facing.)
+#define MOVE_RELATIVE(spd, h, v)        { CMD_BYTE_62, 0, spd, h, v, NULL }
 
 // TODO: CMD_BYTE_63
 
@@ -407,7 +430,8 @@
 
 // TODO: CMD_BYTE_67
 
-// TODO: CMD_BYTE_68
+// Animate sprite height to h (pixels) at up to spd units/frame. Same behavior as HEIGHT_TO.
+#define HEIGHT_TO_2(spd, h)             { CMD_BYTE_68, 0, spd, h, 0, NULL }
 
 // TODO: CMD_BYTE_69
 
@@ -423,7 +447,8 @@
 
 // TODO: CMD_BYTE_6F
 
-// TODO: CMD_BYTE_70
+// Animate sprite height to h (pixels) at up to spd units/frame (Data Crystal: Change Sprite Z Position).
+#define HEIGHT_TO(spd, h)               { CMD_BYTE_70, 0, spd, h, 0, NULL }
 
 // TODO: CMD_BYTE_71
 
@@ -463,7 +488,8 @@
 
 // TODO: CMD_BYTE_83
 
-// TODO: CMD_BYTE_84
+// Interpolate to relative (h, v) pixel offset; duration = hypot(delta)/spd (min 1). Updates facing.
+#define WALK_RELATIVE_DIST(spd, h, v)   { CMD_BYTE_84, 0, spd, h, v, NULL }
 
 // TODO: CMD_BYTE_85
 
@@ -473,7 +499,8 @@
 
 // TODO: CMD_BYTE_88
 
-// TODO: CMD_BYTE_89
+// Face dir, then walk forward at spd for f frames (updates walk anim).
+#define WALK_DIRECTION(f, spd, dir)     { CMD_BYTE_89, f, spd, dir, 0, NULL }
 
 #define CMD_UNK_8A(a,b,t)               { CMD_BYTE_8A, a, b, t, 0, NULL }
 
@@ -495,13 +522,21 @@
 // o: Final orientation
 #define ROTATE_TO(spd,t,o)              { CMD_BYTE_91, spd, t, o, 0, NULL }
 
-#define CMD_UNK_92(a,b,t)               { CMD_BYTE_92, a, b, t, 0, NULL }
+// Like ROTATE_TO, but target facing is relative to the current direction (TransformDirection1).
+#define ROTATE_RELATIVE(spd, t, turn)   { CMD_BYTE_92, spd, t, turn, 0, NULL }
+#define CMD_UNK_92(a,b,t)               ROTATE_RELATIVE(a, b, t)
 
-#define CMD_UNK_93(a,t,c)               { CMD_BYTE_93, a, t, c, 0, NULL }
+// Rotate to face another lives actor (by lives id). spd/t as ROTATE_TO; id is lives type/index.
+#define ROTATE_TO_LIVES(spd, t, id)     { CMD_BYTE_93, spd, t, id, 0, NULL }
+#define CMD_UNK_93(a,t,c)               ROTATE_TO_LIVES(a, t, c)
 
-#define CMD_UNK_94(a,t,c)               { CMD_BYTE_94, a, t, c, 0, NULL }
+// Rotate to face another lives actor (variant without size offset).
+#define ROTATE_TO_LIVES2(spd, t, id)    { CMD_BYTE_94, spd, t, id, 0, NULL }
+#define CMD_UNK_94(a,t,c)               ROTATE_TO_LIVES2(a, t, c)
 
-#define CMD_UNK_95(a,t,c)               { CMD_BYTE_95, a, t, c, 0, NULL }
+// Rotate to face a GroundLink waypoint.
+#define ROTATE_TO_WAYPOINT(spd, t, w)   { CMD_BYTE_95, spd, t, w, 0, NULL }
+#define CMD_UNK_95(a,t,c)               ROTATE_TO_WAYPOINT(a, t, c)
 
 // TODO: CMD_BYTE_96
 
@@ -511,9 +546,11 @@
 
 #define CAMERA_END_PAN                  { CMD_BYTE_99, 0, 0, 0, 0, NULL }
 
-// TODO: CMD_BYTE_9A
+// Focus camera on lives index 0 (player) without waiting.
+#define CAMERA_FOCUS_PLAYER             { CMD_BYTE_9A, 0, 0, 0, 0, NULL }
 
-// TODO: CMD_BYTE_9B
+// Start camera tracking the running object at speed spd; waits until settled.
+#define CAMERA_FOLLOW(spd)              { CMD_BYTE_9B, 0, spd, 0, 0, NULL }
 
 // TODO: CMD_BYTE_9C
 
@@ -654,11 +691,14 @@
 
 #define STOP_ANIMATION_ON_CURRENT_FRAME { CMD_BYTE_DD, 0, 0, 0, 0, NULL }
 
-// TODO: CMD_BYTE_DE
+// Wait until the lives emotion/sprite effect from EMOTION_EFFECT finishes.
+#define WAIT_EFFECT                     { CMD_BYTE_DE, 0, 0, 0, 0, NULL }
 
-// TODO: CMD_BYTE_DF
+// Wait until the current screen fade finishes (same waiter as FADE_IN/OUT).
+#define WAIT_FADE                       { CMD_BYTE_DF, 0, 0, 0, 0, NULL }
 
-// TODO: CMD_BYTE_E0
+// Wait until the current BGM is no longer the given track (timeout ~180s).
+#define WAIT_BGM(id)                    { CMD_BYTE_E0, 0, id, 0, 0, NULL }
 
 #define WAIT_FANFARE1(id)               { CMD_BYTE_E1, 0, id, 0, 0, NULL }
 
@@ -668,9 +708,10 @@
 
 #define ALERT_CUE(id)                   { CMD_BYTE_E4, 0, id, 0, 0, NULL }
 
-// a: Value to place in script's `branchDiscriminant`.
-// b: Value to place in `gUnlockBranchLabels[a]`.
-#define CMD_UNK_E5(a, b)                { CMD_BYTE_E5, b, a, 0, 0, NULL }
+// Await cue id, then require GroundScriptLockCond(id, cond) before continuing.
+// a: cue / branchDiscriminant. b: condition value stored in gUnlockBranchLabels[a].
+#define AWAIT_CUE_COND(a, b)            { CMD_BYTE_E5, b, a, 0, 0, NULL }
+#define CMD_UNK_E5(a, b)                AWAIT_CUE_COND(a, b)
 
 #define CALL_LABEL(x)                   { CMD_BYTE_E6, 0, x, 0, 0, NULL }
 

@@ -238,7 +238,7 @@ static const ScriptRef s_gs2_g1_s0_station_sref = { STATION_CONTROL, SCRIPT_TYPE
 
 static const struct ScriptCommand s_gs2_g1_s0_lives0_dlg0[] = { /* 0x817e0f0 */
     DEBUGINFO_O(231),
-    { 0x53, 0x00,  0x0000,  0x00000200,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(0x200),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -246,9 +246,9 @@ static const struct ScriptCommand s_gs2_g1_s0_lives0_dlg0[] = { /* 0x817e0f0 */
 static const struct ScriptCommand s_gs2_g1_s0_lives0_dlg2[] = { /* 0x817e130 */
     DEBUGINFO_O(238),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000036,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0003,  0x0000005e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x36),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x3, 0x5E),
     WAIT(1),
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, 0x0002, 0x00000000),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0003, 0x00000000),
@@ -266,7 +266,7 @@ static const struct ScriptCommand s_gs2_g1_s0_lives0_dlg2[] = { /* 0x817e130 */
 
 static const struct ScriptCommand s_gs2_g1_s0_lives1_dlg0[] = { /* 0x817e380 */
     DEBUGINFO_O(259),
-    { 0x53, 0x00,  0x0000,  0x00000200,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(0x200),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -274,9 +274,9 @@ static const struct ScriptCommand s_gs2_g1_s0_lives1_dlg0[] = { /* 0x817e380 */
 static const struct ScriptCommand s_gs2_g1_s0_lives1_dlg2[] = { /* 0x817e3c0 */
     DEBUGINFO_O(266),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000036,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0003,  0x0000005e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x36),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x3, 0x5E),
     WAIT(1),
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, 0x0002, 0x00000000),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0003, 0x00000000),
@@ -294,7 +294,7 @@ static const struct ScriptCommand s_gs2_g1_s0_lives1_dlg2[] = { /* 0x817e3c0 */
 
 static const struct ScriptCommand s_gs2_g1_s0_lives2_dlg0[] = { /* 0x817e4e0 */
     DEBUGINFO_O(287),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -302,7 +302,7 @@ static const struct ScriptCommand s_gs2_g1_s0_lives2_dlg0[] = { /* 0x817e4e0 */
 static const struct ScriptCommand s_gs2_g1_s0_lives2_dlg2[] = { /* 0x817e520 */
     DEBUGINFO_O(294),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" The Jumpluff appear to\nhave left on the winds.")),
     MSG_NPC(1, _(" I shall miss them...")),
@@ -352,7 +352,7 @@ static const ScriptRef s_gs2_g2_s0_station_sref = { STATION_CONTROL, SCRIPT_TYPE
 
 static const struct ScriptCommand s_gs2_g3_s0_lives0_dlg0[] = { /* 0x817e7f4 */
     DEBUGINFO_O(345),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -360,7 +360,7 @@ static const struct ScriptCommand s_gs2_g3_s0_lives0_dlg0[] = { /* 0x817e7f4 */
 static const struct ScriptCommand s_gs2_g3_s0_lives0_dlg2[] = { /* 0x817e834 */
     DEBUGINFO_O(352),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     JUMPIF_SCENE_GT(SCENARIO_SUB2, 33, 3, /* to label */ 0),
     FANFARE_PLAY2(465),
@@ -436,16 +436,16 @@ static const struct ScriptCommand s_gs2_g3_s0_lives0_dlg2[] = { /* 0x817e834 */
 static const struct ScriptCommand s_gs2_g3_s0_lives0_dlg3[] = { /* 0x817f2d4 */
     DEBUGINFO_O(428),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
     JUMPIF_SCENE_GT(SCENARIO_SUB2, 33, 3, /* to label */ 0),
     CALL_SCRIPT(NOTICE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    { 0x56, 0x00,  0x0000,  0x0000005d,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SMILE),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
     ALERT_CUE(5),
     AWAIT_CUE(6),
     CMD_UNK_8D(1, DIR_TRANS_NONE),
@@ -453,10 +453,10 @@ static const struct ScriptCommand s_gs2_g3_s0_lives0_dlg3[] = { /* 0x817f2d4 */
     WAIT(12),
     RET,
   LABEL(0), /* = 0x00 */
-    { 0x56, 0x00,  0x0000,  0x0000005d,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SMILE),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
     ALERT_CUE(5),
     AWAIT_CUE(6),
     RET,
@@ -470,7 +470,7 @@ static const struct ScriptCommand s_gs2_g3_s0_obj0_dlg2[] = { /* 0x817f474 */
 
 static const struct ScriptCommand s_gs2_g4_s0_lives0_dlg0[] = { /* 0x817f4a4 */
     DEBUGINFO_O(463),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -478,7 +478,7 @@ static const struct ScriptCommand s_gs2_g4_s0_lives0_dlg0[] = { /* 0x817f4a4 */
 static const struct ScriptCommand s_gs2_g4_s0_lives0_dlg2[] = { /* 0x817f4e4 */
     DEBUGINFO_O(470),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     SET_ARRAYVAL(EVENT_S07E01,  3,  1),
     ALERT_CUE(6),
@@ -494,13 +494,13 @@ static const struct ScriptCommand s_gs2_g4_s0_lives0_dlg2[] = { /* 0x817f4e4 */
 static const struct ScriptCommand s_gs2_g4_s0_lives0_dlg3[] = { /* 0x817f6b8 */
     DEBUGINFO_O(486),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     CMD_UNK_8D(1, DIR_TRANS_NONE),
     AWAIT_CUE(6),
-    { 0x56, 0x00,  0x0000,  0x0000005d,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SMILE),
     WAIT(60),
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    CMD_UNK_E5(5, 0),
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
+    AWAIT_CUE_COND(5, 0),
     RET,
 };
 
@@ -545,7 +545,7 @@ static const ScriptRef s_gs2_g6_s0_station_sref = { EVENT_WAKEUP, SCRIPT_TYPE_07
 static const struct ScriptCommand s_gs2_g6_s0_eff0_script[] = { /* 0x817f8a0 */
     DEBUGINFO_O(537),
     AWAIT_CUE(4),
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     CAMERA_END_PAN,
     ALERT_CUE(5),
     AWAIT_CUE(4),
@@ -555,9 +555,9 @@ static const struct ScriptCommand s_gs2_g6_s0_eff0_script[] = { /* 0x817f8a0 */
 static const struct ScriptCommand s_gs2_g6_s0_lives0_dlg0[] = { /* 0x817f910 */
     DEBUGINFO_O(547),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
-    CMD_UNK_95(4, DIR_TRANS_10, 5),
+    ROTATE_TO_WAYPOINT(4, DIR_TRANS_10, 5),
     ALERT_CUE(4),
     AWAIT_CUE(5),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0002, 0x00000000),
@@ -630,13 +630,13 @@ static const struct ScriptCommand s_gs2_g6_s0_lives0_dlg0[] = { /* 0x817f910 */
     ALERT_CUE(7),
     ALERT_CUE(8),
     WAIT(60),
-    CMD_UNK_93(8, DIR_TRANS_10, 93),
+    ROTATE_TO_LIVES(8, DIR_TRANS_10, 93),
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_SOUTHEAST),
     AWAIT_CUE(5),
     CANCEL_EVENTS(5, 0),
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
@@ -647,37 +647,37 @@ static const struct ScriptCommand s_gs2_g6_s0_lives0_dlg0[] = { /* 0x817f910 */
 static const struct ScriptCommand s_gs2_g6_s0_lives1_dlg0[] = { /* 0x818009c */
     DEBUGINFO_O(639),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs2_g6_s0_lives2_dlg0[] = { /* 0x81800fc */
     DEBUGINFO_O(648),
     SELECT_ANIMATION(2),
-    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     AWAIT_CUE(7),
-    { 0x56, 0x00,  0x0000,  0x0000005d,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SMILE),
     WAIT(60),
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    CMD_UNK_E5(5, 0),
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
+    AWAIT_CUE_COND(5, 0),
     AWAIT_CUE(7),
-    CMD_UNK_93(4, DIR_TRANS_10, 93),
+    ROTATE_TO_LIVES(4, DIR_TRANS_10, 93),
     ALERT_CUE(5),
     AWAIT_CUE(7),
     CALL_SCRIPT(NOTICE_FUNC),
-    CMD_UNK_93(4, DIR_TRANS_10, 0),
+    ROTATE_TO_LIVES(4, DIR_TRANS_10, 0),
     ALERT_CUE(5),
     AWAIT_CUE(7),
-    { 0x56, 0x00,  0x0000,  0x0000005b,  0x00000000, NULL },
-    { 0x54, 0x00,  0x000b,  0x00000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0200,  0x0000000a,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SHOCK),
+    SELECT_ANIMATION(0xB),
+    HEIGHT_TO(0x200, 0xA),
     WAIT(60),
-    { 0x70, 0x00,  0x0200,  0x00000000,  0x00000000, NULL },
+    HEIGHT_TO(0x200, 0x0),
     SELECT_ANIMATION(2),
-    CMD_UNK_E5(5, 0),
+    AWAIT_CUE_COND(5, 0),
     AWAIT_CUE(7),
     WAIT(30),
     CJUMP_UNK_C8(0),
@@ -689,26 +689,26 @@ static const struct ScriptCommand s_gs2_g6_s0_lives2_dlg0[] = { /* 0x81800fc */
   LABEL(1), /* = 0x01 */
     WALK_GRID(512, 3),
     WALK_GRID(512, 4),
-    CMD_UNK_E5(5, 0),
+    AWAIT_CUE_COND(5, 0),
     END_DELETE,
 };
 
 static const struct ScriptCommand s_gs2_g6_s0_lives3_dlg0[] = { /* 0x818034c */
     DEBUGINFO_O(688),
     SELECT_ANIMATION(2),
-    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
-    { 0x2d, 0x07,  0x0003,  0x00000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0x0),
     AWAIT_CUE(8),
-    CMD_UNK_93(4, DIR_TRANS_10, 93),
+    ROTATE_TO_LIVES(4, DIR_TRANS_10, 93),
     AWAIT_CUE(8),
     CALL_SCRIPT(NOTICE_FUNC),
-    CMD_UNK_93(4, DIR_TRANS_10, 0),
+    ROTATE_TO_LIVES(4, DIR_TRANS_10, 0),
     AWAIT_CUE(8),
-    { 0x56, 0x00,  0x0000,  0x0000005b,  0x00000000, NULL },
-    { 0x54, 0x00,  0x000b,  0x00000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0200,  0x0000000a,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SHOCK),
+    SELECT_ANIMATION(0xB),
+    HEIGHT_TO(0x200, 0xA),
     WAIT(60),
-    { 0x70, 0x00,  0x0200,  0x00000000,  0x00000000, NULL },
+    HEIGHT_TO(0x200, 0x0),
     SELECT_ANIMATION(2),
     AWAIT_CUE(8),
     CJUMP_UNK_C8(0),
@@ -758,7 +758,7 @@ static const ScriptRef s_gs2_g8_s0_station_sref = { EVENT_WAKEUP, SCRIPT_TYPE_07
 static const struct ScriptCommand s_gs2_g8_s0_eff0_script[] = { /* 0x8180614 */
     DEBUGINFO_O(750),
     AWAIT_CUE(4),
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     CAMERA_END_PAN,
     ALERT_CUE(5),
     END_DELETE,
@@ -767,9 +767,9 @@ static const struct ScriptCommand s_gs2_g8_s0_eff0_script[] = { /* 0x8180614 */
 static const struct ScriptCommand s_gs2_g8_s0_lives0_dlg0[] = { /* 0x8180674 */
     DEBUGINFO_O(759),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
-    CMD_UNK_95(4, DIR_TRANS_10, 5),
+    ROTATE_TO_WAYPOINT(4, DIR_TRANS_10, 5),
     ALERT_CUE(4),
     AWAIT_CUE(5),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0002, 0x00000000),
@@ -832,13 +832,13 @@ static const struct ScriptCommand s_gs2_g8_s0_lives0_dlg0[] = { /* 0x8180674 */
     ALERT_CUE(7),
     ALERT_CUE(8),
     WAIT(60),
-    CMD_UNK_93(8, DIR_TRANS_10, 93),
+    ROTATE_TO_LIVES(8, DIR_TRANS_10, 93),
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_SOUTHEAST),
     AWAIT_CUE(5),
     CANCEL_EVENTS(7, 0),
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
@@ -850,31 +850,31 @@ static const struct ScriptCommand s_gs2_g8_s0_lives0_dlg0[] = { /* 0x8180674 */
 static const struct ScriptCommand s_gs2_g8_s0_lives1_dlg0[] = { /* 0x8180dc0 */
     DEBUGINFO_O(842),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs2_g8_s0_lives2_dlg0[] = { /* 0x8180e20 */
     DEBUGINFO_O(851),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     AWAIT_CUE(7),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTH),
     ALERT_CUE(5),
     AWAIT_CUE(7),
     CALL_SCRIPT(NOTICE_FUNC),
-    CMD_UNK_93(4, DIR_TRANS_10, 0),
+    ROTATE_TO_LIVES(4, DIR_TRANS_10, 0),
     ALERT_CUE(5),
     AWAIT_CUE(7),
-    { 0x56, 0x00,  0x0000,  0x0000005b,  0x00000000, NULL },
-    { 0x54, 0x00,  0x000b,  0x00000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0200,  0x0000000a,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SHOCK),
+    SELECT_ANIMATION(0xB),
+    HEIGHT_TO(0x200, 0xA),
     WAIT(60),
-    { 0x70, 0x00,  0x0200,  0x00000000,  0x00000000, NULL },
+    HEIGHT_TO(0x200, 0x0),
     SELECT_ANIMATION(2),
-    CMD_UNK_E5(5, 0),
+    AWAIT_CUE_COND(5, 0),
     AWAIT_CUE(7),
     WAIT(30),
     CJUMP_UNK_C8(0),
@@ -886,26 +886,26 @@ static const struct ScriptCommand s_gs2_g8_s0_lives2_dlg0[] = { /* 0x8180e20 */
   LABEL(1), /* = 0x01 */
     WALK_GRID(512, 9),
     WALK_GRID(512, 10),
-    CMD_UNK_E5(5, 0),
+    AWAIT_CUE_COND(5, 0),
     END_DELETE,
 };
 
 static const struct ScriptCommand s_gs2_g8_s0_lives3_dlg0[] = { /* 0x8181010 */
     DEBUGINFO_O(885),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0003,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0x0),
     AWAIT_CUE(8),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTH),
     ALERT_CUE(5),
     AWAIT_CUE(8),
     CALL_SCRIPT(NOTICE_FUNC),
-    CMD_UNK_93(4, DIR_TRANS_10, 0),
+    ROTATE_TO_LIVES(4, DIR_TRANS_10, 0),
     AWAIT_CUE(8),
-    { 0x56, 0x00,  0x0000,  0x0000005b,  0x00000000, NULL },
-    { 0x54, 0x00,  0x000b,  0x00000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0200,  0x0000000a,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SHOCK),
+    SELECT_ANIMATION(0xB),
+    HEIGHT_TO(0x200, 0xA),
     WAIT(60),
-    { 0x70, 0x00,  0x0200,  0x00000000,  0x00000000, NULL },
+    HEIGHT_TO(0x200, 0x0),
     SELECT_ANIMATION(2),
     AWAIT_CUE(8),
     CJUMP_UNK_C8(0),
@@ -923,7 +923,7 @@ static const struct ScriptCommand s_gs2_g8_s0_lives3_dlg0[] = { /* 0x8181010 */
 static const struct ScriptCommand s_gs2_g9_s0_lives0_dlg0[] = { /* 0x81811c0 */
     DEBUGINFO_O(915),
     SELECT_ANIMATION(2),
-    { 0x53, 0x00,  0x0000,  0x00000200,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(0x200),
     RET,
 };
 
@@ -958,7 +958,7 @@ static const struct ScriptCommand s_gs2_g9_s1_eff0_script[] = { /* 0x81812bc */
 static const struct ScriptCommand s_gs2_g9_s1_lives0_dlg0[] = { /* 0x818131c */
     DEBUGINFO_O(950),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(2, _(" ...I got KO'd in that\ndungeon, but what about Medicham?\nHope she's OK...")),
     MSG_NPC(2, _(" I hope she gets to the end\nand gets my wish to come true...")),
@@ -985,7 +985,7 @@ static const struct ScriptCommand s_gs2_g9_s1_lives0_dlg0[] = { /* 0x818131c */
     TEXTBOX_CLEAR,
     { 0xa1, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
@@ -996,30 +996,30 @@ static const struct ScriptCommand s_gs2_g9_s1_lives0_dlg0[] = { /* 0x818131c */
 static const struct ScriptCommand s_gs2_g9_s1_lives1_dlg0[] = { /* 0x81816d0 */
     DEBUGINFO_O(988),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs2_g9_s1_lives2_dlg0[] = { /* 0x8181730 */
     DEBUGINFO_O(997),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     AWAIT_CUE(7),
     CALL_SCRIPT(NOTICE_FUNC),
-    CMD_UNK_93(4, DIR_TRANS_10, 0),
+    ROTATE_TO_LIVES(4, DIR_TRANS_10, 0),
     ALERT_CUE(5),
     AWAIT_CUE(7),
-    { 0x56, 0x00,  0x0000,  0x0000005b,  0x00000000, NULL },
-    { 0x54, 0x00,  0x000b,  0x00000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0200,  0x0000000a,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_SHOCK),
+    SELECT_ANIMATION(0xB),
+    HEIGHT_TO(0x200, 0xA),
     WAIT(60),
-    { 0x70, 0x00,  0x0200,  0x00000000,  0x00000000, NULL },
+    HEIGHT_TO(0x200, 0x0),
     SELECT_ANIMATION(2),
-    CMD_UNK_E5(5, 0),
+    AWAIT_CUE_COND(5, 0),
     AWAIT_CUE(7),
-    CMD_UNK_92(4, 11, DIR_TRANS_FLIP),
+    ROTATE_RELATIVE(4, 11, DIR_TRANS_FLIP),
     ALERT_CUE(5),
     AWAIT_CUE(7),
     RET,
@@ -1035,7 +1035,7 @@ static const ScriptRef s_gs2_g10_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g10_s0_lives0_dlg0[] = { /* 0x81818ac */
     DEBUGINFO_O(1028),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1043,7 +1043,7 @@ static const struct ScriptCommand s_gs2_g10_s0_lives0_dlg0[] = { /* 0x81818ac */
 static const struct ScriptCommand s_gs2_g10_s0_lives0_dlg2[] = { /* 0x81818ec */
     DEBUGINFO_O(1035),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_1, 0x0001, 0x00000000),
     MSG_NPC(1, _(" I've heard fissures have\nopened up in the ground here and there.\nThey're trouble for everyone.")),
@@ -1067,7 +1067,7 @@ static const ScriptRef s_gs2_g11_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g11_s0_lives0_dlg0[] = { /* 0x8181a8c */
     DEBUGINFO_O(1060),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1075,7 +1075,7 @@ static const struct ScriptCommand s_gs2_g11_s0_lives0_dlg0[] = { /* 0x8181a8c */
 static const struct ScriptCommand s_gs2_g11_s0_lives0_dlg2[] = { /* 0x8181acc */
     DEBUGINFO_O(1067),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I've lived in this pond for\nmany long years...")),
     MSG_NPC(1, _(" But never have I seen such\nfrequent natural disasters...")),
@@ -1098,7 +1098,7 @@ static const ScriptRef s_gs2_g12_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g12_s0_lives0_dlg0[] = { /* 0x8181c18 */
     DEBUGINFO_O(1091),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1106,7 +1106,7 @@ static const struct ScriptCommand s_gs2_g12_s0_lives0_dlg0[] = { /* 0x8181c18 */
 static const struct ScriptCommand s_gs2_g12_s0_lives0_dlg2[] = { /* 0x8181c58 */
     DEBUGINFO_O(1098),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Seeing the innocence of\nchildren at play is a good thing.\nHohoho.")),
     MSG_NPC(1, _(" When I was small...{WAIT_PRESS}\nI was tiny...{WAIT_PRESS}\nHohoho.")),
@@ -1122,9 +1122,9 @@ static const struct ScriptCommand s_gs2_g12_s0_obj0_dlg2[] = { /* 0x8181d3c */
 static const struct ScriptCommand s_gs2_g12_s0_lives1_dlg2[] = { /* 0x8181d6c */
     DEBUGINFO_O(1114),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000022,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0003,  0x0000005e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x22),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x3, 0x5E),
     WAIT(1),
     MSG_NPC(1, _(" Oh! {NAME_0} and\n{NAME_2}! Long time no see!")),
     MSG_NPC(1, _(" I have a new friend!")),
@@ -1143,7 +1143,7 @@ static const ScriptRef s_gs2_g13_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g13_s0_lives0_dlg0[] = { /* 0x8181ef8 */
     DEBUGINFO_O(1136),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1151,8 +1151,8 @@ static const struct ScriptCommand s_gs2_g13_s0_lives0_dlg0[] = { /* 0x8181ef8 */
 static const struct ScriptCommand s_gs2_g13_s0_lives0_dlg2[] = { /* 0x8181f38 */
     DEBUGINFO_O(1143),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000036,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x36),
     WAIT(1),
     MSG_NPC(1, _(" I've not seen {NAME_2}\nor other children lately.\nI wonder how they are keeping.")),
     MSG_NPC(1, _(" Not seeing the children\ngives me a twinge of sadness...")),
@@ -1175,7 +1175,7 @@ static const ScriptRef s_gs2_g14_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g14_s0_lives0_dlg0[] = { /* 0x81820b0 */
     DEBUGINFO_O(1168),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1183,7 +1183,7 @@ static const struct ScriptCommand s_gs2_g14_s0_lives0_dlg0[] = { /* 0x81820b0 */
 static const struct ScriptCommand s_gs2_g14_s0_lives0_dlg2[] = { /* 0x81820f0 */
     DEBUGINFO_O(1175),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     PORTRAIT_REP(0x0001, 0x00000001),
     MSG_NPC(1, _(" It's good to see the\nyoungsters back.")),
@@ -1209,8 +1209,8 @@ static const struct ScriptCommand s_gs2_g14_s0_obj0_dlg2[] = { /* 0x8182484 */
 static const struct ScriptCommand s_gs2_g14_s0_lives1_dlg2[] = { /* 0x81824b4 */
     DEBUGINFO_O(1201),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x0000005e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x5E),
     WAIT(1),
     MSG_NPC(1, _(" I can play with {NAME_2}\nagain!")),
     MSG_NPC(1, _(" Thank you!")),
@@ -1220,8 +1220,8 @@ static const struct ScriptCommand s_gs2_g14_s0_lives1_dlg2[] = { /* 0x81824b4 */
 static const struct ScriptCommand s_gs2_g14_s0_lives2_dlg2[] = { /* 0x818255c */
     DEBUGINFO_O(1212),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000022,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x22),
     WAIT(1),
     MSG_NPC(1, _(" {NAME_0} and\n{NAME_2}, thank you!")),
     JUMP_SCRIPT(END_TALK),
@@ -1237,7 +1237,7 @@ static const ScriptRef s_gs2_g15_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g15_s0_lives0_dlg0[] = { /* 0x8182624 */
     DEBUGINFO_O(1230),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1245,7 +1245,7 @@ static const struct ScriptCommand s_gs2_g15_s0_lives0_dlg0[] = { /* 0x8182624 */
 static const struct ScriptCommand s_gs2_g15_s0_lives0_dlg2[] = { /* 0x8182664 */
     DEBUGINFO_O(1237),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_1, 0x0001, 0x00000001),
     MSG_NPC(1, _(" Seeing children at play is\nwhat I most enjoy now.")),
@@ -1260,16 +1260,16 @@ static const struct ScriptCommand s_gs2_g15_s0_obj0_dlg2[] = { /* 0x8182708 */
 
 static const struct ScriptCommand s_gs2_g15_s0_lives1_dlg0[] = { /* 0x8182738 */
     DEBUGINFO_O(1253),
-    { 0x53, 0x00,  0x0000,  0x00000200,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(0x200),
     RET,
 };
 
 static const struct ScriptCommand s_gs2_g15_s0_lives1_dlg2[] = { /* 0x8182768 */
     DEBUGINFO_O(1259),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000036,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0003,  0x0000005e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x36),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x3, 0x5E),
     WAIT(1),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0002, 0x00000000),
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, 0x0003, 0x00000000),
@@ -1284,16 +1284,16 @@ static const struct ScriptCommand s_gs2_g15_s0_lives1_dlg2[] = { /* 0x8182768 */
 
 static const struct ScriptCommand s_gs2_g15_s0_lives2_dlg0[] = { /* 0x81828d4 */
     DEBUGINFO_O(1277),
-    { 0x53, 0x00,  0x0000,  0x00000200,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(0x200),
     RET,
 };
 
 static const struct ScriptCommand s_gs2_g15_s0_lives2_dlg2[] = { /* 0x8182904 */
     DEBUGINFO_O(1283),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000036,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0003,  0x0000005e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x36),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x3, 0x5E),
     WAIT(1),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0002, 0x00000000),
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, 0x0003, 0x00000000),
@@ -1316,7 +1316,7 @@ static const ScriptRef s_gs2_g16_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g16_s0_lives0_dlg0[] = { /* 0x8182a30 */
     DEBUGINFO_O(1309),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1324,8 +1324,8 @@ static const struct ScriptCommand s_gs2_g16_s0_lives0_dlg0[] = { /* 0x8182a30 */
 static const struct ScriptCommand s_gs2_g16_s0_lives0_dlg2[] = { /* 0x8182a70 */
     DEBUGINFO_O(1316),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000063,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x63),
     WAIT(1),
     MSG_NPC(1, _(" Hohoho.\nYou wish to hear me tell old folklore?")),
     TEXTBOX_CLEAR,
@@ -1355,8 +1355,8 @@ static const struct ScriptCommand s_gs2_g16_s0_obj0_dlg2[] = { /* 0x8182cb8 */
 static const struct ScriptCommand s_gs2_g16_s0_lives1_dlg2[] = { /* 0x8182ce8 */
     DEBUGINFO_O(1347),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000062,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x62),
     WAIT(1),
     MSG_NPC(1, _(" {NAME_2} told us\nfolklore from long ago.")),
     MSG_NPC(1, _(" It was fun.")),
@@ -1366,8 +1366,8 @@ static const struct ScriptCommand s_gs2_g16_s0_lives1_dlg2[] = { /* 0x8182ce8 */
 static const struct ScriptCommand s_gs2_g16_s0_lives2_dlg2[] = { /* 0x8182da0 */
     DEBUGINFO_O(1358),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000062,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x62),
     WAIT(1),
     MSG_NPC(1, _(" The folklore was fun and\ninteresting.{WAIT_PRESS}\n{NAME_2} is very wise.")),
     JUMP_SCRIPT(END_TALK),
@@ -1396,9 +1396,9 @@ static const ScriptRef s_gs2_g16_s1_station_sref = { EVENT_WAKEUP, SCRIPT_TYPE_0
 static const struct ScriptCommand s_gs2_g16_s1_lives0_dlg0[] = { /* 0x8182f18 */
     DEBUGINFO_O(1388),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000063,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0004,  0x00000052,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x63),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x4, 0x52),
     ALERT_CUE(4),
     WAIT(1),
     WALK_GRID(256, 12),
@@ -1478,10 +1478,10 @@ static const struct ScriptCommand s_gs2_g16_s1_lives0_dlg0[] = { /* 0x8182f18 */
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0001, 0x00000001),
     MSG_NPC(1, _(" If you feel the urge to hear\nmy tale again, come see me. Hohoho.")),
     TEXTBOX_CLEAR,
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     ALERT_CUE(4),
     BGM_SWITCH(MUS_FILE_SELECT),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(8),
     RET,
 };
@@ -1489,7 +1489,7 @@ static const struct ScriptCommand s_gs2_g16_s1_lives0_dlg0[] = { /* 0x8182f18 */
 static const struct ScriptCommand s_gs2_g16_s1_lives1_dlg0[] = { /* 0x8183b64 */
     DEBUGINFO_O(1481),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0003,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0x0),
     WALK_GRID(256, 13),
     SET_DIR_WAIT(DIRECTION_NORTH, 0),
     ALERT_CUE(3),
@@ -1503,15 +1503,15 @@ static const struct ScriptCommand s_gs2_g16_s1_lives1_dlg0[] = { /* 0x8183b64 */
     WAIT(60),
     ROTATE_TO(4, DIR_TRANS_SPINRIGHT1, DIRECTION_NORTH),
     AWAIT_CUE(8),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs2_g16_s1_lives2_dlg0[] = { /* 0x8183c84 */
     DEBUGINFO_O(1502),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     SET_DIR_WAIT(DIRECTION_SOUTH, 0),
     AWAIT_CUE(6),
     CALL_SCRIPT(SMILE_START_FUNC),
@@ -1523,8 +1523,8 @@ static const struct ScriptCommand s_gs2_g16_s1_lives2_dlg0[] = { /* 0x8183c84 */
 static const struct ScriptCommand s_gs2_g16_s1_lives2_dlg2[] = { /* 0x8183d24 */
     DEBUGINFO_O(1515),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000063,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x63),
     WAIT(1),
     MSG_NPC(1, _(" Hohoho.\nYou wish to hear me tell old folklore?")),
     TEXTBOX_CLEAR,
@@ -1547,9 +1547,9 @@ static const struct ScriptCommand s_gs2_g17_s0_station_sref_script[] = { /* 0x81
     DEBUGINFO_O(1538),
     SELECT_MAP(2),
     SELECT_ENTITIES(-1, 0),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     RET,
 };
 
@@ -1570,9 +1570,9 @@ static const ScriptRef s_gs2_g18_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE_
 static const struct ScriptCommand s_gs2_g18_s0_lives0_dlg0[] = { /* 0x8183f98 */
     DEBUGINFO_O(1562),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0003,  0x00000052,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x3, 0x52),
+    WAIT_FADE,
     WAIT(30),
     MSG_NPC(2, _(" Yes, a human.")),
     MSG_NPC(2, _(" As one might expect, the\nhuman that grabbed the tail was subjected\nto a curse of a thousand years.")),
@@ -1599,15 +1599,15 @@ static const struct ScriptCommand s_gs2_g18_s0_lives0_dlg0[] = { /* 0x8183f98 */
 static const struct ScriptCommand s_gs2_g18_s0_lives1_dlg0[] = { /* 0x81841f0 */
     DEBUGINFO_O(1591),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     HALT,
 };
 
 static const struct ScriptCommand s_gs2_g18_s0_lives2_dlg0[] = { /* 0x8184230 */
     DEBUGINFO_O(1598),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     HALT,
 };
 
@@ -1621,7 +1621,7 @@ static const ScriptRef s_gs2_g19_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g19_s0_lives0_dlg0[] = { /* 0x81842bc */
     DEBUGINFO_O(1614),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(6),
     RET,
 };
@@ -1642,7 +1642,7 @@ static const ScriptRef s_gs2_g20_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g20_s0_lives0_dlg0[] = { /* 0x8184368 */
     DEBUGINFO_O(1635),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1650,7 +1650,7 @@ static const struct ScriptCommand s_gs2_g20_s0_lives0_dlg0[] = { /* 0x8184368 */
 static const struct ScriptCommand s_gs2_g20_s0_lives0_dlg2[] = { /* 0x81843a8 */
     DEBUGINFO_O(1642),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I regret this...{WAIT_PRESS}\nHow some old folklore I told...{WAIT_PRESS}\ncould cause such an uproar...")),
     MSG_NPC(1, _(" I got carried away and\nrecounted that tale...{WAIT_PRESS}\nI should've left well enough alone...")),
@@ -1666,7 +1666,7 @@ static const struct ScriptCommand s_gs2_g20_s0_obj0_dlg2[] = { /* 0x81844c8 */
 static const struct ScriptCommand s_gs2_g20_s0_lives1_dlg0[] = { /* 0x81844f8 */
     DEBUGINFO_O(1658),
     JUMPIF_SCENE_EQ(SCENARIO_SUB1, 30, -1, /* to label */ 0),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     SELECT_ANIMATION(1),
     RET,
   LABEL(0), /* = 0x00 */
@@ -1676,7 +1676,7 @@ static const struct ScriptCommand s_gs2_g20_s0_lives1_dlg0[] = { /* 0x81844f8 */
 static const struct ScriptCommand s_gs2_g20_s0_lives1_dlg2[] = { /* 0x8184568 */
     DEBUGINFO_O(1668),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I'm so glad {NAME_0}\nisn't under suspicion anymore.")),
     JUMP_SCRIPT(END_TALK),
@@ -1685,7 +1685,7 @@ static const struct ScriptCommand s_gs2_g20_s0_lives1_dlg2[] = { /* 0x8184568 */
 static const struct ScriptCommand s_gs2_g20_s0_lives2_dlg2[] = { /* 0x81845fc */
     DEBUGINFO_O(1677),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I just knew {NAME_0}\ncouldn't be evil.")),
     MSG_NPC(1, _(" I hope you keep doing good\nwith your rescue work!")),
@@ -1703,7 +1703,7 @@ static const ScriptRef s_gs2_g21_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g21_s0_lives0_dlg0[] = { /* 0x8184714 */
     DEBUGINFO_O(1696),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1711,7 +1711,7 @@ static const struct ScriptCommand s_gs2_g21_s0_lives0_dlg0[] = { /* 0x8184714 */
 static const struct ScriptCommand s_gs2_g21_s0_lives0_dlg2[] = { /* 0x8184754 */
     DEBUGINFO_O(1703),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Wroooar!\nI can't relax!")),
     MSG_NPC(1, _(" My whiskers...{WAIT_PRESS}\nThey tell me of coming earthquakes.")),
@@ -1728,7 +1728,7 @@ static const struct ScriptCommand s_gs2_g21_s0_obj0_dlg2[] = { /* 0x818484c */
 static const struct ScriptCommand s_gs2_g21_s0_lives1_dlg0[] = { /* 0x818487c */
     DEBUGINFO_O(1720),
     JUMPIF_SCENE_EQ(SCENARIO_SUB1, 30, -1, /* to label */ 0),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     SELECT_ANIMATION(1),
     RET,
   LABEL(0), /* = 0x00 */
@@ -1738,7 +1738,7 @@ static const struct ScriptCommand s_gs2_g21_s0_lives1_dlg0[] = { /* 0x818487c */
 static const struct ScriptCommand s_gs2_g21_s0_lives1_dlg2[] = { /* 0x81848ec */
     DEBUGINFO_O(1730),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" That earthquake really\nfrightened me...")),
     MSG_NPC(1, _(" I was so scared, I spat silk\nall over the place...{WAIT_PRESS}\nIt was a mess for everyone...")),
@@ -1748,7 +1748,7 @@ static const struct ScriptCommand s_gs2_g21_s0_lives1_dlg2[] = { /* 0x81848ec */
 static const struct ScriptCommand s_gs2_g21_s0_lives2_dlg2[] = { /* 0x81849e0 */
     DEBUGINFO_O(1740),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I hardened when the quake\nhit...")),
     MSG_NPC(1, _(" I couldn't take a step...{WAIT_PRESS}\nI was just shaking inside my shell...")),
@@ -1767,7 +1767,7 @@ static const ScriptRef s_gs2_g22_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g22_s0_lives0_dlg0[] = { /* 0x8184b3c */
     DEBUGINFO_O(1760),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1775,7 +1775,7 @@ static const struct ScriptCommand s_gs2_g22_s0_lives0_dlg0[] = { /* 0x8184b3c */
 static const struct ScriptCommand s_gs2_g22_s0_lives0_dlg2[] = { /* 0x8184b7c */
     DEBUGINFO_O(1767),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Wroooar!\nI can't relax!")),
     MSG_NPC(1, _(" My whiskers...{WAIT_PRESS}\nThey tell me of coming earthquakes.")),
@@ -1792,7 +1792,7 @@ static const struct ScriptCommand s_gs2_g22_s0_obj0_dlg2[] = { /* 0x8184bfc */
 static const struct ScriptCommand s_gs2_g22_s0_lives1_dlg0[] = { /* 0x8184c2c */
     DEBUGINFO_O(1784),
     JUMPIF_SCENE_EQ(SCENARIO_SUB1, 30, -1, /* to label */ 0),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     SELECT_ANIMATION(1),
     RET,
   LABEL(0), /* = 0x00 */
@@ -1802,7 +1802,7 @@ static const struct ScriptCommand s_gs2_g22_s0_lives1_dlg0[] = { /* 0x8184c2c */
 static const struct ScriptCommand s_gs2_g22_s0_lives1_dlg2[] = { /* 0x8184c9c */
     DEBUGINFO_O(1794),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I'm terrified of all the\nearthquakes...")),
     JUMP_SCRIPT(END_TALK),
@@ -1811,7 +1811,7 @@ static const struct ScriptCommand s_gs2_g22_s0_lives1_dlg2[] = { /* 0x8184c9c */
 static const struct ScriptCommand s_gs2_g22_s0_lives2_dlg2[] = { /* 0x8184d28 */
     DEBUGINFO_O(1803),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I haven't relaxed from\nhardening at all...")),
     JUMP_SCRIPT(END_TALK),
@@ -1828,7 +1828,7 @@ static const ScriptRef s_gs2_g23_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g23_s0_lives0_dlg0[] = { /* 0x8184e04 */
     DEBUGINFO_O(1821),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1836,7 +1836,7 @@ static const struct ScriptCommand s_gs2_g23_s0_lives0_dlg0[] = { /* 0x8184e04 */
 static const struct ScriptCommand s_gs2_g23_s0_lives0_dlg2[] = { /* 0x8184e44 */
     DEBUGINFO_O(1828),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Your words in the square\nstruck me to my heart.")),
     MSG_NPC(1, _(" I shouldn't be panicking.{WAIT_PRESS}\nI have the ability to sense quakes.\nI must remain calm.")),
@@ -1853,7 +1853,7 @@ static const struct ScriptCommand s_gs2_g23_s0_obj0_dlg2[] = { /* 0x8184f8c */
 static const struct ScriptCommand s_gs2_g23_s0_lives1_dlg0[] = { /* 0x8184fbc */
     DEBUGINFO_O(1845),
     JUMPIF_SCENE_EQ(SCENARIO_SUB1, 30, -1, /* to label */ 0),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     SELECT_ANIMATION(1),
     RET,
   LABEL(0), /* = 0x00 */
@@ -1863,8 +1863,8 @@ static const struct ScriptCommand s_gs2_g23_s0_lives1_dlg0[] = { /* 0x8184fbc */
 static const struct ScriptCommand s_gs2_g23_s0_lives1_dlg2[] = { /* 0x818502c */
     DEBUGINFO_O(1855),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000022,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x22),
     WAIT(1),
     MSG_NPC(1, _(" {NAME_0}!\nPlease take care!")),
     MSG_NPC(1, _(" We'll be OK.\nWe'll try not to be scared of the quakes!")),
@@ -1874,7 +1874,7 @@ static const struct ScriptCommand s_gs2_g23_s0_lives1_dlg2[] = { /* 0x818502c */
 static const struct ScriptCommand s_gs2_g23_s0_lives2_dlg2[] = { /* 0x8185100 */
     DEBUGINFO_O(1866),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I'll do my best to harden\nmyself!")),
     JUMP_SCRIPT(END_TALK),
@@ -1891,7 +1891,7 @@ static const ScriptRef s_gs2_g24_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g24_s0_lives0_dlg0[] = { /* 0x81851d4 */
     DEBUGINFO_O(1884),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1899,7 +1899,7 @@ static const struct ScriptCommand s_gs2_g24_s0_lives0_dlg0[] = { /* 0x81851d4 */
 static const struct ScriptCommand s_gs2_g24_s0_lives0_dlg2[] = { /* 0x8185214 */
     DEBUGINFO_O(1891),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Sniffle...\nThis is so inspiring...")),
     MSG_NPC(1, _(" Pokémon have united in\ntheir efforts to rescue Alakazam's team...")),
@@ -1916,7 +1916,7 @@ static const struct ScriptCommand s_gs2_g24_s0_obj0_dlg2[] = { /* 0x818534c */
 static const struct ScriptCommand s_gs2_g24_s0_lives1_dlg0[] = { /* 0x818537c */
     DEBUGINFO_O(1908),
     JUMPIF_SCENE_EQ(SCENARIO_SUB1, 30, -1, /* to label */ 0),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     SELECT_ANIMATION(1),
     RET,
   LABEL(0), /* = 0x00 */
@@ -1926,7 +1926,7 @@ static const struct ScriptCommand s_gs2_g24_s0_lives1_dlg0[] = { /* 0x818537c */
 static const struct ScriptCommand s_gs2_g24_s0_lives1_dlg2[] = { /* 0x81853ec */
     DEBUGINFO_O(1918),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" My mom has joined other\nPokémon to fight in the {COLOR YELLOW_D}Magma Cavern{RESET}.")),
     MSG_NPC(1, _(" Mom is weak to fire, so it\nisn't easy for her...")),
@@ -1939,7 +1939,7 @@ static const struct ScriptCommand s_gs2_g24_s0_lives1_dlg2[] = { /* 0x81853ec */
 static const struct ScriptCommand s_gs2_g24_s0_lives2_dlg2[] = { /* 0x81855b8 */
     DEBUGINFO_O(1931),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I've hardened quite a lot!\nNo earthquake can touch me now!")),
     JUMP_SCRIPT(END_TALK),
@@ -1955,7 +1955,7 @@ static const ScriptRef s_gs2_g25_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g25_s0_lives0_dlg0[] = { /* 0x8185694 */
     DEBUGINFO_O(1948),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -1963,7 +1963,7 @@ static const struct ScriptCommand s_gs2_g25_s0_lives0_dlg0[] = { /* 0x8185694 */
 static const struct ScriptCommand s_gs2_g25_s0_lives0_dlg2[] = { /* 0x81856d4 */
     DEBUGINFO_O(1955),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" A shooting star is on\na collision course...{WAIT_PRESS}\nThis is indeed a desperate time.")),
     MSG_NPC(1, _(" But there is nothing that\nI can do.{WAIT_PRESS}\nAll our hopes ride with you.")),
@@ -1980,7 +1980,7 @@ static const struct ScriptCommand s_gs2_g25_s0_obj0_dlg2[] = { /* 0x8185844 */
 static const struct ScriptCommand s_gs2_g25_s0_lives1_dlg2[] = { /* 0x8185874 */
     DEBUGINFO_O(1972),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I'll use Harden and wait for\n{NAME_0}'s team to come back!")),
     JUMP_SCRIPT(END_TALK),
@@ -1997,7 +1997,7 @@ static const ScriptRef s_gs2_g26_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g26_s0_lives0_dlg0[] = { /* 0x818595c */
     DEBUGINFO_O(1990),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -2005,7 +2005,7 @@ static const struct ScriptCommand s_gs2_g26_s0_lives0_dlg0[] = { /* 0x818595c */
 static const struct ScriptCommand s_gs2_g26_s0_lives0_dlg2[] = { /* 0x818599c */
     DEBUGINFO_O(1997),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I see...\nYou are finally off.")),
     MSG_NPC(1, _(" This journey promises to be\nharsh.\nI count on your perseverance.")),
@@ -2021,8 +2021,8 @@ static const struct ScriptCommand s_gs2_g26_s0_obj0_dlg2[] = { /* 0x8185a70 */
 static const struct ScriptCommand s_gs2_g26_s0_lives1_dlg2[] = { /* 0x8185aa0 */
     DEBUGINFO_O(2013),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000022,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x22),
     WAIT(1),
     MSG_NPC(1, _(" You're soon going...")),
     MSG_NPC(1, _(" But this is {NAME_0}\nand {NAME_2}.{WAIT_PRESS}\nYou can't fail.")),
@@ -2033,7 +2033,7 @@ static const struct ScriptCommand s_gs2_g26_s0_lives1_dlg2[] = { /* 0x8185aa0 */
 static const struct ScriptCommand s_gs2_g26_s0_lives2_dlg2[] = { /* 0x8185bac */
     DEBUGINFO_O(2025),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Hello, I am Caterpie's\nmother. It's been a while.")),
     MSG_NPC(1, _(" You also have my support.{WAIT_PRESS}\nPlease do your best. And please be careful!")),
@@ -2043,7 +2043,7 @@ static const struct ScriptCommand s_gs2_g26_s0_lives2_dlg2[] = { /* 0x8185bac */
 static const struct ScriptCommand s_gs2_g26_s0_lives3_dlg2[] = { /* 0x8185ca4 */
     DEBUGINFO_O(2035),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I'll use Harden and wait for\n{NAME_0}'s team to come back!")),
     JUMP_SCRIPT(END_TALK),
@@ -2060,7 +2060,7 @@ static const ScriptRef s_gs2_g27_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 
 static const struct ScriptCommand s_gs2_g27_s0_lives0_dlg0[] = { /* 0x8185d50 */
     DEBUGINFO_O(2053),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -2068,7 +2068,7 @@ static const struct ScriptCommand s_gs2_g27_s0_lives0_dlg0[] = { /* 0x8185d50 */
 static const struct ScriptCommand s_gs2_g27_s0_lives0_dlg2[] = { /* 0x8185d90 */
     DEBUGINFO_O(2060),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Ah...{WAIT_PRESS} The {COLOR YELLOW_D}Sky Tower{RESET},\nyou say...")),
     MSG_NPC(1, _(" In all my long years, I'd\nnot known of any world above the clouds.")),
@@ -2085,8 +2085,8 @@ static const struct ScriptCommand s_gs2_g27_s0_obj0_dlg2[] = { /* 0x8185eac */
 static const struct ScriptCommand s_gs2_g27_s0_lives1_dlg2[] = { /* 0x8185edc */
     DEBUGINFO_O(2077),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x09,  0x0002,  0x00000022,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x2, 0x22),
     WAIT(1),
     MSG_NPC(1, _(" This is {NAME_0}\nand {NAME_2} after all.{WAIT_PRESS}\nYou can't fail.")),
     MSG_NPC(1, _(" I believe in you.\nSo I'll be waiting for you.")),
@@ -2096,7 +2096,7 @@ static const struct ScriptCommand s_gs2_g27_s0_lives1_dlg2[] = { /* 0x8185edc */
 static const struct ScriptCommand s_gs2_g27_s0_lives2_dlg2[] = { /* 0x8185f90 */
     DEBUGINFO_O(2088),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I believe too.\n{NAME_0}, don't let us down!")),
     JUMP_SCRIPT(END_TALK),
@@ -2105,7 +2105,7 @@ static const struct ScriptCommand s_gs2_g27_s0_lives2_dlg2[] = { /* 0x8185f90 */
 static const struct ScriptCommand s_gs2_g27_s0_lives3_dlg2[] = { /* 0x818601c */
     DEBUGINFO_O(2097),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Oh, is that right?\nYou can climb above the clouds?")),
     MSG_NPC(1, _(" I wish I could use Harden\nup on the clouds...")),
@@ -2117,9 +2117,9 @@ static const struct ScriptCommand s_gs2_g28_s0_station_sref_script[] = { /* 0x81
     SELECT_MAP(2),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_AFTERMATH),
-    { 0x22, 0x01,  0x002d,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x2D),
     WAIT(240),
-    { 0x23, 0x01,  0x002d,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x2D),
     RET,
 };
 
@@ -2134,7 +2134,7 @@ static const struct ScriptCommand s_gs2_g28_s0_eff0_script[] = { /* 0x8186180 */
 
 static const struct ScriptCommand s_gs2_g28_s0_lives0_dlg0[] = { /* 0x81861c0 */
     DEBUGINFO_O(2127),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -2150,7 +2150,7 @@ static const struct ScriptCommand s_gs2_g29_s0_station_sref_script[] = { /* 0x81
     SELECT_ENTITIES(-1, 0),
     WAIT(30),
     BGM_SWITCH(MUS_FILE_SELECT),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
     SELECT_EVENTS(0, 0),
     SELECT_EVENTS(0, 2),
@@ -2180,12 +2180,12 @@ static const struct ScriptCommand s_gs2_g29_s0_eff0_script[] = { /* 0x818630c */
 static const struct ScriptCommand s_gs2_g29_s0_lives0_dlg0[] = { /* 0x81863ec */
     DEBUGINFO_O(2172),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     ALERT_CUE(6),
     ALERT_CUE(7),
     ALERT_CUE(8),
     WALK_GRID(256, 15),
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT_FADE,
     AWAIT_CUE(5),
     WAIT(10),
     ALERT_CUE(6),
@@ -2385,9 +2385,9 @@ static const struct ScriptCommand s_gs2_g29_s0_lives0_dlg0[] = { /* 0x81863ec */
     VARIANT(/* == */  3, _(" {NAME_0}.{WAIT_PRESS}\nLet's go to the cave if we're ready to\nevolve.")),
     VARIANT_DEFAULT(_(" {NAME_0}.{WAIT_PRESS}\nLet's go to the cave if we're ready to\nevolve.")),
     TEXTBOX_CLEAR,
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
@@ -2418,7 +2418,7 @@ static const struct ScriptCommand s_gs2_g29_s0_lives0_dlg0[] = { /* 0x81863ec */
 static const struct ScriptCommand s_gs2_g29_s0_lives1_dlg0[] = { /* 0x8187888 */
     DEBUGINFO_O(2410),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     WALK_GRID(256, 17),
     AWAIT_CUE(6),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHEAST),
@@ -2461,14 +2461,14 @@ static const struct ScriptCommand s_gs2_g29_s0_lives1_dlg0[] = { /* 0x8187888 */
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_EAST),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs2_g29_s0_lives2_dlg0[] = { /* 0x8187b78 */
     DEBUGINFO_O(2460),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     WALK_GRID(256, 19),
     AWAIT_CUE(7),
     WAIT(10),
@@ -2505,7 +2505,7 @@ static const struct ScriptCommand s_gs2_g29_s0_lives2_dlg0[] = { /* 0x8187b78 */
 static const struct ScriptCommand s_gs2_g29_s0_lives3_dlg0[] = { /* 0x8187d98 */
     DEBUGINFO_O(2497),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0003,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0x0),
     WALK_GRID(256, 21),
     ALERT_CUE(5),
     AWAIT_CUE(8),
@@ -2536,7 +2536,7 @@ static const struct ScriptCommand s_gs2_g29_s0_lives3_dlg0[] = { /* 0x8187d98 */
 static const struct ScriptCommand s_gs2_g29_s0_lives4_dlg0[] = { /* 0x8187f58 */
     DEBUGINFO_O(2528),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0004,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x4, 0x0),
     AWAIT_CUE(9),
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_SOUTHWEST),
     WAIT(30),
@@ -2561,7 +2561,7 @@ static const struct ScriptCommand s_gs2_g29_s0_lives4_dlg0[] = { /* 0x8187f58 */
 static const struct ScriptCommand s_gs2_g29_s0_lives5_dlg0[] = { /* 0x81880b8 */
     DEBUGINFO_O(2553),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0005,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x5, 0x0),
     AWAIT_CUE(10),
     WAIT(10),
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_SOUTHWEST),
@@ -2581,7 +2581,7 @@ static const struct ScriptCommand s_gs2_g29_s0_lives5_dlg0[] = { /* 0x81880b8 */
     CALL_SCRIPT(NOTICE_FUNC),
     AWAIT_CUE(10),
     ROTATE_TO(10, DIR_TRANS_10, DIRECTION_SOUTH),
-    { 0x56, 0x00,  0x0000,  0x00000047,  0x00000000, NULL },
+    EMOTION_EFFECT(0x47),
     ALERT_CUE(5),
     AWAIT_CUE(10),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_WEST),
@@ -2594,9 +2594,9 @@ static const struct ScriptCommand s_gs2_g29_s0_lives5_dlg0[] = { /* 0x81880b8 */
 
 static const struct ScriptCommand s_gs2_g29_s0_lives6_dlg0[] = { /* 0x81882a8 */
     DEBUGINFO_O(2587),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0006,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x6, 0x0),
     AWAIT_CUE(11),
     ROTATE_TO(12, DIR_TRANS_10, DIRECTION_NORTHWEST),
     ALERT_CUE(5),
@@ -2619,7 +2619,7 @@ static const ScriptRef s_gs2_g30_s0_station_sref = { STATION_CONTROL, SCRIPT_TYP
 static const struct ScriptCommand s_gs2_g30_s0_lives0_dlg2[] = { /* 0x81883b4 */
     DEBUGINFO_O(2611),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" First I have to evolve like\nMetapod!")),
     JUMP_SCRIPT(END_TALK),
@@ -2628,7 +2628,7 @@ static const struct ScriptCommand s_gs2_g30_s0_lives0_dlg2[] = { /* 0x81883b4 */
 static const struct ScriptCommand s_gs2_g30_s0_lives1_dlg2[] = { /* 0x818843c */
     DEBUGINFO_O(2620),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Oh, I hope I can be\nButterfree soon...")),
     JUMP_SCRIPT(END_TALK),
@@ -2637,7 +2637,7 @@ static const struct ScriptCommand s_gs2_g30_s0_lives1_dlg2[] = { /* 0x818843c */
 static const struct ScriptCommand s_gs2_g30_s0_lives2_dlg2[] = { /* 0x81884c8 */
     DEBUGINFO_O(2629),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I suspect that cave is where\nevolution can take place.")),
     MSG_NPC(1, _(" You should enter that cave\nif you wish to evolve.")),
@@ -2647,7 +2647,7 @@ static const struct ScriptCommand s_gs2_g30_s0_lives2_dlg2[] = { /* 0x81884c8 */
 static const struct ScriptCommand s_gs2_g30_s0_lives3_dlg2[] = { /* 0x818856c */
     DEBUGINFO_O(2639),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" I might become\nstronger!{WAIT_PRESS}\nOoh, it's exciting...")),
     JUMP_SCRIPT(END_TALK),
@@ -2655,7 +2655,7 @@ static const struct ScriptCommand s_gs2_g30_s0_lives3_dlg2[] = { /* 0x818856c */
 
 static const struct ScriptCommand s_gs2_g30_s0_lives4_dlg0[] = { /* 0x8188604 */
     DEBUGINFO_O(2648),
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
     SELECT_ANIMATION(1),
     RET,
 };
@@ -2663,7 +2663,7 @@ static const struct ScriptCommand s_gs2_g30_s0_lives4_dlg0[] = { /* 0x8188604 */
 static const struct ScriptCommand s_gs2_g30_s0_lives4_dlg2[] = { /* 0x8188644 */
     DEBUGINFO_O(2655),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" That cave's entrance\nappears rather narrow.\nOnly one may enter at a time, it seems.")),
     MSG_NPC(1, _(" If you wish to enter the\ncave, you must come alone.")),

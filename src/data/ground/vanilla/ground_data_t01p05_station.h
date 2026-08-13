@@ -124,14 +124,14 @@ static const ScriptRef s_gs6_g1_s0_station_sref = { STATION_CONTROL, SCRIPT_TYPE
 
 static const struct ScriptCommand s_gs6_g1_s0_lives0_dlg1[] = { /* 0x81993ac */
     DEBUGINFO_O(126),
-    { 0x53, 0x00,  0x0000,  0x00000400,  0x00000000, NULL },
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_CANCEL_SCRIPT2),
     JUMP_SCRIPT(MOVE_PLAZA_SLEEP),
 };
 
 static const struct ScriptCommand s_gs6_g1_s0_lives0_dlg2[] = { /* 0x81993dc */
     DEBUGINFO_O(132),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     { 0x06, 0x00,  0x001e, -0x00000001,  0x00000000, NULL },
     COND_EQUAL(-1, /* to label */ 0),
@@ -162,7 +162,7 @@ static const ScriptRef s_gs6_g1_s0_evt0_sref = { GETOUT_NORMAL, SCRIPT_TYPE_02, 
 static const struct ScriptCommand s_gs6_g1_s1_evt0_sref_script[] = { /* 0x8199528 */
     DEBUGINFO_O(163),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_INSTANT(_("{CENTER_ALIGN}There appears to be no one inside.")),
     MSG_INSTANT(_("{CENTER_ALIGN}............!{WAIT_PRESS}\n{CENTER_ALIGN}There is a notice posted in the back.")),
@@ -178,7 +178,7 @@ static const struct ScriptCommand s_gs6_g2_s0_station_sref_script[] = { /* 0x819
     CALL_STATION(  1,  0),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_POKEMON_SQUARE),
-    { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, -1),
     AWAIT_CUE(3),
     CALL_STATION(  1,  0),
     SELECT_EVENTS(0, 0),
@@ -189,9 +189,9 @@ static const ScriptRef s_gs6_g2_s0_station_sref = { EVENT_STATION, SCRIPT_TYPE_0
 
 static const struct ScriptCommand s_gs6_g2_s0_lives0_dlg0[] = { /* 0x81996f8 */
     DEBUGINFO_O(191),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     CALL_SCRIPT(WAIT_START_FUNC),
     SPECIAL_TEXT(SPECIAL_TEXT_DOJO_SUCCESS, 0, 0),
@@ -206,7 +206,7 @@ static const struct ScriptCommand s_gs6_g2_s0_lives0_dlg0[] = { /* 0x81996f8 */
     SPECIAL_TEXT(SPECIAL_TEXT_UNK_2C, 73, 0),
   LABEL(5), /* = 0x05 */
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
@@ -217,20 +217,20 @@ static const struct ScriptCommand s_gs6_g2_s0_lives0_dlg0[] = { /* 0x81996f8 */
 
 static const struct ScriptCommand s_gs6_g2_s0_lives1_dlg0[] = { /* 0x8199848 */
     DEBUGINFO_O(219),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     CALL_SCRIPT(WAIT_START_FUNC),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs6_g2_s0_lives2_dlg0[] = { /* 0x81998c8 */
     DEBUGINFO_O(230),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     CALL_SCRIPT(INIT_PLAZA_SLEEP_TALK_FUNC),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     CMD_UNK_8E(0, DIR_TRANS_NONE, 0),
     AWAIT_CUE(3),
     RET,
@@ -242,7 +242,7 @@ static const struct ScriptCommand s_gs6_g3_s0_station_sref_script[] = { /* 0x819
     CALL_STATION(  1,  0),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_POKEMON_SQUARE),
-    { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, -1),
     AWAIT_CUE(3),
     CALL_STATION(  1,  0),
     SELECT_EVENTS(0, 0),
@@ -253,34 +253,34 @@ static const ScriptRef s_gs6_g3_s0_station_sref = { EVENT_STATION, SCRIPT_TYPE_0
 
 static const struct ScriptCommand s_gs6_g3_s0_lives0_dlg0[] = { /* 0x81999e4 */
     DEBUGINFO_O(255),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     CALL_SCRIPT(WAIT_START_FUNC),
     SPECIAL_TEXT(SPECIAL_TEXT_DOJO_FAILURE, 0, 0),
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
 
 static const struct ScriptCommand s_gs6_g3_s0_lives1_dlg0[] = { /* 0x8199a94 */
     DEBUGINFO_O(269),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     CALL_SCRIPT(WAIT_START_FUNC),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs6_g3_s0_lives2_dlg0[] = { /* 0x8199b14 */
     DEBUGINFO_O(280),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     CALL_SCRIPT(INIT_PLAZA_SLEEP_TALK_FUNC),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     CMD_UNK_8E(0, DIR_TRANS_NONE, 0),
     AWAIT_CUE(3),
     RET,
@@ -292,7 +292,7 @@ static const struct ScriptCommand s_gs6_g4_s0_station_sref_script[] = { /* 0x819
     CALL_STATION(  1,  0),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_POKEMON_SQUARE),
-    { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, -1),
     AWAIT_CUE(3),
     CALL_STATION(  1,  0),
     SELECT_EVENTS(0, 0),
@@ -303,34 +303,34 @@ static const ScriptRef s_gs6_g4_s0_station_sref = { EVENT_STATION, SCRIPT_TYPE_0
 
 static const struct ScriptCommand s_gs6_g4_s0_lives0_dlg0[] = { /* 0x8199c30 */
     DEBUGINFO_O(305),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     CALL_SCRIPT(WAIT_START_FUNC),
     SPECIAL_TEXT(SPECIAL_TEXT_DOJO_FAILURE, 0, 0),
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
 
 static const struct ScriptCommand s_gs6_g4_s0_lives1_dlg0[] = { /* 0x8199ce0 */
     DEBUGINFO_O(319),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     CALL_SCRIPT(WAIT_START_FUNC),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs6_g4_s0_lives2_dlg0[] = { /* 0x8199d60 */
     DEBUGINFO_O(330),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     CALL_SCRIPT(INIT_PLAZA_SLEEP_TALK_FUNC),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     CMD_UNK_8E(0, DIR_TRANS_NONE, 0),
     AWAIT_CUE(3),
     RET,
@@ -342,7 +342,7 @@ static const struct ScriptCommand s_gs6_g5_s0_station_sref_script[] = { /* 0x819
     CALL_STATION(  1,  0),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_POKEMON_SQUARE),
-    { 0x22, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, -1),
     AWAIT_CUE(3),
     CALL_STATION(  1,  0),
     SELECT_EVENTS(0, 0),
@@ -353,34 +353,34 @@ static const ScriptRef s_gs6_g5_s0_station_sref = { EVENT_STATION, SCRIPT_TYPE_0
 
 static const struct ScriptCommand s_gs6_g5_s0_lives0_dlg0[] = { /* 0x8199e7c */
     DEBUGINFO_O(355),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     CALL_SCRIPT(WAIT_START_FUNC),
     SPECIAL_TEXT(SPECIAL_TEXT_DOJO_ALL_CLEARED, 0, 0),
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
 
 static const struct ScriptCommand s_gs6_g5_s0_lives1_dlg0[] = { /* 0x8199f2c */
     DEBUGINFO_O(369),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     CALL_SCRIPT(WAIT_START_FUNC),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 
 static const struct ScriptCommand s_gs6_g5_s0_lives2_dlg0[] = { /* 0x8199fac */
     DEBUGINFO_O(380),
-    { 0x4f, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HITBOX,
     CALL_SCRIPT(INIT_PLAZA_SLEEP_TALK_FUNC),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     CMD_UNK_8E(0, DIR_TRANS_NONE, 0),
     AWAIT_CUE(3),
     RET,

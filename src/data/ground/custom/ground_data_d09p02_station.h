@@ -75,7 +75,7 @@ static const struct ScriptCommand s_gs196_g0_s0_evt1_sref_script[] = { /* 0x8248
   LABEL(1), /* = 0x01 */
     TEXTBOX_CLEAR,
     BGM_FADEOUT(30),
-    { 0x23, 0x01, -0x0001,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, -1),
     CALL_SCRIPT(DISMISSAL_SALLY_MEMBER4_FUNC),
     SET_DUNGEON_RES(/* result */ 10, /* enter */ -1),
     EXECUTE_STATION(MAP_TEAM_BASE_INSIDE, 4, 0),
@@ -149,7 +149,7 @@ static const struct ScriptCommand s_gs196_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(MAP_MT_BLAZE_MID),
     SELECT_ENTITIES(-1, 0),
     BGM_SWITCH(MUS_MT_BLAZE),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
     SELECT_EVENTS(0, 0),
     RET,
@@ -160,8 +160,8 @@ static const ScriptRef s_gs196_g1_s0_station_sref = { EVENT_STATION, SCRIPT_TYPE
 static const struct ScriptCommand s_gs196_g1_s0_lives0_dlg0[] = { /* 0x82491e4 */
     DEBUGINFO_O(161),
     CALL_SCRIPT(INIT_SLEEP_FUNC),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    WAIT_FADE,
     ALERT_CUE(6),
     CALL_SCRIPT(WAKEUP_FUNC),
     CALL_SCRIPT(LOOK_AROUND_LEFT_FUNC),
@@ -175,9 +175,9 @@ static const struct ScriptCommand s_gs196_g1_s0_lives0_dlg0[] = { /* 0x82491e4 *
     VARIANT(/* == */  1, _(" But we almost made it.{WAIT_PRESS}\nLet's give it our best again!")),
     VARIANT_DEFAULT(_(" But we came close.{WAIT_PRESS}\nLet's keep doing our best!")),
     TEXTBOX_CLEAR,
-    { 0x9b, 0x00,  0x0100,  0x00000000,  0x00000000, NULL },
+    CAMERA_FOLLOW(0x100),
     ALERT_CUE(3),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     ALERT_CUE(6),
     RET,
 };
@@ -185,7 +185,7 @@ static const struct ScriptCommand s_gs196_g1_s0_lives0_dlg0[] = { /* 0x82491e4 *
 static const struct ScriptCommand s_gs196_g1_s0_lives1_dlg0[] = { /* 0x8249404 */
     DEBUGINFO_O(186),
     CALL_SCRIPT(INIT_SLEEP_FUNC),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
     WAIT(15),
     CALL_SCRIPT(WAKEUP_FUNC),
@@ -193,7 +193,7 @@ static const struct ScriptCommand s_gs196_g1_s0_lives1_dlg0[] = { /* 0x8249404 *
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_EAST),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    { 0x52, 0x00,  0x0000,  0x00001000,  0x00000000, NULL },
+    SET_OBJ_FLAGS(OBJ_FLAG_WALK_RELATED),
     RET,
 };
 

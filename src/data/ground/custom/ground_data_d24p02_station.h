@@ -20,7 +20,7 @@ static const struct ScriptCommand s_gs221_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(221),
     SELECT_ENTITIES(-1, 0),
     BGM_SWITCH(MUS_STORMY_SEA),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
     RET,
 };
@@ -33,16 +33,16 @@ static const struct ScriptCommand s_gs221_g1_s0_eff0_script[] = { /* 0x826d828 *
     WAIT(1),
     AWAIT_CUE(4),
     WAIT(20),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     END_DELETE,
 };
 
 static const struct ScriptCommand s_gs221_g1_s0_lives0_dlg0[] = { /* 0x826d898 */
     DEBUGINFO_O(41),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     ALERT_CUE(7),
-    { 0x89, 0x50,  0x0099,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(80, 0x99, 0x4),
     AWAIT_CUE(5),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_SOUTH),
     MSG_NPC(2, _(" You're going to the\n{COLOR YELLOW_D}Murky Cave{RESET}?")),
@@ -50,19 +50,19 @@ static const struct ScriptCommand s_gs221_g1_s0_lives0_dlg0[] = { /* 0x826d898 *
     TEXTBOX_CLEAR,
     ALERT_CUE(4),
     ALERT_CUE(7),
-    { 0x89, 0x50,  0x0080,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(80, 0x80, 0x4),
     ALERT_CUE(3),
     HALT,
 };
 
 static const struct ScriptCommand s_gs221_g1_s0_lives1_dlg0[] = { /* 0x826d9d8 */
     DEBUGINFO_O(59),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     SELECT_ANIMATION(2),
-    { 0x89, 0x58,  0x0100,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(88, 0x100, 0x4),
     ALERT_CUE(5),
     AWAIT_CUE(7),
-    { 0x89, 0x40,  0x0080,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(64, 0x80, 0x4),
     HALT,
 };
 

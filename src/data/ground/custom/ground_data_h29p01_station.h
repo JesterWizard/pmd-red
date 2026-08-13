@@ -100,15 +100,15 @@ static const struct ScriptCommand s_gs158_g1_s0_lives0_dlg1[] = { /* 0x820cce0 *
     END_DELETE,
   LABEL(0), /* = 0x00 */
     WARP_WAYPOINT(0, 0),
-    { 0x51, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x1),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(1), /* = 0x01 */
     WARP_WAYPOINT(0, 2),
-    { 0x51, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x3),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(2), /* = 0x02 */
     WARP_WAYPOINT(0, 4),
-    { 0x51, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x5),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -126,15 +126,15 @@ static const struct ScriptCommand s_gs158_g1_s0_lives1_dlg1[] = { /* 0x820ce20 *
     END_DELETE,
   LABEL(0), /* = 0x00 */
     WARP_WAYPOINT(0, 0),
-    { 0x51, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x1),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(1), /* = 0x01 */
     WARP_WAYPOINT(0, 2),
-    { 0x51, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x3),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(2), /* = 0x02 */
     WARP_WAYPOINT(0, 4),
-    { 0x51, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x5),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -152,15 +152,15 @@ static const struct ScriptCommand s_gs158_g1_s0_lives2_dlg1[] = { /* 0x820cf60 *
     END_DELETE,
   LABEL(0), /* = 0x00 */
     WARP_WAYPOINT(0, 0),
-    { 0x51, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x1),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(1), /* = 0x01 */
     WARP_WAYPOINT(0, 2),
-    { 0x51, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x3),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(2), /* = 0x02 */
     WARP_WAYPOINT(0, 4),
-    { 0x51, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x5),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -174,11 +174,11 @@ static const struct ScriptCommand s_gs158_g2_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(MAP_FRIEND_AREA_LEGENDARY_ISLAND),
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_FRIEND_AREA_LEGENDARY_ISLAND),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
     WAIT(60),
     BGM_FADEOUT(30),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     WAIT(120),
     RET,
 };
@@ -204,10 +204,10 @@ static const struct ScriptCommand s_gs158_g2_s0_eff0_script[] = { /* 0x820d15c *
 static const struct ScriptCommand s_gs158_g2_s0_lives0_dlg0[] = { /* 0x820d22c */
     DEBUGINFO_O(221),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x52, 0x00,  0x0000,  0x00040000,  0x00000000, NULL },
-    { 0x89, 0x30,  0x0100,  0x00000004,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    SET_OBJ_FLAGS(0x40000),
+    WALK_DIRECTION(48, 0x100, 0x4),
+    WAIT_FADE,
     // Our character looks around
     WAIT(30),
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_WEST),
@@ -227,25 +227,25 @@ static const struct ScriptCommand s_gs158_g2_s0_lives0_dlg0[] = { /* 0x820d22c *
     // Articuno anim speeds up, attacks south, white flash
     // Fade in (slow), vortex stone appears with flashing white circle
     // Our character walks north
-    { 0x23, 0x01,  30,  0x00000000,  0x00000000, NULL }, // Fade out black?
+    FADE_OUT(1, 30), // Fade out black?
     SET_DIR_WAIT(DIRECTION_NORTHWEST, 0),
     ALERT_CUE(4),
     AWAIT_CUE(5),
-    { 0x22, 0x01,  30,  0x00000000,  0x00000000, NULL }, // Fade in black?
+    FADE_IN(1, 30), // Fade in black?
     ALERT_CUE(8), // Moltres float
     AWAIT_CUE(5),
-    { 0x23, 0x01,  30,  0x00000000,  0x00000000, NULL }, // Fade out black?
+    FADE_OUT(1, 30), // Fade out black?
     SET_DIR_WAIT(DIRECTION_NORTHEAST, 0),
     ALERT_CUE(4),
     AWAIT_CUE(5),
-    { 0x22, 0x01,  30,  0x00000000,  0x00000000, NULL }, // Fade in black?
+    FADE_IN(1, 30), // Fade in black?
     ALERT_CUE(7), // Zapdos float
     AWAIT_CUE(5),
-    { 0x23, 0x01,  30,  0x00000000,  0x00000000, NULL }, // Fade out black?
+    FADE_OUT(1, 30), // Fade out black?
     SET_DIR_WAIT(DIRECTION_NORTH, 0),
     ALERT_CUE(4),
     AWAIT_CUE(5),
-    { 0x22, 0x01,  30,  0x00000000,  0x00000000, NULL }, // Fade in black?
+    FADE_IN(1, 30), // Fade in black?
     ALERT_CUE(8), // Moltres glide
     ALERT_CUE(7), // Zapdos glide
     AWAIT_CUE(5),
@@ -330,12 +330,12 @@ static const struct ScriptCommand s_gs158_g2_s0_lives0_dlg0[] = { /* 0x820d22c *
 static const struct ScriptCommand s_gs158_g2_s0_lives1_dlg0[] = { /* 0x820db5c */
     DEBUGINFO_O(332),
     SELECT_ANIMATION(2),
-    { 0x59, 0x00, -0x0004,  0x00000000,  0x00000000, NULL },
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    MOVE_RELATIVE_POS(0, -4, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
-    { 0x54, 0x00,  0x0400,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x400),
     WAIT(60),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     FANFARE_PLAY2(497),
     SELECT_ANIMATION(18),
     STOP_ANIMATION_ON_CURRENT_FRAME,
@@ -344,10 +344,10 @@ static const struct ScriptCommand s_gs158_g2_s0_lives1_dlg0[] = { /* 0x820db5c *
     SELECT_ANIMATION(2),
     SET_DIR_WAIT(DIRECTION_SOUTH, 0),
     AWAIT_CUE(6),
-    { 0x70, 0x00,  0x0080,  0x0000000a,  0x00000000, NULL },
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0100,  0x00000014,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0300,  0x00000064,  0x00000000, NULL },
+    HEIGHT_TO(0x80, 0xA),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
+    HEIGHT_TO(0x100, 0x14),
+    HEIGHT_TO(0x300, 0x64),
     ALERT_CUE(5),
     AWAIT_CUE(6),
     HALT,
@@ -356,30 +356,30 @@ static const struct ScriptCommand s_gs158_g2_s0_lives1_dlg0[] = { /* 0x820db5c *
 static const struct ScriptCommand s_gs158_g2_s0_lives2_dlg0[] = { /* 0x820dccc */
     DEBUGINFO_O(358),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     AWAIT_CUE(7),
     WAIT(60),
-    { 0x54, 0x00,  0x0400,  0x00000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0080,  0x0000000a,  0x00000000, NULL },
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0100,  0x00000014,  0x00000000, NULL },
+    SELECT_ANIMATION(0x400),
+    HEIGHT_TO(0x80, 0xA),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
+    HEIGHT_TO(0x100, 0x14),
     FANFARE_PLAY2(504),
-    { 0x70, 0x00,  0x0300,  0x00000064,  0x00000000, NULL },
+    HEIGHT_TO(0x300, 0x64),
     ALERT_CUE(5),
     AWAIT_CUE(7),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     WARP_WAYPOINT(0, 7),
     SET_DIR_WAIT(DIRECTION_SOUTH, 4),
-    { 0x70, 0x00,  0x0100,  0x00000014,  0x00000000, NULL },
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
-    { 0x52, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0080,  0x00000000,  0x00000000, NULL },
+    HEIGHT_TO(0x100, 0x14),
+    SELECT_ANIMATION(0x300),
+    SET_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
+    HEIGHT_TO(0x80, 0x0),
     WAIT(30),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_WEST),
     AWAIT_CUE(7),
-    { 0x54, 0x00,  0x0400,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x400),
     WAIT(60),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     FANFARE_PLAY2(497),
     SELECT_ANIMATION(18),
     STOP_ANIMATION_ON_CURRENT_FRAME,
@@ -395,30 +395,30 @@ static const struct ScriptCommand s_gs158_g2_s0_lives2_dlg0[] = { /* 0x820dccc *
 static const struct ScriptCommand s_gs158_g2_s0_lives3_dlg0[] = { /* 0x820df0c */
     DEBUGINFO_O(397),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0003,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0x0),
     AWAIT_CUE(8),
     WAIT(60),
-    { 0x54, 0x00,  0x0400,  0x00000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0080,  0x0000000a,  0x00000000, NULL },
-    { 0x53, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0100,  0x00000014,  0x00000000, NULL },
+    SELECT_ANIMATION(0x400),
+    HEIGHT_TO(0x80, 0xA),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
+    HEIGHT_TO(0x100, 0x14),
     FANFARE_PLAY2(504),
-    { 0x70, 0x00,  0x0300,  0x00000064,  0x00000000, NULL },
+    HEIGHT_TO(0x300, 0x64),
     ALERT_CUE(5),
     AWAIT_CUE(8),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     WARP_WAYPOINT(0, 8),
     SET_DIR_WAIT(DIRECTION_SOUTH, 4),
-    { 0x70, 0x00,  0x0100,  0x00000014,  0x00000000, NULL },
-    { 0x52, 0x00,  0x0000,  0x01000000,  0x00000000, NULL },
-    { 0x70, 0x00,  0x0080,  0x00000000,  0x00000000, NULL },
+    HEIGHT_TO(0x100, 0x14),
+    SET_OBJ_FLAGS(OBJ_FLAG_AIRBORNE),
+    HEIGHT_TO(0x80, 0x0),
     WAIT(30),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_EAST),
     ALERT_CUE(5),
     AWAIT_CUE(8),
-    { 0x54, 0x00,  0x0400,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x400),
     WAIT(60),
-    { 0x54, 0x00,  0x0300,  0x00000000,  0x00000000, NULL },
+    SELECT_ANIMATION(0x300),
     FANFARE_PLAY2(497),
     SELECT_ANIMATION(18),
     STOP_ANIMATION_ON_CURRENT_FRAME,
@@ -433,22 +433,22 @@ static const struct ScriptCommand s_gs158_g2_s0_lives3_dlg0[] = { /* 0x820df0c *
 
 static const struct ScriptCommand s_gs158_g2_s0_eff1_script[] = { /* 0x820e14c */
     DEBUGINFO_O(436),
-    { 0x59, 0x00, -0x0004,  0x00000000,  0x00000000, NULL },
+    MOVE_RELATIVE_POS(0, -4, 0x0),
     AWAIT_CUE(10),
     FANFARE_PLAY2(485),
-    { 0x56, 0x00,  0x0000,  0x00000173,  0x00000000, NULL },
+    EMOTION_EFFECT(0x173),
     AWAIT_CUE(10),
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
     WAIT(1),
-    { 0x56, 0x00,  0x0000,  0x00000174,  0x00000000, NULL },
-    { 0xde, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    EMOTION_EFFECT(0x174),
+    WAIT_EFFECT,
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
     WAIT(1),
-    { 0x56, 0x00,  0x0000,  0x00000175,  0x00000000, NULL },
-    { 0x52, 0x00,  0x0000,  0x00020000,  0x00000000, NULL },
+    EMOTION_EFFECT(0x175),
+    SET_OBJ_FLAGS(0x20000),
     ALERT_CUE(5),
     AWAIT_CUE(10),
-    { 0x56, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    EMOTION_EFFECT(EMOTION_EFFECT_NONE),
     AWAIT_CUE(10),
     RET,
 };
@@ -462,13 +462,13 @@ static const struct ScriptCommand s_gs158_g2_s0_lives4_dlg0[] = { /* 0x820e27c *
     COND_EQUAL(146, /* to label */ 2),
     END_DELETE,
   LABEL(0), /* = 0x00 */
-    { 0x2d, 0x07,  0x0001,  0x0000000e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0xE),
     END_DELETE,
   LABEL(1), /* = 0x01 */
-    { 0x2d, 0x07,  0x0002,  0x0000000e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0xE),
     END_DELETE,
   LABEL(2), /* = 0x02 */
-    { 0x2d, 0x07,  0x0003,  0x0000000e,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0xE),
     END_DELETE,
 };
 
@@ -481,15 +481,15 @@ static const struct ScriptCommand s_gs158_g2_s0_lives4_dlg1[] = { /* 0x820e37c *
     END_DELETE,
   LABEL(0), /* = 0x00 */
     WARP_WAYPOINT(0, 0),
-    { 0x51, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x1),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(1), /* = 0x01 */
     WARP_WAYPOINT(0, 2),
-    { 0x51, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x3),
     JUMP_SCRIPT(HABITAT_MOVE1),
   LABEL(2), /* = 0x02 */
     WARP_WAYPOINT(0, 4),
-    { 0x51, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x5),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -502,13 +502,13 @@ static const struct ScriptCommand s_gs158_g2_s0_lives5_dlg0[] = { /* 0x820e49c *
     COND_EQUAL(146, /* to label */ 2),
     END_DELETE,
   LABEL(0), /* = 0x00 */
-    { 0x2d, 0x07,  0x0001,  0x0000000f,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0xF),
     END_DELETE,
   LABEL(1), /* = 0x01 */
-    { 0x2d, 0x07,  0x0002,  0x0000000f,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0xF),
     END_DELETE,
   LABEL(2), /* = 0x02 */
-    { 0x2d, 0x07,  0x0003,  0x0000000f,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0xF),
     END_DELETE,
 };
 
@@ -521,13 +521,13 @@ static const struct ScriptCommand s_gs158_g2_s0_lives6_dlg0[] = { /* 0x820e59c *
     COND_EQUAL(146, /* to label */ 2),
     END_DELETE,
   LABEL(0), /* = 0x00 */
-    { 0x2d, 0x07,  0x0001,  0x00000010,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x10),
     END_DELETE,
   LABEL(1), /* = 0x01 */
-    { 0x2d, 0x07,  0x0002,  0x00000010,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x10),
     END_DELETE,
   LABEL(2), /* = 0x02 */
-    { 0x2d, 0x07,  0x0003,  0x00000010,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0x10),
     END_DELETE,
 };
 

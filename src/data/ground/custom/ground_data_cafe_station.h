@@ -54,7 +54,7 @@ static const struct ScriptCommand s_gs229_g0_s1_lives1_dlg0[] = {
 static const struct ScriptCommand s_gs229_g1_s0_lives0_dlg2[] = {
     DEBUGINFO_O(58),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     SPECIAL_TEXT(SPECIAL_TEXT_SPINDA_JUICE_BAR, 0, 0),
     JUMP_SCRIPT(END_TALK),
@@ -63,7 +63,7 @@ static const struct ScriptCommand s_gs229_g1_s0_lives0_dlg2[] = {
 static const struct ScriptCommand s_gs229_g1_s0_lives1_dlg2[] = {
     DEBUGINFO_O(68),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     SPECIAL_TEXT(SPECIAL_TEXT_RECYCLE_SHOP, 0, 0),
     JUMP_SCRIPT(END_TALK),
@@ -72,7 +72,7 @@ static const struct ScriptCommand s_gs229_g1_s0_lives1_dlg2[] = {
 static const struct ScriptCommand s_gs229_g1_s0_lives2_dlg2[] = {
     DEBUGINFO_O(78),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT(1),
     MSG_NPC(1, _(" Wobbuffet!")),
     JUMP_SCRIPT(END_TALK),

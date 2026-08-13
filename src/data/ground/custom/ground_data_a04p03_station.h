@@ -24,10 +24,10 @@ static const struct ScriptCommand s_gs173_g1_s0_station_sref_script[] = { /* 0x8
     { 0x97, 0x00,  0x0002,  0x00000001,  0x00000001, NULL },
     BGM_SWITCH(MUS_WORLD_CALAMITY),
     FANFARE_PLAY2(508),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     WAIT(240),
     FANFARE_FADEOUT2(60, 508),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     WAIT(60),
     RET,
 };
@@ -49,10 +49,10 @@ static const struct ScriptCommand s_gs173_g2_s0_station_sref_script[] = { /* 0x8
     BGM_SWITCH(MUS_RAYQUAZAS_DOMAIN),
     FANFARE_PLAY2(508),
     { 0x97, 0x00,  0x0002,  0x00000001,  0x00000001, NULL },
-    { 0x22, 0x01,  0x0010,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x10),
     AWAIT_CUE(5),
     WAIT(210),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     FANFARE_FADEOUT2(30, 508),
     RET,
 };
@@ -64,7 +64,7 @@ static const struct ScriptCommand s_gs173_g2_s0_eff0_script[] = { /* 0x8229d9c *
     CAMERA_END_PAN,
     WAIT(1),
     CAMERA_INIT_PAN,
-    { 0x89, 0x30,  0x0300,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(48, 0x300, 0x4),
     ALERT_CUE(5),
     AWAIT_CUE(4),
     END_DELETE,
@@ -99,7 +99,7 @@ static const struct ScriptCommand s_gs173_g3_s0_eff0_script[] = { /* 0x8229f58 *
     CAMERA_END_PAN,
     WAIT(1),
     CAMERA_INIT_PAN,
-    { 0x89, 0x18,  0x0400,  0x00000004,  0x00000000, NULL },
+    WALK_DIRECTION(24, 0x400, 0x4),
     ALERT_CUE(5),
     AWAIT_CUE(4),
     END_DELETE,
@@ -107,7 +107,7 @@ static const struct ScriptCommand s_gs173_g3_s0_eff0_script[] = { /* 0x8229f58 *
 
 static const struct ScriptCommand s_gs173_g3_s0_eff1_script[] = { /* 0x8229fd8 */
     DEBUGINFO_O(109),
-    { 0x56, 0x00,  0x0000,  0x00000135,  0x00000000, NULL },
+    EMOTION_EFFECT(0x135),
     HALT,
 };
 

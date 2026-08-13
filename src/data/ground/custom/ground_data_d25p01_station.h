@@ -24,7 +24,7 @@ static const struct ScriptCommand s_gs222_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(222),
     SELECT_ENTITIES(-1, 0),
     BGM_SWITCH(MUS_IN_THE_DEPTHS_OF_THE_PIT),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
     BGM_FADEOUT(120),
     FLASH_TO(TRUE, PALUTIL_KIND_01, 60, RGB_U32(0xFF, 0xFF, 0xFF)),
@@ -36,8 +36,8 @@ static const ScriptRef s_gs222_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE
 static const struct ScriptCommand s_gs222_g1_s0_lives0_dlg0[] = { /* 0x826dc2c */
     DEBUGINFO_O(37),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    WAIT_FADE,
     ALERT_CUE(6),
     WALK_GRID(256, 0),
     WAIT(15),
@@ -58,7 +58,7 @@ static const struct ScriptCommand s_gs222_g1_s0_lives0_dlg0[] = { /* 0x826dc2c *
 static const struct ScriptCommand s_gs222_g1_s0_lives1_dlg0[] = { /* 0x826ddc0 */
     DEBUGINFO_O(59),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     AWAIT_CUE(6),
     WALK_GRID(256, 2),
     AWAIT_CUE(6),
@@ -70,7 +70,7 @@ static const struct ScriptCommand s_gs222_g1_s0_lives1_dlg0[] = { /* 0x826ddc0 *
 static const struct ScriptCommand s_gs222_g1_s0_lives2_dlg0[] = { /* 0x826de50 */
     DEBUGINFO_O(71),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     HALT,
 };
 

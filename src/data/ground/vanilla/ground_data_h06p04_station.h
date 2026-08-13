@@ -105,7 +105,7 @@ static const struct ScriptCommand s_gs119_g0_s4_lives1_dlg0[] = { /* 0x81f6550 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives0_dlg1[] = { /* 0x81f6580 */
     DEBUGINFO_O(107),
-    { 0x51, 0x00,  0x000e,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0xE),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -116,7 +116,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives0_dlg2[] = { /* 0x81f65b0 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives1_dlg1[] = { /* 0x81f65d0 */
     DEBUGINFO_O(118),
-    { 0x51, 0x00,  0x000d,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0xD),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -127,7 +127,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives1_dlg2[] = { /* 0x81f6600 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives2_dlg1[] = { /* 0x81f6620 */
     DEBUGINFO_O(129),
-    { 0x51, 0x00,  0x000c,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0xC),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -138,7 +138,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives2_dlg2[] = { /* 0x81f6650 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives3_dlg1[] = { /* 0x81f6670 */
     DEBUGINFO_O(140),
-    { 0x51, 0x00,  0x000b,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0xB),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -149,7 +149,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives3_dlg2[] = { /* 0x81f66a0 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives4_dlg1[] = { /* 0x81f66c0 */
     DEBUGINFO_O(151),
-    { 0x51, 0x00,  0x000a,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0xA),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -160,7 +160,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives4_dlg2[] = { /* 0x81f66f0 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives5_dlg1[] = { /* 0x81f6710 */
     DEBUGINFO_O(162),
-    { 0x51, 0x00,  0x0009,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x9),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -171,7 +171,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives5_dlg2[] = { /* 0x81f6740 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives6_dlg1[] = { /* 0x81f6760 */
     DEBUGINFO_O(173),
-    { 0x51, 0x00,  0x0008,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x8),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -182,7 +182,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives6_dlg2[] = { /* 0x81f6790 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives7_dlg1[] = { /* 0x81f67b0 */
     DEBUGINFO_O(184),
-    { 0x51, 0x00,  0x0007,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x7),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -193,7 +193,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives7_dlg2[] = { /* 0x81f67e0 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives8_dlg1[] = { /* 0x81f6800 */
     DEBUGINFO_O(195),
-    { 0x51, 0x00,  0x0006,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x6),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -204,7 +204,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives8_dlg2[] = { /* 0x81f6830 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives9_dlg1[] = { /* 0x81f6850 */
     DEBUGINFO_O(206),
-    { 0x51, 0x00,  0x0005,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x5),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -215,7 +215,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives9_dlg2[] = { /* 0x81f6880 *
 
 static const struct ScriptCommand s_gs119_g1_s0_lives10_dlg1[] = { /* 0x81f68a0 */
     DEBUGINFO_O(217),
-    { 0x51, 0x00,  0x0004,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x4),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -226,7 +226,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives10_dlg2[] = { /* 0x81f68d0 
 
 static const struct ScriptCommand s_gs119_g1_s0_lives11_dlg1[] = { /* 0x81f68f0 */
     DEBUGINFO_O(228),
-    { 0x51, 0x00,  0x0003,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x3),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -237,7 +237,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives11_dlg2[] = { /* 0x81f6920 
 
 static const struct ScriptCommand s_gs119_g1_s0_lives12_dlg1[] = { /* 0x81f6940 */
     DEBUGINFO_O(239),
-    { 0x51, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x1),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -248,7 +248,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives12_dlg2[] = { /* 0x81f6970 
 
 static const struct ScriptCommand s_gs119_g1_s0_lives13_dlg1[] = { /* 0x81f6990 */
     DEBUGINFO_O(250),
-    { 0x51, 0x00,  0x0002,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x2),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
@@ -259,7 +259,7 @@ static const struct ScriptCommand s_gs119_g1_s0_lives13_dlg2[] = { /* 0x81f69c0 
 
 static const struct ScriptCommand s_gs119_g1_s0_lives14_dlg1[] = { /* 0x81f69e0 */
     DEBUGINFO_O(261),
-    { 0x51, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x0),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 

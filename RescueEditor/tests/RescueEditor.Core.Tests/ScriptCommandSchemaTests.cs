@@ -100,4 +100,51 @@ public sealed class ScriptCommandSchemaTests
         Assert.Contains(fields!, f => f.Label == "Map");
         Assert.Contains(fields!, f => f.Label == "Flags" && f.Format == "hex");
     }
+
+    [Theory]
+    [InlineData(0x02, "NEXT_DUNGEON")]
+    [InlineData(0x2D, "UPDATE_NAME")]
+    [InlineData(0x4C, "FANFARE_PLAY2")]
+    [InlineData(0x4F, "CLEAR_HITBOX")]
+    [InlineData(0x51, "SET_POSITION_BOUNDS")]
+    [InlineData(0x52, "SET_OBJ_FLAGS")]
+    [InlineData(0x53, "CLEAR_OBJ_FLAGS")]
+    [InlineData(0x56, "EMOTION_EFFECT")]
+    [InlineData(0x60, "SET_HEIGHT")]
+    [InlineData(0x62, "MOVE_RELATIVE")]
+    [InlineData(0x68, "HEIGHT_TO_2")]
+    [InlineData(0x70, "HEIGHT_TO")]
+    [InlineData(0x84, "WALK_RELATIVE_DIST")]
+    [InlineData(0x89, "WALK_DIRECTION")]
+    [InlineData(0x92, "ROTATE_RELATIVE")]
+    [InlineData(0x93, "ROTATE_TO_LIVES")]
+    [InlineData(0x94, "ROTATE_TO_LIVES2")]
+    [InlineData(0x95, "ROTATE_TO_WAYPOINT")]
+    [InlineData(0x9A, "CAMERA_FOCUS_PLAYER")]
+    [InlineData(0x9B, "CAMERA_FOLLOW")]
+    [InlineData(0xDE, "WAIT_EFFECT")]
+    [InlineData(0xDF, "WAIT_FADE")]
+    [InlineData(0xE0, "WAIT_BGM")]
+    [InlineData(0xE5, "AWAIT_CUE_COND")]
+    public void NewlyNamedOpcodesResolveByName(byte op, string name)
+    {
+        Assert.Equal(name, ScriptOpcodeNames.GetName(op));
+        Assert.True(ScriptOpcodeNames.TryGetOp(name, out var resolved));
+        Assert.Equal(op, resolved);
+    }
+
+    [Theory]
+    [InlineData(0x52, "Flags", ScriptArgField.Arg1)]
+    [InlineData(0x53, "Flags", ScriptArgField.Arg1)]
+    [InlineData(0x56, "Effect", ScriptArgField.Arg1)]
+    [InlineData(0x60, "Height", ScriptArgField.Arg1)]
+    [InlineData(0x70, "Height", ScriptArgField.Arg1)]
+    [InlineData(0x2D, "Kind", ScriptArgField.ArgByte)]
+    [InlineData(0x51, "Link", ScriptArgField.ArgShort)]
+    public void NewlyNamedOpcodesExposeSemanticFields(byte op, string label, ScriptArgField field)
+    {
+        var fields = ScriptCommandSchema.GetSemanticFields(op);
+        Assert.NotNull(fields);
+        Assert.Contains(fields!, f => f.Label == label && f.Field == field);
+    }
 }

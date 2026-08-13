@@ -20,9 +20,9 @@ static const struct ScriptCommand s_gs169_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(169),
     SELECT_ENTITIES(-1, 0),
     BGM_SWITCH(MUS_ESCAPE_THROUGH_THE_SNOW),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     RET,
 };
 
@@ -31,8 +31,8 @@ static const ScriptRef s_gs169_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE
 static const struct ScriptCommand s_gs169_g1_s0_lives0_dlg0[] = { /* 0x821cfa4 */
     DEBUGINFO_O(32),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    WAIT_FADE,
     WAIT(30),
     WAIT(90),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0001, 0x0000000b),
@@ -49,7 +49,7 @@ static const struct ScriptCommand s_gs169_g1_s0_lives0_dlg0[] = { /* 0x821cfa4 *
 static const struct ScriptCommand s_gs169_g1_s0_lives1_dlg0[] = { /* 0x821d0e4 */
     DEBUGINFO_O(50),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
     HALT,
 };
 

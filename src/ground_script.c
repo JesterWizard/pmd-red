@@ -555,7 +555,7 @@ s16 HandleAction(Action *action, const DebugLocation *debug)
                         case CMD_BYTE_26:
                         case CMD_BYTE_27: // FLASH_FROM
                         case CMD_BYTE_28: // FLASH_TO
-                        case CMD_BYTE_DF: {
+                        case CMD_BYTE_DF: { // WAIT_FADE
                             if (sub_8099B94())
                                 loopContinue = FALSE;
                             else
@@ -779,10 +779,10 @@ s16 HandleAction(Action *action, const DebugLocation *debug)
                             break;
                         }
                         case CMD_BYTE_91: // ROTATE_TO
-                        case CMD_BYTE_92: // CMD_UNK_92
-                        case CMD_BYTE_93: // CMD_UNK_93
-                        case CMD_BYTE_94: // CMD_UNK_94
-                        case CMD_BYTE_95: { // CMD_UNK_95
+                        case CMD_BYTE_92: // ROTATE_RELATIVE
+                        case CMD_BYTE_93: // ROTATE_TO_LIVES
+                        case CMD_BYTE_94: // ROTATE_TO_LIVES2
+                        case CMD_BYTE_95: { // ROTATE_TO_WAYPOINT
                             if (action->scriptData.unk2A > 0) {
                                 action->scriptData.unk2A--;
                                 loopContinue = FALSE;
@@ -801,11 +801,11 @@ s16 HandleAction(Action *action, const DebugLocation *debug)
                                 // arg1h synthetic
                                 switch (cmd.op) {
                                     case CMD_BYTE_91: // ROTATE_TO
-                                    case CMD_BYTE_92: { // CMD_UNK_92
+                                    case CMD_BYTE_92: { // ROTATE_RELATIVE
                                         tmp2 = (s8) action->scriptData.unk4D;
                                         break;
                                     }
-                                    case CMD_BYTE_93: { // CMD_UNK_93
+                                    case CMD_BYTE_93: { // ROTATE_TO_LIVES
                                         s16 res;
                                         res = sub_80A7AE8((s16)cmd.arg1);
                                         if (res >= 0) {
@@ -815,7 +815,7 @@ s16 HandleAction(Action *action, const DebugLocation *debug)
                                         }
                                         break;
                                     }
-                                    case CMD_BYTE_94: { // CMD_UNK_94
+                                    case CMD_BYTE_94: { // ROTATE_TO_LIVES2
                                         s32 res;
                                         res = (s16)sub_80A7AE8((s16)cmd.arg1);
                                         if (res >= 0) {
@@ -825,7 +825,7 @@ s16 HandleAction(Action *action, const DebugLocation *debug)
                                         }
                                         break;
                                     }
-                                    case CMD_BYTE_95: { // CMD_UNK_95
+                                    case CMD_BYTE_95: { // ROTATE_TO_WAYPOINT
                                         flag = TRUE;
                                         action->callbacks->getHitboxCenter(action->parentObject, &pos1);
                                         action->callbacks->getSize(action->parentObject, &pos2);
@@ -870,7 +870,7 @@ s16 HandleAction(Action *action, const DebugLocation *debug)
                             break;
                         }
                         case CMD_BYTE_E3:
-                        case CMD_BYTE_E5: { // CMD_UNK_E5
+                        case CMD_BYTE_E5: { // AWAIT_CUE_COND
                             if (action->scriptData.unk22 != -1) {
                                 loopContinue = FALSE;
                             }
@@ -1984,7 +1984,7 @@ static s32 ExecuteScriptCommand(Action *action)
                 ScriptClearTextbox2();
                 break;
             }
-            case CMD_BYTE_2D: {
+            case CMD_BYTE_2D: { // UPDATE_NAME
                 switch ((u8)curCmd.argByte) {
                     case 0: {
                         ResetTextboxPortrait(curCmd.argShort);
@@ -2265,11 +2265,11 @@ static s32 ExecuteScriptCommand(Action *action)
                 action->callbacks->setPositionBounds(action->parentObject, &posOut1, &posOut2);
                 break;
             }
-            case CMD_BYTE_52: {
+            case CMD_BYTE_52: { // SET_OBJ_FLAGS
                 action->callbacks->setFlags(action->parentObject, curCmd.arg1);
                 break;
             }
-            case CMD_BYTE_53: {
+            case CMD_BYTE_53: { // CLEAR_OBJ_FLAGS
                 if (curCmd.arg1 & 0x400 && action->scriptData2.state == 1)
                     InitScriptData(&action->scriptData2);
 
@@ -2288,7 +2288,7 @@ static s32 ExecuteScriptCommand(Action *action)
                 action->callbacks->livesOnlyNullsub(action->parentObject, (u16)curCmd.argShort);
                 break;
             }
-            case CMD_BYTE_56: {
+            case CMD_BYTE_56: { // EMOTION_EFFECT
                 action->callbacks->func38(action->parentObject, (s16)curCmd.arg1, curCmd.argShort);
                 break;
             }
@@ -2378,7 +2378,7 @@ static s32 ExecuteScriptCommand(Action *action)
                 SetScriptVarArrayValue(NULL, POSITION_DIRECTION, (u16)curCmd.arg1, dir);
                 break;
             }
-            case CMD_BYTE_60: {
+            case CMD_BYTE_60: { // SET_HEIGHT
                 action->callbacks->setPosHeight(action->parentObject, curCmd.arg1 << 8);
                 scriptData->unk2A = (u8)curCmd.argByte;
                 return ESC_RET_02;
@@ -2460,7 +2460,7 @@ static s32 ExecuteScriptCommand(Action *action)
             case CMD_BYTE_72:
             case CMD_BYTE_78:
             case CMD_BYTE_7E:
-            case CMD_BYTE_84: {
+            case CMD_BYTE_84: { // WALK_RELATIVE_DIST (84)
                 action->callbacks->getHitboxCenter(action->parentObject, &scriptData->pos1);
                 scriptData->pos2.x = scriptData->pos1.x + (curCmd.arg1 << 8);
                 scriptData->pos2.y = scriptData->pos1.y + (curCmd.arg2 << 8);
@@ -2556,13 +2556,13 @@ static s32 ExecuteScriptCommand(Action *action)
                 break;
             }
             case CMD_BYTE_68:
-            case CMD_BYTE_70: {
+            case CMD_BYTE_70: { // HEIGHT_TO / HEIGHT_TO_2
                 scriptData->unk48 = curCmd.arg1 << 8;
                 scriptData->unk30 = curCmd.argShort;
                 scriptData->unk2A = -1;
                 return ESC_RET_02;
             }
-            case CMD_BYTE_89: {
+            case CMD_BYTE_89: { // WALK_DIRECTION
                 action->scriptData.storedDir = curCmd.arg1;
                 action->callbacks->setDirection(action->parentObject, (s8) curCmd.arg1);
                 scriptData->unk30 = curCmd.argShort;
@@ -2657,9 +2657,9 @@ static s32 ExecuteScriptCommand(Action *action)
                 scriptData->unk2A = (u8)curCmd.argByte;
                 return ESC_RET_02;
             }
-            case CMD_BYTE_93: // CMD_UNK_93
-            case CMD_BYTE_94: // CMD_UNK_94
-            case CMD_BYTE_95: { // CMD_UNK_95
+            case CMD_BYTE_93: // ROTATE_TO_LIVES
+            case CMD_BYTE_94: // ROTATE_TO_LIVES2
+            case CMD_BYTE_95: { // ROTATE_TO_WAYPOINT
                 scriptData->unk2A = 0;
                 return ESC_RET_02;
             }
@@ -2668,7 +2668,7 @@ static s32 ExecuteScriptCommand(Action *action)
                 scriptData->unk2A = 0;
                 return ESC_RET_02;
             }
-            case CMD_BYTE_92: { // CMD_UNK_92
+            case CMD_BYTE_92: { // ROTATE_RELATIVE
                 s8 unk;
                 action->callbacks->getDirection(action->parentObject, &unk);
                 action->scriptData.unk4D = TransformDirection1(unk, (u8)curCmd.arg1);
@@ -3175,9 +3175,9 @@ static s32 ExecuteScriptCommand(Action *action)
                 return ESC_RET_02;
             }
             case CMD_BYTE_DD:
-            case CMD_BYTE_DE:
-            case CMD_BYTE_DF:
-            case CMD_BYTE_E0:
+            case CMD_BYTE_DE: // WAIT_EFFECT
+            case CMD_BYTE_DF: // WAIT_FADE
+            case CMD_BYTE_E0: // WAIT_BGM
             case CMD_BYTE_E1: // WAIT_FANFARE1
             case CMD_BYTE_E2: { // WAIT_FANFARE2
                 return ESC_RET_02;
@@ -3194,7 +3194,7 @@ static s32 ExecuteScriptCommand(Action *action)
                 GroundScriptLockJumpZero(curCmd.argShort);
                 break;
             }
-            case CMD_BYTE_E5: { // CMD_UNK_E5
+            case CMD_BYTE_E5: { // AWAIT_CUE_COND
                 scriptData->branchDiscriminant = curCmd.argShort;
 
                 if (GroundScriptLockCond(action, curCmd.argShort, curCmd.argByte))

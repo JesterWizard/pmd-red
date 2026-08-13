@@ -20,9 +20,9 @@ static const struct ScriptCommand s_gs211_g1_s0_station_sref_script[] = { /* 0x8
     SELECT_MAP(211),
     SELECT_ENTITIES(-1, 0),
     BGM_SWITCH(MUS_THERES_TROUBLE),
-    { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_IN(1, 0x1E),
     AWAIT_CUE(3),
-    { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
+    FADE_OUT(1, 0x1E),
     RET,
 };
 
@@ -31,8 +31,8 @@ static const ScriptRef s_gs211_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE
 static const struct ScriptCommand s_gs211_g1_s0_lives0_dlg0[] = { /* 0x826425c */
     DEBUGINFO_O(32),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    WAIT_FADE,
     WAIT(30),
     MSG_NPC(2, _(" Gwooooooooooh!{WAIT_PRESS}\n...H-how dare you!")),
     TEXTBOX_CLEAR,
@@ -72,7 +72,7 @@ static const struct ScriptCommand s_gs211_g1_s0_lives0_dlg0[] = { /* 0x826425c *
 static const struct ScriptCommand s_gs211_g1_s0_lives1_dlg0[] = { /* 0x8264734 */
     DEBUGINFO_O(73),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0002,  0x00000000,  0x00000000, NULL },
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
     HALT,
 };
 

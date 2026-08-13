@@ -105,7 +105,7 @@ static const struct ScriptCommand s_gs127_g0_s4_lives1_dlg0[] = { /* 0x81fb8f8 *
 
 static const struct ScriptCommand s_gs127_g1_s0_lives0_dlg1[] = { /* 0x81fb928 */
     DEBUGINFO_O(107),
-    { 0x51, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_POSITION_BOUNDS(0x0),
     JUMP_SCRIPT(HABITAT_MOVE1),
 };
 
