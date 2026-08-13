@@ -308,6 +308,10 @@ public sealed class MainWindow : Window
         exportSelected.Click += ExportSelectedOnClick;
         var exportCategory = new MenuItem { Header = "Export _Category…" };
         exportCategory.Click += ExportCategoryOnClick;
+        var exportMod = new MenuItem { Header = "Export _Mod Package…" };
+        exportMod.Click += ExportModPackageOnClick;
+        var importMod = new MenuItem { Header = "Import Mo_d Package…" };
+        importMod.Click += ImportModPackageOnClick;
         var close = new MenuItem { Header = "_Close ROM" };
         close.Click += async (_, _) =>
         {
@@ -324,6 +328,8 @@ public sealed class MainWindow : Window
         file.Items.Add(new Separator());
         file.Items.Add(exportSelected);
         file.Items.Add(exportCategory);
+        file.Items.Add(exportMod);
+        file.Items.Add(importMod);
         file.Items.Add(new Separator());
         file.Items.Add(close);
         file.Items.Add(exit);
@@ -396,6 +402,16 @@ public sealed class MainWindow : Window
         view.Items.Add(toggleInspector);
         view.Items.Add(toggleOutput);
         menu.Items.Add(view);
+
+        var tools = new MenuItem { Header = "_Tools" };
+        var wonderMail = new MenuItem { Header = "_Wonder Mail…" };
+        wonderMail.Click += (_, _) =>
+        {
+            var window = new WonderMailWindow();
+            window.Show(this);
+        };
+        tools.Items.Add(wonderMail);
+        menu.Items.Add(tools);
         return menu;
     }
 
@@ -1123,7 +1139,7 @@ public sealed class MainWindow : Window
     {
         if (_scenes is null)
             return;
-        ProjectEditApplier.Apply(project, _scenes);
+        ProjectEditApplier.Apply(project, _scenes, _runtimeConfig);
     }
 
     private async void BuildRomOnClick(object? sender, RoutedEventArgs e)
@@ -1190,6 +1206,107 @@ public sealed class MainWindow : Window
         SetStatus($"Exported {result.Paths.Count} file(s). {result.Errors.Count} skipped.");
         if (result.Errors.Count > 0)
             await ShowErrorAsync("Some assets were skipped", string.Join("\n", result.Errors.Take(12)));
+    }
+
+    private async void ExportModPackageOnClick(object? sender, RoutedEventArgs e)
+    {
+        if (_workingRom is null || _project is null)
+        {
+            await ShowErrorAsync("Export Mod Package", "Open a ROM before exporting a mod package.");
+            return;
+        }
+
+        var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
+        {
+            Title = "Export RescueTemple Mod Package",
+            SuggestedFileName = SanitizeModFileName(_project.Name) + ".rtmod",
+            FileTypeChoices =
+            [
+                new FilePickerFileType("RescueTemple Mod Package") { Patterns = ["*.rtmod"] },
+            ],
+        });
+        if (file is null)
+            return;
+
+        try
+        {
+            var package = ModPackage.Collect(
+                _workingRom, _project, _scenes, _runtimeConfig, _catalog);
+            await Task.Run(() => ModPackage.ExportArchive(package, file.Path.LocalPath));
+            var parts = new List<string>
+            {
+                $"{package.Edits.Count} edit(s)",
+                $"{package.Overlays.Count} overlay(s)",
+                $"{package.RuntimeConfig.Count} C Patch field(s)",
+            };
+            SetStatus($"Exported mod package {file.Path.LocalPath} ({string.Join(", ", parts)}).");
+            AppendOutput($"Mod package exported: {file.Path.LocalPath}");
+        }
+        catch (Exception exception)
+        {
+            await ShowErrorAsync("Export Mod Package failed", exception.Message);
+        }
+    }
+
+    private async void ImportModPackageOnClick(object? sender, RoutedEventArgs e)
+    {
+        if (_workingRom is null || _project is null || _scenes is null)
+        {
+            await ShowErrorAsync("Import Mod Package", "Open the matching baserom before importing a mod package.");
+            return;
+        }
+
+        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Import RescueTemple Mod Package",
+            AllowMultiple = false,
+            FileTypeFilter =
+            [
+                new FilePickerFileType("RescueTemple Mod Package") { Patterns = ["*.rtmod", "manifest.json"] },
+                FilePickerFileTypes.All,
+            ],
+        });
+        var file = files.FirstOrDefault();
+        if (file is null)
+            return;
+
+        try
+        {
+            var package = await Task.Run(() => ModPackage.Load(file.Path.LocalPath));
+            var result = ModPackage.Apply(package, _workingRom, _project, _scenes, _runtimeConfig);
+            if (_cPatchesUseDecompHost && _cPatchWorkingRom is not null)
+                _cPatchWorkingRom.Sync(_scenes, _charmap, _runtimeConfig);
+            else
+                _workingRom.Sync(_scenes, _charmap, _runtimeConfig);
+
+            _sceneWorkspace?.RefreshFromExternal();
+            _cPatchesWorkspace?.RefreshFromExternal();
+            UpdateDirtyTitle();
+
+            var summary =
+                $"Imported {result.EditCount} edit(s), {result.OverlayCount} overlay(s), {result.RuntimeConfigCount} C Patch field(s).";
+            SetStatus(summary);
+            AppendOutput(summary);
+            if (!result.Success || result.Warnings.Count > 0)
+            {
+                var details = string.Join("\n", result.Errors.Concat(result.Warnings).Take(20));
+                await ShowErrorAsync(result.Success ? "Import warnings" : "Import Mod Package failed", details);
+            }
+        }
+        catch (Exception exception)
+        {
+            await ShowErrorAsync("Import Mod Package failed", exception.Message);
+        }
+    }
+
+    private static string SanitizeModFileName(string name)
+    {
+        var invalid = Path.GetInvalidFileNameChars();
+        var builder = new System.Text.StringBuilder(name.Length);
+        foreach (var character in name)
+            builder.Append(invalid.Contains(character) ? '_' : character);
+        var cleaned = builder.ToString().Trim().TrimEnd('.');
+        return string.IsNullOrWhiteSpace(cleaned) ? "mod" : cleaned;
     }
 
     private async Task<string?> ChooseExportDirectoryAsync()

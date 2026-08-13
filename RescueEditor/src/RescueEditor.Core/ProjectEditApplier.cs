@@ -6,11 +6,31 @@ namespace RescueEditor.Core;
 /// </summary>
 public static class ProjectEditApplier
 {
-    public static void Apply(ProjectDocument project, SceneDatabase database)
+    public static void Apply(
+        ProjectDocument project,
+        SceneDatabase database,
+        RuntimeConfigState? runtimeConfig = null) =>
+        Apply(project.Edits, database, runtimeConfig);
+
+    public static void Apply(
+        IEnumerable<ProjectEdit> edits,
+        SceneDatabase database,
+        RuntimeConfigState? runtimeConfig = null)
     {
-        foreach (var edit in project.Edits)
+        foreach (var edit in edits)
         {
-            if (edit.Kind == "entity.position" &&
+            if (edit.Kind == "runtimeConfig.field" &&
+                runtimeConfig is not null &&
+                edit.Values.TryGetValue("value", out var configText) &&
+                byte.TryParse(configText, out var configValue))
+            {
+                runtimeConfig.Set(edit.Target, configValue);
+            }
+            else if (edit.Kind == "runtimeConfig.reset" && runtimeConfig is not null)
+            {
+                runtimeConfig.RestoreSourceSnapshot();
+            }
+            else if (edit.Kind == "entity.position" &&
                 TryParseHexOffset(edit.Target, out var offset) &&
                 edit.Values.TryGetValue("x", out var xText) &&
                 edit.Values.TryGetValue("y", out var yText) &&

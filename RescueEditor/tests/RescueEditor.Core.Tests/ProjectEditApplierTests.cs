@@ -106,6 +106,27 @@ public sealed class ProjectEditApplierTests
         Assert.Contains("NOT_A_COMMAND", error.Message);
     }
 
+    [Fact]
+    public void ApplyRestoresRuntimeConfigFields()
+    {
+        var bytes = new byte[0x80];
+        const int offset = 0x10;
+        bytes[offset + 2] = 1;
+        var state = RuntimeConfigCodec.Read(RomImage.FromBytes("/tmp/rt-applier-cfg.gba", bytes), offset);
+        var project = new ProjectDocument();
+        project.Edits.Add(new ProjectEdit
+        {
+            Id = "cfg",
+            Kind = "runtimeConfig.field",
+            Target = "always_run",
+            Values = { ["value"] = "1" },
+        });
+
+        ProjectEditApplier.Apply(project, new SceneDatabase(), state);
+
+        Assert.Equal(1, state.Get("always_run"));
+    }
+
     private static Scene CreateScene(string stationName, params ScriptCommandData[] commands)
     {
         var station = new ScriptRefData { Name = stationName };

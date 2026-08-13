@@ -95,5 +95,12 @@ The published application is placed under
   fills the WAV cache for instant later plays. On Windows, Linux tools launch via WSL.
 - `pksdir0` archives: generic raw entry browsing and export.
 
-This MVP keeps the source ROM read-only. Exported files and Build ROM copies
-are the safe hand-off points for later reassembly workflows.
+This MVP keeps the source ROM read-only. Exported files, **mod packages**, and
+Build ROM copies are the safe hand-off points for later reassembly workflows.
+
+## Mod packages
+
+**File → Export Mod Package…** writes a `.rtmod` archive (manifest + changed
+ROM overlays + RuntimeConfig / C Patches + project edits). Recipients open the
+same baserom and use **File → Import Mod Package…**. Format details:
+[documentation/RescueTempleModPatchPackages.md](../documentation/RescueTempleModPatchPackages.md).
