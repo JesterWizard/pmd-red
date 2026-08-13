@@ -23,6 +23,7 @@ public sealed class MainWindow : Window
         ("Effects", AssetCategory.Effects),
         ("Ground Maps", AssetCategory.GroundMaps),
         ("Dungeons", AssetCategory.Dungeons),
+        ("Data Tables", AssetCategory.DataTables),
         ("Music", AssetCategory.Music),
         ("Sound Effects", AssetCategory.SoundEffects),
         ("Raw Archives", AssetCategory.RawArchives),
@@ -57,6 +58,7 @@ public sealed class MainWindow : Window
     private SceneWorkspacePanel? _sceneWorkspace;
     private CPatchesWorkspacePanel? _cPatchesWorkspace;
     private DungeonWorkspacePanel? _dungeonWorkspace;
+    private DataTablesWorkspacePanel? _dataTablesWorkspace;
     private ProjectSearchIndex _projectSearch = ProjectSearchIndex.Empty;
     private ScriptNamedDefinitions? _scriptNames;
     private CancellationTokenSource? _searchIndexCts;
@@ -597,6 +599,9 @@ public sealed class MainWindow : Window
                     case CategoryWorkspaceKind.Dungeons:
                         OpenDungeons();
                         break;
+                    case CategoryWorkspaceKind.DataTables:
+                        OpenDataTables();
+                        break;
                     case CategoryWorkspaceKind.SceneExplorer:
                         ShowScenesPicker();
                         _explorer.ExpandCategory(AssetCategory.Scenes);
@@ -625,6 +630,10 @@ public sealed class MainWindow : Window
                 else if (assetNode.Asset.Category == AssetCategory.Dungeons)
                 {
                     OpenDungeons(assetNode.Asset);
+                }
+                else if (assetNode.Asset.Category == AssetCategory.DataTables)
+                {
+                    OpenDataTables(assetNode.Asset);
                 }
                 else
                 {
@@ -734,6 +743,28 @@ public sealed class MainWindow : Window
         SetStatus("Dungeons: generated floors are cached after the first preview.");
     }
 
+    private void OpenDataTables(AssetDescriptor? asset = null)
+    {
+        if (_rom is null || _catalog is null || _charmap is null)
+            return;
+        _selectedCategory = AssetCategory.DataTables;
+        _selectedAsset = asset ?? _catalog.ForCategory(AssetCategory.DataTables).FirstOrDefault();
+        _dataTablesWorkspace ??= new DataTablesWorkspacePanel();
+        _dataTablesWorkspace.AssetSelected -= OnDataTableSelected;
+        _dataTablesWorkspace.AssetSelected += OnDataTableSelected;
+        _dataTablesWorkspace.Load(_rom, _charmap, _catalog, _workingRom, _selectedAsset);
+        _workspaceHost.Child = _dataTablesWorkspace;
+        ApplyDockLayout(sceneOwnsInspector: true);
+        UpdateBreadcrumb();
+        SetStatus("Data tables: edit stats, learnsets, and descriptions. Build ROM to export.");
+    }
+
+    private void OnDataTableSelected(object? sender, AssetDescriptor? asset)
+    {
+        _selectedAsset = asset;
+        UpdateBreadcrumb();
+    }
+
     private void UpdateBreadcrumb()
     {
         var romName = _rom is null ? "RescueTemple" : Path.GetFileName(_rom.Path);
@@ -775,12 +806,23 @@ public sealed class MainWindow : Window
             });
         }
 
+        if (a.Category == AssetCategory.DataTables && a.Metadata.Count > 0)
+        {
+            _propertiesBody.Children.Add(EditorChrome.SectionHeader("Fields"));
+            foreach (var (key, value) in a.Metadata)
+            {
+                if (string.IsNullOrWhiteSpace(value) || key is "id" or "table")
+                    continue;
+                _propertiesBody.Children.Add(InspectorValueRow(key, value));
+            }
+        }
+
         AddAssetReferences(a);
     }
 
     private void AddAssetReferences(AssetDescriptor asset)
     {
-        if (_scenes is null)
+        if (_scenes is null || asset.Category == AssetCategory.DataTables)
             return;
 
         var hits = _scenes.References.FindForAsset(asset);
@@ -1247,17 +1289,17 @@ public sealed class MainWindow : Window
                 return true;
             case EditorCommandId.ToggleExplorer:
                 _dock.Toggle(DockPanelId.Explorer);
-                ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                ApplyDockLayout(sceneOwnsInspector: OwnsInspector());
                 PersistShellSettings();
                 return true;
             case EditorCommandId.ToggleInspector:
                 _dock.Toggle(DockPanelId.Inspector);
-                ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                ApplyDockLayout(sceneOwnsInspector: OwnsInspector());
                 PersistShellSettings();
                 return true;
             case EditorCommandId.ToggleOutput:
                 _dock.Toggle(DockPanelId.Output);
-                ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                ApplyDockLayout(sceneOwnsInspector: OwnsInspector());
                 PersistShellSettings();
                 return true;
             case EditorCommandId.GlobalSearch:
@@ -1267,6 +1309,9 @@ public sealed class MainWindow : Window
                 return false;
         }
     }
+
+    private bool OwnsInspector() =>
+        _workspaceHost.Child == _sceneWorkspace || _workspaceHost.Child == _dataTablesWorkspace;
 
     private void ApplyDockLayout(bool sceneOwnsInspector)
     {

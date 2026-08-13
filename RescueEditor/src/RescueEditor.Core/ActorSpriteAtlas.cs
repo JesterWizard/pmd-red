@@ -110,6 +110,49 @@ public sealed class ActorSpriteAtlas
     }
 
     /// <summary>
+    /// South idle for list icons. Loads only <c>sprite_1.png</c> — never the full AX sheet.
+    /// </summary>
+    public RgbaImage? TryGetStandingThumbnail(int speciesId)
+    {
+        if (speciesId <= 0)
+            return null;
+        if (_bySpecies.TryGetValue(speciesId, out var cached))
+            return cached;
+
+        var folder = ResolveFolder(speciesId);
+        if (folder is null)
+        {
+            _bySpecies[speciesId] = null;
+            return null;
+        }
+
+        var path = Path.Combine(_repositoryRoot, "graphics", "ax", "mon", folder, "sprite_1.png");
+        if (!File.Exists(path))
+        {
+            _bySpecies[speciesId] = null;
+            return null;
+        }
+
+        try
+        {
+            var image = RgbaImage.FromPng(File.ReadAllBytes(path));
+            if (image is not null)
+                GbaChroma.KeyOut(image);
+            _bySpecies[speciesId] = image;
+            _bySpeciesFrame[(speciesId, 0)] = image;
+            return image;
+        }
+        catch
+        {
+            _bySpecies[speciesId] = null;
+            return null;
+        }
+    }
+
+    public int CachedSheetFrameCount(int speciesId) =>
+        _bySpeciesFrame.Count(kv => kv.Key.Species == speciesId);
+
+    /// <summary>
     /// AX sprite index (0 → <c>sprite_1.png</c>) lookup.
     /// </summary>
     public RgbaImage? TryGetSpeciesSprite(int speciesId, int frameIndex)

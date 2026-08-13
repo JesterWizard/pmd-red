@@ -72,6 +72,31 @@ public sealed class NamedIdCatalogTests
     }
 
     [Fact]
+    public void ParseMoveAndTypeDefines()
+    {
+        var moves = NamedIdCatalogs.ParseMoveDefines("""
+            #define MOVE_NOTHING 0x0
+            #define MOVE_IRON_TAIL 0x1
+            #define MOVE_TACKLE 0x9A
+            #define NUM_MOVE_IDS (MOVE_SLEEP_TALK_ATTACK + 1)
+            """);
+        Assert.True(moves.TryGetId("MOVE_IRON_TAIL", out var id));
+        Assert.Equal(1, id);
+        Assert.True(moves.TryGetId("MOVE_TACKLE", out id));
+        Assert.Equal(0x9A, id);
+        Assert.False(moves.TryGetId("NUM_MOVE_IDS", out _));
+
+        var types = NamedIdCatalogs.ParseTypeDefines("""
+            #define TYPE_NONE 0x0
+            #define TYPE_GRASS 0x4
+            #define TYPE_STEEL 0x11
+            #define NUM_TYPES 0x12
+            """);
+        Assert.Equal("TYPE_GRASS", types.Format(4));
+        Assert.False(types.TryGetId("NUM_TYPES", out _));
+    }
+
+    [Fact]
     public void ParseEmotionDefines()
     {
         var catalog = NamedIdCatalogs.ParseEmotionDefines("""

@@ -584,6 +584,22 @@ public class ActorSpriteAtlasTests
     }
 
     [Fact]
+    public void StandingThumbnail_LoadsOnlyIdleSheetNotFullAnimation()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+
+        var atlas = new ActorSpriteAtlas(root);
+        var thumb = atlas.TryGetStandingThumbnail(4);
+        Assert.NotNull(thumb);
+        Assert.Equal(1, atlas.CachedSheetFrameCount(4));
+
+        Assert.NotNull(atlas.TryGetSpeciesSprite(4, 12));
+        Assert.True(atlas.CachedSheetFrameCount(4) > 10,
+            "full sheet load should decode walk/idle frames, not just sprite_1");
+    }
+
+    [Fact]
     public void DialogueHudFitsThreeTextLines()
     {
         Assert.Equal(3, GbaDialogueHud.MaxTextLines);

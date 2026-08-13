@@ -88,6 +88,9 @@ public static class CatalogBuilder
         Report("Indexing dungeons…");
         catalog.AddRange(DungeonIndexer.Index(rom, repositoryRoot));
 
+        Report("Indexing data tables…");
+        catalog.AddRange(DataTableIndexer.Index(rom, charmap, repositoryRoot));
+
         Report("Building authoritative scene graph…");
         var profile = RomProfile.TryMatch(rom);
         var scenes = SceneGraphParser.Parse(rom, profile, catalog, charmap, progress);

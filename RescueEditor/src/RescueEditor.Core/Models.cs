@@ -12,6 +12,7 @@ public enum AssetCategory
     Effects,
     GroundMaps,
     Dungeons,
+    DataTables,
     Music,
     SoundEffects,
     RawArchives,
@@ -34,6 +35,12 @@ public enum AssetKind
     Scene,
     Dungeon,
     DungeonFloor,
+    MonsterTable,
+    MonsterEntry,
+    MoveTable,
+    MoveEntry,
+    ItemTable,
+    ItemEntry,
     RuntimeConfig,
 }
 
@@ -121,6 +128,12 @@ public sealed class AssetCatalog
                         : int.MaxValue)
                     .ThenBy(asset => int.TryParse(asset.Metadata.GetValueOrDefault("floor"), out var floor)
                         ? floor
+                        : -1)
+                    .ToArray(),
+            AssetCategory.DataTables =>
+                items.OrderBy(asset => asset.Kind)
+                    .ThenBy(asset => int.TryParse(asset.Metadata.GetValueOrDefault("id"), out var id)
+                        ? id
                         : -1)
                     .ToArray(),
             AssetCategory.Music or AssetCategory.SoundEffects =>

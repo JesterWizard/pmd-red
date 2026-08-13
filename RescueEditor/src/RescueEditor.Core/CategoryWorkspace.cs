@@ -14,6 +14,9 @@ public enum CategoryWorkspaceKind
 
     /// <summary>Dedicated dungeon floors / spawns workspace.</summary>
     Dungeons,
+
+    /// <summary>Read-only monster / move / item tables.</summary>
+    DataTables,
 }
 
 /// <summary>Routes project categories to the correct workspace surface.</summary>
@@ -24,6 +27,7 @@ public static class CategoryWorkspace
         AssetCategory.Scenes => CategoryWorkspaceKind.SceneExplorer,
         AssetCategory.CPatches => CategoryWorkspaceKind.CPatches,
         AssetCategory.Dungeons => CategoryWorkspaceKind.Dungeons,
+        AssetCategory.DataTables => CategoryWorkspaceKind.DataTables,
         _ => CategoryWorkspaceKind.AssetBrowser,
     };
 

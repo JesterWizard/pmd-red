@@ -70,6 +70,22 @@ public static class NamedIdCatalogs
         @"^\s*#define\s+(?<name>ITEM_[A-Z0-9_]+)\s+(?<value>\d+)\b",
         RegexOptions.Compiled);
 
+    private static readonly Regex MoveDefine = new(
+        @"^\s*#define\s+(?<name>MOVE_[A-Z0-9_]+)\s+(?<value>0x[0-9A-Fa-f]+|\d+)\b",
+        RegexOptions.Compiled);
+
+    private static readonly Regex TypeDefine = new(
+        @"^\s*#define\s+(?<name>TYPE_[A-Z0-9_]+)\s+(?<value>0x[0-9A-Fa-f]+|\d+)\b",
+        RegexOptions.Compiled);
+
+    private static readonly Regex AbilityDefine = new(
+        @"^\s*#define\s+(?<name>ABILITY_[A-Z0-9_]+)\s+(?<value>0x[0-9A-Fa-f]+|\d+)\b",
+        RegexOptions.Compiled);
+
+    private static readonly Regex FriendAreaDefine = new(
+        @"^\s*#define\s+(?<name>FRIEND_AREA_[A-Z0-9_]+)\s+(?<value>\d+)\b",
+        RegexOptions.Compiled);
+
     private static readonly Regex PaletteUtilEnumEntry = new(
         @"^\s*(?<name>PALUTIL_KIND_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
         RegexOptions.Compiled);
@@ -175,6 +191,19 @@ public static class NamedIdCatalogs
         return new NamedIdCatalog(pairs);
     }
 
+    public static NamedIdCatalog ParseMoveDefines(string headerText) =>
+        ParseHashDefines(headerText, MoveDefine, allowHex: true,
+            skipNames: ["NUM_REGULAR_MOVE_IDS", "NUM_MOVE_IDS"]);
+
+    public static NamedIdCatalog ParseTypeDefines(string headerText) =>
+        ParseHashDefines(headerText, TypeDefine, allowHex: true, skipNames: ["NUM_TYPES"]);
+
+    public static NamedIdCatalog ParseAbilityDefines(string headerText) =>
+        ParseHashDefines(headerText, AbilityDefine, allowHex: true, skipNames: ["NUM_ABILITIES"]);
+
+    public static NamedIdCatalog ParseFriendAreaDefines(string headerText) =>
+        ParseHashDefines(headerText, FriendAreaDefine, allowHex: false);
+
     public static NamedIdCatalog ParsePaletteUtilEnum(string headerText) =>
         ParseSequentialEnum(headerText, PaletteUtilEnumEntry, startAt: -1);
 
@@ -227,7 +256,11 @@ public static class NamedIdCatalogs
             ParseGroundAnimDefines(headerText)
         );
 
-    private static NamedIdCatalog ParseHashDefines(string headerText, Regex define, bool allowHex)
+    private static NamedIdCatalog ParseHashDefines(
+        string headerText,
+        Regex define,
+        bool allowHex,
+        IReadOnlyCollection<string>? skipNames = null)
     {
         var pairs = new List<(int, string)>();
         foreach (var rawLine in headerText.Replace("\r\n", "\n").Split('\n'))
@@ -235,13 +268,16 @@ public static class NamedIdCatalogs
             var match = define.Match(rawLine);
             if (!match.Success)
                 continue;
+            var name = match.Groups["name"].Value;
+            if (skipNames is not null && skipNames.Contains(name))
+                continue;
             var raw = match.Groups["value"].Value;
             int id;
             if (allowHex && raw.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
                 id = unchecked((int)ulong.Parse(raw.AsSpan(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture));
             else
                 id = int.Parse(raw, CultureInfo.InvariantCulture);
-            pairs.Add((id, match.Groups["name"].Value));
+            pairs.Add((id, name));
         }
 
         return new NamedIdCatalog(pairs);

@@ -15,6 +15,9 @@ public static class AssetPreviewer
             AssetKind.GroundMap => GroundMapIndexer.Render(rom, asset),
             AssetKind.Scene => CreateScenePreview(rom, asset),
             AssetKind.Dungeon or AssetKind.DungeonFloor => DungeonPreview.Create(rom, asset),
+            AssetKind.MonsterTable or AssetKind.MonsterEntry or
+                AssetKind.MoveTable or AssetKind.MoveEntry or
+                AssetKind.ItemTable or AssetKind.ItemEntry => DataTablePreview.Create(rom, asset, charmap),
             AssetKind.Dialogue => CreateDialoguePreview(rom, asset, charmap),
             AssetKind.Script => new PreviewContent(asset.Name,
                 Text: ScriptDisassembler.Disassemble(rom, asset.Offset, charmap)),
@@ -289,6 +292,7 @@ public static class AssetExportService
         AssetCategory.RawArchives => "raw-archives",
         AssetCategory.GroundMaps => "ground-maps",
         AssetCategory.Dungeons => "dungeons",
+        AssetCategory.DataTables => "data-tables",
         AssetCategory.SoundEffects => "sound-effects",
         AssetCategory.CPatches => "c-patches",
         _ => category.ToString().ToLowerInvariant(),
