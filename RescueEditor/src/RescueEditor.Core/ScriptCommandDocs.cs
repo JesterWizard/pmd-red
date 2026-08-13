@@ -147,16 +147,15 @@ public static class ScriptCommandDocs
 
     private static void AppendDefineList(StringBuilder builder, byte op, ScriptNamedDefinitions? names)
     {
-        if (names is null)
-            return;
-
-        var catalog = op switch
+        NamedIdCatalog? catalog = op switch
         {
-            0x54 => names.GroundAnim,
-            0x56 => names.EmotionEffect,
-            0x2D => names.UpdateName,
-            0x52 or 0x53 => names.ObjFlag,
-            0x89 or 0x8B or 0x91 => names.Direction,
+            0x54 => names?.GroundAnim is { Entries.Count: > 0 } anim
+                ? anim
+                : ScriptNamedDefinitions.BuiltInGroundAnim,
+            0x56 => names?.EmotionEffect,
+            0x2D => names?.UpdateName,
+            0x52 or 0x53 => names?.ObjFlag,
+            0x89 or 0x8B or 0x91 => names?.Direction,
             _ => null,
         };
         if (catalog is null || catalog.Entries.Count == 0)

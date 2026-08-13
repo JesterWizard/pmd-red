@@ -107,6 +107,16 @@ public sealed class ScriptCommandDocsTests
     }
 
     [Fact]
+    public void SelectAnimationTooltipUsesBuiltInDefinesWhenCatalogsMissing()
+    {
+        Assert.True(ScriptCommandDocs.TryGetByName("SELECT_ANIMATION", out var doc));
+        var tip = ScriptCommandDocs.FormatTooltip(doc, names: null);
+        Assert.Contains("Defines:", tip);
+        Assert.Contains("• GROUND_ANIM_STILL = 2", tip);
+        Assert.Contains("• GROUND_ANIM_TWITCH = 22", tip);
+    }
+
+    [Fact]
     public void PortraitTooltipIncludesCastMemberWhenProvided()
     {
         var cast = new ScriptSceneCast(

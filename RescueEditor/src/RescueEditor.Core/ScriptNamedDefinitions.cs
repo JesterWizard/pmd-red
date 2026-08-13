@@ -51,6 +51,38 @@ public sealed class ScriptNamedDefinitions
         ScriptId.Entries.Count > 0 ||
         PaletteUtil.Entries.Count > 0;
 
+    /// <summary>
+    /// Fallback <c>GROUND_ANIM_*</c> list when <c>ground_script_params.h</c> is missing
+    /// from the ROM's repository root (e.g. incomplete Windows mirror).
+    /// </summary>
+    public static NamedIdCatalog BuiltInGroundAnim { get; } = new(
+    [
+        (0, "GROUND_ANIM_IDLE"),
+        (1, "GROUND_ANIM_IDLE_ALT"),
+        (2, "GROUND_ANIM_STILL"),
+        (3, "GROUND_ANIM_STILL_WALK"),
+        (4, "GROUND_ANIM_IDLE_AND_WALK"),
+        (5, "GROUND_ANIM_WALK_IN_PLACE"),
+        (6, "GROUND_ANIM_SLEEP"),
+        (7, "GROUND_ANIM_ATTACK"),
+        (8, "GROUND_ANIM_HURT"),
+        (9, "GROUND_ANIM_SHAKE"),
+        (10, "GROUND_ANIM_STILL2"),
+        (11, "GROUND_ANIM_HURT2"),
+        (12, "GROUND_ANIM_ATTACK1"),
+        (13, "GROUND_ANIM_ATTACK2"),
+        (14, "GROUND_ANIM_TAIL_WHIP"),
+        (15, "GROUND_ANIM_SPIN"),
+        (16, "GROUND_ANIM_DOUBLE_TEAM"),
+        (17, "GROUND_ANIM_JUMP"),
+        (18, "GROUND_ANIM_SPECIAL"),
+        (19, "GROUND_ANIM_SPIN2"),
+        (20, "GROUND_ANIM_SPECIAL_LOOP"),
+        (21, "GROUND_ANIM_SPIN_LOOP"),
+        (22, "GROUND_ANIM_TWITCH"),
+        (23, "GROUND_ANIM_TWITCH2"),
+    ]);
+
     public static ScriptNamedDefinitions? TryLoadFromRepository(string? repositoryRoot)
     {
         if (string.IsNullOrWhiteSpace(repositoryRoot) || !Directory.Exists(repositoryRoot))
@@ -83,10 +115,12 @@ public sealed class ScriptNamedDefinitions
         NamedIdCatalog updateName = new([]);
         NamedIdCatalog objFlag = new([]);
         NamedIdCatalog emotionEffect = new([]);
-        NamedIdCatalog groundAnim = new([]);
+        NamedIdCatalog groundAnim = BuiltInGroundAnim;
         if (File.Exists(paramsPath))
             (updateName, objFlag, emotionEffect, groundAnim) =
                 NamedIdCatalogs.ParseGroundScriptParams(File.ReadAllText(paramsPath));
+        if (groundAnim.Entries.Count == 0)
+            groundAnim = BuiltInGroundAnim;
 
         var direction = File.Exists(directionPath)
             ? NamedIdCatalogs.ParseDirectionEnum(File.ReadAllText(directionPath))

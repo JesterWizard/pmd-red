@@ -7,10 +7,17 @@ public sealed record ScriptCastMember(
     byte TypeId,
     short SpeciesId,
     string SpeciesName,
-    string? MonsterDefine);
+    string? MonsterDefine,
+    string? Role = null)
+{
+    /// <summary>e.g. <c>PLAYER (Charmander)</c> or <c>Gengar</c>.</summary>
+    public string DisplayLabel =>
+        Role is null ? SpeciesName : $"{Role} ({SpeciesName})";
+}
 
 /// <summary>
 /// Scene lives roster for script editor annotations (PORTRAIT speaker → species, @live headers).
+/// Portrait / MSG_* speaker ids are live <em>indices</em> in the current sector (0 = first actor).
 /// </summary>
 public sealed class ScriptSceneCast
 {
@@ -35,11 +42,13 @@ public sealed class ScriptSceneCast
         Func<int, short>? resolveSpecies = null,
         NamedIdCatalog? monsters = null,
         Func<short, string>? prettyName = null,
+        Func<int, string?>? resolveRole = null,
         int group = -1,
         int sector = -1)
     {
         resolveSpecies ??= static _ => 0;
         prettyName ??= species => DialogueFormatter.PrettySpeciesName(species);
+        resolveRole ??= static _ => null;
 
         var members = new List<ScriptCastMember>();
         foreach (var g in scene.Groups)
@@ -57,11 +66,12 @@ public sealed class ScriptSceneCast
                 {
                     var live = s.Lives[i];
                     var species = resolveSpecies(live.TypeId);
+                    var role = resolveRole(live.TypeId);
                     var name = species > 0 ? prettyName(species) : $"type {live.TypeId}";
                     string? define = null;
                     if (species > 0 && monsters is not null)
                         monsters.TryGetName(species, out define);
-                    members.Add(new ScriptCastMember(i, live.TypeId, species, name, define));
+                    members.Add(new ScriptCastMember(i, live.TypeId, species, name, define, role));
                 }
 
                 // Live indices are sector-local (PORTRAIT liveN). Never merge sectors —
@@ -80,15 +90,33 @@ public sealed class ScriptSceneCast
         NamedIdCatalog? monsters = null,
         string? repositoryRoot = null,
         int group = -1,
-        int sector = -1)
+        int sector = -1,
+        PlayAppearance? appearance = null)
     {
         profile ??= RomProfile.Us10;
+        appearance ??= PlayAppearance.CharmanderAndBulbasaur;
+        var capturedAppearance = appearance;
+
         Func<int, short>? resolve = null;
+        Func<int, string?> resolveRole = typeId =>
+        {
+            if (rom is null)
+                return PlayAppearance.RoleForLiveType(typeId);
+            // Only label PLAYER/PARTNER when the ROM kind is dynamic (species 0).
+            var fromRom = GroundLivesTypes.ResolveSpecies(rom, profile, typeId);
+            return fromRom == 0 ? PlayAppearance.RoleForLiveType(typeId) : null;
+        };
+
         if (rom is not null)
         {
             var capturedRom = rom;
             var capturedProfile = profile;
-            resolve = typeId => GroundLivesTypes.ResolvePreviewSpecies(capturedRom, capturedProfile, typeId);
+            resolve = typeId => GroundLivesTypes.ResolvePlaySpecies(
+                capturedRom, capturedProfile, typeId, capturedAppearance);
+        }
+        else
+        {
+            resolve = typeId => capturedAppearance.TryResolveLiveType((byte)Math.Clamp(typeId, 0, 255)) ?? 0;
         }
 
         return Build(
@@ -96,6 +124,7 @@ public sealed class ScriptSceneCast
             resolveSpecies: resolve,
             monsters: monsters,
             prettyName: species => DialogueFormatter.PrettySpeciesName(species, repositoryRoot),
+            resolveRole: resolveRole,
             group: group,
             sector: sector);
     }
@@ -104,7 +133,7 @@ public sealed class ScriptSceneCast
         _byLive.TryGetValue(liveIndex, out member!);
 
     public string? DescribeLive(int liveIndex) =>
-        TryGet(liveIndex, out var member) ? $"live{liveIndex} {member.SpeciesName}" : null;
+        TryGet(liveIndex, out var member) ? $"live{liveIndex} {member.DisplayLabel}" : null;
 
     public string RosterText()
     {
@@ -112,13 +141,13 @@ public sealed class ScriptSceneCast
             return "No lives in this scene sector.";
 
         var builder = new StringBuilder();
-        builder.AppendLine("Scene cast (lives → portrait/actor):");
+        builder.AppendLine("Scene cast — PORTRAIT / MSG_* id = live index:");
         foreach (var member in Members)
         {
             builder.Append("  • live").Append(member.LiveIndex)
                 .Append("  type ").Append(member.TypeId)
-                .Append("  ").Append(member.SpeciesName);
-            if (!string.IsNullOrEmpty(member.MonsterDefine))
+                .Append("  ").Append(member.DisplayLabel);
+            if (!string.IsNullOrEmpty(member.MonsterDefine) && member.Role is null)
                 builder.Append("  (").Append(member.MonsterDefine).Append(')');
             builder.AppendLine();
         }

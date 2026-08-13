@@ -50,6 +50,12 @@ assets_fingerprint() {
     "$repo/include/constants/bg_music.h" \
     "$repo/include/constants/emotions.h" \
     "$repo/include/constants/ground_map.h" \
+    "$repo/include/constants/ground_script_params.h" \
+    "$repo/include/constants/direction.h" \
+    "$repo/include/constants/monster.h" \
+    "$repo/include/constants/script_id.h" \
+    "$repo/include/constants/palette_util.h" \
+    "$repo/include/portrait_placement.h" \
     "$repo/src/sound_names.c" \
     "$repo/charmap.txt" \
     "$repo/data/monster/monster_data.json" \
@@ -83,11 +89,18 @@ assets_need_sync() {
 }
 
 sync_small_repo_files() {
-  mkdir -p "$win_mirror/include/constants" "$win_mirror/src" \
+  mkdir -p "$win_mirror/include/constants" "$win_mirror/include" "$win_mirror/src" \
     "$win_mirror/data/monster" "$win_mirror/graphics/custom" "$win_mirror/data/effects"
   cp -f "$repo/include/constants/bg_music.h" "$win_mirror/include/constants/bg_music.h"
   cp -f "$repo/include/constants/emotions.h" "$win_mirror/include/constants/emotions.h"
   cp -f "$repo/include/constants/ground_map.h" "$win_mirror/include/constants/ground_map.h"
+  # Script editor named catalogs (SELECT_ANIMATION, PORTRAIT place, directions, …).
+  cp -f "$repo/include/constants/ground_script_params.h" "$win_mirror/include/constants/ground_script_params.h"
+  cp -f "$repo/include/constants/direction.h" "$win_mirror/include/constants/direction.h" 2>/dev/null || true
+  cp -f "$repo/include/constants/monster.h" "$win_mirror/include/constants/monster.h" 2>/dev/null || true
+  cp -f "$repo/include/constants/script_id.h" "$win_mirror/include/constants/script_id.h" 2>/dev/null || true
+  cp -f "$repo/include/constants/palette_util.h" "$win_mirror/include/constants/palette_util.h" 2>/dev/null || true
+  cp -f "$repo/include/portrait_placement.h" "$win_mirror/include/portrait_placement.h" 2>/dev/null || true
   cp -f "$repo/src/sound_names.c" "$win_mirror/src/sound_names.c"
   cp -f "$repo/charmap.txt" "$win_mirror/charmap.txt"
   cp -f "$repo/data/monster/monster_data.json" "$win_mirror/data/monster/monster_data.json"
@@ -155,6 +168,12 @@ start_live_sync() {
       "$repo/include/constants/bg_music.h" \
       "$repo/include/constants/emotions.h" \
       "$repo/include/constants/ground_map.h" \
+      "$repo/include/constants/ground_script_params.h" \
+      "$repo/include/constants/direction.h" \
+      "$repo/include/constants/monster.h" \
+      "$repo/include/constants/script_id.h" \
+      "$repo/include/constants/palette_util.h" \
+      "$repo/include/portrait_placement.h" \
       "$repo/src/sound_names.c" \
       "$repo/data/monster" "$repo/graphics/custom" "$repo/data/effects" \
       2>/dev/null)"; do
@@ -164,8 +183,7 @@ start_live_sync() {
           rsync -a --delete "$repo/sound/" "$win_mirror/sound/" >/dev/null
           assets_fingerprint > "$assets_stamp"
           ;;
-        "$repo/charmap.txt"*|"$repo/include/constants/bg_music.h"*|\
-        "$repo/include/constants/emotions.h"*|"$repo/include/constants/ground_map.h"*|\
+        "$repo/charmap.txt"*|"$repo/include/constants/"*|"$repo/include/portrait_placement.h"*|\
         "$repo/src/sound_names.c"*|\
         "$repo/data/monster"*|"$repo/graphics/custom"*|"$repo/data/effects"*)
           sync_small_repo_files >/dev/null

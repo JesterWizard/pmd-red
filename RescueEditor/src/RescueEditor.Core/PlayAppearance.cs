@@ -76,10 +76,21 @@ public sealed class PlayAppearance
     /// Maps live TypeIds used for hero/partner slots (see <c>sub_80A7DDC</c>).
     /// Returns null when the type should use the ROM table / preview stand-ins.
     /// </summary>
-    public short? TryResolveLiveType(byte typeId) => typeId switch
+    public short? TryResolveLiveType(byte typeId) => RoleForLiveType(typeId) switch
     {
-        0 or 1 or 3 or 33 or 35 => PlayerSpecies,
-        2 or 4 or 5 or 6 or 7 or 8 or 34 => PartnerSpecies,
+        "PLAYER" => PlayerSpecies,
+        "PARTNER" => PartnerSpecies,
+        _ => null,
+    };
+
+    /// <summary>
+    /// Dynamic (species-0) live kinds used as the player or partner slot.
+    /// Portrait args use live <em>index</em>, not this type id.
+    /// </summary>
+    public static string? RoleForLiveType(int typeId) => typeId switch
+    {
+        0 or 1 or 3 or 33 or 35 => "PLAYER",
+        2 or 4 or 5 or 6 or 7 or 8 or 34 => "PARTNER",
         _ => null,
     };
 }

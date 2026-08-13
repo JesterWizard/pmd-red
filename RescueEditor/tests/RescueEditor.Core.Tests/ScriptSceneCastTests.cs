@@ -171,4 +171,27 @@ public sealed class ScriptSceneCastTests
         Assert.Single(cast.Members);
         Assert.Equal("Gengar", cast.Members[0].SpeciesName);
     }
+
+    [Fact]
+    public void LabelsPlayerAndPartnerStandInsForPortraitIds()
+    {
+        var scene = new Scene { MapId = 1, Name = "Team" };
+        var group = new SceneGroup { Index = 0 };
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        sector.Lives.Add(new SceneEntity { Kind = SceneEntityKind.Live, TypeId = 1 }); // PLAYER kind
+        sector.Lives.Add(new SceneEntity { Kind = SceneEntityKind.Live, TypeId = 2 }); // PARTNER kind
+        sector.Lives.Add(new SceneEntity { Kind = SceneEntityKind.Live, TypeId = 72 }); // fixed NPC (ignored without ROM)
+        group.Sectors.Add(sector);
+        scene.Groups.Add(group);
+
+        var cast = ScriptSceneCast.BuildFromRom(scene, rom: null);
+        Assert.Equal(3, cast.Members.Count);
+        Assert.Equal("PLAYER", cast.Members[0].Role);
+        Assert.Equal("Charmander", cast.Members[0].SpeciesName);
+        Assert.Equal("live0 PLAYER (Charmander)", cast.DescribeLive(0));
+        Assert.Equal("PARTNER", cast.Members[1].Role);
+        Assert.Equal("Bulbasaur", cast.Members[1].SpeciesName);
+        Assert.Equal("live1 PARTNER (Bulbasaur)", cast.DescribeLive(1));
+        Assert.Contains("PORTRAIT / MSG_* id = live index", cast.RosterText());
+    }
 }
