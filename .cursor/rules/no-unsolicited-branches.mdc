@@ -1,0 +1,25 @@
+---
+description: Never create git feature/topic branches unless the user says "Make a branch"
+alwaysApply: true
+---
+
+# No unsolicited branches
+
+Do **not** create, switch to, or check out a new feature/topic branch unless the user explicitly authorizes it with the exact phrase **Make a branch** (case-insensitive is fine).
+
+## Forbidden without that phrase
+
+- `git checkout -b …`
+- `git switch -c …`
+- Creating a branch because a Linear/GitHub ticket suggests a `gitBranchName`
+- Creating a branch “to keep master clean” or before starting a ticket
+
+## Allowed without that phrase
+
+- Work on the **current** branch (including `master` / `main`)
+- Inspect branches (`git branch`, `git status`, `git log`)
+- Commit / PR only when the user separately asks for those
+
+## If a ticket suggests a branch name
+
+Note the suggested name in the reply and keep working on the current branch until the user says **Make a branch**.
