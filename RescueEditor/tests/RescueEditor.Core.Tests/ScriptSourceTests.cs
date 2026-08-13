@@ -589,7 +589,159 @@ public sealed class ScriptSourceTests
         Fanfare = new NamedIdCatalog([(206, "LEVELUP"), (204, "REWARD")]),
         Map = new NamedIdCatalog([(0, "MAP_SQUARE"), (1, "MAP_POKEMON_SQUARE")]),
         Emotion = new NamedIdCatalog([(0, "EMOTION_NORMAL"), (1, "EMOTION_HAPPY"), (12, "EMOTION_SUPRISED")]),
+        UpdateName = new NamedIdCatalog([(0, "UPDATE_NAME_CLEAR"), (7, "UPDATE_NAME_ACTOR_SELF")]),
+        ObjFlag = new NamedIdCatalog([(0x1F, "OBJ_FLAG_INTERACT_MASK"), (0x01000000, "OBJ_FLAG_AIRBORNE")]),
+        EmotionEffect = new NamedIdCatalog([(0, "EMOTION_EFFECT_NONE"), (88, "EMOTION_EFFECT_NOTICE")]),
+        Direction = new NamedIdCatalog([(0, "DIRECTION_SOUTH"), (4, "DIRECTION_NORTH")]),
+        DirTrans = new NamedIdCatalog([(0, "DIR_TRANS_NONE"), (10, "DIR_TRANS_10")]),
+        Placement = new NamedIdCatalog([(0, "PLACEMENT_LEFT_BOTTOM_1"), (3, "PLACEMENT_RIGHT_BOTTOM_FLIP"), (21, "PLACEMENT_KEEP")]),
+        GroundAnim = new NamedIdCatalog([(2, "GROUND_ANIM_STILL"), (5, "GROUND_ANIM_WALK_IN_PLACE"), (6, "GROUND_ANIM_SLEEP")]),
+        ScriptId = new NamedIdCatalog([(0, "END_TALK"), (355, "COMMON_ENTER")]),
+        PaletteUtil = new NamedIdCatalog([(0, "PALUTIL_KIND_00"), (1, "PALUTIL_KIND_01"), (13, "PALUTIL_KIND_13")]),
     };
+
+    [Fact]
+    public void FormatsPortraitPlacementAnimationAndJumpScriptNames()
+    {
+        var names = TestNames();
+        Assert.Equal(
+            "PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, 1, EMOTION_NORMAL)",
+            ScriptSource.FormatCommand(
+                new ScriptCommandData { Op = 0x2E, ArgByte = 3, ArgShort = 1, Arg1 = 0 },
+                names: names));
+        Assert.Equal(
+            "SELECT_ANIMATION(GROUND_ANIM_STILL)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x54, ArgShort = 2 }, names: names));
+        Assert.Equal(
+            "JUMP_SCRIPT(END_TALK)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0xE9, ArgShort = 0 }, names: names));
+        Assert.Equal(
+            "FLASH_FROM(1, PALUTIL_KIND_13, 60, 0)",
+            ScriptSource.FormatCommand(
+                new ScriptCommandData { Op = 0x27, ArgByte = 1, ArgShort = 13, Arg1 = 60, Arg2 = 0 },
+                names: names));
+        Assert.Equal(
+            "CAMERA_SHAKE(2, 1, 3)",
+            ScriptSource.FormatCommand(
+                new ScriptCommandData { Op = 0x97, ArgShort = 2, Arg1 = 1, Arg2 = 3 }));
+        Assert.Equal(
+            "TEXTBOX_AUTO_PRESS(-1, -1)",
+            ScriptSource.FormatCommand(
+                new ScriptCommandData { Op = 0x2B, Arg1 = -1, Arg2 = -1 }));
+        Assert.Equal(
+            "FANFARE_FADEOUT2(60, 453)",
+            ScriptSource.FormatCommand(
+                new ScriptCommandData { Op = 0x4E, ArgShort = 60, Arg1 = 453 }));
+    }
+
+    [Fact]
+    public void ParsesNewNamedCommandsAndParamCatalogs()
+    {
+        var names = TestNames();
+        var parsed = ScriptSource.Parse("""
+            PORTRAIT(PLACEMENT_KEEP, 1, EMOTION_HAPPY)
+            SELECT_ANIMATION(GROUND_ANIM_SLEEP)
+            JUMP_SCRIPT(COMMON_ENTER)
+            CALL_SCRIPT(END_TALK)
+            FLASH_TO(1, PALUTIL_KIND_01, 5, 0)
+            TEXTBOX_AUTO_PRESS(60, 60)
+            FANFARE_FADEOUT2(60, LEVELUP)
+            CAMERA_SHAKE(0, 0, 0)
+            EMOTION_EFFECT(EMOTION_EFFECT_NOTICE)
+            """, names: names);
+        Assert.True(parsed.Ok, string.Join("; ", parsed.Errors.Select(e => e.Message)));
+        var commands = Assert.Single(parsed.Sections).Commands;
+        Assert.Equal(21, commands[0].Command.ArgByte);
+        Assert.Equal(6, commands[1].Command.ArgShort);
+        Assert.Equal(355, commands[2].Command.ArgShort);
+        Assert.Equal(0, commands[3].Command.ArgShort);
+        Assert.Equal(1, commands[4].Command.ArgShort);
+        Assert.Equal(60, commands[5].Command.Arg1);
+        Assert.Equal(206, commands[6].Command.Arg1);
+        Assert.Equal(0, commands[7].Command.ArgShort);
+        Assert.Equal(88, commands[8].Command.Arg1);
+    }
+
+    [Fact]
+    public void FormatsAndParsesDebuginfoOIgnoringFilenamePtr()
+    {
+        var formatted = ScriptSource.FormatCommand(new ScriptCommandData
+        {
+            Op = 0xF6,
+            ArgShort = 35,
+            ArgPtr = 0x0825FFA8,
+        });
+        Assert.Equal("DEBUGINFO_O(35)", formatted);
+
+        var parsed = ScriptSource.Parse("DEBUGINFO_O(35)\nDEBUGINFO(99)");
+        Assert.True(parsed.Ok, string.Join("; ", parsed.Errors.Select(e => e.Message)));
+        var commands = Assert.Single(parsed.Sections).Commands;
+        Assert.Equal(0xF6, commands[0].Command.Op);
+        Assert.Equal(35, commands[0].Command.ArgShort);
+        Assert.Equal(0xF6, commands[1].Command.Op);
+        Assert.Equal(99, commands[1].Command.ArgShort);
+    }
+
+    [Fact]
+    public void FormatsNamedUpdateNameObjFlagsEmotionEffectAndDirection()
+    {
+        var names = TestNames();
+        Assert.Equal(
+            "UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0, 0)",
+            ScriptSource.FormatCommand(
+                new ScriptCommandData { Op = 0x2D, ArgByte = 7, ArgShort = 0, Arg1 = 0 },
+                names: names));
+        Assert.Equal(
+            "SET_OBJ_FLAGS(OBJ_FLAG_AIRBORNE)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x52, Arg1 = 0x01000000 }, names: names));
+        Assert.Equal(
+            "CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x53, Arg1 = 0x1F }, names: names));
+        Assert.Equal(
+            "EMOTION_EFFECT(EMOTION_EFFECT_NOTICE)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x56, Arg1 = 88 }, names: names));
+        Assert.Equal(
+            "WALK_DIRECTION(72, 256, DIRECTION_NORTH)",
+            ScriptSource.FormatCommand(
+                new ScriptCommandData { Op = 0x89, ArgByte = 72, ArgShort = 256, Arg1 = 4 },
+                names: names));
+    }
+
+    [Fact]
+    public void ParsesNamedGroundScriptParams()
+    {
+        var names = TestNames();
+        var parsed = ScriptSource.Parse("""
+            UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0, 0)
+            SET_OBJ_FLAGS(OBJ_FLAG_AIRBORNE)
+            EMOTION_EFFECT(EMOTION_EFFECT_NOTICE)
+            WALK_DIRECTION(0x48, 0x100, DIRECTION_NORTH)
+            """, names: names);
+        Assert.True(parsed.Ok, string.Join("; ", parsed.Errors.Select(e => e.Message)));
+        var commands = Assert.Single(parsed.Sections).Commands;
+        Assert.Equal(7, commands[0].Command.ArgByte);
+        Assert.Equal(0x01000000, commands[1].Command.Arg1);
+        Assert.Equal(88, commands[2].Command.Arg1);
+        Assert.Equal(4, commands[3].Command.Arg1);
+    }
+
+    [Fact]
+    public void SuggestsGroundScriptParamAutocomplete()
+    {
+        var names = TestNames();
+        Assert.Equal(
+            ["UPDATE_NAME_ACTOR_SELF"],
+            names.Suggest(0x2D, 0, "UPDATE_NAME_ACTOR").Select(e => e.Name).ToArray());
+        Assert.Equal(
+            ["OBJ_FLAG_AIRBORNE"],
+            names.Suggest(0x52, 0, "OBJ_FLAG_AIR").Select(e => e.Name).ToArray());
+        Assert.Equal(
+            ["EMOTION_EFFECT_NOTICE"],
+            names.Suggest(0x56, 0, "EMOTION_EFFECT_NOT").Select(e => e.Name).ToArray());
+        Assert.Equal(
+            ["DIRECTION_NORTH"],
+            names.Suggest(0x89, 2, "DIRECTION_N").Select(e => e.Name).ToArray());
+    }
 
     [Fact]
     public void FormatsNamedMusicEmotionMapAndFanfare()
@@ -599,8 +751,12 @@ public sealed class ScriptSourceTests
             "BGM_SWITCH(MUS_POKEMON_SQUARE)",
             ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x44, Arg1 = 7 }, names: names));
         Assert.Equal(
-            "PORTRAIT(3, 1, EMOTION_HAPPY)",
-            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x2E, ArgByte = 3, ArgShort = 1, Arg1 = 1 }, names: names));
+            "PORTRAIT(PLACEMENT_LEFT_BOTTOM_1, 1, EMOTION_HAPPY)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x2E, ArgByte = 0, ArgShort = 1, Arg1 = 1 }, names: names));
+        // keep a raw place id when not in catalog
+        Assert.Equal(
+            "PORTRAIT(9, 1, EMOTION_HAPPY)",
+            ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x2E, ArgByte = 9, ArgShort = 1, Arg1 = 1 }, names: names));
         Assert.Equal(
             "SELECT_MAP(MAP_POKEMON_SQUARE)",
             ScriptSource.FormatCommand(new ScriptCommandData { Op = 0x08, Arg1 = 1 }, names: names));

@@ -112,24 +112,24 @@
 #define FADE2_IN(wait, f)               { CMD_BYTE_25, wait, f, 0, 0, NULL }
 #define FADE2_OUT(wait, f)              { CMD_BYTE_26, wait, f, 0, 0, NULL }
 
-// a0: Some bool
-// kind: See enum "PaletteUtilUnk0Kind"
-// a2: ?
-// rgb: (R << 16) | (G << 8) | (B)
+// a0: Some bool — if nonzero, script waits for the flash to finish.
+// kind: PaletteUtilUnk0Kind (PALUTIL_KIND_*)
+// a2: Duration / related frames
+// rgb: (R << 16) | (G << 8) | (B)  (use RGB_U32)
 #define FLASH_FROM(a0, kind, a2, rgb)   { CMD_BYTE_27, a0, kind, a2, rgb, NULL }
 
-// a0: Some bool
-// kind: See enum "PaletteUtilUnk0Kind"
-// a2: ?
-// rgb: (R << 16) | (G << 8) | (B)
+// a0: Some bool — if nonzero, script waits for the flash to finish.
+// kind: PaletteUtilUnk0Kind (PALUTIL_KIND_*)
+// a2: Duration / related frames
+// rgb: (R << 16) | (G << 8) | (B)  (use RGB_U32)
 #define FLASH_TO(a0, kind, a2, rgb)     { CMD_BYTE_28, a0, kind, a2, rgb, NULL }
 
 // TODO: CMD_BYTE_29
 
 // TODO: CMD_BYTE_2A
 
-// Waits specified number of frames, then automatically does a button press without waiting for player's input.
-// -1 disables it.
+// Auto-advances textboxes after the given frame counts (end / mid message).
+// Pass -1 to disable.
 #define TEXTBOX_AUTO_PRESS(endF, midF)  { CMD_BYTE_2B, 0, 0, endF, midF, NULL }
 
 // TODO: CMD_BYTE_2C
@@ -378,7 +378,7 @@
 // Also cancels nested scriptData2 when f includes OBJ_FLAG_CANCEL_SCRIPT2.
 #define CLEAR_OBJ_FLAGS(f)              { CMD_BYTE_53, 0, 0, f, 0, NULL }
 
-#define SELECT_ANIMATION(id)            { CMD_BYTE_54, 0, id, 0, 0, NULL }
+#define SELECT_ANIMATION(id)            { CMD_BYTE_54, 0, id, 0, 0, NULL } // id: GROUND_ANIM_*
 
 // TODO: CMD_BYTE_55
 
@@ -540,7 +540,10 @@
 
 // TODO: CMD_BYTE_96
 
-// TODO: CMD_BYTE_97
+// Camera shake overlay (code_809D148.c). mode: CAMERA_SHAKE_* .
+// Soft (1): fixed period/amplitude. Custom (2): amp=intensity, period=frames between jitters.
+// Off (0): stop. Common pattern: CAMERA_SHAKE(CAMERA_SHAKE_CUSTOM, 1, 3) … CAMERA_SHAKE(CAMERA_SHAKE_OFF, 0, 0).
+#define CAMERA_SHAKE(mode, amp, period) { CMD_BYTE_97, 0, mode, amp, period, NULL }
 
 #define CAMERA_INIT_PAN                 { CMD_BYTE_98, 0, 0, 0, 0, NULL }
 

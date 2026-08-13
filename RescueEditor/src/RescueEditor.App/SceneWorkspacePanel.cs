@@ -1645,8 +1645,8 @@ public sealed class SceneWorkspacePanel : UserControl
             : null;
         var names = ScriptNamedDefinitions.TryLoadBestEffort(preferredRoot);
         var editor = focus is { } entry
-            ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex, names)
-            : new SceneScriptWindow(_scene, _changes, _database, names: names);
+            ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex, names, _rom, preferredRoot)
+            : new SceneScriptWindow(_scene, _changes, _database, names: names, rom: _rom, repositoryRoot: preferredRoot);
         editor.Applied += (_, _) =>
         {
             SyncWorkingRom();

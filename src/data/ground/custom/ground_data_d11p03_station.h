@@ -906,7 +906,7 @@ static const struct ScriptCommand s_gs203_g3_s0_lives0_dlg0[] = { /* 0x8259658 *
     TEXTBOX_CLEAR,
     WAIT(10),
     FANFARE_PLAY2(453),
-    { 0x97, 0x00,  0x0002,  0x00000001,  0x00000003, NULL },
+    CAMERA_SHAKE(2, 1, 3),
     ALERT_CUE(6),
     ALERT_CUE(7),
     ALERT_CUE(8),

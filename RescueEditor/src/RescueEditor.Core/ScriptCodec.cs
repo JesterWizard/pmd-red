@@ -29,6 +29,7 @@ public static class ScriptOpcodeNames
         [0x26] = "FADE2_OUT",
         [0x27] = "FLASH_FROM",
         [0x28] = "FLASH_TO",
+        [0x2B] = "TEXTBOX_AUTO_PRESS",
         [0x2D] = "UPDATE_NAME",
         [0x2E] = "PORTRAIT",
         [0x2F] = "PORTRAIT_POS",
@@ -49,6 +50,7 @@ public static class ScriptOpcodeNames
         [0x48] = "BGM_FADEOUT",
         [0x49] = "FANFARE_PLAY",
         [0x4C] = "FANFARE_PLAY2",
+        [0x4E] = "FANFARE_FADEOUT2",
         [0x4F] = "CLEAR_HITBOX",
         [0x51] = "SET_POSITION_BOUNDS",
         [0x52] = "SET_OBJ_FLAGS",
@@ -73,6 +75,7 @@ public static class ScriptOpcodeNames
         [0x93] = "ROTATE_TO_LIVES",
         [0x94] = "ROTATE_TO_LIVES2",
         [0x95] = "ROTATE_TO_WAYPOINT",
+        [0x97] = "CAMERA_SHAKE",
         [0x98] = "CAMERA_INIT_PAN",
         [0x99] = "CAMERA_END_PAN",
         [0x9A] = "CAMERA_FOCUS_PLAYER",
@@ -173,6 +176,7 @@ public static class ScriptOpcodeNames
         ["CMD_UNK_94"] = 0x94,
         ["CMD_UNK_95"] = 0x95,
         ["CMD_UNK_E5"] = 0xE5,
+        ["DEBUGINFO_O"] = 0xF6,
     };
 
     private static readonly Dictionary<string, byte> OpsByName =

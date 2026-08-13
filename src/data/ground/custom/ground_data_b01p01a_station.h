@@ -13316,7 +13316,7 @@ static const struct ScriptCommand s_gs9_g83_s0_lives0_dlg0[] = { /* 0x81da3bc */
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
     WAIT_FADE,
     WAIT(30),
-    { 0x97, 0x00,  0x0002,  0x00000001,  0x00000003, NULL },
+    CAMERA_SHAKE(2, 1, 3),
     MSG_OVERHEARD(_("Whooooooosh!")),
     WALK_RELATIVE(512, 0, 80),
     WAIT(60),
@@ -13334,7 +13334,7 @@ static const struct ScriptCommand s_gs9_g83_s0_lives0_dlg0[] = { /* 0x81da3bc */
     ALERT_CUE(7),
     AWAIT_CUE(5),
     SELECT_ANIMATION(0xB),
-    { 0x97, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
+    CAMERA_SHAKE(0, 0, 0),
   LABEL(1), /* = 0x01 */
     ROTATE_TO(4, DIR_TRANS_SPINRIGHT1, DIRECTION_NORTHEAST),
     ROTATE_TO(4, DIR_TRANS_SPINRIGHT1, DIRECTION_SOUTHEAST),

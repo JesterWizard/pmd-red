@@ -31,11 +31,13 @@ Named constants live in [`include/constants/ground_script_params.h`](../include/
 
 | Header | Used for |
 |--------|----------|
-| [`constants/ground_script_params.h`](../include/constants/ground_script_params.h) | `UPDATE_NAME_*`, `OBJ_FLAG_*`, `EMOTION_EFFECT_*` |
+| [`constants/ground_script_params.h`](../include/constants/ground_script_params.h) | `UPDATE_NAME_*`, `OBJ_FLAG_*`, `EMOTION_EFFECT_*`, `GROUND_ANIM_*`, `CAMERA_SHAKE_*` |
 | [`constants/direction.h`](../include/constants/direction.h) | `DIRECTION_*`, `DIR_TRANS_*` |
 | [`portrait_placement.h`](../include/portrait_placement.h) | `PLACEMENT_*` / `PLACEMENT_KEEP` (for `PORTRAIT`) |
 | [`constants/emotions.h`](../include/constants/emotions.h) | `EMOTION_*` portrait faces (for `PORTRAIT`, not overhead effects) |
 | [`constants/bg_music.h`](../include/constants/bg_music.h) | `MUS_*` (for `BGM_*` / `WAIT_BGM`) |
+| [`constants/script_id.h`](../include/constants/script_id.h) | `ScriptID` (`END_TALK`, `COMMON_ENTER`, … for `JUMP_SCRIPT` / `CALL_SCRIPT`) |
+| [`constants/palette_util.h`](../include/constants/palette_util.h) | `PALUTIL_KIND_*` (for `FLASH_FROM` / `FLASH_TO`) |
 
 ### `UpdateNameKind` — `UPDATE_NAME(kind, …)`
 
@@ -76,6 +78,45 @@ EMOTION_EFFECT_SMILE      // 93  smile / note
 EMOTION_EFFECT_ANGRY      // 94  anger
 ```
 
+### `GROUND_ANIM_*` — `SELECT_ANIMATION(id)`
+
+Script anim ids (Data Crystal “Set Movement Animation”), mapped through `gUnknown_8117F64`:
+
+```c
+GROUND_ANIM_IDLE           // 0   overworld idle
+GROUND_ANIM_IDLE_ALT       // 1
+GROUND_ANIM_STILL          // 2   motionless standing (common default)
+GROUND_ANIM_STILL_WALK     // 3
+GROUND_ANIM_IDLE_AND_WALK  // 4
+GROUND_ANIM_WALK_IN_PLACE  // 5
+GROUND_ANIM_SLEEP          // 6
+GROUND_ANIM_ATTACK         // 7
+GROUND_ANIM_HURT           // 8
+GROUND_ANIM_SHAKE          // 9
+GROUND_ANIM_STILL2         // 10
+GROUND_ANIM_HURT2          // 11
+GROUND_ANIM_ATTACK1        // 12
+GROUND_ANIM_ATTACK2        // 13
+GROUND_ANIM_TAIL_WHIP      // 14
+GROUND_ANIM_SPIN           // 15
+GROUND_ANIM_DOUBLE_TEAM    // 16
+GROUND_ANIM_JUMP           // 17
+GROUND_ANIM_SPECIAL        // 18
+GROUND_ANIM_SPIN2          // 19
+GROUND_ANIM_SPECIAL_LOOP   // 20
+GROUND_ANIM_SPIN_LOOP      // 21
+GROUND_ANIM_TWITCH         // 22
+GROUND_ANIM_TWITCH2        // 23
+```
+
+### `PLACEMENT_*` — `PORTRAIT(place, …)`
+
+From `portrait_placement.h` (`PLACEMENT_KEEP` keeps the speaker’s last placement/flip).
+
+### `ScriptID` — `JUMP_SCRIPT` / `CALL_SCRIPT`
+
+From `constants/script_id.h` (`END_TALK`, `COMMON_ENTER`, emotion helper funcs, …).
+
 ### Direction / rotate — `WALK_DIRECTION`, `ROTATE_*`
 
 From `constants/direction.h`:
@@ -94,11 +135,16 @@ DIR_TRANS_10, DIR_TRANS_11   // common cutscene turn styles
 
 | Op | Old name(s) | New macro |
 |----|-------------|-----------|
+| `0x27` | `CMD_27` | `FLASH_FROM` |
+| `0x28` | `CMD_28` | `FLASH_TO` |
+| `0x2B` | `CMD_2B` | `TEXTBOX_AUTO_PRESS` |
 | `0x2D` | `CMD_2D` | `UPDATE_NAME` |
+| `0x4E` | `CMD_4E` | `FANFARE_FADEOUT2` |
 | `0x4F` | `CMD_4F` | `CLEAR_HITBOX` |
 | `0x51` | `CMD_51` | `SET_POSITION_BOUNDS` |
 | `0x52` | `CMD_52` | `SET_OBJ_FLAGS` |
 | `0x53` | `CMD_53` | `CLEAR_OBJ_FLAGS` |
+| `0x54` | `CMD_54` | `SELECT_ANIMATION` |
 | `0x56` | `CMD_56` | `EMOTION_EFFECT` / `EMOTION_EFFECT_EX` |
 | `0x59` | `CMD_59` | `MOVE_RELATIVE_POS` |
 | `0x60` | `CMD_60` | `SET_HEIGHT` / `SET_HEIGHT_WAIT` |
@@ -111,6 +157,7 @@ DIR_TRANS_10, DIR_TRANS_11   // common cutscene turn styles
 | `0x93` | `CMD_93` / `CMD_UNK_93` | `ROTATE_TO_LIVES` |
 | `0x94` | `CMD_94` / `CMD_UNK_94` | `ROTATE_TO_LIVES2` |
 | `0x95` | `CMD_95` / `CMD_UNK_95` | `ROTATE_TO_WAYPOINT` |
+| `0x97` | `CMD_97` | `CAMERA_SHAKE` |
 | `0x9A` | `CMD_9A` | `CAMERA_FOCUS_PLAYER` |
 | `0x9B` | `CMD_9B` | `CAMERA_FOLLOW` |
 | `0xDE` | `CMD_DE` | `WAIT_EFFECT` |
@@ -126,6 +173,30 @@ Also bulk-rewired already-named macros that were still written raw in data: `FAD
 ---
 
 ## Command reference
+
+### `0x27` → `FLASH_FROM(wait, kind, frames, rgb)` / `0x28` → `FLASH_TO(…)`
+
+**Does:** Palette flash utilities (`sub_8099A5C` / `sub_8099AFC`). If `wait` is nonzero, the script waits for the flash to finish.
+
+| Param | Field | Meaning / defines |
+|-------|-------|-------------------|
+| `wait` | `argByte` | Nonzero → wait |
+| `kind` | `argShort` | `PALUTIL_KIND_*` |
+| `frames` | `arg1` | Duration-related |
+| `rgb` | `arg2` | Packed RGB (`RGB_U32`) |
+
+---
+
+### `0x2B` → `TEXTBOX_AUTO_PRESS(endF, midF)`
+
+**Does:** Auto-advances textboxes after the given frame counts (end / mid). Pass `-1` to disable.
+
+| Param | Field | Meaning / defines |
+|-------|-------|-------------------|
+| `endF` | `arg1` | Frames before auto-press at end (`-1` disables) |
+| `midF` | `arg2` | Frames before auto-press mid-message (`-1` disables) |
+
+---
 
 ### `0x2D` → `UPDATE_NAME(kind, slot, id)`
 
@@ -180,6 +251,56 @@ Also bulk-rewired already-named macros that were still written raw in data: `FAD
 | `f` | `arg1` | `OBJ_FLAG_*` bitmask |
 
 **Example:** `CLEAR_OBJ_FLAGS(OBJ_FLAG_AIRBORNE)` before a fall/height cutscene.
+
+---
+
+### `0x4E` → `FANFARE_FADEOUT2(f, i)`
+
+**Does:** Fades out SFX/fanfare on the second channel (`FadeOutSound`). Negative `f` uses a default of 30 frames.
+
+| Param | Field | Meaning / defines |
+|-------|-------|-------------------|
+| `f` | `argShort` | Fade frames |
+| `i` | `arg1` | Fanfare / SE id |
+
+---
+
+### `0x54` → `SELECT_ANIMATION(id)`
+
+**Does:** Sets the cutscene movement/pose animation for the running lives (via `gUnknown_8117F64`). Effect ends when the script ends.
+
+| Param | Field | Meaning / defines |
+|-------|-------|-------------------|
+| `id` | `argShort` | `GROUND_ANIM_*` (full list below) |
+
+```c
+GROUND_ANIM_IDLE           // 0
+GROUND_ANIM_IDLE_ALT       // 1
+GROUND_ANIM_STILL          // 2  motionless standing (common default)
+GROUND_ANIM_STILL_WALK     // 3
+GROUND_ANIM_IDLE_AND_WALK  // 4
+GROUND_ANIM_WALK_IN_PLACE  // 5
+GROUND_ANIM_SLEEP          // 6
+GROUND_ANIM_ATTACK         // 7
+GROUND_ANIM_HURT           // 8
+GROUND_ANIM_SHAKE          // 9
+GROUND_ANIM_STILL2         // 10
+GROUND_ANIM_HURT2          // 11
+GROUND_ANIM_ATTACK1        // 12
+GROUND_ANIM_ATTACK2        // 13
+GROUND_ANIM_TAIL_WHIP      // 14
+GROUND_ANIM_SPIN           // 15
+GROUND_ANIM_DOUBLE_TEAM    // 16
+GROUND_ANIM_JUMP           // 17
+GROUND_ANIM_SPECIAL        // 18
+GROUND_ANIM_SPIN2          // 19
+GROUND_ANIM_SPECIAL_LOOP   // 20
+GROUND_ANIM_SPIN_LOOP      // 21
+GROUND_ANIM_TWITCH         // 22
+GROUND_ANIM_TWITCH2        // 23
+```
+
+**Example:** `SELECT_ANIMATION(GROUND_ANIM_STILL)`.
 
 ---
 
@@ -334,6 +455,20 @@ Also bulk-rewired already-named macros that were still written raw in data: `FAD
 | `spd` | `argByte` | Turn speed |
 | `t` | `argShort` | `DIR_TRANS_*` |
 | `w` | `arg1` | Waypoint / link index |
+
+---
+
+### `0x97` → `CAMERA_SHAKE(mode, amp, period)`
+
+**Does:** Starts or stops a camera shake overlay (`sub_809D124` / `code_809D148.c`). Soft mode uses a fixed amp/period; custom uses `amp` + `period`.
+
+| Param | Field | Meaning / defines |
+|-------|-------|-------------------|
+| `mode` | `argShort` | `CAMERA_SHAKE_OFF` (0) / `_SOFT` (1) / `_CUSTOM` (2) |
+| `amp` | `arg1` | Intensity for `CUSTOM` |
+| `period` | `arg2` | Frames between jitters for `CUSTOM` |
+
+**Example:** `CAMERA_SHAKE(CAMERA_SHAKE_CUSTOM, 1, 3)` … `CAMERA_SHAKE(CAMERA_SHAKE_OFF, 0, 0)`.
 
 ---
 

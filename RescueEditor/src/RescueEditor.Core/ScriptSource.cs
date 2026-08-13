@@ -50,7 +50,8 @@ public static class ScriptSource
         short DefaultShort = 0,
         int DefaultArg1 = 0,
         int DefaultArg2 = 0,
-        uint DefaultPtr = 0);
+        uint DefaultPtr = 0,
+        bool IgnorePtr = false);
 
     private static readonly Dictionary<byte, MacroLayout> Layouts = new()
     {
@@ -72,6 +73,9 @@ public static class ScriptSource
         [0x02] = new("NEXT_DUNGEON", [Slot.Short, Slot.Arg1]),
         [0x22] = new("FADE_IN", [Slot.Byte, Slot.Short]),
         [0x23] = new("FADE_OUT", [Slot.Byte, Slot.Short]),
+        [0x27] = new("FLASH_FROM", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.Arg2]),
+        [0x28] = new("FLASH_TO", [Slot.Byte, Slot.Short, Slot.Arg1, Slot.Arg2]),
+        [0x2B] = new("TEXTBOX_AUTO_PRESS", [Slot.Arg1, Slot.Arg2]),
         [0x2D] = new("UPDATE_NAME", [Slot.Byte, Slot.Short, Slot.Arg1]),
         [0x2E] = new("PORTRAIT", [Slot.Byte, Slot.Short, Slot.Arg1]),
         [0x2F] = new("PORTRAIT_POS", [Slot.Short, Slot.Arg1, Slot.Arg2]),
@@ -92,6 +96,7 @@ public static class ScriptSource
         [0x48] = new("BGM_FADEOUT", [Slot.Short]),
         [0x49] = new("FANFARE_PLAY", [Slot.Arg1]),
         [0x4C] = new("FANFARE_PLAY2", [Slot.Arg1]),
+        [0x4E] = new("FANFARE_FADEOUT2", [Slot.Short, Slot.Arg1]),
         [0x4F] = new("CLEAR_HITBOX", []),
         [0x51] = new("SET_POSITION_BOUNDS", [Slot.Short]),
         [0x52] = new("SET_OBJ_FLAGS", [Slot.Arg1]),
@@ -116,6 +121,7 @@ public static class ScriptSource
         [0x93] = new("ROTATE_TO_LIVES", [Slot.Byte, Slot.Short, Slot.Arg1]),
         [0x94] = new("ROTATE_TO_LIVES2", [Slot.Byte, Slot.Short, Slot.Arg1]),
         [0x95] = new("ROTATE_TO_WAYPOINT", [Slot.Byte, Slot.Short, Slot.Arg1]),
+        [0x97] = new("CAMERA_SHAKE", [Slot.Short, Slot.Arg1, Slot.Arg2]),
         [0x98] = new("CAMERA_INIT_PAN", []),
         [0x99] = new("CAMERA_END_PAN", []),
         [0x9A] = new("CAMERA_FOCUS_PLAYER", []),
@@ -151,6 +157,7 @@ public static class ScriptSource
         [0xF0] = new("HALT", []),
         [0xF1] = new("END_DELETE", []),
         [0xF4] = new("LABEL", [Slot.Short]),
+        [0xF6] = new("DEBUGINFO_O", [Slot.Short], IgnorePtr: true),
     };
 
     private static readonly Regex SectionHeader =
@@ -161,12 +168,33 @@ public static class ScriptSource
         ScriptCommandData command,
         IReadOnlyDictionary<int, DialogueString>? dialogue = null,
         ScriptNamedDefinitions? names = null,
-        string? dialogueText = null)
+        string? dialogueText = null,
+        ScriptSceneCast? cast = null)
     {
+        string formatted;
         if (Layouts.TryGetValue(command.Op, out var layout) && MatchesDefaults(command, layout))
-            return FormatNamed(command, layout, dialogue, names, dialogueText);
+            formatted = FormatNamed(command, layout, dialogue, names, dialogueText);
+        else
+            formatted = FormatRaw(command);
 
-        return FormatRaw(command);
+        var note = CastAnnotation(command, cast);
+        return note is null ? formatted : $"{formatted}  # {note}";
+    }
+
+    private static string? CastAnnotation(ScriptCommandData command, ScriptSceneCast? cast)
+    {
+        if (cast is null)
+            return null;
+        var liveIndex = command.Op switch
+        {
+            0x2E => command.ArgShort, // PORTRAIT speaker
+            0x33 or 0x34 => command.ArgShort, // MSG_QUIET / MSG_NPC / DIALOGUE
+            0x93 or 0x94 => command.Arg1, // ROTATE_TO_LIVES*
+            _ => int.MinValue,
+        };
+        if (liveIndex == int.MinValue)
+            return null;
+        return cast.DescribeLive(liveIndex);
     }
 
     public static ScriptSourceParseResult Parse(
@@ -233,9 +261,10 @@ public static class ScriptSource
     public static string RewriteWithNamedArgs(
         string text,
         IReadOnlyDictionary<int, DialogueString>? dialogue = null,
-        ScriptNamedDefinitions? names = null)
+        ScriptNamedDefinitions? names = null,
+        ScriptSceneCast? cast = null)
     {
-        if (names is null || !names.HasAny)
+        if ((names is null || !names.HasAny) && cast is null)
             return text;
 
         var lines = text.Replace("\r\n", "\n").Replace('\r', '\n').Split('\n');
@@ -262,7 +291,13 @@ public static class ScriptSource
                 ? code[code.TrimEnd().Length..]
                 : string.Empty;
             builder.Append(leading);
-            builder.Append(FormatCommand(command.Command, dialogue, names, command.DialogueText));
+            // Drop prior cast annotations; FormatCommand re-appends a fresh one.
+            var priorComment = comment.TrimStart();
+            if (priorComment.StartsWith('#') &&
+                cast is not null &&
+                priorComment.Contains("live", StringComparison.OrdinalIgnoreCase))
+                comment = string.Empty;
+            builder.Append(FormatCommand(command.Command, dialogue, names, command.DialogueText, cast));
             builder.Append(trailingWs);
             builder.Append(comment);
         }
@@ -501,7 +536,8 @@ public static class ScriptSource
             return false;
         if (!used.Contains(Slot.Arg2) && command.Arg2 != layout.DefaultArg2)
             return false;
-        if (!used.Contains(Slot.Ptr) && !used.Contains(Slot.String) && command.ArgPtr != layout.DefaultPtr)
+        if (!used.Contains(Slot.Ptr) && !used.Contains(Slot.String) &&
+            !layout.IgnorePtr && command.ArgPtr != layout.DefaultPtr)
             return false;
         return true;
     }
@@ -709,19 +745,24 @@ public static class SceneScriptSource
     public static string Format(
         Scene scene,
         IReadOnlyDictionary<int, DialogueString>? dialogue = null,
-        ScriptNamedDefinitions? names = null)
+        ScriptNamedDefinitions? names = null,
+        ScriptSceneCast? cast = null)
     {
         if (!string.IsNullOrEmpty(scene.ScriptSourceText))
         {
             var saved = scene.ScriptSourceText.Replace("\r\n", "\n").Replace('\r', '\n');
             if (!saved.EndsWith('\n'))
                 saved += "\n";
-            return ScriptSource.RewriteWithNamedArgs(saved, dialogue, names);
+            return ScriptSource.RewriteWithNamedArgs(saved, dialogue, names, cast);
         }
 
         var builder = new StringBuilder();
         if (!string.IsNullOrWhiteSpace(scene.Name))
             builder.AppendLine($"# {scene.Name}");
+        if (cast is not null && cast.Members.Count > 0)
+        {
+            builder.AppendLine("# " + cast.RosterText().Replace("\n", "\n# "));
+        }
 
         var any = false;
         foreach (var group in scene.Groups)
@@ -737,12 +778,12 @@ public static class SceneScriptSource
                     var nameSuffix = string.IsNullOrEmpty(station.Name) ? "" : $" {station.Name}";
                     builder.AppendLine($"@station g{sector.Group}/s{sector.Sector}{indexSuffix}{nameSuffix}");
                     foreach (var command in station.Commands)
-                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names));
+                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names, cast: cast));
                 }
 
-                AppendEntityScripts(builder, sector.Lives, "live", dialogue, names, ref any);
-                AppendEntityScripts(builder, sector.Objects, "object", dialogue, names, ref any);
-                AppendEntityScripts(builder, sector.Effects, "effect", dialogue, names, ref any);
+                AppendEntityScripts(builder, sector.Lives, "live", dialogue, names, cast, ref any);
+                AppendEntityScripts(builder, sector.Objects, "object", dialogue, names, cast: null, ref any);
+                AppendEntityScripts(builder, sector.Effects, "effect", dialogue, names, cast: null, ref any);
 
                 foreach (var entity in sector.Events)
                 {
@@ -754,7 +795,7 @@ public static class SceneScriptSource
                     var nameSuffix = string.IsNullOrEmpty(eventScript.Name) ? "" : $" {eventScript.Name}";
                     builder.AppendLine($"@event g{sector.Group}/s{sector.Sector}{indexSuffix}{nameSuffix}");
                     foreach (var command in eventScript.Commands)
-                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names));
+                        builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names, cast: cast));
                 }
             }
         }
@@ -769,16 +810,38 @@ public static class SceneScriptSource
         return builder.ToString().TrimEnd() + "\n";
     }
 
+    public static string FormatLiveHeader(
+        int group,
+        int sector,
+        int entityIndex,
+        int scriptSlot,
+        ScriptSceneCast? cast = null,
+        bool includeIndex = true)
+    {
+        var indexSuffix = includeIndex ? $".{entityIndex}" : "";
+        var header = $"@live g{group}/s{sector}{indexSuffix} dlg{scriptSlot}";
+        if (cast is not null && cast.TryGet(entityIndex, out var member))
+        {
+            header += $"  # type {member.TypeId} · {member.SpeciesName}";
+            if (!string.IsNullOrEmpty(member.MonsterDefine))
+                header += $" ({member.MonsterDefine})";
+        }
+
+        return header;
+    }
+
     private static void AppendEntityScripts(
         StringBuilder builder,
         IReadOnlyList<SceneEntity> entities,
         string kind,
         IReadOnlyDictionary<int, DialogueString>? dialogue,
         ScriptNamedDefinitions? names,
+        ScriptSceneCast? cast,
         ref bool any)
     {
-        foreach (var entity in entities)
+        for (var entityPos = 0; entityPos < entities.Count; entityPos++)
         {
+            var entity = entities[entityPos];
             for (var slot = 0; slot < entity.Scripts.Count; slot++)
             {
                 var script = entity.Scripts[slot];
@@ -786,10 +849,24 @@ public static class SceneScriptSource
                     continue;
                 any = true;
                 AppendBlankLine(builder);
-                var indexSuffix = entities.Count > 1 ? $".{entity.Index}" : "";
-                builder.AppendLine($"@{kind} g{entity.Group}/s{entity.Sector}{indexSuffix} dlg{slot}");
+                if (kind == "live")
+                {
+                    builder.AppendLine(FormatLiveHeader(
+                        entity.Group,
+                        entity.Sector,
+                        entityPos,
+                        slot,
+                        cast,
+                        includeIndex: entities.Count > 1));
+                }
+                else
+                {
+                    var indexSuffix = entities.Count > 1 ? $".{entity.Index}" : "";
+                    builder.AppendLine($"@{kind} g{entity.Group}/s{entity.Sector}{indexSuffix} dlg{slot}");
+                }
+
                 foreach (var command in script.Commands)
-                    builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names));
+                    builder.AppendLine(ScriptSource.FormatCommand(command, dialogue, names, cast: cast));
             }
         }
     }

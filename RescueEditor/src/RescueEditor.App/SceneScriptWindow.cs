@@ -1,3 +1,4 @@
+
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -19,10 +20,14 @@ public sealed class SceneScriptWindow : Window
     private readonly SceneDatabase? _database;
     private readonly ChangeService _changes;
     private readonly ScriptNamedDefinitions? _names;
+    private readonly ScriptSceneCast _cast;
     private readonly TextEditor _editor;
     private readonly ScriptColorizingTransformer _colorizer;
     private readonly TextBlock _status;
     private readonly TextBlock _counts;
+    private readonly TextBlock _commandTip;
+    private readonly TextBlock _castRoster;
+    private readonly InstantComboBox _commandInfo;
     private IReadOnlyList<ScriptSourceError> _errors = [];
     private CompletionWindow? _completion;
 
@@ -35,18 +40,50 @@ public sealed class SceneScriptWindow : Window
         int? focusGroup = null,
         int? focusSector = null,
         int? focusStationIndex = null,
-        ScriptNamedDefinitions? names = null)
+        ScriptNamedDefinitions? names = null,
+        RomImage? rom = null,
+        string? repositoryRoot = null)
     {
         _scene = scene;
         _changes = changes;
         _database = database;
         _names = names;
 
+        NamedIdCatalog? monsters = null;
+        var repoRoot = repositoryRoot;
+        if (string.IsNullOrWhiteSpace(repoRoot) && rom is not null)
+            repoRoot = CatalogBuilder.FindRepositoryRoot(rom.Path);
+        if (!string.IsNullOrWhiteSpace(repoRoot))
+        {
+            var monsterPath = Path.Combine(repoRoot, "include", "constants", "monster.h");
+            if (File.Exists(monsterPath))
+                monsters = NamedIdCatalogs.ParseMonsterDefines(File.ReadAllText(monsterPath));
+        }
+
+        ScriptSceneCast cast;
+        try
+        {
+            cast = ScriptSceneCast.BuildFromRom(
+                scene,
+                rom,
+                RomProfile.Us10,
+                monsters,
+                repoRoot,
+                focusGroup ?? -1,
+                focusSector ?? -1);
+        }
+        catch
+        {
+            cast = ScriptSceneCast.Empty;
+        }
+
+        _cast = cast;
+
         Title = string.IsNullOrWhiteSpace(scene.Name)
             ? "Script"
             : $"Script — {scene.Name}";
-        Width = 760;
-        Height = 560;
+        Width = 820;
+        Height = 600;
         MinWidth = 480;
         MinHeight = 320;
         CanResize = true;
@@ -62,10 +99,51 @@ public sealed class SceneScriptWindow : Window
             VerticalAlignment = VerticalAlignment.Center,
         };
 
+        _commandTip = new TextBlock
+        {
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextSecondaryBrush,
+            TextWrapping = TextWrapping.Wrap,
+            MaxHeight = 96,
+        };
+
+        _commandInfo = new InstantComboBox
+        {
+            Width = 200,
+            PlaceholderText = "Command info…",
+        };
+        foreach (var name in ScriptCommandDocs.AlphabeticalCommandNames)
+        {
+            var item = new ComboBoxItem { Content = name };
+            if (ScriptCommandDocs.TryGetByName(name, out var doc))
+                ToolTip.SetTip(item, ScriptCommandDocs.FormatTooltip(doc, _names, _cast));
+            _commandInfo.Items.Add(item);
+        }
+
+        _commandInfo.SelectionChanged += (_, _) =>
+        {
+            if (_commandInfo.SelectedItem is ComboBoxItem { Content: string name } &&
+                ScriptCommandDocs.TryGetByName(name, out var doc))
+                _commandTip.Text = ScriptCommandDocs.FormatTooltip(doc, _names, _cast);
+            else
+                _commandTip.Text = string.Empty;
+        };
+
+        _castRoster = new TextBlock
+        {
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextSecondaryBrush,
+            TextWrapping = TextWrapping.Wrap,
+            Text = _cast.RosterText(),
+            IsVisible = _cast.Members.Count > 0,
+        };
+
         _colorizer = new ScriptColorizingTransformer(() => _errors);
         _editor = new TextEditor
         {
-            Document = new TextDocument(SceneScriptSource.Format(scene, database?.DialogueByOffset, names)),
+            Document = new TextDocument(SceneScriptSource.Format(scene, database?.DialogueByOffset, names, _cast)),
             FontFamily = EditorTheme.MonoFont,
             FontSize = EditorTheme.FontBody,
             Foreground = EditorTheme.TextPrimaryBrush,
@@ -97,7 +175,7 @@ public sealed class SceneScriptWindow : Window
             VerticalAlignment = VerticalAlignment.Center,
             Text = _names is null
                 ? "No named catalogs loaded (need include/constants/*.h beside the ROM). Numbers only · Ctrl+/ · Ctrl+S."
-                : "Named MUS_/EMOTION_/MAP_/SE args · type or Ctrl+Space for lookup · hover red lines for errors · Ctrl+S Apply.",
+                : "Named MUS_/GROUND_ANIM_/UPDATE_NAME_/OBJ_FLAG_/EMOTION_EFFECT_/MAP_/SE args · hover opcode for params · cast listed above · Ctrl+Space · Ctrl+S Apply.",
         };
 
         var apply = EditorChrome.ToolButton("Apply", primary: true);
@@ -115,7 +193,23 @@ public sealed class SceneScriptWindow : Window
             LetterSpacing = 0.6,
             VerticalAlignment = VerticalAlignment.Center,
         };
-        DockPanel.SetDock(_counts, Dock.Right);
+        var commandLabel = new TextBlock
+        {
+            Text = "Info",
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextDimBrush,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(0, 0, EditorTheme.Space2, 0),
+        };
+        var headerRight = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            Spacing = EditorTheme.Space2,
+            VerticalAlignment = VerticalAlignment.Center,
+            Children = { commandLabel, _commandInfo, _counts },
+        };
+        DockPanel.SetDock(headerRight, Dock.Right);
         var header = new Border
         {
             Background = EditorTheme.PanelBgRaisedBrush,
@@ -123,7 +217,32 @@ public sealed class SceneScriptWindow : Window
             BorderThickness = new Thickness(0, 0, 0, 1),
             Padding = new Thickness(EditorTheme.Space4, 0),
             Height = EditorTheme.ToolbarHeight,
-            Child = new DockPanel { LastChildFill = true, Children = { _counts, title } },
+            Child = new DockPanel { LastChildFill = true, Children = { headerRight, title } },
+        };
+
+        var tipPanel = new Border
+        {
+            Background = EditorTheme.PanelBgBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 0, 0, 1),
+            Padding = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
+            Child = _commandTip,
+            IsVisible = false,
+        };
+        _commandTip.PropertyChanged += (_, e) =>
+        {
+            if (e.Property == TextBlock.TextProperty)
+                tipPanel.IsVisible = !string.IsNullOrWhiteSpace(_commandTip.Text);
+        };
+
+        var castPanel = new Border
+        {
+            Background = EditorTheme.PanelBgBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 0, 0, 1),
+            Padding = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
+            Child = _castRoster,
+            IsVisible = _cast.Members.Count > 0,
         };
 
         var buttons = new StackPanel
@@ -151,8 +270,12 @@ public sealed class SceneScriptWindow : Window
 
         var root = new DockPanel { LastChildFill = true };
         DockPanel.SetDock(header, Dock.Top);
+        DockPanel.SetDock(castPanel, Dock.Top);
+        DockPanel.SetDock(tipPanel, Dock.Top);
         DockPanel.SetDock(footer, Dock.Bottom);
         root.Children.Add(header);
+        root.Children.Add(castPanel);
+        root.Children.Add(tipPanel);
         root.Children.Add(footer);
         root.Children.Add(well);
         Content = root;
@@ -284,12 +407,6 @@ public sealed class SceneScriptWindow : Window
 
     private void OnPointerMoved(object? sender, PointerEventArgs e)
     {
-        if (_errors.Count == 0)
-        {
-            ToolTip.SetTip(_editor, null);
-            return;
-        }
-
         var view = _editor.TextArea.TextView;
         var pos = e.GetPosition(view);
         pos += view.ScrollOffset;
@@ -305,7 +422,17 @@ public sealed class SceneScriptWindow : Window
             .Select(error => error.Message)
             .Distinct()
             .ToArray();
-        ToolTip.SetTip(_editor, messages.Length == 0 ? null : string.Join("\n", messages));
+        if (messages.Length > 0)
+        {
+            ToolTip.SetTip(_editor, string.Join("\n", messages));
+            return;
+        }
+
+        var lineText = _editor.Document.GetText(line);
+        var column = 0;
+        if (view.GetPosition(pos) is { } textPos && textPos.Location.Line == line.LineNumber)
+            column = Math.Max(0, textPos.Location.Column - 1);
+        ToolTip.SetTip(_editor, ScriptCommandDocs.TooltipAtColumn(lineText, column, _cast, _names));
     }
 
     private void ShowCompletion(bool force = false)

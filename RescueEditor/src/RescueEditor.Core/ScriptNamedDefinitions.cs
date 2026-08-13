@@ -8,6 +8,15 @@ public enum ScriptNamedArgKind
     Fanfare,
     Map,
     Emotion,
+    UpdateName,
+    ObjFlag,
+    EmotionEffect,
+    Direction,
+    DirTrans,
+    Placement,
+    GroundAnim,
+    ScriptId,
+    PaletteUtil,
 }
 
 /// <summary>Loaded catalogs for script Format / Parse / autocomplete.</summary>
@@ -17,25 +26,45 @@ public sealed class ScriptNamedDefinitions
     public required NamedIdCatalog Fanfare { get; init; }
     public required NamedIdCatalog Map { get; init; }
     public required NamedIdCatalog Emotion { get; init; }
+    public required NamedIdCatalog UpdateName { get; init; }
+    public required NamedIdCatalog ObjFlag { get; init; }
+    public required NamedIdCatalog EmotionEffect { get; init; }
+    public required NamedIdCatalog Direction { get; init; }
+    public required NamedIdCatalog DirTrans { get; init; }
+    public required NamedIdCatalog Placement { get; init; }
+    public required NamedIdCatalog GroundAnim { get; init; }
+    public required NamedIdCatalog ScriptId { get; init; }
+    public required NamedIdCatalog PaletteUtil { get; init; }
 
     public bool HasAny =>
         Music.Entries.Count > 0 ||
         Fanfare.Entries.Count > 0 ||
         Map.Entries.Count > 0 ||
-        Emotion.Entries.Count > 0;
+        Emotion.Entries.Count > 0 ||
+        UpdateName.Entries.Count > 0 ||
+        ObjFlag.Entries.Count > 0 ||
+        EmotionEffect.Entries.Count > 0 ||
+        Direction.Entries.Count > 0 ||
+        DirTrans.Entries.Count > 0 ||
+        Placement.Entries.Count > 0 ||
+        GroundAnim.Entries.Count > 0 ||
+        ScriptId.Entries.Count > 0 ||
+        PaletteUtil.Entries.Count > 0;
 
-    /// <summary>
-    /// Loads whatever catalogs exist under <paramref name="repositoryRoot"/>.
-    /// Returns null only when the root is missing or no catalog files were found.
-    /// </summary>
     public static ScriptNamedDefinitions? TryLoadFromRepository(string? repositoryRoot)
     {
         if (string.IsNullOrWhiteSpace(repositoryRoot) || !Directory.Exists(repositoryRoot))
             return null;
 
-        var musicPath = Path.Combine(repositoryRoot, "include", "constants", "bg_music.h");
-        var emotionPath = Path.Combine(repositoryRoot, "include", "constants", "emotions.h");
-        var mapPath = Path.Combine(repositoryRoot, "include", "constants", "ground_map.h");
+        var constants = Path.Combine(repositoryRoot, "include", "constants");
+        var musicPath = Path.Combine(constants, "bg_music.h");
+        var emotionPath = Path.Combine(constants, "emotions.h");
+        var mapPath = Path.Combine(constants, "ground_map.h");
+        var paramsPath = Path.Combine(constants, "ground_script_params.h");
+        var directionPath = Path.Combine(constants, "direction.h");
+        var scriptIdPath = Path.Combine(constants, "script_id.h");
+        var palettePath = Path.Combine(constants, "palette_util.h");
+        var placementPath = Path.Combine(repositoryRoot, "include", "portrait_placement.h");
         var sfxPath = Path.Combine(repositoryRoot, "src", "sound_names.c");
 
         var music = File.Exists(musicPath)
@@ -51,19 +80,49 @@ public sealed class ScriptNamedDefinitions
             ? NamedIdCatalogs.ParseSfxNames(File.ReadAllText(sfxPath))
             : new NamedIdCatalog([]);
 
+        NamedIdCatalog updateName = new([]);
+        NamedIdCatalog objFlag = new([]);
+        NamedIdCatalog emotionEffect = new([]);
+        NamedIdCatalog groundAnim = new([]);
+        if (File.Exists(paramsPath))
+            (updateName, objFlag, emotionEffect, groundAnim) =
+                NamedIdCatalogs.ParseGroundScriptParams(File.ReadAllText(paramsPath));
+
+        var direction = File.Exists(directionPath)
+            ? NamedIdCatalogs.ParseDirectionEnum(File.ReadAllText(directionPath))
+            : new NamedIdCatalog([]);
+        var dirTrans = File.Exists(directionPath)
+            ? NamedIdCatalogs.ParseDirTransEnum(File.ReadAllText(directionPath))
+            : new NamedIdCatalog([]);
+        var placement = File.Exists(placementPath)
+            ? NamedIdCatalogs.ParsePortraitPlacement(File.ReadAllText(placementPath))
+            : new NamedIdCatalog([]);
+        var scriptId = File.Exists(scriptIdPath)
+            ? NamedIdCatalogs.ParseScriptIdEnum(File.ReadAllText(scriptIdPath))
+            : new NamedIdCatalog([]);
+        var paletteUtil = File.Exists(palettePath)
+            ? NamedIdCatalogs.ParsePaletteUtilEnum(File.ReadAllText(palettePath))
+            : new NamedIdCatalog([]);
+
         var defs = new ScriptNamedDefinitions
         {
             Music = music,
             Emotion = emotion,
             Map = map,
             Fanfare = fanfare,
+            UpdateName = updateName,
+            ObjFlag = objFlag,
+            EmotionEffect = emotionEffect,
+            Direction = direction,
+            DirTrans = dirTrans,
+            Placement = placement,
+            GroundAnim = groundAnim,
+            ScriptId = scriptId,
+            PaletteUtil = paletteUtil,
         };
         return defs.HasAny ? defs : null;
     }
 
-    /// <summary>
-    /// Tries <paramref name="preferredRoot"/> then walks common decomp roots for constant headers.
-    /// </summary>
     public static ScriptNamedDefinitions? TryLoadBestEffort(string? preferredRoot = null)
     {
         foreach (var root in CandidateRepositoryRoots(preferredRoot))
@@ -112,17 +171,40 @@ public sealed class ScriptNamedDefinitions
         ScriptNamedArgKind.Fanfare => Fanfare,
         ScriptNamedArgKind.Map => Map,
         ScriptNamedArgKind.Emotion => Emotion,
+        ScriptNamedArgKind.UpdateName => UpdateName,
+        ScriptNamedArgKind.ObjFlag => ObjFlag,
+        ScriptNamedArgKind.EmotionEffect => EmotionEffect,
+        ScriptNamedArgKind.Direction => Direction,
+        ScriptNamedArgKind.DirTrans => DirTrans,
+        ScriptNamedArgKind.Placement => Placement,
+        ScriptNamedArgKind.GroundAnim => GroundAnim,
+        ScriptNamedArgKind.ScriptId => ScriptId,
+        ScriptNamedArgKind.PaletteUtil => PaletteUtil,
         _ => null,
     };
 
     public ScriptNamedArgKind KindFor(byte op, int argIndex) => op switch
     {
-        0x08 or 0x09 when argIndex == 0 => ScriptNamedArgKind.Map, // SELECT_MAP / SELECT_GROUND
-        0x2E when argIndex == 2 => ScriptNamedArgKind.Emotion, // PORTRAIT(place, id, emotion)
-        0x44 when argIndex == 0 => ScriptNamedArgKind.Music, // BGM_SWITCH
-        0x45 when argIndex == 1 => ScriptNamedArgKind.Music, // BGM_FADEIN(fade, music)
-        0x46 when argIndex == 0 => ScriptNamedArgKind.Music, // BGM_QUEUE
-        0x49 when argIndex == 0 => ScriptNamedArgKind.Fanfare, // FANFARE_PLAY
+        0x08 or 0x09 when argIndex == 0 => ScriptNamedArgKind.Map,
+        0x27 or 0x28 when argIndex == 1 => ScriptNamedArgKind.PaletteUtil, // FLASH_* kind
+        0x2D when argIndex == 0 => ScriptNamedArgKind.UpdateName,
+        0x2E when argIndex == 0 => ScriptNamedArgKind.Placement, // PORTRAIT place
+        0x2E when argIndex == 2 => ScriptNamedArgKind.Emotion,
+        0x44 when argIndex == 0 => ScriptNamedArgKind.Music,
+        0x45 when argIndex == 1 => ScriptNamedArgKind.Music,
+        0x46 when argIndex == 0 => ScriptNamedArgKind.Music,
+        0x49 or 0x4C when argIndex == 0 => ScriptNamedArgKind.Fanfare,
+        0x4E when argIndex == 1 => ScriptNamedArgKind.Fanfare, // FANFARE_FADEOUT2(f, i)
+        0x52 or 0x53 when argIndex == 0 => ScriptNamedArgKind.ObjFlag,
+        0x54 when argIndex == 0 => ScriptNamedArgKind.GroundAnim,
+        0x56 when argIndex == 0 => ScriptNamedArgKind.EmotionEffect,
+        0x89 when argIndex == 2 => ScriptNamedArgKind.Direction,
+        0x8B when argIndex == 1 => ScriptNamedArgKind.Direction,
+        0x91 when argIndex == 1 => ScriptNamedArgKind.DirTrans,
+        0x91 when argIndex == 2 => ScriptNamedArgKind.Direction,
+        0x92 when argIndex == 1 => ScriptNamedArgKind.DirTrans,
+        0x93 or 0x94 or 0x95 when argIndex == 1 => ScriptNamedArgKind.DirTrans,
+        0xE8 or 0xE9 when argIndex == 0 => ScriptNamedArgKind.ScriptId, // CALL/JUMP_SCRIPT
         _ => ScriptNamedArgKind.None,
     };
 

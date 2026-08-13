@@ -107,7 +107,7 @@ public static class ScriptCommandSchema
         ],
         0x54 => // SELECT_ANIMATION
         [
-            new("Animation", ScriptArgField.Arg1),
+            new("Animation", ScriptArgField.ArgShort),
         ],
         0x56 => // EMOTION_EFFECT
         [
@@ -138,6 +138,12 @@ public static class ScriptCommandSchema
             new("Frames", ScriptArgField.ArgByte),
             new("Speed", ScriptArgField.ArgShort),
             new("Direction", ScriptArgField.Arg1),
+        ],
+        0x97 => // CAMERA_SHAKE
+        [
+            new("Mode", ScriptArgField.ArgShort),
+            new("Amp", ScriptArgField.Arg1),
+            new("Period", ScriptArgField.Arg2),
         ],
         0x9B => // CAMERA_FOLLOW
         [
@@ -173,7 +179,24 @@ public static class ScriptCommandSchema
         ],
         0xE8 or 0xE9 => // CALL_SCRIPT / JUMP_SCRIPT
         [
-            new("Script", ScriptArgField.Arg1),
+            new("Script", ScriptArgField.ArgShort),
+        ],
+        0x27 or 0x28 => // FLASH_FROM / FLASH_TO
+        [
+            new("Wait", ScriptArgField.ArgByte),
+            new("Kind", ScriptArgField.ArgShort),
+            new("Frames", ScriptArgField.Arg1),
+            new("Rgb", ScriptArgField.Arg2, "hex"),
+        ],
+        0x2B => // TEXTBOX_AUTO_PRESS
+        [
+            new("EndFrames", ScriptArgField.Arg1),
+            new("MidFrames", ScriptArgField.Arg2),
+        ],
+        0x4E => // FANFARE_FADEOUT2
+        [
+            new("Fade", ScriptArgField.ArgShort),
+            new("Fanfare", ScriptArgField.Arg1),
         ],
         0xEA or 0xEB => // CALL_STATION / JUMP_STATION
         [

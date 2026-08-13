@@ -12,10 +12,10 @@ public sealed class ScriptCommandSchemaTests
     [InlineData(0x1B, "Function", ScriptArgField.Arg1)] // EXECUTE_FUNCTION
     [InlineData(0x1C, "Subroutine", ScriptArgField.Arg1)] // EXECUTE_SUBROUTINE
     [InlineData(0x2F, "X", ScriptArgField.Arg1)] // PORTRAIT_POS
-    [InlineData(0x54, "Animation", ScriptArgField.Arg1)] // SELECT_ANIMATION
+    [InlineData(0x54, "Animation", ScriptArgField.ArgShort)] // SELECT_ANIMATION
     [InlineData(0x5B, "Waypoint", ScriptArgField.Arg1)] // WARP_WAYPOINT
-    [InlineData(0xE8, "Script", ScriptArgField.Arg1)] // CALL_SCRIPT
-    [InlineData(0xE9, "Script", ScriptArgField.Arg1)] // JUMP_SCRIPT
+    [InlineData(0xE8, "Script", ScriptArgField.ArgShort)] // CALL_SCRIPT
+    [InlineData(0xE9, "Script", ScriptArgField.ArgShort)] // JUMP_SCRIPT
     [InlineData(0xEA, "Station", ScriptArgField.Arg1)] // CALL_STATION
     [InlineData(0xEB, "Station", ScriptArgField.Arg1)] // JUMP_STATION
     public void KnownOpcodesExposePrimarySemanticField(byte op, string label, ScriptArgField field)

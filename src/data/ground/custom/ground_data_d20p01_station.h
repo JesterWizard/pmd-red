@@ -160,7 +160,7 @@ static const struct ScriptCommand s_gs216_g1_s0_lives0_dlg0[] = { /* 0x8267cc8 *
     TEXTBOX_CLEAR,
     WAIT(60),
     FANFARE_PLAY2(453),
-    { 0x97, 0x00,  0x0001,  0x00000000,  0x00000000, NULL },
+    CAMERA_SHAKE(1, 0, 0),
     WAIT(60),
     TEXTBOX_AUTO_PRESS(90, 90),
     MSG_NPC(-1, _(" Me...?")),
