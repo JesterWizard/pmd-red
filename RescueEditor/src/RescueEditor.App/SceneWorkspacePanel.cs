@@ -39,6 +39,7 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly ToggleButton _effectsToggle;
     private readonly ToggleButton _eventsToggle;
     private readonly ToggleButton _linksToggle;
+    private readonly ToggleButton _collisionToggle;
     private readonly ToggleButton _gridToggle;
     private readonly ToggleButton _snapToggle;
     private readonly ToggleButton _selectTool;
@@ -93,6 +94,10 @@ public sealed class SceneWorkspacePanel : UserControl
     private NamedIdCatalog? _monsters;
     private string? _assetsRoot;
     private SceneEntity? _selectedEntity;
+    private SceneLink? _selectedLink;
+    private int _selectedLinkIndex = -1;
+    private ListBox? _linksList;
+    private TextBlock? _linkDetails;
     private ScriptCommandData? _selectedCommand;
     private ScriptRefData? _selectedStation;
     private bool _suppressPropertyEvents;
@@ -108,10 +113,15 @@ public sealed class SceneWorkspacePanel : UserControl
         FontSize = EditorTheme.FontBody;
 
         _map = new SceneMapCanvas();
-        _map.EntitySelected += (_, entity) =>
+        _map.SelectionChanged += (_, hit) =>
         {
-            _selectedEntity = entity;
+            _selectedEntity = hit?.Entity;
+            _selectedLink = hit?.Link;
+            _selectedLinkIndex = hit?.LinkIndex ?? -1;
+            if (_selectedLink is not null)
+                SetInspectorMode("Links");
             SyncEntityListSelection();
+            RefreshLinksPanel();
             RefreshProperties();
         };
         _map.EntityMoved += (_, entity) =>
@@ -147,9 +157,10 @@ public sealed class SceneWorkspacePanel : UserControl
         _effectsToggle = EditorChrome.ToolToggle("Effects", isChecked: true);
         _eventsToggle = EditorChrome.ToolToggle("Events", isChecked: true);
         _linksToggle = EditorChrome.ToolToggle("Links", isChecked: true);
+        _collisionToggle = EditorChrome.ToolToggle("Collision", isChecked: SceneMapOverlay.ShowCollisionByDefault);
         _gridToggle = EditorChrome.ToolToggle("Grid");
         _snapToggle = EditorChrome.ToolToggle("Snap", isChecked: true);
-        foreach (var toggle in new[] { _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _gridToggle })
+        foreach (var toggle in new[] { _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _collisionToggle, _gridToggle })
             toggle.IsCheckedChanged += (_, _) => RefreshMap();
         _snapToggle.IsCheckedChanged += (_, _) => _map.SnapToGrid = _snapToggle.IsChecked == true;
         _map.SnapToGrid = true;
@@ -195,7 +206,7 @@ public sealed class SceneWorkspacePanel : UserControl
                 EditorChrome.ToolbarLabel("Sector"),
                 _sectorBox,
                 EditorChrome.ToolbarSeparator(),
-                _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle,
+                _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _collisionToggle,
                 EditorChrome.ToolbarSeparator(),
                 _undoButton, _redoButton, playButton,
             },
@@ -491,14 +502,7 @@ public sealed class SceneWorkspacePanel : UserControl
         _objectsRight = BuildEntityKindPanel(SceneEntityKind.Object);
         _effectsRight = BuildEntityKindPanel(SceneEntityKind.Effect);
         _eventsRight = BuildEntityKindPanel(SceneEntityKind.Event);
-        _linksRight = new TextBlock
-        {
-            Text = "Links are drawn on the map viewport.",
-            Margin = new Thickness(EditorTheme.Space4),
-            TextWrapping = TextWrapping.Wrap,
-            FontSize = EditorTheme.FontLabel,
-            Foreground = EditorTheme.TextMutedBrush,
-        };
+        _linksRight = BuildLinksPanel();
         _scriptRight = BuildScriptRightPanel();
 
         _inspectorTabBar = new StackPanel
@@ -738,6 +742,8 @@ public sealed class SceneWorkspacePanel : UserControl
             if (list.SelectedItem is SceneEntity entity)
             {
                 _selectedEntity = entity;
+                _selectedLink = null;
+                _selectedLinkIndex = -1;
                 RefreshProperties();
                 RefreshMap();
             }
@@ -784,6 +790,94 @@ public sealed class SceneWorkspacePanel : UserControl
         panel.Children.Add(hint);
         Grid.SetRow(hint, 2);
         return panel;
+    }
+
+    private Control BuildLinksPanel()
+    {
+        _linksList = new ListBox();
+        EditorChrome.StyleList(_linksList);
+        _linksList.SelectionChanged += (_, _) =>
+        {
+            if (_suppressPropertyEvents || _linksList.SelectedItem is not LinkListItem item)
+                return;
+            _selectedLink = item.Link;
+            _selectedLinkIndex = item.Index;
+            _selectedEntity = null;
+            if (_linkDetails is not null)
+                _linkDetails.Text = SceneMapOverlay.FormatLinkDetails(item.Link, item.Index);
+            RefreshMap();
+        };
+
+        _linkDetails = new TextBlock
+        {
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
+            TextWrapping = TextWrapping.Wrap,
+            FontFamily = EditorTheme.MonoFont,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextSecondaryBrush,
+            LineHeight = 16,
+            Text = "Click a GroundLink on the map (with Links visible) to inspect it.",
+        };
+
+        var hint = new TextBlock
+        {
+            Text = "Collision overlay is off by default. Toggle Collision in the toolbar to tint solid tiles.",
+            Margin = new Thickness(EditorTheme.Space4, 0, EditorTheme.Space4, EditorTheme.Space3),
+            TextWrapping = TextWrapping.Wrap,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
+
+        var panel = new Grid { RowDefinitions = new RowDefinitions("*,Auto,Auto") };
+        panel.Children.Add(_linksList);
+        panel.Children.Add(_linkDetails);
+        Grid.SetRow(_linkDetails, 1);
+        panel.Children.Add(hint);
+        Grid.SetRow(hint, 2);
+        return panel;
+    }
+
+    private void RefreshLinksPanel()
+    {
+        if (_linksList is null || _linkDetails is null)
+            return;
+
+        var items = new List<LinkListItem>();
+        if (_scene is not null)
+        {
+            for (var i = 0; i < _scene.Links.Count; i++)
+                items.Add(new LinkListItem(i, _scene.Links[i]));
+        }
+
+        _suppressPropertyEvents = true;
+        try
+        {
+            _linksList.ItemsSource = items;
+            _linksList.SelectedIndex = _selectedLinkIndex >= 0 && _selectedLinkIndex < items.Count
+                ? _selectedLinkIndex
+                : -1;
+        }
+        finally
+        {
+            _suppressPropertyEvents = false;
+        }
+
+        _linkDetails.Text = _selectedLink is not null && _selectedLinkIndex >= 0
+            ? SceneMapOverlay.FormatLinkDetails(_selectedLink, _selectedLinkIndex)
+            : "Click a GroundLink on the map (with Links visible) to inspect it.";
+    }
+
+    private sealed class LinkListItem
+    {
+        public LinkListItem(int index, SceneLink link)
+        {
+            Index = index;
+            Link = link;
+        }
+
+        public int Index { get; }
+        public SceneLink Link { get; }
+        public override string ToString() => SceneMapOverlay.FormatLinkListRow(Link, Index);
     }
 
     private Control BuildScriptRightPanel()
@@ -898,7 +992,11 @@ public sealed class SceneWorkspacePanel : UserControl
             _ => (SceneEntityKind?)null,
         };
         if (kind is null)
+        {
+            if (_inspectorMode == "Links")
+                RefreshLinksPanel();
             return;
+        }
 
         var panel = kind switch
         {
@@ -1422,7 +1520,9 @@ public sealed class SceneWorkspacePanel : UserControl
             visibleSectors: ResolveVisibleSectors(g),
             actorSprites: _actorSprites,
             objectSprites: _objectSprites,
-            groundEffects: _groundEffects);
+            groundEffects: _groundEffects,
+            showCollision: _collisionToggle.IsChecked == true,
+            selectedLink: _selectedLink);
     }
 
     private HashSet<int> ResolveVisibleSectors(int group)
@@ -1529,6 +1629,8 @@ public sealed class SceneWorkspacePanel : UserControl
         if (_entityList.SelectedItem is SceneEntity entity)
         {
             _selectedEntity = entity;
+            _selectedLink = null;
+            _selectedLinkIndex = -1;
             RefreshProperties();
             RefreshMap();
         }

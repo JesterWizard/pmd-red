@@ -65,6 +65,22 @@ public static class BmaCollisionDecoder
         return new GroundCollisionMap(width, height, tiles);
     }
 
+    public static GroundCollisionMap? TryLoad(RomImage rom, Scene scene)
+    {
+        var asset = scene.Map?.GroundMapAsset;
+        if (asset is null)
+            return null;
+        try
+        {
+            var bma = Compression.DecompressGmlz(rom.Copy(asset.Offset, asset.Size));
+            return TryDecode(bma);
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
     public static bool[] DecodeCollisionLayer(
         ReadOnlySpan<byte> source,
         int width,

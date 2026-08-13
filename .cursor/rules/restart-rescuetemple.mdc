@@ -1,0 +1,18 @@
+---
+description: Force-close and reopen RescueTemple after finishing a ticket
+alwaysApply: true
+---
+
+# Restart RescueTemple after a ticket
+
+When you **finish implementing a ticket** (Linear/GitHub issue work is done, tests green, UI wired), **force-close RescueTemple and open it again** before ending the turn. Do this even if hot reload is already running.
+
+## How
+
+1. Kill the Windows editor process (ignore failure if it is not running):
+   `/mnt/c/Windows/System32/taskkill.exe /F /IM RescueTemple.exe`
+2. Also kill leftover `dotnet watch` for RescueTemple if it would keep the old binary locked.
+3. Relaunch with `./RescueEditor/dev.sh` from the repo root (background it; that script already taskkills `RescueTemple.exe` and starts Windows hot reload).
+4. If Windows .NET / the `pmd-red-win` mirror is unavailable, use `./RescueEditor/dev.sh --linux`.
+
+Do **not** skip this because “watch should pick up the change.” The user wants a full process restart so they see the new build.

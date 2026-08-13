@@ -126,11 +126,14 @@ public static class SceneCompositor
         ObjectSpriteAtlas? objectSprites = null,
         SceneEntity? excludeLive = null,
         GroundEffectAtlas? groundEffects = null,
-        int animTick = 0) =>
+        int animTick = 0,
+        GroundCollisionMap? collision = null,
+        bool showCollision = false,
+        SceneLink? selectedLink = null) =>
         ComposeSceneImage(
             rom, scene, group, sector, selected, showLives, showObjects, showEffects, showEvents,
             showLinks, drawLabels, showGrid, hudDialogue, visibleSectors, actorSprites, objectSprites,
-            excludeLive, groundEffects, animTick).ToPng();
+            excludeLive, groundEffects, animTick, collision, showCollision, selectedLink).ToPng();
 
     public static RgbaImage ComposeSceneImage(
         RomImage rom,
@@ -151,7 +154,10 @@ public static class SceneCompositor
         ObjectSpriteAtlas? objectSprites = null,
         SceneEntity? excludeLive = null,
         GroundEffectAtlas? groundEffects = null,
-        int animTick = 0)
+        int animTick = 0,
+        GroundCollisionMap? collision = null,
+        bool showCollision = false,
+        SceneLink? selectedLink = null)
     {
         var background = RenderMapBackground(rom, scene, animTick);
         RgbaImage image;
@@ -163,6 +169,9 @@ public static class SceneCompositor
         {
             image = CreateFallbackCanvas(scene);
         }
+
+        if (showCollision && collision is not null)
+            SceneMapOverlay.PaintCollision(image, collision);
 
         if (showGrid)
             DrawGrid(image);
@@ -182,9 +191,14 @@ public static class SceneCompositor
         if (showLinks)
         {
             foreach (var link in scene.Links)
-                DrawRect(image, link.Position.PixelX, link.Position.PixelY,
-                    Math.Max(8, link.Width * 8), Math.Max(8, link.Height * 8),
-                    0xFF, 0x80, 0x80, selected: false, filled: false);
+            {
+                var selectedMatch = selectedLink is not null &&
+                    (ReferenceEquals(selectedLink, link) ||
+                     (selectedLink.RomOffset >= 0 && selectedLink.RomOffset == link.RomOffset));
+                var rect = SceneMapOverlay.BoundsOf(link);
+                DrawRect(image, rect.Left, rect.Top, rect.Width, rect.Height,
+                    0xFF, 0x80, 0x80, selectedMatch, filled: false);
+            }
         }
 
         if (!string.IsNullOrWhiteSpace(hudDialogue))

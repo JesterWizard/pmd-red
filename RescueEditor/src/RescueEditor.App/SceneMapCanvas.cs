@@ -43,6 +43,9 @@ public sealed class SceneMapCanvas : UserControl
     private bool _showEffects = true;
     private bool _showEvents = true;
     private bool _showLinks = true;
+    private bool _showCollision;
+    private SceneLink? _selectedLink;
+    private GroundCollisionMap? _collision;
     private bool _showGrid;
     private string? _hudDialogue;
     private Bitmap? _bitmap;
@@ -60,6 +63,7 @@ public sealed class SceneMapCanvas : UserControl
     public SceneMapTool Tool { get; set; } = SceneMapTool.Select;
     public bool SnapToGrid { get; set; } = true;
     public event EventHandler<SceneEntity?>? EntitySelected;
+    public event EventHandler<SceneMapSelection?>? SelectionChanged;
     public event EventHandler<SceneEntity>? EntityMoved;
     public event EventHandler<(double X, double Y)>? CursorMoved;
     public CompactPos? MovedPending { get; set; }
@@ -209,18 +213,23 @@ public sealed class SceneMapCanvas : UserControl
         IReadOnlyCollection<int>? visibleSectors = null,
         ActorSpriteAtlas? actorSprites = null,
         ObjectSpriteAtlas? objectSprites = null,
-        GroundEffectAtlas? groundEffects = null)
+        GroundEffectAtlas? groundEffects = null,
+        bool showCollision = false,
+        SceneLink? selectedLink = null)
     {
         _rom = rom;
         _scene = scene;
         _group = group;
         _sector = sector;
         _selected = selected;
+        _selectedLink = selectedLink;
         _showLives = showLives;
         _showObjects = showObjects;
         _showEffects = showEffects;
         _showEvents = showEvents;
         _showLinks = showLinks;
+        _showCollision = showCollision;
+        _collision = showCollision ? BmaCollisionDecoder.TryLoad(rom, scene) : null;
         _showGrid = showGrid;
         _hudDialogue = hudDialogue;
         _visibleSectors = visibleSectors;
@@ -252,7 +261,10 @@ public sealed class SceneMapCanvas : UserControl
                 visibleSectors: _visibleSectors,
                 actorSprites: _actorSprites,
                 objectSprites: _objectSprites,
-                groundEffects: _groundEffects);
+                groundEffects: _groundEffects,
+                collision: _collision,
+                showCollision: _showCollision,
+                selectedLink: _selectedLink);
             using var stream = new MemoryStream(png);
             _bitmap?.Dispose();
             _bitmap = new Bitmap(stream);
@@ -402,14 +414,19 @@ public sealed class SceneMapCanvas : UserControl
         if (!point.Properties.IsLeftButtonPressed || _scene is null)
             return;
 
-        var hit = HitTest((int)map.X, (int)map.Y);
-        _selected = hit;
-        EntitySelected?.Invoke(this, hit);
-        if (hit is not null)
+        var hit = SceneMapOverlay.HitTest(
+            _scene, (int)map.X, (int)map.Y, _group, _sector, _visibleSectors,
+            _showLives, _showObjects, _showEffects, _showEvents, _showLinks,
+            _rom, _actorSprites, _objectSprites);
+        _selected = hit?.Entity;
+        _selectedLink = hit?.Link;
+        SelectionChanged?.Invoke(this, hit);
+        EntitySelected?.Invoke(this, hit?.Entity);
+        if (hit?.Entity is not null)
         {
             _dragging = true;
             _dragStart = point.Position;
-            _dragOrigin = hit.Position;
+            _dragOrigin = hit.Entity.Position;
             e.Pointer.Capture(_host);
         }
         Refresh();
@@ -480,54 +497,4 @@ public sealed class SceneMapCanvas : UserControl
     private Point ToMap(Point hostPoint) =>
         new(hostPoint.X / Math.Max(0.001, _imageScale), hostPoint.Y / Math.Max(0.001, _imageScale));
 
-    private SceneEntity? HitTest(int pixelX, int pixelY)
-    {
-        if (_scene is null)
-            return null;
-
-        SceneEntity? best = null;
-        var bestArea = int.MaxValue;
-        foreach (var entity in SceneCompositor.EnumerateVisibleEntities(
-                     _scene, _group, _sector, _visibleSectors,
-                     _showLives, _showObjects, _showEffects, _showEvents))
-        {
-            int left, top, w, h;
-            RgbaImage? sprite = null;
-            if (entity.Kind == SceneEntityKind.Live && _rom is not null)
-                sprite = _actorSprites?.TryGetForLive(_rom, null, entity.TypeId);
-            else if (entity.Kind == SceneEntityKind.Object)
-                sprite = _objectSprites?.TryGetForObject(entity.TypeId);
-
-            if (sprite is not null)
-            {
-                var hitW = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
-                var hitH = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
-                var cx = entity.PixelX + hitW / 2;
-                var cy = entity.PixelY + hitH / 2;
-                left = cx - sprite.Width / 2;
-                top = cy - sprite.Height / 2;
-                w = sprite.Width;
-                h = sprite.Height;
-            }
-            else
-            {
-                left = entity.PixelX;
-                top = entity.PixelY;
-                w = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
-                h = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
-            }
-
-            if (pixelX >= left && pixelX < left + w &&
-                pixelY >= top && pixelY < top + h)
-            {
-                var area = w * h;
-                if (area <= bestArea)
-                {
-                    bestArea = area;
-                    best = entity;
-                }
-            }
-        }
-        return best;
-    }
 }

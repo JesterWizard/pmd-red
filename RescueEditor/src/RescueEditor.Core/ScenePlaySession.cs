@@ -821,21 +821,8 @@ public sealed class ScenePlaySession
         return CameraWidth;
     }
 
-    private static GroundCollisionMap? TryLoadCollision(RomImage rom, Scene scene)
-    {
-        var asset = scene.Map?.GroundMapAsset;
-        if (asset is null)
-            return null;
-        try
-        {
-            var bma = Compression.DecompressGmlz(rom.Copy(asset.Offset, asset.Size));
-            return BmaCollisionDecoder.TryDecode(bma);
-        }
-        catch
-        {
-            return null;
-        }
-    }
+    private static GroundCollisionMap? TryLoadCollision(RomImage rom, Scene scene) =>
+        BmaCollisionDecoder.TryLoad(rom, scene);
 
     private static BplPaletteAnimation? TryLoadMapPaletteAnimation(RomImage rom, Scene scene)
     {
