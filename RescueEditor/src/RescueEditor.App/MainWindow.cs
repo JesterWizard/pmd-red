@@ -39,6 +39,7 @@ public sealed class MainWindow : Window
     private readonly Grid _contentGrid;
     private readonly EditorKeymap _keymap = EditorKeymap.CreateDefault();
     private readonly EditorDockLayout _dock = new();
+    private readonly GlobalSearchPalette _searchPalette = new();
     private readonly string _shellSettingsPath;
     private readonly TextBlock _status;
     private readonly StackPanel _propertiesBody;
@@ -54,6 +55,10 @@ public sealed class MainWindow : Window
     private readonly AssetWorkspacePanel _assetWorkspace;
     private SceneWorkspacePanel? _sceneWorkspace;
     private CPatchesWorkspacePanel? _cPatchesWorkspace;
+    private ProjectSearchIndex _projectSearch = ProjectSearchIndex.Empty;
+    private ScriptNamedDefinitions? _scriptNames;
+    private CancellationTokenSource? _searchIndexCts;
+    private bool _searchDirty;
 
     private RomImage? _rom;
     private WorkingRom? _workingRom;
@@ -264,7 +269,8 @@ public sealed class MainWindow : Window
             },
         };
 
-        Content = new Panel { Children = { _root, _loadingOverlay } };
+        Content = new Panel { Children = { _root, _loadingOverlay, _searchPalette } };
+        _searchPalette.ResultChosen += (_, hit) => OpenSearchHit(hit);
         KeyDown += MainWindowOnKeyDown;
         Closing += OnClosing;
         Opened += OnOpened;
@@ -332,8 +338,16 @@ public sealed class MainWindow : Window
             InputGesture = new KeyGesture(Key.Y, KeyModifiers.Control),
         };
         redo.Click += (_, _) => { _changes.Redo(); _sceneWorkspace?.RefreshFromExternal(); UpdateDirtyTitle(); };
+        var find = new MenuItem
+        {
+            Header = "_Find in Project…",
+            InputGesture = new KeyGesture(Key.P, KeyModifiers.Control),
+        };
+        find.Click += (_, _) => OpenGlobalSearch();
         edit.Items.Add(undo);
         edit.Items.Add(redo);
+        edit.Items.Add(new Separator());
+        edit.Items.Add(find);
         menu.Items.Add(edit);
 
         var sceneMenu = new MenuItem { Header = "_Scene" };
@@ -533,6 +547,7 @@ public sealed class MainWindow : Window
 
             _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes);
             _explorer.Build(_catalog, _scenes, Categories);
+            KickSearchIndexBuild();
             _selectedCategory = AssetCategory.Scenes;
             _selectedAsset = null;
             ShowScenesPicker();
@@ -643,7 +658,8 @@ public sealed class MainWindow : Window
             _sceneWorkspace.DirtyChanged += OnSceneDirty;
             _sceneWorkspace.Load(_rom, _charmap, _scenes, _changes, scene,
                 asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null,
-                _workingRom);
+                _workingRom,
+                _scriptNames);
             // Scene editor owns center+right (SkyTemple style); hide generic properties.
             _workspaceHost.Child = _sceneWorkspace;
             ApplyDockLayout(sceneOwnsInspector: true);
@@ -656,7 +672,11 @@ public sealed class MainWindow : Window
         }
     }
 
-    private void OnSceneDirty(object? sender, EventArgs e) => UpdateDirtyTitle();
+    private void OnSceneDirty(object? sender, EventArgs e)
+    {
+        UpdateDirtyTitle();
+        _searchDirty = true;
+    }
 
     private void OpenCPatches(AssetDescriptor? asset = null)
     {
@@ -727,6 +747,181 @@ public sealed class MainWindow : Window
                 Foreground = EditorTheme.TextMutedBrush,
             });
         }
+
+        AddAssetReferences(a);
+    }
+
+    private void AddAssetReferences(AssetDescriptor asset)
+    {
+        if (_scenes is null)
+            return;
+
+        var hits = _scenes.References.FindForAsset(asset);
+        _propertiesBody.Children.Add(EditorChrome.SectionHeader(
+            hits.Count == 0 ? "References" : $"References ({hits.Count})"));
+        if (hits.Count == 0)
+        {
+            _propertiesBody.Children.Add(new TextBlock
+            {
+                Text = "No scene scripts reference this asset.",
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, EditorTheme.Space2),
+                TextWrapping = TextWrapping.Wrap,
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextMutedBrush,
+            });
+            return;
+        }
+
+        foreach (var hit in hits.Take(24))
+        {
+            var captured = hit;
+            var row = new TextBlock
+            {
+                Text = $"{hit.SceneName} · {hit.LocationLabel}",
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, 0),
+                TextWrapping = TextWrapping.Wrap,
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.AccentBrush,
+                Cursor = new Cursor(StandardCursorType.Hand),
+            };
+            ToolTip.SetTip(row, "Open script at this use");
+            row.PointerPressed += (_, e) =>
+            {
+                OpenScriptReference(captured);
+                e.Handled = true;
+            };
+            _propertiesBody.Children.Add(row);
+        }
+
+        if (hits.Count > 24)
+        {
+            _propertiesBody.Children.Add(new TextBlock
+            {
+                Text = $"…and {hits.Count - 24} more",
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, EditorTheme.Space2),
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextMutedBrush,
+            });
+        }
+    }
+
+    private void OpenScriptReference(ScriptAssetHit hit)
+    {
+        if (_scenes is null || _rom is null || _charmap is null)
+            return;
+        if (hit.Site == ScriptSiteKind.Function)
+        {
+            SetStatus($"Function script '{hit.SiteName}' is not attached to a scene source.");
+            return;
+        }
+
+        var scene = _scenes.FindScene(hit.MapId);
+        if (scene is null)
+        {
+            SetStatus($"No scene for map {hit.MapId}.");
+            return;
+        }
+
+        var mapText = hit.MapId.ToString();
+        var asset = _catalog?.Assets.FirstOrDefault(candidate =>
+                        candidate.Kind == AssetKind.Scene &&
+                        candidate.Metadata.TryGetValue("mapId", out var id) &&
+                        id == mapText)
+                    ?? new AssetDescriptor
+                    {
+                        Id = $"scene:{hit.MapId}",
+                        Name = scene.Name,
+                        Category = AssetCategory.Scenes,
+                        Kind = AssetKind.Scene,
+                        Metadata = new Dictionary<string, string> { ["mapId"] = mapText },
+                    };
+
+        OpenScene(scene, asset);
+        _sceneWorkspace?.OpenScriptAt(hit);
+    }
+
+    private void KickSearchIndexBuild()
+    {
+        _searchIndexCts?.Cancel();
+        _searchIndexCts = new CancellationTokenSource();
+        var token = _searchIndexCts.Token;
+        var catalog = _catalog;
+        var scenes = _scenes;
+        var romPath = _rom?.Path;
+        if (catalog is null || scenes is null || string.IsNullOrWhiteSpace(romPath))
+        {
+            _projectSearch = ProjectSearchIndex.Empty;
+            return;
+        }
+
+        _ = Task.Run(() =>
+        {
+            var names = ScriptNamedDefinitions.TryLoadBestEffort(CatalogBuilder.FindRepositoryRoot(romPath));
+            if (token.IsCancellationRequested)
+                return;
+            var index = ProjectSearchIndex.Build(catalog.Assets, scenes, names);
+            if (token.IsCancellationRequested)
+                return;
+            Dispatcher.UIThread.Post(() =>
+            {
+                if (token.IsCancellationRequested)
+                    return;
+                _scriptNames = names;
+                _projectSearch = index;
+                _searchDirty = false;
+                _sceneWorkspace?.SetScriptNames(names);
+                _searchPalette.UpdateIndex(index);
+            });
+        }, token);
+    }
+
+    private void OpenGlobalSearch()
+    {
+        if (_rom is null || _catalog is null)
+        {
+            SetStatus("Open a ROM to search dialogue and scripts.");
+            return;
+        }
+
+        if (_searchDirty || _projectSearch.DocumentCount == 0)
+            KickSearchIndexBuild();
+        _searchPalette.Show(_projectSearch);
+    }
+
+    private void OpenSearchHit(ProjectSearchHit hit)
+    {
+        if (hit.Script is { } scriptHit)
+        {
+            OpenScriptReference(scriptHit);
+            var label = hit.Kind == ProjectSearchKind.Dialogue ? "Dialogue" : "Script";
+            SetStatus($"{label}  ·  {scriptHit.SceneName}  ·  {scriptHit.LocationLabel}");
+            return;
+        }
+
+        var asset = _catalog?.Assets.FirstOrDefault(candidate =>
+                        candidate.Kind == AssetKind.Dialogue &&
+                        (candidate.Id == hit.AssetId || candidate.Offset == hit.DialogueOffset));
+        if (asset is null)
+        {
+            SetStatus(hit.DialogueOffset >= 0
+                ? $"Dialogue 0x{hit.DialogueOffset:X} is not in the dialogue catalog."
+                : "Could not open search result.");
+            return;
+        }
+
+        _selectedCategory = AssetCategory.Dialogue;
+        _selectedAsset = asset;
+        _explorer.ExpandCategory(AssetCategory.Dialogue);
+        _workspaceHost.Child = _assetWorkspace;
+        ApplyDockLayout(sceneOwnsInspector: false);
+        _assetWorkspace.ShowCategory(AssetCategory.Dialogue, selectFirst: false);
+        _ = _assetWorkspace.RevealAssetAsync(asset);
+        UpdateBreadcrumb();
+        UpdateProperties();
+        SetStatus($"Dialogue  ·  {asset.DisplayName}");
     }
 
     private void ShowInspectorEmpty()
@@ -954,6 +1149,11 @@ public sealed class MainWindow : Window
         _cPatchesUseDecompHost = false;
         _sceneWorkspace = null;
         _cPatchesWorkspace = null;
+        _projectSearch = ProjectSearchIndex.Empty;
+        _scriptNames = null;
+        _searchIndexCts?.Cancel();
+        _searchIndexCts = null;
+        _searchPalette.Dismiss();
         _selectedAsset = null;
         _selectedCategory = null;
         _explorer.Clear();
@@ -1031,6 +1231,9 @@ public sealed class MainWindow : Window
                 _dock.Toggle(DockPanelId.Output);
                 ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
                 PersistShellSettings();
+                return true;
+            case EditorCommandId.GlobalSearch:
+                OpenGlobalSearch();
                 return true;
             default:
                 return false;

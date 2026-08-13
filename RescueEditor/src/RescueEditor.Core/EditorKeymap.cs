@@ -12,6 +12,7 @@ public enum EditorCommandId
     ToggleExplorer,
     ToggleInspector,
     ToggleOutput,
+    GlobalSearch,
 }
 
 public readonly record struct KeyChord(string Key, bool Ctrl, bool Shift, bool Alt)
@@ -43,6 +44,7 @@ public sealed class EditorKeymap
         new(new KeyChord("OemOpenBrackets", Ctrl: true, Shift: false, Alt: false), EditorCommandId.ToggleExplorer),
         new(new KeyChord("OemCloseBrackets", Ctrl: true, Shift: false, Alt: false), EditorCommandId.ToggleInspector),
         new(new KeyChord("U", Ctrl: true, Shift: true, Alt: false), EditorCommandId.ToggleOutput),
+        new(new KeyChord("P", Ctrl: true, Shift: false, Alt: false), EditorCommandId.GlobalSearch),
     ]);
 
     public bool TryResolve(KeyChord chord, out EditorCommandId command) =>

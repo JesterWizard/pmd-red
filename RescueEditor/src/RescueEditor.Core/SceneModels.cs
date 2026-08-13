@@ -304,6 +304,12 @@ public sealed class SceneDatabase
     public Dictionary<int, DialogueString> DialogueByOffset { get; } = new();
     public List<string> Diagnostics { get; } = new();
 
+    private ScriptAssetIndex? _references;
+
+    public ScriptAssetIndex References => _references ??= ScriptAssetIndex.Build(this);
+
+    public void InvalidateReferences() => _references = null;
+
     public Scene? FindScene(int mapId) => Scenes.FirstOrDefault(scene => scene.MapId == mapId);
     public GroundMapDefinition? FindMap(int mapId) => Maps.FirstOrDefault(map => map.MapId == mapId);
 }

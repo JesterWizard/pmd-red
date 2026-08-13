@@ -89,6 +89,9 @@ public sealed class SceneWorkspacePanel : UserControl
     private ObjectSpriteAtlas? _objectSprites;
     private GroundEffectAtlas? _groundEffects;
     private PortraitAtlas? _portraitAtlas;
+    private ScriptNamedDefinitions? _scriptNames;
+    private NamedIdCatalog? _monsters;
+    private string? _assetsRoot;
     private SceneEntity? _selectedEntity;
     private ScriptCommandData? _selectedCommand;
     private ScriptRefData? _selectedStation;
@@ -600,21 +603,29 @@ public sealed class SceneWorkspacePanel : UserControl
         ChangeService changes,
         Scene? scene = null,
         int? selectMapId = null,
-        WorkingRom? workingRom = null)
+        WorkingRom? workingRom = null,
+        ScriptNamedDefinitions? scriptNames = null)
     {
         _workingRom = workingRom;
         _rom = workingRom?.View ?? rom;
         _charmap = charmap;
         _database = database;
         _changes = changes;
+        if (scriptNames is not null)
+            _scriptNames = scriptNames;
         _scene = scene ?? (selectMapId is int id
             ? database.Scenes.FirstOrDefault(s => s.MapId == id)
             : database.Scenes.FirstOrDefault());
         var assetsRoot = CatalogBuilder.FindRepositoryRoot(rom.Path);
-        _actorSprites = new ActorSpriteAtlas(assetsRoot, database.Profile);
-        _objectSprites = new ObjectSpriteAtlas(assetsRoot);
-        _groundEffects = new GroundEffectAtlas(rom);
-        _portraitAtlas = new PortraitAtlas(rom, assetsRoot);
+        if (_actorSprites is null || !string.Equals(_assetsRoot, assetsRoot, StringComparison.OrdinalIgnoreCase))
+        {
+            _assetsRoot = assetsRoot;
+            _actorSprites = new ActorSpriteAtlas(assetsRoot, database.Profile);
+            _objectSprites = new ObjectSpriteAtlas(assetsRoot);
+            _groundEffects = new GroundEffectAtlas(_rom);
+            _portraitAtlas = new PortraitAtlas(_rom, assetsRoot);
+            _monsters = null;
+        }
         _selectedEntity = null;
         _selectedCommand = null;
         _selectedStation = null;
@@ -622,6 +633,8 @@ public sealed class SceneWorkspacePanel : UserControl
         RebuildSectorCombo();
         RefreshAll();
     }
+
+    public void SetScriptNames(ScriptNamedDefinitions? names) => _scriptNames = names;
 
     public void RefreshFromExternal()
     {
@@ -1220,6 +1233,7 @@ public sealed class SceneWorkspacePanel : UserControl
         }
 
         RebuildSemanticProperties();
+        AppendScriptReferences();
     }
 
     private void RebuildSemanticProperties()
@@ -1291,6 +1305,7 @@ public sealed class SceneWorkspacePanel : UserControl
                         _ => "arg1",
                     };
                     SceneEditing.SetCommandArgument(_changes, _selectedCommand, fieldName, value);
+                    _database?.InvalidateReferences();
                     RefreshScripts();
                     DirtyChanged?.Invoke(this, EventArgs.Empty);
                 };
@@ -1300,6 +1315,67 @@ public sealed class SceneWorkspacePanel : UserControl
         finally
         {
             _suppressPropertyEvents = false;
+        }
+    }
+
+    private void AppendScriptReferences()
+    {
+        if (_selectedCommand is null || _database is null)
+            return;
+
+        var hits = _database.References.FindRelated(_selectedCommand);
+        _semanticPropertyHost.Children.Add(EditorChrome.SectionHeader(
+            hits.Count == 0 ? "References" : $"References ({hits.Count})"));
+        if (hits.Count == 0)
+        {
+            _semanticPropertyHost.Children.Add(new TextBlock
+            {
+                Text = "No indexed uses of this command’s dialogue, BGM, portrait, or map ids.",
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextDimBrush,
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
+                TextWrapping = TextWrapping.Wrap,
+            });
+            return;
+        }
+
+        foreach (var hit in hits.Take(24))
+        {
+            var captured = hit;
+            var row = new TextBlock
+            {
+                Text = $"{hit.SceneName} · {hit.LocationLabel}",
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.AccentBrush,
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, 0),
+                TextWrapping = TextWrapping.Wrap,
+                Cursor = new Cursor(StandardCursorType.Hand),
+            };
+            ToolTip.SetTip(row, "Open script at this use");
+            row.PointerPressed += (_, e) =>
+            {
+                if (captured.MapId >= 0 && _scene is not null && captured.MapId != _scene.MapId)
+                {
+                    _status.Text = $"Used in {captured.SceneName} (g{captured.Group}/s{captured.Sector}). Switch to that scene to jump.";
+                    return;
+                }
+
+                OpenScriptAt(captured);
+                e.Handled = true;
+            };
+            _semanticPropertyHost.Children.Add(row);
+        }
+
+        if (hits.Count > 24)
+        {
+            _semanticPropertyHost.Children.Add(new TextBlock
+            {
+                Text = $"…and {hits.Count - 24} more",
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextMutedBrush,
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1),
+            });
         }
     }
 
@@ -1647,19 +1723,28 @@ public sealed class SceneWorkspacePanel : UserControl
             play.Show();
     }
 
-    private async void OpenScriptEditor(SceneStationEntry? focus = null)
+    public void OpenScriptAt(ScriptAssetHit hit) => OpenScriptEditor(hit: hit);
+
+    private async void OpenScriptEditor(SceneStationEntry? focus = null, ScriptAssetHit? hit = null)
     {
         if (_scene is null || _changes is null)
             return;
 
         var owner = TopLevel.GetTopLevel(this) as Window;
-        var preferredRoot = _rom is not null
+        var preferredRoot = _assetsRoot ?? (_rom is not null
             ? CatalogBuilder.FindRepositoryRoot(_rom.Path)
-            : null;
-        var names = ScriptNamedDefinitions.TryLoadBestEffort(preferredRoot);
-        var editor = focus is { } entry
-            ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex, names, _rom, preferredRoot)
-            : new SceneScriptWindow(_scene, _changes, _database, names: names, rom: _rom, repositoryRoot: preferredRoot);
+            : null);
+        _scriptNames ??= ScriptNamedDefinitions.TryLoadBestEffort(preferredRoot);
+        _monsters ??= LoadMonsters(preferredRoot);
+        var names = _scriptNames;
+        var editor = hit is not null
+            ? new SceneScriptWindow(_scene, _changes, _database, names: names, rom: _rom,
+                repositoryRoot: preferredRoot, focusHit: hit, monsters: _monsters)
+            : focus is { } entry
+                ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex,
+                    names, _rom, preferredRoot, monsters: _monsters)
+                : new SceneScriptWindow(_scene, _changes, _database, names: names, rom: _rom,
+                    repositoryRoot: preferredRoot, monsters: _monsters);
         editor.Applied += (_, _) =>
         {
             SyncWorkingRom();
@@ -1670,6 +1755,16 @@ public sealed class SceneWorkspacePanel : UserControl
             await editor.ShowDialog(owner);
         else
             editor.Show();
+    }
+
+    private static NamedIdCatalog? LoadMonsters(string? repositoryRoot)
+    {
+        if (string.IsNullOrWhiteSpace(repositoryRoot))
+            return null;
+        var monsterPath = Path.Combine(repositoryRoot, "include", "constants", "monster.h");
+        return File.Exists(monsterPath)
+            ? NamedIdCatalogs.ParseMonsterDefines(File.ReadAllText(monsterPath))
+            : null;
     }
 
     private ScenePlaySession? CreatePlaySessionForBeat(ScenePlayBeat beat)

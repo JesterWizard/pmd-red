@@ -112,10 +112,8 @@ public static class CatalogBuilder
         }
         diagnostics.AddRange(scenes.Diagnostics);
 
-        Report("Scanning dialogue and scripts…");
-        var (dialogue, scripts) = ScriptIndexer.Index(rom, charmap);
-        catalog.AddRange(dialogue);
-        catalog.AddRange(scripts);
+        Report("Indexing scene dialogue…");
+        catalog.AddRange(ScriptIndexer.FromDialogueTable(scenes.DialogueByOffset));
 
         Report("Indexing music and sound effects…");
         catalog.AddRange(SoundIndexer.Index(repositoryRoot, rom));
@@ -132,7 +130,7 @@ public static class CatalogBuilder
             diagnostics.Add("No portraits were found in this ROM.");
         if (archives.Count == 0)
             diagnostics.Add("No valid pksdir0 archives were found; raw archive and ground entries are unavailable.");
-        if (dialogue.Count == 0)
+        if (scenes.DialogueByOffset.Count == 0)
             diagnostics.Add("No dialogue command pointers were recognized in this ROM.");
         if (!rom.Info.IsKnownRetailRom)
             diagnostics.Add($"SHA-1 {rom.Sha1} does not match the documented US 1.0 baserom.");

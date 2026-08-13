@@ -211,6 +211,24 @@ public sealed class AssetWorkspacePanel : UserControl
 
     public Task ShowAssetAsync(AssetDescriptor asset) => ShowPreviewAsync(asset);
 
+    public Task RevealAssetAsync(AssetDescriptor asset)
+    {
+        ShowCategory(asset.Category, selectFirst: false);
+        if (!_useGridView && _assetList.ItemsSource is IEnumerable<object> items)
+        {
+            foreach (var item in items)
+            {
+                if (item is AssetListItem listItem && listItem.Asset.Id == asset.Id)
+                {
+                    _assetList.SelectedItem = listItem;
+                    return Task.CompletedTask;
+                }
+            }
+        }
+
+        return ShowPreviewAsync(asset);
+    }
+
     public void SetViewMode(bool grid)
     {
         _useGridView = grid;

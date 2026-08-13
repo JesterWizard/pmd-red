@@ -590,6 +590,7 @@ public static class SceneEditing
                 }
                 if (sourceText is not null)
                     scene.ScriptSourceText = sourceText;
+                database?.InvalidateReferences();
             },
             revert: () =>
             {
@@ -610,6 +611,7 @@ public static class SceneEditing
                         database.DialogueByOffset.Remove(pending.Offset);
                 }
                 scene.ScriptSourceText = oldSource;
+                database?.InvalidateReferences();
             },
             edit: projectEdit);
     }

@@ -89,6 +89,35 @@ public static class ScriptIndexer
         return (dialogue, scripts);
     }
 
+    public static IReadOnlyList<AssetDescriptor> FromDialogueTable(
+        IReadOnlyDictionary<int, DialogueString> dialogue)
+    {
+        return dialogue.Values
+            .OrderBy(entry => entry.Offset)
+            .Select((entry, index) =>
+            {
+                var id = index + 1;
+                var text = entry.Text ?? "";
+                return new AssetDescriptor
+                {
+                    Id = $"dialogue:{entry.Offset:X}",
+                    Name = $"D{id:D4}",
+                    Category = AssetCategory.Dialogue,
+                    Kind = AssetKind.Dialogue,
+                    Offset = entry.Offset,
+                    Size = Math.Max(1, entry.Size),
+                    Format = "PMD charmap",
+                    Description = text,
+                    Metadata = new Dictionary<string, string>
+                    {
+                        ["romOffset"] = $"0x{entry.Offset:X}",
+                        ["dialogueId"] = id.ToString(),
+                    },
+                };
+            })
+            .ToList();
+    }
+
     private static int StringByteLength(RomImage rom, int offset, int maximum)
     {
         var length = 0;

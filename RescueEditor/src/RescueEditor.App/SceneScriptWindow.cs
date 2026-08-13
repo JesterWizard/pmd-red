@@ -42,18 +42,19 @@ public sealed class SceneScriptWindow : Window
         int? focusStationIndex = null,
         ScriptNamedDefinitions? names = null,
         RomImage? rom = null,
-        string? repositoryRoot = null)
+        string? repositoryRoot = null,
+        ScriptAssetHit? focusHit = null,
+        NamedIdCatalog? monsters = null)
     {
         _scene = scene;
         _changes = changes;
         _database = database;
         _names = names;
 
-        NamedIdCatalog? monsters = null;
         var repoRoot = repositoryRoot;
         if (string.IsNullOrWhiteSpace(repoRoot) && rom is not null)
             repoRoot = CatalogBuilder.FindRepositoryRoot(rom.Path);
-        if (!string.IsNullOrWhiteSpace(repoRoot))
+        if (monsters is null && !string.IsNullOrWhiteSpace(repoRoot))
         {
             var monsterPath = Path.Combine(repoRoot, "include", "constants", "monster.h");
             if (File.Exists(monsterPath))
@@ -69,8 +70,8 @@ public sealed class SceneScriptWindow : Window
                 RomProfile.Us10,
                 monsters,
                 repoRoot,
-                focusGroup ?? -1,
-                focusSector ?? -1);
+                focusGroup ?? focusHit?.Group ?? -1,
+                focusSector ?? focusHit?.Sector ?? -1);
         }
         catch
         {
@@ -286,8 +287,29 @@ public sealed class SceneScriptWindow : Window
         _editor.KeyDown += OnKeyDown;
         _editor.TextArea.KeyDown += OnKeyDown;
 
-        if (focusGroup is int group && focusSector is int sector && focusStationIndex is int index)
+        if (focusHit is { } hit)
+            Opened += (_, _) => FocusHit(hit);
+        else if (focusGroup is int group && focusSector is int sector && focusStationIndex is int index)
             Opened += (_, _) => FocusStation(group, sector, index);
+    }
+
+    public void FocusHit(ScriptAssetHit hit)
+    {
+        var selection = ScriptAssetIndex.FindSourceSelection(_editor.Text ?? string.Empty, hit);
+        if (selection.Line < 1)
+        {
+            if (hit.Site == ScriptSiteKind.Station)
+                FocusStation(hit.Group, hit.Sector, hit.SiteIndex);
+            return;
+        }
+
+        var documentLine = _editor.Document.GetLineByNumber(Math.Min(selection.Line, _editor.Document.LineCount));
+        var start = Math.Clamp(documentLine.Offset + Math.Max(0, selection.Column), 0, _editor.Document.TextLength);
+        var length = Math.Clamp(selection.Length, 1, Math.Max(1, documentLine.EndOffset - start));
+        _editor.CaretOffset = start;
+        _editor.Select(start, length);
+        _editor.ScrollToLine(selection.Line);
+        _editor.TextArea.Focus();
     }
 
     public void FocusStation(int group, int sector, int stationIndex)

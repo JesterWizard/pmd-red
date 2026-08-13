@@ -16,7 +16,8 @@ public static class EditorCommandRouter
             EditorCommandId.Save or
             EditorCommandId.ToggleExplorer or
             EditorCommandId.ToggleInspector or
-            EditorCommandId.ToggleOutput,
+            EditorCommandId.ToggleOutput or
+            EditorCommandId.GlobalSearch,
         EditorFocusKind.SceneCanvas => true,
         _ => !IsSceneOnly(command),
     };
