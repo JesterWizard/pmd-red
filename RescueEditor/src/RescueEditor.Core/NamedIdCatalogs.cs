@@ -98,6 +98,10 @@ public static class NamedIdCatalogs
         @"^\s*\{\s*(?:NULL|""(?<name>[^""]+)"")\s*,",
         RegexOptions.Compiled);
 
+    private static readonly Regex ScriptOpcodeMacro = new(
+        @"^\s*#define\s+(?<name>[A-Z][A-Z0-9_]*)(?:\([^)]*\))?\s+\{[^}]*CMD_BYTE_(?<op>[0-9A-Fa-f]{2})\b",
+        RegexOptions.Compiled);
+
     public static NamedIdCatalog ParseMusicEnum(string headerText) =>
         ParseSequentialEnum(headerText, MusicEnumEntry);
 
@@ -278,6 +282,21 @@ public static class NamedIdCatalogs
             else
                 id = int.Parse(raw, CultureInfo.InvariantCulture);
             pairs.Add((id, name));
+        }
+
+        return new NamedIdCatalog(pairs);
+    }
+
+    public static NamedIdCatalog ParseScriptOpcodeMacros(string headerText)
+    {
+        var pairs = new List<(int, string)>();
+        foreach (var rawLine in headerText.Replace("\r\n", "\n").Split('\n'))
+        {
+            var match = ScriptOpcodeMacro.Match(rawLine);
+            if (!match.Success)
+                continue;
+            var op = int.Parse(match.Groups["op"].Value, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+            pairs.Add((op, match.Groups["name"].Value));
         }
 
         return new NamedIdCatalog(pairs);

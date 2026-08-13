@@ -151,7 +151,13 @@ public static class ScriptOpcodeNames
     public static string GetName(byte op) =>
         Names.TryGetValue(op, out var name) ? name : $"CMD_{op:X2}";
 
-    public static bool TryGetOp(string name, out byte op)
+    public static NamedIdCatalog BuiltInCatalog { get; } = new(
+        Names.Select(pair => ((int)pair.Key, pair.Value)));
+
+    public static bool TryGetOp(string name, out byte op) =>
+        TryGetOp(name, overlay: null, out op);
+
+    public static bool TryGetOp(string name, NamedIdCatalog? overlay, out byte op)
     {
         op = 0;
         if (string.IsNullOrWhiteSpace(name))
@@ -161,6 +167,12 @@ public static class ScriptOpcodeNames
             return true;
         if (OpsByName.TryGetValue(name, out op))
             return true;
+        if (overlay is not null && overlay.TryGetId(name, out var overlayId) &&
+            overlayId is >= 0 and <= 255)
+        {
+            op = (byte)overlayId;
+            return true;
+        }
         if (name.StartsWith("CMD_", StringComparison.OrdinalIgnoreCase) &&
             name.Length is >= 5 and <= 6 &&
             byte.TryParse(name.AsSpan(4), System.Globalization.NumberStyles.HexNumber,

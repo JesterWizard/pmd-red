@@ -39,7 +39,10 @@ public static class ScriptCommandDocs
 
     public static bool TryGet(byte op, out ScriptCommandDoc doc) => ByOp.TryGetValue(op, out doc!);
 
-    public static bool TryGetByName(string name, out ScriptCommandDoc doc)
+    public static bool TryGetByName(string name, out ScriptCommandDoc doc) =>
+        TryGetByName(name, overlay: null, out doc);
+
+    public static bool TryGetByName(string name, NamedIdCatalog? overlay, out ScriptCommandDoc doc)
     {
         doc = null!;
         if (string.IsNullOrWhiteSpace(name))
@@ -47,7 +50,7 @@ public static class ScriptCommandDocs
         name = name.Trim();
         if (ByName.TryGetValue(name, out doc!))
             return true;
-        if (ScriptOpcodeNames.TryGetOp(name, out var op) && ByOp.TryGetValue(op, out doc!))
+        if (ScriptOpcodeNames.TryGetOp(name, overlay, out var op) && ByOp.TryGetValue(op, out doc!))
             return true;
         return false;
     }
@@ -100,7 +103,7 @@ public static class ScriptCommandDocs
 
         var open = trimmed.IndexOf('(');
         var name = open < 0 ? trimmed : trimmed[..open].Trim();
-        if (!TryGetByName(name, out var doc))
+        if (!TryGetByName(name, names?.Opcodes, out var doc))
             return null;
         return FormatTooltip(doc, names, cast, line);
     }
@@ -140,7 +143,7 @@ public static class ScriptCommandDocs
             return null;
 
         var name = line[start..i];
-        if (!TryGetByName(name, out var doc))
+        if (!TryGetByName(name, names?.Opcodes, out var doc))
             return null;
         return FormatTooltip(doc, names, cast, line);
     }

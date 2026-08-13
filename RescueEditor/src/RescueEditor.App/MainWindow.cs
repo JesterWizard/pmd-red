@@ -410,7 +410,10 @@ public sealed class MainWindow : Window
             var window = new WonderMailWindow();
             window.Show(this);
         };
+        var resync = new MenuItem { Header = "Resync from _decomp" };
+        resync.Click += (_, _) => ResyncNamedConstantsFromDecomp();
         tools.Items.Add(wonderMail);
+        tools.Items.Add(resync);
         menu.Items.Add(tools);
         return menu;
     }
@@ -928,6 +931,75 @@ public sealed class MainWindow : Window
         _sceneWorkspace?.OpenScriptAt(hit);
     }
 
+    private void ResyncNamedConstantsFromDecomp()
+    {
+        var preferred = _rom is not null ? CatalogBuilder.FindRepositoryRoot(_rom.Path) : null;
+        var root = NamedConstantResync.TryFindRepositoryRoot(preferred);
+        if (root is null)
+        {
+            AppendOutput("Resync failed: could not find decomp headers (include/constants).");
+            ShowOutput();
+            return;
+        }
+
+        var result = NamedConstantResync.Run(root, previous: _scriptNames);
+        if (!result.Ok)
+        {
+            AppendOutput(result.Summary);
+            ShowOutput();
+            return;
+        }
+
+        if (result.Names is not null)
+        {
+            _scriptNames = result.Names;
+            _sceneWorkspace?.SetScriptNames(result.Names);
+        }
+
+        AppendOutput(result.Summary);
+        var shown = 0;
+        foreach (var delta in result.Deltas)
+        {
+            if (shown >= 40)
+            {
+                AppendOutput($"… {result.Deltas.Count - shown} more catalog change(s).");
+                break;
+            }
+
+            AppendOutput(FormatDelta(delta));
+            shown++;
+        }
+
+        ShowOutput();
+        KickSearchIndexBuild();
+    }
+
+    private void ShowOutput()
+    {
+        if (_dock.OutputVisible)
+            return;
+        _dock.SetVisible(DockPanelId.Output, true);
+        ApplyDockLayout(sceneOwnsInspector: OwnsInspector());
+        PersistShellSettings();
+    }
+
+    private static string FormatDelta(NamedCatalogDelta delta)
+    {
+        var id = delta.Id.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        return delta.Kind switch
+        {
+            NamedCatalogDeltaKind.Renamed =>
+                $"{delta.Catalog}: {delta.EditorName} → {delta.HeaderName} ({id})",
+            NamedCatalogDeltaKind.Added =>
+                $"{delta.Catalog}: added {delta.HeaderName} ({id})",
+            NamedCatalogDeltaKind.Removed =>
+                $"{delta.Catalog}: removed {delta.EditorName} ({id})",
+            NamedCatalogDeltaKind.ValueChanged =>
+                $"{delta.Catalog}: {delta.HeaderName} now {id}",
+            _ => $"{delta.Catalog}: {delta.Kind}",
+        };
+    }
+
     private void KickSearchIndexBuild()
     {
         _searchIndexCts?.Cancel();
@@ -942,9 +1014,10 @@ public sealed class MainWindow : Window
             return;
         }
 
+        var existingNames = _scriptNames;
         _ = Task.Run(() =>
         {
-            var names = ScriptNamedDefinitions.TryLoadBestEffort(CatalogBuilder.FindRepositoryRoot(romPath));
+            var names = existingNames ?? ScriptNamedDefinitions.TryLoadBestEffort(CatalogBuilder.FindRepositoryRoot(romPath));
             if (token.IsCancellationRequested)
                 return;
             var index = ProjectSearchIndex.Build(catalog.Assets, scenes, names);

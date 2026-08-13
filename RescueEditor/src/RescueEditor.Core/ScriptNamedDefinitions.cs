@@ -35,6 +35,7 @@ public sealed class ScriptNamedDefinitions
     public required NamedIdCatalog GroundAnim { get; init; }
     public required NamedIdCatalog ScriptId { get; init; }
     public required NamedIdCatalog PaletteUtil { get; init; }
+    public NamedIdCatalog Opcodes { get; init; } = new([]);
 
     public bool HasAny =>
         Music.Entries.Count > 0 ||
@@ -49,7 +50,8 @@ public sealed class ScriptNamedDefinitions
         Placement.Entries.Count > 0 ||
         GroundAnim.Entries.Count > 0 ||
         ScriptId.Entries.Count > 0 ||
-        PaletteUtil.Entries.Count > 0;
+        PaletteUtil.Entries.Count > 0 ||
+        Opcodes.Entries.Count > 0;
 
     /// <summary>
     /// Fallback <c>GROUND_ANIM_*</c> list when <c>ground_script_params.h</c> is missing
@@ -88,16 +90,16 @@ public sealed class ScriptNamedDefinitions
         if (string.IsNullOrWhiteSpace(repositoryRoot) || !Directory.Exists(repositoryRoot))
             return null;
 
-        var constants = Path.Combine(repositoryRoot, "include", "constants");
-        var musicPath = Path.Combine(constants, "bg_music.h");
-        var emotionPath = Path.Combine(constants, "emotions.h");
-        var mapPath = Path.Combine(constants, "ground_map.h");
-        var paramsPath = Path.Combine(constants, "ground_script_params.h");
-        var directionPath = Path.Combine(constants, "direction.h");
-        var scriptIdPath = Path.Combine(constants, "script_id.h");
-        var palettePath = Path.Combine(constants, "palette_util.h");
-        var placementPath = Path.Combine(repositoryRoot, "include", "portrait_placement.h");
-        var sfxPath = Path.Combine(repositoryRoot, "src", "sound_names.c");
+        var musicPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.BgMusic);
+        var emotionPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.Emotions);
+        var mapPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.GroundMap);
+        var paramsPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.GroundScriptParams);
+        var directionPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.Direction);
+        var scriptIdPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.ScriptId);
+        var palettePath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.PaletteUtil);
+        var placementPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.PortraitPlacement);
+        var sfxPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.SoundNames);
+        var dataScriptPath = NamedConstantSources.Combine(repositoryRoot, NamedConstantSources.DataScript);
 
         var music = File.Exists(musicPath)
             ? NamedIdCatalogs.ParseMusicEnum(File.ReadAllText(musicPath))
@@ -137,6 +139,9 @@ public sealed class ScriptNamedDefinitions
         var paletteUtil = File.Exists(palettePath)
             ? NamedIdCatalogs.ParsePaletteUtilEnum(File.ReadAllText(palettePath))
             : new NamedIdCatalog([]);
+        var opcodes = File.Exists(dataScriptPath)
+            ? NamedIdCatalogs.ParseScriptOpcodeMacros(File.ReadAllText(dataScriptPath))
+            : new NamedIdCatalog([]);
 
         var defs = new ScriptNamedDefinitions
         {
@@ -153,6 +158,7 @@ public sealed class ScriptNamedDefinitions
             GroundAnim = groundAnim,
             ScriptId = scriptId,
             PaletteUtil = paletteUtil,
+            Opcodes = opcodes,
         };
         return defs.HasAny ? defs : null;
     }

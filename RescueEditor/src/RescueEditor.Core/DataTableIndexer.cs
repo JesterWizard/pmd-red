@@ -29,12 +29,12 @@ public static class DataTableIndexer
         }
 
         return new DataTableLabels(
-            Load(Path.Combine("include", "constants", "monster.h"), NamedIdCatalogs.ParseMonsterDefines),
-            Load(Path.Combine("include", "constants", "move_id.h"), NamedIdCatalogs.ParseMoveDefines),
-            Load(Path.Combine("include", "constants", "item.h"), NamedIdCatalogs.ParseItemDefines),
-            Load(Path.Combine("include", "constants", "type.h"), NamedIdCatalogs.ParseTypeDefines),
-            Load(Path.Combine("include", "constants", "ability.h"), NamedIdCatalogs.ParseAbilityDefines),
-            Load(Path.Combine("include", "constants", "friend_area.h"), NamedIdCatalogs.ParseFriendAreaDefines));
+            Load(NamedConstantSources.Monster, NamedIdCatalogs.ParseMonsterDefines),
+            Load(NamedConstantSources.MoveId, NamedIdCatalogs.ParseMoveDefines),
+            Load(NamedConstantSources.Item, NamedIdCatalogs.ParseItemDefines),
+            Load(NamedConstantSources.Type, NamedIdCatalogs.ParseTypeDefines),
+            Load(NamedConstantSources.Ability, NamedIdCatalogs.ParseAbilityDefines),
+            Load(NamedConstantSources.FriendArea, NamedIdCatalogs.ParseFriendAreaDefines));
     }
 
     public static IReadOnlyList<AssetDescriptor> Index(

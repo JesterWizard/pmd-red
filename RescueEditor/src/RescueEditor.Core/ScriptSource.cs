@@ -414,7 +414,7 @@ public static class ScriptSource
             inner = line[(open + 1)..^1];
         }
 
-        if (!ScriptOpcodeNames.TryGetOp(name, out var op))
+        if (!ScriptOpcodeNames.TryGetOp(name, names?.Opcodes, out var op))
         {
             error = $"Unknown command '{name}'.";
             return false;

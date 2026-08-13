@@ -1,0 +1,39 @@
+---
+description: All generated code must follow DRY; extract shared logic instead of copy-paste
+alwaysApply: true
+---
+
+# DRY (Don't Repeat Yourself)
+
+All new or generated code must have a **single source of truth**. Do not copy-paste logic, constants, or structural patterns that already exist.
+
+## Required
+
+- Before writing a block, search the codebase for the same behavior and **reuse or extend** it.
+- Extract a helper, function, constant, or type when the same logic appears (or would appear) in more than one place.
+- Shared values (sizes, IDs, flags, strings, magic numbers) live in one named constant or existing header — never duplicated literals.
+- Prefer calling an existing API over reimplementing it “just for this file.”
+
+## Forbidden
+
+- Near-identical functions that differ only by a name, type, or a few literals — parameterize instead.
+- Duplicating a `switch` / `if` chain that already exists elsewhere.
+- Copying a UI/editor snippet and tweaking it in a second window instead of sharing a control or helper.
+- Re-declaring the same constant under a new name in another file.
+
+## Allowed duplication
+
+- Trivial one-liners that are clearer inline than behind a helper (e.g. a single null check).
+- Code that only *looks* similar but encodes different domain rules — do not force a shared abstraction.
+- Generated tables or data dumps that are the canonical source (do not invent a second generator unless asked).
+
+## Example
+
+```c
+// BAD — same bound check copied
+if (id < 0 || id >= FOO_COUNT) return;
+if (id < 0 || id >= FOO_COUNT) return;
+
+// GOOD
+if (!IsValidFooId(id)) return;
+```

@@ -20,7 +20,7 @@ public sealed class NamedIdCatalog
         {
             if (string.IsNullOrWhiteSpace(name))
                 continue;
-            _idToName[id] = name;
+            _idToName.TryAdd(id, name);
             _nameToId[name] = id;
             _entries.Add(new NamedIdEntry(id, name));
         }
