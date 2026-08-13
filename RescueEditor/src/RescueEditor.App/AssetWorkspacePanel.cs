@@ -286,7 +286,7 @@ public sealed class AssetWorkspacePanel : UserControl
             };
             _assetGrid.Children.Add(card);
             if (asset.Kind is AssetKind.KaoPortrait or AssetKind.KaoPortraitSheet or AssetKind.TitleBackground or
-                AssetKind.Effect or AssetKind.GroundMap or AssetKind.Scene)
+                AssetKind.Effect or AssetKind.GroundMap or AssetKind.Scene or AssetKind.Dungeon or AssetKind.DungeonFloor)
                 _ = LoadThumbnailAsync(asset, imageHost, token);
         }
     }
@@ -390,8 +390,35 @@ public sealed class AssetWorkspacePanel : UserControl
                 using var stream = new MemoryStream(preview.Png!);
                 var initialZoom = AssetPreviewZoom.InitialFor(asset.Kind);
                 var integerZoom = asset.Kind is AssetKind.KaoPortrait or AssetKind.KaoPortraitSheet;
-                _previewHost.Child = CreateZoomableImagePreview(
+                var image = CreateZoomableImagePreview(
                     preview.Title, new Bitmap(stream), initialZoom, integerZoom);
+                if (asset.Kind is AssetKind.Dungeon or AssetKind.DungeonFloor &&
+                    !string.IsNullOrWhiteSpace(preview.Text))
+                {
+                    var notes = new TextBox
+                    {
+                        Text = preview.Text,
+                        IsReadOnly = true,
+                        AcceptsReturn = true,
+                        TextWrapping = TextWrapping.Wrap,
+                        FontFamily = new FontFamily("Cascadia Mono, Consolas, monospace"),
+                        FontSize = 13,
+                        MinHeight = 120,
+                    };
+                    EditorChrome.StyleEditor(notes);
+                    var split = new Grid
+                    {
+                        RowDefinitions = new RowDefinitions("2*,*"),
+                        Children = { image, notes },
+                    };
+                    Grid.SetRow(image, 0);
+                    Grid.SetRow(notes, 1);
+                    _previewHost.Child = split;
+                }
+                else
+                {
+                    _previewHost.Child = image;
+                }
             }
             else
             {

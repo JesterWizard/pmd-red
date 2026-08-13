@@ -15,6 +15,7 @@ public sealed class WorkingRom
     public RomImage Source { get; }
     public RomImage View { get; private set; }
     public RuntimeConfigState? RuntimeConfig { get; set; }
+    private readonly List<(int Offset, byte[] Data)> _overlays = [];
     /// <summary>Immutable parse of the source baserom, taken before project edits.</summary>
     public SceneDatabase? Baseline { get; set; }
 
@@ -32,7 +33,29 @@ public sealed class WorkingRom
             buffer, database, report, charmap, runtimeConfig ?? RuntimeConfig);
         foreach (var (dialogue, wasDirty) in dirty)
             dialogue.Dirty = wasDirty;
+        ApplyOverlays(buffer);
         View = RomImage.FromBytes(Source.Path, buffer.Copy(0, buffer.Length));
         return report;
+    }
+
+    /// <summary>Patch the working copy (and re-apply after scene Sync). Does not write the source file.</summary>
+    public void Overlay(int offset, ReadOnlySpan<byte> data)
+    {
+        var copy = data.ToArray();
+        _overlays.Add((offset, copy));
+        var buffer = MutableRom.From(View);
+        buffer.WriteBytes(offset, copy);
+        View = RomImage.FromBytes(Source.Path, buffer.Copy(0, buffer.Length));
+    }
+
+    public MutableRom BeginMutate() => MutableRom.From(View);
+
+    public void Commit(MutableRom buffer, int offset, int length) =>
+        Overlay(offset, buffer.Copy(offset, length));
+
+    private void ApplyOverlays(MutableRom buffer)
+    {
+        foreach (var (offset, data) in _overlays)
+            buffer.WriteBytes(offset, data);
     }
 }

@@ -11,6 +11,9 @@ public enum CategoryWorkspaceKind
 
     /// <summary>Dedicated RuntimeConfig / C Patches workspace.</summary>
     CPatches,
+
+    /// <summary>Dedicated dungeon floors / spawns workspace.</summary>
+    Dungeons,
 }
 
 /// <summary>Routes project categories to the correct workspace surface.</summary>
@@ -20,6 +23,7 @@ public static class CategoryWorkspace
     {
         AssetCategory.Scenes => CategoryWorkspaceKind.SceneExplorer,
         AssetCategory.CPatches => CategoryWorkspaceKind.CPatches,
+        AssetCategory.Dungeons => CategoryWorkspaceKind.Dungeons,
         _ => CategoryWorkspaceKind.AssetBrowser,
     };
 

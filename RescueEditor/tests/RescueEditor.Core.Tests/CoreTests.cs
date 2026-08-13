@@ -91,6 +91,7 @@ public sealed class CoreTests
         Assert.Contains(catalog.Assets, asset => asset.Category == AssetCategory.Effects);
         Assert.Contains(catalog.Assets, asset => asset.Category == AssetCategory.Scenes);
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.GroundMaps));
+        Assert.NotEmpty(catalog.ForCategory(AssetCategory.Dungeons));
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.Dialogue));
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.Music));
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.SoundEffects));

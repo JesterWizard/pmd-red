@@ -129,11 +129,21 @@ public sealed class ProjectExplorerPanel : UserControl
             {
                 foreach (var asset in catalog.ForCategory(category))
                 {
-                    categoryNode.Children.Add(new AssetExplorerNode
+                    var assetNode = new AssetExplorerNode
                     {
                         Title = asset.DisplayName,
                         Asset = asset,
-                    });
+                    };
+                    foreach (var child in asset.Children)
+                    {
+                        assetNode.Children.Add(new AssetExplorerNode
+                        {
+                            Title = child.DisplayName,
+                            Asset = child,
+                        });
+                    }
+
+                    categoryNode.Children.Add(assetNode);
                 }
             }
 

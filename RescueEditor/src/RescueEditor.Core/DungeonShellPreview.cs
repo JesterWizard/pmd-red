@@ -60,11 +60,25 @@ public static class DungeonShellPreview
 
         try
         {
-            return RenderEmap(rom, tileset, map, animTick);
+            var (widthChunks, heightChunks) = ResolveShellChunks(map, rom);
+            return RenderEmap(rom, tileset, map.Name, widthChunks, heightChunks, animTick);
         }
         catch
         {
             return null;
+        }
+    }
+
+    /// <summary>Render a dungeon tileset's baked emap (or a tile sheet if emap is missing).</summary>
+    public static PreviewContent? TryRenderTileset(RomImage rom, int tileset, int animTick = 0)
+    {
+        try
+        {
+            return RenderEmap(rom, tileset, $"tileset {tileset}", 24, 24, animTick);
+        }
+        catch
+        {
+            return TryRenderTileSheet(rom, tileset);
         }
     }
 
@@ -90,8 +104,11 @@ public static class DungeonShellPreview
         if (dungFloor >= floorCount)
             dungFloor = floorCount - 1;
 
-        if (!TryGetMapParam(rom, out var unk0, out var floorProperties))
+        var tables = DungeonMapParamTables.TryLoad(rom);
+        if (tables is null)
             return false;
+        var unk0 = tables.FloorTablePointers;
+        var floorProperties = tables.FloorProperties;
 
         var dungArray = rom.ReadPointerOffset(unk0 + dungeonId * 4);
         if (dungArray < 0)
@@ -113,34 +130,8 @@ public static class DungeonShellPreview
         return true;
     }
 
-    private static bool TryGetMapParam(RomImage rom, out int unk0, out int floorProperties)
-    {
-        unk0 = -1;
-        floorProperties = -1;
-        foreach (var archive in RomArchiveParser.FindArchives(rom))
-        {
-            var entry = archive.Entries.FirstOrDefault(e => e.Name == "mapparam");
-            if (entry is null)
-                continue;
-
-            // SIR0 header: magic, dataPtr (GBA), pointerList…
-            if (entry.Size < 12)
-                continue;
-            var dataGba = rom.ReadInt32(entry.Offset + 4);
-            var dataRom = dataGba & 0x1FFFFFF;
-            if (!rom.IsRangeValid(dataRom, 8))
-                continue;
-
-            unk0 = rom.ReadPointerOffset(dataRom);
-            floorProperties = rom.ReadPointerOffset(dataRom + 4);
-            return unk0 >= 0 && floorProperties >= 0;
-        }
-
-        return false;
-    }
-
     private static PreviewContent RenderEmap(
-        RomImage rom, int tileset, GroundMapDefinition map, int animTick = 0)
+        RomImage rom, int tileset, string title, int widthChunks, int heightChunks, int animTick = 0)
     {
         // gUnknown_8108EC0[tileset] is identity for tileset ≥ 64.
         var fonCelId = tileset;
@@ -156,7 +147,6 @@ public static class DungeonShellPreview
         var canm = DungeonCanmAnimation.TryLoad(rom, tileset);
         canm?.ApplyTo(pal, animTick);
 
-        var (widthChunks, heightChunks) = ResolveShellChunks(map, rom);
         widthChunks = Math.Clamp(widthChunks, 1, 24);
         heightChunks = Math.Clamp(heightChunks, 1, 24);
 
@@ -192,9 +182,42 @@ public static class DungeonShellPreview
         }
 
         return new PreviewContent(
-            map.Name,
+            title,
             Png: new RgbaImage(imageWidth, imageHeight, pixels).ToPng(),
             MimeType: "image/png");
+    }
+
+    private static PreviewContent? TryRenderTileSheet(RomImage rom, int tileset)
+    {
+        try
+        {
+            var fon = LoadDungeonAsset(rom, $"b{tileset:D2}fon");
+            var palBytes = LoadDungeonAsset(rom, $"b{tileset:D2}pal");
+            if (fon.Length < 32 || palBytes.Length < 64)
+                return null;
+            var pal = ReadDungeonPalette(palBytes);
+            var tileCount = Math.Min(fon.Length / 32, 256);
+            var columns = 16;
+            var rows = Math.Max(1, (tileCount + columns - 1) / columns);
+            var imageWidth = columns * 8;
+            var imageHeight = rows * 8;
+            var pixels = new byte[checked(imageWidth * imageHeight * 4)];
+            for (var i = 0; i < tileCount; i++)
+            {
+                var tx = (i % columns) * 8;
+                var ty = (i / columns) * 8;
+                BlitTile(fon, pal, (ushort)i, pixels, imageWidth, tx, ty);
+            }
+
+            return new PreviewContent(
+                $"tileset {tileset}",
+                Png: new RgbaImage(imageWidth, imageHeight, pixels).ToPng(),
+                MimeType: "image/png");
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     private static (int WidthChunks, int HeightChunks) ResolveShellChunks(

@@ -22,6 +22,7 @@ public sealed class MainWindow : Window
         ("Backgrounds", AssetCategory.Backgrounds),
         ("Effects", AssetCategory.Effects),
         ("Ground Maps", AssetCategory.GroundMaps),
+        ("Dungeons", AssetCategory.Dungeons),
         ("Music", AssetCategory.Music),
         ("Sound Effects", AssetCategory.SoundEffects),
         ("Raw Archives", AssetCategory.RawArchives),
@@ -55,6 +56,7 @@ public sealed class MainWindow : Window
     private readonly AssetWorkspacePanel _assetWorkspace;
     private SceneWorkspacePanel? _sceneWorkspace;
     private CPatchesWorkspacePanel? _cPatchesWorkspace;
+    private DungeonWorkspacePanel? _dungeonWorkspace;
     private ProjectSearchIndex _projectSearch = ProjectSearchIndex.Empty;
     private ScriptNamedDefinitions? _scriptNames;
     private CancellationTokenSource? _searchIndexCts;
@@ -592,6 +594,9 @@ public sealed class MainWindow : Window
                     case CategoryWorkspaceKind.CPatches:
                         OpenCPatches();
                         break;
+                    case CategoryWorkspaceKind.Dungeons:
+                        OpenDungeons();
+                        break;
                     case CategoryWorkspaceKind.SceneExplorer:
                         ShowScenesPicker();
                         _explorer.ExpandCategory(AssetCategory.Scenes);
@@ -616,6 +621,10 @@ public sealed class MainWindow : Window
                          assetNode.Asset.Category == AssetCategory.CPatches)
                 {
                     OpenCPatches(assetNode.Asset);
+                }
+                else if (assetNode.Asset.Category == AssetCategory.Dungeons)
+                {
+                    OpenDungeons(assetNode.Asset);
                 }
                 else
                 {
@@ -706,6 +715,23 @@ public sealed class MainWindow : Window
         SetStatus(_cPatchesUseDecompHost
             ? "C Patches: install options, then Build ROM for a playable patched game"
             : _runtimeConfig.StatusMessage);
+    }
+
+    private void OpenDungeons(AssetDescriptor? asset = null)
+    {
+        if (_rom is null || _catalog is null)
+            return;
+        _selectedCategory = AssetCategory.Dungeons;
+        _selectedAsset = asset ?? _catalog.ForCategory(AssetCategory.Dungeons).FirstOrDefault();
+        _dungeonWorkspace ??= new DungeonWorkspacePanel();
+        _dungeonWorkspace.Load(_rom, _catalog, _workingRom, _selectedAsset);
+        if (asset is not null)
+            _dungeonWorkspace.ShowAsset(asset);
+        _workspaceHost.Child = _dungeonWorkspace;
+        ApplyDockLayout(sceneOwnsInspector: false);
+        UpdateBreadcrumb();
+        UpdateProperties();
+        SetStatus("Dungeons: generated floors are cached after the first preview.");
     }
 
     private void UpdateBreadcrumb()
@@ -1150,6 +1176,7 @@ public sealed class MainWindow : Window
         _cPatchesUseDecompHost = false;
         _sceneWorkspace = null;
         _cPatchesWorkspace = null;
+        _dungeonWorkspace = null;
         _projectSearch = ProjectSearchIndex.Empty;
         _scriptNames = null;
         _searchIndexCts?.Cancel();

@@ -11,6 +11,7 @@ public enum AssetCategory
     Backgrounds,
     Effects,
     GroundMaps,
+    Dungeons,
     Music,
     SoundEffects,
     RawArchives,
@@ -31,6 +32,8 @@ public enum AssetKind
     SoundWave,
     SoundSong,
     Scene,
+    Dungeon,
+    DungeonFloor,
     RuntimeConfig,
 }
 
@@ -111,6 +114,14 @@ public sealed class AssetCatalog
                 items.OrderBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase)
                     .ThenBy(asset => asset.Metadata.GetValueOrDefault("romName", asset.Name),
                         StringComparer.OrdinalIgnoreCase)
+                    .ToArray(),
+            AssetCategory.Dungeons =>
+                items.OrderBy(asset => int.TryParse(asset.Metadata.GetValueOrDefault("dungeonId"), out var id)
+                        ? id
+                        : int.MaxValue)
+                    .ThenBy(asset => int.TryParse(asset.Metadata.GetValueOrDefault("floor"), out var floor)
+                        ? floor
+                        : -1)
                     .ToArray(),
             AssetCategory.Music or AssetCategory.SoundEffects =>
                 items.OrderBy(asset =>

@@ -85,6 +85,9 @@ public static class CatalogBuilder
         Report("Composing ground map sets…");
         catalog.AddRange(GroundMapIndexer.Index(rom, archives));
 
+        Report("Indexing dungeons…");
+        catalog.AddRange(DungeonIndexer.Index(rom, repositoryRoot));
+
         Report("Building authoritative scene graph…");
         var profile = RomProfile.TryMatch(rom);
         var scenes = SceneGraphParser.Parse(rom, profile, catalog, charmap, progress);

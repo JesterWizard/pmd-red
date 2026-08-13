@@ -222,10 +222,13 @@ public static class EditorChrome
                 cb.Padding = new Thickness(4, 0);
                 cb.VerticalContentAlignment = VerticalAlignment.Center;
             }
-            cb.FontFamily = EditorTheme.UiFont;
-            cb.MinWidth = 0;
-            cb.Width = double.NaN;
-            cb.HorizontalAlignment = HorizontalAlignment.Stretch;
+        cb.FontFamily = EditorTheme.UiFont;
+            if (cb is not InstantComboBox)
+            {
+                cb.MinWidth = 0;
+                cb.Width = double.NaN;
+                cb.HorizontalAlignment = HorizontalAlignment.Stretch;
+            }
             cb.CornerRadius = new CornerRadius(0);
             if (cb is not InstantComboBox)
             {
@@ -243,9 +246,10 @@ public static class EditorChrome
                     RoutingStrategies.Tunnel);
             }
         }
-        else if (editor is CompactSpinBox)
+        else if (editor is CompactSpinBox spin)
         {
-            editor.HorizontalAlignment = HorizontalAlignment.Stretch;
+            if (double.IsNaN(spin.Width))
+                editor.HorizontalAlignment = HorizontalAlignment.Stretch;
         }
     }
 
@@ -555,11 +559,14 @@ public sealed class CompactSpinBox : UserControl
             FontSize = EditorTheme.FontLabel,
             Height = EditorTheme.ControlHeight,
             MinHeight = EditorTheme.ControlHeight,
-            Padding = new Thickness(4, 0),
+            MinWidth = 0,
+            MaxWidth = double.PositiveInfinity,
+            Padding = new Thickness(3, 0),
             VerticalContentAlignment = VerticalAlignment.Center,
             BorderThickness = new Thickness(0),
             Background = Brushes.Transparent,
             CornerRadius = new CornerRadius(0),
+            HorizontalAlignment = HorizontalAlignment.Stretch,
         };
         _text.LostFocus += (_, _) => CommitText();
         _text.KeyDown += (_, e) =>
@@ -586,6 +593,7 @@ public sealed class CompactSpinBox : UserControl
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1),
             CornerRadius = new CornerRadius(0),
+            MinWidth = 0,
             Height = EditorTheme.ControlHeight,
             Child = new DockPanel
             {
@@ -595,6 +603,10 @@ public sealed class CompactSpinBox : UserControl
         };
         DockPanel.SetDock(spinners, Dock.Right);
         Content = shell;
+        ClipToBounds = true;
+        HorizontalAlignment = HorizontalAlignment.Left;
+        Height = EditorTheme.ControlHeight;
+        MinHeight = EditorTheme.ControlHeight;
         _text.Text = "0";
     }
 

@@ -143,6 +143,17 @@ public sealed class WorkingRomTests
         Assert.Equal("Hi", Encoding.ASCII.GetString(working.View.Copy(0x20, 2)));
     }
 
+    [Fact]
+    public void OverlaySurvivesSceneSync()
+    {
+        var (source, _, database) = CreateToy("/tmp/working-rom-overlay.gba");
+        var working = new WorkingRom(source);
+        working.Overlay(0x180, new byte[] { 0x11, 0x22 });
+        working.Sync(database);
+        Assert.Equal(0x11, working.View.ReadByte(0x180));
+        Assert.Equal(0x22, working.View.ReadByte(0x181));
+    }
+
     private static (RomImage Source, Scene Scene, SceneDatabase Database) CreateToy(string path)
     {
         var bytes = new byte[0x200];

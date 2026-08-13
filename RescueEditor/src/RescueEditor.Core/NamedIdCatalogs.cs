@@ -50,6 +50,26 @@ public static class NamedIdCatalogs
         @"^\s*#define\s+(?<name>MONSTER_[A-Z0-9_]+)\s+(?<value>\d+)\b",
         RegexOptions.Compiled);
 
+    private static readonly Regex DungeonEnumEntry = new(
+        @"^\s*(?<name>DUNGEON_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
+        RegexOptions.Compiled);
+
+    private static readonly Regex TrapEnumEntry = new(
+        @"^\s*(?<name>TRAP_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
+        RegexOptions.Compiled);
+
+    private static readonly Regex WeatherEnumEntry = new(
+        @"^\s*(?<name>WEATHER_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
+        RegexOptions.Compiled);
+
+    private static readonly Regex DungeonMusicEnumEntry = new(
+        @"^\s*(?<name>DUNGEON_MUS_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
+        RegexOptions.Compiled);
+
+    private static readonly Regex ItemDefine = new(
+        @"^\s*#define\s+(?<name>ITEM_[A-Z0-9_]+)\s+(?<value>\d+)\b",
+        RegexOptions.Compiled);
+
     private static readonly Regex PaletteUtilEnumEntry = new(
         @"^\s*(?<name>PALUTIL_KIND_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
         RegexOptions.Compiled);
@@ -104,6 +124,38 @@ public static class NamedIdCatalogs
 
     public static NamedIdCatalog ParseGroundAnimDefines(string headerText) =>
         ParseHashDefines(headerText, GroundAnimDefine, allowHex: false);
+
+    public static NamedIdCatalog ParseDungeonEnum(string headerText) =>
+        ParseSequentialEnum(headerText, DungeonEnumEntry, startAt: -1,
+            skipNames: ["NUM_DUNGEONS", "DUNGEON_INVALID", "DUNGEON_FIRST_MAZE", "DUNGEON_LAST_MAZE",
+                "DUNGEON_LAST_BASIC_MAZE"]);
+
+    public static NamedIdCatalog ParseTrapEnum(string headerText) =>
+        ParseSequentialEnum(headerText, TrapEnumEntry, startAt: -1, skipNames: ["NUM_TRAPS"]);
+
+    public static NamedIdCatalog ParseWeatherEnum(string headerText) =>
+        ParseSequentialEnum(headerText, WeatherEnumEntry, startAt: -1, skipNames: ["WEATHER_COUNT"]);
+
+    public static NamedIdCatalog ParseDungeonMusicEnum(string headerText) =>
+        ParseSequentialEnum(headerText, DungeonMusicEnumEntry, startAt: -1);
+
+    public static NamedIdCatalog ParseItemDefines(string headerText)
+    {
+        var pairs = new List<(int, string)>();
+        foreach (var rawLine in headerText.Replace("\r\n", "\n").Split('\n'))
+        {
+            var match = ItemDefine.Match(rawLine);
+            if (!match.Success)
+                continue;
+            var name = match.Groups["name"].Value;
+            if (name is "ITEM_ACTION_TYPE_NOTHING" || name.StartsWith("ITEM_ACTION_TYPE_", StringComparison.Ordinal))
+                continue;
+            var id = int.Parse(match.Groups["value"].Value, CultureInfo.InvariantCulture);
+            pairs.Add((id, name));
+        }
+
+        return new NamedIdCatalog(pairs);
+    }
 
     public static NamedIdCatalog ParseMonsterDefines(string headerText)
     {
