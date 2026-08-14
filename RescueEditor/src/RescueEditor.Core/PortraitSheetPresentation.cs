@@ -6,8 +6,16 @@ public static class PortraitSheetPresentation
     public const int FaceSize = 40;
     public const int DefaultDisplayScale = 3;
     public const int ColumnsPerRow = 4;
+    public const int GapX = 8;
+    public const int GapY = 10;
+    public const int LabelGap = 3;
+    public const int LabelHeight = PixelFont.GlyphRows + 2;
     /// <summary>Draw emotion captions at 1/LabelShrink of the full pixel font.</summary>
     public const int LabelShrink = 2;
+
+    public const int ScaledFace = FaceSize * DefaultDisplayScale;
+    public const int CellWidth = ScaledFace;
+    public const int CellHeight = ScaledFace + LabelGap + LabelHeight;
 
     public static string EmotionLabel(int index, string emotion) => $"{index} - {emotion}";
 
@@ -18,6 +26,43 @@ public static class PortraitSheetPresentation
     {
         var cols = ColumnCount(faceCount);
         return Math.Max(1, (faceCount + cols - 1) / cols);
+    }
+
+    public static (int Width, int Height) SheetPixelSize(int faceCount)
+    {
+        var cols = ColumnCount(faceCount);
+        var rows = RowCount(faceCount);
+        return (
+            cols * CellWidth + (cols - 1) * GapX,
+            rows * CellHeight + (rows - 1) * GapY);
+    }
+
+    public static (int X, int Y) CellOrigin(int index, int faceCount)
+    {
+        var cols = ColumnCount(faceCount);
+        var col = index % cols;
+        var row = index / cols;
+        return (col * (CellWidth + GapX), row * (CellHeight + GapY));
+    }
+
+    /// <summary>Emotion index under a composed-sheet pixel, or null for gaps / empty cells.</summary>
+    public static int? HitTest(int x, int y, int faceCount)
+    {
+        if (x < 0 || y < 0 || faceCount <= 0)
+            return null;
+        var strideX = CellWidth + GapX;
+        var strideY = CellHeight + GapY;
+        var col = x / strideX;
+        var row = y / strideY;
+        var localX = x - col * strideX;
+        var localY = y - row * strideY;
+        if (localX >= CellWidth || localY >= CellHeight)
+            return null;
+        var cols = ColumnCount(faceCount);
+        if (col < 0 || col >= cols)
+            return null;
+        var index = row * cols + col;
+        return index >= 0 && index < faceCount ? index : null;
     }
 
     public static RgbaImage ScaleNearest(RgbaImage source, int scale)

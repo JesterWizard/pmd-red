@@ -23,4 +23,19 @@ public static class DialogueEncodedBudget
 
     public static bool Fits(string? text, int maxBytes) =>
         CountBytes(text) <= maxBytes;
+
+    public readonly record struct Status(int Used, int Max, bool Fits)
+    {
+        public bool Warn => !Fits;
+
+        public string Message => Fits
+            ? $"Encoded size: {Used} / {Max} bytes"
+            : $"Encoded size: {Used} bytes exceeds slot {Max}; relocates on Build ROM";
+    }
+
+    public static Status Evaluate(string? text, int maxBytes)
+    {
+        var used = CountBytes(text);
+        return new Status(used, maxBytes, used <= maxBytes);
+    }
 }

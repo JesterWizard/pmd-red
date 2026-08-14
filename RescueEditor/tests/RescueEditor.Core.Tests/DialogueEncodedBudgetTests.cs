@@ -23,6 +23,21 @@ public sealed class DialogueEncodedBudgetTests
     }
 
     [Fact]
+    public void EvaluateWarnsWhenTextExceedsSlot()
+    {
+        var ok = DialogueEncodedBudget.Evaluate("Hi", maxBytes: 8);
+        Assert.True(ok.Fits);
+        Assert.False(ok.Warn);
+        Assert.Contains("2 / 8", ok.Message, StringComparison.Ordinal);
+
+        var over = DialogueEncodedBudget.Evaluate("Hello there", maxBytes: 4);
+        Assert.False(over.Fits);
+        Assert.True(over.Warn);
+        Assert.Contains("relocates", over.Message, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("4", over.Message, StringComparison.Ordinal);
+    }
+
+    [Fact]
     public void NullOrEmptyIsZero()
     {
         Assert.Equal(0, DialogueEncodedBudget.CountBytes(null));

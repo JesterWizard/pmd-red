@@ -230,6 +230,8 @@ public static class GbaDialogueHud
         }
     }
 
+    public static int PortraitPlacementCount => PortraitTiles.Length;
+
     public static (int X, int Y, bool Flip) ResolvePortraitPlacement(int placement)
     {
         if (placement < 0 || placement >= PortraitTiles.Length)
@@ -422,13 +424,17 @@ public static class GbaDialogueHud
 
             var (x, y, _) = ResolvePortraitPlacement(slot.Placement);
             var flip = slot.Flip;
-            // Frame: 5×5 tiles = 40×40 content, border ~2px like WINDOW_TYPE_7.
-            DrawWindow(camera, x - 2, y - 2, portrait.Width + 4, portrait.Height + 4);
-            if (flip)
-                BlitFlipped(camera, portrait, x, y);
-            else
-                SceneCompositor.BlitSpritePublic(camera, portrait, x, y);
+            DrawFramedPortrait(camera, portrait, x, y, flip);
         }
+    }
+
+    public static void DrawFramedPortrait(RgbaImage camera, RgbaImage portrait, int x, int y, bool flip)
+    {
+        DrawWindow(camera, x - 2, y - 2, portrait.Width + 4, portrait.Height + 4);
+        if (flip)
+            BlitFlipped(camera, portrait, x, y);
+        else
+            SceneCompositor.BlitSpritePublic(camera, portrait, x, y);
     }
 
     public static void DrawWindow(RgbaImage image, int x, int y, int w, int h)

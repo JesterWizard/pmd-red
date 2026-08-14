@@ -5,6 +5,7 @@ using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using RescueEditor.Core;
 
@@ -27,6 +28,7 @@ public sealed class AssetWorkspacePanel : UserControl
     private AssetCatalog? _catalog;
     private SceneDatabase? _scenes;
     private ChangeService? _changes;
+    private WorkingRom? _workingRom;
     private PortraitAtlas? _portraitAtlas;
     private bool _useGridView;
     private AssetDescriptor? _selectedAsset;
@@ -133,15 +135,16 @@ public sealed class AssetWorkspacePanel : UserControl
         _soundCacheWarmer = warmer;
     }
 
-    public void Bind(RomImage rom, Charmap charmap, AssetCatalog catalog, SceneDatabase? scenes, ChangeService changes)
+    public void Bind(RomImage rom, Charmap charmap, AssetCatalog catalog, SceneDatabase? scenes, ChangeService changes, WorkingRom? workingRom = null)
     {
-        _rom = rom;
+        _rom = workingRom?.View ?? rom;
         _charmap = charmap;
         _catalog = catalog;
         _scenes = scenes;
         _changes = changes;
+        _workingRom = workingRom;
         var root = CatalogBuilder.FindRepositoryRoot(rom.Path);
-        _portraitAtlas = new PortraitAtlas(rom, root);
+        _portraitAtlas = new PortraitAtlas(_rom, root);
     }
 
     public void Clear()
@@ -152,6 +155,7 @@ public sealed class AssetWorkspacePanel : UserControl
         _catalog = null;
         _scenes = null;
         _changes = null;
+        _workingRom = null;
         _portraitAtlas = null;
         _selectedAsset = null;
         _assetList.ItemsSource = null;
@@ -392,7 +396,11 @@ public sealed class AssetWorkspacePanel : UserControl
                 var integerZoom = asset.Kind is AssetKind.KaoPortrait or AssetKind.KaoPortraitSheet;
                 var image = CreateZoomableImagePreview(
                     preview.Title, new Bitmap(stream), initialZoom, integerZoom);
-                if (asset.Kind is AssetKind.Dungeon or AssetKind.DungeonFloor &&
+                if (asset.Kind == AssetKind.KaoPortraitSheet)
+                {
+                    _previewHost.Child = BuildPortraitSheetEditor(asset, image);
+                }
+                else if (asset.Kind is AssetKind.Dungeon or AssetKind.DungeonFloor &&
                     !string.IsNullOrWhiteSpace(preview.Text))
                 {
                     var notes = new TextBox
@@ -482,17 +490,7 @@ public sealed class AssetWorkspacePanel : UserControl
         editor.Height = double.NaN;
         editor.MinHeight = 160;
 
-        var portraitImage = new Image
-        {
-            Stretch = Stretch.None,
-            HorizontalAlignment = HorizontalAlignment.Left,
-            VerticalAlignment = VerticalAlignment.Top,
-            UseLayoutRounding = true,
-            IsVisible = false,
-        };
-        RenderOptions.SetBitmapInterpolationMode(portraitImage, BitmapInterpolationMode.None);
-        Bitmap? portraitBitmap = null;
-        TryShowSpeakerPortrait(asset, portraitImage, ref portraitBitmap);
+        TryShowSpeakerPortrait(asset, out var speakerLabel, out var face, out var placement);
 
         var previewImage = new Image
         {
@@ -506,7 +504,11 @@ public sealed class AssetWorkspacePanel : UserControl
         Bitmap? previewBitmap = null;
         void RefreshPreview()
         {
-            var png = DialogueTextPreview.RenderPng(editor.Text);
+            var png = DialogueHudPreview.RenderPng(
+                editor.Text,
+                speakerLabel: speakerLabel,
+                face: face,
+                placement: placement);
             using var stream = new MemoryStream(png);
             var next = new Bitmap(stream);
             previewImage.Source = next;
@@ -522,18 +524,12 @@ public sealed class AssetWorkspacePanel : UserControl
         };
         void UpdateSize()
         {
-            var len = DialogueEncodedBudget.CountBytes(editor.Text);
             var max = dialogue?.Size ?? asset.Size;
-            if (len > max)
-            {
-                sizeLabel.Text = $"Encoded size: {len} bytes (original slot {max}; relocates on Build ROM)";
-                sizeLabel.Foreground = EditorTheme.TextMutedBrush;
-            }
-            else
-            {
-                sizeLabel.Text = $"Encoded size: {len} / {max} bytes";
-                sizeLabel.Foreground = EditorTheme.TextMutedBrush;
-            }
+            var status = DialogueEncodedBudget.Evaluate(editor.Text, max);
+            sizeLabel.Text = status.Message;
+            sizeLabel.Foreground = status.Warn
+                ? EditorTheme.WarningBrush
+                : EditorTheme.TextMutedBrush;
         }
         UpdateSize();
         editor.TextChanged += (_, _) =>
@@ -571,7 +567,6 @@ public sealed class AssetWorkspacePanel : UserControl
                 Children =
                 {
                     EditorChrome.PaneTitle(asset.Name),
-                    portraitImage,
                     previewImage,
                     editor,
                     sizeLabel,
@@ -589,8 +584,142 @@ public sealed class AssetWorkspacePanel : UserControl
         };
     }
 
-    private void TryShowSpeakerPortrait(AssetDescriptor asset, Image portraitImage, ref Bitmap? portraitBitmap)
+    private Control BuildPortraitSheetEditor(AssetDescriptor sheet, Control preview)
     {
+        var faces = sheet.Children.Count > 0 ? sheet.Children : [sheet];
+        var selected = 0;
+        var status = new TextBlock
+        {
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            TextWrapping = TextWrapping.NoWrap,
+            TextTrimming = TextTrimming.CharacterEllipsis,
+        };
+        void SetStatus(string text, bool warn = false)
+        {
+            status.Text = text;
+            status.Foreground = warn ? EditorTheme.WarningBrush : EditorTheme.TextMutedBrush;
+        }
+        void DescribeSelection()
+        {
+            if (selected < 0 || selected >= faces.Count)
+            {
+                SetStatus("Click a face to select it.");
+                return;
+            }
+            var face = faces[selected];
+            var emotion = face.Metadata.GetValueOrDefault("emotion", $"Emotion{selected}");
+            SetStatus(
+                $"{PortraitSheetPresentation.EmotionLabel(selected, emotion)}  ·  " +
+                $"slot {face.Size} bytes  ·  {PortraitFaceCodec.RestrictionsText}");
+        }
+        DescribeSelection();
+
+        var replace = EditorChrome.ToolButton("Replace face…");
+        replace.Click += async (_, _) =>
+        {
+            if (selected < 0 || selected >= faces.Count)
+            {
+                SetStatus("Click a face first.", warn: true);
+                return;
+            }
+            if (_workingRom is null)
+            {
+                SetStatus("Open a ROM to replace portrait faces.", warn: true);
+                return;
+            }
+
+            var top = TopLevel.GetTopLevel(this);
+            if (top is null)
+                return;
+            var files = await top.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+            {
+                Title = "Portrait face PNG",
+                AllowMultiple = false,
+                FileTypeFilter =
+                [
+                    new FilePickerFileType("PNG image") { Patterns = ["*.png"] },
+                ],
+            });
+            var file = files.FirstOrDefault();
+            if (file is null)
+                return;
+
+            await using var stream = await file.OpenReadAsync();
+            using var memory = new MemoryStream();
+            await stream.CopyToAsync(memory);
+            var image = RgbaImage.FromPng(memory.ToArray());
+            if (image is null)
+            {
+                SetStatus("Could not decode that PNG.", warn: true);
+                return;
+            }
+
+            var face = faces[selected];
+            var buffer = _workingRom.BeginMutate();
+            var error = PortraitFaceCodec.TryWrite(buffer, face, image);
+            if (error is not null)
+            {
+                SetStatus(error, warn: true);
+                return;
+            }
+
+            _workingRom.Commit(buffer, face.Offset, face.Size);
+            _workingRom.Commit(buffer, face.AuxiliaryOffset, face.AuxiliarySize);
+            _rom = _workingRom.View;
+            var root = CatalogBuilder.FindRepositoryRoot(_rom.Path);
+            _portraitAtlas = new PortraitAtlas(_rom, root);
+            await ShowPreviewAsync(sheet);
+        };
+
+        if (_previewImage is not null)
+        {
+            _previewImage.PointerPressed += (_, e) =>
+            {
+                if (_previewImage.Bounds.Width < 1 || _previewImage.Bounds.Height < 1)
+                    return;
+                var pos = e.GetPosition(_previewImage);
+                var px = (int)(pos.X * _previewPixelWidth / _previewImage.Bounds.Width);
+                var py = (int)(pos.Y * _previewPixelHeight / _previewImage.Bounds.Height);
+                var hit = PortraitSheetPresentation.HitTest(px, py, faces.Count);
+                if (hit is int index)
+                {
+                    selected = index;
+                    DescribeSelection();
+                }
+            };
+        }
+
+        var bar = EditorChrome.ToolbarHost(new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center,
+            Children = { replace, status },
+        });
+
+        return new DockPanel
+        {
+            LastChildFill = true,
+            Children =
+            {
+                new Border { [DockPanel.DockProperty] = Dock.Top, Child = bar },
+                preview,
+            },
+        };
+    }
+
+    private void TryShowSpeakerPortrait(
+        AssetDescriptor asset,
+        out string? speakerLabel,
+        out RgbaImage? face,
+        out int placement)
+    {
+        speakerLabel = null;
+        face = null;
+        placement = 0;
         if (_rom is null || _portraitAtlas is null)
             return;
         if (!asset.Metadata.TryGetValue("commandOffset", out var cmdText))
@@ -604,16 +733,13 @@ public sealed class AssetWorkspacePanel : UserControl
         if (info is null || info.Value.Species <= 0)
             return;
 
-        var png = DialoguePortraitPreview.TryRenderPng(_portraitAtlas, info.Value.Species, info.Value.Emotion);
-        if (png is null)
-            return;
-
-        using var stream = new MemoryStream(png);
-        var next = new Bitmap(stream);
-        portraitImage.Source = next;
-        portraitImage.IsVisible = true;
-        portraitBitmap?.Dispose();
-        portraitBitmap = next;
+        placement = info.Value.Placement;
+        face = _portraitAtlas.TryGet(info.Value.Species, info.Value.Emotion);
+        var root = CatalogBuilder.FindRepositoryRoot(_rom.Path);
+        var folders = MonsterSpriteFolders.Load(root ?? ".");
+        speakerLabel = folders.TryGetValue(info.Value.Species, out var folder)
+            ? folder
+            : MonsterSpriteFolders.ForSpecies(info.Value.Species, folders);
     }
 
     private Control CreateZoomableImagePreview(

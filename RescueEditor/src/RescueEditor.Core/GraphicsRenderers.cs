@@ -21,11 +21,7 @@ public static class GraphicsRenderers
             : [sheet];
         var font = PixelFont.Load();
         const int scale = PortraitSheetPresentation.DefaultDisplayScale;
-        const int face = PortraitSheetPresentation.FaceSize * scale;
-        const int gapX = 8;
-        const int gapY = 10;
-        const int labelGap = 3;
-        const int labelH = PixelFont.GlyphRows + 2;
+        const int face = PortraitSheetPresentation.ScaledFace;
 
         var labels = new string[faces.Count];
         for (var i = 0; i < faces.Count; i++)
@@ -34,12 +30,7 @@ public static class GraphicsRenderers
             labels[i] = PortraitSheetPresentation.EmotionLabel(i, emotion);
         }
 
-        var cellW = face;
-        var cellH = face + labelGap + labelH;
-        var cols = PortraitSheetPresentation.ColumnCount(faces.Count);
-        var rows = PortraitSheetPresentation.RowCount(faces.Count);
-        var width = cols * cellW + (cols - 1) * gapX;
-        var height = rows * cellH + (rows - 1) * gapY;
+        var (width, height) = PortraitSheetPresentation.SheetPixelSize(faces.Count);
         var canvas = new RgbaImage(width, height, new byte[width * height * 4]);
 
         for (var i = 0; i < faces.Count; i++)
@@ -54,16 +45,13 @@ public static class GraphicsRenderers
                 continue;
             }
 
-            var col = i % cols;
-            var row = i / cols;
-            var cellX = col * (cellW + gapX);
-            var cellY = row * (cellH + gapY);
+            var (cellX, cellY) = PortraitSheetPresentation.CellOrigin(i, faces.Count);
             BlitRgba(canvas, image, cellX, cellY);
             font.DrawCentered(
                 canvas,
                 labels[i],
-                cellX + cellW / 2,
-                cellY + face + labelGap,
+                cellX + PortraitSheetPresentation.CellWidth / 2,
+                cellY + face + PortraitSheetPresentation.LabelGap,
                 r: 0xE8, g: 0xE8, b: 0xE8);
         }
 
@@ -74,34 +62,8 @@ public static class GraphicsRenderers
             Text: sheet.Description);
     }
 
-    private static RgbaImage DecodePortraitImage(RomImage rom, AssetDescriptor asset)
-    {
-        var graphics = rom.Copy(asset.Offset, asset.Size);
-        if (asset.Metadata.TryGetValue("forcePrefix", out var forcePrefix) &&
-            string.Equals(forcePrefix, "true", StringComparison.OrdinalIgnoreCase) ||
-            !graphics.AsSpan().StartsWith("AT4P"u8))
-        {
-            graphics = [.. "AT4PX"u8, .. graphics];
-        }
-
-        var decoded = Compression.DecompressAt(graphics);
-        if (decoded.Length < 0x320)
-            throw new InvalidDataException($"Portrait data is only 0x{decoded.Length:X} bytes.");
-
-        var palette = ReadRgbPalette(rom, asset.AuxiliaryOffset, asset.AuxiliarySize, transparentFirst: true);
-        var pixels = new byte[40 * 40 * 4];
-        for (var tileY = 0; tileY < 5; tileY++)
-        {
-            for (var tileX = 0; tileX < 5; tileX++)
-            {
-                var tileOffset = (tileY * 5 + tileX) * 32;
-                Blit4BppTile(decoded.AsSpan(tileOffset, 32), palette, pixels, 40,
-                    tileX * 8, tileY * 8);
-            }
-        }
-
-        return new RgbaImage(40, 40, pixels);
-    }
+    private static RgbaImage DecodePortraitImage(RomImage rom, AssetDescriptor asset) =>
+        PortraitFaceCodec.Decode(rom, asset);
 
     private static void BlitRgba(RgbaImage dest, RgbaImage src, int dx, int dy)
     {

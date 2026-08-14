@@ -197,6 +197,146 @@ public static class Compression
         return output.ToArray();
     }
 
+    /// <summary>
+    /// Greedy AT4PX encoder (PX nibble patterns + short LZ copies + literals).
+    /// Header bytes 5–6 are the end offset of the command stream (absolute file size).
+    /// </summary>
+    public static byte[] CompressAt4px(ReadOnlySpan<byte> data)
+    {
+        var ops = new List<(bool Literal, byte[] Payload)>();
+        var i = 0;
+        while (i < data.Length)
+        {
+            byte px = 0;
+            var hasPx = i + 2 <= data.Length && TryPx(data, i, out px);
+            var hasCopy = TryCopy(data, i, out var copyPayload, out var copyLen);
+
+            if (hasCopy && copyLen >= 4)
+            {
+                ops.Add((false, copyPayload));
+                i += copyLen;
+                continue;
+            }
+
+            if (hasPx)
+            {
+                ops.Add((false, [px]));
+                i += 2;
+                continue;
+            }
+
+            if (hasCopy)
+            {
+                ops.Add((false, copyPayload));
+                i += copyLen;
+                continue;
+            }
+
+            ops.Add((true, [data[i]]));
+            i++;
+        }
+
+        var stream = new List<byte>();
+        for (var op = 0; op < ops.Count; )
+        {
+            byte flags = 0;
+            var group = Math.Min(8, ops.Count - op);
+            for (var bit = 0; bit < group; bit++)
+            {
+                if (ops[op + bit].Literal)
+                    flags |= (byte)(0x80 >> bit);
+            }
+
+            stream.Add(flags);
+            for (var bit = 0; bit < group; bit++)
+                stream.AddRange(ops[op + bit].Payload);
+            op += group;
+        }
+
+        var total = 0x12 + stream.Count;
+        var output = new byte[total];
+        "AT4PX"u8.CopyTo(output);
+        output[5] = (byte)total;
+        output[6] = (byte)(total >> 8);
+        // High nibble is 4 bits. Reserve 0x7–0xF for the 9 PX patterns; 0x0–0x6 are LZ lengths 3–9.
+        for (var f = 0; f < 9; f++)
+            output[7 + f] = (byte)(0x07 + f);
+        output[0x10] = (byte)data.Length;
+        output[0x11] = (byte)(data.Length >> 8);
+        stream.CopyTo(output, 0x12);
+        return output;
+    }
+
+    private static bool TryPx(ReadOnlySpan<byte> data, int i, out byte encoded)
+    {
+        encoded = 0;
+        var n0 = data[i] >> 4;
+        var n1 = data[i] & 0xF;
+        var n2 = data[i + 1] >> 4;
+        var n3 = data[i + 1] & 0xF;
+        var n = n0;
+        int pattern;
+        if (n1 == n && n2 == n && n3 == n)
+            pattern = 0; // [n,n,n,n]
+        else if (n1 == ((n + 1) & 0xF) && n2 == ((n + 1) & 0xF) && n3 == ((n + 1) & 0xF))
+            pattern = 1;
+        else if (n1 == ((n - 1) & 0xF) && n2 == n && n3 == n)
+            pattern = 2;
+        else if (n1 == n && n2 == ((n - 1) & 0xF) && n3 == n)
+            pattern = 3;
+        else if (n1 == n && n2 == n && n3 == ((n - 1) & 0xF))
+            pattern = 4;
+        else if (n1 == ((n - 1) & 0xF) && n2 == ((n - 1) & 0xF) && n3 == ((n - 1) & 0xF))
+            pattern = 5;
+        else if (n1 == ((n + 1) & 0xF) && n2 == n && n3 == n)
+            pattern = 6;
+        else if (n1 == n && n2 == ((n + 1) & 0xF) && n3 == n)
+            pattern = 7;
+        else if (n1 == n && n2 == n && n3 == ((n + 1) & 0xF))
+            pattern = 8;
+        else
+            return false;
+
+        encoded = (byte)(((0x07 + pattern) << 4) | n);
+        return true;
+    }
+
+    private static bool TryCopy(ReadOnlySpan<byte> data, int i, out byte[] payload, out int length)
+    {
+        payload = [];
+        length = 0;
+        const int minLen = 3;
+        const int maxLen = 9; // high nibble 0–6; 0x7–0xF are PX
+        var remaining = data.Length - i;
+        if (remaining < minLen || i < minLen)
+            return false;
+
+        var window = Math.Min(i, 0x1000);
+        var bestLen = 0;
+        var bestSrc = 0;
+        for (var src = i - window; src < i; src++)
+        {
+            var n = 0;
+            var cap = Math.Min(maxLen, remaining);
+            while (n < cap && data[src + n] == data[i + n])
+                n++;
+            if (n > bestLen)
+            {
+                bestLen = n;
+                bestSrc = src;
+            }
+        }
+
+        if (bestLen < minLen)
+            return false;
+
+        var packed = bestSrc - i + 0x1000;
+        var high = (byte)(bestLen - 3);
+        payload = [(byte)((high << 4) | ((packed >> 8) & 0xF)), (byte)packed];
+        length = bestLen;
+        return true;
+    }
+
     private static void AddPair(List<byte> output, int first, int second)
     {
         output.Add((byte)first);

@@ -53,6 +53,21 @@ public sealed class PortraitSheetPresentationTests
     }
 
     [Fact]
+    public void HitTestSelectsEmotionCellAndIgnoresGaps()
+    {
+        var (w, h) = PortraitSheetPresentation.SheetPixelSize(5);
+        Assert.True(w > PortraitSheetPresentation.CellWidth);
+        Assert.True(h > PortraitSheetPresentation.CellHeight);
+
+        Assert.Equal(0, PortraitSheetPresentation.HitTest(0, 0, 5));
+        Assert.Equal(1, PortraitSheetPresentation.HitTest(PortraitSheetPresentation.CellWidth + PortraitSheetPresentation.GapX, 0, 5));
+        Assert.Equal(4, PortraitSheetPresentation.HitTest(0, PortraitSheetPresentation.CellHeight + PortraitSheetPresentation.GapY, 5));
+        Assert.Null(PortraitSheetPresentation.HitTest(PortraitSheetPresentation.CellWidth + 1, 0, 5)); // gap
+        Assert.Null(PortraitSheetPresentation.HitTest(w - 1, h - 1, 5)); // empty cell 7 in 4-col grid
+        Assert.Null(PortraitSheetPresentation.HitTest(-1, 0, 5));
+    }
+
+    [Fact]
     public void LabelShrinkKeepsCaptionUnderFaceWidth()
     {
         var font = PixelFont.Load();

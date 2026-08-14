@@ -1,6 +1,10 @@
 namespace RescueEditor.Core;
 
-public readonly record struct DialogueSpeakerInfo(int SpeakerId, int Emotion, short Species);
+public readonly record struct DialogueSpeakerInfo(
+    int SpeakerId,
+    int Emotion,
+    short Species,
+    int Placement = 0);
 
 /// <summary>
 /// Resolves speaker id / emotion / species for a MSG command from preceding script ops.
@@ -34,6 +38,7 @@ public static class DialogueSpeakerResolver
             return null;
 
         var emotion = 0;
+        var placement = 0;
         short species = 0;
         int? boundLive = null;
         int? boundType = null;
@@ -61,6 +66,9 @@ public static class DialogueSpeakerResolver
                 emotion = (int)cmd.Arg1;
                 if (emotion == -2)
                     return null; // telepathy / hidden face
+                // PLACEMENT_KEEP == array length (21): keep the last real placement.
+                if (cmd.ArgByte < GbaDialogueHud.PortraitPlacementCount)
+                    placement = cmd.ArgByte;
             }
         }
 
@@ -69,7 +77,7 @@ public static class DialogueSpeakerResolver
         else if (resolveLiveSpecies is not null)
             species = resolveLiveSpecies(boundLive ?? speakerId);
 
-        return new DialogueSpeakerInfo(speakerId, emotion < 0 ? 0 : emotion, species);
+        return new DialogueSpeakerInfo(speakerId, emotion < 0 ? 0 : emotion, species, placement);
     }
 
     /// <summary>

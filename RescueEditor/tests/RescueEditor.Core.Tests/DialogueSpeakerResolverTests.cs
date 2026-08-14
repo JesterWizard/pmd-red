@@ -18,6 +18,22 @@ public sealed class DialogueSpeakerResolverTests
         Assert.NotNull(info);
         Assert.Equal(3, info!.Value.SpeakerId);
         Assert.Equal(4, info.Value.Emotion);
+        Assert.Equal(0, info.Value.Placement);
+    }
+
+    [Fact]
+    public void ResolvesPortraitPlacementAndKeepsPriorWhenSentinel()
+    {
+        var commands = new List<ScriptCommandData>
+        {
+            new() { Op = 0x2E, ArgByte = 3, ArgShort = 1, Arg1 = 0 }, // RIGHT_BOTTOM_FLIP
+            new() { Op = 0x2E, ArgByte = 21, ArgShort = 1, Arg1 = 2 }, // PLACEMENT_KEEP
+            new() { Op = 0x34, ArgShort = 1 },
+        };
+
+        var info = DialogueSpeakerResolver.TryResolve(commands, msgIndex: 2);
+        Assert.Equal(3, info!.Value.Placement);
+        Assert.Equal(2, info.Value.Emotion);
     }
 
     [Fact]

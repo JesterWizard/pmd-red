@@ -569,7 +569,7 @@ public sealed class MainWindow : Window
                 catch { }
             });
 
-            _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes);
+            _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes, _workingRom);
             _explorer.Build(_catalog, _scenes, Categories);
             KickSearchIndexBuild();
             _selectedCategory = AssetCategory.Scenes;
