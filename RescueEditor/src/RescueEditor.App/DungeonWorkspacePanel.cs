@@ -326,6 +326,12 @@ public sealed class DungeonWorkspacePanel : UserControl
             PatchFloor(new FloorPropertiesPatch(FloorConnectivity: value), renderMap: true)));
         _floorHost.Children.Add(SpinRow("Tileset", props.Tileset, 0, 255, value =>
             PatchFloor(new FloorPropertiesPatch(Tileset: value), renderMap: true)));
+        _floorHost.Children.Add(SpinRow("Shop %", props.KecleonShopChance, 0, 100, value =>
+            PatchFloor(new FloorPropertiesPatch(KecleonShopChance: value), renderMap: true)));
+        _floorHost.Children.Add(SpinRow("Maze %", props.MazeRoomChance, 0, 100, value =>
+            PatchFloor(new FloorPropertiesPatch(MazeRoomChance: value), renderMap: true)));
+        _floorHost.Children.Add(SpinRow("Extra halls", props.NumExtraHallways, 0, 255, value =>
+            PatchFloor(new FloorPropertiesPatch(NumExtraHallways: value), renderMap: true)));
         _floorHost.Children.Add(CheckRow("Dead ends", props.AllowDeadEnds, value =>
             PatchFloor(new FloorPropertiesPatch(AllowDeadEnds: value), renderMap: true)));
         _floorHost.Children.Add(CheckRow(

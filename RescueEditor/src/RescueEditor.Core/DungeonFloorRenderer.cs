@@ -81,6 +81,8 @@ public static class DungeonFloorRenderer
         {
             var cell = ResolveCell(map, tx, ty, cex, oob, tileset);
             BlitCell(fon, cel, pal, cell, pixels, width, tx * ChunkPixels, ty * ChunkPixels);
+            if (map.Shop[tx, ty])
+                TintShopCell(pixels, width, tx * ChunkPixels, ty * ChunkPixels);
         }
 
         return (new RgbaImage(width, height, pixels).ToPng(), width, height);
@@ -129,6 +131,20 @@ public static class DungeonFloorRenderer
 
         var id = (int)(mask * 3);
         return id >= 0 && id < cex.Length ? cex[id] : 0;
+    }
+
+    private static void TintShopCell(byte[] pixels, int stride, int destX, int destY)
+    {
+        for (var row = 0; row < ChunkPixels; row++)
+        for (var col = 0; col < ChunkPixels; col++)
+        {
+            var o = ((destY + row) * stride + destX + col) * 4;
+            if ((uint)o + 3 >= (uint)pixels.Length)
+                continue;
+            pixels[o] = (byte)Math.Min(255, pixels[o] + 40);
+            pixels[o + 1] = (byte)Math.Min(255, pixels[o + 1] + 28);
+            pixels[o + 2] = (byte)(pixels[o + 2] * 3 / 4);
+        }
     }
 
     private static int TerrainAt(GeneratedDungeonFloor map, int x, int y, int oob)

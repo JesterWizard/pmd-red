@@ -23,7 +23,8 @@ public static class DungeonFloorPreviewCache
         var p = floor.Properties;
         return string.Join(':',
             floor.DungeonId, floor.Floor, seed, p.Layout, p.RoomDensity, p.Tileset,
-            p.FloorConnectivity, p.AllowDeadEnds ? 1 : 0, p.RoomFlags);
+            p.FloorConnectivity, p.AllowDeadEnds ? 1 : 0, p.RoomFlags,
+            p.KecleonShopChance, p.MazeRoomChance, p.NumExtraHallways, p.MonsterHouseChance);
     }
 
     public static string FileStem(DungeonFloorRecord floor, uint seed = DungeonFloorRenderer.DefaultSeed) =>

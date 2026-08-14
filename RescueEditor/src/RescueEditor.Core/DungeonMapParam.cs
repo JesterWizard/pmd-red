@@ -225,6 +225,9 @@ public sealed record FloorPropertiesRecord(
     int ItemStickyChance = 0,
     int BuriedItemDensity = 0,
     int MoneyUpperBound = 0,
+    int MazeRoomChance = 0,
+    int NumExtraHallways = 0,
+    int SecondaryStructuresBudget = 0,
     int RomOffset = -1);
 
 public sealed record MonsterSpawnEntry(int Species, int Level, int Weight, int RomOffset = -1);
