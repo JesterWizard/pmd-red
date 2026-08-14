@@ -50,8 +50,8 @@ public static class DataTableIndexer
 
         repositoryRoot ??= CatalogBuilder.FindRepositoryRoot(rom.Path);
         var labels = LoadLabels(repositoryRoot);
-        return
-        [
+        var assets = new List<AssetDescriptor>
+        {
             BuildTable(AssetKind.MonsterTable, "Pokemon", "monspara",
                 tables.MonsterCount, DataTableTables.MonsterEntrySize, tables.MonsterData,
                 id => CreateMonsterAsset(rom, charmap, tables, labels, id)),
@@ -61,8 +61,10 @@ public static class DataTableIndexer
             BuildTable(AssetKind.ItemTable, "Items", "itempara",
                 tables.ItemCount, DataTableTables.ItemEntrySize, tables.ItemData,
                 id => CreateItemAsset(rom, charmap, tables, labels, id)),
-            .. IndexFriendAreas(rom, friendTables),
-        ];
+        };
+        assets.AddRange(IndexFriendAreas(rom, friendTables));
+        assets.AddRange(GameplayTableIndexer.Index(rom));
+        return assets;
     }
 
     private static IReadOnlyList<AssetDescriptor> IndexFriendAreas(RomImage rom, FriendAreaTables? tables = null)
@@ -177,6 +179,7 @@ public static class DataTableIndexer
                 ["atk"] = $"{entry.BaseAtk}/{entry.BaseSpAtk}",
                 ["def"] = $"{entry.BaseDef}/{entry.BaseSpDef}",
                 ["recruitRate"] = entry.RecruitRate.ToString(CultureInfo.InvariantCulture),
+                ["evolveFrom"] = entry.EvolveFrom.ToString(CultureInfo.InvariantCulture),
                 ["learnset"] = learnset,
             },
         };
@@ -347,6 +350,9 @@ public static class DataTablePreview
                 AssetKind.MoveTable => $"{asset.Children.Count} move entries (wazapara).",
                 AssetKind.ItemTable => $"{asset.Children.Count} item entries (itempara).",
                 AssetKind.FriendAreaTable => $"{asset.Children.Count} friend area entries.",
+                AssetKind.TypeMatchupTable => $"{asset.Children.Count} attacking types.",
+                AssetKind.ExclusiveTable => $"{asset.Children.Count} version-exclusive species.",
+                AssetKind.ShopTable => $"{asset.Children.Count} shop inventories.",
                 _ => asset.Description ?? "",
             });
             return builder.ToString();
@@ -367,6 +373,14 @@ public static class DataTablePreview
                 builder.AppendLine($"HP {entry.BaseHp}  Exp {entry.ExpYield}  Recruit {entry.RecruitRate}");
                 builder.AppendLine($"Atk/SpAtk {entry.BaseAtk}/{entry.BaseSpAtk}  Def/SpDef {entry.BaseDef}/{entry.BaseSpDef}");
                 builder.AppendLine($"Weight {entry.Weight}  Size {entry.Size}  Body {entry.BodySize}");
+                if (entry.EvolveFrom != 0 || entry.EvolveType != 0)
+                {
+                    var from = DataTableCodec.ReadMonster(rom, tables, entry.EvolveFrom, charmap);
+                    var fromName = from is null || string.IsNullOrWhiteSpace(from.Name)
+                        ? DungeonBuiltinNames.Species(entry.EvolveFrom)
+                        : from.Name;
+                    builder.AppendLine($"Evolves from {fromName} ({DataTableEnums.EvolveTypePicks.FirstOrDefault(p => p.Id == entry.EvolveType)?.Name ?? entry.EvolveType.ToString()})");
+                }
                 if (entry.LevelUpMoves.Count > 0)
                 {
                     builder.AppendLine();
@@ -429,6 +443,57 @@ public static class DataTablePreview
             }
         }
 
+        if (asset.Kind == AssetKind.TypeMatchupEntry)
+        {
+            var chart = GameplayTableTables.TryLoad(rom);
+            if (chart is not null && int.TryParse(asset.Metadata.GetValueOrDefault("id"), out var attack))
+            {
+                builder.AppendLine($"{DataTableEnums.TypeName(attack)} attacking");
+                for (var defend = 0; defend < GameplayTableTables.TypeCount; defend++)
+                {
+                    var value = GameplayTableCodec.ReadMatchup(rom, chart, attack, defend);
+                    builder.AppendLine($"  vs {DataTableEnums.TypeName(defend)}: {EffectivenessName(value)}");
+                }
+            }
+        }
+
+        if (asset.Kind == AssetKind.ExclusiveEntry)
+        {
+            var chart = GameplayTableTables.TryLoad(rom);
+            if (chart is not null && int.TryParse(asset.Metadata.GetValueOrDefault("id"), out var index))
+            {
+                var exclusive = GameplayTableCodec.ReadExclusive(rom, chart, index);
+                if (exclusive is not null)
+                {
+                    builder.AppendLine($"Species: {DungeonBuiltinNames.Species(exclusive.Species)}");
+                    builder.AppendLine($"Red: {(exclusive.InRed ? "yes" : "no")}  Blue: {(exclusive.InBlue ? "yes" : "no")}");
+                }
+            }
+        }
+
+        if (asset.Kind == AssetKind.ShopEntry)
+        {
+            var gameplay = GameplayTableTables.TryLoad(rom);
+            if (gameplay is not null && int.TryParse(asset.Metadata.GetValueOrDefault("id"), out var shopId))
+            {
+                var shop = GameplayTableCodec.ListShops(rom, gameplay).FirstOrDefault(s => s.Id == shopId);
+                if (shop is not null)
+                {
+                    builder.AppendLine(shop.Name);
+                    foreach (var item in shop.Items.Take(24))
+                        builder.AppendLine($"  {DataTableCodec.ReadItem(rom, tables, item.ItemId, charmap)?.Name ?? $"Item {item.ItemId}"}  {item.Weight}");
+                }
+            }
+        }
+
         return builder.ToString();
     }
+
+    private static string EffectivenessName(int value) => value switch
+    {
+        GameplayTableCodec.Immune => "Immune",
+        GameplayTableCodec.Resist => "Not very effective",
+        GameplayTableCodec.Super => "Super effective",
+        _ => "Neutral",
+    };
 }

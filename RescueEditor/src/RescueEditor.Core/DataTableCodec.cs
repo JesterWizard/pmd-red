@@ -118,6 +118,9 @@ public sealed record MonsterTableEntry(
     int Size,
     bool CanThrowItems,
     int EvolveFrom,
+    int EvolveType,
+    int EvolveRequirement,
+    int EvolveExtra,
     int RecruitRate,
     IReadOnlyList<LevelUpMove> LevelUpMoves,
     IReadOnlyList<int> HmTmMoves);
@@ -216,6 +219,19 @@ public static class DataTableCodec
         return picks.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase).ThenBy(p => p.Id).ToArray();
     }
 
+    public static IReadOnlyList<DataTablePick> AlphabeticalMonsters(RomImage rom, DataTableTables tables, Charmap? charmap)
+    {
+        var picks = new List<DataTablePick>(tables.MonsterCount);
+        for (var id = 0; id < tables.MonsterCount; id++)
+        {
+            var entry = ReadMonster(rom, tables, id, charmap);
+            var name = entry is null || string.IsNullOrWhiteSpace(entry.Name) ? DungeonBuiltinNames.Species(id) : entry.Name;
+            picks.Add(new DataTablePick(id, name));
+        }
+
+        return picks.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase).ThenBy(p => p.Id).ToArray();
+    }
+
     public static bool WriteMonster(
         MutableRom rom,
         DataTableTables tables,
@@ -245,6 +261,14 @@ public static class DataTableCodec
         rom.WriteUInt16(off + 0x2C, (ushort)Math.Clamp(patch.Weight, 0, 65535));
         rom.WriteUInt16(off + 0x2E, (ushort)Math.Clamp(patch.Size, 0, 65535));
         rom.WriteInt16(off + 0x40, (short)Math.Clamp(patch.RecruitRate, short.MinValue, short.MaxValue));
+        if (patch.EvolveFrom is int evolveFrom)
+            rom.WriteInt16(off + 0x34, (short)Math.Clamp(evolveFrom, short.MinValue, short.MaxValue));
+        if (patch.EvolveType is int evolveType)
+            rom.WriteUInt16(off + 0x36, (ushort)Math.Clamp(evolveType, 0, 65535));
+        if (patch.EvolveRequirement is int evolveReq)
+            rom.WriteInt16(off + 0x38, (short)Math.Clamp(evolveReq, short.MinValue, short.MaxValue));
+        if (patch.EvolveExtra is int evolveExtra)
+            rom.WriteUInt16(off + 0x3A, (ushort)Math.Clamp(evolveExtra, 0, 65535));
         dirty?.Add(new RomSpan(off, DataTableTables.MonsterEntrySize));
         return WriteLevelUpMoves(rom, tables, id, patch.LevelUpMoves, dirty);
     }
@@ -335,6 +359,9 @@ public static class DataTableCodec
             Size: rom.ReadUInt16(off + 0x2E),
             CanThrowItems: rom.ReadByte(off + 0x33) != 0,
             EvolveFrom: rom.ReadInt16(off + 0x34),
+            EvolveType: rom.ReadUInt16(off + 0x36),
+            EvolveRequirement: rom.ReadInt16(off + 0x38),
+            EvolveExtra: rom.ReadUInt16(off + 0x3A),
             RecruitRate: rom.ReadInt16(off + 0x40),
             LevelUpMoves: levelUp,
             HmTmMoves: hmTm);
@@ -558,7 +585,11 @@ public sealed record DataTableMonsterPatch(
     int Size,
     int BodySize,
     int RecruitRate,
-    IReadOnlyList<LevelUpMove> LevelUpMoves);
+    IReadOnlyList<LevelUpMove> LevelUpMoves,
+    int? EvolveFrom = null,
+    int? EvolveType = null,
+    int? EvolveRequirement = null,
+    int? EvolveExtra = null);
 
 public sealed record DataTableMovePatch(
     int BasePower,

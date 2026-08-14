@@ -157,14 +157,15 @@ public static class EditorChrome
         };
     }
 
-    public static Control PropertyRow(string label, Control editor)
+    public static Control PropertyRow(string label, Control editor, double? labelWidth = null)
     {
         editor.HorizontalAlignment = HorizontalAlignment.Stretch;
         StyleEditor(editor);
 
+        var width = labelWidth ?? EditorTheme.LabelColumnWidth;
         var grid = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.LabelColumnWidth},*"),
+            ColumnDefinitions = new ColumnDefinitions($"{width},*"),
             Margin = new Thickness(EditorTheme.Space4, 0),
             Height = EditorTheme.ControlHeight + 2,
         };

@@ -15,6 +15,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
     private const double ListPaneWidth = 280;
     private const double ComboWidth = 200;
     private const double SpinWidth = 72;
+    private const double MatchupLabelWidth = 112;
 
     private readonly ListBox _list;
     private readonly TextBox _filterBox;
@@ -24,6 +25,10 @@ public sealed class DataTablesWorkspacePanel : UserControl
     private readonly ToggleButton _moveTab;
     private readonly ToggleButton _itemTab;
     private readonly ToggleButton _friendTab;
+    private readonly ToggleButton _typeTab;
+    private readonly ToggleButton _exclusiveTab;
+    private readonly ToggleButton _shopTab;
+    private readonly IReadOnlyList<ToggleButton> _tableTabs;
 
     private RomImage? _rom;
     private Charmap? _charmap;
@@ -31,15 +36,25 @@ public sealed class DataTablesWorkspacePanel : UserControl
     private WorkingRom? _workingRom;
     private DataTableTables? _tables;
     private FriendAreaTables? _friendTables;
+    private GameplayTableTables? _gameplay;
     private ActorSpriteAtlas? _sprites;
     private DungeonIconAtlas? _icons;
     private IReadOnlyList<DataTablePick> _movePicks = [];
+    private IReadOnlyList<DataTablePick> _monsterPicks = [];
+    private IReadOnlyList<DataTablePick> _itemPicks = [];
+    private IReadOnlyList<ShopTableEntry> _shops = [];
     private AssetDescriptor? _table;
     private AssetDescriptor? _selected;
     private IReadOnlyList<AssetDescriptor> _entries = [];
     private bool _suppress;
     private readonly List<LearnsetRow> _learnsetRows = [];
+    private readonly List<ShopItemRow> _shopRows = [];
     private readonly Dictionary<(AssetKind Kind, int Id), Bitmap> _listSpriteCache = [];
+    private static readonly IReadOnlyList<DataTablePick> YesNoPicks =
+    [
+        new(0, "No"),
+        new(1, "Yes"),
+    ];
 
     public event EventHandler<AssetDescriptor?>? AssetSelected;
 
@@ -61,49 +76,66 @@ public sealed class DataTablesWorkspacePanel : UserControl
             FontSize = EditorTheme.FontLabel,
             Height = EditorTheme.ControlHeight,
             MinHeight = EditorTheme.ControlHeight,
-            Width = 200,
+            Width = 160,
+            MinWidth = 120,
+            MaxWidth = 200,
         };
         EditorChrome.StyleEditor(_filterBox);
         _filterBox.TextChanged += (_, _) => ApplyFilter();
 
-        _monsterTab = EditorChrome.InspectorTab("Pokemon", isChecked: true);
-        _moveTab = EditorChrome.InspectorTab("Moves");
-        _itemTab = EditorChrome.InspectorTab("Items");
-        _friendTab = EditorChrome.InspectorTab("Friend Areas");
-        _monsterTab.IsCheckedChanged += (_, _) => { if (_monsterTab.IsChecked == true) ShowTableKind(AssetKind.MonsterTable); };
-        _moveTab.IsCheckedChanged += (_, _) => { if (_moveTab.IsChecked == true) ShowTableKind(AssetKind.MoveTable); };
-        _itemTab.IsCheckedChanged += (_, _) => { if (_itemTab.IsChecked == true) ShowTableKind(AssetKind.ItemTable); };
-        _friendTab.IsCheckedChanged += (_, _) => { if (_friendTab.IsChecked == true) ShowTableKind(AssetKind.FriendAreaTable); };
+        _monsterTab = EditorChrome.InspectorTab(DataTablesToolbarLayout.TableTabs[0], isChecked: true);
+        _moveTab = EditorChrome.InspectorTab(DataTablesToolbarLayout.TableTabs[1]);
+        _itemTab = EditorChrome.InspectorTab(DataTablesToolbarLayout.TableTabs[2]);
+        _friendTab = EditorChrome.InspectorTab(DataTablesToolbarLayout.TableTabs[3]);
+        _typeTab = EditorChrome.InspectorTab(DataTablesToolbarLayout.TableTabs[4]);
+        _exclusiveTab = EditorChrome.InspectorTab(DataTablesToolbarLayout.TableTabs[5]);
+        _shopTab = EditorChrome.InspectorTab(DataTablesToolbarLayout.TableTabs[6]);
+        _tableTabs = [_monsterTab, _moveTab, _itemTab, _friendTab, _typeTab, _exclusiveTab, _shopTab];
+        BindTableTab(_monsterTab, AssetKind.MonsterTable);
+        BindTableTab(_moveTab, AssetKind.MoveTable);
+        BindTableTab(_itemTab, AssetKind.ItemTable);
+        BindTableTab(_friendTab, AssetKind.FriendAreaTable);
+        BindTableTab(_typeTab, AssetKind.TypeMatchupTable);
+        BindTableTab(_exclusiveTab, AssetKind.ExclusiveTable);
+        BindTableTab(_shopTab, AssetKind.ShopTable);
 
-        var toolbarInner = new StackPanel
+        var title = new TextBlock
+        {
+            Text = DataTablesToolbarLayout.Title,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontToolbar,
+            FontWeight = FontWeight.SemiBold,
+            Foreground = EditorTheme.TextPrimaryBrush,
+            Margin = new Thickness(EditorTheme.Space2, 0, EditorTheme.Space3, 0),
+            VerticalAlignment = VerticalAlignment.Center,
+        };
+        var actions = new StackPanel
         {
             Orientation = Orientation.Horizontal,
             Spacing = EditorTheme.Space2,
             VerticalAlignment = VerticalAlignment.Center,
-            Children =
-            {
-                new TextBlock
-                {
-                    Text = "Data Tables",
-                    FontFamily = EditorTheme.UiFont,
-                    FontSize = EditorTheme.FontToolbar,
-                    FontWeight = FontWeight.SemiBold,
-                    Foreground = EditorTheme.TextPrimaryBrush,
-                    Margin = new Thickness(EditorTheme.Space2, 0, EditorTheme.Space3, 0),
-                    VerticalAlignment = VerticalAlignment.Center,
-                },
-                new StackPanel
-                {
-                    Orientation = Orientation.Horizontal,
-                    Children = { _monsterTab, _moveTab, _itemTab, _friendTab },
-                },
-                EditorChrome.ToolbarSeparator(),
-                _filterBox,
-                AddToolbarButton("Add", AddEntry),
-                AddToolbarButton("Delete", DeleteEntry),
-                _status,
-            },
+            Children = { _filterBox, AddToolbarButton("Add", AddEntry), AddToolbarButton("Delete", DeleteEntry) },
         };
+        var identity = new Grid
+        {
+            ColumnDefinitions = new ColumnDefinitions("Auto,Auto,*"),
+            Height = EditorTheme.ToolbarHeight,
+            Children = { title, actions, _status },
+        };
+        Grid.SetColumn(actions, 1);
+        Grid.SetColumn(_status, 2);
+        _status.Margin = new Thickness(EditorTheme.Space3, 0, 0, 0);
+        _status.HorizontalAlignment = HorizontalAlignment.Stretch;
+
+        var tabs = new WrapPanel
+        {
+            Orientation = Orientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center,
+        };
+        foreach (var tab in _tableTabs)
+            tabs.Children.Add(tab);
+
+        var toolbarInner = EditorChrome.ToolbarStack(identity, tabs);
 
         _list = new ListBox
         {
@@ -146,7 +178,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
         {
             RowDefinitions = new RowDefinitions("Auto,*"),
             Background = EditorTheme.PanelBgBrush,
-            Children = { EditorChrome.ToolbarHost(toolbarInner), split },
+            Children = { EditorChrome.ToolbarHost(toolbarInner, DataTablesToolbarLayout.RowCount), split },
         };
         Grid.SetRow(split, 1);
     }
@@ -162,8 +194,16 @@ public sealed class DataTablesWorkspacePanel : UserControl
         _icons = DungeonIconAtlas.TryLoad(ActiveRom, 0);
         _tables = DataTableTables.TryLoad(ActiveRom);
         _friendTables = FriendAreaTables.TryLoad(ActiveRom);
+        _gameplay = GameplayTableTables.TryLoad(ActiveRom);
         if (_tables is not null)
+        {
             _movePicks = DataTableCodec.AlphabeticalMoves(ActiveRom, _tables, charmap);
+            _monsterPicks = DataTableCodec.AlphabeticalMonsters(ActiveRom, _tables, charmap);
+            _itemPicks = DataTableCodec.AlphabeticalItems(ActiveRom, _tables, charmap);
+        }
+
+        if (_gameplay is not null)
+            _shops = GameplayTableCodec.ListShops(ActiveRom, _gameplay);
         ShowAsset(asset ?? catalog.ForCategory(AssetCategory.DataTables).FirstOrDefault());
     }
 
@@ -172,8 +212,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
         if (_catalog is null || asset is null)
             return;
 
-        var table = asset.Kind is AssetKind.MonsterEntry or AssetKind.MoveEntry or AssetKind.ItemEntry
-            or AssetKind.FriendAreaEntry
+        var table = IsEntryKind(asset.Kind)
             ? ParentTable(asset)
             : asset;
         if (table is null)
@@ -184,12 +223,14 @@ public sealed class DataTablesWorkspacePanel : UserControl
         _moveTab.IsChecked = table.Kind == AssetKind.MoveTable;
         _itemTab.IsChecked = table.Kind == AssetKind.ItemTable;
         _friendTab.IsChecked = table.Kind == AssetKind.FriendAreaTable;
+        _typeTab.IsChecked = table.Kind == AssetKind.TypeMatchupTable;
+        _exclusiveTab.IsChecked = table.Kind == AssetKind.ExclusiveTable;
+        _shopTab.IsChecked = table.Kind == AssetKind.ShopTable;
         _entries = table.Children;
         _status.Text = table.Description ?? table.Name;
         ApplyFilter();
 
-        var focus = asset.Kind is AssetKind.MonsterEntry or AssetKind.MoveEntry or AssetKind.ItemEntry
-            or AssetKind.FriendAreaEntry
+        var focus = IsEntryKind(asset.Kind)
             ? asset
             : _entries.FirstOrDefault(e => e.Metadata.GetValueOrDefault("id") == "1") ?? _entries.FirstOrDefault();
         if (focus is not null)
@@ -201,6 +242,14 @@ public sealed class DataTablesWorkspacePanel : UserControl
     private AssetDescriptor? ParentTable(AssetDescriptor entry) =>
         _catalog?.ForCategory(AssetCategory.DataTables).FirstOrDefault(t =>
             t.Children.Any(c => c.Id == entry.Id));
+
+    private static bool IsEntryKind(AssetKind kind) => kind is
+        AssetKind.MonsterEntry or AssetKind.MoveEntry or AssetKind.ItemEntry
+        or AssetKind.FriendAreaEntry or AssetKind.TypeMatchupEntry
+        or AssetKind.ExclusiveEntry or AssetKind.ShopEntry;
+
+    private void BindTableTab(ToggleButton tab, AssetKind kind) =>
+        tab.IsCheckedChanged += (_, _) => { if (tab.IsChecked == true) ShowTableKind(kind); };
 
     private void ShowTableKind(AssetKind kind)
     {
@@ -298,7 +347,8 @@ public sealed class DataTablesWorkspacePanel : UserControl
 
     private void ApplyListSprite(Image image, AssetKind kind, int id)
     {
-        if (kind is AssetKind.MoveEntry or AssetKind.FriendAreaEntry)
+        if (kind is AssetKind.MoveEntry or AssetKind.FriendAreaEntry or AssetKind.TypeMatchupEntry
+            or AssetKind.ExclusiveEntry or AssetKind.ShopEntry)
         {
             image.Source = null;
             image.Width = 0;
@@ -331,6 +381,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
     {
         _formHost.Children.Clear();
         _learnsetRows.Clear();
+        _shopRows.Clear();
         if (!int.TryParse(asset.Metadata.GetValueOrDefault("id"), out var id))
             return;
         if (asset.Kind is AssetKind.MonsterEntry or AssetKind.MoveEntry or AssetKind.ItemEntry &&
@@ -351,6 +402,15 @@ public sealed class DataTablesWorkspacePanel : UserControl
                 break;
             case AssetKind.FriendAreaEntry:
                 BuildFriendAreaForm(id);
+                break;
+            case AssetKind.TypeMatchupEntry:
+                BuildTypeForm(id);
+                break;
+            case AssetKind.ExclusiveEntry:
+                BuildExclusiveForm(id);
+                break;
+            case AssetKind.ShopEntry:
+                BuildShopForm(id);
                 break;
         }
 
@@ -379,6 +439,25 @@ public sealed class DataTablesWorkspacePanel : UserControl
         _formHost.Children.Add(SpinRow("Weight", entry.Weight, 0, 65535, SaveMonster));
         _formHost.Children.Add(SpinRow("Size", entry.Size, 0, 65535, SaveMonster));
         _formHost.Children.Add(SpinRow("Body", entry.BodySize, 0, 255, SaveMonster));
+
+        _formHost.Children.Add(EditorChrome.SectionHeader("Evolution"));
+        _formHost.Children.Add(ComboRow("From", _monsterPicks, entry.EvolveFrom, SaveMonster));
+        _formHost.Children.Add(ComboRow("Method", DataTableEnums.EvolveTypePicks, entry.EvolveType, SaveMonster));
+        _formHost.Children.Add(SpinRow("Value", entry.EvolveRequirement, 0, 999, SaveMonster));
+        _formHost.Children.Add(ComboRow("Extra", DataTableEnums.EvolveExtraPicks, entry.EvolveExtra, SaveMonster));
+        var into = EvolvesIntoNames(id);
+        if (into.Count > 0)
+        {
+            _formHost.Children.Add(new TextBlock
+            {
+                Text = "Evolves into: " + string.Join(", ", into),
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextMutedBrush,
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, EditorTheme.Space2),
+            });
+        }
 
         _formHost.Children.Add(EditorChrome.SectionHeader("Level-up"));
         var learnHost = new StackPanel { Spacing = EditorTheme.Space1, Name = "LearnsetHost" };
@@ -541,6 +620,105 @@ public sealed class DataTablesWorkspacePanel : UserControl
         });
     }
 
+    private IReadOnlyList<string> EvolvesIntoNames(int species)
+    {
+        if (_tables is null)
+            return [];
+        var names = new List<string>();
+        for (var id = 0; id < _tables.MonsterCount; id++)
+        {
+            var off = _tables.MonsterData + id * DataTableTables.MonsterEntrySize;
+            if (!ActiveRom.IsRangeValid(off + 0x34, 4))
+                continue;
+            if (ActiveRom.ReadInt16(off + 0x34) != species || ActiveRom.ReadUInt16(off + 0x36) == 0)
+                continue;
+            names.Add(_monsterPicks.FirstOrDefault(p => p.Id == id)?.Name ?? DungeonBuiltinNames.Species(id));
+        }
+
+        return names;
+    }
+
+    private void BuildTypeForm(int attack)
+    {
+        if (_gameplay is null)
+            return;
+        _formHost.Children.Add(EditorChrome.SectionHeader($"{DataTableEnums.TypeName(attack)} attacking"));
+        for (var defend = 0; defend < GameplayTableTables.TypeCount; defend++)
+        {
+            var value = GameplayTableCodec.ReadMatchup(ActiveRom, _gameplay, attack, defend);
+            _formHost.Children.Add(ComboRow($"vs {DataTableEnums.TypeName(defend)}", DataTableEnums.EffectivenessPicks, value, SaveType, MatchupLabelWidth));
+        }
+    }
+
+    private void BuildExclusiveForm(int index)
+    {
+        if (_gameplay is null)
+            return;
+        var entry = GameplayTableCodec.ReadExclusive(ActiveRom, _gameplay, index);
+        if (entry is null)
+            return;
+        _formHost.Children.Add(EditorChrome.SectionHeader(DungeonBuiltinNames.Species(entry.Species)));
+        _formHost.Children.Add(ComboRow("Species", _monsterPicks, entry.Species, SaveExclusive));
+        _formHost.Children.Add(ComboRow("Red", YesNoPicks, entry.InRed ? 1 : 0, SaveExclusive));
+        _formHost.Children.Add(ComboRow("Blue", YesNoPicks, entry.InBlue ? 1 : 0, SaveExclusive));
+    }
+
+    private void BuildShopForm(int id)
+    {
+        var shop = _shops.FirstOrDefault(s => s.Id == id);
+        if (shop is null)
+            return;
+        _formHost.Children.Add(EditorChrome.SectionHeader(shop.Name));
+        var host = new StackPanel { Spacing = EditorTheme.Space1 };
+        foreach (var item in GameplayTableCodec.ReadShop(ActiveRom, shop))
+            host.Children.Add(BuildShopItemRow(item));
+        _formHost.Children.Add(host);
+        var add = EditorChrome.ToolButton("Add item");
+        add.HorizontalAlignment = HorizontalAlignment.Left;
+        add.Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, 0, 0);
+        add.Click += (_, _) =>
+        {
+            var pick = _itemPicks.FirstOrDefault(p => p.Id != 0) ?? _itemPicks.FirstOrDefault();
+            host.Children.Add(BuildShopItemRow(new ShopItemWeight(pick?.Id ?? 1, 1000)));
+            SaveShop();
+        };
+        _formHost.Children.Add(add);
+    }
+
+    private Control BuildShopItemRow(ShopItemWeight item)
+    {
+        var combo = Combo(_itemPicks, item.ItemId, ComboWidth);
+        var weight = Spin(item.Weight, 1, 10000, SpinWidth);
+        var rowState = new ShopItemRow(combo, weight);
+        _shopRows.Add(rowState);
+        combo.SelectionChanged += (_, _) => SaveShop();
+        weight.ValueChanged += (_, _) => SaveShop();
+        var remove = EditorChrome.IconButton("−", tip: "Remove");
+        remove.Click += (_, _) =>
+        {
+            _shopRows.Remove(rowState);
+            if (combo.Parent is Control row && row.Parent is Panel host)
+                host.Children.Remove(row);
+            SaveShop();
+        };
+        var grid = new Grid
+        {
+            ColumnDefinitions = new ColumnDefinitions("*,Auto,Auto"),
+            Margin = new Thickness(EditorTheme.Space4, 0),
+            Height = EditorTheme.ControlHeight + 2,
+        };
+        combo.HorizontalAlignment = HorizontalAlignment.Stretch;
+        combo.Width = double.NaN;
+        combo.MinWidth = 0;
+        grid.Children.Add(combo);
+        Grid.SetColumn(weight, 1);
+        weight.Margin = new Thickness(EditorTheme.Space2, 0, 0, 0);
+        grid.Children.Add(weight);
+        Grid.SetColumn(remove, 2);
+        grid.Children.Add(remove);
+        return grid;
+    }
+
     private static Button AddToolbarButton(string text, Action click)
     {
         var button = EditorChrome.ToolButton(text);
@@ -698,6 +876,9 @@ public sealed class DataTablesWorkspacePanel : UserControl
             AssetKind.MoveEntry => AssetKind.MoveTable,
             AssetKind.ItemEntry => AssetKind.ItemTable,
             AssetKind.FriendAreaEntry => AssetKind.FriendAreaTable,
+            AssetKind.TypeMatchupEntry => AssetKind.TypeMatchupTable,
+            AssetKind.ExclusiveEntry => AssetKind.ExclusiveTable,
+            AssetKind.ShopEntry => AssetKind.ShopTable,
             var tableKind => tableKind,
         };
         var table = indexed.FirstOrDefault(a => a.Kind == kind)
@@ -734,7 +915,11 @@ public sealed class DataTablesWorkspacePanel : UserControl
             Size: IntVal("Size"),
             BodySize: IntVal("Body"),
             RecruitRate: IntVal("Recruit"),
-            LevelUpMoves: learnset), dirty));
+            LevelUpMoves: learnset,
+            EvolveFrom: ComboVal("From"),
+            EvolveType: ComboVal("Method"),
+            EvolveRequirement: IntVal("Value"),
+            EvolveExtra: ComboVal("Extra")), dirty));
     }
 
     private void SaveMove()
@@ -795,6 +980,52 @@ public sealed class DataTablesWorkspacePanel : UserControl
             RebuildForm(_selected);
     }
 
+    private void SaveType()
+    {
+        if (_suppress || _workingRom is null || _gameplay is null || _selected is null)
+            return;
+        if (!int.TryParse(_selected.Metadata.GetValueOrDefault("id"), out var attack))
+            return;
+        Apply((buffer, dirty) =>
+        {
+            for (var defend = 0; defend < GameplayTableTables.TypeCount; defend++)
+            {
+                var label = $"vs {DataTableEnums.TypeName(defend)}";
+                if (!GameplayTableCodec.WriteMatchup(buffer, _gameplay, attack, defend, ComboVal(label), dirty))
+                    return false;
+            }
+
+            return true;
+        });
+    }
+
+    private void SaveExclusive()
+    {
+        if (_suppress || _workingRom is null || _gameplay is null || _selected is null)
+            return;
+        if (!int.TryParse(_selected.Metadata.GetValueOrDefault("id"), out var index))
+            return;
+        Apply((buffer, dirty) => GameplayTableCodec.WriteExclusive(buffer, _gameplay, index, new ExclusivePokemonPatch(
+            Species: ComboVal("Species"),
+            InRed: ComboVal("Red") != 0,
+            InBlue: ComboVal("Blue") != 0), dirty));
+    }
+
+    private void SaveShop()
+    {
+        if (_suppress || _workingRom is null || _selected is null)
+            return;
+        if (!int.TryParse(_selected.Metadata.GetValueOrDefault("id"), out var id))
+            return;
+        var shop = _shops.FirstOrDefault(s => s.Id == id);
+        if (shop is null)
+            return;
+        var items = _shopRows
+            .Select(row => new ShopItemWeight(SelectedId(row.Item), (int)(row.Weight.Value ?? 1)))
+            .ToArray();
+        Apply((buffer, dirty) => GameplayTableCodec.WriteShopItems(buffer, ActiveRom, shop, items, dirty));
+    }
+
     private void Apply(Func<MutableRom, List<RomSpan>, bool> write)
     {
         if (_workingRom is null)
@@ -848,11 +1079,11 @@ public sealed class DataTablesWorkspacePanel : UserControl
         return EditorChrome.PropertyRow(label, spin);
     }
 
-    private Control ComboRow(string label, IReadOnlyList<DataTablePick> picks, int selected, Action save)
+    private Control ComboRow(string label, IReadOnlyList<DataTablePick> picks, int selected, Action save, double? labelWidth = null)
     {
         var combo = Combo(picks, selected, ComboWidth);
         combo.SelectionChanged += (_, _) => save();
-        return EditorChrome.PropertyRow(label, combo);
+        return EditorChrome.PropertyRow(label, combo, labelWidth);
     }
 
     private Control DescriptionBox(string text, Action save)
@@ -925,4 +1156,6 @@ public sealed class DataTablesWorkspacePanel : UserControl
     private sealed record DataTableListItem(AssetDescriptor Asset);
 
     private sealed record LearnsetRow(CompactSpinBox Level, InstantComboBox Move);
+
+    private sealed record ShopItemRow(InstantComboBox Item, CompactSpinBox Weight);
 }

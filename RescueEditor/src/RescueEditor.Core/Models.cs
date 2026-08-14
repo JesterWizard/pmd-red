@@ -43,6 +43,12 @@ public enum AssetKind
     ItemEntry,
     FriendAreaTable,
     FriendAreaEntry,
+    TypeMatchupTable,
+    TypeMatchupEntry,
+    ExclusiveTable,
+    ExclusiveEntry,
+    ShopTable,
+    ShopEntry,
     RuntimeConfig,
 }
 

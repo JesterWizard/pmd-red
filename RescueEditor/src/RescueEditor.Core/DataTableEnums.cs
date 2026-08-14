@@ -51,6 +51,36 @@ public static class DataTableEnums
     public static IReadOnlyList<DataTablePick> FriendAreaPicks { get; } = Alphabetical(FriendAreas);
     public static IReadOnlyList<DataTablePick> MoveCategoryPicks { get; } =
         Alphabetical(["Physical", "Special", "Status"]);
+    public static IReadOnlyList<DataTablePick> EvolveTypePicks { get; } =
+        new DataTablePick[]
+        {
+            new(0, "None"),
+            new(1, "Level"),
+            new(2, "IQ"),
+            new(3, "Item"),
+            new(13, "Link Cable"),
+        }.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase).ToArray();
+
+    public static IReadOnlyList<DataTablePick> EvolveExtraPicks { get; } =
+        new DataTablePick[]
+        {
+            new(0, "None"),
+            new(4, "Link Cable"),
+            new(5, "Attack > Defense"),
+            new(6, "Attack < Defense"),
+            new(7, "Attack = Defense"),
+            new(8, "Sun Ribbon"),
+            new(9, "Lunar Ribbon"),
+            new(10, "Beauty Scarf"),
+            new(11, "Wurmple → Silcoon"),
+            new(12, "Wurmple → Cascoon"),
+        }.OrderBy(p => p.Name, StringComparer.OrdinalIgnoreCase).ToArray();
+
+    public static IReadOnlyList<DataTablePick> EffectivenessPicks { get; } = Alphabetical(
+    [
+        "Immune", "Not very effective", "Neutral", "Super effective",
+    ]);
+
     public static IReadOnlyList<DataTablePick> ItemCategoryPicks { get; } = Alphabetical(
     [
         "Thrown (line)", "Thrown (arc)", "Berries / seeds / vitamins", "Food / gummies",
