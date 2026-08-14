@@ -135,24 +135,6 @@ public sealed class MainWindow : Window
             VerticalAlignment = VerticalAlignment.Center,
             TextTrimming = TextTrimming.CharacterEllipsis,
         };
-        var statusInner = new Grid
-        {
-            ColumnDefinitions = new ColumnDefinitions("*,Auto"),
-            Children =
-            {
-                _status,
-                new TextBlock
-                {
-                    Text = "RescueTemple",
-                    FontFamily = EditorTheme.UiFont,
-                    FontSize = EditorTheme.FontMeta,
-                    Foreground = EditorTheme.TextDimBrush,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Margin = new Thickness(EditorTheme.Space4, 0, 0, 0),
-                    [Grid.ColumnProperty] = 1,
-                },
-            },
-        };
 
         _assetWorkspace = new AssetWorkspacePanel();
         _assetWorkspace.AttachSound(_soundStreamHost, _soundCacheWarmer);
@@ -207,17 +189,15 @@ public sealed class MainWindow : Window
         Grid.SetRow(_outputHost, 2);
 
         var menu = CreateMenu();
-        var statusBar = EditorChrome.StatusHost(statusInner);
 
         _root = new Grid
         {
-            RowDefinitions = new RowDefinitions("Auto,Auto,*,Auto"),
-            Children = { menu, _breadcrumb, mainBody, statusBar },
+            RowDefinitions = new RowDefinitions("Auto,Auto,*"),
+            Children = { menu, _breadcrumb, mainBody },
         };
         Grid.SetRow(menu, 0);
         Grid.SetRow(_breadcrumb, 1);
         Grid.SetRow(mainBody, 2);
-        Grid.SetRow(statusBar, 3);
 
         _loadingStage = new TextBlock
         {

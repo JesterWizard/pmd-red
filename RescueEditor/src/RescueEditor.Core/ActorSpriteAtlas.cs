@@ -183,7 +183,8 @@ public sealed class ActorSpriteAtlas
         int animationId,
         int direction,
         int tickFrames,
-        bool isMoving = false)
+        bool isMoving = false,
+        bool applyRetailPlayback = true)
     {
         EnsureFramesLoaded(speciesId);
         var multi = IsMultiPiece(speciesId);
@@ -212,7 +213,7 @@ public sealed class ActorSpriteAtlas
         // Avoids sheet scraps (Charmander north sprite_13 is 16×32) and wrong facing groups.
         if (animationId != GroundScriptVm.AnimSleep && animationId > 0)
         {
-            var axFrame = TryGetAxAnimFrame(speciesId, animationId, dir, tickFrames);
+            var axFrame = TryGetAxAnimFrame(speciesId, animationId, dir, tickFrames, applyRetailPlayback);
             if (axFrame is not null)
                 return axFrame;
         }
@@ -245,8 +246,9 @@ public sealed class ActorSpriteAtlas
     }
 
     /// <summary>Legacy helper — south idle only.</summary>
-    public RgbaImage? TryGetAnimatedSprite(int speciesId, int animationId, int tickFrames, bool isMoving = false) =>
-        TryGetAnimatedSprite(speciesId, animationId, GroundScriptVm.DirSouth, tickFrames, isMoving)?.Image;
+    public RgbaImage? TryGetAnimatedSprite(
+        int speciesId, int animationId, int tickFrames, bool isMoving = false, bool applyRetailPlayback = true) =>
+        TryGetAnimatedSprite(speciesId, animationId, GroundScriptVm.DirSouth, tickFrames, isMoving, applyRetailPlayback)?.Image;
 
     /// <summary>
     /// Idle/walk sheet layout shared by most monster AX dumps (see <c>src/data/ax/*.h</c> poses 1–24).
@@ -292,7 +294,8 @@ public sealed class ActorSpriteAtlas
         return image;
     }
 
-    private AnimatedSprite? TryGetAxAnimFrame(int speciesId, int scriptAnimId, int direction, int tickFrames)
+    private AnimatedSprite? TryGetAxAnimFrame(
+        int speciesId, int scriptAnimId, int direction, int tickFrames, bool applyRetailPlayback = true)
     {
         var folder = ResolveFolder(speciesId);
         if (folder is null)
@@ -309,7 +312,9 @@ public sealed class ActorSpriteAtlas
         if (seq is null || seq.Frames.Count == 0)
             return null;
 
-        var tick = GroundAnimMapping.EffectiveTick(scriptAnimId, tickFrames, seq.TotalDurationFrames);
+        var tick = applyRetailPlayback
+            ? GroundAnimMapping.EffectiveTick(scriptAnimId, tickFrames, seq.TotalDurationFrames)
+            : Math.Max(0, tickFrames) % seq.TotalDurationFrames;
         var frame = seq.FrameAtTick(tick);
         if (_assembledPoseIds.TryGetValue((speciesId, frame.PoseId), out var cached))
         {

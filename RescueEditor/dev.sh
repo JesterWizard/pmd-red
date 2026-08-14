@@ -247,7 +247,7 @@ run_windows_watch() {
   cd "$win_mirror/RescueEditor"
   # Avoid interactive "rude edit" prompts that leave the app stuck/silent on old code.
   export DOTNET_WATCH_RESTART_ON_RUDE_EDIT=1
-  local watch_args=(watch run --project "$project_win")
+  local watch_args=(watch --non-interactive run --project "$project_win")
   if [[ -f "$win_mirror/RescueEditor/src/RescueEditor.App/obj/project.assets.json" ]]; then
     watch_args+=(--no-restore)
   fi
@@ -266,7 +266,7 @@ run_linux_watch() {
   fi
   stop_existing_instances
   echo "Starting Linux Avalonia build (software renderer)…"
-  local watch_args=(watch run --project "$project")
+  local watch_args=(watch --non-interactive run --project "$project")
   if [[ -f "$root/src/RescueEditor.App/obj/project.assets.json" ]]; then
     watch_args+=(--no-restore)
   fi

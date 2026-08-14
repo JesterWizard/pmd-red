@@ -76,6 +76,25 @@ public sealed class EmotionEffectAtlas
         return clip.Frames[^1].Visual;
     }
 
+    /// <summary>Duration / pose timeline for the inspector scrubber.</summary>
+    public EffectAnimInfo? TryGetSequence(int effectId)
+    {
+        var clip = TryGetClip(effectId);
+        if (clip is null || clip.Frames.Count == 0)
+            return null;
+        if (!TryGetSharedAnim(effectId, out var animId, out var loop))
+            return null;
+
+        var frames = new AxAnimSequence.Frame[clip.Frames.Count];
+        for (var i = 0; i < clip.Frames.Count; i++)
+        {
+            var step = clip.Frames[i];
+            frames[i] = new AxAnimSequence.Frame(step.Duration, step.PoseId, 0, 0);
+        }
+
+        return new EffectAnimInfo(effectId, animId, loop, AxAnimSequence.FromFrames(frames));
+    }
+
     /// <summary>
     /// Map script effect id → anim slot in <see cref="SharedEmotionBank"/>
     /// (from <c>gUnknown_80B9CC4[id].animId</c> / <c>.loop</c>).
@@ -251,7 +270,7 @@ public sealed class EmotionEffectAtlas
         {
             if (!poseImages.TryGetValue(poseId, out var visual))
                 continue;
-            framesOut.Add(new EfoAnimFrame(duration, visual));
+            framesOut.Add(new EfoAnimFrame(duration, poseId, visual));
             loopLen += duration;
         }
         if (framesOut.Count == 0 || loopLen <= 0)
@@ -518,7 +537,7 @@ public sealed class EmotionEffectAtlas
         public bool Loop { get; } = loop;
     }
 
-    private readonly record struct EfoAnimFrame(int Duration, EmotionFrame Visual);
+    private readonly record struct EfoAnimFrame(int Duration, int PoseId, EmotionFrame Visual);
 }
 
 /// <summary>Composed emotion sprite with origin (effect attach point) inside the image.</summary>

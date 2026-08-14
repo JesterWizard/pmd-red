@@ -5,7 +5,6 @@ using Avalonia.Controls.Templates;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
-using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using RescueEditor.Core;
 
@@ -321,39 +320,11 @@ public sealed class DataTablesWorkspacePanel : UserControl
                 return;
             }
 
-            bitmap = ToWriteableBitmap(sprite);
+            bitmap = RgbaBitmap.ToWriteable(sprite);
             _listSpriteCache[key] = bitmap;
         }
 
         image.Source = bitmap;
-    }
-
-    private static WriteableBitmap ToWriteableBitmap(RgbaImage sprite)
-    {
-        var bitmap = new WriteableBitmap(
-            new PixelSize(sprite.Width, sprite.Height),
-            new Vector(96, 96),
-            PixelFormat.Rgba8888,
-            AlphaFormat.Unpremul);
-        using var fb = bitmap.Lock();
-        var src = sprite.Pixels;
-        var srcStride = sprite.Width * 4;
-        if (fb.RowBytes == srcStride)
-        {
-            System.Runtime.InteropServices.Marshal.Copy(src, 0, fb.Address, src.Length);
-        }
-        else
-        {
-            for (var y = 0; y < sprite.Height; y++)
-            {
-                System.Runtime.InteropServices.Marshal.Copy(
-                    src, y * srcStride,
-                    fb.Address + y * fb.RowBytes,
-                    srcStride);
-            }
-        }
-
-        return bitmap;
     }
 
     private void RebuildForm(AssetDescriptor asset)
@@ -539,7 +510,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
         var rgba = FriendAreaIntroArt.TryLoadSceneBackground(ActiveRom, _catalog, entry.SceneBma);
         if (rgba is not null)
         {
-            preview.Source = ToWriteableBitmap(rgba);
+        preview.Source = RgbaBitmap.ToWriteable(rgba);
             preview.Width = rgba.Width;
             preview.Height = rgba.Height;
         }

@@ -54,4 +54,53 @@ public static class GroundAnimMapping
         // Play once, then hold the last frame (axdata flags&0x2000 finished).
         return Math.Clamp(tickFrames, 0, dur - 1);
     }
+
+    public static string PlaybackMode(int scriptAnim)
+    {
+        if (HoldFirstFrame(scriptAnim))
+            return "hold first";
+        if (Loops(scriptAnim))
+            return "loop";
+        return "play once";
+    }
+
+    public static AnimMapping Describe(int scriptAnim, NamedIdCatalog? names = null)
+    {
+        names ??= ScriptNamedDefinitions.BuiltInGroundAnim;
+        var constant = names.TryGetName(scriptAnim, out var n) ? n : scriptAnim.ToString();
+        return new AnimMapping(
+            Kind: AnimScrubKind.Actor,
+            ScriptAnimId: scriptAnim,
+            ConstantName: constant,
+            AxAnimIndex: ToAxAnimIndex(scriptAnim),
+            Loops: Loops(scriptAnim),
+            HoldFirstFrame: HoldFirstFrame(scriptAnim),
+            PlaybackMode: PlaybackMode(scriptAnim),
+            SelectAnimationLabel: $"SELECT_ANIMATION({constant})");
+    }
+
+    public static IReadOnlyList<AnimMapping> List(NamedIdCatalog? names = null)
+    {
+        names ??= ScriptNamedDefinitions.BuiltInGroundAnim;
+        return names.Entries
+            .OrderBy(e => e.Id)
+            .Select(e => Describe(e.Id, names))
+            .ToArray();
+    }
 }
+
+public enum AnimScrubKind
+{
+    Actor,
+    Effect,
+}
+
+public readonly record struct AnimMapping(
+    AnimScrubKind Kind,
+    int ScriptAnimId,
+    string ConstantName,
+    int AxAnimIndex,
+    bool Loops,
+    bool HoldFirstFrame,
+    string PlaybackMode,
+    string SelectAnimationLabel);

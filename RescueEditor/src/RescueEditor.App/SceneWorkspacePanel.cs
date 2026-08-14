@@ -50,6 +50,7 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly StackPanel _inspectorTabBar;
     private readonly TextBlock _eventsHud;
     private readonly Slider _commandSlider;
+    private readonly AnimScrubberPanel _animScrubber;
 
     private readonly CompactSpinBox _typeBox;
     private readonly CompactSpinBox _dirBox;
@@ -89,7 +90,9 @@ public sealed class SceneWorkspacePanel : UserControl
     private ActorSpriteAtlas? _actorSprites;
     private ObjectSpriteAtlas? _objectSprites;
     private GroundEffectAtlas? _groundEffects;
+    private EmotionEffectAtlas? _emotionEffects;
     private PortraitAtlas? _portraitAtlas;
+    private int _previewScriptAnim = GroundScriptVm.AnimIdle;
     private ScriptNamedDefinitions? _scriptNames;
     private NamedIdCatalog? _monsters;
     private string? _assetsRoot;
@@ -429,6 +432,10 @@ public sealed class SceneWorkspacePanel : UserControl
             },
         };
 
+        _animScrubber = new AnimScrubberPanel();
+        _animScrubber.ActorAnimChosen += OnActorAnimChosen;
+        _animScrubber.EffectIdChosen += OnEffectIdChosen;
+
         _opBox = EditorChrome.CompactNumeric(0, 255);
         _argByteBox = EditorChrome.CompactNumeric(0, 255);
         _argShortBox = EditorChrome.CompactNumeric(short.MinValue, short.MaxValue);
@@ -630,6 +637,7 @@ public sealed class SceneWorkspacePanel : UserControl
             _objectSprites = new ObjectSpriteAtlas(assetsRoot);
             _groundEffects = new GroundEffectAtlas(_rom);
             _portraitAtlas = new PortraitAtlas(_rom, assetsRoot);
+            _emotionEffects = new EmotionEffectAtlas(assetsRoot, _rom);
             _monsters = null;
         }
         _selectedEntity = null;
@@ -700,12 +708,12 @@ public sealed class SceneWorkspacePanel : UserControl
             {
                 Content = new StackPanel
                 {
-                    Children = { _scriptPropertyForm, _propertyForm },
+                    Children = { _scriptPropertyForm, _propertyForm, _animScrubber },
                 },
             },
         };
 
-        var root = new Grid { RowDefinitions = new RowDefinitions("*,Auto,*,Auto") };
+        var root = new Grid { RowDefinitions = new RowDefinitions("*,Auto,*,*") };
         root.Children.Add(sectorPanel);
         root.Children.Add(sectorButtons);
         Grid.SetRow(sectorButtons, 1);
@@ -1334,6 +1342,7 @@ public sealed class SceneWorkspacePanel : UserControl
 
         RebuildSemanticProperties();
         AppendScriptReferences();
+        RefreshAnimScrubber();
     }
 
     private void RebuildSemanticProperties()
@@ -1539,6 +1548,88 @@ public sealed class SceneWorkspacePanel : UserControl
             _soloSector);
     }
 
+    private void RefreshAnimScrubber()
+    {
+        _scriptNames ??= ScriptNamedDefinitions.TryLoadBestEffort(_assetsRoot);
+        var ground = _scriptNames?.GroundAnim ?? ScriptNamedDefinitions.BuiltInGroundAnim;
+        var emotions = _scriptNames?.EmotionEffect ?? new NamedIdCatalog([]);
+
+        if (_selectedCommand?.Op == 0x54)
+        {
+            _previewScriptAnim = _selectedCommand.ArgShort;
+            _animScrubber.BindActor(
+                _assetsRoot, _actorSprites, ResolveScrubSpecies(),
+                _previewScriptAnim, ResolveScrubDirection(), ground);
+            return;
+        }
+
+        if (_selectedCommand?.Op == 0x56)
+        {
+            _emotionEffects ??= new EmotionEffectAtlas(_assetsRoot, _rom);
+            _animScrubber.BindEffect(_emotionEffects, _selectedCommand.Arg1, emotions);
+            return;
+        }
+
+        if (_selectedEntity?.Kind == SceneEntityKind.Live)
+        {
+            _animScrubber.BindActor(
+                _assetsRoot, _actorSprites, ResolveScrubSpecies(),
+                _previewScriptAnim, ResolveScrubDirection(), ground);
+            return;
+        }
+
+        if (_selectedEntity?.Kind == SceneEntityKind.Effect)
+        {
+            _animScrubber.BindGroundEffect(_groundEffects, _selectedEntity.TypeId);
+            return;
+        }
+
+        _animScrubber.Clear();
+    }
+
+    private int ResolveScrubSpecies()
+    {
+        if (_rom is null || _database is null)
+            return GroundLivesTypes.SpeciesCharmander;
+        var live = _selectedEntity?.Kind == SceneEntityKind.Live
+            ? _selectedEntity
+            : CurrentSector()?.Lives.FirstOrDefault();
+        if (live is null)
+            return GroundLivesTypes.SpeciesCharmander;
+        var species = GroundLivesTypes.ResolvePreviewSpecies(_rom, _database.Profile, live.TypeId);
+        return species > 0 ? species : GroundLivesTypes.SpeciesCharmander;
+    }
+
+    private int ResolveScrubDirection() =>
+        _selectedEntity?.Kind == SceneEntityKind.Live ? _selectedEntity.DirectionOrFlags & 7 : 0;
+
+    private void OnActorAnimChosen(int id)
+    {
+        _previewScriptAnim = id;
+        if (_selectedCommand?.Op == 0x54 && _changes is not null)
+        {
+            SceneEditing.SetCommandArgument(_changes, _selectedCommand, "argShort", id);
+            RefreshScripts();
+            DirtyChanged?.Invoke(this, EventArgs.Empty);
+            return;
+        }
+
+        RefreshAnimScrubber();
+    }
+
+    private void OnEffectIdChosen(int id)
+    {
+        if (_selectedCommand?.Op == 0x56 && _changes is not null)
+        {
+            SceneEditing.SetCommandArgument(_changes, _selectedCommand, "arg1", id);
+            RefreshScripts();
+            DirtyChanged?.Invoke(this, EventArgs.Empty);
+            return;
+        }
+
+        RefreshAnimScrubber();
+    }
+
     private void ApplyEntityProps()
     {
         if (_suppressPropertyEvents || _changes is null || _selectedEntity is null)
@@ -1571,6 +1662,7 @@ public sealed class SceneWorkspacePanel : UserControl
             SceneEditing.SetEntityHalfTileFlags(_changes, _selectedEntity, halfX, halfY);
 
         RefreshMap();
+        RefreshAnimScrubber();
         DirtyChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -1591,6 +1683,7 @@ public sealed class SceneWorkspacePanel : UserControl
         Set("argPtr", (int)(_argPtrBox.Value ?? 0), unchecked((int)_selectedCommand.ArgPtr));
         RefreshScripts();
         RebuildSemanticProperties();
+        RefreshAnimScrubber();
         DirtyChanged?.Invoke(this, EventArgs.Empty);
     }
 

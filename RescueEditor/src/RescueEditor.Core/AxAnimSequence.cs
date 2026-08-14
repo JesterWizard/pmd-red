@@ -14,6 +14,9 @@ public sealed partial class AxAnimSequence
 
     public IReadOnlyList<Frame> Frames { get; }
 
+    public static AxAnimSequence FromFrames(IReadOnlyList<Frame> frames) =>
+        new(frames.Count == 0 ? [new Frame(1, 0, 0, 0)] : frames);
+
     public int TotalDurationFrames
     {
         get
@@ -27,21 +30,39 @@ public sealed partial class AxAnimSequence
 
     public int PoseIdAtTick(int tickFrames) => FrameAtTick(tickFrames).PoseId;
 
+    public int FrameIndexAtTick(int tickFrames)
+    {
+        if (Frames.Count == 0)
+            return 0;
+        var t = Math.Max(0, tickFrames) % TotalDurationFrames;
+        for (var i = 0; i < Frames.Count; i++)
+        {
+            var dur = Math.Max(1, Frames[i].DurationFrames);
+            if (t < dur)
+                return i;
+            t -= dur;
+        }
+
+        return Frames.Count - 1;
+    }
+
+    public int TickAtFrameIndex(int frameIndex)
+    {
+        if (Frames.Count == 0)
+            return 0;
+        var idx = Math.Clamp(frameIndex, 0, Frames.Count - 1);
+        var tick = 0;
+        for (var i = 0; i < idx; i++)
+            tick += Math.Max(1, Frames[i].DurationFrames);
+        return tick;
+    }
+
     /// <summary>Active AX frame at <paramref name="tickFrames"/> (pose + retail anim offsets).</summary>
     public Frame FrameAtTick(int tickFrames)
     {
         if (Frames.Count == 0)
             return new Frame(1, 0, 0, 0);
-        var t = Math.Max(0, tickFrames) % TotalDurationFrames;
-        foreach (var frame in Frames)
-        {
-            var dur = Math.Max(1, frame.DurationFrames);
-            if (t < dur)
-                return frame;
-            t -= dur;
-        }
-
-        return Frames[^1];
+        return Frames[FrameIndexAtTick(tickFrames)];
     }
 
     public static AxAnimSequence? TryLoad(
