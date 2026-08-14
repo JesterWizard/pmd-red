@@ -43,6 +43,13 @@ public sealed class MainWindow : Window
     private readonly EditorDockLayout _dock = new();
     private readonly GlobalSearchPalette _searchPalette = new();
     private readonly string _shellSettingsPath;
+    private readonly IEditorFileSystem _files = OsEditorFileSystem.Instance;
+    private readonly string _sessionSettingsPath;
+    private EditorSessionSettings _session;
+    private readonly MenuItem _recentRomsMenu = new() { Header = "Recent _ROMs" };
+    private readonly MenuItem _recentProjectsMenu = new() { Header = "Recent _Projects" };
+    private readonly DispatcherTimer _autosaveTimer;
+    private DateTimeOffset? _lastExplicitSaveAt;
     private readonly TextBlock _status;
     private readonly StackPanel _propertiesBody;
     private readonly Border _loadingOverlay;
@@ -93,10 +100,9 @@ public sealed class MainWindow : Window
         FontSize = EditorTheme.FontBody;
         AppIcon.Apply(this);
 
-        _shellSettingsPath = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "RescueTemple",
-            "shell.json");
+        _shellSettingsPath = RescueTemplePaths.ShellSettingsPath;
+        _sessionSettingsPath = RescueTemplePaths.SessionSettingsPath;
+        _session = EditorSessionSettingsStore.LoadOrDefault(_files, _sessionSettingsPath);
         EditorShellSettingsStore.LoadOrDefault(_shellSettingsPath).ApplyTo(_dock);
 
         _explorer = new ProjectExplorerPanel();
@@ -265,6 +271,10 @@ public sealed class MainWindow : Window
         Closing += OnClosing;
         Opened += OnOpened;
         ApplyDockLayout(sceneOwnsInspector: false);
+        RebuildRecentMenus();
+        _autosaveTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(2) };
+        _autosaveTimer.Tick += (_, _) => TryAutosave();
+        _autosaveTimer.Start();
     }
 
     private Menu CreateMenu()
@@ -307,9 +317,11 @@ public sealed class MainWindow : Window
         var exit = new MenuItem { Header = "E_xit" };
         exit.Click += (_, _) => Close();
         file.Items.Add(open);
+        file.Items.Add(_recentRomsMenu);
         file.Items.Add(new Separator());
-        file.Items.Add(saveProject);
         file.Items.Add(openProject);
+        file.Items.Add(_recentProjectsMenu);
+        file.Items.Add(saveProject);
         file.Items.Add(buildRom);
         file.Items.Add(new Separator());
         file.Items.Add(exportSelected);
@@ -411,9 +423,7 @@ public sealed class MainWindow : Window
         await Dispatcher.UIThread.InvokeAsync(() => { }, DispatcherPriority.Background);
         FitToWorkingArea();
         Activate();
-        var defaultRom = FindDefaultRom();
-        if (defaultRom is not null)
-            await OpenRomAsync(defaultRom);
+        await RestoreDocumentSessionAsync();
     }
 
     private void FitToWorkingArea()
@@ -558,10 +568,16 @@ public sealed class MainWindow : Window
             _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes, _workingRom);
             _explorer.Build(_catalog, _scenes, Categories);
             KickSearchIndexBuild();
-            _selectedCategory = AssetCategory.Scenes;
-            _selectedAsset = null;
-            ShowScenesPicker();
-            _explorer.ExpandCategory(AssetCategory.Scenes);
+            var restoreExplorer = string.Equals(path, _session.LastRomPath, StringComparison.OrdinalIgnoreCase);
+            if (!(restoreExplorer && RestoreExplorerFromSession()))
+            {
+                _selectedCategory = AssetCategory.Scenes;
+                _selectedAsset = null;
+                ShowScenesPicker();
+                _explorer.ExpandCategory(AssetCategory.Scenes);
+            }
+            RememberRom(path);
+            PersistSession();
             UpdateBreadcrumb();
             UpdateDirtyTitle();
 
@@ -657,6 +673,8 @@ public sealed class MainWindow : Window
                 UpdateBreadcrumb();
                 break;
         }
+
+        CaptureExplorerToSession();
     }
 
     private void OpenSelectedScene()
@@ -1133,26 +1151,47 @@ public sealed class MainWindow : Window
             await ShowErrorAsync("Save Project", "Open a ROM before saving a project.");
             return;
         }
-        var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
+        if (string.IsNullOrWhiteSpace(_project.Path))
         {
-            Title = "Save RescueTemple Project",
-            SuggestedFileName = _project.Name + ".rtproj",
-            FileTypeChoices =
-            [
-                new FilePickerFileType("RescueTemple Project") { Patterns = ["*.rtproj", "*.json"] },
-            ],
-        });
-        if (file is null) return;
-        try
-        {
-            _project.Save(file.Path.LocalPath);
-            UpdateDirtyTitle();
-            SetStatus($"Saved project {_project.Path}");
+            var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
+            {
+                Title = "Save RescueTemple Project",
+                SuggestedFileName = _project.Name + ".rtproj",
+                FileTypeChoices =
+                [
+                    new FilePickerFileType("RescueTemple Project") { Patterns = ["*.rtproj", "*.rescue", "*.json"] },
+                ],
+            });
+            if (file is null) return;
+            try
+            {
+                _project.Save(file.Path.LocalPath);
+            }
+            catch (Exception exception)
+            {
+                await ShowErrorAsync("Save Project failed", exception.Message);
+                return;
+            }
         }
-        catch (Exception exception)
+        else
         {
-            await ShowErrorAsync("Save Project failed", exception.Message);
+            try
+            {
+                _project.Save();
+            }
+            catch (Exception exception)
+            {
+                await ShowErrorAsync("Save Project failed", exception.Message);
+                return;
+            }
         }
+
+        _lastExplicitSaveAt = DateTimeOffset.UtcNow;
+        RememberProject(_project.Path!);
+        PersistSession();
+        TryAutosave(force: true);
+        UpdateDirtyTitle();
+        SetStatus($"Saved project {_project.Path}");
     }
 
     private async void OpenProjectOnClick(object? sender, RoutedEventArgs e)
@@ -1165,15 +1204,20 @@ public sealed class MainWindow : Window
             AllowMultiple = false,
             FileTypeFilter =
             [
-                new FilePickerFileType("RescueTemple Project") { Patterns = ["*.rtproj", "*.json"] },
+                new FilePickerFileType("RescueTemple Project") { Patterns = ["*.rtproj", "*.rescue", "*.json"] },
                 FilePickerFileTypes.All,
             ],
         });
         var file = files.FirstOrDefault();
         if (file is null) return;
+        await OpenProjectFromPathAsync(file.Path.LocalPath, restoreExplorer: false);
+    }
+
+    private async Task OpenProjectFromPathAsync(string path, bool restoreExplorer)
+    {
         try
         {
-            var project = ProjectDocument.Load(file.Path.LocalPath);
+            var project = ProjectDocument.Load(path);
             if (!string.IsNullOrWhiteSpace(project.BaseRomPath) && File.Exists(project.BaseRomPath))
                 await OpenRomAsync(project.BaseRomPath);
             if (_rom is null || _scenes is null)
@@ -1182,8 +1226,13 @@ public sealed class MainWindow : Window
                 return;
             }
             _project = project;
+            _lastExplicitSaveAt = new DateTimeOffset(File.GetLastWriteTimeUtc(path), TimeSpan.Zero);
             _changes.Attach(_project, _scenes);
             ApplyProjectEdits(_project);
+            RememberProject(path);
+            PersistSession();
+            if (restoreExplorer)
+                RestoreExplorerFromSession();
             SetStatus($"Loaded project {project.Path}");
             _sceneWorkspace?.RefreshFromExternal();
             UpdateDirtyTitle();
@@ -1215,6 +1264,7 @@ public sealed class MainWindow : Window
             FileTypeChoices = [new FilePickerFileType("GBA ROM") { Patterns = ["*.gba"] }],
         });
         if (file is null) return;
+        TryAutosave(force: true);
         try
         {
             var report = RomBuilder.Build(
@@ -1541,6 +1591,8 @@ public sealed class MainWindow : Window
 
     private async void OnClosing(object? sender, WindowClosingEventArgs e)
     {
+        TryAutosave();
+        PersistSession();
         PersistShellSettings();
         if (_forceClose)
             return;
@@ -1647,21 +1699,301 @@ public sealed class MainWindow : Window
         var open = EditorChrome.ToolButton("Open ROM…", primary: true);
         open.MinWidth = 108;
         open.Click += OpenButtonOnClick;
-        return new StackPanel
+        var children = new List<Control>
+        {
+            EditorChrome.PaneTitle("No ROM loaded"),
+            EditorChrome.MutedBody("Open baserom.gba to browse scenes, dialogue, and assets."),
+            open,
+        };
+        var recents = RecentDocumentList.Existing(_session.RecentRoms, _files);
+        if (recents.Count > 0)
+        {
+            children.Add(EditorChrome.MutedBody("Recent ROMs"));
+            foreach (var path in recents.Take(5))
+            {
+                var recentPath = path;
+                var recent = EditorChrome.ToolButton(Path.GetFileName(recentPath));
+                recent.MinWidth = 108;
+                recent.Click += async (_, _) =>
+                {
+                    if (_isLoading) return;
+                    if (!await ConfirmDiscardIfNeededAsync("Open ROM"))
+                        return;
+                    await OpenRomAsync(recentPath);
+                };
+                children.Add(recent);
+            }
+        }
+
+        var panel = new StackPanel
         {
             Spacing = EditorTheme.Space3,
             VerticalAlignment = VerticalAlignment.Center,
             HorizontalAlignment = HorizontalAlignment.Center,
-            Children =
-            {
-                EditorChrome.PaneTitle("No ROM loaded"),
-                EditorChrome.MutedBody("Open baserom.gba to browse scenes, dialogue, and assets."),
-                open,
-            },
         };
+        foreach (var child in children)
+            panel.Children.Add(child);
+        return panel;
     }
 
     private void SetStatus(string text) => _status.Text = text;
+
+    private async Task RestoreDocumentSessionAsync()
+    {
+        var lastProject = _session.LastProjectPath;
+        var lastRom = _session.LastRomPath;
+        var autosaveKey = !string.IsNullOrWhiteSpace(lastProject) ? lastProject : lastRom;
+        if (!string.IsNullOrWhiteSpace(autosaveKey))
+        {
+            var envelope = ProjectAutosave.TryLoad(_files, RescueTemplePaths.GetAppDataDirectory(), autosaveKey);
+            if (envelope is not null &&
+                ProjectAutosave.ShouldPrompt(envelope.AutosavedAt, envelope.LastExplicitSaveAt) &&
+                _files.FileExists(envelope.RomPath))
+            {
+                if (await ConfirmRestoreAutosaveAsync())
+                {
+                    await ApplyAutosaveEnvelopeAsync(envelope);
+                    return;
+                }
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(lastProject) && _files.FileExists(lastProject))
+        {
+            await OpenProjectFromPathAsync(lastProject, restoreExplorer: true);
+            return;
+        }
+
+        if (!string.IsNullOrWhiteSpace(lastRom) && _files.FileExists(lastRom))
+        {
+            await OpenRomAsync(lastRom);
+            return;
+        }
+
+        var recents = RecentDocumentList.Existing(_session.RecentRoms, _files);
+        if (recents.Count > 0)
+        {
+            _workspaceHost.Child = CreateWelcomePanel();
+            return;
+        }
+
+        var defaultRom = FindDefaultRom();
+        if (defaultRom is not null)
+            await OpenRomAsync(defaultRom);
+    }
+
+    private async Task ApplyAutosaveEnvelopeAsync(AutosaveEnvelope envelope)
+    {
+        await OpenRomAsync(envelope.RomPath);
+        if (_rom is null || _scenes is null)
+            return;
+        _project = envelope.Project;
+        _project.Path = envelope.ExplicitSavePath;
+        _project.IsDirty = true;
+        _lastExplicitSaveAt = envelope.LastExplicitSaveAt;
+        _changes.Attach(_project, _scenes);
+        ApplyProjectEdits(_project);
+        _session.ExplorerCategory = envelope.ExplorerCategory;
+        _session.ExplorerAssetId = envelope.ExplorerAssetId;
+        _session.ExplorerSceneMapId = envelope.ExplorerSceneMapId;
+        RestoreExplorerFromSession();
+        if (!string.IsNullOrWhiteSpace(_project.Path))
+            RememberProject(_project.Path);
+        PersistSession();
+        _sceneWorkspace?.RefreshFromExternal();
+        UpdateDirtyTitle();
+        SetStatus("Restored autosave.");
+    }
+
+    private async Task<bool> ConfirmRestoreAutosaveAsync()
+    {
+        var dialog = new Window
+        {
+            Title = "Restore autosave",
+            Width = 460,
+            Height = 170,
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Icon = AppIcon.Get(),
+        };
+        EditorChrome.StyleDialogWindow(dialog);
+        var restore = false;
+        var message = EditorChrome.MutedBody(
+            "An autosave is newer than the last saved project. Restore it?");
+        var discard = EditorChrome.ToolButton("Discard");
+        discard.Click += (_, _) => dialog.Close();
+        var confirm = EditorChrome.ToolButton("Restore autosave", primary: true);
+        confirm.Click += (_, _) =>
+        {
+            restore = true;
+            dialog.Close();
+        };
+        var buttons = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Spacing = EditorTheme.Space2,
+            Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
+            Children = { discard, confirm },
+        };
+        dialog.Content = new DockPanel
+        {
+            Margin = new Thickness(EditorTheme.Space5),
+            LastChildFill = true,
+            Children = { buttons, message },
+        };
+        DockPanel.SetDock(buttons, Dock.Bottom);
+        await dialog.ShowDialog(this);
+        return restore;
+    }
+
+    private void RememberRom(string path)
+    {
+        _session.RecentRoms = RecentDocumentList.Remember(_session.RecentRoms, path);
+        _session.LastRomPath = path;
+    }
+
+    private void RememberProject(string path)
+    {
+        _session.RecentProjects = RecentDocumentList.Remember(_session.RecentProjects, path);
+        _session.LastProjectPath = path;
+    }
+
+    private void CaptureExplorerToSession()
+    {
+        _session.ExplorerCategory = _selectedCategory?.ToString();
+        _session.ExplorerAssetId = _selectedAsset?.Id;
+        _session.ExplorerSceneMapId = null;
+        if (_selectedAsset?.Metadata.TryGetValue("mapId", out var mapText) == true &&
+            int.TryParse(mapText, out var mapId))
+            _session.ExplorerSceneMapId = mapId;
+    }
+
+    private bool RestoreExplorerFromSession()
+    {
+        if (_session.ExplorerSceneMapId is int mapId && _explorer.SelectScene(mapId))
+            return true;
+
+        if (!string.IsNullOrWhiteSpace(_session.ExplorerAssetId) &&
+            _explorer.TrySelectAssetId(_session.ExplorerAssetId))
+            return true;
+
+        if (Enum.TryParse<AssetCategory>(_session.ExplorerCategory, out var category) &&
+            _explorer.TrySelectCategory(category))
+            return true;
+
+        return false;
+    }
+
+    private void PersistSession()
+    {
+        try
+        {
+            CaptureExplorerToSession();
+            if (_rom is not null)
+                _session.LastRomPath = _rom.Path;
+            if (!string.IsNullOrWhiteSpace(_project?.Path))
+                _session.LastProjectPath = _project.Path;
+            EditorSessionSettingsStore.Save(_files, _sessionSettingsPath, _session);
+            RebuildRecentMenus();
+        }
+        catch (IOException)
+        {
+        }
+        catch (UnauthorizedAccessException)
+        {
+        }
+    }
+
+    private void RebuildRecentMenus()
+    {
+        FillRecentMenu(_recentRomsMenu, RecentDocumentList.Existing(_session.RecentRoms, _files), "No recent ROMs",
+            async path =>
+            {
+                if (_isLoading) return;
+                if (!await ConfirmDiscardIfNeededAsync("Open ROM"))
+                    return;
+                await OpenRomAsync(path);
+            });
+        FillRecentMenu(_recentProjectsMenu, RecentDocumentList.Existing(_session.RecentProjects, _files), "No recent projects",
+            async path =>
+            {
+                if (_isLoading) return;
+                if (!await ConfirmDiscardIfNeededAsync("Open Project"))
+                    return;
+                await OpenProjectFromPathAsync(path, restoreExplorer: true);
+            });
+    }
+
+    private static void FillRecentMenu(
+        MenuItem menu,
+        IReadOnlyList<string> paths,
+        string emptyLabel,
+        Func<string, Task> open)
+    {
+        menu.Items.Clear();
+        if (paths.Count == 0)
+        {
+            menu.Items.Add(new MenuItem { Header = emptyLabel, IsEnabled = false });
+            return;
+        }
+
+        foreach (var path in paths)
+        {
+            var captured = path;
+            var item = new MenuItem { Header = RecentMenuHeader(captured) };
+            item.Click += async (_, _) => await open(captured);
+            menu.Items.Add(item);
+        }
+    }
+
+    private static string RecentMenuHeader(string path)
+    {
+        var name = Path.GetFileName(path);
+        var directory = Path.GetDirectoryName(path);
+        return string.IsNullOrEmpty(directory) ? name : $"{name}  ({directory})";
+    }
+
+    private bool ShouldAutosave() =>
+        _rom is not null &&
+        _project is not null &&
+        (_changes.IsDirty || _project.Edits.Count > 0 ||
+         (_project.IsDirty && !string.IsNullOrWhiteSpace(_project.Path)));
+
+    private void TryAutosave(bool force = false)
+    {
+        if (_isLoading)
+            return;
+        if (_rom is null || _project is null)
+            return;
+        if (!force && !ShouldAutosave())
+            return;
+        try
+        {
+            CaptureExplorerToSession();
+            var key = !string.IsNullOrWhiteSpace(_project.Path) ? _project.Path : _rom.Path;
+            ProjectAutosave.Write(
+                _files,
+                RescueTemplePaths.GetAppDataDirectory(),
+                key,
+                new AutosaveEnvelope
+                {
+                    AutosavedAt = DateTimeOffset.UtcNow,
+                    LastExplicitSaveAt = _lastExplicitSaveAt,
+                    ExplicitSavePath = _project.Path,
+                    RomPath = _rom.Path,
+                    ExplorerCategory = _session.ExplorerCategory,
+                    ExplorerAssetId = _session.ExplorerAssetId,
+                    ExplorerSceneMapId = _session.ExplorerSceneMapId,
+                    Project = _project,
+                });
+        }
+        catch (IOException)
+        {
+        }
+        catch (UnauthorizedAccessException)
+        {
+        }
+    }
 
     private async Task ShowErrorAsync(string title, string message)
     {

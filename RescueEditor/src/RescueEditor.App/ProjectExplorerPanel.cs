@@ -156,6 +156,8 @@ public sealed class ProjectExplorerPanel : UserControl
 
     public void SelectAsset(AssetDescriptor asset)
     {
+        if (TrySelectAssetId(asset.Id))
+            return;
         foreach (var (node, control) in _nodeControls)
         {
             if (node is AssetExplorerNode assetNode && ReferenceEquals(assetNode.Asset, asset))
@@ -167,7 +169,22 @@ public sealed class ProjectExplorerPanel : UserControl
         }
     }
 
-    public void SelectScene(int mapId)
+    public bool TrySelectAssetId(string assetId)
+    {
+        foreach (var (node, control) in _nodeControls)
+        {
+            if (node is AssetExplorerNode assetNode &&
+                string.Equals(assetNode.Asset.Id, assetId, StringComparison.Ordinal))
+            {
+                ExpandAncestors(control);
+                SelectControl(control, node);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool SelectScene(int mapId)
     {
         foreach (var (node, control) in _nodeControls)
         {
@@ -175,9 +192,10 @@ public sealed class ProjectExplorerPanel : UserControl
             {
                 ExpandAncestors(control);
                 SelectControl(control, node);
-                return;
+                return true;
             }
         }
+        return false;
     }
 
     public void ExpandCategory(AssetCategory category)
@@ -190,6 +208,21 @@ public sealed class ProjectExplorerPanel : UserControl
                 return;
             }
         }
+    }
+
+    public bool TrySelectCategory(AssetCategory category)
+    {
+        foreach (var (node, control) in _nodeControls)
+        {
+            if (node is CategoryExplorerNode cat && cat.Category == category)
+            {
+                if (control is Expander expander)
+                    expander.IsExpanded = true;
+                SelectionChanged?.Invoke(this, node);
+                return true;
+            }
+        }
+        return false;
     }
 
     private void ApplyFilter()
