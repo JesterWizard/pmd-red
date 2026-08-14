@@ -217,6 +217,15 @@ public static class SoundIndexer
         return players;
     }
 
+    public static int MaxTracksForPlayer(int player) => player switch
+    {
+        0 => 12,
+        1 => 6,
+        2 or 3 or 7 => 1,
+        4 or 5 or 6 => 2,
+        _ => 16,
+    };
+
     private static string DescribePlayer(int player, int songId) => player switch
     {
         0 => "BGM",
@@ -385,7 +394,14 @@ public static class SoundWaveCodec
         if (!asset.HasRomRange || asset.Size < 16)
             throw new InvalidDataException("This sound entry has no ROM sample range.");
         var source = rom.Copy(asset.Offset, asset.Size);
-        var sampleRate = Math.Max(1, (int)(BinaryPrimitives.ReadUInt32LittleEndian(source.AsSpan(4)) >> 10));
+        return ToWave(source);
+    }
+
+    public static byte[] ToWave(ReadOnlySpan<byte> source)
+    {
+        if (source.Length < 16)
+            throw new InvalidDataException("This sound entry has no ROM sample range.");
+        var sampleRate = Math.Max(1, (int)(BinaryPrimitives.ReadUInt32LittleEndian(source[4..]) >> 10));
         if (sampleRate > 192_000)
             sampleRate = 44_100;
         var pcm = new byte[source.Length - 16];
@@ -409,5 +425,10 @@ public static class SoundWaveCodec
         writer.Write(pcm.Length);
         writer.Write(pcm);
         return output.ToArray();
+    }
+
+    internal static void RememberResolved(string romPath, string sourcePath, int offset, int size, int sampleRate)
+    {
+        ResolveCache[romPath + "\0" + sourcePath] = (offset, size, sampleRate);
     }
 }

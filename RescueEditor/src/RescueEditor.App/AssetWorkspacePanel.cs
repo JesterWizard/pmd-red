@@ -46,6 +46,10 @@ public sealed class AssetWorkspacePanel : UserControl
     private int _previewPixelWidth;
     private int _previewPixelHeight;
 
+    private EncodedSound? _pendingSound;
+    private string? _pendingSoundAssetId;
+    private readonly Dictionary<string, byte[]> _appliedSoundPreview = new(StringComparer.Ordinal);
+
     public event EventHandler<AssetDescriptor?>? AssetSelected;
     public event EventHandler? RequestSceneWorkspace;
 
@@ -157,6 +161,9 @@ public sealed class AssetWorkspacePanel : UserControl
         _changes = null;
         _workingRom = null;
         _portraitAtlas = null;
+        _pendingSound = null;
+        _pendingSoundAssetId = null;
+        _appliedSoundPreview.Clear();
         _selectedAsset = null;
         _assetList.ItemsSource = null;
         _assetGrid.Children.Clear();
@@ -356,8 +363,7 @@ public sealed class AssetWorkspacePanel : UserControl
         {
             if (_soundStreamHost is null || _soundCacheWarmer is null)
                 return;
-            _soundPreview ??= new SoundPreviewPanel(_soundStreamHost, _soundCacheWarmer);
-            _previewHost.Child = _soundPreview;
+            _soundPreview = EnsureSoundPreview();
             _soundPreview.StopAudio();
         }
         else
@@ -377,9 +383,27 @@ public sealed class AssetWorkspacePanel : UserControl
             {
                 if (_soundStreamHost is null || _soundCacheWarmer is null)
                     return;
-                _soundPreview ??= new SoundPreviewPanel(_soundStreamHost, _soundCacheWarmer);
+                _soundPreview = EnsureSoundPreview();
                 _previewHost.Child = _soundPreview;
-                await _soundPreview.LoadAsync(_rom, asset, preview.Text ?? string.Empty, cts.Token);
+                _soundPreview.SetApplyEnabled(
+                    _pendingSound is not null &&
+                    string.Equals(_pendingSoundAssetId, asset.Id, StringComparison.Ordinal));
+                byte[]? staged = null;
+                string? note = null;
+                if (_pendingSound is EncodedSound pending &&
+                    string.Equals(_pendingSoundAssetId, asset.Id, StringComparison.Ordinal) &&
+                    pending.PreviewWav.Length > 44)
+                {
+                    staged = pending.PreviewWav;
+                    note = "Pending import — preview in Player, then Apply to write into the working ROM.";
+                }
+                else if (_appliedSoundPreview.TryGetValue(asset.Id, out var applied))
+                {
+                    staged = applied;
+                    note = "Replacement is in the working ROM (Build ROM or export .rtmod to ship it).";
+                }
+
+                await _soundPreview.LoadAsync(_rom, asset, preview.Text ?? string.Empty, cts.Token, staged, note);
                 return;
             }
 
@@ -586,6 +610,134 @@ public sealed class AssetWorkspacePanel : UserControl
                 },
             },
         };
+    }
+
+    private SoundPreviewPanel EnsureSoundPreview()
+    {
+        if (_soundPreview is not null)
+            return _soundPreview;
+        if (_soundStreamHost is null)
+            throw new InvalidOperationException("Sound playback is not attached.");
+        _soundPreview = new SoundPreviewPanel(_soundStreamHost, _soundCacheWarmer);
+        _soundPreview.ImportRequested += ImportSoundAsync;
+        _soundPreview.ApplyRequested += ApplyPendingSound;
+        return _soundPreview;
+    }
+
+    private async Task ImportSoundAsync()
+    {
+        var asset = _selectedAsset;
+        if (asset is null || asset.Kind is not (AssetKind.SoundSong or AssetKind.SoundWave))
+            return;
+        if (_workingRom is null)
+        {
+            _soundPreview?.SetStatus("Open a ROM to replace this sequence.", warn: true);
+            return;
+        }
+
+        var top = TopLevel.GetTopLevel(this);
+        if (top is null)
+            return;
+        var files = await top.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Replace with WAV, AIFF, or M4A sequence",
+            AllowMultiple = false,
+            FileTypeFilter =
+            [
+                new FilePickerFileType("Audio")
+                {
+                    Patterns = ["*.wav", "*.aiff", "*.aif", "*.bin"],
+                },
+                new FilePickerFileType("WAV") { Patterns = ["*.wav"] },
+                new FilePickerFileType("AIFF") { Patterns = ["*.aiff", "*.aif"] },
+                new FilePickerFileType("M4A sequence") { Patterns = ["*.bin"] },
+            ],
+        });
+        var file = files.FirstOrDefault();
+        if (file is null)
+            return;
+
+        await using var stream = await file.OpenReadAsync();
+        using var memory = new MemoryStream();
+        await stream.CopyToAsync(memory);
+        var bytes = memory.ToArray();
+        var name = file.Name;
+
+        EncodedSound encoded;
+        try
+        {
+            encoded = asset.Kind == AssetKind.SoundSong
+                ? SoundAuthoring.EncodeSong(bytes, name)
+                : SoundAuthoring.Encode(bytes, name);
+        }
+        catch (Exception exception) when (exception is InvalidDataException or ArgumentException)
+        {
+            _soundPreview?.SetStatus(exception.Message, warn: true);
+            return;
+        }
+
+        _pendingSound = encoded;
+        _pendingSoundAssetId = asset.Id;
+        _soundPreview?.SetApplyEnabled(true);
+        if (_soundPreview is not null && _rom is not null)
+        {
+            await _soundPreview.LoadAsync(
+                _rom,
+                asset,
+                SoundAuthoring.RestrictionsText,
+                CancellationToken.None,
+                encoded.PreviewWav,
+                $"Pending import ({name}, {encoded.SampleRate:N0} Hz) — Apply writes it into the working ROM.");
+        }
+    }
+
+    private void ApplyPendingSound()
+    {
+        var asset = _selectedAsset;
+        if (asset is null || asset.Kind is not (AssetKind.SoundSong or AssetKind.SoundWave))
+            return;
+        if (_workingRom is null)
+        {
+            _soundPreview?.SetStatus("Open a ROM to apply this replacement.", warn: true);
+            return;
+        }
+
+        if (_pendingSound is not EncodedSound encoded ||
+            !string.Equals(_pendingSoundAssetId, asset.Id, StringComparison.Ordinal))
+        {
+            _soundPreview?.SetStatus("Import audio first.", warn: true);
+            return;
+        }
+
+        var resolved = asset.Kind == AssetKind.SoundWave && _rom is not null
+            ? SoundWaveCodec.Resolve(_rom, asset)
+            : asset;
+        var buffer = _workingRom.BeginMutate();
+        var dirty = new List<RomSpan>();
+        var error = SoundAuthoring.TryWrite(buffer, resolved, encoded, dirty);
+        if (error is not null)
+        {
+            _soundPreview?.SetStatus(error, warn: true);
+            return;
+        }
+
+        _workingRom.CommitDirty(buffer, dirty);
+        _rom = _workingRom.View;
+        if (encoded.PreviewWav.Length > 44)
+        {
+            _appliedSoundPreview[asset.Id] = encoded.PreviewWav;
+            if (asset.Metadata.TryGetValue("songId", out var songIdText) &&
+                int.TryParse(songIdText, out var songId))
+            {
+                var maxLoops = songId >= SoundIndexer.SoundEffectsStartIndex ? 0 : 1;
+                try { AgbplayRenderer.SaveCachedWav(_rom.Path, songId, maxLoops, encoded.PreviewWav); }
+                catch { /* preview still uses the staged WAV */ }
+            }
+        }
+        _pendingSound = null;
+        _pendingSoundAssetId = null;
+        _soundPreview?.SetApplyEnabled(false);
+        _soundPreview?.SetStatus("Applied to the working ROM (Build ROM or export .rtmod).");
     }
 
     private Control BuildPortraitSheetEditor(AssetDescriptor sheet, Control preview)
@@ -1000,8 +1152,13 @@ public sealed class AssetWorkspacePanel : UserControl
 
     public void DisposeSoundPreview()
     {
-        _soundPreview?.Dispose();
-        _soundPreview = null;
+        if (_soundPreview is not null)
+        {
+            _soundPreview.ImportRequested -= ImportSoundAsync;
+            _soundPreview.ApplyRequested -= ApplyPendingSound;
+            _soundPreview.Dispose();
+            _soundPreview = null;
+        }
     }
 
     private sealed record AssetListItem(AssetDescriptor Asset)

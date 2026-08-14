@@ -27,13 +27,29 @@ public static class SoundSequenceParser
     public const int RetailSongTableOffset = 0x1E866BC;
     public const int MaxSongTableEntries = 940;
 
-    private static readonly byte[] WaitTable =
+    internal static readonly byte[] WaitTable =
     [
         0,
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
         17, 18, 19, 20, 21, 22, 23, 24, 28, 30, 32, 36, 40, 42, 44, 48,
         52, 54, 56, 60, 64, 66, 68, 72, 76, 78, 80, 84, 88, 90, 92, 96,
     ];
+
+    internal static void AppendWaits(List<byte> track, int ticks)
+    {
+        while (ticks > 0)
+        {
+            var best = 1;
+            for (var i = 1; i < WaitTable.Length; i++)
+            {
+                if (WaitTable[i] <= ticks)
+                    best = i;
+            }
+
+            track.Add((byte)(0x80 + best));
+            ticks -= WaitTable[best];
+        }
+    }
 
     public static bool TryGetSongHeaderOffset(RomImage rom, int songId, out int headerOffset)
     {

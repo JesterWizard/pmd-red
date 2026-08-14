@@ -20,6 +20,8 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
     private readonly TextBlock _timeEnd;
     private readonly Button _playButton;
     private readonly Button _stopButton;
+    private readonly Button _importButton;
+    private readonly Button _applyButton;
     private readonly Slider _seek;
     private readonly Canvas _waveform;
     private readonly TextBox _codeBox;
@@ -43,6 +45,9 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
     private CancellationTokenSource? _loadCts;
     private int _waveformUpdatePending; // 0 = idle, 1 = queued/running
     private Polyline? _waveformShape;
+
+    public event Func<Task>? ImportRequested;
+    public event Action? ApplyRequested;
 
     public SoundPreviewPanel(AgbplayStreamHost streamHost, SoundCacheWarmer? cacheWarmer = null)
     {
@@ -80,6 +85,8 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
         };
         _playButton = new Button { Content = "Play", MinWidth = 72 };
         _stopButton = new Button { Content = "Stop", MinWidth = 72 };
+        _importButton = new Button { Content = "Import audio…", MinWidth = 108 };
+        _applyButton = new Button { Content = "Apply", MinWidth = 72, IsEnabled = false };
 
         _seek = new Slider
         {
@@ -119,6 +126,13 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
             _timeStart.Text = "0:00";
             UpdateVisuals();
         };
+        _importButton.Click += async (_, _) =>
+        {
+            if (ImportRequested is null)
+                return;
+            await ImportRequested();
+        };
+        _applyButton.Click += (_, _) => ApplyRequested?.Invoke();
 
         _seek.AddHandler(InputElement.PointerPressedEvent, (_, _) => _seekDragging = true,
             handledEventsToo: true);
@@ -192,7 +206,7 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
             Orientation = Orientation.Horizontal,
             Spacing = 8,
             Margin = new Thickness(0, 8, 0, 0),
-            Children = { _playButton, _stopButton, _status },
+            Children = { _playButton, _stopButton, _importButton, _applyButton, _status },
         };
         playerGrid.Children.Add(controls);
         Grid.SetRow(controls, 2);
@@ -302,7 +316,9 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
         RomImage rom,
         AssetDescriptor asset,
         string codeText,
-        CancellationToken token = default)
+        CancellationToken token = default,
+        byte[]? stagedWav = null,
+        string? stagedNote = null)
     {
         _loadCts?.Cancel();
         var cts = CancellationTokenSource.CreateLinkedTokenSource(token);
@@ -338,20 +354,23 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
 
             _songId = prepared.SongId;
             _maxLoops = prepared.MaxLoops;
-            _meta.Text = prepared.Meta;
+            _meta.Text = string.IsNullOrWhiteSpace(stagedNote)
+                ? prepared.Meta
+                : stagedNote + "\n" + prepared.Meta;
             _estimatedDuration = prepared.EstimatedDuration;
             DrawWaveform();
             RefreshDurationUi();
 
-            if (prepared.CachedWav.Length > 44)
+            var previewWav = stagedWav is { Length: > 44 } ? stagedWav : prepared.CachedWav;
+            if (previewWav.Length > 44)
             {
-                _wav = prepared.CachedWav;
+                _wav = previewWav;
                 _peaks = WaveformPeaks.Build(_wav, bucketCount: DesiredBucketCount());
                 _knownDuration = TimeSpan.FromSeconds(GuessWavDurationSeconds(_wav));
                 _waveformDirty = true;
                 DrawWaveform();
                 RefreshDurationUi();
-                _status.Text = "Ready (cached)";
+                _status.Text = stagedWav is { Length: > 44 } ? "Ready (import preview)" : "Ready (cached)";
             }
             else
             {
@@ -378,6 +397,14 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
         _cacheWarmer?.Resume();
         _playButton.Content = "Play";
         _status.Text = "Preparing…";
+    }
+
+    public void SetApplyEnabled(bool enabled) => _applyButton.IsEnabled = enabled;
+
+    public void SetStatus(string text, bool warn = false)
+    {
+        _status.Text = text;
+        _status.Foreground = warn ? EditorTheme.WarningBrush : Brushes.Gray;
     }
 
     public void Dispose()
@@ -432,6 +459,12 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
         if (songId < 0)
         {
             _status.Text = "Song ID unavailable.";
+            return;
+        }
+
+        if (wav.Length >= 44)
+        {
+            _streamPlayer.PlayCached(wav);
             return;
         }
 
