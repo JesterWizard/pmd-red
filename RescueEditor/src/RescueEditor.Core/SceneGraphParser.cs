@@ -24,6 +24,13 @@ public static class SceneGraphParser
 
         profile ??= RomProfile.TryMatch(rom) ?? RomProfile.Us10;
         var database = new SceneDatabase { Profile = profile };
+        if (!profile.LayoutVerified)
+        {
+            database.Diagnostics.Add(
+                $"Opened as {profile.Name}. Scene graph and writes stay gated until this layout is verified.");
+            return database;
+        }
+
         if (!profile.Matches(rom))
             database.Diagnostics.Add($"ROM SHA-1 {rom.Sha1} does not match profile '{profile.Name}'. Scene parsing may be incomplete.");
 

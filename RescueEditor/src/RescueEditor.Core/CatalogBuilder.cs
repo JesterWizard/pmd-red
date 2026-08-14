@@ -138,7 +138,11 @@ public static class CatalogBuilder
             diagnostics.Add("No valid pksdir0 archives were found; raw archive and ground entries are unavailable.");
         if (scenes.DialogueByOffset.Count == 0)
             diagnostics.Add("No dialogue command pointers were recognized in this ROM.");
-        if (!rom.Info.IsKnownRetailRom)
+        if (profile is null)
+            diagnostics.Add($"SHA-1 {rom.Sha1} does not match a supported RescueTemple profile.");
+        else if (!profile.LayoutVerified)
+            diagnostics.Add($"Opened as {profile.Name} (browse-only; US 1.0 features stay gated until this layout is verified).");
+        else if (!rom.Info.IsKnownRetailRom)
             diagnostics.Add($"SHA-1 {rom.Sha1} does not match the documented US 1.0 baserom.");
 
         Report($"Done — {catalog.Assets.Count:N0} assets indexed.");

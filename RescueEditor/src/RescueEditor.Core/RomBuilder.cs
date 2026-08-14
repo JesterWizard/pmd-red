@@ -109,6 +109,12 @@ public static class RomBuilder
         }
 
         var profile = RomProfile.TryMatch(source);
+        if (profile is { AllowWrites: false })
+        {
+            report.Errors.Add($"Profile '{profile.Name}' is browse-only until its layout is verified.");
+            return report;
+        }
+
         var runtimeOnly = profile is null && runtimeConfig is not null;
         if (profile is null && !runtimeOnly)
         {
@@ -673,7 +679,9 @@ public static class SceneLint
     public static LintResult Validate(RomImage rom, SceneDatabase database)
     {
         var result = new LintResult();
-        if (!database.Profile.Matches(rom))
+        if (!database.Profile.AllowWrites)
+            result.Errors.Add($"Profile '{database.Profile.Name}' is browse-only until its layout is verified.");
+        else if (!database.Profile.Matches(rom))
             result.Errors.Add("ROM does not match the writable US 1.0 profile.");
 
         foreach (var scene in database.Scenes)
