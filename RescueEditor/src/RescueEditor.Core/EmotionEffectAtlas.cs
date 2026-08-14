@@ -36,6 +36,12 @@ public sealed class EmotionEffectAtlas
         _rom = rom;
     }
 
+    public void ClearCache()
+    {
+        _clips.Clear();
+        _sources.Clear();
+    }
+
     public void PrefetchCommon()
     {
         foreach (var id in new[] { NoticeId, QuestionId, ShockId, SweatId, SmileId, AngryId })

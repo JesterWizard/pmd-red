@@ -17,6 +17,9 @@ internal sealed class AnimScrubberPanel : UserControl
     private readonly Slider _slider;
     private readonly TextBlock _counter;
     private readonly TextBlock _empty;
+    private readonly Button _replace;
+    private readonly TextBlock _importStatus;
+    private readonly Border _importHost;
     private bool _suppress;
     private AnimScrubber? _scrub;
     private ActorSpriteAtlas? _actors;
@@ -25,6 +28,11 @@ internal sealed class AnimScrubberPanel : UserControl
 
     public event Action<int>? ActorAnimChosen;
     public event Action<int>? EffectIdChosen;
+    public event EventHandler? ReplaceArtClicked;
+
+    public bool ImportIsActor { get; private set; }
+    public string? ImportEffectName { get; private set; }
+    public int ImportSpeciesId => _speciesId;
 
     public AnimScrubberPanel()
     {
@@ -70,6 +78,19 @@ internal sealed class AnimScrubberPanel : UserControl
             TextWrapping = TextWrapping.Wrap,
             Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
         };
+        _replace = EditorChrome.ToolButton("Replace sprites…");
+        _replace.Click += (_, _) => ReplaceArtClicked?.Invoke(this, EventArgs.Empty);
+        _importStatus = new TextBlock
+        {
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            TextWrapping = TextWrapping.Wrap,
+            Text = AxActorSpriteAuthoring.RestrictionsText,
+        };
+        _importHost = EditorChrome.ImportActionBlock(_replace, _importStatus);
+        _importHost.Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, EditorTheme.Space2);
+        _importHost.IsVisible = false;
 
         _animBox.SelectionChanged += (_, _) => OnAnimPicked();
         _slider.PropertyChanged += (_, e) =>
@@ -99,6 +120,7 @@ internal sealed class AnimScrubberPanel : UserControl
             well,
             _slider,
             _counter,
+            _importHost,
             _empty);
     }
 
@@ -113,6 +135,13 @@ internal sealed class AnimScrubberPanel : UserControl
         _empty.IsVisible = true;
         _slider.IsEnabled = false;
         _animBox.IsEnabled = false;
+        HideImport();
+    }
+
+    public void SetImportStatus(string text, bool warn = false)
+    {
+        _importStatus.Text = text;
+        _importStatus.Foreground = warn ? EditorTheme.WarningBrush : EditorTheme.TextMutedBrush;
     }
 
     public void BindActor(
@@ -144,6 +173,7 @@ internal sealed class AnimScrubberPanel : UserControl
         ApplyScrub(scrub, emptyHint: speciesId <= 0
             ? "Select a live on the map to preview this animation."
             : "No AX sequence for this species / facing.");
+        ShowActorImport();
     }
 
     public void BindEffect(EmotionEffectAtlas? atlas, int effectId, NamedIdCatalog names)
@@ -175,10 +205,12 @@ internal sealed class AnimScrubberPanel : UserControl
             ApplyScrub(
                 AnimScrubber.ForEffect(effectId, new EffectAnimInfo(effectId, 0, false, AxAnimSequence.FromFrames([])), names),
                 emptyHint: "No effect clip in this ROM.");
+            ShowEffectImport(EmotionEffectAtlas.SharedEmotionBank);
             return;
         }
 
         ApplyScrub(AnimScrubber.ForEffect(effectId, info.Value, names), emptyHint: null);
+        ShowEffectImport(EmotionEffectAtlas.SharedEmotionBank);
     }
 
     public void BindGroundEffect(GroundEffectAtlas? atlas, byte typeId)
@@ -197,6 +229,10 @@ internal sealed class AnimScrubberPanel : UserControl
         _counter.Text = "frame —";
         if (image is null)
             _mapLabel.Text += " — no sheet.";
+        if (GroundEffectAtlas.ShouldPreviewSectorEffect(typeId))
+            ShowEffectImport($"efob{typeId:D3}");
+        else
+            HideImport();
     }
 
     private void FillCombo(IReadOnlyList<AnimMapping> mappings, int selectedId, bool actor)
@@ -282,6 +318,31 @@ internal sealed class AnimScrubberPanel : UserControl
         }
 
         _preview.Source = image is null ? null : RgbaBitmap.ToWriteable(image);
+    }
+
+    private void ShowActorImport()
+    {
+        ImportIsActor = true;
+        ImportEffectName = null;
+        _replace.Content = "Replace sprites…";
+        SetImportStatus(AxActorSpriteAuthoring.RestrictionsText);
+        _importHost.IsVisible = true;
+    }
+
+    private void ShowEffectImport(string effectName)
+    {
+        ImportIsActor = false;
+        ImportEffectName = effectName;
+        _replace.Content = "Replace sheet…";
+        SetImportStatus(GroundEffectAuthoring.RestrictionsText);
+        _importHost.IsVisible = true;
+    }
+
+    private void HideImport()
+    {
+        ImportIsActor = false;
+        ImportEffectName = null;
+        _importHost.IsVisible = false;
     }
 
     private sealed record AnimPick(int Id, string Label, bool Effect)

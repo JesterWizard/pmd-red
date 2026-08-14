@@ -26,6 +26,18 @@ public sealed class ActorSpriteAtlas
         _profile = profile ?? RomProfile.Us10;
     }
 
+    public void ClearCache()
+    {
+        _bySpecies.Clear();
+        _bySpeciesFrame.Clear();
+        _frameCount.Clear();
+        _byLiveType.Clear();
+        _assembledPoses.Clear();
+        _assembledPoseIds.Clear();
+        _animSequences.Clear();
+        _multiPiece.Clear();
+    }
+
     /// <summary>Walk up from <paramref name="hint"/> until actor or ornament sprite trees exist.</summary>
     public static string ResolveAssetsRoot(string hint)
     {

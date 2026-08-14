@@ -417,6 +417,31 @@ public static class EditorChrome
         };
     }
 
+    /// <summary>
+    /// Import control stacked above wrapping status so the restriction line never
+    /// collides with the button on a fixed-height toolbar.
+    /// </summary>
+    public static Border ImportActionBlock(Control actions, TextBlock status)
+    {
+        status.TextWrapping = TextWrapping.Wrap;
+        status.TextTrimming = TextTrimming.None;
+        status.VerticalAlignment = VerticalAlignment.Top;
+        status.Margin = new Thickness(0, EditorTheme.Space2, 0, 0);
+        if (actions is Button button)
+            button.HorizontalAlignment = HorizontalAlignment.Left;
+
+        return new Border
+        {
+            Background = EditorTheme.ToolbarBgBrush,
+            Padding = new Thickness(EditorTheme.Space3, EditorTheme.Space2),
+            Child = new StackPanel
+            {
+                Orientation = Orientation.Vertical,
+                Children = { actions, status },
+            },
+        };
+    }
+
     public static StackPanel ToolbarRow(params Control[] children)
     {
         var row = new StackPanel

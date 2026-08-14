@@ -492,6 +492,7 @@ public sealed class SceneWorkspacePanel : UserControl
         _animScrubber = new AnimScrubberPanel();
         _animScrubber.ActorAnimChosen += OnActorAnimChosen;
         _animScrubber.EffectIdChosen += OnEffectIdChosen;
+        _animScrubber.ReplaceArtClicked += async (_, _) => await ReplaceScrubberArtAsync();
 
         _opBox = EditorChrome.CompactNumeric(0, 255);
         _argByteBox = EditorChrome.CompactNumeric(0, 255);
@@ -1882,6 +1883,90 @@ public sealed class SceneWorkspacePanel : UserControl
         }
 
         RefreshAnimScrubber();
+    }
+
+    private async Task ReplaceScrubberArtAsync()
+    {
+        var top = TopLevel.GetTopLevel(this);
+        if (top is null)
+            return;
+
+        if (_animScrubber.ImportIsActor)
+        {
+            if (string.IsNullOrEmpty(_assetsRoot) || _animScrubber.ImportSpeciesId <= 0)
+            {
+                _animScrubber.SetImportStatus("Select a live on the map first.", warn: true);
+                return;
+            }
+
+            var folders = await top.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
+            {
+                Title = "AX sprite folder (sprite_N.png)",
+                AllowMultiple = false,
+            });
+            var folder = folders.FirstOrDefault()?.Path.LocalPath;
+            if (string.IsNullOrEmpty(folder))
+                return;
+
+            var error = AxActorSpriteAuthoring.TryWriteSpecies(_assetsRoot, _animScrubber.ImportSpeciesId, folder);
+            if (error is not null)
+            {
+                _animScrubber.SetImportStatus(error, warn: true);
+                return;
+            }
+
+            _actorSprites?.ClearCache();
+            RefreshAnimScrubber();
+            RefreshMap();
+            _animScrubber.SetImportStatus("Replaced AX sprites (included in Build ROM from the dump tree).");
+            return;
+        }
+
+        var name = _animScrubber.ImportEffectName;
+        if (string.IsNullOrEmpty(name))
+            return;
+        if (_workingRom is null)
+        {
+            _animScrubber.SetImportStatus("Open a ROM to replace effect sheets.", warn: true);
+            return;
+        }
+
+        var files = await top.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Ground effect PNG",
+            AllowMultiple = false,
+            FileTypeFilter = [new FilePickerFileType("PNG image") { Patterns = ["*.png"] }],
+        });
+        var file = files.FirstOrDefault();
+        if (file is null)
+            return;
+
+        await using var stream = await file.OpenReadAsync();
+        using var memory = new MemoryStream();
+        await stream.CopyToAsync(memory);
+        var image = RgbaImage.FromPng(memory.ToArray());
+        if (image is null)
+        {
+            _animScrubber.SetImportStatus("Could not decode that PNG.", warn: true);
+            return;
+        }
+
+        var buffer = _workingRom.BeginMutate();
+        var dirty = new List<RomSpan>();
+        var writeError = GroundEffectAuthoring.TryWrite(buffer, name, image, dirty);
+        if (writeError is not null)
+        {
+            _animScrubber.SetImportStatus(writeError, warn: true);
+            return;
+        }
+
+        _workingRom.CommitDirty(buffer, dirty);
+        _rom = _workingRom.View;
+        _groundEffects = new GroundEffectAtlas(_rom);
+        _emotionEffects = new EmotionEffectAtlas(_assetsRoot, _rom);
+        RefreshAnimScrubber();
+        RefreshMap();
+        _animScrubber.SetImportStatus($"Imported {name} (Build ROM or export .rtmod).");
     }
 
     private void ApplyEntityProps()

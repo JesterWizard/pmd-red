@@ -218,6 +218,51 @@ public static class PngCodec
         return c;
     }
 
+    public static byte[] EncodeIndexed(int width, int height, ReadOnlySpan<byte> indices, ReadOnlySpan<byte> paletteRgbx)
+    {
+        if (width <= 0 || height <= 0)
+            throw new ArgumentOutOfRangeException(nameof(width));
+        if (indices.Length != checked(width * height))
+            throw new ArgumentException("Index buffer size does not match the image dimensions.", nameof(indices));
+
+        using var output = new MemoryStream();
+        output.Write(Signature);
+
+        Span<byte> ihdr = stackalloc byte[13];
+        BinaryPrimitives.WriteInt32BigEndian(ihdr, width);
+        BinaryPrimitives.WriteInt32BigEndian(ihdr[4..], height);
+        ihdr[8] = 8;
+        ihdr[9] = 3;
+        WriteChunk(output, "IHDR"u8, ihdr);
+
+        var colors = Math.Max(1, paletteRgbx.Length / 4);
+        var plte = new byte[colors * 3];
+        for (var i = 0; i < colors; i++)
+        {
+            plte[i * 3] = paletteRgbx[i * 4];
+            plte[i * 3 + 1] = paletteRgbx[i * 4 + 1];
+            plte[i * 3 + 2] = paletteRgbx[i * 4 + 2];
+        }
+
+        WriteChunk(output, "PLTE"u8, plte);
+        WriteChunk(output, "tRNS"u8, [0]);
+
+        var scanlines = new byte[checked((width + 1) * height)];
+        for (var y = 0; y < height; y++)
+        {
+            var destination = y * (width + 1);
+            scanlines[destination] = 0;
+            indices.Slice(y * width, width).CopyTo(scanlines.AsSpan(destination + 1, width));
+        }
+
+        using var compressed = new MemoryStream();
+        using (var zlib = new ZLibStream(compressed, CompressionLevel.SmallestSize, leaveOpen: true))
+            zlib.Write(scanlines);
+        WriteChunk(output, "IDAT"u8, compressed.ToArray());
+        WriteChunk(output, "IEND"u8, ReadOnlySpan<byte>.Empty);
+        return output.ToArray();
+    }
+
     public static byte[] Encode(RgbaImage image)
     {
         using var output = new MemoryStream();

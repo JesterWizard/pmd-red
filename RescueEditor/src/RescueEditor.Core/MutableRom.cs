@@ -37,6 +37,17 @@ public sealed class MutableRom
     public uint ReadUInt32(int offset) => BinaryPrimitives.ReadUInt32LittleEndian(_bytes.AsSpan(Checked(offset, 4)));
     public int ReadInt32(int offset) => unchecked((int)ReadUInt32(offset));
 
+    public int ReadPointerOffset(int offset)
+    {
+        if (!IsRangeValid(offset, 4))
+            return -1;
+        var pointer = ReadUInt32(offset);
+        if (pointer < RomImage.RomVirtualAddress)
+            return -1;
+        var dest = (int)(pointer - RomImage.RomVirtualAddress);
+        return dest < Length ? dest : -1;
+    }
+
     public void WriteByte(int offset, byte value) => _bytes[Checked(offset, 1)] = value;
 
     public void WriteUInt16(int offset, ushort value) =>

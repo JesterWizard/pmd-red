@@ -428,6 +428,10 @@ public sealed class AssetWorkspacePanel : UserControl
                 {
                     _previewHost.Child = BuildGroundMapEditor(asset, image);
                 }
+                else if (asset.Kind == AssetKind.Effect)
+                {
+                    _previewHost.Child = BuildEffectEditor(asset, image);
+                }
                 else if (asset.Kind is AssetKind.Dungeon or AssetKind.DungeonFloor &&
                     !string.IsNullOrWhiteSpace(preview.Text))
                 {
@@ -746,13 +750,10 @@ public sealed class AssetWorkspacePanel : UserControl
         var selected = 0;
         var status = new TextBlock
         {
-            VerticalAlignment = VerticalAlignment.Center,
-            Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
             FontFamily = EditorTheme.UiFont,
             FontSize = EditorTheme.FontMeta,
             Foreground = EditorTheme.TextMutedBrush,
-            TextWrapping = TextWrapping.NoWrap,
-            TextTrimming = TextTrimming.CharacterEllipsis,
+            TextWrapping = TextWrapping.Wrap,
         };
         void SetStatus(string text, bool warn = false)
         {
@@ -849,13 +850,7 @@ public sealed class AssetWorkspacePanel : UserControl
             };
         }
 
-        var bar = EditorChrome.ToolbarHost(new StackPanel
-        {
-            Orientation = Orientation.Horizontal,
-            VerticalAlignment = VerticalAlignment.Center,
-            Children = { replace, status },
-        });
-
+        var bar = EditorChrome.ImportActionBlock(replace, status);
         return new DockPanel
         {
             LastChildFill = true,
@@ -871,13 +866,10 @@ public sealed class AssetWorkspacePanel : UserControl
     {
         var status = new TextBlock
         {
-            VerticalAlignment = VerticalAlignment.Center,
-            Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
             FontFamily = EditorTheme.UiFont,
             FontSize = EditorTheme.FontMeta,
             Foreground = EditorTheme.TextMutedBrush,
-            TextWrapping = TextWrapping.NoWrap,
-            TextTrimming = TextTrimming.CharacterEllipsis,
+            TextWrapping = TextWrapping.Wrap,
             Text = GroundMapCodec.RestrictionsText,
         };
         var import = EditorChrome.ToolButton("Import PNG…");
@@ -947,12 +939,83 @@ public sealed class AssetWorkspacePanel : UserControl
             await ShowPreviewAsync(asset);
         };
 
-        var bar = EditorChrome.ToolbarHost(new StackPanel
+        var bar = EditorChrome.ImportActionBlock(import, status);
+        return new DockPanel
         {
-            Orientation = Orientation.Horizontal,
-            VerticalAlignment = VerticalAlignment.Center,
-            Children = { import, status },
-        });
+            LastChildFill = true,
+            Children =
+            {
+                new Border { [DockPanel.DockProperty] = Dock.Top, Child = bar },
+                preview,
+            },
+        };
+    }
+
+    private Control BuildEffectEditor(AssetDescriptor asset, Control preview)
+    {
+        var status = new TextBlock
+        {
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            TextWrapping = TextWrapping.Wrap,
+            Text = GroundEffectAuthoring.RestrictionsText,
+        };
+        var import = EditorChrome.ToolButton("Import PNG…");
+        import.IsEnabled = asset.Name.StartsWith("efob", StringComparison.OrdinalIgnoreCase);
+        if (!import.IsEnabled)
+            status.Text = "Background effect archives cannot be replaced from this sheet view.";
+        import.Click += async (_, _) =>
+        {
+            if (_workingRom is null)
+            {
+                status.Text = "Open a ROM to import an effect sheet.";
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            var top = TopLevel.GetTopLevel(this);
+            if (top is null)
+                return;
+            var files = await top.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+            {
+                Title = "Ground effect PNG",
+                AllowMultiple = false,
+                FileTypeFilter = [new FilePickerFileType("PNG image") { Patterns = ["*.png"] }],
+            });
+            var file = files.FirstOrDefault();
+            if (file is null)
+                return;
+
+            await using var stream = await file.OpenReadAsync();
+            using var memory = new MemoryStream();
+            await stream.CopyToAsync(memory);
+            var image = RgbaImage.FromPng(memory.ToArray());
+            if (image is null)
+            {
+                status.Text = "Could not decode that PNG.";
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            var buffer = _workingRom.BeginMutate();
+            var dirty = new List<RomSpan>();
+            var error = GroundEffectAuthoring.TryWrite(buffer, asset.Name, image, dirty);
+            if (error is not null)
+            {
+                status.Text = error;
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            _workingRom.CommitDirty(buffer, dirty);
+            _rom = _workingRom.View;
+            status.Text = $"Imported {asset.Name} (Build ROM or export .rtmod).";
+            status.Foreground = EditorTheme.TextMutedBrush;
+            await ShowPreviewAsync(asset);
+        };
+
+        var bar = EditorChrome.ImportActionBlock(import, status);
         return new DockPanel
         {
             LastChildFill = true,

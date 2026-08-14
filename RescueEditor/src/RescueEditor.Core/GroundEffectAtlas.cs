@@ -42,6 +42,8 @@ public sealed class GroundEffectAtlas
         return image;
     }
 
+    public void ClearCache() => _byKind.Clear();
+
     private static RgbaImage? TryLoadKind(RomImage? rom, byte typeId)
     {
         if (rom is null)
