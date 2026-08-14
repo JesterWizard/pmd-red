@@ -5,6 +5,7 @@ using Avalonia.Controls.Templates;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.Styling;
 using RescueEditor.Core;
 
 namespace RescueEditor.App;
@@ -304,8 +305,22 @@ public sealed class SceneWorkspacePanel : UserControl
             Child = workspaceBody,
         };
 
-        _sectorList = new ListBox();
+        _sectorList = new ListBox
+        {
+            Height = EditorTheme.SceneSectorListMaxHeight,
+            MinHeight = EditorTheme.SceneSectorListMaxHeight,
+            MaxHeight = EditorTheme.SceneSectorListMaxHeight,
+        };
         EditorChrome.StyleList(_sectorList);
+        _sectorList.Styles.Add(new Style(x => x.OfType<ListBoxItem>())
+        {
+            Setters =
+            {
+                new Setter(MinHeightProperty, EditorTheme.SceneSectorRowHeight),
+                new Setter(HeightProperty, EditorTheme.SceneSectorRowHeight),
+                new Setter(PaddingProperty, new Thickness(EditorTheme.Space2, 0)),
+            },
+        });
         _sectorList.SelectionChanged += (_, _) =>
         {
             if (_suppressPropertyEvents || _refreshGate.IsEntered)
@@ -694,14 +709,6 @@ public sealed class SceneWorkspacePanel : UserControl
             },
         };
 
-        var scriptHeader = EditorChrome.SectionHeader("Scripts");
-        var scriptPanel = new DockPanel();
-        DockPanel.SetDock(scriptHeader, Dock.Top);
-        DockPanel.SetDock(_scriptHeaderRow, Dock.Top);
-        scriptPanel.Children.Add(scriptHeader);
-        scriptPanel.Children.Add(_scriptHeaderRow);
-        scriptPanel.Children.Add(_scriptList);
-
         var propsHost = new Border
         {
             Child = new ScrollViewer
@@ -713,14 +720,12 @@ public sealed class SceneWorkspacePanel : UserControl
             },
         };
 
-        var root = new Grid { RowDefinitions = new RowDefinitions("*,Auto,*,*") };
+        var root = new Grid { RowDefinitions = new RowDefinitions("Auto,Auto,*") };
         root.Children.Add(sectorPanel);
         root.Children.Add(sectorButtons);
         Grid.SetRow(sectorButtons, 1);
-        root.Children.Add(scriptPanel);
-        Grid.SetRow(scriptPanel, 2);
         root.Children.Add(propsHost);
-        Grid.SetRow(propsHost, 3);
+        Grid.SetRow(propsHost, 2);
         return root;
     }
 

@@ -15,6 +15,7 @@ internal sealed class AnimScrubberPanel : UserControl
     private readonly TextBlock _mapLabel;
     private readonly Image _preview;
     private readonly Slider _slider;
+    private readonly TextBlock _counter;
     private readonly TextBlock _empty;
     private bool _suppress;
     private AnimScrubber? _scrub;
@@ -48,8 +49,18 @@ internal sealed class AnimScrubberPanel : UserControl
         {
             Minimum = 0,
             Maximum = 0,
-            Height = 16,
-            Margin = new Thickness(EditorTheme.Space2, 0, EditorTheme.Space2, EditorTheme.Space1),
+            MinHeight = 36,
+            Height = 36,
+            ClipToBounds = false,
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, EditorTheme.Space1),
+        };
+        _counter = new TextBlock
+        {
+            FontFamily = EditorTheme.MonoFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, EditorTheme.Space4),
+            Text = "frame —",
         };
         _empty = new TextBlock
         {
@@ -70,25 +81,24 @@ internal sealed class AnimScrubberPanel : UserControl
             }
         };
 
-        var wellBody = new DockPanel { LastChildFill = true };
-        DockPanel.SetDock(_slider, Dock.Bottom);
-        wellBody.Children.Add(_slider);
-        wellBody.Children.Add(_preview);
-
         var well = new Border
         {
             Background = EditorTheme.ViewportWellBrush,
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1),
             Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space1, EditorTheme.Space4, EditorTheme.Space2),
-            Height = 120,
-            Child = wellBody,
+            Height = 104,
+            Child = _preview,
         };
 
+        Padding = new Thickness(0, 0, 0, EditorTheme.Space4);
+        ClipToBounds = false;
         Content = EditorChrome.InspectorSection("Animation",
             EditorChrome.PropertyRow("Id", _animBox),
             _mapLabel,
             well,
+            _slider,
+            _counter,
             _empty);
     }
 
@@ -99,6 +109,7 @@ internal sealed class AnimScrubberPanel : UserControl
         _effects = null;
         _preview.Source = null;
         _mapLabel.Text = "";
+        _counter.Text = "frame —";
         _empty.IsVisible = true;
         _slider.IsEnabled = false;
         _animBox.IsEnabled = false;
@@ -183,6 +194,7 @@ internal sealed class AnimScrubberPanel : UserControl
             : $"Kind {typeId} is a camera / script host — no sprite.";
         var image = atlas?.TryGetForEffect(typeId);
         _preview.Source = image is null ? null : RgbaBitmap.ToWriteable(image);
+        _counter.Text = "frame —";
         if (image is null)
             _mapLabel.Text += " — no sheet.";
     }
@@ -246,11 +258,12 @@ internal sealed class AnimScrubberPanel : UserControl
             return;
 
         var frame = _scrub.Current;
+        var frames = Math.Max(1, _scrub.Sequence.Frames.Count);
+        _counter.Text =
+            $"frame {_scrub.FrameIndex + 1} / {frames}   tick {_scrub.Tick} / {_scrub.MaxTick}   pose {frame.PoseId}";
         ToolTip.SetTip(
             _preview,
-            $"frame {_scrub.FrameIndex + 1}/{Math.Max(1, _scrub.Sequence.Frames.Count)}  " +
-            $"tick {_scrub.Tick}/{_scrub.MaxTick}  pose {frame.PoseId}  {frame.DurationFrames}f  " +
-            $"off {frame.OffsetX},{frame.OffsetY}" +
+            $"{frame.DurationFrames}f  off {frame.OffsetX},{frame.OffsetY}" +
             (_scrub.Mapping.HoldFirstFrame ? "  · Scene Play holds first" : ""));
 
         RgbaImage? image = null;

@@ -72,6 +72,9 @@ public static class EditorTheme
     public const double AssetBrowserWidth = 220;
     public const double SceneInspectorWidth = 380;
     public const double SceneInspectorMinWidth = 320;
+    public const int SceneSectorVisibleRows = 5;
+    public const double SceneSectorRowHeight = ControlHeight + 2;
+    public const double SceneSectorListMaxHeight = SceneSectorVisibleRows * SceneSectorRowHeight;
     public const double RulerSize = 18;
 
     public static SolidColorBrush WindowBgBrush { get; } = Solid(WindowBg);
