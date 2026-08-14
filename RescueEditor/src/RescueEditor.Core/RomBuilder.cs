@@ -203,6 +203,15 @@ public static class RomBuilder
                         }
                     }
                 }
+
+                try
+                {
+                    WriteSceneLinks(rom, scene, report, clearDirty: true);
+                }
+                catch (Exception exception)
+                {
+                    report.Errors.Add($"Scene {scene.MapId} links: {exception.Message}");
+                }
             }
         }
         else
@@ -264,6 +273,15 @@ public static class RomBuilder
         WriteDirtyDialogue(rom, database, project: null, report, charmap);
         foreach (var scene in database.Scenes)
         {
+            try
+            {
+                WriteSceneLinks(rom, scene, report, clearDirty: false);
+            }
+            catch (Exception exception)
+            {
+                report.Errors.Add($"Scene {scene.MapId} links: {exception.Message}");
+            }
+
             foreach (var group in scene.Groups)
             {
                 foreach (var sector in group.Sectors)
@@ -354,6 +372,54 @@ public static class RomBuilder
             {
                 report.Errors.Add($"Dialogue 0x{dialogue.Offset:X}: {exception.Message}");
             }
+        }
+    }
+
+    private static void WriteSceneLinks(
+        MutableRom rom,
+        Scene scene,
+        RomBuildReport report,
+        bool clearDirty)
+    {
+        if (scene.LinksListDirty)
+        {
+            if (scene.HeaderOffset < 0)
+                throw new InvalidOperationException($"Scene {scene.MapId} has no header offset.");
+
+            var bytes = new byte[Math.Max(SceneLink.Size, scene.Links.Count * SceneLink.Size)];
+            for (var i = 0; i < scene.Links.Count; i++)
+                scene.Links[i].Write(bytes.AsSpan(i * SceneLink.Size, SceneLink.Size));
+
+            var free = scene.Links.Count == 0
+                ? FreeSpaceAllocator.FindFreeSpace(rom, SceneLink.Size)
+                : FreeSpaceAllocator.FindFreeSpace(rom, scene.Links.Count * SceneLink.Size);
+            if (scene.Links.Count > 0)
+                rom.WriteBytes(free, bytes.AsSpan(0, scene.Links.Count * SceneLink.Size));
+            rom.WritePointer(scene.HeaderOffset + 8, free);
+            scene.LinksOffset = free;
+            for (var i = 0; i < scene.Links.Count; i++)
+            {
+                scene.Links[i].RomOffset = free + i * SceneLink.Size;
+                scene.Links[i].NeedsListRewrite = false;
+            }
+
+            if (clearDirty)
+                scene.LinksListDirty = false;
+            report.Changes.Add($"GroundLink list map {scene.MapId} -> 0x{free:X} ({scene.Links.Count})");
+            return;
+        }
+
+        if (!clearDirty)
+            return;
+
+        Span<byte> encoded = stackalloc byte[SceneLink.Size];
+        foreach (var link in scene.Links)
+        {
+            if (link.RomOffset < 0)
+                continue;
+            link.Write(encoded);
+            rom.WriteBytes(link.RomOffset, encoded);
+            report.Changes.Add($"GroundLink @ 0x{link.RomOffset:X}");
         }
     }
 

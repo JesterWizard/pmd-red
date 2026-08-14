@@ -90,6 +90,61 @@ public static class ProjectEditApplier
                     break;
                 }
             }
+            else if (edit.Kind == "link.add")
+            {
+                var scene = FindScene(database, edit);
+                if (scene is null)
+                    continue;
+                byte.TryParse(edit.Values.GetValueOrDefault("x"), out var lx);
+                byte.TryParse(edit.Values.GetValueOrDefault("y"), out var ly);
+                byte.TryParse(edit.Values.GetValueOrDefault("xFlags"), out var lxf);
+                byte.TryParse(edit.Values.GetValueOrDefault("yFlags"), out var lyf);
+                byte.TryParse(edit.Values.GetValueOrDefault("width"), out var lw);
+                byte.TryParse(edit.Values.GetValueOrDefault("height"), out var lh);
+                byte.TryParse(edit.Values.GetValueOrDefault("ret"), out var lret);
+                byte.TryParse(edit.Values.GetValueOrDefault("unk7"), out var lunk);
+                if (lw == 0) lw = 1;
+                if (lh == 0) lh = 1;
+                scene.Links.Add(new SceneLink
+                {
+                    Position = new CompactPos(lx, ly, lxf, lyf),
+                    Width = lw,
+                    Height = lh,
+                    Ret = lret,
+                    Unk7 = lunk,
+                    RomOffset = -1,
+                    NeedsListRewrite = true,
+                });
+                scene.LinksListDirty = true;
+            }
+            else if (edit.Kind == "link.position" &&
+                     edit.Values.TryGetValue("x", out var linkXText) &&
+                     edit.Values.TryGetValue("y", out var linkYText) &&
+                     byte.TryParse(linkXText, out var linkX) &&
+                     byte.TryParse(linkYText, out var linkY) &&
+                     FindLink(database, edit) is { } movedLink)
+            {
+                byte.TryParse(edit.Values.GetValueOrDefault("xFlags"), out var linkXf);
+                byte.TryParse(edit.Values.GetValueOrDefault("yFlags"), out var linkYf);
+                movedLink.Position = new CompactPos(linkX, linkY, linkXf, linkYf);
+            }
+            else if (edit.Kind == "link.size" &&
+                     edit.Values.TryGetValue("width", out var linkWText) &&
+                     edit.Values.TryGetValue("height", out var linkHText) &&
+                     byte.TryParse(linkWText, out var linkW) &&
+                     byte.TryParse(linkHText, out var linkH) &&
+                     FindLink(database, edit) is { } sizedLink)
+            {
+                sizedLink.Width = linkW;
+                sizedLink.Height = linkH;
+            }
+            else if (edit.Kind == "link.ret" &&
+                     edit.Values.TryGetValue("ret", out var linkRetText) &&
+                     byte.TryParse(linkRetText, out var linkRet) &&
+                     FindLink(database, edit) is { } retLink)
+            {
+                retLink.Ret = linkRet;
+            }
             else if (edit.Kind == "script.source" &&
                      edit.Values.TryGetValue("source", out var source) &&
                      !string.IsNullOrEmpty(source))
@@ -122,6 +177,20 @@ public static class ProjectEditApplier
 
         return database.Scenes.FirstOrDefault(scene =>
             string.Equals(scene.Name, edit.Target, StringComparison.Ordinal));
+    }
+
+    private static SceneLink? FindLink(SceneDatabase database, ProjectEdit edit)
+    {
+        if (TryParseHexOffset(edit.Target, out var offset))
+        {
+            var byOffset = database.Scenes.SelectMany(scene => scene.Links)
+                .FirstOrDefault(link => link.RomOffset == offset);
+            if (byOffset is not null)
+                return byOffset;
+        }
+
+        var scene = FindScene(database, edit);
+        return scene?.Links.LastOrDefault();
     }
 
     private static bool TryParseHexOffset(string target, out int offset)

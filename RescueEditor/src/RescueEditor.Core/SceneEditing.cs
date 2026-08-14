@@ -176,10 +176,13 @@ public static class SceneEditing
         ChangeService changes,
         SceneSector sector,
         SceneEntityKind kind,
-        CompactPos? position = null)
+        CompactPos? position = null,
+        byte width = 1,
+        byte height = 1)
     {
         var list = sector.ListFor(kind);
-        var entity = CreateDefaultEntity(kind, sector, list.Count, position ?? new CompactPos(5, 5, 0, 0));
+        var entity = CreateDefaultEntity(
+            kind, sector, list.Count, position ?? new CompactPos(5, 5, 0, 0), width, height);
         changes.Execute(
             $"Add {kind}",
             apply: () =>
@@ -204,6 +207,8 @@ public static class SceneEditing
                     ["kind"] = kind.ToString(),
                     ["x"] = entity.Position.XTiles.ToString(),
                     ["y"] = entity.Position.YTiles.ToString(),
+                    ["width"] = entity.Width.ToString(),
+                    ["height"] = entity.Height.ToString(),
                 },
             });
         return entity;
@@ -246,6 +251,167 @@ public static class SceneEditing
                 },
             });
     }
+
+    public static SceneLink AddLink(
+        ChangeService changes,
+        Scene scene,
+        CompactPos position,
+        byte width = 1,
+        byte height = 1,
+        byte ret = 0,
+        byte unk7 = 0)
+    {
+        width = Math.Clamp(width, (byte)1, SceneMapOverlay.MaxVolumeTiles);
+        height = Math.Clamp(height, (byte)1, SceneMapOverlay.MaxVolumeTiles);
+        var link = new SceneLink
+        {
+            Position = position,
+            Width = width,
+            Height = height,
+            Ret = ret,
+            Unk7 = unk7,
+            RomOffset = -1,
+            NeedsListRewrite = true,
+        };
+        changes.Execute(
+            "Add GroundLink",
+            apply: () =>
+            {
+                scene.Links.Add(link);
+                scene.LinksListDirty = true;
+            },
+            revert: () =>
+            {
+                scene.Links.Remove(link);
+                scene.LinksListDirty = true;
+            },
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "link.add",
+                Target = $"map:{scene.MapId}",
+                Description = $"Add GroundLink at ({position.XTiles},{position.YTiles})",
+                Values =
+                {
+                    ["mapId"] = scene.MapId.ToString(),
+                    ["x"] = position.XTiles.ToString(),
+                    ["y"] = position.YTiles.ToString(),
+                    ["xFlags"] = position.XFlags.ToString(),
+                    ["yFlags"] = position.YFlags.ToString(),
+                    ["width"] = width.ToString(),
+                    ["height"] = height.ToString(),
+                    ["ret"] = ret.ToString(),
+                    ["unk7"] = unk7.ToString(),
+                },
+            });
+        return link;
+    }
+
+    public static void MoveLink(ChangeService changes, SceneLink link, CompactPos newPosition)
+    {
+        var old = link.Position;
+        changes.Execute(
+            "Move GroundLink",
+            apply: () => link.Position = newPosition,
+            revert: () => link.Position = old,
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "link.position",
+                Target = LinkTarget(link),
+                Description = $"Move GroundLink to ({newPosition.XTiles},{newPosition.YTiles})",
+                Values =
+                {
+                    ["x"] = newPosition.XTiles.ToString(),
+                    ["y"] = newPosition.YTiles.ToString(),
+                    ["xFlags"] = newPosition.XFlags.ToString(),
+                    ["yFlags"] = newPosition.YFlags.ToString(),
+                },
+            });
+    }
+
+    public static void SetLinkSize(ChangeService changes, SceneLink link, byte width, byte height)
+    {
+        width = Math.Clamp(width, (byte)1, SceneMapOverlay.MaxVolumeTiles);
+        height = Math.Clamp(height, (byte)1, SceneMapOverlay.MaxVolumeTiles);
+        var oldW = link.Width;
+        var oldH = link.Height;
+        changes.Execute(
+            "Set GroundLink size",
+            apply: () =>
+            {
+                link.Width = width;
+                link.Height = height;
+            },
+            revert: () =>
+            {
+                link.Width = oldW;
+                link.Height = oldH;
+            },
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "link.size",
+                Target = LinkTarget(link),
+                Values =
+                {
+                    ["width"] = width.ToString(),
+                    ["height"] = height.ToString(),
+                },
+            });
+    }
+
+    public static void SetLinkRet(ChangeService changes, SceneLink link, byte ret)
+    {
+        var old = link.Ret;
+        changes.Execute(
+            "Set GroundLink ret",
+            apply: () => link.Ret = ret,
+            revert: () => link.Ret = old,
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "link.ret",
+                Target = LinkTarget(link),
+                Values = { ["ret"] = ret.ToString() },
+            });
+    }
+
+    public static void RemoveLink(ChangeService changes, Scene scene, SceneLink link)
+    {
+        var index = scene.Links.IndexOf(link);
+        if (index < 0)
+            return;
+        changes.Execute(
+            "Remove GroundLink",
+            apply: () =>
+            {
+                scene.Links.Remove(link);
+                scene.LinksListDirty = true;
+            },
+            revert: () =>
+            {
+                if (index > scene.Links.Count)
+                    scene.Links.Add(link);
+                else
+                    scene.Links.Insert(index, link);
+                scene.LinksListDirty = true;
+            },
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "link.remove",
+                Target = LinkTarget(link),
+                Values =
+                {
+                    ["mapId"] = scene.MapId.ToString(),
+                    ["index"] = index.ToString(),
+                },
+            });
+    }
+
+    private static string LinkTarget(SceneLink link) =>
+        link.RomOffset >= 0 ? $"0x{link.RomOffset:X}" : "link:new";
 
     public static SceneEntity DuplicateEntity(ChangeService changes, SceneSector sector, SceneEntity source)
     {
@@ -723,20 +889,24 @@ public static class SceneEditing
         SceneEntityKind kind,
         SceneSector sector,
         int index,
-        CompactPos position)
+        CompactPos position,
+        byte width = 1,
+        byte height = 1)
     {
+        width = Math.Clamp(width, (byte)1, SceneMapOverlay.MaxVolumeTiles);
+        height = Math.Clamp(height, (byte)1, SceneMapOverlay.MaxVolumeTiles);
         var size = SceneEntity.EntrySizeFor(kind);
         var raw = new byte[size];
-        raw[2] = 1;
-        raw[3] = 1;
+        raw[2] = width;
+        raw[3] = height;
         position.Write(raw.AsSpan(4, 4));
         return new SceneEntity
         {
             Kind = kind,
             TypeId = 0,
             DirectionOrFlags = 0,
-            Width = 1,
-            Height = 1,
+            Width = width,
+            Height = height,
             Position = position,
             RomOffset = -1,
             Group = sector.Group,

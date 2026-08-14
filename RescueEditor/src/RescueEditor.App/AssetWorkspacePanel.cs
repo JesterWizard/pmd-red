@@ -400,6 +400,10 @@ public sealed class AssetWorkspacePanel : UserControl
                 {
                     _previewHost.Child = BuildPortraitSheetEditor(asset, image);
                 }
+                else if (asset.Kind == AssetKind.GroundMap)
+                {
+                    _previewHost.Child = BuildGroundMapEditor(asset, image);
+                }
                 else if (asset.Kind is AssetKind.Dungeon or AssetKind.DungeonFloor &&
                     !string.IsNullOrWhiteSpace(preview.Text))
                 {
@@ -700,6 +704,103 @@ public sealed class AssetWorkspacePanel : UserControl
             Children = { replace, status },
         });
 
+        return new DockPanel
+        {
+            LastChildFill = true,
+            Children =
+            {
+                new Border { [DockPanel.DockProperty] = Dock.Top, Child = bar },
+                preview,
+            },
+        };
+    }
+
+    private Control BuildGroundMapEditor(AssetDescriptor asset, Control preview)
+    {
+        var status = new TextBlock
+        {
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            TextWrapping = TextWrapping.NoWrap,
+            TextTrimming = TextTrimming.CharacterEllipsis,
+            Text = GroundMapCodec.RestrictionsText,
+        };
+        var import = EditorChrome.ToolButton("Import PNG…");
+        import.Click += async (_, _) =>
+        {
+            if (_workingRom is null)
+            {
+                status.Text = "Open a ROM to import map tiles.";
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            var mapName = asset.Metadata.GetValueOrDefault("romName");
+            if (string.IsNullOrWhiteSpace(mapName))
+            {
+                status.Text = "This ground map has no ROM name.";
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            var top = TopLevel.GetTopLevel(this);
+            if (top is null)
+                return;
+            var files = await top.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+            {
+                Title = "Ground map PNG",
+                AllowMultiple = false,
+                FileTypeFilter = [new FilePickerFileType("PNG image") { Patterns = ["*.png"] }],
+            });
+            var file = files.FirstOrDefault();
+            if (file is null)
+                return;
+
+            await using var stream = await file.OpenReadAsync();
+            using var memory = new MemoryStream();
+            await stream.CopyToAsync(memory);
+            var image = RgbaImage.FromPng(memory.ToArray());
+            if (image is null)
+            {
+                status.Text = "Could not decode that PNG.";
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            var rejected = GroundMapCodec.Validate(image);
+            if (rejected is not null)
+            {
+                status.Text = rejected;
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            var buffer = _workingRom.BeginMutate();
+            var dirty = new List<RomSpan>();
+            var error = GroundMapCodec.TryWrite(buffer, _catalog, mapName, image, dirty);
+            if (error is not null)
+            {
+                status.Text = error;
+                status.Foreground = EditorTheme.WarningBrush;
+                return;
+            }
+
+            _workingRom.CommitDirty(buffer, dirty);
+            _rom = _workingRom.View;
+            status.Text = $"Imported tiles for {mapName} (Build ROM to export).";
+            status.Foreground = EditorTheme.TextMutedBrush;
+            await ShowPreviewAsync(asset);
+        };
+
+        var bar = EditorChrome.ToolbarHost(new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center,
+            Children = { import, status },
+        });
         return new DockPanel
         {
             LastChildFill = true,

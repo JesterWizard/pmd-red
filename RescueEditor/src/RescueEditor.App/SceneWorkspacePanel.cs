@@ -5,6 +5,7 @@ using Avalonia.Controls.Templates;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.Platform.Storage;
 using Avalonia.Styling;
 using RescueEditor.Core;
 
@@ -45,6 +46,10 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly ToggleButton _snapToggle;
     private readonly ToggleButton _selectTool;
     private readonly ToggleButton _panTool;
+    private readonly ToggleButton _addCollisionTool;
+    private readonly ToggleButton _eraseCollisionTool;
+    private readonly ToggleButton _drawLinkTool;
+    private readonly ToggleButton _drawEventTool;
     private readonly Button _undoButton;
     private readonly Button _redoButton;
     private readonly Panel _inspectorContentHost;
@@ -102,6 +107,11 @@ public sealed class SceneWorkspacePanel : UserControl
     private int _selectedLinkIndex = -1;
     private ListBox? _linksList;
     private TextBlock? _linkDetails;
+    private CompactSpinBox? _linkXBox;
+    private CompactSpinBox? _linkYBox;
+    private CompactSpinBox? _linkWBox;
+    private CompactSpinBox? _linkHBox;
+    private CompactSpinBox? _linkRetBox;
     private ScriptCommandData? _selectedCommand;
     private ScriptRefData? _selectedStation;
     private bool _suppressPropertyEvents;
@@ -137,6 +147,16 @@ public sealed class SceneWorkspacePanel : UserControl
             RefreshAll();
             DirtyChanged?.Invoke(this, EventArgs.Empty);
         };
+        _map.LinkMoved += (_, link) =>
+        {
+            if (_changes is null || _map.MovedPending is not { } pos)
+                return;
+            SceneEditing.MoveLink(_changes, link, pos);
+            _map.MovedPending = null;
+            RefreshAll();
+            DirtyChanged?.Invoke(this, EventArgs.Empty);
+        };
+        _map.VolumeCommitted += (_, commit) => OnVolumeCommitted(commit);
 
         _groupBox = EditorChrome.CompactNumeric(0, 255, 44);
         _groupBox.Value = 0;
@@ -169,24 +189,43 @@ public sealed class SceneWorkspacePanel : UserControl
         _snapToggle.IsCheckedChanged += (_, _) => _map.SnapToGrid = _snapToggle.IsChecked == true;
         _map.SnapToGrid = true;
 
-        _selectTool = EditorChrome.ToolToggle("Select", isChecked: true);
-        _panTool = EditorChrome.ToolToggle("Pan");
+        _selectTool = EditorChrome.ToolToggle(SceneToolbarCopy.Select, isChecked: true);
+        _panTool = EditorChrome.ToolToggle(SceneToolbarCopy.Pan);
+        _addCollisionTool = EditorChrome.ToolToggle(SceneToolbarCopy.PaintCollision, tip: SceneToolbarCopy.PaintCollisionTip);
+        _eraseCollisionTool = EditorChrome.ToolToggle(SceneToolbarCopy.EraseCollision, tip: SceneToolbarCopy.EraseCollisionTip);
+        _drawLinkTool = EditorChrome.ToolToggle(SceneToolbarCopy.DrawLink, tip: SceneToolbarCopy.DrawLinkTip);
+        _drawEventTool = EditorChrome.ToolToggle(SceneToolbarCopy.DrawEvent, tip: SceneToolbarCopy.DrawEventTip);
         _selectTool.IsCheckedChanged += (_, _) =>
         {
             if (_selectTool.IsChecked == true)
-            {
-                _panTool.IsChecked = false;
-                _map.Tool = SceneMapTool.Select;
-            }
+                SetMapTool(SceneMapTool.Select);
         };
         _panTool.IsCheckedChanged += (_, _) =>
         {
             if (_panTool.IsChecked == true)
-            {
-                _selectTool.IsChecked = false;
-                _map.Tool = SceneMapTool.Pan;
-            }
+                SetMapTool(SceneMapTool.Pan);
         };
+        _addCollisionTool.IsCheckedChanged += (_, _) =>
+        {
+            if (_addCollisionTool.IsChecked == true)
+                SetMapTool(SceneMapTool.PaintCollisionAdd);
+        };
+        _eraseCollisionTool.IsCheckedChanged += (_, _) =>
+        {
+            if (_eraseCollisionTool.IsChecked == true)
+                SetMapTool(SceneMapTool.PaintCollisionErase);
+        };
+        _drawLinkTool.IsCheckedChanged += (_, _) =>
+        {
+            if (_drawLinkTool.IsChecked == true)
+                SetMapTool(SceneMapTool.DrawLink);
+        };
+        _drawEventTool.IsCheckedChanged += (_, _) =>
+        {
+            if (_drawEventTool.IsChecked == true)
+                SetMapTool(SceneMapTool.DrawEvent);
+        };
+        _map.CollisionEdited += (_, collision) => WriteCollision(collision);
 
         _undoButton = EditorChrome.ToolButton("Undo");
         _redoButton = EditorChrome.ToolButton("Redo");
@@ -196,28 +235,31 @@ public sealed class SceneWorkspacePanel : UserControl
         playButton.Click += async (_, _) => await OpenScenePlayAsync();
         var diffButton = EditorChrome.ToolButton("Diff");
         diffButton.Click += async (_, _) => await OpenSceneDiffAsync();
+        var importMap = EditorChrome.ToolButton("Import PNG…");
+        importMap.Click += async (_, _) => await ImportMapPngAsync();
 
-        var toolbarInner = new StackPanel
-        {
-            Orientation = Orientation.Horizontal,
-            VerticalAlignment = VerticalAlignment.Center,
-            Children =
-            {
-                _selectTool, _panTool,
-                EditorChrome.ToolbarSeparator(),
-                _gridToggle, _snapToggle,
-                EditorChrome.ToolbarSeparator(),
+        var row1 = EditorChrome.ToolbarRow(
+            EditorChrome.ToolbarCluster(
+                SceneToolbarCopy.Tool,
+                _selectTool, _panTool, _drawLinkTool, _drawEventTool,
+                _addCollisionTool, _eraseCollisionTool),
+            EditorChrome.ToolbarCluster(SceneToolbarCopy.View, _gridToggle, _snapToggle),
+            EditorChrome.ToolbarCluster(
+                SceneToolbarCopy.Place,
                 EditorChrome.ToolbarLabel("Group"),
                 _groupBox,
                 EditorChrome.ToolbarLabel("Sector"),
-                _sectorBox,
-                EditorChrome.ToolbarSeparator(),
-                _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _collisionToggle,
-                EditorChrome.ToolbarSeparator(),
-                _undoButton, _redoButton, playButton, diffButton,
-            },
-        };
-        var toolbar = EditorChrome.ToolbarHost(toolbarInner);
+                _sectorBox));
+        var row2 = EditorChrome.ToolbarRowSplit(
+            EditorChrome.ToolbarCluster(
+                SceneToolbarCopy.Show,
+                _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _collisionToggle),
+            EditorChrome.ToolbarCluster(
+                SceneToolbarCopy.Edit,
+                _undoButton, _redoButton, playButton, diffButton, importMap));
+        var toolbar = EditorChrome.ToolbarHost(
+            EditorChrome.ToolbarStack(row1, row2),
+            rows: SceneToolbarLayout.RowCount);
 
         _status = new TextBlock(); // retained for RefreshMap notes; shown via map/events HUD
 
@@ -671,12 +713,126 @@ public sealed class SceneWorkspacePanel : UserControl
         RefreshAll();
     }
 
+    private void SetMapTool(SceneMapTool tool)
+    {
+        _selectTool.IsChecked = tool == SceneMapTool.Select;
+        _panTool.IsChecked = tool == SceneMapTool.Pan;
+        _addCollisionTool.IsChecked = tool == SceneMapTool.PaintCollisionAdd;
+        _eraseCollisionTool.IsChecked = tool == SceneMapTool.PaintCollisionErase;
+        _drawLinkTool.IsChecked = tool == SceneMapTool.DrawLink;
+        _drawEventTool.IsChecked = tool == SceneMapTool.DrawEvent;
+        _map.Tool = tool;
+        if (tool is SceneMapTool.PaintCollisionAdd or SceneMapTool.PaintCollisionErase)
+        {
+            _collisionToggle.IsChecked = true;
+            RefreshMap();
+        }
+        else if (tool == SceneMapTool.DrawLink)
+        {
+            _linksToggle.IsChecked = true;
+            RefreshMap();
+        }
+        else if (tool == SceneMapTool.DrawEvent)
+        {
+            _eventsToggle.IsChecked = true;
+            RefreshMap();
+        }
+    }
+
     public void SyncWorkingRom()
     {
         if (_workingRom is null || _database is null)
             return;
         _workingRom.Sync(_database, _charmap);
         _rom = _workingRom.View;
+    }
+
+    private void WriteCollision(GroundCollisionMap collision)
+    {
+        var bma = _scene?.Map?.BmaName;
+        if (string.IsNullOrWhiteSpace(bma) || _workingRom is null)
+            return;
+
+        var before = _rom is null ? null : GroundMapCodec.TryLoadCollisionOrEmpty(_rom, bma);
+        string? error = null;
+        void Write(GroundCollisionMap map)
+        {
+            error = ApplyGroundWrite((buffer, dirty) =>
+                GroundMapCodec.TryWriteCollision(buffer, catalog: null, bma, map, dirty));
+        }
+
+        if (_changes is not null && before is not null)
+            GroundMapEditing.PaintCollision(_changes, bma, before, collision, Write);
+        else
+            Write(collision);
+
+        _status.Text = error ?? $"Collision saved for {bma} (Build ROM to export).";
+        DirtyChanged?.Invoke(this, EventArgs.Empty);
+        RefreshMap();
+    }
+
+    private async Task ImportMapPngAsync()
+    {
+        var bma = _scene?.Map?.BmaName;
+        if (string.IsNullOrWhiteSpace(bma))
+        {
+            _status.Text = "This scene has no ground map to replace.";
+            return;
+        }
+        if (_workingRom is null)
+        {
+            _status.Text = "Open a ROM to import map tiles.";
+            return;
+        }
+
+        var top = TopLevel.GetTopLevel(this);
+        if (top is null)
+            return;
+        var files = await top.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Ground map PNG",
+            AllowMultiple = false,
+            FileTypeFilter = [new FilePickerFileType("PNG image") { Patterns = ["*.png"] }],
+        });
+        var file = files.FirstOrDefault();
+        if (file is null)
+            return;
+
+        await using var stream = await file.OpenReadAsync();
+        using var memory = new MemoryStream();
+        await stream.CopyToAsync(memory);
+        var image = RgbaImage.FromPng(memory.ToArray());
+        if (image is null)
+        {
+            _status.Text = "Could not decode that PNG.";
+            return;
+        }
+
+        var rejected = GroundMapCodec.Validate(image);
+        if (rejected is not null)
+        {
+            _status.Text = rejected;
+            return;
+        }
+
+        var error = ApplyGroundWrite((buffer, dirty) =>
+            GroundMapCodec.TryWrite(buffer, catalog: null, bma, image, dirty));
+        _status.Text = error ?? $"Imported tiles for {bma} (Build ROM to export).";
+        RefreshMap();
+    }
+
+    private string? ApplyGroundWrite(Func<MutableRom, List<RomSpan>, string?> write)
+    {
+        if (_workingRom is null)
+            return "Open a ROM to edit the ground map.";
+        var buffer = _workingRom.BeginMutate();
+        var dirty = new List<RomSpan>();
+        var error = write(buffer, dirty);
+        if (error is not null)
+            return error;
+        _workingRom.CommitDirty(buffer, dirty);
+        _rom = _workingRom.View;
+        return null;
     }
 
     private Control BuildSceneRightPanel()
@@ -818,10 +974,20 @@ public sealed class SceneWorkspacePanel : UserControl
             _selectedLink = item.Link;
             _selectedLinkIndex = item.Index;
             _selectedEntity = null;
-            if (_linkDetails is not null)
-                _linkDetails.Text = SceneMapOverlay.FormatLinkDetails(item.Link, item.Index);
+            RefreshLinkFields();
             RefreshMap();
         };
+
+        _linkXBox = EditorChrome.CompactNumeric(0, 255);
+        _linkYBox = EditorChrome.CompactNumeric(0, 255);
+        _linkWBox = EditorChrome.CompactNumeric(1, 64);
+        _linkHBox = EditorChrome.CompactNumeric(1, 64);
+        _linkRetBox = EditorChrome.CompactNumeric(0, 255);
+        _linkXBox.ValueChanged += (_, _) => ApplyLinkProps();
+        _linkYBox.ValueChanged += (_, _) => ApplyLinkProps();
+        _linkWBox.ValueChanged += (_, _) => ApplyLinkProps();
+        _linkHBox.ValueChanged += (_, _) => ApplyLinkProps();
+        _linkRetBox.ValueChanged += (_, _) => ApplyLinkProps();
 
         _linkDetails = new TextBlock
         {
@@ -831,24 +997,52 @@ public sealed class SceneWorkspacePanel : UserControl
             FontSize = EditorTheme.FontLabel,
             Foreground = EditorTheme.TextSecondaryBrush,
             LineHeight = 16,
-            Text = "Click a GroundLink on the map (with Links visible) to inspect it.",
+            Text = "Draw a Link volume on the map, or click an existing GroundLink.",
         };
+
+        var add = EditorChrome.IconButton("+", tip: "Add GroundLink");
+        var remove = EditorChrome.IconButton("−", tip: "Remove selected GroundLink");
+        add.Click += (_, _) => AddDefaultLink();
+        remove.Click += (_, _) => RemoveSelectedLink();
+        var actions = new Border
+        {
+            Background = EditorTheme.PanelBgRaisedBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 1, 0, 0),
+            Padding = new Thickness(EditorTheme.Space2, EditorTheme.Space1),
+            Child = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                Children = { add, remove },
+            },
+        };
+
+        var fields = EditorChrome.InspectorSection("Volume",
+            EditorChrome.PropertyRow("X", _linkXBox),
+            EditorChrome.PropertyRow("Y", _linkYBox),
+            EditorChrome.PropertyRow("Width", _linkWBox),
+            EditorChrome.PropertyRow("Height", _linkHBox),
+            EditorChrome.PropertyRow("Ret", _linkRetBox));
 
         var hint = new TextBlock
         {
-            Text = "Collision overlay is off by default. Toggle Collision in the toolbar to tint solid tiles.",
+            Text = "Link volume tool draws a warp/area rect. Ret is the GroundLink_GetPos/GetArea return. Script hooks stay in the Script inspector.",
             Margin = new Thickness(EditorTheme.Space4, 0, EditorTheme.Space4, EditorTheme.Space3),
             TextWrapping = TextWrapping.Wrap,
             FontSize = EditorTheme.FontLabel,
             Foreground = EditorTheme.TextMutedBrush,
         };
 
-        var panel = new Grid { RowDefinitions = new RowDefinitions("*,Auto,Auto") };
+        var panel = new Grid { RowDefinitions = new RowDefinitions("*,Auto,Auto,Auto,Auto") };
         panel.Children.Add(_linksList);
+        panel.Children.Add(fields);
+        Grid.SetRow(fields, 1);
         panel.Children.Add(_linkDetails);
-        Grid.SetRow(_linkDetails, 1);
+        Grid.SetRow(_linkDetails, 2);
+        panel.Children.Add(actions);
+        Grid.SetRow(actions, 3);
         panel.Children.Add(hint);
-        Grid.SetRow(hint, 2);
+        Grid.SetRow(hint, 4);
         return panel;
     }
 
@@ -879,7 +1073,62 @@ public sealed class SceneWorkspacePanel : UserControl
 
         _linkDetails.Text = _selectedLink is not null && _selectedLinkIndex >= 0
             ? SceneMapOverlay.FormatLinkDetails(_selectedLink, _selectedLinkIndex)
-            : "Click a GroundLink on the map (with Links visible) to inspect it.";
+            : "Draw a Link volume on the map, or click an existing GroundLink.";
+        RefreshLinkFields();
+    }
+
+    private void RefreshLinkFields()
+    {
+        if (_linkXBox is null || _linkYBox is null || _linkWBox is null || _linkHBox is null || _linkRetBox is null)
+            return;
+        _suppressPropertyEvents = true;
+        try
+        {
+            if (_selectedLink is null)
+            {
+                _linkXBox.Value = 0;
+                _linkYBox.Value = 0;
+                _linkWBox.Value = 1;
+                _linkHBox.Value = 1;
+                _linkRetBox.Value = 0;
+                return;
+            }
+
+            _linkXBox.Value = _selectedLink.Position.XTiles;
+            _linkYBox.Value = _selectedLink.Position.YTiles;
+            _linkWBox.Value = _selectedLink.Width;
+            _linkHBox.Value = _selectedLink.Height;
+            _linkRetBox.Value = _selectedLink.Ret;
+        }
+        finally
+        {
+            _suppressPropertyEvents = false;
+        }
+    }
+
+    private void ApplyLinkProps()
+    {
+        if (_suppressPropertyEvents || _changes is null || _selectedLink is null)
+            return;
+        if (_linkXBox is null || _linkYBox is null || _linkWBox is null || _linkHBox is null || _linkRetBox is null)
+            return;
+
+        var x = (byte)(_linkXBox.Value ?? 0);
+        var y = (byte)(_linkYBox.Value ?? 0);
+        var w = (byte)(_linkWBox.Value ?? 1);
+        var h = (byte)(_linkHBox.Value ?? 1);
+        var ret = (byte)(_linkRetBox.Value ?? 0);
+        var pos = new CompactPos(x, y, _selectedLink.Position.XFlags, _selectedLink.Position.YFlags);
+        if (pos.XTiles != _selectedLink.Position.XTiles || pos.YTiles != _selectedLink.Position.YTiles)
+            SceneEditing.MoveLink(_changes, _selectedLink, pos);
+        if (_selectedLink.Width != w || _selectedLink.Height != h)
+            SceneEditing.SetLinkSize(_changes, _selectedLink, w, h);
+        if (_selectedLink.Ret != ret)
+            SceneEditing.SetLinkRet(_changes, _selectedLink, ret);
+
+        RefreshMap();
+        RefreshLinksPanel();
+        DirtyChanged?.Invoke(this, EventArgs.Empty);
     }
 
     private sealed class LinkListItem
@@ -1751,6 +2000,81 @@ public sealed class SceneWorkspacePanel : UserControl
         DirtyChanged?.Invoke(this, EventArgs.Empty);
     }
 
+    private void AddDefaultLink()
+    {
+        if (_changes is null || _scene is null)
+            return;
+        _selectedLink = SceneEditing.AddLink(_changes, _scene, new CompactPos(5, 5, 0, 0), 2, 2);
+        _selectedLinkIndex = _scene.Links.Count - 1;
+        _selectedEntity = null;
+        SetInspectorMode("Links");
+        RefreshAll();
+        DirtyChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void RemoveSelectedLink()
+    {
+        if (_changes is null || _scene is null || _selectedLink is null)
+            return;
+        SceneEditing.RemoveLink(_changes, _scene, _selectedLink);
+        _selectedLink = null;
+        _selectedLinkIndex = -1;
+        RefreshAll();
+        DirtyChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void OnVolumeCommitted(SceneVolumeCommit commit)
+    {
+        if (_changes is null || _scene is null)
+            return;
+
+        if (commit.IsCreate)
+        {
+            if (commit.IsLink)
+            {
+                _selectedLink = SceneEditing.AddLink(
+                    _changes, _scene, commit.Position, commit.Width, commit.Height);
+                _selectedLinkIndex = _scene.Links.Count - 1;
+                _selectedEntity = null;
+                SetInspectorMode("Links");
+            }
+            else
+            {
+                var sector = CurrentSector();
+                if (sector is null)
+                    return;
+                _selectedEntity = SceneEditing.AddEntity(
+                    _changes, sector, SceneEntityKind.Event, commit.Position, commit.Width, commit.Height);
+                _selectedLink = null;
+                _selectedLinkIndex = -1;
+                SetInspectorMode("Events");
+            }
+        }
+        else if (commit.Link is not null)
+        {
+            if (commit.Position.XTiles != commit.Link.Position.XTiles ||
+                commit.Position.YTiles != commit.Link.Position.YTiles)
+                SceneEditing.MoveLink(_changes, commit.Link, commit.Position);
+            if (commit.Width != commit.Link.Width || commit.Height != commit.Link.Height)
+                SceneEditing.SetLinkSize(_changes, commit.Link, commit.Width, commit.Height);
+            _selectedLink = commit.Link;
+            _selectedEntity = null;
+        }
+        else if (commit.Entity is not null)
+        {
+            if (commit.Position.XTiles != commit.Entity.Position.XTiles ||
+                commit.Position.YTiles != commit.Entity.Position.YTiles)
+                SceneEditing.MoveEntity(_changes, commit.Entity, commit.Position);
+            if (commit.Width != commit.Entity.Width || commit.Height != commit.Entity.Height)
+                SceneEditing.SetEntitySize(_changes, commit.Entity, commit.Width, commit.Height);
+            _selectedEntity = commit.Entity;
+            _selectedLink = null;
+        }
+
+        RefreshAll();
+        DirtyChanged?.Invoke(this, EventArgs.Empty);
+    }
+
     private void RemoveSelectedEntity()
     {
         var sector = CurrentSector();
@@ -1825,18 +2149,19 @@ public sealed class SceneWorkspacePanel : UserControl
                 DirtyChanged?.Invoke(this, EventArgs.Empty);
                 return true;
             case EditorCommandId.DeleteSelection:
+                if (_selectedLink is not null)
+                {
+                    RemoveSelectedLink();
+                    return true;
+                }
                 if (_selectedEntity is null) return false;
                 RemoveSelectedEntity();
                 return true;
             case EditorCommandId.SelectTool:
-                _selectTool.IsChecked = true;
-                _panTool.IsChecked = false;
-                _map.Tool = SceneMapTool.Select;
+                SetMapTool(SceneMapTool.Select);
                 return true;
             case EditorCommandId.PanTool:
-                _panTool.IsChecked = true;
-                _selectTool.IsChecked = false;
-                _map.Tool = SceneMapTool.Pan;
+                SetMapTool(SceneMapTool.Pan);
                 return true;
             case EditorCommandId.ToggleGrid:
                 _gridToggle.IsChecked = _gridToggle.IsChecked != true;

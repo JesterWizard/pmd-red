@@ -11,7 +11,6 @@ public static class SceneGraphParser
     private const int SectorSize = 40;
     private const int GroupSize = 8;
     private const int HeaderSize = 12;
-    private const int LinkSize = 8;
 
     public static SceneDatabase Parse(
         RomImage rom,
@@ -181,6 +180,7 @@ public static class SceneGraphParser
             Name = map.Name,
             Map = map,
             HeaderOffset = headerOffset,
+            LinksOffset = linksOffset,
         };
 
         if (groupsOffset >= 0)
@@ -209,8 +209,8 @@ public static class SceneGraphParser
             // Use group count heuristic: many maps store a short list. Cap by scanning for plausible entries.
             for (var i = 0; i < 256; i++)
             {
-                var linkOffset = linksOffset + i * LinkSize;
-                if (!rom.IsRangeValid(linkOffset, LinkSize))
+                var linkOffset = linksOffset + i * SceneLink.Size;
+                if (!rom.IsRangeValid(linkOffset, SceneLink.Size))
                     break;
                 var pos = CompactPos.Read(rom, linkOffset);
                 var width = rom.ReadByte(linkOffset + 4);

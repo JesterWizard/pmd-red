@@ -55,6 +55,18 @@ public sealed class WorkingRom
     public void Commit(MutableRom buffer, int offset, int length) =>
         Overlay(offset, buffer.Copy(offset, length));
 
+    public void CommitDirty(MutableRom buffer, IEnumerable<RomSpan> dirty)
+    {
+        if (buffer.Length != View.Length)
+        {
+            Adopt(buffer);
+            return;
+        }
+
+        foreach (var span in dirty)
+            Commit(buffer, span.Offset, span.Length);
+    }
+
     /// <summary>Replace the working image after a structural insert/delete. Clears byte overlays.</summary>
     public void Adopt(MutableRom buffer)
     {

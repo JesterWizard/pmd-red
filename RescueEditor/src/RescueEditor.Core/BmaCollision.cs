@@ -27,6 +27,28 @@ public sealed class GroundCollisionMap
         return _solid[tileY * WidthTiles + tileX];
     }
 
+    public bool SetSolidTile(int tileX, int tileY, bool solid)
+    {
+        if (tileX < 0 || tileY < 0 || tileX >= WidthTiles || tileY >= HeightTiles)
+            return false;
+        _solid[tileY * WidthTiles + tileX] = solid;
+        return true;
+    }
+
+    public bool ToggleTile(int tileX, int tileY)
+    {
+        if (tileX < 0 || tileY < 0 || tileX >= WidthTiles || tileY >= HeightTiles)
+            return false;
+        var next = !_solid[tileY * WidthTiles + tileX];
+        _solid[tileY * WidthTiles + tileX] = next;
+        return next;
+    }
+
+    public GroundCollisionMap Clone() =>
+        new(WidthTiles, HeightTiles, (bool[])_solid.Clone());
+
+    public bool[] CopySolid() => (bool[])_solid.Clone();
+
     /// <summary>Sample the tile under a pixel (top-left of an 8×8 cell).</summary>
     public bool IsSolidPixel(double pixelX, double pixelY) =>
         IsSolidTile((int)Math.Floor(pixelX / 8.0), (int)Math.Floor(pixelY / 8.0));
@@ -40,33 +62,56 @@ public static class BmaCollisionDecoder
         if (bma.Length < 12)
             return null;
 
-        var width = bma[0];
-        var height = bma[1];
-        var widthChunks = bma[4];
-        var heightChunks = bma[5];
-        var layers = Math.Clamp((int)bma[6], 0, 2);
-        var hasDataLayer = BinaryPrimitives.ReadInt16LittleEndian(bma[8..]);
         var hasCollision = BinaryPrimitives.ReadInt16LittleEndian(bma[10..]);
-        if (width <= 0 || height <= 0 || hasCollision <= 0)
+        if (hasCollision <= 0)
             return null;
-
-        var index = 12;
-        // Skip visual layers (same NRL walk as GroundMapRenderer).
-        for (var layer = 0; layer < Math.Max(1, layers); layer++)
-            index += ConsumeBmaLayer(bma[index..], widthChunks, heightChunks);
-
-        if (hasDataLayer > 0)
-            index += ConsumeGenericNrl(bma[index..], width * height);
-
-        if (index >= bma.Length)
+        if (!TryLocateCollision(bma, out var index, out var width, out var height))
             return null;
 
         var tiles = DecodeCollisionLayer(bma[index..], width, height, out _);
         return new GroundCollisionMap(width, height, tiles);
     }
 
+    public static bool TryLocateCollision(
+        ReadOnlySpan<byte> bma, out int offset, out int width, out int height)
+    {
+        offset = 0;
+        width = 0;
+        height = 0;
+        if (bma.Length < 12)
+            return false;
+
+        width = bma[0];
+        height = bma[1];
+        var widthChunks = bma[4];
+        var heightChunks = bma[5];
+        var layers = Math.Clamp((int)bma[6], 0, 2);
+        var hasDataLayer = BinaryPrimitives.ReadInt16LittleEndian(bma[8..]);
+        if (width <= 0 || height <= 0)
+            return false;
+
+        var index = 12;
+        for (var layer = 0; layer < Math.Max(1, layers); layer++)
+            index += ConsumeBmaLayer(bma[index..], widthChunks, heightChunks);
+
+        if (hasDataLayer > 0)
+            index += ConsumeGenericNrl(bma[index..], width * height);
+
+        if (index > bma.Length)
+            return false;
+        offset = index;
+        return true;
+    }
+
     public static GroundCollisionMap? TryLoad(RomImage rom, Scene scene)
     {
+        if (!string.IsNullOrWhiteSpace(scene.Map?.BmaName))
+        {
+            var byName = GroundMapCodec.TryLoadCollision(rom, scene.Map.BmaName);
+            if (byName is not null)
+                return byName;
+        }
+
         var asset = scene.Map?.GroundMapAsset;
         if (asset is null)
             return null;
@@ -79,6 +124,16 @@ public static class BmaCollisionDecoder
         {
             return null;
         }
+    }
+
+    public static GroundCollisionMap? TryLoadOrEmpty(RomImage rom, Scene scene)
+    {
+        var loaded = TryLoad(rom, scene);
+        if (loaded is not null)
+            return loaded;
+        if (string.IsNullOrWhiteSpace(scene.Map?.BmaName))
+            return null;
+        return GroundMapCodec.TryLoadCollisionOrEmpty(rom, scene.Map.BmaName);
     }
 
     public static bool[] DecodeCollisionLayer(
@@ -188,5 +243,59 @@ public static class BmaCollisionDecoder
         if (written < stopWhenSize)
             throw new InvalidDataException("Generic NRL ended before expected size.");
         return cursor;
+    }
+}
+
+/// <summary>Inverse of <see cref="BmaCollisionDecoder"/> collision RLE (+ row XOR).</summary>
+public static class BmaCollisionEncoder
+{
+    public static byte[] EncodeLayer(bool[] solid, int width, int height)
+    {
+        if (width <= 0 || height <= 0)
+            throw new ArgumentOutOfRangeException(nameof(width));
+        if (solid.Length != width * height)
+            throw new ArgumentException("Solid buffer length must equal width×height.", nameof(solid));
+
+        var raw = new byte[solid.Length];
+        var previous = new bool[width];
+        for (var i = 0; i < solid.Length; i++)
+        {
+            var col = i % width;
+            raw[i] = (byte)((solid[i] ^ previous[col]) ? 1 : 0);
+            previous[col] = solid[i];
+        }
+
+        var output = new List<byte>();
+        var cursor = 0;
+        while (cursor < raw.Length)
+        {
+            var value = raw[cursor];
+            var count = 1;
+            while (cursor + count < raw.Length && raw[cursor + count] == value && count < 128)
+                count++;
+            output.Add((byte)((value << 7) | (count - 1)));
+            cursor += count;
+        }
+
+        return output.ToArray();
+    }
+
+    public static byte[] ReplaceCollision(ReadOnlySpan<byte> bma, GroundCollisionMap collision)
+    {
+        if (!BmaCollisionDecoder.TryLocateCollision(bma, out var offset, out var width, out var height))
+            throw new InvalidDataException("BMA has no collision payload to replace.");
+        if (collision.WidthTiles != width || collision.HeightTiles != height)
+        {
+            throw new ArgumentException(
+                $"Collision is {collision.WidthTiles}×{collision.HeightTiles}, BMA is {width}×{height}.",
+                nameof(collision));
+        }
+
+        var encoded = EncodeLayer(collision.CopySolid(), width, height);
+        var result = new byte[offset + encoded.Length];
+        bma[..offset].CopyTo(result);
+        encoded.CopyTo(result, offset);
+        BinaryPrimitives.WriteInt16LittleEndian(result.AsSpan(10), 1);
+        return result;
     }
 }

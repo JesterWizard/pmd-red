@@ -266,7 +266,7 @@ public static class EditorChrome
         Opacity = 0.7,
     };
 
-    public static Button ToolButton(string text, bool primary = false)
+    public static Button ToolButton(string text, bool primary = false, string? tip = null)
     {
         var button = new Button
         {
@@ -275,8 +275,8 @@ public static class EditorChrome
             FontSize = EditorTheme.FontToolbar,
             Height = EditorTheme.ControlHeight,
             MinHeight = EditorTheme.ControlHeight,
-            Padding = new Thickness(EditorTheme.Space2 + 1, 0),
-            Margin = new Thickness(0, 0, 1, 0),
+            Padding = new Thickness(EditorTheme.Space3, 0),
+            Margin = new Thickness(0),
             VerticalContentAlignment = VerticalAlignment.Center,
             HorizontalContentAlignment = HorizontalAlignment.Center,
             CornerRadius = new CornerRadius(0),
@@ -292,10 +292,12 @@ public static class EditorChrome
             button.Background = Brushes.Transparent;
             button.Foreground = EditorTheme.TextSecondaryBrush;
         }
+        if (!string.IsNullOrWhiteSpace(tip))
+            ToolTip.SetTip(button, tip);
         return button;
     }
 
-    public static ToggleButton ToolToggle(string text, bool isChecked = false)
+    public static ToggleButton ToolToggle(string text, bool isChecked = false, string? tip = null)
     {
         var button = new ToggleButton
         {
@@ -305,15 +307,18 @@ public static class EditorChrome
             FontSize = EditorTheme.FontMeta,
             Height = EditorTheme.ControlHeight,
             MinHeight = EditorTheme.ControlHeight,
-            Padding = new Thickness(EditorTheme.Space2 + 1, 0),
-            Margin = new Thickness(0, 0, 1, 0),
+            Padding = new Thickness(EditorTheme.Space3, 0),
+            Margin = new Thickness(0),
             VerticalContentAlignment = VerticalAlignment.Center,
+            HorizontalContentAlignment = HorizontalAlignment.Center,
             CornerRadius = new CornerRadius(0),
             BorderThickness = new Thickness(0),
             Background = Brushes.Transparent,
             Foreground = EditorTheme.TextSecondaryBrush,
         };
         button.Classes.Add("rt-tool");
+        if (!string.IsNullOrWhiteSpace(tip))
+            ToolTip.SetTip(button, tip);
         return button;
     }
 
@@ -399,13 +404,105 @@ public static class EditorChrome
         return box;
     }
 
-    public static Border ToolbarHost(Control content) => new()
+    public static Border ToolbarHost(Control content, int rows = 1)
     {
-        Background = EditorTheme.ToolbarBgBrush,
-        Height = EditorTheme.ToolbarHeight,
-        Padding = new Thickness(EditorTheme.Space3, 0),
-        Child = content,
-    };
+        var stripRows = Math.Max(1, rows);
+        return new Border
+        {
+            Background = EditorTheme.ToolbarBgBrush,
+            Height = stripRows == 1 ? EditorTheme.ToolbarHeight : double.NaN,
+            MinHeight = EditorTheme.ToolbarHeight * stripRows,
+            Padding = new Thickness(EditorTheme.Space3, 0),
+            Child = content,
+        };
+    }
+
+    public static StackPanel ToolbarRow(params Control[] children)
+    {
+        var row = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center,
+            Height = EditorTheme.ToolbarHeight,
+        };
+        foreach (var child in children)
+            row.Children.Add(child);
+        return row;
+    }
+
+    public static Grid ToolbarRowSplit(Control left, Control right)
+    {
+        var grid = new Grid
+        {
+            Height = EditorTheme.ToolbarHeight,
+            ColumnDefinitions = new ColumnDefinitions("*,Auto"),
+        };
+        left.VerticalAlignment = VerticalAlignment.Center;
+        right.VerticalAlignment = VerticalAlignment.Center;
+        grid.Children.Add(left);
+        Grid.SetColumn(right, 1);
+        grid.Children.Add(right);
+        return grid;
+    }
+
+    public static Control ToolbarCluster(string caption, params Control[] children)
+    {
+        var inner = new StackPanel { Orientation = Orientation.Horizontal };
+        foreach (var child in children)
+            inner.Children.Add(child);
+
+        var well = new Border
+        {
+            Background = EditorTheme.InputBgBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(1),
+            Padding = new Thickness(1),
+            VerticalAlignment = VerticalAlignment.Center,
+            Child = inner,
+        };
+
+        return new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(0, 0, EditorTheme.Space5, 0),
+            Children =
+            {
+                new TextBlock
+                {
+                    Text = caption.ToUpperInvariant(),
+                    FontFamily = EditorTheme.UiFont,
+                    FontSize = EditorTheme.FontMeta,
+                    FontWeight = FontWeight.SemiBold,
+                    Foreground = EditorTheme.TextDimBrush,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin = new Thickness(0, 0, EditorTheme.Space2, 0),
+                },
+                well,
+            },
+        };
+    }
+
+    public static StackPanel ToolbarStack(params Control[] rows)
+    {
+        var stack = new StackPanel { Orientation = Orientation.Vertical };
+        for (var i = 0; i < rows.Length; i++)
+        {
+            if (i > 0)
+            {
+                stack.Children.Add(new Border
+                {
+                    Height = 1,
+                    Background = EditorTheme.BorderSubtleBrush,
+                    Opacity = 0.7,
+                });
+            }
+
+            stack.Children.Add(rows[i]);
+        }
+
+        return stack;
+    }
 
     public static Border StatusHost(Control content) => new()
     {

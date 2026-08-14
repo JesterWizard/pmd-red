@@ -240,12 +240,24 @@ public sealed class SceneGroup
 
 public sealed class SceneLink
 {
+    public const int Size = 8;
+
     public CompactPos Position { get; set; }
     public byte Width { get; set; }
     public byte Height { get; set; }
     public byte Ret { get; set; }
     public byte Unk7 { get; set; }
     public int RomOffset { get; set; } = -1;
+    public bool NeedsListRewrite { get; set; }
+
+    public void Write(Span<byte> destination)
+    {
+        Position.Write(destination[..4]);
+        destination[4] = Width;
+        destination[5] = Height;
+        destination[6] = Ret;
+        destination[7] = Unk7;
+    }
 }
 
 public sealed class GroundMapDefinition
@@ -271,6 +283,8 @@ public sealed class Scene
     public string Name { get; set; } = string.Empty;
     public GroundMapDefinition? Map { get; set; }
     public int HeaderOffset { get; set; } = -1;
+    public int LinksOffset { get; set; } = -1;
+    public bool LinksListDirty { get; set; }
     public List<SceneGroup> Groups { get; } = new();
     public List<SceneLink> Links { get; } = new();
     public List<string> Diagnostics { get; } = new();

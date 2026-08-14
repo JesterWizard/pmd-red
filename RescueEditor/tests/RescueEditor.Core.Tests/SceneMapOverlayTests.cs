@@ -82,6 +82,56 @@ public sealed class SceneMapOverlayTests
     }
 
     [Fact]
+    public void VolumeFromPixelsNormalizesInvertedDragAndSnapsToTiles()
+    {
+        var volume = SceneMapOverlay.VolumeFromPixels(pixelX0: 20, pixelY0: 28, pixelX1: 4, pixelY1: 8, snap: true);
+
+        Assert.Equal(0, volume.Position.XTiles);
+        Assert.Equal(1, volume.Position.YTiles);
+        Assert.Equal(3, volume.Width);
+        Assert.Equal(3, volume.Height);
+    }
+
+    [Fact]
+    public void VolumeFromPixelsEnforcesMinimumOneTile()
+    {
+        var volume = SceneMapOverlay.VolumeFromPixels(10, 10, 11, 11, snap: true);
+
+        Assert.Equal(1, volume.Position.XTiles);
+        Assert.Equal(1, volume.Position.YTiles);
+        Assert.Equal(1, volume.Width);
+        Assert.Equal(1, volume.Height);
+    }
+
+    [Fact]
+    public void HitHandlePrefersCornerOverBody()
+    {
+        var rect = new SceneMapHitRect(8, 16, 32, 24);
+
+        Assert.Equal(SceneMapResizeHandle.SouthEast, SceneMapOverlay.HitHandle(rect, 8 + 32 - 1, 16 + 24 - 1));
+        Assert.Equal(SceneMapResizeHandle.NorthWest, SceneMapOverlay.HitHandle(rect, 8, 16));
+        Assert.Equal(SceneMapResizeHandle.Body, SceneMapOverlay.HitHandle(rect, 20, 28));
+        Assert.Equal(SceneMapResizeHandle.None, SceneMapOverlay.HitHandle(rect, 0, 0));
+    }
+
+    [Fact]
+    public void ResizeVolumeGrowsFromSouthEastAndMovesOriginFromNorthWest()
+    {
+        var origin = new SceneVolumeTiles(new CompactPos(2, 3, 0, 0), 2, 2);
+        var se = SceneMapOverlay.ResizeVolume(origin, SceneMapResizeHandle.SouthEast, pixelX: 48, pixelY: 56, snap: true);
+        Assert.Equal(2, se.Position.XTiles);
+        Assert.Equal(3, se.Position.YTiles);
+        Assert.Equal(4, se.Width);
+        Assert.Equal(4, se.Height);
+
+        var nw = SceneMapOverlay.ResizeVolume(origin, SceneMapResizeHandle.NorthWest, pixelX: 8, pixelY: 16, snap: true);
+        Assert.Equal(1, nw.Position.XTiles);
+        Assert.Equal(2, nw.Position.YTiles);
+        Assert.Equal(3, nw.Width);
+        Assert.Equal(3, nw.Height);
+    }
+
+    [Fact]
     public void FormatLinkDetailsIncludesIndexBoundsAndRet()
     {
         var link = new SceneLink
@@ -131,6 +181,19 @@ public sealed class SceneMapOverlayTests
 
         Assert.Equal(0x30, off.Pixels[0]);
         Assert.True(on.Pixels[0] > off.Pixels[0]);
+    }
+
+    [Fact]
+    public void WriteOverlayTile_SetsTintAndClears()
+    {
+        var pixels = new byte[16 * 8 * 4];
+        SceneMapOverlay.WriteOverlayTile(pixels, 16 * 4, 16, 8, tileX: 0, tileY: 0, solid: true);
+        Assert.Equal(SceneMapOverlay.CollisionTintR, pixels[0]);
+        Assert.Equal(SceneMapOverlay.CollisionTintA, pixels[3]);
+        SceneMapOverlay.WriteOverlayTile(pixels, 16 * 4, 16, 8, tileX: 0, tileY: 0, solid: false);
+        Assert.Equal(0, pixels[0]);
+        Assert.Equal(0, pixels[3]);
+        Assert.Equal(0, pixels[8 * 4]);
     }
 
     [Fact]

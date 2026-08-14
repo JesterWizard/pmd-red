@@ -679,13 +679,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
             return;
         }
 
-        if (buffer.Length != _workingRom.View.Length)
-            _workingRom.Adopt(buffer);
-        else
-        {
-            foreach (var span in dirty)
-                _workingRom.Commit(buffer, span.Offset, span.Length);
-        }
+        _workingRom.CommitDirty(buffer, dirty);
 
         _status.Text = $"Background saved for {sceneBma} (Build ROM to export).";
         if (_selected is not null)

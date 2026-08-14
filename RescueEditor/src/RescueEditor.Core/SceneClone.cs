@@ -25,6 +25,8 @@ public static class SceneClone
             Name = source.Name,
             Map = source.Map is null ? null : Clone(source.Map),
             HeaderOffset = source.HeaderOffset,
+            LinksOffset = source.LinksOffset,
+            LinksListDirty = source.LinksListDirty,
             ScriptSourceText = source.ScriptSourceText,
         };
         clone.Diagnostics.AddRange(source.Diagnostics);
@@ -169,6 +171,7 @@ public static class SceneClone
         Ret = source.Ret,
         Unk7 = source.Unk7,
         RomOffset = source.RomOffset,
+        NeedsListRewrite = source.NeedsListRewrite,
     };
 
     public static DialogueString Clone(DialogueString source)
