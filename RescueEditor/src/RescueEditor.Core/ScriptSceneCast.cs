@@ -17,7 +17,7 @@ public sealed record ScriptCastMember(
 
 /// <summary>
 /// Scene lives roster for script editor annotations (PORTRAIT speaker → species, @live headers).
-/// Portrait / MSG_* speaker ids are live <em>indices</em> in the current sector (0 = first actor).
+/// MSG/PORTRAIT speaker ids are name slots; UPDATE_NAME binds them to a live (see SpeakerSlotMap).
 /// </summary>
 public sealed class ScriptSceneCast
 {
@@ -132,6 +132,20 @@ public sealed class ScriptSceneCast
     public bool TryGet(int liveIndex, out ScriptCastMember member) =>
         _byLive.TryGetValue(liveIndex, out member!);
 
+    public bool TryGetByTypeId(int typeId, out ScriptCastMember member)
+    {
+        foreach (var candidate in Members)
+        {
+            if (candidate.TypeId != typeId)
+                continue;
+            member = candidate;
+            return true;
+        }
+
+        member = null!;
+        return false;
+    }
+
     public string? DescribeLive(int liveIndex) =>
         TryGet(liveIndex, out var member) ? $"live{liveIndex} {member.DisplayLabel}" : null;
 
@@ -141,7 +155,7 @@ public sealed class ScriptSceneCast
             return "No lives in this scene sector.";
 
         var builder = new StringBuilder();
-        builder.AppendLine("Scene cast — PORTRAIT / MSG_* id = live index:");
+        builder.AppendLine("Scene cast — lives in this sector (MSG ids are name slots, not liveN):");
         foreach (var member in Members)
         {
             builder.Append("  • live").Append(member.LiveIndex)

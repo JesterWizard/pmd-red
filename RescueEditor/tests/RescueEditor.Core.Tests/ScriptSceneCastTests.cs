@@ -192,6 +192,6 @@ public sealed class ScriptSceneCastTests
         Assert.Equal("PARTNER", cast.Members[1].Role);
         Assert.Equal("Bulbasaur", cast.Members[1].SpeciesName);
         Assert.Equal("live1 PARTNER (Bulbasaur)", cast.DescribeLive(1));
-        Assert.Contains("PORTRAIT / MSG_* id = live index", cast.RosterText());
+        Assert.Contains("MSG ids are name slots", cast.RosterText());
     }
 }

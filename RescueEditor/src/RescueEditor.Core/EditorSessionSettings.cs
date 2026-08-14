@@ -9,6 +9,7 @@ public sealed class EditorSessionSettings
     public List<string> RecentProjects { get; set; } = new();
     public string? LastRomPath { get; set; }
     public string? LastProjectPath { get; set; }
+    public string? ScriptEditorKind { get; set; }
     public string? ExplorerCategory { get; set; }
     public string? ExplorerAssetId { get; set; }
     public int? ExplorerSceneMapId { get; set; }

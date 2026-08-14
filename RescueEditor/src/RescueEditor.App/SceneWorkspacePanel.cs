@@ -84,6 +84,10 @@ public sealed class SceneWorkspacePanel : UserControl
     private TextBlock? _scriptSummary;
     private ListBox? _scriptStationList;
     private TextBlock? _scriptEmptyHint;
+    private ToggleButton? _scriptKindToggle;
+    private ToggleButton? _eventKindToggle;
+    private Button? _openScriptButton;
+    private ScriptEditorKind _scriptEditorKind = ScriptEditorKind.Script;
     private string _inspectorMode = "Scene";
     private SceneStationEntry? _selectedScriptStation;
 
@@ -708,6 +712,12 @@ public sealed class SceneWorkspacePanel : UserControl
 
     public void SetScriptNames(ScriptNamedDefinitions? names) => _scriptNames = names;
 
+    public ScriptEditorKind ScriptEditorKind
+    {
+        get => _scriptEditorKind;
+        set => SetScriptEditorKind(value);
+    }
+
     public void RefreshFromExternal()
     {
         SyncWorkingRom();
@@ -1177,7 +1187,7 @@ public sealed class SceneWorkspacePanel : UserControl
 
         _scriptEmptyHint = new TextBlock
         {
-            Text = "No station scripts in this scene. Add one for the current map sector, or open the full editor.",
+            Text = "No station scripts in this scene. Add one for the current map sector, or open the editor.",
             Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
             TextWrapping = TextWrapping.Wrap,
             FontSize = EditorTheme.FontLabel,
@@ -1187,8 +1197,20 @@ public sealed class SceneWorkspacePanel : UserControl
 
         var add = EditorChrome.IconButton("+", tip: "Add station script to current sector");
         add.Click += (_, _) => AddStationScript();
-        var open = EditorChrome.ToolButton("Open script editor", primary: true);
-        open.Click += (_, _) =>
+        _scriptKindToggle = EditorChrome.ToolToggle("Script", isChecked: true, tip: "Edit as source opcodes");
+        _eventKindToggle = EditorChrome.ToolToggle("Event", tip: "Edit as a high-level event list");
+        _scriptKindToggle.IsCheckedChanged += (_, _) =>
+        {
+            if (_scriptKindToggle.IsChecked == true)
+                SetScriptEditorKind(ScriptEditorKind.Script);
+        };
+        _eventKindToggle.IsCheckedChanged += (_, _) =>
+        {
+            if (_eventKindToggle.IsChecked == true)
+                SetScriptEditorKind(ScriptEditorKind.Event);
+        };
+        _openScriptButton = EditorChrome.ToolButton("Open script editor", primary: true);
+        _openScriptButton.Click += (_, _) =>
         {
             if (_scriptStationList.SelectedItem is ScriptStationListItem item)
                 OpenScriptEditor(item.Entry);
@@ -1206,13 +1228,13 @@ public sealed class SceneWorkspacePanel : UserControl
             {
                 Orientation = Orientation.Horizontal,
                 Spacing = EditorTheme.Space2,
-                Children = { add, open },
+                Children = { add, _scriptKindToggle, _eventKindToggle, _openScriptButton },
             },
         };
 
         var hint = new TextBlock
         {
-            Text = "Select a station and open the editor to jump to its @station section. Max 64 stations per sector.",
+            Text = "Script = source opcodes. Event = high-level list. Toggle before opening, or inside the editor. Max 64 stations per sector.",
             Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, EditorTheme.Space3),
             TextWrapping = TextWrapping.Wrap,
             FontSize = EditorTheme.FontMeta,
@@ -2411,6 +2433,19 @@ public sealed class SceneWorkspacePanel : UserControl
 
     public void OpenScriptAt(ScriptAssetHit hit) => OpenScriptEditor(hit: hit);
 
+    private void SetScriptEditorKind(ScriptEditorKind kind)
+    {
+        _scriptEditorKind = kind;
+        if (_scriptKindToggle is not null)
+            _scriptKindToggle.IsChecked = kind == ScriptEditorKind.Script;
+        if (_eventKindToggle is not null)
+            _eventKindToggle.IsChecked = kind == ScriptEditorKind.Event;
+        if (_openScriptButton is not null)
+            _openScriptButton.Content = kind == ScriptEditorKind.Event
+                ? "Open event editor"
+                : "Open script editor";
+    }
+
     private async void OpenScriptEditor(SceneStationEntry? focus = null, ScriptAssetHit? hit = null)
     {
         if (_scene is null || _changes is null)
@@ -2425,12 +2460,18 @@ public sealed class SceneWorkspacePanel : UserControl
         var names = _scriptNames;
         var editor = hit is not null
             ? new SceneScriptWindow(_scene, _changes, _database, names: names, rom: _rom,
-                repositoryRoot: preferredRoot, focusHit: hit, monsters: _monsters)
+                repositoryRoot: preferredRoot, focusHit: hit, monsters: _monsters,
+                initialKind: _scriptEditorKind, kindChanged: SetScriptEditorKind, portraits: _portraitAtlas,
+                actors: _actorSprites)
             : focus is { } entry
                 ? new SceneScriptWindow(_scene, _changes, _database, entry.Group, entry.Sector, entry.StationIndex,
-                    names, _rom, preferredRoot, monsters: _monsters)
+                    names, _rom, preferredRoot, monsters: _monsters,
+                    initialKind: _scriptEditorKind, kindChanged: SetScriptEditorKind, portraits: _portraitAtlas,
+                    actors: _actorSprites)
                 : new SceneScriptWindow(_scene, _changes, _database, names: names, rom: _rom,
-                    repositoryRoot: preferredRoot, monsters: _monsters);
+                    repositoryRoot: preferredRoot, monsters: _monsters,
+                    initialKind: _scriptEditorKind, kindChanged: SetScriptEditorKind, portraits: _portraitAtlas,
+                    actors: _actorSprites);
         editor.Applied += (_, _) =>
         {
             SyncWorkingRom();

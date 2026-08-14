@@ -695,7 +695,11 @@ public sealed class MainWindow : Window
         try
         {
             _selectedAsset = asset;
-            _sceneWorkspace ??= new SceneWorkspacePanel();
+            if (_sceneWorkspace is null)
+            {
+                _sceneWorkspace = new SceneWorkspacePanel();
+                _sceneWorkspace.ScriptEditorKind = ScriptEditorKindCodec.Parse(_session.ScriptEditorKind);
+            }
             _sceneWorkspace.DirtyChanged -= OnSceneDirty;
             _sceneWorkspace.DirtyChanged += OnSceneDirty;
             _sceneWorkspace.Load(_rom, _charmap, _scenes, _changes, scene,
@@ -1889,6 +1893,8 @@ public sealed class MainWindow : Window
         try
         {
             CaptureExplorerToSession();
+            if (_sceneWorkspace is not null)
+                _session.ScriptEditorKind = ScriptEditorKindCodec.ToToken(_sceneWorkspace.ScriptEditorKind);
             if (_rom is not null)
                 _session.LastRomPath = _rom.Path;
             if (!string.IsNullOrWhiteSpace(_project?.Path))

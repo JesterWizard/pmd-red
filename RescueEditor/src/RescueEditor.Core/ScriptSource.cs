@@ -9,7 +9,9 @@ public sealed record ScriptSourceError(int Line, string Message);
 public sealed class ScriptSourceCommand
 {
     public required ScriptCommandData Command { get; init; }
-    public string? DialogueText { get; init; }
+    public string? DialogueText { get; set; }
+    /// <summary>1-based source line, or 0 if unknown (inserted commands).</summary>
+    public int SourceLine { get; set; }
 }
 
 public sealed class ScriptSourceSection
@@ -245,6 +247,7 @@ public static class ScriptSource
                 continue;
             }
 
+            command.SourceLine = lineNumber;
             current.Commands.Add(command);
         }
 

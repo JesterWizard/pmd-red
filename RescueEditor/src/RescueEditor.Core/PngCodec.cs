@@ -24,6 +24,41 @@ public sealed class RgbaImage
     public byte[] ToPng() => PngCodec.Encode(this);
 
     public static RgbaImage? FromPng(byte[] png) => PngCodec.TryDecode(png);
+
+    public RgbaImage ScaleToFit(int maxWidth, int maxHeight)
+    {
+        if (maxWidth <= 0 || maxHeight <= 0)
+            throw new ArgumentOutOfRangeException(nameof(maxWidth));
+        if (Width <= maxWidth && Height <= maxHeight)
+            return this;
+        var scale = Math.Min(maxWidth / (double)Width, maxHeight / (double)Height);
+        var width = Math.Max(1, (int)Math.Round(Width * scale));
+        var height = Math.Max(1, (int)Math.Round(Height * scale));
+        return NearestResize(width, height);
+    }
+
+    public RgbaImage NearestResize(int width, int height)
+    {
+        if (width <= 0 || height <= 0)
+            throw new ArgumentOutOfRangeException(nameof(width));
+        var dest = new byte[width * height * 4];
+        for (var y = 0; y < height; y++)
+        {
+            var sy = y * Height / height;
+            for (var x = 0; x < width; x++)
+            {
+                var sx = x * Width / width;
+                var si = (sy * Width + sx) * 4;
+                var di = (y * width + x) * 4;
+                dest[di] = Pixels[si];
+                dest[di + 1] = Pixels[si + 1];
+                dest[di + 2] = Pixels[si + 2];
+                dest[di + 3] = Pixels[si + 3];
+            }
+        }
+
+        return new RgbaImage(width, height, dest);
+    }
 }
 
 public static class PngCodec
