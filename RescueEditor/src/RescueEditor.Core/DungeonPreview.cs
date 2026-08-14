@@ -71,7 +71,7 @@ public static class DungeonPreview
             builder.AppendLine(
                 $"  Tileset {props.Tileset} · Music {DungeonIndexer.ResolveMusic(props.BgMusic, labels)} · Weather {DungeonIndexer.PrettyWeather(props.Weather, labels)}");
             builder.AppendLine(
-                $"  Layout {props.Layout} · Item density {props.ItemDensity} · Trap density {props.TrapDensity}");
+                $"  {DungeonIndexer.ResolveLayout(props.Layout, labels)} · Darkness {DungeonIndexer.PrettyDarkness(props.VisibilityRange)} · Item density {props.ItemDensity} · Trap density {props.TrapDensity}");
 
             var wild = record.Monsters.Where(m => m.Weight != 0).ToArray();
             if (wild.Length > 0)

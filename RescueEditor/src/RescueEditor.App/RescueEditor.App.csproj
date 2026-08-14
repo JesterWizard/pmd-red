@@ -36,4 +36,28 @@
           CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <RepoRoot>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../..'))</RepoRoot>
+    <DungeonFloorCache>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/../../cache/dungeon-floors'))</DungeonFloorCache>
+    <Baserom>$(RepoRoot)/baserom.gba</Baserom>
+    <DungeonFloorBakeProject>$(MSBuildProjectDirectory)/../RescueEditor.Bake/RescueEditor.Bake.csproj</DungeonFloorBakeProject>
+  </PropertyGroup>
+
+  <Target Name="BakeDungeonFloorPreviews"
+          BeforeTargets="BeforeBuild"
+          Condition="Exists('$(Baserom)') And Exists('$(DungeonFloorBakeProject)')"
+          Inputs="$(Baserom);$(MSBuildProjectDirectory)/../RescueEditor.Core/DungeonFloorGenerator.cs;$(MSBuildProjectDirectory)/../RescueEditor.Core/DungeonFloorRenderer.cs;$(MSBuildProjectDirectory)/../RescueEditor.Core/DungeonFloorPreviewCache.cs;$(MSBuildProjectDirectory)/../RescueEditor.Core/DungeonFloorPreviewBake.cs"
+          Outputs="$(DungeonFloorCache)/manifest.json">
+    <MakeDir Directories="$(DungeonFloorCache)" />
+    <Exec Command="dotnet run --project &quot;$(DungeonFloorBakeProject)&quot; -c $(Configuration) -- &quot;$(Baserom)&quot; &quot;$(DungeonFloorCache)&quot;" />
+  </Target>
+
+  <Target Name="IncludeDungeonFloorPreviews" BeforeTargets="GetCopyToOutputDirectoryItems">
+    <ItemGroup Condition="Exists('$(DungeonFloorCache)')">
+      <Content Include="$(DungeonFloorCache)\**\*"
+               Link="dungeon-floors\%(RecursiveDir)%(Filename)%(Extension)"
+               CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+  </Target>
+
 </Project>

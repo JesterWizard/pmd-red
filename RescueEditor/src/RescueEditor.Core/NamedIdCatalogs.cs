@@ -66,6 +66,10 @@ public static class NamedIdCatalogs
         @"^\s*(?<name>DUNGEON_MUS_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
         RegexOptions.Compiled);
 
+    private static readonly Regex FloorLayoutEnumEntry = new(
+        @"^\s*(?<name>LAYOUT_[A-Za-z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
+        RegexOptions.Compiled);
+
     private static readonly Regex ItemDefine = new(
         @"^\s*#define\s+(?<name>ITEM_[A-Z0-9_]+)\s+(?<value>\d+)\b",
         RegexOptions.Compiled);
@@ -158,6 +162,9 @@ public static class NamedIdCatalogs
 
     public static NamedIdCatalog ParseDungeonMusicEnum(string headerText) =>
         ParseSequentialEnum(headerText, DungeonMusicEnumEntry, startAt: -1);
+
+    public static NamedIdCatalog ParseFloorLayoutEnum(string headerText) =>
+        ParseSequentialEnum(headerText, FloorLayoutEnumEntry, startAt: -1, skipNames: ["NUM_FLOOR_LAYOUTS"]);
 
     public static NamedIdCatalog ParseItemDefines(string headerText)
     {

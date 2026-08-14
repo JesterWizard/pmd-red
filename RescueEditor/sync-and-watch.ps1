@@ -53,6 +53,8 @@ function Get-AssetsFingerprint {
     )
     foreach ($rel in @(
         "include\constants\bg_music.h",
+        "include\constants\weather.h",
+        "include\dungeon_generation.h",
         "include\constants\emotions.h",
         "include\constants\ground_map.h",
         "src\sound_names.c",
@@ -93,6 +95,9 @@ function Test-AssetsNeedSync {
 function Sync-SmallRepoFiles {
     $pairs = @(
         @{ Src = "include\constants\bg_music.h"; Dst = "include\constants\bg_music.h" },
+        @{ Src = "include\constants\weather.h"; Dst = "include\constants\weather.h" },
+        @{ Src = "include\dungeon_generation.h"; Dst = "include\dungeon_generation.h" },
+        @{ Src = "src\dungeon_config.c"; Dst = "src\dungeon_config.c" },
         @{ Src = "include\constants\emotions.h"; Dst = "include\constants\emotions.h" },
         @{ Src = "include\constants\ground_map.h"; Dst = "include\constants\ground_map.h" },
         @{ Src = "src\sound_names.c"; Dst = "src\sound_names.c" },
@@ -178,7 +183,7 @@ Write-Host "Syncing editor sources WSL -> $winRoot ..."
 $editorSrc = Join-Path $wslRoot "RescueEditor"
 $editorDst = Join-Path $winRoot "RescueEditor"
 New-Item -ItemType Directory -Force -Path $editorDst | Out-Null
-& robocopy $editorSrc $editorDst /MIR /XD bin obj .git publish /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+& robocopy $editorSrc $editorDst /MIR /XD bin obj .git publish cache /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
 if ($LASTEXITCODE -ge 8) { throw "robocopy failed for RescueEditor (exit $LASTEXITCODE)" }
 
 if (Test-AssetsNeedSync) {

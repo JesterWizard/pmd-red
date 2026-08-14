@@ -161,6 +161,31 @@ public sealed class NamedIdCatalogTests
     }
 
     [Fact]
+    public void ParseFloorLayoutEnum()
+    {
+        var catalog = NamedIdCatalogs.ParseFloorLayoutEnum("""
+            enum FloorLayout {
+                LAYOUT_LARGE,
+                LAYOUT_SMALL,
+                LAYOUT_ONE_ROOM_MONSTER_HOUSE,
+                LAYOUT_MEDIUM = 11,
+                LAYOUT_UNUSED_0xC,
+                NUM_FLOOR_LAYOUTS
+            };
+            """);
+
+        Assert.True(catalog.TryGetId("LAYOUT_LARGE", out var id));
+        Assert.Equal(0, id);
+        Assert.True(catalog.TryGetId("LAYOUT_SMALL", out id));
+        Assert.Equal(1, id);
+        Assert.True(catalog.TryGetId("LAYOUT_MEDIUM", out id));
+        Assert.Equal(11, id);
+        Assert.True(catalog.TryGetId("LAYOUT_UNUSED_0xC", out id));
+        Assert.Equal(12, id);
+        Assert.False(catalog.TryGetId("NUM_FLOOR_LAYOUTS", out _));
+    }
+
+    [Fact]
     public void LoadsRealRepositoryHeadersWhenPresent()
     {
         var root = RuntimeConfigHeaderParser.TryFindHeaderPath();

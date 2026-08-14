@@ -81,6 +81,8 @@ assets_fingerprint() {
   printf 'effects_mtime=%s\n' "$(stat -c %Y "$repo/data/effects" 2>/dev/null || echo 0)"
   for f in \
     "$repo/include/constants/bg_music.h" \
+    "$repo/include/constants/weather.h" \
+    "$repo/include/dungeon_generation.h" \
     "$repo/include/constants/emotions.h" \
     "$repo/include/constants/ground_map.h" \
     "$repo/include/constants/ground_script_params.h" \
@@ -90,6 +92,7 @@ assets_fingerprint() {
     "$repo/include/constants/palette_util.h" \
     "$repo/include/portrait_placement.h" \
     "$repo/src/sound_names.c" \
+    "$repo/src/dungeon_config.c" \
     "$repo/charmap.txt" \
     "$repo/data/monster/monster_data.json" \
     "$repo/graphics/custom/pmd2_font_sheet.png"
@@ -125,6 +128,9 @@ sync_small_repo_files() {
   mkdir -p "$win_mirror/include/constants" "$win_mirror/include" "$win_mirror/src" \
     "$win_mirror/data/monster" "$win_mirror/graphics/custom" "$win_mirror/data/effects"
   cp -f "$repo/include/constants/bg_music.h" "$win_mirror/include/constants/bg_music.h"
+  cp -f "$repo/include/constants/weather.h" "$win_mirror/include/constants/weather.h" 2>/dev/null || true
+  cp -f "$repo/include/dungeon_generation.h" "$win_mirror/include/dungeon_generation.h" 2>/dev/null || true
+  cp -f "$repo/src/dungeon_config.c" "$win_mirror/src/dungeon_config.c" 2>/dev/null || true
   cp -f "$repo/include/constants/emotions.h" "$win_mirror/include/constants/emotions.h"
   cp -f "$repo/include/constants/ground_map.h" "$win_mirror/include/constants/ground_map.h"
   # Script editor named catalogs (SELECT_ANIMATION, PORTRAIT place, directions, …).
@@ -148,7 +154,7 @@ sync_heavy_repo_assets() {
     "$win_mirror/data/monster" "$win_mirror/graphics/ax/mon" "$win_mirror/graphics/ornament"
   echo "Syncing sound + actor sprites (one-time / when changed)…"
   rsync -a --delete \
-    --exclude bin --exclude obj --exclude publish --exclude .git \
+    --exclude bin --exclude obj --exclude publish --exclude .git --exclude cache \
     "$repo/sound/" "$win_mirror/sound/"
   sync_small_repo_files
   # Actor frames: idle dirs (1–15) + common sleep sheets (47–55). Full dump is huge.
@@ -165,7 +171,7 @@ sync_heavy_repo_assets() {
 sync_editor_sources() {
   mkdir -p "$win_mirror/RescueEditor"
   rsync -a --delete \
-    --exclude bin --exclude obj --exclude publish --exclude .git \
+    --exclude bin --exclude obj --exclude publish --exclude .git --exclude cache \
     "$root/" "$win_mirror/RescueEditor/"
 }
 
@@ -199,6 +205,9 @@ start_live_sync() {
       "$root/src" "$root/tests" \
       "$repo/charmap.txt" "$repo/sound" \
       "$repo/include/constants/bg_music.h" \
+      "$repo/include/constants/weather.h" \
+      "$repo/include/dungeon_generation.h" \
+      "$repo/src/dungeon_config.c" \
       "$repo/include/constants/emotions.h" \
       "$repo/include/constants/ground_map.h" \
       "$repo/include/constants/ground_script_params.h" \
@@ -217,6 +226,7 @@ start_live_sync() {
           assets_fingerprint > "$assets_stamp"
           ;;
         "$repo/charmap.txt"*|"$repo/include/constants/"*|"$repo/include/portrait_placement.h"*|\
+        "$repo/include/dungeon_generation.h"*|"$repo/src/dungeon_config.c"*|\
         "$repo/src/sound_names.c"*|\
         "$repo/data/monster"*|"$repo/graphics/custom"*|"$repo/data/effects"*)
           sync_small_repo_files >/dev/null

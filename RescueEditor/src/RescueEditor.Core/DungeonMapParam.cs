@@ -108,19 +108,7 @@ public sealed class DungeonMapParamTables
         if (!rom.IsRangeValid(propsOff, FloorPropertiesSize))
             return null;
 
-        var properties = new FloorPropertiesRecord(
-            Layout: rom.ReadByte(propsOff),
-            RoomDensity: unchecked((sbyte)rom.ReadByte(propsOff + 1)),
-            Tileset: rom.ReadByte(propsOff + 2),
-            BgMusic: rom.ReadByte(propsOff + 3),
-            Weather: rom.ReadByte(propsOff + 4),
-            FloorConnectivity: rom.ReadByte(propsOff + 5),
-            EnemyDensity: rom.ReadByte(propsOff + 6),
-            KecleonShopChance: rom.ReadByte(propsOff + 7),
-            MonsterHouseChance: rom.ReadByte(propsOff + 8),
-            ItemDensity: rom.ReadByte(propsOff + 15),
-            TrapDensity: rom.ReadByte(propsOff + 16),
-            FixedRoomNumber: rom.ReadByte(propsOff + 18));
+        var properties = DungeonFloorPropertiesCodec.Read(rom, propsOff);
 
         var monsters = ReadMonsters(rom, monsterTable);
         var traps = ReadTraps(rom, trapTable);
@@ -129,6 +117,7 @@ public sealed class DungeonMapParamTables
             DungeonId: dungeonId,
             Floor: floor,
             PropertiesIndex: propertiesIndex,
+            PropertiesOffset: propsOff,
             MonsterTable: monsterTable,
             TrapTable: trapTable,
             ItemTables: itemTables,
@@ -229,7 +218,14 @@ public sealed record FloorPropertiesRecord(
     int MonsterHouseChance,
     int ItemDensity,
     int TrapDensity,
-    int FixedRoomNumber);
+    int FixedRoomNumber,
+    int VisibilityRange = 0,
+    bool AllowDeadEnds = false,
+    int RoomFlags = 0,
+    int ItemStickyChance = 0,
+    int BuriedItemDensity = 0,
+    int MoneyUpperBound = 0,
+    int RomOffset = -1);
 
 public sealed record MonsterSpawnEntry(int Species, int Level, int Weight, int RomOffset = -1);
 public sealed record TrapSpawnEntry(int TrapId, int Threshold, int RomOffset = -1);
@@ -239,6 +235,7 @@ public sealed record DungeonFloorRecord(
     int DungeonId,
     int Floor,
     int PropertiesIndex,
+    int PropertiesOffset,
     int MonsterTable,
     int TrapTable,
     int[] ItemTables,

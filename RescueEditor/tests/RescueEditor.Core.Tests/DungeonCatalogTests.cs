@@ -214,6 +214,62 @@ public sealed class DungeonCatalogTests
         var second = DungeonFloorRenderer.Render(rom, floor, cacheDirectory: cache, seed: 1);
         Assert.Equal(first.Png, second.Png);
         Assert.Equal(writeTime, File.GetLastWriteTimeUtc(cachedFile[0]));
+        Assert.True(DungeonFloorPreviewCache.TryLoad(cache, floor, seed: 1, out var loaded));
+        Assert.Equal(first.FloorTileCount, loaded!.FloorTileCount);
+        Assert.Equal(first.RoomCount, loaded.RoomCount);
+        Assert.Equal(first.Png, loaded.Png);
+    }
+
+    [Fact]
+    public void PreviewBake_SecondRun_SkipsUnchangedFloors()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var cache = Path.Combine(Path.GetTempPath(), "rescue-temple-dungeon-bake-test");
+        if (Directory.Exists(cache))
+            Directory.Delete(cache, recursive: true);
+
+        var first = DungeonFloorPreviewBake.Run(rom, cache, dungeonIds: [0]);
+        Assert.True(first.Generated >= 3);
+        Assert.Equal(0, first.Skipped);
+        var png = Directory.GetFiles(cache, "*.png").OrderBy(p => p).First();
+        var writeTime = File.GetLastWriteTimeUtc(png);
+
+        var second = DungeonFloorPreviewBake.Run(rom, cache, dungeonIds: [0]);
+        Assert.Equal(0, second.Generated);
+        Assert.Equal(first.Total, second.Skipped);
+        Assert.Equal(writeTime, File.GetLastWriteTimeUtc(png));
+    }
+
+    [Fact]
+    public void PreviewBake_RegeneratesAfterLayoutEdit()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var tables = DungeonMapParamTables.TryLoad(rom)!;
+        var floor = tables.TryReadFloor(rom, 0, 1)!;
+        var cache = Path.Combine(Path.GetTempPath(), "rescue-temple-dungeon-bake-edit-test");
+        if (Directory.Exists(cache))
+            Directory.Delete(cache, recursive: true);
+
+        var vanilla = DungeonFloorRenderer.Render(rom, floor, cacheDirectory: cache, seed: 1);
+        var working = new WorkingRom(rom);
+        var buffer = working.BeginMutate();
+        DungeonFloorPropertiesCodec.Patch(buffer, floor.PropertiesOffset, new FloorPropertiesPatch(Layout: floor.Properties.Layout == 0 ? 1 : 0));
+        working.Commit(buffer, floor.PropertiesOffset, DungeonMapParamTables.FloorPropertiesSize);
+        var edited = tables.TryReadFloor(working.View, 0, 1)!;
+        Assert.NotEqual(
+            DungeonFloorPreviewCache.Fingerprint(floor),
+            DungeonFloorPreviewCache.Fingerprint(edited));
+
+        var redrawn = DungeonFloorRenderer.Render(working.View, edited, cacheDirectory: cache, seed: 1);
+        Assert.NotEqual(vanilla.Png, redrawn.Png);
     }
 
     [Fact]
@@ -221,6 +277,79 @@ public sealed class DungeonCatalogTests
     {
         Assert.Equal(CategoryWorkspaceKind.Dungeons, CategoryWorkspace.Resolve(AssetCategory.Dungeons));
         Assert.False(CategoryWorkspace.UsesAssetBrowser(AssetCategory.Dungeons));
+    }
+
+    [Fact]
+    public void FloorProperties_TinyWoodsB1F_ExposesMusicWeatherDarknessAndLayout()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var root = CatalogBuilder.FindRepositoryRoot(rom.Path);
+        var labels = DungeonIndexer.LoadLabels(root);
+        var tables = DungeonMapParamTables.TryLoad(rom);
+        Assert.NotNull(tables);
+        var floor = tables!.TryReadFloor(rom, 0, 1);
+        Assert.NotNull(floor);
+        Assert.True(floor!.PropertiesOffset >= 0);
+        Assert.Contains("TINY_WOODS", DungeonIndexer.ResolveMusic(floor.Properties.BgMusic, labels), StringComparison.OrdinalIgnoreCase);
+        Assert.Equal("Clear", DungeonIndexer.PrettyWeather(floor.Properties.Weather, labels));
+        Assert.Contains("Small", DungeonIndexer.PrettyLayout(floor.Properties.Layout, labels), StringComparison.OrdinalIgnoreCase);
+        Assert.InRange(floor.Properties.VisibilityRange, 0, 3);
+
+        var asset = DungeonIndexer.Index(rom, root)
+            .First(a => a.Metadata.GetValueOrDefault("dungeonId") == "0")
+            .Children[0];
+        Assert.Contains("LAYOUT_SMALL", asset.Metadata.GetValueOrDefault("layout") ?? "", StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void FloorPropertiesCodec_WritesMusicWeatherDarknessLayout_AndLeavesReservedBytes()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var root = CatalogBuilder.FindRepositoryRoot(rom.Path);
+        var labels = DungeonIndexer.LoadLabels(root);
+        var tables = DungeonMapParamTables.TryLoad(rom)!;
+        var floor = tables.TryReadFloor(rom, 0, 1)!;
+        var off = floor.PropertiesOffset;
+        var before = rom.Copy(off, DungeonMapParamTables.FloorPropertiesSize);
+
+        var working = new WorkingRom(rom);
+        var buffer = working.BeginMutate();
+        DungeonFloorPropertiesCodec.Patch(buffer, off, new FloorPropertiesPatch(
+            Layout: 0,
+            BgMusic: 2,
+            Weather: 4,
+            VisibilityRange: 1));
+        working.Commit(buffer, off, DungeonMapParamTables.FloorPropertiesSize);
+
+        var rewritten = tables.TryReadFloor(working.View, 0, 1)!;
+        Assert.Equal(0, rewritten.Properties.Layout);
+        Assert.Equal(2, rewritten.Properties.BgMusic);
+        Assert.Equal(4, rewritten.Properties.Weather);
+        Assert.Equal(1, rewritten.Properties.VisibilityRange);
+        Assert.Contains("THUNDERWAVE", DungeonIndexer.ResolveMusic(rewritten.Properties.BgMusic, labels), StringComparison.OrdinalIgnoreCase);
+        Assert.Equal("Rain", DungeonIndexer.PrettyWeather(rewritten.Properties.Weather, labels));
+
+        var after = working.View.Copy(off, DungeonMapParamTables.FloorPropertiesSize);
+        Assert.Equal(before[DungeonFloorPropertiesCodec.UnkEOffset], after[DungeonFloorPropertiesCodec.UnkEOffset]);
+        Assert.Equal(before[DungeonFloorPropertiesCodec.FloorNumberOffset], after[DungeonFloorPropertiesCodec.FloorNumberOffset]);
+        Assert.Equal(before[DungeonFloorPropertiesCodec.Unk1AOffset], after[DungeonFloorPropertiesCodec.Unk1AOffset]);
+        Assert.Equal(before[DungeonFloorPropertiesCodec.Unk1BOffset], after[DungeonFloorPropertiesCodec.Unk1BOffset]);
+
+        var asset = DungeonIndexer.Index(working.View, root)
+            .First(a => a.Metadata.GetValueOrDefault("dungeonId") == "0")
+            .Children[0];
+        var preview = DungeonPreview.Create(working.View, asset, root);
+        Assert.Contains("THUNDERWAVE", preview.Text ?? "", StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Rain", preview.Text ?? "", StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("LAYOUT_LARGE", preview.Text ?? "", StringComparison.OrdinalIgnoreCase);
     }
 
     private static string? FindUpwards(string fileName)

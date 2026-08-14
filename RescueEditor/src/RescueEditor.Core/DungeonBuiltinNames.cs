@@ -99,6 +99,54 @@ public static partial class DungeonBuiltinNames
     public static readonly string[] Weather =
     ["Clear", "Sunny", "Sandstorm", "Cloudy", "Rain", "Hail", "Fog", "Snow"];
 
+    public static readonly string[] LayoutSymbols =
+    [
+        "LAYOUT_LARGE",
+        "LAYOUT_SMALL",
+        "LAYOUT_ONE_ROOM_MONSTER_HOUSE",
+        "LAYOUT_OUTER_RING",
+        "LAYOUT_CROSSROADS",
+        "LAYOUT_TWO_ROOMS_WITH_MONSTER_HOUSE",
+        "LAYOUT_LINE",
+        "LAYOUT_CROSS",
+        "LAYOUT_LARGE_0x8",
+        "LAYOUT_BEETLE",
+        "LAYOUT_OUTER_ROOMS",
+        "LAYOUT_MEDIUM",
+        "LAYOUT_UNUSED_0xC",
+        "LAYOUT_UNUSED_0xD",
+        "LAYOUT_UNUSED_0xE",
+        "LAYOUT_UNUSED_0xF",
+    ];
+
+    public static readonly string[] Layouts =
+    [
+        "Large",
+        "Small",
+        "One Room Monster House",
+        "Outer Ring",
+        "Crossroads",
+        "Two Rooms With Monster House",
+        "Line",
+        "Cross",
+        "Large 8",
+        "Beetle",
+        "Outer Rooms",
+        "Medium",
+        "Unused C",
+        "Unused D",
+        "Unused E",
+        "Unused F",
+    ];
+
+    public static readonly string[] Darkness =
+    [
+        "Full",
+        "Dark",
+        "Dim",
+        "Heavy",
+    ];
+
     private static readonly string?[] SpeciesNames =
     [
         "None",
@@ -549,4 +597,13 @@ public static partial class DungeonBuiltinNames
 
     public static string WeatherName(int id) =>
         (uint)id < (uint)Weather.Length ? Weather[id] : $"Weather {id}";
+
+    public static string LayoutSymbol(int id) =>
+        (uint)id < (uint)LayoutSymbols.Length ? LayoutSymbols[id] : $"LAYOUT_{id}";
+
+    public static string LayoutName(int id) =>
+        (uint)id < (uint)Layouts.Length ? Layouts[id] : $"Layout {id}";
+
+    public static string DarknessName(int id) =>
+        (uint)id < (uint)Darkness.Length ? Darkness[id] : $"Darkness {id}";
 }

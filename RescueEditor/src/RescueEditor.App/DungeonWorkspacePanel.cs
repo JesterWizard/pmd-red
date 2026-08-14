@@ -20,9 +20,12 @@ public sealed class DungeonWorkspacePanel : UserControl
     private readonly StackPanel _pokemonHost;
     private readonly StackPanel _itemHost;
     private readonly StackPanel _trapHost;
+    private readonly StackPanel _floorHost;
     private readonly ScrollViewer _pokemonScroll;
     private readonly ScrollViewer _itemScroll;
     private readonly ScrollViewer _trapScroll;
+    private readonly ScrollViewer _floorScroll;
+    private readonly ToggleButton _floorTab;
     private readonly ToggleButton _pokemonTab;
     private readonly ToggleButton _itemTab;
     private readonly ToggleButton _trapTab;
@@ -72,6 +75,12 @@ public sealed class DungeonWorkspacePanel : UserControl
         };
         RenderOptions.SetBitmapInterpolationMode(_mapImage, BitmapInterpolationMode.None);
 
+        _floorHost = new StackPanel
+        {
+            Spacing = EditorTheme.Space1,
+            Margin = new Thickness(EditorTheme.Space2),
+            HorizontalAlignment = HorizontalAlignment.Stretch,
+        };
         _pokemonHost = new StackPanel
         {
             Spacing = EditorTheme.Space1,
@@ -90,48 +99,35 @@ public sealed class DungeonWorkspacePanel : UserControl
             Margin = new Thickness(EditorTheme.Space2),
             HorizontalAlignment = HorizontalAlignment.Left,
         };
+        _floorScroll = Wrap(_floorHost);
         _pokemonScroll = Wrap(_pokemonHost);
         _itemScroll = Wrap(_itemHost);
         _trapScroll = Wrap(_trapHost);
+        _pokemonScroll.IsVisible = false;
         _itemScroll.IsVisible = false;
         _trapScroll.IsVisible = false;
 
-        _pokemonTab = EditorChrome.InspectorTab("Pokémon", isChecked: true);
+        _floorTab = EditorChrome.InspectorTab("Floor", isChecked: true);
+        _pokemonTab = EditorChrome.InspectorTab("Pokémon");
         _itemTab = EditorChrome.InspectorTab("Items");
         _trapTab = EditorChrome.InspectorTab("Traps");
-        _pokemonTab.IsCheckedChanged += (_, _) =>
-        {
-            if (_pokemonTab.IsChecked == true)
-                ShowListTab(0);
-            else if (_itemTab.IsChecked != true && _trapTab.IsChecked != true)
-                _pokemonTab.IsChecked = true;
-        };
-        _itemTab.IsCheckedChanged += (_, _) =>
-        {
-            if (_itemTab.IsChecked == true)
-                ShowListTab(1);
-            else if (_pokemonTab.IsChecked != true && _trapTab.IsChecked != true)
-                _itemTab.IsChecked = true;
-        };
-        _trapTab.IsCheckedChanged += (_, _) =>
-        {
-            if (_trapTab.IsChecked == true)
-                ShowListTab(2);
-            else if (_pokemonTab.IsChecked != true && _itemTab.IsChecked != true)
-                _trapTab.IsChecked = true;
-        };
+        BindListTab(_floorTab, 0);
+        BindListTab(_pokemonTab, 1);
+        BindListTab(_itemTab, 2);
+        BindListTab(_trapTab, 3);
 
         var tabs = new StackPanel
         {
             Orientation = Orientation.Horizontal,
             Spacing = 0,
-            Children = { _pokemonTab, _itemTab, _trapTab },
+            Children = { _floorTab, _pokemonTab, _itemTab, _trapTab },
         };
         var lists = new Grid
         {
             RowDefinitions = new RowDefinitions("Auto,*"),
-            Children = { tabs, _pokemonScroll, _itemScroll, _trapScroll },
+            Children = { tabs, _floorScroll, _pokemonScroll, _itemScroll, _trapScroll },
         };
+        Grid.SetRow(_floorScroll, 1);
         Grid.SetRow(_pokemonScroll, 1);
         Grid.SetRow(_itemScroll, 1);
         Grid.SetRow(_trapScroll, 1);
@@ -239,14 +235,34 @@ public sealed class DungeonWorkspacePanel : UserControl
 
     private RomImage ActiveRom => _workingRom?.View ?? _rom!;
 
+    private void BindListTab(ToggleButton tab, int index)
+    {
+        tab.IsCheckedChanged += (_, _) =>
+        {
+            if (tab.IsChecked == true)
+            {
+                ShowListTab(index);
+                return;
+            }
+
+            if (_floorTab.IsChecked != true &&
+                _pokemonTab.IsChecked != true &&
+                _itemTab.IsChecked != true &&
+                _trapTab.IsChecked != true)
+                tab.IsChecked = true;
+        };
+    }
+
     private void ShowListTab(int index)
     {
-        _pokemonTab.IsChecked = index == 0;
-        _itemTab.IsChecked = index == 1;
-        _trapTab.IsChecked = index == 2;
-        _pokemonScroll.IsVisible = index == 0;
-        _itemScroll.IsVisible = index == 1;
-        _trapScroll.IsVisible = index == 2;
+        _floorTab.IsChecked = index == 0;
+        _pokemonTab.IsChecked = index == 1;
+        _itemTab.IsChecked = index == 2;
+        _trapTab.IsChecked = index == 3;
+        _floorScroll.IsVisible = index == 0;
+        _pokemonScroll.IsVisible = index == 1;
+        _itemScroll.IsVisible = index == 2;
+        _trapScroll.IsVisible = index == 3;
     }
 
     private async Task LoadFloorAsync(AssetDescriptor floor, bool renderMap = true)
@@ -261,7 +277,7 @@ public sealed class DungeonWorkspacePanel : UserControl
         if (record is null)
             return;
 
-        _status.Text = $"{floor.Name}  ·  tileset {record.Properties.Tileset}  ·  {DungeonIndexer.ResolveMusic(record.Properties.BgMusic, _labels)}";
+        _status.Text = $"{floor.Name}  ·  {DungeonIndexer.PrettyLayout(record.Properties.Layout, _labels)}  ·  {DungeonIndexer.ResolveMusic(record.Properties.BgMusic, _labels)}  ·  {DungeonIndexer.PrettyWeather(record.Properties.Weather, _labels)}";
         if (_icons is null || _tileset != record.Properties.Tileset)
         {
             _tileset = record.Properties.Tileset;
@@ -269,6 +285,7 @@ public sealed class DungeonWorkspacePanel : UserControl
         }
 
         _contents = DungeonFloorContents.From(record, _labels);
+        FillFloor(_contents);
         FillPokemon(_contents);
         FillItems(_contents);
         FillTraps(_contents);
@@ -278,7 +295,7 @@ public sealed class DungeonWorkspacePanel : UserControl
 
         try
         {
-            var rendered = await Task.Run(() => DungeonFloorRenderer.Render(_rom, record));
+            var rendered = await Task.Run(() => DungeonFloorRenderer.Render(ActiveRom, record));
             using var stream = new MemoryStream(rendered.Png);
             _mapImage.Source = new Bitmap(stream);
         }
@@ -286,6 +303,156 @@ public sealed class DungeonWorkspacePanel : UserControl
         {
             _status.Text = $"{floor.Name} — could not generate map: {ex.Message}";
         }
+    }
+
+    private void FillFloor(DungeonFloorContents contents)
+    {
+        _suppress = true;
+        _floorHost.Children.Clear();
+        var props = contents.Properties;
+        _floorHost.Children.Add(EditorChrome.SectionHeader("Atmosphere"));
+        _floorHost.Children.Add(ComboRow("Music", MusicPicks(), props.BgMusic, id =>
+            PatchFloor(new FloorPropertiesPatch(BgMusic: id), renderMap: false)));
+        _floorHost.Children.Add(ComboRow("Weather", WeatherPicks(), props.Weather, id =>
+            PatchFloor(new FloorPropertiesPatch(Weather: id), renderMap: false)));
+        _floorHost.Children.Add(ComboRow("Darkness", DarknessPicks(), props.VisibilityRange & 3, id =>
+            PatchFloor(new FloorPropertiesPatch(VisibilityRange: id), renderMap: false)));
+        _floorHost.Children.Add(EditorChrome.SectionHeader("Layout"));
+        _floorHost.Children.Add(ComboRow("Type", LayoutPicks(), props.Layout, id =>
+            PatchFloor(new FloorPropertiesPatch(Layout: id), renderMap: true)));
+        _floorHost.Children.Add(SpinRow("Rooms", props.RoomDensity, -16, 16, value =>
+            PatchFloor(new FloorPropertiesPatch(RoomDensity: value), renderMap: true)));
+        _floorHost.Children.Add(SpinRow("Connect", props.FloorConnectivity, 0, 255, value =>
+            PatchFloor(new FloorPropertiesPatch(FloorConnectivity: value), renderMap: true)));
+        _floorHost.Children.Add(SpinRow("Tileset", props.Tileset, 0, 255, value =>
+            PatchFloor(new FloorPropertiesPatch(Tileset: value), renderMap: true)));
+        _floorHost.Children.Add(CheckRow("Dead ends", props.AllowDeadEnds, value =>
+            PatchFloor(new FloorPropertiesPatch(AllowDeadEnds: value), renderMap: true)));
+        _floorHost.Children.Add(CheckRow(
+            "Secondary",
+            (props.RoomFlags & DungeonFloorPropertiesCodec.RoomFlagAllowSecondaryTerrain) != 0,
+            value => PatchRoomFlag(DungeonFloorPropertiesCodec.RoomFlagAllowSecondaryTerrain, value)));
+        _floorHost.Children.Add(CheckRow(
+            "Imperfect",
+            (props.RoomFlags & DungeonFloorPropertiesCodec.RoomFlagAllowImperfections) != 0,
+            value => PatchRoomFlag(DungeonFloorPropertiesCodec.RoomFlagAllowImperfections, value)));
+        _floorHost.Children.Add(EditorChrome.SectionHeader("Density"));
+        _floorHost.Children.Add(SpinRow("Enemies", props.EnemyDensity, 0, 255, value =>
+            PatchFloor(new FloorPropertiesPatch(EnemyDensity: value), renderMap: false)));
+        _floorHost.Children.Add(SpinRow("Items", props.ItemDensity, 0, 255, value =>
+            PatchFloor(new FloorPropertiesPatch(ItemDensity: value), renderMap: false)));
+        _floorHost.Children.Add(SpinRow("Traps", props.TrapDensity, 0, 255, value =>
+            PatchFloor(new FloorPropertiesPatch(TrapDensity: value), renderMap: false)));
+        _suppress = false;
+    }
+
+    private IReadOnlyList<NamedPick> MusicPicks()
+    {
+        var entries = _labels.DungeonMusic.Entries;
+        if (entries.Count == 0)
+        {
+            return Enumerable.Range(0, 76)
+                .Select(id => new NamedPick(id, $"{id:00} {DungeonIndexer.ResolveMusic(id, _labels)}"))
+                .ToArray();
+        }
+
+        return entries
+            .OrderBy(e => e.Id)
+            .Select(e => new NamedPick(e.Id, $"{e.Id:00} {DungeonIndexer.ResolveMusic(e.Id, _labels)}"))
+            .ToArray();
+    }
+
+    private IReadOnlyList<NamedPick> WeatherPicks() =>
+        Enumerable.Range(0, DungeonBuiltinNames.Weather.Length)
+            .Select(id => new NamedPick(id, DungeonIndexer.PrettyWeather(id, _labels)))
+            .ToArray();
+
+    private IReadOnlyList<NamedPick> LayoutPicks()
+    {
+        var entries = _labels.Layouts.Entries
+            .Where(e => !e.Name.Contains("UNUSED", StringComparison.Ordinal))
+            .OrderBy(e => e.Id)
+            .ToArray();
+        if (entries.Length == 0)
+        {
+            return Enumerable.Range(0, 12)
+                .Select(id => new NamedPick(id, DungeonIndexer.PrettyLayout(id, _labels)))
+                .ToArray();
+        }
+
+        return entries
+            .Select(e => new NamedPick(e.Id, DungeonIndexer.PrettyLayout(e.Id, _labels)))
+            .ToArray();
+    }
+
+    private static IReadOnlyList<NamedPick> DarknessPicks() =>
+        Enumerable.Range(0, DungeonBuiltinNames.Darkness.Length)
+            .Select(id => new NamedPick(id, DungeonBuiltinNames.DarknessName(id)))
+            .ToArray();
+
+    private Control ComboRow(string label, IReadOnlyList<NamedPick> picks, int selectedId, Action<int> apply)
+    {
+        var combo = Combo(picks, selectedId);
+        combo.Width = double.NaN;
+        combo.MinWidth = 0;
+        combo.MaxWidth = double.PositiveInfinity;
+        combo.HorizontalAlignment = HorizontalAlignment.Stretch;
+        combo.SelectionChanged += (_, _) =>
+        {
+            if (_suppress || combo.SelectedItem is not NamedPick pick)
+                return;
+            apply(pick.Id);
+        };
+        return EditorChrome.PropertyRow(label, combo);
+    }
+
+    private Control SpinRow(string label, int value, int min, int max, Action<int> apply)
+    {
+        var spin = Spin(value, min, max, WeightSpinWidth);
+        spin.HorizontalAlignment = HorizontalAlignment.Left;
+        spin.ValueChanged += (_, _) =>
+        {
+            if (_suppress || spin.Value is not decimal next)
+                return;
+            apply((int)next);
+        };
+        return EditorChrome.PropertyRow(label, spin);
+    }
+
+    private Control CheckRow(string label, bool value, Action<bool> apply)
+    {
+        var box = new CheckBox
+        {
+            IsChecked = value,
+            VerticalAlignment = VerticalAlignment.Center,
+        };
+        box.IsCheckedChanged += (_, _) =>
+        {
+            if (_suppress)
+                return;
+            apply(box.IsChecked == true);
+        };
+        return EditorChrome.PropertyRow(label, box);
+    }
+
+    private void PatchRoomFlag(int flag, bool enabled)
+    {
+        if (_contents is null)
+            return;
+        var flags = _contents.Properties.RoomFlags;
+        flags = enabled ? flags | flag : flags & ~flag;
+        PatchFloor(new FloorPropertiesPatch(RoomFlags: flags), renderMap: true);
+    }
+
+    private void PatchFloor(FloorPropertiesPatch patch, bool renderMap)
+    {
+        if (_workingRom is null || _contents is null || _contents.PropertiesOffset < 0)
+            return;
+        var buffer = _workingRom.BeginMutate();
+        DungeonFloorPropertiesCodec.Patch(buffer, _contents.PropertiesOffset, patch);
+        _workingRom.Commit(buffer, _contents.PropertiesOffset, DungeonMapParamTables.FloorPropertiesSize);
+        if (_selectedFloor is not null)
+            _ = LoadFloorAsync(_selectedFloor, renderMap);
     }
 
     private void FillPokemon(DungeonFloorContents contents)

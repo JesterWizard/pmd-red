@@ -47,5 +47,6 @@ __pycache__/
 *.syms
 .cache
 .rescue-temple/
+RescueEditor/cache/
 build-cmake-*
 compile_commands.json

@@ -16,7 +16,11 @@ public sealed class DungeonFloorContents
     public required IReadOnlyList<DungeonContentRow> Traps { get; init; }
     public required string Music { get; init; }
     public required string Weather { get; init; }
+    public required string Layout { get; init; }
+    public required string Darkness { get; init; }
     public required int Tileset { get; init; }
+    public required FloorPropertiesRecord Properties { get; init; }
+    public int PropertiesOffset { get; init; }
     public int MonsterListOffset { get; init; }
     public int ItemListOffset { get; init; }
     public int ItemCompressedWords { get; init; }
@@ -48,7 +52,11 @@ public sealed class DungeonFloorContents
             Traps = traps,
             Music = DungeonIndexer.ResolveMusic(floor.Properties.BgMusic, labels),
             Weather = DungeonIndexer.PrettyWeather(floor.Properties.Weather, labels),
+            Layout = DungeonIndexer.PrettyLayout(floor.Properties.Layout, labels),
+            Darkness = DungeonIndexer.PrettyDarkness(floor.Properties.VisibilityRange),
             Tileset = floor.Properties.Tileset,
+            Properties = floor.Properties,
+            PropertiesOffset = floor.PropertiesOffset,
             MonsterListOffset = floor.MonsterListOffset,
             ItemListOffset = floor.ItemListOffset,
             ItemCompressedWords = floor.ItemCompressedWords,

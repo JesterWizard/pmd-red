@@ -32,30 +32,23 @@ public static class DungeonFloorRenderer
         RomImage rom,
         DungeonFloorRecord floor,
         string? cacheDirectory = null,
-        uint seed = DefaultSeed)
+        uint seed = DefaultSeed,
+        bool searchShipped = true)
     {
-        cacheDirectory ??= DefaultCacheDirectory(CatalogBuilder.FindRepositoryRoot(rom.Path));
-        Directory.CreateDirectory(cacheDirectory);
-        var key = $"{rom.Sha1}_{floor.DungeonId}_{floor.Floor}_{seed}.png";
-        var path = Path.Combine(cacheDirectory, key);
-        if (File.Exists(path))
+        var writable = cacheDirectory ?? DefaultCacheDirectory(CatalogBuilder.FindRepositoryRoot(rom.Path));
+        if (DungeonFloorPreviewCache.TryLoad(writable, floor, seed, out var cached) && cached is not null)
+            return cached;
+        if (searchShipped)
         {
-            var png = File.ReadAllBytes(path);
-            var generated = new DungeonFloorGenerator(seed).Generate(floor.Properties);
-            return new DungeonFloorRenderResult
-            {
-                Png = png,
-                Width = generated.Width * ChunkPixels,
-                Height = generated.Height * ChunkPixels,
-                FloorTileCount = generated.FloorTileCount,
-                RoomCount = generated.RoomCount,
-            };
+            var shipped = DungeonFloorPreviewCache.ShippedDirectory();
+            if (!string.Equals(shipped, writable, StringComparison.OrdinalIgnoreCase) &&
+                DungeonFloorPreviewCache.TryLoad(shipped, floor, seed, out cached) && cached is not null)
+                return cached;
         }
 
         var map = new DungeonFloorGenerator(seed).Generate(floor.Properties);
         var image = RenderMap(rom, floor.Properties.Tileset, map);
-        File.WriteAllBytes(path, image.Png);
-        return new DungeonFloorRenderResult
+        var result = new DungeonFloorRenderResult
         {
             Png = image.Png,
             Width = image.Width,
@@ -63,6 +56,8 @@ public static class DungeonFloorRenderer
             FloorTileCount = map.FloorTileCount,
             RoomCount = map.RoomCount,
         };
+        DungeonFloorPreviewCache.Save(writable, floor, seed, result);
+        return result;
     }
 
     private static (byte[] Png, int Width, int Height) RenderMap(

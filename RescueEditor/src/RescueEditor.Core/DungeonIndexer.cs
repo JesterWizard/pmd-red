@@ -97,9 +97,12 @@ public static class DungeonIndexer
     {
         var label = FloorLabel(stairUp, record.Floor);
         var musicName = ResolveMusic(record.Properties.BgMusic, labels);
-        var musicMeta = musicName.StartsWith("MUS_", StringComparison.Ordinal)
-            ? $"{musicName} ({Pretty(musicName, "MUS_")})"
-            : musicName;
+        var musicPretty = musicName.StartsWith("DUNGEON_MUS_", StringComparison.Ordinal)
+            ? Pretty(musicName, "DUNGEON_MUS_")
+            : Pretty(musicName, "MUS_");
+        var musicMeta = $"{musicName} ({musicPretty})";
+        var layoutName = ResolveLayout(record.Properties.Layout, labels);
+        var layoutMeta = $"{layoutName} ({Pretty(layoutName, "LAYOUT_")})";
         var wild = record.Monsters.Where(m => m.Weight != 0).ToArray();
         var spawnText = string.Join(", ", wild.Take(8).Select(m =>
             $"{PrettyMonster(m.Species, labels)} Lv.{m.Level}"));
@@ -135,7 +138,8 @@ public static class DungeonIndexer
                 ["weather"] = PrettyWeather(record.Properties.Weather, labels),
                 ["itemDensity"] = record.Properties.ItemDensity.ToString(CultureInfo.InvariantCulture),
                 ["trapDensity"] = record.Properties.TrapDensity.ToString(CultureInfo.InvariantCulture),
-                ["layout"] = record.Properties.Layout.ToString(CultureInfo.InvariantCulture),
+                ["layout"] = layoutMeta,
+                ["darkness"] = PrettyDarkness(record.Properties.VisibilityRange),
             },
         };
     }
@@ -178,6 +182,19 @@ public static class DungeonIndexer
         return DungeonBuiltinNames.WeatherName(weather);
     }
 
+    public static string ResolveLayout(int layout, DungeonLabels labels) =>
+        labels.Layouts.TryGetName(layout, out var name) ? name : DungeonBuiltinNames.LayoutSymbol(layout);
+
+    public static string PrettyLayout(int layout, DungeonLabels labels)
+    {
+        if (labels.Layouts.TryGetName(layout, out var name))
+            return Pretty(name, "LAYOUT_");
+        return DungeonBuiltinNames.LayoutName(layout);
+    }
+
+    public static string PrettyDarkness(int visibilityRange) =>
+        DungeonBuiltinNames.DarknessName(visibilityRange & 3);
+
     public static string PrettyItem(int itemId, DungeonLabels labels) =>
         labels.Items.TryGetName(itemId, out var name)
             ? Pretty(name, "ITEM_")
@@ -196,6 +213,8 @@ public static class DungeonIndexer
 
         var dungeonMusic = Load(Path.Combine("include", "constants", "bg_music.h"),
             NamedIdCatalogs.ParseDungeonMusicEnum);
+        var layouts = Load(Path.Combine("include", "dungeon_generation.h"),
+            NamedIdCatalogs.ParseFloorLayoutEnum);
         var map = ParseDungeonMusicMap(Path.Combine(repositoryRoot, "src", "dungeon_config.c"));
 
         return new DungeonLabels(
@@ -204,6 +223,7 @@ public static class DungeonIndexer
             Load(Path.Combine("include", "constants", "item.h"), NamedIdCatalogs.ParseItemDefines),
             Load(Path.Combine("include", "constants", "weather.h"), NamedIdCatalogs.ParseWeatherEnum),
             dungeonMusic,
+            layouts,
             map);
     }
 
@@ -328,9 +348,11 @@ public sealed record DungeonLabels(
     NamedIdCatalog Items,
     NamedIdCatalog Weather,
     NamedIdCatalog DungeonMusic,
+    NamedIdCatalog Layouts,
     IReadOnlyList<string> DungeonMusicToSong)
 {
     public static DungeonLabels Empty { get; } = new(
+        new NamedIdCatalog([]),
         new NamedIdCatalog([]),
         new NamedIdCatalog([]),
         new NamedIdCatalog([]),
