@@ -518,8 +518,11 @@ public static class ScriptSource
             return 0;
         foreach (var entry in dialogue.Values)
         {
-            if (entry.Text == text && entry.Offset >= 0)
+            if (entry.Text != text)
+                continue;
+            if (entry.Offset >= 0)
                 return RomPointer.FromOffset(entry.Offset).Value;
+            return unchecked((uint)entry.Offset);
         }
 
         return 0;

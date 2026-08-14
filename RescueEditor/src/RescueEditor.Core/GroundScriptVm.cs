@@ -1895,10 +1895,12 @@ public sealed class GroundScriptVm
                 continue;
 
             var offset = live.ScriptOffsets.ElementAtOrDefault(0);
-            if (offset <= 0)
-                continue;
-            var commands = ScriptCodec.ReadScript(_rom, offset);
-            if (commands.Count == 0)
+            List<ScriptCommandData>? commands = null;
+            if (offset > 0)
+                commands = ScriptCodec.ReadScript(_rom, offset);
+            else if (live.Scripts.Count > 0 && live.Scripts[0].Commands.Count > 0)
+                commands = live.Scripts[0].Commands;
+            if (commands is null || commands.Count == 0)
                 continue;
             _actors.Add(new ScriptActor($"live{id}", commands, npcId: id));
             if (!_animations.ContainsKey(id))

@@ -159,27 +159,9 @@ public static class RomBuilder
                         if (sector.RomOffset < 0)
                             continue;
 
-                        foreach (var kind in new[]
-                                 {
-                                     SceneEntityKind.Live, SceneEntityKind.Object,
-                                     SceneEntityKind.Effect, SceneEntityKind.Event,
-                                 })
-                        {
-                            try
-                            {
-                                if (sector.IsListDirty(kind))
-                                    WriteEntityList(rom, sector, kind, report);
-                                else
-                                    WriteEntitiesInPlace(rom, sector.ListFor(kind), report);
-                            }
-                            catch (Exception exception)
-                            {
-                                report.Errors.Add($"Sector {sector.Group}/{sector.Sector} {kind}: {exception.Message}");
-                            }
-                        }
-
                         try
                         {
+                            WriteEntityScripts(rom, sector, report, clearDirty: true);
                             if (sector.StationsListDirty)
                                 WriteStationList(rom, sector, report, clearDirty: true);
                             else
@@ -194,12 +176,29 @@ public static class RomBuilder
                                     WriteStationScript(rom, station, report);
                                 }
                             }
-
-                            WriteEntityScripts(rom, sector, report, clearDirty: true);
                         }
                         catch (Exception exception)
                         {
                             report.Errors.Add($"Sector {sector.Group}/{sector.Sector} stations: {exception.Message}");
+                        }
+
+                        foreach (var kind in new[]
+                                 {
+                                     SceneEntityKind.Live, SceneEntityKind.Object,
+                                     SceneEntityKind.Effect, SceneEntityKind.Event,
+                                 })
+                        {
+                            try
+                            {
+                                if (sector.IsListDirty(kind))
+                                    WriteEntityList(rom, sector, kind, report, clearDirty: true);
+                                else
+                                    WriteEntitiesInPlace(rom, sector.ListFor(kind), report);
+                            }
+                            catch (Exception exception)
+                            {
+                                report.Errors.Add($"Sector {sector.Group}/{sector.Sector} {kind}: {exception.Message}");
+                            }
                         }
                     }
                 }
@@ -260,8 +259,8 @@ public static class RomBuilder
     }
 
     /// <summary>
-    /// Patches dialogue, station scripts, and RuntimeConfig into a mutable ROM for Scene Play.
-    /// Does not write entity lists or save a file.
+    /// Patches dialogue, station scripts, dirty entity lists, and RuntimeConfig into a mutable ROM for Scene Play.
+    /// Does not save a file.
     /// </summary>
     public static void WriteWorkingCopy(
         MutableRom rom,
@@ -288,6 +287,20 @@ public static class RomBuilder
                 {
                     try
                     {
+                        WriteEntityScripts(rom, sector, report, clearDirty: false);
+                        if (sector.RomOffset >= 0)
+                        {
+                            foreach (var kind in new[]
+                                     {
+                                         SceneEntityKind.Live, SceneEntityKind.Object,
+                                         SceneEntityKind.Effect, SceneEntityKind.Event,
+                                     })
+                            {
+                                if (sector.IsListDirty(kind))
+                                    WriteEntityList(rom, sector, kind, report, clearDirty: false);
+                            }
+                        }
+
                         if (sector.StationsListDirty)
                         {
                             // Keep dirty so each WorkingRom sync (from source) rewrites new stations.
@@ -305,8 +318,6 @@ public static class RomBuilder
                                 WriteStationScript(rom, station, report);
                             }
                         }
-
-                        WriteEntityScripts(rom, sector, report, clearDirty: false);
                     }
                     catch (Exception exception)
                     {
@@ -454,12 +465,18 @@ public static class RomBuilder
         MutableRom rom,
         SceneSector sector,
         SceneEntityKind kind,
-        RomBuildReport report)
+        RomBuildReport report,
+        bool clearDirty)
     {
         if (sector.RomOffset < 0)
             throw new InvalidOperationException("Sector has no ROM offset.");
-
         var list = sector.ListFor(kind);
+        if (list.Count > SceneEntities.MaxPerSector(kind))
+        {
+            throw new InvalidOperationException(
+                $"Sector g{sector.Group}/s{sector.Sector} exceeds {SceneEntities.MaxPerSector(kind)} {SceneEntities.Noun(kind)}.");
+        }
+
         var entrySize = SceneEntity.EntrySizeFor(kind);
         var countOffset = sector.GetListCountOffset(kind);
         var bytes = new byte[Math.Max(entrySize, list.Count * entrySize)];
@@ -488,7 +505,8 @@ public static class RomBuilder
             list[i].NeedsListRewrite = false;
         }
 
-        sector.SetListDirty(kind, false);
+        if (clearDirty)
+            sector.SetListDirty(kind, false);
         report.Changes.Add($"{kind} list g{sector.Group}/s{sector.Sector} -> 0x{free:X} ({list.Count})");
     }
 
@@ -720,6 +738,36 @@ public static class RomBuilder
         destination[2] = entity.Width;
         destination[3] = entity.Height;
         entity.Position.Write(destination[4..8]);
+        EncodeEntityScriptPointers(entity, destination);
+    }
+
+    private static void EncodeEntityScriptPointers(SceneEntity entity, Span<byte> destination)
+    {
+        if (entity.Kind is SceneEntityKind.Live or SceneEntityKind.Object)
+        {
+            for (var slot = 0; slot < 4; slot++)
+            {
+                var scriptOffset = slot < entity.ScriptOffsets.Length ? entity.ScriptOffsets[slot] : -1;
+                WritePointerOrZero(destination.Slice(8 + slot * 4, 4), scriptOffset);
+            }
+        }
+        else if (entity.Kind == SceneEntityKind.Effect)
+        {
+            var scriptOffset = entity.ScriptOffsets.Length > 0 ? entity.ScriptOffsets[0] : -1;
+            WritePointerOrZero(destination.Slice(8, 4), scriptOffset);
+        }
+        else if (entity.Kind == SceneEntityKind.Event)
+        {
+            WritePointerOrZero(destination.Slice(8, 4), entity.EventScriptRefOffset);
+        }
+    }
+
+    private static void WritePointerOrZero(Span<byte> destination, int offset)
+    {
+        if (offset >= 0)
+            BitConverter.TryWriteBytes(destination, RomPointer.FromOffset(offset).Value);
+        else
+            destination.Clear();
     }
 
     private static void WriteEntity(MutableRom rom, SceneEntity entity)

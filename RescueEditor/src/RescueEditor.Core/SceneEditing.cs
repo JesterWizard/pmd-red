@@ -178,11 +178,21 @@ public static class SceneEditing
         SceneEntityKind kind,
         CompactPos? position = null,
         byte width = 1,
-        byte height = 1)
+        byte height = 1,
+        byte typeId = 0)
     {
         var list = sector.ListFor(kind);
+        if (list.Count >= SceneEntities.MaxPerSector(kind))
+            throw new InvalidOperationException(SceneEntities.CapError(sector, kind));
+
         var entity = CreateDefaultEntity(
-            kind, sector, list.Count, position ?? new CompactPos(5, 5, 0, 0), width, height);
+            kind,
+            sector,
+            list.Count,
+            position ?? new CompactPos(5, 5, 0, 0),
+            width,
+            height,
+            typeId);
         changes.Execute(
             $"Add {kind}",
             apply: () =>
@@ -415,7 +425,11 @@ public static class SceneEditing
 
     public static SceneEntity DuplicateEntity(ChangeService changes, SceneSector sector, SceneEntity source)
     {
-        var clone = CreateDefaultEntity(source.Kind, sector, sector.ListFor(source.Kind).Count, source.Position);
+        var list = sector.ListFor(source.Kind);
+        if (list.Count >= SceneEntities.MaxPerSector(source.Kind))
+            throw new InvalidOperationException(SceneEntities.CapError(sector, source.Kind));
+
+        var clone = CreateDefaultEntity(source.Kind, sector, list.Count, source.Position, source.Width, source.Height, source.TypeId);
         clone.TypeId = source.TypeId;
         clone.DirectionOrFlags = source.DirectionOrFlags;
         clone.Width = source.Width;
@@ -433,7 +447,6 @@ public static class SceneEditing
         clone.RawBytes[3] = clone.Height;
         clone.Position.Write(clone.RawBytes.AsSpan(4, 4));
 
-        var list = sector.ListFor(source.Kind);
         changes.Execute(
             $"Duplicate {source.DisplayName}",
             apply: () =>
@@ -622,6 +635,39 @@ public static class SceneEditing
         Charmap charmap) =>
         ReplaceDialogue(changes, dialogue, newText, charmap);
 
+    /// <summary>
+    /// Allocates a new dirty dialogue string with a unique placeholder offset.
+    /// <see cref="DialogueRelocation"/> relocates it on working-copy / ROM write.
+    /// </summary>
+    public static DialogueString AddDialogue(
+        ChangeService changes,
+        SceneDatabase database,
+        string text = "")
+    {
+        var dialogue = CreateDialogueSlot(database, text);
+        changes.Execute(
+            "Add dialogue",
+            apply: () =>
+            {
+                database.DialogueByOffset[dialogue.Offset] = dialogue;
+                database.InvalidateReferences();
+            },
+            revert: () =>
+            {
+                database.DialogueByOffset.Remove(dialogue.Offset);
+                database.InvalidateReferences();
+            },
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "dialogue.add",
+                Target = $"0x{dialogue.Offset:X}",
+                Description = text.Length > 64 ? text[..64] + "…" : text,
+                Values = { ["text"] = text },
+            });
+        return dialogue;
+    }
+
     public static void ApplySceneScriptSource(
         ChangeService changes,
         Scene scene,
@@ -692,19 +738,12 @@ public static class SceneEditing
                 {
                     if (command.ArgPtr == 0)
                     {
-                        var offset = -1;
-                        while (database.DialogueByOffset.ContainsKey(offset) ||
-                               pendingDialogue.Any(item => item.Offset == offset))
-                            offset--;
-                        var created = new DialogueString
-                        {
-                            Offset = offset,
-                            Size = Math.Max(64, DialogueEncodedBudget.CountBytes(parsedCommand.DialogueText) + 16),
-                            Text = parsedCommand.DialogueText,
-                            Dirty = true,
-                        };
-                        command.ArgPtr = unchecked((uint)offset);
-                        pendingDialogue.Add((offset, created));
+                        var created = CreateDialogueSlot(
+                            database,
+                            parsedCommand.DialogueText,
+                            pendingDialogue.Select(item => item.Offset));
+                        command.ArgPtr = unchecked((uint)created.Offset);
+                        pendingDialogue.Add((created.Offset, created));
                     }
                     else if (TryGetDialogue(database, command.ArgPtr, out var dialogue) &&
                              dialogue.Text != parsedCommand.DialogueText)
@@ -885,25 +924,45 @@ public static class SceneEditing
         RomOffset = command.RomOffset,
     };
 
+    private static DialogueString CreateDialogueSlot(
+        SceneDatabase database,
+        string text,
+        IEnumerable<int>? reservedOffsets = null)
+    {
+        var offset = -1;
+        var reserved = reservedOffsets as HashSet<int> ?? reservedOffsets?.ToHashSet() ?? [];
+        while (database.DialogueByOffset.ContainsKey(offset) || reserved.Contains(offset))
+            offset--;
+        return new DialogueString
+        {
+            Offset = offset,
+            Size = Math.Max(64, DialogueEncodedBudget.CountBytes(text) + 16),
+            Text = text,
+            Dirty = true,
+        };
+    }
+
     private static SceneEntity CreateDefaultEntity(
         SceneEntityKind kind,
         SceneSector sector,
         int index,
         CompactPos position,
         byte width = 1,
-        byte height = 1)
+        byte height = 1,
+        byte typeId = 0)
     {
         width = Math.Clamp(width, (byte)1, SceneMapOverlay.MaxVolumeTiles);
         height = Math.Clamp(height, (byte)1, SceneMapOverlay.MaxVolumeTiles);
         var size = SceneEntity.EntrySizeFor(kind);
         var raw = new byte[size];
+        raw[0] = typeId;
         raw[2] = width;
         raw[3] = height;
         position.Write(raw.AsSpan(4, 4));
-        return new SceneEntity
+        var entity = new SceneEntity
         {
             Kind = kind,
-            TypeId = 0,
+            TypeId = typeId,
             DirectionOrFlags = 0,
             Width = width,
             Height = height,
@@ -913,10 +972,28 @@ public static class SceneEditing
             Sector = sector.Sector,
             Index = index,
             RawBytes = raw,
-            DisplayName = $"{kind} 0",
+            DisplayName = $"{kind} {typeId}",
             NeedsListRewrite = true,
             ScriptOffsets = CreateScriptOffsets(kind),
         };
+        AttachDefaultScriptStubs(entity);
+        return entity;
+    }
+
+    private static void AttachDefaultScriptStubs(SceneEntity entity)
+    {
+        var slotCount = entity.ScriptOffsets.Length;
+        for (var i = 0; i < slotCount; i++)
+        {
+            var stub = new EntityScriptSlot { Offset = -1 };
+            if (i == 0)
+            {
+                stub.Commands.Add(new ScriptCommandData { Op = 0xEF });
+                stub.Dirty = true;
+            }
+
+            entity.Scripts.Add(stub);
+        }
     }
 
     private static int[] CreateScriptOffsets(SceneEntityKind kind) => kind switch

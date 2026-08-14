@@ -911,9 +911,9 @@ public sealed class SceneWorkspacePanel : UserControl
         EditorChrome.StyleList(list);
         list.SelectionChanged += (_, _) =>
         {
-            if (list.SelectedItem is SceneEntity entity)
+            if (list.SelectedItem is EntityKindListItem item)
             {
-                _selectedEntity = entity;
+                _selectedEntity = item.Entity;
                 _selectedLink = null;
                 _selectedLinkIndex = -1;
                 RefreshProperties();
@@ -921,7 +921,7 @@ public sealed class SceneWorkspacePanel : UserControl
             }
         };
 
-        var add = EditorChrome.IconButton("+", tip: $"Add {kind}");
+        var add = EditorChrome.IconButton("+", tip: $"Add {kind} to current sector");
         var remove = EditorChrome.IconButton("−", tip: $"Remove selected {kind}");
         var dup = EditorChrome.ToolButton("Dup");
         ToolTip.SetTip(dup, $"Duplicate selected {kind}");
@@ -938,16 +938,17 @@ public sealed class SceneWorkspacePanel : UserControl
             Child = new StackPanel
             {
                 Orientation = Orientation.Horizontal,
+                Spacing = EditorTheme.Space2,
                 Children = { add, remove, dup },
             },
         };
 
         var hint = new TextBlock
         {
-            Text = $"Select a {kind} on the map or list. Properties are on the Scene tab.",
-            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
+            Text = $"Select a {kind} on the map or list. Max {SceneEntities.MaxPerSector(kind)} {SceneEntities.Noun(kind)} per sector.",
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, EditorTheme.Space3),
             TextWrapping = TextWrapping.Wrap,
-            FontSize = EditorTheme.FontLabel,
+            FontSize = EditorTheme.FontMeta,
             Foreground = EditorTheme.TextMutedBrush,
         };
 
@@ -1275,7 +1276,13 @@ public sealed class SceneWorkspacePanel : UserControl
             return;
 
         var sector = CurrentSector();
-        list.ItemsSource = sector?.ListFor(kind.Value).ToArray() ?? Array.Empty<SceneEntity>();
+        var items = sector?.ListFor(kind.Value).Select(entity => new EntityKindListItem(entity)).ToArray()
+            ?? [];
+        list.ItemsSource = items;
+        if (_selectedEntity is not null)
+        {
+            list.SelectedItem = items.FirstOrDefault(item => ReferenceEquals(item.Entity, _selectedEntity));
+        }
     }
 
     private void RefreshAll()
@@ -2075,14 +2082,40 @@ public sealed class SceneWorkspacePanel : UserControl
         // Best-effort; entity lists on kind tabs refresh on tab switch.
     }
 
+    private static string InspectorModeFor(SceneEntityKind kind) => kind switch
+    {
+        SceneEntityKind.Live => "Lives",
+        SceneEntityKind.Object => "Objects",
+        SceneEntityKind.Effect => "Effects",
+        SceneEntityKind.Event => "Events",
+        _ => "Scene",
+    };
+
     private void AddEntity(SceneEntityKind kind)
     {
         var sector = CurrentSector();
         if (_changes is null || sector is null)
+        {
+            _status.Text = "Select a map sector before adding an entity.";
             return;
-        _selectedEntity = SceneEditing.AddEntity(_changes, sector, kind);
-        RefreshAll();
-        DirtyChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        try
+        {
+            _selectedEntity = SceneEditing.AddEntity(_changes, sector, kind);
+            _selectedLink = null;
+            _selectedLinkIndex = -1;
+            SetInspectorMode(InspectorModeFor(kind));
+            SyncWorkingRom();
+            RefreshAll();
+            DirtyChanged?.Invoke(this, EventArgs.Empty);
+            _status.Text =
+                $"Added {kind} {_selectedEntity.DisplayName} at ({_selectedEntity.Position.XTiles},{_selectedEntity.Position.YTiles}).";
+        }
+        catch (InvalidOperationException exception)
+        {
+            _status.Text = exception.Message;
+        }
     }
 
     private void AddDefaultLink()
@@ -2128,11 +2161,19 @@ public sealed class SceneWorkspacePanel : UserControl
                 var sector = CurrentSector();
                 if (sector is null)
                     return;
-                _selectedEntity = SceneEditing.AddEntity(
-                    _changes, sector, SceneEntityKind.Event, commit.Position, commit.Width, commit.Height);
-                _selectedLink = null;
-                _selectedLinkIndex = -1;
-                SetInspectorMode("Events");
+                try
+                {
+                    _selectedEntity = SceneEditing.AddEntity(
+                        _changes, sector, SceneEntityKind.Event, commit.Position, commit.Width, commit.Height);
+                    _selectedLink = null;
+                    _selectedLinkIndex = -1;
+                    SetInspectorMode("Events");
+                }
+                catch (InvalidOperationException exception)
+                {
+                    _status.Text = exception.Message;
+                    return;
+                }
             }
         }
         else if (commit.Link is not null)
@@ -2176,9 +2217,17 @@ public sealed class SceneWorkspacePanel : UserControl
         var sector = CurrentSector();
         if (_changes is null || sector is null || _selectedEntity is null)
             return;
-        _selectedEntity = SceneEditing.DuplicateEntity(_changes, sector, _selectedEntity);
-        RefreshAll();
-        DirtyChanged?.Invoke(this, EventArgs.Empty);
+        try
+        {
+            _selectedEntity = SceneEditing.DuplicateEntity(_changes, sector, _selectedEntity);
+            SyncWorkingRom();
+            RefreshAll();
+            DirtyChanged?.Invoke(this, EventArgs.Empty);
+        }
+        catch (InvalidOperationException exception)
+        {
+            _status.Text = exception.Message;
+        }
     }
 
     private void AddSector()
@@ -2457,6 +2506,11 @@ public sealed class SceneWorkspacePanel : UserControl
 
     private static string Truncate(string text, int max) =>
         text.Length <= max ? text : text[..(max - 1)] + "…";
+
+    private sealed record EntityKindListItem(SceneEntity Entity)
+    {
+        public override string ToString() => SceneEntities.FormatListRow(Entity);
+    }
 
     private sealed record SectorListItem(int Group, int Sector, string Title, SceneSector Data)
     {

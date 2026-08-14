@@ -146,6 +146,12 @@ public sealed class MainWindow : Window
             UpdateDirtyTitle();
         };
         _assetWorkspace.RequestSceneWorkspace += (_, _) => OpenSelectedScene();
+        _assetWorkspace.DirtyChanged += OnSceneDirty;
+        _assetWorkspace.CatalogChanged += (_, _) =>
+        {
+            if (_catalog is not null)
+                _explorer.Build(_catalog, _scenes, Categories);
+        };
 
         _leftSplitter = EditorChrome.ColumnSplitter();
         _rightSplitter = EditorChrome.ColumnSplitter();

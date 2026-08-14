@@ -118,6 +118,21 @@ public static class ScriptIndexer
             .ToList();
     }
 
+    public static string FormatCatalogId(
+        IReadOnlyDictionary<int, DialogueString> table,
+        DialogueString dialogue)
+    {
+        var index = 0;
+        foreach (var entry in table.Values.OrderBy(item => item.Offset))
+        {
+            index++;
+            if (ReferenceEquals(entry, dialogue) || entry.Offset == dialogue.Offset)
+                return $"D{index:D4}";
+        }
+
+        return $"D{Math.Max(1, table.Count):D4}";
+    }
+
     private static int StringByteLength(RomImage rom, int offset, int maximum)
     {
         var length = 0;

@@ -21,6 +21,7 @@ public sealed class AssetWorkspacePanel : UserControl
     private readonly Border _previewHost;
     private readonly ToggleButton _listViewButton;
     private readonly ToggleButton _gridViewButton;
+    private readonly Button _addDialogueButton;
     private readonly Grid _split;
 
     private RomImage? _rom;
@@ -52,6 +53,8 @@ public sealed class AssetWorkspacePanel : UserControl
 
     public event EventHandler<AssetDescriptor?>? AssetSelected;
     public event EventHandler? RequestSceneWorkspace;
+    public event EventHandler? DirtyChanged;
+    public event EventHandler? CatalogChanged;
 
     public AssetDescriptor? SelectedAsset => _selectedAsset;
 
@@ -107,13 +110,19 @@ public sealed class AssetWorkspacePanel : UserControl
                 SetViewMode(true);
         };
 
-        var toolbarInner = new StackPanel
+        _addDialogueButton = EditorChrome.ToolButton("Add line");
+        _addDialogueButton.IsVisible = false;
+        ToolTip.SetTip(_addDialogueButton, "Allocate a new Dxxxx dialogue string");
+        _addDialogueButton.Click += (_, _) => AddDialogueLine();
+
+        var toolbarLeft = new StackPanel
         {
             Orientation = Orientation.Horizontal,
             VerticalAlignment = VerticalAlignment.Center,
             Children = { _listViewButton, _gridViewButton },
         };
-        var toolbar = EditorChrome.ToolbarHost(toolbarInner);
+        var toolbar = EditorChrome.ToolbarHost(
+            EditorChrome.ToolbarRowSplit(toolbarLeft, _addDialogueButton));
 
         _split = new Grid
         {
@@ -178,6 +187,7 @@ public sealed class AssetWorkspacePanel : UserControl
 
     public void ShowCategory(AssetCategory category, bool selectFirst)
     {
+        _addDialogueButton.IsVisible = category == AssetCategory.Dialogue;
         if (_catalog is null || !CategoryWorkspace.UsesAssetBrowser(category))
             return;
         var assets = _catalog.ForCategory(category);
@@ -218,6 +228,27 @@ public sealed class AssetWorkspacePanel : UserControl
                 VerticalAlignment = VerticalAlignment.Center,
             };
         }
+    }
+
+    private void AddDialogueLine()
+    {
+        if (_scenes is null || _changes is null || _catalog is null)
+            return;
+
+        var added = SceneEditing.AddDialogue(_changes, _scenes, "New dialogue.");
+        if (_workingRom is not null)
+            _workingRom.Sync(_scenes, _charmap);
+
+        var rebuilt = ScriptIndexer.FromDialogueTable(_scenes.DialogueByOffset);
+        _catalog.ReplaceCategory(AssetCategory.Dialogue, rebuilt);
+        CatalogChanged?.Invoke(this, EventArgs.Empty);
+        DirtyChanged?.Invoke(this, EventArgs.Empty);
+
+        var match = rebuilt.FirstOrDefault(asset => asset.Offset == added.Offset);
+        if (match is not null)
+            _ = RevealAssetAsync(match);
+        else
+            ShowCategory(AssetCategory.Dialogue, selectFirst: false);
     }
 
     public Task ShowAssetAsync(AssetDescriptor asset) => ShowPreviewAsync(asset);
