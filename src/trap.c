@@ -429,7 +429,7 @@ void HandleStickyTrap(Entity *pokemon,Entity *target)
     s32 index;
     s32 itemCount;
     s32 newIndex;
-    Item *itemStack[21];
+    Item *itemStack[INVENTORY_SIZE + 1];
 
     info = GetEntInfo(target);
     if (HasHeldItem(target,0xe)) {
@@ -520,7 +520,7 @@ void HandleGrimyTrap(Entity *pokemon, Entity *target)
     s32 index;
     EntityInfo *info;
     s32 badFoodCount;
-    Item *itemStack [22];
+    Item *itemStack[INVENTORY_SIZE + 1];
 
     badFoodCount = 0;
     if (target != NULL) {
