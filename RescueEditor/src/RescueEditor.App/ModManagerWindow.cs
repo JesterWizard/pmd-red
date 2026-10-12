@@ -68,7 +68,7 @@ public sealed class ModManagerWindow : Window
         var footerButtons = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             VerticalAlignment = VerticalAlignment.Center,
             Margin = new Thickness(EditorTheme.Space4, 0, 0, 0),
             Children = { cancel, _apply },

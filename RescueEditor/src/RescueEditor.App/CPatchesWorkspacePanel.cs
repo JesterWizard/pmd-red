@@ -56,7 +56,7 @@ public sealed class CPatchesWorkspacePanel : UserControl
         var toolbarInner = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             VerticalAlignment = VerticalAlignment.Center,
             Children =
             {
@@ -239,7 +239,7 @@ public sealed class CPatchesWorkspacePanel : UserControl
         var actions = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             VerticalAlignment = VerticalAlignment.Center,
             Children = { install, uninstall },
         };

@@ -134,6 +134,8 @@ public sealed class ScenePlaySession
     /// <summary>Free-roam avatar is hidden while a scripted cutscene is finished (end overlay).</summary>
     public bool ShowFreeRoamPlayer => AllowFreeRoam && !(IsScripted && ScriptFinished);
     public GroundScriptVm? ScriptVm => _script;
+    /// <summary>Script lines stepped since the last Restart (step-through playback).</summary>
+    public int LinesStepped { get; private set; }
     public int MapWidthPixels { get; }
     public int MapHeightPixels { get; }
     public double PlayerX { get; private set; }
@@ -199,6 +201,38 @@ public sealed class ScenePlaySession
     public void AdvanceDialogue() => _script?.AdvanceDialogue();
     public void MoveChoice(int delta) => _script?.MoveChoice(delta);
 
+    /// <summary>Advance one script line: dismiss a pending textbox, or run to the next command, then pause.</summary>
+    public bool StepLine()
+    {
+        if (_script is null || _script.Finished)
+            return false;
+        _script.Pause();
+        if (_script.WaitingForAdvance)
+        {
+            _script.AdvanceDialogue();
+            if (_script.WaitingForAdvance)   // another page of the same text box is the step
+            {
+                LinesStepped++;
+                SyncFromScript();
+                return true;
+            }
+        }
+        _script.StepOver();
+        _animTick++;
+        LinesStepped++;
+        SyncFromScript();
+        return true;
+    }
+
+    /// <summary>Restart the cutscene and replay line steps until <paramref name="line"/> lines have run.</summary>
+    public void StepToLine(int line)
+    {
+        Restart();
+        _script?.Pause();
+        var target = Math.Max(0, line);
+        while (LinesStepped < target && StepLine()) { }
+    }
+
     /// <summary>Rebuild the script VM and clear play state so the cutscene can run again.</summary>
     public void Restart()
     {
@@ -207,6 +241,7 @@ public sealed class ScenePlaySession
         _lastMusicId = null;
         MusicId = null;
         _animTick = 0;
+        LinesStepped = 0;
         _cachedBg = null;
         _cachedBgGroup = int.MinValue;
         _cachedBgSector = int.MinValue;
@@ -250,19 +285,7 @@ public sealed class ScenePlaySession
         {
             _script.Tick(dtSeconds);
             _animTick += Math.Max(1, (int)Math.Round(dtSeconds * 60));
-            ActiveGroup = _script.ActiveGroup;
-            ActiveSector = _script.ActiveSector;
-            if (_script.MusicId is int song)
-                MusicId = song;
-            else
-                MusicId = null;
-            foreach (var id in _script.DrainPendingSfx())
-                _pendingSfx.Add(id);
-
-            SyncPlayerFromLive();
-            UpdateCamera();
-            if (_script.Finished)
-                AllowFreeRoam = true;
+            SyncFromScript();
             return;
         }
 
@@ -609,6 +632,28 @@ public sealed class ScenePlaySession
                 SceneCompositor.BlitSpritePublic(image, fx.Image, fxX, fxY, flipH: false);
             }
         }
+    }
+
+    /// <summary>Copy station, music, SFX, player and camera state from the script VM.</summary>
+    private void SyncFromScript()
+    {
+        var script = _script;
+        if (script is null)
+            return;
+
+        ActiveGroup = script.ActiveGroup;
+        ActiveSector = script.ActiveSector;
+        if (script.MusicId is int song)
+            MusicId = song;
+        else
+            MusicId = null;
+        foreach (var id in script.DrainPendingSfx())
+            _pendingSfx.Add(id);
+
+        SyncPlayerFromLive();
+        UpdateCamera();
+        if (script.Finished)
+            AllowFreeRoam = true;
     }
 
     private void SyncPlayerFromLive()

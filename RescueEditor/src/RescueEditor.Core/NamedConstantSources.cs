@@ -23,29 +23,6 @@ public static class NamedConstantSources
     public const string Weather = "include/constants/weather.h";
     public const string SoundNames = "src/sound_names.c";
 
-    public static IReadOnlyList<string> All { get; } =
-    [
-        BgMusic,
-        Emotions,
-        GroundMap,
-        GroundScriptParams,
-        Direction,
-        ScriptId,
-        PaletteUtil,
-        PortraitPlacement,
-        DataScript,
-        Monster,
-        MoveId,
-        Item,
-        Type,
-        Ability,
-        FriendArea,
-        Dungeon,
-        Trap,
-        Weather,
-        SoundNames,
-    ];
-
     public static string Combine(string repositoryRoot, string relative) =>
         Path.Combine(repositoryRoot, relative.Replace('/', Path.DirectorySeparatorChar));
 }

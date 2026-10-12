@@ -15,7 +15,6 @@ public enum AssetCategory
     DataTables,
     Music,
     SoundEffects,
-    RawArchives,
     CPatches,
 }
 

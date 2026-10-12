@@ -56,35 +56,7 @@ public static class CatalogBuilder
 
         Report("Scanning pksdir0 archives…");
         var archives = RomArchiveParser.FindArchives(rom);
-        Report($"Found {archives.Count} archive(s); indexing raw entries…");
-        foreach (var archive in archives)
-        {
-            var isGroundArchive = archive.Entries.Any(entry =>
-                entry.Name.Length >= 3 &&
-                (entry.Name.EndsWith('c') || entry.Name.EndsWith('m')) &&
-                entry.Name.Contains('P', StringComparison.OrdinalIgnoreCase));
-            foreach (var entry in archive.Entries)
-            {
-                var kind = isGroundArchive && IsGroundFileName(entry.Name)
-                    ? AssetKind.GroundFile
-                    : AssetKind.Raw;
-                catalog.Add(new AssetDescriptor
-                {
-                    Id = $"archive:{archive.HeaderOffset:X}:{entry.Name}:{entry.Offset:X}",
-                    Name = entry.Name,
-                    Category = AssetCategory.RawArchives,
-                    Kind = kind,
-                    Offset = entry.Offset,
-                    Size = entry.Size,
-                    Format = isGroundArchive ? "ground archive" : "pksdir0",
-                    Description = $"{archive.Name}, {entry.Size:N0} bytes",
-                    Metadata = new Dictionary<string, string>
-                    {
-                        ["archive"] = archive.Name,
-                    },
-                });
-            }
-        }
+        Report($"Found {archives.Count} archive(s).");
 
         Report("Composing ground map sets…");
         catalog.AddRange(GroundMapIndexer.Index(rom, archives));
@@ -158,7 +130,7 @@ public static class CatalogBuilder
         if (portraits.Length == 0)
             diagnostics.Add("No portraits were found in this ROM.");
         if (archives.Count == 0)
-            diagnostics.Add("No valid pksdir0 archives were found; raw archive and ground entries are unavailable.");
+            diagnostics.Add("No valid pksdir0 archives were found; ground map entries are unavailable.");
         if (scenes.DialogueByOffset.Count == 0)
             diagnostics.Add("No dialogue command pointers were recognized in this ROM.");
         if (profile is null)
@@ -171,12 +143,6 @@ public static class CatalogBuilder
         Report($"Done — {catalog.Assets.Count:N0} assets indexed.");
         catalog.SetDiagnostics(diagnostics);
         return (catalog, charmap, scenes);
-    }
-
-    private static bool IsGroundFileName(string name)
-    {
-        return name.Length >= 3 &&
-            (name.EndsWith('c') || name.EndsWith('m') || name.Contains('P'));
     }
 
     public static string FindRepositoryRoot(string romPath)

@@ -112,7 +112,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
         var actions = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             VerticalAlignment = VerticalAlignment.Center,
             Children = { _filterBox, AddToolbarButton("Add", AddEntry), AddToolbarButton("Delete", DeleteEntry) },
         };
@@ -494,7 +494,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
         return new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             Children =
             {
                 Label("Lv"),

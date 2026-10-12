@@ -280,10 +280,10 @@ public sealed class ScriptAssetIndexTests
         Assert.Empty(index.Find(ScriptAssetKind.Dialogue, 1));
         Assert.Empty(index.FindForAsset(new AssetDescriptor
         {
-            Id = "raw:1",
-            Name = "raw",
-            Category = AssetCategory.RawArchives,
-            Kind = AssetKind.Raw,
+            Id = "fx:1",
+            Name = "fx",
+            Category = AssetCategory.Effects,
+            Kind = AssetKind.Effect,
         }));
     }
 

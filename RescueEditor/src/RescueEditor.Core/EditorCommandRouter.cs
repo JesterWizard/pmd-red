@@ -20,7 +20,8 @@ public static class EditorCommandRouter
             EditorCommandId.GlobalSearch or
             EditorCommandId.PlayInEmulator or
             EditorCommandId.ManageMods or
-            EditorCommandId.SaveProjectAs,
+            EditorCommandId.SaveProjectAs or
+            EditorCommandId.ShowHome,
         EditorFocusKind.SceneCanvas => true,
         _ => !IsSceneOnly(command),
     };

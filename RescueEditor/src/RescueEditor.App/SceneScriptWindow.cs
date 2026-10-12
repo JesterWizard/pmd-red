@@ -273,7 +273,7 @@ public sealed class SceneScriptWindow : Window
         var headerRight = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             VerticalAlignment = VerticalAlignment.Center,
             Children = { _scriptKindToggle, _eventKindToggle, helpToggle, commandLabel, _commandInfo, _counts },
         };
@@ -320,7 +320,7 @@ public sealed class SceneScriptWindow : Window
         var buttons = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             VerticalAlignment = VerticalAlignment.Center,
             HorizontalAlignment = HorizontalAlignment.Right,
             Children = { _scriptPicker, _exportScope, copyC, saveC, apply, close },
@@ -388,7 +388,7 @@ public sealed class SceneScriptWindow : Window
             Child = new StackPanel
             {
                 Orientation = Orientation.Horizontal,
-                Spacing = EditorTheme.Space2,
+                Spacing = EditorTheme.ButtonGap,
                 Children = { _insertOp, insert, delete, up, down },
             },
         };

@@ -231,6 +231,7 @@ public sealed class GroundScriptVm
         var startIndex = actor.Index;
         var startCommands = actor.Commands;
         var startDepth = actor.CallStack.Count;
+        var hadDialogue = WaitingForAdvance;
         var blocked = actor.WaitFrames > 0 || actor.WalkActive ||
             actor.AwaitCueId is not null || actor.E5WaitingCue is not null;
         var overCall = !blocked &&
@@ -240,6 +241,9 @@ public sealed class GroundScriptVm
         _suppressBreakpoints = true;
         _stepComplete = () =>
         {
+            if (!hadDialogue && WaitingForAdvance)
+                return true;
+
             if (blocked)
             {
                 return actor.WaitFrames == 0 && !actor.WalkActive &&
@@ -257,7 +261,11 @@ public sealed class GroundScriptVm
         IsPaused = false;
         var guard = 0;
         while (!Finished && !actor.Done && !IsPaused && guard++ < 100_000)
+        {
             TickOneFrame();
+            if (!hadDialogue && WaitingForAdvance)
+                break;
+        }
         _stepComplete = null;
         _suppressBreakpoints = false;
         IsPaused = true;

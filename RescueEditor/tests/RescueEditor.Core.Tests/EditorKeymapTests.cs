@@ -23,6 +23,7 @@ public sealed class EditorKeymapTests
     [InlineData("F5", false, false, false, EditorCommandId.PlayInEmulator)]
     [InlineData("M", true, true, false, EditorCommandId.ManageMods)]
     [InlineData("S", true, true, false, EditorCommandId.SaveProjectAs)]
+    [InlineData("Home", false, false, true, EditorCommandId.ShowHome)]
     public void ResolvesDefaultBindings(string key, bool ctrl, bool shift, bool alt, EditorCommandId expected)
     {
         Assert.True(_map.TryResolve(new KeyChord(key, ctrl, shift, alt), out var command));

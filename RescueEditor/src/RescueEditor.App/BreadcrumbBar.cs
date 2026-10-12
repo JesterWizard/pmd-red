@@ -7,14 +7,24 @@ namespace RescueEditor.App;
 
 public sealed class BreadcrumbBar : UserControl
 {
+    private readonly Button _homeButton;
     private readonly StackPanel _segments;
     private readonly Button _modsBadge;
     private readonly TextBlock _status;
 
+    public event EventHandler? HomeClicked;
     public event EventHandler? ModsBadgeClicked;
 
     public BreadcrumbBar()
     {
+        _homeButton = EditorChrome.ToolButton("⌂ Home", tip: "Home dashboard (Alt+Home)");
+        _homeButton.Margin = new Thickness(0, 0, EditorTheme.Space4, 0);
+        _homeButton.Height = EditorTheme.ControlHeight - 2;
+        _homeButton.MinHeight = EditorTheme.ControlHeight - 2;
+        _homeButton.VerticalAlignment = VerticalAlignment.Center;
+        _homeButton.FontSize = EditorTheme.FontMeta;
+        _homeButton.Click += (_, _) => HomeClicked?.Invoke(this, EventArgs.Empty);
+
         _segments = new StackPanel
         {
             Orientation = Orientation.Horizontal,
@@ -42,12 +52,13 @@ public sealed class BreadcrumbBar : UserControl
         };
         var row = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions("*,Auto,Auto"),
-            Children = { _segments, _modsBadge, _status },
+            ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto,Auto"),
+            Children = { _homeButton, _segments, _modsBadge, _status },
         };
-        Grid.SetColumn(_segments, 0);
-        Grid.SetColumn(_modsBadge, 1);
-        Grid.SetColumn(_status, 2);
+        Grid.SetColumn(_homeButton, 0);
+        Grid.SetColumn(_segments, 1);
+        Grid.SetColumn(_modsBadge, 2);
+        Grid.SetColumn(_status, 3);
         Content = new Border
         {
             Background = EditorTheme.ToolbarBgBrush,

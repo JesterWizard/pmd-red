@@ -485,7 +485,7 @@ public sealed class SceneWorkspacePanel : UserControl
                     EditorChrome.PropertyRow("Half", new StackPanel
                     {
                         Orientation = Orientation.Horizontal,
-                        Spacing = EditorTheme.Space2,
+                        Spacing = EditorTheme.ButtonGap,
                         Children = { _halfXToggle, _halfYToggle },
                     }),
                     EditorChrome.PropertyRow("Width", _wBox),
@@ -948,7 +948,7 @@ public sealed class SceneWorkspacePanel : UserControl
             Child = new StackPanel
             {
                 Orientation = Orientation.Horizontal,
-                Spacing = EditorTheme.Space2,
+                Spacing = EditorTheme.ButtonGap,
                 Children = { add, remove, dup },
             },
         };
@@ -1229,7 +1229,7 @@ public sealed class SceneWorkspacePanel : UserControl
             Child = new StackPanel
             {
                 Orientation = Orientation.Horizontal,
-                Spacing = EditorTheme.Space2,
+                Spacing = EditorTheme.ButtonGap,
                 Children = { add, remove, _scriptKindToggle, _eventKindToggle, _openScriptButton },
             },
         };
@@ -1613,7 +1613,7 @@ public sealed class SceneWorkspacePanel : UserControl
         {
             Orientation = Orientation.Horizontal,
             HorizontalAlignment = HorizontalAlignment.Right,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
             Children = { cancel, delete },
         };

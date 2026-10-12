@@ -13,7 +13,7 @@ public sealed class CategoryWorkspaceTests
     [InlineData(AssetCategory.Dialogue, CategoryWorkspaceKind.AssetBrowser)]
     [InlineData(AssetCategory.Portraits, CategoryWorkspaceKind.AssetBrowser)]
     [InlineData(AssetCategory.Music, CategoryWorkspaceKind.AssetBrowser)]
-    [InlineData(AssetCategory.RawArchives, CategoryWorkspaceKind.AssetBrowser)]
+    [InlineData(AssetCategory.Effects, CategoryWorkspaceKind.AssetBrowser)]
     public void Resolve_RoutesCategoryToWorkspaceKind(AssetCategory category, CategoryWorkspaceKind expected)
     {
         Assert.Equal(expected, CategoryWorkspace.Resolve(category));

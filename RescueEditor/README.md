@@ -3,7 +3,7 @@
 RescueTemple (project folder: `RescueEditor`) is a cross-platform Avalonia/.NET 8
 browser and exporter for the Pokémon Mystery Dungeon: Red Rescue Team
 decompilation. This editor opens a ROM without modifying it, builds an in-memory asset
-catalog and scene graph, previews supported formats, exports selected entries,
+catalog and scene graph, previews supported formats,
 and can save a project / build an edited ROM **copy**. The source baserom is
 never overwritten.
 
@@ -93,12 +93,35 @@ The published application is placed under
 
 ## UI notes
 
+- After a ROM opens, the middle pane shows **Home**: a grid of tiles for Scenes,
+  Characters (portraits), Dialogue, Music, Sound Effects, Maps, Backgrounds,
+  Effects, Scripts & Animations, Dungeons, Data Tables, and C Patches, each with an
+  item count. Click a tile to open that section. Return to Home with the **⌂ Home**
+  button at the left of the breadcrumb bar, **View → Home**, or **Alt+Home**. If the
+  last session's selection is restored on reopen, that view shows instead.
 - Use **List** / **Grid** in the toolbar (or **View** menu) to switch the
   middle browser pane. Grid mode shows thumbnail cards for portraits,
   backgrounds, effects, and ground maps.
 - Dialogue entries are listed by ID (`D0001`…); the right pane shows the
   decoded text with macros such as `{COLOR GREEN}`, `{POKEMON_0}`, and
   `{WAIT_PRESS}`.
+
+## Step through a cutscene
+
+Scene Play can run a cutscene one script line at a time. This works for cutscenes
+only. Turn on **Step through** in the toolbar, or press **F9**. The cutscene restarts
+paused at line 0. The toolbar then shows **◀ Prev line**, **Next line ▶**, and a
+**Line N** counter, and the script panel on the right highlights the current line.
+
+| Key | Action |
+|-----|--------|
+| F10 or A | Next line (same as **Next line ▶**): run one script line, or show the next page of the current text box |
+| Shift+F10 | Previous line (same as **◀ Prev line**): rebuild the cutscene and replay it up to the line before |
+| F9 | Turn **Step through** on or off |
+
+- Auto progress is off while stepping.
+- Turning **Step through** off resumes normal playback from the current line.
+- Changing scene or pressing **Replay** leaves step mode.
 
 ## Playtest in an emulator
 
@@ -150,7 +173,7 @@ Failure messages:
 ## Current asset coverage
 
 - Portraits: AT4PX/AT4PN-style decompression and 40×40 portrait rendering.
-- Title backgrounds: title tilemap composition and PNG export.
+- Title backgrounds: title tilemap composition and preview.
 - Effects: SIRO background/object tile previews.
 - Ground maps: GMLZ, BPL, BPC, and BMA decoding with composed PNG previews.
 - Dialogue and scripts: ROM scanning for `MSG_*` command pointers, PMD
@@ -168,7 +191,6 @@ Failure messages:
   `agbplay-stream --server` keeps the ROM loaded so clicks stream audio within
   about a second (often much faster after the first warm). A background warmer
   fills the WAV cache for instant later plays. On Windows, Linux tools launch via WSL.
-- `pksdir0` archives: generic raw entry browsing and export.
 
 This MVP keeps the source ROM read-only. Exported files, **mod packages**, and
 Build ROM copies are the safe hand-off points for later reassembly workflows.
@@ -217,9 +239,6 @@ separately and always win.
 - A `Mods: N` badge (N enabled mods, or `Mods: enabled/total` when some are off) at
   the right of the breadcrumb bar shows when the project has mods. Click it to open
   Manage Mods.
-
-The last two items replace the old **File → Export Mod Package…** and
-**File → Import Mod Package…**.
 
 ### Manage Mods window
 

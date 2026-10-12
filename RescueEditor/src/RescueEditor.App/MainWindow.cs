@@ -26,7 +26,6 @@ public sealed class MainWindow : Window
         ("Data Tables", AssetCategory.DataTables),
         ("Music", AssetCategory.Music),
         ("Sound Effects", AssetCategory.SoundEffects),
-        ("Raw Archives", AssetCategory.RawArchives),
     ];
 
     // Changes whenever the App or Core assembly is rebuilt; lets the restore prompt tell an app update from a crash.
@@ -36,6 +35,7 @@ public sealed class MainWindow : Window
     private readonly ProjectExplorerPanel _explorer;
     private readonly BreadcrumbBar _breadcrumb;
     private readonly Border _workspaceHost;
+    private readonly HomeDashboardPanel _home = new();
     private readonly Border _propertiesHost;
     private readonly GridSplitter _leftSplitter;
     private readonly GridSplitter _rightSplitter;
@@ -122,6 +122,8 @@ public sealed class MainWindow : Window
 
         _breadcrumb = new BreadcrumbBar();
         _breadcrumb.ModsBadgeClicked += async (_, _) => await OpenModManagerAsync();
+        _breadcrumb.HomeClicked += (_, _) => ShowHome();
+        _home.TileChosen += (_, category) => OpenHomeTile(category);
         _workspaceHost = new Border
         {
             Background = EditorTheme.CanvasBgBrush,
@@ -313,10 +315,6 @@ public sealed class MainWindow : Window
         openProject.Click += OpenProjectOnClick;
         var buildRom = new MenuItem { Header = "_Build ROM…" };
         buildRom.Click += BuildRomOnClick;
-        var exportSelected = new MenuItem { Header = "Export _Selected…" };
-        exportSelected.Click += ExportSelectedOnClick;
-        var exportCategory = new MenuItem { Header = "Export _Category…" };
-        exportCategory.Click += ExportCategoryOnClick;
         var close = new MenuItem { Header = "_Close ROM" };
         close.Click += async (_, _) =>
         {
@@ -333,9 +331,6 @@ public sealed class MainWindow : Window
         file.Items.Add(saveProject);
         file.Items.Add(saveProjectAs);
         file.Items.Add(buildRom);
-        file.Items.Add(new Separator());
-        file.Items.Add(exportSelected);
-        file.Items.Add(exportCategory);
         file.Items.Add(new Separator());
         file.Items.Add(close);
         file.Items.Add(exit);
@@ -423,6 +418,8 @@ public sealed class MainWindow : Window
         menu.Items.Add(emulatorMenu);
 
         var view = new MenuItem { Header = "_View" };
+        var home = new MenuItem { Header = "_Home", InputGesture = new KeyGesture(Key.Home, KeyModifiers.Alt) };
+        home.Click += (_, _) => ExecuteShellCommand(EditorCommandId.ShowHome);
         var list = new MenuItem { Header = "_List" };
         list.Click += (_, _) => _assetWorkspace.SetViewMode(false);
         var grid = new MenuItem { Header = "_Grid" };
@@ -445,6 +442,8 @@ public sealed class MainWindow : Window
             InputGesture = new KeyGesture(Key.U, KeyModifiers.Control | KeyModifiers.Shift),
         };
         toggleOutput.Click += (_, _) => ExecuteShellCommand(EditorCommandId.ToggleOutput);
+        view.Items.Add(home);
+        view.Items.Add(new Separator());
         view.Items.Add(list);
         view.Items.Add(grid);
         view.Items.Add(new Separator());
@@ -452,19 +451,6 @@ public sealed class MainWindow : Window
         view.Items.Add(toggleInspector);
         view.Items.Add(toggleOutput);
         menu.Items.Add(view);
-
-        var tools = new MenuItem { Header = "_Tools" };
-        var wonderMail = new MenuItem { Header = "_Wonder Mail…" };
-        wonderMail.Click += (_, _) =>
-        {
-            var window = new WonderMailWindow();
-            window.Show(this);
-        };
-        var resync = new MenuItem { Header = "Resync from _decomp" };
-        resync.Click += (_, _) => ResyncNamedConstantsFromDecomp();
-        tools.Items.Add(wonderMail);
-        tools.Items.Add(resync);
-        menu.Items.Add(tools);
         return menu;
     }
 
@@ -633,10 +619,7 @@ public sealed class MainWindow : Window
             var restoreExplorer = string.Equals(path, _session.LastRomPath, StringComparison.OrdinalIgnoreCase);
             if (!(restoreExplorer && RestoreExplorerFromSession()))
             {
-                _selectedCategory = AssetCategory.Scenes;
-                _selectedAsset = null;
-                ShowScenesPicker();
-                _explorer.ExpandCategory(AssetCategory.Scenes);
+                ShowHome();
             }
             RememberRom(path);
             PersistSession();
@@ -912,6 +895,11 @@ public sealed class MainWindow : Window
 
     private void UpdateBreadcrumb()
     {
+        if (_workspaceHost.Child == _home && _rom is not null)
+        {
+            _breadcrumb.SetPath(Path.GetFileName(_rom.Path), "Home");
+            return;
+        }
         var romName = _rom is null ? "RescueTemple" : Path.GetFileName(_rom.Path);
         var category = Categories.FirstOrDefault(c => c.Category == _selectedCategory).Name
                        ?? _selectedCategory?.ToString()
@@ -1057,49 +1045,6 @@ public sealed class MainWindow : Window
         _sceneWorkspace?.OpenScriptAt(hit);
     }
 
-    private void ResyncNamedConstantsFromDecomp()
-    {
-        var preferred = _rom is not null ? CatalogBuilder.FindRepositoryRoot(_rom.Path) : null;
-        var root = NamedConstantResync.TryFindRepositoryRoot(preferred);
-        if (root is null)
-        {
-            AppendOutput("Resync failed: could not find decomp headers (include/constants).");
-            ShowOutput();
-            return;
-        }
-
-        var result = NamedConstantResync.Run(root, previous: _scriptNames);
-        if (!result.Ok)
-        {
-            AppendOutput(result.Summary);
-            ShowOutput();
-            return;
-        }
-
-        if (result.Names is not null)
-        {
-            _scriptNames = result.Names;
-            _sceneWorkspace?.SetScriptNames(result.Names);
-        }
-
-        AppendOutput(result.Summary);
-        var shown = 0;
-        foreach (var delta in result.Deltas)
-        {
-            if (shown >= 40)
-            {
-                AppendOutput($"… {result.Deltas.Count - shown} more catalog change(s).");
-                break;
-            }
-
-            AppendOutput(FormatDelta(delta));
-            shown++;
-        }
-
-        ShowOutput();
-        KickSearchIndexBuild();
-    }
-
     private void ShowOutput()
     {
         if (_dock.OutputVisible)
@@ -1107,23 +1052,6 @@ public sealed class MainWindow : Window
         _dock.SetVisible(DockPanelId.Output, true);
         ApplyDockLayout(sceneOwnsInspector: OwnsInspector());
         PersistShellSettings();
-    }
-
-    private static string FormatDelta(NamedCatalogDelta delta)
-    {
-        var id = delta.Id.ToString(System.Globalization.CultureInfo.InvariantCulture);
-        return delta.Kind switch
-        {
-            NamedCatalogDeltaKind.Renamed =>
-                $"{delta.Catalog}: {delta.EditorName} → {delta.HeaderName} ({id})",
-            NamedCatalogDeltaKind.Added =>
-                $"{delta.Catalog}: added {delta.HeaderName} ({id})",
-            NamedCatalogDeltaKind.Removed =>
-                $"{delta.Catalog}: removed {delta.EditorName} ({id})",
-            NamedCatalogDeltaKind.ValueChanged =>
-                $"{delta.Catalog}: {delta.HeaderName} now {id}",
-            _ => $"{delta.Catalog}: {delta.Kind}",
-        };
     }
 
     private void KickSearchIndexBuild(bool useDiskCache = false)
@@ -1766,47 +1694,6 @@ public sealed class MainWindow : Window
         SetStatus($"Emulator set to {_session.EmulatorPath}.");
     }
 
-    private async void ExportSelectedOnClick(object? sender, RoutedEventArgs e)
-    {
-        if (_rom is null || _charmap is null)
-            return;
-        if (_selectedAsset is null)
-        {
-            await ShowErrorAsync("Export Selected", "Select an asset in the explorer first.");
-            return;
-        }
-        var directory = await ChooseExportDirectoryAsync();
-        if (directory is null) return;
-        try
-        {
-            var asset = _selectedAsset;
-            var paths = await Task.Run(() => AssetExportService.Export(_rom, asset, _charmap, directory));
-            SetStatus($"Exported {asset.Name}: {paths.Count} file(s) to {directory}");
-        }
-        catch (Exception exception) when (exception is InvalidDataException or IOException)
-        {
-            await ShowErrorAsync("Export failed", exception.Message);
-        }
-    }
-
-    private async void ExportCategoryOnClick(object? sender, RoutedEventArgs e)
-    {
-        if (_rom is null || _charmap is null || _catalog is null)
-            return;
-        if (_selectedCategory is null)
-        {
-            await ShowErrorAsync("Export Category", "Select a category in the explorer first.");
-            return;
-        }
-        var directory = await ChooseExportDirectoryAsync();
-        if (directory is null) return;
-        var assets = _catalog.ForCategory(_selectedCategory.Value);
-        var result = await Task.Run(() => AssetExportService.ExportMany(_rom, assets, _charmap, directory));
-        SetStatus($"Exported {result.Paths.Count} file(s). {result.Errors.Count} skipped.");
-        if (result.Errors.Count > 0)
-            await ShowErrorAsync("Some assets were skipped", string.Join("\n", result.Errors.Take(12)));
-    }
-
     private void RebuildModsMenu()
     {
         _modsMenu.Items.Clear();
@@ -2127,16 +2014,6 @@ public sealed class MainWindow : Window
         return string.IsNullOrWhiteSpace(cleaned) ? "mod" : cleaned;
     }
 
-    private async Task<string?> ChooseExportDirectoryAsync()
-    {
-        var folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
-        {
-            Title = "Choose RescueTemple export folder",
-            AllowMultiple = false,
-        });
-        return folders.FirstOrDefault()?.Path.LocalPath;
-    }
-
     private void ClearRom()
     {
         _assetWorkspace.DisposeSoundPreview();
@@ -2251,6 +2128,9 @@ public sealed class MainWindow : Window
             case EditorCommandId.ManageMods:
                 _ = OpenModManagerAsync();
                 return true;
+            case EditorCommandId.ShowHome:
+                ShowHome();
+                return true;
             default:
                 return false;
         }
@@ -2354,7 +2234,7 @@ public sealed class MainWindow : Window
         {
             Orientation = Orientation.Horizontal,
             HorizontalAlignment = HorizontalAlignment.Right,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
             Children = { cancel, confirm },
         };
@@ -2394,7 +2274,7 @@ public sealed class MainWindow : Window
         {
             Orientation = Orientation.Horizontal,
             HorizontalAlignment = HorizontalAlignment.Right,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
             Children = { cancel, confirm },
         };
@@ -2432,6 +2312,28 @@ public sealed class MainWindow : Window
             }
         }
         return null;
+    }
+
+    private void ShowHome()
+    {
+        if (_catalog is null || _rom is null)
+        {
+            _workspaceHost.Child = CreateWelcomePanel();
+            return;
+        }
+        _selectedCategory = null;
+        _selectedAsset = null;
+        _home.Show(Path.GetFileName(_rom.Path), HomeTiles.Build(_catalog, _scenes));
+        _workspaceHost.Child = _home;
+        ApplyDockLayout(sceneOwnsInspector: false);
+        ShowInspectorEmpty();
+        _breadcrumb.SetPath(Path.GetFileName(_rom.Path), "Home");
+    }
+
+    private void OpenHomeTile(AssetCategory category)
+    {
+        if (!_explorer.TrySelectCategory(category))
+            SetStatus($"{category} is not available for this ROM.");
     }
 
     private void ShowScenesPicker()
@@ -2612,7 +2514,7 @@ public sealed class MainWindow : Window
         {
             Orientation = Orientation.Horizontal,
             HorizontalAlignment = HorizontalAlignment.Right,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
             Children = { discard, confirm },
         };

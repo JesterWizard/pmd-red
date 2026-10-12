@@ -19,6 +19,7 @@ public static class EditorTheme
     public static readonly Color PanelBg = Color.FromRgb(0x26, 0x27, 0x2B);
     public static readonly Color PanelBgRaised = Color.FromRgb(0x2E, 0x30, 0x35);
     public static readonly Color PanelBgAlt = Color.FromRgb(0x2E, 0x30, 0x35);
+    public static readonly Color ControlHover = Color.FromRgb(0x3A, 0x3C, 0x42);
     public static readonly Color CanvasBg = Color.FromRgb(0x1C, 0x1D, 0x20);
     public static readonly Color ViewportWell = Color.FromRgb(0x1A, 0x1B, 0x1E);
     public static readonly Color InputBg = Color.FromRgb(0x1F, 0x20, 0x23);
@@ -62,7 +63,9 @@ public static class EditorTheme
     public static readonly FontFamily MonoFont = new("Cascadia Mono, Consolas, monospace");
 
     public const double ControlHeight = 22;
-    public const double ToolbarHeight = 30;
+    public const double ButtonHeight = 26;
+    public const double ButtonGap = Space4;
+    public const double ToolbarHeight = 36;
     public const double StatusHeight = 24;
     public const double PanelHeaderHeight = 26;
     public const double LabelColumnWidth = 88;
@@ -86,6 +89,7 @@ public static class EditorTheme
     public static SolidColorBrush PanelBgBrush { get; } = Solid(PanelBg);
     public static SolidColorBrush PanelBgRaisedBrush { get; } = Solid(PanelBgRaised);
     public static SolidColorBrush PanelBgAltBrush { get; } = Solid(PanelBgAlt);
+    public static SolidColorBrush ControlHoverBrush { get; } = Solid(ControlHover);
     public static SolidColorBrush CanvasBgBrush { get; } = Solid(CanvasBg);
     public static SolidColorBrush ViewportWellBrush { get; } = Solid(ViewportWell);
     public static SolidColorBrush InputBgBrush { get; } = Solid(InputBg);
@@ -97,6 +101,7 @@ public static class EditorTheme
     public static SolidColorBrush TextMutedBrush { get; } = Solid(TextMuted);
     public static SolidColorBrush TextDimBrush { get; } = Solid(TextDim);
     public static SolidColorBrush AccentBrush { get; } = Solid(Accent);
+    public static SolidColorBrush AccentHoverBrush { get; } = Solid(AccentHover);
     public static SolidColorBrush AccentSoftBrush { get; } = Solid(AccentSoft);
     public static SolidColorBrush SelectionBrush { get; } = Solid(Selection);
     public static SolidColorBrush DangerBrush { get; } = Solid(Danger);
@@ -277,9 +282,9 @@ public static class EditorChrome
             Content = text,
             FontFamily = EditorTheme.UiFont,
             FontSize = EditorTheme.FontToolbar,
-            Height = EditorTheme.ControlHeight,
-            MinHeight = EditorTheme.ControlHeight,
-            Padding = new Thickness(EditorTheme.Space3, 0),
+            Height = EditorTheme.ButtonHeight,
+            MinHeight = EditorTheme.ButtonHeight,
+            Padding = new Thickness(EditorTheme.Space5, 0),
             Margin = new Thickness(0),
             VerticalContentAlignment = VerticalAlignment.Center,
             HorizontalContentAlignment = HorizontalAlignment.Center,
@@ -290,11 +295,14 @@ public static class EditorChrome
         {
             button.Background = EditorTheme.AccentBrush;
             button.Foreground = EditorTheme.TextPrimaryBrush;
+            button.Classes.Add("rt-primary");
         }
         else
         {
-            button.Background = Brushes.Transparent;
-            button.Foreground = EditorTheme.TextSecondaryBrush;
+            button.Background = EditorTheme.PanelBgRaisedBrush;
+            button.BorderBrush = EditorTheme.BorderBrush;
+            button.BorderThickness = new Thickness(1);
+            button.Foreground = EditorTheme.TextPrimaryBrush;
         }
         if (!string.IsNullOrWhiteSpace(tip))
             ToolTip.SetTip(button, tip);
@@ -309,9 +317,9 @@ public static class EditorChrome
             IsChecked = isChecked,
             FontFamily = EditorTheme.UiFont,
             FontSize = EditorTheme.FontMeta,
-            Height = EditorTheme.ControlHeight,
-            MinHeight = EditorTheme.ControlHeight,
-            Padding = new Thickness(EditorTheme.Space3, 0),
+            Height = EditorTheme.ButtonHeight,
+            MinHeight = EditorTheme.ButtonHeight,
+            Padding = new Thickness(EditorTheme.Space4, 0),
             Margin = new Thickness(0),
             VerticalContentAlignment = VerticalAlignment.Center,
             HorizontalContentAlignment = HorizontalAlignment.Center,
@@ -416,7 +424,7 @@ public static class EditorChrome
             Background = EditorTheme.ToolbarBgBrush,
             Height = stripRows == 1 ? EditorTheme.ToolbarHeight : double.NaN,
             MinHeight = EditorTheme.ToolbarHeight * stripRows,
-            Padding = new Thickness(EditorTheme.Space3, 0),
+            Padding = new Thickness(EditorTheme.Space4, 0),
             Child = content,
         };
     }
@@ -476,7 +484,7 @@ public static class EditorChrome
 
     public static Control ToolbarCluster(string caption, params Control[] children)
     {
-        var inner = new StackPanel { Orientation = Orientation.Horizontal };
+        var inner = new StackPanel { Orientation = Orientation.Horizontal, Spacing = EditorTheme.Space1 };
         foreach (var child in children)
             inner.Children.Add(child);
 
@@ -486,7 +494,7 @@ public static class EditorChrome
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1),
             CornerRadius = EditorTheme.CardRadius,
-            Padding = new Thickness(2),
+            Padding = new Thickness(3),
             VerticalAlignment = VerticalAlignment.Center,
             Child = inner,
         };
@@ -495,7 +503,7 @@ public static class EditorChrome
         {
             Orientation = Orientation.Horizontal,
             VerticalAlignment = VerticalAlignment.Center,
-            Margin = new Thickness(0, 0, EditorTheme.Space5, 0),
+            Margin = new Thickness(0, 0, EditorTheme.Space6, 0),
             Children =
             {
                 new TextBlock
@@ -506,7 +514,7 @@ public static class EditorChrome
                     FontWeight = FontWeight.SemiBold,
                     Foreground = EditorTheme.TextDimBrush,
                     VerticalAlignment = VerticalAlignment.Center,
-                    Margin = new Thickness(0, 0, EditorTheme.Space2, 0),
+                    Margin = new Thickness(0, 0, EditorTheme.Space3, 0),
                 },
                 well,
             },

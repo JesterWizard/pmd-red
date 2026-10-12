@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Animation;
 using Avalonia.Controls;
+using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -67,6 +68,7 @@ public static class EditorPopupStyles
         // Compact IDE toggles: quiet checked state instead of Fluent's solid accent fill.
         AddToolToggleStyles(app);
         AddWorkspaceTabStyles(app);
+        AddPrimaryButtonStyles(app);
     }
 
     /// <summary>Soft, rounded Fluent resource overrides: muted checked states, borderless expanders.</summary>
@@ -85,7 +87,9 @@ public static class EditorPopupStyles
         app.Resources["ToggleButtonBorderBrushCheckedPressed"] = Brushes.Transparent;
         app.Resources["ToggleButtonBackgroundPointerOver"] = EditorTheme.PanelBgRaisedBrush;
         app.Resources["ToggleButtonBackgroundPressed"] = EditorTheme.PanelBgRaisedBrush;
-        app.Resources["ButtonBackgroundPointerOver"] = EditorTheme.PanelBgRaisedBrush;
+        app.Resources["ButtonBackgroundPointerOver"] = EditorTheme.ControlHoverBrush;
+        app.Resources["ButtonBorderBrushPointerOver"] = EditorTheme.BorderBrush;
+        app.Resources["ButtonForegroundPointerOver"] = EditorTheme.TextPrimaryBrush;
         app.Resources["ButtonBackgroundPressed"] = EditorTheme.SelectionBrush;
         app.Resources["ExpanderHeaderBackground"] = Brushes.Transparent;
         app.Resources["ExpanderHeaderBackgroundPointerOver"] = EditorTheme.PanelBgRaisedBrush;
@@ -142,6 +146,21 @@ public static class EditorPopupStyles
         checkedStyle.Setters.Add(new Setter(TemplatedControl.ForegroundProperty, EditorTheme.TextPrimaryBrush));
         checkedStyle.Setters.Add(new Setter(TemplatedControl.BackgroundProperty, EditorTheme.AccentSoftBrush));
         app.Styles.Add(checkedStyle);
+    }
+
+    /// <summary>Primary (accent) buttons keep the blue fill on hover instead of Fluent's gray.</summary>
+    private static void AddPrimaryButtonStyles(Application app)
+    {
+        var hover = new Style(x => x.OfType<Button>().Class("rt-primary").Class(":pointerover")
+            .Template().OfType<ContentPresenter>().Name("PART_ContentPresenter"));
+        hover.Setters.Add(new Setter(ContentPresenter.BackgroundProperty, EditorTheme.AccentHoverBrush));
+        hover.Setters.Add(new Setter(ContentPresenter.ForegroundProperty, EditorTheme.TextPrimaryBrush));
+        app.Styles.Add(hover);
+
+        var pressed = new Style(x => x.OfType<Button>().Class("rt-primary").Class(":pressed")
+            .Template().OfType<ContentPresenter>().Name("PART_ContentPresenter"));
+        pressed.Setters.Add(new Setter(ContentPresenter.BackgroundProperty, EditorTheme.AccentBrush));
+        app.Styles.Add(pressed);
     }
 
     private static Style CreateNoTransitionsStyle(Type controlType)

@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
@@ -75,7 +76,10 @@ public sealed class ScenePlayWindow : Window
     private readonly string? _romPath;
     private readonly ScenePlayAutoProgress _autoProgress = new();
     private readonly CheckBox _autoProgressCheck;
-    private readonly Button? _pauseButton;
+    private readonly ToggleButton? _stepModeToggle;
+    private readonly Button? _prevLineButton;
+    private readonly Button? _nextLineButton;
+    private readonly TextBlock? _lineLabel;
     private readonly TextBlock? _debugHeader;
     private readonly TextEditor? _debugBody;
     private readonly Border? _debugPanel;
@@ -89,6 +93,7 @@ public sealed class ScenePlayWindow : Window
     private bool _suppressComboChange;
     private double _speed = 1;
     private int? _playingSongId;
+    private bool _stepMode;
 
     public ScenePlayWindow(
         ScenePlaySession session,
@@ -137,7 +142,7 @@ public sealed class ScenePlayWindow : Window
             FontSize = EditorTheme.FontMeta,
             Foreground = EditorTheme.TextMutedBrush,
             Text = _session.IsScripted
-                ? "Cutscene · A advances text · Esc closes · click view for focus"
+                ? "Cutscene · A advances text · F9 step through · Esc closes"
                 : "Arrows move · Esc closes · click view for focus · Controls to rebind",
         };
 
@@ -249,28 +254,49 @@ public sealed class ScenePlayWindow : Window
 
         if (_session.IsScripted)
         {
-            _pauseButton = EditorChrome.ToolButton("Pause");
-            var stepButton = EditorChrome.ToolButton("Step");
-            var breakPc = EditorChrome.ToolButton("Break PC");
-            var clearBp = EditorChrome.ToolButton("Clear BP");
-            _pauseButton.Click += (_, _) => TogglePause();
-            stepButton.Click += (_, _) => StepScript();
-            breakPc.Click += (_, _) => BreakAtCurrentPc();
-            clearBp.Click += (_, _) =>
+            var stepModeToggle = EditorChrome.ToolToggle(
+                "Step through",
+                tip: "Pause the cutscene and step it one script line at a time (F9)");
+            stepModeToggle.IsCheckedChanged += (_, _) => SetStepMode(stepModeToggle.IsChecked == true);
+
+            var prevLineButton = EditorChrome.ToolButton(
+                "◀ Prev line",
+                tip: "Replay the cutscene up to the previous line (Shift+F10)");
+            prevLineButton.IsVisible = false;
+            prevLineButton.Click += (_, _) => StepPrevLine();
+
+            var nextLineButton = EditorChrome.ToolButton(
+                "Next line ▶",
+                primary: true,
+                tip: "Run the next script line (F10 or A)");
+            nextLineButton.IsVisible = false;
+            nextLineButton.Click += (_, _) => StepNextLine();
+
+            var lineLabel = new TextBlock
             {
-                _session.ScriptVm?.ClearBreakpoints();
-                RefreshDebugWatch(force: true);
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextMutedBrush,
+                VerticalAlignment = VerticalAlignment.Center,
+                MinWidth = 56,
+                Text = "Line 0",
+                IsVisible = false,
             };
-            toolbarChildren.Add(_pauseButton);
-            toolbarChildren.Add(stepButton);
-            toolbarChildren.Add(breakPc);
-            toolbarChildren.Add(clearBp);
+
+            _stepModeToggle = stepModeToggle;
+            _prevLineButton = prevLineButton;
+            _nextLineButton = nextLineButton;
+            _lineLabel = lineLabel;
+            toolbarChildren.Add(stepModeToggle);
+            toolbarChildren.Add(prevLineButton);
+            toolbarChildren.Add(nextLineButton);
+            toolbarChildren.Add(lineLabel);
         }
 
         var toolbar = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             Margin = new Thickness(EditorTheme.Space3),
             Children = { },
         };
@@ -291,7 +317,7 @@ public sealed class ScenePlayWindow : Window
         var row = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Spacing = EditorTheme.Space2,
+            Spacing = EditorTheme.ButtonGap,
             HorizontalAlignment = HorizontalAlignment.Center,
             Children = { _backButton, replayButton, _nextButton },
         };
@@ -445,54 +471,91 @@ public sealed class ScenePlayWindow : Window
         for (var i = 0; i < 8 && _session.DialogueMode == PlayDialogueMode.None; i++)
             _session.Tick(1.0 / TargetFps);
         RefreshDebugWatch(force: true);
-        SyncPauseButton();
     }
 
-    private void TogglePause()
+    /// <summary>Enter or leave line-by-line cutscene stepping (F9 / toolbar toggle).</summary>
+    private void SetStepMode(bool on)
     {
-        var vm = _session.ScriptVm;
-        if (vm is null)
+        if (on == _stepMode)
             return;
-        if (vm.IsPaused)
-            vm.Continue();
+        _stepMode = on;
+
+        if (on)
+        {
+            HideEndMenu();
+            _autoProgressCheck.IsChecked = false;
+            _autoProgressCheck.IsEnabled = false;
+            _session.StepToLine(0);
+            _session.EnsureBackground();
+            _session.DrainPendingSfx();
+            _playingSongId = null;
+            StopBgm();
+        }
         else
-            vm.Pause();
-        SyncPauseButton();
-        RefreshDebugWatch(force: true);
-        UpdateStatusText();
-    }
+        {
+            _autoProgressCheck.IsEnabled = true;
+            _session.ScriptVm?.Continue();
+            _lastTick = DateTime.UtcNow;
+            _simAccum = 0;
+        }
 
-    private void StepScript()
-    {
-        var vm = _session.ScriptVm;
-        if (vm is null)
-            return;
-        vm.StepOver();
-        SyncPauseButton();
+        if (_stepModeToggle is not null)
+            _stepModeToggle.IsChecked = on;
+        if (_prevLineButton is not null)
+            _prevLineButton.IsVisible = on;
+        if (_nextLineButton is not null)
+            _nextLineButton.IsVisible = on;
+        if (_lineLabel is not null)
+            _lineLabel.IsVisible = on;
+        SyncStepChrome();
         RefreshFrame();
         RefreshDebugWatch(force: true);
         UpdateStatusText();
+        _view.Focus();
     }
 
-    private void BreakAtCurrentPc()
+    /// <summary>Run the next script line (or dismiss the pending text page) and stay paused.</summary>
+    private void StepNextLine()
     {
-        var vm = _session.ScriptVm;
-        if (vm is null)
+        if (!_stepMode)
             return;
-        var current = vm.Watch().CurrentActor;
-        if (current is not { } actor)
-            return;
-        vm.AddBreakpoint(new GroundScriptBreakpoint(
-            CommandIndex: actor.Index,
-            ActorName: actor.Name));
+        _session.StepLine();
+        PlayQueuedSfx();
+        PlayMusicIfChanged();
+        RefreshFrame();
         RefreshDebugWatch(force: true);
+        SyncStepChrome();
+        UpdateStatusText();
+        _view.Focus();
     }
 
-    private void SyncPauseButton()
+    /// <summary>Rebuild the cutscene and replay up to the line before the current one.</summary>
+    private void StepPrevLine()
     {
-        if (_pauseButton is null)
+        if (!_stepMode || _session.LinesStepped == 0)
             return;
-        _pauseButton.Content = _session.ScriptVm?.IsPaused == true ? "Continue" : "Pause";
+        _session.StepToLine(_session.LinesStepped - 1);
+        _session.EnsureBackground();
+        _session.DrainPendingSfx();
+        HideEndMenu();
+        if (_session.MusicId is null)
+            StopBgm();
+        PlayMusicIfChanged();
+        RefreshFrame();
+        RefreshDebugWatch(force: true);
+        SyncStepChrome();
+        UpdateStatusText();
+        _view.Focus();
+    }
+
+    private void SyncStepChrome()
+    {
+        if (_lineLabel is not null)
+            _lineLabel.Text = $"Line {_session.LinesStepped}";
+        if (_prevLineButton is not null)
+            _prevLineButton.IsEnabled = _session.LinesStepped > 0;
+        if (_nextLineButton is not null)
+            _nextLineButton.IsEnabled = !_session.ScriptFinished;
     }
 
     private void RefreshDebugWatch(bool force = false)
@@ -592,25 +655,22 @@ public sealed class ScenePlayWindow : Window
 
         if (_session.IsScripted && _session.ScriptVm is not null)
         {
-            if (e.Key == Key.F6)
+            if (e.Key == Key.F9)
             {
-                TogglePause();
+                if (_stepModeToggle is not null)
+                    _stepModeToggle.IsChecked = !_stepMode;
+                else
+                    SetStepMode(!_stepMode);
                 e.Handled = true;
                 return;
             }
 
-            if (e.Key == Key.F10)
+            if (_stepMode && e.Key == Key.F10)
             {
-                StepScript();
-                e.Handled = true;
-                return;
-            }
-
-            if (e.Key == Key.F5)
-            {
-                _session.ScriptVm.Continue();
-                SyncPauseButton();
-                RefreshDebugWatch(force: true);
+                if (e.KeyModifiers.HasFlag(KeyModifiers.Shift))
+                    StepPrevLine();
+                else
+                    StepNextLine();
                 e.Handled = true;
                 return;
             }
@@ -623,6 +683,13 @@ public sealed class ScenePlayWindow : Window
             _captureTarget = null;
             RebuildControlsMenu();
             _status.Text = $"Bound {target} → {Describe(chord)}";
+            e.Handled = true;
+            return;
+        }
+
+        if (_stepMode && _keymap.TryResolve(chord, out var stepChordButton) && stepChordButton == GbaButton.A)
+        {
+            StepNextLine();
             e.Handled = true;
             return;
         }
@@ -694,7 +761,7 @@ public sealed class ScenePlayWindow : Window
 
     private void ApplyAutoProgress(double scaledDt)
     {
-        if (!_session.IsScripted)
+        if (!_session.IsScripted || _stepMode)
             return;
 
         var action = _autoProgress.Update(
@@ -729,9 +796,9 @@ public sealed class ScenePlayWindow : Window
             if (_navigator?.CanGoNext != true)
                 ShowEndMenu();
         }
-        else if (_session.IsScripted && _session.ScriptVm?.IsPaused == true)
+        else if (_session.IsScripted && _stepMode && !_session.ScriptFinished)
         {
-            SetPlayStatus("Paused · F10 step · F5 continue · F6 pause/resume");
+            SetPlayStatus($"Step through · line {_session.LinesStepped} · F10 / A next · Shift+F10 previous · F9 exit");
         }
         else if (_session.IsScripted)
         {
@@ -774,6 +841,8 @@ public sealed class ScenePlayWindow : Window
 
     private void Replay()
     {
+        if (_stepMode)
+            SetStepMode(false);
         HideEndMenu();
         _session.Restart();
         _playingSongId = null;
@@ -811,6 +880,8 @@ public sealed class ScenePlayWindow : Window
         if (next is null)
             return;
 
+        if (_stepMode)
+            SetStepMode(false);
         HideEndMenu();
         _session = next;
         _frameBitmap = null;

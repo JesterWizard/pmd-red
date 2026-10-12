@@ -16,6 +16,7 @@ public enum EditorCommandId
     PlayInEmulator,
     ManageMods,
     SaveProjectAs,
+    ShowHome,
 }
 
 public readonly record struct KeyChord(string Key, bool Ctrl, bool Shift, bool Alt)
@@ -51,6 +52,7 @@ public sealed class EditorKeymap
         new(new KeyChord("F5", Ctrl: false, Shift: false, Alt: false), EditorCommandId.PlayInEmulator),
         new(new KeyChord("M", Ctrl: true, Shift: true, Alt: false), EditorCommandId.ManageMods),
         new(new KeyChord("S", Ctrl: true, Shift: true, Alt: false), EditorCommandId.SaveProjectAs),
+        new(new KeyChord("Home", Ctrl: false, Shift: false, Alt: true), EditorCommandId.ShowHome),
     ]);
 
     public bool TryResolve(KeyChord chord, out EditorCommandId command) =>
