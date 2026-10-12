@@ -291,7 +291,8 @@ public static class PngCodec
         }
 
         using var compressed = new MemoryStream();
-        using (var zlib = new ZLibStream(compressed, CompressionLevel.SmallestSize, leaveOpen: true))
+        // Optimal, not SmallestSize: ~3x faster encode for ~10% larger previews; pixels are identical.
+        using (var zlib = new ZLibStream(compressed, CompressionLevel.Optimal, leaveOpen: true))
             zlib.Write(scanlines);
         WriteChunk(output, "IDAT"u8, compressed.ToArray());
         WriteChunk(output, "IEND"u8, ReadOnlySpan<byte>.Empty);
@@ -321,7 +322,7 @@ public static class PngCodec
         }
 
         using var compressed = new MemoryStream();
-        using (var zlib = new ZLibStream(compressed, CompressionLevel.SmallestSize, leaveOpen: true))
+        using (var zlib = new ZLibStream(compressed, CompressionLevel.Optimal, leaveOpen: true))
             zlib.Write(scanlines);
         WriteChunk(output, "IDAT"u8, compressed.ToArray());
         WriteChunk(output, "IEND"u8, ReadOnlySpan<byte>.Empty);

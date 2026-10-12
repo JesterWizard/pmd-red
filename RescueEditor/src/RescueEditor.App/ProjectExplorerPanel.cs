@@ -277,6 +277,8 @@ public sealed class ProjectExplorerPanel : UserControl
             Padding = new Thickness(0, 0, 0, 0),
             Cursor = new Cursor(StandardCursorType.Hand),
             Height = EditorTheme.ControlHeight + 2,
+            CornerRadius = EditorTheme.ControlRadius,
+            Margin = new Thickness(EditorTheme.Space2, 1),
         };
         row.PointerPressed += (_, e) =>
         {

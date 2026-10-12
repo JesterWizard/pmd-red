@@ -159,7 +159,7 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
 
         _waveform = new Canvas
         {
-            Background = new SolidColorBrush(Color.FromRgb(14, 14, 18)),
+            Background = EditorTheme.ViewportWellBrush,
             ClipToBounds = true,
             HorizontalAlignment = HorizontalAlignment.Stretch,
             VerticalAlignment = VerticalAlignment.Stretch,

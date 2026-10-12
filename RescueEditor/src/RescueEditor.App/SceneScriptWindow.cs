@@ -1003,10 +1003,7 @@ public sealed class SceneScriptWindow : Window
             return null;
         try
         {
-            var preview = SceneCompositor.RenderMapBackground(_rom, scene);
-            if (preview?.Png is not { Length: > 0 } png)
-                return null;
-            return RgbaImage.FromPng(png);
+            return SceneCompositor.RenderMapBackgroundImage(_rom, scene);
         }
         catch
         {
@@ -1294,7 +1291,7 @@ public sealed class SceneScriptWindow : Window
             Background = EditorTheme.InputBgBrush,
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1),
-            CornerRadius = new CornerRadius(0),
+            CornerRadius = EditorTheme.ControlRadius,
             Padding = new Thickness(EditorTheme.Space2, EditorTheme.Space2),
             MinHeight = height,
             MaxHeight = 160,

@@ -228,7 +228,7 @@ public sealed class MainWindow : Window
         _loadingOverlay = new Border
         {
             IsVisible = false,
-            Background = new SolidColorBrush(Color.FromArgb(200, 0x1B, 0x1B, 0x1C)),
+            Background = new SolidColorBrush(Color.FromArgb(200, 0x1E, 0x1F, 0x22)),
             Child = new Border
             {
                 Width = 320,
@@ -238,7 +238,7 @@ public sealed class MainWindow : Window
                 Background = EditorTheme.PanelBgBrush,
                 BorderBrush = EditorTheme.BorderSubtleBrush,
                 BorderThickness = new Thickness(1),
-                CornerRadius = new CornerRadius(0),
+                CornerRadius = EditorTheme.OverlayRadius,
                 Child = new StackPanel
                 {
                     Spacing = EditorTheme.Space2,

@@ -172,6 +172,13 @@ public static class GroundMapIndexer
 
     public static PreviewContent Render(RomImage rom, AssetDescriptor asset, int animTick = 0)
     {
+        return new PreviewContent(asset.Name, Png: RenderImage(rom, asset, animTick).ToPng(),
+            MimeType: "image/png");
+    }
+
+    /// <summary>Same as <see cref="Render"/> but returns the decoded image without PNG encoding.</summary>
+    public static RgbaImage RenderImage(RomImage rom, AssetDescriptor asset, int animTick = 0)
+    {
         var bpl = ReadPart(rom, asset.Metadata, "bplOffset", "bplSize");
         var bpc = Compression.DecompressGmlz(
             ReadPart(rom, asset.Metadata, "bpcOffset", "bpcSize"));
@@ -186,7 +193,7 @@ public static class GroundMapIndexer
             bpaFrames.Add(BpaFrame0Tiles(bpa));
         }
 
-        return GroundMapRenderer.Render(asset.Name, bpl, bpc, bma, bpaFrames, animTick);
+        return GroundMapRenderer.RenderImage(asset.Name, bpl, bpc, bma, bpaFrames, animTick);
     }
 
     /// <summary>
@@ -239,6 +246,37 @@ public static class GroundMapIndexer
     /// </summary>
     public static PreviewContent? TryRenderFromMap(RomImage rom, GroundMapDefinition? map, int animTick = 0)
     {
+        var asset = TryResolveMapAsset(rom, map);
+        if (asset is null)
+            return null;
+        try
+        {
+            return Render(rom, asset, animTick);
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>Same as TryRenderFromMap but returns the decoded image without PNG encoding.</summary>
+    public static RgbaImage? TryRenderImageFromMap(RomImage rom, GroundMapDefinition? map, int animTick = 0)
+    {
+        var asset = TryResolveMapAsset(rom, map);
+        if (asset is null)
+            return null;
+        try
+        {
+            return RenderImage(rom, asset, animTick);
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    private static AssetDescriptor? TryResolveMapAsset(RomImage rom, GroundMapDefinition? map)
+    {
         if (map?.BmaName is null || map.BplName is null || map.BpcName is null)
             return null;
 
@@ -288,14 +326,7 @@ public static class GroundMapIndexer
                 Description = bma.Name,
                 Metadata = metadata,
             };
-            try
-            {
-                return Render(rom, asset, animTick);
-            }
-            catch
-            {
-                return null;
-            }
+            return asset;
         }
 
         return null;
@@ -380,6 +411,14 @@ public static class GroundMapIndexer
 public static class GroundMapRenderer
 {
     public static PreviewContent Render(string name, ReadOnlySpan<byte> bpl, ReadOnlySpan<byte> bpc,
+        ReadOnlySpan<byte> bma, IReadOnlyList<byte[]>? bpaFrame0Tiles = null, int animTick = 0)
+    {
+        return new PreviewContent(name, Png: RenderImage(name, bpl, bpc, bma, bpaFrame0Tiles, animTick).ToPng(),
+            MimeType: "image/png");
+    }
+
+    /// <summary>Same as <see cref="Render"/> but returns the decoded image without PNG encoding.</summary>
+    public static RgbaImage RenderImage(string name, ReadOnlySpan<byte> bpl, ReadOnlySpan<byte> bpc,
         ReadOnlySpan<byte> bma, IReadOnlyList<byte[]>? bpaFrame0Tiles = null, int animTick = 0)
     {
         if (bpl.Length < 4 || bma.Length < 12 || bpc.Length < 14)
@@ -496,8 +535,7 @@ public static class GroundMapRenderer
             }
         }
 
-        return new PreviewContent(name, Png: new RgbaImage(imageWidth, imageHeight, pixels).ToPng(),
-            MimeType: "image/png");
+        return new RgbaImage(imageWidth, imageHeight, pixels);
     }
 
     private static BpcHeader ReadBpcHeader(ReadOnlySpan<byte> bpc)

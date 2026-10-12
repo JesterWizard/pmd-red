@@ -1,3 +1,6 @@
+using System.Collections.Concurrent;
+using System.Runtime.CompilerServices;
+
 namespace RescueEditor.Core;
 
 public sealed class ScenePreviewState
@@ -18,6 +21,10 @@ public sealed class ScenePreviewState
 
 public static class SceneCompositor
 {
+    // Decoded map backgrounds per ROM. RomImage is immutable (edits create a new instance),
+    // so keying by reference is safe; entries drop when the RomImage is collected.
+    private static readonly ConditionalWeakTable<RomImage, ConcurrentDictionary<string, RgbaImage?>> BackgroundCache = new();
+
     public static PreviewContent? RenderMapBackground(RomImage rom, Scene scene, int animTick = 0)
     {
         // Boss-end shells (tileset ≥ 64): retail fills via dungeon emap (bXXemap0).
@@ -83,12 +90,98 @@ public static class SceneCompositor
         }
     }
 
+    /// <summary>
+    /// Decoded map background; animTick 0 results are cached per ROM. Returns a private copy the caller may draw on.
+    /// </summary>
+    public static RgbaImage? RenderMapBackgroundImage(RomImage rom, Scene scene, int animTick = 0)
+    {
+        if (animTick != 0)
+            return RenderMapBackgroundImageUncached(rom, scene, animTick);
+
+        var map = scene.Map;
+        var key = $"{map?.MapId}|{map?.BmaName}|{map?.BplName}|{map?.BpcName}|{map?.GroundMapAsset?.Offset}";
+        var perRom = BackgroundCache.GetValue(rom, _ => new ConcurrentDictionary<string, RgbaImage?>());
+        var cached = perRom.GetOrAdd(key, _ => RenderMapBackgroundImageUncached(rom, scene, 0));
+        return cached is null ? null : new RgbaImage(cached.Width, cached.Height, (byte[])cached.Pixels.Clone());
+    }
+
+    private static RgbaImage? RenderMapBackgroundImageUncached(RomImage rom, Scene scene, int animTick)
+    {
+        // Boss-end shells (tileset ≥ 64): retail fills via dungeon emap (bXXemap0).
+        // Prefer that before the shell BMA — some ends (e.g. Frost Forest Peak) render a
+        // non-flat but wrong tile soup from BPC alone, which would otherwise win.
+        try
+        {
+            var dungeon = DungeonShellPreview.TryRender(rom, scene.Map, animTick);
+            var dungeonImage = dungeon?.Png is null ? null : RgbaImage.FromPng(dungeon.Png);
+            if (dungeonImage is not null && !IsVisuallyFlat(dungeonImage))
+                return dungeonImage;
+        }
+        catch
+        {
+            // Fall through to ground BMA / Mid shells.
+        }
+
+        var primary = TryRenderMapPrimaryImage(rom, scene, animTick);
+        if (primary is not null && !IsVisuallyFlat(primary))
+            return primary;
+
+        // Dungeon shell maps (DxxP02/P03, render modes 10/11) store a near-empty BMA;
+        // retail fills tiles via dungeon generation. Prefer mid/peak staging maps
+        // (same dimensions as boss ends) before falling back to the entry BMA.
+        foreach (var shell in GroundMapIndexer.EnumerateDungeonShellFallbacks(scene.Map))
+        {
+            try
+            {
+                var fallback = GroundMapIndexer.TryRenderImageFromMap(rom, shell, animTick);
+                if (fallback is not null && !IsVisuallyFlat(fallback))
+                    return fallback;
+            }
+            catch
+            {
+                // Try the next nearer shell.
+            }
+        }
+
+        return primary;
+    }
+
+    private static RgbaImage? TryRenderMapPrimaryImage(RomImage rom, Scene scene, int animTick)
+    {
+        var asset = scene.Map?.GroundMapAsset;
+        if (asset is not null)
+        {
+            try
+            {
+                return GroundMapIndexer.RenderImage(rom, asset, animTick);
+            }
+            catch
+            {
+                // Fall through to name-based archive lookup.
+            }
+        }
+
+        try
+        {
+            return GroundMapIndexer.TryRenderImageFromMap(rom, scene.Map, animTick);
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
     /// <summary>True when a ground render has almost no palette variety (empty dungeon shell).</summary>
     public static bool IsVisuallyFlat(PreviewContent content)
     {
         if (content.Png is null)
             return true;
-        var image = RgbaImage.FromPng(content.Png);
+        return IsVisuallyFlat(RgbaImage.FromPng(content.Png));
+    }
+
+    /// <summary>True when a decoded ground render has almost no palette variety (empty dungeon shell).</summary>
+    public static bool IsVisuallyFlat(RgbaImage? image)
+    {
         if (image is null || image.Width < 8 || image.Height < 8)
             return true;
 
@@ -159,16 +252,7 @@ public static class SceneCompositor
         bool showCollision = false,
         SceneLink? selectedLink = null)
     {
-        var background = RenderMapBackground(rom, scene, animTick);
-        RgbaImage image;
-        if (background?.Png is not null)
-        {
-            image = RgbaImage.FromPng(background.Png) ?? CreateFallbackCanvas(scene);
-        }
-        else
-        {
-            image = CreateFallbackCanvas(scene);
-        }
+        var image = RenderMapBackgroundImage(rom, scene, animTick) ?? CreateFallbackCanvas(scene);
 
         if (showCollision && collision is not null)
             SceneMapOverlay.PaintCollision(image, collision);

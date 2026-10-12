@@ -1099,7 +1099,7 @@ public sealed class DataTablesWorkspacePanel : UserControl
             FontFamily = EditorTheme.UiFont,
             FontSize = EditorTheme.FontLabel,
             Padding = new Thickness(6, 6),
-            CornerRadius = new CornerRadius(0),
+            CornerRadius = EditorTheme.ControlRadius,
             BorderThickness = new Thickness(1),
             BorderBrush = EditorTheme.BorderSubtleBrush,
             Background = EditorTheme.InputBgBrush,

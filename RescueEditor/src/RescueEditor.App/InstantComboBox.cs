@@ -26,7 +26,7 @@ public sealed class InstantComboBox : ComboBox
         Padding = new Thickness(4, 0);
         VerticalContentAlignment = VerticalAlignment.Center;
         HorizontalContentAlignment = HorizontalAlignment.Left;
-        CornerRadius = new CornerRadius(0);
+        CornerRadius = EditorTheme.ControlRadius;
         HorizontalAlignment = HorizontalAlignment.Left;
         MaxDropDownHeight = 320;
 
@@ -55,6 +55,8 @@ public static class EditorPopupStyles
     /// <summary>Strip Fluent open/close transitions so menus and combos appear instantly.</summary>
     public static void Apply(Application app)
     {
+        AddFluentResourceOverrides(app);
+
         app.Styles.Add(CreateNoTransitionsStyle(typeof(Popup)));
         app.Styles.Add(CreateNoTransitionsStyle(typeof(ComboBox)));
         app.Styles.Add(CreateNoTransitionsStyle(typeof(Menu)));
@@ -67,13 +69,45 @@ public static class EditorPopupStyles
         AddWorkspaceTabStyles(app);
     }
 
+    /// <summary>Soft, rounded Fluent resource overrides: muted checked states, borderless expanders.</summary>
+    private static void AddFluentResourceOverrides(Application app)
+    {
+        app.Resources["ControlCornerRadius"] = EditorTheme.ControlRadius;
+        app.Resources["OverlayCornerRadius"] = EditorTheme.CardRadius;
+        app.Resources["ToggleButtonBackgroundChecked"] = EditorTheme.AccentSoftBrush;
+        app.Resources["ToggleButtonBackgroundCheckedPointerOver"] = EditorTheme.SelectionBrush;
+        app.Resources["ToggleButtonBackgroundCheckedPressed"] = EditorTheme.SelectionBrush;
+        app.Resources["ToggleButtonForegroundChecked"] = EditorTheme.TextPrimaryBrush;
+        app.Resources["ToggleButtonForegroundCheckedPointerOver"] = EditorTheme.TextPrimaryBrush;
+        app.Resources["ToggleButtonForegroundCheckedPressed"] = EditorTheme.TextPrimaryBrush;
+        app.Resources["ToggleButtonBorderBrushChecked"] = Brushes.Transparent;
+        app.Resources["ToggleButtonBorderBrushCheckedPointerOver"] = Brushes.Transparent;
+        app.Resources["ToggleButtonBorderBrushCheckedPressed"] = Brushes.Transparent;
+        app.Resources["ToggleButtonBackgroundPointerOver"] = EditorTheme.PanelBgRaisedBrush;
+        app.Resources["ToggleButtonBackgroundPressed"] = EditorTheme.PanelBgRaisedBrush;
+        app.Resources["ButtonBackgroundPointerOver"] = EditorTheme.PanelBgRaisedBrush;
+        app.Resources["ButtonBackgroundPressed"] = EditorTheme.SelectionBrush;
+        app.Resources["ExpanderHeaderBackground"] = Brushes.Transparent;
+        app.Resources["ExpanderHeaderBackgroundPointerOver"] = EditorTheme.PanelBgRaisedBrush;
+        app.Resources["ExpanderHeaderBackgroundPressed"] = EditorTheme.PanelBgRaisedBrush;
+        app.Resources["ExpanderHeaderBorderBrush"] = Brushes.Transparent;
+        app.Resources["ExpanderHeaderBorderBrushPointerOver"] = Brushes.Transparent;
+        app.Resources["ExpanderHeaderBorderBrushPressed"] = Brushes.Transparent;
+        app.Resources["ExpanderHeaderBorderThickness"] = new Thickness(0);
+        app.Resources["ExpanderContentBackground"] = Brushes.Transparent;
+        app.Resources["ExpanderContentBorderBrush"] = Brushes.Transparent;
+        app.Resources["ExpanderMinHeight"] = 30.0;
+        app.Resources["MenuFlyoutPresenterBackground"] = EditorTheme.MenuBgBrush;
+        app.Resources["MenuFlyoutPresenterBorderBrush"] = EditorTheme.BorderSubtleBrush;
+    }
+
     private static void AddToolToggleStyles(Application app)
     {
         var idle = new Style(x => x.OfType<ToggleButton>().Class("rt-tool"));
         idle.Setters.Add(new Setter(TemplatedControl.BackgroundProperty, Brushes.Transparent));
         idle.Setters.Add(new Setter(TemplatedControl.ForegroundProperty, EditorTheme.TextSecondaryBrush));
         idle.Setters.Add(new Setter(TemplatedControl.BorderBrushProperty, Brushes.Transparent));
-        idle.Setters.Add(new Setter(TemplatedControl.CornerRadiusProperty, new CornerRadius(0)));
+        idle.Setters.Add(new Setter(TemplatedControl.CornerRadiusProperty, EditorTheme.ControlRadius));
         app.Styles.Add(idle);
 
         var hover = new Style(x => x.OfType<ToggleButton>().Class("rt-tool").Class(":pointerover"));
@@ -96,16 +130,17 @@ public static class EditorPopupStyles
         idle.Setters.Add(new Setter(TemplatedControl.BackgroundProperty, Brushes.Transparent));
         idle.Setters.Add(new Setter(TemplatedControl.ForegroundProperty, EditorTheme.TextMutedBrush));
         idle.Setters.Add(new Setter(TemplatedControl.BorderBrushProperty, Brushes.Transparent));
-        idle.Setters.Add(new Setter(TemplatedControl.CornerRadiusProperty, new CornerRadius(0)));
+        idle.Setters.Add(new Setter(TemplatedControl.CornerRadiusProperty, EditorTheme.ControlRadius));
         app.Styles.Add(idle);
 
         var hover = new Style(x => x.OfType<ToggleButton>().Class("rt-workspace-tab").Class(":pointerover"));
+        hover.Setters.Add(new Setter(TemplatedControl.BackgroundProperty, EditorTheme.PanelBgRaisedBrush));
         hover.Setters.Add(new Setter(TemplatedControl.ForegroundProperty, EditorTheme.TextSecondaryBrush));
         app.Styles.Add(hover);
 
         var checkedStyle = new Style(x => x.OfType<ToggleButton>().Class("rt-workspace-tab").Class(":checked"));
         checkedStyle.Setters.Add(new Setter(TemplatedControl.ForegroundProperty, EditorTheme.TextPrimaryBrush));
-        checkedStyle.Setters.Add(new Setter(TemplatedControl.BorderBrushProperty, EditorTheme.AccentBrush));
+        checkedStyle.Setters.Add(new Setter(TemplatedControl.BackgroundProperty, EditorTheme.AccentSoftBrush));
         app.Styles.Add(checkedStyle);
     }
 

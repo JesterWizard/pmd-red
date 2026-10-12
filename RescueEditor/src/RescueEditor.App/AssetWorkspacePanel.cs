@@ -316,7 +316,7 @@ public sealed class AssetWorkspacePanel : UserControl
                 Padding = new Thickness(EditorTheme.Space2),
                 BorderBrush = EditorTheme.BorderSubtleBrush,
                 BorderThickness = new Thickness(1),
-                CornerRadius = new CornerRadius(0),
+                CornerRadius = EditorTheme.CardRadius,
                 Background = EditorTheme.PanelBgBrush,
                 Tag = asset,
                 Child = new StackPanel { Spacing = 2, Children = { imageHost, title } },

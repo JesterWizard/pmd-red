@@ -291,7 +291,7 @@ public sealed class SceneMapCanvas : UserControl
             return;
         try
         {
-            var png = SceneCompositor.ComposeScenePng(
+            var composed = SceneCompositor.ComposeSceneImage(
                 _rom, _scene, _group, _sector, _selected,
                 _showLives, _showObjects, _showEffects, _showEvents, _showLinks,
                 drawLabels: true,
@@ -304,10 +304,10 @@ public sealed class SceneMapCanvas : UserControl
                 collision: null,
                 showCollision: false,
                 selectedLink: _selectedLink);
-            using var stream = new MemoryStream(png);
-            _bitmap?.Dispose();
-            _bitmap = new Bitmap(stream);
+            var previous = _bitmap;
+            _bitmap = RgbaBitmap.ToWriteable(composed);
             _image.Source = _bitmap;
+            previous?.Dispose();
             _imageWidth = _bitmap.PixelSize.Width;
             _imageHeight = _bitmap.PixelSize.Height;
             ApplyZoom();

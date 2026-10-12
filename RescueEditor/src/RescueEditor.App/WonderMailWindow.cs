@@ -44,7 +44,7 @@ public sealed class WonderMailWindow : Window
             MinHeight = 56,
             Height = double.NaN,
             Padding = new Thickness(4, 4),
-            CornerRadius = new CornerRadius(0),
+            CornerRadius = EditorTheme.ControlRadius,
             BorderThickness = new Thickness(1),
             BorderBrush = EditorTheme.BorderSubtleBrush,
             Background = EditorTheme.InputBgBrush,

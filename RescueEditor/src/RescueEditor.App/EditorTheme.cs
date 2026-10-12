@@ -9,36 +9,35 @@ using Avalonia.Media;
 namespace RescueEditor.App;
 
 /// <summary>
-/// Compact desktop-editor design tokens.
-/// Inspired by Unity / Visual Studio / Blender density — not web/SaaS UI.
+/// Compact desktop-editor design tokens with a soft, rounded macOS-style finish.
 /// </summary>
 public static class EditorTheme
 {
-    public static readonly Color WindowBg = Color.FromRgb(0x1B, 0x1B, 0x1C);
-    public static readonly Color MenuBg = Color.FromRgb(0x1F, 0x1F, 0x20);
-    public static readonly Color ToolbarBg = Color.FromRgb(0x2A, 0x2A, 0x2C);
-    public static readonly Color PanelBg = Color.FromRgb(0x24, 0x24, 0x25);
-    public static readonly Color PanelBgRaised = Color.FromRgb(0x28, 0x28, 0x29);
-    public static readonly Color PanelBgAlt = Color.FromRgb(0x28, 0x28, 0x29);
-    public static readonly Color CanvasBg = Color.FromRgb(0x10, 0x10, 0x11);
-    public static readonly Color ViewportWell = Color.FromRgb(0x0C, 0x0C, 0x0D);
-    public static readonly Color InputBg = Color.FromRgb(0x1E, 0x1E, 0x1F);
-    public static readonly Color Border = Color.FromRgb(0x3A, 0x3A, 0x3C);
-    public static readonly Color BorderSubtle = Color.FromRgb(0x2E, 0x2E, 0x30);
-    public static readonly Color Separator = Color.FromRgb(0x3A, 0x3A, 0x3C);
+    public static readonly Color WindowBg = Color.FromRgb(0x1E, 0x1F, 0x22);
+    public static readonly Color MenuBg = Color.FromRgb(0x23, 0x24, 0x28);
+    public static readonly Color ToolbarBg = Color.FromRgb(0x2B, 0x2D, 0x31);
+    public static readonly Color PanelBg = Color.FromRgb(0x26, 0x27, 0x2B);
+    public static readonly Color PanelBgRaised = Color.FromRgb(0x2E, 0x30, 0x35);
+    public static readonly Color PanelBgAlt = Color.FromRgb(0x2E, 0x30, 0x35);
+    public static readonly Color CanvasBg = Color.FromRgb(0x1C, 0x1D, 0x20);
+    public static readonly Color ViewportWell = Color.FromRgb(0x1A, 0x1B, 0x1E);
+    public static readonly Color InputBg = Color.FromRgb(0x1F, 0x20, 0x23);
+    public static readonly Color Border = Color.FromRgb(0x3C, 0x3E, 0x44);
+    public static readonly Color BorderSubtle = Color.FromRgb(0x33, 0x35, 0x3A);
+    public static readonly Color Separator = Color.FromRgb(0x3C, 0x3E, 0x44);
 
-    public static readonly Color TextPrimary = Color.FromRgb(0xE8, 0xE8, 0xE8);
-    public static readonly Color TextSecondary = Color.FromRgb(0xC0, 0xC0, 0xC0);
-    public static readonly Color TextMuted = Color.FromRgb(0x96, 0x96, 0x96);
-    public static readonly Color TextDim = Color.FromRgb(0x6E, 0x6E, 0x6E);
+    public static readonly Color TextPrimary = Color.FromRgb(0xE4, 0xE5, 0xE8);
+    public static readonly Color TextSecondary = Color.FromRgb(0xC4, 0xC6, 0xCC);
+    public static readonly Color TextMuted = Color.FromRgb(0x9A, 0x9D, 0xA4);
+    public static readonly Color TextDim = Color.FromRgb(0x74, 0x77, 0x7E);
 
-    public static readonly Color Accent = Color.FromRgb(0x0E, 0x63, 0x9C);
-    public static readonly Color AccentHover = Color.FromRgb(0x11, 0x7A, 0xBD);
-    public static readonly Color AccentSoft = Color.FromArgb(0x55, 0x0E, 0x63, 0x9C);
-    public static readonly Color Selection = Color.FromRgb(0x09, 0x4E, 0x7A);
-    public static readonly Color Danger = Color.FromRgb(0xC5, 0x42, 0x42);
-    public static readonly Color Warning = Color.FromRgb(0xC9, 0xA2, 0x27);
-    public static readonly Color Success = Color.FromRgb(0x3D, 0xA3, 0x5A);
+    public static readonly Color Accent = Color.FromRgb(0x3B, 0x82, 0xF6);
+    public static readonly Color AccentHover = Color.FromRgb(0x5A, 0x97, 0xF8);
+    public static readonly Color AccentSoft = Color.FromArgb(0x40, 0x3B, 0x82, 0xF6);
+    public static readonly Color Selection = Color.FromRgb(0x2D, 0x5C, 0x9E);
+    public static readonly Color Danger = Color.FromRgb(0xE5, 0x61, 0x5B);
+    public static readonly Color Warning = Color.FromRgb(0xE0, 0xB4, 0x4C);
+    public static readonly Color Success = Color.FromRgb(0x4D, 0xBF, 0x73);
 
     public static readonly Color ScriptHeader = Color.FromRgb(0x6C, 0xB3, 0xD8);
     public static readonly Color ScriptOpcode = Color.FromRgb(0x7E, 0xC8, 0xA3);
@@ -62,10 +61,10 @@ public static class EditorTheme
     public static readonly FontFamily UiFont = new("Segoe UI, Cantarell, Ubuntu, Noto Sans, sans-serif");
     public static readonly FontFamily MonoFont = new("Cascadia Mono, Consolas, monospace");
 
-    public const double ControlHeight = 20;
-    public const double ToolbarHeight = 26;
-    public const double StatusHeight = 22;
-    public const double PanelHeaderHeight = 22;
+    public const double ControlHeight = 22;
+    public const double ToolbarHeight = 30;
+    public const double StatusHeight = 24;
+    public const double PanelHeaderHeight = 26;
     public const double LabelColumnWidth = 88;
     public const double ExplorerWidth = 216;
     public const double InspectorWidth = 300;
@@ -76,6 +75,10 @@ public static class EditorTheme
     public const double SceneSectorRowHeight = ControlHeight + 2;
     public const double SceneSectorListMaxHeight = SceneSectorVisibleRows * SceneSectorRowHeight;
     public const double RulerSize = 18;
+
+    public static readonly CornerRadius ControlRadius = new(5);
+    public static readonly CornerRadius CardRadius = new(8);
+    public static readonly CornerRadius OverlayRadius = new(12);
 
     public static SolidColorBrush WindowBgBrush { get; } = Solid(WindowBg);
     public static SolidColorBrush MenuBgBrush { get; } = Solid(MenuBg);
@@ -196,7 +199,7 @@ public static class EditorChrome
             nud.MinWidth = 0;
             nud.Width = double.NaN;
             nud.Padding = new Thickness(4, 0);
-            nud.CornerRadius = new CornerRadius(0);
+            nud.CornerRadius = EditorTheme.ControlRadius;
             nud.BorderThickness = new Thickness(1);
             nud.BorderBrush = EditorTheme.BorderSubtleBrush;
             nud.Background = EditorTheme.InputBgBrush;
@@ -210,7 +213,7 @@ public static class EditorChrome
             tb.FontSize = EditorTheme.FontLabel;
             tb.FontFamily = EditorTheme.MonoFont;
             tb.Padding = new Thickness(4, 0);
-            tb.CornerRadius = new CornerRadius(0);
+            tb.CornerRadius = EditorTheme.ControlRadius;
             tb.BorderThickness = new Thickness(1);
             tb.BorderBrush = EditorTheme.BorderSubtleBrush;
             tb.Background = EditorTheme.InputBgBrush;
@@ -233,7 +236,7 @@ public static class EditorChrome
                 cb.Width = double.NaN;
                 cb.HorizontalAlignment = HorizontalAlignment.Stretch;
             }
-            cb.CornerRadius = new CornerRadius(0);
+            cb.CornerRadius = EditorTheme.ControlRadius;
             if (cb is not InstantComboBox)
             {
                 cb.AddHandler(
@@ -280,7 +283,7 @@ public static class EditorChrome
             Margin = new Thickness(0),
             VerticalContentAlignment = VerticalAlignment.Center,
             HorizontalContentAlignment = HorizontalAlignment.Center,
-            CornerRadius = new CornerRadius(0),
+            CornerRadius = EditorTheme.ControlRadius,
             BorderThickness = new Thickness(0),
         };
         if (primary)
@@ -312,7 +315,7 @@ public static class EditorChrome
             Margin = new Thickness(0),
             VerticalContentAlignment = VerticalAlignment.Center,
             HorizontalContentAlignment = HorizontalAlignment.Center,
-            CornerRadius = new CornerRadius(0),
+            CornerRadius = EditorTheme.ControlRadius,
             BorderThickness = new Thickness(0),
             Background = Brushes.Transparent,
             Foreground = EditorTheme.TextSecondaryBrush,
@@ -335,10 +338,10 @@ public static class EditorChrome
             Height = 22,
             MinHeight = 22,
             Padding = new Thickness(EditorTheme.Space4, 0),
-            Margin = new Thickness(0),
+            Margin = new Thickness(0, 0, EditorTheme.Space1, 0),
             VerticalContentAlignment = VerticalAlignment.Center,
-            CornerRadius = new CornerRadius(0),
-            BorderThickness = new Thickness(0, 0, 0, 1),
+            CornerRadius = EditorTheme.ControlRadius,
+            BorderThickness = new Thickness(0),
             BorderBrush = Brushes.Transparent,
             Background = Brushes.Transparent,
             Foreground = EditorTheme.TextMutedBrush,
@@ -362,7 +365,7 @@ public static class EditorChrome
             FontSize = EditorTheme.FontBody,
             VerticalContentAlignment = VerticalAlignment.Center,
             HorizontalContentAlignment = HorizontalAlignment.Center,
-            CornerRadius = new CornerRadius(0),
+            CornerRadius = EditorTheme.ControlRadius,
             BorderThickness = new Thickness(0),
             Background = Brushes.Transparent,
             Foreground = EditorTheme.TextSecondaryBrush,
@@ -482,7 +485,8 @@ public static class EditorChrome
             Background = EditorTheme.InputBgBrush,
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1),
-            Padding = new Thickness(1),
+            CornerRadius = EditorTheme.CardRadius,
+            Padding = new Thickness(2),
             VerticalAlignment = VerticalAlignment.Center,
             Child = inner,
         };
@@ -634,9 +638,9 @@ public static class EditorChrome
             Height = 20,
             MinHeight = 20,
             Padding = new Thickness(EditorTheme.Space3, 0),
-            Margin = new Thickness(0),
-            CornerRadius = new CornerRadius(0),
-            BorderThickness = new Thickness(0, 0, 0, 1),
+            Margin = new Thickness(0, 0, EditorTheme.Space1, 0),
+            CornerRadius = EditorTheme.ControlRadius,
+            BorderThickness = new Thickness(0),
             BorderBrush = Brushes.Transparent,
             Background = Brushes.Transparent,
             Foreground = EditorTheme.TextMutedBrush,
@@ -718,7 +722,7 @@ public sealed class CompactSpinBox : UserControl
             Background = EditorTheme.InputBgBrush,
             BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1),
-            CornerRadius = new CornerRadius(0),
+            CornerRadius = EditorTheme.ControlRadius,
             MinWidth = 0,
             Height = EditorTheme.ControlHeight,
             Child = new DockPanel

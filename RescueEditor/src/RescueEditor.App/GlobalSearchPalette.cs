@@ -22,7 +22,7 @@ public sealed class GlobalSearchPalette : Border
     public GlobalSearchPalette()
     {
         IsVisible = false;
-        Background = new SolidColorBrush(Color.FromArgb(160, 0x10, 0x10, 0x11));
+        Background = new SolidColorBrush(Color.FromArgb(120, 0x1E, 0x1F, 0x22));
         ZIndex = 20;
         Focusable = true;
 
@@ -73,8 +73,10 @@ public sealed class GlobalSearchPalette : Border
             HorizontalAlignment = HorizontalAlignment.Center,
             VerticalAlignment = VerticalAlignment.Top,
             Background = EditorTheme.PanelBgBrush,
-            BorderBrush = EditorTheme.AccentBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(1, 1, 1, 1),
+            CornerRadius = EditorTheme.OverlayRadius,
+            ClipToBounds = true,
             Child = new StackPanel
             {
                 Children =
@@ -84,6 +86,7 @@ public sealed class GlobalSearchPalette : Border
                         Background = EditorTheme.PanelBgRaisedBrush,
                         BorderBrush = EditorTheme.BorderSubtleBrush,
                         BorderThickness = new Thickness(0, 0, 0, 1),
+                        CornerRadius = new CornerRadius(12, 12, 0, 0),
                         Padding = new Thickness(EditorTheme.Space3),
                         Child = _query,
                     },
