@@ -2411,20 +2411,23 @@ public sealed class SceneWorkspacePanel : UserControl
         if (_scene is null || _database is null)
             return;
 
-        var baselineDb = _workingRom?.Baseline;
-        if (baselineDb is null)
-            return;
-
+        var scene = _scene;
+        var database = _database;
         var sector = CurrentSector();
         var filter = sector is null
             ? null
             : new SceneDiffFilter(sector.Group, sector.Sector);
-        var name = _scene.Name;
-        if (string.IsNullOrWhiteSpace(name) && _scene.Map is not null)
-            name = GroundMapNames.GetDisplayName(_scene.Map.Name) ?? _scene.Map.Name;
+        var name = scene.Name;
+        if (string.IsNullOrWhiteSpace(name) && scene.Map is not null)
+            name = GroundMapNames.GetDisplayName(scene.Map.Name) ?? scene.Map.Name;
+
+        var workingRom = _workingRom;
+        var baselineDb = workingRom is null ? null : await Task.Run(() => workingRom.Baseline);
+        if (baselineDb is null)
+            return;
 
         var owner = TopLevel.GetTopLevel(this) as Window;
-        var window = new SceneDiffWindow(baselineDb, _database, _scene.MapId, name, filter);
+        var window = new SceneDiffWindow(baselineDb, database, scene.MapId, name, filter);
         if (owner is not null)
             await window.ShowDialog(owner);
         else

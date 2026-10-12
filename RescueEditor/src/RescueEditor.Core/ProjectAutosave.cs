@@ -14,11 +14,15 @@ public sealed class AutosaveEnvelope
     public string? ExplorerCategory { get; set; }
     public string? ExplorerAssetId { get; set; }
     public int? ExplorerSceneMapId { get; set; }
+    /// <summary>Build of the app that wrote this autosave; null for files written before this was recorded.</summary>
+    public string? AppBuildId { get; set; }
     public ProjectDocument Project { get; set; } = new();
 
     [JsonIgnore]
     public string Path { get; set; } = string.Empty;
 }
+
+public sealed record AutosaveRestorePrompt(string Title, string Message, string ConfirmLabel, string DiscardLabel);
 
 public static class ProjectAutosave
 {
@@ -32,6 +36,25 @@ public static class ProjectAutosave
 
     public static bool ShouldPrompt(DateTimeOffset autosavedAt, DateTimeOffset? lastExplicitSaveAt) =>
         lastExplicitSaveAt is null || autosavedAt > lastExplicitSaveAt;
+
+    /// <summary>Wording for the startup restore prompt: an app update when the build changed since the autosave, otherwise an unexpected close.</summary>
+    public static AutosaveRestorePrompt DescribeRestore(AutosaveEnvelope envelope, string currentBuildId)
+    {
+        if (envelope.AppBuildId is not null && !string.Equals(envelope.AppBuildId, currentBuildId, StringComparison.Ordinal))
+        {
+            return new AutosaveRestorePrompt(
+                Title: "RescueTemple was updated",
+                Message: "RescueTemple was updated and restarted while you had unsaved changes. Restore the work from before the update?",
+                ConfirmLabel: "Restore my changes",
+                DiscardLabel: "Discard");
+        }
+
+        return new AutosaveRestorePrompt(
+            Title: "Unsaved changes found",
+            Message: "RescueTemple closed before your last changes were saved. Restore them?",
+            ConfirmLabel: "Restore my changes",
+            DiscardLabel: "Discard");
+    }
 
     public static AutosaveEnvelope Write(
         IEditorFileSystem files,

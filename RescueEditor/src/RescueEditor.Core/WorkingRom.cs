@@ -10,7 +10,8 @@ public sealed class WorkingRom
     {
         Source = source;
         _seed = source;
-        View = RomImage.FromBytes(source.Path, source.Bytes.ToArray());
+        // RomImage is immutable; every mutation below builds a new image, so sharing is safe.
+        View = source;
     }
 
     public RomImage Source { get; }
@@ -18,8 +19,26 @@ public sealed class WorkingRom
     private RomImage _seed;
     public RuntimeConfigState? RuntimeConfig { get; set; }
     private readonly List<(int Offset, byte[] Data)> _overlays = [];
+    private SceneDatabase? _baseline;
+    private readonly object _baselineLock = new();
+
     /// <summary>Immutable parse of the source baserom, taken before project edits.</summary>
-    public SceneDatabase? Baseline { get; set; }
+    public SceneDatabase? Baseline
+    {
+        get
+        {
+            lock (_baselineLock)
+                return _baseline ??= BaselineFactory?.Invoke();
+        }
+        set
+        {
+            lock (_baselineLock)
+                _baseline = value;
+        }
+    }
+
+    /// <summary>Builds <see cref="Baseline"/> on first read when it was not set explicitly.</summary>
+    public Func<SceneDatabase>? BaselineFactory { get; set; }
 
     public RomBuildReport Sync(
         SceneDatabase database,

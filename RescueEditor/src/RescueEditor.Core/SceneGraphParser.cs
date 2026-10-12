@@ -17,7 +17,8 @@ public static class SceneGraphParser
         RomProfile? profile = null,
         AssetCatalog? catalog = null,
         Charmap? charmap = null,
-        IProgress<string>? progress = null)
+        IProgress<string>? progress = null,
+        bool parallel = true)
     {
         void Report(string message) => progress?.Report(message);
 
@@ -43,27 +44,85 @@ public static class SceneGraphParser
         database.FunctionScripts.AddRange(ReadFunctionScripts(rom, profile));
 
         Report("Parsing scene headers…");
-        for (var mapId = 0; mapId < profile.MapCount; mapId++)
+        if (parallel)
         {
-            var map = maps[mapId];
-            var headerOffset = ReadMapScriptHeaderOffset(rom, profile, mapId);
-            map.ScriptHeaderOffset = headerOffset;
-            if (headerOffset < 0)
+            var headerOffsets = new int[profile.MapCount];
+            for (var mapId = 0; mapId < profile.MapCount; mapId++)
             {
-                if (mapId == profile.MapCount - 1)
-                    database.Diagnostics.Add($"Map {mapId} ({map.Name}) has no script header in this ROM.");
-                continue;
+                headerOffsets[mapId] = ReadMapScriptHeaderOffset(rom, profile, mapId);
+                maps[mapId].ScriptHeaderOffset = headerOffsets[mapId];
             }
 
-            try
+            // ParseScene only reads the ROM and charmap, so headers can be parsed concurrently.
+            var parsed = new Scene?[profile.MapCount];
+            var errors = new Exception?[profile.MapCount];
+            Parallel.For(0, profile.MapCount, mapId =>
             {
-                var scene = ParseScene(rom, map, headerOffset, charmap);
+                if (headerOffsets[mapId] < 0)
+                    return;
+                try
+                {
+                    parsed[mapId] = ParseScene(rom, maps[mapId], headerOffsets[mapId], charmap);
+                }
+                catch (Exception exception) when (exception is InvalidDataException or ArgumentOutOfRangeException)
+                {
+                    errors[mapId] = exception;
+                }
+            });
+
+            // CollectDialogue mutates the shared database, so it stays sequential and in map order.
+            for (var mapId = 0; mapId < profile.MapCount; mapId++)
+            {
+                var map = maps[mapId];
+                if (headerOffsets[mapId] < 0)
+                {
+                    if (mapId == profile.MapCount - 1)
+                        database.Diagnostics.Add($"Map {mapId} ({map.Name}) has no script header in this ROM.");
+                    continue;
+                }
+
+                if (errors[mapId] is not null)
+                {
+                    database.Diagnostics.Add($"Map {mapId} ({map.Name}): {errors[mapId]!.Message}");
+                    continue;
+                }
+
+                var scene = parsed[mapId]!;
                 database.Scenes.Add(scene);
-                CollectDialogue(rom, scene, database, charmap);
+                try
+                {
+                    CollectDialogue(rom, scene, database, charmap);
+                }
+                catch (Exception exception) when (exception is InvalidDataException or ArgumentOutOfRangeException)
+                {
+                    database.Diagnostics.Add($"Map {mapId} ({map.Name}): {exception.Message}");
+                }
             }
-            catch (Exception exception) when (exception is InvalidDataException or ArgumentOutOfRangeException)
+        }
+        else
+        {
+            for (var mapId = 0; mapId < profile.MapCount; mapId++)
             {
-                database.Diagnostics.Add($"Map {mapId} ({map.Name}): {exception.Message}");
+                var map = maps[mapId];
+                var headerOffset = ReadMapScriptHeaderOffset(rom, profile, mapId);
+                map.ScriptHeaderOffset = headerOffset;
+                if (headerOffset < 0)
+                {
+                    if (mapId == profile.MapCount - 1)
+                        database.Diagnostics.Add($"Map {mapId} ({map.Name}) has no script header in this ROM.");
+                    continue;
+                }
+
+                try
+                {
+                    var scene = ParseScene(rom, map, headerOffset, charmap);
+                    database.Scenes.Add(scene);
+                    CollectDialogue(rom, scene, database, charmap);
+                }
+                catch (Exception exception) when (exception is InvalidDataException or ArgumentOutOfRangeException)
+                {
+                    database.Diagnostics.Add($"Map {mapId} ({map.Name}): {exception.Message}");
+                }
             }
         }
 

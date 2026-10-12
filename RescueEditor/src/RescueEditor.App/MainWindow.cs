@@ -29,6 +29,10 @@ public sealed class MainWindow : Window
         ("Raw Archives", AssetCategory.RawArchives),
     ];
 
+    // Changes whenever the App or Core assembly is rebuilt; lets the restore prompt tell an app update from a crash.
+    private static readonly string AppBuildId =
+        $"{typeof(MainWindow).Assembly.ManifestModule.ModuleVersionId:N}+{typeof(ProjectAutosave).Assembly.ManifestModule.ModuleVersionId:N}";
+
     private readonly ProjectExplorerPanel _explorer;
     private readonly BreadcrumbBar _breadcrumb;
     private readonly Border _workspaceHost;
@@ -500,11 +504,23 @@ public sealed class MainWindow : Window
         {
             var rom = RomImage.Open(path);
             progressSink.Report($"Opened {rom.Length / 1024 / 1024.0:F2} MiB ROM…");
+            var bindTask = Task.Run(() =>
+            {
+                try
+                {
+                    return (Binding: (CPatchBinding?)CPatchFeaturePayload.Bind(rom, editorDirectory: AppContext.BaseDirectory), Error: (string?)null);
+                }
+                catch (InvalidOperationException exception)
+                {
+                    return (Binding: (CPatchBinding?)null, Error: (string?)exception.Message);
+                }
+            });
             var built = CatalogBuilder.Build(
                 rom,
                 charmapPathOverride: Path.Combine(AppContext.BaseDirectory, "charmap.txt"),
                 progress: progressSink);
-            return (rom, built.Catalog, built.Charmap, built.Scenes);
+            var bind = bindTask.GetAwaiter().GetResult();
+            return (rom, built.Catalog, built.Charmap, built.Scenes, bind.Binding, bind.Error);
         });
 
         try
@@ -518,15 +534,15 @@ public sealed class MainWindow : Window
             _catalog = result.Catalog;
             _charmap = result.Charmap;
             _scenes = result.Scenes;
-            _workingRom.Baseline = SceneClone.Clone(_scenes);
+            var baselineRom = result.rom;
+            var baselineProfile = result.Scenes.Profile;
+            var baselineCharmap = result.Charmap;
+            _workingRom.BaselineFactory = () => SceneGraphParser.Parse(baselineRom, baselineProfile, catalog: null, charmap: baselineCharmap);
             _cPatchHostRom = null;
             _cPatchWorkingRom = null;
             _cPatchesUseDecompHost = false;
-            try
+            if (result.Binding is { } binding)
             {
-                var binding = CPatchFeaturePayload.Bind(
-                    _rom,
-                    editorDirectory: AppContext.BaseDirectory);
                 _cPatchHostRom = binding.FeatureRom;
                 _cPatchesUseDecompHost = binding.UsesPayload;
                 _runtimeConfig = binding.Config;
@@ -541,11 +557,11 @@ public sealed class MainWindow : Window
                     AppendOutput(binding.Status);
                 }
             }
-            catch (InvalidOperationException exception)
+            else
             {
                 _runtimeConfig = RuntimeConfigCodec.TryLoad(_rom);
                 _workingRom.RuntimeConfig = _runtimeConfig;
-                AppendOutput($"C Patches: {exception.Message}");
+                AppendOutput($"C Patches: {result.Error}");
             }
 
             _project = ProjectDocument.Create(_rom, _scenes.Profile);
@@ -567,7 +583,7 @@ public sealed class MainWindow : Window
 
             _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes, _workingRom);
             _explorer.Build(_catalog, _scenes, Categories);
-            KickSearchIndexBuild();
+            KickSearchIndexBuild(useDiskCache: true);
             var restoreExplorer = string.Equals(path, _session.LastRomPath, StringComparison.OrdinalIgnoreCase);
             if (!(restoreExplorer && RestoreExplorerFromSession()))
             {
@@ -1008,7 +1024,7 @@ public sealed class MainWindow : Window
         };
     }
 
-    private void KickSearchIndexBuild()
+    private void KickSearchIndexBuild(bool useDiskCache = false)
     {
         _searchIndexCts?.Cancel();
         _searchIndexCts = new CancellationTokenSource();
@@ -1016,6 +1032,7 @@ public sealed class MainWindow : Window
         var catalog = _catalog;
         var scenes = _scenes;
         var romPath = _rom?.Path;
+        var romSha1 = _rom?.Sha1;
         if (catalog is null || scenes is null || string.IsNullOrWhiteSpace(romPath))
         {
             _projectSearch = ProjectSearchIndex.Empty;
@@ -1028,9 +1045,31 @@ public sealed class MainWindow : Window
             var names = existingNames ?? ScriptNamedDefinitions.TryLoadBestEffort(CatalogBuilder.FindRepositoryRoot(romPath));
             if (token.IsCancellationRequested)
                 return;
-            var index = ProjectSearchIndex.Build(catalog.Assets, scenes, names);
+            ProjectSearchIndex? index = null;
+            string? cachePath = null;
+            string? cacheKey = null;
+            // Only the post-load build may use the disk cache: it indexes the unedited ROM, keyed by SHA-1 + editor build + names.
+            if (useDiskCache && !string.IsNullOrEmpty(romSha1))
+            {
+                cacheKey = ProjectSearchIndex.CacheKey(romSha1, names);
+                cachePath = Path.Combine(RescueTemplePaths.GetAppDataDirectory(), "cache", $"search-{romSha1}.rtsi");
+                try
+                {
+                    if (File.Exists(cachePath))
+                    {
+                        using var input = new BufferedStream(File.OpenRead(cachePath), 1 << 20);
+                        index = ProjectSearchIndex.TryLoad(input, cacheKey);
+                    }
+                }
+                catch (IOException) { }
+                catch (UnauthorizedAccessException) { }
+            }
+
+            var fromCache = index is not null;
+            index ??= ProjectSearchIndex.Build(catalog.Assets, scenes, names);
             if (token.IsCancellationRequested)
                 return;
+
             Dispatcher.UIThread.Post(() =>
             {
                 if (token.IsCancellationRequested)
@@ -1041,6 +1080,22 @@ public sealed class MainWindow : Window
                 _sceneWorkspace?.SetScriptNames(names);
                 _searchPalette.UpdateIndex(index);
             });
+
+            if (token.IsCancellationRequested)
+                return;
+            if (!fromCache && cachePath is not null && cacheKey is not null)
+            {
+                try
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(cachePath)!);
+                    var tempPath = cachePath + ".tmp";
+                    using (var output = new BufferedStream(File.Create(tempPath), 1 << 20))
+                        index.Save(output, cacheKey);
+                    File.Move(tempPath, cachePath, overwrite: true);
+                }
+                catch (IOException) { }
+                catch (UnauthorizedAccessException) { }
+            }
         }, token);
     }
 
@@ -1251,7 +1306,11 @@ public sealed class MainWindow : Window
     {
         if (_scenes is null)
             return;
+        // Cancel the post-load search build BEFORE mutating scenes, so it can never cache edited data.
+        _searchIndexCts?.Cancel();
         ProjectEditApplier.Apply(project, _scenes, _runtimeConfig);
+        _searchDirty = true;
+        KickSearchIndexBuild();
     }
 
     private async void BuildRomOnClick(object? sender, RoutedEventArgs e)
@@ -1754,7 +1813,7 @@ public sealed class MainWindow : Window
                 ProjectAutosave.ShouldPrompt(envelope.AutosavedAt, envelope.LastExplicitSaveAt) &&
                 _files.FileExists(envelope.RomPath))
             {
-                if (await ConfirmRestoreAutosaveAsync())
+                if (await ConfirmRestoreAutosaveAsync(envelope))
                 {
                     await ApplyAutosaveEnvelopeAsync(envelope);
                     return;
@@ -1806,26 +1865,26 @@ public sealed class MainWindow : Window
         PersistSession();
         _sceneWorkspace?.RefreshFromExternal();
         UpdateDirtyTitle();
-        SetStatus("Restored autosave.");
+        SetStatus("Restored unsaved changes.");
     }
 
-    private async Task<bool> ConfirmRestoreAutosaveAsync()
+    private async Task<bool> ConfirmRestoreAutosaveAsync(AutosaveEnvelope envelope)
     {
+        var prompt = ProjectAutosave.DescribeRestore(envelope, AppBuildId);
         var dialog = new Window
         {
-            Title = "Restore autosave",
+            Title = prompt.Title,
             Width = 460,
-            Height = 170,
+            Height = 180,
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             Icon = AppIcon.Get(),
         };
         EditorChrome.StyleDialogWindow(dialog);
         var restore = false;
-        var message = EditorChrome.MutedBody(
-            "An autosave is newer than the last saved project. Restore it?");
-        var discard = EditorChrome.ToolButton("Discard");
+        var message = EditorChrome.MutedBody(prompt.Message);
+        var discard = EditorChrome.ToolButton(prompt.DiscardLabel);
         discard.Click += (_, _) => dialog.Close();
-        var confirm = EditorChrome.ToolButton("Restore autosave", primary: true);
+        var confirm = EditorChrome.ToolButton(prompt.ConfirmLabel, primary: true);
         confirm.Click += (_, _) =>
         {
             restore = true;
@@ -1990,6 +2049,7 @@ public sealed class MainWindow : Window
                     ExplorerCategory = _session.ExplorerCategory,
                     ExplorerAssetId = _session.ExplorerAssetId,
                     ExplorerSceneMapId = _session.ExplorerSceneMapId,
+                    AppBuildId = AppBuildId,
                     Project = _project,
                 });
         }

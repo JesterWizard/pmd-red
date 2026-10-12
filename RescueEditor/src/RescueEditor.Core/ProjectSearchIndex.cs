@@ -1,4 +1,7 @@
 using System.Globalization;
+using System.Reflection;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace RescueEditor.Core;
 
@@ -75,6 +78,208 @@ public sealed class ProjectSearchIndex
     }
 
     public int DocumentCount => _docs.Count;
+
+    /// <summary>File signature for the binary cache ("RTSI" when read as bytes).</summary>
+    private const int CacheMagic = 0x49535452; // "RTSI"
+
+    /// <summary>Bump when the cache layout or the indexed document shape changes.</summary>
+    private const int CacheVersion = 1;
+
+    /// <summary>Key for a cache file: the baserom SHA-1, the named-id catalogs, and this build of the index.</summary>
+    public static string CacheKey(string romSha1, ScriptNamedDefinitions? names)
+    {
+        var text = new StringBuilder();
+        text.Append("v" + CacheVersion + "|" + romSha1 + "|" +
+                    typeof(ProjectSearchIndex).Assembly.ManifestModule.ModuleVersionId + "|");
+        if (names is not null)
+        {
+            var catalogs = typeof(ScriptNamedDefinitions)
+                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(p => p.PropertyType == typeof(NamedIdCatalog))
+                .OrderBy(p => p.Name, StringComparer.Ordinal);
+            foreach (var property in catalogs)
+            {
+                text.Append(property.Name + ":");
+                if (property.GetValue(names) is NamedIdCatalog catalog)
+                {
+                    foreach (var entry in catalog.Entries)
+                        text.Append(entry.Id + "=" + entry.Name + ";");
+                }
+            }
+        }
+
+        return Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(text.ToString())));
+    }
+
+    /// <summary>Writes this index as a compact binary cache tagged with <paramref name="key"/>.</summary>
+    public void Save(Stream stream, string key)
+    {
+        using var writer = new BinaryWriter(stream, Encoding.UTF8, leaveOpen: true);
+        writer.Write(CacheMagic);
+        writer.Write(CacheVersion);
+        writer.Write(key);
+
+        // Each distinct string is stored once; documents refer to it by table index (-1 means null).
+        var table = new List<string>();
+        var tableIndex = new Dictionary<string, int>(StringComparer.Ordinal);
+        int Id(string? s)
+        {
+            if (s is null)
+                return -1;
+            if (!tableIndex.TryGetValue(s, out var id))
+            {
+                id = table.Count;
+                table.Add(s);
+                tableIndex[s] = id;
+            }
+            return id;
+        }
+
+        foreach (var doc in _docs)
+        {
+            Id(doc.Title);
+            foreach (var define in doc.Defines)
+                Id(define);
+            Id(doc.Opcode);
+            foreach (var token in doc.IdTokens)
+                Id(token);
+            Id(doc.TextHaystack);
+            Id(doc.MatchSnippet);
+            Id(doc.AssetId);
+            if (doc.Script is { } scriptHit)
+            {
+                Id(scriptHit.SceneName);
+                Id(scriptHit.OpcodeName);
+                Id(scriptHit.SiteName);
+                Id(scriptHit.PortraitSpecies);
+            }
+        }
+
+        writer.Write(table.Count);
+        foreach (var str in table)
+            writer.Write(str);
+
+        writer.Write(_docs.Count);
+        foreach (var doc in _docs)
+        {
+            writer.Write((byte)doc.Kind);
+            writer.Write(Id(doc.Title));
+            writer.Write(doc.Defines.Count);
+            foreach (var define in doc.Defines)
+                writer.Write(Id(define));
+            writer.Write(Id(doc.Opcode));
+            writer.Write(doc.IdTokens.Count);
+            foreach (var token in doc.IdTokens)
+                writer.Write(Id(token));
+            writer.Write(Id(doc.TextHaystack));
+            writer.Write(Id(doc.MatchSnippet));
+            writer.Write(Id(doc.AssetId));
+            writer.Write(doc.DialogueOffset);
+            writer.Write(doc.Script is not null);
+            if (doc.Script is { } hit)
+            {
+                writer.Write((int)hit.Kind);
+                writer.Write(hit.Value);
+                writer.Write(hit.MapId);
+                writer.Write(Id(hit.SceneName));
+                writer.Write(hit.Group);
+                writer.Write(hit.Sector);
+                writer.Write((int)hit.Site);
+                writer.Write(hit.SiteIndex);
+                writer.Write(hit.ScriptSlot);
+                writer.Write(hit.CommandIndex);
+                writer.Write(hit.Op);
+                writer.Write(Id(hit.OpcodeName));
+                writer.Write(Id(hit.SiteName));
+                writer.Write(Id(hit.PortraitSpecies));
+                writer.Write(hit.PortraitEmotion);
+            }
+        }
+
+        writer.Write(CacheMagic);
+    }
+
+    /// <summary>
+    /// Reads an index written by <see cref="Save"/>. Returns null for a different format, a different key, or any
+    /// corrupt data, so the caller rebuilds from the ROM instead.
+    /// </summary>
+    public static ProjectSearchIndex? TryLoad(Stream stream, string key)
+    {
+        try
+        {
+            using var reader = new BinaryReader(stream, Encoding.UTF8, leaveOpen: true);
+            if (reader.ReadInt32() != CacheMagic || reader.ReadInt32() != CacheVersion || reader.ReadString() != key)
+                return null;
+
+            var table = new string[ReadCount(reader)];
+            for (var i = 0; i < table.Length; i++)
+                table[i] = reader.ReadString();
+
+            string? Lookup(int id) => id < 0 ? null : table[id];
+            string Required(int id) =>
+                Lookup(id) ?? throw new InvalidDataException("Search cache has a null in a required string slot.");
+
+            var docCount = ReadCount(reader);
+            var docs = new List<IndexedDoc>(Math.Min(docCount, 1 << 20));
+            for (var d = 0; d < docCount; d++)
+            {
+                var kind = (ProjectSearchKind)reader.ReadByte();
+                var title = Required(reader.ReadInt32());
+                var defines = new string[ReadCount(reader)];
+                for (var i = 0; i < defines.Length; i++)
+                    defines[i] = Required(reader.ReadInt32());
+                var opcode = Lookup(reader.ReadInt32());
+                var idTokens = new string[ReadCount(reader)];
+                for (var i = 0; i < idTokens.Length; i++)
+                    idTokens[i] = Required(reader.ReadInt32());
+                var textHaystack = Required(reader.ReadInt32());
+                var matchSnippet = Required(reader.ReadInt32());
+                var assetId = Lookup(reader.ReadInt32());
+                var dialogueOffset = reader.ReadInt32();
+
+                ScriptAssetHit? script = null;
+                if (reader.ReadBoolean())
+                {
+                    var hitKind = (ScriptAssetKind)reader.ReadInt32();
+                    var value = reader.ReadInt32();
+                    var mapId = reader.ReadInt32();
+                    var sceneName = Required(reader.ReadInt32());
+                    var group = reader.ReadInt32();
+                    var sector = reader.ReadInt32();
+                    var site = (ScriptSiteKind)reader.ReadInt32();
+                    var siteIndex = reader.ReadInt32();
+                    var scriptSlot = reader.ReadInt32();
+                    var commandIndex = reader.ReadInt32();
+                    var op = reader.ReadByte();
+                    var opcodeName = Required(reader.ReadInt32());
+                    var siteName = Required(reader.ReadInt32());
+                    var portraitSpecies = Lookup(reader.ReadInt32());
+                    var portraitEmotion = reader.ReadInt32();
+                    script = new ScriptAssetHit(
+                        hitKind, value, mapId, sceneName, group, sector, site, siteIndex, scriptSlot, commandIndex,
+                        op, opcodeName, siteName, portraitSpecies, portraitEmotion);
+                }
+
+                docs.Add(new IndexedDoc(
+                    kind, title, defines, opcode, idTokens, textHaystack, matchSnippet, assetId, dialogueOffset,
+                    script));
+            }
+
+            return reader.ReadInt32() == CacheMagic ? new ProjectSearchIndex(docs) : null;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
+    private static int ReadCount(BinaryReader reader)
+    {
+        var count = reader.ReadInt32();
+        if (count < 0)
+            throw new InvalidDataException("Negative count in search cache.");
+        return count;
+    }
 
     public static ProjectSearchIndex Build(
         IEnumerable<AssetDescriptor>? assets,

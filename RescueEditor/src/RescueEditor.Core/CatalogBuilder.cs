@@ -6,7 +6,8 @@ public static class CatalogBuilder
         RomImage rom,
         string? repositoryRootOverride = null,
         string? charmapPathOverride = null,
-        IProgress<string>? progress = null)
+        IProgress<string>? progress = null,
+        bool parallel = true)
     {
         void Report(string message) => progress?.Report(message);
 
@@ -19,6 +20,9 @@ public static class CatalogBuilder
 
         Report("Loading charmap…");
         var charmap = Charmap.FromFile(charmapPath);
+        // Dungeons and data tables only read the ROM and charmap; they are added to the catalog later, in order.
+        var dungeonsTask = parallel ? Task.Run(() => (IReadOnlyList<AssetDescriptor>)DungeonIndexer.Index(rom, repositoryRoot).ToList()) : null;
+        var tablesTask = parallel ? Task.Run(() => (IReadOnlyList<AssetDescriptor>)DataTableIndexer.Index(rom, charmap, repositoryRoot).ToList()) : null;
         var catalog = new AssetCatalog();
         var diagnostics = new List<string>();
 
@@ -85,15 +89,34 @@ public static class CatalogBuilder
         Report("Composing ground map sets…");
         catalog.AddRange(GroundMapIndexer.Index(rom, archives));
 
-        Report("Indexing dungeons…");
-        catalog.AddRange(DungeonIndexer.Index(rom, repositoryRoot));
+        RomProfile? profile;
+        SceneDatabase scenes;
+        if (parallel)
+        {
+            // The scene graph reads the catalog's ground maps, so it parses before dungeons and data tables
+            // are appended. Those two were started in the background above and are appended in the original order.
+            Report("Building authoritative scene graph…");
+            profile = RomProfile.TryMatch(rom);
+            scenes = SceneGraphParser.Parse(rom, profile, catalog, charmap, progress, parallel: true);
 
-        Report("Indexing data tables…");
-        catalog.AddRange(DataTableIndexer.Index(rom, charmap, repositoryRoot));
+            Report("Indexing dungeons…");
+            catalog.AddRange(dungeonsTask!.GetAwaiter().GetResult());
 
-        Report("Building authoritative scene graph…");
-        var profile = RomProfile.TryMatch(rom);
-        var scenes = SceneGraphParser.Parse(rom, profile, catalog, charmap, progress);
+            Report("Indexing data tables…");
+            catalog.AddRange(tablesTask!.GetAwaiter().GetResult());
+        }
+        else
+        {
+            Report("Indexing dungeons…");
+            catalog.AddRange(DungeonIndexer.Index(rom, repositoryRoot));
+
+            Report("Indexing data tables…");
+            catalog.AddRange(DataTableIndexer.Index(rom, charmap, repositoryRoot));
+
+            Report("Building authoritative scene graph…");
+            profile = RomProfile.TryMatch(rom);
+            scenes = SceneGraphParser.Parse(rom, profile, catalog, charmap, progress, parallel: false);
+        }
         foreach (var scene in scenes.Scenes)
         {
             var entityCount = scene.AllEntities.Count();

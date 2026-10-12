@@ -91,4 +91,73 @@ public sealed class ProjectAutosaveTests
         var files = new MemoryEditorFileSystem();
         Assert.Null(ProjectAutosave.TryLoad(files, "/tmp/RescueTemple", "missing-key"));
     }
+
+    [Fact]
+    public void DescribeRestore_UsesUpdateWordingWhenBuildChanged()
+    {
+        var prompt = ProjectAutosave.DescribeRestore(new AutosaveEnvelope { AppBuildId = "old" }, "new");
+
+        Assert.Equal("RescueTemple was updated", prompt.Title);
+        Assert.Equal("RescueTemple was updated and restarted while you had unsaved changes. Restore the work from before the update?", prompt.Message);
+        Assert.Equal("Restore my changes", prompt.ConfirmLabel);
+        Assert.Equal("Discard", prompt.DiscardLabel);
+    }
+
+    [Fact]
+    public void DescribeRestore_UsesGenericWordingWhenBuildUnchangedOrUnknown()
+    {
+        var cases = new[]
+        {
+            (Envelope: new AutosaveEnvelope { AppBuildId = "same" }, Current: "same"),
+            (Envelope: new AutosaveEnvelope(), Current: "x"),
+        };
+
+        foreach (var (envelope, current) in cases)
+        {
+            var prompt = ProjectAutosave.DescribeRestore(envelope, current);
+
+            Assert.Equal("Unsaved changes found", prompt.Title);
+            Assert.Equal("RescueTemple closed before your last changes were saved. Restore them?", prompt.Message);
+            Assert.Equal("Restore my changes", prompt.ConfirmLabel);
+            Assert.Equal("Discard", prompt.DiscardLabel);
+            Assert.DoesNotContain("autosave", prompt.Title, StringComparison.OrdinalIgnoreCase);
+            Assert.DoesNotContain("autosave", prompt.Message, StringComparison.OrdinalIgnoreCase);
+        }
+    }
+
+    [Fact]
+    public void WriteAndLoad_RoundTripsAppBuildId()
+    {
+        var files = new MemoryEditorFileSystem();
+        var appData = "/tmp/RescueTemple";
+        var romPath = "/roms/baserom.gba";
+        files.WriteAllText(romPath, "BASE");
+
+        var project = new ProjectDocument
+        {
+            Name = "Mod",
+            BaseRomPath = romPath,
+            BaseRomSha1 = "abc",
+            IsDirty = true,
+        };
+
+        var envelope = ProjectAutosave.Write(
+            files,
+            appData,
+            key: project.BaseRomPath,
+            envelope: new AutosaveEnvelope
+            {
+                AutosavedAt = DateTimeOffset.Parse("2026-08-14T16:00:00Z"),
+                LastExplicitSaveAt = DateTimeOffset.Parse("2026-08-14T15:00:00Z"),
+                RomPath = romPath,
+                AppBuildId = "build-123",
+                Project = project,
+            });
+
+        Assert.True(files.FileExists(envelope.Path));
+
+        var loaded = ProjectAutosave.TryLoad(files, appData, key: romPath);
+        Assert.NotNull(loaded);
+        Assert.Equal("build-123", loaded!.AppBuildId);
+    }
 }
