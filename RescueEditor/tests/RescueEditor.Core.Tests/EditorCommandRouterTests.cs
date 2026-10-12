@@ -12,6 +12,8 @@ public sealed class EditorCommandRouterTests
     [InlineData(EditorCommandId.ToggleOutput, true)]
     [InlineData(EditorCommandId.GlobalSearch, true)]
     [InlineData(EditorCommandId.PlayInEmulator, true)]
+    [InlineData(EditorCommandId.ManageMods, true)]
+    [InlineData(EditorCommandId.SaveProjectAs, true)]
     [InlineData(EditorCommandId.Undo, false)]
     [InlineData(EditorCommandId.Redo, false)]
     [InlineData(EditorCommandId.DeleteSelection, false)]

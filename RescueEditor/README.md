@@ -102,20 +102,23 @@ The published application is placed under
 
 ## Playtest in an emulator
 
-After **File → Build ROM…**, press **F5** (or **Emulator → Play Last Build**) to
+After **File → Build ROM…**, press **F5** (or **Play → Play Last Build**) to
 open that build in mGBA.
 
+- The **Play** menu holds **Play Scene**, **Play Last Build**, **Set Emulator…**,
+  **Use Auto-Detected mGBA** and **Restart After Build**. There is no separate
+  **Scene** menu.
 - RescueTemple launches a copy next to the build, `<name>.playtest.gba`, so a
   running emulator never locks the Build ROM output. The copy's save file is
   `<name>.playtest.sav`. The first launch seeds it from `<name>.sav` if one exists;
   after that it keeps its own progress.
-- **Emulator → Restart After Build** (on by default): when an emulator that
+- **Play → Restart After Build** (on by default): when an emulator that
   RescueTemple started is still open, a successful Build ROM closes it, refreshes
   the copy, and relaunches it. Pressing F5 again does the same by hand. mGBA has
   no command to reload a ROM from outside, so "hot reload" is a restart. The
   emulator is asked to close first so it can flush its save; it is force-closed
   after 3 seconds.
-- **Emulator → Set Emulator…** picks any emulator executable; **Use
+- **Play → Set Emulator…** picks any emulator executable; **Use
   Auto-Detected mGBA** goes back to searching the default install locations:
   - Windows: `%ProgramFiles%\mGBA\mGBA.exe`, `%ProgramFiles(x86)%\mGBA\mGBA.exe`,
     `%LOCALAPPDATA%\Programs\mGBA\mGBA.exe`
@@ -170,9 +173,90 @@ Failure messages:
 This MVP keeps the source ROM read-only. Exported files, **mod packages**, and
 Build ROM copies are the safe hand-off points for later reassembly workflows.
 
-## Mod packages
+## Editing tips
 
-**File → Export Mod Package…** writes a `.rtmod` archive (manifest + changed
-ROM overlays + RuntimeConfig / C Patches + project edits). Recipients open the
-same baserom and use **File → Import Mod Package…**. Format details:
-[documentation/RescueTempleModPatchPackages.md](../documentation/RescueTempleModPatchPackages.md).
+- **Ctrl+Z** / **Ctrl+Y** undo and redo direct ROM edits (Dungeons, Data Tables,
+  graphics, same-size sound replacements, ground map imports) like scene edits.
+  Several byte ranges written by one action are one undo step. The **Edit** menu
+  shows what Undo and Redo will do.
+- An edit that resizes ROM data (a size-changing sound replacement or a data-table
+  insert) cannot be undone. Older ROM edits can't be undone after one.
+- Saving marks the project clean: the `*` in the title clears, and undoing back to
+  the saved state clears it too.
+- **Merge Mod into Project…** clears undo history.
+- Drop a `.gba` or `.bin` to open a ROM, or a `.rtproj` / `.rescue` to open a
+  project. Drop `.rtmod` files, a mod folder, or its `manifest.json` to add mods.
+  Dropping onto the **Manage Mods** window adds mods to its list. If one drop mixes
+  kinds, a project wins over a ROM, and a ROM wins over mods.
+- The welcome screen lists **Recent Projects** as well as **Recent ROMs**, with a
+  drag-and-drop tip.
+- **Build ROM** and **Merge Mod into Project…** warnings go to the **Output** panel,
+  which opens automatically. Errors still pop up.
+- The project explorer builds rows only when a branch is expanded, and its filter
+  applies 200 ms after you stop typing.
+
+## Mods
+
+RescueTemple can layer mods over the baserom from the top-level **Mods** menu. A
+mod is a `.rtmod` file or a mod folder with a `manifest.json`. The project
+references each mod and switches it on or off. Your own edits are kept
+separately and always win.
+
+### Mod menu
+
+- **Mods → Manage Mods…** (Ctrl+Shift+M) opens the mod list.
+- **Mods → Add Mod…** adds a `.rtmod` file or a mod folder's `manifest.json`.
+- One checkbox item per mod in the project. Click it to turn that mod on or off.
+- **Mods → Export Project as Mod…** packages only your own changes. With mods
+  enabled, ROM bytes are compared against the state right after the mods load, and
+  C Patch values against the mods' values. The package's `warnings` lists the mods
+  it was built on ("Made on top of mods: …"), so recipients know which mods to load
+  first.
+- **Mods → Merge Mod into Project…** copies a mod's changes into the project
+  permanently, with no toggle afterwards. Prefer **Add Mod…** to keep it switchable.
+- A `Mods: N` badge (N enabled mods, or `Mods: enabled/total` when some are off) at
+  the right of the breadcrumb bar shows when the project has mods. Click it to open
+  Manage Mods.
+
+The last two items replace the old **File → Export Mod Package…** and
+**File → Import Mod Package…**.
+
+### Manage Mods window
+
+- Lists mods in load order, with a checkbox per mod.
+- Each row shows its edit, ROM patch and C Patch setting counts.
+- Errors show in red when a file is missing or unreadable, or was made for a
+  different baserom. Those mods are added disabled.
+- **Locate…** is enabled when the selected mod's file is missing. Use it to point
+  the mod at the moved file.
+- **⚠ Overlaps with …** appears when two enabled mods change the same ROM bytes,
+  the same C Patch setting with different values, or the same edit target.
+- The details panel for the selected mod shows its file, target profile, package
+  warnings and conflicts.
+- **Add Mod…**, **Remove**, **Move Up** / **Move Down** (Alt+Up / Alt+Down),
+  **Enable All** and **Disable All**. The **Delete** key also removes the selected mod.
+  Removing a mod only takes it out of the project; the `.rtmod` file stays on disk.
+- **Apply** is enabled only after a change. **Escape** or **Cancel** discards changes.
+
+### Load order and saving
+
+- Load order: the baserom, then enabled mods from top to bottom (a lower mod wins
+  where two overlap), then the project's own edits, which always win.
+- Switching mods is faster: RescueTemple reuses the existing ROM index and only
+  re-reads scenes (about 2 s instead of a full re-index). It falls back to a full
+  re-index when that is not possible, for example after installing C Patches. The
+  Output line shows how long it took. Undo history is still cleared when mods
+  change, and unsaved edits are kept.
+- Mods are references, not copies. The project file (`.rtproj`) stores each mod's
+  path and on/off state in a `mods` list. The `.rtmod` file is not copied. Moving
+  or deleting the file shows the mod as missing.
+- The project also saves direct ROM byte edits (Dungeons, Data Tables, graphics,
+  and same-size sound/graphics replacements) in a `romPatches` list, so they
+  survive reopening. Previously only scene, dialogue, script and C Patch edits
+  were saved.
+- Exception: an edit that resizes ROM data (a sound replacement that changes size,
+  or a data-table insert) cannot be stored in the project. RescueTemple says so in
+  Output on save and asks before a mod reload. Use **Build ROM** to keep those.
+- **File → Save Project As…** (Ctrl+Shift+S). **Save Project** is Ctrl+S.
+
+Format details: [documentation/RescueTempleModPatchPackages.md](../documentation/RescueTempleModPatchPackages.md).

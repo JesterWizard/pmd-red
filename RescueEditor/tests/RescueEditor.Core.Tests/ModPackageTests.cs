@@ -89,6 +89,57 @@ public sealed class ModPackageTests
         Assert.Empty(package.Edits);
     }
 
+    [Fact]
+    public void CollectAgainstReferenceSkipsModBytes()
+    {
+        var rom = RomImage.FromBytes("/tmp/rtmod-reference.gba", CreateToyBytes());
+        var working = new WorkingRom(rom);
+        var project = ProjectDocument.Create(rom, RomProfile.Us10);
+        working.OverlayMod(0x100, new byte[] { 9 });
+        working.MarkModBaseline();
+        working.Overlay(0x180, new byte[] { 1 });
+
+        var package = ModPackage.Collect(working, project, reference: working.ModBaseline);
+
+        var only = Assert.Single(package.Overlays);
+        Assert.Equal(0x180, only.Offset);
+        Assert.DoesNotContain(package.Overlays, o => o.Offset == 0x100);
+
+        var legacy = ModPackage.Collect(working, project);
+        Assert.Contains(legacy.Overlays, o => o.Offset == 0x100);
+    }
+
+    [Fact]
+    public void CollectRuntimeConfigAgainstBaseline()
+    {
+        var rom = RomImage.FromBytes("/tmp/rtmod-baseline-config.gba", CreateToyBytes());
+        var working = new WorkingRom(rom);
+        var project = ProjectDocument.Create(rom, RomProfile.Us10);
+        var config = RuntimeConfigState.CreateStandalone();
+        config.Set("always_run", 1);
+        var baseline = new Dictionary<string, byte> { ["always_run"] = 1 };
+
+        var inherited = ModPackage.Collect(working, project, runtimeConfig: config, runtimeConfigBaseline: baseline);
+        Assert.DoesNotContain(inherited.RuntimeConfig, field => field.Id == "always_run");
+
+        config.Set("always_run", 0);
+        var changed = ModPackage.Collect(working, project, runtimeConfig: config, runtimeConfigBaseline: baseline);
+        Assert.Contains(changed.RuntimeConfig, field => field.Id == "always_run" && field.Value == 0);
+    }
+
+    [Fact]
+    public void CollectAddsBuiltOnModsWarning()
+    {
+        var rom = RomImage.FromBytes("/tmp/rtmod-built-on.gba", CreateToyBytes());
+        var working = new WorkingRom(rom);
+        var project = ProjectDocument.Create(rom, RomProfile.Us10);
+
+        var package = ModPackage.Collect(working, project, builtOnMods: ["A", "B"]);
+
+        Assert.Contains(package.Warnings, warning =>
+            warning.Contains("Made on top of mods: A, B", StringComparison.Ordinal));
+    }
+
     private static (WorkingRom Working, ProjectDocument Project, SceneDatabase Database, RuntimeConfigState Config)
         CreateEditedToy()
     {

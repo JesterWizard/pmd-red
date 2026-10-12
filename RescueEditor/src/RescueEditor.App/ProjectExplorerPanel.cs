@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
-using Avalonia.VisualTree;
+using Avalonia.Threading;
 using RescueEditor.Core;
 
 namespace RescueEditor.App;
@@ -15,6 +15,11 @@ public sealed class ProjectExplorerPanel : UserControl
     private readonly TextBox _filterBox;
     private List<ExplorerNode> _roots = new();
     private readonly Dictionary<ExplorerNode, Control> _nodeControls = new();
+    private List<ExplorerNode> _displayRoots = new();
+    private readonly HashSet<ExplorerNode> _populated = new();
+    private readonly Dictionary<ExplorerNode, int> _depths = new();
+    private readonly DispatcherTimer _filterTimer = new() { Interval = TimeSpan.FromMilliseconds(200) };
+    private bool _filterApplied;
     private Control? _selectedControl;
     public event EventHandler<ExplorerNode?>? SelectionChanged;
 
@@ -30,7 +35,7 @@ public sealed class ProjectExplorerPanel : UserControl
 
         _filterBox = new TextBox
         {
-            PlaceholderText = "Filter scenes…",
+            PlaceholderText = "Filter…",
             FontFamily = EditorTheme.UiFont,
             FontSize = EditorTheme.FontLabel,
             Height = EditorTheme.ControlHeight,
@@ -38,7 +43,8 @@ public sealed class ProjectExplorerPanel : UserControl
         };
         EditorChrome.StyleEditor(_filterBox);
         _filterBox.FontFamily = EditorTheme.UiFont;
-        _filterBox.TextChanged += (_, _) => ApplyFilter();
+        _filterBox.TextChanged += (_, _) => { _filterTimer.Stop(); _filterTimer.Start(); };
+        _filterTimer.Tick += (_, _) => { _filterTimer.Stop(); ApplyFilter(); };
 
         var filterHost = new Border
         {
@@ -65,8 +71,13 @@ public sealed class ProjectExplorerPanel : UserControl
     {
         _roots = new();
         _filterBox.Text = string.Empty;
+        _filterTimer.Stop(); // setting Text above may have started the debounce timer
         _host.Children.Clear();
         _nodeControls.Clear();
+        _displayRoots = new();
+        _populated.Clear();
+        _depths.Clear();
+        _filterApplied = false;
         _selectedControl = null;
     }
 
@@ -158,82 +169,62 @@ public sealed class ProjectExplorerPanel : UserControl
     {
         if (TrySelectAssetId(asset.Id))
             return;
-        foreach (var (node, control) in _nodeControls)
-        {
-            if (node is AssetExplorerNode assetNode && ReferenceEquals(assetNode.Asset, asset))
-            {
-                ExpandAncestors(control);
-                SelectControl(control, node);
-                return;
-            }
-        }
+        if (Reveal(n => n is AssetExplorerNode a && ReferenceEquals(a.Asset, asset)) is { } hit)
+            SelectControl(hit.Control, hit.Node);
     }
 
     public bool TrySelectAssetId(string assetId)
     {
-        foreach (var (node, control) in _nodeControls)
-        {
-            if (node is AssetExplorerNode assetNode &&
-                string.Equals(assetNode.Asset.Id, assetId, StringComparison.Ordinal))
-            {
-                ExpandAncestors(control);
-                SelectControl(control, node);
-                return true;
-            }
-        }
-        return false;
+        if (Reveal(n => n is AssetExplorerNode a && string.Equals(a.Asset.Id, assetId, StringComparison.Ordinal))
+            is not { } hit)
+            return false;
+        SelectControl(hit.Control, hit.Node);
+        return true;
     }
 
     public bool SelectScene(int mapId)
     {
-        foreach (var (node, control) in _nodeControls)
-        {
-            if (node is AssetExplorerNode { Scene: { } scene } && scene.MapId == mapId)
-            {
-                ExpandAncestors(control);
-                SelectControl(control, node);
-                return true;
-            }
-        }
-        return false;
+        if (Reveal(n => n is AssetExplorerNode { Scene: { } scene } && scene.MapId == mapId) is not { } hit)
+            return false;
+        SelectControl(hit.Control, hit.Node);
+        return true;
     }
 
     public void ExpandCategory(AssetCategory category)
     {
-        foreach (var (node, control) in _nodeControls)
+        if (Reveal(n => n is CategoryExplorerNode c && c.Category == category) is { Control: Expander expander } hit)
         {
-            if (node is CategoryExplorerNode cat && cat.Category == category && control is Expander expander)
-            {
-                expander.IsExpanded = true;
-                return;
-            }
+            EnsurePopulated(hit.Node);
+            expander.IsExpanded = true;
         }
     }
 
     public bool TrySelectCategory(AssetCategory category)
     {
-        foreach (var (node, control) in _nodeControls)
+        if (Reveal(n => n is CategoryExplorerNode c && c.Category == category) is not { } hit)
+            return false;
+        if (hit.Control is Expander expander)
         {
-            if (node is CategoryExplorerNode cat && cat.Category == category)
-            {
-                if (control is Expander expander)
-                    expander.IsExpanded = true;
-                SelectionChanged?.Invoke(this, node);
-                return true;
-            }
+            EnsurePopulated(hit.Node);
+            expander.IsExpanded = true;
         }
-        return false;
+        SelectionChanged?.Invoke(this, hit.Node);
+        return true;
     }
 
     private void ApplyFilter()
     {
         var query = (_filterBox.Text ?? string.Empty).Trim();
+        _filterApplied = !string.IsNullOrEmpty(query);
         var roots = string.IsNullOrEmpty(query) ? _roots : FilterNodes(_roots, query);
+        _displayRoots = roots;
         _host.Children.Clear();
         _nodeControls.Clear();
+        _populated.Clear();
+        _depths.Clear();
         _selectedControl = null;
         foreach (var node in roots)
-            _host.Children.Add(BuildNodeControl(node, depth: 0, expand: !string.IsNullOrEmpty(query)));
+            _host.Children.Add(BuildNodeControl(node, depth: 0, expand: _filterApplied));
     }
 
     private Control BuildNodeControl(ExplorerNode node, int depth, bool expand)
@@ -241,6 +232,7 @@ public sealed class ProjectExplorerPanel : UserControl
         if (node.Children.Count > 0)
         {
             // Expander: entire header row toggles open/closed (not chevron-only like TreeView).
+            // Child rows are built by EnsurePopulated on first expand (or straight away when filtering).
             var expander = new Expander
             {
                 Header = CreateHeaderLabel(node, depth),
@@ -250,13 +242,14 @@ public sealed class ProjectExplorerPanel : UserControl
                 Padding = new Thickness(0),
                 Margin = new Thickness(0),
                 Tag = node,
+                Content = new StackPanel { Spacing = 0 },
             };
-            var childHost = new StackPanel { Spacing = 0 };
-            foreach (var child in node.Children)
-                childHost.Children.Add(BuildNodeControl(child, depth + 1, expand));
-            expander.Content = childHost;
-            expander.Expanded += (_, _) => SelectionChanged?.Invoke(this, node);
+            _depths[node] = depth;
+            // Register before populating: EnsurePopulated finds the host through _nodeControls.
             _nodeControls[node] = expander;
+            if (expand)
+                EnsurePopulated(node);
+            expander.Expanded += (_, _) => { EnsurePopulated(node); SelectionChanged?.Invoke(this, node); };
             return expander;
         }
 
@@ -317,15 +310,34 @@ public sealed class ProjectExplorerPanel : UserControl
         SelectionChanged?.Invoke(this, node);
     }
 
-    private static void ExpandAncestors(Control control)
+    // Child rows are created on first expand; thousands of collapsed assets never get controls.
+    private void EnsurePopulated(ExplorerNode node)
     {
-        Visual? current = control;
-        while (current is not null)
+        if (!_populated.Add(node) ||
+            !_nodeControls.TryGetValue(node, out var control) ||
+            control is not Expander { Content: StackPanel host })
+            return;
+        var depth = _depths.GetValueOrDefault(node);
+        var expand = _filterApplied;
+        foreach (var child in node.Children)
+            host.Children.Add(BuildNodeControl(child, depth + 1, expand));
+    }
+
+    /// <summary>Expands the first node matching <paramref name="match"/> and every ancestor (creating rows as needed) and returns that node with its control.</summary>
+    private (ExplorerNode Node, Control Control)? Reveal(Func<ExplorerNode, bool> match)
+    {
+        var path = TreePath.Find(_displayRoots, node => node.Children, match);
+        if (path is null)
+            return null;
+        // Includes the match itself, as the old visual-tree walk did: a matched branch is opened too.
+        foreach (var current in path)
         {
-            if (current is Expander expander)
+            EnsurePopulated(current);
+            if (_nodeControls.TryGetValue(current, out var branch) && branch is Expander expander)
                 expander.IsExpanded = true;
-            current = current.GetVisualParent();
         }
+        var target = path[^1];
+        return _nodeControls.TryGetValue(target, out var control) ? (target, control) : null;
     }
 
     private static List<ExplorerNode> FilterNodes(IEnumerable<ExplorerNode> nodes, string query)

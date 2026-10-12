@@ -53,9 +53,10 @@ public sealed class MainWindow : Window
     private System.Diagnostics.Process? _emulatorProcess;
     private readonly MenuItem _recentRomsMenu = new() { Header = "Recent _ROMs" };
     private readonly MenuItem _recentProjectsMenu = new() { Header = "Recent _Projects" };
+    private readonly MenuItem _modsMenu = new() { Header = "_Mods" };
     private readonly DispatcherTimer _autosaveTimer;
     private DateTimeOffset? _lastExplicitSaveAt;
-    private readonly TextBlock _status;
+    private int _savedUserEditVersion;
     private readonly StackPanel _propertiesBody;
     private readonly Border _loadingOverlay;
     private readonly TextBlock _loadingStage;
@@ -66,6 +67,8 @@ public sealed class MainWindow : Window
     private readonly AgbplayStreamHost _soundStreamHost = new();
     private readonly SoundCacheWarmer _soundCacheWarmer = new();
     private readonly ChangeService _changes = new();
+    private readonly List<RomByteChange> _pendingRomChanges = new();
+    private bool _romFlushQueued;
     private readonly AssetWorkspacePanel _assetWorkspace;
     private SceneWorkspacePanel? _sceneWorkspace;
     private CPatchesWorkspacePanel? _cPatchesWorkspace;
@@ -83,9 +86,13 @@ public sealed class MainWindow : Window
     private SceneDatabase? _scenes;
     private ProjectDocument? _project;
     private RuntimeConfigState? _runtimeConfig;
+    private IReadOnlyDictionary<string, byte>? _modRuntimeBaseline;
+    private List<string> _loadedModNames = new();
     private RomImage? _cPatchHostRom;
     private WorkingRom? _cPatchWorkingRom;
     private bool _cPatchesUseDecompHost;
+    // RuntimeConfig ROM location when the ROM was last indexed; a C Patch install that moves it forces a full reopen.
+    private (int Offset, int Capacity)? _runtimeConfigOpenLayout;
     private bool _isLoading;
     private AssetDescriptor? _selectedAsset;
     private AssetCategory? _selectedCategory;
@@ -114,6 +121,7 @@ public sealed class MainWindow : Window
         _explorer.SelectionChanged += ExplorerOnSelectionChanged;
 
         _breadcrumb = new BreadcrumbBar();
+        _breadcrumb.ModsBadgeClicked += async (_, _) => await OpenModManagerAsync();
         _workspaceHost = new Border
         {
             Background = EditorTheme.CanvasBgBrush,
@@ -137,16 +145,6 @@ public sealed class MainWindow : Window
             Child = EditorChrome.VerticalPane(propsBody, leftEdge: true),
         };
 
-        _status = new TextBlock
-        {
-            Text = "Open a baserom.gba to begin.",
-            FontFamily = EditorTheme.UiFont,
-            FontSize = EditorTheme.FontMeta,
-            Foreground = EditorTheme.TextMutedBrush,
-            VerticalAlignment = VerticalAlignment.Center,
-            TextTrimming = TextTrimming.CharacterEllipsis,
-        };
-
         _assetWorkspace = new AssetWorkspacePanel();
         _assetWorkspace.AttachSound(_soundStreamHost, _soundCacheWarmer);
         _assetWorkspace.AssetSelected += (_, asset) =>
@@ -163,6 +161,7 @@ public sealed class MainWindow : Window
             if (_catalog is not null)
                 _explorer.Build(_catalog, _scenes, Categories);
         };
+        _changes.Changed += OnChangesChanged;
 
         _leftSplitter = EditorChrome.ColumnSplitter();
         _rightSplitter = EditorChrome.ColumnSplitter();
@@ -271,6 +270,9 @@ public sealed class MainWindow : Window
         };
 
         Content = new Panel { Children = { _root, _loadingOverlay, _searchPalette } };
+        DragDrop.SetAllowDrop(this, true);
+        DragDrop.AddDragOverHandler(this, OnDragOver);
+        DragDrop.AddDropHandler(this, OnDrop);
         _searchPalette.ResultChosen += (_, hit) => OpenSearchHit(hit);
         KeyDown += MainWindowOnKeyDown;
         Closing += OnClosing;
@@ -297,10 +299,16 @@ public sealed class MainWindow : Window
         open.Click += OpenButtonOnClick;
         var saveProject = new MenuItem
         {
-            Header = "Save _Project…",
+            Header = "_Save Project",
             InputGesture = new KeyGesture(Key.S, KeyModifiers.Control),
         };
         saveProject.Click += SaveProjectOnClick;
+        var saveProjectAs = new MenuItem
+        {
+            Header = "Save Project _As…",
+            InputGesture = new KeyGesture(Key.S, KeyModifiers.Control | KeyModifiers.Shift),
+        };
+        saveProjectAs.Click += async (_, _) => await SaveProjectAsync(choosePath: true);
         var openProject = new MenuItem { Header = "Open Pro_ject…" };
         openProject.Click += OpenProjectOnClick;
         var buildRom = new MenuItem { Header = "_Build ROM…" };
@@ -309,10 +317,6 @@ public sealed class MainWindow : Window
         exportSelected.Click += ExportSelectedOnClick;
         var exportCategory = new MenuItem { Header = "Export _Category…" };
         exportCategory.Click += ExportCategoryOnClick;
-        var exportMod = new MenuItem { Header = "Export _Mod Package…" };
-        exportMod.Click += ExportModPackageOnClick;
-        var importMod = new MenuItem { Header = "Import Mo_d Package…" };
-        importMod.Click += ImportModPackageOnClick;
         var close = new MenuItem { Header = "_Close ROM" };
         close.Click += async (_, _) =>
         {
@@ -327,12 +331,11 @@ public sealed class MainWindow : Window
         file.Items.Add(openProject);
         file.Items.Add(_recentProjectsMenu);
         file.Items.Add(saveProject);
+        file.Items.Add(saveProjectAs);
         file.Items.Add(buildRom);
         file.Items.Add(new Separator());
         file.Items.Add(exportSelected);
         file.Items.Add(exportCategory);
-        file.Items.Add(exportMod);
-        file.Items.Add(importMod);
         file.Items.Add(new Separator());
         file.Items.Add(close);
         file.Items.Add(exit);
@@ -344,13 +347,22 @@ public sealed class MainWindow : Window
             Header = "_Undo",
             InputGesture = new KeyGesture(Key.Z, KeyModifiers.Control),
         };
-        undo.Click += (_, _) => { _changes.Undo(); _sceneWorkspace?.RefreshFromExternal(); UpdateDirtyTitle(); };
+        undo.Click += (_, _) => ExecuteShellCommand(EditorCommandId.Undo);
         var redo = new MenuItem
         {
             Header = "_Redo",
             InputGesture = new KeyGesture(Key.Y, KeyModifiers.Control),
         };
-        redo.Click += (_, _) => { _changes.Redo(); _sceneWorkspace?.RefreshFromExternal(); UpdateDirtyTitle(); };
+        redo.Click += (_, _) => ExecuteShellCommand(EditorCommandId.Redo);
+        edit.SubmenuOpened += (_, _) =>
+        {
+            var undoText = _changes.UndoDescription?.Replace("_", "__");
+            var redoText = _changes.RedoDescription?.Replace("_", "__");
+            undo.Header = undoText is null ? "_Undo" : $"_Undo {undoText}";
+            redo.Header = redoText is null ? "_Redo" : $"_Redo {redoText}";
+            undo.IsEnabled = _changes.CanUndo;
+            redo.IsEnabled = _changes.CanRedo;
+        };
         var find = new MenuItem
         {
             Header = "_Find in Project…",
@@ -362,9 +374,10 @@ public sealed class MainWindow : Window
         edit.Items.Add(new Separator());
         edit.Items.Add(find);
         menu.Items.Add(edit);
+        menu.Items.Add(_modsMenu);
+        RebuildModsMenu();
 
-        var sceneMenu = new MenuItem { Header = "_Scene" };
-        var playScene = new MenuItem { Header = "_Play Scene" };
+        var playScene = new MenuItem { Header = "Play _Scene" };
         playScene.Click += async (_, _) =>
         {
             if (_sceneWorkspace is not null && _workspaceHost.Child == _sceneWorkspace)
@@ -372,17 +385,15 @@ public sealed class MainWindow : Window
             else
                 SetStatus("Open a scene first to use Scene Play.");
         };
-        sceneMenu.Items.Add(playScene);
-        menu.Items.Add(sceneMenu);
 
-        var emulatorMenu = new MenuItem { Header = "E_mulator" };
+        var emulatorMenu = new MenuItem { Header = "_Play" };
         var playBuild = new MenuItem
         {
-            Header = "_Play Last Build",
+            Header = "Play Last _Build",
             InputGesture = new KeyGesture(Key.F5),
         };
         playBuild.Click += async (_, _) => await PlayInEmulatorAsync();
-        var setEmulator = new MenuItem { Header = "_Set Emulator…" };
+        var setEmulator = new MenuItem { Header = "Set E_mulator…" };
         setEmulator.Click += async (_, _) => await SetEmulatorAsync();
         var autoDetectEmulator = new MenuItem { Header = "Use _Auto-Detected mGBA" };
         autoDetectEmulator.Click += (_, _) =>
@@ -403,6 +414,7 @@ public sealed class MainWindow : Window
             restartAfterBuild.IsChecked = _session.RestartEmulatorAfterBuild;
             PersistSession();
         };
+        emulatorMenu.Items.Add(playScene);
         emulatorMenu.Items.Add(playBuild);
         emulatorMenu.Items.Add(new Separator());
         emulatorMenu.Items.Add(setEmulator);
@@ -566,14 +578,10 @@ public sealed class MainWindow : Window
             EndLoadingOverlay();
 
             _rom = result.rom;
-            _workingRom = new WorkingRom(result.rom);
+            CreateWorkingRom(result.rom, result.Scenes.Profile, result.Charmap);
             _catalog = result.Catalog;
             _charmap = result.Charmap;
             _scenes = result.Scenes;
-            var baselineRom = result.rom;
-            var baselineProfile = result.Scenes.Profile;
-            var baselineCharmap = result.Charmap;
-            _workingRom.BaselineFactory = () => SceneGraphParser.Parse(baselineRom, baselineProfile, catalog: null, charmap: baselineCharmap);
             _cPatchHostRom = null;
             _cPatchWorkingRom = null;
             _cPatchesUseDecompHost = false;
@@ -589,19 +597,21 @@ public sealed class MainWindow : Window
                 }
                 else
                 {
-                    _workingRom.RuntimeConfig = _runtimeConfig;
+                    _workingRom!.RuntimeConfig = _runtimeConfig;
                     AppendOutput(binding.Status);
                 }
             }
             else
             {
                 _runtimeConfig = RuntimeConfigCodec.TryLoad(_rom);
-                _workingRom.RuntimeConfig = _runtimeConfig;
+                _workingRom!.RuntimeConfig = _runtimeConfig;
                 AppendOutput($"C Patches: {result.Error}");
             }
+            _runtimeConfigOpenLayout = _runtimeConfig is null ? null : (_runtimeConfig.RomOffset, _runtimeConfig.RomCapacity);
 
             _project = ProjectDocument.Create(_rom, _scenes.Profile);
             _changes.Attach(_project, _scenes);
+            RebuildModsMenu();
 
             var romPath = _rom.Path;
             _ = Task.Run(() =>
@@ -651,6 +661,62 @@ public sealed class MainWindow : Window
         finally
         {
             _isLoading = false;
+        }
+    }
+
+    /// <summary>Creates a fresh working ROM for <paramref name="rom"/> and wires its events. C Patch wiring stays with the caller.</summary>
+    private void CreateWorkingRom(RomImage rom, RomProfile? profile, Charmap charmap)
+    {
+        _workingRom = new WorkingRom(rom);
+        _savedUserEditVersion = 0;
+        _pendingRomChanges.Clear();
+        // A plain Open ROM has no mods; ComposeProjectOntoRom sets these again when a project is applied.
+        _modRuntimeBaseline = null;
+        _loadedModNames = new();
+        _workingRom.UserEdited += (_, _) => Dispatcher.UIThread.Post(UpdateDirtyTitle);
+        _workingRom.UserBytesChanged += OnUserBytesChanged;
+        _workingRom.BaselineFactory = () => SceneGraphParser.Parse(rom, profile, catalog: null, charmap: charmap);
+    }
+
+    /// <summary>Rebuilds scenes and the working ROM from the already-indexed baserom (no re-index). False when it cannot be used.</summary>
+    private async Task<bool> TryQuickResetAsync()
+    {
+        if (_rom is null || _catalog is null || _charmap is null || _scenes is null)
+            return false;
+        if (_runtimeConfig is not null &&
+            _runtimeConfigOpenLayout != (_runtimeConfig.RomOffset, _runtimeConfig.RomCapacity))
+            return false;
+        if (_isLoading)
+            return false;
+        var rom = _rom;
+        var catalog = _catalog;
+        var charmap = _charmap;
+        var profile = _scenes.Profile;
+        _isLoading = true;
+        BeginLoadingOverlay("Applying mods…");
+        try
+        {
+            var scenes = await Task.Run(() => SceneGraphParser.Parse(rom, profile, catalog, charmap, progress: null, parallel: true));
+            _scenes = scenes;
+            _runtimeConfig?.RestoreSourceSnapshot();
+            CreateWorkingRom(rom, profile, charmap);
+            if (_cPatchesUseDecompHost && _cPatchHostRom is not null)
+                _cPatchWorkingRom = new WorkingRom(_cPatchHostRom) { RuntimeConfig = _runtimeConfig };
+            else
+                _workingRom!.RuntimeConfig = _runtimeConfig;
+            _assetWorkspace.Bind(rom, charmap, catalog, _scenes, _changes, _workingRom);
+            _explorer.Build(catalog, _scenes, Categories);
+            return true;
+        }
+        catch (Exception exception) when (exception is not OutOfMemoryException)
+        {
+            AppendOutput($"Quick mod reload failed ({exception.Message}); re-indexing the ROM instead.");
+            return false;
+        }
+        finally
+        {
+            _isLoading = false;
+            EndLoadingOverlay();
         }
     }
 
@@ -1211,7 +1277,7 @@ public sealed class MainWindow : Window
 
     private void UpdateDirtyTitle()
     {
-        var dirty = _project?.IsDirty == true || _changes.IsDirty;
+        var dirty = _project?.IsDirty == true || _changes.IsDirty || HasUnsavedRomEdits;
         var name = _rom is null ? "RescueTemple" : Path.GetFileName(_rom.Path);
         Title = dirty ? $"RescueTemple — {name} *" : $"RescueTemple — {name}";
     }
@@ -1239,14 +1305,22 @@ public sealed class MainWindow : Window
         _root.IsEnabled = true;
     }
 
-    private async void SaveProjectOnClick(object? sender, RoutedEventArgs e)
+    private async void SaveProjectOnClick(object? sender, RoutedEventArgs e) => await SaveProjectAsync(choosePath: false);
+
+    private async Task SaveProjectAsync(bool choosePath)
     {
         if (_project is null)
         {
             await ShowErrorAsync("Save Project", "Open a ROM before saving a project.");
             return;
         }
-        if (string.IsNullOrWhiteSpace(_project.Path))
+        CaptureRomPatches();
+        if (_workingRom?.HasStructuralEdits == true)
+        {
+            AppendOutput("Note: an edit resized ROM data (sound or data-table insert). Resized data and direct ROM edits made after it are not stored in the project. Use Build ROM to keep them.");
+            ShowOutput();
+        }
+        if (choosePath || string.IsNullOrWhiteSpace(_project.Path))
         {
             var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
             {
@@ -1282,6 +1356,8 @@ public sealed class MainWindow : Window
         }
 
         _lastExplicitSaveAt = DateTimeOffset.UtcNow;
+        _savedUserEditVersion = _workingRom?.UserEditVersion ?? 0;
+        _changes.MarkSaved();
         RememberProject(_project.Path!);
         PersistSession();
         TryAutosave(force: true);
@@ -1313,17 +1389,38 @@ public sealed class MainWindow : Window
         try
         {
             var project = ProjectDocument.Load(path);
-            if (!string.IsNullOrWhiteSpace(project.BaseRomPath) && File.Exists(project.BaseRomPath))
-                await OpenRomAsync(project.BaseRomPath);
-            if (_rom is null || _scenes is null)
+            var baseRomFound = !string.IsNullOrWhiteSpace(project.BaseRomPath) && File.Exists(project.BaseRomPath);
+            var romPath = baseRomFound ? project.BaseRomPath : _rom?.Path;
+            var wrongRomMessage =
+                $"This project was made for a different ROM (SHA-1 {project.BaseRomSha1}). Open that ROM, then the project.";
+            if (romPath is null)
+            {
+                await ShowErrorAsync("Open Project", "Could not find the project's base ROM. Open the ROM first, then open the project.");
+                return;
+            }
+            // Fallback to the open ROM: reject a different ROM before reopening anything.
+            if (!baseRomFound && _rom is not null &&
+                !string.IsNullOrWhiteSpace(project.BaseRomSha1) &&
+                !string.Equals(project.BaseRomSha1, _rom.Sha1, StringComparison.OrdinalIgnoreCase))
+            {
+                await ShowErrorAsync("Open Project", wrongRomMessage);
+                return;
+            }
+            var previousWorkingRom = _workingRom;
+            await OpenRomAsync(romPath);
+            if (_rom is null || _scenes is null || ReferenceEquals(_workingRom, previousWorkingRom))
             {
                 await ShowErrorAsync("Open Project", "Could not open the project's base ROM.");
                 return;
             }
-            _project = project;
+            if (!string.IsNullOrWhiteSpace(project.BaseRomSha1) &&
+                !string.Equals(project.BaseRomSha1, _rom.Sha1, StringComparison.OrdinalIgnoreCase))
+            {
+                await ShowErrorAsync("Open Project", wrongRomMessage);
+                return;
+            }
             _lastExplicitSaveAt = new DateTimeOffset(File.GetLastWriteTimeUtc(path), TimeSpan.Zero);
-            _changes.Attach(_project, _scenes);
-            ApplyProjectEdits(_project);
+            ComposeProjectOntoRom(project);
             RememberProject(path);
             PersistSession();
             if (restoreExplorer)
@@ -1349,6 +1446,186 @@ public sealed class MainWindow : Window
         KickSearchIndexBuild();
     }
 
+    private bool HasUnsavedRomEdits =>
+        _workingRom is not null && _workingRom.UserEditVersion != _savedUserEditVersion;
+
+    private void SyncWorkingRom()
+    {
+        if (_scenes is null)
+            return;
+        if (_cPatchesUseDecompHost && _cPatchWorkingRom is not null)
+            _cPatchWorkingRom.Sync(_scenes, _charmap, _runtimeConfig);
+        else
+            _workingRom?.Sync(_scenes, _charmap, _runtimeConfig);
+    }
+
+    /// <summary>Applies a project to the freshly opened ROM: enabled mods first, then the project's own edits and ROM patches.</summary>
+    private void ComposeProjectOntoRom(ProjectDocument project)
+    {
+        if (_workingRom is null || _scenes is null)
+            return;
+        _project = project;
+        _changes.Attach(project, _scenes);
+        _pendingRomChanges.Clear();
+        var hasEnabledMods = project.Mods.Any(mod => mod.Enabled);
+        if (hasEnabledMods)
+        {
+            var mods = ModStack.ApplyEnabled(project.Mods, _workingRom, _scenes, _runtimeConfig);
+            foreach (var name in mods.Applied)
+                AppendOutput($"Mod loaded: {name}");
+            foreach (var line in mods.Warnings)
+                AppendOutput($"Mod warning: {line}");
+            foreach (var line in mods.Errors)
+                AppendOutput($"Mod error: {line}");
+            if (mods.Errors.Count > 0)
+                ShowOutput();
+            SyncWorkingRom();
+            _workingRom.MarkModBaseline();
+            _modRuntimeBaseline = _runtimeConfig is null
+                ? null
+                : RuntimeConfigSchema.Fields.ToDictionary(field => field.Id, field => _runtimeConfig.Get(field.Id), StringComparer.Ordinal);
+            _loadedModNames = mods.Applied.ToList();
+        }
+        else
+        {
+            _modRuntimeBaseline = null;
+            _loadedModNames = new();
+        }
+        ApplyProjectEdits(project);
+        var patched = ModStack.ApplyRomPatches(project.RomPatches, _workingRom);
+        if (hasEnabledMods || project.Edits.Count > 0)
+            SyncWorkingRom();
+        _savedUserEditVersion = _workingRom.UserEditVersion;
+        if (patched > 0)
+            AppendOutput($"Restored {patched} direct ROM edit(s) from the project.");
+        RebuildModsMenu();
+    }
+
+    private void CaptureRomPatches()
+    {
+        if (_workingRom is null || _project is null)
+            return;
+        // After a resize, the patches captured just before the first resize are the only ones in baserom layout.
+        _project.RomPatches = _workingRom.HasStructuralEdits
+            ? _workingRom.PreResizePatches
+            : _workingRom.CaptureUserPatches();
+    }
+
+    private void OnChangesChanged(object? sender, EventArgs e)
+    {
+        // Back at the saved point with no unflushed byte edits: the ROM version counts as saved again.
+        // Undo/redo of a byte edit bumps UserEditVersion through Overlay, so the version alone would stay dirty.
+        if (!_changes.IsDirty && _pendingRomChanges.Count == 0 && _workingRom is { HasStructuralEdits: false })
+            _savedUserEditVersion = _workingRom.UserEditVersion;
+        UpdateDirtyTitle();
+    }
+
+    private void OnUserBytesChanged(object? sender, RomBytesChangedEventArgs e)
+    {
+        if (!Dispatcher.UIThread.CheckAccess())
+        {
+            Dispatcher.UIThread.Post(() => OnUserBytesChanged(sender, e));
+            return;
+        }
+        if (!ReferenceEquals(sender, _workingRom))
+            return;
+        _pendingRomChanges.AddRange(e.Changes);
+        if (_romFlushQueued)
+            return;
+        _romFlushQueued = true;
+        // One user action can commit several spans; post once so they become a single undo step.
+        Dispatcher.UIThread.Post(FlushRomHistory, DispatcherPriority.Background);
+    }
+
+    private void FlushRomHistory()
+    {
+        _romFlushQueued = false;
+        if (_pendingRomChanges.Count == 0 || _workingRom is null)
+            return;
+        var changes = _pendingRomChanges.ToList();
+        _pendingRomChanges.Clear();
+        var working = _workingRom;
+        var structural = working.StructuralVersion;
+        var bytes = changes.Sum(change => change.After.Length);
+        _changes.Record(
+            $"ROM edit ({bytes:N0} byte(s))",
+            apply: () => RestoreRomHistory(working, changes, structural, useAfter: true),
+            revert: () => RestoreRomHistory(working, changes, structural, useAfter: false));
+    }
+
+    private void RestoreRomHistory(WorkingRom working, IReadOnlyList<RomByteChange> changes, int structuralVersion, bool useAfter)
+    {
+        if (!ReferenceEquals(working, _workingRom))
+            return;
+        // A resize since the edit was recorded moved the layout; its offsets would write into the wrong bytes.
+        if (working.StructuralVersion != structuralVersion)
+        {
+            SetStatus("That ROM edit can't be undone after a resize (sound or data-table insert).");
+            return;
+        }
+        working.RestoreBytes(changes, useAfter);
+        Dispatcher.UIThread.Post(RefreshCurrentWorkspace, DispatcherPriority.Background);
+    }
+
+    /// <summary>Reloads the visible workspace from the working ROM after an undo/redo of a byte edit.</summary>
+    private void RefreshCurrentWorkspace()
+    {
+        var child = _workspaceHost.Child;
+        if (child is null)
+            return;
+        if (ReferenceEquals(child, _dungeonWorkspace))
+            OpenDungeons(_selectedAsset);
+        else if (ReferenceEquals(child, _dataTablesWorkspace))
+            OpenDataTables(_selectedAsset);
+        else if (ReferenceEquals(child, _sceneWorkspace))
+            OpenSelectedScene();
+        else if (ReferenceEquals(child, _assetWorkspace) && _rom is not null && _charmap is not null && _catalog is not null)
+        {
+            _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes, _workingRom);
+            if (_selectedAsset is not null)
+                _ = _assetWorkspace.ShowAssetAsync(_selectedAsset);
+        }
+    }
+
+    /// <summary>Re-indexes the ROM and re-applies the project with its current mod list (mods → edits → ROM patches).</summary>
+    /// <returns>True only when the project was re-applied; false when the reload was skipped, declined, or failed.</returns>
+    private async Task<bool> ReloadWithModsAsync(string reason)
+    {
+        if (_rom is null || _project is null || _workingRom is null || _isLoading)
+            return false;
+        if (_workingRom.HasStructuralEdits &&
+            !await ConfirmAsync(
+                "Reload with mods",
+                "An edit resized ROM data (sound or data-table insert). That edit, and direct ROM edits made after it, are lost when the ROM reloads. Build ROM first to keep them.\n\nReload anyway?",
+                "Reload"))
+            return false;
+
+        CaptureRomPatches();
+        CaptureExplorerToSession();
+        var project = _project;
+        var lastExplicitSave = _lastExplicitSaveAt;
+        var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+        if (!await TryQuickResetAsync())
+        {
+            var previousWorkingRom = _workingRom;
+            await OpenRomAsync(_rom.Path);
+            // OpenRomAsync keeps the old ROM when reopening fails; composing again would apply the project twice.
+            if (_rom is null || _scenes is null || ReferenceEquals(_workingRom, previousWorkingRom))
+                return false;
+        }
+        _lastExplicitSaveAt = lastExplicitSave;
+        ComposeProjectOntoRom(project);
+        project.IsDirty = true;
+        RestoreExplorerFromSession();
+        _sceneWorkspace?.RefreshFromExternal();
+        _cPatchesWorkspace?.RefreshFromExternal();
+        UpdateDirtyTitle();
+        var active = project.Mods.Count(mod => mod.Enabled);
+        SetStatus($"{reason} — {active} mod(s) active. Undo history was cleared.");
+        AppendOutput($"{reason} — {active} mod(s) active ({stopwatch.Elapsed.TotalSeconds:0.0}s).");
+        return true;
+    }
+
     private async void BuildRomOnClick(object? sender, RoutedEventArgs e)
     {
         if (_rom is null || _scenes is null || _project is null)
@@ -1372,6 +1649,8 @@ public sealed class MainWindow : Window
             var summary = report.Success
                 ? $"Built {file.Path.LocalPath} ({report.Changes.Count} changes). F5 plays it in the emulator."
                 : $"Build failed with {report.Errors.Count} error(s).";
+            if (report.Success && report.Warnings.Count > 0)
+                summary += $" {report.Warnings.Count} warning(s) — see Output.";
             SetStatus(summary);
             if (report.Success)
             {
@@ -1380,10 +1659,16 @@ public sealed class MainWindow : Window
                 if (_session.RestartEmulatorAfterBuild && EmulatorRunning)
                     await PlayInEmulatorAsync();
             }
-            if (!report.Success || report.Warnings.Count > 0)
+            if (report.Warnings.Count > 0)
             {
-                var details = string.Join("\n", report.Errors.Concat(report.Warnings).Take(20));
-                await ShowErrorAsync(report.Success ? "Build warnings" : "Build ROM failed", details);
+                foreach (var warning in report.Warnings)
+                    AppendOutput($"Warning: {warning}");
+                ShowOutput();
+            }
+            if (!report.Success)
+            {
+                var details = string.Join("\n", report.Errors.Take(20));
+                await ShowErrorAsync("Build ROM failed", details);
             }
         }
         catch (Exception exception)
@@ -1483,8 +1768,13 @@ public sealed class MainWindow : Window
 
     private async void ExportSelectedOnClick(object? sender, RoutedEventArgs e)
     {
-        if (_rom is null || _charmap is null || _selectedAsset is null)
+        if (_rom is null || _charmap is null)
             return;
+        if (_selectedAsset is null)
+        {
+            await ShowErrorAsync("Export Selected", "Select an asset in the explorer first.");
+            return;
+        }
         var directory = await ChooseExportDirectoryAsync();
         if (directory is null) return;
         try
@@ -1501,8 +1791,13 @@ public sealed class MainWindow : Window
 
     private async void ExportCategoryOnClick(object? sender, RoutedEventArgs e)
     {
-        if (_rom is null || _charmap is null || _selectedCategory is null || _catalog is null)
+        if (_rom is null || _charmap is null || _catalog is null)
             return;
+        if (_selectedCategory is null)
+        {
+            await ShowErrorAsync("Export Category", "Select a category in the explorer first.");
+            return;
+        }
         var directory = await ChooseExportDirectoryAsync();
         if (directory is null) return;
         var assets = _catalog.ForCategory(_selectedCategory.Value);
@@ -1512,17 +1807,219 @@ public sealed class MainWindow : Window
             await ShowErrorAsync("Some assets were skipped", string.Join("\n", result.Errors.Take(12)));
     }
 
+    private void RebuildModsMenu()
+    {
+        _modsMenu.Items.Clear();
+        var manage = new MenuItem
+        {
+            Header = "_Manage Mods…",
+            InputGesture = new KeyGesture(Key.M, KeyModifiers.Control | KeyModifiers.Shift),
+        };
+        manage.Click += async (_, _) => await OpenModManagerAsync();
+        var add = new MenuItem { Header = "_Add Mod…" };
+        add.Click += async (_, _) => await AddModsFromPickerAsync();
+        _modsMenu.Items.Add(manage);
+        _modsMenu.Items.Add(add);
+        _modsMenu.Items.Add(new Separator());
+        if (_rom is null || _project is null)
+        {
+            _modsMenu.Items.Add(new MenuItem { Header = "Open a ROM to use mods", IsEnabled = false });
+        }
+        else if (_project.Mods.Count == 0)
+        {
+            _modsMenu.Items.Add(new MenuItem { Header = "No mods added", IsEnabled = false });
+        }
+        else
+        {
+            foreach (var mod in _project.Mods)
+            {
+                var entry = mod;
+                var name = string.IsNullOrWhiteSpace(entry.Name) ? Path.GetFileNameWithoutExtension(entry.Path) : entry.Name;
+                var item = new MenuItem
+                {
+                    Header = name.Replace("_", "__"),
+                    ToggleType = MenuItemToggleType.CheckBox,
+                    IsChecked = entry.Enabled,
+                };
+                ToolTip.SetTip(item, entry.Path);
+                item.Click += async (_, _) =>
+                {
+                    entry.Enabled = !entry.Enabled;
+                    _project.IsDirty = true;
+                    if (!await ReloadWithModsAsync($"{(entry.Enabled ? "Enabled" : "Disabled")} {name}"))
+                    {
+                        entry.Enabled = !entry.Enabled;
+                        RebuildModsMenu();
+                    }
+                };
+                _modsMenu.Items.Add(item);
+            }
+        }
+        _modsMenu.Items.Add(new Separator());
+        var export = new MenuItem { Header = "_Export Project as Mod…" };
+        export.Click += ExportModPackageOnClick;
+        var merge = new MenuItem { Header = "Mer_ge Mod into Project…" };
+        ToolTip.SetTip(merge, "Copies a mod's changes into this project permanently. Use Add Mod… to keep it switchable.");
+        merge.Click += ImportModPackageOnClick;
+        _modsMenu.Items.Add(export);
+        _modsMenu.Items.Add(merge);
+        _breadcrumb.SetModsBadge(_project?.Mods.Count(mod => mod.Enabled) ?? 0, _rom is null ? 0 : _project?.Mods.Count ?? 0);
+    }
+
+    private async Task OpenModManagerAsync()
+    {
+        if (_rom is null || _project is null)
+        {
+            await ShowErrorAsync("Mods", "Open a ROM before managing mods.");
+            return;
+        }
+        var window = new ModManagerWindow(_project.Mods, _rom.Sha1);
+        await window.ShowDialog(this);
+        if (window.Result is null)
+            return;
+        var previous = _project.Mods;
+        _project.Mods = window.Result;
+        _project.IsDirty = true;
+        RebuildModsMenu();
+        if (await ReloadWithModsAsync("Mods updated"))
+            return;
+        _project.Mods = previous;
+        RebuildModsMenu();
+        SetStatus("Mods were not changed.");
+    }
+
+    private async Task AddModsFromPickerAsync()
+    {
+        if (_rom is null || _project is null)
+        {
+            await ShowErrorAsync("Mods", "Open a ROM before managing mods.");
+            return;
+        }
+
+        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Add RescueTemple Mod Package",
+            AllowMultiple = true,
+            FileTypeFilter =
+            [
+                new FilePickerFileType("RescueTemple Mod Package") { Patterns = ["*.rtmod", "manifest.json"] },
+                FilePickerFileTypes.All,
+            ],
+        });
+
+        await AddModPathsAsync(files.Select(file => file.Path.LocalPath).ToList());
+    }
+
+    /// <summary>Adds mod packages or mod folders (or their manifest.json) to the project, then reloads the ROM with them.</summary>
+    private async Task AddModPathsAsync(IReadOnlyList<string> paths)
+    {
+        if (_rom is null || _project is null)
+        {
+            await ShowErrorAsync("Mods", "Open a ROM before managing mods.");
+            return;
+        }
+
+        var known = _project.Mods
+            .Select(mod => Path.GetFullPath(mod.Path))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var added = new List<ProjectModEntry>();
+        foreach (var pickedPath in paths)
+        {
+            var path = pickedPath;
+            if (path.EndsWith("manifest.json", StringComparison.OrdinalIgnoreCase))
+                path = Path.GetDirectoryName(path) ?? path;
+
+            var fullPath = Path.GetFullPath(path);
+            if (!known.Add(fullPath))
+                continue;
+
+            var entry = new ProjectModEntry { Path = fullPath };
+            var info = ModStack.Inspect(entry, _rom.Sha1);
+            entry.Name = info.DisplayName;
+            entry.Enabled = info.Error is null;
+            if (info.Error is not null)
+                AppendOutput($"Mod not enabled: {info.DisplayName}: {info.Summary}");
+            _project.Mods.Add(entry);
+            added.Add(entry);
+        }
+
+        if (added.Count == 0)
+            return;
+
+        _project.IsDirty = true;
+        RebuildModsMenu();
+        if (added.Any(entry => entry.Enabled))
+        {
+            if (!await ReloadWithModsAsync($"Added {added.Count} mod(s)"))
+            {
+                _project.Mods.RemoveAll(mod => added.Contains(mod));
+                RebuildModsMenu();
+                SetStatus("Mods were not added.");
+            }
+        }
+        else
+            SetStatus("Mod added but not enabled — see Output.");
+    }
+
+    private static void OnDragOver(object? sender, DragEventArgs e)
+    {
+        e.DragEffects = e.DataTransfer.TryGetFiles() is { Length: > 0 } ? DragDropEffects.Copy : DragDropEffects.None;
+    }
+
+    /// <summary>Opens a dropped project or ROM, or adds dropped mods. A project wins over a ROM, and a ROM wins over mods.</summary>
+    private async void OnDrop(object? sender, DragEventArgs e)
+    {
+        // Set before the first await: the routed event has returned by the time the continuation runs.
+        e.Handled = true;
+        if (_isLoading)
+            return;
+
+        var dropped = (e.DataTransfer.TryGetFiles() ?? Array.Empty<IStorageItem>())
+            .Select(item => item.TryGetLocalPath())
+            .OfType<string>()
+            .Select(path => (FilePath: path, Kind: DroppedFiles.Classify(path, Directory.Exists, File.Exists)))
+            .ToList();
+
+        var project = dropped.FirstOrDefault(item => item.Kind == DroppedFileKind.Project).FilePath;
+        if (project is not null)
+        {
+            if (await ConfirmDiscardIfNeededAsync("Open Project"))
+                await OpenProjectFromPathAsync(project, restoreExplorer: false);
+            return;
+        }
+
+        var rom = dropped.FirstOrDefault(item => item.Kind == DroppedFileKind.Rom).FilePath;
+        if (rom is not null)
+        {
+            if (await ConfirmDiscardIfNeededAsync("Open ROM"))
+                await OpenRomAsync(rom);
+            return;
+        }
+
+        var mods = dropped
+            .Where(item => item.Kind == DroppedFileKind.Mod)
+            .Select(item => item.FilePath)
+            .ToList();
+        if (mods.Count > 0)
+        {
+            await AddModPathsAsync(mods);
+            return;
+        }
+
+        SetStatus("Drop a .gba ROM, a .rtproj project, or .rtmod mods.");
+    }
+
     private async void ExportModPackageOnClick(object? sender, RoutedEventArgs e)
     {
         if (_workingRom is null || _project is null)
         {
-            await ShowErrorAsync("Export Mod Package", "Open a ROM before exporting a mod package.");
+            await ShowErrorAsync("Export Project as Mod", "Open a ROM before exporting a mod.");
             return;
         }
 
         var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            Title = "Export RescueTemple Mod Package",
+            Title = "Export Project as Mod",
             SuggestedFileName = SanitizeModFileName(_project.Name) + ".rtmod",
             FileTypeChoices =
             [
@@ -1534,8 +2031,13 @@ public sealed class MainWindow : Window
 
         try
         {
+            // With mods loaded, export only this project's own changes (diffed against the post-mod baseline).
+            var modsLoaded = _loadedModNames.Count > 0;
             var package = ModPackage.Collect(
-                _workingRom, _project, _scenes, _runtimeConfig, _catalog);
+                _workingRom, _project, _scenes, _runtimeConfig, _catalog,
+                reference: modsLoaded ? _workingRom.ModBaseline : null,
+                runtimeConfigBaseline: modsLoaded ? _modRuntimeBaseline : null,
+                builtOnMods: modsLoaded ? _loadedModNames : null);
             await Task.Run(() => ModPackage.ExportArchive(package, file.Path.LocalPath));
             var parts = new List<string>
             {
@@ -1545,10 +2047,12 @@ public sealed class MainWindow : Window
             };
             SetStatus($"Exported mod package {file.Path.LocalPath} ({string.Join(", ", parts)}).");
             AppendOutput($"Mod package exported: {file.Path.LocalPath}");
+            if (modsLoaded)
+                AppendOutput($"Exported only this project's own changes. It builds on: {string.Join(", ", _loadedModNames)}.");
         }
         catch (Exception exception)
         {
-            await ShowErrorAsync("Export Mod Package failed", exception.Message);
+            await ShowErrorAsync("Export Project as Mod failed", exception.Message);
         }
     }
 
@@ -1556,13 +2060,13 @@ public sealed class MainWindow : Window
     {
         if (_workingRom is null || _project is null || _scenes is null)
         {
-            await ShowErrorAsync("Import Mod Package", "Open the matching baserom before importing a mod package.");
+            await ShowErrorAsync("Merge Mod into Project", "Open the matching baserom before merging a mod.");
             return;
         }
 
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            Title = "Import RescueTemple Mod Package",
+            Title = "Merge Mod into Project",
             AllowMultiple = false,
             FileTypeFilter =
             [
@@ -1578,6 +2082,9 @@ public sealed class MainWindow : Window
         {
             var package = await Task.Run(() => ModPackage.Load(file.Path.LocalPath));
             var result = ModPackage.Apply(package, _workingRom, _project, _scenes, _runtimeConfig);
+            // The merge's own byte writes are not undoable as one step; drop them and restart history.
+            _pendingRomChanges.Clear();
+            _changes.Attach(_project, _scenes);
             if (_cPatchesUseDecompHost && _cPatchWorkingRom is not null)
                 _cPatchWorkingRom.Sync(_scenes, _charmap, _runtimeConfig);
             else
@@ -1588,18 +2095,25 @@ public sealed class MainWindow : Window
             UpdateDirtyTitle();
 
             var summary =
-                $"Imported {result.EditCount} edit(s), {result.OverlayCount} overlay(s), {result.RuntimeConfigCount} C Patch field(s).";
+                $"Merged {result.EditCount} edit(s), {result.OverlayCount} overlay(s), {result.RuntimeConfigCount} C Patch field(s).";
             SetStatus(summary);
             AppendOutput(summary);
-            if (!result.Success || result.Warnings.Count > 0)
+            AppendOutput("Merging a mod cannot be undone; undo history was cleared.");
+            if (result.Warnings.Count > 0)
             {
-                var details = string.Join("\n", result.Errors.Concat(result.Warnings).Take(20));
-                await ShowErrorAsync(result.Success ? "Import warnings" : "Import Mod Package failed", details);
+                foreach (var warning in result.Warnings)
+                    AppendOutput($"Warning: {warning}");
+                ShowOutput();
+            }
+            if (!result.Success)
+            {
+                var details = string.Join("\n", result.Errors.Take(20));
+                await ShowErrorAsync("Merge Mod failed", details);
             }
         }
         catch (Exception exception)
         {
-            await ShowErrorAsync("Import Mod Package failed", exception.Message);
+            await ShowErrorAsync("Merge Mod failed", exception.Message);
         }
     }
 
@@ -1656,6 +2170,7 @@ public sealed class MainWindow : Window
         Title = "RescueTemple";
         SetStatus("Open a baserom.gba to begin.");
         AppendOutput("ROM closed.");
+        RebuildModsMenu();
     }
 
     private void MainWindowOnKeyDown(object? sender, KeyEventArgs e)
@@ -1709,6 +2224,9 @@ public sealed class MainWindow : Window
             case EditorCommandId.Save:
                 SaveProjectOnClick(this, new RoutedEventArgs());
                 return true;
+            case EditorCommandId.SaveProjectAs:
+                _ = SaveProjectAsync(choosePath: true);
+                return true;
             case EditorCommandId.ToggleExplorer:
                 _dock.Toggle(DockPanelId.Explorer);
                 ApplyDockLayout(sceneOwnsInspector: OwnsInspector());
@@ -1729,6 +2247,9 @@ public sealed class MainWindow : Window
                 return true;
             case EditorCommandId.PlayInEmulator:
                 _ = PlayInEmulatorAsync();
+                return true;
+            case EditorCommandId.ManageMods:
+                _ = OpenModManagerAsync();
                 return true;
             default:
                 return false;
@@ -1794,7 +2315,7 @@ public sealed class MainWindow : Window
         PersistShellSettings();
         if (_forceClose)
             return;
-        if (!UnsavedChangesGate.RequiresConfirmation(_project?.IsDirty == true, _changes.IsDirty))
+        if (!UnsavedChangesGate.RequiresConfirmation(_project?.IsDirty == true || HasUnsavedRomEdits, _changes.IsDirty))
             return;
 
         e.Cancel = true;
@@ -1807,7 +2328,7 @@ public sealed class MainWindow : Window
 
     private async Task<bool> ConfirmDiscardIfNeededAsync(string action)
     {
-        if (!UnsavedChangesGate.RequiresConfirmation(_project?.IsDirty == true, _changes.IsDirty))
+        if (!UnsavedChangesGate.RequiresConfirmation(_project?.IsDirty == true || HasUnsavedRomEdits, _changes.IsDirty))
             return true;
 
         var dialog = new Window
@@ -1846,6 +2367,46 @@ public sealed class MainWindow : Window
         DockPanel.SetDock(buttons, Dock.Bottom);
         await dialog.ShowDialog(this);
         return discard;
+    }
+
+    private async Task<bool> ConfirmAsync(string title, string message, string confirmLabel)
+    {
+        var dialog = new Window
+        {
+            Title = title,
+            Width = 420,
+            Height = 190,
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Icon = AppIcon.Get(),
+        };
+        EditorChrome.StyleDialogWindow(dialog);
+        var confirmed = false;
+        var body = EditorChrome.MutedBody(message);
+        var cancel = EditorChrome.ToolButton("Cancel");
+        cancel.Click += (_, _) => dialog.Close();
+        var confirm = EditorChrome.ToolButton(confirmLabel, primary: true);
+        confirm.Click += (_, _) =>
+        {
+            confirmed = true;
+            dialog.Close();
+        };
+        var buttons = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Spacing = EditorTheme.Space2,
+            Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
+            Children = { cancel, confirm },
+        };
+        dialog.Content = new DockPanel
+        {
+            Margin = new Thickness(EditorTheme.Space5),
+            LastChildFill = true,
+            Children = { buttons, body },
+        };
+        DockPanel.SetDock(buttons, Dock.Bottom);
+        await dialog.ShowDialog(this);
+        return confirmed;
     }
 
     private void AppendOutput(string line)
@@ -1912,6 +2473,7 @@ public sealed class MainWindow : Window
                 var recentPath = path;
                 var recent = EditorChrome.ToolButton(Path.GetFileName(recentPath));
                 recent.MinWidth = 108;
+                ToolTip.SetTip(recent, recentPath);
                 recent.Click += async (_, _) =>
                 {
                     if (_isLoading) return;
@@ -1922,6 +2484,28 @@ public sealed class MainWindow : Window
                 children.Add(recent);
             }
         }
+
+        var recentProjects = RecentDocumentList.Existing(_session.RecentProjects, _files);
+        if (recentProjects.Count > 0)
+        {
+            children.Add(EditorChrome.MutedBody("Recent Projects"));
+            foreach (var path in recentProjects.Take(5))
+            {
+                var projectPath = path;
+                var project = EditorChrome.ToolButton(Path.GetFileNameWithoutExtension(projectPath));
+                project.MinWidth = 108;
+                ToolTip.SetTip(project, projectPath);
+                project.Click += async (_, _) =>
+                {
+                    if (_isLoading) return;
+                    if (!await ConfirmDiscardIfNeededAsync("Open Project"))
+                        return;
+                    await OpenProjectFromPathAsync(projectPath, restoreExplorer: true);
+                };
+                children.Add(project);
+            }
+        }
+        children.Add(EditorChrome.MutedBody("Tip: drag a .gba, .rtproj or .rtmod file onto this window."));
 
         var panel = new StackPanel
         {
@@ -1934,7 +2518,7 @@ public sealed class MainWindow : Window
         return panel;
     }
 
-    private void SetStatus(string text) => _status.Text = text;
+    private void SetStatus(string text) => _breadcrumb.SetStatus(text);
 
     private async Task RestoreDocumentSessionAsync()
     {
@@ -1985,18 +2569,17 @@ public sealed class MainWindow : Window
         await OpenRomAsync(envelope.RomPath);
         if (_rom is null || _scenes is null)
             return;
-        _project = envelope.Project;
-        _project.Path = envelope.ExplicitSavePath;
-        _project.IsDirty = true;
+        var project = envelope.Project;
+        project.Path = envelope.ExplicitSavePath;
         _lastExplicitSaveAt = envelope.LastExplicitSaveAt;
-        _changes.Attach(_project, _scenes);
-        ApplyProjectEdits(_project);
+        ComposeProjectOntoRom(project);
+        project.IsDirty = true;
         _session.ExplorerCategory = envelope.ExplorerCategory;
         _session.ExplorerAssetId = envelope.ExplorerAssetId;
         _session.ExplorerSceneMapId = envelope.ExplorerSceneMapId;
         RestoreExplorerFromSession();
-        if (!string.IsNullOrWhiteSpace(_project.Path))
-            RememberProject(_project.Path);
+        if (!string.IsNullOrWhiteSpace(project.Path))
+            RememberProject(project.Path);
         PersistSession();
         _sceneWorkspace?.RefreshFromExternal();
         UpdateDirtyTitle();
@@ -2156,7 +2739,7 @@ public sealed class MainWindow : Window
     private bool ShouldAutosave() =>
         _rom is not null &&
         _project is not null &&
-        (_changes.IsDirty || _project.Edits.Count > 0 ||
+        (_changes.IsDirty || _project.Edits.Count > 0 || HasUnsavedRomEdits ||
          (_project.IsDirty && !string.IsNullOrWhiteSpace(_project.Path)));
 
     private void TryAutosave(bool force = false)
@@ -2169,6 +2752,7 @@ public sealed class MainWindow : Window
             return;
         try
         {
+            CaptureRomPatches();
             CaptureExplorerToSession();
             var key = !string.IsNullOrWhiteSpace(_project.Path) ? _project.Path : _rom.Path;
             ProjectAutosave.Write(

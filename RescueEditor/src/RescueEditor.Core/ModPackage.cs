@@ -60,7 +60,10 @@ public static class ModPackage
         ProjectDocument project,
         SceneDatabase? database = null,
         RuntimeConfigState? runtimeConfig = null,
-        AssetCatalog? catalog = null)
+        AssetCatalog? catalog = null,
+        RomImage? reference = null,
+        IReadOnlyDictionary<string, byte>? runtimeConfigBaseline = null,
+        IReadOnlyList<string>? builtOnMods = null)
     {
         ArgumentNullException.ThrowIfNull(working);
         ArgumentNullException.ThrowIfNull(project);
@@ -73,12 +76,21 @@ public static class ModPackage
             Edits = project.Edits.Select(CloneEdit).ToList(),
         };
 
+        if (builtOnMods is { Count: > 0 })
+        {
+            package.Warnings.Add(
+                $"Made on top of mods: {string.Join(", ", builtOnMods)}. Load the same mods before this one.");
+        }
+
         if (runtimeConfig is not null)
         {
             foreach (var field in RuntimeConfigSchema.Fields)
             {
                 var value = runtimeConfig.Get(field.Id);
-                if (value == field.VanillaValue)
+                var baseline = runtimeConfigBaseline is not null && runtimeConfigBaseline.TryGetValue(field.Id, out var b)
+                    ? b
+                    : field.VanillaValue;
+                if (value == baseline)
                     continue;
                 package.RuntimeConfig.Add(new ModPackageRuntimeConfigField
                 {
@@ -88,12 +100,13 @@ public static class ModPackage
             }
         }
 
-        var source = working.Source.Bytes;
+        var source = (reference ?? working.Source).Bytes;
         var view = working.View.Bytes;
         if (source.Length != view.Length)
         {
+            var referenceName = reference is null ? "the baserom" : "the reference image";
             package.Warnings.Add(
-                $"Working ROM length ({view.Length}) differs from the baserom ({source.Length}); overlays cover the overlapping prefix only.");
+                $"Working ROM length ({view.Length}) differs from {referenceName} ({source.Length}); overlays cover the overlapping prefix only.");
         }
 
         var skipStart = -1;
@@ -231,7 +244,8 @@ public static class ModPackage
         WorkingRom working,
         ProjectDocument? project,
         SceneDatabase? database,
-        RuntimeConfigState? runtimeConfig)
+        RuntimeConfigState? runtimeConfig,
+        bool modLayer = false)
     {
         ArgumentNullException.ThrowIfNull(package);
         ArgumentNullException.ThrowIfNull(working);
@@ -261,7 +275,10 @@ public static class ModPackage
                 continue;
             }
 
-            working.Overlay(overlay.Offset, overlay.Data);
+            if (modLayer)
+                working.OverlayMod(overlay.Offset, overlay.Data);
+            else
+                working.Overlay(overlay.Offset, overlay.Data);
             result.OverlayCount++;
         }
 

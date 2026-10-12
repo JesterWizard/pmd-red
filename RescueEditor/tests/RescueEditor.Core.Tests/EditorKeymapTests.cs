@@ -21,6 +21,8 @@ public sealed class EditorKeymapTests
     [InlineData("U", true, true, false, EditorCommandId.ToggleOutput)]
     [InlineData("P", true, false, false, EditorCommandId.GlobalSearch)]
     [InlineData("F5", false, false, false, EditorCommandId.PlayInEmulator)]
+    [InlineData("M", true, true, false, EditorCommandId.ManageMods)]
+    [InlineData("S", true, true, false, EditorCommandId.SaveProjectAs)]
     public void ResolvesDefaultBindings(string key, bool ctrl, bool shift, bool alt, EditorCommandId expected)
     {
         Assert.True(_map.TryResolve(new KeyChord(key, ctrl, shift, alt), out var command));

@@ -198,4 +198,297 @@ public sealed class WorkingRomTests
         };
         return (source, scene, database);
     }
+
+    [Fact]
+    public void ModOverlaysApplyBeforeUserOverlaysAfterSync()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-modlayer.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+
+        working.OverlayMod(0x10, new byte[] { 1, 2, 3 });
+        working.Overlay(0x11, new byte[] { 9 });
+        working.Sync(new SceneDatabase { Profile = RomProfile.Us10 });
+
+        Assert.Equal(1, working.View.ReadByte(0x10));
+        Assert.Equal(9, working.View.ReadByte(0x11));
+        Assert.Equal(3, working.View.ReadByte(0x12));
+    }
+
+    [Fact]
+    public void CaptureUserPatchesKeepsOnlyBytesThatDifferFromSeedAndMods()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-modlayer.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+
+        working.OverlayMod(0x20, new byte[] { 5, 5 });
+        working.Overlay(0x1F, new byte[] { 0, 5, 7, 8 });
+        working.Overlay(0x40, new byte[] { 4 });
+
+        var patches = working.CaptureUserPatches();
+
+        Assert.Equal(2, patches.Count);
+        Assert.Equal(0x21, patches[0].Offset);
+        Assert.Equal(new byte[] { 7, 8 }, patches[0].Data);
+        Assert.Equal(0x40, patches[1].Offset);
+        Assert.Equal(new byte[] { 4 }, patches[1].Data);
+    }
+
+    [Fact]
+    public void CaptureUserPatchesLaterOverlayWins()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-modlayer.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+
+        working.Overlay(0x30, new byte[] { 1, 1 });
+        working.Overlay(0x31, new byte[] { 2 });
+
+        var patches = working.CaptureUserPatches();
+
+        Assert.Single(patches);
+        Assert.Equal(0x30, patches[0].Offset);
+        Assert.Equal(new byte[] { 1, 2 }, patches[0].Data);
+    }
+
+    [Fact]
+    public void UserEditVersionCountsUserEditsOnly()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-version.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+        var userEdits = 0;
+        working.UserEdited += (_, _) => userEdits++;
+
+        working.OverlayMod(0x10, new byte[] { 1 });
+        Assert.Equal(0, working.UserEditVersion);
+        Assert.Equal(0, userEdits);
+
+        working.Overlay(0x20, new byte[] { 1 });
+        Assert.Equal(1, working.UserEditVersion);
+        Assert.Equal(1, userEdits);
+
+        working.Sync(new SceneDatabase { Profile = RomProfile.Us10 });
+        Assert.Equal(1, working.UserEditVersion);
+        Assert.Equal(1, userEdits);
+
+        working.Adopt(MutableRom.From(working.View));
+        Assert.Equal(2, working.UserEditVersion);
+        Assert.Equal(2, userEdits);
+    }
+
+    [Fact]
+    public void ResizingAdoptSnapshotsEarlierUserPatches()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-snapshot.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+
+        working.Overlay(0x20, new byte[] { 7 });
+        var first = MutableRom.From(working.View);
+        first.ExtendTo(0x200);
+        working.Adopt(first);
+
+        var snapshot = Assert.Single(working.PreResizePatches);
+        Assert.Equal(0x20, snapshot.Offset);
+        Assert.Equal(new byte[] { 7 }, snapshot.Data);
+
+        working.Overlay(0x30, new byte[] { 8 });
+        var second = MutableRom.From(working.View);
+        second.ExtendTo(0x300);
+        working.Adopt(second);
+
+        var still = Assert.Single(working.PreResizePatches);
+        Assert.Equal(0x20, still.Offset);
+        Assert.Equal(new byte[] { 7 }, still.Data);
+    }
+
+    [Fact]
+    public void AdoptSetsHasStructuralEdits()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-modlayer.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+
+        Assert.False(working.HasStructuralEdits);
+        var buffer = MutableRom.From(working.View);
+        buffer.ExtendTo(0x200);
+        working.Adopt(buffer);
+        Assert.True(working.HasStructuralEdits);
+    }
+
+    [Fact]
+    public void ResizingAdoptBumpsStructuralVersion()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-structural-version.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+
+        Assert.Equal(0, working.StructuralVersion);
+        var sameLength = working.BeginMutate();
+        sameLength.WriteByte(0x10, 3);
+        working.Adopt(sameLength);
+        Assert.Equal(0, working.StructuralVersion);
+
+        var resized = MutableRom.From(working.View);
+        resized.ExtendTo(0x200);
+        working.Adopt(resized);
+        Assert.Equal(1, working.StructuralVersion);
+    }
+
+    [Fact]
+    public void SameLengthAdoptKeepsModLayerAndIsCapturable()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-modlayer.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+
+        working.OverlayMod(0x10, new byte[] { 5 });
+        var buffer = working.BeginMutate();
+        buffer.WriteByte(0x40, 9);
+        working.Adopt(buffer);
+
+        Assert.False(working.HasStructuralEdits);
+        Assert.Equal(5, working.View.ReadByte(0x10));
+        Assert.Equal(9, working.View.ReadByte(0x40));
+
+        var patches = working.CaptureUserPatches();
+        Assert.Single(patches);
+        Assert.Equal(0x40, patches[0].Offset);
+        Assert.Equal(new byte[] { 9 }, patches[0].Data);
+
+        working.Sync(new SceneDatabase { Profile = RomProfile.Us10 });
+        Assert.Equal(9, working.View.ReadByte(0x40));
+    }
+
+    [Fact]
+    public void ProjectDocumentRoundTripsModsAndRomPatches()
+    {
+        var document = new ProjectDocument
+        {
+            Mods = { new ProjectModEntry { Path = "/x/a.rtmod", Name = "A", Enabled = false } },
+            RomPatches = { new ProjectRomPatch { Offset = 0x40, Data = new byte[] { 1, 2 } } },
+        };
+        var path = Path.Combine(Path.GetTempPath(), $"proj-{Guid.NewGuid():N}.rtproj");
+        try
+        {
+            document.Save(path);
+            var loaded = ProjectDocument.Load(path);
+
+            Assert.Single(loaded.Mods);
+            Assert.Equal("/x/a.rtmod", loaded.Mods[0].Path);
+            Assert.Equal("A", loaded.Mods[0].Name);
+            Assert.False(loaded.Mods[0].Enabled);
+            Assert.Single(loaded.RomPatches);
+            Assert.Equal(0x40, loaded.RomPatches[0].Offset);
+            Assert.Equal(new byte[] { 1, 2 }, loaded.RomPatches[0].Data);
+        }
+        finally
+        {
+            if (File.Exists(path))
+                File.Delete(path);
+        }
+    }
+
+    [Fact]
+    public void OverlayReportsBeforeAndAfterBytes()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-history.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+        var events = new List<RomBytesChangedEventArgs>();
+        working.UserBytesChanged += (_, e) => events.Add(e);
+
+        working.Overlay(0x10, new byte[] { 1, 2 });
+
+        var raised = Assert.Single(events);
+        var change = Assert.Single(raised.Changes);
+        Assert.Equal(0x10, change.Offset);
+        Assert.Equal(new byte[] { 0, 0 }, change.Before);
+        Assert.Equal(new byte[] { 1, 2 }, change.After);
+    }
+
+    [Fact]
+    public void OverlayWithSameBytesReportsNothing()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-history.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+        var events = new List<RomBytesChangedEventArgs>();
+        working.UserBytesChanged += (_, e) => events.Add(e);
+
+        working.Overlay(0x10, new byte[] { 0 });
+
+        Assert.Empty(events);
+    }
+
+    [Fact]
+    public void ModOverlaySyncAndQuietOverlayReportNothing()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-history.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+        var events = new List<RomBytesChangedEventArgs>();
+        working.UserBytesChanged += (_, e) => events.Add(e);
+
+        working.OverlayMod(0x10, new byte[] { 1 });
+        working.Sync(new SceneDatabase { Profile = RomProfile.Us10 });
+        working.Overlay(0x20, new byte[] { 1 }, recordHistory: false);
+
+        Assert.Empty(events);
+        Assert.Equal(1, working.View.ReadByte(0x10));
+        Assert.Equal(1, working.View.ReadByte(0x20));
+    }
+
+    [Fact]
+    public void SameLengthAdoptReportsAllRunsOnce()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-history.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+        var events = new List<RomBytesChangedEventArgs>();
+        working.UserBytesChanged += (_, e) => events.Add(e);
+
+        var buffer = working.BeginMutate();
+        buffer.WriteByte(0x10, 1);
+        buffer.WriteByte(0x40, 2);
+        working.Adopt(buffer);
+
+        var raised = Assert.Single(events);
+        Assert.Equal(2, raised.Changes.Count);
+        Assert.Equal(0x10, raised.Changes[0].Offset);
+        Assert.Equal(new byte[] { 0 }, raised.Changes[0].Before);
+        Assert.Equal(new byte[] { 1 }, raised.Changes[0].After);
+        Assert.Equal(0x40, raised.Changes[1].Offset);
+        Assert.Equal(new byte[] { 0 }, raised.Changes[1].Before);
+        Assert.Equal(new byte[] { 2 }, raised.Changes[1].After);
+    }
+
+    [Fact]
+    public void RestoreBytesUndoesAndRedoesWithoutReporting()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-history.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+        var events = new List<RomBytesChangedEventArgs>();
+        working.UserBytesChanged += (_, e) => events.Add(e);
+
+        working.Overlay(0x10, new byte[] { 1 });
+        working.Overlay(0x10, new byte[] { 2 });
+        Assert.Equal(2, events.Count);
+        var changes = events.SelectMany(raised => raised.Changes).ToList();
+
+        working.RestoreBytes(changes, useAfter: false);
+        Assert.Equal(0, working.View.ReadByte(0x10));
+        Assert.Empty(working.CaptureUserPatches());
+
+        working.RestoreBytes(changes, useAfter: true);
+        Assert.Equal(2, working.View.ReadByte(0x10));
+        Assert.Equal(2, events.Count);
+    }
+
+    [Fact]
+    public void ApplyRomPatchesDoesNotReportHistory()
+    {
+        var rom = RomImage.FromBytes("/tmp/working-rom-history.gba", new byte[0x100]);
+        var working = new WorkingRom(rom);
+        var events = new List<RomBytesChangedEventArgs>();
+        working.UserBytesChanged += (_, e) => events.Add(e);
+
+        var applied = ModStack.ApplyRomPatches(
+            [new ProjectRomPatch { Offset = 0x30, Data = new byte[] { 7 } }],
+            working);
+
+        Assert.Equal(1, applied);
+        Assert.Empty(events);
+        Assert.Equal(7, working.View.ReadByte(0x30));
+    }
 }
