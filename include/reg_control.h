@@ -28,5 +28,6 @@ void nullsub_17(void);
 void xxx_update_bg_sound_input(void);
 
 void sub_800BA5C(void);
+void SetSoftlockWatchdogPaused(bool8 paused);
 
 #endif // GUARD_CODE_800B5F0_H

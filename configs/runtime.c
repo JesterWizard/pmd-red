@@ -58,4 +58,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .living_square = TRUE, /* TRUE = Square NPCs wander / visit / banter; FALSE = vanilla static */
     .full_party_entry = TRUE, /* TRUE = enter with 4 (raises dungeon max 3→4); FALSE = vanilla (most dungeons max 3) */
     .thought_bubbles = TRUE, /* TRUE = L toggles overworld thought bubble; FALSE = off */
+    .softlock_recovery = TRUE, /* TRUE = soft reset after a 300-frame hang; FALSE = off */
 };

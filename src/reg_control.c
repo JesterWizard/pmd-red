@@ -7,6 +7,7 @@
 #include "input.h"
 #include "music.h"
 #include "reg_control.h"
+#include "runtime.h"
 #include "sprite.h"
 #include "text_1.h"
 
@@ -24,7 +25,7 @@ EWRAM_INIT bool8 gUnknown_203B09A = {0};
 EWRAM_INIT bool8 gUnknown_203B09B = {0};
 EWRAM_INIT u32 gUnknown_203B09C = {0};
 EWRAM_INIT u32 gUnknown_203B0A0 = {0};
-EWRAM_INIT u32 gUnknown_203B0A4 = {0}; // Written to but never read
+EWRAM_INIT u32 gUnknown_203B0A4 = {0}; // VBlank count at the main loop's last frame update (softlock watchdog)
 EWRAM_INIT s16 gUnknown_203B0A8 = {0};
 EWRAM_INIT s16 gUnknown_203B0AA = {0};
 EWRAM_INIT s16 gUnknown_203B0AC = {0};
@@ -32,11 +33,17 @@ EWRAM_INIT s16 gUnknown_203B0AE = {-1};
 EWRAM_INIT s16 gUnknown_203B0B0 = {-1}; // Written to but never read
 EWRAM_INIT s16 gUnknown_203B0B2 = {-1}; // Written to but never read
 
+// Softlock recovery: VBlanks the main loop may miss its frame update before a soft reset
+#define SOFTLOCK_RECOVERY_FRAMES 300
+
+static EWRAM_DATA bool8 sSoftlockWatchdogPaused = FALSE;
+
 static void UpdateBGControlRegisters(void);
 static void VBlankIntr(void);
 static void VCountIntr(void);
 static void UnusedIntrFunc(void);
 static void Timer3Intr(void);
+static void RecoverFromSoftlock(void);
 
 static const IntrCallback sInitialIntrTable[6] =
 {
@@ -237,6 +244,9 @@ static void VBlankIntr(void)
     s32 index;
 
     gUnknown_203B0A0++;
+    if (gRuntimeConfig.softlock_recovery && !sSoftlockWatchdogPaused
+        && gUnknown_203B0A0 - gUnknown_203B0A4 >= SOFTLOCK_RECOVERY_FRAMES)
+        RecoverFromSoftlock();
     SoundVSync();
     BlinkSavingIcon();
 
@@ -326,6 +336,23 @@ static void Timer3Intr(void)
     if (gIntrCallbacks[4])
         gIntrCallbacks[4]();
     AckInterrupt(INTR_FLAG_TIMER3);
+}
+
+void SetSoftlockWatchdogPaused(bool8 paused)
+{
+    // Restart the count first so time spent paused is not charged to the main loop
+    gUnknown_203B0A4 = gUnknown_203B0A0;
+    sSoftlockWatchdogPaused = paused;
+}
+
+static void RecoverFromSoftlock(void)
+{
+    REG_IME = 0;
+    DmaStop(0);
+    DmaStop(1);
+    DmaStop(2);
+    DmaStop(3);
+    SoftReset(RESET_ALL);
 }
 
 UNUSED static u32 sub_800BB34(void)

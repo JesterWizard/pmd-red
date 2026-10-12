@@ -77,6 +77,16 @@ public sealed class RuntimeConfigSchemaTests
     }
 
     [Fact]
+    public void SoftlockRecoveryHasCuratedMetadata()
+    {
+        var field = RuntimeConfigSchema.Find("softlock_recovery");
+        Assert.NotNull(field);
+        Assert.Equal(RuntimeConfigFieldKind.Toggle, field!.Kind);
+        Assert.Equal("Softlock Recovery", field.DisplayName);
+        Assert.Equal("QoL / Cheats", field.Group);
+    }
+
+    [Fact]
     public void CompareToSchemaDetectsDrift()
     {
         var header = RuntimeConfigHeaderParser.Parse("""

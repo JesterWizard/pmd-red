@@ -2,12 +2,14 @@
 #include "gba/flash.h"
 #include "flash.h"
 #include "memory.h"
+#include "reg_control.h"
 
 EWRAM_INIT bool8 gFlashEnabled = {0};
 
 extern FlashIntrFunc *GetInterruptHandler(s32);
 
 static u8 TryProgramSector(s32, u8 *);
+static s32 WriteFlashDataUnchecked(s32, u8 *, s32);
 
 void InitFlash(void)
 {
@@ -18,7 +20,22 @@ void InitFlash(void)
 void ClearFlashData(void)
 {
     if (gFlashEnabled)
+    {
+        SetSoftlockWatchdogPaused(TRUE);
         EraseFlashChip();
+        SetSoftlockWatchdogPaused(FALSE);
+    }
+}
+
+// Flash writes can outlast the softlock watchdog window; never reset mid-write
+s32 WriteFlashData(s32 sector, u8 *src, s32 size)
+{
+    s32 status;
+
+    SetSoftlockWatchdogPaused(TRUE);
+    status = WriteFlashDataUnchecked(sector, src, size);
+    SetSoftlockWatchdogPaused(FALSE);
+    return status;
 }
 
 s32 ReadFlashData(s32 sector, u8 *dest, s32 size)
@@ -43,7 +60,7 @@ s32 ReadFlashData(s32 sector, u8 *dest, s32 size)
     return 3;
 }
 
-s32 WriteFlashData(s32 sector, u8 *src, s32 size)
+static s32 WriteFlashDataUnchecked(s32 sector, u8 *src, s32 size)
 {
     u8 buffer[0x1000];
 

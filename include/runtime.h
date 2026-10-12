@@ -140,6 +140,9 @@ typedef struct {
     /* Ground overworld: L toggles a thought-bubble sprite above the player
      * (art selected from latest SCENARIO_MAIN; else DEFAULT) */
     u8 thought_bubbles;
+    /* Watchdog: soft reset to title if the main loop misses its frame wait
+     * for 300 VBlanks (hard hang); save data is kept */
+    u8 softlock_recovery;
 } RuntimeConfig;
 
 /* magic(4) + version(4) + RuntimeConfig + checksum(4); grow when fields are added */

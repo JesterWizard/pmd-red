@@ -250,4 +250,8 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("On the overworld, press {L_BUTTON} to toggle\na thought bubble above the player."),
       &gRuntimeConfig.thought_bubbles, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+    { _("Softlock"), _("Softlock Recovery"),
+      _("Soft resets to the title screen if\nthe game hangs for 300 frames\n(5 seconds). Save data is kept."),
+      &gRuntimeConfig.softlock_recovery, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
 };

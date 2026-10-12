@@ -290,6 +290,8 @@ public static class RuntimeConfigSchema
             "Enter dungeons with 4 party members (else most dungeons max 3).");
         Add("thought_bubbles", RuntimeConfigFieldKind.Toggle, "Thought Bubbles", "Graphics / UI",
             "Ground overworld: L toggles a thought-bubble sprite above the player.");
+        Add("softlock_recovery", RuntimeConfigFieldKind.Toggle, "Softlock Recovery", "QoL / Cheats",
+            "Soft reset to the title screen if the game hangs for 300 frames (save data kept).");
 
         return meta;
     }

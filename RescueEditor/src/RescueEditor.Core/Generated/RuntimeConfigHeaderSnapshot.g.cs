@@ -67,5 +67,6 @@ public static class RuntimeConfigHeaderSnapshot
         new("living_square", "Pokémon Square ambient life: wander routes, visitors, banter (else vanilla static NPCs)", 54),
         new("full_party_entry", "Enter dungeons with 4 party members (else vanilla: most dungeons max 3; boss floors with data max 4 are also clamped to 3 until postgame)", 55),
         new("thought_bubbles", "Ground overworld: L toggles a thought-bubble sprite above the player (art selected from latest SCENARIO_MAIN; else DEFAULT)", 56),
+        new("softlock_recovery", "Watchdog: soft reset to title if the main loop misses its frame wait for 300 VBlanks (hard hang); save data is kept", 57),
     ];
 }
