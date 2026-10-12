@@ -81,6 +81,50 @@ The published application is placed under
   decoded text with macros such as `{COLOR GREEN}`, `{POKEMON_0}`, and
   `{WAIT_PRESS}`.
 
+## Playtest in an emulator
+
+After **File → Build ROM…**, press **F5** (or **Emulator → Play Last Build**) to
+open that build in mGBA.
+
+- RescueTemple launches a copy next to the build, `<name>.playtest.gba`, so a
+  running emulator never locks the Build ROM output. The copy's save file is
+  `<name>.playtest.sav`. The first launch seeds it from `<name>.sav` if one exists;
+  after that it keeps its own progress.
+- **Emulator → Restart After Build** (on by default): when an emulator that
+  RescueTemple started is still open, a successful Build ROM closes it, refreshes
+  the copy, and relaunches it. Pressing F5 again does the same by hand. mGBA has
+  no command to reload a ROM from outside, so "hot reload" is a restart. The
+  emulator is asked to close first so it can flush its save; it is force-closed
+  after 3 seconds.
+- **Emulator → Set Emulator…** picks any emulator executable; **Use
+  Auto-Detected mGBA** goes back to searching the default install locations:
+  - Windows: `%ProgramFiles%\mGBA\mGBA.exe`, `%ProgramFiles(x86)%\mGBA\mGBA.exe`,
+    `%LOCALAPPDATA%\Programs\mGBA\mGBA.exe`
+  - macOS: `/Applications/mGBA.app`
+  - Linux: `mgba-qt` in `/usr/bin`, `/usr/local/bin`, `/usr/games`, or the mGBA
+    Flatpak
+- Settings are kept in the RescueTemple session file with the recent ROMs list.
+
+Failure messages:
+
+| Situation | What RescueTemple says |
+|-----------|------------------------|
+| No ROM built yet | "No ROM has been built yet. Use File → Build ROM… first." |
+| Built ROM was moved or deleted | "The last built ROM is missing: …" |
+| No emulator configured or found | "No emulator found. Install mGBA (https://mgba.io/downloads.html) …" plus the paths it checked |
+| Configured emulator was removed | "The emulator set in RescueTemple was not found: …" |
+| Playtest copy locked (an emulator RescueTemple did not start has it open) | "Could not update the playtest copy: … Close the emulator and try again." |
+
+### Windows and WSL
+
+- `./RescueEditor/dev.sh` runs RescueTemple as a Windows program, so it launches
+  the **Windows** mGBA (`mGBA.exe`). Install mGBA on Windows, not inside WSL.
+- Builds saved under `\\wsl$\...` paths work; mGBA opens them directly. Saving
+  the build on a Windows drive (for example `C:\Users\<you>\pmd-builds\`) is
+  faster to copy.
+- If RescueTemple runs natively inside WSL (Linux `dotnet` with WSLg), it looks
+  for Linux mGBA instead: `sudo apt install mgba-qt`.
+
 ## Current asset coverage
 
 - Portraits: AT4PX/AT4PN-style decompression and 40×40 portrait rendering.

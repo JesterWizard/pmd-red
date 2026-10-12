@@ -13,6 +13,12 @@ public sealed class EditorSessionSettings
     public string? ExplorerCategory { get; set; }
     public string? ExplorerAssetId { get; set; }
     public int? ExplorerSceneMapId { get; set; }
+    /// <summary>Emulator executable chosen with Emulator → Set Emulator…; null = auto-detect mGBA.</summary>
+    public string? EmulatorPath { get; set; }
+    /// <summary>Output path of the last successful Build ROM (source of the playtest copy).</summary>
+    public string? LastBuiltRomPath { get; set; }
+    /// <summary>Relaunch an emulator RescueTemple started after each successful Build ROM.</summary>
+    public bool RestartEmulatorAfterBuild { get; set; } = true;
 
     public string ToJson() => JsonSerializer.Serialize(this, SerializerOptions);
 

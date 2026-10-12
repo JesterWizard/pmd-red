@@ -41,6 +41,34 @@ public sealed class EditorSessionSettingsTests
         Assert.Empty(loaded.RecentProjects);
         Assert.Null(loaded.LastRomPath);
     }
+
+    [Fact]
+    public void SaveAndLoad_RoundTripEmulatorSettings()
+    {
+        var files = new MemoryEditorFileSystem();
+        var settings = new EditorSessionSettings
+        {
+            EmulatorPath = @"C:\Program Files\mGBA\mGBA.exe",
+            LastBuiltRomPath = "mod.edited.gba",
+            RestartEmulatorAfterBuild = false,
+        };
+
+        EditorSessionSettingsStore.Save(files, "session.json", settings);
+        var loaded = EditorSessionSettingsStore.LoadOrDefault(files, "session.json");
+
+        Assert.Equal(@"C:\Program Files\mGBA\mGBA.exe", loaded.EmulatorPath);
+        Assert.Equal("mod.edited.gba", loaded.LastBuiltRomPath);
+        Assert.False(loaded.RestartEmulatorAfterBuild);
+    }
+
+    [Fact]
+    public void OlderSessionFile_DefaultsToRestartEmulatorAfterBuild()
+    {
+        var loaded = EditorSessionSettings.FromJson("{}");
+        Assert.Null(loaded.EmulatorPath);
+        Assert.Null(loaded.LastBuiltRomPath);
+        Assert.True(loaded.RestartEmulatorAfterBuild);
+    }
 }
 
 public sealed class MemoryEditorFileSystem : IEditorFileSystem

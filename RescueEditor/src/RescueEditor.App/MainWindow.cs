@@ -50,6 +50,7 @@ public sealed class MainWindow : Window
     private readonly IEditorFileSystem _files = OsEditorFileSystem.Instance;
     private readonly string _sessionSettingsPath;
     private EditorSessionSettings _session;
+    private System.Diagnostics.Process? _emulatorProcess;
     private readonly MenuItem _recentRomsMenu = new() { Header = "Recent _ROMs" };
     private readonly MenuItem _recentProjectsMenu = new() { Header = "Recent _Projects" };
     private readonly DispatcherTimer _autosaveTimer;
@@ -373,6 +374,41 @@ public sealed class MainWindow : Window
         };
         sceneMenu.Items.Add(playScene);
         menu.Items.Add(sceneMenu);
+
+        var emulatorMenu = new MenuItem { Header = "E_mulator" };
+        var playBuild = new MenuItem
+        {
+            Header = "_Play Last Build",
+            InputGesture = new KeyGesture(Key.F5),
+        };
+        playBuild.Click += async (_, _) => await PlayInEmulatorAsync();
+        var setEmulator = new MenuItem { Header = "_Set Emulator…" };
+        setEmulator.Click += async (_, _) => await SetEmulatorAsync();
+        var autoDetectEmulator = new MenuItem { Header = "Use _Auto-Detected mGBA" };
+        autoDetectEmulator.Click += (_, _) =>
+        {
+            _session.EmulatorPath = null;
+            PersistSession();
+            SetStatus("Emulator: auto-detect mGBA.");
+        };
+        var restartAfterBuild = new MenuItem
+        {
+            Header = "_Restart After Build",
+            ToggleType = MenuItemToggleType.CheckBox,
+            IsChecked = _session.RestartEmulatorAfterBuild,
+        };
+        restartAfterBuild.Click += (_, _) =>
+        {
+            _session.RestartEmulatorAfterBuild = !_session.RestartEmulatorAfterBuild;
+            restartAfterBuild.IsChecked = _session.RestartEmulatorAfterBuild;
+            PersistSession();
+        };
+        emulatorMenu.Items.Add(playBuild);
+        emulatorMenu.Items.Add(new Separator());
+        emulatorMenu.Items.Add(setEmulator);
+        emulatorMenu.Items.Add(autoDetectEmulator);
+        emulatorMenu.Items.Add(restartAfterBuild);
+        menu.Items.Add(emulatorMenu);
 
         var view = new MenuItem { Header = "_View" };
         var list = new MenuItem { Header = "_List" };
@@ -1334,9 +1370,16 @@ public sealed class MainWindow : Window
                 _rom, _scenes, _project, file.Path.LocalPath, _charmap, _runtimeConfig, _cPatchHostRom,
                 workingImage: _workingRom?.View);
             var summary = report.Success
-                ? $"Built {file.Path.LocalPath} ({report.Changes.Count} changes)."
+                ? $"Built {file.Path.LocalPath} ({report.Changes.Count} changes). F5 plays it in the emulator."
                 : $"Build failed with {report.Errors.Count} error(s).";
             SetStatus(summary);
+            if (report.Success)
+            {
+                _session.LastBuiltRomPath = file.Path.LocalPath;
+                PersistSession();
+                if (_session.RestartEmulatorAfterBuild && EmulatorRunning)
+                    await PlayInEmulatorAsync();
+            }
             if (!report.Success || report.Warnings.Count > 0)
             {
                 var details = string.Join("\n", report.Errors.Concat(report.Warnings).Take(20));
@@ -1347,6 +1390,95 @@ public sealed class MainWindow : Window
         {
             await ShowErrorAsync("Build ROM failed", exception.Message);
         }
+    }
+
+    private bool EmulatorRunning => _emulatorProcess is { HasExited: false };
+
+    private async Task PlayInEmulatorAsync()
+    {
+        var emulator = EmulatorPlaytest.ResolveEmulator(
+            _session.EmulatorPath,
+            EmulatorPlaytest.DefaultEmulatorCandidates(
+                OperatingSystem.IsWindows(), OperatingSystem.IsMacOS(), Environment.GetEnvironmentVariable),
+            File.Exists);
+        if (!emulator.Success)
+        {
+            await ShowErrorAsync("Play in Emulator", emulator.Error!);
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(_session.LastBuiltRomPath) || !File.Exists(_session.LastBuiltRomPath))
+        {
+            // PrepareCopy has no side effects on a missing ROM; reuse its message.
+            await ShowErrorAsync("Play in Emulator", EmulatorPlaytest.PrepareCopy(_session.LastBuiltRomPath).Error!);
+            return;
+        }
+
+        // The emulator we launched holds the playtest copy open; close it before refreshing the copy.
+        await StopEmulatorAsync();
+        var copy = EmulatorPlaytest.PrepareCopy(_session.LastBuiltRomPath);
+        if (!copy.Success)
+        {
+            await ShowErrorAsync("Play in Emulator", copy.Error!);
+            return;
+        }
+
+        try
+        {
+            _emulatorProcess = System.Diagnostics.Process.Start(
+                EmulatorPlaytest.CreateStartInfo(emulator.Path!, copy.RomPath!));
+            SetStatus($"Playing {Path.GetFileName(copy.RomPath)} in " +
+                $"{Path.GetFileNameWithoutExtension(emulator.Path)}. F5 restarts it with the latest build.");
+        }
+        catch (Exception exception) when (exception is System.ComponentModel.Win32Exception or InvalidOperationException)
+        {
+            await ShowErrorAsync("Play in Emulator",
+                $"Could not start the emulator:\n{emulator.Path}\n\n{exception.Message}");
+        }
+    }
+
+    private async Task StopEmulatorAsync()
+    {
+        var process = _emulatorProcess;
+        _emulatorProcess = null;
+        if (process is null)
+            return;
+        try
+        {
+            if (!process.HasExited)
+            {
+                // Ask the window to close first so the emulator can flush its .sav; force it after 3 s.
+                if (!process.CloseMainWindow() || !await Task.Run(() => process.WaitForExit(3000)))
+                    process.Kill();
+                await Task.Run(() => process.WaitForExit(3000));
+            }
+        }
+        catch (Exception exception) when (exception is InvalidOperationException or System.ComponentModel.Win32Exception)
+        {
+        }
+        finally
+        {
+            process.Dispose();
+        }
+    }
+
+    private async Task SetEmulatorAsync()
+    {
+        var filters = new List<FilePickerFileType>();
+        if (OperatingSystem.IsWindows())
+            filters.Add(new FilePickerFileType("Programs") { Patterns = ["*.exe"] });
+        filters.Add(FilePickerFileTypes.All);
+        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Choose Emulator (mGBA)",
+            AllowMultiple = false,
+            FileTypeFilter = filters,
+        });
+        if (files.Count == 0)
+            return;
+        _session.EmulatorPath = files[0].Path.LocalPath;
+        PersistSession();
+        SetStatus($"Emulator set to {_session.EmulatorPath}.");
     }
 
     private async void ExportSelectedOnClick(object? sender, RoutedEventArgs e)
@@ -1594,6 +1726,9 @@ public sealed class MainWindow : Window
                 return true;
             case EditorCommandId.GlobalSearch:
                 OpenGlobalSearch();
+                return true;
+            case EditorCommandId.PlayInEmulator:
+                _ = PlayInEmulatorAsync();
                 return true;
             default:
                 return false;

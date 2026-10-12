@@ -17,7 +17,8 @@ public static class EditorCommandRouter
             EditorCommandId.ToggleExplorer or
             EditorCommandId.ToggleInspector or
             EditorCommandId.ToggleOutput or
-            EditorCommandId.GlobalSearch,
+            EditorCommandId.GlobalSearch or
+            EditorCommandId.PlayInEmulator,
         EditorFocusKind.SceneCanvas => true,
         _ => !IsSceneOnly(command),
     };

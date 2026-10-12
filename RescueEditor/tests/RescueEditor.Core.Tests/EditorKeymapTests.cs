@@ -20,6 +20,7 @@ public sealed class EditorKeymapTests
     [InlineData("OemCloseBrackets", true, false, false, EditorCommandId.ToggleInspector)]
     [InlineData("U", true, true, false, EditorCommandId.ToggleOutput)]
     [InlineData("P", true, false, false, EditorCommandId.GlobalSearch)]
+    [InlineData("F5", false, false, false, EditorCommandId.PlayInEmulator)]
     public void ResolvesDefaultBindings(string key, bool ctrl, bool shift, bool alt, EditorCommandId expected)
     {
         Assert.True(_map.TryResolve(new KeyChord(key, ctrl, shift, alt), out var command));
