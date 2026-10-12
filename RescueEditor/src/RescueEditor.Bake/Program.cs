@@ -1,8 +1,23 @@
 using RescueEditor.Core;
 
+if (args.Length >= 1 && args[0] == "probe-layout")
+{
+    if (args.Length != 2)
+    {
+        Console.Error.WriteLine("usage: RescueEditor.Bake probe-layout <rom.gba>");
+        return 1;
+    }
+
+    var probeRom = RomImage.Open(args[1]);
+    Console.Write(RomLayoutReport.Build(probeRom));
+    Console.WriteLine();
+    return 0;
+}
+
 if (args.Length < 2)
 {
     Console.Error.WriteLine("usage: RescueEditor.Bake <baserom.gba> <outputDir>");
+    Console.Error.WriteLine("       RescueEditor.Bake probe-layout <rom.gba>");
     return 1;
 }
 

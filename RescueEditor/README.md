@@ -45,12 +45,31 @@ Use **File → Open ROM** to select another image. Detection uses SHA-1 + size
 | Profile | SHA-1 | Writes / scene graph |
 | --- | --- | --- |
 | PMD Red Rescue Team US 1.0 (`B24E`) | `9f4cfc5b5f4859d17169a485462e977c7aac2b89` | Yes |
-| PMD Red Rescue Team EU (`B24P`) | `afee3b060dd5fd4a68afb1b003456aef3a2af073` | Browse-only until offsets are verified |
-| PMD Red Rescue Team JP (`B24J`) | `4bc9370edebb3da5bdf768eeced689fda3f8b77b` | Browse-only until offsets are verified |
+| PMD Red Rescue Team EU (`B24P`) | `afee3b060dd5fd4a68afb1b003456aef3a2af073` | Browse-only; anchors not yet probed on a retail dump |
+| PMD Red Rescue Team JP (`B24J`) | `4bc9370edebb3da5bdf768eeced689fda3f8b77b` | Browse-only; anchors not yet probed on a retail dump |
 | PMD Blue Rescue Team US (`APHE`) | `503edef4fe6088bca00616efcac3b13da90cd105` | Recognized; layout not mapped yet |
 
 An unmatched image still opens for generic browsing; the catalog reports that
 its SHA-1 is not a supported profile.
+
+### Verifying a new profile (EU / JP)
+
+```sh
+dotnet run --project RescueEditor/src/RescueEditor.Bake -- probe-layout path/to/rom.gba
+```
+
+The probe locates `gMapFilesTable`, `gGroundMapConversionTable`, `gMapScriptTable`,
+`gGroundLivesTypeData`, and `gFunctionScriptTable` by structure (no US offsets),
+parses the scene graph read-only, and prints `Validation: sane` plus a RomProfile
+snippet only when there are no errors. To turn that into a profile:
+
+1. Paste the snippet into the `Eu10` or `Jp10` definition in `RomProfile.cs`.
+2. Set `LayoutVerified = true` once the scene graph checks out.
+3. Set `AllowWrites = true` only after checking sample scenes in the editor.
+4. Add a test to `RomProfileTests.cs`.
+
+C Patches and RuntimeConfig stay US-only. `Us10` lists 230 maps and 246 map files
+because the modern hack build adds Spinda Cafe; a retail US probe reports 229 / 245 / 407.
 
 ## Build tests
 
