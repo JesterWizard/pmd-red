@@ -560,6 +560,53 @@ public static class SceneEditing
         return station;
     }
 
+    /// <summary>
+    /// Removes a station script from the sector. Remaining stations shift down, so their
+    /// g/s.N identities stay contiguous. Clears <see cref="Scene.ScriptSourceText"/> so the
+    /// script editor regenerates @station headers.
+    /// </summary>
+    public static void RemoveStation(
+        ChangeService changes,
+        Scene scene,
+        SceneSector sector,
+        ScriptRefData station)
+    {
+        var index = sector.Stations.IndexOf(station);
+        if (index < 0)
+            throw new ArgumentException("Station is not in this sector.", nameof(station));
+
+        var identity = SceneStations.FormatIdentity(sector.Group, sector.Sector, index, sector.Stations.Count);
+        var oldSource = scene.ScriptSourceText;
+        changes.Execute(
+            $"Remove station {identity}",
+            apply: () =>
+            {
+                sector.Stations.Remove(station);
+                sector.HasStation = sector.Stations.Count > 0;
+                sector.StationsListDirty = true;
+                scene.ScriptSourceText = null;
+            },
+            revert: () =>
+            {
+                sector.Stations.Insert(Math.Min(index, sector.Stations.Count), station);
+                sector.HasStation = true;
+                sector.StationsListDirty = true;
+                scene.ScriptSourceText = oldSource;
+            },
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "station.remove",
+                Target = $"sector:{sector.Group}:{sector.Sector}",
+                Values =
+                {
+                    ["group"] = sector.Group.ToString(),
+                    ["sector"] = sector.Sector.ToString(),
+                    ["index"] = index.ToString(),
+                },
+            });
+    }
+
     public static void RemoveSector(ChangeService changes, SceneGroup group, SceneSector sector)
     {
         if (group.Sectors.Count <= 1)

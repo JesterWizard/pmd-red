@@ -82,6 +82,11 @@ public static class SceneStations
             $"{entries.Count} stations · {commands} commands");
     }
 
+    /// <summary>True when the station is empty or only a RET (the stub AddStation creates).</summary>
+    public static bool IsRetStub(ScriptRefData station) =>
+        station.Commands.Count == 0 ||
+        (station.Commands.Count == 1 && station.Commands[0].Op == 0xEF);
+
     /// <summary>1-based line number of the matching @station header, or -1.</summary>
     public static int FindStationHeaderLine(string sourceText, int group, int sector, int stationIndex)
     {

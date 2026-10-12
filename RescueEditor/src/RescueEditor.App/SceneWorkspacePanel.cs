@@ -1197,6 +1197,8 @@ public sealed class SceneWorkspacePanel : UserControl
 
         var add = EditorChrome.IconButton("+", tip: "Add station script to current sector");
         add.Click += (_, _) => AddStationScript();
+        var remove = EditorChrome.IconButton("−", tip: "Delete selected station script (Delete)");
+        remove.Click += (_, _) => _ = RemoveSelectedStationScriptAsync();
         _scriptKindToggle = EditorChrome.ToolToggle("Script", isChecked: true, tip: "Edit as source opcodes");
         _eventKindToggle = EditorChrome.ToolToggle("Event", tip: "Edit as a high-level event list");
         _scriptKindToggle.IsCheckedChanged += (_, _) =>
@@ -1228,7 +1230,7 @@ public sealed class SceneWorkspacePanel : UserControl
             {
                 Orientation = Orientation.Horizontal,
                 Spacing = EditorTheme.Space2,
-                Children = { add, _scriptKindToggle, _eventKindToggle, _openScriptButton },
+                Children = { add, remove, _scriptKindToggle, _eventKindToggle, _openScriptButton },
             },
         };
 
@@ -1553,6 +1555,77 @@ public sealed class SceneWorkspacePanel : UserControl
         {
             _status.Text = exception.Message;
         }
+    }
+
+    private async Task RemoveSelectedStationScriptAsync()
+    {
+        if (_scene is null || _changes is null)
+            return;
+        if (_selectedScriptStation is not { } entry || entry.Station is null)
+        {
+            _status.Text = "Select a station script to delete.";
+            return;
+        }
+
+        var sector = _scene.Groups
+            .FirstOrDefault(group => group.Index == entry.Group)?
+            .Sectors.FirstOrDefault(item => item.Sector == entry.Sector);
+        if (sector is null || !sector.Stations.Contains(entry.Station))
+            return;
+        if (!SceneStations.IsRetStub(entry.Station) && !await ConfirmRemoveStationAsync(entry))
+            return;
+
+        SceneEditing.RemoveStation(_changes, _scene, sector, entry.Station);
+        _selectedScriptStation = null;
+        _selectedStation = null;
+        SyncWorkingRom();
+        RefreshAll();
+        DirtyChanged?.Invoke(this, EventArgs.Empty);
+        _status.Text = $"Deleted station {entry.Identity}.";
+    }
+
+    private async Task<bool> ConfirmRemoveStationAsync(SceneStationEntry entry)
+    {
+        if (TopLevel.GetTopLevel(this) is not Window owner)
+            return false;
+
+        var dialog = new Window
+        {
+            Title = "Delete station script",
+            Width = 420,
+            Height = 150,
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Icon = AppIcon.Get(),
+        };
+        EditorChrome.StyleDialogWindow(dialog);
+        var confirmed = false;
+        var message = EditorChrome.MutedBody(
+            $"Station {entry.Identity} has {entry.CommandCount} commands. Delete it? You can undo this.");
+        var cancel = EditorChrome.ToolButton("Cancel");
+        cancel.Click += (_, _) => dialog.Close();
+        var delete = EditorChrome.ToolButton("Delete", primary: true);
+        delete.Click += (_, _) =>
+        {
+            confirmed = true;
+            dialog.Close();
+        };
+        var buttons = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Spacing = EditorTheme.Space2,
+            Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
+            Children = { cancel, delete },
+        };
+        dialog.Content = new DockPanel
+        {
+            Margin = new Thickness(EditorTheme.Space5),
+            LastChildFill = true,
+            Children = { buttons, message },
+        };
+        DockPanel.SetDock(buttons, Dock.Bottom);
+        await dialog.ShowDialog(owner);
+        return confirmed;
     }
 
     private void RefreshMapInfo()
@@ -2305,6 +2378,11 @@ public sealed class SceneWorkspacePanel : UserControl
                 DirtyChanged?.Invoke(this, EventArgs.Empty);
                 return true;
             case EditorCommandId.DeleteSelection:
+                if (_scriptRight?.IsKeyboardFocusWithin == true)
+                {
+                    _ = RemoveSelectedStationScriptAsync();
+                    return true;
+                }
                 if (_selectedLink is not null)
                 {
                     RemoveSelectedLink();

@@ -132,6 +132,106 @@ public sealed class SceneStationsTests
     }
 
     [Fact]
+    public void RemoveStationMiddleReindexesAndSupportsUndoRedo()
+    {
+        var scene = MakeScene(
+            ("A", 0, 0, [Ret()]),
+            ("B", 0, 0, [Wait(5), Ret()]),
+            ("C", 0, 0, [Ret()]));
+        scene.ScriptSourceText = "# stale\n";
+        var sector = scene.Groups[0].Sectors[0];
+        sector.StationsListDirty = false;
+        var changes = new ChangeService();
+        var removed = sector.Stations[1];
+
+        SceneEditing.RemoveStation(changes, scene, sector, removed);
+
+        Assert.Equal(new[] { "A", "C" }, sector.Stations.Select(s => s.Name));
+        Assert.True(sector.StationsListDirty);
+        Assert.True(sector.HasStation);
+        Assert.Null(scene.ScriptSourceText);
+        var entries = SceneStations.Enumerate(scene);
+        Assert.Equal(2, entries.Count);
+        Assert.Equal("g0/s0.0", entries[0].Identity);
+        Assert.Equal("A", entries[0].Name);
+        Assert.Equal("g0/s0.1", entries[1].Identity);
+        Assert.Equal("C", entries[1].Name);
+
+        changes.Undo();
+        Assert.Equal(new[] { "A", "B", "C" }, sector.Stations.Select(s => s.Name));
+        Assert.Same(removed, sector.Stations[1]);
+        Assert.Equal(2, sector.Stations[1].Commands.Count);
+        Assert.Equal(0xDB, sector.Stations[1].Commands[0].Op);
+        Assert.Equal(0xEF, sector.Stations[1].Commands[1].Op);
+        Assert.Equal("# stale\n", scene.ScriptSourceText);
+
+        changes.Redo();
+        Assert.Equal(new[] { "A", "C" }, sector.Stations.Select(s => s.Name));
+        Assert.Null(scene.ScriptSourceText);
+    }
+
+    [Fact]
+    public void RemoveLastStationClearsHasStation()
+    {
+        var scene = MakeScene(("ONLY", 0, 0, [Ret()]));
+        var sector = scene.Groups[0].Sectors[0];
+        sector.StationsListDirty = false;
+        var changes = new ChangeService();
+
+        SceneEditing.RemoveStation(changes, scene, sector, sector.Stations[0]);
+
+        Assert.Empty(sector.Stations);
+        Assert.False(sector.HasStation);
+        Assert.True(sector.StationsListDirty);
+        Assert.Empty(SceneStations.Enumerate(scene));
+
+        changes.Undo();
+        Assert.Single(sector.Stations);
+        Assert.Equal("ONLY", sector.Stations[0].Name);
+        Assert.True(sector.HasStation);
+    }
+
+    [Fact]
+    public void RemoveStationRejectsStationNotInSector()
+    {
+        var scene = MakeScene(("A", 0, 0, [Ret()]));
+        var sector = scene.Groups[0].Sectors[0];
+        var changes = new ChangeService();
+        var stranger = new ScriptRefData { Name = "X", Commands = { Ret() } };
+
+        Assert.Throws<ArgumentException>(() => SceneEditing.RemoveStation(changes, scene, sector, stranger));
+
+        Assert.False(changes.CanUndo);
+        Assert.Single(sector.Stations);
+    }
+
+    [Fact]
+    public void RemoveStationRegeneratesScriptSource()
+    {
+        var scene = MakeScene(
+            ("A", 0, 0, [Ret()]),
+            ("B", 0, 0, [Wait(1), Ret()]));
+        var sector = scene.Groups[0].Sectors[0];
+        var changes = new ChangeService();
+
+        SceneEditing.RemoveStation(changes, scene, sector, sector.Stations[0]);
+
+        var text = SceneScriptSource.Format(scene);
+        Assert.Contains("@station g0/s0 B", text);
+        Assert.DoesNotContain("@station g0/s0.0", text);
+        Assert.DoesNotContain("@station g0/s0.1", text);
+    }
+
+    [Fact]
+    public void IsRetStubDetectsEmptyAndSingleRet()
+    {
+        Assert.True(SceneStations.IsRetStub(new ScriptRefData()));
+        Assert.True(SceneStations.IsRetStub(new ScriptRefData { Commands = { Ret() } }));
+        Assert.False(SceneStations.IsRetStub(new ScriptRefData { Commands = { Wait(1), Ret() } }));
+        Assert.False(SceneStations.IsRetStub(new ScriptRefData { Commands = { Wait(1) } }));
+    }
+
+    [Fact]
     public void WriteWorkingCopyPersistsNewStationListAndScript()
     {
         var bytes = new byte[0x12000];
@@ -181,6 +281,95 @@ public sealed class SceneStationsTests
         Assert.Equal("NEW_STATION", reloaded.Name);
         Assert.Equal(2, reloaded.Commands.Count);
     }
+
+    [Fact]
+    public void WriteWorkingCopyAfterRemovingMiddleStationRewritesTable()
+    {
+        var stationA = ToyStation("S_A", 1);
+        var stationB = ToyStation("S_B", 2);
+        var stationC = ToyStation("S_C", 3);
+        var (working, scene, sector, database) = MakeToyWorkingCopy(stationA, stationB, stationC);
+
+        var first = working.Sync(database);
+        Assert.True(first.Success, string.Join("; ", first.Errors));
+        Assert.Equal(3, working.View.ReadInt32(ToySectorOffset + 32));
+
+        SceneEditing.RemoveStation(new ChangeService(), scene, sector, stationB);
+
+        var report = working.Sync(database);
+        Assert.True(report.Success, string.Join("; ", report.Errors));
+        Assert.Equal(2, working.View.ReadInt32(ToySectorOffset + 32));
+        var table = working.View.ReadPointerOffset(ToySectorOffset + 36);
+        Assert.True(table >= 0);
+        Assert.Equal(stationA.RomOffset, working.View.ReadPointerOffset(table));
+        Assert.Equal(stationC.RomOffset, working.View.ReadPointerOffset(table + 4));
+
+        var reloadedA = ScriptRefData.Read(working.View, stationA.RomOffset, loadCommands: true);
+        Assert.Equal("S_A", reloadedA.Name);
+        Assert.Equal(1, reloadedA.Commands[0].ArgShort);
+
+        var reloadedC = ScriptRefData.Read(working.View, stationC.RomOffset, loadCommands: true);
+        Assert.Equal("S_C", reloadedC.Name);
+        Assert.Equal(3, reloadedC.Commands[0].ArgShort);
+    }
+
+    [Fact]
+    public void WriteWorkingCopyAfterRemovingLastStationClearsTable()
+    {
+        var only = ToyStation("ONLY", 4);
+        var (working, scene, sector, database) = MakeToyWorkingCopy(only);
+
+        var first = working.Sync(database);
+        Assert.True(first.Success, string.Join("; ", first.Errors));
+        Assert.Equal(1, working.View.ReadInt32(ToySectorOffset + 32));
+
+        SceneEditing.RemoveStation(new ChangeService(), scene, sector, only);
+
+        var report = working.Sync(database);
+        Assert.True(report.Success, string.Join("; ", report.Errors));
+        Assert.Equal(0, working.View.ReadInt32(ToySectorOffset + 32));
+        Assert.Equal(0u, working.View.ReadUInt32(ToySectorOffset + 36));
+        Assert.False(sector.HasStation);
+        Assert.Equal(-1, sector.StationListOffset);
+    }
+
+    private const int ToySectorOffset = 0x100;
+
+    /// <summary>
+    /// Toy ROM mirroring WriteWorkingCopyPersistsNewStationListAndScript: 0x12000 bytes with
+    /// 0xFF free space from 0x10000, and one sector blob at <see cref="ToySectorOffset"/>.
+    /// </summary>
+    private static (WorkingRom Working, Scene Scene, SceneSector Sector, SceneDatabase Database) MakeToyWorkingCopy(
+        params ScriptRefData[] stations)
+    {
+        var bytes = new byte[0x12000];
+        Array.Fill(bytes, (byte)0xFF, 0x10000, 0x2000);
+        var source = RomImage.FromBytes("station-list-toy.gba", bytes);
+        var sector = new SceneSector
+        {
+            Group = 0,
+            Sector = 0,
+            RomOffset = ToySectorOffset,
+            StationsListDirty = true,
+            HasStation = stations.Length > 0,
+        };
+        sector.Stations.AddRange(stations);
+        var group = new SceneGroup { Index = 0 };
+        group.Sectors.Add(sector);
+        var scene = new Scene { MapId = 1, Name = "Toy" };
+        scene.Groups.Add(group);
+        var database = new SceneDatabase();
+        database.Scenes.Add(scene);
+        return (new WorkingRom(source), scene, sector, database);
+    }
+
+    private static ScriptRefData ToyStation(string name, short frames) => new()
+    {
+        Name = name,
+        ScriptOffset = -1,
+        RomOffset = -1,
+        Commands = { Wait(frames), Ret() },
+    };
 
     private static Scene MakeScene(params (string Name, int Group, int Sector, ScriptCommandData[] Commands)[] stations)
     {
