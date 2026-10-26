@@ -14,6 +14,7 @@
 #include "text_2.h"
 #include "text_3.h"
 #include "text_4.h"
+#include "ui_style.h"
 
 EWRAM_DATA Window gWindows[MAX_WINDOWS] = {0}; // NDS=020EDDEC
 EWRAM_DATA CharMapStruct *gCharmaps[2] = { NULL };
@@ -554,12 +555,12 @@ static void PutWindowLeftBorderTilemap(Window *window, s32 x, s32 y, s32 a3, u16
             break;
         case WINDOW_TYPE_0:
             if (a3 == 0) {
-                tilemaps[0][y][x] = TILEMAP_TILE_NUM(0x297) | TILEMAP_PAL(15);
+                tilemaps[0][y][x] = GetUiStyleDialogueCornerTile(FALSE);
                 tilemaps[1][y][x] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
                 break;
             }
             if (a3 == window->height - 1) {
-                tilemaps[0][y][x] = TILEMAP_TILE_NUM(0x297) | TILEMAP_PAL(15) | TILEMAP_FLIP_VERTICAL(1);
+                tilemaps[0][y][x] = GetUiStyleDialogueCornerTile(TRUE);
                 tilemaps[1][y][x] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
                 break;
             }
@@ -624,12 +625,12 @@ static void PutWindowRightBorderTilemap(Window *window, s32 x, s32 y, s32 a3, u1
             break;
         case WINDOW_TYPE_0:
             if (a3 == 0) {
-                tilemaps[0][y][x] = TILEMAP_TILE_NUM(0x297) | TILEMAP_PAL(15) | TILEMAP_FLIP_HORIZONTAL(1);
+                tilemaps[0][y][x] = GetUiStyleDialogueCornerTile(FALSE) | TILEMAP_FLIP_HORIZONTAL(1);
                 tilemaps[1][y][x] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
                 break;
             }
             if (a3 == window->height - 1) {
-                tilemaps[0][y][x] = TILEMAP_TILE_NUM(0x297) | TILEMAP_PAL(15) | TILEMAP_FLIP_HORIZONTAL(1) | TILEMAP_FLIP_VERTICAL(1);
+                tilemaps[0][y][x] = GetUiStyleDialogueCornerTile(TRUE) | TILEMAP_FLIP_HORIZONTAL(1);
                 tilemaps[1][y][x] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
                 break;
             }

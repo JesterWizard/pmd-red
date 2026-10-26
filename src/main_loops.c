@@ -47,6 +47,7 @@
 #include "rescue_team_info.h"
 #include "run_dungeon.h"
 #include "runtime.h"
+#include "ui_style.h"
 #include "save.h"
 #include "save_read.h"
 #include "sprite.h"
@@ -138,6 +139,8 @@ void GameLoop_Async(void)
     InitializePlayTime();
     LoadGameOptions();
     SetWindowBGColor();
+    /* InitGraphics loaded the chrome sheet before the runtime config existed. */
+    ApplyUiStyle();
     LoadExclusivePokemon();
     LoadFriendAreas();
     LoadItemParameters();

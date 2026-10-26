@@ -61,4 +61,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .softlock_recovery = TRUE, /* TRUE = soft reset after a 300-frame hang; FALSE = off */
     .chapter_titles = TRUE, /* TRUE = PMD2-style chapter cards at each main-story episode; FALSE = off */
     .boss_recruit = FALSE, /* TRUE = postgame bosses always offer to join when defeated; FALSE = vanilla recruit roll */
+    .ui_style = UI_STYLE_RED, /* UI_STYLE_RED = vanilla windows; UI_STYLE_SKY = Explorers of Sky windows */
 };

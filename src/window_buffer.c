@@ -3,6 +3,7 @@
 #include "bg_control.h"
 #include "window_buffer.h"
 #include "math.h"
+#include "ui_style.h"
 
 #define UNROLL16(x) do { x; x; x; x; x; x; x; x; x; x; x; x; x; x; x; x; } while (0)
 
@@ -307,6 +308,9 @@ void ToggleWindowBgBuffer(void)
     gWinBufferPtr = sBufferPtr;
     sBufferIdx = !sBufferIdx;
     sBoolUnk = !sBoolUnk;
-    SetBldAlphaReg((gUnknown_2026E4E & 0x1F00) >> 8, gUnknown_2026E4E & 0x1F);
+    if (UiStyleWantsOpaqueWindows(gBldCnt))
+        SetBldAlphaReg(16, 0);
+    else
+        SetBldAlphaReg((gUnknown_2026E4E & 0x1F00) >> 8, gUnknown_2026E4E & 0x1F);
     gDrawWindow = TRUE;
 }

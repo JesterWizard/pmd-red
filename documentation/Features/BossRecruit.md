@@ -88,4 +88,4 @@ Vanilla rates are per 1000, before the leader-level, Friend Bow and Fast Friend 
 - **Postgame only.** Bosses fought during the story can't be recruited at all, as in vanilla.
 - **No new recruits.** The toggle doesn't make never-recruitable species joinable.
 - **Existing saves keep the ROM default.** The runtime-override record is now version 3. Records from before this toggle keep their other overrides and take `boss_recruit` from the ROM default.
-- **RuntimeConfig is full.** This field fills the last byte of the 0x48-byte save record. The next toggle needs `RUNTIME_CONFIG_SAVE_SIZE` raised (a static assert in `runtime_config.c` catches it).
+- **Save record size.** This field filled the last byte of the 0x48-byte save record; `ui_style` then raised it to 0x4C (version 4). A static assert in `runtime_config.c` catches the next overflow.

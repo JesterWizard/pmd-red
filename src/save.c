@@ -19,6 +19,7 @@
 #include "random.h"
 #include "rescue_scenario.h"
 #include "runtime.h"
+#include "ui_style.h"
 #include "save.h"
 #include "spinda_cafe.h"
 #include "string_format.h"
@@ -227,6 +228,7 @@ u32 ReadSaveFromPak(u32 *a)
     {
         if (!RestoreRuntimeConfig(GetRuntimeConfigSaveBuffer(playerSave->unk448), RUNTIME_CONFIG_SAVE_SIZE))
             ResetRuntimeConfigToRom();
+        ApplyUiStyle();
         if (gUnknown_203B184 == NULL) {
             if (!RestoreGlobalScriptVars(playerSave->unk004)) {
                 saveStatus = 4;

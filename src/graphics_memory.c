@@ -9,6 +9,7 @@
 #include "ground_bg_tile_stream.h"
 #include "custom_graphics.h"
 #include "text_1.h"
+#include "ui_style.h"
 
 struct FontData
 {
@@ -72,6 +73,7 @@ void InitGraphics(void)
     i = font->size;
     CpuCopy((u32 *)(VRAM + 0x4f00), font->dataArray, i * 32);
     CloseFile(file);
+    LoadUiStyleChromeTiles();
 
     file = OpenFileAndGetFileDataPtr("fontsp", sysFileArchieve);
     font = (struct FontData *)(file->data);
@@ -101,6 +103,7 @@ void InitFontPalette(void)
 
     fontpalFile = OpenFileAndGetFileDataPtr("fontpal", &gSystemFileArchive);
     CpuCopy(gFontPalette, fontpalFile->data, sizeof(gFontPalette));
+    ApplyUiStyleToFontPalette();
 
     if (sub_80063B0() == 1)
         ptr = &gFontPalette[0];
@@ -125,6 +128,7 @@ void ReloadFontSheet(void)
     font = (struct FontData *)(file->data);
     CpuCopy((u32 *)(VRAM + 0x4f00), font->dataArray, font->size * 32);
     CloseFile(file);
+    LoadUiStyleChromeTiles();
     InitFontPalette();
     /* Font ROM tile 0x27A is window-gap chrome on BG1. Town mode must keep it
      * transparent (UpdateFadeInTile(0)); without this, Felicity/Gulpin money

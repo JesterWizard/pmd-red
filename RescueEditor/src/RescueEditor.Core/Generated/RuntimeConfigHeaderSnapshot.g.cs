@@ -70,5 +70,6 @@ public static class RuntimeConfigHeaderSnapshot
         new("softlock_recovery", "Watchdog: soft reset to title if the main loop misses its frame wait for 300 VBlanks (hard hang); save data is kept", 57),
         new("chapter_titles", "PMD2-style chapter title cards (art fade-in + \"Chapter N\" / title) at the start of each main-story episode", 58),
         new("boss_recruit", "Postgame: defeated boss Pokémon always offer to join (story bosses, legendaries, rescue-team / maze bosses); never-recruitable species stay so", 59),
+        new("ui_style", "UI style for windows / frames: 0 = Red Rescue Team (vanilla), 1 = Explorers of Sky (dark fill, beveled frame tinted by the Windows option)", 60),
     ];
 }

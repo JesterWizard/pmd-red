@@ -3,6 +3,7 @@
 #include "game_options.h"
 #include "graphics_memory.h"
 #include "data_serializer.h"
+#include "ui_style.h"
 
 EWRAM_INIT GameOptions *gGameOptionsRef = {NULL};
 EWRAM_DATA GameOptions gGameOptions = {0};
@@ -193,6 +194,7 @@ void SetWindowBGColor(void)
     };
 
     SetFontsBaseColor(winColors[gGameOptionsRef->windowColor & NUM_WINDOW_COLORS]);
+    ApplyUiStyleToFontPalette();
 }
 
 bool8 GameOptions_ShowMiniMap(void)

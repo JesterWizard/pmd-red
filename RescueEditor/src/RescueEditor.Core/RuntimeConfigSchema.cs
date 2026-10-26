@@ -296,6 +296,9 @@ public static class RuntimeConfigSchema
             "PMD2-style chapter cards (art fade-in + chapter number and title) at the start of each main-story chapter.");
         Add("boss_recruit", RuntimeConfigFieldKind.Toggle, "Boss Recruit", "QoL / Cheats",
             "After the story, defeated bosses always offer to join (species that can never be recruited stay unrecruitable).");
+        Add("ui_style", RuntimeConfigFieldKind.U8, "UI Style", "Graphics / UI",
+            "Window and frame style: 0 = Red Rescue Team (vanilla), 1 = Explorers of Sky. The frame colour follows Options > Windows.",
+            vanilla: 0, recommended: 1, min: 0, max: 1);
 
         return meta;
     }

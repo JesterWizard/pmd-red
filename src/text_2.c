@@ -7,6 +7,7 @@
 #include "custom_graphics.h"
 #include "dungeon_vram.h"
 #include "pmd2_font.h"
+#include "ui_style.h"
 
 static void AddUnderScoreHighlightInternal(Window *windows, u32 windowId, s32 x, s32 y, s32 width, u32 color);
 static void DisplayMonPortrait(Window *windows, u16 dst[32][32], s32 winID, const u8 *compressedData, u32 palNum);
@@ -1198,20 +1199,27 @@ static bool8 xxx_update_bg_vram(Window *windows)
 
         if (window->isWinType0) {
             u32 *r2, *r1;
+            u32 bottomRows[3];
 
-            CpuCopy(window->unk28, window->winGFX, 0xD00);
-            // The reason for the casts is because we want to add 0xD00/r5 directly to pointers. Because pointers are u32, without the casts, it would multiply the value by 4.
-            r2 = (u32 *)(((u8 *)window->winGFX) + 0xD00);
-            r1 = (u32 *)(((u8 *)window->unk28) + 0xD00);
+            /* First 4 tile rows as-is (vanilla hardcoded 0xD00 for a 26-wide box;
+             * the café's 8bpp dialogue is 25 wide), then the 5th row gets the
+             * bottom frame rows. */
+            s32 topBytes = window->width * 4 * 32;
+
+            CpuCopy(window->unk28, window->winGFX, topBytes);
+            // The reason for the casts is because we want to add topBytes directly to pointers. Because pointers are u32, without the casts, it would multiply the value by 4.
+            r2 = (u32 *)(((u8 *)window->winGFX) + topBytes);
+            r1 = (u32 *)(((u8 *)window->unk28) + topBytes);
+            GetUiStyleDialogueBottomRows(bottomRows);
             for (j = 0; j < window->width; j++) {
                 *(r1++) = *(r2++);
                 *(r1++) = *(r2++);
                 *(r1++) = *(r2++);
                 *(r1++) = *(r2++);
                 *(r1++) = *(r2++);
-                *(r1++) = 0xDDDDDDDD;
-                *(r1++) = 0xEEEEEEEE;
-                *(r1++) = 0xFFFFFFFF;
+                *(r1++) = bottomRows[0];
+                *(r1++) = bottomRows[1];
+                *(r1++) = bottomRows[2];
                 r2 += 3;
             }
             window->unk38 = 0;
@@ -1446,11 +1454,14 @@ void PrepareTextbox_8008C6C(Window *windows, u32 windowId)
     else {
         s32 count = (window->width * (window->totalHeight - 1)) * 32;
         u32 *ptr = window->winGFX;
+        u32 topRows[4];
+
+        GetUiStyleDialogueTopRows(topRows);
         for (i = 0; i < window->width; i++) {
-            *(ptr++) = 0xFFFFFFFF;
-            *(ptr++) = 0xEEEEEEEE;
-            *(ptr++) = 0xDDDDDDDD;
-            *(ptr++) = 0;
+            *(ptr++) = topRows[0];
+            *(ptr++) = topRows[1];
+            *(ptr++) = topRows[2];
+            *(ptr++) = topRows[3];
             *(ptr++) = 0;
             *(ptr++) = 0;
             *(ptr++) = 0;
@@ -1463,9 +1474,12 @@ void PrepareTextbox_8008C6C(Window *windows, u32 windowId)
     }
 
     if (window->type == WINDOW_TYPE_WITH_HEADER) {
+        u8 lineTop, lineShadow;
+
+        GetUiStyleHeaderLineColors(&lineTop, &lineShadow);
         window->unk46 = TRUE;
-        AddUnderScoreHighlightInternal(windows, windowId, 0, 10, window->width * 8, 14);
-        AddUnderScoreHighlightInternal(windows, windowId, 0, 11, window->width * 8, 13);
+        AddUnderScoreHighlightInternal(windows, windowId, 0, 10, window->width * 8, lineTop);
+        AddUnderScoreHighlightInternal(windows, windowId, 0, 11, window->width * 8, lineShadow);
         window->unk46 = FALSE;
     }
 

@@ -262,4 +262,8 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("After the story, defeated bosses\nalways offer to join your team\n(if the species can be recruited)."),
       &gRuntimeConfig.boss_recruit, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+    { _("UI style"), _("UI Style"),
+      _("Window and frame style: Red Rescue\nTeam or Explorers of Sky. The frame\ncolour follows Options > Windows."),
+      &gRuntimeConfig.ui_style, CUSTOM_DEBUG_MENU_OPTION_UI_STYLE, 0,
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
 };

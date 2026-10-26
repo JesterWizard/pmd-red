@@ -440,6 +440,33 @@ call sites.
 
 ---
 
+## 2026-10-26 — UI styles: Explorers of Sky windows
+
+Docs: [`documentation/Features/UiStyles.md`](documentation/Features/UiStyles.md).
+
+### What changed
+- Runtime field `ui_style` (`UI_STYLE_RED` default, `UI_STYLE_SKY`): Sky
+  windows have an opaque dark grey fill and a beveled EoS frame tinted by
+  Options > Windows (Blue / Red → pink / Green). Palette work stays in font
+  bank 15 (slot 1 fill, 13–15 frame); 18 frame tiles from
+  `graphics/custom/ui_style/sky_chrome.png` (converted by
+  `tools/convert_ui_style_chrome.py`) are copied over the chrome sheet.
+  Dialogue corners use unused slots 0x2E4 / 0x2E5; its top / bottom edge rows
+  and the header separator follow the style.
+- Sky windows are opaque: `ToggleWindowBgBuffer` forces BG1 alpha 16/0 in
+  vanilla's translucent-window blend mode.
+- Runtime-override save record → 0x4C bytes, version 4. v1–v3 records (0x48,
+  checksum at 0x44) still load; new fields take the ROM default.
+- Debug menu **UI: Red / Sky** (applies immediately), RescueTemple schema,
+  header snapshot and test.
+- Fix (both styles): the dialogue bottom-edge copy hardcoded 0xD00 bytes (26
+  tiles wide); the café's 25-wide box drew its bottom edge 4 tiles off.
+
+### Reverse
+Set `.ui_style = UI_STYLE_RED`, or drop `src/ui_style.c` and its hooks.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -457,4 +484,5 @@ call sites.
 | Chapter title cards | On (`chapter_titles`; 10 chapters from `EVENT_M01ExxA`) |
 | Spinda's Café | On (`spinda_cafe`; Recycle Shop + tickets, dance, team tables) |
 | Postgame boss recruit | Off (`boss_recruit`) |
+| UI style | Red (`ui_style`; Sky = Explorers of Sky windows) |
 | Matching `make compare` | Not expected to match once assets diverge |
