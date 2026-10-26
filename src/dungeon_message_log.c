@@ -1,4 +1,5 @@
 #include "global.h"
+#include "custom_graphics.h"
 #include "globaldata.h"
 #include "dungeon_message_log.h"
 #include "dungeon_message.h"
@@ -207,6 +208,7 @@ static bool8 TryScrollLogUp(s32 touchScreenArrow)
 
     for (i = 0; i < 7; i++) {
         ScrollUpWindowFunc(0);
+        ScrollPokeCoinObjSprites(0, 2, 0); /* content moves down 2px */
         DungeonRunFrameActions(0xD);
     }
 
@@ -257,6 +259,7 @@ static bool8 TryScrollLogDown(s32 touchScreenArrow)
 
     for (i = 0; i < 7; i++) {
         ScrollDownWindowFunc(0);
+        ScrollPokeCoinObjSprites(0, -2, 0); /* content moves up 2px */
         DungeonRunFrameActions(0xD);
     }
 

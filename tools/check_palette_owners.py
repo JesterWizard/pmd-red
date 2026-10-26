@@ -176,12 +176,28 @@ def main() -> None:
     # Legacy BG dungeon gold slot names may remain in palette_owners.h; OBJ path
     # must not SetBGPalette them (stairs/traps share bank 12).
     if re.search(r"SetBGPaletteBufferColorArray\s*\(\s*base\s*\+\s*POKE_COIN_DUNGEON_GOLD", custom_c):
-        fail(f"{CUSTOM_C.name}: must not write dungeon BG gold slots (use floor OBJ pal)")
+        fail(f"{CUSTOM_C.name}: must not write dungeon BG gold slots (use coin OBJ pal)")
 
     if "POKE_COIN_ITEMPAT_BASE_TILE" in custom_c or re.search(
         r"0x1A0\s*\+\s*gItemParametersData\[ITEM_POKE\]", custom_c
     ):
         fail(f"{CUSTOM_C.name}: dungeon coin must use custom poke_coin tiles, not floor itempat")
+
+    # Dungeon coin OBJ palette shares OBJ bank 13 with the HP bars (slots 0–7).
+    hp_slots = d.get("DUNGEON_HP_BAR_OBJ_PAL_SLOTS")
+    if hp_slots is None:
+        fail(f"{OWNERS_H.name}: missing #define DUNGEON_HP_BAR_OBJ_PAL_SLOTS")
+    obj_slots = [
+        d["POKE_COIN_SLOT_WHITE_OBJ"],
+        d["POKE_COIN_SLOT_PALE"],
+        d["POKE_COIN_SLOT_YELLOW"],
+        d["POKE_COIN_SLOT_MID"],
+        d["POKE_COIN_SLOT_DARK_TOWN"],
+    ]
+    if len(set(obj_slots)) != 5 or min(obj_slots) < hp_slots or max(obj_slots) > 15:
+        fail(f"dungeon coin OBJ slots {obj_slots} must be 5 distinct in {hp_slots}..15")
+    if "GetItemPalette(ITEM_POKE)" in custom_c:
+        fail(f"{CUSTOM_C.name}: dungeon coin must use its own OBJ pal (floor ITEM_POKE has 3 golds)")
 
     if "POKE_COIN_OBJ_VRAM_INDEX" not in custom_c:
         fail(f"{CUSTOM_C.name}: dungeon coin OBJ VRAM upload missing POKE_COIN_OBJ_VRAM_INDEX")
@@ -229,8 +245,8 @@ def main() -> None:
     print(
         "check_palette_owners: OK — "
         f"HUD {expect_label}, HP green {expect_green}, pink ({pr},{pg},{pb})@11, "
-        f"dungeon coin OBJ (custom poke_coin.4bpp + floor pal, bank {d['POKE_COIN_PAL_BANK_DUNGEON']} slots "
-        f"{gold_slots} reserved stairs-safe)"
+        f"dungeon coin OBJ (custom poke_coin.4bpp, OBJ bank {d['DUNGEON_HP_BAR_OBJ_PAL_BANK']} slots {obj_slots}; "
+        f"BG bank {d['POKE_COIN_PAL_BANK_DUNGEON']} slots {gold_slots} reserved stairs-safe)"
     )
 
 

@@ -276,6 +276,9 @@ static void ShowWindowsInternal(const WindowTemplates *winTemplates, bool8 a1, b
     if (winTemplates == NULL)
         winTemplates = &sDummyWindows;
 
+    /* Window ids / positions change; dungeon coin sprites would float. */
+    ClearPokeCoinObjSprites();
+
     if (gGroundMap8bpp) {
         for (i = 0; i < MAX_WINDOWS; i++) {
             if (winTemplates->id[i].width != 0)
@@ -897,7 +900,6 @@ void sub_80073B8(s32 windowId)
 {
     Window *window = &gWindows[windowId];
 
-    ClearPokeCoinObjSprites();
     window->unk3C = &window->unk1C[(u32)window->unk2C / 4];
     window->unk40 = window->unk1C;
     window->unk46 = TRUE;

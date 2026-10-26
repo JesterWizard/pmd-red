@@ -9,18 +9,23 @@
 #define POKE_COIN_SIZE 16
 /* Opaque art width after convert_poke_coin.py left-align (10×10 in 16×16). */
 #define POKE_COIN_ART_WIDTH 12
+/* First opaque row: convert_poke_coin.py centers the 10px art vertically. */
+#define POKE_COIN_ART_TOP 3
+#define POKE_COIN_ART_HEIGHT 10
 
 /* Horizontal: keep ox at 0 — blitX is ceiled so the 16×16 never overlaps
  * digits; left-aligned art means the coin sits at the left of that block.
  * Large ox clips the coin (art is ~10px; ox+10 must be ≤ 16).
  *
  * Vertical: blitY is tile-snapped (y & ~7); oy = (y & 7) + context align.
- * Each UI needs its own align (dialogue bevel vs menu money row vs dungeon). */
+ * Text caps span rows y..y+7, so menu rows use art top = y - 1: the 10px coin
+ * then overhangs the caps by 1px above and below (centered), the same in the
+ * town B menu (BG blit) and the dungeon field menu (OBJ). */
 #define POKE_COIN_OX_TOWN 0
 #define POKE_COIN_OX_DUNGEON 0
 #define POKE_COIN_OY_DIALOGUE (-3) /* WINDOW_TYPE_0 speaker boxes */
-#define POKE_COIN_OY_MENU (-3)     /* rank / shop money rows */
-#define POKE_COIN_OY_DUNGEON_ALIGN (-4) /* field-menu money y=12 */
+#define POKE_COIN_OY_MENU (-1 - POKE_COIN_ART_TOP)     /* rank / shop money rows */
+#define POKE_COIN_OY_DUNGEON_ALIGN (-1 - POKE_COIN_ART_TOP) /* field-menu money */
 
 /* Half {STAR_BULLET} for move Power rows (full stars use vanilla STAR_BULLET). */
 #define POWER_STAR_HALF_CHR 0x8754
@@ -61,12 +66,21 @@ u32 GetPokeCoinPalBank(void);
 bool8 IsCustomPokeCoinChar(s32 chr);
 
 /*
- * Dungeon {POKE}: custom poke_coin.4bpp OBJ overlay, colored with the floor
- * ITEM_POKE palette (no BG bank stomping). Register while printing; Emit each
- * frame; Clear on textbox prep.
+ * Dungeon {POKE}: custom poke_coin.4bpp OBJ overlay with its own palette in
+ * OBJ bank 13 slots 8–12 (no BG bank stomping). Coins are registered in window
+ * gfx coordinates while printing and placed on screen at Emit (every frame),
+ * so they must be dropped / moved whenever their window's text is:
+ *   ClearPokeCoinObjSprites        window layout rebuilt (ShowWindows)
+ *   ClearPokeCoinObjSpritesInWindow textbox cleared (PrepareTextbox)
+ *   ClearPokeCoinObjSpritesInRect   part of a window cleared (sub_80087EC)
+ *   ScrollPokeCoinObjSprites        window gfx scrolled by dy rows; coins whose
+ *                                   art goes above clipTop are erased
  */
 void ClearPokeCoinObjSprites(void);
-void RegisterPokeCoinObjSprite(s32 screenX, s32 screenY);
+void ClearPokeCoinObjSpritesInWindow(u32 windowId);
+void ClearPokeCoinObjSpritesInRect(u32 windowId, s32 x, s32 y, s32 width, s32 height);
+void ScrollPokeCoinObjSprites(u32 windowId, s32 dy, s32 clipTop);
+void RegisterPokeCoinObjSprite(u32 windowId, s32 x, s32 artTop);
 void EmitPokeCoinObjSprites(void);
 
 #endif /* GUARD_CUSTOM_GRAPHICS_H */

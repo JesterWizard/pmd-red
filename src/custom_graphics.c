@@ -2,10 +2,8 @@
 #include "custom_graphics.h"
 #include "runtime.h"
 #include "bg_palette_buffer.h"
-#include "constants/item.h"
 #include "cpu.h"
 #include "graphics_memory.h"
-#include "items.h"
 #include "sprite.h"
 #include "structs/rgb.h"
 #include "structs/sprite_oam.h"
@@ -16,9 +14,10 @@
 /*
  * Poké coin — see include/palette_owners.h (enforced by tools/check_palette_owners.py).
  *
- * Dungeon: custom poke_coin.4bpp as OBJ (floor ITEM_POKE palette for golds —
- * not itempat art). Town: full gold on BG bank 14 (map flowers stay on 12;
- * rank badge on 13). Portrait on bank 14 → coin uses bank 13 with same golds.
+ * Dungeon: custom poke_coin.4bpp as OBJ with the town golds in OBJ bank 13
+ * slots 8–12 (HP bars use 0–7). Town: full gold on BG bank 14 (map flowers
+ * stay on 12; rank badge on 13). Portrait on bank 14 → coin uses bank 13 with
+ * same golds.
  */
 
 #define POKE_COIN_OBJ_MAX 8
@@ -27,7 +26,15 @@
 #define POKE_COIN_OBJ_TILE_COUNT 4
 #define POKE_COIN_OBJ_UPLOAD_BYTES (POKE_COIN_OBJ_TILE_COUNT * 32)
 
-static EWRAM_DATA DungeonPos sPokeCoinObjPos[POKE_COIN_OBJ_MAX] = {0};
+/* Window-relative so the coin follows its text: x = glyph x, artTop = first
+ * opaque coin row, both in the window's gfx coordinates. */
+typedef struct PokeCoinObj {
+    u8 windowId;
+    s16 x;
+    s16 artTop;
+} PokeCoinObj;
+
+static EWRAM_DATA PokeCoinObj sPokeCoinObjs[POKE_COIN_OBJ_MAX] = {0};
 static EWRAM_DATA s32 sPokeCoinObjCount = {0};
 
 static const RGB_Struct sItemPinkColor = {
@@ -310,7 +317,7 @@ u32 GetPokeCoinPalBank(void)
 
 static void LoadPokeCoinPalette(void)
 {
-    /* Dungeon coins are custom OBJ tiles + floor pal; do not touch BG bank 12. */
+    /* Dungeon coins are custom OBJ tiles + OBJ pal; do not touch BG bank 12. */
     if (gUnknown_203B40C)
         return;
 
@@ -322,34 +329,124 @@ void ClearPokeCoinObjSprites(void)
     sPokeCoinObjCount = 0;
 }
 
-void RegisterPokeCoinObjSprite(s32 screenX, s32 screenY)
+static void RemovePokeCoinObj(s32 index)
 {
+    s32 i;
+
+    sPokeCoinObjCount--;
+    for (i = index; i < sPokeCoinObjCount; i++)
+        sPokeCoinObjs[i] = sPokeCoinObjs[i + 1];
+}
+
+void RegisterPokeCoinObjSprite(u32 windowId, s32 x, s32 artTop)
+{
+    s32 i;
+
+    /* Windows that reprint every frame (field menu) must not pile up copies. */
+    for (i = 0; i < sPokeCoinObjCount; i++) {
+        if (sPokeCoinObjs[i].windowId == windowId && sPokeCoinObjs[i].x == x
+            && sPokeCoinObjs[i].artTop == artTop)
+            return;
+    }
     if (sPokeCoinObjCount >= POKE_COIN_OBJ_MAX)
-        return;
-    sPokeCoinObjPos[sPokeCoinObjCount].x = screenX;
-    sPokeCoinObjPos[sPokeCoinObjCount].y = screenY;
+        RemovePokeCoinObj(0); /* keep the newest text's coins */
+    sPokeCoinObjs[sPokeCoinObjCount].windowId = windowId;
+    sPokeCoinObjs[sPokeCoinObjCount].x = x;
+    sPokeCoinObjs[sPokeCoinObjCount].artTop = artTop;
     sPokeCoinObjCount++;
+}
+
+void ClearPokeCoinObjSpritesInWindow(u32 windowId)
+{
+    s32 i;
+
+    for (i = sPokeCoinObjCount - 1; i >= 0; i--) {
+        if (sPokeCoinObjs[i].windowId == windowId)
+            RemovePokeCoinObj(i);
+    }
+}
+
+void ClearPokeCoinObjSpritesInRect(u32 windowId, s32 x, s32 y, s32 width, s32 height)
+{
+    s32 i;
+
+    for (i = sPokeCoinObjCount - 1; i >= 0; i--) {
+        const PokeCoinObj *coin = &sPokeCoinObjs[i];
+
+        if (coin->windowId == windowId
+            && coin->x < x + width && coin->x + POKE_COIN_ART_WIDTH > x
+            && coin->artTop < y + height && coin->artTop + POKE_COIN_ART_HEIGHT > y)
+            RemovePokeCoinObj(i);
+    }
+}
+
+void ScrollPokeCoinObjSprites(u32 windowId, s32 dy, s32 clipTop)
+{
+    s32 i;
+    s32 gfxBottom = gWindows[windowId].totalHeight * 8;
+
+    for (i = sPokeCoinObjCount - 1; i >= 0; i--) {
+        PokeCoinObj *coin = &sPokeCoinObjs[i];
+
+        if (coin->windowId != windowId)
+            continue;
+        coin->artTop += dy;
+        /* Text scrolled past clipTop (or out of the gfx) is erased; so is its coin. */
+        if (coin->artTop < clipTop || coin->artTop + POKE_COIN_ART_HEIGHT > gfxBottom)
+            RemovePokeCoinObj(i);
+    }
+}
+
+/* Screen position of a coin, or FALSE while it is outside the window's visible
+ * rows (header windows keep hidden gfx rows above and below for scrolling). */
+static bool8 GetPokeCoinObjScreenPos(const PokeCoinObj *coin, s32 *screenX, s32 *screenY)
+{
+    const Window *window = &gWindows[coin->windowId];
+    s32 visTop = window->unk24 * 8;
+    s32 visBottom = (window->unk24 + window->height) * 8;
+
+    if (window->width <= 0 || window->height <= 0)
+        return FALSE;
+    if (window->type == WINDOW_TYPE_WITH_HEADER)
+        visTop += WINDOW_HEADER_HEIGHT * 8;
+    if (coin->artTop < visTop || coin->artTop + POKE_COIN_ART_HEIGHT > visBottom)
+        return FALSE;
+    if (coin->x < 0 || coin->x + POKE_COIN_ART_WIDTH > window->width * 8)
+        return FALSE;
+
+    *screenX = window->x * 8 + coin->x;
+    *screenY = window->y * 8 + coin->artTop - window->unk24 * 8 - POKE_COIN_ART_TOP;
+    return TRUE;
 }
 
 static void UnpackCoinSource(u8 out[16][16]);
 static void PackCoinBlit(u8 in[16][16]);
 
-static u8 RemapCoinPixelForFloorObj(u8 p)
+/* Golds keep their town indices; white moves off the HP-bar slots. */
+static u8 RemapCoinPixelForObj(u8 p)
 {
     if (p == POKE_COIN_SLOT_WHITE)
-        return POKE_COIN_SLOT_WHITE_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_PALE)
-        return POKE_COIN_SLOT_PALE_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_YELLOW)
-        return POKE_COIN_SLOT_YELLOW_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_MID)
-        return POKE_COIN_SLOT_MID_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_DARK_TOWN)
-        return POKE_COIN_SLOT_DARK_OBJ_FLOOR;
+        return POKE_COIN_SLOT_WHITE_OBJ;
     return p;
 }
 
-/* Town .4bpp → floor ITEM_POKE indices, then OBJ VRAM upload. */
+/* All five town tones (white + 4 golds), brightness-aware like the font. */
+static void ApplyPokeCoinObjPalette(void)
+{
+    static const u8 sSlots[] = {
+        POKE_COIN_SLOT_WHITE, POKE_COIN_SLOT_PALE, POKE_COIN_SLOT_YELLOW,
+        POKE_COIN_SLOT_MID, POKE_COIN_SLOT_DARK_TOWN,
+    };
+    s32 base = (16 + POKE_COIN_OBJ_PAL_BANK) * 16;
+    s32 i;
+
+    for (i = 0; i < (s32)ARRAY_COUNT(sSlots); i++) {
+        SetBGPaletteBufferColorRGB(base + RemapCoinPixelForObj(sSlots[i]),
+                                   &sPokeCoinTownPal[sSlots[i]], gDungeonBrightness, NULL);
+    }
+}
+
+/* Town .4bpp → coin OBJ indices, then OBJ VRAM upload. */
 static void UploadPokeCoinObjTiles(void)
 {
     u8 grid[16][16];
@@ -358,7 +455,7 @@ static void UploadPokeCoinObjTiles(void)
     UnpackCoinSource(grid);
     for (y = 0; y < 16; y++) {
         for (x = 0; x < 16; x++)
-            grid[y][x] = RemapCoinPixelForFloorObj(grid[y][x]);
+            grid[y][x] = RemapCoinPixelForObj(grid[y][x]);
     }
     PackCoinBlit(grid);
     CpuCopy((void *)(OBJ_VRAM0 + POKE_COIN_OBJ_VRAM_INDEX * 32),
@@ -368,27 +465,30 @@ static void UploadPokeCoinObjTiles(void)
 void EmitPokeCoinObjSprites(void)
 {
     s32 i;
-    s32 palNum;
     SpriteOAM sprite;
 
     if (!gRuntimeConfig.custom_graphics || !gUnknown_203B40C || sPokeCoinObjCount <= 0)
         return;
 
     UploadPokeCoinObjTiles();
-    palNum = GetItemPalette(ITEM_POKE);
+    ApplyPokeCoinObjPalette();
 
     for (i = 0; i < sPokeCoinObjCount; i++) {
+        s32 screenX, screenY;
+
+        if (!GetPokeCoinObjScreenPos(&sPokeCoinObjs[i], &screenX, &screenY))
+            continue;
         sprite.attrib1 = 0;
         sprite.attrib2 = 0;
         sprite.attrib3 = 0;
         sprite.unk6 = 0;
         SpriteSetShape(&sprite, 0); /* square */
         SpriteSetSize(&sprite, 1);  /* 16×16 */
-        SpriteSetY(&sprite, sPokeCoinObjPos[i].y);
-        SpriteSetX(&sprite, sPokeCoinObjPos[i].x);
+        SpriteSetY(&sprite, screenY);
+        SpriteSetX(&sprite, screenX);
         SpriteSetTileNum(&sprite, POKE_COIN_OBJ_VRAM_INDEX);
         SpriteSetPriority(&sprite, 0); /* above dialogue BG */
-        SpriteSetPalNum(&sprite, palNum);
+        SpriteSetPalNum(&sprite, POKE_COIN_OBJ_PAL_BANK);
         AddSprite(&sprite, 0x100, NULL, NULL);
     }
 }

@@ -6,6 +6,7 @@
 #include "dungeon_util.h"
 #include "dungeon_vram.h"
 #include "graphics_memory.h"
+#include "palette_owners.h"
 #include "runtime.h"
 #include "sprite.h"
 #include "structs/dungeon_entity.h"
@@ -20,14 +21,15 @@
  * and type-1/2 move effects (base 0x248). Type-3 effects use 0x370+ and must
  * not be overlapped — an earlier 0x380 placement corrupted attack graphics.
  *
- * Palette: OBJ bank 13 (monster pals 0–12, effects 14, UI/minimap 15).
+ * Palette: OBJ bank 13 slots 0–7 (monster pals 0–12, effects 14, UI/minimap 15).
+ * Slots 8–15 belong to the dungeon Poké coin (see palette_owners.h).
  */
 
 #define HP_BAR_ART_FRAMES 12 /* frames in graphics/custom/hp_bars.png */
 #define HP_BAR_FRAMES 11    /* uploaded frames; full-HP art frame skipped */
 #define HP_BAR_TILES_PER_FRAME 2
 #define HP_BAR_VRAM_INDEX 0x232
-#define HP_BAR_OBJ_PAL 13
+#define HP_BAR_OBJ_PAL DUNGEON_HP_BAR_OBJ_PAL_BANK
 #define HP_BAR_PAL_INDEX_BASE ((16 + HP_BAR_OBJ_PAL) * 16) /* 464 */
 #define HP_BAR_ART_FIRST_FRAME 1 /* skip full bar; hidden when HP is full anyway */
 #define HP_BAR_UPLOAD_BYTES (HP_BAR_FRAMES * HP_BAR_TILES_PER_FRAME * 32)
@@ -48,7 +50,7 @@ enum {
     HP_BAR_COL_RED,
 };
 
-static const RGB_Struct sHpBarPalette[16] = {
+static const RGB_Struct sHpBarPalette[DUNGEON_HP_BAR_OBJ_PAL_SLOTS] = {
     [HP_BAR_COL_TRANSPARENT] = {   0,   0,   0, 0x80 },
     [HP_BAR_COL_BORDER] = {  56,  56,  56, 0x80 },
     [HP_BAR_COL_EMPTY] = {  80,  88, 144, 0x80 },
@@ -81,7 +83,7 @@ void ApplyDungeonHpBarPalette(void)
     if (!gRuntimeConfig.dungeon_hp_bars)
         return;
 
-    for (i = 0; i < 16; i++) {
+    for (i = 0; i < DUNGEON_HP_BAR_OBJ_PAL_SLOTS; i++) {
         SetBGPaletteBufferColorRGB(HP_BAR_PAL_INDEX_BASE + i, &sHpBarPalette[i],
                                    gDungeonBrightness, gDungeon->colorRamp);
     }
