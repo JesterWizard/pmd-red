@@ -27,6 +27,9 @@ void GetUiStyleDialogueTopRows(u32 rows[4]);
 void GetUiStyleDialogueBottomRows(u32 rows[3]);
 /* Dialogue (WINDOW_TYPE_0) left corner tilemap entries; flip H for the right. */
 u16 GetUiStyleDialogueCornerTile(bool8 bottom);
+/* Swap flipped left-hand frame pieces for the Sky right-hand tiles inside
+ * [x0..x1] x [y0..y1] of a BG0 tilemap (no-op in Red style). */
+void RemapUiStyleFrameTiles(u16 tilemap[32][32], s32 x0, s32 y0, s32 x1, s32 y1);
 /* Sky windows are opaque: TRUE when the window layer (BG1) is the only
  * first blend target, i.e. vanilla's translucent window mode. */
 bool8 UiStyleWantsOpaqueWindows(u16 bldCnt);

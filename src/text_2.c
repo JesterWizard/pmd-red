@@ -1297,7 +1297,8 @@ void DrawWindowBg(const WindowTemplate *window, DungeonPos *pos)
             }
         }
     }
-    else if (window->type == WINDOW_TYPE_WITH_HEADER) {
+    /* Sky header windows are one plain box: use the normal window rectangle. */
+    else if (window->type == WINDOW_TYPE_WITH_HEADER && !UiStyleIsSky()) {
         s32 i;
         s32 xStart = ((window->pos.x + pos->x) * 8) - 5;
         s32 yStart = ((window->pos.y + pos->y) * 8) - 4;

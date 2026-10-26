@@ -131,6 +131,7 @@ static void PutWindowFillTilemap(Window *window, s32 x, s32 y, s32 a3, u16 tilem
 static void PutWindowRightBorderTilemap(Window *window, s32 x, s32 y, s32 a3, u16 tilemaps[4][32][32]);
 static void PutWindowBottomBorderTilemap(Window *window, s32 y, u16 tilemaps[4][32][32], bool8 a3);
 static void PutHeaderWindowTopBorderTilemap(Window *window, s32 y, u32 a2, const WindowHeader *winHeader, u16 tilemaps[4][32][32]);
+static void PutSkyHeaderWindowTopBorderTilemap(Window *window, s32 y, u32 a2, u16 tilemaps[4][32][32]);
 
 // arm9.bin::02005448
 void LoadCharmaps(void)
@@ -454,6 +455,7 @@ static void AddWindow(Window *windows, u32 *vram, u32 *gfxPool, u16 tilemaps[4][
             workingY++;
         }
         PutWindowBottomBorderTilemap(newWindow, workingY, tilemaps, a9);
+        RemapUiStyleFrameTiles(tilemaps[0], x - 1, y - 1, x + newWindow->width, y + newWindow->height);
     }
 
     if (!(winTemplate->flags & WINTEMPLATE_FLAG_x80))
@@ -732,6 +734,39 @@ static void PutWindowBottomBorderTilemap(Window *window, s32 y, u16 tilemaps[4][
     }
 }
 
+/* Explorers of Sky titled window: one box with the title rows inside and the
+ * separator line (drawn into the window graphics) as the only divider — no tabs. */
+static void PutSkyHeaderWindowTopBorderTilemap(Window *window, s32 y, u32 a2, u16 tilemaps[4][32][32])
+{
+    s32 x = window->x - 1;
+    s32 row, i;
+
+    tilemaps[0][y][x] = TILEMAP_TILE_NUM(0x2D8) | TILEMAP_PAL(15);
+    tilemaps[1][y][x] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
+    for (i = 0; i < window->width; i++) {
+        tilemaps[0][y][x + 1 + i] = TILEMAP_TILE_NUM(0x2D9) | TILEMAP_PAL(15);
+        tilemaps[1][y][x + 1 + i] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
+    }
+    tilemaps[0][y][x + 1 + window->width] = TILEMAP_TILE_NUM(0x2D8) | TILEMAP_PAL(15) | TILEMAP_FLIP_HORIZONTAL(1);
+    tilemaps[1][y][x + 1 + window->width] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
+
+    /* The two header graphics rows span the full width (title + separator). */
+    for (row = 0; row < WINDOW_HEADER_HEIGHT; row++) {
+        s32 ty = y + 1 + row;
+
+        tilemaps[0][ty][x] = TILEMAP_TILE_NUM(0x2DA) | TILEMAP_PAL(15);
+        tilemaps[1][ty][x] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
+        for (i = 0; i < window->width; i++) {
+            u32 tile = a2 ? a2 + row * window->width + i : 0x278;
+
+            tilemaps[0][ty][x + 1 + i] = TILEMAP_TILE_NUM(tile) | TILEMAP_PAL(15);
+            tilemaps[1][ty][x + 1 + i] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
+        }
+        tilemaps[0][ty][x + 1 + window->width] = TILEMAP_TILE_NUM(0x2DA) | TILEMAP_PAL(15) | TILEMAP_FLIP_HORIZONTAL(1);
+        tilemaps[1][ty][x + 1 + window->width] = TILEMAP_TILE_NUM(0x2DB) | TILEMAP_PAL(15);
+    }
+}
+
 // arm9.bin::02004054
 static void PutHeaderWindowTopBorderTilemap(Window *window, s32 y, u32 a2, const WindowHeader *winHeader, u16 tilemaps[4][32][32])
 {
@@ -748,6 +783,11 @@ static void PutHeaderWindowTopBorderTilemap(Window *window, s32 y, u32 a2, const
         return;
     if (y < 0)
         return;
+
+    if (UiStyleIsSky()) {
+        PutSkyHeaderWindowTopBorderTilemap(window, y, a2, tilemaps);
+        return;
+    }
 
     tilemaps[0][y  ][x] = TILEMAP_TILE_NUM(0x278) | TILEMAP_PAL(15);
     tilemaps[1][y  ][x] = TILEMAP_TILE_NUM(0x27A) | TILEMAP_PAL(15);

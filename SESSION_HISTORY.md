@@ -461,6 +461,11 @@ Docs: [`documentation/Features/UiStyles.md`](documentation/Features/UiStyles.md)
   header snapshot and test.
 - Fix (both styles): the dialogue bottom-edge copy hardcoded 0xD00 bytes (26
   tiles wide); the café's 25-wide box drew its bottom edge 4 tiles off.
+- Sky follow-up (side-by-side with EoS): four frame tones (slot 9 joins
+  13–15) with EoS's top-left lighting; separate right edge / right corners
+  (slots 0x2FC–0x2FF, 0x2E6) remapped in `AddWindow`; titled windows become
+  one box with a full-width separator instead of tabs; yellow EoS menu cursor
+  (OBJ tile 0x3F4); name colour slot 14 kept light; pink / blue re-sampled.
 
 ### Reverse
 Set `.ui_style = UI_STYLE_RED`, or drop `src/ui_style.c` and its hooks.

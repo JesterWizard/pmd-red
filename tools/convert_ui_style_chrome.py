@@ -2,8 +2,8 @@
 """Convert graphics/custom/ui_style/sky_chrome.png into src/data/ui_style_sky_chrome.h.
 
 The PNG is an indexed strip of 8x8 tiles whose pixel values are font bank-15
-palette slots (0 = transparent, 1 = window fill, 13/14/15 = frame dark / mid /
-light). Each tile replaces one or more font chrome tiles when ui_style is Sky.
+palette slots (0 = transparent, 13 = dark line, 9 = inner mid, 14 = outer /
+light mid, 15 = light band). Each tile replaces one or more font chrome tiles when ui_style is Sky.
 
 Run after editing the PNG:  python3 tools/convert_ui_style_chrome.py
 """
@@ -36,6 +36,14 @@ TILES = [
     ("header_tab_b", (0x2E3,)),
     ("header_tab_corner", (0x297,)),   # also the WINDOW_TYPE_7 portrait top edge
     ("header_tab_side", (0x2EF,)),
+    # Right-hand pieces: EoS shades the right edge differently (dark outer
+    # line), so these are not flips of the left ones. Slots vanilla leaves
+    # empty / never draws; text_1.c remaps the flipped vanilla entries to them.
+    ("right", (0x2FC,)),
+    ("corner_top_right", (0x2FD,)),
+    ("corner_bottom_right", (0x2FE,)),
+    ("dialogue_top_right", (0x2FF,)),
+    ("dialogue_bottom_right", (0x2E6,)),
 ]
 
 
