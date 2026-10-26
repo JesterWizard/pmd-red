@@ -17,6 +17,8 @@
 
 Divides the main story into ten chapters and opens each one PMD2-style: the screen fades in on a background picture, then **Chapter N** and the chapter title fade in over it, hold for a few seconds, and everything fades out into the chapter's first scene.
 
+![Chapter 1 title card: art fades in, the title blends in over it, then everything fades into the first scene](images/chapter_titles.gif)
+
 Toggle: `gRuntimeConfig.chapter_titles` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). It can also be switched from the in-game debug menu (**Chapters**, applies from the next chapter start) and in RescueTemple (**Chapter Titles**, Graphics / UI).
 
 ---
@@ -37,6 +39,8 @@ The chapters follow the game's own story episodes. Its main-story event scripts 
 | 8 | The Frozen North | E08A, E08B | 13–14 | Frosty Forest, Mt. Freeze | Ice Floe Beach |
 | 9 | Heart of the Volcano | E09A | 15 | Magma Cavern | Crater |
 | 10 | Toward the Sky | E10A | 16 | Sky Tower | Stratos Lookout |
+
+![All ten chapter cards](images/chapter_titles_all.png)
 
 Chapter 1 appears after the personality test, just before the "Where am I…?" wake-up scene. The ending (`EVENT_M01END`) and the postgame have no card.
 
