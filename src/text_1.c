@@ -284,7 +284,7 @@ static void ShowWindowsInternal(const WindowTemplates *winTemplates, bool8 a1, b
             if (winTemplates->id[i].width != 0)
                 neededTiles += winTemplates->id[i].width * winTemplates->id[i].totalHeight;
         }
-        SetGroundMap8bppWideUi(neededTiles > 256);
+        SetGroundMap8bppWideUi(neededTiles + gGroundMap8bppUiReserveTiles > 256);
         startTileNum = gGroundMap8bppWideUi ? 2 : 128;
         /* Transparent art under menu rects — frees those streamer tiles; UI covers the hole. */
         if (gGroundMap8bppWideUi) {

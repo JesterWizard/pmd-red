@@ -35,7 +35,8 @@ typedef struct DungeonDataEntry
 
 extern const DungeonDataEntry gDungeons[];
 extern const u8 gInvalidDungeonIDs[11];
-extern const u8 gInvalidItemIDs[16];
+#define INVALID_ITEM_IDS_COUNT 21
+extern const u8 gInvalidItemIDs[INVALID_ITEM_IDS_COUNT];
 extern const bool8 gTacticsTargetLeader[NUM_TACTICS];
 extern const s16 gReqTacticLvls[NUM_TACTICS];
 extern const s32 gReqIQSkillPts[NUM_IQ_SKILLS];

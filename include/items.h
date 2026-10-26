@@ -89,6 +89,7 @@ u32 GetMoneyValue(Item* slot);
 u16 GetItemMoveID(u8 index);
 bool8 IsShoppableItem(u32 id);
 bool8 IsGummiItem(u8);
+u8 GetBestGummiIndexForTypes(u8 type0, u8 type1);
 void ShiftItemsDownFrom(s32 start);
 void ClearItemSlotAt(u32 index);
 void MoveToStorage(Item *slot);

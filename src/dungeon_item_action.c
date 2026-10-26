@@ -290,6 +290,13 @@ void sub_80479B8(bool8 param_1, bool8 param_2, u8 param_3, Entity *pokemon, Enti
             case ITEM_SILVER_GUMMI:
                 HandleGummiItemAction(pokemon,target,0x11);
                 break;
+            case ITEM_WONDER_GUMMI: {
+                EntityInfo *eaterInfo = GetEntInfo(target);
+
+                HandleGummiItemAction(pokemon, target,
+                    GetBestGummiIndexForTypes(eaterInfo->types[0], eaterInfo->types[1]));
+                break;
+            }
             case ITEM_APPLE:
             case ITEM_BANANA:
                 sub_80487CC(pokemon,target,0x32,5);

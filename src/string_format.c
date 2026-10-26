@@ -55,6 +55,7 @@ static const WindowTemplate sOnlyTextDialogueBoxWindowTemplate = {
     .header = NULL,
 };
 
+static void GetDialogueMenuSize(const MenuItem *menuItem, s32 *width, s32 *height);
 static void sub_8014A88(void);
 static bool8 sub_8014B94(void);
 static void nullsub_35(void);
@@ -157,6 +158,7 @@ enum
 void ResetDialogueBox(void)
 {
     SetPokeCoinTownPortraitBankInUse(FALSE);
+    gGroundMap8bppUiReserveTiles = 0;
     sPrintStringState = STATE_FINISHED;
     sAutoPressNewTextboxFrames = 60;
     sAutoPressMidTextboxFrames = 60;
@@ -254,6 +256,13 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
 
     sDialogueBoxWinTemplates.id[2] = sWinTemplateDummy;
     sDialogueBoxWinTemplates.id[3] = sWinTemplateDummy;
+    gGroundMap8bppUiReserveTiles = 0;
+    if (gGroundMap8bpp && menuItems != NULL) {
+        s32 menuWidth, menuHeight;
+
+        GetDialogueMenuSize(menuItems, &menuWidth, &menuHeight);
+        gGroundMap8bppUiReserveTiles = menuWidth * menuHeight;
+    }
     ResetUnusedInputStruct();
     ShowWindows(&sDialogueBoxWinTemplates, TRUE, TRUE);
     sTextPrintStruct.x = 4;
@@ -298,6 +307,7 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
 void sub_8014490(void)
 {
     SetPokeCoinTownPortraitBankInUse(FALSE);
+    gGroundMap8bppUiReserveTiles = 0;
     sPrintStringState = STATE_FINISHED;
     gUnknown_202EC1C = 0;
 }
@@ -588,11 +598,10 @@ void DrawDialogueBoxString_Async(void)
     }
 }
 
-static void sub_8014A88(void)
+/* Menu window size in tiles for the dialogue's menu items. */
+static void GetDialogueMenuSize(const MenuItem *menuItem, s32 *width, s32 *height)
 {
-    s32 r2, r1;
     u8 text[256];
-    const MenuItem *menuItem = sDialogueMenuItems;
     s32 r5 = 0;
     s32 r7 = 0;
     s32 i;
@@ -625,13 +634,19 @@ static void sub_8014A88(void)
         }
     }
 
-    r2 = r5 / 8;
+    *height = r5 / 8;
     if (r5 % 8)
-        r2++;
+        (*height)++;
+    *width = r7 / 8 + 2;
+}
 
+static void sub_8014A88(void)
+{
+    s32 r2, r1;
+
+    gGroundMap8bppUiReserveTiles = 0; /* the menu is in the templates now */
+    GetDialogueMenuSize(sDialogueMenuItems, &r1, &r2);
     sDialogueBoxWinTemplates.id[2].type = gUnknown_202EC10;
-    r1 = r7 / 8;
-    r1 += 2;
     sDialogueBoxWinTemplates.id[2].width = r1;
     sDialogueBoxWinTemplates.id[2].totalHeight = r2;
     sDialogueBoxWinTemplates.id[2].height = r2;

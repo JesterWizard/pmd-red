@@ -27,7 +27,7 @@ const u8 gInvalidDungeonIDs[11] =
 };
 
 // NDS=020C3448
-const u8 gInvalidItemIDs[16] =
+const u8 gInvalidItemIDs[INVALID_ITEM_IDS_COUNT] =
 {
     ITEM_G_MACHINE_6,
     ITEM_G_MACHINE_7,
@@ -44,6 +44,12 @@ const u8 gInvalidItemIDs[16] =
     ITEM_RING_F,
     ITEM_OBSERVER_ORB,
     ITEM_BEATUP_ORB,
+    /* Recycle Shop exclusives: never job targets / rewards / password items. */
+    ITEM_PRIZE_TICKET,
+    ITEM_SILVER_TICKET,
+    ITEM_GOLD_TICKET,
+    ITEM_PRISM_TICKET,
+    ITEM_WONDER_GUMMI,
     NUMBER_OF_ITEM_IDS
 };
 

@@ -1,6 +1,7 @@
 #include "global.h"
 #include "globaldata.h"
 #include "ground_lives.h"
+#include "constants/ground_map.h"
 #include "ground_script.h"
 #include "ground_sprite.h"
 #include "ground_event.h"
@@ -374,6 +375,17 @@ UNUSED static s16 sub_80A7B40(s32 a0_)
     return -1;
 }
 
+/* Lives kinds 10–13: team members besides the leader (vanilla adds the
+ * partner after QUEST_CAN_DEPOSIT_PARTNER). Spinda's Café seats always leave the
+ * partner out — the partner follows the leader in there. */
+static s32 GetTeamSlotMembers(s32 *indices)
+{
+    if (CheckQuest(QUEST_CAN_DEPOSIT_PARTNER)
+        && GetScriptVarValue(NULL, GROUND_MAP) != MAP_SPINDA_CAFE)
+        return sub_808D6A4(indices);
+    return sub_808D654(indices);
+}
+
 static s32 sub_80A7B94(s16 *a0)
 {
     s32 id = *a0;
@@ -485,12 +497,7 @@ static s32 sub_80A7B94(s16 *a0)
                 return -1;
             }
 
-            if (CheckQuest(QUEST_CAN_DEPOSIT_PARTNER)) {
-                val = sub_808D6A4(sp);
-            }
-            else {
-                val = sub_808D654(sp);
-            }
+            val = GetTeamSlotMembers(sp);
 
             if (id < val) {
                 return -1;
@@ -561,12 +568,7 @@ s32 sub_80A7DDC(s16 *a0, s16 *speciesDst)
                 return -1;
             }
 
-            if (CheckQuest(QUEST_CAN_DEPOSIT_PARTNER)) {
-                val = sub_808D6A4(sp);
-            }
-            else {
-                val = sub_808D654(sp);
-            }
+            val = GetTeamSlotMembers(sp);
 
             if (id < val) {
                 Pokemon *monStrPtr = &gRecruitedPokemonRef->pokemon[sp[id]];

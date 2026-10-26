@@ -1,3 +1,28 @@
+.global ItemNamePrizeTicket
+ItemNamePrizeTicket:
+.string "Prize Ticket\0"
+.align 2,0
+
+.global ItemNameSilverTicket
+ItemNameSilverTicket:
+.string "Silver Ticket\0"
+.align 2,0
+
+.global ItemNameGoldTicket
+ItemNameGoldTicket:
+.string "Gold Ticket\0"
+.align 2,0
+
+.global ItemNamePrismTicket
+ItemNamePrismTicket:
+.string "Prism Ticket\0"
+.align 2,0
+
+.global ItemNameWonderGummi
+ItemNameWonderGummi:
+.string "Wonder Gummi\0"
+.align 2,0
+
 .global ItemNameGMachine8
 ItemNameGMachine8:
 .string "G Machine 8\0"

@@ -44,6 +44,10 @@ void sub_800CD64(s32, bool8);
 void SetTitleBg8bpp(bool8 enabled);
 void SetGroundMap8bpp(bool8 enabled);
 void SetGroundMap8bppWideUi(bool8 enabled);
+/* Window tiles a pending dialogue menu will add (café only). Counted by
+ * ShowWindows so the dialogue opens in wide UI already instead of switching
+ * when the menu appears, which would move (and wipe) the drawn text. */
+extern s32 gGroundMap8bppUiReserveTiles;
 bool8 GroundMap8bppHideBg0(void);
 void ClearTitleBgMapsForGround(void);
 void ClearGroundMap8bppMaps(void);

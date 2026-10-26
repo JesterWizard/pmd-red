@@ -1074,7 +1074,9 @@ void GetGummiItemStatBoost(Pokemon* pokemon, u8 id, bool8 checkBoostFlags, Gummi
   if (result) {
     u8 pokemon_type_0 = GetPokemonType(pokemon->speciesNum, 0);
     u8 pokemon_type_1 = GetPokemonType(pokemon->speciesNum, 1);
-    u32 gummi_index = id - ITEM_WHITE_GUMMI + 1;
+    u32 gummi_index = (id == ITEM_WONDER_GUMMI)
+        ? GetBestGummiIndexForTypes(pokemon_type_0, pokemon_type_1)
+        : id - ITEM_WHITE_GUMMI + 1;
     s32 value0;
     s32 value1;
     s32 diff;
@@ -1157,8 +1159,28 @@ void GetGummiItemStatBoost(Pokemon* pokemon, u8 id, bool8 checkBoostFlags, Gummi
 }
 
 // arm9.bin::0205FC10
+/* Wonder Gummi acts as whichever gummi the eater's types like best. */
+u8 GetBestGummiIndexForTypes(u8 type0, u8 type1)
+{
+    s32 i;
+    u8 best = 1;
+    s32 bestBoost = gTypeGummiIQBoost[type0][1] + gTypeGummiIQBoost[type1][1];
+
+    for (i = 2; i < NUMBER_OF_GUMMIS; i++) {
+        s32 boost = gTypeGummiIQBoost[type0][i] + gTypeGummiIQBoost[type1][i];
+
+        if (boost > bestBoost) {
+            bestBoost = boost;
+            best = i;
+        }
+    }
+    return best;
+}
+
 bool8 IsGummiItem(u8 id)
 {
+    if (id == ITEM_WONDER_GUMMI)
+        return TRUE;
     if (id < ITEM_WHITE_GUMMI)
         return FALSE;
     if (id > ITEM_SILVER_GUMMI)
@@ -1591,7 +1613,7 @@ u8 GetRandomItemForSet(s32 setId, s32 rndValCategory, s32 rndValItem)
         if (ptr[arrId] >= ITEM_SETS_SKIP_NUMBER) {
             s32 a = ptr[arrId] - ITEM_SETS_SKIP_NUMBER;
 
-            while (a != 0) {
+            while (a != 0 && id < NUM_ITEM_CATEGORIES + NUMBER_OF_ITEM_IDS) {
                 rawArray[id++] = 0;
                 a--;
             }

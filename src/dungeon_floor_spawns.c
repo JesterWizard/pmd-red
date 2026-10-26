@@ -129,7 +129,8 @@ void SetFloorItemMonsterSpawns(void)
 
         for (j = 0; j < NUM_ITEM_CATEGORIES + NUMBER_OF_ITEM_IDS; ) {
             if (src[arrId] >= ITEM_SETS_SKIP_NUMBER) {
-                for (k = src[arrId] - ITEM_SETS_SKIP_NUMBER; k != 0; k--) {
+                /* Clamp: a set encoded for a different item count must not overrun spArray. */
+                for (k = src[arrId] - ITEM_SETS_SKIP_NUMBER; k != 0 && j < NUM_ITEM_CATEGORIES + NUMBER_OF_ITEM_IDS; k--) {
                     spArray[j++] = 0;
                 }
             }

@@ -1926,6 +1926,14 @@ static bool8 sub_809B648(void)
             sTextbox->unk430 = -1;
             return 0;
         }
+        case SPECIAL_TEXT_SPINDA_JUICE_SERVE:
+            ResetTextbox();
+            if (CreateSpindaJuiceServe()) {
+                sTextbox->unk418 = &gSpindaJuiceBarHandlers;
+                return 1;
+            }
+            sTextbox->unk430 = -1;
+            return 0;
         case SPECIAL_TEXT_RECYCLE_SHOP: {
             u32 mode = CheckQuest(QUEST_SQUARE_ASLEEP) ? 1 : 0;
 
