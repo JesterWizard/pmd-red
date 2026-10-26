@@ -19,6 +19,7 @@
 #include "ground_main.h"
 #include "runtime.h"
 #include "script_vars_info.h"
+#include "chapter_titles.h"
 #include "thought_bubble.h"
 #include "training_maze.h"
 
@@ -478,8 +479,10 @@ void ScenarioCalc(s16 param_1,s32 param_2,s32 param_3)
   SetScriptVarArrayValue(NULL,param_1_s32,0,param_2);
   SetScriptVarArrayValue(NULL,param_1_s32,1,param_3);
   /* Track latest SCENARIO_MAIN for overworld thought-bubble art selection. */
-  if (param_1_s32 == SCENARIO_MAIN)
+  if (param_1_s32 == SCENARIO_MAIN) {
     ThoughtBubble_NotifyScenarioMain(param_2, param_3);
+    ChapterTitles_NotifyScenarioMain(local_18, local_14, param_2, param_3);
+  }
 
   switch(param_1_s32)
   {

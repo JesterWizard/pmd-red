@@ -292,6 +292,8 @@ public static class RuntimeConfigSchema
             "Ground overworld: L toggles a thought-bubble sprite above the player.");
         Add("softlock_recovery", RuntimeConfigFieldKind.Toggle, "Softlock Recovery", "QoL / Cheats",
             "Soft reset to the title screen if the game hangs for 300 frames (save data kept).");
+        Add("chapter_titles", RuntimeConfigFieldKind.Toggle, "Chapter Titles", "Graphics / UI",
+            "PMD2-style chapter cards (art fade-in + chapter number and title) at the start of each main-story chapter.");
 
         return meta;
     }

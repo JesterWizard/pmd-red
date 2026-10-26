@@ -46,3 +46,4 @@ Options applied on the next relevant re-entry or transition are:
 - `Team ACT` and `All Dojo`: next Dojo entry.
 - `Living Sq`: after leaving and re-entering Pokémon Square.
 - `Party of 4`: next dungeon entry.
+- `Chapters`: next story chapter start.

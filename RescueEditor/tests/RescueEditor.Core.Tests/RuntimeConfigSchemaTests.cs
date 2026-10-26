@@ -87,6 +87,16 @@ public sealed class RuntimeConfigSchemaTests
     }
 
     [Fact]
+    public void ChapterTitlesHasCuratedMetadata()
+    {
+        var field = RuntimeConfigSchema.Find("chapter_titles");
+        Assert.NotNull(field);
+        Assert.Equal(RuntimeConfigFieldKind.Toggle, field!.Kind);
+        Assert.Equal("Chapter Titles", field.DisplayName);
+        Assert.Equal("Graphics / UI", field.Group);
+    }
+
+    [Fact]
     public void CompareToSchemaDetectsDrift()
     {
         var header = RuntimeConfigHeaderParser.Parse("""

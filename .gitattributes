@@ -21,6 +21,11 @@ Makefile text eol=lf
 
 *.png binary
 *.bin binary
+# Raw RGBX palettes written by the art converters (not JASC-PAL text):
+# eol conversion would insert 0x0D before every 0x0A byte on checkout.
+graphics/custom/backgrounds/*.pal binary
+graphics/portraits/**/*.pal binary
+graphics/title_screen_backgrounds/*.pal binary
 
 *.h linguist-language=C
 *.inc linguist-language=Assembly
