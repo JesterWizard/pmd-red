@@ -45,12 +45,12 @@ struct AchievementsData
     /* 0x10 */ u32 enemiesDefeated;
     /* 0x14 */ u32 criticalHits;
     /* 0x18 */ u32 dungeonVisited[4];
-    /* 0x28 */ u8 itemsEverGot[30];
-    /* 0x46 */ u8 runFlags;
-    /* 0x47 */ u8 popupQueue[ACH_POPUP_QUEUE_SIZE];
-    /* 0x53 */ u8 popupCount;
-    /* 0x54 */ u16 pendingUnlocks; /* bit per ACH_* deferred during boss fight */
-    /* 0x56 */ u8 fill56[0x1A];
+    /* 0x28 */ u8 itemsEverGot[32]; /* bit per item ID: covers every u8 ID */
+    /* 0x48 */ u8 runFlags;
+    /* 0x49 */ u8 popupQueue[ACH_POPUP_QUEUE_SIZE];
+    /* 0x55 */ u8 popupCount;
+    /* 0x56 */ u16 pendingUnlocks; /* bit per ACH_* deferred during boss fight */
+    /* 0x58 */ u8 fill58[0x18];
 };
 
 extern struct AchievementsData gAchievementsData;

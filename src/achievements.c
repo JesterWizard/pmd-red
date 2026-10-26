@@ -573,6 +573,10 @@ void NoteAchievementDungeonVisited(u8 dungeonId)
     EvaluateAchievements();
 }
 
+_Static_assert(sizeof(struct AchievementsData) == ACHIEVEMENTS_DATA_SIZE, "AchievementsData layout");
+_Static_assert(NUMBER_OF_ITEM_IDS <= sizeof(((struct AchievementsData *)0)->itemsEverGot) * 8,
+               "itemsEverGot needs a bit per item ID");
+
 void NoteAchievementItemObtained(u8 itemId)
 {
     if (!gRuntimeConfig.achievements)
@@ -597,7 +601,7 @@ u32 SaveAchievementsData(u8 *buffer, u32 bufLen)
     WriteBits(&seri, &gAchievementsData.criticalHits, 32);
     for (i = 0; i < 4; i++)
         WriteBits(&seri, &gAchievementsData.dungeonVisited[i], 32);
-    for (i = 0; i < 30; i++)
+    for (i = 0; i < (s32)ARRAY_COUNT(gAchievementsData.itemsEverGot); i++)
         WriteBits(&seri, &gAchievementsData.itemsEverGot[i], 8);
     FinishBitSerializer(&seri);
     return seri.count;
@@ -618,7 +622,9 @@ u32 RestoreAchievementsData(u8 *buffer, u32 bufLen)
     ReadBits(&seri, &gAchievementsData.criticalHits, 32);
     for (i = 0; i < 4; i++)
         ReadBits(&seri, &gAchievementsData.dungeonVisited[i], 32);
-    for (i = 0; i < 30; i++)
+    /* Saves from before the custom items wrote 30 bytes here; the chunk is
+     * zero-filled past them, so the last two bytes read back as 0. */
+    for (i = 0; i < (s32)ARRAY_COUNT(gAchievementsData.itemsEverGot); i++)
         ReadBits(&seri, &gAchievementsData.itemsEverGot[i], 8);
     FinishBitSerializer(&seri);
     return seri.count;
