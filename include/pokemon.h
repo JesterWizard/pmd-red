@@ -99,6 +99,8 @@ s16 GetInternalNo(s16 index);
 s32 CalculateEXPGain(s16 index, s32 level);
 s16 GetPokemonEvolveConditions(s16 index, unkEvolve *r1);
 u8 GetPokemonOverworldPalette(s16 index, bool32 recolorShopKecleon);
+// TRUE if custom portraits are on and the species' custom portrait has this emotion.
+bool8 CustomPortraitHasEmotion(s16 id, s32 spriteId);
 OpenedFile *OpenPokemonDialogueSpriteFile(s16 index, s32 spriteId);
 OpenedFile *GetDialogueSpriteDataPtr(s32 index);
 OpenedFile *GetDialogueSpriteDataPtrForEmotion(s32 index, s32 spriteId);
