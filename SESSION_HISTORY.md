@@ -418,6 +418,28 @@ Revert the branch. Removing the items requires dropping IDs 240–244 from
 
 ---
 
+## 2026-10-26 — Postgame boss recruit toggle
+
+Docs: [`documentation/Features/BossRecruit.md`](documentation/Features/BossRecruit.md).
+
+### What changed
+- Runtime toggle `boss_recruit` (default off): after `QUEST_CAN_CHANGE_LEADER`,
+  a defeated boss (`bossFlag` or a boss `monsterBehavior`) always offers to
+  join. For those bosses any teammate's KO counts, distance / sight checks are
+  skipped, and a full team gets the Send Home choice even with
+  `pmd2_send_home` off. Recruit rate −999, Latias / Latios and the
+  legendary-once rule are unchanged.
+- Runtime-override save record → version 3 (v1/v2 take `boss_recruit` from the
+  ROM default). The struct now fills the 0x48-byte record; a static assert
+  guards the size.
+- Debug menu **Boss Join**, RescueTemple schema, header snapshot and test.
+
+### Reverse
+Set `.boss_recruit = FALSE`, or drop `IsGuaranteedBossRecruit` and its three
+call sites.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -434,4 +456,5 @@ Revert the branch. Removing the items requires dropping IDs 240–244 from
 | Custom title backgrounds | On (8bpp ≤600 tiles @ +128; maps SB 6–8/31; `custom_title_backgrounds`) |
 | Chapter title cards | On (`chapter_titles`; 10 chapters from `EVENT_M01ExxA`) |
 | Spinda's Café | On (`spinda_cafe`; Recycle Shop + tickets, dance, team tables) |
+| Postgame boss recruit | Off (`boss_recruit`) |
 | Matching `make compare` | Not expected to match once assets diverge |

@@ -4,6 +4,7 @@
 #include "structs/dungeon_entity.h"
 #include "dungeon_misc.h"
 
+bool8 IsGuaranteedBossRecruit(EntityInfo *info);
 bool8 TryRecruitMonster(Entity *attacker, Entity *target);
 bool8 IsMonsterRecruitable(s32 species);
 bool8 MonsterJoinSequence_Async(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3);

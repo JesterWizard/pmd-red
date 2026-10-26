@@ -43,12 +43,60 @@ static void InitializeDungeonMonFromRecruit(DungeonMon *dungeonMon, struct unkSt
 static bool8 SendNewRecruitHome_Async(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3);
 static bool8 MakeRoomForRecruit(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3, bool8 *sentHome);
 
+/* Runtime `boss_recruit`: after the story (leader switching unlocked), a
+ * defeated boss always offers to join. Species the game never lets join
+ * (recruit rate -999, Latias / Latios, already-recruited legendaries) and the
+ * dungeon / Friend Area gates are unchanged. */
+bool8 IsGuaranteedBossRecruit(EntityInfo *info)
+{
+    if (!gRuntimeConfig.boss_recruit || !gDungeon->unk644.canChangeLeader)
+        return FALSE;
+    if (info->bossFlag)
+        return TRUE;
+
+    switch (info->monsterBehavior) {
+        case BEHAVIOR_SKARMORY:
+        case BEHAVIOR_GENGAR:
+        case BEHAVIOR_EKANS:
+        case BEHAVIOR_MEDICHAM:
+        case BEHAVIOR_ZAPDOS:
+        case BEHAVIOR_MOLTRES:
+        case BEHAVIOR_ARTICUNO:
+        case BEHAVIOR_GROUDON_2:
+        case BEHAVIOR_RAYQUAZA:
+        case BEHAVIOR_MANKEY:
+        case BEHAVIOR_MEWTWO:
+        case BEHAVIOR_ENTEI:
+        case BEHAVIOR_RAIKOU:
+        case BEHAVIOR_SUICUNE:
+        case BEHAVIOR_HO_OH:
+        case BEHAVIOR_LATIOS:
+        case BEHAVIOR_REGIROCK:
+        case BEHAVIOR_REGICE:
+        case BEHAVIOR_REGISTEEL:
+        case BEHAVIOR_JIRACHI:
+        case BEHAVIOR_LUGIA:
+        case BEHAVIOR_KYOGRE:
+        case BEHAVIOR_DEOXYS_NORMAL:
+        case BEHAVIOR_SMEARGLE:
+        case BEHAVIOR_32:
+        case BEHAVIOR_33:
+        case BEHAVIOR_34:
+        case BEHAVIOR_35:
+        case BEHAVIOR_MAZE_BOSS:
+            return TRUE;
+        default:
+            return FALSE;
+    }
+}
+
 bool8 TryRecruitMonster(Entity *attacker, Entity *target)
 {
     s32 rand;
     s32 recruitRate;
     EntityInfo *attackerInfo = GetEntInfo(attacker);
     EntityInfo *targetInfo = GetEntInfo(target);
+    bool8 guaranteed = IsGuaranteedBossRecruit(targetInfo);
 
     if (gDungeon->fixedRoomNumber != FIXED_ROOM_FROSTY_GROTTO_ARTICUNO
         && gDungeon->fixedRoomNumber != FIXED_ROOM_MT_BLAZE_PEAK_MOLTRES
@@ -94,7 +142,8 @@ bool8 TryRecruitMonster(Entity *attacker, Entity *target)
 
     if (!IsMonsterRecruitable(targetInfo->id))
         return FALSE;
-    if (abs((attacker->pos).x - (target->pos).x) >= 2 || abs((attacker->pos).y - (target->pos).y) >= 2)
+    if (!guaranteed
+        && (abs((attacker->pos).x - (target->pos).x) >= 2 || abs((attacker->pos).y - (target->pos).y) >= 2))
         return FALSE;
     if (targetInfo->joinedAt.id == DUNGEON_JOIN_LOCATION_CLIENT_POKEMON)
         return FALSE;
@@ -102,7 +151,7 @@ bool8 TryRecruitMonster(Entity *attacker, Entity *target)
         return FALSE;
     if (targetInfo->monsterBehavior == BEHAVIOR_OUTLAW)
         return FALSE;
-    if (!CanSeeTarget(target,attacker))
+    if (!guaranteed && !CanSeeTarget(target,attacker))
         return FALSE;
 
     sub_806F910();
@@ -123,10 +172,12 @@ bool8 TryRecruitMonster(Entity *attacker, Entity *target)
         if (leader != NULL && EntityIsValid(leader) && IqSkillIsEnabled(leader, IQ_FAST_FRIEND))
             recruitRate += 50;
     }
+    if (guaranteed)
+        recruitRate = 1000;
     if (rand >= recruitRate)
         return FALSE;
 
-    if (!gRuntimeConfig.pmd2_send_home && !TeamHasSpaceForRecruit(targetInfo->apparentID)) {
+    if (!gRuntimeConfig.pmd2_send_home && !guaranteed && !TeamHasSpaceForRecruit(targetInfo->apparentID)) {
         nullsub_96(attacker, target);
         return FALSE;
     }
@@ -363,7 +414,8 @@ static bool8 MakeRoomForRecruit(Entity *entity1, Entity *entity2, struct unkStru
     Entity *target;
 
     *sentHome = FALSE;
-    if (!gRuntimeConfig.pmd2_send_home)
+    /* Guaranteed boss recruits get the Send Home choice even with it off. */
+    if (!gRuntimeConfig.pmd2_send_home && !IsGuaranteedBossRecruit(GetEntInfo(entity2)))
         return FALSE;
 
     DisplayDungeonMessage_Async(NULL, gText_DungeonTeamFull, TRUE);

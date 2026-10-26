@@ -60,4 +60,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .thought_bubbles = TRUE, /* TRUE = L toggles overworld thought bubble; FALSE = off */
     .softlock_recovery = TRUE, /* TRUE = soft reset after a 300-frame hang; FALSE = off */
     .chapter_titles = TRUE, /* TRUE = PMD2-style chapter cards at each main-story episode; FALSE = off */
+    .boss_recruit = FALSE, /* TRUE = postgame bosses always offer to join when defeated; FALSE = vanilla recruit roll */
 };
