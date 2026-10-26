@@ -305,6 +305,7 @@ enum SpecialTextKind
     SPECIAL_TEXT_RECYCLE_SHOP,
     SPECIAL_TEXT_OUTLAW_BOARD,
     SPECIAL_TEXT_CUSTOM_DEBUG_MENU,
+    SPECIAL_TEXT_SPINDA_JUICE_SERVE, // after Spinda's dance (see café station script)
 };
 
 #endif // GUARD_CONSTANTS_SCRIPT_CMD_H

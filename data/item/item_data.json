@@ -2993,5 +2993,60 @@
         "order": 234,
         "paletteID": 0,
         "actionType": "ITEM_ACTION_TYPE_LINK_BOX"
+    },
+    {
+        "name": "ItemNamePrizeTicket",
+        "buyPrice": 0,
+        "sellPrice": 100,
+        "category": "CATEGORY_OTHER",
+        "spriteID": 5,
+        "description": "ItemDescriptionPrizeTicket",
+        "order": 240,
+        "paletteID": 5,
+        "actionType": "ITEM_ACTION_TYPE_MISC"
+    },
+    {
+        "name": "ItemNameSilverTicket",
+        "buyPrice": 0,
+        "sellPrice": 200,
+        "category": "CATEGORY_OTHER",
+        "spriteID": 5,
+        "description": "ItemDescriptionSilverTicket",
+        "order": 241,
+        "paletteID": 10,
+        "actionType": "ITEM_ACTION_TYPE_MISC"
+    },
+    {
+        "name": "ItemNameGoldTicket",
+        "buyPrice": 0,
+        "sellPrice": 400,
+        "category": "CATEGORY_OTHER",
+        "spriteID": 5,
+        "description": "ItemDescriptionGoldTicket",
+        "order": 242,
+        "paletteID": 4,
+        "actionType": "ITEM_ACTION_TYPE_MISC"
+    },
+    {
+        "name": "ItemNamePrismTicket",
+        "buyPrice": 0,
+        "sellPrice": 800,
+        "category": "CATEGORY_OTHER",
+        "spriteID": 5,
+        "description": "ItemDescriptionPrismTicket",
+        "order": 243,
+        "paletteID": 1,
+        "actionType": "ITEM_ACTION_TYPE_MISC"
+    },
+    {
+        "name": "ItemNameWonderGummi",
+        "buyPrice": 0,
+        "sellPrice": 800,
+        "category": "CATEGORY_FOOD_GUMMIES",
+        "spriteID": 17,
+        "description": "ItemDescriptionWonderGummi",
+        "order": 72,
+        "paletteID": 12,
+        "actionType": "ITEM_ACTION_TYPE_FOOD"
     }
 ]

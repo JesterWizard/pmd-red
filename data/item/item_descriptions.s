@@ -877,3 +877,24 @@ ItemDescriptionMimeJrFig:
 .global ItemDescriptionPlaceholder
 ItemDescriptionPlaceholder:
 .string "Synthesis item\n\0"
+
+.global ItemDescriptionPrizeTicket
+ItemDescriptionPrizeTicket:
+.string "A ticket from the {color YELLOW}Recycle Shop{reset}.{NEW_LINE}Wynaut lets you draw a card with it{NEW_LINE}for a chance at a prize.\n\0"
+
+.global ItemDescriptionSilverTicket
+ItemDescriptionSilverTicket:
+.string "A silver ticket from the {color YELLOW}Recycle{NEW_LINE}Shop{reset}. Its draw has better odds and{NEW_LINE}better prizes than a {color YELLOW}Prize Ticket{reset}.\n\0"
+
+.global ItemDescriptionGoldTicket
+ItemDescriptionGoldTicket:
+.string "A gold ticket from the {color YELLOW}Recycle Shop{reset}.{NEW_LINE}Its draw offers rare prizes, with{NEW_LINE}good odds of winning.\n\0"
+
+.global ItemDescriptionPrismTicket
+ItemDescriptionPrismTicket:
+.string "A shimmering ticket from the {color YELLOW}Recycle{NEW_LINE}Shop{reset}. Its draw has the best odds and{NEW_LINE}the rarest prizes of all.\n\0"
+
+.global ItemDescriptionWonderGummi
+ItemDescriptionWonderGummi:
+.string "A food item that somewhat fills the{NEW_LINE}Pokémon's {color YELLOW}Belly{reset}.{NEW_LINE}When given to a rescue team member,{NEW_LINE}it greatly raises the Pokémon's {color YELLOW}IQ{reset}.{NEW_LINE}Pokémon of every type love it.\n\0"
+

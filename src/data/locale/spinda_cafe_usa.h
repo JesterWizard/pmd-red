@@ -32,8 +32,11 @@
     " Who will drink it?"))
 
 #define SPINDA_MIXING (_( \
-    " OK! Mixing...{WAIT_PRESS}\n" \
-    "Here you go〜♪"))
+    " OK! Coming right up〜♪\n" \
+    "Watch me mix it!"))
+
+#define SPINDA_SERVE (_( \
+    " Ta-da! Here you go〜♪"))
 
 #define SPINDA_DRANK_SYS (_("{NAME_0} drank the juice!"))
 
@@ -98,29 +101,61 @@
     "Trade items... get prizes!"))
 
 #define RECYCLE_HOW_MAY (_( \
-    " Recycle items?\n" \
-    "Or use a Prize Ticket?"))
+    " Trade, get a ticket, or\n" \
+    "try the lottery?"))
 
 #define RECYCLE_INFO (_( \
-    " Give me items from your\n" \
-    "Toolbox. More items means better prizes!{EXTRA_MSG}" \
-    " Or trade for a Prize Ticket\n" \
-    "and try the lottery〜♪\n" \
+    " {COLOR YELLOW}Trade{RESET}: give me the items an\n" \
+    "offer asks for, and I'll swap them!\n" \
+    "Recycle more to unlock new offers.{EXTRA_MSG}" \
+    " {COLOR YELLOW}Get Ticket{RESET}: recycle any 4, 6, 8,\n" \
+    "or 10 items for a Prize, Silver, Gold, or\n" \
+    "Prism Ticket. Better tickets need a higher rank.{EXTRA_MSG}" \
+    " {COLOR YELLOW}Lottery{RESET}: hand me a ticket and\n" \
+    "pick a card! Better tickets, better prizes〜♪\n" \
     "Stackable throw items can't be recycled."))
 
 #define RECYCLE_BYE (_(" Bye-bye!"))
 
-#define RECYCLE_NO_ITEMS (_( \
-    " You have nothing to\n" \
-    "recycle..."))
+#define RECYCLE_TRADE_PROMPT (_( \
+    " Which offer? You've\n" \
+    "recycled {VALUE_0} item(s) so far!"))
 
-#define RECYCLE_PICK_COUNT (_( \
-    " How many items will you\n" \
-    "recycle?"))
+#define RECYCLE_TRADE_NONE (_( \
+    " No offers yet... Recycle\n" \
+    "some items first!"))
+
+#define RECYCLE_TRADE_CONFIRM (_( \
+    " For {COLOR GREEN}{MOVE_ITEM_0}{RESET}, give me\n" \
+    "{VALUE_0} {COLOR GREEN}{MOVE_ITEM_1}{RESET}. OK?"))
+
+#define RECYCLE_TRADE_SHORT (_( \
+    " You need {VALUE_0}\n" \
+    "{COLOR GREEN}{MOVE_ITEM_1}{RESET} in your Toolbox..."))
+
+#define RECYCLE_TICKET_PROMPT (_( \
+    " Which ticket? The number\n" \
+    "is how many items to recycle."))
+
+#define RECYCLE_TICKET_FEW_ITEMS (_( \
+    " You need {VALUE_0} items\n" \
+    "I can recycle in your Toolbox..."))
+
+#define RECYCLE_NEED_SILVER_RANK (_( \
+    " Silver Tickets are for\n" \
+    "Silver Rank teams and up!"))
+
+#define RECYCLE_NEED_GOLD_RANK (_( \
+    " Gold Tickets are for\n" \
+    "Gold Rank teams and up!"))
+
+#define RECYCLE_NEED_DIAMOND_RANK (_( \
+    " Prism Tickets are only for\n" \
+    "Diamond Rank teams!"))
 
 #define RECYCLE_PICK_ITEMS (_( \
-    " Pick {VALUE_0} item(s) to\n" \
-    "recycle."))
+    " Pick {VALUE_0} more item(s)\n" \
+    "to recycle."))
 
 #define RECYCLE_CANT_RECYCLE (_( \
     " I can't take that item."))
@@ -129,31 +164,52 @@
     " You already picked that\n" \
     "one."))
 
-#define RECYCLE_CHOOSE_REWARD (_( \
-    " Nice! What do you want?"))
-
 #define RECYCLE_GOT_ITEM (_( \
     " Here! Take the\n" \
     "{COLOR GREEN}{MOVE_ITEM_0}{RESET}!"))
 
 #define RECYCLE_GOT_TICKET (_( \
-    " You got a Prize Ticket!\n" \
-    "Try the lottery!"))
+    " Here's your\n" \
+    "{COLOR GREEN}{MOVE_ITEM_0}{RESET}! Try the lottery!"))
+
+#define RECYCLE_LEGACY_TICKET (_( \
+    " Oh! Here's the ticket you\n" \
+    "left with me: {COLOR GREEN}{MOVE_ITEM_0}{RESET}!"))
 
 #define RECYCLE_BAG_FULL (_( \
     " Your Toolbox is full...\n" \
     "I'll put it in storage!"))
 
 #define RECYCLE_NO_TICKET (_( \
-    " You don't have a Prize\n" \
-    "Ticket."))
+    " You don't have any\n" \
+    "tickets."))
 
-#define RECYCLE_LOTTERY (_( \
-    " Pick a color!\n" \
-    "(It doesn't matter〜♪)"))
+#define RECYCLE_LOTTERY_PROMPT (_( \
+    " Which ticket will you\n" \
+    "use?"))
+
+#define RECYCLE_BONUS_DRAW (_( \
+    " Ooh! That earned a bonus\n" \
+    "draw! Pick a card right now〜♪"))
+
+#define RECYCLE_DRAW_PRIZE (_( \
+    " Prize Ticket! Pick a card!"))
+
+#define RECYCLE_DRAW_SILVER (_( \
+    " Silver Ticket! Pick a\n" \
+    "card!"))
+
+#define RECYCLE_DRAW_GOLD (_( \
+    " A Gold Ticket! Pick a\n" \
+    "card!"))
+
+#define RECYCLE_DRAW_PRISM (_( \
+    " A Prism Ticket!!\n" \
+    "Pick a card!"))
 
 #define RECYCLE_LOTTERY_LOSS (_( \
-    " Aww... No prize this time."))
+    " Aww... Not a winner.{WAIT_PRESS}\n" \
+    "Take the {COLOR GREEN}{MOVE_ITEM_0}{RESET} anyway!"))
 
 #define RECYCLE_LOTTERY_WIN (_( \
     " You won!\n" \
@@ -162,7 +218,3 @@
 #define RECYCLE_LOTTERY_BIG (_( \
     " BIG WIN〜♪\n" \
     "{COLOR GREEN}{MOVE_ITEM_0}{RESET}!"))
-
-#define RECYCLE_NEED_MORE (_( \
-    " Recycle more items to\n" \
-    "unlock better prizes!"))

@@ -47,6 +47,8 @@ enum JuiceStates {
     JUICE_PICK_MON_DLG,
     JUICE_PICK_MON,
     JUICE_MIXING,
+    JUICE_ORDERED,   /* hand back to the script: Spinda dances, then JUICE_SERVE */
+    JUICE_SERVING,
     JUICE_DRANK_SYS,
     JUICE_SPINDA_REACT,
     JUICE_STAT_SYS,
@@ -84,6 +86,7 @@ typedef struct SpindaJuiceBarWork
     u8 msgAmounts[8];
     s32 msgCount;
     s32 msgIndex;
+    bool8 servePending; /* drink applied; kept alive until JUICE_SERVE shows it */
 } SpindaJuiceBarWork;
 
 enum JuiceMsgKind {
@@ -225,20 +228,10 @@ static void CollectTeamMons(void)
     }
 }
 
-bool8 CreateSpindaJuiceBar(s32 mode)
+static void OpenSpindaPortrait(void)
 {
     OpenedFile *faceFile;
     u8 *monName;
-
-    (void)mode;
-    if (!gRuntimeConfig.spinda_cafe)
-        return FALSE;
-
-    ResetUnusedInputStruct();
-    ShowWindows(NULL, TRUE, TRUE);
-    sJuiceWork = MemoryAlloc(sizeof(SpindaJuiceBarWork), MEMALLOC_GROUP_8);
-    MemoryFill8(sJuiceWork, 0, sizeof(SpindaJuiceBarWork));
-    sJuiceWork->menuAction = JUICE_MIX;
 
     CopyYellowMonsterNametoBuffer(gSpeakerNameBuffer, MONSTER_SPINDA);
     CopyYellowMonsterNametoBuffer(gFormatBuffer_Monsters[7], MONSTER_SPINDA);
@@ -254,9 +247,44 @@ bool8 CreateSpindaJuiceBar(s32 mode)
     sJuiceWork->monPortrait.unkE = 0;
     sJuiceWork->monPortrait.pos.x = 2;
     sJuiceWork->monPortrait.pos.y = 8;
+}
+
+/* SPECIAL_TEXT_SPINDA_JUICE_BAR: welcome + menu. Result 0 = a drink was
+ * ordered (the café script plays Spinda's dance, then JUICE_SERVE); -1 = left. */
+bool8 CreateSpindaJuiceBar(s32 mode)
+{
+    (void)mode;
+    if (!gRuntimeConfig.spinda_cafe)
+        return FALSE;
+
+    ResetUnusedInputStruct();
+    ShowWindows(NULL, TRUE, TRUE);
+    if (sJuiceWork != NULL)
+        FREE_AND_SET_NULL(sJuiceWork); /* stale order (script never served it) */
+    sJuiceWork = MemoryAlloc(sizeof(SpindaJuiceBarWork), MEMALLOC_GROUP_8);
+    MemoryFill8(sJuiceWork, 0, sizeof(SpindaJuiceBarWork));
+    sJuiceWork->menuAction = JUICE_MIX;
+    OpenSpindaPortrait();
 
     CollectTeamMons();
     UpdateJuiceState(JUICE_INIT);
+    return TRUE;
+}
+
+/* SPECIAL_TEXT_SPINDA_JUICE_SERVE: results of the order, then the menu again
+ * (same results as JUICE_BAR). */
+bool8 CreateSpindaJuiceServe(void)
+{
+    if (!gRuntimeConfig.spinda_cafe || sJuiceWork == NULL || !sJuiceWork->servePending)
+        return FALSE;
+
+    ResetUnusedInputStruct();
+    ShowWindows(NULL, TRUE, TRUE);
+    sJuiceWork->servePending = FALSE;
+    OpenSpindaPortrait();
+    /* Shared format buffers may have been reused while Spinda danced. */
+    PrintColoredPokeNameToBuffer(gFormatBuffer_Names[0], sJuiceWork->drinkMon, COLOR_CYAN);
+    UpdateJuiceState(JUICE_SERVING);
     return TRUE;
 }
 
@@ -272,8 +300,10 @@ u32 SpindaJuiceBarCallback(void)
         case JUICE_PICK_ITEM:
             HandleJuiceItemPick();
             break;
+        case JUICE_ORDERED:
+            return 3; /* script result 0: dance, then serve */
         case JUICE_EXIT:
-            return 3;
+            return 2; /* script result -1 */
         default: {
             s32 tmp;
 
@@ -289,7 +319,8 @@ void DestroySpindaJuiceBar(void)
 {
     if (sJuiceWork != NULL) {
         CloseFile(sJuiceWork->monPortrait.faceFile);
-        FREE_AND_SET_NULL(sJuiceWork);
+        if (!sJuiceWork->servePending)
+            FREE_AND_SET_NULL(sJuiceWork);
     }
 }
 
@@ -832,8 +863,14 @@ static void UpdateJuiceDialogue(void)
             break;
         case JUICE_MIXING:
             SetSpindaEmotion(EMOTION_HAPPY);
-            sJuiceWork->fallbackState = JUICE_DRANK_SYS;
+            sJuiceWork->servePending = TRUE;
+            sJuiceWork->fallbackState = JUICE_ORDERED;
             CreateDialogueBoxAndPortrait(SPINDA_MIXING, 0, sJuiceWork->monPortraitPtr, 0x10D);
+            break;
+        case JUICE_SERVING:
+            SetSpindaEmotion(EMOTION_HAPPY);
+            sJuiceWork->fallbackState = JUICE_DRANK_SYS;
+            CreateDialogueBoxAndPortrait(SPINDA_SERVE, 0, sJuiceWork->monPortraitPtr, 0x10D);
             break;
         case JUICE_DRANK_SYS:
             /* System narration — no Spinda portrait. */
@@ -871,6 +908,7 @@ static void UpdateJuiceDialogue(void)
             break;
         case JUICE_MAIN_MENU:
         case JUICE_PICK_MON:
+        case JUICE_ORDERED:
         case JUICE_EXIT:
         default:
             break;

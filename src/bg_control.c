@@ -123,6 +123,7 @@ void SetTitleBg8bpp(bool8 enabled)
 
 EWRAM_DATA bool8 gGroundMap8bpp = 0;
 EWRAM_DATA bool8 gGroundMap8bppWideUi = 0;
+EWRAM_DATA s32 gGroundMap8bppUiReserveTiles = 0;
 
 void SetGroundMap8bpp(bool8 enabled)
 {

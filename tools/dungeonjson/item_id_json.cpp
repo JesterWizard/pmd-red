@@ -265,6 +265,11 @@ void set_item_ids(){
     item_macro_ids["ITEM_G_MACHINE_6"] = 0xF9;
     item_macro_ids["ITEM_G_MACHINE_7"] = 0xFA;
     item_macro_ids["ITEM_G_MACHINE_8"] = 0xFB;
+    item_macro_ids["ITEM_PRIZE_TICKET"] = 0xFC;
+    item_macro_ids["ITEM_SILVER_TICKET"] = 0xFD;
+    item_macro_ids["ITEM_GOLD_TICKET"] = 0xFE;
+    item_macro_ids["ITEM_PRISM_TICKET"] = 0xFF;
+    item_macro_ids["ITEM_WONDER_GUMMI"] = 0x100;
 }
 
 int get_item_id(string item_macro){

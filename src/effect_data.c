@@ -5480,6 +5480,12 @@ static const unkStruct_80CE37C gUnknown_80CE37C[NUMBER_OF_ITEM_IDS] = {
     [ITEM_G_MACHINE_6    ] = { .unk0 =  21, .unk2 =   8 },
     [ITEM_G_MACHINE_7    ] = { .unk0 =  21, .unk2 =   8 },
     [ITEM_G_MACHINE_8    ] = { .unk0 =  21, .unk2 =   8 },
+    /* Recycle Shop items: tickets animate like Upgrade, Wonder Gummi like gummis. */
+    [ITEM_PRIZE_TICKET   ] = { .unk0 =   0, .unk2 =   8 },
+    [ITEM_SILVER_TICKET  ] = { .unk0 =   0, .unk2 =   8 },
+    [ITEM_GOLD_TICKET    ] = { .unk0 =   0, .unk2 =   8 },
+    [ITEM_PRISM_TICKET   ] = { .unk0 =   0, .unk2 =   8 },
+    [ITEM_WONDER_GUMMI   ] = { .unk0 = 406, .unk2 = 406 },
 };
 
 static const s16 sTrapEffectTable[NUM_TRAPS] = {

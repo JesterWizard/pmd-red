@@ -10,9 +10,11 @@
 #include "kecleon_bros4.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "music.h"
 #include "music_util.h"
 #include "pokemon.h"
 #include "random.h"
+#include "rescue_team_info.h"
 #include "runtime.h"
 #include "spinda_cafe.h"
 #include "string_format.h"
@@ -20,63 +22,98 @@
 #include "text_2.h"
 #include "text_3.h"
 
+/*
+ * Recycle Shop (Wynaut / Wobbuffet), modelled on Explorers of Sky:
+ *   Trade    — fixed offers "give N of item A, get item B"; offers unlock as the
+ *              lifetime recycle count grows.
+ *   Tickets  — recycle any 4 / 6 / 8 / 10 items for a Prize / Silver / Gold /
+ *              Prism Ticket (rank-gated). Tickets are real items.
+ *   Lottery  — hand in a ticket, pick one of three cards: loss / win / big win,
+ *              each with its own prize pool per ticket tier. Big wins can award
+ *              a higher ticket.
+ *   Bonus    — rare free Prize Ticket draw right after a trade or exchange.
+ */
+
 enum RecycleMenuActions {
     REC_CANCEL = 1,
-    REC_RECYCLE,
-    REC_TICKET,
+    REC_TRADE,
+    REC_TICKETS,
+    REC_LOTTERY,
     REC_INFO,
-    REC_EXCHANGE,
-    REC_GET_TICKET,
-    REC_COUNT_2 = 20,
-    REC_COUNT_4 = 21,
-    REC_COUNT_6 = 22,
-    REC_COUNT_8 = 23,
-    REC_COLOR_RED = 30,
-    REC_COLOR_BLUE = 31,
-    REC_COLOR_YELLOW = 32,
-    REC_REWARD_BASE = 40,
+    REC_YES,
+    REC_NO,
+    REC_NEXT_PAGE,
+    REC_OFFER_BASE = 20,   /* + offer index on page */
+    REC_TIER_BASE = 40,    /* + ticket tier */
+    REC_CARD_BASE = 50,    /* + card 0..2 */
 };
 
 enum RecycleStates {
     REC_INIT,
+    REC_LEGACY_TICKET,
     REC_MAIN_PROMPT,
-    REC_MAIN_MENU,
     REC_INFO_DLG,
-    REC_NO_ITEMS,
-    REC_PICK_COUNT_DLG,
-    REC_PICK_COUNT,
+    REC_BYE,
+    REC_EXIT,
+    /* Trade */
+    REC_TRADE_MENU,
+    REC_TRADE_NONE,
+    REC_TRADE_CONFIRM,
+    REC_TRADE_SHORT,
+    REC_TRADE_DONE,
+    /* Tickets */
+    REC_TICKET_MENU,
+    REC_TICKET_RANK,
+    REC_TICKET_FEW_ITEMS,
     REC_PICK_ITEMS_DLG,
     REC_PICK_ITEMS,
     REC_CANT_ITEM,
     REC_ALREADY,
-    REC_CHOOSE_REWARD_DLG,
-    REC_CHOOSE_REWARD,
-    REC_GOT_ITEM,
-    REC_GOT_TICKET,
-    REC_BAG_FULL_NOTE,
-    REC_NO_TICKET,
-    REC_LOTTERY_DLG,
+    REC_TICKET_DONE,
+    /* Lottery */
     REC_LOTTERY_MENU,
-    REC_LOTTERY_RESULT,
-    REC_NEED_MORE,
-    REC_BYE,
-    REC_EXIT,
+    REC_NO_TICKET,
+    REC_BONUS_DLG,
+    REC_CARD_MENU,
+    REC_CARD_RESULT,
+    REC_BAG_FULL_NOTE,
 };
 
-#define REC_MAX_PICK 8
+enum RecycleOutcome {
+    REC_OUTCOME_LOSS,
+    REC_OUTCOME_WIN,
+    REC_OUTCOME_BIG_WIN,
+};
+
+#define REC_MAX_PICK 10
+#define REC_OFFERS_PER_PAGE 5
+#define REC_BONUS_DRAW_CHANCE 32 /* 1 in N after a trade / exchange */
+#define REC_WIN_JINGLE 0x137      /* same jingle as an achievement unlock */
 
 typedef struct RecycleShopWork
 {
     s32 currState;
     s32 fallbackState;
+    s32 afterRewardState;
     u32 menuAction;
+    /* Trade */
+    s32 offerPage;
+    s32 offerIds[REC_OFFERS_PER_PAGE];
+    s32 offerCount;
+    s32 chosenOffer;
+    /* Tickets */
+    s32 ticketTier;
     s32 targetCount;
     s32 pickedCount;
     s32 pickedIndices[REC_MAX_PICK];
-    s32 rewardItemId;
-    s32 lotteryTier;
-    MenuItem menuItems[12];
-    u16 menuRestrict[12];
+    /* Lottery */
+    s32 drawTier;
+    bool8 bonusDraw;
+    s32 outcome;
+    u8 rewardItemId;
+    MenuItem menuItems[10];
+    u16 menuRestrict[10];
+    u8 menuLabels[REC_OFFERS_PER_PAGE][FORMAT_BUFFER_LEN]; /* offer / ticket names */
     MonPortraitMsg monPortrait;
     MonPortraitMsg *monPortraitPtr;
     WindowTemplates windows;
@@ -85,40 +122,18 @@ typedef struct RecycleShopWork
 static EWRAM_INIT RecycleShopWork *sRecWork = {NULL};
 
 #include "data/spinda_cafe.h"
-
-/* Catalog rewards by tier (item ids). */
-static const u8 sRecycleCatalogTier[][6] = {
-    { ITEM_ORAN_BERRY, ITEM_APPLE, ITEM_MAX_ELIXIR, ITEM_CHERI_BERRY, ITEM_PECHA_BERRY, ITEM_RAWST_BERRY },
-    { ITEM_REVIVER_SEED, ITEM_WHITE_GUMMI, ITEM_BIG_APPLE, ITEM_LIFE_SEED, ITEM_JOY_SEED, ITEM_PROTEIN },
-    { ITEM_REVIVER_SEED, ITEM_GOLD_GUMMI, ITEM_HUGE_APPLE, ITEM_IRON, ITEM_CALCIUM, ITEM_ZINC },
-    { ITEM_REVIVER_ORB, ITEM_GOLD_GUMMI, ITEM_SILVER_GUMMI, ITEM_LIFE_SEED, ITEM_JOY_SEED, ITEM_GINSENG },
-};
-
-static const u8 sLotteryNormalPrizes[] = {
-    ITEM_ORAN_BERRY, ITEM_APPLE, ITEM_MAX_ELIXIR, ITEM_CHERI_BERRY, ITEM_WHITE_GUMMI, ITEM_REVIVER_SEED,
-};
-
-static const u8 sLotteryBigPrizes[] = {
-    ITEM_REVIVER_SEED, ITEM_GOLD_GUMMI, ITEM_LIFE_SEED, ITEM_JOY_SEED, ITEM_REVIVER_ORB, ITEM_GINSENG,
-};
+#include "data/recycle_shop.h"
 
 static void UpdateRecState(u32 newState);
 static void SetupRecWindows(void);
 static void UpdateRecDialogue(void);
-static void BuildRecMainMenu(void);
-static void BuildRecCountMenu(void);
-static void BuildRecRewardMenu(void);
-static void BuildRecLotteryMenu(void);
 static void HandleRecMainMenu(void);
-static void HandleRecCountMenu(void);
-static void HandleRecRewardMenu(void);
-static void HandleRecLotteryMenu(void);
+static void HandleRecTradeMenu(void);
+static void HandleRecTradeConfirm(void);
+static void HandleRecTicketMenu(void);
 static void HandleRecItemPick(void);
-static bool8 CanRecycleItem(u8 itemId);
-static bool8 IndexAlreadyPicked(s32 index);
-static void RemovePickedItems(void);
-static bool8 GiveRewardItem(u8 itemId);
-static u8 TicketForCount(s32 count);
+static void HandleRecLotteryMenu(void);
+static void HandleRecCardMenu(void);
 
 static bool8 CanRecycleItem(u8 itemId)
 {
@@ -128,6 +143,8 @@ static bool8 CanRecycleItem(u8 itemId)
         return FALSE;
     if (itemId == ITEM_STICK || itemId == ITEM_IRON_THORN
         || itemId == ITEM_SILVER_SPIKE || itemId == ITEM_GEO_PEBBLE)
+        return FALSE;
+    if (IsRecycleTicket(itemId))
         return FALSE;
     cat = GetItemCategory(itemId);
     if (cat == CATEGORY_THROWN_LINE || cat == CATEGORY_THROWN_ARC)
@@ -148,17 +165,14 @@ static bool8 IndexAlreadyPicked(s32 index)
     return FALSE;
 }
 
-static void RemovePickedItems(void)
+/* Removes the toolbox slots in indices[0..count), highest index first so
+ * ShiftItemsDownFrom keeps the remaining indices valid. */
+static void RemoveInventorySlots(s32 *indices, s32 count)
 {
     s32 i, j;
-    s32 indices[REC_MAX_PICK];
 
-    for (i = 0; i < sRecWork->pickedCount; i++)
-        indices[i] = sRecWork->pickedIndices[i];
-
-    /* Highest index first so ShiftItemsDownFrom stays valid. */
-    for (i = 0; i < sRecWork->pickedCount; i++) {
-        for (j = i + 1; j < sRecWork->pickedCount; j++) {
+    for (i = 0; i < count; i++) {
+        for (j = i + 1; j < count; j++) {
             if (indices[j] > indices[i]) {
                 s32 t = indices[i];
 
@@ -167,13 +181,45 @@ static void RemovePickedItems(void)
             }
         }
     }
-
-    for (i = 0; i < sRecWork->pickedCount; i++)
+    for (i = 0; i < count; i++)
         ShiftItemsDownFrom(indices[i]);
-
-    NoteSpindaCafeItemsRecycled(sRecWork->pickedCount);
 }
 
+static s32 CountRecyclableInventory(void)
+{
+    s32 i, n = 0;
+
+    for (i = 0; i < INVENTORY_SIZE; i++) {
+        if (ItemExists(&gTeamInventoryRef->teamItems[i])
+            && CanRecycleItem(gTeamInventoryRef->teamItems[i].id))
+            n++;
+    }
+    return n;
+}
+
+/* Toolbox slots holding itemId (unequipped). Fills indices if non-NULL. */
+static s32 FindInventorySlotsOf(u8 itemId, s32 *indices, s32 max)
+{
+    s32 i, n = 0;
+
+    for (i = 0; i < INVENTORY_SIZE && n < max; i++) {
+        Item *slot = &gTeamInventoryRef->teamItems[i];
+
+        if (ItemExists(slot) && slot->id == itemId && !ItemInShop(slot)) {
+            if (indices != NULL)
+                indices[n] = i;
+            n++;
+        }
+    }
+    return n;
+}
+
+static s32 CountTicketsOfTier(s32 tier)
+{
+    return FindInventorySlotsOf(sTicketTiers[tier].itemId, NULL, INVENTORY_SIZE);
+}
+
+/* Adds to the toolbox, or storage when full. Returns TRUE if it went in the bag. */
 static bool8 GiveRewardItem(u8 itemId)
 {
     Item slot;
@@ -182,25 +228,47 @@ static bool8 GiveRewardItem(u8 itemId)
     sub_8090E14(gFormatBuffer_Items[0], &slot, NULL);
     sRecWork->rewardItemId = itemId;
 
-    if (AddItemToInventory(&slot)) {
-        NoteAchievementItemObtained(itemId);
+    /* AddItemToInventory returns TRUE when the bag is full. */
+    if (!AddItemToInventory(&slot))
         return TRUE;
-    }
-
-    MoveToStorage(&slot);
     NoteAchievementItemObtained(itemId);
+    MoveToStorage(&slot);
     return FALSE;
 }
 
-static u8 TicketForCount(s32 count)
+/* Shows the reward line next (or the "went to storage" note first). */
+static void ShowReward(u8 itemId, u32 rewardState, u32 afterState)
 {
-    if (count >= 8)
-        return CAFE_TICKET_PRISM;
-    if (count >= 6)
-        return CAFE_TICKET_GOLD;
-    if (count >= 4)
-        return CAFE_TICKET_SILVER;
-    return CAFE_TICKET_BRONZE;
+    sRecWork->afterRewardState = afterState;
+    if (GiveRewardItem(itemId)) {
+        UpdateRecState(rewardState);
+    }
+    else {
+        sRecWork->fallbackState = rewardState;
+        UpdateRecState(REC_BAG_FULL_NOTE);
+    }
+}
+
+/* After a trade / exchange: rare free draw, else back to the main menu. */
+static u32 NextStateAfterRecycle(void)
+{
+    if (RandInt(REC_BONUS_DRAW_CHANCE) == 0) {
+        sRecWork->bonusDraw = TRUE;
+        sRecWork->drawTier = RECYCLE_TICKET_PRIZE;
+        return REC_BONUS_DLG;
+    }
+    return REC_MAIN_PROMPT;
+}
+
+static s32 CountUnlockedOffers(void)
+{
+    s32 i, n = 0;
+
+    for (i = 0; i < (s32)ARRAY_COUNT(sTradeOffers); i++) {
+        if (gSpindaCafeData.itemsRecycled >= sTradeOffers[i].unlockAt)
+            n++;
+    }
+    return n;
 }
 
 bool8 CreateRecycleShop(s32 mode)
@@ -216,7 +284,7 @@ bool8 CreateRecycleShop(s32 mode)
     ShowWindows(NULL, TRUE, TRUE);
     sRecWork = MemoryAlloc(sizeof(RecycleShopWork), MEMALLOC_GROUP_8);
     MemoryFill8(sRecWork, 0, sizeof(RecycleShopWork));
-    sRecWork->menuAction = REC_RECYCLE;
+    sRecWork->menuAction = REC_TRADE;
 
     CopyYellowMonsterNametoBuffer(gSpeakerNameBuffer, MONSTER_WYNAUT);
     CopyYellowMonsterNametoBuffer(gFormatBuffer_Monsters[7], MONSTER_WYNAUT);
@@ -243,17 +311,23 @@ u32 RecycleShopCallback(void)
         case REC_MAIN_PROMPT:
             HandleRecMainMenu();
             break;
-        case REC_PICK_COUNT_DLG:
-            HandleRecCountMenu();
+        case REC_TRADE_MENU:
+            HandleRecTradeMenu();
             break;
-        case REC_CHOOSE_REWARD_DLG:
-            HandleRecRewardMenu();
+        case REC_TRADE_CONFIRM:
+            HandleRecTradeConfirm();
             break;
-        case REC_LOTTERY_DLG:
-            HandleRecLotteryMenu();
+        case REC_TICKET_MENU:
+            HandleRecTicketMenu();
             break;
         case REC_PICK_ITEMS:
             HandleRecItemPick();
+            break;
+        case REC_LOTTERY_MENU:
+            HandleRecLotteryMenu();
+            break;
+        case REC_CARD_MENU:
+            HandleRecCardMenu();
             break;
         case REC_EXIT:
             return 3;
@@ -294,202 +368,247 @@ static void SetupRecWindows(void)
     ShowWindows(&sRecWork->windows, TRUE, TRUE);
 }
 
+static void AddMenuItem(s32 *n, const u8 *text, u32 action, bool8 disabled)
+{
+    sRecWork->menuItems[*n].text = text;
+    sRecWork->menuItems[*n].menuAction = action;
+    sRecWork->menuRestrict[*n] = disabled;
+    (*n)++;
+}
+
+static void EndMenu(s32 n)
+{
+    sRecWork->menuItems[n].text = NULL;
+    sRecWork->menuItems[n].menuAction = REC_CANCEL;
+}
+
 static void BuildRecMainMenu(void)
 {
     s32 n = 0;
 
     MemoryFill16(sRecWork->menuRestrict, 0, sizeof(sRecWork->menuRestrict));
-    sRecWork->menuItems[n].text = sRecycleItems;
-    sRecWork->menuItems[n].menuAction = REC_RECYCLE;
-    n++;
-    sRecWork->menuItems[n].text = sPrizeTicket;
-    sRecWork->menuItems[n].menuAction = REC_TICKET;
-    n++;
-    sRecWork->menuItems[n].text = gCommonInfo[0];
-    sRecWork->menuItems[n].menuAction = REC_INFO;
-    n++;
-    sRecWork->menuItems[n].text = gCommonCancel[0];
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
-    n++;
-    sRecWork->menuItems[n].text = NULL;
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
+    AddMenuItem(&n, sRecTrade, REC_TRADE, FALSE);
+    AddMenuItem(&n, sRecTickets, REC_TICKETS, FALSE);
+    AddMenuItem(&n, sRecLottery, REC_LOTTERY, FALSE);
+    AddMenuItem(&n, gCommonInfo[0], REC_INFO, FALSE);
+    AddMenuItem(&n, gCommonCancel[0], REC_CANCEL, FALSE);
+    EndMenu(n);
 }
 
-static void BuildRecCountMenu(void)
+/* Page of unlocked offers. */
+static void BuildRecTradeMenu(void)
 {
     s32 n = 0;
-    u8 tier = GetSpindaCafeCatalogTier();
+    s32 i, seen = 0;
+    s32 first = sRecWork->offerPage * REC_OFFERS_PER_PAGE;
 
     MemoryFill16(sRecWork->menuRestrict, 0, sizeof(sRecWork->menuRestrict));
-    sRecWork->menuItems[n].text = sCount2;
-    sRecWork->menuItems[n].menuAction = REC_COUNT_2;
-    n++;
-    sRecWork->menuItems[n].text = sCount4;
-    sRecWork->menuItems[n].menuAction = REC_COUNT_4;
-    if (tier < 2)
-        sRecWork->menuRestrict[n] = 1;
-    n++;
-    sRecWork->menuItems[n].text = sCount6;
-    sRecWork->menuItems[n].menuAction = REC_COUNT_6;
-    if (tier < 3)
-        sRecWork->menuRestrict[n] = 1;
-    n++;
-    sRecWork->menuItems[n].text = sCount8;
-    sRecWork->menuItems[n].menuAction = REC_COUNT_8;
-    if (tier < 4)
-        sRecWork->menuRestrict[n] = 1;
-    n++;
-    sRecWork->menuItems[n].text = gCommonCancel[0];
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
-    n++;
-    sRecWork->menuItems[n].text = NULL;
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
-}
-
-static void BuildRecRewardMenu(void)
-{
-    s32 n = 0;
-    u8 tier = GetSpindaCafeCatalogTier();
-    const u8 *catalog = sRecycleCatalogTier[tier - 1];
-    s32 i;
-
-    MemoryFill16(sRecWork->menuRestrict, 0, sizeof(sRecWork->menuRestrict));
-
-    sRecWork->menuItems[n].text = sExchangeCatalog;
-    sRecWork->menuItems[n].menuAction = REC_EXCHANGE;
-    n++;
-    sRecWork->menuItems[n].text = sGetTicket;
-    sRecWork->menuItems[n].menuAction = REC_GET_TICKET;
-    n++;
-
-    /* Show first 3 catalog names as direct picks when exchanging path expands — kept simple: Exchange opens subpick via actions 40+ */
-    for (i = 0; i < 3; i++) {
+    sRecWork->offerCount = 0;
+    for (i = 0; i < (s32)ARRAY_COUNT(sTradeOffers) && sRecWork->offerCount < REC_OFFERS_PER_PAGE; i++) {
         Item tmp;
 
-        ItemIdToItem(&tmp, catalog[i], FALSE);
-        sub_8090E14(gFormatBuffer_Items[i], &tmp, NULL);
-        sRecWork->menuItems[n].text = gFormatBuffer_Items[i];
-        sRecWork->menuItems[n].menuAction = REC_REWARD_BASE + i;
-        n++;
+        if (gSpindaCafeData.itemsRecycled < sTradeOffers[i].unlockAt)
+            continue;
+        if (seen++ < first)
+            continue;
+        ItemIdToItem(&tmp, sTradeOffers[i].reward, FALSE);
+        sub_8090E14(sRecWork->menuLabels[sRecWork->offerCount], &tmp, NULL);
+        sRecWork->offerIds[sRecWork->offerCount] = i;
+        AddMenuItem(&n, sRecWork->menuLabels[sRecWork->offerCount],
+                    REC_OFFER_BASE + sRecWork->offerCount, FALSE);
+        sRecWork->offerCount++;
     }
-
-    sRecWork->menuItems[n].text = gCommonCancel[0];
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
-    n++;
-    sRecWork->menuItems[n].text = NULL;
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
-
-    (void)catalog;
+    if (CountUnlockedOffers() > REC_OFFERS_PER_PAGE)
+        AddMenuItem(&n, sRecNextPage, REC_NEXT_PAGE, FALSE);
+    AddMenuItem(&n, gCommonCancel[0], REC_CANCEL, FALSE);
+    EndMenu(n);
 }
 
+static void BuildYesNoMenu(void)
+{
+    s32 n = 0;
+
+    MemoryFill16(sRecWork->menuRestrict, 0, sizeof(sRecWork->menuRestrict));
+    AddMenuItem(&n, gCommonYes[0], REC_YES, FALSE);
+    AddMenuItem(&n, gCommonNo[0], REC_NO, FALSE);
+    EndMenu(n);
+}
+
+static void BuildRecTicketMenu(void)
+{
+    s32 n = 0;
+    s32 tier;
+
+    MemoryFill16(sRecWork->menuRestrict, 0, sizeof(sRecWork->menuRestrict));
+    for (tier = 0; tier < RECYCLE_TICKET_TIERS; tier++)
+        AddMenuItem(&n, sTicketTiers[tier].menuText, REC_TIER_BASE + tier, FALSE);
+    AddMenuItem(&n, gCommonCancel[0], REC_CANCEL, FALSE);
+    EndMenu(n);
+}
+
+/* Tickets you hold, with counts. */
 static void BuildRecLotteryMenu(void)
 {
     s32 n = 0;
+    s32 tier;
 
     MemoryFill16(sRecWork->menuRestrict, 0, sizeof(sRecWork->menuRestrict));
-    sRecWork->menuItems[n].text = sColorRed;
-    sRecWork->menuItems[n].menuAction = REC_COLOR_RED;
-    n++;
-    sRecWork->menuItems[n].text = sColorBlue;
-    sRecWork->menuItems[n].menuAction = REC_COLOR_BLUE;
-    n++;
-    sRecWork->menuItems[n].text = sColorYellow;
-    sRecWork->menuItems[n].menuAction = REC_COLOR_YELLOW;
-    n++;
-    sRecWork->menuItems[n].text = gCommonCancel[0];
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
-    n++;
-    sRecWork->menuItems[n].text = NULL;
-    sRecWork->menuItems[n].menuAction = REC_CANCEL;
+    for (tier = 0; tier < RECYCLE_TICKET_TIERS; tier++) {
+        s32 count = CountTicketsOfTier(tier);
+
+        if (count == 0)
+            continue;
+        sprintfStatic(sRecWork->menuLabels[tier], sRecTicketCountFmt,
+                      gItemParametersData[sTicketTiers[tier].itemId].name, count);
+        AddMenuItem(&n, sRecWork->menuLabels[tier], REC_TIER_BASE + tier, FALSE);
+    }
+    AddMenuItem(&n, gCommonCancel[0], REC_CANCEL, FALSE);
+    EndMenu(n);
+}
+
+static void BuildRecCardMenu(void)
+{
+    s32 n = 0;
+
+    MemoryFill16(sRecWork->menuRestrict, 0, sizeof(sRecWork->menuRestrict));
+    AddMenuItem(&n, sRecCardLeft, REC_CARD_BASE + 0, FALSE);
+    AddMenuItem(&n, sRecCardMiddle, REC_CARD_BASE + 1, FALSE);
+    AddMenuItem(&n, sRecCardRight, REC_CARD_BASE + 2, FALSE);
+    EndMenu(n);
+}
+
+static void SetOfferFormatArgs(const struct RecycleTradeOffer *offer)
+{
+    Item tmp;
+
+    ItemIdToItem(&tmp, offer->reward, FALSE);
+    sub_8090E14(gFormatBuffer_Items[0], &tmp, NULL);
+    ItemIdToItem(&tmp, offer->cost, FALSE);
+    sub_8090E14(gFormatBuffer_Items[1], &tmp, NULL);
+    gFormatArgs[0] = offer->costCount;
+}
+
+static void ShowRecMessage(const u8 *text, u32 next)
+{
+    sRecWork->fallbackState = next;
+    CreateDialogueBoxAndPortrait(text, 0, sRecWork->monPortraitPtr, 0x10D);
+}
+
+static void ShowRecMenu(const u8 *text, u32 defaultAction)
+{
+    CreateMenuDialogueBoxAndPortrait(text, 0, defaultAction, sRecWork->menuItems,
+                                     sRecWork->menuRestrict, 4, 0, sRecWork->monPortraitPtr, 0xC);
 }
 
 static void UpdateRecDialogue(void)
 {
     switch (sRecWork->currState) {
         case REC_INIT:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            CreateDialogueBoxAndPortrait(RECYCLE_WELCOME, 0, sRecWork->monPortraitPtr, 0x10D);
+            ShowRecMessage(RECYCLE_WELCOME,
+                gSpindaCafeData.ticketType != CAFE_TICKET_NONE ? REC_LEGACY_TICKET : REC_MAIN_PROMPT);
             break;
+        case REC_LEGACY_TICKET: {
+            /* Saves from before tickets were items held one abstract ticket. */
+            u8 itemId = LegacyTicketItem(gSpindaCafeData.ticketType);
+
+            gSpindaCafeData.ticketType = CAFE_TICKET_NONE;
+            sRecWork->afterRewardState = REC_MAIN_PROMPT;
+            if (GiveRewardItem(itemId)) {
+                ShowRecMessage(RECYCLE_LEGACY_TICKET, REC_MAIN_PROMPT);
+            }
+            else {
+                sRecWork->fallbackState = REC_MAIN_PROMPT;
+                CreateDialogueBoxAndPortrait(RECYCLE_BAG_FULL, 0, sRecWork->monPortraitPtr, 0x10D);
+            }
+            break;
+        }
         case REC_MAIN_PROMPT:
+            sRecWork->bonusDraw = FALSE;
             BuildRecMainMenu();
-            CreateMenuDialogueBoxAndPortrait(RECYCLE_HOW_MAY, 0, sRecWork->menuAction,
-                sRecWork->menuItems, sRecWork->menuRestrict, 4, 0, sRecWork->monPortraitPtr, 0xC);
+            ShowRecMenu(RECYCLE_HOW_MAY, sRecWork->menuAction);
             break;
         case REC_INFO_DLG:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            CreateDialogueBoxAndPortrait(RECYCLE_INFO, 0, sRecWork->monPortraitPtr, 0x10D);
+            ShowRecMessage(RECYCLE_INFO, REC_MAIN_PROMPT);
             break;
-        case REC_NO_ITEMS:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            CreateDialogueBoxAndPortrait(RECYCLE_NO_ITEMS, 0, sRecWork->monPortraitPtr, 0x10D);
+        case REC_BYE:
+            ShowRecMessage(RECYCLE_BYE, REC_EXIT);
             break;
-        case REC_PICK_COUNT_DLG:
-            BuildRecCountMenu();
-            CreateMenuDialogueBoxAndPortrait(RECYCLE_PICK_COUNT, 0, REC_COUNT_2,
-                sRecWork->menuItems, sRecWork->menuRestrict, 4, 0, sRecWork->monPortraitPtr, 0xC);
+
+        case REC_TRADE_MENU:
+            BuildRecTradeMenu();
+            gFormatArgs[0] = gSpindaCafeData.itemsRecycled;
+            ShowRecMenu(RECYCLE_TRADE_PROMPT, REC_OFFER_BASE);
+            break;
+        case REC_TRADE_NONE:
+            ShowRecMessage(RECYCLE_TRADE_NONE, REC_MAIN_PROMPT);
+            break;
+        case REC_TRADE_CONFIRM:
+            SetOfferFormatArgs(&sTradeOffers[sRecWork->chosenOffer]);
+            BuildYesNoMenu();
+            ShowRecMenu(RECYCLE_TRADE_CONFIRM, REC_YES);
+            break;
+        case REC_TRADE_SHORT:
+            SetOfferFormatArgs(&sTradeOffers[sRecWork->chosenOffer]);
+            ShowRecMessage(RECYCLE_TRADE_SHORT, REC_TRADE_MENU);
+            break;
+        case REC_TRADE_DONE:
+            ShowRecMessage(RECYCLE_GOT_ITEM, sRecWork->afterRewardState);
+            break;
+
+        case REC_TICKET_MENU:
+            BuildRecTicketMenu();
+            ShowRecMenu(RECYCLE_TICKET_PROMPT, REC_TIER_BASE);
+            break;
+        case REC_TICKET_RANK:
+            ShowRecMessage(sTicketTiers[sRecWork->ticketTier].rankText, REC_TICKET_MENU);
+            break;
+        case REC_TICKET_FEW_ITEMS:
+            gFormatArgs[0] = sRecWork->targetCount;
+            ShowRecMessage(RECYCLE_TICKET_FEW_ITEMS, REC_TICKET_MENU);
             break;
         case REC_PICK_ITEMS_DLG:
-            gFormatArgs[0] = sRecWork->targetCount;
-            sRecWork->fallbackState = REC_PICK_ITEMS;
-            CreateDialogueBoxAndPortrait(RECYCLE_PICK_ITEMS, 0, sRecWork->monPortraitPtr, 0x10D);
+            gFormatArgs[0] = sRecWork->targetCount - sRecWork->pickedCount;
+            ShowRecMessage(RECYCLE_PICK_ITEMS, REC_PICK_ITEMS);
             break;
         case REC_PICK_ITEMS:
             sub_801A5D8(1, 3, NULL, 10);
             sub_801A8D0(TRUE);
             break;
         case REC_CANT_ITEM:
-            sRecWork->fallbackState = REC_PICK_ITEMS_DLG;
-            CreateDialogueBoxAndPortrait(RECYCLE_CANT_RECYCLE, 0, sRecWork->monPortraitPtr, 0x10D);
+            ShowRecMessage(RECYCLE_CANT_RECYCLE, REC_PICK_ITEMS_DLG);
             break;
         case REC_ALREADY:
-            sRecWork->fallbackState = REC_PICK_ITEMS_DLG;
-            CreateDialogueBoxAndPortrait(RECYCLE_ALREADY_PICKED, 0, sRecWork->monPortraitPtr, 0x10D);
+            ShowRecMessage(RECYCLE_ALREADY_PICKED, REC_PICK_ITEMS_DLG);
             break;
-        case REC_CHOOSE_REWARD_DLG:
-            BuildRecRewardMenu();
-            CreateMenuDialogueBoxAndPortrait(RECYCLE_CHOOSE_REWARD, 0, REC_EXCHANGE,
-                sRecWork->menuItems, sRecWork->menuRestrict, 4, 0, sRecWork->monPortraitPtr, 0xC);
+        case REC_TICKET_DONE:
+            ShowRecMessage(RECYCLE_GOT_TICKET, sRecWork->afterRewardState);
             break;
-        case REC_GOT_ITEM:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            CreateDialogueBoxAndPortrait(RECYCLE_GOT_ITEM, 0, sRecWork->monPortraitPtr, 0x10D);
-            break;
-        case REC_GOT_TICKET:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            CreateDialogueBoxAndPortrait(RECYCLE_GOT_TICKET, 0, sRecWork->monPortraitPtr, 0x10D);
-            break;
-        case REC_BAG_FULL_NOTE:
-            if (sRecWork->lotteryTier != 0)
-                sRecWork->fallbackState = REC_LOTTERY_RESULT;
-            else
-                sRecWork->fallbackState = REC_GOT_ITEM;
-            CreateDialogueBoxAndPortrait(RECYCLE_BAG_FULL, 0, sRecWork->monPortraitPtr, 0x10D);
+
+        case REC_LOTTERY_MENU:
+            BuildRecLotteryMenu();
+            ShowRecMenu(RECYCLE_LOTTERY_PROMPT, REC_TIER_BASE);
             break;
         case REC_NO_TICKET:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            CreateDialogueBoxAndPortrait(RECYCLE_NO_TICKET, 0, sRecWork->monPortraitPtr, 0x10D);
+            ShowRecMessage(RECYCLE_NO_TICKET, REC_MAIN_PROMPT);
             break;
-        case REC_LOTTERY_DLG:
-            BuildRecLotteryMenu();
-            CreateMenuDialogueBoxAndPortrait(RECYCLE_LOTTERY, 0, REC_COLOR_RED,
-                sRecWork->menuItems, sRecWork->menuRestrict, 4, 0, sRecWork->monPortraitPtr, 0xC);
+        case REC_BONUS_DLG:
+            ShowRecMessage(RECYCLE_BONUS_DRAW, REC_CARD_MENU);
             break;
-        case REC_LOTTERY_RESULT:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            if (sRecWork->lotteryTier == 0)
-                CreateDialogueBoxAndPortrait(RECYCLE_LOTTERY_LOSS, 0, sRecWork->monPortraitPtr, 0x10D);
-            else if (sRecWork->lotteryTier == 2)
-                CreateDialogueBoxAndPortrait(RECYCLE_LOTTERY_BIG, 0, sRecWork->monPortraitPtr, 0x10D);
+        case REC_CARD_MENU:
+            BuildRecCardMenu();
+            ShowRecMenu(sTicketTiers[sRecWork->drawTier].drawText, REC_CARD_BASE + 1);
+            break;
+        case REC_CARD_RESULT:
+            if (sRecWork->outcome == REC_OUTCOME_BIG_WIN)
+                ShowRecMessage(RECYCLE_LOTTERY_BIG, sRecWork->afterRewardState);
+            else if (sRecWork->outcome == REC_OUTCOME_WIN)
+                ShowRecMessage(RECYCLE_LOTTERY_WIN, sRecWork->afterRewardState);
             else
-                CreateDialogueBoxAndPortrait(RECYCLE_LOTTERY_WIN, 0, sRecWork->monPortraitPtr, 0x10D);
+                ShowRecMessage(RECYCLE_LOTTERY_LOSS, sRecWork->afterRewardState);
             break;
-        case REC_NEED_MORE:
-            sRecWork->fallbackState = REC_MAIN_PROMPT;
-            CreateDialogueBoxAndPortrait(RECYCLE_NEED_MORE, 0, sRecWork->monPortraitPtr, 0x10D);
-            break;
-        case REC_BYE:
-            sRecWork->fallbackState = REC_EXIT;
-            CreateDialogueBoxAndPortrait(RECYCLE_BYE, 0, sRecWork->monPortraitPtr, 0x10D);
+        case REC_BAG_FULL_NOTE:
+            /* fallbackState already holds the reward line to show next. */
+            CreateDialogueBoxAndPortrait(RECYCLE_BAG_FULL, 0, sRecWork->monPortraitPtr, 0x10D);
             break;
         default:
             break;
@@ -511,55 +630,97 @@ static void HandleRecMainMenu(void)
         case REC_INFO:
             UpdateRecState(REC_INFO_DLG);
             break;
-        case REC_RECYCLE:
-            if (GetNumberOfFilledInventorySlots() == 0)
-                UpdateRecState(REC_NO_ITEMS);
-            else
-                UpdateRecState(REC_PICK_COUNT_DLG);
+        case REC_TRADE:
+            sRecWork->offerPage = 0;
+            UpdateRecState(CountUnlockedOffers() == 0 ? REC_TRADE_NONE : REC_TRADE_MENU);
             break;
-        case REC_TICKET:
-            if (gSpindaCafeData.ticketType == CAFE_TICKET_NONE)
-                UpdateRecState(REC_NO_TICKET);
-            else
-                UpdateRecState(REC_LOTTERY_DLG);
+        case REC_TICKETS:
+            UpdateRecState(REC_TICKET_MENU);
             break;
+        case REC_LOTTERY: {
+            s32 tier;
+            bool8 any = FALSE;
+
+            for (tier = 0; tier < RECYCLE_TICKET_TIERS; tier++) {
+                if (CountTicketsOfTier(tier) != 0)
+                    any = TRUE;
+            }
+            UpdateRecState(any ? REC_LOTTERY_MENU : REC_NO_TICKET);
+            break;
+        }
     }
 }
 
-static void HandleRecCountMenu(void)
+static void HandleRecTradeMenu(void)
 {
     s32 menuAction;
 
     if (sub_80144A4(&menuAction))
         return;
 
-    if (menuAction == REC_CANCEL) {
+    if (menuAction == REC_NEXT_PAGE) {
+        sRecWork->offerPage++;
+        if (sRecWork->offerPage * REC_OFFERS_PER_PAGE >= CountUnlockedOffers())
+            sRecWork->offerPage = 0;
+        UpdateRecState(REC_TRADE_MENU);
+        return;
+    }
+    if (menuAction >= REC_OFFER_BASE && menuAction < REC_OFFER_BASE + sRecWork->offerCount) {
+        sRecWork->chosenOffer = sRecWork->offerIds[menuAction - REC_OFFER_BASE];
+        UpdateRecState(REC_TRADE_CONFIRM);
+        return;
+    }
+    UpdateRecState(REC_MAIN_PROMPT);
+}
+
+static void HandleRecTradeConfirm(void)
+{
+    s32 menuAction;
+    const struct RecycleTradeOffer *offer;
+    s32 slots[REC_MAX_PICK];
+
+    if (sub_80144A4(&menuAction))
+        return;
+
+    if (menuAction != REC_YES) {
+        UpdateRecState(REC_TRADE_MENU);
+        return;
+    }
+
+    offer = &sTradeOffers[sRecWork->chosenOffer];
+    if (FindInventorySlotsOf(offer->cost, slots, offer->costCount) < offer->costCount) {
+        UpdateRecState(REC_TRADE_SHORT);
+        return;
+    }
+    RemoveInventorySlots(slots, offer->costCount);
+    NoteSpindaCafeItemsRecycled(offer->costCount);
+    ShowReward(offer->reward, REC_TRADE_DONE, NextStateAfterRecycle());
+}
+
+static void HandleRecTicketMenu(void)
+{
+    s32 menuAction;
+    const struct RecycleTicketTier *tier;
+
+    if (sub_80144A4(&menuAction))
+        return;
+
+    if (menuAction < REC_TIER_BASE || menuAction >= REC_TIER_BASE + RECYCLE_TICKET_TIERS) {
         UpdateRecState(REC_MAIN_PROMPT);
         return;
     }
 
-    switch (menuAction) {
-        case REC_COUNT_2:
-            sRecWork->targetCount = 2;
-            break;
-        case REC_COUNT_4:
-            sRecWork->targetCount = 4;
-            break;
-        case REC_COUNT_6:
-            sRecWork->targetCount = 6;
-            break;
-        case REC_COUNT_8:
-            sRecWork->targetCount = 8;
-            break;
-        default:
-            return;
-    }
-
-    if (GetNumberOfFilledInventorySlots() < sRecWork->targetCount) {
-        UpdateRecState(REC_NO_ITEMS);
+    sRecWork->ticketTier = menuAction - REC_TIER_BASE;
+    tier = &sTicketTiers[sRecWork->ticketTier];
+    sRecWork->targetCount = tier->recycleCount;
+    if (GetRescueTeamRank() < tier->minRank) {
+        UpdateRecState(REC_TICKET_RANK);
         return;
     }
-
+    if (CountRecyclableInventory() < sRecWork->targetCount) {
+        UpdateRecState(REC_TICKET_FEW_ITEMS);
+        return;
+    }
     sRecWork->pickedCount = 0;
     UpdateRecState(REC_PICK_ITEMS_DLG);
 }
@@ -581,10 +742,13 @@ static void HandleRecItemPick(void)
                 break;
             }
             sRecWork->pickedIndices[sRecWork->pickedCount++] = idx;
-            if (sRecWork->pickedCount >= sRecWork->targetCount)
-                UpdateRecState(REC_CHOOSE_REWARD_DLG);
-            else
+            if (sRecWork->pickedCount < sRecWork->targetCount) {
                 UpdateRecState(REC_PICK_ITEMS_DLG);
+                break;
+            }
+            RemoveInventorySlots(sRecWork->pickedIndices, sRecWork->pickedCount);
+            NoteSpindaCafeItemsRecycled(sRecWork->pickedCount);
+            ShowReward(sTicketTiers[sRecWork->ticketTier].itemId, REC_TICKET_DONE, NextStateAfterRecycle());
             break;
         }
         case 2:
@@ -594,82 +758,62 @@ static void HandleRecItemPick(void)
     }
 }
 
-static void HandleRecRewardMenu(void)
-{
-    s32 menuAction;
-    u8 tier = GetSpindaCafeCatalogTier();
-    const u8 *catalog = sRecycleCatalogTier[tier - 1];
-
-    if (sub_80144A4(&menuAction))
-        return;
-
-    if (menuAction == REC_CANCEL) {
-        UpdateRecState(REC_MAIN_PROMPT);
-        return;
-    }
-
-    if (menuAction == REC_GET_TICKET) {
-        RemovePickedItems();
-        gSpindaCafeData.ticketType = TicketForCount(sRecWork->targetCount);
-        UpdateRecState(REC_GOT_TICKET);
-        return;
-    }
-
-    if (menuAction == REC_EXCHANGE)
-        menuAction = REC_REWARD_BASE;
-
-    if (menuAction >= REC_REWARD_BASE && menuAction < REC_REWARD_BASE + 3) {
-        u8 itemId = catalog[menuAction - REC_REWARD_BASE];
-        bool8 inBag;
-
-        RemovePickedItems();
-        inBag = GiveRewardItem(itemId);
-        if (!inBag)
-            UpdateRecState(REC_BAG_FULL_NOTE);
-        else
-            UpdateRecState(REC_GOT_ITEM);
-    }
-}
-
 static void HandleRecLotteryMenu(void)
 {
     s32 menuAction;
-    s32 roll;
+    s32 tier;
+    s32 slot[1];
 
     if (sub_80144A4(&menuAction))
         return;
 
-    if (menuAction == REC_CANCEL) {
+    if (menuAction < REC_TIER_BASE || menuAction >= REC_TIER_BASE + RECYCLE_TICKET_TIERS) {
         UpdateRecState(REC_MAIN_PROMPT);
         return;
     }
 
-    /* Color is cosmetic. */
-    (void)menuAction;
-    gSpindaCafeData.ticketType = CAFE_TICKET_NONE;
-    roll = RandInt(100);
-    if (roll < 35) {
-        sRecWork->lotteryTier = 0;
-        UpdateRecState(REC_LOTTERY_RESULT);
+    tier = menuAction - REC_TIER_BASE;
+    if (FindInventorySlotsOf(sTicketTiers[tier].itemId, slot, 1) == 0) {
+        UpdateRecState(REC_NO_TICKET);
+        return;
     }
-    else if (roll < 90) {
-        u8 itemId = sLotteryNormalPrizes[RandInt(ARRAY_COUNT(sLotteryNormalPrizes))];
-        bool8 inBag;
+    RemoveInventorySlots(slot, 1);
+    sRecWork->drawTier = tier;
+    sRecWork->bonusDraw = FALSE;
+    UpdateRecState(REC_CARD_MENU);
+}
 
-        sRecWork->lotteryTier = 1;
-        inBag = GiveRewardItem(itemId);
-        if (!inBag)
-            sRecWork->fallbackState = REC_LOTTERY_RESULT;
-        UpdateRecState(inBag ? REC_LOTTERY_RESULT : REC_BAG_FULL_NOTE);
+static u8 PickFromPool(const struct RecyclePrizePool *pool)
+{
+    return pool->items[RandInt(pool->count)];
+}
+
+static void HandleRecCardMenu(void)
+{
+    s32 menuAction;
+    const struct RecycleTicketTier *tier;
+    s32 roll;
+    u8 prize;
+
+    if (sub_80144A4(&menuAction))
+        return;
+
+    /* Which card is cosmetic; the outcome is rolled from the ticket's odds. */
+    tier = &sTicketTiers[sRecWork->drawTier];
+    roll = RandInt(100);
+    if (roll < tier->lossChance) {
+        sRecWork->outcome = REC_OUTCOME_LOSS;
+        prize = PickFromPool(&tier->lossPool);
+    }
+    else if (roll < tier->lossChance + tier->winChance) {
+        sRecWork->outcome = REC_OUTCOME_WIN;
+        prize = PickFromPool(&tier->winPool);
     }
     else {
-        u8 itemId = sLotteryBigPrizes[RandInt(ARRAY_COUNT(sLotteryBigPrizes))];
-        bool8 inBag;
-
-        sRecWork->lotteryTier = 2;
-        inBag = GiveRewardItem(itemId);
-        if (!inBag)
-            sRecWork->fallbackState = REC_LOTTERY_RESULT;
-        UpdateRecState(inBag ? REC_LOTTERY_RESULT : REC_BAG_FULL_NOTE);
+        sRecWork->outcome = REC_OUTCOME_BIG_WIN;
+        prize = PickFromPool(&tier->bigWinPool);
     }
+    if (sRecWork->outcome != REC_OUTCOME_LOSS)
+        PlayFanfareSE(REC_WIN_JINGLE, 0x100);
+    ShowReward(prize, REC_CARD_RESULT, REC_MAIN_PROMPT);
 }

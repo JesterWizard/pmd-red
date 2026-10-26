@@ -279,8 +279,16 @@
 #define ITEM_G_MACHINE_6 237
 #define ITEM_G_MACHINE_7 238
 #define ITEM_G_MACHINE_8 239
+/* Spinda's Café Recycle Shop (not in vanilla Red). */
+#define ITEM_PRIZE_TICKET 240
+#define ITEM_SILVER_TICKET 241
+#define ITEM_GOLD_TICKET 242
+#define ITEM_PRISM_TICKET 243
+#define ITEM_WONDER_GUMMI 244
 
-#define NUMBER_OF_ITEM_IDS (ITEM_G_MACHINE_8 + 1)
+#define NUMBER_OF_ITEM_IDS (ITEM_WONDER_GUMMI + 1)
+/* First id added by this hack; vanilla data (job items, spawn LUTs) stops before it. */
+#define ITEM_FIRST_CUSTOM ITEM_PRIZE_TICKET
 
 #define NUMBER_OF_GUMMIS 18
 #define INVENTORY_SIZE_VANILLA 20

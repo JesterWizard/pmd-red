@@ -384,6 +384,40 @@ Set `.chapter_titles = FALSE`, or drop `src/chapter_titles.c` and the hooks in
 
 ---
 
+## 2026-10-26 — Spinda's Café: Recycle Shop, tickets, Spinda's dance, team tables
+
+Docs: [`documentation/Features/SpindaCafe.md`](documentation/Features/SpindaCafe.md).
+
+### What changed
+- New items 240–244: Prize / Silver / Gold / Prism Ticket and Wonder Gummi
+  (`NUMBER_OF_ITEM_IDS` 245). Wonder Gummi picks the best gummi type for the
+  eater (`GetBestGummiIndexForTypes`). The new IDs are in `gInvalidItemIDs`
+  and skipped by mail jobs (`ITEM_FIRST_CUSTOM`). `tools/dungeonjson` knows them,
+  and `dungeon_item.mk` now rebuilds spawn sets when the tool changes. The
+  spawn-set decoders clamp at the end of the array.
+- Recycle Shop rewritten Sky-style: Trade (18 unlockable offers), Get Ticket
+  (4/6/8/10 items, rank-gated), Lottery (three cards, loss/win/big-win pools),
+  1-in-32 bonus draw. Old saves' abstract ticket converts to an item.
+- Juice Bar split into `SPECIAL_TEXT_SPINDA_JUICE_BAR` +
+  `SPECIAL_TEXT_SPINDA_JUICE_SERVE`. Between them the café script cues Spinda's
+  dance (hop, spin, tail whip).
+- Team members other than leader / partner sit at the café tables (lives kinds
+  10–13) with random café talk. `GetTeamSlotMembers` ignores
+  `QUEST_CAN_DEPOSIT_PARTNER` on `MAP_SPINDA_CAFE`.
+- Café wide UI: a dialogue that will open a menu reserves the menu's window
+  tiles (`gGroundMap8bppUiReserveTiles`), so large menus no longer blank the
+  dialogue and portrait when they appear.
+- Achievements `itemsEverGot` grown from 30 to 32 bytes so IDs 240-255 have
+  their own bits (they were landing in `runFlags`). Struct size unchanged;
+  old saves read the two new bytes as 0.
+
+### Reverse
+Revert the branch. Removing the items requires dropping IDs 240–244 from
+`item.h`, `item_data.json`, names / descriptions, `effect_data.c`, the
+`dungeonjson` map and the RescueEditor arrays together.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -399,4 +433,5 @@ Set `.chapter_titles = FALSE`, or drop `src/chapter_titles.c` and the hooks in
 | Runtime config | On (modern; edit `configs/runtime.c`) |
 | Custom title backgrounds | On (8bpp ≤600 tiles @ +128; maps SB 6–8/31; `custom_title_backgrounds`) |
 | Chapter title cards | On (`chapter_titles`; 10 chapters from `EVENT_M01ExxA`) |
+| Spinda's Café | On (`spinda_cafe`; Recycle Shop + tickets, dance, team tables) |
 | Matching `make compare` | Not expected to match once assets diverge |

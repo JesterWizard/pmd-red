@@ -456,7 +456,8 @@ static u8 sub_8095F28(u8 param_1)
   }
 
   counter = 0;
-  for(itemID = ITEM_STICK; itemID < NUMBER_OF_ITEM_IDS; itemID++)
+  /* Hack-added items (Recycle Shop exclusives) are never requested by jobs. */
+  for(itemID = ITEM_STICK; itemID < ITEM_FIRST_CUSTOM; itemID++)
   {
     if ((param_1 == 0x63) ||
        (xxx_bit_lut_lookup_8091E50(param_1, itemID) != 0)) {
