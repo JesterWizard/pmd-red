@@ -369,11 +369,14 @@ Docs: [`documentation/Features/ChapterTitles.md`](documentation/Features/Chapter
   and take `chapter_titles` from the ROM default.
 - Friend Area intro art load / fade / teardown moved to `src/fullscreen_art.c`
   (shared with the cards; intro behavior unchanged).
-- Regenerated 9 stale Friend Area `.pal` files (serene_sea, shallow_beach,
-  mt_moonview, scorched_plains, healing_forest, secretive_forest, darkness_ridge,
-  ice_floe_beach, volcanic_pit): their tiles matched the PNGs but the palettes
-  did not, so those intros (and the cards using them) showed scrambled colors.
-  The converter only reconverts when a PNG is newer, so builds never fixed them.
+- `.gitattributes`: raw RGBX palettes in `graphics/custom/backgrounds`,
+  `graphics/portraits` and `graphics/title_screen_backgrounds` are now
+  `binary`. The global `*.pal text eol=crlf` rule (meant for JASC-PAL text)
+  inserted 0x0D before every 0x0A byte on checkout, scrambling 9 Friend Area
+  intros (serene_sea, shallow_beach, mt_moonview, scorched_plains,
+  healing_forest, secretive_forest, darkness_ridge, ice_floe_beach,
+  volcanic_pit) and making builds rewrite the elekid / spinarak / sunkern /
+  swinub portrait palettes. The committed blobs were already correct.
 
 ### Reverse
 Set `.chapter_titles = FALSE`, or drop `src/chapter_titles.c` and the hooks in
