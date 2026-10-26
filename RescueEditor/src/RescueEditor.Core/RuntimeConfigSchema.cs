@@ -294,6 +294,8 @@ public static class RuntimeConfigSchema
             "Soft reset to the title screen if the game hangs for 300 frames (save data kept).");
         Add("chapter_titles", RuntimeConfigFieldKind.Toggle, "Chapter Titles", "Graphics / UI",
             "PMD2-style chapter cards (art fade-in + chapter number and title) at the start of each main-story chapter.");
+        Add("boss_recruit", RuntimeConfigFieldKind.Toggle, "Boss Recruit", "QoL / Cheats",
+            "After the story, defeated bosses always offer to join (species that can never be recruited stay unrecruitable).");
 
         return meta;
     }

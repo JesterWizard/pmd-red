@@ -146,6 +146,9 @@ typedef struct {
     /* PMD2-style chapter title cards (art fade-in + "Chapter N" / title)
      * at the start of each main-story episode */
     u8 chapter_titles;
+    /* Postgame: defeated boss Pokémon always offer to join (story bosses,
+     * legendaries, rescue-team / maze bosses); never-recruitable species stay so */
+    u8 boss_recruit;
 } RuntimeConfig;
 
 /* magic(4) + version(4) + RuntimeConfig + checksum(4); grow when fields are added */

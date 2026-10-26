@@ -97,6 +97,16 @@ public sealed class RuntimeConfigSchemaTests
     }
 
     [Fact]
+    public void BossRecruitHasCuratedMetadata()
+    {
+        var field = RuntimeConfigSchema.Find("boss_recruit");
+        Assert.NotNull(field);
+        Assert.Equal(RuntimeConfigFieldKind.Toggle, field!.Kind);
+        Assert.Equal("Boss Recruit", field.DisplayName);
+        Assert.Equal("QoL / Cheats", field.Group);
+    }
+
+    [Fact]
     public void CompareToSchemaDetectsDrift()
     {
         var header = RuntimeConfigHeaderParser.Parse("""

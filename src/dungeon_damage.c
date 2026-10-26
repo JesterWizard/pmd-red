@@ -793,7 +793,9 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
         }
     }
 
-    if (EntityIsValid(attacker) && GetEntityType(attacker) == ENTITY_MONSTER && !GetEntInfo(attacker)->isTeamLeader)
+    /* Only the leader's KO recruits, except guaranteed boss recruits (any teammate). */
+    if (EntityIsValid(attacker) && GetEntityType(attacker) == ENTITY_MONSTER && !GetEntInfo(attacker)->isTeamLeader
+        && !IsGuaranteedBossRecruit(targetData))
         r10 = FALSE;
 
     if (r10) {

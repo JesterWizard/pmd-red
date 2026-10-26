@@ -69,5 +69,6 @@ public static class RuntimeConfigHeaderSnapshot
         new("thought_bubbles", "Ground overworld: L toggles a thought-bubble sprite above the player (art selected from latest SCENARIO_MAIN; else DEFAULT)", 56),
         new("softlock_recovery", "Watchdog: soft reset to title if the main loop misses its frame wait for 300 VBlanks (hard hang); save data is kept", 57),
         new("chapter_titles", "PMD2-style chapter title cards (art fade-in + \"Chapter N\" / title) at the start of each main-story episode", 58),
+        new("boss_recruit", "Postgame: defeated boss Pokémon always offer to join (story bosses, legendaries, rescue-team / maze bosses); never-recruitable species stay so", 59),
     ];
 }

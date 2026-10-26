@@ -258,4 +258,8 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Shows a PMD2-style chapter card\n(art + chapter number and title) at\nthe start of each story chapter."),
       &gRuntimeConfig.chapter_titles, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+    { _("Boss Join"), _("Boss Recruit"),
+      _("After the story, defeated bosses\nalways offer to join your team\n(if the species can be recruited)."),
+      &gRuntimeConfig.boss_recruit, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
 };
