@@ -143,6 +143,9 @@ typedef struct {
     /* Watchdog: soft reset to title if the main loop misses its frame wait
      * for 300 VBlanks (hard hang); save data is kept */
     u8 softlock_recovery;
+    /* PMD2-style chapter title cards (art fade-in + "Chapter N" / title)
+     * at the start of each main-story episode */
+    u8 chapter_titles;
 } RuntimeConfig;
 
 /* magic(4) + version(4) + RuntimeConfig + checksum(4); grow when fields are added */

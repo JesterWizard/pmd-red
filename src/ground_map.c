@@ -13,6 +13,7 @@
 #include "window_buffer.h"
 #include "constants/dungeon.h"
 #include "constants/ground_map.h"
+#include "chapter_titles.h"
 #include "code_809D148.h"
 
 IWRAM_INIT GroundMapAction *gGroundMapAction = {NULL};
@@ -402,6 +403,8 @@ void GroundMap_Select(s32 mapId_)
     s32 mapId = (s16) mapId_;
 
     Log(0, "GroundMap Select %3d", mapId);
+    /* New story chapter: title card while the previous scene is faded out. */
+    ShowPendingChapterTitle_Async();
     ClearScriptVarArray(NULL, MAP_LOCAL);
     ClearScriptVarArray(NULL, MAP_LOCAL_DOOR);
     sub_80A5EDC(0);

@@ -254,4 +254,8 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Soft resets to the title screen if\nthe game hangs for 300 frames\n(5 seconds). Save data is kept."),
       &gRuntimeConfig.softlock_recovery, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+    { _("Chapters"), _("Chapter Titles"),
+      _("Shows a PMD2-style chapter card\n(art + chapter number and title) at\nthe start of each story chapter."),
+      &gRuntimeConfig.chapter_titles, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
 };

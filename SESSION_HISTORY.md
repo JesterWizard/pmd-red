@@ -353,6 +353,34 @@ scroll / rect / ShowWindows hooks.
 
 ---
 
+## 2026-10-26 — Chapter title cards
+
+Docs: [`documentation/Features/ChapterTitles.md`](documentation/Features/ChapterTitles.md).
+
+### What changed
+- Main story split into 10 chapters following the game's own episodes
+  (`EVENT_M01E01A` … `EVENT_M01E10A`). A PMD2-style card (Friend Area art fade-in
+  + "Chapter N" / title, alpha-blended text) plays on each chapter's first
+  morning, queued from `ScenarioCalc` on `SCENARIO_MAIN (N,0)→(N,1)` and shown
+  at the next `GroundMap_Select`.
+- Runtime toggle `chapter_titles` (default on): `runtime.h`, `configs/runtime.c`,
+  debug menu (**Chapters**), RescueTemple schema + header snapshot.
+- Runtime-override save record → version 2; v1 records keep their overrides
+  and take `chapter_titles` from the ROM default.
+- Friend Area intro art load / fade / teardown moved to `src/fullscreen_art.c`
+  (shared with the cards; intro behavior unchanged).
+- Regenerated 9 stale Friend Area `.pal` files (serene_sea, shallow_beach,
+  mt_moonview, scorched_plains, healing_forest, secretive_forest, darkness_ridge,
+  ice_floe_beach, volcanic_pit): their tiles matched the PNGs but the palettes
+  did not, so those intros (and the cards using them) showed scrambled colors.
+  The converter only reconverts when a PNG is newer, so builds never fixed them.
+
+### Reverse
+Set `.chapter_titles = FALSE`, or drop `src/chapter_titles.c` and the hooks in
+`ScenarioCalc` / `GroundMap_Select`.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -367,4 +395,5 @@ scroll / rect / ShowWindows hooks.
 | Unused unk blobs in modern ROM | Stripped |
 | Runtime config | On (modern; edit `configs/runtime.c`) |
 | Custom title backgrounds | On (8bpp ≤600 tiles @ +128; maps SB 6–8/31; `custom_title_backgrounds`) |
+| Chapter title cards | On (`chapter_titles`; 10 chapters from `EVENT_M01ExxA`) |
 | Matching `make compare` | Not expected to match once assets diverge |
