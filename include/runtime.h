@@ -149,10 +149,19 @@ typedef struct {
     /* Postgame: defeated boss Pokémon always offer to join (story bosses,
      * legendaries, rescue-team / maze bosses); never-recruitable species stay so */
     u8 boss_recruit;
+    /* UI style for windows / frames: 0 = Red Rescue Team (vanilla),
+     * 1 = Explorers of Sky (dark fill, beveled frame tinted by the Windows option) */
+    u8 ui_style;
 } RuntimeConfig;
 
+enum UiStyle {
+    UI_STYLE_RED,
+    UI_STYLE_SKY,
+    UI_STYLE_COUNT,
+};
+
 /* magic(4) + version(4) + RuntimeConfig + checksum(4); grow when fields are added */
-#define RUNTIME_CONFIG_SAVE_SIZE 0x48
+#define RUNTIME_CONFIG_SAVE_SIZE 0x4C
 
 extern const RuntimeConfig gRuntimeConfigRom;
 extern RuntimeConfig gRuntimeConfigData;

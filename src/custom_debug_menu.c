@@ -21,6 +21,7 @@
 #include "text_2.h"
 #include "text_3.h"
 #include "items.h"
+#include "ui_style.h"
 
 enum CustomDebugMenuAction
 {
@@ -39,6 +40,7 @@ enum CustomDebugMenuOptionType
     CUSTOM_DEBUG_MENU_OPTION_EXP_MULTIPLIER,
     CUSTOM_DEBUG_MENU_OPTION_BANK_INTEREST,
     CUSTOM_DEBUG_MENU_OPTION_ONE_WAY,
+    CUSTOM_DEBUG_MENU_OPTION_UI_STYLE,
 };
 
 enum CustomDebugMenuOptionFlags
@@ -293,6 +295,11 @@ static void BuildCustomDebugMenuLabel(u8 *buffer, s32 optionIndex)
                                   : _("Bank %d%%"),
                           gRuntimeConfig.bank_interest_percent);
             break;
+        case CUSTOM_DEBUG_MENU_OPTION_UI_STYLE:
+            sprintfStatic(buffer,
+                          enabled ? _("{STAR_BULLET}UI: %s") : _("UI: %s"),
+                          GetUiStyleName(gRuntimeConfig.ui_style));
+            break;
         default:
             if (enabled)
                 sprintfStatic(buffer, _("{STAR_BULLET}%s"), option->label);
@@ -311,6 +318,8 @@ static bool8 IsCustomDebugMenuOptionEnabled(const struct CustomDebugMenuOption *
             return gRuntimeConfig.exp_multiplier > 1;
         case CUSTOM_DEBUG_MENU_OPTION_BANK_INTEREST:
             return gRuntimeConfig.bank_interest_percent != 0;
+        case CUSTOM_DEBUG_MENU_OPTION_UI_STYLE:
+            return gRuntimeConfig.ui_style != UI_STYLE_RED;
         default:
             return *option->value != 0;
     }
@@ -352,6 +361,10 @@ static void ExecuteCustomDebugMenuOption(s32 optionIndex)
                 gRuntimeConfig.bank_interest_percent = 10;
             else
                 gRuntimeConfig.bank_interest_percent = 0;
+            break;
+        case CUSTOM_DEBUG_MENU_OPTION_UI_STYLE:
+            gRuntimeConfig.ui_style = (gRuntimeConfig.ui_style + 1) % UI_STYLE_COUNT;
+            ApplyUiStyle();
             break;
         case CUSTOM_DEBUG_MENU_OPTION_ONE_WAY:
             if (*option->value == 0) {

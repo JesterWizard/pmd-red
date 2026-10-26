@@ -107,6 +107,17 @@ public sealed class RuntimeConfigSchemaTests
     }
 
     [Fact]
+    public void UiStyleHasCuratedMetadata()
+    {
+        var field = RuntimeConfigSchema.Find("ui_style");
+        Assert.NotNull(field);
+        Assert.Equal(RuntimeConfigFieldKind.U8, field!.Kind);
+        Assert.Equal("UI Style", field.DisplayName);
+        Assert.Equal("Graphics / UI", field.Group);
+        Assert.Equal((byte)1, field.Max);
+    }
+
+    [Fact]
     public void CompareToSchemaDetectsDrift()
     {
         var header = RuntimeConfigHeaderParser.Parse("""
