@@ -407,6 +407,9 @@ Docs: [`documentation/Features/SpindaCafe.md`](documentation/Features/SpindaCafe
 - Café wide UI: a dialogue that will open a menu reserves the menu's window
   tiles (`gGroundMap8bppUiReserveTiles`), so large menus no longer blank the
   dialogue and portrait when they appear.
+- Achievements `itemsEverGot` grown from 30 to 32 bytes so IDs 240-255 have
+  their own bits (they were landing in `runFlags`). Struct size unchanged;
+  old saves read the two new bytes as 0.
 
 ### Reverse
 Revert the branch. Removing the items requires dropping IDs 240–244 from
