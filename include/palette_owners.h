@@ -16,8 +16,9 @@
  *   levfont: 4,5,6,12,15 | hp5font: 8,10,15 | chrome: 12–15 | pink: 11
  *
  * Dungeon coin: custom poke_coin.4bpp as OBJ (not floor itempat art).
- *   Tiles upload to a spare OBJ VRAM slot; palette is GetItemPalette(ITEM_POKE)
- *   (floor golds 10/9/8 + white 15). No BG bank 12 writes.
+ *   Tiles upload to a spare OBJ VRAM slot; colors are the exact town golds in
+ *   OBJ bank 13 slots 8–12 (HP bars own slots 0–7). The floor ITEM_POKE pal
+ *   only has 3 golds, which merged the "P" into the coin face. No BG writes.
  *
  * Town coin: full palette on BG bank 14 (map tiles stop at bank 12 on
  * T01P03; rank badge is 13 when shown). While a dialogue portrait owns
@@ -52,18 +53,14 @@
 #define POKE_COIN_DUNGEON_GOLD_SLOT3 11 /* ← floor dark */
 #define POKE_COIN_NUM_GOLD_TONES 4
 
-/* Floor ITEM_POKE sprite indices inside GetItemPalette(ITEM_POKE) bank. */
-#define POKE_COIN_FLOOR_SLOT_DARK 8
-#define POKE_COIN_FLOOR_SLOT_MID 9
-#define POKE_COIN_FLOOR_SLOT_BRIGHT 10
-#define POKE_COIN_FLOOR_SLOT_WHITE 15
+/* Dungeon OBJ bank 13: HP bars use slots 0–7 (dungeon_hp_bars.c). */
+#define DUNGEON_HP_BAR_OBJ_PAL_BANK 13
+#define DUNGEON_HP_BAR_OBJ_PAL_SLOTS 8
 
-/* Town .4bpp → floor OBJ pal (3 golds + white). */
-#define POKE_COIN_SLOT_WHITE_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_WHITE
-#define POKE_COIN_SLOT_PALE_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_BRIGHT
-#define POKE_COIN_SLOT_YELLOW_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_MID
-#define POKE_COIN_SLOT_MID_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_MID
-#define POKE_COIN_SLOT_DARK_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_DARK
+/* Dungeon coin OBJ pal: town golds keep their .4bpp indices (9–12); white
+ * moves 7 → 8 because 7 is an HP-bar slot. */
+#define POKE_COIN_OBJ_PAL_BANK DUNGEON_HP_BAR_OBJ_PAL_BANK
+#define POKE_COIN_SLOT_WHITE_OBJ 8
 
 /* Town .4bpp tile indices (from convert_poke_coin.py / poke_coin.png). */
 #define POKE_COIN_SLOT_TRANSPARENT 0
@@ -105,6 +102,12 @@
 
 #if POKE_COIN_DUNGEON_GOLD_SLOT0 < 8 || POKE_COIN_DUNGEON_GOLD_SLOT3 > 11
 #error "Dungeon coin gold must stay in trappat bank slots 8–11 (stairs use 1–7,15)"
+#endif
+
+#if POKE_COIN_SLOT_WHITE_OBJ < DUNGEON_HP_BAR_OBJ_PAL_SLOTS \
+    || POKE_COIN_SLOT_PALE < DUNGEON_HP_BAR_OBJ_PAL_SLOTS \
+    || POKE_COIN_SLOT_DARK_TOWN > 15
+#error "Dungeon coin OBJ slots must stay in OBJ bank 13 slots 8–15 (HP bars own 0–7)"
 #endif
 
 #if POKE_COIN_PAL_BANK_DUNGEON == FONT_BANK

@@ -304,6 +304,28 @@ Why not full table LZ-on-open: `Dungeon` (~116 KiB) already fills most of the
 
 ---
 
+## 2026-10-26 — Poké coin palette + vertical alignment
+
+### What changed
+- **Dungeon palette:** the {POKE} OBJ no longer borrows the floor
+  `GetItemPalette(ITEM_POKE)` bank (only 3 golds, so the coin's yellow and mid
+  tones merged and the "P" vanished into the face). It now writes the exact
+  town golds into **OBJ bank 13 slots 8–12** each frame it is shown
+  (brightness-aware, no color ramp). HP bars keep slots 0–7 and no longer
+  write 8–15 (`DUNGEON_HP_BAR_OBJ_PAL_*` in `palette_owners.h`).
+- **Town menu height:** `POKE_COIN_OY_MENU` −3 → −4 so the 10px coin is
+  centered on the 8px caps (art rows y−1 … y+8), matching the dungeon field
+  menu. When `y` is tile-aligned the coin sits 1px lower rather than clipping
+  its top row.
+- `tools/check_palette_owners.py` checks the new OBJ slots.
+
+### Reverse
+Restore `GetItemPalette(ITEM_POKE)` + the floor slot remap in
+`EmitPokeCoinObjSprites`, set `POKE_COIN_OY_MENU` back to `(-3)`, and the HP bar
+palette loop back to 16.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |

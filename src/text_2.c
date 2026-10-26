@@ -101,6 +101,10 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
             else
                 oyAlign = POKE_COIN_OY_MENU;
             oy = (y & 7) + oyAlign;
+            /* y on a tile boundary would push the art's top row out of the
+             * 16×16 block; sit 1px lower instead of clipping it. */
+            if (POKE_COIN_ART_TOP + oy < 0)
+                oy = -POKE_COIN_ART_TOP;
 
             /* Dialogue line-2+: floor-snapped blitY sits in the line above
              * (11px glyphs from y=4 reach into tile row 1). Shift the 16×16

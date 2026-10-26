@@ -2,10 +2,8 @@
 #include "custom_graphics.h"
 #include "runtime.h"
 #include "bg_palette_buffer.h"
-#include "constants/item.h"
 #include "cpu.h"
 #include "graphics_memory.h"
-#include "items.h"
 #include "sprite.h"
 #include "structs/rgb.h"
 #include "structs/sprite_oam.h"
@@ -16,9 +14,10 @@
 /*
  * Poké coin — see include/palette_owners.h (enforced by tools/check_palette_owners.py).
  *
- * Dungeon: custom poke_coin.4bpp as OBJ (floor ITEM_POKE palette for golds —
- * not itempat art). Town: full gold on BG bank 14 (map flowers stay on 12;
- * rank badge on 13). Portrait on bank 14 → coin uses bank 13 with same golds.
+ * Dungeon: custom poke_coin.4bpp as OBJ with the town golds in OBJ bank 13
+ * slots 8–12 (HP bars use 0–7). Town: full gold on BG bank 14 (map flowers
+ * stay on 12; rank badge on 13). Portrait on bank 14 → coin uses bank 13 with
+ * same golds.
  */
 
 #define POKE_COIN_OBJ_MAX 8
@@ -310,7 +309,7 @@ u32 GetPokeCoinPalBank(void)
 
 static void LoadPokeCoinPalette(void)
 {
-    /* Dungeon coins are custom OBJ tiles + floor pal; do not touch BG bank 12. */
+    /* Dungeon coins are custom OBJ tiles + OBJ pal; do not touch BG bank 12. */
     if (gUnknown_203B40C)
         return;
 
@@ -334,22 +333,31 @@ void RegisterPokeCoinObjSprite(s32 screenX, s32 screenY)
 static void UnpackCoinSource(u8 out[16][16]);
 static void PackCoinBlit(u8 in[16][16]);
 
-static u8 RemapCoinPixelForFloorObj(u8 p)
+/* Golds keep their town indices; white moves off the HP-bar slots. */
+static u8 RemapCoinPixelForObj(u8 p)
 {
     if (p == POKE_COIN_SLOT_WHITE)
-        return POKE_COIN_SLOT_WHITE_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_PALE)
-        return POKE_COIN_SLOT_PALE_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_YELLOW)
-        return POKE_COIN_SLOT_YELLOW_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_MID)
-        return POKE_COIN_SLOT_MID_OBJ_FLOOR;
-    if (p == POKE_COIN_SLOT_DARK_TOWN)
-        return POKE_COIN_SLOT_DARK_OBJ_FLOOR;
+        return POKE_COIN_SLOT_WHITE_OBJ;
     return p;
 }
 
-/* Town .4bpp → floor ITEM_POKE indices, then OBJ VRAM upload. */
+/* All five town tones (white + 4 golds), brightness-aware like the font. */
+static void ApplyPokeCoinObjPalette(void)
+{
+    static const u8 sSlots[] = {
+        POKE_COIN_SLOT_WHITE, POKE_COIN_SLOT_PALE, POKE_COIN_SLOT_YELLOW,
+        POKE_COIN_SLOT_MID, POKE_COIN_SLOT_DARK_TOWN,
+    };
+    s32 base = (16 + POKE_COIN_OBJ_PAL_BANK) * 16;
+    s32 i;
+
+    for (i = 0; i < (s32)ARRAY_COUNT(sSlots); i++) {
+        SetBGPaletteBufferColorRGB(base + RemapCoinPixelForObj(sSlots[i]),
+                                   &sPokeCoinTownPal[sSlots[i]], gDungeonBrightness, NULL);
+    }
+}
+
+/* Town .4bpp → coin OBJ indices, then OBJ VRAM upload. */
 static void UploadPokeCoinObjTiles(void)
 {
     u8 grid[16][16];
@@ -358,7 +366,7 @@ static void UploadPokeCoinObjTiles(void)
     UnpackCoinSource(grid);
     for (y = 0; y < 16; y++) {
         for (x = 0; x < 16; x++)
-            grid[y][x] = RemapCoinPixelForFloorObj(grid[y][x]);
+            grid[y][x] = RemapCoinPixelForObj(grid[y][x]);
     }
     PackCoinBlit(grid);
     CpuCopy((void *)(OBJ_VRAM0 + POKE_COIN_OBJ_VRAM_INDEX * 32),
@@ -368,14 +376,13 @@ static void UploadPokeCoinObjTiles(void)
 void EmitPokeCoinObjSprites(void)
 {
     s32 i;
-    s32 palNum;
     SpriteOAM sprite;
 
     if (!gRuntimeConfig.custom_graphics || !gUnknown_203B40C || sPokeCoinObjCount <= 0)
         return;
 
     UploadPokeCoinObjTiles();
-    palNum = GetItemPalette(ITEM_POKE);
+    ApplyPokeCoinObjPalette();
 
     for (i = 0; i < sPokeCoinObjCount; i++) {
         sprite.attrib1 = 0;
@@ -388,7 +395,7 @@ void EmitPokeCoinObjSprites(void)
         SpriteSetX(&sprite, sPokeCoinObjPos[i].x);
         SpriteSetTileNum(&sprite, POKE_COIN_OBJ_VRAM_INDEX);
         SpriteSetPriority(&sprite, 0); /* above dialogue BG */
-        SpriteSetPalNum(&sprite, palNum);
+        SpriteSetPalNum(&sprite, POKE_COIN_OBJ_PAL_BANK);
         AddSprite(&sprite, 0x100, NULL, NULL);
     }
 }
