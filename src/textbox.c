@@ -584,6 +584,50 @@ bool8 sub_809AC18(s32 a0_, s32 a1_)
     }
 }
 
+/*
+ * A few NPCs use extra kao slots: the purple Kecleon (lives 0x47) takes slots
+ * 6+, and Lombre / Absol / Spinda have pre-drawn mirrored faces (+4 / +1 / +2)
+ * for flipped placements. Returns the slot to show and sets *preMirrored
+ * when that face replaces the hardware flip.
+ * The slot is picked before the file is opened, so a custom portrait without
+ * it falls back to the vanilla kao, and a custom face whose mirror slot is
+ * missing keeps the custom face and is flipped in hardware instead.
+ */
+static s32 GetSpecialPortraitFaceId(TextboxPortrait *portraitPtr, s32 spriteId, bool8 *preMirrored)
+{
+    s32 emotion = spriteId & 0xF;
+    s32 offset;
+
+    *preMirrored = FALSE;
+
+    // first 4 bits are actually spriteId, there's also some 0x40 flag which isn't really used. I assume it marks that the spriteId was changed?
+    switch (portraitPtr->unk0) {
+        case 0x47:
+            if (emotion < 6)
+                return (s8) ((spriteId + 6) | 0x40);
+            return spriteId;
+        case 0x4D:
+            offset = 4;
+            break;
+        case 0x53:
+            offset = 1;
+            break;
+        case 0x73:
+            offset = 2;
+            break;
+        default:
+            return spriteId;
+    }
+
+    if (!portraitPtr->monPortrait.flip || emotion >= offset)
+        return spriteId;
+    if (CustomPortraitHasEmotion(portraitPtr->speciesID, emotion)
+        && !CustomPortraitHasEmotion(portraitPtr->speciesID, emotion + offset))
+        return spriteId;
+    *preMirrored = TRUE;
+    return (s8) ((spriteId + offset) | 0x40);
+}
+
 bool8 ScriptSetPortraitInfo(s32 portraitId_, s32 spriteId_, s32 placementId_)
 {
     s32 portraitId = (s16) portraitId_;
@@ -613,41 +657,17 @@ bool8 ScriptSetPortraitInfo(s32 portraitId_, s32 spriteId_, s32 placementId_)
         }
 
         if (portraitPtr->showPortrait) {
-            portraitPtr->faceFile = OpenPokemonDialogueSpriteFile(portraitPtr->speciesID, spriteId);
+            bool8 preMirrored;
+            s32 faceId = GetSpecialPortraitFaceId(portraitPtr, spriteId, &preMirrored);
+
+            portraitPtr->faceFile = OpenPokemonDialogueSpriteFile(portraitPtr->speciesID, faceId);
             if (portraitPtr->faceFile != NULL) {
                 portraitPtr->spriteId = spriteId;
                 portraitPtr->monPortrait.faceFile = portraitPtr->faceFile;
                 GetFileDataPtr(portraitPtr->faceFile, 0);
-                // first 4 bits are actually spriteId, there's also some 0x40 flag which isn't really used. I assume it marks that the spriteId was changed?
-                switch (portraitPtr->unk0) {
-                    case 0x47:
-                        if ((spriteId & 0xF) < 6) {
-                            spriteId = (s8) (spriteId + 6);
-                            spriteId = (s8) (spriteId | 0x40);
-                        }
-                        break;
-                    case 0x4D:
-                        if (portraitPtr->monPortrait.flip && (spriteId & 0xF) < 4) {
-                            portraitPtr->monPortrait.flip = FALSE;
-                            spriteId = (s8) (spriteId + 4);
-                            spriteId = (s8) (spriteId | 0x40);
-                        }
-                        break;
-                    case 0x53:
-                        if (portraitPtr->monPortrait.flip && (spriteId & 0xF) < 1) {
-                            portraitPtr->monPortrait.flip = FALSE;
-                            spriteId = (s8) (spriteId + 1);
-                            spriteId = (s8) (spriteId | 0x40);
-                        }
-                        break;
-                    case 0x73:
-                        if (portraitPtr->monPortrait.flip && (spriteId & 0xF) < 2) {
-                            portraitPtr->monPortrait.flip = FALSE;
-                            spriteId = (s8) (spriteId + 2);
-                            spriteId = (s8) (spriteId | 0x40);
-                        }
-                        break;
-                }
+                if (preMirrored)
+                    portraitPtr->monPortrait.flip = FALSE;
+                spriteId = faceId;
 
                 portraitPtr->monPortrait.faceData = (void *) portraitPtr->faceFile->data;
                 portraitPtr->monPortrait.spriteId = spriteId & 0xF;

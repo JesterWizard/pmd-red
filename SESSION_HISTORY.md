@@ -472,6 +472,24 @@ Set `.ui_style = UI_STYLE_RED`, or drop `src/ui_style.c` and its hooks.
 
 ---
 
+## 2026-10-26 — Custom portraits: special NPC slots (Lombre fix)
+
+Docs: [`documentation/Features/CustomPortraits.md`](documentation/Features/CustomPortraits.md#special-npc-slots).
+
+### What changed
+- Cutscene portraits for the purple Kecleon (lives 0x47), Lombre (0x4D) and
+  Absol (0x53) went blank with custom portraits on. `ScriptSetPortraitInfo`
+  swapped them to extra kao slots (purple palette, pre-drawn mirrored faces)
+  after opening the Normal-only custom pack, which has nothing in those slots.
+- `GetSpecialPortraitFaceId` now picks the slot before the open: a missing
+  swapped slot loads vanilla `kao`; a custom face without its mirror slot is
+  flipped in hardware. `CustomPortraitHasEmotion` is now public.
+
+### Reverse
+Restore the post-open `switch (portraitPtr->unk0)` in `ScriptSetPortraitInfo`.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |

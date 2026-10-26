@@ -983,7 +983,7 @@ u8 GetPokemonOverworldPalette(s16 index, bool32 recolorShopKecleon)
     }
 }
 
-static bool8 CustomPortraitHasEmotion(s16 id, s32 spriteId)
+bool8 CustomPortraitHasEmotion(s16 id, s32 spriteId)
 {
     if (!gRuntimeConfig.custom_portraits || !HasCustomPortrait(id))
         return FALSE;
