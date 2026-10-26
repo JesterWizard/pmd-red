@@ -1,4 +1,5 @@
 #include "global.h"
+#include "custom_graphics.h"
 #include "globaldata.h"
 #include "dungeon_message.h"
 #include "dungeon_message_log.h"
@@ -260,6 +261,8 @@ void xxx_draw_string_80524F0(void)
     case 3:
         strPtr->unk1C068++;
         gIwramTextFunc4(0);
+        /* Rows below 4 move up 1px; row 3 and above are erased. */
+        ScrollPokeCoinObjSprites(0, -1, 4);
         if (strPtr->unk1C068 > 10) {
             strPtr->unk1C06C = 2;
         }

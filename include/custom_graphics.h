@@ -11,6 +11,7 @@
 #define POKE_COIN_ART_WIDTH 12
 /* First opaque row: convert_poke_coin.py centers the 10px art vertically. */
 #define POKE_COIN_ART_TOP 3
+#define POKE_COIN_ART_HEIGHT 10
 
 /* Horizontal: keep ox at 0 — blitX is ceiled so the 16×16 never overlaps
  * digits; left-aligned art means the coin sits at the left of that block.
@@ -66,11 +67,20 @@ bool8 IsCustomPokeCoinChar(s32 chr);
 
 /*
  * Dungeon {POKE}: custom poke_coin.4bpp OBJ overlay with its own palette in
- * OBJ bank 13 slots 8–12 (no BG bank stomping). Register while printing; Emit
- * each frame; Clear on textbox prep.
+ * OBJ bank 13 slots 8–12 (no BG bank stomping). Coins are registered in window
+ * gfx coordinates while printing and placed on screen at Emit (every frame),
+ * so they must be dropped / moved whenever their window's text is:
+ *   ClearPokeCoinObjSprites        window layout rebuilt (ShowWindows)
+ *   ClearPokeCoinObjSpritesInWindow textbox cleared (PrepareTextbox)
+ *   ClearPokeCoinObjSpritesInRect   part of a window cleared (sub_80087EC)
+ *   ScrollPokeCoinObjSprites        window gfx scrolled by dy rows; coins whose
+ *                                   art goes above clipTop are erased
  */
 void ClearPokeCoinObjSprites(void);
-void RegisterPokeCoinObjSprite(s32 screenX, s32 screenY);
+void ClearPokeCoinObjSpritesInWindow(u32 windowId);
+void ClearPokeCoinObjSpritesInRect(u32 windowId, s32 x, s32 y, s32 width, s32 height);
+void ScrollPokeCoinObjSprites(u32 windowId, s32 dy, s32 clipTop);
+void RegisterPokeCoinObjSprite(u32 windowId, s32 x, s32 artTop);
 void EmitPokeCoinObjSprites(void);
 
 #endif /* GUARD_CUSTOM_GRAPHICS_H */

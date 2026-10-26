@@ -62,8 +62,6 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
             /* Dungeon: custom poke_coin.4bpp OBJ (floor ITEM_POKE palette).
              * Town: BG window blit as before. */
             if (gUnknown_203B40C) {
-                s32 screenX;
-                s32 screenY;
                 s32 oyAlign;
                 s32 blitX;
 
@@ -72,9 +70,7 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
                 else
                     oyAlign = POKE_COIN_OY_DUNGEON_ALIGN;
 
-                screenX = window->x * 8 + x;
-                screenY = window->y * 8 + y + oyAlign;
-                RegisterPokeCoinObjSprite(screenX, screenY);
+                RegisterPokeCoinObjSprite(windowId, x, y + oyAlign + POKE_COIN_ART_TOP);
                 blitX = (x + 7) & ~7;
                 return (blitX - x) + POKE_COIN_ART_WIDTH + gCharacterSpacing;
             }
@@ -1136,6 +1132,7 @@ UNUSED static void sub_80086C8(Window *windows, s32 windowId, s32 a2, s32 a3, s3
 
 void sub_80087EC(s32 a0, s32 a1, s32 a2, s32 a3, s32 a4)
 {
+    ClearPokeCoinObjSpritesInRect(a0, a1, a2, a3, a4);
     sub_8008818(gWindows, a0, a1, a2, a3, a4);
 }
 
@@ -1438,7 +1435,7 @@ void PrepareTextbox_8008C6C(Window *windows, u32 windowId)
     s32 i;
     Window *window = &windows[windowId];
 
-    ClearPokeCoinObjSprites();
+    ClearPokeCoinObjSpritesInWindow(windowId);
 
     if (!window->isWinType0) {
         s32 count = (window->width * window->totalHeight) * 32;

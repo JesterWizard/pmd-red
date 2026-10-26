@@ -326,6 +326,33 @@ palette loop back to 16.
 
 ---
 
+## 2026-10-26 — Dungeon Poké coin follows its text (pickups / logs / dialogue)
+
+### What changed
+The dungeon {POKE} is an OBJ, so it does not move or clear with window text.
+It used to store screen positions and was wiped by `sub_80073B8` (every text
+pass on any window), which caused:
+- typewriter dialogue (money tutorial, Kecleon prompts) losing its coin after
+  the first frame;
+- earlier pickup lines in the message popup losing their coin when the next
+  line printed;
+- Others → Message log placing every coin one line low (window gfx row
+  offset `unk24` ignored), a stray coin below the box, and coins left behind
+  when scrolling.
+
+Coins are now stored per window in gfx coordinates (`custom_graphics.c`) and
+placed at Emit: skipped unless fully inside the window's visible rows,
+cleared per window (`PrepareTextbox`), per rect (`sub_80087EC`) or all
+(`ShowWindows`), and shifted with the popup scroll (`dungeon_message.c`) and
+the log viewer scroll (`dungeon_message_log.c`).
+
+### Reverse
+Restore `ClearPokeCoinObjSprites()` in `sub_80073B8` / `PrepareTextbox`, the
+screen-space `RegisterPokeCoinObjSprite(screenX, screenY)`, and drop the
+scroll / rect / ShowWindows hooks.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
