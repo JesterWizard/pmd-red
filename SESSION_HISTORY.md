@@ -490,6 +490,50 @@ Restore the post-open `switch (portraitPtr->unk0)` in `ScriptSetPortraitInfo`.
 
 ---
 
+## 2026-10-27 — Cloud build/screenshot workflow and fresh-clone fixes
+
+Docs: [`documentation/cloud_sessions.md`](documentation/cloud_sessions.md).
+
+### What changed
+- Cloud bootstrap: `.claude/settings.json` registers `.claude/hooks/session-start.sh`
+  as a SessionStart hook. In cloud sessions (`CLAUDE_CODE_REMOTE=true`) it runs
+  `scripts/cloud/setup.sh`, which is idempotent. It installs missing apt and pip
+  packages, regenerates `baserom.gba` from `baserom.xdelta`, runs `make tools`,
+  and builds `build/tools/mgba_shot`. Flags: `--build`, `--agbcc`. The hook does
+  not build the ROM.
+- `scripts/cloud/smoke_test.sh`: headless 1800-frame boot test with six captures.
+  It checks for the title screen, a changing picture, and intro graphics. It uses
+  no golden hashes.
+- `scripts/cloud/screenshot.sh` and `scripts/cloud/mgba_shot.c` (built to
+  `build/tools/mgba_shot`). The tool lives in `scripts/cloud/`, not `tools/`,
+  because the root Makefile auto-builds every `tools/*/` directory that has a
+  Makefile.
+- Fresh-clone fixes:
+  - 23,407 `graphics/ax/anim_lz/**/*.lz` blobs that `src/data/ax/*.h` and
+    `src/data/ax_shared_anims.c` INCBIN were never committed, because of the
+    `*.lz` ignore rule. They were regenerated from the C arrays at commit
+    `a592ba530~1` with `compress_ax_anims.py`'s `pack_anim_body` and
+    `lz77_with_gmlz`, each round-trip checked, and committed.
+  - `.gitignore` gained `!graphics/ax/anim_lz/**/*.lz`.
+  - Makefile: `$(AX_TILES_STAMP)` depends on `AX_MON_4BPPS`, so every
+    `graphics/ax/mon/*/*.png` is converted to `.4bpp` before `compress_ax_tiles.py`
+    runs. Added `$(MAP): $(ELF) ;` because the default goal (`cpatch-payload`)
+    needs `pmd_red.map`.
+- Docs: `CLAUDE.md` (agent orientation), `.claude/skills/rom-screenshot/SKILL.md`.
+
+### Reverse
+- Remove the `.gitignore` line `!graphics/ax/anim_lz/**/*.lz` and the two Makefile
+  additions above.
+- Delete `scripts/cloud/`, `.claude/hooks/`, `.claude/settings.json`,
+  `.claude/skills/rom-screenshot/`, `documentation/cloud_sessions.md` and
+  `CLAUDE.md`.
+- Keep the anim `.lz` files, or the build breaks.
+
+### Verify
+- `scripts/cloud/smoke_test.sh --build` prints `SMOKE TEST PASSED`.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
