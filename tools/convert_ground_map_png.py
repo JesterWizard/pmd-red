@@ -3,8 +3,9 @@
 
 RT BPC is raw 4bpp (not Sky AT4PX). BPL/BMA match skytemple-files layouts.
 
-Spinda Café emits a dual-layer BMA: layer0 (BG2) = bar fronts in front of
-Pokémon sprites; layer1 (BG3) = room behind sprites. Requires MAP unk0=6/7/9.
+Spinda Café emits a dual-layer BMA: layer0 (BG2) is currently empty (no bar
+fronts; café staff draw over the whole counter); layer1 (BG3) = room behind
+sprites. Requires MAP unk0=6/7/9.
 Native 520×400 exceeds the 1024 VRAM tile cap; ground_bg_tile_stream remaps
 the visible window at runtime so the map need not be downscaled.
 """
@@ -163,34 +164,53 @@ def luminance(rgb: tuple[int, int, int]) -> float:
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
 
-# Spinda Café furniture — authored for native 520×400 → 65×50 tiles
-# (padded camera 66×51). Runtime streams VRAM tiles for the visible region.
-CAFE_BAR_RECTS = (
-    # Full counter through approach row. Player stands on y=24;
-    # talk proxies on solid y=22 handle A-range.
-    (12, 12, 28, 22),
-    (34, 12, 52, 22),
-)
-# South counter fascia → BMA layer0 (BG2), in front of Pokémon sprites.
-# Left bar: drop Spinda's rightmost two fascia tiles (orange/green jars).
-CAFE_BAR_FG_RECTS = (
-    (12, 16, 24, 16),
-    (34, 16, 52, 16),
-)
-# Bottom lip only — taller FG overlaps café staff sprites.
+# Empty: café staff draw over the whole counter (no BMA layer0 lip).
+CAFE_BAR_FG_RECTS = ()
+# Kept for split_bar_layers; unused while CAFE_BAR_FG_RECTS is empty.
 CAFE_BAR_FG_PIXELS = 4
-CAFE_TABLE_DISKS = (
-    (16, 26, 3),
-    (22, 30, 3),
-    (48, 26, 3),
-    (42, 30, 3),
-)
-CAFE_NPC_WALKABLE = ()  # staff stand on solid counter tiles; do not punch bar holes
 
+
+
+# Hand-authored café floor (tile coords, inclusive x spans) for rows 0..37,
+# measured from spinda_cafe.png. Rows not listed are fully solid. Rows >= 38
+# (stairs) keep the luminance result. Counters end at y=19 (fascia bottom),
+# the back wall ends at y=14, tables/plants/crates/barrels/signs are solid.
+CAFE_WALKABLE_SPANS = {
+    15: ((28, 36),),
+    16: ((28, 36),),
+    17: ((28, 36),),
+    18: ((28, 36),),
+    19: ((28, 36),),
+    20: ((13, 51),),
+    21: ((11, 53),),
+    22: ((11, 12), (19, 45), (52, 52)),
+    23: ((11, 12), (19, 45), (52, 52)),
+    24: ((11, 12), (19, 45)),
+    25: ((11, 12), (19, 45)),
+    26: ((11, 12), (19, 45)),
+    27: ((13, 50),),
+    28: ((13, 18), (25, 39), (46, 50)),
+    29: ((13, 18), (25, 39), (46, 49)),
+    30: ((13, 18), (25, 39), (46, 49)),
+    31: ((13, 18), (25, 39), (46, 49)),
+    32: ((16, 18), (25, 39), (46, 49)),
+    33: ((16, 49),),
+    34: ((19, 45),),
+    35: ((19, 45),),
+    36: ((19, 45),),
+    37: ((19, 45),),
+}
+CAFE_AUTHORED_ROWS = 38
 
 
 def build_collision(img_rgb: Image.Image, w_tiles: int, h_tiles: int) -> list[bool]:
-    """Solid on cave walls / void / bars / tables; walkable on floor + stairs + staff tiles."""
+    """Café collision: luminance heuristic, then hand-authored rows overwrite it.
+
+    The luminance loop runs for every tile as before. For rows ty < CAFE_AUTHORED_ROWS
+    the whole row is then set blocked, except the inclusive x spans listed in
+    CAFE_WALKABLE_SPANS[ty], which are walkable. Rows >= CAFE_AUTHORED_ROWS (stairs)
+    keep the luminance result unchanged.
+    """
     blocked: list[bool] = []
     px = img_rgb.load()
     for ty in range(h_tiles):
@@ -216,30 +236,13 @@ def build_collision(img_rgb: Image.Image, w_tiles: int, h_tiles: int) -> list[bo
                 continue
             blocked.append(True)
 
-    def set_blocked(tx: int, ty: int, value: bool) -> None:
-        if 0 <= tx < w_tiles and 0 <= ty < h_tiles:
-            blocked[ty * w_tiles + tx] = value
-
-    for x0, y0, x1, y1 in CAFE_BAR_RECTS:
-        for ty in range(y0, y1 + 1):
-            for tx in range(x0, x1 + 1):
-                set_blocked(tx, ty, True)
-
-    # BG2 fascia row must always be solid (no NPC walkable punches).
-    for x0, y0, x1, y1 in CAFE_BAR_FG_RECTS:
-        for ty in range(y0, y1 + 1):
-            for tx in range(x0, x1 + 1):
-                set_blocked(tx, ty, True)
-
-    for cx, cy, rad in CAFE_TABLE_DISKS:
-        r2 = rad * rad
-        for ty in range(cy - rad, cy + rad + 1):
-            for tx in range(cx - rad, cx + rad + 1):
-                if (tx - cx) * (tx - cx) + (ty - cy) * (ty - cy) <= r2:
-                    set_blocked(tx, ty, True)
-
-    for tx, ty in CAFE_NPC_WALKABLE:
-        set_blocked(tx, ty, False)
+    for ty in range(min(CAFE_AUTHORED_ROWS, h_tiles)):
+        row = ty * w_tiles
+        for tx in range(w_tiles):
+            blocked[row + tx] = True
+        for x0, x1 in CAFE_WALKABLE_SPANS.get(ty, ()):
+            for tx in range(max(0, x0), min(w_tiles - 1, x1) + 1):
+                blocked[row + tx] = False
 
     return blocked
 
