@@ -231,6 +231,9 @@ CPATCH_PAYLOAD := RescueEditor/src/RescueEditor.Core/Resources/CPatchFeaturePayl
 cpatch-payload: $(ROM) $(MAP) gen-runtime-config-schema
 	python3 tools/pack_cpatch_payload.py --feature-rom $(ROM) --map $(MAP) -o $(CPATCH_PAYLOAD)
 
+# The map is written by the ELF link; this lets make order it after the link.
+$(MAP): $(ELF) ;
+
 # Pretend rules that are actually flags defer to `make all`
 modern: all
 
@@ -295,7 +298,10 @@ ax-dedupe:
 
 FORCE: ;
 
-$(AX_TILES_STAMP): FORCE
+# Fresh clones have only the PNGs; generate every .4bpp before compressing.
+AX_MON_4BPPS := $(patsubst %.png,%.4bpp,$(wildcard graphics/ax/mon/*/*.png))
+
+$(AX_TILES_STAMP): FORCE $(AX_MON_4BPPS)
 	@mkdir -p $(dir $@)
 	@python3 compress_ax_tiles.py --stamp $@ --quiet
 
