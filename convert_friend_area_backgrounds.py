@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Convert graphics/custom/backgrounds/*.png to 8bpp AT4PN + pal for friend-area intros.
+"""Convert graphics/custom/backgrounds/*.png to 8bpp AT4PX + pal for friend-area intros.
 
 Output next to each PNG:
-  <slug>.at4pn  — AT4PN: 2×32×32 tilemaps + 8bpp tiles
+  <slug>.at4px  — AT4PX (PX-compressed): 2×32×32 tilemaps + 8bpp tiles
   <slug>.pal    — 240 RGBX colors (index 0 reserved transparent)
 
 Also regenerates src/friend_area_intros_data.c (INCBINs + ID→asset table).
@@ -88,7 +88,7 @@ FRIEND_AREA_SLUGS: list[tuple[int, str]] = [
 
 
 def convert_one(png: Path, force: bool = False) -> bool:
-    out_at = png.with_suffix(".at4pn")
+    out_at = png.with_suffix(".at4px")
     out_pal = png.with_suffix(".pal")
     if (
         not force
@@ -101,12 +101,12 @@ def convert_one(png: Path, force: bool = False) -> bool:
 
     im = title.flatten_rgb(Image.open(png))
     raw, pal, ntiles, ncolors, merged = title.convert_image(im)
-    out_at.write_bytes(title.wrap_at4pn(raw))
+    out_at.write_bytes(title.wrap_at4px(raw))
     out_pal.write_bytes(pal)
     extra = ", merged" if merged else ""
     print(
         f"  {png.name}: colors={ncolors}, tiles={ntiles}{extra}, "
-        f"at4pn={out_at.stat().st_size}"
+        f"at4px={out_at.stat().st_size}"
     )
     return True
 
@@ -129,7 +129,7 @@ def generate_c() -> None:
     for _area_id, slug in FRIEND_AREA_SLUGS:
         ident = slug_to_c_ident(slug)
         base = f"graphics/custom/backgrounds/{slug}"
-        lines.append(f"static const u8 {ident}Gfx[] = INCBIN_U8(\"{base}.at4pn\");")
+        lines.append(f"static const u8 {ident}Gfx[] = INCBIN_U8(\"{base}.at4px\");")
         lines.append(f"static const u8 {ident}Pal[] = INCBIN_U8(\"{base}.pal\");")
 
     lines.append("")
