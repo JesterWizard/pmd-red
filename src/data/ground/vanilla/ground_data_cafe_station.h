@@ -170,7 +170,7 @@ static const struct GroundLivesData s_gs229_g0_s1_lives[] = {
 };
 
 /* Spinda (left bar), Wynaut+Wobbuffet (right bar) — on fascia, face south.
- * Counter solid through y=22; talk hits kind-4 proxies there. */
+ * Counter solid through y=19; talk hits the kind-4 proxies on that row. */
 static const struct GroundLivesData s_gs229_g1_s0_lives[] = {
     /*  0 */ { 115,   0,   0,   0, {  20,  16, 0, CPOS_HALFTILE }, {
         [1] = s_gs229_g1_s0_lives0_dlg1,
@@ -202,15 +202,15 @@ static const struct GroundLivesData s_gs229_g1_s0_lives[] = {
     } },
 };
 
-/* Invisible talk zones on solid y=22 so A works from player y=24 (kind 4 = no sprite). */
+/* Invisible talk zones on the counter's front row (y=19) so A works from the floor in front of the counter (y=20) (kind 4 = no sprite). */
 static const struct GroundObjectData s_gs229_g1_s0_objs[] = {
-    /*  0 */ {   4,   0,   5,   1, {  20,  22, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  0 */ {   4,   0,  15,   1, {  20,  19, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives0_dlg2,
     } },
-    /*  1 */ {   4,   0,   3,   1, {  42,  22, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  1 */ {   4,   0,   7,   1, {  40,  19, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives1_dlg2,
     } },
-    /*  2 */ {   4,   0,   3,   1, {  44,  22, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  2 */ {   4,   0,   7,   1, {  47,  19, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives2_dlg2,
     } },
 };

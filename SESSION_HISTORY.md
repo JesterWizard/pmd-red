@@ -534,6 +534,71 @@ Docs: [`documentation/cloud_sessions.md`](documentation/cloud_sessions.md).
 
 ---
 
+## 2026-10-28 — Spinda's Café: collision, layering, talk zones, streamer lag
+
+Docs: [`documentation/Features/SpindaCafe.md`](documentation/Features/SpindaCafe.md),
+[`documentation/gba_techniques/DynamicTileLoading.md`](documentation/gba_techniques/DynamicTileLoading.md),
+[`documentation/cloud_sessions.md`](documentation/cloud_sessions.md).
+
+### What changed
+- **Collision:** `tools/convert_ground_map_png.py` builds rows 0–37 from the
+  hand-authored `CAFE_WALKABLE_SPANS` table (inclusive x spans; unlisted rows
+  solid). Rows 38+ (stairs) keep the luminance heuristic. `CAFE_BAR_RECTS`,
+  `CAFE_TABLE_DISKS` and `CAFE_NPC_WALKABLE` are removed. Counters are solid
+  through y=19, so the player stands at y=20; the old invisible blocks on rows
+  20–22 are gone. Back wall, ceiling and side walls are solid. Walkable tiles
+  went 1081 → 680.
+- **Layering:** `CAFE_BAR_FG_RECTS = ()`, so BMA layer0 (BG2) is empty. Spinda,
+  Wynaut and Wobbuffet draw over the counter's back edge. Map conversion stays
+  `unk0 = 6`.
+- **Talk zones:** the three invisible kind-4 objects in `s_gs229_g1_s0_objs`
+  (vanilla and custom `ground_data_cafe_station.h`) moved from y=22 to the
+  counter's front row y=19. Spinda's is 15 wide at x=20, Wynaut's 7 wide at x=40,
+  Wobbuffet's 7 wide at x=47. A anywhere along a counter front talks to its staff.
+- **Map assets:** the café BMA is INCBINd from the committed
+  `data/map_bg_lz/T01P08m.bma.lz`; the BPC `data/map_bg/T01P08c.bpc` stays raw.
+  A `ground_lz.stamp` Makefile rule re-runs `compress_ground_assets.py` whenever a
+  `data/map_bg/*` file is newer, so the `.lz` copies cannot go stale.
+- **Streamer lag:** `GroundBgTileStream_RemapVisibleTilemaps`
+  (`src/ground_bg_tile_stream.c`) goes from three passes to two. Pass A stamps
+  cached tiles and rewrites them, recording misses in `sMissBits` (384 bytes; a
+  cell list did not fit in EWRAM). Pass B allocates only the misses. Every visible
+  cached tile is still stamped before any allocation. Over 821 frames of café
+  movement, dropped frames went 82 → 3 walking and 197 → 7 running. The same walk
+  on Pokémon Square drops 0.
+- **Test tooling:**
+  - `make DEBUG_BOOT_MAP=MAP_xxx` (e.g. `MAP_SPINDA_CAFE`): New Game creates the
+    default Charmander/Squirtle team, sets `SCENARIO_MAIN` 18,3 and enters that
+    map. Default builds are byte-identical; `make` again afterwards.
+  - `build/tools/mgba_shot --watch ADDR` (hex, up to 4; appends `w0=…` to shot
+    lines) and `--trace FROM:TO` (prints per-frame values; needs `--watch`).
+    Lag frames over a window = emulated frames − increase of `gUnknown_203B0B8`.
+- **Known, not fixed:** Wobbuffet's speaker name shows "Invalidity:" (pre-existing);
+  Spinda's drink dialogue and dance are not yet matched to Explorers of Sky (needs
+  a reference script).
+
+### Reverse
+- Revert the session's commits, or piecemeal:
+  1. Collision and layering: restore the old `CAFE_*` constants (bars, tables,
+     NPC walkable, `CAFE_BAR_FG_RECTS` rects) in `tools/convert_ground_map_png.py`,
+     regenerate with `python3 tools/convert_ground_map_png.py
+     graphics/custom/spinda_cafe.png`, then `make`. Commit both `data/map_bg` and
+     `data/map_bg_lz`.
+  2. Talk zones: restore the three objects to y=22 in both
+     `ground_data_cafe_station.h` packs.
+  3. Streamer: restore the three-pass remap in `src/ground_bg_tile_stream.c`.
+- `DEBUG_BOOT_MAP` is opt-in and off by default, so a normal build needs nothing
+  reversed.
+
+### Verify
+- `make DEBUG_BOOT_MAP=MAP_SPINDA_CAFE`, then
+  `build/tools/mgba_shot pmd_red.gba build/shots/cafe --frames 2700 --shot 2700 --press 600:START --press 900:A --press 1200:A --press 1500:A --press 1800:A --press 2100:A`.
+  The player should appear at the top of the café stairs. Then plain `make`.
+- Plain `make`, then `scripts/cloud/smoke_test.sh` on the default build. It must
+  print `SMOKE TEST PASSED`.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |

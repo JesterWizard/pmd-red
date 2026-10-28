@@ -32,6 +32,9 @@ ifeq (modern,$(MAKECMDGOALS))
   MODERN := 1
 endif
 
+# Test hook: make DEBUG_BOOT_MAP=MAP_SPINDA_CAFE → New Game boots into that map (post-game story, default team). Leave empty for normal builds.
+DEBUG_BOOT_MAP ?=
+
 PREFIX := arm-none-eabi-
 OBJCOPY := $(PREFIX)objcopy
 OBJDUMP := $(PREFIX)objdump
@@ -128,6 +131,10 @@ GROUND_STORY_PATH := src/data/ground/$(GROUND_STORY_DIR)
 CPPFLAGS += -iquote $(GROUND_STORY_PATH)
 INCLUDE_PATHS += -I $(GROUND_STORY_PATH)
 
+ifneq ($(DEBUG_BOOT_MAP),)
+CPPFLAGS += -DDEBUG_BOOT_MAP=$(DEBUG_BOOT_MAP)
+endif
+
 #### Files ####
 # Always emit pmd_red.gba. Matching (agbcc) and modern objects stay separated.
 BUILD_DIR_NORMAL := build/pmd_red_matching
@@ -205,6 +212,11 @@ GROUND_MAP_OBJECTS := $(filter $(C_BUILDDIR)/ground_map_files_%.o,$(C_OBJECTS))
 # Stamp path for pack flips (rule attached after `all:` so it is not the default goal)
 GROUND_STATION_OBJECTS := $(filter $(C_BUILDDIR)/ground_data_%_station.o,$(C_OBJECTS))
 GROUND_STORY_STAMP := $(BUILD_DIR)/.ground_story_$(GROUND_STORY_DIR)
+DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)
+# GNU make skips a missing prerequisite that has a recipe when the target already
+# exists (the .SECONDARY: above), so the rule below would never run after a flip.
+# Create a missing stamp at parse time instead; the new mtime forces main_loops.o.
+$(if $(wildcard $(DEBUG_BOOT_STAMP)),,$(shell mkdir -p $(BUILD_DIR) && rm -f $(BUILD_DIR)/.debug_boot_* && touch $(DEBUG_BOOT_STAMP)))
 
 SUBDIRS := $(sort $(dir $(ALL_OBJECTS)))
 
@@ -270,6 +282,15 @@ all: $(ROM)
 # Keep after `all:` so this prerequisite-only rule is not the default goal.
 $(GROUND_MAP_OBJECTS): $(GROUND_MAP_COMPRESSED_ASSETS)
 
+# Re-run the ground compressor when a raw map asset is newer than the stamp
+# (data/map_bg_lz/*.lz are committed; the script only rewrites stale ones).
+GROUND_LZ_STAMP := $(BUILD_DIR)/ground_lz.stamp
+$(GROUND_LZ_STAMP): $(GROUND_MAP_RAW_ASSETS) compress_ground_assets.py | tools/gbagfx
+	@mkdir -p $(dir $@)
+	python3 compress_ground_assets.py
+	@touch $@
+$(GROUND_MAP_OBJECTS): $(GROUND_LZ_STAMP)
+
 # Rebuild station scripts when custom_story pack selection flips
 $(GROUND_STATION_OBJECTS): $(GROUND_STORY_STAMP)
 $(GROUND_STORY_STAMP):
@@ -277,6 +298,13 @@ $(GROUND_STORY_STAMP):
 	@rm -f $(BUILD_DIR)/.ground_story_vanilla $(BUILD_DIR)/.ground_story_custom
 	@touch $@
 	@echo "Ground story pack: $(GROUND_STORY_DIR) (custom_story=$(CUSTOM_STORY_FLAG))"
+
+# Rebuild main_loops when the DEBUG_BOOT_MAP test hook flips
+$(C_BUILDDIR)/main_loops.o: $(DEBUG_BOOT_STAMP)
+$(DEBUG_BOOT_STAMP):
+	@mkdir -p $(BUILD_DIR)
+	@rm -f $(BUILD_DIR)/.debug_boot_*
+	@touch $@
 
 tools: $(TOOLDIRS)
 

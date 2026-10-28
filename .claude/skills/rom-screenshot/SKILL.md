@@ -27,6 +27,11 @@ Full reference: `documentation/cloud_sessions.md`.
        --press 600:START --press 900:A --press 1200:A --press 1500:A --press 2000:A
      ```
      → frame 2400 is the New Game "Welcome!" screen (start of the personality quiz).
+   - Specific map (for example Spinda's Café): build a test ROM with
+     `make DEBUG_BOOT_MAP=MAP_SPINDA_CAFE` instead of plain `make`. New Game then
+     starts in that map with post-game progress. Run the café route from
+     `documentation/cloud_sessions.md` (section "Reaching a map directly"), then run
+     plain `make` to get the normal ROM back.
 5. **Look.** Open the PNG with the Read tool. It renders images. Describe what
    you see and say whether it matches what was asked.
 6. **Show the user.** Send the PNG file to the user (for example with the

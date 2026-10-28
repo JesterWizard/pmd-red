@@ -118,6 +118,19 @@ static u8 sub_8001170(void);
 static void sub_80011CC(DungeonSetupSubstruct *info, u8 dungId);
 static void sub_80011E8(DungeonSetupSubstruct *info);
 
+#ifdef DEBUG_BOOT_MAP
+/* Test hook (make DEBUG_BOOT_MAP=MAP_xxx): New Game skips the story and
+ * enters that map with the default leader/partner and post-game progress. */
+static void DebugBootMap_Setup(void)
+{
+    sub_8001064();
+    ScenarioCalc(SCENARIO_MAIN, 18, 3);
+    SetScriptVarValue(NULL, START_MODE, STARTMODE_CONTINUE_GAME);
+    SetScriptVarValue(NULL, GROUND_ENTER, DEBUG_BOOT_MAP);
+    SetScriptVarValue(NULL, GROUND_ENTER_LINK, 0);
+}
+#endif
+
 // arm9.bin::0200E0A8
 void GameLoop_Async(void)
 {
@@ -278,6 +291,9 @@ void GameLoop_Async(void)
             case MENU_NEW_GAME: {
                 sub_80122A8();
                 nullsub_33();
+#ifdef DEBUG_BOOT_MAP
+                DebugBootMap_Setup();
+#endif
                 tmp3 = RunGameMode_Async(0);
                 break;
             }
