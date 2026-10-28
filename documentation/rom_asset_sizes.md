@@ -4,8 +4,10 @@ Retail baseline is a fixed **32.00 MiB** GBA image (`baserom.gba`). The default
 **modern** build (`make`) emits an unpadded `pmd_red.gba` packed with
 `ld_script_modern.ld`.
 
-Current modern image: **~20.71 MiB** (~11.29 MiB under 32 MiB). Details and
-reversals: `SESSION_HISTORY.md`.
+Current modern image: **23,657,497 bytes** (22.56 MiB; **9,896.9 KB / 9,665.0 KiB
+≈ 9.44 MiB** under 32 MiB, the ROM is 70.5% of retail). Measured figures and
+the 2026-10-28 pass: [`rom_size_report.md`](rom_size_report.md). Reversals:
+`SESSION_HISTORY.md`.
 
 Percentages below are of the **32 MiB** retail image unless noted.
 
@@ -20,6 +22,9 @@ Percentages below are of the **32 MiB** retail image unless noted.
 | (+ custom title BGs / portraits) | **25.30 MiB** | +~0.54 MiB | New always-linked assets |
 | AX pose/anim table dedupe | **21.92 MiB** | **−~3.38 MiB** | Alias duplicate pose/anim arrays |
 | AX anim sequence LZ | **20.71 MiB** | **−~1.20 MiB** | GMLZ anims → `axdata.animCache` on init |
+| Start of 2026-10-28 size pass (`c334a10fd`) | **23.58 MiB** (24,721,801 B) | — | Image had grown to this size before this pass (as hack features were added; not re-attributed here) |
+| Step 1: AT4PX intro/title art (`ba432f97c`) | **22.77 MiB** (23,878,109 B) | **−0.80 MiB** (−843,692 B) | Friend-area and title art AT4PN → AT4PX; loaders size from bytes 0x10..0x11 |
+| Step 2: alias duplicate ground maps (`188fe7e3e`) | **22.56 MiB** (23,657,497 B) | **−0.21 MiB** (−220,612 B) | 117 byte-identical ground files point at one kept symbol; `tools/check_ground_file_aliases.py` |
 
 ## High-level layout — before vs after
 
@@ -167,12 +172,28 @@ unpadded modern pack.
 
 ## Remaining checklist
 
-1. **LZ `effect_sbin`** (~0.4 MiB likely) — needs decompress-on-open.
-2. **Ground BPL/BPA LZ** (~0.4 MiB) — boot-safe scratch path required.
-3. **Position-set indexing** in AX tables (~0.8 MiB potential).
-4. **Pose/remaining table packing** (offset format; full table LZ still heap-hostile).
-5. **Trim or build-exclude** custom title BGs / portraits if unused.
-6. **Sound** downsample/cull if quality can drop.
+Full list with reasons: [`rom_size_report.md`](rom_size_report.md#further-candidates).
+
+1. **Effect data duplicates** (~105 KiB, 184 blobs in 67 groups) — not safe yet.
+   Effect tilemaps are reached as the bytes after their 10-entry header, not
+   through a pointer. Store tilemap pointers in the effect format first.
+2. **Effect graphics LZ** (~0.4 MiB estimated) — needs a decompress-on-load path
+   in the effect code (raw payloads LZ to ~67%).
+3. **Ground BPL/BPA LZ** (~0.4 MiB estimated) — palettes and tile animations are
+   read memory-mapped every frame; the earlier heap-decompress attempt hung boot.
+   Needs a non-heap scratch path.
+4. **AX position/pose table packing** (~0.8 MiB estimated) — needs a runtime
+   format change (offset packing, position-set indexing).
+5. **Remove or build-exclude hack assets** — custom portraits (590,572 B) and
+   intro/title backgrounds (1,892,031 B). A feature decision for the owner, not
+   a compression.
+6. **Sound** downsample or cull (1,290,906 B in the ROM). Quality trade-off; no
+   byte-identical duplicate waves were found.
+
+Not worth doing: linker garbage collection of unreferenced sections (trial
+`--gc-sections` link saved only ~18 KiB).
+Already compressed with no headroom: custom portraits (AT4PX, no duplicates) and
+monster sprite tiles (LZ, essentially no duplicates).
 
 ## Regenerating these numbers
 
