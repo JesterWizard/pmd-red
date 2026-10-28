@@ -65,7 +65,7 @@ Install paths (extra `bppMode` arg: `GROUND_STREAM_4BPP` / `GROUND_STREAM_8BPP`)
 
 Activation: `layerSpecs->numTiles > groundBg->unk52C.unk6`.
 
-**8bpp café layout:** BPL flag `0x8B` → `gGroundMap8bpp`; BG2+BG3 `BGCNT_256COLOR` + `CHARBASE(1)`; art tiles at indices **128–767** (`0x6000–0xFFFF`, **640** slots) so font/chrome at `0x4F00–0x5FFF` is preserved. Art maps at SB **0/1** (`0x0000–0x0FFF`) — not SB 8 (aliases tile 0). Vanilla `ShowWindows` starts window tile gfx at tile **2**, which would overwrite SB 0/1; café explore starts at tile **128** instead (UI maps at SB **6/7**, 256 window tiles). When a stack needs more, **`gGroundMap8bppWideUi`** parks art maps at SB **30/31** (pool end **704**), blanks art under menu rects, and loads window gfx from tile **2** in low VRAM — café art stays visible around the UI. `unk6 = 768` (absolute end). Exit reloads the font sheet. Left-edge fade tiles are forced transparent via `sub_8009388` / `InitText`. Entering café clears SB 0/1 (+ legacy 30/31) and keeps BG1 fill clear. The 3×3 dual-layer renderer fills a **32×24** tile window; Remap that whole window (stamp cached → alloc misses → rewrite, both layers). **Never Remap at map-load’s default camera** (`sUnknownPosition`) — that window can exceed the pool and poison the slot cache; first `sub_80A4764` at the player camera is the only Remap.
+**8bpp café layout:** BPL flag `0x8B` → `gGroundMap8bpp`; BG2+BG3 `BGCNT_256COLOR` + `CHARBASE(1)`; art tiles at indices **128–767** (`0x6000–0xFFFF`, **640** slots) so font/chrome at `0x4F00–0x5FFF` is preserved. Art maps at SB **0/1** (`0x0000–0x0FFF`) — not SB 8 (aliases tile 0). Vanilla `ShowWindows` starts window tile gfx at tile **2**, which would overwrite SB 0/1; café explore starts at tile **128** instead (UI maps at SB **6/7**, 256 window tiles). When a stack needs more, **`gGroundMap8bppWideUi`** parks art maps at SB **30/31** (pool end **704**), blanks art under menu rects, and loads window gfx from tile **2** in low VRAM — café art stays visible around the UI. `unk6 = 768` (absolute end). Exit reloads the font sheet. Left-edge fade tiles are forced transparent via `sub_8009388` / `InitText`. Entering café clears SB 0/1 (+ legacy 30/31) and keeps BG1 fill clear. The 3×3 dual-layer renderer fills a **32×24** tile window; Remap that whole window in **two passes**, both layers. Pass A stamps each cached tile and rewrites it in place, recording misses in a per-tilemap bitmap (`sMissBits`, 384 bytes; a cell list did not fit in EWRAM). Pass B allocates only the misses, in the same order. Invariant: every visible cached tile is stamped before any allocation. **Never Remap at map-load’s default camera** (`sUnknownPosition`) — that window can exceed the pool and poison the slot cache; first `sub_80A4764` at the player camera is the only Remap.
 
 ---
 
@@ -75,10 +75,12 @@ Hooked from `sub_80A4764` (ground BG update) and `DoScheduledMemCopies`:
 
 1. **Update camera** (`tilePos` / `chunkPos` / BG scroll regs).
 2. **`NeedsRebuild`?** Same `tilePos` as last remap → **skip** clear/render/remap and **skip** tilemap DMA (`unk52A`). Only refresh BG offsets (cheap sub-tile scroll).
-3. On rebuild: clear CPU tilemaps → render source IDs → `RemapVisibleTilemaps` (assign slots, **queue** uploads — no VRAM writes yet).
+3. On rebuild: clear CPU tilemaps → render source IDs → `RemapVisibleTilemaps` in two passes. Pass A stamps and rewrites cached cells and records misses. Pass B allocates only the misses. Uploads are **queued**, with no VRAM writes yet.
 4. After `WaitForNextFrame` / in **`DoScheduledMemCopies`**: `FlushUploads` **then** BG tilemap DMA so gfx and map commit together in VBlank.
 
 Eviction: free bits first; else clock-hand on slots **not** stamped for the current rebuild and **not** `sOnScreenClock` (still referenced by the displayed map).
+
+**Remap cost (measured in Spinda's Café).** The earlier three-pass remap (stamp, alloc, rewrite) over the 32×24 window overran the frame on every tile crossing. Two passes fixed most of it. Over 821 frames of movement, dropped frames went from 82 to 3 for walking and from 197 to 7 for running. The same walk on Pokémon Square drops 0. Dropped frames are counted with the lag recipe in [cloud_sessions.md](../cloud_sessions.md#measuring-lag). The remaining stalls are isolated single frames when first entering the top of the room, where many new tiles arrive at once.
 
 ---
 

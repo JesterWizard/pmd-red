@@ -154,14 +154,25 @@ Adding more items: append to [`data/item/item_data.json`](../../data/item/item_d
 | Strings | [`src/data/locale/spinda_cafe_usa.h`](../../src/data/locale/spinda_cafe_usa.h) |
 | Save | [`src/save.c`](../../src/save.c), `savedSpindaCafe` (reuses former `fill42C`) |
 
+### Map art workflow (BMA is LZ)
+
+The café BMA is read from the committed `data/map_bg_lz/T01P08m.bma.lz` (GMLZ). The BPC `data/map_bg/T01P08c.bpc` stays raw for streaming. Both are referenced in [`src/ground_map_files_10.c`](../../src/ground_map_files_10.c). Regenerating only the raw map is a trap: a new BPC paired with an old BMA garbled the room. The Makefile now has a `ground_lz.stamp` rule. It re-runs `compress_ground_assets.py` whenever a `data/map_bg/*` file (or the script) is newer than the stamp, so the committed `.lz` copies cannot go stale.
+
+1. Edit `graphics/custom/spinda_cafe.png` or `tools/convert_ground_map_png.py`.
+2. `python3 tools/convert_ground_map_png.py graphics/custom/spinda_cafe.png`
+3. `make` (recompresses automatically).
+4. Commit both `data/map_bg` and `data/map_bg_lz` changes.
+
 ---
 
 ## Limitations
 
 - Indoor art source is **520×400** (~146 colors, ~1840 unique 8×8 tiles). GBA **4bpp** multi-bank BGs cannot reproduce that art 1:1 (some tiles use 16+ colors; co-occurrence exceeds 14×15 palette slots). The café therefore uses **8bpp / 256-color** BG2+BG3 (`gGroundMap8bpp`), with art tiles at **CHARBASE1 indices 128–767** (`0x6000–0xFFFF`, 640 slots — font/chrome at `0x4F00–0x5FFF` preserved like title 8bpp) and maps at **SB 0/1**. Window tile gfx starts at **tile 128** (`ShowWindowsInternal`) so dialogue cannot overwrite those maps; UI (BG0/BG1) maps stay at **SB 6/7** while exploring (256 window tiles). Unique tiles still exceed VRAM, so **[dynamic tile loading](../gba_techniques/DynamicTileLoading.md)** streams the visible window from an **uncompressed ROM BPC**. Convert with `tools/convert_ground_map_png.py --bpp 8` (asserts 100% PNG match). Map conversion stays **`unk0 = 6`** so sprites sit between layers — do not use `unk0 = 5`. The 640-slot pool covers typical top-of-room windows (~550–630 unique); Remap uses two-pass stamp-then-alloc over the full **32×24** buffer.
 - **Wide UI (dynamic):** `ShowWindows` counts the window stack. If it needs more than 256 tiles, art tilemaps move to **SB 30/31** (streamer pool capped at 704), window gfx loads from **tile 2** in low VRAM (`0x06000000+`), and art cells under each menu rect are cleared (invisible under opaque UI — frees those streamer tiles). BG2/BG3 stay on so the café remains visible around menus. Closing remaps art back to SB 0/1. Dialogue width / Toolbox row caps still avoid flipping for small boxes. A dialogue that will open a menu reserves the menu's tiles up front (`gGroundMap8bppUiReserveTiles`), so wide UI is chosen before the text is drawn. Switching later would move the window tiles and blank the dialogue and portrait.
-- Collision: cave walls/void from luminance; **bars** (counter through approach row `y=22`) and **round tables** from fixed tile regions. Player stands on `y=24`; invisible kind-4 talk objects on `y=22` bridge A-range. Staff stay on solid fascia tiles.
-- **Bar occlusion:** bottom **4px** of the fascia row on **BMA layer0 (BG2)** in front of Pokémon (left bar FG ends at `x=24`, dropping Spinda’s rightmost two jar tiles). Rest of the room on **layer1 (BG3)**.
+- **Collision (hand-authored):** for rows `0..37` the walkable tiles come from `CAFE_WALKABLE_SPANS` in [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py) (inclusive x spans per row; unlisted rows are solid). Rows `38+` (the stairs) still use the luminance heuristic. `CAFE_BAR_RECTS`, `CAFE_TABLE_DISKS` and `CAFE_NPC_WALKABLE` were removed. Counters are solid through `y=19`, and the player can stand directly in front of them at `y=20` (the old invisible blocks on rows 20–22 are gone). The back wall and ceiling (rows 0–14) and the side walls are solid, so the player can no longer climb the walls. Tables, plants, crates, barrels and signs are solid and match the art. Walkable tiles went from 1081 to 680.
+- **Talk zones:** the three invisible kind-4 objects in `s_gs229_g1_s0_objs` (in both `ground_data_cafe_station.h` packs) moved from `y=22` to the counter's front row `y=19`. Spinda's is 15 tiles wide, centred at x=20 (half-tile). Wynaut's is 7 wide at x=40 and Wobbuffet's is 7 wide at x=47. Pressing A anywhere along a counter's front talks to that counter's staff (verified in-game for all three).
+- **Bar occlusion:** `CAFE_BAR_FG_RECTS = ()`, so **BMA layer0 (BG2)** is empty. Spinda, Wynaut and Wobbuffet draw over the counter's back edge. Their feet are no longer hidden under a 4px lip. The map conversion entry stays `unk0 = 6`.
+- **Streaming stalls:** the remaining lag is isolated single frames when first entering the top of the room, where many new tiles arrive at once. The per-frame cost is in [DynamicTileLoading](../gba_techniques/DynamicTileLoading.md#frame-loop).
 - No cup-dungeon unlocks, door recruits, or Project P dungeon unlocks.
 - No bad drinks (Hunger / Grimy lookalike stat drops).
 - Good-feeling chances are approximate (community-tested rates), not decomp-verified.
@@ -169,3 +180,5 @@ Adding more items: append to [`data/item/item_data.json`](../../data/item/item_d
 - The lottery is a menu pick; there is no card-flip animation.
 - Picked items are not marked in the Toolbox list during a ticket exchange. Picking the same slot twice is refused.
 - Stairs / NPC positions may need in-game tuning.
+- **Known, not fixed:** Wobbuffet's speaker name shows "Invalidity:" instead of "Wobbuffet:" (pre-existing).
+- **Known, not fixed:** Spinda's drink dialogue and dance are not yet matched to Explorers of Sky. This needs a reference script from the user.

@@ -128,7 +128,7 @@ Source: `scripts/cloud/mgba_shot.c`. Built to `build/tools/mgba_shot` by
 `make -C scripts/cloud`.
 
 ```bash
-build/tools/mgba_shot ROM OUT_PREFIX [--frames N] [--shot F]... [--every K] [--press F:KEYS[:DUR]]...
+build/tools/mgba_shot ROM OUT_PREFIX [--frames N] [--shot F]... [--every K] [--press F:KEYS[:DUR]]... [--watch ADDR]... [--trace FROM:TO]
 ```
 
 - `--frames N`: total frames to emulate (default 600).
@@ -138,6 +138,12 @@ build/tools/mgba_shot ROM OUT_PREFIX [--frames N] [--shot F]... [--every K] [--p
   Repeatable. Overlapping holds are ORed together.
 - KEYS is `+`-joined from `A,B,L,R,START,SELECT,UP,DOWN,LEFT,RIGHT`, case-insensitive,
   for example `900:A+B:10`.
+- `--watch ADDR`: read the 32-bit value at GBA address `ADDR` (hex, `0x` optional,
+  multiple of 4). Repeatable, up to 4 addresses. Each shot line gets
+  ` w0=0x........` (then `w1`, `w2`, …) appended.
+- `--trace FROM:TO`: print `trace frame=<n> w0=0x........` after each frame from
+  FROM to TO (1-based, TO ≤ `--frames`). Needs `--watch`. Give it at most once.
+  Trace lines print before that frame's shot line.
 - With neither `--shot` nor `--every`, it takes one capture after the last frame.
 - Each capture writes `OUT_PREFIX_fNNNNN.png` (240x160, 8-bit RGB).
 - Exit status: 0 success, 1 runtime failure, 2 bad arguments.
@@ -159,6 +165,55 @@ The tool lives in `scripts/cloud/`, not `tools/`, on purpose. The root Makefile
 builds every `tools/*/` directory that has a Makefile, and not every contributor
 has libmgba installed. Build it with `make -C scripts/cloud`, which needs
 `libmgba-dev` and `libpng-dev`.
+
+### Measuring lag
+
+The game increments `gUnknown_203B0B8` once per game-loop frame
+(`WaitForNextFrameAndAdvanceRNG`). Watch that counter with `--watch` and
+`--trace`. Over a window, lag frames = emulated frames − counter increase.
+The address moves between builds, so read it from the ELF of the build you test:
+
+```bash
+make DEBUG_BOOT_MAP=MAP_SPINDA_CAFE          # test build that boots into the café
+ADDR=0x$(arm-none-eabi-nm pmd_red.elf | awk '$3 == "gUnknown_203B0B8" {print $1}')
+mkdir -p build/shots
+build/tools/mgba_shot pmd_red.gba build/shots/lag --frames 3000 \
+  --press 600:START --press 900:A --press 1200:A --press 1500:A --press 1800:A --press 2100:A \
+  --press 2500:UP:40 --press 2560:LEFT:40 --press 2660:UP:120 \
+  --watch $ADDR --trace 2501:2800 > build/shots/lag.txt
+make                                          # plain build again afterwards
+a=$(sed -n 's/^trace frame=2501 w0=//p' build/shots/lag.txt)
+b=$(sed -n 's/^trace frame=2800 w0=//p' build/shots/lag.txt)
+echo "lag frames: $(( (2800 - 2501) - (b - a) ))"
+```
+
+The presses in the example walk to Spinda's counter. Change them to walk
+through the window you want to measure. The window runs from trace frame
+FROM to trace frame TO, which is TO − FROM emulated frames. The `w0` value
+on the FROM line is the baseline. Lag frames = (TO − FROM) − (w0 at TO − w0 at FROM).
+
+## Reaching a map directly (DEBUG_BOOT_MAP)
+
+`make DEBUG_BOOT_MAP=MAP_xxx` builds a test ROM for one map. It is a hook in
+`src/main_loops.c`. New Game skips the story and creates the default leader and
+partner (Charmander and Squirtle). It sets post-game story progress
+(`SCENARIO_MAIN` 18,3) and enters that map directly. Default builds are
+byte-identical. A stamp file makes `main_loops.o` rebuild when the value
+changes.
+
+```bash
+make DEBUG_BOOT_MAP=MAP_SPINDA_CAFE
+mkdir -p build/shots
+build/tools/mgba_shot pmd_red.gba build/shots/cafe --frames 2700 --shot 2700 \
+  --press 600:START --press 900:A --press 1200:A --press 1500:A --press 1800:A --press 2100:A
+make                                          # plain build: the normal ROM again
+```
+
+The route above ends with the player at the top of the café stairs. To walk
+to Spinda's counter and talk, use `--frames 3000` and add
+`--press 2500:UP:40 --press 2560:LEFT:40 --press 2660:UP:120 --press 2820:A`.
+
+Always run a plain `make` afterwards. The test ROM is not the normal game.
 
 ## Viewing screenshots
 
