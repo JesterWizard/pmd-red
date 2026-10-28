@@ -41,6 +41,7 @@ _Static_assert(BYTES_PER_PIXEL == 4,
 #define DEFAULT_FRAMES 600UL
 #define DEFAULT_PRESS_DUR 6UL
 #define MAX_FRAMES 10000000UL
+#define MAX_WATCH 4
 
 #define EXIT_RUNTIME 1
 #define EXIT_USAGE 2
@@ -64,6 +65,11 @@ struct options {
 	struct press* presses;
 	size_t npresses;
 	size_t cappresses;
+	uint32_t watch[MAX_WATCH]; /* GBA addresses from --watch, in order given */
+	size_t nwatch;
+	bool has_trace;
+	unsigned long trace_from; /* 1-based, inclusive */
+	unsigned long trace_to;   /* 1-based, inclusive */
 };
 
 enum parse_result {
@@ -111,11 +117,18 @@ static void usage(FILE* f) {
 	    "                        frame F; repeatable, overlapping holds are ORed.\n"
 	    "                        KEYS is '+'-separated from A,B,L,R,START,SELECT,\n"
 	    "                        UP,DOWN,LEFT,RIGHT (case-insensitive), e.g. 900:A+B:10\n"
+	    "  --watch ADDR          read the 32-bit value at GBA address ADDR (hex, 0x\n"
+	    "                        optional, multiple of 4); repeatable, up to 4\n"
+	    "  --trace FROM:TO       print a trace line after each frame FROM..TO (1-based,\n"
+	    "                        TO <= --frames); needs --watch; at most one\n"
 	    "  -h, --help            show this help and exit\n"
 	    "\n"
 	    "With neither --shot nor --every, one capture is taken after the last frame.\n"
 	    "Each capture writes OUT_PREFIX_fNNNNN.png (8-bit RGB) and prints:\n"
-	    "  shot frame=<F> file=<path> colors=<N> hash=<16 hex digits>\n"
+	    "  shot frame=<F> file=<path> colors=<N> hash=<16 hex digits> [wN=0x<8 hex digits>...]\n"
+	    "With --trace, each frame FROM..TO also prints (before that frame's shot line):\n"
+	    "  trace frame=<F> wN=0x<8 hex digits> [wN=...]\n"
+	    "wN is the Nth --watch address, counting from w0, in the order given.\n"
 	    "\n"
 	    "Exit status: 0 success, 1 runtime failure, 2 bad arguments.\n",
 	    f);
@@ -146,6 +159,62 @@ static bool parse_ulong(const char* s, unsigned long min, unsigned long max,
 	}
 	*out = v;
 	return true;
+}
+
+/* Parses a hex value in [0, 0xFFFFFFFF] with an optional 0x/0X prefix. */
+static bool parse_hex32(const char* s, uint32_t* out) {
+	const char* p = s;
+	uint64_t v = 0;
+	size_t ndigits = 0;
+
+	if (p[0] == '0' && (p[1] == 'x' || p[1] == 'X')) {
+		p += 2;
+	}
+	for (; isxdigit((unsigned char)*p); ++p, ++ndigits) {
+		unsigned d = isdigit((unsigned char)*p) ? (unsigned)(*p - '0')
+							: (unsigned)(tolower((unsigned char)*p) - 'a' + 10);
+		v = v * 16 + d;
+		if (v > 0xFFFFFFFFu) {
+			return false;
+		}
+	}
+	if (ndigits == 0 || *p != '\0') {
+		return false;
+	}
+	*out = (uint32_t)v;
+	return true;
+}
+
+/* Parses FROM:TO, both 1-based frame numbers. */
+static bool parse_range(const char* spec, unsigned long* from, unsigned long* to) {
+	char* copy;
+	char* colon;
+	unsigned long a = 0;
+	unsigned long b = 0;
+	bool ok = false;
+
+	copy = malloc(strlen(spec) + 1);
+	if (!copy) {
+		err("out of memory");
+		return false;
+	}
+	strcpy(copy, spec);
+
+	colon = strchr(copy, ':');
+	if (!colon) {
+		goto out;
+	}
+	*colon = '\0';
+	if (!parse_ulong(copy, 1, MAX_FRAMES, &a) || !parse_ulong(colon + 1, 1, MAX_FRAMES, &b)) {
+		goto out;
+	}
+	*from = a;
+	*to = b;
+	ok = true;
+
+out:
+	free(copy);
+	return ok;
 }
 
 /* Splits s (modified in place) on '+' and ORs the matching GBA key bits. */
@@ -285,7 +354,8 @@ static enum parse_result parse_args(int argc, char** argv, struct options* o) {
 		}
 
 		if (strcmp(arg, "--frames") == 0 || strcmp(arg, "--shot") == 0 ||
-		    strcmp(arg, "--every") == 0 || strcmp(arg, "--press") == 0) {
+		    strcmp(arg, "--every") == 0 || strcmp(arg, "--press") == 0 ||
+		    strcmp(arg, "--watch") == 0 || strcmp(arg, "--trace") == 0) {
 			if (a + 1 >= argc) {
 				err("%s requires a value", arg);
 				return PARSE_ERR;
@@ -325,6 +395,28 @@ static enum parse_result parse_args(int argc, char** argv, struct options* o) {
 				err("--every '%s': must be an integer >= 1", val);
 				return PARSE_ERR;
 			}
+		} else if (strcmp(arg, "--watch") == 0) {
+			uint32_t addr = 0;
+			if (!parse_hex32(val, &addr) || (addr & 3u) != 0) {
+				err("--watch '%s': must be a hex address (0x optional) that is a multiple of 4",
+				    val);
+				return PARSE_ERR;
+			}
+			if (o->nwatch == MAX_WATCH) {
+				err("--watch: at most %d addresses", MAX_WATCH);
+				return PARSE_ERR;
+			}
+			o->watch[o->nwatch++] = addr;
+		} else if (strcmp(arg, "--trace") == 0) {
+			if (o->has_trace) {
+				err("--trace may be given only once");
+				return PARSE_ERR;
+			}
+			if (!parse_range(val, &o->trace_from, &o->trace_to)) {
+				err("--trace '%s': expected FROM:TO with frame numbers >= 1", val);
+				return PARSE_ERR;
+			}
+			o->has_trace = true;
 		} else { /* --press */
 			struct press p;
 			if (!parse_press(val, &p)) {
@@ -347,6 +439,20 @@ static enum parse_result parse_args(int argc, char** argv, struct options* o) {
 	if (o->every > o->frames) {
 		err("--every %lu exceeds --frames %lu", o->every, o->frames);
 		return PARSE_ERR;
+	}
+	if (o->has_trace) {
+		if (o->nwatch == 0) {
+			err("--trace requires at least one --watch");
+			return PARSE_ERR;
+		}
+		if (o->trace_from > o->trace_to) {
+			err("--trace %lu:%lu: FROM must not exceed TO", o->trace_from, o->trace_to);
+			return PARSE_ERR;
+		}
+		if (o->trace_to > o->frames) {
+			err("--trace ends at frame %lu, beyond --frames %lu", o->trace_to, o->frames);
+			return PARSE_ERR;
+		}
 	}
 	for (i = 0; i < o->nshots; ++i) {
 		if (o->shots[i] > o->frames) {
@@ -457,8 +563,22 @@ fail:
 	return ok;
 }
 
+/* Reads each --watch address with no side effects (segment -1 is raw access). */
+static void read_watches(struct mCore* core, const struct options* o, uint32_t* vals) {
+	for (size_t i = 0; i < o->nwatch; ++i) {
+		vals[i] = core->rawRead32(core, o->watch[i], -1);
+	}
+}
+
+/* Appends " wN=0x........" for each --watch value; prints nothing without --watch. */
+static void print_watches(const struct options* o, const uint32_t* vals) {
+	for (size_t i = 0; i < o->nwatch; ++i) {
+		printf(" w%zu=0x%08" PRIx32, i, vals[i]);
+	}
+}
+
 static bool capture(const struct options* o, unsigned long frame, const color_t* buf,
-		    unsigned w, unsigned h, uint8_t* rgb, uint8_t* seen) {
+		    unsigned w, unsigned h, uint8_t* rgb, uint8_t* seen, const uint32_t* vals) {
 	const uint8_t* src = (const uint8_t*)buf;
 	size_t npix = (size_t)w * h;
 	unsigned colors = 0;
@@ -492,8 +612,10 @@ static bool capture(const struct options* o, unsigned long frame, const color_t*
 	}
 	ok = write_png(path, rgb, w, h);
 	if (ok) {
-		printf("shot frame=%lu file=%s colors=%u hash=%016" PRIx64 "\n", frame, path,
+		printf("shot frame=%lu file=%s colors=%u hash=%016" PRIx64, frame, path,
 		       colors, hash);
+		print_watches(o, vals);
+		putchar('\n');
 	}
 	free(path);
 	return ok;
@@ -528,6 +650,7 @@ static int run(const struct options* o) {
 	uint8_t* seen = NULL;
 	unsigned w = 0;
 	unsigned h = 0;
+	uint32_t vals[MAX_WATCH] = { 0 };
 
 	vf = VFileOpen(o->rom, O_RDONLY);
 	if (!vf) {
@@ -582,7 +705,15 @@ static int run(const struct options* o) {
 		core->setKeys(core, keys);
 		core->runFrame(core);
 
-		if (is_capture(o, n) && !capture(o, n, buf, w, h, rgb, seen)) {
+		if (o->nwatch) {
+			read_watches(core, o, vals);
+		}
+		if (o->has_trace && n >= o->trace_from && n <= o->trace_to) {
+			printf("trace frame=%lu", n);
+			print_watches(o, vals);
+			putchar('\n');
+		}
+		if (is_capture(o, n) && !capture(o, n, buf, w, h, rgb, seen, vals)) {
 			goto out;
 		}
 	}
