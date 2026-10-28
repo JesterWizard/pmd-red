@@ -290,6 +290,12 @@ $(GROUND_LZ_STAMP): $(GROUND_MAP_RAW_ASSETS) compress_ground_assets.py | tools/g
 	python3 compress_ground_assets.py
 	@touch $@
 $(GROUND_MAP_OBJECTS): $(GROUND_LZ_STAMP)
+GROUND_ALIAS_STAMP := $(BUILD_DIR)/ground_aliases.stamp
+$(GROUND_ALIAS_STAMP): src/ground_files_table.c $(wildcard src/ground_map_files_*.c) $(GROUND_MAP_RAW_ASSETS) $(GROUND_MAP_COMPRESSED_ASSETS) tools/check_ground_file_aliases.py
+	@mkdir -p $(dir $@)
+	@python3 tools/check_ground_file_aliases.py
+	@touch $@
+$(C_BUILDDIR)/ground_files_table.o: $(GROUND_ALIAS_STAMP)
 
 # Rebuild station scripts when custom_story pack selection flips
 $(GROUND_STATION_OBJECTS): $(GROUND_STORY_STAMP)

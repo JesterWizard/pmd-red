@@ -4,7 +4,6 @@
 const u8 gFileH02P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H02P01c.bpc.lz");
 const u8 gFileH02P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H02P01m.bma.lz");
 const u8 gFileH02P02[] ALIGNED(4) = INCBIN_U8("data/map_bg/H02P02.bpl");
-const u8 gFileH02P02W[] ALIGNED(4) = INCBIN_U8("data/map_bg/H02P02W.bpl");
 const u8 gFileH02P02Wc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H02P02Wc.bpc.lz");
 const u8 gFileH02P02Wm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H02P02Wm.bma.lz");
 const u8 gFileH02P02c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H02P02c.bpc.lz");
