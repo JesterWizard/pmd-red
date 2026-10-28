@@ -1,8 +1,9 @@
 namespace RescueEditor.Core;
 
 /// <summary>
-/// Friend-area intro splash (240×160). Retail baserom has no AT4PN table;
-/// the decomp keeps PNG / AT4PN sources under graphics/custom/backgrounds.
+/// Friend-area intro splash (240×160). Retail baserom has no friend-area intro table;
+/// the decomp keeps PNG, AT4PN, or AT4PX sources under graphics/custom/backgrounds
+/// (the modern ROM links the art as AT4PX).
 /// </summary>
 public static class FriendAreaIntroArt
 {
@@ -134,8 +135,13 @@ public static class FriendAreaIntroArt
         if (File.Exists(png))
             return RgbaImage.FromPng(File.ReadAllBytes(png));
 
-        var at4pn = Path.Combine(dir, slug + ".at4pn");
         var pal = Path.Combine(dir, slug + ".pal");
+        var at4px = Path.Combine(dir, slug + ".at4px");
+        if (File.Exists(at4px) && File.Exists(pal))
+            return At4pn8bpp.Decode(File.ReadAllBytes(at4px), File.ReadAllBytes(pal));
+
+        // Older checkouts only have the uncompressed AT4PN source.
+        var at4pn = Path.Combine(dir, slug + ".at4pn");
         if (File.Exists(at4pn) && File.Exists(pal))
             return At4pn8bpp.Decode(File.ReadAllBytes(at4pn), File.ReadAllBytes(pal));
 

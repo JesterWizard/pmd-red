@@ -1,3 +1,5 @@
+using System.Buffers.Binary;
+
 namespace RescueEditor.Core;
 
 public sealed class FriendAreaIntroTables
@@ -7,24 +9,51 @@ public sealed class FriendAreaIntroTables
     public int GfxPointerOffset(int id) => Assets + id * 8;
     public int PalPointerOffset(int id) => Assets + id * 8 + 4;
 
+    /// <summary>
+    /// Finds gFriendAreaIntroAssets in one linear pass over the ROM. Entry 0 is {NULL, NULL};
+    /// entry 1 and entry 2 have a gfx pointer to an AT4PN/AT4PX blob, and entry 1 has a ROM palette pointer
+    /// in between. Two passes: collect blob addresses, then test 4-byte-aligned candidates.
+    /// </summary>
     public static FriendAreaIntroTables? TryLoad(RomImage rom)
     {
-        var magic = "AT4PN"u8;
         var hay = rom.Bytes;
-        for (var i = 0; i <= hay.Length - magic.Length; i++)
+        var blobs = CollectAt4pBlobs(hay);
+        if (blobs.Count == 0)
+            return null;
+
+        var romStart = RomImage.RomVirtualAddress;
+        var romEnd = romStart + (uint)hay.Length;
+        for (var t = 0; t + 20 <= hay.Length; t += 4)
         {
-            if (!hay.Slice(i, magic.Length).SequenceEqual(magic))
+            if (BinaryPrimitives.ReadUInt64LittleEndian(hay.Slice(t, 8)) != 0)
                 continue;
-            var ptr = RomImage.RomVirtualAddress + (uint)i;
-            var needle = new byte[12];
-            BitConverter.TryWriteBytes(needle.AsSpan(8), ptr);
-            var table = IndexOf(hay, needle);
-            if (table < 0)
+            if (!blobs.Contains(BinaryPrimitives.ReadUInt32LittleEndian(hay.Slice(t + 8, 4))))
                 continue;
-            return new FriendAreaIntroTables { Assets = table };
+            var pal = BinaryPrimitives.ReadUInt32LittleEndian(hay.Slice(t + 12, 4));
+            if (pal < romStart || pal >= romEnd)
+                continue;
+            if (!blobs.Contains(BinaryPrimitives.ReadUInt32LittleEndian(hay.Slice(t + 16, 4))))
+                continue;
+            return new FriendAreaIntroTables { Assets = t };
         }
 
         return null;
+    }
+
+    // Intro art is AT4PN (stored) or AT4PX (compressed); both share the "AT4P" prefix.
+    private static HashSet<uint> CollectAt4pBlobs(ReadOnlySpan<byte> hay)
+    {
+        var blobs = new HashSet<uint>();
+        for (var i = 0; i + 5 <= hay.Length; i++)
+        {
+            if (hay[i] != (byte)'A' || !hay.Slice(i, 4).SequenceEqual("AT4P"u8))
+                continue;
+            var variant = hay[i + 4];
+            if (variant is (byte)'N' or (byte)'X')
+                blobs.Add(RomImage.RomVirtualAddress + (uint)i);
+        }
+
+        return blobs;
     }
 
     public (int Gfx, int Pal) ReadPointers(RomImage rom, int id)
@@ -84,15 +113,4 @@ public sealed class FriendAreaIntroTables
         return rom.IsRangeValid(dest, length);
     }
 
-    private static int IndexOf(ReadOnlySpan<byte> haystack, ReadOnlySpan<byte> needle)
-    {
-        var last = haystack.Length - needle.Length;
-        for (var i = 0; i <= last; i += 4)
-        {
-            if (haystack.Slice(i, needle.Length).SequenceEqual(needle))
-                return i;
-        }
-
-        return -1;
-    }
 }
