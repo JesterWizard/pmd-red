@@ -40,6 +40,12 @@ static EWRAM_DATA u16 sUploadSlot[STREAM_MAX_UPLOADS];
 static EWRAM_DATA u16 sUploadSource[STREAM_MAX_UPLOADS];
 static EWRAM_DATA u16 sUploadCount = 0;
 static EWRAM_DATA s16 sSavedVramSlots = 0;
+/* Misses recorded by pass A of one remap: one bit per visible cell, per visible
+ * tilemap (NUM_LAYERS x 2 bgs at most). Pass B walks the set bits in cell order.
+ * A bitmap, not a cell list, because EWRAM has no room for a 4-tilemap list. */
+#define STREAM_MAX_REMAP_TILEMAPS 4
+#define STREAM_MISS_WORDS (STREAM_VISIBLE_TILEMAP_ENTRIES / 32)
+static EWRAM_DATA u32 sMissBits[STREAM_MAX_REMAP_TILEMAPS][STREAM_MISS_WORDS];
 
 void GroundBgTileStream_Reset(void)
 {
@@ -377,37 +383,10 @@ static u16 EnsureTile(u16 sourceId)
     return slot;
 }
 
-static void StampCachedVisible(u16 *tilemap)
-{
-    s32 i;
-
-    for (i = 0; i < STREAM_VISIBLE_TILEMAP_ENTRIES; i++) {
-        u16 sourceId = tilemap[i] & 0x0FFF;
-        u16 slot;
-
-        if (sourceId == 0 || sourceId >= (u16)sNumTiles)
-            continue;
-        slot = sSourceToSlot[sourceId];
-        if (slot != 0)
-            sSlotStamp[slot] = sClock;
-    }
-}
-
-static void AllocMissesVisible(u16 *tilemap)
-{
-    s32 i;
-
-    for (i = 0; i < STREAM_VISIBLE_TILEMAP_ENTRIES; i++) {
-        u16 sourceId = tilemap[i] & 0x0FFF;
-
-        if (sourceId == 0 || sourceId >= (u16)sNumTiles)
-            continue;
-        if (sSourceToSlot[sourceId] == 0)
-            EnsureTile(sourceId);
-    }
-}
-
-static void RewriteTilemapSlots(u16 *tilemap)
+/* Pass A over one visible tilemap. Cached tiles are stamped and rewritten to
+ * their slot in place. Entries whose source is not cached yet are only recorded
+ * (cell + tilemap index) so pass B can allocate them after every hit is stamped. */
+static void StampAndCollectMisses(u16 *tilemap, s32 tilemapIndex)
 {
     s32 i;
 
@@ -418,8 +397,47 @@ static void RewriteTilemapSlots(u16 *tilemap)
 
         if (sourceId == 0)
             continue;
+        if (sourceId >= (u16)sNumTiles) {
+            tilemap[i] = entry & 0xF000;
+            continue;
+        }
         slot = sSourceToSlot[sourceId];
-        tilemap[i] = (slot != 0) ? (slot | (entry & 0xF000)) : (entry & 0xF000);
+        if (slot != 0) {
+            sSlotStamp[slot] = sClock;
+            tilemap[i] = slot | (entry & 0xF000);
+        }
+        else {
+            sMissBits[tilemapIndex][i >> 5] |= (1u << (i & 31));
+        }
+    }
+}
+
+/* Pass B: allocate slots for the recorded misses, in the same order as the
+ * collection (tilemap order, then cell order). A source missed twice reuses the
+ * slot allocated for its first miss. Clears the bitmap as it goes. */
+static void AllocMissesAndRewrite(u16 **tilemaps, s32 numTilemaps)
+{
+    s32 t;
+    s32 w;
+
+    for (t = 0; t < numTilemaps; t++) {
+        for (w = 0; w < STREAM_MISS_WORDS; w++) {
+            u32 bits = sMissBits[t][w];
+
+            sMissBits[t][w] = 0;
+            while (bits != 0) {
+                u16 cell = (u16)((w << 5) | LowestSetBitIndex(bits));
+                u16 *tilemap = tilemaps[t];
+                u16 entry = tilemap[cell];
+                u16 sourceId = entry & 0x0FFF;
+                u16 slot = sSourceToSlot[sourceId];
+
+                bits &= bits - 1;
+                if (slot == 0)
+                    slot = EnsureTile(sourceId);
+                tilemap[cell] = (slot != 0) ? (slot | (entry & 0xF000)) : (entry & 0xF000);
+            }
+        }
     }
 }
 
@@ -459,9 +477,18 @@ void GroundBgTileStream_SetCafeWideUiSlots(bool8 menuMode)
     GroundBgTileStream_Invalidate();
 }
 
+/* Remaps every visible tilemap in two passes. Pass A (StampAndCollectMisses)
+ * stamps all cached visible tiles and rewrites them, recording the misses. Only
+ * after that does pass B (AllocMissesAndRewrite) allocate slots, so AllocSlot
+ * never evicts a tile this rebuild still shows. Both layers are stamped before
+ * any alloc so BG2 cannot starve BG3. Layer 0 is collected before layer 1, and
+ * bgTilemaps[0] before bgTilemaps[1], so allocation order is unchanged. */
 void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
 {
     s32 layer;
+    s32 t;
+    s32 numTilemaps = 0;
+    u16 *tilemaps[STREAM_MAX_REMAP_TILEMAPS];
     MapRender *mapRender;
 
     if (!sActive || groundBg == NULL)
@@ -474,28 +501,17 @@ void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
         sOnScreenClock = 0;
     }
 
-    /* Stamp both layers before any alloc so BG2 cannot starve BG3. */
     for (layer = 0; layer < groundBg->unk474; layer++) {
         mapRender = &groundBg->mapRender[layer];
         if (mapRender->bgTilemaps[0] != NULL)
-            StampCachedVisible(mapRender->bgTilemaps[0]);
+            tilemaps[numTilemaps++] = mapRender->bgTilemaps[0];
         if (mapRender->numBgs > 1 && mapRender->bgTilemaps[1] != NULL)
-            StampCachedVisible(mapRender->bgTilemaps[1]);
+            tilemaps[numTilemaps++] = mapRender->bgTilemaps[1];
     }
-    for (layer = 0; layer < groundBg->unk474; layer++) {
-        mapRender = &groundBg->mapRender[layer];
-        if (mapRender->bgTilemaps[0] != NULL)
-            AllocMissesVisible(mapRender->bgTilemaps[0]);
-        if (mapRender->numBgs > 1 && mapRender->bgTilemaps[1] != NULL)
-            AllocMissesVisible(mapRender->bgTilemaps[1]);
-    }
-    for (layer = 0; layer < groundBg->unk474; layer++) {
-        mapRender = &groundBg->mapRender[layer];
-        if (mapRender->bgTilemaps[0] != NULL)
-            RewriteTilemapSlots(mapRender->bgTilemaps[0]);
-        if (mapRender->numBgs > 1 && mapRender->bgTilemaps[1] != NULL)
-            RewriteTilemapSlots(mapRender->bgTilemaps[1]);
-    }
+
+    for (t = 0; t < numTilemaps; t++)
+        StampAndCollectMisses(tilemaps[t], t);
+    AllocMissesAndRewrite(tilemaps, numTilemaps);
 
     sCachedTileX = groundBg->mapRender[0].tilePos.x;
     sCachedTileY = groundBg->mapRender[0].tilePos.y;
