@@ -359,7 +359,7 @@ static void LoadTitleScreen(void)
 
     if (gRuntimeConfig.custom_title_backgrounds) {
         const u8 *srcData;
-        u32 payloadLen;
+        u32 outLen;
         u8 *buf;
         u32 decompSize;
         u32 tileBytes;
@@ -370,8 +370,12 @@ static void LoadTitleScreen(void)
         bgFile = OpenFileAndGetFileDataPtr(sCustomBG[rnd], &gCustomTitleBgArchive);
 
         srcData = bgFile->data;
-        payloadLen = srcData[5] | (srcData[6] << 8);
-        buf = MemoryAlloc((payloadLen + 3) & ~3, MEMALLOC_GROUP_0);
+        /* AT4PX bytes 5..6 are the compressed length; size from the output length at 0x10. */
+        if (srcData[4] == 'N')
+            outLen = srcData[5] | (srcData[6] << 8);
+        else
+            outLen = srcData[0x10] | (srcData[0x11] << 8);
+        buf = MemoryAlloc((outLen + 3) & ~3, MEMALLOC_GROUP_0);
         decompSize = DecompressAT(buf, 0, srcData);
         if (decompSize < 0x1000)
             decompSize = 0x1000;

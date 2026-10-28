@@ -48,7 +48,7 @@ void SetFullscreenArtBrightness(const RGB_Struct *pal, s32 brightness)
 
 void LoadFullscreenArt(const u8 *at4pn)
 {
-    u32 payloadLen;
+    u32 outLen;
     u8 *buf;
     u32 decompSize;
     u32 tileBytes;
@@ -64,8 +64,12 @@ void LoadFullscreenArt(const u8 *at4pn)
     SetBG3RegOffsets(0, 0);
     SetBGOBJEnableFlags(0);
 
-    payloadLen = at4pn[5] | (at4pn[6] << 8);
-    buf = MemoryAlloc((payloadLen + 3) & ~3, MEMALLOC_GROUP_0);
+    /* AT4PX bytes 5..6 are the compressed length; size from the output length at 0x10. */
+    if (at4pn[4] == 'N')
+        outLen = at4pn[5] | (at4pn[6] << 8);
+    else
+        outLen = at4pn[0x10] | (at4pn[0x11] << 8);
+    buf = MemoryAlloc((outLen + 3) & ~3, MEMALLOC_GROUP_0);
     decompSize = DecompressAT(buf, 0, at4pn);
     if (decompSize < 0x1000)
         decompSize = 0x1000;

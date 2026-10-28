@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Convert graphics/title_screen_backgrounds/*.png to 8bpp AT4PN + RGB palette.
+"""Convert graphics/title_screen_backgrounds/*.png to 8bpp AT4PX + RGB palette.
 
 Output (next to each PNG):
-  title_XX.at4pn  — AT4PN: 2×32×32 tilemaps + 8bpp tiles (64 B each)
+  title_XX.at4px  — AT4PX (PX-compressed AT4PN payload): 2×32×32 tilemaps +
+                    8bpp tiles (64 B each)
   title_XX.pal    — 240 RGBX colors (index 0 reserved transparent), unk4=0x80
 
 Custom title uses BG3 in 256-color text mode at CHARBASE 1 (VRAM+0x4000).
@@ -189,7 +190,7 @@ def convert_image(im: Image.Image) -> tuple[bytes, bytes, int, int, bool]:
         encode_8bpp(t) for t in tiles
     )
     if len(raw) > 0xFFFF:
-        raise RuntimeError(f"payload too large for AT4PN: {len(raw):#x}")
+        raise RuntimeError(f"payload too large: {len(raw):#x}")
 
     pad = colors[0] if colors else (0, 0, 0)
     pal_list = [pad] + colors
@@ -202,12 +203,24 @@ def convert_image(im: Image.Image) -> tuple[bytes, bytes, int, int, bool]:
     return raw, bytes(pal), len(tiles), len(colors), merged
 
 
-def wrap_at4pn(payload: bytes) -> bytes:
-    return b"AT4PN" + struct.pack("<H", len(payload)) + payload
+def wrap_at4px(payload: bytes) -> bytes:
+    """Compress payload into an AT4PX container for DecompressAT.
+
+    Header: "AT4PX", u16 container length at bytes 5..6, 9 PX flag bytes at
+    7..15, u16 decompressed length at 0x10..0x11, PX data from 0x12.
+    """
+    from skytemple_files.compression_container.at4px.handler import At4pxHandler
+
+    blob = At4pxHandler.serialize(At4pxHandler.compress(payload))
+    assert blob[:5] == b"AT4PX", blob[:5]
+    assert len(blob) < 0x10000, len(blob)
+    assert struct.unpack_from("<H", blob, 5)[0] == len(blob)
+    assert struct.unpack_from("<H", blob, 0x10)[0] == len(payload)
+    return blob
 
 
 def convert_one(png: Path, force: bool = False) -> bool:
-    out_at = png.with_suffix(".at4pn")
+    out_at = png.with_suffix(".at4px")
     out_pal = png.with_suffix(".pal")
     if (
         not force
@@ -220,12 +233,12 @@ def convert_one(png: Path, force: bool = False) -> bool:
 
     im = flatten_rgb(Image.open(png))
     raw, pal, ntiles, ncolors, merged = convert_image(im)
-    out_at.write_bytes(wrap_at4pn(raw))
+    out_at.write_bytes(wrap_at4px(raw))
     out_pal.write_bytes(pal)
     extra = ", merged" if merged else ""
     print(
         f"  {png.name}: 8bpp, colors={ncolors}, tiles={ntiles}{extra}, "
-        f"at4pn={out_at.stat().st_size}, uncomp={len(raw):#x}"
+        f"at4px={out_at.stat().st_size}, uncomp={len(raw):#x}"
     )
     return True
 

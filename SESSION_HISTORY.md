@@ -599,6 +599,50 @@ Docs: [`documentation/Features/SpindaCafe.md`](documentation/Features/SpindaCafe
 
 ---
 
+## 2026-10-28 — ROM size: AT4PX intro/title art, ground file aliases
+
+Docs: [`documentation/rom_size_report.md`](documentation/rom_size_report.md),
+[`documentation/rom_asset_sizes.md`](documentation/rom_asset_sizes.md).
+
+### What changed
+- **Intro/title art as AT4PX (`ba432f97c`):** `convert_friend_area_backgrounds.py`
+  and `convert_title_backgrounds.py` write AT4PX (PX compression) instead of
+  AT4PN. The retail `DecompressAT` already decodes AT4PX, so no new decoder.
+  `LoadFullscreenArt` (`src/fullscreen_art.c`) and the custom-title block of
+  `LoadTitleScreen` (`src/main_loops.c`) size the buffer from bytes 0x10..0x11
+  (AT4PN keeps the old path). Saved **843,692** bytes.
+- **RescueEditor (`fda84078f`):** `FriendAreaIntroTables.TryLoad` finds AT4PX and
+  AT4PN intro blobs in one pass. The repo fallback prefers `.at4px`. No ROM change.
+- **Ground map aliases (`188fe7e3e`):** 117 byte-identical ground map files
+  (34 groups) point at one kept symbol in `src/ground_files_table.c`, marked
+  `/* alias: <path> */`. Their duplicate `INCBIN`s are gone. Saved **220,612**
+  bytes. `tools/check_ground_file_aliases.py` runs from a Makefile stamp and fails
+  the build if an aliased file stops being identical.
+- **Size:** `pmd_red.gba` 24,721,801 → **23,657,497** bytes (−1,064,304 B =
+  1,064.3 KB = 1,039.4 KiB). Free vs 32 MiB retail: 9,896.9 KB (9,665.0 KiB).
+  Details: `documentation/rom_size_report.md`.
+
+### Reverse
+1. Revert `188fe7e3e` to restore the duplicate ground `INCBIN`s and drop the
+   alias check. Or put each `INCBIN` back by hand in `src/ground_map_files_*.c`.
+2. Revert `fda84078f` (RescueEditor only).
+3. Revert `ba432f97c` to go back to AT4PN and the old loader sizing. Or
+   regenerate the AT4PN blobs with the old converter, then restore the
+   loader code.
+4. `make -j$(nproc)` after each revert.
+
+### Verify
+- `make -j$(nproc)`, then `ls -l pmd_red.gba` must show **23,657,497** bytes.
+- `python3 tools/check_ground_file_aliases.py` must print
+  `ground file aliases OK (117 aliases)`.
+- `scripts/cloud/smoke_test.sh` on the default build. It must print
+  `SMOKE TEST PASSED`.
+- Headless screenshots: friend-area intro and title-menu art render the same as
+  before. Maps using aliased files (Squirtle-construction team base room,
+  Thunderwave Cave end) render in-game.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |

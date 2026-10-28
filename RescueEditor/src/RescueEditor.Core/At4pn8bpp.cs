@@ -2,7 +2,10 @@ using System.Buffers.Binary;
 
 namespace RescueEditor.Core;
 
-/// <summary>Uncompressed 8bpp AT4PN used by custom title / friend-area intros (240×160).</summary>
+/// <summary>
+/// 8bpp AT4PN/AT4PX art used by custom title / friend-area intros (240×160).
+/// Encode writes uncompressed AT4PN; Decode handles both AT4PN and compressed AT4PX.
+/// </summary>
 public static class At4pn8bpp
 {
     public const int ScreenWidth = 240;
