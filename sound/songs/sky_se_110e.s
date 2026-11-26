@@ -20,7 +20,7 @@ sky_se_110e_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
 	.byte	BENDR, 15
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 72
 	.byte	VOICE, 0
@@ -55,7 +55,7 @@ sky_se_110e_0:
 	.byte	W02
 	.byte	BEND, 64
 	.byte	W18
-	.byte	N28, 59, 24
+	.byte	N28, 59, 23
 	.byte	W28
 	.byte	FINE
 

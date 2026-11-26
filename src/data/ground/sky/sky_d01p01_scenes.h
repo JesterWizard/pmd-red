@@ -227,6 +227,7 @@ static const struct ScriptCommand s_gs178_g6_s0_station_sref_script[] = {
     SELECT_MAP(MAP_SKY_GUILD_DUSK),
     SELECT_ENTITIES(-1, 0),
     WAIT(1), /* the actors take their poses; the pan draws them */
+    BGM_FADEIN(120, MUS_SKY_FIRE_CRACKLING), /* EoS: bgm_PlayFadeIn(BGM_FIRE_CRACKLING_LOUDER, 120) */
     /* EoS: dusk clouds (top screen) over the guild: pan down to the guild. */
     SKY_CUTAWAY(SKY_CUTAWAY_GUILD_SKY_SCROLL, 90),
     FADE_IN(TRUE, 0), /* the pan ends on this exact view */
@@ -278,7 +279,7 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SUPRISED),
     MSG_NPC(NPC_PARTNER, _(" Waah!")),
     TEXTBOX_CLEAR,
-    FANFARE_PLAY2(470),
+    FANFARE_PLAY2(SE_SKY_FLUSTERED), /* EoS se_Play(8963) */
     CALL_SCRIPT(SWEAT_FUNC),
     ROTATE_TO(3, DIR_TRANS_SPINLEFT1, DIRECTION_NORTH),
     WAIT(5),
@@ -289,6 +290,8 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     MSG_NPC(NPC_PARTNER, _(" That shocked me!")),
     TEXTBOX_CLEAR,
     WAIT(30),
+    FANFARE_PLAY2(SE_SKY_SWEAT_DROP), /* EoS se_Play(8961) + EFFECT_SWEAT_DROP */
+    CALL_SCRIPT(SWEAT_FUNC),
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SIGH),
     MSG_NPC(NPC_PARTNER, _(" Whew...")),
     TEXTBOX_CLEAR,
@@ -298,6 +301,7 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     MSG_NPC(NPC_PARTNER, _(" I vowed that I would do it\ntoday, but...")),
     TEXTBOX_CLEAR,
     WALK_RELATIVE(128, 0, -8),
+    FANFARE_PLAY2(SE_SKY_RELIC_FRAGMENT), /* EoS se_Play(6410): the treasure comes out */
     WAIT(15),
     SELECT_ANIMATION(5),
     MOVE_RELATIVE(128, 0, 8),
@@ -552,13 +556,11 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     MSG_NPC(NPC_PARTNER, _(" What?{WAIT_PRESS} You say you're a human?")),
     MSG_NPC(NPC_PARTNER, _(" You look like a totally normal\n{POKEMON_0} to me!")),
     TEXTBOX_CLEAR,
-    FANFARE_PLAY2(469),
-    CALL_SCRIPT(LOOK_AROUND_FUNC),
-    FANFARE_STOP2(469),
+    CALL_SCRIPT(LOOK_AROUND_FUNC), /* EoS: no sound */
     WAIT(30),
-    FANFARE_PLAY2(482),
+    FANFARE_PLAY2(463), /* EoS se_Play(8968) + EFFECT_SHOCKED_MIRRORED */
     CALL_SCRIPT(SHOCK_FUNC),
-    WAIT_FANFARE2(482),
+    WAIT_FANFARE2(463),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_SUPRISED),
     MSG_QUIET(NPC_PLAYER, _("(It's...it's true!)")),
     MSG_QUIET(NPC_PLAYER, _("(I've turned into a {POKEMON_0}!)")),
@@ -571,7 +573,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     MSG_NPC(NPC_PARTNER, _(" You're...{WAIT_PRESS}a little odd...")),
     MSG_NPC(NPC_PARTNER, _(" Are you pulling some kind of\ntrick on me?")),
     TEXTBOX_CLEAR,
-    FANFARE_PLAY2(463),
+    FANFARE_PLAY2(466), /* EoS se_Play(8967) */
     CALL_SCRIPT(SHOCK_FUNC),
     WAIT(15),
     ROTATE_TO(4, DIR_TRANS_SPINLEFT1, DIRECTION_EAST),
@@ -605,14 +607,17 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     SELECT_LIVES(-1, 1), /* Zubat & Koffing swoop in from the right */
     WAIT(1),
-    FANFARE_PLAY2(466),
-    CALL_SCRIPT(NOTICE_FUNC),
     /* Cues are only delivered to scripts already waiting (GroundScript_Unlock):
-     * every ALERT here is followed straight away by its AWAIT. */
+     * every ALERT here is followed straight away by its AWAIT (Zubat's flight
+     * takes longer than the 30 frames before the "!"). */
     ALERT_CUE(7),
     ALERT_CUE(8),
+    WAIT(30), /* EoS: the "!" 30 frames into their approach */
+    FANFARE_PLAY2(465), /* EoS se_Play(8964) + EFFECT_EXCLAMATION_MARK */
+    EMOTION_EFFECT(EMOTION_EFFECT_NOTICE),
     AWAIT_CUE(5), /* Zubat rams into the partner */
     SKY_AMBIENCE_FADEOUT(0), /* EoS: bgm2_Stop() as Zubat strikes */
+    FANFARE_PLAY2(SE_SKY_TACKLE), /* EoS se_Play(5121) */
     ALERT_CUE(6),
     AWAIT_CUE(5), /* partner knocked back, shocked */
     SELECT_ENTITIES(-1, 2), /* EoS: the Relic Fragment falls on the sand */
@@ -653,6 +658,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     ALERT_CUE(7), /* Zubat swoops down and grabs it */
     AWAIT_CUE(5),
     ALERT_CUE(9), /* the fragment is gone */
+    FANFARE_PLAY2(463), /* EoS se_Play(8968) + EFFECT_SHOCKED_MIRRORED on the partner */
     AWAIT_CUE(5), /* Zubat back in place */
     MSG_NPC(NPC_PARTNER, _(" Aaaah!")),
     TEXTBOX_CLEAR,
@@ -695,6 +701,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     CHOICE(/* label */ 3, _("No")),
   LABEL(3), /* = 0x03 */
     TEXTBOX_CLEAR,
+    FANFARE_PLAY2(463), /* EoS se_Play(8968) */
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SUPRISED),
     MSG_NPC(NPC_PARTNER, _(" Awww! You won't help me?")),
     MSG_NPC(NPC_PARTNER, _(" That thing is important to me!")),
@@ -738,13 +745,13 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     AWAIT_CUE(6),
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_WEST),
     WAIT(30),
-    FANFARE_PLAY2(466),
+    FANFARE_PLAY2(465), /* EoS se_Play(8964) */
     CALL_SCRIPT(NOTICE_FUNC),
-    WAIT_FANFARE2(466),
+    WAIT_FANFARE2(465),
     ALERT_CUE(5),
     AWAIT_CUE(6),
     WALK_RELATIVE(256, -116, 0),
-    FANFARE_PLAY2(463),
+    FANFARE_PLAY2(455), /* EoS se_Play(8974) */
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
@@ -757,7 +764,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(JUMP_ANGRY_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    FANFARE_PLAY2(466),
+    FANFARE_PLAY2(465), /* EoS se_Play(8964) */
     CALL_SCRIPT(NOTICE_FUNC),
     SELECT_ANIMATION(5),
     MOVE_RELATIVE(256, 16, 0),
@@ -768,7 +775,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    FANFARE_PLAY2(463),
+    FANFARE_PLAY2(455), /* EoS se_Play(8974) */
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
@@ -779,14 +786,15 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     SELECT_ANIMATION(11), /* EoS: knocked back, hurt */
     MOVE_RELATIVE(768, -40, 0),
     SELECT_ANIMATION(2),
-    FANFARE_PLAY2(463),
-    CALL_SCRIPT(SHOCK_FUNC),
+    CALL_SCRIPT(SHOCK_FUNC), /* EoS: EFFECT_SHOCKED, no sound (the tackle's) */
     ALERT_CUE(5),
     AWAIT_CUE(6),
     ROTATE_TO(1, DIR_TRANS_10, DIRECTION_EAST),
-    CALL_SCRIPT(JUMP_ANGRY_FUNC),
+    FANFARE_PLAY2(457), /* EoS se_Play(8971) + EFFECT_ANGRY */
+    CALL_SCRIPT(ANGRY_START_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
+    CALL_SCRIPT(ANGRY_END_FUNC), /* EoS SetEffect(EFFECT_NONE) */
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
@@ -923,8 +931,7 @@ static const struct ScriptCommand s_gs178_g2_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(WAKEUP_FUNC),
     CALL_SCRIPT(LOOK_AROUND_FUNC),
     ROTATE_TO_LIVES(4, DIR_TRANS_11, LIVES_KIND_PLAYER),
-    FANFARE_PLAY2(470),
-    CALL_SCRIPT(SWEAT_FUNC),
+    CALL_SCRIPT(SWEAT_FUNC), /* EoS m01a0301: the sweat drops play no sound */
     ALERT_CUE(5),
     AWAIT_CUE(6),
     FANFARE_PLAY2(466),
@@ -1059,6 +1066,8 @@ static const struct ScriptCommand s_gs178_g3_s0_lives0_dlg0[] = { /* Player */
     TEXTBOX_CLEAR,
     ALERT_CUE(6),
     AWAIT_CUE(5),
+    FANFARE_PLAY2(470), /* EoS se_Play(8972) + sweat drops on the hero */
+    CALL_SCRIPT(SWEAT_FUNC),
     PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_SUPRISED),
     MSG_QUIET(NPC_PLAYER, _("(Wah! What should I do?{WAIT_PRESS} I'm getting\nrecruited out of the blue!)")),
     PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_WORRIED),
@@ -1069,6 +1078,7 @@ static const struct ScriptCommand s_gs178_g3_s0_lives0_dlg0[] = { /* Player */
     CHOICE(/* label */ 3, _("Say no")),
   LABEL(3), /* = 0x03 */
     TEXTBOX_CLEAR,
+    FANFARE_PLAY2(463), /* EoS se_Play(8968) */
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SUPRISED),
     MSG_NPC(NPC_PARTNER, _(" What?! Oh, please!")),
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SAD),
@@ -1124,6 +1134,7 @@ static const struct ScriptCommand s_gs178_g3_s0_lives1_dlg0[] = { /* Partner */
     ALERT_CUE(5),
     AWAIT_CUE(6),
     WALK_RELATIVE(128, 12, 0),
+    FANFARE_PLAY2(SE_SKY_RELIC_FRAGMENT), /* EoS se_Play(6410): the Relic Fragment comes out */
     MOVE_RELATIVE(128, -12, 0),
     ALERT_CUE(5),
     AWAIT_CUE(6),
@@ -1138,7 +1149,7 @@ static const struct ScriptCommand s_gs178_g3_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(JUMP_HAPPY_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6), /* "Oh? Really?!" */
-    FANFARE_PLAY2(466),
+    FANFARE_PLAY2(465), /* EoS se_Play(8964) */
     CALL_SCRIPT(NOTICE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6), /* "Yay!" */

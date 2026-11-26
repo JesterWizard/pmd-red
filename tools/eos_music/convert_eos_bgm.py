@@ -11,7 +11,7 @@ voicegroup (sky_vg_bgmNNNN) generated from bgmNNNN.swd in front of it
 (see sky_soundfont.py). The EoS samples every song uses become WaveData in
 sound/songs/sky_samples.s (+ sound/direct_sound_samples/sky/*.bin).
 
-  * SONGS (song ids 61..70) are the story songs, used by the sky scenes.
+  * SONGS (song ids 61..71) are the story songs, used by the sky scenes.
   * every Sky Jukebox track (EoS overlay 9's track -> bgm table, names from
     the "Music Tracks" strings) not in SONGS becomes sound/songs/sky_bgm_NNNN.s,
     appended to the song table after its last entry
@@ -74,9 +74,19 @@ SONGS = [
     # under the music on its second BGM player (bgm2_*); the demake plays it
     # on the ambience player (src/sky_ambience.c).
     (70, 100, "sky_ocean"),
+    # EoS bgm0116 "Fire Crackling (louder)" (BGM_FIRE_CRACKLING_LOUDER): the
+    # guild's torches at dusk (m01a0104).
+    (71, 116, "sky_fire_crackling"),
 ]
 
 RENDER_SECONDS = 90
+
+# Level trims (dB) on top of the headroom model, which brings every song to
+# about the same mix level. EoS's Ocean1 sits well under the scene sounds
+# (DeSmuME, m01a0208: the waves ~6.5 dB under the text blips, ~15 dB under
+# Zubat's tackle); at the model's level it was ~4.5 dB over that against the
+# blips and ~7 dB over it against the SEs (mGBA), so it is trimmed by 6 dB.
+LEVEL_DB = {"seq_070": -6.0}
 
 
 def vlq(n: int) -> bytes:
@@ -285,6 +295,8 @@ def convert_smd(rom, sf, smd: str, bank: str, vg_label: str, label: str, out: Pa
     song = smdl.parse(rom.getFileByName(smd))
     vg, vg_asm, tones = sf.voicegroup_from(bank, vg_label, song_programs(song))
     mids, mvl, level = song_to_midi(song, tones, sf)
+    if label in LEVEL_DB:
+        mvl = max(1, round(mvl * 10 ** (LEVEL_DB[label] / 20)))
 
     def mid2agb(data: bytes, name: str) -> str:
         mid = MIDI_DIR / f"{name}.mid"

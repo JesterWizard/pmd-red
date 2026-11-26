@@ -28,80 +28,80 @@ sky_se_0e11_0:
 	.byte	W04
 	.byte	VOL, 52
 	.byte	W04
-	.byte	VOL, 58
+	.byte	VOL, 59
 	.byte	W04
-	.byte	VOL, 64
+	.byte	VOL, 65
 	.byte	W03
-	.byte	VOL, 69
+	.byte	VOL, 70
 	.byte	W04
-	.byte	VOL, 74
+	.byte	VOL, 75
 	.byte	W04
-	.byte	VOL, 79
-	.byte	W04
-	.byte	VOL, 83
-	.byte	W04
-	.byte	VOL, 87
-	.byte	W03
-	.byte	VOL, 91
-	.byte	W04
-	.byte	VOL, 95
-	.byte	W04
-	.byte	VOL, 98
-	.byte	W04
-	.byte	VOL, 102
-	.byte	W04
-	.byte	VOL, 105
-	.byte	W03
-	.byte	VOL, 108
-	.byte	W04
-	.byte	VOL, 111
-	.byte	W04
-	.byte	VOL, 114
-	.byte	W04
-	.byte	VOL, 117
-	.byte	W04
-	.byte	VOL, 120
-	.byte	W03
-	.byte	VOL, 123
-	.byte	W04
-	.byte	VOL, 126
-	.byte	W36
-	.byte	W02
-	.byte	VOL, 122
-	.byte	W15
-	.byte	VOL, 120
-	.byte	W06
-	.byte	VOL, 118
-	.byte	W05
-	.byte	VOL, 116
-	.byte	W04
-	.byte	VOL, 114
-	.byte	W04
-	.byte	VOL, 112
-	.byte	W04
-	.byte	VOL, 109
-	.byte	W03
-	.byte	VOL, 106
-	.byte	W04
-	.byte	VOL, 103
-	.byte	W04
-	.byte	VOL, 100
-	.byte	W04
-	.byte	VOL, 96
-	.byte	W04
-	.byte	VOL, 92
-	.byte	W03
-	.byte	VOL, 88
+	.byte	VOL, 80
 	.byte	W04
 	.byte	VOL, 84
 	.byte	W04
-	.byte	VOL, 79
+	.byte	VOL, 88
+	.byte	W03
+	.byte	VOL, 92
 	.byte	W04
-	.byte	VOL, 74
+	.byte	VOL, 96
 	.byte	W04
-	.byte	VOL, 69
+	.byte	VOL, 99
+	.byte	W04
+	.byte	VOL, 103
+	.byte	W04
+	.byte	VOL, 106
+	.byte	W03
+	.byte	VOL, 109
+	.byte	W04
+	.byte	VOL, 112
+	.byte	W04
+	.byte	VOL, 115
+	.byte	W04
+	.byte	VOL, 118
+	.byte	W04
+	.byte	VOL, 121
+	.byte	W03
+	.byte	VOL, 124
+	.byte	W04
+	.byte	VOL, 127
+	.byte	W36
+	.byte	W02
+	.byte	VOL, 123
+	.byte	W15
+	.byte	VOL, 121
+	.byte	W06
+	.byte	VOL, 119
+	.byte	W05
+	.byte	VOL, 117
+	.byte	W04
+	.byte	VOL, 115
+	.byte	W04
+	.byte	VOL, 113
+	.byte	W04
+	.byte	VOL, 110
+	.byte	W03
+	.byte	VOL, 107
+	.byte	W04
+	.byte	VOL, 104
+	.byte	W04
+	.byte	VOL, 101
+	.byte	W04
+	.byte	VOL, 97
+	.byte	W04
+	.byte	VOL, 93
+	.byte	W03
+	.byte	VOL, 89
+	.byte	W04
+	.byte	VOL, 85
+	.byte	W04
+	.byte	VOL, 80
+	.byte	W04
+	.byte	VOL, 75
+	.byte	W04
+	.byte	VOL, 70
 	.byte	W07
-	.byte	VOL, 58
+	.byte	VOL, 59
 	.byte	W04
 	.byte	VOL, 52
 	.byte	W04

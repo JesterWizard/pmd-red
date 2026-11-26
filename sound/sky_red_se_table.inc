@@ -220,16 +220,16 @@ song seq_515,  3,  3
 song seq_516,  5,  5
 song seq_517,  5,  5
 song sky_se_1206,  5,  5    @ 518: SE_NUM_EFF_RAIN
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
+song sky_se_1401,  5,  5    @ 519: SE_NUM_EVENT_MOTION_DAMEGE_01
+song sky_se_2301,  5,  5    @ 520: SE_NUM_EVENT_SIGN_ASE_01
+song sky_se_2303,  5,  5    @ 521: SE_NUM_EVENT_SIGN_HATENA_03
+song sky_se_190a,  5,  5    @ 522: SE_NUM_EVENT_MAIN02_HAKO_01
+song sky_se_1906,  5,  5    @ 523: SE_NUM_EVENT_MAIN01_KAKERA_03
+song sky_se_1d06,  5,  5    @ 524: SE_NUM_EVENT_MAIN18_MIKARUGE_06
+song sky_se_2206,  5,  5    @ 525: SE_NUM_EVENT_MOTION_ITEM
+song sky_se_1417,  5,  5    @ 526: SE_NUM_EVENT_EFF_FLASH_HEAVY
+song sky_se_1410,  5,  5    @ 527: SE_NUM_EVENT_EFF_WIPE_01
+song sky_se_2c02,  5,  5    @ 528: SE_NUM_ETC01_HADO_02
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0

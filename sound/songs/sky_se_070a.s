@@ -20,32 +20,32 @@ sky_se_070a_0:
 	.byte	TEMPO, 245
 	.byte	KEYSH, 0
 	.byte	BENDR, 12
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N04, 47, 96
+	.byte	N04, 47, 90
 	.byte	W05
-	.byte	N05, 52, 108
+	.byte	N05, 52, 102
 	.byte	W04
 	.byte	BEND, 2
 	.byte	W01
-	.byte	N04, 57, 120
+	.byte	N04, 57, 113
 	.byte	W02
 	.byte	BEND, 33
 	.byte	W03
-	.byte	N05, 62, 120
+	.byte	N05, 62, 113
 	.byte	W02
 	.byte	BEND, 64
 	.byte	W03
 	.byte	N04, 67, 127
 	.byte	W06
 	.byte	VOICE, 1
-	.byte	N24, 60, 127
+	.byte	N24, 60, 124
 	.byte	W24
-	.byte	N24, 60, 48
+	.byte	N24, 60, 45
 	.byte	W24
-	.byte	N24, 60, 24
+	.byte	N24, 60, 23
 	.byte	W24
 	.byte	FINE
 

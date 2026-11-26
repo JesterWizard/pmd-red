@@ -19,17 +19,17 @@ sky_vg_se_0111:
 sky_se_0111_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 104
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N21, 90, 67
+	.byte	N21, 90, 65
 	.byte	W12
 	.byte	VOICE, 1
-	.byte	N19, 100, 83
+	.byte	N19, 100, 80
 	.byte	W19
-	.byte	N12, 100, 21
+	.byte	N12, 100, 20
 	.byte	W12
-	.byte	N09, 100, 16
+	.byte	N09, 100, 15
 	.byte	W09
 	.byte	FINE
 

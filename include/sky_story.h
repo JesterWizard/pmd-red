@@ -65,6 +65,20 @@ extern u8 gSkyBossExp;
 #define MUS_SKY_WELCOME_TO_THE_WORLD        68
 #define MUS_SKY_STORM                       69 /* EoS BGM_STORM (bgm0101) */
 #define MUS_SKY_OCEAN                       70 /* EoS BGM_OCEAN1 (bgm0100): the waves */
+#define MUS_SKY_FIRE_CRACKLING              71 /* EoS BGM_FIRE_CRACKLING_LOUDER (bgm0116): the guild's torches */
+
+/* EoS scene sound effects with no Red equivalent (song table slots that are
+ * empty in Red; tools/eos_music/sky_red_se_map.py). */
+#define SE_SKY_TACKLE                       519 /* SE_NUM_EVENT_MOTION_DAMEGE_01 (0x1401) */
+#define SE_SKY_SWEAT_DROP                   520 /* SE_NUM_EVENT_SIGN_ASE_01 (0x2301) */
+#define SE_SKY_FLUSTERED                    521 /* SE_NUM_EVENT_SIGN_HATENA_03 (0x2303) */
+#define SE_SKY_RELIC_FRAGMENT               522 /* SE_NUM_EVENT_MAIN02_HAKO_01 (0x190A) */
+#define SE_SKY_FRAGMENT_TOSS                523 /* SE_NUM_EVENT_MAIN01_KAKERA_03 (0x1906) */
+#define SE_SKY_FLEE                         524 /* SE_NUM_EVENT_MAIN18_MIKARUGE_06 (0x1D06) */
+#define SE_SKY_PICK_UP                      525 /* SE_NUM_EVENT_MOTION_ITEM (0x2206) */
+#define SE_SKY_FLASH_HEAVY                  526 /* SE_NUM_EVENT_EFF_FLASH_HEAVY (0x1417) */
+#define SE_SKY_BOSS_WIPE                    527 /* SE_NUM_EVENT_EFF_WIPE_01 (0x1410) */
+#define SE_SKY_QUIZ_REVEAL                  528 /* SE_NUM_ETC01_HADO_02 (0x2C02) */
 
 #ifndef __ASSEMBLER__
 s32 SkyStory_GetDungeonBgm(s32 defaultSong);

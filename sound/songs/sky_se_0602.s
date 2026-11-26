@@ -20,44 +20,44 @@ sky_se_0602_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
 	.byte	BENDR, 1
-	.byte	VOL, 125
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N10, 66, 127
 	.byte	W06
 	.byte	N08, 68, 127
 	.byte	W06
-	.byte	VOL, 122
+	.byte	VOL, 124
 	.byte	VOICE, 1
 	.byte	N15, 72, 127
 	.byte	W02
-	.byte	VOL, 119
+	.byte	VOL, 120
 	.byte	W01
-	.byte	VOL, 109
-	.byte	N14, 65, 126
+	.byte	VOL, 110
+	.byte	N14, 65, 124
 	.byte	W01
-	.byte	VOL, 107
+	.byte	VOL, 108
 	.byte	W03
 	.byte	BEND, 127
 	.byte	W02
-	.byte	VOL, 121
+	.byte	VOL, 123
 	.byte	BEND, 125
 	.byte	W02
-	.byte	VOL, 120
+	.byte	VOL, 121
 	.byte	BEND, 117
 	.byte	W01
-	.byte	VOL, 115
+	.byte	VOL, 116
 	.byte	W01
 	.byte	BEND, 102
 	.byte	W01
-	.byte	VOL, 106
+	.byte	VOL, 107
 	.byte	W01
 	.byte	BEND, 82
 	.byte	W01
-	.byte	VOL, 94
+	.byte	VOL, 95
 	.byte	BEND, 64
 	.byte	W03
-	.byte	VOL, 60
+	.byte	VOL, 61
 	.byte	W01
 	.byte	VOL, 37
 	.byte	W01

@@ -15,30 +15,30 @@ sky_vg_se_0102:
 sky_se_0102_0:
 	.byte	TEMPO, 120
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N03, 82, 116
+	.byte	N03, 82, 100
 	.byte	W03
-	.byte	N03, 81, 127
+	.byte	N03, 81, 119
 	.byte	W03
 	.byte	N03, 80, 127
 	.byte	W03
 	.byte	N03, 79, 127
 	.byte	W03
-	.byte	N03, 78, 116
+	.byte	N03, 78, 100
 	.byte	W03
-	.byte	N03, 77, 72
+	.byte	N03, 77, 63
 	.byte	W03
-	.byte	N03, 76, 43
+	.byte	N03, 76, 38
 	.byte	W03
-	.byte	N03, 75, 36
+	.byte	N03, 75, 31
 	.byte	W03
-	.byte	N03, 74, 29
+	.byte	N03, 74, 25
 	.byte	W03
-	.byte	N03, 73, 29
+	.byte	N03, 73, 25
 	.byte	W03
-	.byte	N03, 73, 22
+	.byte	N03, 73, 19
 	.byte	W03
 	.byte	FINE
 

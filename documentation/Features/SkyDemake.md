@@ -427,8 +427,9 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
   EoS's Pit background as the floor's tileset. Its cutscene is
   `CUTSCENE_BEACH_CAVE_PIT`
   ([`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c)):
-  m01a0401 (first visit) or m01a0501 (re-fight) dialogue, the camera shows the
-  thieves, boss music, and the dungeon ends once both are down. No cutscene
+  m01a0401 (first visit) or m01a0501 (re-fight) dialogue and sounds, the
+  camera shows the thieves, EoS's two white flashes and boss wipe
+  (`PitBossWipe`), boss music, and the dungeon ends once both are down. No cutscene
   flags are touched, so Sinister Woods is unaffected.
 - Later visits to Beach Cave have no Pit.
 - Bosses grant no EXP, as in EoS: `gSkyBossExp` (src/sky_story.c, default
@@ -502,7 +503,10 @@ Instruments come from EoS's DSE sound banks
   scale note velocities. EoS volume × expression becomes MIDI volume, and pitch
   bends are kept. Each song's master volume comes from an offline model of the
   m4a mixer ([`m4a_render.py`](../../tools/eos_music/m4a_render.py)) so the
-  8-bit mix, which wraps instead of clipping, keeps headroom.
+  8-bit mix, which wraps instead of clipping, keeps headroom. That brings
+  every song to about the same level, so `LEVEL_DB` trims songs EoS keeps
+  quieter: Ocean1 (`seq_070`) is 6 dB down (see
+  [Chapter 1 audio audit](#chapter-1-audio-audit)).
 - **Loops**: DSE loops each track by itself (its 0x99 loop point to its end).
   In music every track loops together, so a song has one loop, as mid2agb
   writes it. EoS's ambient songs (bgm0100–0118, 0179–0193) layer short loops
@@ -513,10 +517,10 @@ Instruments come from EoS's DSE sound banks
   When a track's loop is under half the longest track's loop
   (`per_track_loops`), the converter runs mid2agb once per track, giving each
   track its own `GOTO`, and splices the tracks into one song. The MIDI files
-  are then `midi/<name>_trackN.mid`. Of the converted songs, `seq_069` and
-  `seq_070` do this. Some music songs have one track whose end is 256 ticks
+  are then `midi/<name>_trackN.mid`. Of the converted songs, `seq_069`,
+  `seq_070` and `seq_071` do this. Some music songs have one track whose end is 256 ticks
   later than the others' (a trailing rest). They keep the shared loop.
-- **Engine**: in the sky build the mixer uses 12 DirectSound channels instead
+- **Engine**: in the sky build the mixer uses 8 DirectSound channels instead
   of Red's 5, and the BGM player has 16 tracks instead of 12 (`src/m4a.c`,
   `sound/music_player_table.inc`). The vanilla build is unchanged.
 
@@ -535,8 +539,9 @@ wins).
 | 68 | bgm0006 Welcome to the World of Pokémon! | Personality quiz |
 | 69 | bgm0101 Storm | The storm at sea (m01a0101, m01d0112 stormy sea, m01a0102) |
 | 70 | bgm0100 Ocean1 | The waves on the beach (m01a0103, m01a0201–0208, m01a0301, m01a0702) |
+| 71 | bgm0116 Fire Crackling (louder) | The guild's torches at dusk (m01a0104) |
 
-`seq_069` and `seq_070` are past Red's music ids, so non-sky builds leave
+`seq_069`–`seq_071` are past Red's music ids, so non-sky builds leave
 their objects out of the link (Makefile `SONG_SRCS`): an extra object
 reorders the linker's long-call stubs and would change the vanilla ROM. The
 same goes for sky-only C files added since (`SKY_ONLY_C_SOURCES`:
@@ -554,7 +559,7 @@ chapter 1 uses, from the decompiled scripts, and the demake's equivalents:
 | m01a0103 (beach, day) | `sound_Stop(); bgm_PlayFadeIn(BGM_OCEAN1, 120)` … `bgm_FadeOut(120)` | group 5: `BGM_FADEIN(120, MUS_SKY_OCEAN)`; its `BGM_FADEOUT(120)` |
 | m01a0201 (beach at dusk, not in the demake) | `sound_Stop(); bgm2_PlayFadeIn(BGM_OCEAN1, 160)` | group 7 (Krabby): `SKY_AMBIENCE(MUS_SKY_OCEAN, 160)` |
 | m01a0202–0208 | `bgm2_PlayFadeIn(BGM_OCEAN1, 0)` (keeps playing) | groups 8 and 1: `SKY_AMBIENCE(MUS_SKY_OCEAN, 0)` |
-| m01a0208, Zubat strikes | `bgm2_Stop()` | `SKY_AMBIENCE_FADEOUT(0)` |
+| m01a0208, Zubat strikes | `bgm2_Stop(); se_Play(5121)` | `SKY_AMBIENCE_FADEOUT(0)`, `FANFARE_PLAY2(SE_SKY_TACKLE)` |
 | m01a0208, "See you around, chicken." | `bgm_PlayFadeIn(BGM_OCEAN1, 150)` … `bgm_FadeOut(60)` | `BGM_FADEIN(150, MUS_SKY_OCEAN)` (was a `BGM_FADEOUT(60)` of nothing); the station's `BGM_FADEOUT(60)` |
 | m01a0301 (defeated) | `bgm_PlayFadeIn(BGM_OCEAN1, 160)` … `bgm_FadeOut(60)` | group 2: `BGM_FADEIN(160, MUS_SKY_OCEAN)`; its `BGM_FADEOUT(60)` |
 | m01a0702 (the team) | `sound_Stop(); bgm2_PlayFadeIn(BGM_OCEAN1, 160)`, the music at "It's my precious treasure.", `bgm_FadeOut(180); bgm2_FadeOut(180)` | group 3: `SKY_AMBIENCE(MUS_SKY_OCEAN, 160)`, `BGM_SWITCH(MUS_SKY_ON_THE_BEACH_AT_DUSK)` after that line (it used to start with the scene), `SKY_AMBIENCE_FADEOUT(180)` |
@@ -627,7 +632,10 @@ jingles are Red's, re-orchestrated.
 397 of Red's 489 sound effects (song ids 300–938) play EoS's own sound
 effect in the sky build, on EoS's own instruments; the other 92 keep Red's.
 Red ids 461, 467 and 488 (unused by the sky scripts and code) carry the storm
-intro's thunder and warp SEs.
+intro's thunder and warp SEs. Ids 519–528, empty in Red's song table and
+called by nothing, carry ten more chapter 1 scene SEs (`SE_SKY_*` in
+`include/sky_story.h`, on SE player 5 from `SCENE_SE_PLAYERS`; see
+[Chapter 1 audio audit](#chapter-1-audio-audit)).
 
 EoS keeps its SEs in DSE "sedl" banks: `SOUND/SYSTEM/se_sys.sed` (menus) and
 `SOUND/SE/*.sed` (motion, event, state, trap, waza1–15, ...). An SE id is
@@ -662,10 +670,21 @@ includes for ids 300–938 under `SKY_STORY` (player fields as in Red).
   capped at the lone-SE mix level (`TARGET_LEVEL`) where the 8-bit mixer would
   wrap. Most SEs now measure within ±30 % of Red's; a few that already hit
   VOL / velocity 127 stay quieter (608 "middle damage": ~0.5× Red's).
+  Only the volumes a note is heard at count towards the VOL limit
+  (`audible_vols`): many EoS SE tracks set volume 127 and then their real
+  volume or expression on the same tick, or before the first note, and that
+  127 used to stop the gain going into VOL (Zubat's tackle, 0x1401, came out
+  3.5 dB quieter). 106 SEs changed by up to 2 dB in how VOL and velocity
+  share the gain; their target level is the same.
 - Channels: every SE song has Red's SE priority (80–127), above the EoS
   songs' 50, so an SE note takes a mixer channel from the BGM even when the
   BGM holds all 8 (m4a steals the lowest-priority channel). Checked in Beach
   Cave: every SE started in a 15000-frame run got a DirectSound or CGB channel.
+  On the beach (frames 9700–15700 of the `EVENT_DIVIDE` run below) "On the
+  Beach at Dusk" and the 5-track Ocean1 ambience fill all 8 channels in about
+  a quarter of the frames and take about 35 voices from each other in 6000
+  frames; every scene SE still gets its channel (priority 100–127 over 50),
+  e.g. the tackle starts on the frame the ambience stops.
 
 Motion SEs (`motion.sed`: the basic attack, hits, attack motions) used the
 wrong bank until the 0x7F01 fix above: programs missing from `001.swd` became
@@ -724,7 +743,81 @@ with no EoS equivalent found: curse, confusion, sleep, whiffer, charging, ...),
 450–517 except the emotes above (Red's own ground-scene sounds: footsteps,
 doors, crowd, cries of the legendaries, ...; the chapter 1 scenes use only the
 emotes), 727, 804, 916, 917 (effect rows whose EoS SE is none) and 633–635,
-637, 894, 923 (no caller found). The chapter 1 scenes' SEs (463, 466, 469, 470, 482) are all EoS's.
+637, 894, 923 (no caller found). The chapter 1 scenes' SEs (455, 457, 463,
+465, 466, 469, 470, 473, 519–528) are all EoS's.
+
+### Chapter 1 audio audit
+
+Every sound call in EoS's chapter 1 scripts (`m01a*`, `m01d*` decompiled with
+SkyTemple; `CallCommon` / `ExecuteCommon` coroutines checked in
+`SCRIPT/COMMON/unionall.ssb`: of the ones chapter 1 uses only
+`CORO_BOSS_WIPE_FUNC` plays a sound, 5136) against the demake. EoS SE ids are
+`bank << 8 | sequence`. "Was" is the demake before this audit.
+
+| EoS script | EoS call | Was | Now |
+|---|---|---|---|
+| m01a0101 / 0102 / m01d0112 | Storm, thunder 6401/6402/6403 | all present | — |
+| m01a0103 | Ocean1 | present | — |
+| m01a0104 (gs178 g6) | `bgm_PlayFadeIn(BGM_FIRE_CRACKLING_LOUDER, 120)` | silent scene | new song 71 (bgm0116) |
+| | 8968 shock, "Pokémon detected!" | 463 | — |
+| | 8963 `SIGN_HATENA_03` + sweat after "Waah!" | 470 (`TENSION_01`) | 521 |
+| | 8961 `SIGN_ASE_01` + sweat drop before "Whew..." | none | 520 + sweat |
+| | 6410 `MAIN02_HAKO_01` as the partner steps up with the treasure | none | 522 |
+| m01a0202–0207 | Ocean1 (bgm2), On the Beach at Dusk | present | — |
+| m01a0208 (gs178 g1) | 8964 `NOTICE_01` "what's that?" | 466 (`NOTICE_04`) | 465 |
+| | 8974 `JUNP_01` "Someone has collapsed!" | 463 | 455 |
+| | 8964 "You're awake!" | 466 | 465 |
+| | 8974 "You say you're a human?" | 463 | 455 |
+| | (look around: no sound), then 8968 shock on the hero | 469 + 482 (`SHOCK_02`) | 463 only |
+| | 8967 `NOTICE_04` + shock on the hero | 463 | 466 |
+| | 8972 sweat "Sorry that I doubted you" | 470 | — |
+| | 8964 on the hero, 30 frames into the thieves' approach | 466 at their start | 465 + "!" at EoS's time |
+| | `bgm2_Stop(); se_Play(5121)` Zubat's tackle | ambience stop only | 519 (new) |
+| | partner shocked after the hit: no sound | 463 | effect only |
+| | 8971 `ANGER_02` + anger mark "Why'd you do that?!" | angry jump, no sound | 457 + anger mark |
+| | 8967 "Hey! That's...!" | 466 | — |
+| | 8968 as Zubat grabs the fragment ("Aaaah!") | none | 463 |
+| | Ocean1 (main) 150 after "chicken", fade 60 | present | — |
+| | 8968 "You won't help me?" | none | 463 |
+| | 8972 / 8971 on the third / fifth refusal | — | no such lines in the demake (one refusal text) |
+| m01a0301 (g2) | sweat drops, no sound | 470 | effect only |
+| | 8967 "We don't have time for this!" | 466 | — |
+| m01a0401 (Pit) | In the Depths of the Pit | present | — |
+| | 8964 + "!" on both thieves | none | 465 + "!" |
+| | partner flinches ("Urk!"): no sound | 464 | effect only |
+| | 8971 with the angry jump between "Give me back..." and "That's my personal treasure!" | none | 457 (line split) |
+| | 8968 + shock "Whaaaat?!" | 464 | 463 |
+| | `bgm_Stop`, 5143 ×2 with white flashes, `CORO_BOSS_WIPE_FUNC` (5136) | music switched straight to Boss Battle | music stops, 526 ×2 with flashes, 527 and a white-out (`PitBossWipe`) |
+| m01a0501 (re-fight) | 8962 `HATENA_02` "Oh... What?" | 464 | 469 |
+| | 8964 on both thieves | none | 465 + "!" (line split) |
+| | 8972 Koffing sweats | none | 470 |
+| | 8973 `SHOCK_03` on the partner and the hero | 464 | 473 |
+| | flashes and wipe as m01a0401 | none | as m01a0401 |
+| m01a0701 (gs179) | 8972 Koffing, then 8972 Zubat after "Owowow..." | both at once | Zubat's after Koffing's line |
+| | 6406 `MAIN01_KAKERA_03` as Zubat tosses the fragment | 466 when it lands | 523 |
+| | 7430 `MAIN18_MIKARUGE_06` as they flee | none | 524 |
+| | 8710 `EVENT_MOTION_ITEM` as the partner picks it up, `WaitSe`, then "Am I ever glad..." | none (picked up after the line) | 525, picked up before the line |
+| m01a0702 (g3) | Ocean1 (bgm2) 160, On the Beach at Dusk at "precious treasure", fades 180 | present | — |
+| | 6410 as the partner brings out the fragment | none | 522 |
+| | 8972 sweat on the hero ("Wah! What should I do?") | none | 470 + sweat |
+| | 8968 "Say no" | none | 463 |
+| | 8962 / 8968 on the "Are you...?" branch | — | not in the demake (two choices) |
+| | 8964 "Oh? Really?!" | 466 | 465 |
+| m00a01a (quiz) | 11266 `ETC01_HADO_02` as the quiz shows the hero's Pokémon | none | 528 (`personality_test1.c`) |
+| | 8712 `HADOU_CHECK` loop during the aura check | — | not in the demake (Red's quiz has no aura step) |
+| m01a0601, m01d0282/0284/0712/0722 | — | — | not in the demake (post-story revisit, later-chapter flashbacks) |
+
+New sound data: song 71 (`seq_071`, 228 bytes, two new bgm.swd samples,
+22 KB) and SEs 519–528 (`sky_se_1401` ... `sky_se_2c02`, 3.1 KB, two new
+`SOUND/SWD` samples, 10.6 KB): 37 KB of ROM in all. `SE_NUM_ETC01_HADO_02`
+has 3 tracks; the SE players have 2, so its third (2 notes of a low hum) is
+dropped.
+
+Levels, against DeSmuME recordings of m01a0208 (EoS) and `sndshot` (GBA):
+with the headroom model alone Ocean1 sat ~4.5 dB louder against the text
+blips than EoS's and ~7 dB louder against the scene SEs, so `seq_070` is
+trimmed 6 dB. Now the waves are 8.5 dB under the blips (EoS 7), the notice
+9 dB over the waves (EoS 10) and the tackle 15 dB over them (EoS 15.5).
 
 ---
 
@@ -944,6 +1037,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
 | Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
+| Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |
 | Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |
 | Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
 | Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c) |
@@ -963,7 +1057,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
   Lock; every track loops as converted.
 - Music uses EoS's samples at 8 bits and at most 18157 Hz. LFO vibrato, key
   groups and layered splits are not ported, and envelopes are approximated.
-  12 mixer channels cost more CPU than Red's 5.
+  8 mixer channels cost more CPU than Red's 5.
 - Sprites and the Relic Fragment use Red's 13 shared overworld palettes, so
   some colours shift (the fragment's red mark becomes grey; Turtwig loses its
   yellow). Converted sprites lack Red's cutscene animation groups 13+ (they

@@ -19,25 +19,25 @@ sky_vg_se_020b:
 sky_se_020b_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 113
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N06, 27, 114
+	.byte	N06, 27, 101
 	.byte	W06
-	.byte	N06, 37, 114
+	.byte	N06, 37, 101
 	.byte	W06
-	.byte	N06, 47, 114
+	.byte	N06, 47, 101
 	.byte	W06
-	.byte	N06, 57, 114
+	.byte	N06, 57, 101
 	.byte	W10
 	.byte	VOICE, 1
-	.byte	N06, 91, 66
+	.byte	N06, 91, 58
 	.byte	W06
-	.byte	N06, 98, 84
+	.byte	N06, 98, 74
 	.byte	W06
-	.byte	N18, 105, 84
+	.byte	N18, 105, 74
 	.byte	W18
-	.byte	N18, 105, 34
+	.byte	N18, 105, 30
 	.byte	W18
 	.byte	FINE
 

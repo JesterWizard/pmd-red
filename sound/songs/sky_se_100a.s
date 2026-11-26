@@ -15,22 +15,22 @@ sky_vg_se_100a:
 sky_se_100a_0:
 	.byte	TEMPO, 145
 	.byte	KEYSH, 0
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N02, 35, 101
+	.byte	N02, 35, 95
 	.byte	W02
 	.byte	N24, 36, 127
 	.byte	W24
-	.byte	N24, 36, 126
+	.byte	N24, 36, 119
 	.byte	W24
-	.byte	N24, 36, 101
+	.byte	N24, 36, 95
 	.byte	W24
-	.byte	N24, 36, 63
+	.byte	N24, 36, 60
 	.byte	W24
-	.byte	N24, 36, 38
+	.byte	N24, 36, 36
 	.byte	W24
-	.byte	N24, 36, 13
+	.byte	N24, 36, 12
 	.byte	W24
 	.byte	FINE
 

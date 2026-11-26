@@ -28,13 +28,13 @@ sky_se_1902_0:
 	.byte	TEMPO, 120
 	.byte	KEYSH, 0
 	.byte	BENDR, 28
-	.byte	VOL, 115
+	.byte	VOL, 127
 	.byte	VOICE, 0
 	.byte	N15, 59, 127
 	.byte	W15
 	.byte	N08, 59, 127
 	.byte	W08
-	.byte	VOL, 55
+	.byte	VOL, 61
 	.byte	BEND, 64
 	.byte	VOICE, 1
 	.byte	TIE, 69, 127
@@ -100,7 +100,7 @@ sky_se_1902_1:
 	.byte	BENDR, 28
 	.byte	VOL, 127
 	.byte	W18
-	.byte	VOL, 65
+	.byte	VOL, 72
 	.byte	BEND, 64
 	.byte	VOICE, 2
 	.byte	W01

@@ -16,7 +16,7 @@ sky_se_2308_0:
 	.byte	TEMPO, 160
 	.byte	KEYSH, 0
 	.byte	BENDR, 12
-	.byte	VOL, 110
+	.byte	VOL, 125
 	.byte	BEND, 64
 	.byte	VOICE, 0
 	.byte	N06, 54, 127
@@ -57,7 +57,7 @@ sky_se_2308_0:
 	.byte	W01
 	.byte	BEND, 77
 	.byte	W01
-	.byte	VOL, 105
+	.byte	VOL, 119
 	.byte	BEND, 64
 	.byte	N18, 69, 127
 	.byte	W01

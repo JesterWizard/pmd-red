@@ -30,7 +30,7 @@ sky_vg_bgm0100:
 	.equ	seq_070_grp, sky_vg_bgm0100
 	.equ	seq_070_pri, 50
 	.equ	seq_070_rev, 0
-	.equ	seq_070_mvl, 127
+	.equ	seq_070_mvl, 64
 	.equ	seq_070_key, 0
 	.equ	seq_070_tbs, 1
 	.equ	seq_070_exg, 1

@@ -74,7 +74,7 @@ SE_MAP = {
     463: (0x2308, "SE_NUM_EVENT_SIGN_SHOCK_01: shock emote (SHOCK_FUNC; sky scene 'Pokemon detected!' = EoS m01a0104 se_Play(0x2308) + EFFECT_SHOCKED; 0x2308 precedes EFFECT_SHOCKED 500x)"),
     464: (0x2305, "SE_NUM_EVENT_SIGN_NOTICE_02: notice emote (NOTICE_FUNC 5x); EoS SIGN_NOTICE_02 precedes EFFECT_EXCLAMATION_MARK 40x"),
     465: (0x2304, "SE_NUM_EVENT_SIGN_NOTICE_01: notice emote (NOTICE_FUNC 60x); EoS SE_NUM_EVENT_SIGN_NOTICE_01 precedes EFFECT_EXCLAMATION_MARK 289x"),
-    466: (0x2307, "SE_NUM_EVENT_SIGN_NOTICE_04: notice emote, second sound (NOTICE_FUNC; Zubat & Koffing swoop in); EoS SIGN_NOTICE_04 precedes EFFECT_EXCLAMATION_MARK 181x (m01a0208, m01a0301)"),
+    466: (0x2307, "SE_NUM_EVENT_SIGN_NOTICE_04: notice emote, second sound (NOTICE_FUNC; sky scenes where EoS plays 8967: m01a0208 'Hey! That's...!' and the hero's shock, m01a0301); EoS SIGN_NOTICE_04 precedes EFFECT_EXCLAMATION_MARK 181x (m01a0208, m01a0301)"),
     467: (0x1902, "SE_NUM_EVENT_MAIN01_THUNDER_02: storm intro lightning, second sound (EoS m01a0101 se_Play(6402)); Red 467 is unused by sky scripts and code"),
     469: (0x2302, "SE_NUM_EVENT_SIGN_HATENA_02: question emote (QUESTION_FUNC / LOOK_AROUND_FUNC); EoS SIGN_HATENA_02 precedes EFFECT_QUESTION_MARK 416x (m01a0501, m01a0702)"),
     470: (0x230C, "SE_NUM_EVENT_SIGN_TENSION_01: sweat emote (SWEAT_FUNC 26x); EoS SIGN_TENSION_01 precedes EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES 822x (m01a0208, m01a0701)"),
@@ -84,6 +84,18 @@ SE_MAP = {
     482: (0x2309, "SE_NUM_EVENT_SIGN_SHOCK_02: big shock (SHOCK_FUNC, 'You say you're a human?'); EoS SIGN_SHOCK_02 precedes EFFECT_SHOCKED 33x"),
     488: (0x1903, "SE_NUM_EVENT_MAIN01_WARP: the hero swept away, before the white-out (EoS m01a0101 se_Play(6403)); Red 488 is unused by sky scripts and code"),
     518: (0x1206, "SE_NUM_EFF_RAIN: effect animation #440 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
+    # 519..528: chapter 1 scene SEs with no Red equivalent, in song table slots
+    # that are empty in Red (no caller anywhere); their player is SCENE_SE_PLAYERS.
+    519: (0x1401, "SE_NUM_EVENT_MOTION_DAMEGE_01: Zubat rams the partner (EoS m01a0208 se_Play(5121), with bgm2_Stop)"),
+    520: (0x2301, "SE_NUM_EVENT_SIGN_ASE_01: sweat drop before 'Whew...' (EoS m01a0104 se_Play(8961) + EFFECT_SWEAT_DROP)"),
+    521: (0x2303, "SE_NUM_EVENT_SIGN_HATENA_03: 'That shocked me!' sweat (EoS m01a0104 se_Play(8963) + EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM)"),
+    522: (0x190A, "SE_NUM_EVENT_MAIN02_HAKO_01: the partner brings out the Relic Fragment (EoS m01a0104 / m01a0702 se_Play(6410) + supervision_Acting)"),
+    523: (0x1906, "SE_NUM_EVENT_MAIN01_KAKERA_03: Zubat tosses the Relic Fragment down (EoS m01a0701 se_Play(6406))"),
+    524: (0x1D06, "SE_NUM_EVENT_MAIN18_MIKARUGE_06: Zubat and Koffing flee the Pit (EoS m01a0701 se_Play(7430))"),
+    525: (0x2206, "SE_NUM_EVENT_MOTION_ITEM: the partner picks up the Relic Fragment (EoS m01a0701 se_Play(8710), WaitSe)"),
+    526: (0x1417, "SE_NUM_EVENT_EFF_FLASH_HEAVY: the two white flashes before the Pit fight (EoS m01a0401 / m01a0501 se_Play(5143) x2)"),
+    527: (0x1410, "SE_NUM_EVENT_EFF_WIPE_01: the boss wipe into the fight (EoS CORO_BOSS_WIPE_FUNC se_Play(5136))"),
+    528: (0x2C02, "SE_NUM_ETC01_HADO_02: the personality quiz reveals the hero's Pokémon (EoS m00a01a se_Play(11266) after supervision_Acting(2..17))"),
     600: (0x101C, "SE_NUM_EFF_NIGHTMARE: effect animation #1 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
     601: (0x0705, "SE_NUM_EFF_DIVE: effect animation #2 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
     602: (0x0704, "SE_NUM_EFF_DIG: effect animation #3 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
@@ -413,3 +425,8 @@ SE_MAP = {
     937: (0x020F, "SE_NUM_EFF_TRICK_UP: effect animation #433 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
     938: (0x0205, "SE_NUM_EFF_ICE_ON: effect animation #434 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
 }
+
+# Music player (song table player fields) for the SEs put in slots that are
+# empty in Red (empty_song, player 0 = the BGM player): SE player 5, the one
+# Red's own ground-scene sounds (464, 466, 473, 482, ...) use.
+SCENE_SE_PLAYERS = {rid: 5 for rid in range(519, 529)}

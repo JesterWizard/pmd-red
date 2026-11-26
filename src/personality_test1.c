@@ -23,6 +23,10 @@
 #include "text_1.h"
 #include "text_2.h"
 #include "text_util.h"
+#ifdef SKY_STORY
+#include "music_util.h"
+#include "sky_story.h"
+#endif
 
 enum
 {
@@ -490,6 +494,11 @@ static void RevealStarter(void)
     if (sub_80144A4(&temp) == 0) {
         CreateDialogueBoxAndPortrait(gStarterReveal, 0, 0, 0x101);
         PersonalityTest_DisplayStarterSprite();
+#ifdef SKY_STORY
+        /* EoS m00a01a plays SE_NUM_ETC01_HADO_02 (se_Play(11266)) as the
+         * quiz shows the hero's Pokémon. */
+        PlaySound(SE_SKY_QUIZ_REVEAL);
+#endif
         sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_1;
     }
 }

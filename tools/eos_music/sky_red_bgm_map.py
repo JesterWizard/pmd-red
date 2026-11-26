@@ -5,7 +5,7 @@
 
 Red's background songs (song ids 0..128) play on Red's instruments
 (voicegroups bank_000 / bank_014). In the sky build each id points at an EoS
-track instead (the story songs 61..70 and the Sky Jukebox songs, already
+track instead (the story songs 61..71 and the Sky Jukebox songs, already
 converted by convert_eos_bgm.py onto EoS's own instruments), so Red's music
 sequences, both music voicegroups and their samples are left out of the ROM.
 
@@ -109,7 +109,7 @@ MAP = {
     127: ("Friend Area: Healing Forest", "Mystifying Forest"),
     128: ("Monster House", "Monster House!"),
 }
-SKY_STORY_IDS = range(61, 71)   # the converted EoS story songs keep their ids
+SKY_STORY_IDS = range(61, 72)   # the converted EoS story songs keep their ids
 
 
 def main() -> None:

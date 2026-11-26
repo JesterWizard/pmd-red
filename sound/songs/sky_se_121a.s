@@ -15,24 +15,24 @@ sky_vg_se_121a:
 sky_se_121a_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N15, 58, 98
+	.byte	N15, 58, 92
 	.byte	W12
-	.byte	N15, 62, 75
+	.byte	N15, 62, 71
 	.byte	W13
-	.byte	N14, 65, 98
+	.byte	N14, 65, 92
 	.byte	W11
-	.byte	N14, 67, 87
+	.byte	N14, 67, 82
 	.byte	W13
-	.byte	N14, 69, 95
+	.byte	N14, 69, 90
 	.byte	W12
-	.byte	N14, 72, 107
+	.byte	N14, 72, 101
 	.byte	W11
-	.byte	N15, 76, 119
+	.byte	N15, 76, 112
 	.byte	W13
-	.byte	N32, 79, 127
+	.byte	N32, 79, 124
 	.byte	W96
 	.byte	W72
 	.byte	N01, 79, 1

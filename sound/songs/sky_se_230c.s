@@ -15,7 +15,7 @@ sky_vg_se_230c:
 sky_se_230c_0:
 	.byte	TEMPO, 120
 	.byte	KEYSH, 0
-	.byte	VOL, 125
+	.byte	VOL, 127
 	.byte	VOICE, 0
 	.byte	N18, 65, 127
 	.byte	W18

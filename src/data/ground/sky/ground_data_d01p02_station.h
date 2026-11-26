@@ -49,6 +49,9 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — 
     PORTRAIT(PLACEMENT_MIDRIGHT_TOP_FLIP, NPC_ZUBAT, EMOTION_NORMAL),
     WAIT(30),
     MSG_NPC(NPC_KOFFING, _(" Owowow...")),
+    TEXTBOX_CLEAR,
+    ALERT_CUE(7), /* EoS: Zubat sweats after Koffing's line */
+    AWAIT_CUE(5),
     MSG_NPC(NPC_ZUBAT, _(" Ugh...{WAIT_PRESS} We got roughed up...")),
     TEXTBOX_CLEAR,
     WAIT(30),
@@ -62,8 +65,8 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     ALERT_CUE(7), /* Zubat tosses the Relic Fragment down */
     AWAIT_CUE(5),
+    FANFARE_PLAY2(SE_SKY_FRAGMENT_TOSS), /* EoS se_Play(6406) */
     SELECT_ENTITIES(-1, 1), /* EoS: it lands at (28.5, 23) */
-    FANFARE_PLAY2(466),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHWEST),
     ALERT_CUE(6), /* partner: "!" */
     AWAIT_CUE(5),
@@ -72,6 +75,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — 
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTH),
     MSG_NPC(NPC_ZUBAT, _(" Yeah, you just remember that!")),
     TEXTBOX_CLEAR,
+    FANFARE_PLAY2(SE_SKY_FLEE), /* EoS se_Play(7430) */
     ALERT_CUE(7), /* they flee past the heroes */
     ALERT_CUE(8),
     WAIT(20),
@@ -86,10 +90,13 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     ALERT_CUE(6),
     AWAIT_CUE(5),
+    /* EoS: se_Play(8710) as the fragment is picked up, WaitSe, then the line. */
+    FANFARE_PLAY2(SE_SKY_PICK_UP),
+    ALERT_CUE(9), /* the partner has picked it up */
+    WAIT_FANFARE2(SE_SKY_PICK_UP),
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_HAPPY),
     MSG_NPC(NPC_PARTNER, _(" Thank goodness...{WAIT_PRESS} I actually\nmanaged to get it back.")),
     TEXTBOX_CLEAR,
-    ALERT_CUE(9), /* the partner has picked it up */
     ALERT_CUE(6), /* partner turns to the hero */
     AWAIT_CUE(5),
     ROTATE_TO_LIVES(4, DIR_TRANS_11, 34),
@@ -138,8 +145,10 @@ static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* Zubat */
     SELECT_ANIMATION(GROUND_ANIM_BEATEN), /* EoS SetAnimation(24) */
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_ZUBAT, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
+    AWAIT_CUE(7), /* EoS: se_Play(8972) + sweat after Koffing's "Owowow..." */
     FANFARE_PLAY2(470),
     CALL_SCRIPT(SWEAT_FUNC),
+    ALERT_CUE(5),
     AWAIT_CUE(7),
     SELECT_ANIMATION(2),
     AWAIT_CUE(7),

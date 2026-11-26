@@ -15,14 +15,14 @@ sky_vg_se_0504:
 sky_se_0504_0:
 	.byte	TEMPO, 160
 	.byte	KEYSH, 0
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N08, 46, 127
 	.byte	W07
 	.byte	N12, 58, 127
 	.byte	W11
-	.byte	N13, 56, 106
+	.byte	N13, 56, 100
 	.byte	W12
 	.byte	N13, 65, 127
 	.byte	W12
@@ -30,39 +30,39 @@ sky_se_0504_0:
 	.byte	W13
 	.byte	TIE, 71, 127
 	.byte	W21
-	.byte	VOL, 116
+	.byte	VOL, 123
 	.byte	W04
-	.byte	VOL, 89
+	.byte	VOL, 94
 	.byte	W04
-	.byte	VOL, 78
+	.byte	VOL, 82
 	.byte	W03
-	.byte	VOL, 69
+	.byte	VOL, 73
 	.byte	W04
-	.byte	VOL, 62
+	.byte	VOL, 66
 	.byte	W04
-	.byte	VOL, 56
+	.byte	VOL, 59
 	.byte	W04
-	.byte	VOL, 50
+	.byte	VOL, 53
 	.byte	W04
-	.byte	VOL, 45
+	.byte	VOL, 48
 	.byte	W03
-	.byte	VOL, 40
+	.byte	VOL, 42
 	.byte	W04
-	.byte	VOL, 35
+	.byte	VOL, 37
 	.byte	W04
-	.byte	VOL, 31
+	.byte	VOL, 33
 	.byte	W04
-	.byte	VOL, 27
+	.byte	VOL, 29
 	.byte	W02
-	.byte	VOL, 25
+	.byte	VOL, 26
 	.byte	W03
-	.byte	VOL, 21
+	.byte	VOL, 22
 	.byte	W04
-	.byte	VOL, 17
+	.byte	VOL, 18
 	.byte	W04
-	.byte	VOL, 14
+	.byte	VOL, 15
 	.byte	W04
-	.byte	VOL, 10
+	.byte	VOL, 11
 	.byte	W04
 	.byte	VOL, 7
 	.byte	W03

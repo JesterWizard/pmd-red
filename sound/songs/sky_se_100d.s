@@ -16,11 +16,11 @@ sky_se_100d_0:
 	.byte	TEMPO, 220
 	.byte	KEYSH, 0
 	.byte	BENDR, 12
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	TIE, 62, 126
+	.byte	TIE, 62, 119
 	.byte	W08
 	.byte	BEND, 68
 	.byte	W04
@@ -58,7 +58,7 @@ sky_se_100d_0:
 	.byte	W01
 	.byte	BEND, 121
 	.byte	W10
-	.byte	N16, 62, 25
+	.byte	N16, 62, 24
 	.byte	W01
 	.byte	EOT, 62
 	.byte	W15
