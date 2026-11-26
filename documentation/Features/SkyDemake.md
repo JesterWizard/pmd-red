@@ -699,6 +699,19 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   Red's cutscene animation groups 13+ (lying, getting up, ...) don't exist in
   the converted sprites; `AxResInit` falls back to Sleep for lying (13) and
   Idle for the rest.
+- **Zubat and Koffing** use EoS's sprites too (`gAxZubatsky`,
+  `gAxKoffingsky` in `monster_gfx_sky.c`; Red's `gAxZubat` / `gAxKoffing`
+  are left out of the sky build). EoS drew their dungeon groups from Red's
+  art, so they look the same as Red's except Zubat's redrawn Hurt pose; what
+  is new are two cutscene poses from EoS's ground set (`m_ground.bin`), added
+  with `convert ... dex41 zubatsky --ground-groups 13,15 --max-tiles 0`
+  (and `dex109 koffingsky`) at their EoS group index, so the scripts use
+  EoS's animation ids: 22 (`GROUND_ANIM_TWITCH`, 0x100D → group 13) is the
+  nod after "We do." at the guild, 24 (`GROUND_ANIM_BEATEN`, 0x100F → group
+  15) the beaten pose after the Beach Cave Pit fight. Group 14 repeats Idle
+  (what `AxResInit` would pick anyway). `--max-tiles 0` keeps Koffing's
+  24-tile attack frames whole (gold gas puffs), as Red's own Koffing has them.
+  Both match Red's overworld palettes (7 and 2) exactly.
 
 ![Turtwig and Piplup on the beach, the Relic Fragment in Beach Cave Pit, Shellos using Mud Bomb, the fragment after the theft](images/sky_demake_gen4.png)
 
@@ -785,7 +798,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 - Sprites and the Relic Fragment use Red's 13 shared overworld palettes, so
   some colours shift (the fragment's red mark becomes grey; Turtwig loses its
   yellow). Converted sprites lack Red's cutscene animation groups 13+ (they
-  fall back to Sleep / Idle).
+  fall back to Sleep / Idle); only Zubat and Koffing carry EoS ground-only
+  poses (groups 13 and 15).
 - Gen 4 moves borrow Red effect handlers; effects Red has no mechanism for
   (Gravity, Trick Room, Heal Block, Embargo, Shadow Force's vanish turn, ...)
   behave like the nearest Red move.

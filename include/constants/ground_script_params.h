@@ -85,6 +85,8 @@ enum UpdateNameKind
 #define GROUND_ANIM_SPIN_LOOP        21  // Spin endlessly
 #define GROUND_ANIM_TWITCH           22  // Hold/twitch (often wing / cutscene hold)
 #define GROUND_ANIM_TWITCH2          23  // Related hold/twitch
+#define GROUND_ANIM_BEATEN           24  // Group 15 (0x100F): EoS's ground-only "beaten" pose
+                                         // (sky build's Zubat / Koffing sprites; others fall back to idle)
 
 // ---------------------------------------------------------------------------
 // CAMERA_SHAKE(mode, amp, period) — CMD_BYTE_97

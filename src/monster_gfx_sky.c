@@ -5,6 +5,11 @@
 /* Explorers of Sky demake: Gen 4 monster sprites (tools/convert_eos_wan_to_ax.py). */
 #ifdef SKY_STORY
 #include "data/ax/munchlaxsky.h" /* EoS Munchlax (Red's ax420 is a placeholder) */
+/* EoS Zubat / Koffing: Red's art plus EoS's ground-only nod and "beaten" poses as
+ * groups 13 and 15 (convert ... --ground-groups 13,15 --max-tiles 0); script animations
+ * 22 (0x100D, nod) and 24 (0x100F) show them, as in EoS. Red's own copies are left out of the sky build. */
+#include "data/ax/zubatsky.h"
+#include "data/ax/koffingsky.h"
 #include "data/ax/turtwig.h"
 #include "data/ax/grotle.h"
 #include "data/ax/torterra.h"

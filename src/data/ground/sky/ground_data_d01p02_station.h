@@ -135,7 +135,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives1_dlg0[] = { /* Partner */
 
 static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* Zubat */
     DEBUGINFO_O(137),
-    SELECT_ANIMATION(GROUND_ANIM_HURT),
+    SELECT_ANIMATION(GROUND_ANIM_BEATEN), /* EoS SetAnimation(24) */
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_ZUBAT, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
     FANFARE_PLAY2(470),
@@ -155,7 +155,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* Zubat */
 
 static const struct ScriptCommand s_gs179_g1_s0_lives3_dlg0[] = { /* Koffing */
     DEBUGINFO_O(155),
-    SELECT_ANIMATION(GROUND_ANIM_HURT),
+    SELECT_ANIMATION(GROUND_ANIM_BEATEN), /* EoS SetAnimation(24) */
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_KOFFING, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
     FANFARE_PLAY2(470),
