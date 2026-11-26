@@ -20,7 +20,7 @@ sky_se_1303_0:
 	.byte	TEMPO, 250
 	.byte	KEYSH, 0
 	.byte	BENDR, 1
-	.byte	VOL, 85
+	.byte	VOL, 106
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
@@ -60,7 +60,7 @@ sky_se_1303_0:
 sky_se_1303_1:
 	.byte	KEYSH, 0
 	.byte	BENDR, 1
-	.byte	VOL, 85
+	.byte	VOL, 106
 	.byte	PAN, 66
 	.byte	BEND, 64
 	.byte	W16

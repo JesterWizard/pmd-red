@@ -16,7 +16,7 @@ sky_se_030f_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
 	.byte	BENDR, 5
-	.byte	VOL, 85
+	.byte	VOL, 106
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0

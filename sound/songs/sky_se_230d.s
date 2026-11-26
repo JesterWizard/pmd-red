@@ -15,7 +15,7 @@ sky_vg_se_230d:
 sky_se_230d_0:
 	.byte	TEMPO, 120
 	.byte	KEYSH, 0
-	.byte	VOL, 80
+	.byte	VOL, 127
 	.byte	VOICE, 0
 	.byte	N08, 61, 127
 	.byte	W08
@@ -28,9 +28,9 @@ sky_se_230d_0:
 	.align	2
 sky_se_230d_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 80
+	.byte	VOL, 127
 	.byte	W02
-	.byte	VOL, 47
+	.byte	VOL, 75
 	.byte	VOICE, 0
 	.byte	N10, 61, 127
 	.byte	W10

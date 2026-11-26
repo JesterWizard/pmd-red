@@ -15,52 +15,52 @@ sky_vg_se_0708:
 sky_se_0708_0:
 	.byte	TEMPO, 135
 	.byte	KEYSH, 0
-	.byte	VOL, 80
+	.byte	VOL, 102
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N16, 84, 60
+	.byte	N16, 84, 76
 	.byte	W01
-	.byte	VOL, 86
+	.byte	VOL, 109
 	.byte	W03
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	W07
-	.byte	N60, 101, 120
+	.byte	N60, 101, 127
 	.byte	W10
-	.byte	VOL, 83
+	.byte	VOL, 105
 	.byte	W02
-	.byte	VOL, 76
+	.byte	VOL, 96
+	.byte	W04
+	.byte	VOL, 84
+	.byte	W04
+	.byte	VOL, 74
 	.byte	W04
 	.byte	VOL, 66
 	.byte	W04
-	.byte	VOL, 58
-	.byte	W04
-	.byte	VOL, 52
-	.byte	W04
-	.byte	VOL, 46
+	.byte	VOL, 59
 	.byte	W03
-	.byte	VOL, 42
+	.byte	VOL, 53
 	.byte	W04
-	.byte	VOL, 37
+	.byte	VOL, 47
 	.byte	W04
-	.byte	VOL, 32
+	.byte	VOL, 41
 	.byte	W02
-	.byte	VOL, 31
+	.byte	VOL, 39
 	.byte	W04
-	.byte	VOL, 27
+	.byte	VOL, 34
 	.byte	W03
-	.byte	VOL, 23
+	.byte	VOL, 29
 	.byte	W04
-	.byte	VOL, 19
+	.byte	VOL, 24
+	.byte	W04
+	.byte	VOL, 20
 	.byte	W04
 	.byte	VOL, 16
 	.byte	W04
-	.byte	VOL, 13
-	.byte	W04
-	.byte	VOL, 9
+	.byte	VOL, 12
 	.byte	W03
-	.byte	VOL, 6
+	.byte	VOL, 8
 	.byte	W04
-	.byte	VOL, 3
+	.byte	VOL, 4
 	.byte	W02
 	.byte	VOL, 2
 	.byte	W02

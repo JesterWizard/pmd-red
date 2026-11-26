@@ -16,33 +16,33 @@ sky_se_0d11_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	VOICE, 0
 	.byte	N08, 60, 127
 	.byte	W08
 	.byte	N04, 54, 127
 	.byte	W04
-	.byte	N04, 60, 106
+	.byte	N04, 60, 127
 	.byte	W04
-	.byte	N04, 70, 94
+	.byte	N04, 70, 124
 	.byte	W03
 	.byte	PAN, 94
 	.byte	W01
-	.byte	N04, 78, 81
+	.byte	N04, 78, 107
 	.byte	W01
 	.byte	BEND, 125
 	.byte	W02
 	.byte	PAN, 64
 	.byte	W01
-	.byte	N04, 63, 69
+	.byte	N04, 63, 91
 	.byte	W04
-	.byte	N04, 69, 56
+	.byte	N04, 69, 74
 	.byte	W04
-	.byte	N04, 79, 44
+	.byte	N04, 79, 58
 	.byte	W04
-	.byte	N04, 87, 32
+	.byte	N04, 87, 42
 	.byte	W04
-	.byte	N04, 95, 20
+	.byte	N04, 95, 26
 	.byte	W04
 	.byte	FINE
 

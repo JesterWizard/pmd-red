@@ -16,17 +16,17 @@ sky_se_0e1e_0:
 	.byte	TEMPO, 135
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 72
+	.byte	VOL, 102
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N07, 53, 120
+	.byte	N07, 53, 127
 	.byte	W01
-	.byte	VOL, 77
+	.byte	VOL, 109
 	.byte	W02
-	.byte	VOL, 85
+	.byte	VOL, 120
 	.byte	W01
-	.byte	VOL, 90
+	.byte	VOL, 127
 	.byte	W05
 	.byte	TIE, 66, 127
 	.byte	TIE, 68, 127

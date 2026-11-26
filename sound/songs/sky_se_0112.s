@@ -7,29 +7,74 @@
 	.align	2
 sky_vg_se_0112:
 @ voice 0
-	.byte	0x00, 60, 0x00, 0x00
-	.word	sky_wav_silent
-	.byte	255, 0, 0, 0
+	.byte	0x09, 60, 0x00, 0x00
+	.word	1
+	.byte	0, 0, 15, 0
+@ voice 1
+	.byte	0x0A, 60, 0x00, 0x00
+	.word	1
+	.byte	0, 0, 15, 0
 
 	.align	2
 sky_se_0112_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 87
+	.byte	VOL, 100
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	W32
+	.byte	N02, 67, 60
 	.byte	W02
+	.byte	N02, 73, 70
+	.byte	W02
+	.byte	N02, 78, 97
+	.byte	W02
+	.byte	N02, 83, 119
+	.byte	W02
+	.byte	N02, 87, 127
+	.byte	W02
+	.byte	N02, 91, 119
+	.byte	W02
+	.byte	N02, 90, 108
+	.byte	W02
+	.byte	N02, 86, 92
+	.byte	W02
+	.byte	N02, 81, 76
+	.byte	W02
+	.byte	N02, 77, 54
+	.byte	W02
+	.byte	N02, 72, 38
+	.byte	W14
 	.byte	FINE
 
 	.align	2
 sky_se_0112_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	W12
-	.byte	VOICE, 0
-	.byte	W22
+	.byte	VOICE, 1
+	.byte	N02, 67, 22
+	.byte	W02
+	.byte	N02, 73, 27
+	.byte	W02
+	.byte	N02, 78, 32
+	.byte	W02
+	.byte	N02, 83, 38
+	.byte	W02
+	.byte	N02, 87, 43
+	.byte	W02
+	.byte	N02, 92, 38
+	.byte	W02
+	.byte	N02, 90, 32
+	.byte	W02
+	.byte	N02, 86, 27
+	.byte	W02
+	.byte	N02, 81, 27
+	.byte	W02
+	.byte	N02, 77, 22
+	.byte	W02
+	.byte	N02, 72, 16
+	.byte	W02
 	.byte	FINE
 
 	.align	2

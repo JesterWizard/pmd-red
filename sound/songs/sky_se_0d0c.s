@@ -20,21 +20,21 @@ sky_se_0d0c_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
 	.byte	BENDR, 1
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N18, 70, 88
+	.byte	N18, 70, 127
 	.byte	W18
-	.byte	N18, 68, 88
+	.byte	N18, 68, 127
 	.byte	W18
-	.byte	N18, 66, 88
+	.byte	N18, 66, 127
 	.byte	W18
-	.byte	N18, 65, 88
+	.byte	N18, 65, 127
 	.byte	W32
 	.byte	W01
 	.byte	VOICE, 1
-	.byte	N48, 55, 110
+	.byte	N48, 55, 127
 	.byte	W02
 	.byte	BEND, 62
 	.byte	W02

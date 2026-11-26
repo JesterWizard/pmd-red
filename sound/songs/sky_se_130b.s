@@ -15,7 +15,7 @@ sky_vg_se_130b:
 sky_se_130b_0:
 	.byte	TEMPO, 160
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N08, 60, 127
@@ -28,13 +28,13 @@ sky_se_130b_0:
 	.align	2
 sky_se_130b_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 66
 	.byte	W09
 	.byte	VOICE, 0
-	.byte	N08, 60, 50
+	.byte	N08, 60, 67
 	.byte	W08
-	.byte	N24, 69, 50
+	.byte	N24, 69, 67
 	.byte	W24
 	.byte	FINE
 

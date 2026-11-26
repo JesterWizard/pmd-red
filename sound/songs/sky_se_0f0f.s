@@ -20,23 +20,23 @@ sky_se_0f0f_0:
 	.byte	TEMPO, 165
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N10, 58, 110
+	.byte	N10, 58, 127
 	.byte	W10
-	.byte	N10, 64, 90
+	.byte	N10, 64, 125
 	.byte	W10
-	.byte	N10, 62, 60
+	.byte	N10, 62, 83
 	.byte	W10
-	.byte	N10, 66, 110
+	.byte	N10, 66, 127
 	.byte	W05
 	.byte	VOICE, 1
-	.byte	TIE, 80, 100
+	.byte	TIE, 80, 127
 	.byte	W02
 	.byte	BEND, 62
 	.byte	W03
-	.byte	VOL, 107
+	.byte	VOL, 123
 	.byte	BEND, 64
 	.byte	W02
 	.byte	BEND, 65
@@ -47,114 +47,114 @@ sky_se_0f0f_0:
 	.byte	W02
 	.byte	BEND, 80
 	.byte	W02
-	.byte	VOL, 106
+	.byte	VOL, 122
 	.byte	BEND, 89
 	.byte	W01
 	.byte	BEND, 100
 	.byte	W01
-	.byte	VOL, 105
+	.byte	VOL, 121
 	.byte	W01
 	.byte	BEND, 108
 	.byte	W02
 	.byte	BEND, 103
 	.byte	W01
-	.byte	VOL, 104
+	.byte	VOL, 120
 	.byte	W01
-	.byte	VOL, 103
+	.byte	VOL, 119
 	.byte	BEND, 97
 	.byte	W01
 	.byte	BEND, 91
 	.byte	W01
-	.byte	VOL, 102
+	.byte	VOL, 118
 	.byte	W01
 	.byte	BEND, 84
 	.byte	W01
-	.byte	VOL, 101
+	.byte	VOL, 117
 	.byte	W01
 	.byte	BEND, 76
 	.byte	W01
-	.byte	VOL, 100
+	.byte	VOL, 115
 	.byte	W01
 	.byte	BEND, 68
 	.byte	W01
-	.byte	VOL, 99
+	.byte	VOL, 114
 	.byte	W01
 	.byte	BEND, 59
 	.byte	W01
-	.byte	VOL, 97
+	.byte	VOL, 112
 	.byte	W01
 	.byte	BEND, 49
 	.byte	W01
-	.byte	VOL, 96
+	.byte	VOL, 111
 	.byte	W01
 	.byte	BEND, 38
 	.byte	W01
-	.byte	VOL, 94
+	.byte	VOL, 109
 	.byte	W01
 	.byte	BEND, 27
 	.byte	W01
-	.byte	VOL, 93
+	.byte	VOL, 107
 	.byte	W01
 	.byte	BEND, 16
 	.byte	W01
-	.byte	VOL, 91
+	.byte	VOL, 105
 	.byte	W01
-	.byte	VOL, 89
+	.byte	VOL, 103
 	.byte	BEND, 3
 	.byte	W02
-	.byte	VOL, 87
+	.byte	VOL, 101
 	.byte	W02
-	.byte	VOL, 85
+	.byte	VOL, 98
 	.byte	W02
-	.byte	VOL, 83
+	.byte	VOL, 96
 	.byte	W02
-	.byte	VOL, 81
+	.byte	VOL, 93
 	.byte	BEND, 10
 	.byte	W02
-	.byte	VOL, 79
+	.byte	VOL, 91
 	.byte	W02
-	.byte	VOL, 76
+	.byte	VOL, 88
 	.byte	BEND, 11
 	.byte	W02
-	.byte	VOL, 74
+	.byte	VOL, 85
 	.byte	BEND, 13
 	.byte	W01
 	.byte	BEND, 15
 	.byte	W01
-	.byte	VOL, 71
+	.byte	VOL, 82
 	.byte	W01
 	.byte	BEND, 17
 	.byte	W01
-	.byte	VOL, 68
+	.byte	VOL, 79
 	.byte	W01
-	.byte	VOL, 65
+	.byte	VOL, 75
 	.byte	BEND, 21
 	.byte	W02
-	.byte	VOL, 62
+	.byte	VOL, 72
 	.byte	BEND, 24
 	.byte	W02
-	.byte	VOL, 60
+	.byte	VOL, 69
 	.byte	BEND, 29
 	.byte	W02
-	.byte	VOL, 56
+	.byte	VOL, 65
 	.byte	BEND, 34
 	.byte	W02
-	.byte	VOL, 53
+	.byte	VOL, 61
 	.byte	BEND, 39
 	.byte	W01
 	.byte	BEND, 44
 	.byte	W01
+	.byte	VOL, 58
+	.byte	W04
 	.byte	VOL, 50
 	.byte	W04
-	.byte	VOL, 43
-	.byte	W04
-	.byte	VOL, 36
+	.byte	VOL, 41
 	.byte	W03
-	.byte	VOL, 28
+	.byte	VOL, 32
 	.byte	W04
-	.byte	VOL, 20
+	.byte	VOL, 23
 	.byte	W04
-	.byte	VOL, 11
+	.byte	VOL, 13
 	.byte	W04
 	.byte	VOL, 3
 	.byte	W01

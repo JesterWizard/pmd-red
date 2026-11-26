@@ -16,11 +16,11 @@ sky_se_1017_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N11, 67, 59
+	.byte	N11, 67, 78
 	.byte	W01
 	.byte	BEND, 44
 	.byte	W01
@@ -36,7 +36,7 @@ sky_se_1017_0:
 	.byte	W01
 	.byte	PAN, 63
 	.byte	W01
-	.byte	N11, 75, 62
+	.byte	N11, 75, 82
 	.byte	W01
 	.byte	PAN, 64
 	.byte	BEND, 64
@@ -46,7 +46,7 @@ sky_se_1017_0:
 	.byte	PAN, 69
 	.byte	W02
 	.byte	PAN, 72
-	.byte	N11, 70, 68
+	.byte	N11, 70, 90
 	.byte	W02
 	.byte	PAN, 76
 	.byte	W01
@@ -55,7 +55,7 @@ sky_se_1017_0:
 	.byte	PAN, 85
 	.byte	W02
 	.byte	PAN, 91
-	.byte	N11, 73, 81
+	.byte	N11, 73, 107
 	.byte	W02
 	.byte	PAN, 97
 	.byte	W02
@@ -63,12 +63,12 @@ sky_se_1017_0:
 	.byte	W01
 	.byte	PAN, 109
 	.byte	W01
-	.byte	N11, 83, 94
+	.byte	N11, 83, 124
 	.byte	W03
 	.byte	PAN, 113
 	.byte	W06
 	.byte	PAN, 112
-	.byte	N11, 87, 119
+	.byte	N11, 87, 127
 	.byte	W01
 	.byte	PAN, 110
 	.byte	W02
@@ -79,7 +79,7 @@ sky_se_1017_0:
 	.byte	PAN, 104
 	.byte	W02
 	.byte	PAN, 101
-	.byte	N11, 76, 93
+	.byte	N11, 76, 123
 	.byte	W02
 	.byte	PAN, 98
 	.byte	W02
@@ -98,7 +98,7 @@ sky_se_1017_0:
 	.byte	PAN, 69
 	.byte	W02
 	.byte	PAN, 63
-	.byte	N11, 71, 90
+	.byte	N11, 71, 119
 	.byte	W02
 	.byte	PAN, 57
 	.byte	W02
@@ -107,7 +107,7 @@ sky_se_1017_0:
 	.byte	PAN, 43
 	.byte	W02
 	.byte	PAN, 35
-	.byte	N11, 77, 60
+	.byte	N11, 77, 79
 	.byte	W02
 	.byte	PAN, 27
 	.byte	W04

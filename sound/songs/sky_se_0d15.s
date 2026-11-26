@@ -19,24 +19,24 @@ sky_vg_se_0d15:
 sky_se_0d15_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N06, 51, 120
+	.byte	N06, 51, 127
 	.byte	W06
-	.byte	N06, 52, 60
+	.byte	N06, 52, 76
 	.byte	W02
-	.byte	N06, 58, 120
+	.byte	N06, 58, 127
 	.byte	W06
-	.byte	N06, 51, 30
+	.byte	N06, 51, 38
 	.byte	W30
-	.byte	N06, 51, 100
+	.byte	N06, 51, 126
 	.byte	W06
-	.byte	N06, 51, 60
+	.byte	N06, 51, 76
 	.byte	W03
-	.byte	N06, 58, 100
+	.byte	N06, 58, 126
 	.byte	W06
-	.byte	N06, 51, 30
+	.byte	N06, 51, 38
 	.byte	W24
 	.byte	W02
 	.byte	FINE
@@ -45,18 +45,18 @@ sky_se_0d15_0:
 sky_se_0d15_1:
 	.byte	KEYSH, 0
 	.byte	BENDR, 1
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	W18
 	.byte	VOICE, 1
-	.byte	N03, 82, 50
+	.byte	N03, 82, 63
 	.byte	W05
-	.byte	N03, 78, 20
+	.byte	N03, 78, 25
 	.byte	W36
-	.byte	N03, 82, 50
+	.byte	N03, 82, 63
 	.byte	W08
-	.byte	N16, 79, 20
+	.byte	N16, 79, 25
 	.byte	W04
 	.byte	BEND, 126
 	.byte	W01

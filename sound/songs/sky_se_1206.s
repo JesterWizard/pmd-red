@@ -19,56 +19,56 @@ sky_vg_se_1206:
 sky_se_1206_0:
 	.byte	TEMPO, 135
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 76, 120
+	.byte	N12, 76, 127
 	.byte	W12
-	.byte	N06, 76, 60
+	.byte	N06, 76, 83
 	.byte	W06
-	.byte	N06, 76, 40
+	.byte	N06, 76, 55
 	.byte	W06
 	.byte	VOICE, 1
-	.byte	N04, 78, 80
+	.byte	N04, 78, 111
 	.byte	W04
 	.byte	VOICE, 0
-	.byte	N20, 76, 60
+	.byte	N20, 76, 83
 	.byte	W20
-	.byte	N24, 76, 20
+	.byte	N24, 76, 28
 	.byte	W24
 	.byte	VOICE, 1
-	.byte	N04, 73, 60
+	.byte	N04, 73, 83
 	.byte	W04
 	.byte	VOICE, 0
-	.byte	N14, 76, 60
+	.byte	N14, 76, 83
 	.byte	W14
-	.byte	N06, 76, 20
+	.byte	N06, 76, 28
 	.byte	W06
-	.byte	N24, 76, 60
+	.byte	N24, 76, 83
 	.byte	W24
 	.byte	VOICE, 1
-	.byte	N04, 79, 80
+	.byte	N04, 79, 111
 	.byte	W04
-	.byte	N04, 77, 60
+	.byte	N04, 77, 83
 	.byte	W04
 	.byte	VOICE, 0
-	.byte	N12, 76, 80
+	.byte	N12, 76, 111
 	.byte	W12
 	.byte	VOICE, 1
-	.byte	N04, 77, 40
+	.byte	N04, 77, 55
 	.byte	W04
 	.byte	VOICE, 0
-	.byte	N30, 76, 60
+	.byte	N30, 76, 83
 	.byte	W30
-	.byte	N06, 76, 20
+	.byte	N06, 76, 28
 	.byte	W06
 	.byte	VOICE, 1
-	.byte	N04, 75, 40
+	.byte	N04, 75, 55
 	.byte	W04
 	.byte	VOICE, 0
-	.byte	N12, 76, 40
+	.byte	N12, 76, 55
 	.byte	W12
-	.byte	N32, 76, 20
+	.byte	N32, 76, 28
 	.byte	W32
 	.byte	FINE
 

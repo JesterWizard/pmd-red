@@ -15,35 +15,35 @@ sky_vg_se_050a:
 sky_se_050a_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 125
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N10, 59, 100
+	.byte	N10, 59, 127
 	.byte	W10
-	.byte	N15, 61, 80
+	.byte	N15, 61, 126
 	.byte	W13
-	.byte	N17, 62, 70
+	.byte	N17, 62, 110
 	.byte	W12
-	.byte	N19, 65, 40
+	.byte	N19, 65, 63
 	.byte	W10
-	.byte	N19, 67, 20
+	.byte	N19, 67, 31
 	.byte	W36
 	.byte	W01
-	.byte	VOL, 124
+	.byte	VOL, 126
 	.byte	W04
-	.byte	VOL, 91
+	.byte	VOL, 92
 	.byte	W03
-	.byte	VOL, 77
+	.byte	VOL, 78
 	.byte	W04
-	.byte	VOL, 67
+	.byte	VOL, 68
 	.byte	W04
-	.byte	VOL, 58
+	.byte	VOL, 59
 	.byte	W04
-	.byte	VOL, 50
+	.byte	VOL, 51
 	.byte	W04
-	.byte	VOL, 43
+	.byte	VOL, 44
 	.byte	W03
-	.byte	VOL, 36
+	.byte	VOL, 37
 	.byte	W04
 	.byte	VOL, 31
 	.byte	W04

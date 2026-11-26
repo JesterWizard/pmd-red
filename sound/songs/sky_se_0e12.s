@@ -20,18 +20,18 @@ sky_se_0e12_0:
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N03, 61, 80
+	.byte	N03, 61, 127
 	.byte	W02
-	.byte	N04, 67, 30
+	.byte	N04, 67, 48
 	.byte	W02
-	.byte	N03, 63, 70
+	.byte	N03, 63, 112
 	.byte	W02
-	.byte	N04, 69, 30
+	.byte	N04, 69, 48
 	.byte	W03
-	.byte	N03, 63, 120
+	.byte	N03, 63, 127
 	.byte	W03
 	.byte	BEND, 63
-	.byte	N13, 67, 60
+	.byte	N13, 67, 96
 	.byte	W02
 	.byte	BEND, 77
 	.byte	W02

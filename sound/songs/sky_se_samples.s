@@ -5,6 +5,60 @@
 	.section .rodata
 
 	.align	2
+	.global	sky_semotion_wav_005_0
+sky_semotion_wav_005_0:
+	.hword	0x0000, 0x0000
+	.word	18593868 @ 18158.07 Hz at key 60
+	.word	0 @ loop start
+	.word	5682 @ size
+	.incbin	"sound/direct_sound_samples/sky/semotion_005.bin"
+
+	.align	2
+	.global	sky_semotion_wav_006_0
+sky_semotion_wav_006_0:
+	.hword	0x0000, 0x4000
+	.word	18594441 @ 18158.63 Hz at key 60
+	.word	322 @ loop start
+	.word	4493 @ size
+	.incbin	"sound/direct_sound_samples/sky/semotion_006.bin"
+
+	.align	2
+	.global	sky_semotion_wav_009_0
+sky_semotion_wav_009_0:
+	.hword	0x0000, 0x0000
+	.word	18593868 @ 18158.07 Hz at key 60
+	.word	0 @ loop start
+	.word	12552 @ size
+	.incbin	"sound/direct_sound_samples/sky/semotion_009.bin"
+
+	.align	2
+	.global	sky_semotion_wav_010_0
+sky_semotion_wav_010_0:
+	.hword	0x0000, 0x0000
+	.word	18593868 @ 18158.07 Hz at key 60
+	.word	0 @ loop start
+	.word	6477 @ size
+	.incbin	"sound/direct_sound_samples/sky/semotion_010.bin"
+
+	.align	2
+	.global	sky_semotion_wav_014_0
+sky_semotion_wav_014_0:
+	.hword	0x0000, 0x4000
+	.word	37187746 @ 36316.16 Hz at key 60
+	.word	7 @ loop start
+	.word	7642 @ size
+	.incbin	"sound/direct_sound_samples/sky/semotion_014.bin"
+
+	.align	2
+	.global	sky_semotion_wav_014_1
+sky_semotion_wav_014_1:
+	.hword	0x0000, 0x4000
+	.word	18593873 @ 18158.08 Hz at key 60
+	.word	7 @ loop start
+	.word	7642 @ size
+	.incbin	"sound/direct_sound_samples/sky/semotion_014.bin"
+
+	.align	2
 	.global	sky_se000_wav_000_0
 sky_se000_wav_000_0:
 	.hword	0x0000, 0x0000

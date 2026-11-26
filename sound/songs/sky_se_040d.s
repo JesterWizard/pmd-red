@@ -16,11 +16,11 @@ sky_se_040d_0:
 	.byte	TEMPO, 160
 	.byte	KEYSH, 0
 	.byte	BENDR, 7
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N48, 57, 100
+	.byte	N48, 57, 127
 	.byte	W01
 	.byte	BEND, 5
 	.byte	W03

@@ -15,7 +15,7 @@ sky_vg_se_0216:
 sky_se_0216_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 125
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N02, 100, 90

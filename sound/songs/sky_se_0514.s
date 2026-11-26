@@ -16,11 +16,11 @@ sky_se_0514_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
 	.byte	BENDR, 24
-	.byte	VOL, 95
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 106
 	.byte	VOICE, 0
-	.byte	N06, 45, 100
+	.byte	N06, 45, 120
 	.byte	W01
 	.byte	BEND, 97
 	.byte	W01
@@ -32,7 +32,7 @@ sky_se_0514_0:
 	.byte	W01
 	.byte	BEND, 81
 	.byte	W01
-	.byte	N06, 52, 100
+	.byte	N06, 52, 120
 	.byte	W01
 	.byte	BEND, 74
 	.byte	W01
@@ -44,15 +44,15 @@ sky_se_0514_0:
 	.byte	W01
 	.byte	BEND, 64
 	.byte	W01
-	.byte	N06, 49, 100
+	.byte	N06, 49, 120
 	.byte	W06
-	.byte	N06, 54, 100
+	.byte	N06, 54, 120
 	.byte	W06
-	.byte	N06, 47, 100
+	.byte	N06, 47, 120
 	.byte	W06
-	.byte	N06, 54, 100
+	.byte	N06, 54, 120
 	.byte	W06
-	.byte	N06, 51, 100
+	.byte	N06, 51, 120
 	.byte	W01
 	.byte	BEND, 67
 	.byte	W02
@@ -60,11 +60,11 @@ sky_se_0514_0:
 	.byte	W01
 	.byte	BEND, 69
 	.byte	W02
-	.byte	N06, 56, 100
+	.byte	N06, 56, 120
 	.byte	W01
 	.byte	BEND, 71
 	.byte	W05
-	.byte	N06, 49, 100
+	.byte	N06, 49, 120
 	.byte	W01
 	.byte	BEND, 72
 	.byte	W01
@@ -72,7 +72,7 @@ sky_se_0514_0:
 	.byte	W02
 	.byte	BEND, 74
 	.byte	W02
-	.byte	N06, 56, 100
+	.byte	N06, 56, 120
 	.byte	W01
 	.byte	BEND, 76
 	.byte	W02
@@ -80,33 +80,33 @@ sky_se_0514_0:
 	.byte	W01
 	.byte	BEND, 78
 	.byte	W02
-	.byte	N06, 53, 100
+	.byte	N06, 53, 120
 	.byte	W03
 	.byte	BEND, 80
 	.byte	W03
-	.byte	N06, 58, 100
+	.byte	N06, 58, 120
 	.byte	W01
 	.byte	BEND, 81
 	.byte	W05
-	.byte	N06, 50, 100
+	.byte	N06, 50, 120
 	.byte	W01
 	.byte	BEND, 82
 	.byte	W04
 	.byte	BEND, 83
 	.byte	W01
-	.byte	N06, 57, 100
+	.byte	N06, 57, 120
 	.byte	W01
 	.byte	BEND, 84
 	.byte	W03
 	.byte	BEND, 85
 	.byte	W02
-	.byte	N06, 54, 100
+	.byte	N06, 54, 120
 	.byte	W02
 	.byte	BEND, 86
 	.byte	W02
 	.byte	BEND, 87
 	.byte	W02
-	.byte	N06, 59, 100
+	.byte	N06, 59, 120
 	.byte	W01
 	.byte	BEND, 88
 	.byte	W02
@@ -114,51 +114,51 @@ sky_se_0514_0:
 	.byte	W01
 	.byte	BEND, 90
 	.byte	W02
-	.byte	N06, 52, 80
+	.byte	N06, 52, 96
 	.byte	W01
 	.byte	BEND, 91
 	.byte	W03
 	.byte	BEND, 92
 	.byte	W02
-	.byte	N06, 59, 80
+	.byte	N06, 59, 96
 	.byte	W06
-	.byte	N06, 56, 80
+	.byte	N06, 56, 96
 	.byte	W06
-	.byte	N06, 61, 80
+	.byte	N06, 61, 96
 	.byte	W01
 	.byte	BEND, 93
 	.byte	W05
-	.byte	N06, 54, 60
+	.byte	N06, 54, 72
 	.byte	W01
 	.byte	BEND, 94
 	.byte	W02
 	.byte	BEND, 95
 	.byte	W03
-	.byte	N06, 61, 60
+	.byte	N06, 61, 72
 	.byte	W01
 	.byte	BEND, 96
 	.byte	W01
 	.byte	BEND, 97
 	.byte	W04
-	.byte	N06, 58, 60
+	.byte	N06, 58, 72
 	.byte	W01
 	.byte	BEND, 98
 	.byte	W03
 	.byte	BEND, 99
 	.byte	W02
-	.byte	N06, 63, 60
+	.byte	N06, 63, 72
 	.byte	W01
 	.byte	BEND, 100
 	.byte	W02
 	.byte	BEND, 101
 	.byte	W03
-	.byte	N06, 56, 40
+	.byte	N06, 56, 48
 	.byte	W01
 	.byte	BEND, 103
 	.byte	W03
 	.byte	BEND, 104
 	.byte	W02
-	.byte	N06, 63, 40
+	.byte	N06, 63, 48
 	.byte	W01
 	.byte	BEND, 105
 	.byte	W01
@@ -166,7 +166,7 @@ sky_se_0514_0:
 	.byte	W02
 	.byte	BEND, 107
 	.byte	W02
-	.byte	N06, 60, 40
+	.byte	N06, 60, 48
 	.byte	W01
 	.byte	BEND, 109
 	.byte	W02
@@ -176,7 +176,7 @@ sky_se_0514_0:
 	.byte	W01
 	.byte	BEND, 112
 	.byte	W01
-	.byte	N06, 65, 40
+	.byte	N06, 65, 48
 	.byte	W01
 	.byte	BEND, 113
 	.byte	W01

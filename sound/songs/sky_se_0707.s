@@ -16,7 +16,7 @@ sky_se_0707_0:
 	.byte	TEMPO, 160
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 99
 	.byte	VOICE, 0
@@ -46,21 +46,21 @@ sky_se_0707_0:
 	.byte	W02
 	.byte	BEND, 5
 	.byte	W02
-	.byte	VOL, 109
+	.byte	VOL, 126
 	.byte	W02
-	.byte	VOL, 87
+	.byte	VOL, 101
 	.byte	W02
-	.byte	VOL, 68
+	.byte	VOL, 79
 	.byte	W02
-	.byte	VOL, 51
+	.byte	VOL, 59
 	.byte	W02
-	.byte	VOL, 37
+	.byte	VOL, 43
 	.byte	W02
-	.byte	VOL, 25
+	.byte	VOL, 29
 	.byte	W02
-	.byte	VOL, 15
+	.byte	VOL, 17
 	.byte	W01
-	.byte	VOL, 8
+	.byte	VOL, 9
 	.byte	W02
 	.byte	VOL, 3
 	.byte	W02

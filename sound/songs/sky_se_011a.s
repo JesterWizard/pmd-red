@@ -8,8 +8,8 @@
 sky_vg_se_011a:
 @ voice 0
 	.byte	0x00, 60, 0x00, 0x00
-	.word	sky_wav_silent
-	.byte	255, 0, 0, 0
+	.word	sky_semotion_wav_006_0
+	.byte	255, 0, 255, 98
 
 	.align	2
 sky_se_011a_0:
@@ -20,6 +20,7 @@ sky_se_011a_0:
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
+	.byte	N60, 65, 127
 	.byte	W20
 	.byte	BEND, 61
 	.byte	W04
@@ -40,7 +41,9 @@ sky_se_011a_0:
 	.byte	BEND, 25
 	.byte	W04
 	.byte	BEND, 20
-	.byte	W06
+	.byte	W04
+	.byte	TIE, 65, 77
+	.byte	W02
 	.byte	BEND, 11
 	.byte	W04
 	.byte	BEND, 4
@@ -53,6 +56,7 @@ sky_se_011a_0:
 	.byte	W04
 	.byte	BEND, 56
 	.byte	W04
+	.byte	EOT, 65
 	.byte	BEND, 64
 	.byte	FINE
 

@@ -24,7 +24,7 @@ sky_se_1316_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
 	.byte	BENDR, 18
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
@@ -32,10 +32,10 @@ sky_se_1316_0:
 	.byte	W01
 	.byte	BEND, 66
 	.byte	W01
-	.byte	VOL, 109
+	.byte	VOL, 126
 	.byte	BEND, 67
 	.byte	W01
-	.byte	VOL, 108
+	.byte	VOL, 125
 	.byte	BEND, 69
 	.byte	W01
 	.byte	BEND, 70
@@ -48,7 +48,7 @@ sky_se_1316_0:
 	.byte	W01
 	.byte	BEND, 79
 	.byte	W01
-	.byte	VOL, 107
+	.byte	VOL, 124
 	.byte	BEND, 83
 	.byte	W01
 	.byte	BEND, 85
@@ -69,6 +69,7 @@ sky_se_1316_0:
 	.byte	W02
 	.byte	BEND, 115
 	.byte	W02
+	.byte	VOL, 123
 	.byte	BEND, 117
 	.byte	W01
 	.byte	BEND, 118
@@ -95,70 +96,70 @@ sky_se_1316_0:
 	.byte	W03
 	.byte	BEND, 104
 	.byte	W02
-	.byte	VOL, 109
+	.byte	VOL, 126
 	.byte	BEND, 107
 	.byte	W01
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	BEND, 109
 	.byte	W01
 	.byte	BEND, 110
 	.byte	W02
 	.byte	BEND, 115
 	.byte	W02
-	.byte	VOL, 108
+	.byte	VOL, 125
 	.byte	BEND, 117
 	.byte	W01
-	.byte	VOL, 107
+	.byte	VOL, 123
 	.byte	BEND, 119
 	.byte	W01
 	.byte	BEND, 123
 	.byte	W01
-	.byte	VOL, 105
+	.byte	VOL, 121
 	.byte	BEND, 126
 	.byte	W02
-	.byte	VOL, 101
+	.byte	VOL, 117
 	.byte	BEND, 110
 	.byte	W01
 	.byte	BEND, 104
 	.byte	W01
-	.byte	VOL, 99
+	.byte	VOL, 114
 	.byte	W01
 	.byte	EOT, 37
 	.byte	W02
-	.byte	VOL, 95
+	.byte	VOL, 110
 	.byte	W03
-	.byte	VOL, 90
+	.byte	VOL, 104
 	.byte	W02
-	.byte	VOL, 81
+	.byte	VOL, 94
 	.byte	W01
-	.byte	VOL, 76
+	.byte	VOL, 88
 	.byte	W02
-	.byte	VOL, 69
+	.byte	VOL, 80
 	.byte	W02
-	.byte	VOL, 62
+	.byte	VOL, 72
 	.byte	W02
-	.byte	VOL, 51
+	.byte	VOL, 59
 	.byte	W02
-	.byte	VOL, 29
+	.byte	VOL, 33
 	.byte	W01
-	.byte	VOL, 11
+	.byte	VOL, 13
 	.byte	FINE
 
 	.align	2
 sky_se_1316_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	W24
 	.byte	VOICE, 1
-	.byte	N04, 52, 120
+	.byte	N04, 52, 127
 	.byte	W05
-	.byte	N06, 63, 50
+	.byte	N06, 63, 69
 	.byte	W04
-	.byte	VOL, 87
+	.byte	VOL, 100
 	.byte	W01
 	.byte	VOICE, 2
-	.byte	N12, 40, 80
+	.byte	N12, 40, 111
 	.byte	W56
 	.byte	W02
 	.byte	FINE

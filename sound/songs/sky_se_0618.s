@@ -16,7 +16,7 @@ sky_se_0618_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
 	.byte	BENDR, 1
-	.byte	VOL, 100
+	.byte	VOL, 125
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0

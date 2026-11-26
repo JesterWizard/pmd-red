@@ -92,7 +92,7 @@ sky_se_1212_0:
 	.byte	VOL, 115
 	.byte	BEND, 92
 	.byte	W01
-	.byte	N20, 62, 50
+	.byte	N20, 62, 80
 	.byte	W01
 	.byte	VOL, 113
 	.byte	BEND, 90
@@ -138,7 +138,7 @@ sky_se_1212_0:
 	.byte	BEND, 65
 	.byte	W01
 	.byte	VOL, 70
-	.byte	N12, 62, 30
+	.byte	N12, 62, 48
 	.byte	W01
 	.byte	BEND, 62
 	.byte	W01
@@ -170,7 +170,7 @@ sky_se_1212_0:
 	.byte	W01
 	.byte	VOL, 18
 	.byte	BEND, 38
-	.byte	TIE, 62, 10
+	.byte	TIE, 62, 16
 	.byte	W02
 	.byte	VOL, 10
 	.byte	BEND, 34

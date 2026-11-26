@@ -15,34 +15,34 @@ sky_vg_se_131a:
 sky_se_131a_0:
 	.byte	TEMPO, 130
 	.byte	KEYSH, 0
-	.byte	VOL, 125
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N13, 48, 124
+	.byte	N13, 48, 127
 	.byte	W12
-	.byte	N13, 48, 94
+	.byte	N13, 48, 127
 	.byte	W12
+	.byte	N07, 55, 127
+	.byte	W06
 	.byte	N07, 55, 94
 	.byte	W06
-	.byte	N07, 55, 60
+	.byte	N07, 62, 127
 	.byte	W06
-	.byte	N07, 62, 124
+	.byte	N07, 62, 110
 	.byte	W06
-	.byte	N07, 62, 70
+	.byte	N07, 67, 127
 	.byte	W06
-	.byte	N07, 67, 125
+	.byte	N07, 67, 127
 	.byte	W06
-	.byte	N07, 67, 110
+	.byte	N07, 74, 127
 	.byte	W06
-	.byte	N07, 74, 104
+	.byte	N07, 74, 123
 	.byte	W06
-	.byte	N07, 74, 78
-	.byte	W06
-	.byte	N13, 76, 99
+	.byte	N13, 76, 127
 	.byte	W12
-	.byte	N13, 76, 49
+	.byte	N13, 76, 77
 	.byte	W12
-	.byte	N13, 76, 29
+	.byte	N13, 76, 46
 	.byte	W13
 	.byte	FINE
 

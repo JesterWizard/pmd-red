@@ -18,25 +18,25 @@ sky_se_0e18_0:
 	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N08, 53, 30
+	.byte	N08, 53, 48
 	.byte	W07
-	.byte	N07, 57, 60
+	.byte	N07, 57, 96
 	.byte	W06
-	.byte	N07, 58, 60
+	.byte	N07, 58, 96
 	.byte	W07
-	.byte	N07, 59, 70
+	.byte	N07, 59, 112
 	.byte	W07
-	.byte	N07, 60, 90
+	.byte	N07, 60, 127
 	.byte	W09
-	.byte	N07, 56, 40
+	.byte	N07, 56, 64
 	.byte	W08
-	.byte	N07, 60, 70
+	.byte	N07, 60, 112
 	.byte	W05
-	.byte	N07, 61, 60
+	.byte	N07, 61, 96
 	.byte	W08
-	.byte	N07, 62, 40
+	.byte	N07, 62, 64
 	.byte	W07
-	.byte	N07, 63, 30
+	.byte	N07, 63, 48
 	.byte	W07
 	.byte	FINE
 

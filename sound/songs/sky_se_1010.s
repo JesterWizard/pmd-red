@@ -15,18 +15,18 @@ sky_vg_se_1010:
 sky_se_1010_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N06, 52, 127
 	.byte	W16
 	.byte	N30, 64, 127
 	.byte	W32
-	.byte	N06, 52, 90
+	.byte	N06, 52, 119
 	.byte	W16
 	.byte	N30, 64, 127
 	.byte	W32
-	.byte	N06, 52, 90
+	.byte	N06, 52, 119
 	.byte	W16
 	.byte	N30, 64, 127
 	.byte	W96
@@ -39,7 +39,7 @@ sky_se_1010_0:
 	.align	2
 sky_se_1010_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 58
+	.byte	VOL, 70
 	.byte	PAN, 66
 	.byte	W20
 	.byte	VOICE, 0
@@ -47,11 +47,11 @@ sky_se_1010_1:
 	.byte	W16
 	.byte	N30, 64, 127
 	.byte	W32
-	.byte	N06, 52, 90
+	.byte	N06, 52, 119
 	.byte	W16
 	.byte	N30, 64, 127
 	.byte	W32
-	.byte	N06, 52, 90
+	.byte	N06, 52, 119
 	.byte	W16
 	.byte	N30, 64, 127
 	.byte	W80

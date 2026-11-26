@@ -15,48 +15,48 @@ sky_vg_se_0713:
 sky_se_0713_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 82
+	.byte	VOL, 95
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	TIE, 38, 127
 	.byte	W01
-	.byte	VOL, 86
-	.byte	TIE, 31, 90
+	.byte	VOL, 99
+	.byte	TIE, 31, 125
 	.byte	W02
-	.byte	VOL, 88
+	.byte	VOL, 102
 	.byte	W03
-	.byte	VOL, 94
+	.byte	VOL, 108
 	.byte	W04
-	.byte	VOL, 98
+	.byte	VOL, 113
 	.byte	W04
-	.byte	VOL, 101
+	.byte	VOL, 117
 	.byte	W04
-	.byte	VOL, 105
+	.byte	VOL, 121
 	.byte	W04
-	.byte	VOL, 107
+	.byte	VOL, 124
 	.byte	W32
 	.byte	W03
-	.byte	VOL, 55
+	.byte	VOL, 64
 	.byte	W04
-	.byte	VOL, 47
+	.byte	VOL, 54
 	.byte	W04
-	.byte	VOL, 40
+	.byte	VOL, 46
 	.byte	W04
-	.byte	VOL, 33
+	.byte	VOL, 38
 	.byte	W03
-	.byte	VOL, 27
+	.byte	VOL, 31
 	.byte	W03
 	.byte	EOT, 38
 	.byte	W01
-	.byte	VOL, 21
+	.byte	VOL, 24
 	.byte	W04
-	.byte	VOL, 16
+	.byte	VOL, 18
 	.byte	W02
 	.byte	EOT, 31
 	.byte	W02
-	.byte	VOL, 10
+	.byte	VOL, 12
 	.byte	W04
-	.byte	VOL, 5
+	.byte	VOL, 6
 	.byte	W03
 	.byte	VOL, 1
 	.byte	W02

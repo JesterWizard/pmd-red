@@ -15,68 +15,70 @@ sky_vg_se_021f:
 sky_se_021f_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
-	.byte	VOL, 115
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	TIE, 58, 90
+	.byte	TIE, 58, 127
 	.byte	W02
-	.byte	TIE, 67, 80
+	.byte	TIE, 67, 116
 	.byte	W96
 	.byte	W13
 	.byte	EOT, 58
 	.byte	W01
-	.byte	TIE, 66, 80
-	.byte	TIE, 57, 90
+	.byte	TIE, 66, 116
+	.byte	TIE, 57, 127
 	.byte	W01
 	.byte	EOT, 67
 	.byte	W92
 	.byte	W03
-	.byte	VOL, 111
+	.byte	VOL, 123
 	.byte	W04
-	.byte	VOL, 92
+	.byte	VOL, 102
 	.byte	W04
-	.byte	VOL, 84
+	.byte	VOL, 93
 	.byte	W03
-	.byte	VOL, 78
+	.byte	VOL, 86
 	.byte	W04
-	.byte	VOL, 73
+	.byte	VOL, 81
 	.byte	W04
-	.byte	VOL, 69
+	.byte	VOL, 76
 	.byte	W04
-	.byte	VOL, 64
+	.byte	VOL, 71
 	.byte	W04
-	.byte	VOL, 61
+	.byte	VOL, 67
 	.byte	W03
-	.byte	VOL, 57
+	.byte	VOL, 63
 	.byte	W04
-	.byte	VOL, 54
+	.byte	VOL, 60
 	.byte	W04
-	.byte	VOL, 51
+	.byte	VOL, 56
 	.byte	W04
-	.byte	VOL, 48
+	.byte	VOL, 53
 	.byte	W04
-	.byte	VOL, 45
+	.byte	VOL, 50
 	.byte	W03
-	.byte	VOL, 43
+	.byte	VOL, 47
 	.byte	W04
-	.byte	VOL, 40
+	.byte	VOL, 44
 	.byte	W04
-	.byte	VOL, 37
+	.byte	VOL, 41
 	.byte	W04
-	.byte	VOL, 35
+	.byte	VOL, 39
 	.byte	W04
-	.byte	VOL, 33
+	.byte	VOL, 36
 	.byte	W03
+	.byte	VOL, 34
+	.byte	W04
 	.byte	VOL, 31
 	.byte	W04
-	.byte	VOL, 28
+	.byte	VOL, 29
 	.byte	W04
-	.byte	VOL, 26
+	.byte	VOL, 27
 	.byte	W04
 	.byte	VOL, 24
-	.byte	W04
-	.byte	VOL, 22
 	.byte	W03
+	.byte	VOL, 22
+	.byte	W04
 	.byte	VOL, 20
 	.byte	W04
 	.byte	VOL, 18
@@ -84,16 +86,14 @@ sky_se_021f_0:
 	.byte	VOL, 16
 	.byte	W04
 	.byte	VOL, 14
-	.byte	W04
-	.byte	VOL, 13
 	.byte	W03
-	.byte	VOL, 11
+	.byte	VOL, 12
 	.byte	W04
-	.byte	VOL, 9
+	.byte	VOL, 10
 	.byte	W04
-	.byte	VOL, 7
+	.byte	VOL, 8
 	.byte	W04
-	.byte	VOL, 5
+	.byte	VOL, 6
 	.byte	W04
 	.byte	VOL, 4
 	.byte	W01

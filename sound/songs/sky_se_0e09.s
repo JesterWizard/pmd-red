@@ -19,21 +19,21 @@ sky_vg_se_0e09:
 sky_se_0e09_0:
 	.byte	TEMPO, 190
 	.byte	KEYSH, 0
-	.byte	VOL, 85
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 51, 110
+	.byte	N12, 51, 118
 	.byte	W12
-	.byte	N32, 55, 110
+	.byte	N32, 55, 118
 	.byte	W32
 	.byte	VOICE, 1
-	.byte	N06, 68, 110
+	.byte	N06, 68, 118
 	.byte	W06
-	.byte	N12, 58, 110
+	.byte	N12, 58, 118
 	.byte	W12
-	.byte	N12, 58, 40
+	.byte	N12, 58, 43
 	.byte	W12
-	.byte	N12, 58, 20
+	.byte	N12, 58, 21
 	.byte	W12
 	.byte	FINE
 

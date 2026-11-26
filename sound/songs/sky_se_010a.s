@@ -7,28 +7,28 @@
 	.align	2
 sky_vg_se_010a:
 @ voice 0
-	.byte	0x0C, 60, 0x00, 0x00
-	.word	0
-	.byte	0, 7, 0, 0
+	.byte	0x09, 60, 0x00, 0x00
+	.word	2
+	.byte	0, 0, 15, 0
 
 	.align	2
 sky_se_010a_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N06, 71, 77
+	.byte	N06, 90, 80
 	.byte	W06
-	.byte	N06, 73, 77
+	.byte	N06, 92, 80
 	.byte	W06
-	.byte	N06, 71, 50
+	.byte	N06, 90, 52
 	.byte	W06
-	.byte	N06, 73, 50
+	.byte	N06, 92, 52
 	.byte	W06
-	.byte	N06, 71, 17
+	.byte	N06, 90, 18
 	.byte	W06
-	.byte	N06, 73, 17
+	.byte	N06, 92, 18
 	.byte	W06
 	.byte	FINE
 

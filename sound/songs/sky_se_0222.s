@@ -57,24 +57,24 @@ sky_se_0222_0:
 	.byte	W02
 	.byte	BEND, 102
 	.byte	W01
-	.byte	N12, 56, 126
+	.byte	N12, 56, 127
 	.byte	W04
 	.byte	BEND, 104
 	.byte	W06
-	.byte	N12, 59, 120
+	.byte	N12, 59, 127
 	.byte	W09
-	.byte	N12, 61, 113
+	.byte	N12, 61, 127
 	.byte	W08
 	.byte	VOL, 114
 	.byte	W01
-	.byte	N12, 62, 108
+	.byte	N12, 62, 127
 	.byte	W01
 	.byte	VOL, 121
 	.byte	W02
 	.byte	VOL, 127
 	.byte	W08
 	.byte	VOL, 126
-	.byte	N13, 60, 113
+	.byte	N13, 60, 127
 	.byte	W02
 	.byte	VOL, 124
 	.byte	W02

@@ -15,7 +15,7 @@ sky_vg_se_3f02:
 sky_se_3f02_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
-	.byte	VOL, 85
+	.byte	VOL, 106
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N04, 90, 80

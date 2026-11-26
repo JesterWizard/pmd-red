@@ -8,18 +8,19 @@
 sky_vg_se_0115:
 @ voice 0
 	.byte	0x00, 60, 0x00, 0x00
-	.word	sky_wav_silent
-	.byte	255, 0, 0, 0
+	.word	sky_semotion_wav_005_0
+	.byte	255, 0, 255, 142
 
 	.align	2
 sky_se_0115_0:
 	.byte	TEMPO, 250
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 115
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
+	.byte	N60, 55, 127
 	.byte	W20
 	.byte	BEND, 61
 	.byte	W02
@@ -39,41 +40,41 @@ sky_se_0115_0:
 	.byte	W02
 	.byte	BEND, 44
 	.byte	W02
-	.byte	VOL, 113
+	.byte	VOL, 125
 	.byte	BEND, 41
 	.byte	W02
-	.byte	VOL, 112
+	.byte	VOL, 124
 	.byte	BEND, 39
 	.byte	W02
-	.byte	VOL, 110
+	.byte	VOL, 121
 	.byte	BEND, 34
 	.byte	W02
-	.byte	VOL, 105
+	.byte	VOL, 116
 	.byte	BEND, 32
 	.byte	W02
-	.byte	VOL, 99
+	.byte	VOL, 109
 	.byte	BEND, 31
 	.byte	W02
-	.byte	VOL, 91
+	.byte	VOL, 100
 	.byte	BEND, 29
 	.byte	W01
-	.byte	VOL, 81
+	.byte	VOL, 89
 	.byte	W01
 	.byte	BEND, 28
 	.byte	W01
-	.byte	VOL, 68
+	.byte	VOL, 75
 	.byte	W01
 	.byte	BEND, 27
 	.byte	W01
-	.byte	VOL, 54
+	.byte	VOL, 60
 	.byte	W01
 	.byte	BEND, 24
 	.byte	W01
-	.byte	VOL, 39
+	.byte	VOL, 43
 	.byte	W01
 	.byte	BEND, 22
 	.byte	W01
-	.byte	VOL, 21
+	.byte	VOL, 23
 	.byte	W01
 	.byte	BEND, 19
 	.byte	W01

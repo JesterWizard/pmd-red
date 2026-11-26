@@ -15,44 +15,44 @@ sky_vg_se_0d02:
 sky_se_0d02_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
-	.byte	VOL, 90
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 56, 110
+	.byte	N12, 56, 125
 	.byte	W12
-	.byte	N12, 63, 110
+	.byte	N12, 63, 125
 	.byte	W12
-	.byte	N12, 68, 110
+	.byte	N12, 68, 125
 	.byte	W12
-	.byte	N12, 65, 110
+	.byte	N12, 65, 125
 	.byte	W12
-	.byte	N12, 70, 110
+	.byte	N12, 70, 125
 	.byte	W12
-	.byte	N06, 72, 70
+	.byte	N06, 72, 79
 	.byte	W06
-	.byte	N04, 68, 70
+	.byte	N04, 68, 79
 	.byte	W04
-	.byte	N04, 60, 70
+	.byte	N04, 60, 79
 	.byte	W04
-	.byte	N04, 63, 70
+	.byte	N04, 63, 79
 	.byte	W04
-	.byte	N04, 68, 70
+	.byte	N04, 68, 79
 	.byte	W04
-	.byte	N04, 58, 50
+	.byte	N04, 58, 57
 	.byte	W04
-	.byte	N04, 61, 50
+	.byte	N04, 61, 57
 	.byte	W04
-	.byte	N04, 68, 30
+	.byte	N04, 68, 34
 	.byte	W04
-	.byte	N04, 60, 30
+	.byte	N04, 60, 34
 	.byte	W04
-	.byte	N04, 63, 30
+	.byte	N04, 63, 34
 	.byte	W04
-	.byte	N04, 68, 10
+	.byte	N04, 68, 11
 	.byte	W04
-	.byte	N04, 58, 10
+	.byte	N04, 58, 11
 	.byte	W04
-	.byte	N04, 61, 10
+	.byte	N04, 61, 11
 	.byte	W04
 	.byte	FINE
 
