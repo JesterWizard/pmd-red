@@ -92,7 +92,10 @@ page instead of scrolling (`sSkyTextbox` in
 [`src/string_format.c`](../../src/string_format.c)). The dungeon message box has
 the same box; it keeps Red's 7-row window (an 8th would reach the minimap's
 tiles), so when it is full it scrolls a line up before writing the next,
-and the minimap's tilemap stops at row 11 while it is up (`LOG_*` in [`src/dungeon_message.c`](../../src/dungeon_message.c),
+and the minimap's tilemap stops at row 11 while it is up. As in EoS,
+windows in a dungeon are translucent (fill blended 10/16 over 6/16 of the
+dungeon, measured on DeSmuME as 60% / 40%; `ToggleWindowBgBuffer` in
+[`src/window_buffer.c`](../../src/window_buffer.c)); ground windows stay opaque (`LOG_*` in [`src/dungeon_message.c`](../../src/dungeon_message.c),
 `sub_803EAF0` kind 3 in [`src/dungeon_vram.c`](../../src/dungeon_vram.c),
 `UpdateBgTilemapForDungeonMap`).
 

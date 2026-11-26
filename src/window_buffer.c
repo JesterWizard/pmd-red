@@ -308,8 +308,17 @@ void ToggleWindowBgBuffer(void)
     gWinBufferPtr = sBufferPtr;
     sBufferIdx = !sBufferIdx;
     sBoolUnk = !sBoolUnk;
-    if (UiStyleWantsOpaqueWindows(gBldCnt))
+    if (UiStyleWantsOpaqueWindows(gBldCnt)) {
+#ifdef SKY_STORY
+        /* EoS dungeon windows are translucent: 60% fill over 40% of the
+         * dungeon (measured on DeSmuME). The dungeon keeps 0x808 here once
+         * its fade-in is done; ground windows stay opaque as in EoS. */
+        if (gUnknown_2026E4E == 0x808)
+            SetBldAlphaReg(10, 6);
+        else
+#endif
         SetBldAlphaReg(16, 0);
+    }
     else
         SetBldAlphaReg((gUnknown_2026E4E & 0x1F00) >> 8, gUnknown_2026E4E & 0x1F);
     gDrawWindow = TRUE;
