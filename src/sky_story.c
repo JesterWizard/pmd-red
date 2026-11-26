@@ -23,6 +23,7 @@
 #include "adventure_info.h"
 #include "menu_input.h"
 #include "save.h"
+#include "random.h"
 #include "pokemon_3.h"
 #include "structs/str_dungeon.h"
 #include "structs/str_file_system.h"
@@ -218,6 +219,10 @@ bool8 SkyStory_SaveGame(void)
     s32 unused = 0;
     DungeonLocation dl = { .id = DUNGEON_OUT_ON_RESCUE, .floor = 0 };
 
+    /* A save only shows up as "Continue" with an id (set by the quiz; the
+     * DEBUG_BOOT_EVENT hook skips it). */
+    if (sub_8011C34() == -1)
+        sub_8011C40(Rand32Bit());
     SetDungeonLocationInfo(&dl);
     sub_80140DC();
     status = WriteSavetoPak(&unused, 1);

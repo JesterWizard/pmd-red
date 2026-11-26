@@ -1921,6 +1921,7 @@ static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = {
  * on Continue from a finished save (src/ground_main.c). */
 static const struct ScriptCommand s_script_SKY_DEMO_END[] = {
     DEBUGINFO_O(1882),
+    SCENARIO_CALC(SCENARIO_MAIN,  3,  0), /* chapter 1 done: Continue comes back here */
     SET_PLACE_MODE(1),
     BGM_STOP,
     FADE_OUT(TRUE, 0),
@@ -1948,6 +1949,7 @@ static const struct ScriptCommand s_script_SKY_DEMO_END[] = {
     HALT,
 };
 #else
+#line 1908
 static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = { /* 0x81252a0 */
     DEBUGINFO_O(1881),
     SET_PLACE_MODE(4),
@@ -1962,6 +1964,7 @@ static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = { /* 0x81252a0
     JUMP_SCRIPT(EVENT_DIVIDE),
 };
 #endif
+#line 1921
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L001[] = { /* 0x8125350 */
     DEBUGINFO_O(1895),
@@ -5461,8 +5464,10 @@ const ScriptRef gFunctionScriptTable[NUM_SCRIPT_IDS] = {
 #ifdef SKY_STORY
     [EVENT_M01E02A_L001] =           { EVENT_M01E02A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L001"),           s_script_SKY_DEMO_END                 },
 #else
+#line 5417
     [EVENT_M01E02A_L001] =           { EVENT_M01E02A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L001"),           s_script_EVENT_M01E02A_L001           },
 #endif
+#line 5418
     [EVENT_M01E02A_L001B] =          { EVENT_M01E02A_L001B,          SCRIPT_TYPE_12, _("EVENT_M01E02A_L001B"),          s_script_EVENT_M01E02A_L001B          },
     [EVENT_M01E02A_L001C] =          { EVENT_M01E02A_L001C,          SCRIPT_TYPE_10, _("EVENT_M01E02A_L001C"),          s_script_EVENT_M01E02A_L001C          },
     [EVENT_M01E02A_L002] =           { EVENT_M01E02A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L002"),           s_script_EVENT_M01E02A_L002           },
