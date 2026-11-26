@@ -342,6 +342,7 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
         Fade(first, TRUE);
         Hold(frames / 2);
         for (i = 0; i < 2; i++) {
+            PlaySoundWithVolume(461, 256); /* EoS se_Play(6401): thunder */
             WhiteFlash(first, 2);
             SwapArt(&gSkyCutaways[SKY_CUTAWAY_STORM_LIT]);
             Hold(4);

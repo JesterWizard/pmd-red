@@ -162,13 +162,13 @@ song sky_se_230b,  2,  2    @ 457: SE_NUM_EVENT_SIGN_ANGER_02
 song sky_se_230f,  2,  2    @ 458: SE_NUM_EVENT_MOTION_JUNP_02
 song seq_459,  5,  5
 song seq_460,  3,  3
-song seq_461,  5,  5
+song sky_se_1901,  5,  5    @ 461: SE_NUM_EVENT_MAIN01_THUNDER_01
 song seq_462,  5,  5
 song sky_se_2308,  2,  2    @ 463: SE_NUM_EVENT_SIGN_SHOCK_01
 song sky_se_2305,  5,  5    @ 464: SE_NUM_EVENT_SIGN_NOTICE_02
 song sky_se_2304,  2,  2    @ 465: SE_NUM_EVENT_SIGN_NOTICE_01
 song sky_se_2307,  5,  5    @ 466: SE_NUM_EVENT_SIGN_NOTICE_04
-song seq_467,  5,  5
+song sky_se_1902,  5,  5    @ 467: SE_NUM_EVENT_MAIN01_THUNDER_02
 song seq_468,  2,  2
 song sky_se_2302,  2,  2    @ 469: SE_NUM_EVENT_SIGN_HATENA_02
 song sky_se_230c,  2,  2    @ 470: SE_NUM_EVENT_SIGN_TENSION_01
@@ -189,7 +189,7 @@ song seq_484,  5,  5
 song seq_485,  5,  5
 song seq_486,  4,  4
 song seq_487,  5,  5
-song seq_488,  5,  5
+song sky_se_1903,  5,  5    @ 488: SE_NUM_EVENT_MAIN01_WARP
 song seq_489,  5,  5
 song seq_490,  5,  5
 song seq_491,  5,  5

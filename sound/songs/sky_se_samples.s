@@ -509,6 +509,15 @@ sky_se068_wav_000_0:
 	.incbin	"sound/direct_sound_samples/sky/se068_000.bin"
 
 	.align	2
+	.global	sky_se069_wav_000_0
+sky_se069_wav_000_0:
+	.hword	0x0000, 0x4000
+	.word	15070699 @ 14717.48 Hz at key 60
+	.word	24 @ loop start
+	.word	4024 @ size
+	.incbin	"sound/direct_sound_samples/sky/se069_000.bin"
+
+	.align	2
 	.global	sky_se124_wav_000_0
 sky_se124_wav_000_0:
 	.hword	0x0000, 0x4000

@@ -68,6 +68,7 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     BGM_FADEIN(160, MUS_STORMY_SEA),
     WAIT(60),
     CAMERA_SHAKE(CAMERA_SHAKE_CUSTOM, 2, 3),
+    FANFARE_PLAY2(461), /* EoS thunder */
     FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(10),
@@ -78,28 +79,34 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     MSG_NPC(-1, _(" Are...{WAIT_PRESS} Are you OK?!")),
     TEXTBOX_CLEAR,
     WAIT(30),
+    FANFARE_PLAY2(461), /* EoS thunder */
     FLASH_TO(TRUE, PALUTIL_KIND_05, 3, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 3, RGB_U32(0xFF, 0xFF, 0xFF)),
     MSG_NPC(-1, _(" No!{WAIT_PRESS} Don't let go!")),
     MSG_NPC(-1, _(" Just a little longer...{WAIT_PRESS}\nCome on! Hang on!")),
     TEXTBOX_CLEAR,
     WAIT(30),
+    FANFARE_PLAY2(461), /* EoS thunder */
     FLASH_TO(TRUE, PALUTIL_KIND_05, 3, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 3, RGB_U32(0xFF, 0xFF, 0xFF)),
     MSG_NPC(-1, _(" N-n-no!{WAIT_PRESS} I can't...{WAIT_PRESS}hold on...!")),
     TEXTBOX_CLEAR,
+    FANFARE_PLAY2(467), /* EoS thunder */
     FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(5),
+    FANFARE_PLAY2(467), /* EoS thunder */
     FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(30),
+    FANFARE_PLAY2(461), /* EoS thunder */
     FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(5),
     FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(20),
+    FANFARE_PLAY2(488), /* EoS se_Play(6403) */
     MSG_NPC(-1, _(" Waaaaaah!")),
     /* EoS: screen_WhiteOutAll(1, 90) with the text box still up, a hold on
      * white, then straight to black before the cliff. */
