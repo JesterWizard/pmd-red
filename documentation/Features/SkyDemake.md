@@ -253,6 +253,55 @@ wins).
 | 67 | bgm0001 Exploration team theme | (available) |
 | 68 | bgm0006 Welcome to the World of Pokémon! | Personality quiz |
 
+### Jingles
+
+Red's fanfares (song ids 200–219, played on the fanfare player by
+`PlayFanfareSE` / `PlaySound` / `FANFARE_PLAY`) play EoS's own jingles in the
+sky build. EoS keeps them in `SOUND/ME/me0000.smd`–`me0013.smd` with one bank,
+`SOUND/ME/me.swd`, that holds both the programs and the samples.
+`convert_eos_bgm.py` converts them with the same pipeline as the BGM
+(`--me-only` converts only these): `sound/songs/sky_me_NNNN.s` (voicegroup
+`sky_vg_meNNNN`), samples in `sound/songs/sky_me_samples.s` (labels
+`sky_me_wav_*`, files `sound/direct_sound_samples/sky/me_NNN.bin`; 10 samples,
+34 KB). `me0000` is not converted: it is note for note `me0006` and EoS only
+plays it from a debug "ME test" menu (`T00P01/m01a0116.ssb`).
+
+`sound/song_table.inc` points ids 200–219 at them under `SKY_STORY`, with
+Red's player fields (`1, 1`); Red's `seq_200`–`seq_219` are not assembled in
+the sky build. EoS jingles use up to 10 tracks, so the sky build's fanfare
+player has 10 tracks instead of 6, in IWRAM (EWRAM is full).
+
+How each id was matched. Red's use comes from its callers in `src/` and the
+ground scripts. EoS's use comes from the EoS scripts (`me_Play(n)` in the
+`.ssb` files, decompiled with SkyTemple) and from the callers of EoS's
+`PlayMeById` (NA `0x0201820C`, veneer `0x02017C50`) in arm9 and the overlays.
+"Melody" is how many note onsets (pitch class on a 16th-note grid, best
+transposition) Red's and EoS's jingles share, which shows the remakes: most EoS
+jingles are Red's, re-orchestrated.
+
+| Id | Red use | EoS ME | EoS use (evidence) |
+|---|---|---|---|
+| 200 | dungeon level up (`sub_8083D58`) | me0001 | level up in ground mode (ov11 `PlayMeById(1)` then "became level N!"); also big rewards: `[me_play:1]` in "accepted the rare and precious item", Egg hatched, scripts' "team was rewarded" |
+| 201 | rescue rank up (`mission_reward.c`, b01p02a "rescue rank went up!") | me0002 | the rank-up step of the reward screen (arm9, played after "Team … went up in rank"); melody closest to Red's 201 |
+| 202 | Pokémon farewell (`party_list_menu.c`) | me0003 | "… was released from the team." (ov11 ×3, Chimecho Assembly, Day Care) |
+| 203 | reward / item received (`GET_ITEM_FUNC`, shops, mission rewards) | me0004 | item received (66 script uses: "received …", reward points; Recycle Shop; dungeon). Melody 0.53 (same tempo, length) |
+| 204 | joined the team (`JOIN_FUNC`, dungeon recruit, Celebi, "became leader") | me0005 | "… joined the team!" (52 of 57 script uses; Chimecho, Day Care). Melody 0.84 |
+| 205 | new dungeon open ("Uproar Forest is now open") | me0006 | "You can now go to …" (42 of 45 script uses) |
+| 206 | friend area obtained | me0006 | same as 205; me0006 is Red's 206 remade (melody 0.61) |
+| 207 | reached the destination floor, tutorial notice, standby | me0007 | "A message has arrived from the Exploration Team Federation". Melody 0.69 |
+| 208 | unused (200 at another volume) | me0001 | as 200 |
+| 209 | (empty) | — | — |
+| 210 | evolution at Luminous Cave (`luminous_cave.c`) | me0008 | Luminous Spring evolution (ov16 ×2), "Teddiursa evolved into Ursaring!". Melody 0.50 |
+| 211 | evolution in a dungeon (`sub_8083D78`) | me0008 | as 210 |
+| 212 | important item received (Teleport Gem, Red Wing, 9-Tail Crest) | me0009 | "… obtained …" key items (24 script uses), dungeon "You've completed a mission!". Same tempo (72/73 bpm) |
+| 213 | Rescue Team Starter Set from the Mailbox | me0004 | as 203 (Red's 213 is 203 at another volume) |
+| 214 | unused | me0010 | no caller in Red: given one of EoS's dungeon-end stings (ov29 `IsFloorOver` plays `{10, 11, 11}[i]` or `{12, 13, 13}[i]`), by length |
+| 215 | unused | me0012 | as 214 |
+| 216 | unused | me0010 | Red's 216–219 are sparse stings like EoS's me0010–me0013; matched by tempo and length (1.3 s / 2.9 s) |
+| 217 | unused | me0011 | 6 notes, 10.8 beats at 160 bpm in both |
+| 218 | unused | me0012 | 150 bpm, ~2 s in both |
+| 219 | unused | me0013 | 3 notes at 240 bpm in both |
+
 ---
 
 ## Dungeon tilesets
