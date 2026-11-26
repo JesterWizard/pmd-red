@@ -15,7 +15,8 @@ From an Explorers of Sky ROM:
     Under it goes EoS's "EXPLORERS OF SKY" emblem, which EoS draws as OBJ
     sprites on the bottom title screen; graphics/custom/sky_title/emblem_src.png
     is that sprite layer captured from the running game (DeSmuME, main-engine
-    OBJ layer only, title loop). "Press START" is in the first picture only,
+    OBJ layer only, title loop; black pixels are kept where the full picture
+    is black too, so the emblem's black outlines are not taken for backdrop). "Press START" is in the first picture only,
     for the blink.
   * menu0..9: main-menu backgrounds, the CGs EoS shows on the DS top screen
     during its top menu (BACK/s09p01a..s09p10a.bgp), scaled to 240x180 and
@@ -118,6 +119,39 @@ def eos_logo(rom) -> tuple[Image.Image, Image.Image]:
     return bg, rgba.resize((w, h), Image.LANCZOS)
 
 
+def split_quantize(im: Image.Image, mask: Image.Image, fg_colors: int = 96,
+                   total: int = title.MAX_COLORS) -> Image.Image:
+    """Quantize the overlay (mask > 0: logo, emblem, "Press START") and the
+    background with separate shares of the 8bpp palette. One median cut over
+    the whole picture spends nearly every colour on the glow's gradients and
+    leaves the emblem's whites and greens speckled."""
+    rgb = im.convert("RGB")
+    fg_px = Image.new("RGB", rgb.size)
+    fg_px.paste(rgb, (0, 0), mask)
+    fg_bbox = mask.getbbox()
+    fg_src = rgb.crop(fg_bbox)
+    fg_mask = mask.crop(fg_bbox)
+    fg_only = [p for p, m in zip(fg_src.get_flattened_data(), fg_mask.get_flattened_data()) if m]
+    fg_img = Image.new("RGB", (len(fg_only), 1))
+    fg_img.putdata(fg_only)
+    fg_n = min(fg_colors, len(set(fg_only)))
+    fg_q = fg_img.quantize(colors=fg_n, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    bg_q = rgb.quantize(colors=total - fg_n, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    out = bg_q.convert("RGB")
+    fg_mapped = rgb.quantize(palette=fg_q, dither=Image.Dither.NONE).convert("RGB")
+    out.paste(fg_mapped, (0, 0), mask)
+    return out
+
+
+def overlay_mask(size, parts) -> Image.Image:
+    """Opaque pixels of the RGBA overlays at their positions."""
+    m = Image.new("L", size, 0)
+    for img, pos in parts:
+        m.paste(img.getchannel("A").point(lambda a: 255 if a >= 128 else 0), pos,
+                img.getchannel("A").point(lambda a: 255 if a >= 128 else 0))
+    return m
+
+
 def write(name: str, im: Image.Image) -> None:
     png = OUT / f"{name}.png"
     im = im.convert("RGB")
@@ -139,13 +173,16 @@ def main() -> int:
     bg, lg = eos_logo(rom)
     blank = bg.convert("RGBA")
     emblem = Image.open(OUT / "emblem_src.png").convert("RGBA")
-    blank.alpha_composite(lg, ((240 - lg.width) // 2, 4))
-    blank.alpha_composite(emblem, ((240 - emblem.width) // 2, 4 + lg.height))
+    lg_pos = ((240 - lg.width) // 2, 4)
+    em_pos = ((240 - emblem.width) // 2, 4 + lg.height)
+    blank.alpha_composite(lg, lg_pos)
+    blank.alpha_composite(emblem, em_pos)
     press = blank.copy()
     ps = tinted(banner, "Press START", (255, 255, 255), (255, 255, 255))
-    press.alpha_composite(ps, ((240 - ps.width) // 2, 160 - ps.height - 2))
-    write("title_press", press)
-    write("title_blank", blank)
+    ps_pos = ((240 - ps.width) // 2, 160 - ps.height - 2)
+    press.alpha_composite(ps, ps_pos)
+    write("title_press", split_quantize(press, overlay_mask((240, 160), [(lg, lg_pos), (emblem, em_pos), (ps, ps_pos)])))
+    write("title_blank", split_quantize(blank, overlay_mask((240, 160), [(lg, lg_pos), (emblem, em_pos)])))
 
     for i in range(10):
         cg = FileType.BGP.deserialize(rom.getFileByName(f"BACK/s09p{i + 1:02d}a.bgp")).to_pil().convert("RGB")

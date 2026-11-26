@@ -172,7 +172,9 @@ def sprite_palette(name: str) -> int:
     """Red overworld palette tools/convert_eos_wan_to_ax.py picked for the sprite."""
     h = ROOT / "src" / "data" / "ax" / f"{ident(name).lower()}.h"
     if h.exists():
-        m = re.search(r"Red overworld palette (\d+)", h.read_text().split("\n", 1)[0])
+        # The note is in the header's first comment lines (compress_ax_anims.py
+        # puts its own marker line first).
+        m = re.search(r"Red overworld palette (\d+)", "\n".join(h.read_text().split("\n")[:5]))
         if m:
             return int(m.group(1))
     return 0

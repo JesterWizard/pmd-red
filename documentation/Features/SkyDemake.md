@@ -335,7 +335,9 @@ writes `graphics/custom/sky_title/`:
   with the logo). Under it goes EoS's green "EXPLORERS OF SKY" emblem, which
   EoS draws as OBJ sprites over the demo loop on the bottom screen:
   `graphics/custom/sky_title/emblem_src.png` is that sprite layer captured
-  from the running game (DeSmuME, main-engine OBJ layer only). "Press START"
+  from the running game (DeSmuME, main-engine OBJ layer only; pure black is
+  kept where the full frame is black too, so the outlines survive). The logo,
+  emblem and "Press START" get their own share of the 8bpp palette. "Press START"
   blinks; the EoS title theme plays.
 - The main-menu backgrounds: the ten CGs EoS shows on the DS top screen
   during its top menu (`BACK/s09p01a`–`s09p10a.bgp`), scaled to 240×180 and
