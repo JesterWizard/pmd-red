@@ -475,10 +475,17 @@ def main() -> int:
         if sid == RED_MUNCHLAX:
             e = gen4_entries[sid]
             e["dexInternal"][1] = red_mons[sid]["dexInternal"][1]
-            # Red's own sprite / portraits for Munchlax stay.
-            e["overworldPalette"] = red_mons[sid]["overworldPalette"]
+            # Red's ax420 is an unused placeholder sprite: Munchlax uses EoS's
+            # sprite (tools/convert_eos_wan_to_ax.py convert ... dex446
+            # munchlax) and its palette. Red's portraits for Munchlax stay.
+            e["overworldPalette"] = sprite_palette("Munchlax")
             e["dialogueSprites"] = red_mons[sid].get("dialogueSprites", 0)
-            e["friendArea"] = red_mons[sid]["friendArea"]
+            # Red's dummy Munchlax has no friend area, and the leader / partner
+            # can only be created in a friend area slot (CreateLeaderPartnerData):
+            # a Munchlax starter or partner was never created (no hero on the
+            # beach; a partner read through NULL hung the game). Munchlax
+            # shares its evolution Snorlax's area.
+            e["friendArea"] = next(m["friendArea"] for m in red_mons if m.get("name") == "MonsterNameSnorlax")
             c += mon_entry(e, red_mons[sid]["name"], red_mons[sid]["category"], sid)
             continue
         c += mon_entry(e, e["name"], e["category"], sid)

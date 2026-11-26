@@ -27,8 +27,10 @@
 #define ART_8BPP_MAX_TILES 600
 #define FADE_STEPS 31
 
-/* Connected CGs (tools/make_sky_cutaway_scrolls.py): 240x320 pictures, the
- * top-screen CG over the scene's first view, as raw 8bpp tiles (30x40). */
+/* Connected CGs (tools/make_sky_cutaway_scrolls.py): the top-screen CG over
+ * the map from its top edge down to the scene's first view (as EoS's two
+ * screens), raw 8bpp tiles, 30 per row. */
+#include "data/sky_scrolls.h"
 static const u8 sScrollStormTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/storm.tiles");
 static const u8 sScrollStormPal[] = INCBIN_U8("graphics/custom/sky_scrolls/storm.pal");
 static const u8 sScrollBeachTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/beach.tiles");
@@ -37,10 +39,8 @@ static const u8 sScrollGuildTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/gui
 static const u8 sScrollGuildPal[] = INCBIN_U8("graphics/custom/sky_scrolls/guild.pal");
 
 #define SCROLL_COLS 30
-#define SCROLL_ROWS 40
 #define SCROLL_RING 21            /* rows visible at a sub-tile offset */
 #define SCROLL_MAIN_SLOTS 608     /* 8bpp tiles 128.. (0x6000-0xF7FF) */
-#define SCROLL_FRAMES 96
 
 /* BG3 (CHARBASE 1, 0x4000) tile number for a ring position: the cutaway
  * area first, then 0x4800-0x4EFF (free in title-BG mode, below the font). */
@@ -63,10 +63,13 @@ static void ScrollLoadRow(const u8 *tiles, s32 row)
 }
 
 /* Fade in on the CG (or arrive on it from the cutaway already shown), hold,
- * then ease down to the scene and dip to black. */
-static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 hold, bool8 fadeIn)
+ * then ease down until the screen shows exactly the map's first view. The
+ * map is rebuilt behind one black frame; the script shows it at once. */
+static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, bool8 fadeIn)
 {
     s32 r, f, y, loaded;
+    s32 dist = rows * 8 - 160;
+    s32 frames = dist * 3 / 5;
 
     LoadFullscreenArtBlank();
     for (r = 0; r < SCROLL_RING; r++)
@@ -85,29 +88,20 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 hold, bool8 fade
     }
     for (f = 0; f < hold; f++)
         RunFullscreenArtFrame();
-    for (f = 1; f <= SCROLL_FRAMES; f++) {
-        /* smoothstep: 160 * t^2 (3 - 2t) */
-        s32 t = (f << 8) / SCROLL_FRAMES;
-        y = (160 * ((t * t) >> 8) * (768 - 2 * t)) >> 16; /* fits in 32 bits */
-        if (y > 160)
-            y = 160;
-        while (loaded < (y + 159) / 8 && loaded < SCROLL_ROWS - 1)
+    for (f = 1; f <= frames; f++) {
+        /* smoothstep: dist * t^2 (3 - 2t), t in 1/256 */
+        s32 t = (f << 8) / frames;
+        y = (dist * ((t * t) >> 8) * (768 - 2 * t)) >> 16;
+        if (y > dist)
+            y = dist;
+        while (loaded < (y + 159) / 8 && loaded < rows - 1)
             ScrollLoadRow(tiles, ++loaded);
         SetBG3RegOffsets(0, y);
-        RunFullscreenArtFrame();
-    }
-    for (f = 0; f < 8; f++)
-        RunFullscreenArtFrame();
-    /* Quick dip to black: the map rebuild takes a few frames; the script
-     * fades the scene back in. */
-    for (f = FADE_STEPS; f >= 0; f -= 4) {
-        SetFullscreenArtBrightness((const RGB_Struct *)pal, f);
         RunFullscreenArtFrame();
     }
     SetFullscreenArtBrightness((const RGB_Struct *)pal, 0);
     RunFullscreenArtFrame();
 }
-
 
 /* Swap the picture without re-initialising windows/sprites (animation frames).
  * Tiles and tilemap go through the scheduled copies of one frame, so they
@@ -246,13 +240,13 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
             Hold(frames / 4);
         }
         /* EoS shows the cliff above the stormy sea: pan down to the sea. */
-        ScrollConnected(sScrollStormTiles, sScrollStormPal, 0, FALSE);
+        ScrollConnected(sScrollStormTiles, sScrollStormPal, SKY_SCROLL_STORM_ROWS, 0, FALSE);
     }
     else if (id == SKY_CUTAWAY_SKY_DAY_SCROLL || id == SKY_CUTAWAY_GUILD_SKY_SCROLL) {
         if (id == SKY_CUTAWAY_SKY_DAY_SCROLL)
-            ScrollConnected(sScrollBeachTiles, sScrollBeachPal, frames, TRUE);
+            ScrollConnected(sScrollBeachTiles, sScrollBeachPal, SKY_SCROLL_BEACH_ROWS, frames, TRUE);
         else
-            ScrollConnected(sScrollGuildTiles, sScrollGuildPal, frames, TRUE);
+            ScrollConnected(sScrollGuildTiles, sScrollGuildPal, SKY_SCROLL_GUILD_ROWS, frames, TRUE);
     }
     else if (id == SKY_CUTAWAY_SUNSET_SEA_ANIM) {
         /* EoS m01a0205/0207: the sea glittering at sunset (8-frame loop). */

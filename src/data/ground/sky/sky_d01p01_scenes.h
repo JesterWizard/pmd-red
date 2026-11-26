@@ -58,7 +58,13 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     SET_PLACE_MODE(1),
     BGM_STOP,
     FADE_OUT(TRUE, 0),
-    FADE2_OUT(TRUE, 0),
+    /* Load the storm map first (behind the fade): the chapter card shows on
+     * this map load, then the voices play in a text box on black, as in EoS. */
+    SELECT_MAP(MAP_SKY_STORM_SEA),
+    WAIT(1), /* the chapter card runs on this map load */
+    SKY_SHOW_MAP(FALSE),
+    FADE_IN(TRUE, 0),
+    FADE2_IN(TRUE, 0),
     BGM_FADEIN(160, MUS_STORMY_SEA),
     WAIT(60),
     CAMERA_SHAKE(CAMERA_SHAKE_CUSTOM, 2, 3),
@@ -92,14 +98,13 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     TEXTBOX_CLEAR,
     CAMERA_SHAKE(CAMERA_SHAKE_OFF, 0, 0),
     WAIT(90),
-    SELECT_MAP(MAP_SKY_STORM_SEA), /* only now: the voices play over black */
-    FADE2_IN(TRUE, 0),
     SET_PLACE_MODE(4),
+    SKY_SHOW_MAP(TRUE),
     /* EoS: the cliff (top screen) over the stormy sea (bottom): the cliff,
      * lightning, then a pan down to the sea, which stays on screen. */
     SKY_BUBBLES(SKY_BUBBLES_RAIN), /* EoS: rain over the cliff and the sea */
     SKY_CUTAWAY(SKY_CUTAWAY_STORM, 160),
-    FADE_IN(TRUE, 15),
+    FADE_IN(TRUE, 0), /* the pan ends on this exact view */
     WAIT(165),
     BGM_FADEOUT(120),
     FADE_OUT(TRUE, 60),
@@ -119,23 +124,23 @@ static const struct ScriptCommand s_gs178_g5_s0_station_sref_script[] = {
     SET_PLACE_MODE(1),
     BGM_STOP,
     FADE_OUT(TRUE, 0),
-    FADE2_OUT(TRUE, 0),
+    FADE2_IN(TRUE, 0), /* EoS: the thoughts are in a text box on black */
     SELECT_MAP(MAP_SKY_BEACH_DAY),
     WAIT(120),
-    MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}......")),
-    MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}............")),
-    MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}..................")),
-    MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}Urrgh...")),
+    MSG_QUIET(-1, _("......")),
+    MSG_QUIET(-1, _("............")),
+    MSG_QUIET(-1, _("..................")),
+    MSG_QUIET(-1, _("Urrgh...")),
     TEXTBOX_CLEAR,
-    MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}Where...")),
-    MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}...Where am I?")),
+    WAIT(30),
+    MSG_QUIET(-1, _("Where...")),
+    MSG_QUIET(-1, _("...Where am I?")),
     TEXTBOX_CLEAR,
     WAIT(1),
-    FADE2_IN(TRUE, 0),
     SELECT_ENTITIES(-1, 0),
     /* EoS: the sky (top screen) over the beach: pan down to the beach. */
     SKY_CUTAWAY(SKY_CUTAWAY_SKY_DAY_SCROLL, 150),
-    FADE_IN(TRUE, 15),
+    FADE_IN(TRUE, 0), /* the pan ends on this exact view */
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
     BGM_FADEOUT(120),
@@ -174,7 +179,7 @@ static const struct ScriptCommand s_gs178_g6_s0_station_sref_script[] = {
     SELECT_ENTITIES(-1, 0),
     /* EoS: dusk clouds (top screen) over the guild: pan down to the guild. */
     SKY_CUTAWAY(SKY_CUTAWAY_GUILD_SKY_SCROLL, 90),
-    FADE_IN(TRUE, 15),
+    FADE_IN(TRUE, 0), /* the pan ends on this exact view */
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
     BGM_FADEOUT(120),

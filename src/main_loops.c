@@ -72,8 +72,15 @@ static EWRAM_INIT OpenedFile *sTitlePaletteFile = NULL;
 static EWRAM_INIT u32 sMainLoopsUnk = MAINLOOPS_UNK_0;
 static EWRAM_INIT TeamBasicInfo sTeamBasicInfo_203B040 = {
     .unk0 = 0,
+#if defined(DEBUG_BOOT_STARTER) && defined(DEBUG_BOOT_PARTNER)
+    /* Test hook (make DEBUG_BOOT_STARTER=... DEBUG_BOOT_PARTNER=...): the
+     * team DEBUG_BOOT_EVENT creates. */
+    .StarterID = DEBUG_BOOT_STARTER,
+    .PartnerID = DEBUG_BOOT_PARTNER,
+#else
     .StarterID = MONSTER_CHARMANDER,
     .PartnerID = MONSTER_SQUIRTLE,
+#endif
     .StarterName = {""},
     .PartnerNick = {""},
 };

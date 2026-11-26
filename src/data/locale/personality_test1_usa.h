@@ -853,8 +853,16 @@
 #define PARTNER_CONFIRM_Q (_( \
     "Choose {COLOR CYAN}{POKEMON_0}{RESET} as your partner?"))
 
+#ifdef SKY_STORY
+/* EoS: one line here; "You're off to the world of Pokémon!" and "Be strong!
+ * Stay smart! And be victorious!" follow in the ground script (gs223), so the
+ * fade-out does not start while they are still on screen. */
+#define END_TEXT (_( \
+    "{CENTER_ALIGN}OK! That's it! You're all ready to go!"))
+#else
 #define END_TEXT (_( \
     "{CENTER_ALIGN}OK! We're all set!{EXTRA_MSG}" \
     "{CENTER_ALIGN}Let's get you into the\n" \
     "{CENTER_ALIGN}world of Pokémon!{EXTRA_MSG}" \
     "{CENTER_ALIGN}Go for it!"))
+#endif

@@ -197,6 +197,8 @@
 #define SKY_BUBBLES(mode)               SPECIAL_PROCESS_EX(0x61, mode, 0)
 #define SKY_SAVE_GAME                   SPECIAL_PROCESS(0x62, 0)
 #define SKY_DEMO_TO_TITLE               SPECIAL_PROCESS(0x63, 0)
+/* Hide (0) or show (1) the ground map and its sprites; text boxes stay. */
+#define SKY_SHOW_MAP(on)                SPECIAL_PROCESS(0x64, on)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

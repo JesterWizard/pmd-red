@@ -60,6 +60,7 @@
 #include "dungeon_list_menu.h"
 #include "data_script.h"
 #include "sky_story.h"
+#include "bg_control.h"
 
 // For gScriptLocks, gScriptLockConds, gUnlockBranchLabels
 #define SCRIPT_LOCKS_ARR_COUNT 129
@@ -4225,6 +4226,10 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
             return SkyStory_SaveGame();
         case 0x63:
             SkyStory_DemoToTitle();
+            return 0;
+        case 0x64:
+            /* BG0/BG1 (windows) stay; BG2/BG3 (map) and OBJ (sprites) toggle. */
+            SetBGOBJEnableFlags(r2 ? 0 : 0x1C);
             return 0;
 #endif
         case 0x4B: {

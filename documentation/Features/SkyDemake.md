@@ -86,7 +86,10 @@ bottom portraits kept just above the box, and a full box clears for the next
 page instead of scrolling (`sSkyTextbox` in
 [`src/string_format.c`](../../src/string_format.c)).
 
-The Krabby bubbles (EoS's `supervision_SpecialActing` 4/5 effect) drift
+The Krabby bubbles (EoS's `supervision_SpecialActing` 4/5 effect; spawn
+points, sizes and velocities measured frame by frame in EoS: down-right from
+the Krabby mouths on the sand, up-left at sunset, a slow leftward drift on
+the beach) drift
 over the two Krabby scenes, the sunset beach and the sunset-sea cutaway:
 `SKY_BUBBLES(mode)` in scripts, OBJ sprites captured from EoS's OBJ layer
 ([`src/sky_bubbles.c`](../../src/sky_bubbles.c),
@@ -108,7 +111,10 @@ dusk clouds over the guild), the demake shows the CG and eases down into the
 scene. The 240x320 pictures come from
 [`tools/make_sky_cutaway_scrolls.py`](../../tools/make_sky_cutaway_scrolls.py)
 (`graphics/custom/sky_scrolls/`: the CG over a capture of the scene's first
-view, with the player's Pokémon replaced by the rendered map); the tiles
+view, with the player's Pokémon replaced by the rendered map; between them
+the map from its top edge, so the tent is whole under the guild's sky, as on
+the DS); the pan ends on exactly the map's first view and the scene is shown
+at once, without a fade; the tiles
 stream through a 21-row ring in the cutaway's VRAM (`ScrollConnected` in
 [`src/sky_cutaways.c`](../../src/sky_cutaways.c)).
 
@@ -526,6 +532,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 - Beach Cave Pit's background has some black areas at the top where the EoS
   picture was folded into Red's 249-chunk limit.
 - Old saves need a new game in the sky build.
+- Test hooks: `DEBUG_BOOT_STARTER=<id> DEBUG_BOOT_PARTNER=<id>` pick the team
+  `DEBUG_BOOT_EVENT` creates.
 - To save ROM space, the sky build leaves out Red-only art EoS has no use
   for: every starter shares one team base (Pikachu's; `BASE_KIND` is ignored
   in `GetAdjustedGroundMap`, and the other 15 bases' map files are not linked,

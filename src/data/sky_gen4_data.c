@@ -10370,11 +10370,11 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)MonsterNameMunchlax, .category = (u8 *)MonsterCategoryBigVoice,
-        .overworldPalette = 12, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0b0000000000111111,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
-        .friendArea = FRIEND_AREA_NONE, .abilities = { ABILITY_PICKUP, ABILITY_THICK_FAT },
+        .friendArea = FRIEND_AREA_ENERGETIC_FOREST, .abilities = { ABILITY_PICKUP, ABILITY_THICK_FAT },
         .shadowSize = 1, .regenSpeed = 100,
         .canMove = 1, .chanceAsleep = 8,
         .baseHP = 30, .expYield = 7,

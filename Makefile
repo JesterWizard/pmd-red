@@ -152,6 +152,9 @@ CPPFLAGS += -DDEBUG_BOOT_MAP=$(DEBUG_BOOT_MAP)
 endif
 ifneq ($(DEBUG_BOOT_EVENT),)
 CPPFLAGS += -DDEBUG_BOOT_EVENT=$(DEBUG_BOOT_EVENT)
+ifneq ($(DEBUG_BOOT_STARTER),)
+CPPFLAGS += -DDEBUG_BOOT_STARTER=$(DEBUG_BOOT_STARTER) -DDEBUG_BOOT_PARTNER=$(DEBUG_BOOT_PARTNER)
+endif
 endif
 ifneq ($(DEBUG_BOOT_FLOOR),)
 CPPFLAGS += -DDEBUG_BOOT_FLOOR=$(DEBUG_BOOT_FLOOR)
@@ -244,7 +247,7 @@ GROUND_STORY_STAMP := $(BUILD_DIR)/.ground_story_$(GROUND_STORY_DIR)
 # Songs and asm (song table, sky-only seq_*/sky_bgm_* songs) test SKY_STORY too.
 SKY_STORY_OBJECTS := $(C_OBJECTS) $(SONG_OBJS) $(ASM_OBJECTS)
 $(if $(wildcard $(GROUND_STORY_STAMP)),,$(shell mkdir -p $(BUILD_DIR) && rm -f $(BUILD_DIR)/.ground_story_* && touch $(GROUND_STORY_STAMP)))
-DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)_$(if $(DEBUG_BOOT_EVENT),$(DEBUG_BOOT_EVENT),none)_$(if $(DEBUG_BOOT_FLOOR),$(DEBUG_BOOT_FLOOR),none)
+DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)_$(if $(DEBUG_BOOT_EVENT),$(DEBUG_BOOT_EVENT),none)_$(if $(DEBUG_BOOT_FLOOR),$(DEBUG_BOOT_FLOOR),none)_$(DEBUG_BOOT_STARTER)_$(DEBUG_BOOT_PARTNER)
 # GNU make skips a missing prerequisite that has a recipe when the target already
 # exists (the .SECONDARY: above), so the rule below would never run after a flip.
 # Create a missing stamp at parse time instead; the new mtime forces main_loops.o.
