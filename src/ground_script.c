@@ -59,6 +59,7 @@
 #include "training_maze.h"
 #include "dungeon_list_menu.h"
 #include "data_script.h"
+#include "sky_story.h"
 
 // For gScriptLocks, gScriptLockConds, gUnlockBranchLabels
 #define SCRIPT_LOCKS_ARR_COUNT 129
@@ -4213,6 +4214,11 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
         case 0x4A:
             GroundSprite_ExtendPaletteDelete(0);
             return 0;
+#ifdef SKY_STORY
+        case 0x60:
+            SkyStory_ShowCutaway_Async((s32)r2, r3);
+            return 0;
+#endif
         case 0x4B: {
             static const u8 sTrieloName[] = _("Trielo");
             Pokemon *ptr = sub_80A8D54(1);

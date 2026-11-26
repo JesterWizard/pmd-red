@@ -192,6 +192,8 @@
 // run side effects (return 0). Prefer the named macros below over raw forms.
 #define SPECIAL_PROCESS_EX(kind, a, b)  { CMD_BYTE_3B, kind, a, b, 0, NULL }
 #define SPECIAL_PROCESS(kind, a)        SPECIAL_PROCESS_EX(kind, a, 0)
+// Explorers of Sky demake (SKY_STORY): full-screen cutaway, see sky_story.h.
+#define SKY_CUTAWAY(id, frames)         SPECIAL_PROCESS_EX(0x60, id, frames)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 
