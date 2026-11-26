@@ -1484,13 +1484,13 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bplFileName = "EV0101A",
         .bpcFileName = "EV0101Ac",
         .bmaFileName = "EV0101Am",
-        .bpaFileNames = {NULL, NULL, NULL, NULL},
+        .bpaFileNames = {"EV0101A1", NULL, NULL, NULL},
     },
     [MAP_FILE_ID_SKY_GUILD_DUSK] = {
         .bplFileName = "EG0101B",
         .bpcFileName = "EG0101Bc",
         .bmaFileName = "EG0101Bm",
-        .bpaFileNames = {NULL, NULL, NULL, NULL},
+        .bpaFileNames = {"EG0101B1", NULL, NULL, NULL},
     },
     [MAP_FILE_ID_SKY_BEACH_DUSK] = {
         .bplFileName = "ED0111B",

@@ -1,9 +1,9 @@
 #ifndef GUARD_GROUND_FILES_TABLE_H
 #define GUARD_GROUND_FILES_TABLE_H
 
-/* Explorers of Sky demake: 7 EoS ground maps x (bpl, bpc, bma). */
+/* Explorers of Sky demake: 7 EoS ground maps x (bpl, bpc, bma) + 2 BPAs. */
 #ifdef SKY_STORY
-#define SKY_GROUND_FILES 21
+#define SKY_GROUND_FILES 23
 #else
 #define SKY_GROUND_FILES 0
 #endif

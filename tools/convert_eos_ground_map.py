@@ -15,8 +15,10 @@ rather than re-quantized.
   * Maps with more than 1024 tiles are streamed by src/ground_bg_tile_stream.c,
     which treats tilemap bits 0-11 as a source tile id and has no flip bits;
     for those, flipped tiles are baked into the pool.
-  * Palette animations are kept (RT's BPL has EoS's layout). BPA tile
-    animations are dropped (static frame 0).
+  * Palette animations are kept (RT's BPL has EoS's layout). On maps that fit
+    VRAM, up to two animated BPAs keep their animation (RT BPA slots 0/1,
+    written as <STEM>1.bpa / <STEM>2.bpa); streamed maps and further BPAs use
+    frame 0.
   * Collision comes from the EoS BMA's first collision layer.
 
 The EoS ROM is never copied into the repository; only the converted map files
@@ -130,6 +132,30 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
     chunk_index: dict[tuple[int, ...], int] = {tuple([0] * 9): 0}
     rt_layers: dict[str, list[int]] = {}
 
+    # Animated BPAs (non-streamed maps only): RT has two animated slots whose
+    # tiles sit right after the static pool in VRAM (ground_bg.c), so their
+    # tiles are not pooled; chunk entries point at slot positions, resolved
+    # once the static pool size is known.
+    anim_slots: list = []          # (bpa, n_tiles)
+    layer_bpa_ranges: dict = {}    # layer -> [(first idx, bpa, slot or None)]
+    for _, layer, _ in sources:
+        first = len(bpc.layers[layer].tiles)
+        ranges = []
+        for bpa in bpc.get_bpas_for_layer(layer, bpas):
+            slot = None
+            if not bake_flips and bpa.number_of_frames > 1 and len(anim_slots) < 2:
+                slot = len(anim_slots)
+                anim_slots.append((bpa, bpa.number_of_tiles))
+            ranges.append((first, bpa, slot))
+            first += bpa.number_of_tiles
+        layer_bpa_ranges[layer] = ranges
+
+    def anim_ref(layer: int, idx: int):
+        for first, bpa, slot in layer_bpa_ranges[layer]:
+            if slot is not None and first <= idx < first + bpa.number_of_tiles:
+                return slot, idx - first
+        return None
+
     for label, layer, bma_layer in sources:
         tiles = layer_tiles(bpc, layer, bpas)
         tilemap = bpc.layers[layer].tilemap
@@ -140,6 +166,10 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
             for e in tilemap[c * 9:(c + 1) * 9]:
                 used_pals.add(e.pal_idx)
                 t = bytes(tiles[e.idx]) if e.idx < len(tiles) else bytes(32)
+                ref = anim_ref(layer, e.idx)
+                if ref is not None:
+                    out.append(("anim", ref[0], ref[1], (e.pal_idx << 12) | (e.flip_y << 11) | (e.flip_x << 10)))
+                    continue
                 if bake_flips:
                     t = flip_tile(t, e.flip_x, e.flip_y)
                     tid = pool_add(t)
@@ -156,7 +186,16 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
         rt_layers[label] = [remap[i] if i < n_chunks else 0 for i in bma_layer]
 
     n_tiles = len(pool)
-    limit = STREAM_MAX_TILES if bake_flips else vram_slots
+    slot_base = [n_tiles, n_tiles + (anim_slots[0][1] if anim_slots else 0)]
+
+    def resolve(entry):
+        if isinstance(entry, tuple):
+            _, slot, k, flags = entry
+            return flags | (slot_base[slot] + k)
+        return entry
+    chunks = [[resolve(e) for e in ch] for ch in chunks]
+    anim_tiles = sum(n for _, n in anim_slots)
+    limit = STREAM_MAX_TILES if bake_flips else vram_slots - anim_tiles
     if n_tiles > limit:
         raise SystemExit(f"{name}: {n_tiles} tiles > {limit}")
     if (not bake_flips) and n_tiles > 1023:
@@ -198,7 +237,8 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
     (out_dir / f"{stem}.bpl").write_bytes(bpl_data)
 
     # BPC: header, tiles 1..N-1, chunks 1..M-1.
-    bpc_data = bytearray(struct.pack("<8h", CHUNK, CHUNK, n_tiles, 0, 0, 0, 0, len(chunks)))
+    slot_tiles = [n for _, n in anim_slots] + [0] * (4 - len(anim_slots))
+    bpc_data = bytearray(struct.pack("<8h", CHUNK, CHUNK, n_tiles, *slot_tiles, len(chunks)))
     for t in pool[1:]:
         bpc_data += t
     for ch in chunks[1:]:
@@ -207,6 +247,23 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
     if len(bpc_data) % 4:
         bpc_data += bytes(4 - len(bpc_data) % 4)
     (out_dir / f"{stem}c.bpc").write_bytes(bpc_data)
+
+    # BPA (RT layout, as EoS): u16 tiles, u16 frames, u32 duration per frame,
+    # then every frame's tiles, frame-major. Written as <STEM>1.bpa, <STEM>2.bpa.
+    for i in range(2):
+        f = out_dir / f"{stem}{i + 1}.bpa"
+        if i < len(anim_slots):
+            bpa, n = anim_slots[i]
+            data = bytearray(struct.pack("<HH", n, bpa.number_of_frames))
+            for fi in bpa.frame_info:
+                data += struct.pack("<I", max(1, fi.duration_per_frame))
+            for fr in range(bpa.number_of_frames):
+                for t in bpa.tiles_for_frame(fr):
+                    data += bytes(t)
+            f.write_bytes(data)
+            print(f"{name}: animated BPA slot {i}: {n} tiles x {bpa.number_of_frames} frames -> {f.name}")
+        elif f.exists():
+            f.unlink()
 
     # BMA: reuse the EoS model; RT layer0 = front (EoS upper), layer1 = back.
     rt = bma
@@ -266,8 +323,8 @@ def render_rt(stem: str, out: Path, vram_slots: int = VRAM_TILE_SLOTS) -> None:
                 fx, fy, pal = (e >> 10) & 1, (e >> 11) & 1, e >> 12
                 if streamed:
                     fx = fy = 0
-                if tid == 0:
-                    continue
+                if tid == 0 or tid >= len(tiles):
+                    continue  # null tile, or an animated BPA slot tile
                 t = tiles[tid]
                 tx, ty = cx * 3 + k % 3, cy * 3 + k // 3
                 for i in range(64):

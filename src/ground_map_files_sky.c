@@ -23,10 +23,12 @@ const u8 gFileED0141Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/ED0141Am.bma.lz"
 const u8 gFileEG0101B[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0101B.bpl");
 const u8 gFileEG0101Bc[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0101Bc.bpc");
 const u8 gFileEG0101Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EG0101Bm.bma.lz");
+const u8 gFileEG0101B1[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0101B1.bpa"); /* torches (BPA) */
 /* EoS v01p01a: storm at sea */
 const u8 gFileEV0101A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0101A.bpl");
 const u8 gFileEV0101Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0101Ac.bpc");
 const u8 gFileEV0101Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0101Am.bma.lz");
+const u8 gFileEV0101A1[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0101A1.bpa"); /* waves (BPA) */
 /* EoS v01p04b: Krabby bubbles (streamed) */
 const u8 gFileEV0104B[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0104B.bpl");
 const u8 gFileEV0104Bc[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0104Bc.bpc");

@@ -579,9 +579,11 @@ extern const u8 gFileED0141Am[];
 extern const u8 gFileEG0101B[];
 extern const u8 gFileEG0101Bc[];
 extern const u8 gFileEG0101Bm[];
+extern const u8 gFileEG0101B1[];
 extern const u8 gFileEV0101A[];
 extern const u8 gFileEV0101Ac[];
 extern const u8 gFileEV0101Am[];
+extern const u8 gFileEV0101A1[];
 extern const u8 gFileEV0104B[];
 extern const u8 gFileEV0104Bc[];
 extern const u8 gFileEV0104Bm[];
@@ -998,17 +1000,19 @@ const File gGroundFiles[GROUND_FILES_COUNT] = {
     [403] = { "ED0141Ac", &gFileED0141Ac, },
     [404] = { "ED0141Am", &gFileED0141Am, },
     [405] = { "EG0101B", &gFileEG0101B, },
-    [406] = { "EG0101Bc", &gFileEG0101Bc, },
-    [407] = { "EG0101Bm", &gFileEG0101Bm, },
-    [408] = { "EV0101A", &gFileEV0101A, },
-    [409] = { "EV0101Ac", &gFileEV0101Ac, },
-    [410] = { "EV0101Am", &gFileEV0101Am, },
-    [411] = { "EV0104B", &gFileEV0104B, },
-    [412] = { "EV0104Bc", &gFileEV0104Bc, },
-    [413] = { "EV0104Bm", &gFileEV0104Bm, },
-    [414] = { "EV0105B", &gFileEV0105B, },
-    [415] = { "EV0105Bc", &gFileEV0105Bc, },
-    [416] = { "EV0105Bm", &gFileEV0105Bm, },
+    [406] = { "EG0101B1", &gFileEG0101B1, },
+    [407] = { "EG0101Bc", &gFileEG0101Bc, },
+    [408] = { "EG0101Bm", &gFileEG0101Bm, },
+    [409] = { "EV0101A", &gFileEV0101A, },
+    [410] = { "EV0101A1", &gFileEV0101A1, },
+    [411] = { "EV0101Ac", &gFileEV0101Ac, },
+    [412] = { "EV0101Am", &gFileEV0101Am, },
+    [413] = { "EV0104B", &gFileEV0104B, },
+    [414] = { "EV0104Bc", &gFileEV0104Bc, },
+    [415] = { "EV0104Bm", &gFileEV0104Bm, },
+    [416] = { "EV0105B", &gFileEV0105B, },
+    [417] = { "EV0105Bc", &gFileEV0105Bc, },
+    [418] = { "EV0105Bm", &gFileEV0105Bm, },
 #endif
     [396 + SKY_GROUND_FILES] = { "H01P01", &gFileH01P01, },
     [397 + SKY_GROUND_FILES] = { "H01P01W", &gFileH01P01W, },

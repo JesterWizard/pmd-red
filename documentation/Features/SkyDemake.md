@@ -79,7 +79,9 @@ over the two Krabby scenes, the sunset beach and the sunset-sea cutaway:
 ([`src/sky_bubbles.c`](../../src/sky_bubbles.c),
 `graphics/custom/sky_bubbles/`). Bubbles hide behind open windows, since EoS
 shows text on the other screen. Converted maps keep EoS's palette animations
-(the sea shimmer, the sunset glitter, the Pit water).
+(the sea shimmer, the sunset glitter, the Pit water) and, on maps that fit
+VRAM, EoS's BPA tile animations: the storm-sea waves (`EV0101A1.bpa`) and
+the guild torches (`EG0101B1.bpa`), in RT's BPA slots.
 
 The DS second screen has no GBA equivalent, so its art (sky panoramas, the
 storm cliff, the Relic Fragment close-up, the animated sunset sea) is shown as
