@@ -118,12 +118,8 @@ static void SkyBuildTopMenu(void)
             sMainMenuItemsExtra[n].text = _("Continue");
             sMainMenuItemsExtra[n++].menuAction = MENU_CONTINUE;
         }
-        sMainMenuItemsExtra[n].text = _("Friend Rescue");
-        sMainMenuItemsExtra[n++].menuAction = MENU_FRIEND_RESCUE;
-        if (sub_803D0D8()) {
-            sMainMenuItemsExtra[n].text = _("Wonder Mail S");
-            sMainMenuItemsExtra[n++].menuAction = MENU_WONDER_MAIL;
-        }
+        /* The demo has no Friend Rescue / Wonder Mail S: rescues run on
+         * Red's later-story maps, which are not in the sky build. */
     }
     sMainMenuItemsExtra[n].text = _("Other");
     sMainMenuItemsExtra[n++].menuAction = MENU_SKY_OTHER;

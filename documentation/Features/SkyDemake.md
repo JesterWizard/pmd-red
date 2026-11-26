@@ -362,8 +362,9 @@ set while the main menu is open) and, like EoS, are sized to their longest entry
 
 The top menu follows EoS ([`src/main_menu2.c`](../../src/main_menu2.c),
 `#ifdef SKY_STORY`): **New Game / Other** without a save, **Continue**
-(Revive Team, Awaiting Rescue) **/ Friend Rescue / Wonder Mail S / Other**
-with one. **Other** opens a second window: Adventure Log, Achievements (if
+(Revive Team, Awaiting Rescue) **/ Other** with one (no Friend Rescue or
+Wonder Mail S in the demo: rescues run on Red's later-story maps, which are
+not in the sky build). **Other** opens a second window: Adventure Log, Achievements (if
 on), Trade Items, Delete Save Data, Sky Jukebox, Exit. The descriptions are EoS's, with the
 DS-only parts (wireless, Nintendo WFC) replaced by the GBA's link cable and
 passwords.
