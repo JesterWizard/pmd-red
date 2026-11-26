@@ -19,7 +19,12 @@ make MODERN=0 compare           # retail-matching gate (needs agbcc, see below)
 scripts/cloud/setup.sh          # toolchain, baserom.gba, mgba_shot (--agbcc, --build)
 scripts/cloud/smoke_test.sh     # headless boot check (prints SMOKE TEST PASSED)
 scripts/cloud/screenshot.sh     # screenshots into build/screenshots/
+scripts/cloud/sky_regression.sh # sky demake regression suite (PASS/FAIL per check, ~2 min)
 ```
+
+- Run the sky regression suite after any sky change. `--no-vanilla` skips the
+  vanilla sha1 rebuild; `--no-build -k NAME` reruns checks on the built test
+  ROMs; `--list` lists them. Adding a check: SkyDemake.md, "Testing".
 
 - In cloud sessions `setup.sh` runs automatically from a SessionStart hook.
   The hook does not build the ROM.

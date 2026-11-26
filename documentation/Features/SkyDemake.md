@@ -1298,6 +1298,115 @@ Old saves need a new game. Following the save-layout checklist
 
 ## Testing
 
+### Regression suite
+
+```bash
+scripts/cloud/sky_regression.sh               # everything: about 2 minutes
+scripts/cloud/sky_regression.sh --no-vanilla  # skip the vanilla sha1 rebuild (about 40 s)
+scripts/cloud/sky_regression.sh --no-build -k portrait -k music   # rerun checks on built ROMs
+scripts/cloud/sky_regression.sh --list        # the checks, their ROM and what they test
+```
+
+It checks that what has been fixed stays fixed. Each check prints
+`PASS` / `FAIL` with the measured values. A failing frame check saves the
+frame it failed on as a PNG under `build/sky_tests/shots/`, and the PNG's
+path is printed. The script exits 1 when a check fails. It builds the tools
+(`make -C scripts/cloud`), then:
+
+1. `vanilla_sha1`: `rm -f pmd_red.elf pmd_red.gba && make STORY=vanilla` must
+   give sha1 `27b588f5...`, then the sky build is restored.
+2. It builds the test ROMs with the hooks below and copies each ROM and its ELF
+   to `build/sky_tests/roms/`. The plain build goes last, so `pmd_red.gba` is
+   the normal ROM again afterwards. Build logs are in `build/sky_tests/logs/`.
+3. It plays each test ROM once, headless and in parallel. Every check on that
+   ROM watches the same run:
+
+| ROM | Build | Driver (`drivers.py`) | Frames |
+|---|---|---|---|
+| `divide` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE` | the story presses (A every 60 frames) from the storm to Beach Cave B1F; once the leader waits for input, open and close the main menu, then mash A | 21000 |
+| `pit` | the same + `DEBUG_BOOT_FLOOR=5` | the story to the Pit; when Boss Battle! starts, tap R (rotate mode), B, mash A | 21000 |
+| `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702 | 9300 |
+| `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
+
+Runs are deterministic (`build/tools/mgba_rpc`, a clean boot with no save).
+The checks find their frames from game state, not from fixed frame numbers:
+
+- **Dialogue boxes**: the print state (`sPrintStringState`) waiting for a
+  press, with the text from `sDialogueTextBuffer`.
+- **Maps**: `gGroundMapAction->groundMapId`.
+- **Camera**: `sUnknown_20399E8`.
+- **Ground objects and actors**: `gGroundObjects`, `gGroundLives`.
+- **Music and sound**: the song header on each m4a player, compared with
+  `gSongTable`.
+- **Dungeon input**: `sArrowsFrames` counts up while the leader waits for input.
+- **Video**: registers, palettes and OAM.
+
+They prefer state and register probes. Pixel probes are colours at fixed
+spots or colour counts in a region. No check compares whole-screen hashes.
+
+| Check | ROM | What it guards |
+|---|---|---|
+| `vanilla_sha1` | — | STORY=vanilla byte-identical |
+| `smoke_boot` | sky | `smoke_test.sh` on the sky ROM |
+| `pan_beach_handoff`, `pan_guild_handoff` | divide | from 20 frames before the cover (`gSkyCoverActive`) to 20 frames after it: OBJ layer on and the actors' sprite pixels ≥ 50% of their count before the cover (no blink); the best-matching shift between consecutive frames ≤ 2 px (no jump) |
+| `dialogue_box_frame` | divide | every ground box: the Sky frame's colours (top, bottom, sides) and the (33,33,33) fill |
+| `dialogue_wrap_opening`, `dialogue_wrap_aftermath` | divide, after | every box: no glyph pixels in the fill's last columns (x 223–224) |
+| `speaker_name_colours`, `_pit` | divide, pit | the name's pixels: Squirtle yellow (255,255,0); Zubat and Koffing light blue (0,255,255) |
+| `portrait_sides_opening`, `_pit`, `_aftermath` | divide, pit, after | the portrait window (`sDialogueBoxWinTemplates` id 1) per scene and speaker, as EoS's FACE_POS: guild, m01a0208, the "Yowch!" face-out, the Pit cutscene, m01a0701, m01a0702 |
+| `guild_no_determined` | divide | "No. I refuse...": BG palette 14 colour 1 is Squirtle's Determined pink (from `graphics/portraits_sky`), not Happy |
+| `beach_meeting_camera` | divide | the camera view is (188, 100) at "(My name?" |
+| `guild_gate_and_totems` | divide | at the guild's first view (118, 112): ≥ 100 portcullis bar pixels in the gate; ground objects 70/71 and four totem OBJ pieces |
+| `stormy_sea` | divide | `MAP_SKY_STORM_WAVES`: ≥ 10 semi-transparent rain OBJs and BLDALPHA 16/8 on ≥ 90% of frames; lightning OBJs on ≥ 20 frames; the Storm BGM |
+| `obj_palette15_restored` | divide | OBJ palette 15 is vanilla's UI palette at the guild and in Beach Cave (the bolt borrows it) |
+| `text_arrow_white` | divide | the text arrow (tile 0x3F0) uses the UI palette; its brightest colour is white |
+| `hero_named_ground` | divide | "So you're named ...?" has a name (debug boot: the species name) |
+| `music_per_scene` | divide | storm (69) at the storm and the stormy sea; Ocean1 (70) on the beach by day; Fire Crackling (71) at the guild; ambience 70 + On the Beach at Dusk (61) for the Krabby and sunset beach; 70 on the main player after "chicken"; Beach Cave (62). Each must play for 120 frames in a row in its scene |
+| `zubat_tackle_se` | divide | SE 519 plays on the sunset beach after the waves stop, before "Yowch!" |
+| `music_pit`, `music_aftermath` | pit, after | In the Depths of the Pit (64) in the cutscene and m01a0701, Boss Battle! (63) in the fight; waves + 61 in m01a0702 |
+| `dungeon_menu_translucent` | divide | main menu open: BLDCNT has BG1 as the alpha target, BLDALPHA 10/6, ≥ 6 colours behind the info window |
+| `dungeon_message_log` | divide | the floor hint: blended, text from x 20–22, 13 px between lines; the turn divider is one white row with a clear row under it |
+| `minimap_dot_palette` | divide | the hero's dot (tile 0x215) uses the UI palette |
+| `hero_named_in_log` | divide | team names in the dungeon log (`#c\x0e...#r` in gDungeon) are not empty and include Charmander |
+| `dungeon_talk_opaque` | pit | a speaker's box in the Pit cutscene: BLDALPHA 16/0, one fill colour |
+| `pit_no_black_tiles` | pit | no all-black 8×8 square during the fight |
+| `pit_rotate_grid` | pit | after an R tap, the changed pixels outside sprites (≥ 500) are in ≤ 6 colours (grid, not Pit art) |
+| `boss_stats` | pit | Zubat L3 15 HP 15/11 and Koffing L6 27 HP 20/8 (EntityInfo in gDungeon); `gSkyBossExp` off |
+| `thieves_beaten_pose` | after | Zubat's and Koffing's actors are in animation 0x100F at "Owowow..." |
+| `relic_fragment_on_beach` | after | ground object 69 on every frame of m01a0702 from "Here's what they stole." |
+| `jukebox_no_stop_bgm` | sky | no track in `src/data/sky_jukebox_data.h` is song 999 (STOP_BGM) |
+| `jukebox_tracks_play` | sky | each of the 141 tracks: the BGM player plays the track's song and the audio peak is ≥ 256 (track 68 "Dialga's Fight to the Finish!" included) |
+| `jukebox_window_top` | sky | the list window's top frame highlight is at y ≥ 3, with the fill under it |
+
+The `xfail="reason"` mark tags a check for a known bug that is not fixed yet.
+Its failure is reported as `XFAIL` and does not fail the suite. When the bug
+is fixed, the check shows `XPASS` (green) and its message says to remove the
+mark. On 8cb12dd36 (before 78dc157d8 and 8cafa263f) the suite fails exactly
+the ten checks those commits fixed: OBJ palette 15, the arrow, the minimap
+dot, the hero's name (ground and log), the log divider, the Relic Fragment,
+and the three Jukebox checks.
+
+**Adding a check.** Add a function to the module in
+`scripts/cloud/sky_regression/checks/` for its area, with
+`@check(rom, "one-line description")`. A generator function gets every frame
+of that ROM's run. `harness.py` documents the API:
+
+- `yield from t.wait(cond, "what")`: the first frame where `cond(f)` holds.
+- `t.wait_event(name)`: a step the driver posts.
+- `t.next()`: the next frame.
+- `return "message"`: the check passes with that message.
+- `expect(cond, "reason")` or `fail(...)`: the check fails.
+
+`f` (`emu.Frame`) reads memory, IO registers, palettes, OAM and `f.fb` (the
+picture). `t.game` (`game.py`) decodes game state, and `probes.py` holds the
+box geometry and picture helpers. A check that needs new input goes in that
+ROM's driver (`drivers.py`), which posts an event for it. A new test ROM is
+one entry in `ROMS` in `run.py`. `build/tools/mgba_rpc` (`scripts/cloud/mgba_rpc.c`)
+is the emulator the suite drives over a pipe. It can step frames, read
+memory, return the frame buffer, report audio levels and save and load
+states, so it can also be scripted by hand.
+
+### Debug boot hooks
+
 Two test-only Makefile hooks (normal builds are unaffected):
 
 ```bash
@@ -1307,7 +1416,7 @@ make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
 - `DEBUG_BOOT_EVENT=<script>`: New Game skips the quiz, creates the default
   team (Charmander / Squirtle) at story scenario (2,0) and runs that event
   script; `EVENT_DIVIDE` starts chapter 1 the normal way. Naming screens are
-  skipped (`RENAME_ALLY` keeps the default name).
+  skipped (a nameless Pokémon takes its species name).
 - `DEBUG_BOOT_FLOOR=<n>`: every dungeon run starts on floor n (5 = Beach Cave
   Pit).
 

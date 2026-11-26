@@ -36,7 +36,7 @@ it if so:
 | pip | Installs missing modules: `skytemple-files tilequant pillow numpy` |
 | baserom | Regenerates `baserom.gba` from the tracked `baserom.xdelta` if it is missing or its sha1 is wrong. The patch applies to 32 MiB of zeros and must give sha1 `9f4cfc5b5f4859d17169a485462e977c7aac2b89`. The modern build also needs `baserom.gba`, because `tools/check_palette_owners.py` reads it. |
 | tools | `make tools` (host tools under `tools/`) |
-| shots | `make -C scripts/cloud`, which builds `build/tools/mgba_shot` |
+| shots | `make -C scripts/cloud`, which builds `build/tools/mgba_shot` and `build/tools/mgba_rpc` (the emulator the sky regression suite drives) |
 
 Optional flags:
 
