@@ -16,6 +16,9 @@
 #include "custom_graphics.h"
 #include "dungeon_config.h"
 #include "run_dungeon.h"
+#ifdef SKY_STORY
+#include "sky_story.h"
+#endif
 
 EWRAM_DATA OpenedFile *gUnknown_202EC94 = NULL;
 EWRAM_DATA OpenedFile *gUnknown_202EC98 = NULL;
@@ -118,6 +121,29 @@ void sub_803E02C(void)
         gDungeon->colorRamp[i].b = i;
     }
 }
+
+#ifdef SKY_STORY
+/* The Beach Cave Pit background has more tiles than Red's 512-tile slot,
+ * so it covers the trap and grid tiles sub_803E02C put at tile 0x200. Copy
+ * the rotate-mode grid tiles (entries 20 and 21) from trappat to firstFree
+ * onwards and point their tilemap entries there. */
+void SkyStory_RelocateGridTiles(s32 firstFree)
+{
+    OpenedFile *file = OpenFileAndGetFileDataPtr("trappat", &gDungeonFileArchive);
+    const u8 *src = ((struct FileStruct2 *)((struct FileStruct *)(file->data))->ptr)->array;
+    s32 i, j;
+
+    for (i = 20; i <= 21; i++) {
+        for (j = 0; j < UNK12A18_ARR_COUNT_2; j++) {
+            s32 old = i * UNK12A18_ARR_COUNT_2 + j;
+            s32 new = firstFree + (i - 20) * UNK12A18_ARR_COUNT_2 + j;
+            CpuCopy((void *)VRAM + 0x8000 + new * 0x20, src + old * 0x20, 0x20);
+            gDungeon->unk12A18[i][j] = (gUnknown_80F5F70[i] << 0xC) | new;
+        }
+    }
+    CloseFile(file);
+}
+#endif
 
 void sub_803E13C(void)
 {

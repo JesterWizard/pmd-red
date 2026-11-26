@@ -43,6 +43,7 @@ void SkyStory_PatchFixedMap(struct OpenedFile *file);
 #define SKY_BEACH_CAVE_PIT_TILESET 64
 bool8 SkyStory_LoadDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, u16 (*cel)[9], u8 *cex);
 bool8 SkyStory_IsSkyTilesetFile(const struct OpenedFile *file);
+void SkyStory_RelocateGridTiles(s32 firstFree);
 /* Fixed-room spawn remap: Gengar/Ekans -> Zubat/Koffing; Medicham dropped. */
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
 struct Entity;

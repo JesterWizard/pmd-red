@@ -42,6 +42,8 @@ bool8 SkyStory_LoadDungeonTileset(OpenedFile **paletteFile, OpenedFile **animFil
         CpuCopy((void *)0x06008000, sBeachCavePitTiles, sizeof(sBeachCavePitTiles));
         CpuCopy(cel, sBeachCavePitChunks, sizeof(sBeachCavePitChunks));
         CpuCopy(cex, sBeachCavePitEmap, sizeof(sBeachCavePitEmap));
+        if (sizeof(sBeachCavePitTiles) > 0x200 * 0x20)
+            SkyStory_RelocateGridTiles(sizeof(sBeachCavePitTiles) / 0x20);
         *paletteFile = (OpenedFile *)&sPitPaletteFile;
         *animFile = (OpenedFile *)&sPitAnimFile;
         return TRUE;
