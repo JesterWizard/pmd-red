@@ -1,14 +1,16 @@
 """Explorers of Sky instruments for the GBA m4a engine.
 
 Builds, from EoS's DSE banks (SOUND/BGM/bgm.swd samples + the per-song
-SOUND/BGM/bgmNNNN.swd programs), m4a voicegroups and DirectSound samples:
+SOUND/BGM/bgmNNNN.swd programs; or, for the jingles, SOUND/ME/me.swd, which
+holds both), m4a voicegroups and DirectSound samples:
 
   * every EoS sample a song uses is decoded (IMA-ADPCM / PCM), resampled to
     min(rate, max_rate) Hz with a windowed-sinc filter (the loop length is
     rounded to whole samples and the rate adjusted to match, so loops stay
     seamless and in tune), normalised to full 8-bit scale and written to
-    sound/direct_sound_samples/sky/eos_NNN.bin.
-  * one m4a WaveData per (sample, pitch) in sound/songs/sky_samples.s. m4a
+    sound/direct_sound_samples/sky/<bin_prefix>_NNN.bin (eos_ for bgm.swd).
+  * one m4a WaveData per (sample, pitch) in sound/songs/<out_name>
+    (sky_samples.s for bgm.swd, labels <prefix>_wav_NNN_k). m4a
     plays a WaveData at `freq / 1024` Hz on key 60 (MidiKeyToFreq), so the
     EoS root key / coarse / fine tune are baked into `freq`:
         DSE: rate(note) = 32728 * 2^((note - root + ctune + ftune/256) / 12)
@@ -161,8 +163,17 @@ SILENT_TONE = Tone("sky_wav_silent", (255, 0, 0, 0), 0, 0.0)
 
 class SoundFont:
     def __init__(self, rom, root: Path, max_rate: int = GBA_RATE, long_rate: int | None = None,
-                 long_bytes: int = 1 << 30):
-        self.main = swdl.parse(rom.getFileByName("SOUND/BGM/bgm.swd"))
+                 long_bytes: int = 1 << 30, sample_bank: str = "SOUND/BGM/bgm.swd",
+                 prefix: str = "sky", bin_prefix: str = "eos", out_name: str = "sky_samples.s"):
+        """sample_bank: the swdl holding the samples (pcmd). Each bank needs its
+        own prefix / bin_prefix / out_name so labels and files do not collide;
+        sky_wav_silent is defined by the default (bgm.swd) output only."""
+        self.sample_bank = sample_bank
+        self.main = swdl.parse(rom.getFileByName(sample_bank))
+        self.prefix = prefix
+        self.bin_prefix = bin_prefix
+        self.out_name = out_name
+        self.defines_silent = out_name == "sky_samples.s"
         self.rom = rom
         self.root = root
         self.bin_dir = root / "sound" / "direct_sound_samples" / "sky"
@@ -210,7 +221,7 @@ class SoundFont:
         size = len(q)
         extra = q[ls2] if looped else np.int8(0)
         data = q.tobytes() + bytes([int(extra) & 0xFF])
-        w = Wave(sid, f"eos_{sid:03d}.bin", info.rate * ratio, ratio, size, ls2, looped, norm)
+        w = Wave(sid, f"{self.bin_prefix}_{sid:03d}.bin", info.rate * ratio, ratio, size, ls2, looped, norm)
         self.waves[sid] = w
         self.data[sid] = data
         return w
@@ -223,7 +234,7 @@ class SoundFont:
         freq = round(DS_RATE * 2 ** (semis / 12) * w.ratio * 1024)
         key = (split.sample, freq)
         if key not in self.wavedata:
-            label = f"sky_wav_{split.sample:03d}_{len([k for k in self.wavedata if k[0] == split.sample])}"
+            label = f"{self.prefix}_wav_{split.sample:03d}_{len([k for k in self.wavedata if k[0] == split.sample])}"
             self.wavedata[key] = label
             self.label_info[label] = key
         return self.wavedata[key], w
@@ -238,10 +249,14 @@ class SoundFont:
 
     # -- voicegroups ----------------------------------------------------------
     def voicegroup(self, bgm: int, programs: set[int]) -> tuple[str, str, dict]:
+        """Voicegroup sky_vg_bgmNNNN from SOUND/BGM/bgmNNNN.swd's programs."""
+        return self.voicegroup_from(f"SOUND/BGM/bgm{bgm:04d}.swd", f"sky_vg_bgm{bgm:04d}", programs)
+
+    def voicegroup_from(self, bank_path: str, label: str, programs: set[int]) -> tuple[str, str, dict]:
         """Returns (label, asm, tones) where tones[(program, key)] is the Tone that
-        plays that key (its .gain is the velocity factor)."""
-        bank = swdl.parse(self.rom.getFileByName(f"SOUND/BGM/bgm{bgm:04d}.swd"))
-        label = f"sky_vg_bgm{bgm:04d}"
+        plays that key (its .gain is the velocity factor). The programs come from
+        bank_path; their samples from this SoundFont's sample bank."""
+        bank = swdl.parse(self.rom.getFileByName(bank_path))
         gains: dict[tuple[int, int], float] = {}
         voices, extra = [], []
         top = max(programs) if programs else 0
@@ -309,17 +324,19 @@ class SoundFont:
         """Writes the .bin samples and sound/songs/sky_samples.s. Returns
         (number of WaveData, ROM bytes)."""
         self.bin_dir.mkdir(parents=True, exist_ok=True)
-        for old in self.bin_dir.glob("eos_*.bin"):
+        for old in self.bin_dir.glob(f"{self.bin_prefix}_*.bin"):
             old.unlink()
         for sid in self.used_samples():
             (self.bin_dir / self.waves[sid].bin_name).write_bytes(self.data[sid])
-        lines = ["@ Explorers of Sky demake: EoS instrument samples (SOUND/BGM/bgm.swd) as m4a",
+        lines = [f"@ Explorers of Sky demake: EoS instrument samples ({self.sample_bank}) as m4a",
                  "@ WaveData, generated by tools/eos_music/convert_eos_bgm.py — do not edit.",
-                 "#ifdef SKY_STORY", "\t.section .rodata", "",
-                 "\t.align\t2", "\t.global\tsky_wav_silent", "sky_wav_silent:",
-                 "\t.hword\t0x0000, 0x0000", "\t.word\t0x400000", "\t.word\t0", "\t.word\t1",
-                 "\t.byte\t0, 0", ""]
-        total = 16 + 2
+                 "#ifdef SKY_STORY", "\t.section .rodata", ""]
+        total = 0
+        if self.defines_silent:
+            lines += ["\t.align\t2", "\t.global\tsky_wav_silent", "sky_wav_silent:",
+                      "\t.hword\t0x0000, 0x0000", "\t.word\t0x400000", "\t.word\t0", "\t.word\t1",
+                      "\t.byte\t0, 0", ""]
+            total = 16 + 2
         for (sid, freq), label in sorted(self.wavedata.items(), key=lambda kv: kv[1]):
             w = self.waves[sid]
             lines += ["\t.align\t2", f"\t.global\t{label}", f"{label}:",
@@ -330,5 +347,5 @@ class SoundFont:
                       f'\t.incbin\t"sound/direct_sound_samples/sky/{w.bin_name}"', ""]
             total += 16 + ((len(self.data[sid]) + 3) & ~3)
         lines += ["#endif", ""]
-        (self.root / "sound" / "songs" / "sky_samples.s").write_text("\n".join(lines))
+        (self.root / "sound" / "songs" / self.out_name).write_text("\n".join(lines))
         return len(self.wavedata), total

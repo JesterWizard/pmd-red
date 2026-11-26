@@ -6,7 +6,12 @@
 #else
 	.equiv NUM_TRACKS_BGM, 12
 #endif
+#ifdef SKY_STORY
+	@ EoS jingles (sky_me_*, fanfare ids 200..219) use up to 10 tracks.
+	.equiv NUM_TRACKS_FANFARE, 10
+#else
 	.equiv NUM_TRACKS_FANFARE, 6
+#endif
 	.equiv NUM_TRACKS_SE1, 1
 	.equiv NUM_TRACKS_SE2, 1
 	.equiv NUM_TRACKS_SE3, 2
@@ -20,9 +25,17 @@ gMPlayTrack_BGM::
     .space TRACK_SIZE * NUM_TRACKS_BGM
     .size gMPlayTrack_BGM, .-gMPlayTrack_BGM
 
+#ifdef SKY_STORY
+	@ EWRAM is full in the sky build: the (larger) fanfare tracks live in IWRAM.
+    .section iwram_data, "aw", %nobits
+    .align 2
+#endif
 gMPlayTrack_Fanfare::
     .space TRACK_SIZE * NUM_TRACKS_FANFARE
     .size gMPlayTrack_Fanfare, .-gMPlayTrack_Fanfare
+#ifdef SKY_STORY
+    .bss
+#endif
 
 gMPlayTrack_SE1::
     .space TRACK_SIZE * NUM_TRACKS_SE1

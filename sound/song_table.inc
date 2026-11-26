@@ -232,6 +232,30 @@ song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
+#ifdef SKY_STORY
+@ Fanfares 200..219: Explorers of Sky's own jingles (tools/eos_music/convert_eos_bgm.py;
+@ Red id -> EoS ME mapping and evidence: documentation/Features/SkyDemake.md).
+song sky_me_0001,  1,  1    @ 200: level up
+song sky_me_0002,  1,  1    @ 201: rescue rank up
+song sky_me_0003,  1,  1    @ 202: Pokemon farewell
+song sky_me_0004,  1,  1    @ 203: reward received
+song sky_me_0005,  1,  1    @ 204: joined the team
+song sky_me_0006,  1,  1    @ 205: new dungeon open
+song sky_me_0006,  1,  1    @ 206: friend area
+song sky_me_0007,  1,  1    @ 207: destination floor / notice
+song sky_me_0001,  1,  1    @ 208: level up (unused copy)
+song empty_song,  0,  0     @ 209: unused
+song sky_me_0008,  1,  1    @ 210: Luminous Cave evolution
+song sky_me_0008,  1,  1    @ 211: evolution in a dungeon
+song sky_me_0009,  1,  1    @ 212: important item
+song sky_me_0004,  1,  1    @ 213: items received
+song sky_me_0010,  1,  1    @ 214: unused
+song sky_me_0012,  1,  1    @ 215: unused
+song sky_me_0010,  1,  1    @ 216: unused
+song sky_me_0011,  1,  1    @ 217: unused
+song sky_me_0012,  1,  1    @ 218: unused
+song sky_me_0013,  1,  1    @ 219: unused
+#else
 song seq_200,  1,  1
 song seq_201,  1,  1
 song seq_202,  1,  1
@@ -252,6 +276,7 @@ song seq_216,  1,  1
 song seq_217,  1,  1
 song seq_218,  1,  1
 song seq_219,  1,  1
+#endif
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
