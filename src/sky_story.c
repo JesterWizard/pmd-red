@@ -29,8 +29,6 @@
 #include "structs/str_dungeon.h"
 #include "structs/str_file_system.h"
 
-/* Beach Cave floors: tileset borrowed from Lapis Cave (blue rock). */
-#define BEACH_CAVE_TILESET 0x2D
 /* EoS: Beach Cave B1F-B4F, then Beach Cave Pit (fixed floor 1) on the story run. */
 #define BEACH_CAVE_FLOORS 4
 #define BEACH_CAVE_PIT_FLOOR 5
@@ -105,7 +103,7 @@ void SkyStory_ApplyFloorOverrides(void)
         return;
 
     floor = gDungeon->unk644.dungeonLocation.floor;
-    gDungeon->floorProperties.tileset = BEACH_CAVE_TILESET;
+    gDungeon->floorProperties.tileset = SKY_BEACH_CAVE_TILESET;
 
     if (floor >= BEACH_CAVE_PIT_FLOOR && SkyStory_IsBeachCaveStoryRun()) {
         /* Beach Cave Pit */
@@ -209,23 +207,6 @@ s16 SkyStory_RemapFixedRoomSpecies(s16 species)
 }
 
 EWRAM_INIT u8 gSkyBossExp = FALSE; /* EoS: defeated bosses grant no EXP */
-
-/* Red species whose dungeon talk lines (talkNN / talkpNN) a Gen 4 Pokémon
- * uses: the starters' Red counterparts, Pikachu otherwise. */
-s32 SkyStory_TalkSpecies(s32 species)
-{
-    switch (species) {
-        case MONSTER_TURTWIG: case MONSTER_TURTWIG + 1: case MONSTER_TURTWIG + 2:
-            return MONSTER_BULBASAUR;
-        case MONSTER_CHIMCHAR: case MONSTER_CHIMCHAR + 1: case MONSTER_CHIMCHAR + 2:
-            return MONSTER_CHARMANDER;
-        case MONSTER_PIPLUP: case MONSTER_PIPLUP + 1: case MONSTER_PIPLUP + 2:
-            return MONSTER_SQUIRTLE;
-        case MONSTER_RIOLU:
-            return MONSTER_MACHOP;
-    }
-    return MONSTER_PIKACHU;
-}
 
 /* EoS gives fixed-floor bosses their own stats (overlay 10's monster spawn
  * stats table, entries 1 and 2 for Beach Cave Pit's Zubat and Koffing):

@@ -28,6 +28,9 @@
 #include "structs/str_pokemon.h"
 #include "dungeon_pos_data.h"
 #include "dungeon_music.h"
+#ifdef SKY_STORY
+#include "sky_story.h"
+#endif
 #include "dungeon_mon_spawn.h"
 #include "move_orb_effects_3.h"
 
@@ -251,9 +254,13 @@ static void sub_807218C(Entity *pokemon)
 {
     EntityInfo *info;
     u8 buffer [400];
+#ifndef SKY_STORY
     s32 r1;
+#endif
     s32 r6;
+#ifndef SKY_STORY
     s32 r3;
+#endif
     struct MonDialogueSpriteInfo dialogueInfo;
     struct MonDialogueSpriteInfo *dialogueInfoPtr = NULL;
 
@@ -269,6 +276,14 @@ static void sub_807218C(Entity *pokemon)
     }
     if(sub_8070BC0(pokemon))
     {
+#ifdef SKY_STORY
+        /* Explorers of Sky demake: EoS's level-up lines; the leader (hero)
+         * has none. */
+        if (SkyStory_HasLevelUpLine(info))
+            SkyStory_TalkLine(buffer, pokemon, SKY_TALK_LEVEL_UP);
+        else
+            buffer[0] = 0;
+#else
         r3 = 0;
         r1 = info->id;
         if(info->joinedAt.id == DUNGEON_JOIN_LOCATION_CLIENT_POKEMON)
@@ -285,11 +300,15 @@ static void sub_807218C(Entity *pokemon)
                 r3 = 1;
         }
         sub_806A3D4(buffer, r1, 3, r3);
+#endif
     }
     else
     {
         strcpy(buffer, gUnknown_80FCF18);
     }
+#ifdef SKY_STORY
+    if (buffer[0] != 0)
+#endif
     DisplayDungeonMessage_Async(dialogueInfoPtr, buffer, 1);
     buffer[0] = 0;
 

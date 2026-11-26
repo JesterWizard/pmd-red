@@ -1,9 +1,16 @@
 /*
- * Explorers of Sky demake: Beach Cave floors use the EoS Beach Cave tileset
+ * Explorers of Sky demake: dungeons use the EoS Beach Cave tileset
  * (dungeon.bin #1), converted by tools/convert_eos_dungeon_tileset.py into
  * the five pieces Red loads per tileset (fon/cel/cex/pal/canm). Game logic
  * keeps the Lapis Cave tileset id (water terrain etc.); only the graphics,
  * palette and autotile table are swapped.
+ *
+ * The sky ROM has no Red dungeon tilesets (b##fon/cel/cex/pal/canm/emap are
+ * left out of its dungeon archive, tools/make_sky_dungeon_archive.py), so
+ * every tileset id draws Beach Cave: pre-drawn background tilesets (ids 0x40+,
+ * Red's boss rooms) the Beach Cave Pit background, the rest the Beach Cave
+ * floors. Dungeon-type ground maps (Red's dungeon entrances and summits) draw
+ * the Beach Cave floor tiles too.
  */
 #include "global.h"
 
@@ -30,13 +37,19 @@ bool8 SkyStory_IsSkyTilesetFile(const OpenedFile *file)
         || file == &sPitPaletteFile || file == &sPitAnimFile;
 }
 
-/* Fills the same destinations LoadDungeonTilesetAssets does; returns FALSE
- * when the vanilla files should be loaded instead. */
-bool8 SkyStory_LoadDungeonTileset(OpenedFile **paletteFile, OpenedFile **animFile, u16 (*cel)[9], u8 *cex)
+static void LoadBeachCaveFloorTiles(void *tiles, void *cel, u8 *cex, OpenedFile **paletteFile, OpenedFile **animFile)
 {
-    if (!SkyStory_IsBeachCave(gDungeon->unk644.dungeonLocation.id))
-        return FALSE;
-    if (gDungeon->tileset == SKY_BEACH_CAVE_PIT_TILESET) {
+    CpuCopy(tiles, sBeachCaveTiles, sizeof(sBeachCaveTiles));
+    CpuCopy(cel, sBeachCaveChunks, sizeof(sBeachCaveChunks));
+    CpuCopy(cex, sBeachCaveCex, sizeof(sBeachCaveCex));
+    *paletteFile = (OpenedFile *)&sPaletteFile;
+    *animFile = (OpenedFile *)&sAnimFile;
+}
+
+/* Fills the same destinations LoadDungeonTilesetAssets does. */
+void SkyStory_LoadDungeonTileset(OpenedFile **paletteFile, OpenedFile **animFile, u16 (*cel)[9], u8 *cex)
+{
+    if (gDungeon->tileset >= SKY_BEACH_CAVE_PIT_TILESET) {
         /* Beach Cave Pit: EoS fixed-floor background (dungeon_bg0) as a
          * pre-drawn 24x24 map, like Red's boss backgrounds. */
         CpuCopy((void *)0x06008000, sBeachCavePitTiles, sizeof(sBeachCavePitTiles));
@@ -46,14 +59,16 @@ bool8 SkyStory_LoadDungeonTileset(OpenedFile **paletteFile, OpenedFile **animFil
             SkyStory_RelocateGridTiles(sizeof(sBeachCavePitTiles) / 0x20);
         *paletteFile = (OpenedFile *)&sPitPaletteFile;
         *animFile = (OpenedFile *)&sPitAnimFile;
-        return TRUE;
+        return;
     }
-    CpuCopy((void *)0x06008000, sBeachCaveTiles, sizeof(sBeachCaveTiles));
-    CpuCopy(cel, sBeachCaveChunks, sizeof(sBeachCaveChunks));
-    CpuCopy(cex, sBeachCaveCex, sizeof(sBeachCaveCex));
-    *paletteFile = (OpenedFile *)&sPaletteFile;
-    *animFile = (OpenedFile *)&sAnimFile;
-    return TRUE;
+    LoadBeachCaveFloorTiles((void *)0x06008000, cel, cex, paletteFile, animFile);
+}
+
+/* sub_80ADD9C (dungeon-type ground maps): tiles, chunks (0x1194 bytes) and
+ * the autotile table (0x930 bytes) of the Beach Cave floors. */
+void SkyStory_LoadGroundDungeonTileset(OpenedFile **paletteFile, OpenedFile **animFile, void *tiles, void *cel, u8 *cex)
+{
+    LoadBeachCaveFloorTiles(tiles, cel, cex, paletteFile, animFile);
 }
 
 #endif /* SKY_STORY */

@@ -9,21 +9,35 @@
 #include "file_system.h"
 #include "constants/dungeon.h"
 #include "structs/dungeon_mapparam.h"
+#ifdef SKY_STORY
+#include "sky_story.h"
+#endif
 
 static s32 sub_80ADFB8(s32 a0, s32 a1, s32 a2, s32 a3, u16 *a4, s32 a5, u8 *a6, s32 a7);
 
 // This function is called when loading a transition between a dungeon and its summit, where the player can continue, save, or go back.
 void sub_80ADD9C(OpenedFile **a0, OpenedFile **a1, u32 *a2, void *a3, u16 *a4, const DungeonLocation *a5, s32 a6, s32 a7, s32 a8, u16 *a9, s32 unused)
 {
+#ifndef SKY_STORY
     OpenedFile *file;
+#endif
     s32 r8;
     s32 i, j;
+#ifndef SKY_STORY
     u8 name[12];
     DungeonLocation dungLoc;
     u8 dungId;
     s32 dungFloor;
     struct DungeonMapParam1 *strPtr;
+#endif
     void *r10 = MemoryAlloc(0x930, MEMALLOC_GROUP_7);
+#ifdef SKY_STORY
+    /* Explorers of Sky demake: the sky ROM has no Red dungeon tilesets, so
+     * dungeon-type ground maps draw EoS's Beach Cave floor tiles (with Lapis
+     * Cave's water rules, as in the dungeon). */
+    r8 = SKY_BEACH_CAVE_TILESET;
+    SkyStory_LoadGroundDungeonTileset(a0, a1, a2, a3, r10);
+#else
     OpenedFile *mapParamFile = OpenFileAndGetFileDataPtr("mapparam", &gDungeonFileArchive);
 
     GeneralizeMazeDungeonLoc(&dungLoc, a5);
@@ -70,6 +84,7 @@ void sub_80ADD9C(OpenedFile **a0, OpenedFile **a1, u32 *a2, void *a3, u16 *a4, c
         DecompressATFile(r10, 0x240, file);
         CloseFile(file);
     }
+#endif
 
     for (i = 0; i < a8; i++) {
         s32 r7 = !IsWaterDungeon(r8) ? 0 : 3;
@@ -78,8 +93,10 @@ void sub_80ADD9C(OpenedFile **a0, OpenedFile **a1, u32 *a2, void *a3, u16 *a4, c
         }
     }
 
+#ifndef SKY_STORY
     sprintf(name, "b%02dcanm", r8);
     *a1 = OpenFile(name, &gDungeonFileArchive);
+#endif
     MemoryFree(r10);
 }
 

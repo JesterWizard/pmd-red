@@ -1351,11 +1351,10 @@ void sub_806A3D4(u8 *dst, s32 _a1, s32 id, bool32 _a3)
     struct UnkTalkFileStruct *strPtr;
 
 #ifdef SKY_STORY
-    /* Red's talk files (talkNN / talkpNN, ten species each) end with Red's
-     * species; a Gen 4 Pokémon read a missing file (garbage text, then a
-     * crash). Gen 4 Pokémon use a Red Pokémon's lines instead. */
-    if (a1 >= SKY_FIRST_GEN4_MONSTER)
-        a1 = SkyStory_TalkSpecies(a1);
+    /* The sky ROM has no Red talk files (talkNN / talkpNN): team members
+     * speak EoS's lines (SkyStory_TalkLine), and nothing calls this. */
+    strcpy(dst, _("{POKEMON_0}:  ..."));
+    return;
 #endif
     if (a3) {
         sprintf(fileName, "talkp%d", (s16) (a1 / 10));

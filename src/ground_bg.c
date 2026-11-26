@@ -16,6 +16,9 @@
 #include "unk_dungeon_load.h"
 #include "palette_fade_util.h"
 #include "constants/dungeon.h"
+#ifdef SKY_STORY
+#include "sky_story.h"
+#endif
 
 // This file most likely deals with map loading and writing to VRAM. It even has a custom decompression function.
 
@@ -627,7 +630,14 @@ void sub_80A3440(GroundBg *groundBg, s32 mapFileId_, const DungeonLocation *dung
     groundBg->decompressedBMAData = bmaData;
     sub_80ADD9C(&groundBg->unk43C, &groundBg->unk440, (void *)(VRAM + 0x8000), groundBg->tileMappings, groundBg->chunkMappings[0], dungLoc, a3, 0x40, bmaHeader->mapHeightChunks, groundBg->unk544, 0);
     // Unused return values
+#ifdef SKY_STORY
+    /* The sky build's Beach Cave palette / colour files are not archive files. */
+    if (!SkyStory_IsSkyTilesetFile(groundBg->unk43C))
+#endif
     GetFileDataPtr(groundBg->unk43C, 0);
+#ifdef SKY_STORY
+    if (!SkyStory_IsSkyTilesetFile(groundBg->unk440))
+#endif
     GetFileDataPtr(groundBg->unk440, 0);
 
     {
