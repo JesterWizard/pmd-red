@@ -1832,6 +1832,10 @@ static const struct ScriptCommand s_script_DEMO_01[] = { /* 0x8125090 */
 
 static const struct ScriptCommand s_script_DEMO_02[] = { /* 0x81250d0 */
     DEBUGINFO_O(1834),
+#ifdef SKY_STORY
+    /* Explorers of Sky boot screens: Nintendo logo, ESRB notice. */
+    SKY_CUTAWAY(SKY_CUTAWAY_BOOT_SCREENS, 0),
+#endif
     EXECUTE_SUBSTATION(226, 1, 0),
     REQUEST_GAME_END(60),
     HALT,
@@ -1839,17 +1843,31 @@ static const struct ScriptCommand s_script_DEMO_02[] = { /* 0x81250d0 */
 
 static const struct ScriptCommand s_script_DEMO_03[] = { /* 0x8125110 */
     DEBUGINFO_O(1841),
+#ifdef SKY_STORY
+    /* Explorers of Sky title screen instead of Red's intro and logo. */
+    BGM_SWITCH(MUS_SKY_TITLE_THEME),
+    SKY_CUTAWAY(SKY_CUTAWAY_TITLE_SCREEN, 3600),
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1), /* as Red's title (gs224 g3): no DEMO_04 */
+    BGM_FADEOUT(30),
+#else
     EXECUTE_SUBSTATION(MAP_PELIPPER_POST_OFFICE_INSIDE, 5, 0),
     EXECUTE_SUBSTATION(MAP_PELIPPER_POST_OFFICE, 29, 0),
     EXECUTE_SUBSTATION(225, 1, 0),
     EXECUTE_SUBSTATION(224, 3, 0),
+#endif
     REQUEST_GAME_END(60),
     HALT,
 };
 
 static const struct ScriptCommand s_script_DEMO_04[] = { /* 0x8125180 */
     DEBUGINFO_O(1851),
+#ifdef SKY_STORY
+    BGM_SWITCH(MUS_SKY_TITLE_THEME),
+    SKY_CUTAWAY(SKY_CUTAWAY_TITLE_SCREEN, 3600),
+    BGM_FADEOUT(30),
+#else
     EXECUTE_SUBSTATION(224, 4, 0),
+#endif
     REQUEST_GAME_END(60),
     HALT,
 };

@@ -49,6 +49,7 @@
 #include "runtime.h"
 #include "ui_style.h"
 #include "save.h"
+#include "sky_story.h"
 #include "save_read.h"
 #include "sprite.h"
 #include "string_format.h"
@@ -215,7 +216,11 @@ void GameLoop_Async(void)
         }
 
         tmp3 = 1;
+#ifdef SKY_STORY
+        StartNewBGM(MUS_SKY_TOP_MENU_THEME);
+#else
         StartNewBGM(MUS_FILE_SELECT);
+#endif
         flag = TRUE;
         sub_80095CC(0, 20);
         InitMainMenu();

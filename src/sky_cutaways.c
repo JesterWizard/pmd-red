@@ -87,6 +87,50 @@ static void WhiteFlash(const SkyCutawayArt *art, s32 frames)
     SetFullscreenArtBrightness((const RGB_Struct *)art->pal, 31);
 }
 
+/* EoS boot: the Nintendo logo, then the ESRB online notice (A skips). */
+static void ShowBootScreens(void)
+{
+    s32 n, i;
+
+    for (n = SKY_TITLE_NINTENDO; n <= SKY_TITLE_ESRB; n++) {
+        const SkyCutawayArt *art = &gSkyTitleArt[n];
+        LoadFullscreenArt(art->at4px);
+        Fade(art, TRUE);
+        for (i = 0; i < 150; i++) {
+            RunFullscreenArtFrame();
+            if (i >= 20 && (gRealInputs.pressed & (A_BUTTON | START_BUTTON)))
+                break;
+        }
+        Fade(art, FALSE);
+        UnloadFullscreenArt();
+    }
+}
+
+/* EoS title: logo over the sky, "Press START" blinking. START or A (or the
+ * time running out, like Red's title) goes on to the main menu. */
+static void ShowTitleScreen(s32 frames)
+{
+    const SkyCutawayArt *press = &gSkyTitleArt[SKY_TITLE_PRESS_START];
+    const SkyCutawayArt *blank = &gSkyTitleArt[SKY_TITLE_BLANK];
+    bool8 shown = TRUE;
+    s32 i;
+
+    LoadFullscreenArt(press->at4px);
+    Fade(press, TRUE);
+    for (i = 0; i < frames; i++) {
+        if (i % 32 == 31) {
+            shown = !shown;
+            SwapArt(shown ? press : blank);
+        }
+        else
+            RunFullscreenArtFrame();
+        if (gRealInputs.pressed & (A_BUTTON | START_BUTTON))
+            break;
+    }
+    Fade(shown ? press : blank, FALSE);
+    UnloadFullscreenArt();
+}
+
 void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
 {
     s32 map = GetGroundMapID();
@@ -96,6 +140,15 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
 
     if (frames <= 0)
         frames = 120;
+    if (id == SKY_CUTAWAY_BOOT_SCREENS || id == SKY_CUTAWAY_TITLE_SCREEN) {
+        /* Nothing to go back to: leave BG2/BG3 hidden and the screen black. */
+        if (id == SKY_CUTAWAY_BOOT_SCREENS)
+            ShowBootScreens();
+        else
+            ShowTitleScreen(frames);
+        SetBGOBJEnableFlags((~savedLayers & 0x1F) | 0xC);
+        return;
+    }
     if (id == SKY_CUTAWAY_STORM) {
         /* EoS m01a0102: the cliff in the storm, lit up by lightning twice. */
         first = &gSkyCutaways[SKY_CUTAWAY_STORM_CLIFF];

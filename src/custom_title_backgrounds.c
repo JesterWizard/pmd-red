@@ -7,6 +7,21 @@
  * File names must stay sorted for OpenFile binary search.
  */
 
+#ifdef SKY_STORY
+/* Explorers of Sky demake: EoS sky panoramas (tools/make_sky_title_screens.py). */
+const u8 gCustomTitleBg0[] = INCBIN_U8("graphics/custom/sky_title/menu0.at4px");
+const u8 gCustomTitleBg0Pal[] = INCBIN_U8("graphics/custom/sky_title/menu0.pal");
+const u8 gCustomTitleBg1[] = INCBIN_U8("graphics/custom/sky_title/menu1.at4px");
+const u8 gCustomTitleBg1Pal[] = INCBIN_U8("graphics/custom/sky_title/menu1.pal");
+const u8 gCustomTitleBg2[] = INCBIN_U8("graphics/custom/sky_title/menu2.at4px");
+const u8 gCustomTitleBg2Pal[] = INCBIN_U8("graphics/custom/sky_title/menu2.pal");
+const u8 gCustomTitleBg3[] = INCBIN_U8("graphics/custom/sky_title/menu3.at4px");
+const u8 gCustomTitleBg3Pal[] = INCBIN_U8("graphics/custom/sky_title/menu3.pal");
+const u8 gCustomTitleBg4[] = INCBIN_U8("graphics/custom/sky_title/menu4.at4px");
+const u8 gCustomTitleBg4Pal[] = INCBIN_U8("graphics/custom/sky_title/menu4.pal");
+const u8 gCustomTitleBg5[] = INCBIN_U8("graphics/custom/sky_title/menu5.at4px");
+const u8 gCustomTitleBg5Pal[] = INCBIN_U8("graphics/custom/sky_title/menu5.pal");
+#else
 const u8 gCustomTitleBg0[] = INCBIN_U8("graphics/title_screen_backgrounds/title_01.at4px");
 const u8 gCustomTitleBg0Pal[] = INCBIN_U8("graphics/title_screen_backgrounds/title_01.pal");
 const u8 gCustomTitleBg1[] = INCBIN_U8("graphics/title_screen_backgrounds/title_02.at4px");
@@ -19,6 +34,7 @@ const u8 gCustomTitleBg4[] = INCBIN_U8("graphics/title_screen_backgrounds/title_
 const u8 gCustomTitleBg4Pal[] = INCBIN_U8("graphics/title_screen_backgrounds/title_05.pal");
 const u8 gCustomTitleBg5[] = INCBIN_U8("graphics/title_screen_backgrounds/title_06.at4px");
 const u8 gCustomTitleBg5Pal[] = INCBIN_U8("graphics/title_screen_backgrounds/title_06.pal");
+#endif
 
 #define CUSTOM_TITLE_BG_FILES_COUNT (CUSTOM_TITLE_BG_COUNT * 2)
 
