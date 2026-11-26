@@ -195,6 +195,8 @@
 // Explorers of Sky demake (SKY_STORY): full-screen cutaway, see sky_story.h.
 #define SKY_CUTAWAY(id, frames)         SPECIAL_PROCESS_EX(0x60, id, frames)
 #define SKY_BUBBLES(mode)               SPECIAL_PROCESS_EX(0x61, mode, 0)
+#define SKY_SAVE_GAME                   SPECIAL_PROCESS(0x62, 0)
+#define SKY_DEMO_TO_TITLE               SPECIAL_PROCESS(0x63, 0)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

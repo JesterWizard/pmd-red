@@ -1905,6 +1905,49 @@ static const struct ScriptCommand s_script_EVENT_M01E01A_L002[] = { /* 0x8125270
     RET,
 };
 
+#ifdef SKY_STORY
+/* Explorers of Sky demake: the demo ends with chapter 1. */
+static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = {
+    DEBUGINFO_O(1881),
+    SET_PLACE_MODE(4),
+    EXECUTE_SUBSTATION(MAP_TINY_WOODS_END, 1, 0),
+    EXECUTE_SUBSTATION(MAP_TINY_WOODS_ENTRY, 3, 0),
+    SET_RESCUE_CONQUERED(RESCUE_DUNGEON_TINY_WOODS),
+    SCENARIO_CALC(SCENARIO_MAIN,  3,  0),
+    JUMP_SCRIPT(SKY_DEMO_END_EVENT),
+};
+
+/* Save prompt, then "the demo ends here", then back to the title. Also run
+ * on Continue from a finished save (src/ground_main.c). */
+static const struct ScriptCommand s_script_SKY_DEMO_END[] = {
+    DEBUGINFO_O(1882),
+    SET_PLACE_MODE(1),
+    BGM_STOP,
+    FADE_OUT(TRUE, 0),
+    FADE2_IN(TRUE, 0),
+    WAIT(30),
+  LABEL(0),
+    ASK2(FALSE, /*default*/ -1, /* speaker */ -1, _("{CENTER_ALIGN}Would you like to save your adventure?")),
+    CHOICE(/* label */ 1, _("Save")),
+    CHOICE(/* label */ 2, _("Don't save")),
+  LABEL(1), /* = 0x01 */
+    TEXTBOX_CLEAR,
+    SKY_SAVE_GAME,
+    COND_EQUAL(0, /* to label */ 3),
+    MSG_INSTANT(_("{CENTER_ALIGN}Your adventure has been saved.")),
+    JUMP_LABEL(2),
+  LABEL(3), /* = 0x03 */
+    MSG_INSTANT(_("{CENTER_ALIGN}The data could not be saved.")),
+  LABEL(2), /* = 0x02 */
+    TEXTBOX_CLEAR,
+    WAIT(20),
+    MSG_INSTANT(_("{CENTER_ALIGN}The demo ends here.\n{CENTER_ALIGN}Look forward to updates!")),
+    TEXTBOX_CLEAR,
+    WAIT(30),
+    SKY_DEMO_TO_TITLE,
+    HALT,
+};
+#else
 static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = { /* 0x81252a0 */
     DEBUGINFO_O(1881),
     SET_PLACE_MODE(4),
@@ -1918,6 +1961,7 @@ static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = { /* 0x81252a0
     SCENARIO_CALC(SCENARIO_MAIN,  3,  0),
     JUMP_SCRIPT(EVENT_DIVIDE),
 };
+#endif
 
 static const struct ScriptCommand s_script_EVENT_M01E02A_L001[] = { /* 0x8125350 */
     DEBUGINFO_O(1895),
@@ -5414,7 +5458,11 @@ const ScriptRef gFunctionScriptTable[NUM_SCRIPT_IDS] = {
     [EVENT_M01E01A_L001] =           { EVENT_M01E01A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E01A_L001"),           s_script_EVENT_M01E01A_L001           },
     [EVENT_M01E01A_L002] =           { EVENT_M01E01A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E01A_L002"),           s_script_EVENT_M01E01A_L002           },
     [EVENT_M01E01A_L003] =           { EVENT_M01E01A_L003,           SCRIPT_TYPE_10, _("EVENT_M01E01A_L003"),           s_script_EVENT_M01E01A_L003           },
+#ifdef SKY_STORY
+    [EVENT_M01E02A_L001] =           { EVENT_M01E02A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L001"),           s_script_SKY_DEMO_END                 },
+#else
     [EVENT_M01E02A_L001] =           { EVENT_M01E02A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L001"),           s_script_EVENT_M01E02A_L001           },
+#endif
     [EVENT_M01E02A_L001B] =          { EVENT_M01E02A_L001B,          SCRIPT_TYPE_12, _("EVENT_M01E02A_L001B"),          s_script_EVENT_M01E02A_L001B          },
     [EVENT_M01E02A_L001C] =          { EVENT_M01E02A_L001C,          SCRIPT_TYPE_10, _("EVENT_M01E02A_L001C"),          s_script_EVENT_M01E02A_L001C          },
     [EVENT_M01E02A_L002] =           { EVENT_M01E02A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L002"),           s_script_EVENT_M01E02A_L002           },

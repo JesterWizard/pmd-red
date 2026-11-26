@@ -210,6 +210,14 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
                 scriptID = DEBUG_BOOT_EVENT;
 #endif
                 break;
+#if defined(SKY_STORY) && !defined(DEBUG_BOOT_MAP)
+            case STARTMODE_CONTINUE_GAME:
+                /* The demo ends after chapter 1: a finished save goes back to
+                 * the demo-end message. */
+                if (!ScriptVarScenarioBefore(SCENARIO_MAIN, 3, 0))
+                    scriptID = SKY_DEMO_END_EVENT;
+                break;
+#endif
             case STARTMODE_GROUND:
             case STARTMODE_3:
                 sub_8001D88();

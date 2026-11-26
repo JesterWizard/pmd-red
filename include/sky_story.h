@@ -123,6 +123,12 @@ void SkyBubbles_Start(s32 mode);
 bool8 SkyBubbles_Active(void);
 void SkyBubbles_SetBrightness(s32 brightness);
 void SkyBubbles_Draw(void);
+
+/* Demo end after chapter 1 (SKY_SAVE_GAME / SKY_DEMO_TO_TITLE). The demo-end
+ * event reuses Red's chapter 2 start slot, which the sky build never reaches. */
+#define SKY_DEMO_END_EVENT EVENT_M01E02A_L001
+bool8 SkyStory_SaveGame(void);
+void SkyStory_DemoToTitle(void);
 void SkyBubbles_DrawCutaway(void);
 
 /* Beach Cave Pit boss cutscene (src/dungeon_cutscene_beach_cave.c). */

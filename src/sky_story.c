@@ -20,6 +20,9 @@
 #include "constants/fixed_rooms.h"
 #include "constants/monster.h"
 #include "event_flag.h"
+#include "adventure_info.h"
+#include "menu_input.h"
+#include "save.h"
 #include "pokemon_3.h"
 #include "structs/str_dungeon.h"
 #include "structs/str_file_system.h"
@@ -204,3 +207,33 @@ s16 SkyStory_RemapFixedRoomSpecies(s16 species)
 }
 
 #endif /* SKY_STORY */
+
+#ifdef SKY_STORY
+/* Demo end (chapter 1): SKY_SAVE_GAME writes the adventure like Red's
+ * between-mode save (src/main_loops.c QuickSave_Async); returns TRUE when it
+ * was written. SKY_DEMO_TO_TITLE resets to the boot / title screens. */
+bool8 SkyStory_SaveGame(void)
+{
+    s32 status;
+    s32 unused = 0;
+    DungeonLocation dl = { .id = DUNGEON_OUT_ON_RESCUE, .floor = 0 };
+
+    SetDungeonLocationInfo(&dl);
+    sub_80140DC();
+    status = WriteSavetoPak(&unused, 1);
+    if (status == SAVE_COMPLETED)
+        status = sub_80121E0(0xF1206);
+    sub_8014114();
+    return status == SAVE_COMPLETED;
+}
+
+void SkyStory_DemoToTitle(void)
+{
+    REG_IME = 0;
+    DmaStop(0);
+    DmaStop(1);
+    DmaStop(2);
+    DmaStop(3);
+    SoftReset(RESET_ALL);
+}
+#endif
