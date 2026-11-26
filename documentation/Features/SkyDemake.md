@@ -160,12 +160,43 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
 
 ## Music
 
-EoS's sequences on Red's instruments
+EoS's sequences on EoS's own instruments
 ([`tools/eos_music/convert_eos_bgm.py`](../../tools/eos_music/convert_eos_bgm.py)):
 SMDL → MIDI (`sound/songs/midi/sky_*.mid`) → `mid2agb` →
 `sound/songs/seq_061.s`–`seq_068.s` (song ids 61–68, `MUS_SKY_*` in
-`include/sky_story.h`). Only the notes come from EoS; each track is mapped to a
-Red voice of `bank_000` by role (drums, bass, pad, lead, bells).
+`include/sky_story.h`).
+
+Instruments come from EoS's DSE sound banks
+([`swdl.py`](../../tools/eos_music/swdl.py) parses them,
+[`sky_soundfont.py`](../../tools/eos_music/sky_soundfont.py) converts them):
+
+- **Samples**: the 204 samples of `SOUND/BGM/bgm.swd` the songs use, decoded
+  (IMA-ADPCM / PCM), resampled to at most 18157 Hz (the mixer rate),
+  normalised to full 8-bit scale, in
+  `sound/direct_sound_samples/sky/eos_NNN.bin`. Loop points are kept: the
+  loop length is rounded to whole samples and the playback rate adjusted to
+  match.
+- **WaveData**: `sound/songs/sky_samples.s`, one per sample and tuning (349,
+  1.91 MB). DSE plays a note at `32728 * 2^((note - root + ctune + ftune/256)/12)`
+  Hz. That pitch is baked into the WaveData `freq`, because m4a ignores a
+  DirectSound voice's base key.
+- **Voicegroups**: every song has its own voicegroup (`sky_vg_bgmNNNN`, at the
+  top of the song's `.s`) built from its `bgmNNNN.swd`. The MIDI program is
+  the EoS program id. A program with one split is a DirectSound voice. One
+  with several splits is a KeySplit voice. A drum kit with per-key pan is a
+  DrumTable voice. Each DSE envelope (attack, hold, decay, sustain, decay2,
+  release) is approximated by m4a ADSR bytes.
+- **Volumes**: split, program and sample volume, and the normalisation gain,
+  scale note velocities. EoS volume × expression becomes MIDI volume, and pitch
+  bends are kept. Each song's master volume comes from an offline model of the
+  m4a mixer ([`m4a_render.py`](../../tools/eos_music/m4a_render.py)) so the
+  8-bit mix, which wraps instead of clipping, keeps headroom.
+- **Engine**: in the sky build the mixer uses 12 DirectSound channels instead
+  of Red's 5, and the BGM player has 16 tracks instead of 12 (`src/m4a.c`,
+  `sound/music_player_table.inc`). The vanilla build is unchanged.
+
+Not ported: LFOs (vibrato), key groups, and layered splits (the first split
+wins).
 
 | Id | EoS | Used for |
 |---|---|---|
@@ -233,7 +264,7 @@ overlay 9 (the jukebox) and the names from the "Music Tracks" strings;
 `tools/eos_music/convert_eos_bgm.py` converts every track. The eight the story
 uses keep song ids 61–68; the other 133 are `sound/songs/sky_bgm_NNNN.s`,
 appended after Red's song table (`sound/sky_jukebox_songs.inc`, song ids
-948–1080), and `IsBGSong` accepts that range (≈800 KB).
+940–1072), and `IsBGSong` accepts that range (≈1.4 MB with their voicegroups; the shared EoS samples are another 1.9 MB).
 
 ![Sky Jukebox](images/sky_jukebox.png)
 
@@ -362,7 +393,9 @@ Winning the boss fight by mashing A needs a strong team; for that test set
   Red feature (Sky Jukebox, Trade Team, Rename Team, Send Demo Dungeon,
   Nintendo WFC) are left out of the top menu. The jukebox has no Loop or
   Lock; every track loops as converted.
-- Music uses Red's instruments; only EoS's notes are ported.
+- Music uses EoS's samples at 8 bits and at most 18157 Hz. LFO vibrato, key
+  groups and layered splits are not ported, and envelopes are approximated.
+  12 mixer channels cost more CPU than Red's 5.
 - Sprites and the Relic Fragment use Red's 13 shared overworld palettes, so
   some colours shift (the fragment's red mark becomes grey; Turtwig loses its
   yellow). Converted sprites lack Red's cutscene animation groups 13+ (they

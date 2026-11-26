@@ -1,6 +1,11 @@
 
 	.equiv TRACK_SIZE, 0x50
+#ifdef SKY_STORY
+	@ EoS songs (sky story pack) use up to 16 tracks.
+	.equiv NUM_TRACKS_BGM, 16
+#else
 	.equiv NUM_TRACKS_BGM, 12
+#endif
 	.equiv NUM_TRACKS_FANFARE, 6
 	.equiv NUM_TRACKS_SE1, 1
 	.equiv NUM_TRACKS_SE2, 1

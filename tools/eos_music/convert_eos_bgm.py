@@ -1,33 +1,33 @@
 #!/usr/bin/env python3
-"""Convert Explorers of Sky BGM sequences (SOUND/BGM/bgmNNNN.smd) into Rescue
-Team m4a songs that play on Red's main BGM voicegroup (bank_000).
+"""Convert Explorers of Sky BGM (SOUND/BGM/bgmNNNN.smd + its bgmNNNN.swd
+instrument bank) into Rescue Team m4a songs that play on EoS's own
+instruments.
 
-    tools/eos_music/convert_eos_bgm.py EOS.nds
+    tools/eos_music/convert_eos_bgm.py EOS.nds [--jukebox-only]
 
-Also converts every Sky Jukebox track (EoS overlay 9's track -> bgm table,
-names from the "Music Tracks" strings): tracks not in SONGS become
-sound/songs/sky_bgm_NNNN.s, appended to the song table after its last entry
-(sound/sky_jukebox_songs.inc, under SKY_STORY), and
-src/data/sky_jukebox_data.h lists all 141 tracks with their song ids.
+For each song: SMDL -> MIDI (sound/songs/midi/*.mid, MIDI program = EoS
+program id) -> mid2agb -> sound/songs/<label>.s, with the song's own
+voicegroup (sky_vg_bgmNNNN) generated from bgmNNNN.swd in front of it
+(see sky_soundfont.py). The EoS samples every song uses become WaveData in
+sound/songs/sky_samples.s (+ sound/direct_sound_samples/sky/*.bin).
 
-For each song in SONGS: SMDL -> MIDI (sound/songs/midi/sky_*.mid) -> mid2agb
--> sound/songs/seq_NNN.s. Only the note data comes from EoS; the instruments
-are Red's (EoS's DS sample banks are not ported). Each EoS track is mapped to
-a Red voice by role:
+  * SONGS (song ids 61..68) are the story songs, used by the sky scenes.
+  * every Sky Jukebox track (EoS overlay 9's track -> bgm table, names from
+    the "Music Tracks" strings) not in SONGS becomes sound/songs/sky_bgm_NNNN.s,
+    appended to the song table after its last entry
+    (sound/sky_jukebox_songs.inc, under SKY_STORY), and
+    src/data/sky_jukebox_data.h lists all 141 tracks with their song ids.
 
-  * EoS programs 126/127 (drum kits) -> Red voice 127 (drum kit, GM-style keys
-    in both games, so drum keys are kept).
-  * other tracks by register (median pitch) and note density:
-    bass -> 95, low strings/pad -> 46, mid -> 14/5, high lead -> 76,
-    very high bells -> 118.
-  * per-song overrides in SONGS where a track clearly wants something else.
+Volumes: split / program / sample volume (and the gain that normalised each
+sample to full 8-bit scale) scale note velocities; EoS volume x expression
+becomes MIDI volume; each song's master volume is chosen with an offline m4a
+mix model (m4a_render.py) so the 8-bit mixer keeps headroom.
 
-EoS keys line up with MIDI keys (checked against Red's own arrangements of
-Welcome to the World of Pokémon, which both games share).
+`--jukebox-only` keeps seq_061..068 as they are (their voicegroups are still
+built, so sky_samples.s keeps their samples).
 """
 from __future__ import annotations
 
-import statistics
 import struct
 import subprocess
 import sys
@@ -36,48 +36,30 @@ from pathlib import Path
 import ndspy.rom
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import m4a_render  # noqa: E402
 import smdl  # noqa: E402
+import sky_soundfont  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 MID2AGB = ROOT / "tools" / "mid2agb" / "mid2agb"
 SONG_DIR = ROOT / "sound" / "songs"
 MIDI_DIR = SONG_DIR / "midi"
 
-# (song slot / music id, EoS bgm id, name, master volume, {eos track index: red voice})
+# (song slot / music id, EoS bgm id, name)
 SONGS = [
     # EoS bgm0101 "Storm" is an ambient storm-noise loop, not music: the storm
     # scene keeps Red's Stormy Sea.
-    (61, 69, "sky_on_the_beach_at_dusk", 110, {}),
-    (62, 21, "sky_beach_cave", 110, {}),
-    (63, 15, "sky_boss_battle", 115, {}),
-    (64, 14, "sky_in_the_depths_of_the_pit", 110, {}),
-    (65, 130, "sky_title_theme", 110, {}),
-    (66, 2, "sky_top_menu_theme", 105, {}),
-    (67, 1, "sky_exploration_team_theme", 110, {}),
-    (68, 6, "sky_welcome_to_the_world_of_pokemon", 105, {}),
+    (61, 69, "sky_on_the_beach_at_dusk"),
+    (62, 21, "sky_beach_cave"),
+    (63, 15, "sky_boss_battle"),
+    (64, 14, "sky_in_the_depths_of_the_pit"),
+    (65, 130, "sky_title_theme"),
+    (66, 2, "sky_top_menu_theme"),
+    (67, 1, "sky_exploration_team_theme"),
+    (68, 6, "sky_welcome_to_the_world_of_pokemon"),
 ]
 
-DRUM_PROGRAMS = {126, 127}
-
-
-def pick_voice(track: smdl.Track) -> int:
-    progs = [p for _, p in track.programs]
-    if any(p in DRUM_PROGRAMS for p in progs):
-        return 127
-    keys = [n.key for n in track.notes]
-    med = statistics.median(keys)
-    span = max(keys) - min(keys)
-    if med < 50:
-        return 95          # bass
-    if med < 62:
-        return 46 if span > 6 else 95
-    if med < 70:
-        return 14          # mid line
-    if med < 78:
-        return 76          # lead
-    if med < 88:
-        return 5           # high line
-    return 118             # bells / sparkles
+RENDER_SECONDS = 90
 
 
 def vlq(n: int) -> bytes:
@@ -100,8 +82,40 @@ def midi_track(events: list[tuple[int, int, bytes]]) -> bytes:
     return b"MTrk" + struct.pack(">I", len(body)) + bytes(body)
 
 
-def song_to_midi(song: smdl.Song, overrides: dict[int, int]) -> bytes:
-    tracks = []
+def _at(changes: list[tuple[int, int]], tick: int, default: int) -> int:
+    v = default
+    for t, x in changes:
+        if t > tick:
+            break
+        v = x
+    return v
+
+
+def tick_seconds(song: smdl.Song):
+    tempos = sorted({(t, max(bpm, 1)) for tr in song.tracks for t, bpm in tr.tempos})
+    if not tempos or tempos[0][0] != 0:
+        tempos.insert(0, (0, 120))
+    marks = []
+    sec = 0.0
+    for i, (t, bpm) in enumerate(tempos):
+        marks.append((t, sec, bpm))
+        if i + 1 < len(tempos):
+            sec += (tempos[i + 1][0] - t) / song.tpqn * 60 / bpm
+
+    def conv(tick: int) -> float:
+        for t, s, bpm in reversed(marks):
+            if tick >= t:
+                return s + (tick - t) / song.tpqn * 60 / bpm
+        return 0.0
+    return conv
+
+
+def song_programs(song: smdl.Song) -> set[int]:
+    return {p for t in song.tracks if t.notes for _, p in t.programs}
+
+
+def song_to_midi(song: smdl.Song, tones: dict, sf: sky_soundfont.SoundFont):
+    """Returns (midi bytes, master volume, stats)."""
     loop = None
     end = 0
     for t in song.tracks:
@@ -120,35 +134,91 @@ def song_to_midi(song: smdl.Song, overrides: dict[int, int]) -> bytes:
     if loop is not None:
         cond.append((loop, 1, b"\xFF\x06\x01["))
         cond.append((end, 9, b"\xFF\x06\x01]"))
-    tracks.append(midi_track(cond))
 
-    ch = 0
+    # pass 1: notes with their split's velocity factor
+    tracks = []
     for t in song.tracks:
         if not t.notes:
             continue
-        if ch == 9:
-            ch += 1  # keep MIDI channel 10 free of meaning for mid2agb
+        progs = sorted(t.programs)
+        mix = sorted([(tk, "v", v) for tk, v in t.volumes] + [(tk, "e", e) for tk, e in t.expressions])
+        notes = []
+        for n in t.notes:
+            prog = _at(progs, n.tick, 0)
+            key = max(0, min(127, n.key))
+            tone = tones.get((prog, key))
+            if tone is None or tone.gain <= 0:
+                continue
+            notes.append((n, key, prog, tone, n.vel * tone.gain))
+        if notes:
+            tracks.append((t, progs, mix, notes))
+        if len(tracks) >= 16:
+            break
+    peak = max((x[4] for tr in tracks for x in tr[3]), default=1.0)
+    scale = 127 / peak if peak > 0 else 1.0
+
+    def vel(raw: float) -> int:
+        return max(1, min(127, round(raw * scale)))
+
+    # pass 2: MIDI + notes for the mix model
+    to_s = tick_seconds(song)
+    out = [midi_track(cond)]
+    render_notes = []
+    for ch, (t, progs, mix, notes) in enumerate(tracks):
         c = ch & 0xF
-        ch += 1
-        voice = overrides.get(t.index, pick_voice(t))
-        ev = [(0, 0, bytes([0xC0 | c, voice & 0x7F]))]
-        for tick, vol in t.volumes:
-            ev.append((tick, 1, bytes([0xB0 | c, 7, min(vol, 127)])))
-        for tick, ex in t.expressions:
-            ev.append((tick, 1, bytes([0xB0 | c, 11, min(ex, 127)])))
+        ev = []
+        for tick, p in progs:
+            ev.append((tick, 0, bytes([0xC0 | c, p & 0x7F])))
+        vol_changes = []
+        v, e = 127, 127
+        for tick, kind, x in mix:
+            if kind == "v":
+                v = min(x, 127)
+            else:
+                e = min(x, 127)
+            vol_changes.append((tick, round(v * e / 127)))
+        if not vol_changes or vol_changes[0][0] > 0:
+            vol_changes.insert(0, (0, 127))
+        for tick, x in vol_changes:
+            ev.append((tick, 1, bytes([0xB0 | c, 7, x])))
         for tick, pan in t.pans:
             ev.append((tick, 1, bytes([0xB0 | c, 10, min(pan, 127)])))
-        for n in t.notes:
-            key = max(0, min(127, n.key))
+        for tick, b in t.bends:
+            m = max(0, min(16383, b + 8192))
+            ev.append((tick, 1, bytes([0xE0 | c, m & 0x7F, m >> 7])))
+        for n, key, prog, tone, raw in notes:
             dur = max(1, n.dur)
-            ev.append((n.tick, 3, bytes([0x90 | c, key, max(1, min(n.vel, 127))])))
+            vv = vel(raw)
+            ev.append((n.tick, 3, bytes([0x90 | c, key, vv])))
             ev.append((n.tick + dur, 2, bytes([0x80 | c, key, 0])))
-        tracks.append(midi_track(ev))
-        if ch >= 16:
-            break
+            start = to_s(n.tick)
+            if start < RENDER_SECONDS:
+                drum = tone.pan != 0
+                render_notes.append((start, to_s(n.tick + dur) - start, key, vv,
+                                     _at(vol_changes, n.tick, 127),
+                                     _at(t.pans, n.tick, 64) - 64,
+                                     tone.pan if drum else 0, tone.adsr, tone.wave_label, key))
+        out.append(midi_track(ev))
 
-    header = b"MThd" + struct.pack(">IHHH", 6, 1, len(tracks), song.tpqn)
-    return header + b"".join(tracks)
+    header = b"MThd" + struct.pack(">IHHH", 6, 1, len(out), song.tpqn)
+    seconds = min(RENDER_SECONDS, to_s(end) + 2)
+    mvl, level = m4a_render.headroom_mvl(render_notes, sf.render_waves(), seconds)
+    return header + b"".join(out), mvl, level
+
+
+def convert(rom, sf, bgm: int, label: str, out: Path, midi_name: str, name: str) -> None:
+    song = smdl.parse(rom.getFileByName(f"SOUND/BGM/bgm{bgm:04d}.smd"))
+    vg, vg_asm, tones = sf.voicegroup(bgm, song_programs(song))
+    data, mvl, level = song_to_midi(song, tones, sf)
+    mid = MIDI_DIR / f"{midi_name}.mid"
+    mid.write_bytes(data)
+    subprocess.run([str(MID2AGB), str(mid), str(out), f"-L{label}", f"-V{mvl:03d}",
+                    "-G000", "-P050", "-E"], check=True)
+    text = out.read_text().replace("voicegroup000", vg)
+    out.write_text(f"@ Explorers of Sky demake: EoS bgm{bgm:04d} ({name}) on EoS's own instruments\n"
+                   f"@ (bgm{bgm:04d}.swd), generated by tools/eos_music/convert_eos_bgm.py\n"
+                   f"#ifdef SKY_STORY\n" + vg_asm + text + "#endif\n")
+    print(f"{label}: EoS bgm{bgm:04d} {name}: mvl {mvl} (mix level {level:.0f} at 127)")
 
 
 # EoS US overlay 9 (Sky Jukebox): u16 bgm id per jukebox track.
@@ -159,19 +229,29 @@ JUKEBOX_INC = ROOT / "sound" / "sky_jukebox_songs.inc"
 JUKEBOX_C = ROOT / "src" / "data" / "sky_jukebox_data.h"
 
 
-def convert(rom, bgm: int, label: str, out: Path, mvl: int, overrides: dict, name: str) -> None:
-    song = smdl.parse(rom.getFileByName(f"SOUND/BGM/bgm{bgm:04d}.smd"))
-    mid = MIDI_DIR / f"{label}.mid"
-    mid.write_bytes(song_to_midi(song, overrides))
-    subprocess.run([str(MID2AGB), str(mid), str(out), f"-L{label}", f"-V{mvl:03d}",
-                    "-G000", "-P050", "-E"], check=True)
-    text = out.read_text().replace("voicegroup000", "bank_000")
-    out.write_text(f"@ Explorers of Sky demake: EoS bgm{bgm:04d} ({name}) on Red voices,\n"
-                   f"@ generated by tools/eos_music/convert_eos_bgm.py\n"
-                   f"#ifdef SKY_STORY\n" + text + "#endif\n")
+def sky_song_count(path: Path) -> int:
+    """Number of `song` entries in the song table as the sky build sees it
+    (SKY_STORY defined: `#else` branches skipped), before the jukebox include."""
+    stack = []          # True while the current #if branch is live
+    count = 0
+    for line in path.read_text().splitlines():
+        s = line.strip()
+        if s.startswith("#ifdef") or s.startswith("#ifndef"):
+            live = (s.split()[1] == "SKY_STORY") == s.startswith("#ifdef")
+            stack.append(live)
+        elif s.startswith("#else"):
+            stack[-1] = not stack[-1]
+        elif s.startswith("#endif"):
+            stack.pop()
+        elif all(stack):
+            if "sky_jukebox_songs.inc" in s:
+                break
+            if s.startswith("song "):
+                count += 1
+    return count
 
 
-def jukebox(rom) -> None:
+def jukebox(rom, sf) -> None:
     import ndspy.codeCompression as cc
     from skytemple_files.common.types.file_types import FileType
     from skytemple_files.common.util import get_ppmdu_config_for_rom
@@ -186,8 +266,8 @@ def jukebox(rom) -> None:
     assert len(names) == JUKEBOX_TRACKS
 
     # Red's table ends here; jukebox songs are appended after it.
-    first = sum(1 for line in SONG_TABLE.read_text().splitlines() if line.startswith("song "))
-    existing = {bgm: slot for slot, bgm, *_ in SONGS}
+    first = sky_song_count(SONG_TABLE)
+    existing = {bgm: slot for slot, bgm, _ in SONGS}
     extra = []
     song_ids = []
     for bgm, name in zip(bgms, names):
@@ -196,7 +276,7 @@ def jukebox(rom) -> None:
             continue
         label = f"sky_bgm_{bgm:04d}"
         if label not in extra:
-            convert(rom, bgm, label, SONG_DIR / f"{label}.s", 105, {}, name)
+            convert(rom, sf, bgm, label, SONG_DIR / f"{label}.s", label, name)
             extra.append(label)
         song_ids.append(first + extra.index(label))
     JUKEBOX_INC.write_text("@ Sky Jukebox songs (tools/eos_music/convert_eos_bgm.py), song ids "
@@ -215,30 +295,26 @@ def jukebox(rom) -> None:
     print(f"jukebox: {JUKEBOX_TRACKS} tracks, {len(extra)} new songs at {first}..")
 
 
+def convert_songs(rom, sf) -> None:
+    for slot, bgm, name in SONGS:
+        label = f"seq_{slot:03d}"
+        convert(rom, sf, bgm, label, SONG_DIR / f"{label}.s", name, name)
+
+
 def main() -> int:
     rom = ndspy.rom.NintendoDSRom.fromFile(sys.argv[1])
     MIDI_DIR.mkdir(parents=True, exist_ok=True)
+    sf = sky_soundfont.SoundFont(rom, ROOT)
     if "--jukebox-only" not in sys.argv:
-        convert_songs(rom)
-    jukebox(rom)
+        convert_songs(rom, sf)
+    else:
+        for _, bgm, _ in SONGS:
+            song = smdl.parse(rom.getFileByName(f"SOUND/BGM/bgm{bgm:04d}.smd"))
+            sf.voicegroup(bgm, song_programs(song))
+    jukebox(rom, sf)
+    count, size = sf.write()
+    print(f"samples: {len(sf.used_samples())} EoS samples, {count} WaveData, {size} bytes")
     return 0
-
-
-def convert_songs(rom) -> None:
-    for slot, bgm, name, mvl, overrides in SONGS:
-        song = smdl.parse(rom.getFileByName(f"SOUND/BGM/bgm{bgm:04d}.smd"))
-        mid = MIDI_DIR / f"{name}.mid"
-        mid.write_bytes(song_to_midi(song, overrides))
-        label = f"seq_{slot:03d}"
-        out = SONG_DIR / f"{label}.s"
-        subprocess.run([str(MID2AGB), str(mid), str(out), f"-L{label}", f"-V{mvl:03d}",
-                        "-G000", "-P050", "-E"], check=True)
-        text = out.read_text()
-        text = text.replace("voicegroup000", "bank_000")
-        out.write_text(f"@ Explorers of Sky demake: EoS bgm{bgm:04d} ({name}) on Red voices,\n"
-                       f"@ generated by tools/eos_music/convert_eos_bgm.py\n"
-                       f"#ifdef SKY_STORY\n" + text + "#endif\n")
-        print(f"{label}: EoS bgm{bgm:04d} {name}")
 
 
 if __name__ == "__main__":
