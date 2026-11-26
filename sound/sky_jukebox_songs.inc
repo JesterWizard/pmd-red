@@ -1,4 +1,4 @@
-@ Sky Jukebox songs (tools/eos_music/convert_eos_bgm.py), song ids 940..1072
+@ Sky Jukebox songs (tools/eos_music/convert_eos_bgm.py), song ids 940..1073
 song sky_bgm_0007,  0,  0
 song sky_bgm_0073,  0,  0
 song sky_bgm_0070,  0,  0
@@ -58,6 +58,7 @@ song sky_bgm_0050,  0,  0
 song sky_bgm_0051,  0,  0
 song sky_bgm_0108,  0,  0
 song sky_bgm_0132,  0,  0
+song sky_bgm_0016,  0,  0  @ 999 = STOP_BGM: never played
 song sky_bgm_0016,  0,  0
 song sky_bgm_0084,  0,  0
 song sky_bgm_0085,  0,  0

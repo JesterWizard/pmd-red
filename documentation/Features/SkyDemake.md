@@ -1120,6 +1120,10 @@ overlay 9 (the jukebox) and the names from the "Music Tracks" strings;
 uses keep song ids 61–68; the other 133 are `sound/songs/sky_bgm_NNNN.s`,
 appended after Red's song table (`sound/sky_jukebox_songs.inc`, song ids
 940–1072), and `IsBGSong` accepts that range (≈1.4 MB with their voicegroups; the shared EoS samples are another 1.9 MB).
+Song id 999 is Red's `STOP_BGM`, which `StartNewBGM` / `FadeInNewBGM` ignore,
+so the converter keeps that slot as a never-played placeholder and the
+jukebox songs after it start at 1000 ("Dialga's Fight to the Finish!" used to
+land on 999 and stayed silent).
 
 ![Sky Jukebox](images/sky_jukebox.png)
 

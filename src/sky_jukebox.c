@@ -52,7 +52,7 @@ static const WindowTemplate sJukeboxDummyWindow = {
  * windows small (6 entries per page, about 330 tiles with the status
  * window), like Red's Continue screen; 7 entries overran into the art. */
 static const WindowTemplate sJukeboxListWindow = {
-    0, 3, 2, 1, 24, 12, 12, 0, NULL
+    0, 3, 2, 2, 24, 11, 11, 0, NULL
 };
 
 static const WindowTemplate sJukeboxStatusWindow = {
