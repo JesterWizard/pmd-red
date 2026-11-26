@@ -437,13 +437,13 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_NORMAL),
     ALERT_CUE(6), /* partner strolls along the shore and looks out to sea */
     AWAIT_CUE(5),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_INSPIRED),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_INSPIRED),
     MSG_NPC(NPC_PARTNER, _(" Wow! What a beautiful sight!")),
     TEXTBOX_CLEAR,
     FADE_OUT(TRUE, 20), /* fade the scene out and back in around the CG */
     SKY_CUTAWAY(SKY_CUTAWAY_SUNSET_SEA_ANIM, 240), /* EoS m01a0205 */
     FADE_IN(TRUE, 20),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_NORMAL),
     MSG_NPC(NPC_PARTNER, _(" When the weather's good, the\nKrabby come out at sundown to\nblow bubbles...")),
     MSG_NPC(NPC_PARTNER, _(" All those bubbles, reflecting the\nsetting sun off the waves...")),
     MSG_NPC(NPC_PARTNER, _(" It's always beautiful.")),
@@ -462,14 +462,14 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     ALERT_CUE(6), /* partner walks closer */
     AWAIT_CUE(5),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SUPRISED),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_SUPRISED),
     MSG_NPC(NPC_PARTNER, _(" Waah!{WAIT_PRESS} Someone has collapsed on\nthe sand!")),
     TEXTBOX_CLEAR,
     ALERT_CUE(6), /* partner runs over */
     AWAIT_CUE(5),
     MSG_NPC(NPC_PARTNER, _(" What happened?!{WAIT_PRESS} Are you OK?")),
     TEXTBOX_CLEAR,
-    PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_PAINED),
+    PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_PAINED),
     MSG_QUIET(NPC_PLAYER, _("(..................)")),
     MSG_QUIET(NPC_PLAYER, _("(...Ugh...)")),
     TEXTBOX_CLEAR,
@@ -478,12 +478,12 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_SOUTH),
     ALERT_CUE(6), /* partner: "!" */
     AWAIT_CUE(5),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_NORMAL),
     MSG_NPC(NPC_PARTNER, _(" You're awake!{WAIT_PRESS} Thank goodness!")),
     TEXTBOX_CLEAR,
     CALL_SCRIPT(LOOK_AROUND_FUNC),
     WAIT(45),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_NORMAL),
     MSG_QUIET(NPC_PLAYER, _("(Where...where am I...?)")),
     TEXTBOX_CLEAR,
     WAIT(10),
@@ -495,9 +495,9 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     ALERT_CUE(6), /* partner introduces themself */
     AWAIT_CUE(5),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_HAPPY),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_HAPPY),
     MSG_NPC(NPC_PARTNER, _(" Anyway, I'm {NAME_1}.{WAIT_PRESS}\nHappy to meet you!")),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_NORMAL),
     MSG_NPC(NPC_PARTNER, _(" And who are you?")),
     MSG_NPC(NPC_PARTNER, _(" I don't think I've seen you\naround before.")),
     TEXTBOX_CLEAR,
@@ -508,7 +508,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     WAIT(30),
     ALERT_CUE(6), /* partner jumps in surprise */
     AWAIT_CUE(5),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SUPRISED),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_SUPRISED),
     MSG_NPC(NPC_PARTNER, _(" What?{WAIT_PRESS} You say you're a human?")),
     MSG_NPC(NPC_PARTNER, _(" You look like a totally normal\n{POKEMON_0} to me!")),
     TEXTBOX_CLEAR,
@@ -519,15 +519,15 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     FANFARE_PLAY2(482),
     CALL_SCRIPT(SHOCK_FUNC),
     WAIT_FANFARE2(482),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_SUPRISED),
+    PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_SUPRISED),
     MSG_QUIET(NPC_PLAYER, _("(It's...it's true!)")),
     MSG_QUIET(NPC_PLAYER, _("(I've turned into a {POKEMON_0}!)")),
     TEXTBOX_CLEAR,
     WAIT(15),
-    PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_WORRIED),
+    PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_WORRIED),
     MSG_QUIET(NPC_PLAYER, _("(...But how did this happen?{WAIT_PRESS}\nI don't remember anything...)")),
     TEXTBOX_CLEAR,
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_WORRIED),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_WORRIED),
     MSG_NPC(NPC_PARTNER, _(" You're...{WAIT_PRESS}a little odd...")),
     MSG_NPC(NPC_PARTNER, _(" Are you pulling some kind of\ntrick on me?")),
     TEXTBOX_CLEAR,
@@ -541,7 +541,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     MSG_NPC(NPC_PARTNER, _(" You're telling me the truth?")),
     MSG_NPC(NPC_PARTNER, _(" OK, how about your name?{WAIT_PRESS}\nWhat's your name?")),
     TEXTBOX_CLEAR,
-    PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_NORMAL),
     MSG_QUIET(NPC_PLAYER, _("(My name?{WAIT_PRESS} That's right,\nmy name is...)")),
     TEXTBOX_CLEAR,
     WAIT(20),
@@ -550,10 +550,10 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     WAIT(20),
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_PLAYER, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_WORRIED),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_WORRIED),
     MSG_NPC(NPC_PARTNER, _(" So you're named {NAME_0}?")),
     TEXTBOX_CLEAR,
-    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_NORMAL),
     MSG_NPC(NPC_PARTNER, _(" OK.{WAIT_PRESS} Well, you don't seem to be a\nbad Pokémon, at least.")),
     TEXTBOX_CLEAR,
     WAIT(15),
@@ -705,7 +705,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    WALK_RELATIVE(768, -100, -4), /* level with the hero (y 21.5 tiles) */
+    WALK_RELATIVE(768, -100, 0), /* EoS m4 (39, 21.5): 4 px above the hero */
     WAIT(10),
     CALL_SCRIPT(JUMP_ANGRY_FUNC),
     ALERT_CUE(5),
@@ -1101,9 +1101,9 @@ static const struct ScriptCommand s_gs178_g3_s0_lives1_dlg0[] = { /* Partner */
 /* Lives / sectors                                                            */
 /* ------------------------------------------------------------------------ */
 
-/* g5 / m01a0103: PLAYER (36,21) facing right */
+/* g5 / m01a0103: PLAYER (36,22) facing right */
 static const struct GroundLivesData s_gs178_g5_s0_lives[] = {
-    /*  0 */ {   0,   2,   0,   0, {  36,  21, 0, CPOS_HALFTILE }, {
+    /*  0 */ {   0,   2,   0,   0, {  36,  22, 0, CPOS_HALFTILE }, {
         [0] = s_gs178_g5_s0_lives0_dlg0,
     } },
 };
@@ -1125,10 +1125,10 @@ static const struct GroundLivesData s_gs178_g6_s1_lives[] = {
     } },
 };
 
-/* g1 / m01a0204-0208: PLAYER (36,21) asleep, ATTENDANT1 enters from (86,24);
+/* g1 / m01a0204-0208: PLAYER (36,22) asleep, ATTENDANT1 enters from (86,24);
  * Zubat (58,21) / Koffing (59,24) arrive from the right in sector 1. */
 static const struct GroundLivesData s_gs178_g1_s0_lives[] = {
-    /*  0 */ {   0,   2,   0,   0, {  36,  21, 0, CPOS_HALFTILE }, {
+    /*  0 */ {   0,   2,   0,   0, {  36,  22, 0, CPOS_HALFTILE }, {
         [0] = s_gs178_g1_s0_lives0_dlg0,
     } },
     /*  1 */ {  34,   6,   0,   0, {  86,  24, 0, CPOS_HALFTILE }, {
