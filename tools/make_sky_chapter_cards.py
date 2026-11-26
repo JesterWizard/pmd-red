@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render Explorers of Sky style chapter cards (black screen, EoS banner font).
+"""Render Explorers of Sky style chapter cards (EoS banner font over black, or\nover the level EoS shows behind the title: Sharpedo Bluff for chapter 1).
 
 Reads the banner font (FONT/banner.bin + FONT/b_pal.bin) from an Explorers of
 Sky ROM, draws "Chapter N" and the chapter title centred on black, and writes
@@ -68,6 +68,37 @@ class Banner:
         return img.crop((0, 0, max(1, x), 24))
 
 
+# Chapter -> (EoS level shown behind the title, brightness): EoS m01a0101
+# back_SetBanner2(LEVEL_V01P02A, ...) shows Sharpedo Bluff behind chapter 1.
+BACKGROUNDS = {1: ("v01p02a", 0.44)}
+
+
+def top(img: Image.Image) -> int:
+    """First row with a visible pixel."""
+    a = img.getchannel("A")
+    for y in range(img.height):
+        if any(a.getpixel((x, y)) for x in range(img.width)):
+            return y
+    return 0
+
+
+def render_level(rom, name: str) -> Image.Image:
+    from PIL import Image as _I
+    orig = _I.Image.putpalette
+    def pp(self, data, rawmode="RGB"):
+        if not isinstance(data, (bytes, bytearray, list)):
+            data = list(data)
+        return orig(self, data, rawmode)
+    _I.Image.putpalette = pp
+    bma = FileType.BMA.deserialize(rom.getFileByName(f"MAP_BG/{name}.bma"))
+    bpc = FileType.BPC.deserialize(rom.getFileByName(f"MAP_BG/{name}.bpc"))
+    bpl = FileType.BPL.deserialize(rom.getFileByName(f"MAP_BG/{name}.bpl"))
+    img = bma.to_pil(bpc, bpl, [None] * 8, False, False)
+    if isinstance(img, list):
+        img = img[0]
+    return img.convert("RGB")
+
+
 def main() -> int:
     rom = ndspy.rom.NintendoDSRom.fromFile(sys.argv[1])
     banner = Banner(rom)
@@ -76,8 +107,20 @@ def main() -> int:
         card = Image.new("RGBA", (240, 160), (0, 0, 0, 255))
         a = banner.render(f"Chapter {n}")
         b = banner.render(name)
-        card.alpha_composite(a, ((240 - a.width) // 2, 50))
-        card.alpha_composite(b, ((240 - b.width) // 2, 82))
+        if n in BACKGROUNDS:
+            # EoS back_SetBanner2(level, 0, x, y, ...): the level's picture
+            # from its top-left, darkened (measured: x0.44 on chapter 1's
+            # Sharpedo Bluff); the GBA's 160 lines take DS lines 16-175.
+            level, k = BACKGROUNDS[n]
+            bg = render_level(rom, level).crop((0, 16, 240, 176))
+            bg = bg.point(lambda v: int(v * k + 0.5))
+            card.alpha_composite(bg.convert("RGBA"), (0, 0))
+            # text tops as in EoS (DS lines 38 / 89), moved up with the crop
+            card.alpha_composite(a, ((240 - a.width) // 2, 38 - 16 - top(a)))
+            card.alpha_composite(b, ((240 - b.width) // 2, 89 - 16 - top(b)))
+        else:
+            card.alpha_composite(a, ((240 - a.width) // 2, 50))
+            card.alpha_composite(b, ((240 - b.width) // 2, 82))
         png = OUT / f"chapter{n}.png"
         card.convert("RGB").save(png)
         raw, pal, ntiles, ncolors, _ = title.convert_image(title.flatten_rgb(card))

@@ -372,7 +372,6 @@ static const struct ScriptCommand s_gs178_g7_s0_station_sref_script[] = {
     BGM_STOP,
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_KRABBY_BUBBLES),
-    SKY_CUTAWAY(SKY_CUTAWAY_SKY_DUSK, 150), /* EoS m01a0201: the sky at dusk */
     SKY_BUBBLES(SKY_BUBBLES_KRABBY_SAND), /* EoS supervision_SpecialActing(4, -4, 8) */
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
@@ -684,6 +683,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     SELECT_ANIMATION(2),
     UPDATE_NAME(UPDATE_NAME_SPEECH_SELF, NPC_PARTNER, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
+    SET_OBJ_FLAGS(0x80000), /* drawn over the beach rocks, as in EoS */
     CAMERA_INIT_PAN,
     AWAIT_CUE(6),
     WALK_RELATIVE(179, -156, 4),
