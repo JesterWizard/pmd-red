@@ -105,7 +105,9 @@ inner edge, 13 px between lines; portraits have EoS's 4 px frame, 14 px above
 the box,
 bottom portraits kept just above the box, and a full box clears for the next
 page instead of scrolling (`sSkyTextbox` in
-[`src/string_format.c`](../../src/string_format.c)). The dungeon message box has
+[`src/string_format.c`](../../src/string_format.c)). The box is narrower than Red's and
+speaker names vary, so a line that would run past it wraps at its last space
+and the rest joins the next line (`SkyWrapDialogueText`). The dungeon message box has
 the same box; it keeps Red's 7-row window (an 8th would reach the minimap's
 tiles), so when it is full it scrolls a line up before writing the next,
 and the minimap's tilemap stops at row 11 while it is up. As in EoS,
@@ -677,6 +679,10 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   has ([`tools/make_sky_gen4_portraits.py`](../../tools/make_sky_gen4_portraits.py)
   → `graphics/portraits/<species>/`, built by `convert_custom_portraits.py`
   into the custom portrait archive under `SKY_STORY`).
+  The same tool exports EoS's faces for every Red hero / partner choice and
+  for Zubat and Koffing into `graphics/portraits_sky/<species>/`; in the sky
+  build they replace those species' Red faces (Red's Charmander "Determined"
+  grins, EoS's frowns), the vanilla build keeps Red's.
 - **Sprites**: EoS's WAN sprites converted to Red's AX format by
   [`tools/convert_eos_wan_to_ax.py`](../../tools/convert_eos_wan_to_ax.py)
   (`batch EOS.nds 387-445 447-492 --names <dex name file>`). AX is WAN's GBA
@@ -762,7 +768,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c) |
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
-| Dialogue box layout | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
+| Dialogue box layout, word wrap (`SkyWrapDialogueText`) | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
 | Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---

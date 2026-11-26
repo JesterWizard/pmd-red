@@ -5,6 +5,7 @@
 #include "structs/rgb.h"
 #include "structs/str_mon_portrait.h"
 
+#ifndef SKY_STORY
 static const u8 sBulbasaurNormalPal[] = INCBIN_U8("graphics/portraits/bulbasaur/Normal.pal");
 static const u8 sBulbasaurNormalGfx[] = INCBIN_U8("graphics/portraits/bulbasaur/Normal.at4px");
 
@@ -27,6 +28,56 @@ static const PortraitGfx sBulbasaurPortraits = {
 };
 
 const SiroArchive gCustomKaoBulbasaur = { "SIRO", &sBulbasaurPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyBulbasaurNormalPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Normal.pal");
+static const u8 sSkyBulbasaurNormalGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Normal.at4px");
+static const u8 sSkyBulbasaurHappyPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Happy.pal");
+static const u8 sSkyBulbasaurHappyGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Happy.at4px");
+static const u8 sSkyBulbasaurPainedPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Pained.pal");
+static const u8 sSkyBulbasaurPainedGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Pained.at4px");
+static const u8 sSkyBulbasaurAngryPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Angry.pal");
+static const u8 sSkyBulbasaurAngryGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Angry.at4px");
+static const u8 sSkyBulbasaurWorriedPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Worried.pal");
+static const u8 sSkyBulbasaurWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Worried.at4px");
+static const u8 sSkyBulbasaurSadPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Sad.pal");
+static const u8 sSkyBulbasaurSadGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Sad.at4px");
+static const u8 sSkyBulbasaurCryingPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Crying.pal");
+static const u8 sSkyBulbasaurCryingGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Crying.at4px");
+static const u8 sSkyBulbasaurShoutingPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Shouting.pal");
+static const u8 sSkyBulbasaurShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Shouting.at4px");
+static const u8 sSkyBulbasaurTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/TearyEye.pal");
+static const u8 sSkyBulbasaurTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/TearyEye.at4px");
+static const u8 sSkyBulbasaurDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Determined.pal");
+static const u8 sSkyBulbasaurDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Determined.at4px");
+static const u8 sSkyBulbasaurJoyousPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Joyous.pal");
+static const u8 sSkyBulbasaurJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Joyous.at4px");
+static const u8 sSkyBulbasaurInspiredPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Inspired.pal");
+static const u8 sSkyBulbasaurInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Inspired.at4px");
+static const u8 sSkyBulbasaurSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Surprised.pal");
+static const u8 sSkyBulbasaurSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/bulbasaur/Surprised.at4px");
+
+static const PortraitGfx sSkyBulbasaurPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyBulbasaurNormalPal, sSkyBulbasaurNormalGfx },
+        { (const RGB_Struct *)sSkyBulbasaurHappyPal, sSkyBulbasaurHappyGfx },
+        { (const RGB_Struct *)sSkyBulbasaurPainedPal, sSkyBulbasaurPainedGfx },
+        { (const RGB_Struct *)sSkyBulbasaurAngryPal, sSkyBulbasaurAngryGfx },
+        { (const RGB_Struct *)sSkyBulbasaurWorriedPal, sSkyBulbasaurWorriedGfx },
+        { (const RGB_Struct *)sSkyBulbasaurSadPal, sSkyBulbasaurSadGfx },
+        { (const RGB_Struct *)sSkyBulbasaurCryingPal, sSkyBulbasaurCryingGfx },
+        { (const RGB_Struct *)sSkyBulbasaurShoutingPal, sSkyBulbasaurShoutingGfx },
+        { (const RGB_Struct *)sSkyBulbasaurTearyEyePal, sSkyBulbasaurTearyEyeGfx },
+        { (const RGB_Struct *)sSkyBulbasaurDeterminedPal, sSkyBulbasaurDeterminedGfx },
+        { (const RGB_Struct *)sSkyBulbasaurJoyousPal, sSkyBulbasaurJoyousGfx },
+        { (const RGB_Struct *)sSkyBulbasaurInspiredPal, sSkyBulbasaurInspiredGfx },
+        { (const RGB_Struct *)sSkyBulbasaurSurprisedPal, sSkyBulbasaurSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyBulbasaur = { "SIRO", &sSkyBulbasaurPortraits };
+#endif
 
 static const u8 sIvysaurNormalPal[] = INCBIN_U8("graphics/portraits/ivysaur/Normal.pal");
 static const u8 sIvysaurNormalGfx[] = INCBIN_U8("graphics/portraits/ivysaur/Normal.at4px");
@@ -122,6 +173,7 @@ static const PortraitGfx sVenusaurPortraits = {
 
 const SiroArchive gCustomKaoVenusaur = { "SIRO", &sVenusaurPortraits };
 
+#ifndef SKY_STORY
 static const u8 sCharmanderNormalPal[] = INCBIN_U8("graphics/portraits/charmander/Normal.pal");
 static const u8 sCharmanderNormalGfx[] = INCBIN_U8("graphics/portraits/charmander/Normal.at4px");
 
@@ -144,6 +196,56 @@ static const PortraitGfx sCharmanderPortraits = {
 };
 
 const SiroArchive gCustomKaoCharmander = { "SIRO", &sCharmanderPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyCharmanderNormalPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Normal.pal");
+static const u8 sSkyCharmanderNormalGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Normal.at4px");
+static const u8 sSkyCharmanderHappyPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Happy.pal");
+static const u8 sSkyCharmanderHappyGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Happy.at4px");
+static const u8 sSkyCharmanderPainedPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Pained.pal");
+static const u8 sSkyCharmanderPainedGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Pained.at4px");
+static const u8 sSkyCharmanderAngryPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Angry.pal");
+static const u8 sSkyCharmanderAngryGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Angry.at4px");
+static const u8 sSkyCharmanderWorriedPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Worried.pal");
+static const u8 sSkyCharmanderWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Worried.at4px");
+static const u8 sSkyCharmanderSadPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Sad.pal");
+static const u8 sSkyCharmanderSadGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Sad.at4px");
+static const u8 sSkyCharmanderCryingPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Crying.pal");
+static const u8 sSkyCharmanderCryingGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Crying.at4px");
+static const u8 sSkyCharmanderShoutingPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Shouting.pal");
+static const u8 sSkyCharmanderShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Shouting.at4px");
+static const u8 sSkyCharmanderTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/charmander/TearyEye.pal");
+static const u8 sSkyCharmanderTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/TearyEye.at4px");
+static const u8 sSkyCharmanderDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Determined.pal");
+static const u8 sSkyCharmanderDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Determined.at4px");
+static const u8 sSkyCharmanderJoyousPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Joyous.pal");
+static const u8 sSkyCharmanderJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Joyous.at4px");
+static const u8 sSkyCharmanderInspiredPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Inspired.pal");
+static const u8 sSkyCharmanderInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Inspired.at4px");
+static const u8 sSkyCharmanderSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/charmander/Surprised.pal");
+static const u8 sSkyCharmanderSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/charmander/Surprised.at4px");
+
+static const PortraitGfx sSkyCharmanderPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyCharmanderNormalPal, sSkyCharmanderNormalGfx },
+        { (const RGB_Struct *)sSkyCharmanderHappyPal, sSkyCharmanderHappyGfx },
+        { (const RGB_Struct *)sSkyCharmanderPainedPal, sSkyCharmanderPainedGfx },
+        { (const RGB_Struct *)sSkyCharmanderAngryPal, sSkyCharmanderAngryGfx },
+        { (const RGB_Struct *)sSkyCharmanderWorriedPal, sSkyCharmanderWorriedGfx },
+        { (const RGB_Struct *)sSkyCharmanderSadPal, sSkyCharmanderSadGfx },
+        { (const RGB_Struct *)sSkyCharmanderCryingPal, sSkyCharmanderCryingGfx },
+        { (const RGB_Struct *)sSkyCharmanderShoutingPal, sSkyCharmanderShoutingGfx },
+        { (const RGB_Struct *)sSkyCharmanderTearyEyePal, sSkyCharmanderTearyEyeGfx },
+        { (const RGB_Struct *)sSkyCharmanderDeterminedPal, sSkyCharmanderDeterminedGfx },
+        { (const RGB_Struct *)sSkyCharmanderJoyousPal, sSkyCharmanderJoyousGfx },
+        { (const RGB_Struct *)sSkyCharmanderInspiredPal, sSkyCharmanderInspiredGfx },
+        { (const RGB_Struct *)sSkyCharmanderSurprisedPal, sSkyCharmanderSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyCharmander = { "SIRO", &sSkyCharmanderPortraits };
+#endif
 
 static const u8 sCharmeleonNormalPal[] = INCBIN_U8("graphics/portraits/charmeleon/Normal.pal");
 static const u8 sCharmeleonNormalGfx[] = INCBIN_U8("graphics/portraits/charmeleon/Normal.at4px");
@@ -237,6 +339,7 @@ static const PortraitGfx sCharizardPortraits = {
 
 const SiroArchive gCustomKaoCharizard = { "SIRO", &sCharizardPortraits };
 
+#ifndef SKY_STORY
 static const u8 sSquirtleNormalPal[] = INCBIN_U8("graphics/portraits/squirtle/Normal.pal");
 static const u8 sSquirtleNormalGfx[] = INCBIN_U8("graphics/portraits/squirtle/Normal.at4px");
 
@@ -259,6 +362,56 @@ static const PortraitGfx sSquirtlePortraits = {
 };
 
 const SiroArchive gCustomKaoSquirtle = { "SIRO", &sSquirtlePortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkySquirtleNormalPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Normal.pal");
+static const u8 sSkySquirtleNormalGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Normal.at4px");
+static const u8 sSkySquirtleHappyPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Happy.pal");
+static const u8 sSkySquirtleHappyGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Happy.at4px");
+static const u8 sSkySquirtlePainedPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Pained.pal");
+static const u8 sSkySquirtlePainedGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Pained.at4px");
+static const u8 sSkySquirtleAngryPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Angry.pal");
+static const u8 sSkySquirtleAngryGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Angry.at4px");
+static const u8 sSkySquirtleWorriedPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Worried.pal");
+static const u8 sSkySquirtleWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Worried.at4px");
+static const u8 sSkySquirtleSadPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Sad.pal");
+static const u8 sSkySquirtleSadGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Sad.at4px");
+static const u8 sSkySquirtleCryingPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Crying.pal");
+static const u8 sSkySquirtleCryingGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Crying.at4px");
+static const u8 sSkySquirtleShoutingPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Shouting.pal");
+static const u8 sSkySquirtleShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Shouting.at4px");
+static const u8 sSkySquirtleTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/squirtle/TearyEye.pal");
+static const u8 sSkySquirtleTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/TearyEye.at4px");
+static const u8 sSkySquirtleDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Determined.pal");
+static const u8 sSkySquirtleDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Determined.at4px");
+static const u8 sSkySquirtleJoyousPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Joyous.pal");
+static const u8 sSkySquirtleJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Joyous.at4px");
+static const u8 sSkySquirtleInspiredPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Inspired.pal");
+static const u8 sSkySquirtleInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Inspired.at4px");
+static const u8 sSkySquirtleSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/squirtle/Surprised.pal");
+static const u8 sSkySquirtleSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/squirtle/Surprised.at4px");
+
+static const PortraitGfx sSkySquirtlePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkySquirtleNormalPal, sSkySquirtleNormalGfx },
+        { (const RGB_Struct *)sSkySquirtleHappyPal, sSkySquirtleHappyGfx },
+        { (const RGB_Struct *)sSkySquirtlePainedPal, sSkySquirtlePainedGfx },
+        { (const RGB_Struct *)sSkySquirtleAngryPal, sSkySquirtleAngryGfx },
+        { (const RGB_Struct *)sSkySquirtleWorriedPal, sSkySquirtleWorriedGfx },
+        { (const RGB_Struct *)sSkySquirtleSadPal, sSkySquirtleSadGfx },
+        { (const RGB_Struct *)sSkySquirtleCryingPal, sSkySquirtleCryingGfx },
+        { (const RGB_Struct *)sSkySquirtleShoutingPal, sSkySquirtleShoutingGfx },
+        { (const RGB_Struct *)sSkySquirtleTearyEyePal, sSkySquirtleTearyEyeGfx },
+        { (const RGB_Struct *)sSkySquirtleDeterminedPal, sSkySquirtleDeterminedGfx },
+        { (const RGB_Struct *)sSkySquirtleJoyousPal, sSkySquirtleJoyousGfx },
+        { (const RGB_Struct *)sSkySquirtleInspiredPal, sSkySquirtleInspiredGfx },
+        { (const RGB_Struct *)sSkySquirtleSurprisedPal, sSkySquirtleSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkySquirtle = { "SIRO", &sSkySquirtlePortraits };
+#endif
 
 static const u8 sWartortleNormalPal[] = INCBIN_U8("graphics/portraits/wartortle/Normal.pal");
 static const u8 sWartortleNormalGfx[] = INCBIN_U8("graphics/portraits/wartortle/Normal.at4px");
@@ -697,6 +850,7 @@ static const PortraitGfx sArbokPortraits = {
 
 const SiroArchive gCustomKaoArbok = { "SIRO", &sArbokPortraits };
 
+#ifndef SKY_STORY
 static const u8 sPikachuNormalPal[] = INCBIN_U8("graphics/portraits/pikachu/Normal.pal");
 static const u8 sPikachuNormalGfx[] = INCBIN_U8("graphics/portraits/pikachu/Normal.at4px");
 
@@ -719,6 +873,56 @@ static const PortraitGfx sPikachuPortraits = {
 };
 
 const SiroArchive gCustomKaoPikachu = { "SIRO", &sPikachuPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyPikachuNormalPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Normal.pal");
+static const u8 sSkyPikachuNormalGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Normal.at4px");
+static const u8 sSkyPikachuHappyPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Happy.pal");
+static const u8 sSkyPikachuHappyGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Happy.at4px");
+static const u8 sSkyPikachuPainedPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Pained.pal");
+static const u8 sSkyPikachuPainedGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Pained.at4px");
+static const u8 sSkyPikachuAngryPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Angry.pal");
+static const u8 sSkyPikachuAngryGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Angry.at4px");
+static const u8 sSkyPikachuWorriedPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Worried.pal");
+static const u8 sSkyPikachuWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Worried.at4px");
+static const u8 sSkyPikachuSadPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Sad.pal");
+static const u8 sSkyPikachuSadGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Sad.at4px");
+static const u8 sSkyPikachuCryingPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Crying.pal");
+static const u8 sSkyPikachuCryingGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Crying.at4px");
+static const u8 sSkyPikachuShoutingPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Shouting.pal");
+static const u8 sSkyPikachuShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Shouting.at4px");
+static const u8 sSkyPikachuTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/pikachu/TearyEye.pal");
+static const u8 sSkyPikachuTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/TearyEye.at4px");
+static const u8 sSkyPikachuDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Determined.pal");
+static const u8 sSkyPikachuDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Determined.at4px");
+static const u8 sSkyPikachuJoyousPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Joyous.pal");
+static const u8 sSkyPikachuJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Joyous.at4px");
+static const u8 sSkyPikachuInspiredPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Inspired.pal");
+static const u8 sSkyPikachuInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Inspired.at4px");
+static const u8 sSkyPikachuSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/pikachu/Surprised.pal");
+static const u8 sSkyPikachuSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/pikachu/Surprised.at4px");
+
+static const PortraitGfx sSkyPikachuPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyPikachuNormalPal, sSkyPikachuNormalGfx },
+        { (const RGB_Struct *)sSkyPikachuHappyPal, sSkyPikachuHappyGfx },
+        { (const RGB_Struct *)sSkyPikachuPainedPal, sSkyPikachuPainedGfx },
+        { (const RGB_Struct *)sSkyPikachuAngryPal, sSkyPikachuAngryGfx },
+        { (const RGB_Struct *)sSkyPikachuWorriedPal, sSkyPikachuWorriedGfx },
+        { (const RGB_Struct *)sSkyPikachuSadPal, sSkyPikachuSadGfx },
+        { (const RGB_Struct *)sSkyPikachuCryingPal, sSkyPikachuCryingGfx },
+        { (const RGB_Struct *)sSkyPikachuShoutingPal, sSkyPikachuShoutingGfx },
+        { (const RGB_Struct *)sSkyPikachuTearyEyePal, sSkyPikachuTearyEyeGfx },
+        { (const RGB_Struct *)sSkyPikachuDeterminedPal, sSkyPikachuDeterminedGfx },
+        { (const RGB_Struct *)sSkyPikachuJoyousPal, sSkyPikachuJoyousGfx },
+        { (const RGB_Struct *)sSkyPikachuInspiredPal, sSkyPikachuInspiredGfx },
+        { (const RGB_Struct *)sSkyPikachuSurprisedPal, sSkyPikachuSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyPikachu = { "SIRO", &sSkyPikachuPortraits };
+#endif
 
 static const u8 sRaichuNormalPal[] = INCBIN_U8("graphics/portraits/raichu/Normal.pal");
 static const u8 sRaichuNormalGfx[] = INCBIN_U8("graphics/portraits/raichu/Normal.at4px");
@@ -997,6 +1201,7 @@ static const PortraitGfx sClefablePortraits = {
 
 const SiroArchive gCustomKaoClefable = { "SIRO", &sClefablePortraits };
 
+#ifndef SKY_STORY
 static const u8 sVulpixNormalPal[] = INCBIN_U8("graphics/portraits/vulpix/Normal.pal");
 static const u8 sVulpixNormalGfx[] = INCBIN_U8("graphics/portraits/vulpix/Normal.at4px");
 
@@ -1019,6 +1224,56 @@ static const PortraitGfx sVulpixPortraits = {
 };
 
 const SiroArchive gCustomKaoVulpix = { "SIRO", &sVulpixPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyVulpixNormalPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Normal.pal");
+static const u8 sSkyVulpixNormalGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Normal.at4px");
+static const u8 sSkyVulpixHappyPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Happy.pal");
+static const u8 sSkyVulpixHappyGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Happy.at4px");
+static const u8 sSkyVulpixPainedPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Pained.pal");
+static const u8 sSkyVulpixPainedGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Pained.at4px");
+static const u8 sSkyVulpixAngryPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Angry.pal");
+static const u8 sSkyVulpixAngryGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Angry.at4px");
+static const u8 sSkyVulpixWorriedPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Worried.pal");
+static const u8 sSkyVulpixWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Worried.at4px");
+static const u8 sSkyVulpixSadPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Sad.pal");
+static const u8 sSkyVulpixSadGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Sad.at4px");
+static const u8 sSkyVulpixCryingPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Crying.pal");
+static const u8 sSkyVulpixCryingGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Crying.at4px");
+static const u8 sSkyVulpixShoutingPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Shouting.pal");
+static const u8 sSkyVulpixShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Shouting.at4px");
+static const u8 sSkyVulpixTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/vulpix/TearyEye.pal");
+static const u8 sSkyVulpixTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/TearyEye.at4px");
+static const u8 sSkyVulpixDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Determined.pal");
+static const u8 sSkyVulpixDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Determined.at4px");
+static const u8 sSkyVulpixJoyousPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Joyous.pal");
+static const u8 sSkyVulpixJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Joyous.at4px");
+static const u8 sSkyVulpixInspiredPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Inspired.pal");
+static const u8 sSkyVulpixInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Inspired.at4px");
+static const u8 sSkyVulpixSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/vulpix/Surprised.pal");
+static const u8 sSkyVulpixSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/vulpix/Surprised.at4px");
+
+static const PortraitGfx sSkyVulpixPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyVulpixNormalPal, sSkyVulpixNormalGfx },
+        { (const RGB_Struct *)sSkyVulpixHappyPal, sSkyVulpixHappyGfx },
+        { (const RGB_Struct *)sSkyVulpixPainedPal, sSkyVulpixPainedGfx },
+        { (const RGB_Struct *)sSkyVulpixAngryPal, sSkyVulpixAngryGfx },
+        { (const RGB_Struct *)sSkyVulpixWorriedPal, sSkyVulpixWorriedGfx },
+        { (const RGB_Struct *)sSkyVulpixSadPal, sSkyVulpixSadGfx },
+        { (const RGB_Struct *)sSkyVulpixCryingPal, sSkyVulpixCryingGfx },
+        { (const RGB_Struct *)sSkyVulpixShoutingPal, sSkyVulpixShoutingGfx },
+        { (const RGB_Struct *)sSkyVulpixTearyEyePal, sSkyVulpixTearyEyeGfx },
+        { (const RGB_Struct *)sSkyVulpixDeterminedPal, sSkyVulpixDeterminedGfx },
+        { (const RGB_Struct *)sSkyVulpixJoyousPal, sSkyVulpixJoyousGfx },
+        { (const RGB_Struct *)sSkyVulpixInspiredPal, sSkyVulpixInspiredGfx },
+        { (const RGB_Struct *)sSkyVulpixSurprisedPal, sSkyVulpixSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyVulpix = { "SIRO", &sSkyVulpixPortraits };
+#endif
 
 static const u8 sNinetalesNormalPal[] = INCBIN_U8("graphics/portraits/ninetales/Normal.pal");
 static const u8 sNinetalesNormalGfx[] = INCBIN_U8("graphics/portraits/ninetales/Normal.at4px");
@@ -1089,6 +1344,7 @@ static const PortraitGfx sWigglytuffPortraits = {
 
 const SiroArchive gCustomKaoWigglytuff = { "SIRO", &sWigglytuffPortraits };
 
+#ifndef SKY_STORY
 static const u8 sZubatNormalPal[] = INCBIN_U8("graphics/portraits/zubat/Normal.pal");
 static const u8 sZubatNormalGfx[] = INCBIN_U8("graphics/portraits/zubat/Normal.at4px");
 
@@ -1111,6 +1367,32 @@ static const PortraitGfx sZubatPortraits = {
 };
 
 const SiroArchive gCustomKaoZubat = { "SIRO", &sZubatPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyZubatNormalPal[] = INCBIN_U8("graphics/portraits_sky/zubat/Normal.pal");
+static const u8 sSkyZubatNormalGfx[] = INCBIN_U8("graphics/portraits_sky/zubat/Normal.at4px");
+
+static const PortraitGfx sSkyZubatPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyZubatNormalPal, sSkyZubatNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSkyZubat = { "SIRO", &sSkyZubatPortraits };
+#endif
 
 static const u8 sGolbatNormalPal[] = INCBIN_U8("graphics/portraits/golbat/Normal.pal");
 static const u8 sGolbatNormalGfx[] = INCBIN_U8("graphics/portraits/golbat/Normal.at4px");
@@ -1342,6 +1624,7 @@ static const PortraitGfx sDugtrioPortraits = {
 
 const SiroArchive gCustomKaoDugtrio = { "SIRO", &sDugtrioPortraits };
 
+#ifndef SKY_STORY
 static const u8 sMeowthNormalPal[] = INCBIN_U8("graphics/portraits/meowth/Normal.pal");
 static const u8 sMeowthNormalGfx[] = INCBIN_U8("graphics/portraits/meowth/Normal.at4px");
 
@@ -1364,6 +1647,56 @@ static const PortraitGfx sMeowthPortraits = {
 };
 
 const SiroArchive gCustomKaoMeowth = { "SIRO", &sMeowthPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyMeowthNormalPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Normal.pal");
+static const u8 sSkyMeowthNormalGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Normal.at4px");
+static const u8 sSkyMeowthHappyPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Happy.pal");
+static const u8 sSkyMeowthHappyGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Happy.at4px");
+static const u8 sSkyMeowthPainedPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Pained.pal");
+static const u8 sSkyMeowthPainedGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Pained.at4px");
+static const u8 sSkyMeowthAngryPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Angry.pal");
+static const u8 sSkyMeowthAngryGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Angry.at4px");
+static const u8 sSkyMeowthWorriedPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Worried.pal");
+static const u8 sSkyMeowthWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Worried.at4px");
+static const u8 sSkyMeowthSadPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Sad.pal");
+static const u8 sSkyMeowthSadGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Sad.at4px");
+static const u8 sSkyMeowthCryingPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Crying.pal");
+static const u8 sSkyMeowthCryingGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Crying.at4px");
+static const u8 sSkyMeowthShoutingPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Shouting.pal");
+static const u8 sSkyMeowthShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Shouting.at4px");
+static const u8 sSkyMeowthTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/meowth/TearyEye.pal");
+static const u8 sSkyMeowthTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/TearyEye.at4px");
+static const u8 sSkyMeowthDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Determined.pal");
+static const u8 sSkyMeowthDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Determined.at4px");
+static const u8 sSkyMeowthJoyousPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Joyous.pal");
+static const u8 sSkyMeowthJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Joyous.at4px");
+static const u8 sSkyMeowthInspiredPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Inspired.pal");
+static const u8 sSkyMeowthInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Inspired.at4px");
+static const u8 sSkyMeowthSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/meowth/Surprised.pal");
+static const u8 sSkyMeowthSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/meowth/Surprised.at4px");
+
+static const PortraitGfx sSkyMeowthPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyMeowthNormalPal, sSkyMeowthNormalGfx },
+        { (const RGB_Struct *)sSkyMeowthHappyPal, sSkyMeowthHappyGfx },
+        { (const RGB_Struct *)sSkyMeowthPainedPal, sSkyMeowthPainedGfx },
+        { (const RGB_Struct *)sSkyMeowthAngryPal, sSkyMeowthAngryGfx },
+        { (const RGB_Struct *)sSkyMeowthWorriedPal, sSkyMeowthWorriedGfx },
+        { (const RGB_Struct *)sSkyMeowthSadPal, sSkyMeowthSadGfx },
+        { (const RGB_Struct *)sSkyMeowthCryingPal, sSkyMeowthCryingGfx },
+        { (const RGB_Struct *)sSkyMeowthShoutingPal, sSkyMeowthShoutingGfx },
+        { (const RGB_Struct *)sSkyMeowthTearyEyePal, sSkyMeowthTearyEyeGfx },
+        { (const RGB_Struct *)sSkyMeowthDeterminedPal, sSkyMeowthDeterminedGfx },
+        { (const RGB_Struct *)sSkyMeowthJoyousPal, sSkyMeowthJoyousGfx },
+        { (const RGB_Struct *)sSkyMeowthInspiredPal, sSkyMeowthInspiredGfx },
+        { (const RGB_Struct *)sSkyMeowthSurprisedPal, sSkyMeowthSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyMeowth = { "SIRO", &sSkyMeowthPortraits };
+#endif
 
 static const u8 sPersianNormalPal[] = INCBIN_U8("graphics/portraits/persian/Normal.pal");
 static const u8 sPersianNormalGfx[] = INCBIN_U8("graphics/portraits/persian/Normal.at4px");
@@ -1412,6 +1745,7 @@ static const PortraitGfx sPersianPortraits = {
 
 const SiroArchive gCustomKaoPersian = { "SIRO", &sPersianPortraits };
 
+#ifndef SKY_STORY
 static const u8 sPsyduckNormalPal[] = INCBIN_U8("graphics/portraits/psyduck/Normal.pal");
 static const u8 sPsyduckNormalGfx[] = INCBIN_U8("graphics/portraits/psyduck/Normal.at4px");
 
@@ -1434,6 +1768,56 @@ static const PortraitGfx sPsyduckPortraits = {
 };
 
 const SiroArchive gCustomKaoPsyduck = { "SIRO", &sPsyduckPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyPsyduckNormalPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Normal.pal");
+static const u8 sSkyPsyduckNormalGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Normal.at4px");
+static const u8 sSkyPsyduckHappyPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Happy.pal");
+static const u8 sSkyPsyduckHappyGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Happy.at4px");
+static const u8 sSkyPsyduckPainedPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Pained.pal");
+static const u8 sSkyPsyduckPainedGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Pained.at4px");
+static const u8 sSkyPsyduckAngryPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Angry.pal");
+static const u8 sSkyPsyduckAngryGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Angry.at4px");
+static const u8 sSkyPsyduckWorriedPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Worried.pal");
+static const u8 sSkyPsyduckWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Worried.at4px");
+static const u8 sSkyPsyduckSadPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Sad.pal");
+static const u8 sSkyPsyduckSadGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Sad.at4px");
+static const u8 sSkyPsyduckCryingPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Crying.pal");
+static const u8 sSkyPsyduckCryingGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Crying.at4px");
+static const u8 sSkyPsyduckShoutingPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Shouting.pal");
+static const u8 sSkyPsyduckShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Shouting.at4px");
+static const u8 sSkyPsyduckTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/psyduck/TearyEye.pal");
+static const u8 sSkyPsyduckTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/TearyEye.at4px");
+static const u8 sSkyPsyduckDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Determined.pal");
+static const u8 sSkyPsyduckDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Determined.at4px");
+static const u8 sSkyPsyduckJoyousPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Joyous.pal");
+static const u8 sSkyPsyduckJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Joyous.at4px");
+static const u8 sSkyPsyduckInspiredPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Inspired.pal");
+static const u8 sSkyPsyduckInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Inspired.at4px");
+static const u8 sSkyPsyduckSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/psyduck/Surprised.pal");
+static const u8 sSkyPsyduckSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/psyduck/Surprised.at4px");
+
+static const PortraitGfx sSkyPsyduckPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyPsyduckNormalPal, sSkyPsyduckNormalGfx },
+        { (const RGB_Struct *)sSkyPsyduckHappyPal, sSkyPsyduckHappyGfx },
+        { (const RGB_Struct *)sSkyPsyduckPainedPal, sSkyPsyduckPainedGfx },
+        { (const RGB_Struct *)sSkyPsyduckAngryPal, sSkyPsyduckAngryGfx },
+        { (const RGB_Struct *)sSkyPsyduckWorriedPal, sSkyPsyduckWorriedGfx },
+        { (const RGB_Struct *)sSkyPsyduckSadPal, sSkyPsyduckSadGfx },
+        { (const RGB_Struct *)sSkyPsyduckCryingPal, sSkyPsyduckCryingGfx },
+        { (const RGB_Struct *)sSkyPsyduckShoutingPal, sSkyPsyduckShoutingGfx },
+        { (const RGB_Struct *)sSkyPsyduckTearyEyePal, sSkyPsyduckTearyEyeGfx },
+        { (const RGB_Struct *)sSkyPsyduckDeterminedPal, sSkyPsyduckDeterminedGfx },
+        { (const RGB_Struct *)sSkyPsyduckJoyousPal, sSkyPsyduckJoyousGfx },
+        { (const RGB_Struct *)sSkyPsyduckInspiredPal, sSkyPsyduckInspiredGfx },
+        { (const RGB_Struct *)sSkyPsyduckSurprisedPal, sSkyPsyduckSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyPsyduck = { "SIRO", &sSkyPsyduckPortraits };
+#endif
 
 static const u8 sGolduckNormalPal[] = INCBIN_U8("graphics/portraits/golduck/Normal.pal");
 static const u8 sGolduckNormalGfx[] = INCBIN_U8("graphics/portraits/golduck/Normal.at4px");
@@ -1712,6 +2096,7 @@ static const PortraitGfx sAlakazamPortraits = {
 
 const SiroArchive gCustomKaoAlakazam = { "SIRO", &sAlakazamPortraits };
 
+#ifndef SKY_STORY
 static const u8 sMachopNormalPal[] = INCBIN_U8("graphics/portraits/machop/Normal.pal");
 static const u8 sMachopNormalGfx[] = INCBIN_U8("graphics/portraits/machop/Normal.at4px");
 
@@ -1734,6 +2119,56 @@ static const PortraitGfx sMachopPortraits = {
 };
 
 const SiroArchive gCustomKaoMachop = { "SIRO", &sMachopPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyMachopNormalPal[] = INCBIN_U8("graphics/portraits_sky/machop/Normal.pal");
+static const u8 sSkyMachopNormalGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Normal.at4px");
+static const u8 sSkyMachopHappyPal[] = INCBIN_U8("graphics/portraits_sky/machop/Happy.pal");
+static const u8 sSkyMachopHappyGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Happy.at4px");
+static const u8 sSkyMachopPainedPal[] = INCBIN_U8("graphics/portraits_sky/machop/Pained.pal");
+static const u8 sSkyMachopPainedGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Pained.at4px");
+static const u8 sSkyMachopAngryPal[] = INCBIN_U8("graphics/portraits_sky/machop/Angry.pal");
+static const u8 sSkyMachopAngryGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Angry.at4px");
+static const u8 sSkyMachopWorriedPal[] = INCBIN_U8("graphics/portraits_sky/machop/Worried.pal");
+static const u8 sSkyMachopWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Worried.at4px");
+static const u8 sSkyMachopSadPal[] = INCBIN_U8("graphics/portraits_sky/machop/Sad.pal");
+static const u8 sSkyMachopSadGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Sad.at4px");
+static const u8 sSkyMachopCryingPal[] = INCBIN_U8("graphics/portraits_sky/machop/Crying.pal");
+static const u8 sSkyMachopCryingGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Crying.at4px");
+static const u8 sSkyMachopShoutingPal[] = INCBIN_U8("graphics/portraits_sky/machop/Shouting.pal");
+static const u8 sSkyMachopShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Shouting.at4px");
+static const u8 sSkyMachopTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/machop/TearyEye.pal");
+static const u8 sSkyMachopTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/machop/TearyEye.at4px");
+static const u8 sSkyMachopDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/machop/Determined.pal");
+static const u8 sSkyMachopDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Determined.at4px");
+static const u8 sSkyMachopJoyousPal[] = INCBIN_U8("graphics/portraits_sky/machop/Joyous.pal");
+static const u8 sSkyMachopJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Joyous.at4px");
+static const u8 sSkyMachopInspiredPal[] = INCBIN_U8("graphics/portraits_sky/machop/Inspired.pal");
+static const u8 sSkyMachopInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Inspired.at4px");
+static const u8 sSkyMachopSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/machop/Surprised.pal");
+static const u8 sSkyMachopSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/machop/Surprised.at4px");
+
+static const PortraitGfx sSkyMachopPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyMachopNormalPal, sSkyMachopNormalGfx },
+        { (const RGB_Struct *)sSkyMachopHappyPal, sSkyMachopHappyGfx },
+        { (const RGB_Struct *)sSkyMachopPainedPal, sSkyMachopPainedGfx },
+        { (const RGB_Struct *)sSkyMachopAngryPal, sSkyMachopAngryGfx },
+        { (const RGB_Struct *)sSkyMachopWorriedPal, sSkyMachopWorriedGfx },
+        { (const RGB_Struct *)sSkyMachopSadPal, sSkyMachopSadGfx },
+        { (const RGB_Struct *)sSkyMachopCryingPal, sSkyMachopCryingGfx },
+        { (const RGB_Struct *)sSkyMachopShoutingPal, sSkyMachopShoutingGfx },
+        { (const RGB_Struct *)sSkyMachopTearyEyePal, sSkyMachopTearyEyeGfx },
+        { (const RGB_Struct *)sSkyMachopDeterminedPal, sSkyMachopDeterminedGfx },
+        { (const RGB_Struct *)sSkyMachopJoyousPal, sSkyMachopJoyousGfx },
+        { (const RGB_Struct *)sSkyMachopInspiredPal, sSkyMachopInspiredGfx },
+        { (const RGB_Struct *)sSkyMachopSurprisedPal, sSkyMachopSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyMachop = { "SIRO", &sSkyMachopPortraits };
+#endif
 
 static const u8 sMachokeNormalPal[] = INCBIN_U8("graphics/portraits/machoke/Normal.pal");
 static const u8 sMachokeNormalGfx[] = INCBIN_U8("graphics/portraits/machoke/Normal.at4px");
@@ -2610,6 +3045,7 @@ static const PortraitGfx sExeggutorPortraits = {
 
 const SiroArchive gCustomKaoExeggutor = { "SIRO", &sExeggutorPortraits };
 
+#ifndef SKY_STORY
 static const u8 sCuboneNormalPal[] = INCBIN_U8("graphics/portraits/cubone/Normal.pal");
 static const u8 sCuboneNormalGfx[] = INCBIN_U8("graphics/portraits/cubone/Normal.at4px");
 
@@ -2632,6 +3068,56 @@ static const PortraitGfx sCubonePortraits = {
 };
 
 const SiroArchive gCustomKaoCubone = { "SIRO", &sCubonePortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyCuboneNormalPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Normal.pal");
+static const u8 sSkyCuboneNormalGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Normal.at4px");
+static const u8 sSkyCuboneHappyPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Happy.pal");
+static const u8 sSkyCuboneHappyGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Happy.at4px");
+static const u8 sSkyCubonePainedPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Pained.pal");
+static const u8 sSkyCubonePainedGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Pained.at4px");
+static const u8 sSkyCuboneAngryPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Angry.pal");
+static const u8 sSkyCuboneAngryGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Angry.at4px");
+static const u8 sSkyCuboneWorriedPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Worried.pal");
+static const u8 sSkyCuboneWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Worried.at4px");
+static const u8 sSkyCuboneSadPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Sad.pal");
+static const u8 sSkyCuboneSadGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Sad.at4px");
+static const u8 sSkyCuboneCryingPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Crying.pal");
+static const u8 sSkyCuboneCryingGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Crying.at4px");
+static const u8 sSkyCuboneShoutingPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Shouting.pal");
+static const u8 sSkyCuboneShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Shouting.at4px");
+static const u8 sSkyCuboneTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/cubone/TearyEye.pal");
+static const u8 sSkyCuboneTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/TearyEye.at4px");
+static const u8 sSkyCuboneDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Determined.pal");
+static const u8 sSkyCuboneDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Determined.at4px");
+static const u8 sSkyCuboneJoyousPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Joyous.pal");
+static const u8 sSkyCuboneJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Joyous.at4px");
+static const u8 sSkyCuboneInspiredPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Inspired.pal");
+static const u8 sSkyCuboneInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Inspired.at4px");
+static const u8 sSkyCuboneSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/cubone/Surprised.pal");
+static const u8 sSkyCuboneSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/cubone/Surprised.at4px");
+
+static const PortraitGfx sSkyCubonePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyCuboneNormalPal, sSkyCuboneNormalGfx },
+        { (const RGB_Struct *)sSkyCuboneHappyPal, sSkyCuboneHappyGfx },
+        { (const RGB_Struct *)sSkyCubonePainedPal, sSkyCubonePainedGfx },
+        { (const RGB_Struct *)sSkyCuboneAngryPal, sSkyCuboneAngryGfx },
+        { (const RGB_Struct *)sSkyCuboneWorriedPal, sSkyCuboneWorriedGfx },
+        { (const RGB_Struct *)sSkyCuboneSadPal, sSkyCuboneSadGfx },
+        { (const RGB_Struct *)sSkyCuboneCryingPal, sSkyCuboneCryingGfx },
+        { (const RGB_Struct *)sSkyCuboneShoutingPal, sSkyCuboneShoutingGfx },
+        { (const RGB_Struct *)sSkyCuboneTearyEyePal, sSkyCuboneTearyEyeGfx },
+        { (const RGB_Struct *)sSkyCuboneDeterminedPal, sSkyCuboneDeterminedGfx },
+        { (const RGB_Struct *)sSkyCuboneJoyousPal, sSkyCuboneJoyousGfx },
+        { (const RGB_Struct *)sSkyCuboneInspiredPal, sSkyCuboneInspiredGfx },
+        { (const RGB_Struct *)sSkyCuboneSurprisedPal, sSkyCuboneSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyCubone = { "SIRO", &sSkyCubonePortraits };
+#endif
 
 static const u8 sMarowakNormalPal[] = INCBIN_U8("graphics/portraits/marowak/Normal.pal");
 static const u8 sMarowakNormalGfx[] = INCBIN_U8("graphics/portraits/marowak/Normal.at4px");
@@ -2749,6 +3235,7 @@ static const PortraitGfx sLickitungPortraits = {
 
 const SiroArchive gCustomKaoLickitung = { "SIRO", &sLickitungPortraits };
 
+#ifndef SKY_STORY
 static const u8 sKoffingNormalPal[] = INCBIN_U8("graphics/portraits/koffing/Normal.pal");
 static const u8 sKoffingNormalGfx[] = INCBIN_U8("graphics/portraits/koffing/Normal.at4px");
 
@@ -2771,6 +3258,32 @@ static const PortraitGfx sKoffingPortraits = {
 };
 
 const SiroArchive gCustomKaoKoffing = { "SIRO", &sKoffingPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyKoffingNormalPal[] = INCBIN_U8("graphics/portraits_sky/koffing/Normal.pal");
+static const u8 sSkyKoffingNormalGfx[] = INCBIN_U8("graphics/portraits_sky/koffing/Normal.at4px");
+
+static const PortraitGfx sSkyKoffingPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyKoffingNormalPal, sSkyKoffingNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSkyKoffing = { "SIRO", &sSkyKoffingPortraits };
+#endif
 
 static const u8 sWeezingNormalPal[] = INCBIN_U8("graphics/portraits/weezing/Normal.pal");
 static const u8 sWeezingNormalGfx[] = INCBIN_U8("graphics/portraits/weezing/Normal.at4px");
@@ -3301,6 +3814,7 @@ static const PortraitGfx sDittoPortraits = {
 
 const SiroArchive gCustomKaoDitto = { "SIRO", &sDittoPortraits };
 
+#ifndef SKY_STORY
 static const u8 sEeveeNormalPal[] = INCBIN_U8("graphics/portraits/eevee/Normal.pal");
 static const u8 sEeveeNormalGfx[] = INCBIN_U8("graphics/portraits/eevee/Normal.at4px");
 
@@ -3323,6 +3837,56 @@ static const PortraitGfx sEeveePortraits = {
 };
 
 const SiroArchive gCustomKaoEevee = { "SIRO", &sEeveePortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyEeveeNormalPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Normal.pal");
+static const u8 sSkyEeveeNormalGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Normal.at4px");
+static const u8 sSkyEeveeHappyPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Happy.pal");
+static const u8 sSkyEeveeHappyGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Happy.at4px");
+static const u8 sSkyEeveePainedPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Pained.pal");
+static const u8 sSkyEeveePainedGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Pained.at4px");
+static const u8 sSkyEeveeAngryPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Angry.pal");
+static const u8 sSkyEeveeAngryGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Angry.at4px");
+static const u8 sSkyEeveeWorriedPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Worried.pal");
+static const u8 sSkyEeveeWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Worried.at4px");
+static const u8 sSkyEeveeSadPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Sad.pal");
+static const u8 sSkyEeveeSadGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Sad.at4px");
+static const u8 sSkyEeveeCryingPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Crying.pal");
+static const u8 sSkyEeveeCryingGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Crying.at4px");
+static const u8 sSkyEeveeShoutingPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Shouting.pal");
+static const u8 sSkyEeveeShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Shouting.at4px");
+static const u8 sSkyEeveeTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/eevee/TearyEye.pal");
+static const u8 sSkyEeveeTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/TearyEye.at4px");
+static const u8 sSkyEeveeDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Determined.pal");
+static const u8 sSkyEeveeDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Determined.at4px");
+static const u8 sSkyEeveeJoyousPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Joyous.pal");
+static const u8 sSkyEeveeJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Joyous.at4px");
+static const u8 sSkyEeveeInspiredPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Inspired.pal");
+static const u8 sSkyEeveeInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Inspired.at4px");
+static const u8 sSkyEeveeSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/eevee/Surprised.pal");
+static const u8 sSkyEeveeSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/eevee/Surprised.at4px");
+
+static const PortraitGfx sSkyEeveePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyEeveeNormalPal, sSkyEeveeNormalGfx },
+        { (const RGB_Struct *)sSkyEeveeHappyPal, sSkyEeveeHappyGfx },
+        { (const RGB_Struct *)sSkyEeveePainedPal, sSkyEeveePainedGfx },
+        { (const RGB_Struct *)sSkyEeveeAngryPal, sSkyEeveeAngryGfx },
+        { (const RGB_Struct *)sSkyEeveeWorriedPal, sSkyEeveeWorriedGfx },
+        { (const RGB_Struct *)sSkyEeveeSadPal, sSkyEeveeSadGfx },
+        { (const RGB_Struct *)sSkyEeveeCryingPal, sSkyEeveeCryingGfx },
+        { (const RGB_Struct *)sSkyEeveeShoutingPal, sSkyEeveeShoutingGfx },
+        { (const RGB_Struct *)sSkyEeveeTearyEyePal, sSkyEeveeTearyEyeGfx },
+        { (const RGB_Struct *)sSkyEeveeDeterminedPal, sSkyEeveeDeterminedGfx },
+        { (const RGB_Struct *)sSkyEeveeJoyousPal, sSkyEeveeJoyousGfx },
+        { (const RGB_Struct *)sSkyEeveeInspiredPal, sSkyEeveeInspiredGfx },
+        { (const RGB_Struct *)sSkyEeveeSurprisedPal, sSkyEeveeSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyEevee = { "SIRO", &sSkyEeveePortraits };
+#endif
 
 static const u8 sVaporeonNormalPal[] = INCBIN_U8("graphics/portraits/vaporeon/Normal.pal");
 static const u8 sVaporeonNormalGfx[] = INCBIN_U8("graphics/portraits/vaporeon/Normal.at4px");
@@ -3810,6 +4374,7 @@ static const PortraitGfx sMewPortraits = {
 
 const SiroArchive gCustomKaoMew = { "SIRO", &sMewPortraits };
 
+#ifndef SKY_STORY
 static const u8 sChikoritaNormalPal[] = INCBIN_U8("graphics/portraits/chikorita/Normal.pal");
 static const u8 sChikoritaNormalGfx[] = INCBIN_U8("graphics/portraits/chikorita/Normal.at4px");
 
@@ -3832,6 +4397,56 @@ static const PortraitGfx sChikoritaPortraits = {
 };
 
 const SiroArchive gCustomKaoChikorita = { "SIRO", &sChikoritaPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyChikoritaNormalPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Normal.pal");
+static const u8 sSkyChikoritaNormalGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Normal.at4px");
+static const u8 sSkyChikoritaHappyPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Happy.pal");
+static const u8 sSkyChikoritaHappyGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Happy.at4px");
+static const u8 sSkyChikoritaPainedPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Pained.pal");
+static const u8 sSkyChikoritaPainedGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Pained.at4px");
+static const u8 sSkyChikoritaAngryPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Angry.pal");
+static const u8 sSkyChikoritaAngryGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Angry.at4px");
+static const u8 sSkyChikoritaWorriedPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Worried.pal");
+static const u8 sSkyChikoritaWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Worried.at4px");
+static const u8 sSkyChikoritaSadPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Sad.pal");
+static const u8 sSkyChikoritaSadGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Sad.at4px");
+static const u8 sSkyChikoritaCryingPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Crying.pal");
+static const u8 sSkyChikoritaCryingGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Crying.at4px");
+static const u8 sSkyChikoritaShoutingPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Shouting.pal");
+static const u8 sSkyChikoritaShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Shouting.at4px");
+static const u8 sSkyChikoritaTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/chikorita/TearyEye.pal");
+static const u8 sSkyChikoritaTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/TearyEye.at4px");
+static const u8 sSkyChikoritaDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Determined.pal");
+static const u8 sSkyChikoritaDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Determined.at4px");
+static const u8 sSkyChikoritaJoyousPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Joyous.pal");
+static const u8 sSkyChikoritaJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Joyous.at4px");
+static const u8 sSkyChikoritaInspiredPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Inspired.pal");
+static const u8 sSkyChikoritaInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Inspired.at4px");
+static const u8 sSkyChikoritaSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/chikorita/Surprised.pal");
+static const u8 sSkyChikoritaSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/chikorita/Surprised.at4px");
+
+static const PortraitGfx sSkyChikoritaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyChikoritaNormalPal, sSkyChikoritaNormalGfx },
+        { (const RGB_Struct *)sSkyChikoritaHappyPal, sSkyChikoritaHappyGfx },
+        { (const RGB_Struct *)sSkyChikoritaPainedPal, sSkyChikoritaPainedGfx },
+        { (const RGB_Struct *)sSkyChikoritaAngryPal, sSkyChikoritaAngryGfx },
+        { (const RGB_Struct *)sSkyChikoritaWorriedPal, sSkyChikoritaWorriedGfx },
+        { (const RGB_Struct *)sSkyChikoritaSadPal, sSkyChikoritaSadGfx },
+        { (const RGB_Struct *)sSkyChikoritaCryingPal, sSkyChikoritaCryingGfx },
+        { (const RGB_Struct *)sSkyChikoritaShoutingPal, sSkyChikoritaShoutingGfx },
+        { (const RGB_Struct *)sSkyChikoritaTearyEyePal, sSkyChikoritaTearyEyeGfx },
+        { (const RGB_Struct *)sSkyChikoritaDeterminedPal, sSkyChikoritaDeterminedGfx },
+        { (const RGB_Struct *)sSkyChikoritaJoyousPal, sSkyChikoritaJoyousGfx },
+        { (const RGB_Struct *)sSkyChikoritaInspiredPal, sSkyChikoritaInspiredGfx },
+        { (const RGB_Struct *)sSkyChikoritaSurprisedPal, sSkyChikoritaSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyChikorita = { "SIRO", &sSkyChikoritaPortraits };
+#endif
 
 static const u8 sBayleefNormalPal[] = INCBIN_U8("graphics/portraits/bayleef/Normal.pal");
 static const u8 sBayleefNormalGfx[] = INCBIN_U8("graphics/portraits/bayleef/Normal.at4px");
@@ -3927,6 +4542,7 @@ static const PortraitGfx sMeganiumPortraits = {
 
 const SiroArchive gCustomKaoMeganium = { "SIRO", &sMeganiumPortraits };
 
+#ifndef SKY_STORY
 static const u8 sCyndaquilNormalPal[] = INCBIN_U8("graphics/portraits/cyndaquil/Normal.pal");
 static const u8 sCyndaquilNormalGfx[] = INCBIN_U8("graphics/portraits/cyndaquil/Normal.at4px");
 
@@ -3949,6 +4565,56 @@ static const PortraitGfx sCyndaquilPortraits = {
 };
 
 const SiroArchive gCustomKaoCyndaquil = { "SIRO", &sCyndaquilPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyCyndaquilNormalPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Normal.pal");
+static const u8 sSkyCyndaquilNormalGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Normal.at4px");
+static const u8 sSkyCyndaquilHappyPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Happy.pal");
+static const u8 sSkyCyndaquilHappyGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Happy.at4px");
+static const u8 sSkyCyndaquilPainedPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Pained.pal");
+static const u8 sSkyCyndaquilPainedGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Pained.at4px");
+static const u8 sSkyCyndaquilAngryPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Angry.pal");
+static const u8 sSkyCyndaquilAngryGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Angry.at4px");
+static const u8 sSkyCyndaquilWorriedPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Worried.pal");
+static const u8 sSkyCyndaquilWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Worried.at4px");
+static const u8 sSkyCyndaquilSadPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Sad.pal");
+static const u8 sSkyCyndaquilSadGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Sad.at4px");
+static const u8 sSkyCyndaquilCryingPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Crying.pal");
+static const u8 sSkyCyndaquilCryingGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Crying.at4px");
+static const u8 sSkyCyndaquilShoutingPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Shouting.pal");
+static const u8 sSkyCyndaquilShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Shouting.at4px");
+static const u8 sSkyCyndaquilTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/TearyEye.pal");
+static const u8 sSkyCyndaquilTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/TearyEye.at4px");
+static const u8 sSkyCyndaquilDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Determined.pal");
+static const u8 sSkyCyndaquilDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Determined.at4px");
+static const u8 sSkyCyndaquilJoyousPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Joyous.pal");
+static const u8 sSkyCyndaquilJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Joyous.at4px");
+static const u8 sSkyCyndaquilInspiredPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Inspired.pal");
+static const u8 sSkyCyndaquilInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Inspired.at4px");
+static const u8 sSkyCyndaquilSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Surprised.pal");
+static const u8 sSkyCyndaquilSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/cyndaquil/Surprised.at4px");
+
+static const PortraitGfx sSkyCyndaquilPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyCyndaquilNormalPal, sSkyCyndaquilNormalGfx },
+        { (const RGB_Struct *)sSkyCyndaquilHappyPal, sSkyCyndaquilHappyGfx },
+        { (const RGB_Struct *)sSkyCyndaquilPainedPal, sSkyCyndaquilPainedGfx },
+        { (const RGB_Struct *)sSkyCyndaquilAngryPal, sSkyCyndaquilAngryGfx },
+        { (const RGB_Struct *)sSkyCyndaquilWorriedPal, sSkyCyndaquilWorriedGfx },
+        { (const RGB_Struct *)sSkyCyndaquilSadPal, sSkyCyndaquilSadGfx },
+        { (const RGB_Struct *)sSkyCyndaquilCryingPal, sSkyCyndaquilCryingGfx },
+        { (const RGB_Struct *)sSkyCyndaquilShoutingPal, sSkyCyndaquilShoutingGfx },
+        { (const RGB_Struct *)sSkyCyndaquilTearyEyePal, sSkyCyndaquilTearyEyeGfx },
+        { (const RGB_Struct *)sSkyCyndaquilDeterminedPal, sSkyCyndaquilDeterminedGfx },
+        { (const RGB_Struct *)sSkyCyndaquilJoyousPal, sSkyCyndaquilJoyousGfx },
+        { (const RGB_Struct *)sSkyCyndaquilInspiredPal, sSkyCyndaquilInspiredGfx },
+        { (const RGB_Struct *)sSkyCyndaquilSurprisedPal, sSkyCyndaquilSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyCyndaquil = { "SIRO", &sSkyCyndaquilPortraits };
+#endif
 
 static const u8 sQuilavaNormalPal[] = INCBIN_U8("graphics/portraits/quilava/Normal.pal");
 static const u8 sQuilavaNormalGfx[] = INCBIN_U8("graphics/portraits/quilava/Normal.at4px");
@@ -4044,6 +4710,7 @@ static const PortraitGfx sTyphlosionPortraits = {
 
 const SiroArchive gCustomKaoTyphlosion = { "SIRO", &sTyphlosionPortraits };
 
+#ifndef SKY_STORY
 static const u8 sTotodileNormalPal[] = INCBIN_U8("graphics/portraits/totodile/Normal.pal");
 static const u8 sTotodileNormalGfx[] = INCBIN_U8("graphics/portraits/totodile/Normal.at4px");
 
@@ -4066,6 +4733,56 @@ static const PortraitGfx sTotodilePortraits = {
 };
 
 const SiroArchive gCustomKaoTotodile = { "SIRO", &sTotodilePortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyTotodileNormalPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Normal.pal");
+static const u8 sSkyTotodileNormalGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Normal.at4px");
+static const u8 sSkyTotodileHappyPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Happy.pal");
+static const u8 sSkyTotodileHappyGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Happy.at4px");
+static const u8 sSkyTotodilePainedPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Pained.pal");
+static const u8 sSkyTotodilePainedGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Pained.at4px");
+static const u8 sSkyTotodileAngryPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Angry.pal");
+static const u8 sSkyTotodileAngryGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Angry.at4px");
+static const u8 sSkyTotodileWorriedPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Worried.pal");
+static const u8 sSkyTotodileWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Worried.at4px");
+static const u8 sSkyTotodileSadPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Sad.pal");
+static const u8 sSkyTotodileSadGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Sad.at4px");
+static const u8 sSkyTotodileCryingPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Crying.pal");
+static const u8 sSkyTotodileCryingGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Crying.at4px");
+static const u8 sSkyTotodileShoutingPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Shouting.pal");
+static const u8 sSkyTotodileShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Shouting.at4px");
+static const u8 sSkyTotodileTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/totodile/TearyEye.pal");
+static const u8 sSkyTotodileTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/TearyEye.at4px");
+static const u8 sSkyTotodileDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Determined.pal");
+static const u8 sSkyTotodileDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Determined.at4px");
+static const u8 sSkyTotodileJoyousPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Joyous.pal");
+static const u8 sSkyTotodileJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Joyous.at4px");
+static const u8 sSkyTotodileInspiredPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Inspired.pal");
+static const u8 sSkyTotodileInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Inspired.at4px");
+static const u8 sSkyTotodileSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/totodile/Surprised.pal");
+static const u8 sSkyTotodileSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/totodile/Surprised.at4px");
+
+static const PortraitGfx sSkyTotodilePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyTotodileNormalPal, sSkyTotodileNormalGfx },
+        { (const RGB_Struct *)sSkyTotodileHappyPal, sSkyTotodileHappyGfx },
+        { (const RGB_Struct *)sSkyTotodilePainedPal, sSkyTotodilePainedGfx },
+        { (const RGB_Struct *)sSkyTotodileAngryPal, sSkyTotodileAngryGfx },
+        { (const RGB_Struct *)sSkyTotodileWorriedPal, sSkyTotodileWorriedGfx },
+        { (const RGB_Struct *)sSkyTotodileSadPal, sSkyTotodileSadGfx },
+        { (const RGB_Struct *)sSkyTotodileCryingPal, sSkyTotodileCryingGfx },
+        { (const RGB_Struct *)sSkyTotodileShoutingPal, sSkyTotodileShoutingGfx },
+        { (const RGB_Struct *)sSkyTotodileTearyEyePal, sSkyTotodileTearyEyeGfx },
+        { (const RGB_Struct *)sSkyTotodileDeterminedPal, sSkyTotodileDeterminedGfx },
+        { (const RGB_Struct *)sSkyTotodileJoyousPal, sSkyTotodileJoyousGfx },
+        { (const RGB_Struct *)sSkyTotodileInspiredPal, sSkyTotodileInspiredGfx },
+        { (const RGB_Struct *)sSkyTotodileSurprisedPal, sSkyTotodileSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyTotodile = { "SIRO", &sSkyTotodilePortraits };
+#endif
 
 static const u8 sCroconawNormalPal[] = INCBIN_U8("graphics/portraits/croconaw/Normal.pal");
 static const u8 sCroconawNormalGfx[] = INCBIN_U8("graphics/portraits/croconaw/Normal.at4px");
@@ -5819,6 +6536,7 @@ static const PortraitGfx sKingdraPortraits = {
 
 const SiroArchive gCustomKaoKingdra = { "SIRO", &sKingdraPortraits };
 
+#ifndef SKY_STORY
 static const u8 sPhanpyNormalPal[] = INCBIN_U8("graphics/portraits/phanpy/Normal.pal");
 static const u8 sPhanpyNormalGfx[] = INCBIN_U8("graphics/portraits/phanpy/Normal.at4px");
 
@@ -5841,6 +6559,56 @@ static const PortraitGfx sPhanpyPortraits = {
 };
 
 const SiroArchive gCustomKaoPhanpy = { "SIRO", &sPhanpyPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyPhanpyNormalPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Normal.pal");
+static const u8 sSkyPhanpyNormalGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Normal.at4px");
+static const u8 sSkyPhanpyHappyPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Happy.pal");
+static const u8 sSkyPhanpyHappyGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Happy.at4px");
+static const u8 sSkyPhanpyPainedPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Pained.pal");
+static const u8 sSkyPhanpyPainedGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Pained.at4px");
+static const u8 sSkyPhanpyAngryPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Angry.pal");
+static const u8 sSkyPhanpyAngryGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Angry.at4px");
+static const u8 sSkyPhanpyWorriedPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Worried.pal");
+static const u8 sSkyPhanpyWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Worried.at4px");
+static const u8 sSkyPhanpySadPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Sad.pal");
+static const u8 sSkyPhanpySadGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Sad.at4px");
+static const u8 sSkyPhanpyCryingPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Crying.pal");
+static const u8 sSkyPhanpyCryingGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Crying.at4px");
+static const u8 sSkyPhanpyShoutingPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Shouting.pal");
+static const u8 sSkyPhanpyShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Shouting.at4px");
+static const u8 sSkyPhanpyTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/phanpy/TearyEye.pal");
+static const u8 sSkyPhanpyTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/TearyEye.at4px");
+static const u8 sSkyPhanpyDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Determined.pal");
+static const u8 sSkyPhanpyDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Determined.at4px");
+static const u8 sSkyPhanpyJoyousPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Joyous.pal");
+static const u8 sSkyPhanpyJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Joyous.at4px");
+static const u8 sSkyPhanpyInspiredPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Inspired.pal");
+static const u8 sSkyPhanpyInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Inspired.at4px");
+static const u8 sSkyPhanpySurprisedPal[] = INCBIN_U8("graphics/portraits_sky/phanpy/Surprised.pal");
+static const u8 sSkyPhanpySurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/phanpy/Surprised.at4px");
+
+static const PortraitGfx sSkyPhanpyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyPhanpyNormalPal, sSkyPhanpyNormalGfx },
+        { (const RGB_Struct *)sSkyPhanpyHappyPal, sSkyPhanpyHappyGfx },
+        { (const RGB_Struct *)sSkyPhanpyPainedPal, sSkyPhanpyPainedGfx },
+        { (const RGB_Struct *)sSkyPhanpyAngryPal, sSkyPhanpyAngryGfx },
+        { (const RGB_Struct *)sSkyPhanpyWorriedPal, sSkyPhanpyWorriedGfx },
+        { (const RGB_Struct *)sSkyPhanpySadPal, sSkyPhanpySadGfx },
+        { (const RGB_Struct *)sSkyPhanpyCryingPal, sSkyPhanpyCryingGfx },
+        { (const RGB_Struct *)sSkyPhanpyShoutingPal, sSkyPhanpyShoutingGfx },
+        { (const RGB_Struct *)sSkyPhanpyTearyEyePal, sSkyPhanpyTearyEyeGfx },
+        { (const RGB_Struct *)sSkyPhanpyDeterminedPal, sSkyPhanpyDeterminedGfx },
+        { (const RGB_Struct *)sSkyPhanpyJoyousPal, sSkyPhanpyJoyousGfx },
+        { (const RGB_Struct *)sSkyPhanpyInspiredPal, sSkyPhanpyInspiredGfx },
+        { (const RGB_Struct *)sSkyPhanpySurprisedPal, sSkyPhanpySurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyPhanpy = { "SIRO", &sSkyPhanpyPortraits };
+#endif
 
 static const u8 sDonphanNormalPal[] = INCBIN_U8("graphics/portraits/donphan/Normal.pal");
 static const u8 sDonphanNormalGfx[] = INCBIN_U8("graphics/portraits/donphan/Normal.at4px");
@@ -6302,6 +7070,7 @@ static const PortraitGfx sCelebiPortraits = {
 
 const SiroArchive gCustomKaoCelebi = { "SIRO", &sCelebiPortraits };
 
+#ifndef SKY_STORY
 static const u8 sTreeckoNormalPal[] = INCBIN_U8("graphics/portraits/treecko/Normal.pal");
 static const u8 sTreeckoNormalGfx[] = INCBIN_U8("graphics/portraits/treecko/Normal.at4px");
 
@@ -6324,6 +7093,56 @@ static const PortraitGfx sTreeckoPortraits = {
 };
 
 const SiroArchive gCustomKaoTreecko = { "SIRO", &sTreeckoPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyTreeckoNormalPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Normal.pal");
+static const u8 sSkyTreeckoNormalGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Normal.at4px");
+static const u8 sSkyTreeckoHappyPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Happy.pal");
+static const u8 sSkyTreeckoHappyGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Happy.at4px");
+static const u8 sSkyTreeckoPainedPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Pained.pal");
+static const u8 sSkyTreeckoPainedGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Pained.at4px");
+static const u8 sSkyTreeckoAngryPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Angry.pal");
+static const u8 sSkyTreeckoAngryGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Angry.at4px");
+static const u8 sSkyTreeckoWorriedPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Worried.pal");
+static const u8 sSkyTreeckoWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Worried.at4px");
+static const u8 sSkyTreeckoSadPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Sad.pal");
+static const u8 sSkyTreeckoSadGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Sad.at4px");
+static const u8 sSkyTreeckoCryingPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Crying.pal");
+static const u8 sSkyTreeckoCryingGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Crying.at4px");
+static const u8 sSkyTreeckoShoutingPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Shouting.pal");
+static const u8 sSkyTreeckoShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Shouting.at4px");
+static const u8 sSkyTreeckoTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/treecko/TearyEye.pal");
+static const u8 sSkyTreeckoTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/TearyEye.at4px");
+static const u8 sSkyTreeckoDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Determined.pal");
+static const u8 sSkyTreeckoDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Determined.at4px");
+static const u8 sSkyTreeckoJoyousPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Joyous.pal");
+static const u8 sSkyTreeckoJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Joyous.at4px");
+static const u8 sSkyTreeckoInspiredPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Inspired.pal");
+static const u8 sSkyTreeckoInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Inspired.at4px");
+static const u8 sSkyTreeckoSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/treecko/Surprised.pal");
+static const u8 sSkyTreeckoSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/treecko/Surprised.at4px");
+
+static const PortraitGfx sSkyTreeckoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyTreeckoNormalPal, sSkyTreeckoNormalGfx },
+        { (const RGB_Struct *)sSkyTreeckoHappyPal, sSkyTreeckoHappyGfx },
+        { (const RGB_Struct *)sSkyTreeckoPainedPal, sSkyTreeckoPainedGfx },
+        { (const RGB_Struct *)sSkyTreeckoAngryPal, sSkyTreeckoAngryGfx },
+        { (const RGB_Struct *)sSkyTreeckoWorriedPal, sSkyTreeckoWorriedGfx },
+        { (const RGB_Struct *)sSkyTreeckoSadPal, sSkyTreeckoSadGfx },
+        { (const RGB_Struct *)sSkyTreeckoCryingPal, sSkyTreeckoCryingGfx },
+        { (const RGB_Struct *)sSkyTreeckoShoutingPal, sSkyTreeckoShoutingGfx },
+        { (const RGB_Struct *)sSkyTreeckoTearyEyePal, sSkyTreeckoTearyEyeGfx },
+        { (const RGB_Struct *)sSkyTreeckoDeterminedPal, sSkyTreeckoDeterminedGfx },
+        { (const RGB_Struct *)sSkyTreeckoJoyousPal, sSkyTreeckoJoyousGfx },
+        { (const RGB_Struct *)sSkyTreeckoInspiredPal, sSkyTreeckoInspiredGfx },
+        { (const RGB_Struct *)sSkyTreeckoSurprisedPal, sSkyTreeckoSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyTreecko = { "SIRO", &sSkyTreeckoPortraits };
+#endif
 
 static const u8 sGrovyleNormalPal[] = INCBIN_U8("graphics/portraits/grovyle/Normal.pal");
 static const u8 sGrovyleNormalGfx[] = INCBIN_U8("graphics/portraits/grovyle/Normal.at4px");
@@ -6419,6 +7238,7 @@ static const PortraitGfx sSceptilePortraits = {
 
 const SiroArchive gCustomKaoSceptile = { "SIRO", &sSceptilePortraits };
 
+#ifndef SKY_STORY
 static const u8 sTorchicNormalPal[] = INCBIN_U8("graphics/portraits/torchic/Normal.pal");
 static const u8 sTorchicNormalGfx[] = INCBIN_U8("graphics/portraits/torchic/Normal.at4px");
 
@@ -6441,6 +7261,56 @@ static const PortraitGfx sTorchicPortraits = {
 };
 
 const SiroArchive gCustomKaoTorchic = { "SIRO", &sTorchicPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyTorchicNormalPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Normal.pal");
+static const u8 sSkyTorchicNormalGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Normal.at4px");
+static const u8 sSkyTorchicHappyPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Happy.pal");
+static const u8 sSkyTorchicHappyGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Happy.at4px");
+static const u8 sSkyTorchicPainedPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Pained.pal");
+static const u8 sSkyTorchicPainedGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Pained.at4px");
+static const u8 sSkyTorchicAngryPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Angry.pal");
+static const u8 sSkyTorchicAngryGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Angry.at4px");
+static const u8 sSkyTorchicWorriedPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Worried.pal");
+static const u8 sSkyTorchicWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Worried.at4px");
+static const u8 sSkyTorchicSadPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Sad.pal");
+static const u8 sSkyTorchicSadGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Sad.at4px");
+static const u8 sSkyTorchicCryingPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Crying.pal");
+static const u8 sSkyTorchicCryingGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Crying.at4px");
+static const u8 sSkyTorchicShoutingPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Shouting.pal");
+static const u8 sSkyTorchicShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Shouting.at4px");
+static const u8 sSkyTorchicTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/torchic/TearyEye.pal");
+static const u8 sSkyTorchicTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/TearyEye.at4px");
+static const u8 sSkyTorchicDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Determined.pal");
+static const u8 sSkyTorchicDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Determined.at4px");
+static const u8 sSkyTorchicJoyousPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Joyous.pal");
+static const u8 sSkyTorchicJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Joyous.at4px");
+static const u8 sSkyTorchicInspiredPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Inspired.pal");
+static const u8 sSkyTorchicInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Inspired.at4px");
+static const u8 sSkyTorchicSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/torchic/Surprised.pal");
+static const u8 sSkyTorchicSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/torchic/Surprised.at4px");
+
+static const PortraitGfx sSkyTorchicPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyTorchicNormalPal, sSkyTorchicNormalGfx },
+        { (const RGB_Struct *)sSkyTorchicHappyPal, sSkyTorchicHappyGfx },
+        { (const RGB_Struct *)sSkyTorchicPainedPal, sSkyTorchicPainedGfx },
+        { (const RGB_Struct *)sSkyTorchicAngryPal, sSkyTorchicAngryGfx },
+        { (const RGB_Struct *)sSkyTorchicWorriedPal, sSkyTorchicWorriedGfx },
+        { (const RGB_Struct *)sSkyTorchicSadPal, sSkyTorchicSadGfx },
+        { (const RGB_Struct *)sSkyTorchicCryingPal, sSkyTorchicCryingGfx },
+        { (const RGB_Struct *)sSkyTorchicShoutingPal, sSkyTorchicShoutingGfx },
+        { (const RGB_Struct *)sSkyTorchicTearyEyePal, sSkyTorchicTearyEyeGfx },
+        { (const RGB_Struct *)sSkyTorchicDeterminedPal, sSkyTorchicDeterminedGfx },
+        { (const RGB_Struct *)sSkyTorchicJoyousPal, sSkyTorchicJoyousGfx },
+        { (const RGB_Struct *)sSkyTorchicInspiredPal, sSkyTorchicInspiredGfx },
+        { (const RGB_Struct *)sSkyTorchicSurprisedPal, sSkyTorchicSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyTorchic = { "SIRO", &sSkyTorchicPortraits };
+#endif
 
 static const u8 sCombuskenNormalPal[] = INCBIN_U8("graphics/portraits/combusken/Normal.pal");
 static const u8 sCombuskenNormalGfx[] = INCBIN_U8("graphics/portraits/combusken/Normal.at4px");
@@ -6536,6 +7406,7 @@ static const PortraitGfx sBlazikenPortraits = {
 
 const SiroArchive gCustomKaoBlaziken = { "SIRO", &sBlazikenPortraits };
 
+#ifndef SKY_STORY
 static const u8 sMudkipNormalPal[] = INCBIN_U8("graphics/portraits/mudkip/Normal.pal");
 static const u8 sMudkipNormalGfx[] = INCBIN_U8("graphics/portraits/mudkip/Normal.at4px");
 
@@ -6558,6 +7429,56 @@ static const PortraitGfx sMudkipPortraits = {
 };
 
 const SiroArchive gCustomKaoMudkip = { "SIRO", &sMudkipPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkyMudkipNormalPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Normal.pal");
+static const u8 sSkyMudkipNormalGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Normal.at4px");
+static const u8 sSkyMudkipHappyPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Happy.pal");
+static const u8 sSkyMudkipHappyGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Happy.at4px");
+static const u8 sSkyMudkipPainedPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Pained.pal");
+static const u8 sSkyMudkipPainedGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Pained.at4px");
+static const u8 sSkyMudkipAngryPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Angry.pal");
+static const u8 sSkyMudkipAngryGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Angry.at4px");
+static const u8 sSkyMudkipWorriedPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Worried.pal");
+static const u8 sSkyMudkipWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Worried.at4px");
+static const u8 sSkyMudkipSadPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Sad.pal");
+static const u8 sSkyMudkipSadGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Sad.at4px");
+static const u8 sSkyMudkipCryingPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Crying.pal");
+static const u8 sSkyMudkipCryingGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Crying.at4px");
+static const u8 sSkyMudkipShoutingPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Shouting.pal");
+static const u8 sSkyMudkipShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Shouting.at4px");
+static const u8 sSkyMudkipTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/mudkip/TearyEye.pal");
+static const u8 sSkyMudkipTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/TearyEye.at4px");
+static const u8 sSkyMudkipDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Determined.pal");
+static const u8 sSkyMudkipDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Determined.at4px");
+static const u8 sSkyMudkipJoyousPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Joyous.pal");
+static const u8 sSkyMudkipJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Joyous.at4px");
+static const u8 sSkyMudkipInspiredPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Inspired.pal");
+static const u8 sSkyMudkipInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Inspired.at4px");
+static const u8 sSkyMudkipSurprisedPal[] = INCBIN_U8("graphics/portraits_sky/mudkip/Surprised.pal");
+static const u8 sSkyMudkipSurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/mudkip/Surprised.at4px");
+
+static const PortraitGfx sSkyMudkipPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkyMudkipNormalPal, sSkyMudkipNormalGfx },
+        { (const RGB_Struct *)sSkyMudkipHappyPal, sSkyMudkipHappyGfx },
+        { (const RGB_Struct *)sSkyMudkipPainedPal, sSkyMudkipPainedGfx },
+        { (const RGB_Struct *)sSkyMudkipAngryPal, sSkyMudkipAngryGfx },
+        { (const RGB_Struct *)sSkyMudkipWorriedPal, sSkyMudkipWorriedGfx },
+        { (const RGB_Struct *)sSkyMudkipSadPal, sSkyMudkipSadGfx },
+        { (const RGB_Struct *)sSkyMudkipCryingPal, sSkyMudkipCryingGfx },
+        { (const RGB_Struct *)sSkyMudkipShoutingPal, sSkyMudkipShoutingGfx },
+        { (const RGB_Struct *)sSkyMudkipTearyEyePal, sSkyMudkipTearyEyeGfx },
+        { (const RGB_Struct *)sSkyMudkipDeterminedPal, sSkyMudkipDeterminedGfx },
+        { (const RGB_Struct *)sSkyMudkipJoyousPal, sSkyMudkipJoyousGfx },
+        { (const RGB_Struct *)sSkyMudkipInspiredPal, sSkyMudkipInspiredGfx },
+        { (const RGB_Struct *)sSkyMudkipSurprisedPal, sSkyMudkipSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkyMudkip = { "SIRO", &sSkyMudkipPortraits };
+#endif
 
 static const u8 sMarshtompNormalPal[] = INCBIN_U8("graphics/portraits/marshtomp/Normal.pal");
 static const u8 sMarshtompNormalGfx[] = INCBIN_U8("graphics/portraits/marshtomp/Normal.at4px");
@@ -7550,6 +8471,7 @@ static const PortraitGfx sNosepassPortraits = {
 
 const SiroArchive gCustomKaoNosepass = { "SIRO", &sNosepassPortraits };
 
+#ifndef SKY_STORY
 static const u8 sSkittyNormalPal[] = INCBIN_U8("graphics/portraits/skitty/Normal.pal");
 static const u8 sSkittyNormalGfx[] = INCBIN_U8("graphics/portraits/skitty/Normal.at4px");
 
@@ -7572,6 +8494,56 @@ static const PortraitGfx sSkittyPortraits = {
 };
 
 const SiroArchive gCustomKaoSkitty = { "SIRO", &sSkittyPortraits };
+#endif
+
+#ifdef SKY_STORY
+static const u8 sSkySkittyNormalPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Normal.pal");
+static const u8 sSkySkittyNormalGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Normal.at4px");
+static const u8 sSkySkittyHappyPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Happy.pal");
+static const u8 sSkySkittyHappyGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Happy.at4px");
+static const u8 sSkySkittyPainedPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Pained.pal");
+static const u8 sSkySkittyPainedGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Pained.at4px");
+static const u8 sSkySkittyAngryPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Angry.pal");
+static const u8 sSkySkittyAngryGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Angry.at4px");
+static const u8 sSkySkittyWorriedPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Worried.pal");
+static const u8 sSkySkittyWorriedGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Worried.at4px");
+static const u8 sSkySkittySadPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Sad.pal");
+static const u8 sSkySkittySadGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Sad.at4px");
+static const u8 sSkySkittyCryingPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Crying.pal");
+static const u8 sSkySkittyCryingGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Crying.at4px");
+static const u8 sSkySkittyShoutingPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Shouting.pal");
+static const u8 sSkySkittyShoutingGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Shouting.at4px");
+static const u8 sSkySkittyTearyEyePal[] = INCBIN_U8("graphics/portraits_sky/skitty/TearyEye.pal");
+static const u8 sSkySkittyTearyEyeGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/TearyEye.at4px");
+static const u8 sSkySkittyDeterminedPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Determined.pal");
+static const u8 sSkySkittyDeterminedGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Determined.at4px");
+static const u8 sSkySkittyJoyousPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Joyous.pal");
+static const u8 sSkySkittyJoyousGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Joyous.at4px");
+static const u8 sSkySkittyInspiredPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Inspired.pal");
+static const u8 sSkySkittyInspiredGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Inspired.at4px");
+static const u8 sSkySkittySurprisedPal[] = INCBIN_U8("graphics/portraits_sky/skitty/Surprised.pal");
+static const u8 sSkySkittySurprisedGfx[] = INCBIN_U8("graphics/portraits_sky/skitty/Surprised.at4px");
+
+static const PortraitGfx sSkySkittyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkySkittyNormalPal, sSkySkittyNormalGfx },
+        { (const RGB_Struct *)sSkySkittyHappyPal, sSkySkittyHappyGfx },
+        { (const RGB_Struct *)sSkySkittyPainedPal, sSkySkittyPainedGfx },
+        { (const RGB_Struct *)sSkySkittyAngryPal, sSkySkittyAngryGfx },
+        { (const RGB_Struct *)sSkySkittyWorriedPal, sSkySkittyWorriedGfx },
+        { (const RGB_Struct *)sSkySkittySadPal, sSkySkittySadGfx },
+        { (const RGB_Struct *)sSkySkittyCryingPal, sSkySkittyCryingGfx },
+        { (const RGB_Struct *)sSkySkittyShoutingPal, sSkySkittyShoutingGfx },
+        { (const RGB_Struct *)sSkySkittyTearyEyePal, sSkySkittyTearyEyeGfx },
+        { (const RGB_Struct *)sSkySkittyDeterminedPal, sSkySkittyDeterminedGfx },
+        { (const RGB_Struct *)sSkySkittyJoyousPal, sSkySkittyJoyousGfx },
+        { (const RGB_Struct *)sSkySkittyInspiredPal, sSkySkittyInspiredGfx },
+        { (const RGB_Struct *)sSkySkittySurprisedPal, sSkySkittySurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSkySkitty = { "SIRO", &sSkySkittyPortraits };
+#endif
 
 static const u8 sDelcattyNormalPal[] = INCBIN_U8("graphics/portraits/delcatty/Normal.pal");
 static const u8 sDelcattyNormalGfx[] = INCBIN_U8("graphics/portraits/delcatty/Normal.at4px");
@@ -12481,13 +13453,28 @@ const SiroArchive gCustomKaoShaymin = { "SIRO", &sShayminPortraits };
 #define CUSTOM_PORTRAIT_COUNT 387
 #endif
 const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
+#ifndef SKY_STORY
     1, /* bulbasaur */
+#endif
+#ifdef SKY_STORY
+    1, /* bulbasaur */
+#endif
     2, /* ivysaur */
     3, /* venusaur */
+#ifndef SKY_STORY
     4, /* charmander */
+#endif
+#ifdef SKY_STORY
+    4, /* charmander */
+#endif
     5, /* charmeleon */
     6, /* charizard */
+#ifndef SKY_STORY
     7, /* squirtle */
+#endif
+#ifdef SKY_STORY
+    7, /* squirtle */
+#endif
     8, /* wartortle */
     9, /* blastoise */
     10, /* caterpie */
@@ -12505,7 +13492,12 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     22, /* fearow */
     23, /* ekans */
     24, /* arbok */
+#ifndef SKY_STORY
     25, /* pikachu */
+#endif
+#ifdef SKY_STORY
+    25, /* pikachu */
+#endif
     26, /* raichu */
     27, /* sandshrew */
     28, /* sandslash */
@@ -12517,11 +13509,21 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     34, /* nidoking */
     35, /* clefairy */
     36, /* clefable */
+#ifndef SKY_STORY
     37, /* vulpix */
+#endif
+#ifdef SKY_STORY
+    37, /* vulpix */
+#endif
     38, /* ninetales */
     39, /* jigglypuff */
     40, /* wigglytuff */
+#ifndef SKY_STORY
     41, /* zubat */
+#endif
+#ifdef SKY_STORY
+    41, /* zubat */
+#endif
     42, /* golbat */
     43, /* oddish */
     44, /* gloom */
@@ -12532,9 +13534,19 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     49, /* venomoth */
     50, /* diglett */
     51, /* dugtrio */
+#ifndef SKY_STORY
     52, /* meowth */
+#endif
+#ifdef SKY_STORY
+    52, /* meowth */
+#endif
     53, /* persian */
+#ifndef SKY_STORY
     54, /* psyduck */
+#endif
+#ifdef SKY_STORY
+    54, /* psyduck */
+#endif
     55, /* golduck */
     56, /* mankey */
     57, /* primeape */
@@ -12546,7 +13558,12 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     63, /* abra */
     64, /* kadabra */
     65, /* alakazam */
+#ifndef SKY_STORY
     66, /* machop */
+#endif
+#ifdef SKY_STORY
+    66, /* machop */
+#endif
     67, /* machoke */
     68, /* machamp */
     69, /* bellsprout */
@@ -12584,12 +13601,22 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     101, /* electrode */
     102, /* exeggcute */
     103, /* exeggutor */
+#ifndef SKY_STORY
     104, /* cubone */
+#endif
+#ifdef SKY_STORY
+    104, /* cubone */
+#endif
     105, /* marowak */
     106, /* hitmonlee */
     107, /* hitmonchan */
     108, /* lickitung */
+#ifndef SKY_STORY
     109, /* koffing */
+#endif
+#ifdef SKY_STORY
+    109, /* koffing */
+#endif
     110, /* weezing */
     111, /* rhyhorn */
     112, /* rhydon */
@@ -12613,7 +13640,12 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     130, /* gyarados */
     131, /* lapras */
     132, /* ditto */
+#ifndef SKY_STORY
     133, /* eevee */
+#endif
+#ifdef SKY_STORY
+    133, /* eevee */
+#endif
     134, /* vaporeon */
     135, /* jolteon */
     136, /* flareon */
@@ -12632,13 +13664,28 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     149, /* dragonite */
     150, /* mewtwo */
     151, /* mew */
+#ifndef SKY_STORY
     152, /* chikorita */
+#endif
+#ifdef SKY_STORY
+    152, /* chikorita */
+#endif
     153, /* bayleef */
     154, /* meganium */
+#ifndef SKY_STORY
     155, /* cyndaquil */
+#endif
+#ifdef SKY_STORY
+    155, /* cyndaquil */
+#endif
     156, /* quilava */
     157, /* typhlosion */
+#ifndef SKY_STORY
     158, /* totodile */
+#endif
+#ifdef SKY_STORY
+    158, /* totodile */
+#endif
     159, /* croconaw */
     160, /* feraligatr */
     161, /* sentret */
@@ -12711,7 +13758,12 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     253, /* houndour */
     254, /* houndoom */
     255, /* kingdra */
+#ifndef SKY_STORY
     256, /* phanpy */
+#endif
+#ifdef SKY_STORY
+    256, /* phanpy */
+#endif
     257, /* donphan */
     258, /* porygon2 */
     259, /* stantler */
@@ -12732,13 +13784,28 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     274, /* lugia */
     275, /* hooh */
     276, /* celebi */
+#ifndef SKY_STORY
     277, /* treecko */
+#endif
+#ifdef SKY_STORY
+    277, /* treecko */
+#endif
     278, /* grovyle */
     279, /* sceptile */
+#ifndef SKY_STORY
     280, /* torchic */
+#endif
+#ifdef SKY_STORY
+    280, /* torchic */
+#endif
     281, /* combusken */
     282, /* blaziken */
+#ifndef SKY_STORY
     283, /* mudkip */
+#endif
+#ifdef SKY_STORY
+    283, /* mudkip */
+#endif
     284, /* marshtomp */
     285, /* swampert */
     286, /* poochyena */
@@ -12780,7 +13847,12 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     322, /* hariyama */
     323, /* azurill */
     324, /* nosepass */
+#ifndef SKY_STORY
     325, /* skitty */
+#endif
+#ifdef SKY_STORY
+    325, /* skitty */
+#endif
     326, /* delcatty */
     327, /* sableye */
     328, /* mawile */
@@ -13186,13 +14258,28 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
 };
 
 const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
+#ifndef SKY_STORY
     0x0001, /* bulbasaur */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* bulbasaur */
+#endif
     0x1FFF, /* ivysaur */
     0x1FFF, /* venusaur */
+#ifndef SKY_STORY
     0x0001, /* charmander */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* charmander */
+#endif
     0x1FFF, /* charmeleon */
     0x1FFF, /* charizard */
+#ifndef SKY_STORY
     0x0001, /* squirtle */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* squirtle */
+#endif
     0x1FFF, /* wartortle */
     0x1FFF, /* blastoise */
     0x0001, /* caterpie */
@@ -13210,7 +14297,12 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* fearow */
     0x0001, /* ekans */
     0x0001, /* arbok */
+#ifndef SKY_STORY
     0x0001, /* pikachu */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* pikachu */
+#endif
     0x1FFF, /* raichu */
     0x0001, /* sandshrew */
     0x0001, /* sandslash */
@@ -13222,11 +14314,21 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* nidoking */
     0x0001, /* clefairy */
     0x0001, /* clefable */
+#ifndef SKY_STORY
     0x0001, /* vulpix */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* vulpix */
+#endif
     0x0001, /* ninetales */
     0x0001, /* jigglypuff */
     0x0001, /* wigglytuff */
+#ifndef SKY_STORY
     0x0001, /* zubat */
+#endif
+#ifdef SKY_STORY
+    0x0001, /* zubat */
+#endif
     0x0001, /* golbat */
     0x0001, /* oddish */
     0x0001, /* gloom */
@@ -13237,9 +14339,19 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* venomoth */
     0x0001, /* diglett */
     0x0001, /* dugtrio */
+#ifndef SKY_STORY
     0x0001, /* meowth */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* meowth */
+#endif
     0x1FFF, /* persian */
+#ifndef SKY_STORY
     0x0001, /* psyduck */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* psyduck */
+#endif
     0x1FFF, /* golduck */
     0x0001, /* mankey */
     0x0001, /* primeape */
@@ -13251,7 +14363,12 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* abra */
     0x0001, /* kadabra */
     0x0001, /* alakazam */
+#ifndef SKY_STORY
     0x0001, /* machop */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* machop */
+#endif
     0x1FFF, /* machoke */
     0x0001, /* machamp */
     0x0001, /* bellsprout */
@@ -13289,12 +14406,22 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* electrode */
     0x0001, /* exeggcute */
     0x0001, /* exeggutor */
+#ifndef SKY_STORY
     0x0001, /* cubone */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* cubone */
+#endif
     0x1FFF, /* marowak */
     0x0001, /* hitmonlee */
     0x0001, /* hitmonchan */
     0x0001, /* lickitung */
+#ifndef SKY_STORY
     0x0001, /* koffing */
+#endif
+#ifdef SKY_STORY
+    0x0001, /* koffing */
+#endif
     0x0001, /* weezing */
     0x0001, /* rhyhorn */
     0x0001, /* rhydon */
@@ -13318,7 +14445,12 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* gyarados */
     0x0001, /* lapras */
     0x0001, /* ditto */
+#ifndef SKY_STORY
     0x0001, /* eevee */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* eevee */
+#endif
     0x1FFF, /* vaporeon */
     0x1FFF, /* jolteon */
     0x1FFF, /* flareon */
@@ -13337,13 +14469,28 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* dragonite */
     0x0001, /* mewtwo */
     0x0001, /* mew */
+#ifndef SKY_STORY
     0x0001, /* chikorita */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* chikorita */
+#endif
     0x1FFF, /* bayleef */
     0x1FFF, /* meganium */
+#ifndef SKY_STORY
     0x0001, /* cyndaquil */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* cyndaquil */
+#endif
     0x1FFF, /* quilava */
     0x1FFF, /* typhlosion */
+#ifndef SKY_STORY
     0x0001, /* totodile */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* totodile */
+#endif
     0x1FFF, /* croconaw */
     0x1FFF, /* feraligatr */
     0x0001, /* sentret */
@@ -13416,7 +14563,12 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* houndour */
     0x0001, /* houndoom */
     0x0001, /* kingdra */
+#ifndef SKY_STORY
     0x0001, /* phanpy */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* phanpy */
+#endif
     0x0001, /* donphan */
     0x0001, /* porygon2 */
     0x0001, /* stantler */
@@ -13437,13 +14589,28 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* lugia */
     0x0001, /* hooh */
     0x0001, /* celebi */
+#ifndef SKY_STORY
     0x0001, /* treecko */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* treecko */
+#endif
     0x1FFF, /* grovyle */
     0x1FFF, /* sceptile */
+#ifndef SKY_STORY
     0x0001, /* torchic */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* torchic */
+#endif
     0x1FFF, /* combusken */
     0x1FFF, /* blaziken */
+#ifndef SKY_STORY
     0x0001, /* mudkip */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* mudkip */
+#endif
     0x1FFF, /* marshtomp */
     0x1FFF, /* swampert */
     0x0001, /* poochyena */
@@ -13485,7 +14652,12 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x0001, /* hariyama */
     0x0001, /* azurill */
     0x0001, /* nosepass */
+#ifndef SKY_STORY
     0x0001, /* skitty */
+#endif
+#ifdef SKY_STORY
+    0x1FFF, /* skitty */
+#endif
     0x1FFF, /* delcatty */
     0x0001, /* sableye */
     0x0001, /* mawile */
@@ -13893,13 +15065,28 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
 const u16 gCustomPortraitCount = CUSTOM_PORTRAIT_COUNT;
 
 static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
+#ifndef SKY_STORY
     { "ckao001", &gCustomKaoBulbasaur },
+#endif
+#ifdef SKY_STORY
+    { "ckao001", &gCustomKaoSkyBulbasaur },
+#endif
     { "ckao002", &gCustomKaoIvysaur },
     { "ckao003", &gCustomKaoVenusaur },
+#ifndef SKY_STORY
     { "ckao004", &gCustomKaoCharmander },
+#endif
+#ifdef SKY_STORY
+    { "ckao004", &gCustomKaoSkyCharmander },
+#endif
     { "ckao005", &gCustomKaoCharmeleon },
     { "ckao006", &gCustomKaoCharizard },
+#ifndef SKY_STORY
     { "ckao007", &gCustomKaoSquirtle },
+#endif
+#ifdef SKY_STORY
+    { "ckao007", &gCustomKaoSkySquirtle },
+#endif
     { "ckao008", &gCustomKaoWartortle },
     { "ckao009", &gCustomKaoBlastoise },
     { "ckao010", &gCustomKaoCaterpie },
@@ -13917,7 +15104,12 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao022", &gCustomKaoFearow },
     { "ckao023", &gCustomKaoEkans },
     { "ckao024", &gCustomKaoArbok },
+#ifndef SKY_STORY
     { "ckao025", &gCustomKaoPikachu },
+#endif
+#ifdef SKY_STORY
+    { "ckao025", &gCustomKaoSkyPikachu },
+#endif
     { "ckao026", &gCustomKaoRaichu },
     { "ckao027", &gCustomKaoSandshrew },
     { "ckao028", &gCustomKaoSandslash },
@@ -13929,11 +15121,21 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao034", &gCustomKaoNidoking },
     { "ckao035", &gCustomKaoClefairy },
     { "ckao036", &gCustomKaoClefable },
+#ifndef SKY_STORY
     { "ckao037", &gCustomKaoVulpix },
+#endif
+#ifdef SKY_STORY
+    { "ckao037", &gCustomKaoSkyVulpix },
+#endif
     { "ckao038", &gCustomKaoNinetales },
     { "ckao039", &gCustomKaoJigglypuff },
     { "ckao040", &gCustomKaoWigglytuff },
+#ifndef SKY_STORY
     { "ckao041", &gCustomKaoZubat },
+#endif
+#ifdef SKY_STORY
+    { "ckao041", &gCustomKaoSkyZubat },
+#endif
     { "ckao042", &gCustomKaoGolbat },
     { "ckao043", &gCustomKaoOddish },
     { "ckao044", &gCustomKaoGloom },
@@ -13944,9 +15146,19 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao049", &gCustomKaoVenomoth },
     { "ckao050", &gCustomKaoDiglett },
     { "ckao051", &gCustomKaoDugtrio },
+#ifndef SKY_STORY
     { "ckao052", &gCustomKaoMeowth },
+#endif
+#ifdef SKY_STORY
+    { "ckao052", &gCustomKaoSkyMeowth },
+#endif
     { "ckao053", &gCustomKaoPersian },
+#ifndef SKY_STORY
     { "ckao054", &gCustomKaoPsyduck },
+#endif
+#ifdef SKY_STORY
+    { "ckao054", &gCustomKaoSkyPsyduck },
+#endif
     { "ckao055", &gCustomKaoGolduck },
     { "ckao056", &gCustomKaoMankey },
     { "ckao057", &gCustomKaoPrimeape },
@@ -13958,7 +15170,12 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao063", &gCustomKaoAbra },
     { "ckao064", &gCustomKaoKadabra },
     { "ckao065", &gCustomKaoAlakazam },
+#ifndef SKY_STORY
     { "ckao066", &gCustomKaoMachop },
+#endif
+#ifdef SKY_STORY
+    { "ckao066", &gCustomKaoSkyMachop },
+#endif
     { "ckao067", &gCustomKaoMachoke },
     { "ckao068", &gCustomKaoMachamp },
     { "ckao069", &gCustomKaoBellsprout },
@@ -13996,12 +15213,22 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao101", &gCustomKaoElectrode },
     { "ckao102", &gCustomKaoExeggcute },
     { "ckao103", &gCustomKaoExeggutor },
+#ifndef SKY_STORY
     { "ckao104", &gCustomKaoCubone },
+#endif
+#ifdef SKY_STORY
+    { "ckao104", &gCustomKaoSkyCubone },
+#endif
     { "ckao105", &gCustomKaoMarowak },
     { "ckao106", &gCustomKaoHitmonlee },
     { "ckao107", &gCustomKaoHitmonchan },
     { "ckao108", &gCustomKaoLickitung },
+#ifndef SKY_STORY
     { "ckao109", &gCustomKaoKoffing },
+#endif
+#ifdef SKY_STORY
+    { "ckao109", &gCustomKaoSkyKoffing },
+#endif
     { "ckao110", &gCustomKaoWeezing },
     { "ckao111", &gCustomKaoRhyhorn },
     { "ckao112", &gCustomKaoRhydon },
@@ -14025,7 +15252,12 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao130", &gCustomKaoGyarados },
     { "ckao131", &gCustomKaoLapras },
     { "ckao132", &gCustomKaoDitto },
+#ifndef SKY_STORY
     { "ckao133", &gCustomKaoEevee },
+#endif
+#ifdef SKY_STORY
+    { "ckao133", &gCustomKaoSkyEevee },
+#endif
     { "ckao134", &gCustomKaoVaporeon },
     { "ckao135", &gCustomKaoJolteon },
     { "ckao136", &gCustomKaoFlareon },
@@ -14044,13 +15276,28 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao149", &gCustomKaoDragonite },
     { "ckao150", &gCustomKaoMewtwo },
     { "ckao151", &gCustomKaoMew },
+#ifndef SKY_STORY
     { "ckao152", &gCustomKaoChikorita },
+#endif
+#ifdef SKY_STORY
+    { "ckao152", &gCustomKaoSkyChikorita },
+#endif
     { "ckao153", &gCustomKaoBayleef },
     { "ckao154", &gCustomKaoMeganium },
+#ifndef SKY_STORY
     { "ckao155", &gCustomKaoCyndaquil },
+#endif
+#ifdef SKY_STORY
+    { "ckao155", &gCustomKaoSkyCyndaquil },
+#endif
     { "ckao156", &gCustomKaoQuilava },
     { "ckao157", &gCustomKaoTyphlosion },
+#ifndef SKY_STORY
     { "ckao158", &gCustomKaoTotodile },
+#endif
+#ifdef SKY_STORY
+    { "ckao158", &gCustomKaoSkyTotodile },
+#endif
     { "ckao159", &gCustomKaoCroconaw },
     { "ckao160", &gCustomKaoFeraligatr },
     { "ckao161", &gCustomKaoSentret },
@@ -14123,7 +15370,12 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao253", &gCustomKaoHoundour },
     { "ckao254", &gCustomKaoHoundoom },
     { "ckao255", &gCustomKaoKingdra },
+#ifndef SKY_STORY
     { "ckao256", &gCustomKaoPhanpy },
+#endif
+#ifdef SKY_STORY
+    { "ckao256", &gCustomKaoSkyPhanpy },
+#endif
     { "ckao257", &gCustomKaoDonphan },
     { "ckao258", &gCustomKaoPorygon2 },
     { "ckao259", &gCustomKaoStantler },
@@ -14144,13 +15396,28 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao274", &gCustomKaoLugia },
     { "ckao275", &gCustomKaoHooh },
     { "ckao276", &gCustomKaoCelebi },
+#ifndef SKY_STORY
     { "ckao277", &gCustomKaoTreecko },
+#endif
+#ifdef SKY_STORY
+    { "ckao277", &gCustomKaoSkyTreecko },
+#endif
     { "ckao278", &gCustomKaoGrovyle },
     { "ckao279", &gCustomKaoSceptile },
+#ifndef SKY_STORY
     { "ckao280", &gCustomKaoTorchic },
+#endif
+#ifdef SKY_STORY
+    { "ckao280", &gCustomKaoSkyTorchic },
+#endif
     { "ckao281", &gCustomKaoCombusken },
     { "ckao282", &gCustomKaoBlaziken },
+#ifndef SKY_STORY
     { "ckao283", &gCustomKaoMudkip },
+#endif
+#ifdef SKY_STORY
+    { "ckao283", &gCustomKaoSkyMudkip },
+#endif
     { "ckao284", &gCustomKaoMarshtomp },
     { "ckao285", &gCustomKaoSwampert },
     { "ckao286", &gCustomKaoPoochyena },
@@ -14192,7 +15459,12 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao322", &gCustomKaoHariyama },
     { "ckao323", &gCustomKaoAzurill },
     { "ckao324", &gCustomKaoNosepass },
+#ifndef SKY_STORY
     { "ckao325", &gCustomKaoSkitty },
+#endif
+#ifdef SKY_STORY
+    { "ckao325", &gCustomKaoSkySkitty },
+#endif
     { "ckao326", &gCustomKaoDelcatty },
     { "ckao327", &gCustomKaoSableye },
     { "ckao328", &gCustomKaoMawile },

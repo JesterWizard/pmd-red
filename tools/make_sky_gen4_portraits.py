@@ -27,6 +27,16 @@ sys.path.insert(0, str(ROOT / "tools"))
 import make_sky_cutaways  # noqa: E402,F401  (PIL putpalette patch)
 
 OUT = ROOT / "graphics" / "portraits"
+# Red species whose faces the sky build takes from EoS as well (they replace
+# Red's / SpriteCollab's in the sky build only, see convert_custom_portraits.py):
+# every hero / partner choice and chapter 1's Zubat and Koffing.
+SKY_RED_OUT = ROOT / "graphics" / "portraits_sky"
+SKY_RED_SPECIES = {  # folder: national dex
+    "bulbasaur": 1, "charmander": 4, "squirtle": 7, "pikachu": 25, "meowth": 52,
+    "psyduck": 54, "machop": 66, "cubone": 104, "eevee": 133, "chikorita": 152,
+    "cyndaquil": 155, "totodile": 158, "phanpy": 231, "treecko": 252, "torchic": 255,
+    "mudkip": 258, "skitty": 300, "vulpix": 37, "zubat": 41, "koffing": 109,
+}
 GEN4_H = ROOT / "include" / "constants" / "sky_gen4.h"
 EMOTIONS = ["Normal", "Happy", "Pained", "Angry", "Worried", "Sad", "Crying",
             "Shouting", "TearyEye", "Determined", "Joyous", "Inspired", "Surprised"]
@@ -59,7 +69,17 @@ def main() -> int:
         (folder / "credits.txt").write_text("Explorers of Sky portraits (Chunsoft / The Pokémon Company), "
                                             "exported by tools/make_sky_gen4_portraits.py\n")
         total += n
-    print(f"{len(species)} species, {total} portraits")
+    for name, dex in sorted(SKY_RED_SPECIES.items()):
+        folder = SKY_RED_OUT / name
+        folder.mkdir(parents=True, exist_ok=True)
+        for e, emo in enumerate(EMOTIONS):
+            img = kao.get(by_dex[dex] - 1, 2 * e)
+            if img is not None:
+                img.get().convert("RGBA").save(folder / f"{emo}.png")
+                total += 1
+        (folder / "credits.txt").write_text("Explorers of Sky portraits (Chunsoft / The Pokémon Company), "
+                                            "exported by tools/make_sky_gen4_portraits.py\n")
+    print(f"{len(species)} + {len(SKY_RED_SPECIES)} species, {total} portraits")
     return 0
 
 

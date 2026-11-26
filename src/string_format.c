@@ -214,6 +214,103 @@ static EWRAM_INIT bool8 sSkyTextbox = FALSE;
 #define TEXTBOX_HEIGHT ((TEXTBOX_LINE_HEIGHT * 3) + 1)
 #define TEXTBOX_OUT_OF_SPACE(y)(y > TEXTBOX_HEIGHT)
 
+#ifdef SKY_STORY
+/* The Sky box is narrower than Red's and speaker names vary (the partner can
+ * be renamed), so the script's own line breaks can run past the box. Wrap a
+ * line that is too wide at its last space; the rest of that line joins the
+ * next one (its '\n' becomes a space) so no word is left alone on a line.
+ * Works in place: a space and a '\n' are both one byte. */
+static void SkyWrapDialogueText(u8 *str, s32 maxWidth)
+{
+    s32 width = 0;
+    u8 *lastSpace = NULL;
+    bool8 wrapped = FALSE;
+
+    while (*str != '\0') {
+        u8 c = *str;
+
+        if (c == '\n' || c == '\r') {
+            if (wrapped && c == '\n' && str[1] != '\0' && str[1] != '\n') {
+                /* carry the wrapped remainder on: the break becomes a space */
+                *str = ' ';
+                wrapped = FALSE;
+                lastSpace = str;
+                width += GetCharacter(' ') != NULL ? GetCharacter(' ')->width + gCharacterSpacing : 0;
+                str++;
+                continue;
+            }
+            width = 0;
+            lastSpace = NULL;
+            wrapped = FALSE;
+            str++;
+            continue;
+        }
+        if (c == '#') {
+            switch (str[1]) {
+            case 'n': case 'P': case 'p':
+                width = 0;
+                lastSpace = NULL;
+                wrapped = FALSE;
+                str += 2;
+                continue;
+            case '[':
+                str += 2;
+                while (*str != '\0' && *str != ']')
+                    str++;
+                if (*str == ']')
+                    str++;
+                continue;
+            case 'C': case 'c': case '~': case ';': case '.':
+                if (str[1] == '.')
+                    width += str[2];
+                str += 3;
+                continue;
+            case '_': case '=': case 'y':
+                str += 3;
+                if (*str == '.')
+                    str++;
+                continue;
+            case 'R': case 'r': case 'W': case ':': case '+':
+                str += 2;
+                continue;
+            case 'S':
+                str += 4;
+                continue;
+            case '>':
+                return; /* tab stops: leave the rest as written */
+            default:
+                break;
+            }
+        }
+        {
+            u32 chr;
+            u8 *next = (u8 *)GetNextCharFromStr(str, &chr);
+
+            if (chr == ' ') {
+                lastSpace = str;
+            }
+            if (chr == '`') {
+                width += 6;
+            }
+            else if (chr != 0x82A0 && chr != 0x82A2) {
+                const unkChar *glyph = GetCharacter(chr);
+                if (glyph != NULL)
+                    width += glyph->width + gCharacterSpacing;
+            }
+            if (width > maxWidth && lastSpace != NULL) {
+                *lastSpace = '\n';
+                str = lastSpace + 1;
+                width = 0;
+                lastSpace = NULL;
+                wrapped = TRUE;
+                continue;
+            }
+            str = next;
+        }
+    }
+}
+#endif
+
 // arm9.bin::0201D700
 void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const MenuItem *menuItems, void *arg_0, u32 a5, u32 unknownUnused, MonPortraitMsg *monPortraitPtr, u16 flags)
 {
@@ -295,6 +392,11 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
     }
     ResetUnusedInputStruct();
     ShowWindows(&sDialogueBoxWinTemplates, TRUE, TRUE);
+#ifdef SKY_STORY
+    /* 3 px right margin, a little under the 5 px on the left */
+    if (sSkyTextbox)
+        SkyWrapDialogueText(sDialogueTextBuffer, sDialogueBoxWinTemplates.id[0].width * 8 - TEXTBOX_TEXT_X - 3);
+#endif
     sTextPrintStruct.x = TEXTBOX_TEXT_X;
     sTextPrintStruct.y = TEXTBOX_TEXT_Y;
     sTextPrintStruct.arrowSpritePosX = 112;
