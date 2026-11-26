@@ -68,19 +68,53 @@ def background(dbin, bg: int, name: str) -> list[str]:
             k = key(grid[y][x])
             canon.setdefault(k, grid[y][x])
             grid[y][x] = canon[k]
+    # Fold down to Red's chunk budget by merging the most alike chunks
+    # (pixel distance x how often the rarer one is used), so the dark cave
+    # ceiling and sand variants merge with their look-alikes instead of a
+    # neighbour's picture.
     from collections import Counter
-    while True:
-        cnt = Counter(c for row in grid for c in row)
-        if len(cnt) <= RED_CHUNKS - 1:
-            break
-        core = {grid[y][x] for y in range(4, 21) for x in range(4, 20)}
-        victim = min((c for c in cnt if c not in core), key=lambda c: cnt[c])
-        for y in range(24):
-            for x in range(24):
-                if grid[y][x] == victim:
-                    nb = [grid[yy][xx] for yy, xx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1))
-                          if 0 <= yy < 24 and 0 <= xx < 24 and grid[yy][xx] != victim]
-                    grid[y][x] = Counter(nb).most_common(1)[0][0] if nb else 0
+    import numpy as np
+    cnt = Counter(c for row in grid for c in row)
+    ids = sorted(cnt)
+    if len(ids) > RED_CHUNKS - 1:
+        def render(c):
+            img = np.zeros((24, 24, 3), dtype=np.float32)
+            for k, e in enumerate(dpc.chunks[c]):
+                tile = bytes(dpci.tiles[e.idx]) if e.idx < len(dpci.tiles) else bytes(32)
+                pal = dpl.palettes[e.pal_idx] if e.pal_idx < len(dpl.palettes) else [0] * 48
+                px = np.array([[(tile[y * 4 + x // 2] >> (4 * (x & 1))) & 15 for x in range(8)]
+                               for y in range(8)])
+                if e.flip_x:
+                    px = px[:, ::-1]
+                if e.flip_y:
+                    px = px[::-1, :]
+                rgb = np.array([pal[i * 3:i * 3 + 3] for i in range(16)], dtype=np.float32)
+                ty, tx = divmod(k, 3)
+                img[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8] = rgb[px]
+            return img.reshape(-1)
+        vec = np.stack([render(c) for c in ids])
+        sq = (vec ** 2).sum(axis=1)
+        dist = sq[:, None] + sq[None, :] - 2 * vec @ vec.T
+        alive = {c: i for i, c in enumerate(ids)}
+        repl = {}
+        while len(alive) > RED_CHUNKS - 1:
+            best = None
+            keys = list(alive)
+            for a_i, a in enumerate(keys):
+                for b in keys[a_i + 1:]:
+                    d = dist[alive[a], alive[b]] * min(cnt[a], cnt[b])
+                    if best is None or d < best[0]:
+                        best = (d, a, b)
+            _, a, b = best
+            keep, drop = (a, b) if cnt[a] >= cnt[b] else (b, a)
+            repl[drop] = keep
+            cnt[keep] += cnt.pop(drop)
+            del alive[drop]
+        def final(c):
+            while c in repl:
+                c = repl[c]
+            return c
+        grid = [[final(c) for c in row] for row in grid]
     used = sorted({c for row in grid for c in row})
     remap = {c: i + 1 for i, c in enumerate(used)}
     chunks = [[None] * 9] + [dpc.chunks[c] for c in used]

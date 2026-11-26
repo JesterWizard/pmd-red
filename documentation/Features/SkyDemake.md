@@ -703,8 +703,9 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 - Gen 4 evolutions needing Gen 4 items or move/gender conditions evolve at
   level 40. Gen 4 Pokémon only appear in the wild in Beach Cave (Shellos); the
   rest of Red's dungeons keep Red's spawn lists.
-- Beach Cave Pit's background is folded into Red's 249-chunk limit: the
-  dark cave ceiling at the top repeats a few chunks.
+- Beach Cave Pit's background is folded into Red's 249-chunk limit by
+  merging the most alike chunks (pixel distance weighted by use), so the
+  picture keeps its shape; a few near-identical rock and sand chunks repeat.
 - Old saves need a new game in the sky build.
 - Test hooks: `DEBUG_BOOT_STARTER=<id> DEBUG_BOOT_PARTNER=<id>` pick the team
   `DEBUG_BOOT_EVENT` creates.
