@@ -38,8 +38,16 @@ and returns to the title screen. Continuing a finished save shows the same
 ending again (`s_script_SKY_DEMO_END` in
 [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h),
 `SKY_SAVE_GAME` / `SKY_DEMO_TO_TITLE` in [`src/sky_story.c`](../../src/sky_story.c),
-the Continue check in [`src/ground_main.c`](../../src/ground_main.c)). Red's
-story after chapter 1 is still in the ROM but no longer reached.
+the Continue check in [`src/ground_main.c`](../../src/ground_main.c)).
+
+Red's story after chapter 1 is not in the sky build: only the ground maps the
+demo visits keep their scripts and map files (Tiny Woods entrance/end, which
+host the Sky scenes, the personality test, the two logo maps and the Sky
+maps; found by tracing a full playthrough). The other 130 station script
+files compile to nothing under `SKY_STORY`, their `gMapScriptTable` entries
+are empty (`GetGroundScript` returns the null script) and their map files
+are not linked (their names in the sorted ground file table point at a kept
+file). This saves about 3.7 MB. The vanilla build keeps everything.
 
 ---
 

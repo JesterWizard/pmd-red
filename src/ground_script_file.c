@@ -53,8 +53,14 @@ static const struct GroundScriptHeader sNullGroundScript = {0};
 
 const struct GroundScriptHeader *GetGroundScript(s16 mapId, const DebugLocation *unused)
 {
-    if (mapId != -1)
+    if (mapId != -1) {
+#ifdef SKY_STORY
+        /* Maps of Red's later story have no scripts in the sky build. */
+        if (gMapScriptTable[mapId] == NULL)
+            return &sNullGroundScript;
+#endif
         return gMapScriptTable[mapId];
+    }
     else
         return &sNullGroundScript;
 }

@@ -46,7 +46,12 @@ static const u8 *const sGroundPlaceNames[] = {
     [GROUND_PLACE_SPINDA_CAFE] =                _("Spinda's Café"),
     [GROUND_PLACE_DIRECTION] =                  _("{COLOR YELLOW_C}direction{RESET}"),
     [GROUND_PLACE_NEW_GAME] =                   _("New Game"),
+#ifdef SKY_STORY
+    /* The demo saves after the beach epilogue (a "scene" map). */
+    [GROUND_PLACE_SCENE] =                      _("Beach"),
+#else
     [GROUND_PLACE_SCENE] =                      _("{COLOR YELLOW_C}scene{RESET}"),
+#endif
     [GROUND_PLACE_INVALIDITY] =                 _("{COLOR RED_W}invalidity{RESET}"),
 };
 

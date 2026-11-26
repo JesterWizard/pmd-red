@@ -1,56 +1,162 @@
 #include "global.h"
 #include "globaldata.h"
 
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD12P04[] ALIGNED(4) = INCBIN_U8("data/map_bg/D12P04.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD12P04c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D12P04c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD12P04m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D12P04m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD13P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D13P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD13P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D13P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD13P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D13P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD13P03[] ALIGNED(4) = INCBIN_U8("data/map_bg/D13P03.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD13P03c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D13P03c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD13P03m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D13P03m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD14P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D14P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD14P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D14P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD14P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D14P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD15P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D15P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD15P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D15P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD15P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D15P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD16P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D16P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD17P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D17P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD18P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D18P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD19P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D19P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD19P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D19P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD19P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D19P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD20P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D20P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD21P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D21P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD21P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D21P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD21P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D21P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD22P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D22P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD22P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D22P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD22P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D22P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD23P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D23P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD24P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D24P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD24P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D24P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD24P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D24P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD24P02[] ALIGNED(4) = INCBIN_U8("data/map_bg/D24P02.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD24P02c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D24P02c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD24P02m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D24P02m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD25P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D25P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/H01P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P01W[] ALIGNED(4) = INCBIN_U8("data/map_bg/H01P01W.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P01W1[] ALIGNED(4) = INCBIN_U8("data/map_bg/H01P01W1.bpa");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P01Wc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P01Wc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P01Wm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P01Wm.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P02[] ALIGNED(4) = INCBIN_U8("data/map_bg/H01P02.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P02c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P02c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P02m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P02m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P03[] ALIGNED(4) = INCBIN_U8("data/map_bg/H01P03.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P03c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P03c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH01P03m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H01P03m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH02P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/H02P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH02P01W1[] ALIGNED(4) = INCBIN_U8("data/map_bg/H02P01W1.bpa");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH02P01Wc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H02P01Wc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileH02P01Wm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/H02P01Wm.bma.lz");
+#endif

@@ -118,8 +118,18 @@ const u8 gFileD01P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D01P01m.bma.lz");
 const u8 gFileD01P02[] ALIGNED(4) = INCBIN_U8("data/map_bg/D01P02.bpl");
 const u8 gFileD01P02c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D01P02c.bpc.lz");
 const u8 gFileD01P02m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D01P02m.bma.lz");
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD02P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D02P01.bpl");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD02P01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D02P01c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD02P01m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D02P01m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD02P02m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/D02P02m.bma.lz");
+#endif
+#ifndef SKY_STORY /* Red's story: not in the sky build */
 const u8 gFileD03P01[] ALIGNED(4) = INCBIN_U8("data/map_bg/D03P01.bpl");
+#endif
