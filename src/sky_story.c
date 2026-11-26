@@ -108,6 +108,7 @@ void SkyStory_ApplyFloorOverrides(void)
     if (floor >= BEACH_CAVE_PIT_FLOOR && SkyStory_IsBeachCaveStoryRun()) {
         /* Beach Cave Pit */
         gDungeon->floorProperties.fixedRoomNumber = FIXED_ROOM_SINISTER_WOODS_TEAM_MEANIES;
+        gDungeon->floorProperties.tileset = SKY_BEACH_CAVE_PIT_TILESET;
         gDungeon->floorProperties.enemyDensity = 0;
         gDungeon->floorProperties.kecleonShopChance = 0;
         gDungeon->floorProperties.monsterHouseChance = 0;

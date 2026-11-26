@@ -30,6 +30,12 @@ s32 SkyStory_GetBeachCaveFloorCount(void);
 u8 SkyStory_RemapDataFloor(u8 dungeonId, u8 floor);
 struct OpenedFile;
 void SkyStory_PatchFixedMap(struct OpenedFile *file);
+/* EoS Beach Cave dungeon tileset (src/sky_dungeon_tileset.c). The Pit floor
+ * borrows Red tileset 64 (a pre-drawn background tileset, no water) for its
+ * game logic and shows the EoS Beach Cave Pit background. */
+#define SKY_BEACH_CAVE_PIT_TILESET 64
+bool8 SkyStory_LoadDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, u16 (*cel)[9], u8 *cex);
+bool8 SkyStory_IsSkyTilesetFile(const struct OpenedFile *file);
 /* Fixed-room spawn remap: Gengar/Ekans -> Zubat/Koffing; Medicham dropped. */
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
 

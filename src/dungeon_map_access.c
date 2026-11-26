@@ -20,6 +20,7 @@
 #include "dungeon_pos_data.h"
 #include "dungeon_data.h"
 #include "dungeon_8041AD0.h"
+#include "sky_story.h"
 
 EWRAM_DATA OpenedFile *gDungeonPaletteFile = {0};
 EWRAM_DATA AnimatedColor gDungeonAnimatedColors[32] = {0};
@@ -81,6 +82,13 @@ void LoadDungeonTilesetAssets(void)
   OpenedFile *file_1;
   u8 fileName [12];
 
+#ifdef SKY_STORY
+  if (SkyStory_LoadDungeonTileset(&gDungeonPaletteFile, &gDungeonAnimatedColorsFile,
+                                  gDungeon->unk11884, gDungeon->unk12C24)) {
+    ReadAnimatedColorData(gDungeonAnimatedColors,gDungeonAnimatedColorsFile,0x20);
+    goto terrain;
+  }
+#endif
   sprintf(fileName,"b%02dfon",gUnknown_8108EC0[gDungeon->tileset]);
   file = OpenFileAndGetFileDataPtr(fileName,&gDungeonFileArchive);
   DecompressATGlobalFile((u32 *)0x06008000,0,file);
@@ -109,6 +117,9 @@ void LoadDungeonTilesetAssets(void)
   sprintf(fileName,"b%02dcanm",gDungeon->tileset);
   gDungeonAnimatedColorsFile = OpenFileAndGetFileDataPtr(fileName,&gDungeonFileArchive);
   ReadAnimatedColorData(gDungeonAnimatedColors,gDungeonAnimatedColorsFile,0x20);
+#ifdef SKY_STORY
+terrain:
+#endif
   gWalkableTileToCrossableTerrain[0] = CROSSABLE_TERRAIN_REGULAR;
   gWalkableTileToCrossableTerrain[1] = CROSSABLE_TERRAIN_LIQUID;
   gWalkableTileToCrossableTerrain[MOVEMENT_TYPE_CHASM] = CROSSABLE_TERRAIN_CREVICE;
@@ -128,6 +139,13 @@ void LoadDungeonTilesetAssets(void)
 
 void sub_8049820(void)
 {
+#ifdef SKY_STORY
+    if (SkyStory_IsSkyTilesetFile(gDungeonAnimatedColorsFile)) {
+        gDungeonAnimatedColorsFile = NULL;
+        gDungeonPaletteFile = NULL;
+        return;
+    }
+#endif
     CloseFile(gDungeonAnimatedColorsFile);
     CloseFile(gDungeonPaletteFile);
 }
