@@ -786,6 +786,9 @@ void sub_80A7040(struct UnkGroundSpriteStruct *ptr, s32 a1_, s32 a2_, s32 a3)
         ptr->unk58 = a1;
         ptr->unk5A = a2;
         ptr->unk60 = a3;
+#ifdef SKY_STORY
+        ptr->effectTries = 0;
+#endif
     }
 }
 
@@ -821,6 +824,20 @@ bool8 sub_80A7094(struct UnkGroundSpriteStruct *ptr, PixelPos *r10, PixelPos *po
             unkStruct.unk18 = 0;
             unkStruct.spriteMasks = unkSubStruct;
             ptr->unk5C = sub_800E890(&unkStruct);
+#ifdef SKY_STORY
+            /* No free effect slot: retrying forever left WAIT_EFFECT hanging
+             * (the beach theft hung on "Yowch!" with a Charmander partner).
+             * Give up on the emote after ~2 s so the script carries on. */
+            if (ptr->unk5C == -1) {
+                if (++ptr->effectTries > 120) {
+                    ptr->unk58 = 0;
+                    ptr->effectTries = 0;
+                }
+            }
+            else {
+                ptr->effectTries = 0;
+            }
+#endif
         }
         else if (!sub_800E9E4(ptr->unk5C)) {
             ptr->unk5C = -1;

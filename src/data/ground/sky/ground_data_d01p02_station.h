@@ -64,8 +64,8 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — 
     AWAIT_CUE(5),
     SELECT_ENTITIES(-1, 1), /* EoS: it lands at (28.5, 23) */
     FANFARE_PLAY2(466),
-    ALERT_CUE(6), /* partner: "!" */
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHWEST),
+    ALERT_CUE(6), /* partner: "!" */
     AWAIT_CUE(5),
     MSG_NPC(NPC_KOFFING, _(" Whoa-ho!{WAIT_PRESS} Don't think you're so\nawesome. Your victory was a fluke!")),
     TEXTBOX_CLEAR,

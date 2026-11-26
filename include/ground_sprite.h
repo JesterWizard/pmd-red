@@ -36,6 +36,9 @@ struct UnkGroundSpriteStruct
     u8 unk70;
     PixelPos unk74;
     s32 unk7C;
+#ifdef SKY_STORY
+    s16 effectTries; /* frames an emotion effect has failed to start */
+#endif
 };
 
 void sub_80A62F0(void);

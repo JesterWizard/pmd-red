@@ -272,7 +272,7 @@ static const struct ScriptCommand s_gs178_g6_s1_lives0_dlg0[] = { /* Zubat — d
     ALERT_CUE(8),
     WALK_RELATIVE(307, 96, 24),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_SOUTH),
-    AWAIT_CUE(5),
+    WAIT(20), /* Koffing (shorter walk) is in place */
     WAIT(45),
     PORTRAIT(PLACEMENT_MIDLEFT_TOP, NPC_KOFFING, EMOTION_NORMAL),
     PORTRAIT(PLACEMENT_MIDRIGHT_TOP_FLIP, NPC_ZUBAT, EMOTION_NORMAL),
@@ -305,7 +305,6 @@ static const struct ScriptCommand s_gs178_g6_s1_lives1_dlg0[] = { /* Koffing */
     WAIT(10),
     WALK_RELATIVE(307, 88, 24),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_SOUTH),
-    ALERT_CUE(5),
     AWAIT_CUE(8),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_EAST),
     ALERT_CUE(5),
@@ -506,18 +505,19 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     SELECT_LIVES(-1, 1), /* Zubat & Koffing swoop in from the right */
     WAIT(1),
-    ALERT_CUE(7),
-    ALERT_CUE(8),
-    WAIT(30),
     FANFARE_PLAY2(466),
     CALL_SCRIPT(NOTICE_FUNC),
+    /* Cues are only delivered to scripts already waiting (GroundScript_Unlock):
+     * every ALERT here is followed straight away by its AWAIT. */
+    ALERT_CUE(7),
+    ALERT_CUE(8),
     AWAIT_CUE(5), /* Zubat rams into the partner */
     ALERT_CUE(6),
-    PORTRAIT(PLACEMENT_MIDLEFT_TOP, NPC_PARTNER, EMOTION_SHOUTING),
-    MSG_NPC(NPC_PARTNER, _(" Yowch!")),
+    AWAIT_CUE(5), /* partner knocked back, shocked */
     SELECT_ENTITIES(-1, 2), /* EoS: the Relic Fragment falls on the sand */
     MOVE_RELATIVE(1024, -40, 0),
-    AWAIT_CUE(5),
+    PORTRAIT(PLACEMENT_MIDLEFT_TOP, NPC_PARTNER, EMOTION_SHOUTING),
+    MSG_NPC(NPC_PARTNER, _(" Yowch!")),
     TEXTBOX_CLEAR,
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_KOFFING, EMOTION_NORMAL),
     PORTRAIT(PLACEMENT_MIDRIGHT_TOP_FLIP, NPC_ZUBAT, EMOTION_NORMAL),
@@ -550,9 +550,9 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     ALERT_CUE(7), /* Zubat swoops down and grabs it */
     AWAIT_CUE(5),
     ALERT_CUE(9), /* the fragment is gone */
+    AWAIT_CUE(5), /* Zubat back in place */
     MSG_NPC(NPC_PARTNER, _(" Aaaah!")),
     TEXTBOX_CLEAR,
-    AWAIT_CUE(5),
     ROTATE_TO_LIVES(4, DIR_TRANS_11, SKY_LIVES_ZUBAT),
     MSG_NPC(NPC_KOFFING, _(" Whoa-ho-ho!{WAIT_PRESS} Not gonna make a\nmove to get that back?{WAIT_PRESS} What's the\nmatter?{WAIT_PRESS} Too scared?")),
     MSG_NPC(NPC_KOFFING, _(" I didn't expect that you'd be such\na big coward!")),
@@ -768,9 +768,9 @@ static const struct ScriptCommand s_gs178_g2_s0_lives0_dlg0[] = { /* Player */
     WAIT_FADE,
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_NORMAL),
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_PAINED),
-    ALERT_CUE(6),
     CALL_SCRIPT(WAKEUP_FUNC),
     CALL_SCRIPT(LOOK_AROUND_DOWN_FUNC),
+    ALERT_CUE(6),
     AWAIT_CUE(5),
     ROTATE_TO_LIVES(4, DIR_TRANS_11, LIVES_KIND_PARTNER),
     WAIT(20),
