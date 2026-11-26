@@ -117,6 +117,67 @@ dungeon, measured on DeSmuME as 60% / 40%; `ToggleWindowBgBuffer` in
 `sub_803EAF0` kind 3 in [`src/dungeon_vram.c`](../../src/dungeon_vram.c),
 `UpdateBgTilemapForDungeonMap`).
 
+### Dungeon menus
+
+The dungeon menus follow EoS's, measured on DeSmuME (Beach Cave savestate)
+and from EoS's own window table (overlay 31 `DUNGEON_WINDOW_PARAMS_*`,
+read from RAM with the pmdsky-debug symbols). EoS lays them out on its
+32×24-tile bottom screen; the GBA has 30×20 tiles, so each window keeps
+EoS's column and is 2 tiles narrower where it reaches the right edge, and
+heights are trimmed to fit 160 px.
+
+![Dungeon menus](images/sky_dungeon_menus.png)
+
+- **Frames.** EoS menu windows have the dialogue box's frame: 7 px sides,
+  5 px top and bottom frames 2 px in from the tile edge, with 1 px of fill
+  inside. Every Sky-style window of the sky build uses it (the title menu
+  too, as in EoS): the corners are the dialogue
+  box's tiles and the top / bottom edge is chrome slot 0x2F8 (a spare
+  all-white tile vanilla never draws; `menu_top` in
+  `sky_story_chrome.png`), swapped in by `RemapSkyFrameEntry`
+  ([`src/ui_style.c`](../../src/ui_style.c)). Fill and translucency are
+  unchanged (60% fill in a dungeon).
+- **Cursor.** EoS's arrow blinks 16 frames on, 16 off (Red: 8 / 8;
+  `AddMenuCursorSprite_` in [`src/menu_input.c`](../../src/menu_input.c)).
+- **Main menu** (B): EoS's options **Moves, Items, Team, Others, Ground,
+  Rest, Exit**. Rest opens **Quicksave / Give Up** (Red's "Quicksave or Give
+  Up", which EoS moved out of Others); Exit closes the menu. EoS: menu at
+  (2,2), 6×12 tiles, 14 px per option; dungeon name at (11,4) 19×2 in orange;
+  team info at (2,16) 28×6. GBA: menu (2,2) 6×9 with 10 px per option (the
+  9 rows left above the info panel), name (11,4) 17×2 right-aligned with the
+  info panel as in EoS (Red's was one column left and not aligned), info
+  (2,13) 26×6. Option text 13 px in, cursor 1 px in; info values at EoS's
+  columns (HP at 68, Belly / Money / Weather / Play at 160). The name uses
+  the font's coral (slot 2), the closest colour to EoS's orange in the font
+  palette (`SkyPrintOnMainMenu` in [`src/dungeon_main.c`](../../src/dungeon_main.c),
+  `sSkyMainMenu` in [`src/dungeon_vram.c`](../../src/dungeon_vram.c)). The
+  sky build uses this menu in either window style.
+- **Titled submenus** (Items, Team, Moves, Others, Rest): one box with the
+  title 8 px in, EoS's separator 12 px under it (2 px in from each side,
+  black shadow), options from 18 px down, 13 px in, 12 px apart (EoS 14 px
+  on its taller screen; `SKY_MENU_*` in [`include/ui_style.h`](../../include/ui_style.h),
+  the separator in `PrepareTextbox_8008C6C`, [`src/text_2.c`](../../src/text_2.c)).
+- **Others**: Options, Message log, Mission objectives, Recruitment search
+  (when recruiting is on), Dungeon hints; 13 tiles wide as in EoS.
+  EoS's Window and Map entries are left out: Red has no separate screens for
+  them (Options holds the window colour and map settings).
+- **Items**: "Treasure Bag", 18 tiles wide, names 21 px in; pages as
+  "(1/2)" at the title's right instead of arrows (Red's held-item and Ground
+  pages count). EoS's description box sits under the list, its top frame
+  over the list's bottom frame; Red has no short descriptions, so it shows
+  the first line of Red's description and is 26 tiles wide (Red's lines are
+  set for that width). It stays up while the Use / Give / ... submenu is open
+  (`CreateDungeonMenuSubWindowKeepWindow1`, [`src/dungeon_submenu.c`](../../src/dungeon_submenu.c)).
+- **Team**: the team name as the title ("????" before the team is named,
+  as EoS shows in chapter 1; Red drops the title then), 15 tiles wide, no
+  leader star, hearts at 81 px, and EoS's role window under the list: "Team
+  Leader" or the member's tactic.
+- **Moves**: "X's moves" with the member as "(1/2)" at the title's right
+  instead of arrows.
+
+EoS's touch-screen row at the bottom of each submenu (separator, ◀ ▶ and
+the close / sort icons) is not drawn: it has no GBA use and no art in Red.
+
 The Krabby bubbles (EoS's `supervision_SpecialActing` 4/5 effect; spawn
 points, sizes and velocities measured frame by frame in EoS: down-right from
 the Krabby mouths on the sand, up-left at sunset, a slow leftward drift on
@@ -769,6 +830,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout, word wrap (`SkyWrapDialogueText`) | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
+| Dungeon menus (main menu, Items, Team, Moves, Others, Rest), frame and cursor | [`src/dungeon_main.c`](../../src/dungeon_main.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/dungeon_menu_items.c`](../../src/dungeon_menu_items.c), [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c), [`src/dungeon_menu_moves.c`](../../src/dungeon_menu_moves.c), [`src/dungeon_menu_others.c`](../../src/dungeon_menu_others.c), [`src/dungeon_submenu.c`](../../src/dungeon_submenu.c), [`src/ui_style.c`](../../src/ui_style.c), [`src/menu_input.c`](../../src/menu_input.c) |
 | Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---
@@ -795,6 +857,13 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 - Beach Cave Pit's background is folded into Red's 249-chunk limit by
   merging the most alike chunks (pixel distance weighted by use), so the
   picture keeps its shape; a few near-identical rock and sand chunks repeat.
+- Dungeon menus: the GBA's 160 px height puts EoS's 7 main-menu options
+  10 px apart (EoS 14 px) and submenu options 12 px apart (EoS 13-14 px);
+  EoS's touch row (◀ ▶, close and sort icons) is not drawn; the dungeon
+  name is coral and item names white, as the font palette has no free slot
+  for EoS's orange (F8C060) or light pink (F8C8C8); the item description is
+  the first line of Red's long description, not EoS's short one; EoS's
+  Others > Window and Map have no screens of their own.
 - Old saves need a new game in the sky build.
 - Test hooks: `DEBUG_BOOT_STARTER=<id> DEBUG_BOOT_PARTNER=<id>` pick the team
   `DEBUG_BOOT_EVENT` creates.

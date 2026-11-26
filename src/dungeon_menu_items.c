@@ -32,6 +32,9 @@
 #include "dungeon_strings.h"
 #include "dungeon_8041AD0.h"
 #include "constants/global.h"
+#include "ui_style.h"
+#include "text_3.h"
+#include "text_2.h"
 
 #define DUNGEON_ITEM_PAGE_GROUND  8
 #define DUNGEON_ITEM_PAGE_HELD0   10
@@ -50,6 +53,9 @@ static void sub_8060890(DungeonPos *a0);
 static void SetSubMenuActions(Entity *a0);
 static void ChosenSubMenuToAction(ActionContainer *a0);
 static s32 sub_8060D64(s16 *a0, bool8 a1, bool8 a2, bool8 a3, Entity *a4);
+#ifdef SKY_STORY
+static void SkyPrintItemDescription(Entity *entity);
+#endif
 
 static bool8 IsDungeonBagPage(s32 pageId)
 {
@@ -81,6 +87,9 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
     s32 i, i_r6;
     s32 r8;
     s32 inputAction = 0;
+#ifdef SKY_STORY
+    s32 skyDescIndex;
+#endif
 
     u8 var_34 = 1;
     u8 var_30 = 0;
@@ -158,6 +167,9 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
             }
         }
         PrintOnDungeonItemsMenu(r8, a0, var_2C, var_30, &windows, &header);
+#ifdef SKY_STORY
+        skyDescIndex = gDungeonMenu.menuIndex;
+#endif
 
         id = sUnknown_202F248[gDungeonMenu.currPage];
         if (id >= DUNGEON_ITEM_PAGE_HELD0) {
@@ -170,6 +182,12 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
         ChangeDungeonCameraPos(&r4->pos, 0, 1, 1);
 
         while (TRUE) {
+#ifdef SKY_STORY
+            if (!var_2C && skyDescIndex != gDungeonMenu.menuIndex) {
+                skyDescIndex = gDungeonMenu.menuIndex;
+                SkyPrintItemDescription(a0);
+            }
+#endif
             AddMenuCursorSprite(&gDungeonMenu);
             DungeonRunFrameActions(0x14);
             if (!var_30) {
@@ -285,7 +303,12 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
 
             SetSubMenuActions(a0);
             sub_8060800(&header, gDungeonMenu.currPage);
+#ifdef SKY_STORY
+            /* Keep the description box up, as EoS does. */
+            CreateDungeonMenuSubWindowKeepWindow1(&windows.id[0], &windows.id[1], 0x16);
+#else
             CreateDungeonMenuSubWindow(&windows.id[0], 0x16);
+#endif
             while (TRUE) {
                 AddMenuCursorSprite(&gDungeonMenu);
                 DungeonRunFrameActions(0x14);
@@ -353,6 +376,82 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
 
 static const struct unkStruct_8090F58 gUnknown_8106B60 = {1, 1, 0, 80, 1};
 
+#ifdef SKY_STORY
+/* EoS: "Treasure Bag" (its chapter 1 "One-Item Inventory" is Red's no-bag
+ * state, where Items only shows held items), the page at the title's right. */
+#define SKY_ITEM_ENTRY_X 21
+static const u8 sSkyTreasureBag[] = _("Treasure Bag");
+static const u8 sSkyPageFmt[] = _("(%d/%d)");
+
+/* EoS's one-line description window under the list, at the bottom of the
+ * screen like EoS's (2,20): the GBA's (2,17), its top frame over the list's
+ * bottom frame as in EoS. Red has no short descriptions (EoS: "Restores
+ * HP."), so it shows the first line of Red's description; those lines are
+ * set for Red's 26-tile windows, so the box is 26 wide, not the list's 18. */
+static const WindowTemplate sSkyItemDescWindow = {
+    .type = WINDOW_TYPE_NORMAL,
+    .pos = { 2, 17 },
+    .width = 26,
+    .height = 2,
+    .totalHeight = 2,
+    .unk12 = 0,
+    .header = NULL,
+};
+
+static Item *SkyGetSelectedItem(Entity *entity)
+{
+    s32 pageId = sUnknown_202F248[gDungeonMenu.currPage];
+
+    if (gDungeonMenu.menuIndex >= gDungeonMenu.currPageEntries)
+        return NULL;
+    if (pageId == DUNGEON_ITEM_PAGE_GROUND) {
+        Entity *object = GetTile(entity->pos.x, entity->pos.y)->object;
+
+        if (object == NULL || GetEntityType(object) != ENTITY_ITEM)
+            return NULL;
+        return GetItemInfo(object);
+    }
+    if (IsDungeonBagPage(pageId))
+        return &gTeamInventoryRef->teamItems[pageId * GetBagItemsPerPage() + gDungeonMenu.menuIndex];
+    if (pageId >= DUNGEON_ITEM_PAGE_HELD0) {
+        Entity *teamMon = gDungeon->teamPokemon[pageId - DUNGEON_ITEM_PAGE_HELD0];
+
+        if (EntityIsValid(teamMon))
+            return &GetEntInfo(teamMon)->heldItem;
+    }
+    return NULL;
+}
+
+static void SkyPrintItemDescription(Entity *entity)
+{
+    Item *item = SkyGetSelectedItem(entity);
+    u8 buf[96];
+
+    CallPrepareTextbox_8008C54(1);
+    sub_80073B8(1);
+    if (item != NULL && ItemExists(item)) {
+        const u8 *src = GetItemDescription(item->id);
+        s32 i;
+
+        for (i = 0; i < (s32)sizeof(buf) - 1 && src[i] != '\0' && src[i] != '\n'; i++) {
+            if (src[i] == '#' && src[i + 1] == 'n')
+                break;
+            buf[i] = src[i];
+        }
+        buf[i] = '\0';
+        while (GetStringLineWidth(buf) > sSkyItemDescWindow.width * 8 - 8) {
+            while (i > 0 && buf[i] != ' ')
+                i--;
+            if (i == 0)
+                break;
+            buf[i] = '\0';
+        }
+        PrintFormattedStringOnWindow(4, 3, buf, 1, 0);
+    }
+    sub_80073E0(1);
+}
+#endif
+
 static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, bool8 a3, WindowTemplates *windows, WindowHeader *header)
 {
     s32 i, x, y;
@@ -368,6 +467,7 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
         .header = NULL,
     };
     u8 txtBuff[80];
+    s32 entryX = 8;
 
     r10 = sub_8060800(header, a0);
     gDungeonMenu.menuIndex = sUnknown_202F240;
@@ -398,6 +498,9 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
                 windows->id[0].height = bagHeight;
                 header->width = 14;
                 gDungeonMenu.firstEntryY = 16;
+#ifdef SKY_STORY
+                gDungeonMenu.firstEntryY = SKY_MENU_FIRST_ENTRY_Y;
+#endif
                 gDungeonMenu.entriesPerPage = perPage;
                 gDungeon->unk181e8.unk18212 = 1;
             }
@@ -420,6 +523,9 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
     else {
         windows->id[0].pos.x = 2;
         windows->id[1] = windows->id[3];
+#ifdef SKY_STORY
+        windows->id[1] = sSkyItemDescWindow;
+#endif
     }
 
     DungeonShowWindows(windows, 1);
@@ -430,6 +536,14 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
     sub_80137B0(&gDungeonMenu, 0);
     sub_80073B8(0);
     x = ((a0 - r10) * 8) + 0xC;
+#ifdef SKY_STORY
+    /* EoS's item list: one titled box (no tabs), names 21 px in, 12 px
+     * apart (EoS: 13 px on its taller screen). */
+    x = SKY_MENU_TITLE_X;
+    entryX = SKY_ITEM_ENTRY_X;
+    if (gDungeonMenu.firstEntryY == SKY_MENU_FIRST_ENTRY_Y)
+        sub_80137B0(&gDungeonMenu, gDungeonMenu.entriesPerPage * SKY_MENU_ENTRY_HEIGHT);
+#endif
     switch (sUnknown_202F248[a0])
     {
     case DUNGEON_ITEM_PAGE_GROUND: {
@@ -440,7 +554,7 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
                 gDungeonMenu.currPageEntries++;
                 sub_8090E14(txtBuff, item, &gUnknown_8106B60);
                 y = GetMenuEntryYCoord(&gDungeonMenu, 0);
-                PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
+                PrintFormattedStringOnWindow(entryX, y, txtBuff, 0, 0);
             }
             if (a3) {
                 gDungeonMenu.cursorArrowPos.x = gDungeonMenu.cursorArrowPos.y = 0;
@@ -454,14 +568,18 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
                 s32 perPage = GetBagItemsPerPage();
                 s32 base = pageId * perPage;
 
+#ifdef SKY_STORY
+                PrintFormattedStringOnWindow(x, 0, sSkyTreasureBag, 0, 0);
+#else
                 sprintfStatic(txtBuff, gTeamToolboxFmtPtr, pageId + 1, GetBagPageCount());
                 PrintFormattedStringOnWindow(x, 0, txtBuff, 0, 0);
+#endif
                 for (i = 0; i < perPage; i++) {
                     if (ItemExists(&gTeamInventoryRef->teamItems[base + i])) {
                         gDungeonMenu.currPageEntries++;
                         sub_8090E14(txtBuff, &gTeamInventoryRef->teamItems[base + i], &gUnknown_8106B60);
                         y = GetMenuEntryYCoord(&gDungeonMenu, i);
-                        PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
+                        PrintFormattedStringOnWindow(entryX, y, txtBuff, 0, 0);
                     }
                     else {
                         break;
@@ -479,7 +597,7 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
                         gDungeonMenu.currPageEntries++;
                         sub_8090E14(txtBuff, item, &gUnknown_8106B60);
                         y = GetMenuEntryYCoord(&gDungeonMenu, 0);
-                        PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
+                        PrintFormattedStringOnWindow(entryX, y, txtBuff, 0, 0);
                     }
                 }
             }
@@ -487,6 +605,15 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
         break;
     }
 
+#ifdef SKY_STORY
+    /* EoS numbers the pages at the title's right instead of arrows; Red's
+     * held-item and Ground pages count as pages too. */
+    gDungeonMenu.leftRightArrowsPos.x = 0;
+    if (sUnknown_202F258 > 1) {
+        sprintfStatic(txtBuff, sSkyPageFmt, a0 + 1, sUnknown_202F258);
+        PrintFormattedStringOnWindow(windows->id[0].width * 8 - SKY_MENU_TITLE_X - GetStringLineWidth(txtBuff), 0, txtBuff, 0, 0);
+    }
+#endif
     if (gDungeonMenu.menuIndex >= gDungeonMenu.currPageEntries) {
         gDungeonMenu.menuIndex = 0;
     }
@@ -496,6 +623,11 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
         PrintFormattedStringOnWindow(4, 2, gWhichTextPtr1, 1, 0);
         sub_80073E0(1);
     }
+#ifdef SKY_STORY
+    else {
+        SkyPrintItemDescription(a1);
+    }
+#endif
 }
 
 static s32 sub_8060800(WindowHeader *header, s32 a1)

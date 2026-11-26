@@ -273,20 +273,51 @@ u16 GetUiStyleDialogueCornerTile(bool8 bottom)
 #define FLIP_H TILEMAP_FLIP_HORIZONTAL(1)
 #define FLIP_V TILEMAP_FLIP_VERTICAL(1)
 
+#ifdef SKY_STORY
+/* EoS menu windows (measured on DeSmuME): the 5 px top / bottom frame sits
+ * 2 px in from the outer tile edge with 1 px of fill inside it, the same as
+ * the dialogue box, so the corners are the dialogue box's. */
+#define SKY_TILE_DIALOGUE_TOP_LEFT     0x2E4
+#define SKY_TILE_DIALOGUE_BOTTOM_LEFT  0x2E5
+#define SKY_TILE_MENU_TOP              0x2F8
+#endif
+
 /* EoS frames are lit from the top left: the right edge gets a dark outer line,
  * so the right-hand pieces are their own tiles instead of flipped left ones. */
 static u16 RemapSkyFrameEntry(u16 entry)
 {
     switch (entry) {
+#ifdef SKY_STORY
+        case FRAME_ENTRY(0x2D8, 0):
+        case FRAME_ENTRY(0x2E8, 0):
+            return FRAME_ENTRY(SKY_TILE_DIALOGUE_TOP_LEFT, 0);
+        case FRAME_ENTRY(0x2D8, FLIP_V):
+        case FRAME_ENTRY(0x2E8, FLIP_V):
+            return FRAME_ENTRY(SKY_TILE_DIALOGUE_BOTTOM_LEFT, 0);
+        case FRAME_ENTRY(0x2D8, FLIP_H):
+        case FRAME_ENTRY(0x2E8, FLIP_H):
+            return FRAME_ENTRY(SKY_TILE_DIALOGUE_TOP_RIGHT, 0);
+        case FRAME_ENTRY(0x2D8, FLIP_H | FLIP_V):
+        case FRAME_ENTRY(0x2E8, FLIP_H | FLIP_V):
+            return FRAME_ENTRY(SKY_TILE_DIALOGUE_BOTTOM_RIGHT, 0);
+        case FRAME_ENTRY(0x2D9, 0):
+        case FRAME_ENTRY(0x2E9, 0):
+            return FRAME_ENTRY(SKY_TILE_MENU_TOP, 0);
+        case FRAME_ENTRY(0x2D9, FLIP_V):
+        case FRAME_ENTRY(0x2E9, FLIP_V):
+            return FRAME_ENTRY(SKY_TILE_MENU_TOP, FLIP_V);
+#endif
         case FRAME_ENTRY(0x2DA, FLIP_H):
         case FRAME_ENTRY(0x2EA, FLIP_H):
             return FRAME_ENTRY(SKY_TILE_RIGHT, 0);
+#ifndef SKY_STORY
         case FRAME_ENTRY(0x2D8, FLIP_H):
         case FRAME_ENTRY(0x2E8, FLIP_H):
             return FRAME_ENTRY(SKY_TILE_CORNER_TOP_RIGHT, 0);
         case FRAME_ENTRY(0x2D8, FLIP_H | FLIP_V):
         case FRAME_ENTRY(0x2E8, FLIP_H | FLIP_V):
             return FRAME_ENTRY(SKY_TILE_CORNER_BOTTOM_RIGHT, 0);
+#endif
         case FRAME_ENTRY(0x2E4, FLIP_H):
             return FRAME_ENTRY(SKY_TILE_DIALOGUE_TOP_RIGHT, 0);
         case FRAME_ENTRY(0x2E5, FLIP_H):

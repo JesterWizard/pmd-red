@@ -31,6 +31,7 @@
 #include "text_2.h"
 #include "text_3.h"
 #include "run_dungeon.h"
+#include "ui_style.h"
 
 static void PrintOthersMenuOptions(void);
 static void ShowGameOptionsMenu(void);
@@ -68,6 +69,28 @@ enum {
     OTHERS_COUNT
 };
 
+#ifdef SKY_STORY
+/* EoS's Others menu: Options, Message log, Mission objectives, Recruitment
+ * search (when recruiting is possible), Dungeon hints. Quicksave / Give Up is
+ * the main menu's Rest (ShowDungeonRestMenu). EoS's Window and Map entries
+ * have no Red screen of their own (Options holds the window colour and the
+ * map settings). */
+static s32 SkyOthersOptionsCount(void)
+{
+    return gDungeon->unk644.canRecruit ? 5 : 4;
+}
+
+static s32 SkyOthersOptionAt(s32 index)
+{
+    static const u8 sWithRecruit[] = {OTHERS_GAME_OPTIONS, OTHERS_MESSAGE_LOG, OTHERS_MISSION_OBJECTIVES, OTHERS_RECRUITMENT_SEARCH, OTHERS_HINTS};
+    static const u8 sNoRecruit[] = {OTHERS_GAME_OPTIONS, OTHERS_MESSAGE_LOG, OTHERS_MISSION_OBJECTIVES, OTHERS_HINTS};
+
+    if (index < 0 || index >= SkyOthersOptionsCount())
+        return -1;
+    return gDungeon->unk644.canRecruit ? sWithRecruit[index] : sNoRecruit[index];
+}
+#endif
+
 void ShowDungeonOthersMenu(void)
 {
     bool8 unkAlwaysFalse;
@@ -92,7 +115,11 @@ void ShowDungeonOthersMenu(void)
             }
 
             if ((gRealInputs.pressed & A_BUTTON) || gDungeonMenu.touchScreen.a_button) {
+#ifdef SKY_STORY
+                if (SkyOthersOptionAt(gDungeonMenu.menuIndex) != OTHERS_RECRUITMENT_SEARCH || !IsFloorwideFixedRoom()) {
+#else
                 if (gDungeonMenu.menuIndex != OTHERS_RECRUITMENT_SEARCH || (gDungeon->unk644.canRecruit && !IsFloorwideFixedRoom())) {
+#endif
                     PlayDungeonConfirmationSE();
                 }
                 else {
@@ -115,6 +142,27 @@ void ShowDungeonOthersMenu(void)
             break;
 
         sOthersCursorId = gDungeonMenu.menuIndex;
+#ifdef SKY_STORY
+        switch (SkyOthersOptionAt(sOthersCursorId)) {
+            case OTHERS_GAME_OPTIONS:
+                ShowGameOptionsMenu();
+                break;
+            case OTHERS_MESSAGE_LOG:
+                DisplayMessageLog();
+                break;
+            case OTHERS_MISSION_OBJECTIVES:
+                ShowMissionObjectivesMenu();
+                break;
+            case OTHERS_RECRUITMENT_SEARCH:
+                if (!IsFloorwideFixedRoom())
+                    ShowRecruitmentSearchMenu();
+                break;
+            case OTHERS_HINTS:
+                ShowHintsMenu();
+                break;
+        }
+        (void)hintsMenuId;
+#else
         if (sOthersCursorId == OTHERS_GAME_OPTIONS) {
             ShowGameOptionsMenu();
         }
@@ -133,6 +181,7 @@ void ShowDungeonOthersMenu(void)
         if (sOthersCursorId == hintsMenuId) {
             ShowHintsMenu();
         }
+#endif
 
         if (gDungeon->unk4)
             break;
@@ -365,6 +414,15 @@ static void AskToResetToDefault(void)
     }
 }
 
+#ifdef SKY_STORY
+void ShowDungeonRestMenu(void)
+{
+    ShowQuickSaveGiveUpMenu();
+    UpdateMinimap();
+    sub_803EAF0(0, NULL);
+}
+#endif
+
 static void ShowQuickSaveGiveUpMenu(void)
 {
     bool8 unkAlwaysFalse = FALSE;
@@ -444,6 +502,92 @@ static bool8 AskToGiveUp(void)
     return FALSE;
 }
 
+#ifdef SKY_STORY
+static const u8 sSkyOthersTitle[] = _("Others");
+static const u8 sSkyOthersOptions[] = _("Options");
+static const u8 sSkyOthersHints[] = _("Dungeon hints");
+static const u8 sSkyRestTitle[] = _("Rest");
+static const u8 sSkyRestQuicksave[] = _("Quicksave");
+static const u8 sSkyRestGiveUp[] = _("Give Up");
+
+/* An EoS titled list (SKY_MENU_* in ui_style.h) at (2,2), width in tiles
+ * as measured on EoS. */
+static void SkyShowTitledList(s32 width, const u8 *title, const u8 *const *options, s32 count, s32 cursor)
+{
+    s32 i;
+    WindowHeader header;
+    WindowTemplates windows = {
+        .id = {
+            [0] = {
+                .type = WINDOW_TYPE_WITH_HEADER,
+                .pos = { 2, 2 },
+                .width = width,
+                .height = 0,
+                .totalHeight = 0,
+                .unk12 = 0,
+                .header = &header,
+            },
+            [1] = WIN_TEMPLATE_DUMMY,
+            [2] = WIN_TEMPLATE_DUMMY,
+            [3] = WIN_TEMPLATE_DUMMY,
+        }
+    };
+
+    header.count = 1;
+    header.currId = 0;
+    header.f3 = 0;
+    header.width = width;
+    gDungeonMenu.menuIndex = cursor;
+    gDungeonMenu.currPageEntries = count;
+    gDungeonMenu.entriesPerPage = count;
+    gDungeonMenu.currPage = 0;
+    gDungeonMenu.pagesCount = 0;
+    gDungeonMenu.unk4 = 0;
+    gDungeonMenu.firstEntryY = SKY_MENU_FIRST_ENTRY_Y;
+    gDungeonMenu.leftRightArrowsPos.x = 0;
+    gDungeonMenu.leftRightArrowsPos.y = 0;
+    gDungeonMenu.unk14.x = 0;
+    gDungeonMenu.windowId = 0;
+    ResetTouchScreenMenuInput(&gDungeonMenu.touchScreen);
+    windows.id[0].height = windows.id[0].totalHeight = CalcEntriesTotalHeight(count, SKY_MENU_ENTRY_HEIGHT) + 2;
+    DungeonShowWindows(&windows, TRUE);
+    sub_80137B0(&gDungeonMenu, count * SKY_MENU_ENTRY_HEIGHT);
+    sub_80073B8(0);
+    PrintFormattedStringOnWindow(SKY_MENU_TITLE_X, 0, title, 0, '\0');
+    for (i = 0; i < count; i++)
+        PrintFormattedStringOnWindow(SKY_MENU_ENTRY_X, GetMenuEntryYCoord(&gDungeonMenu, i), options[i], 0, '\0');
+    sub_80073E0(0);
+}
+
+static void SkyPrintOthersMenuOptions(void)
+{
+    s32 i, count = SkyOthersOptionsCount();
+    const u8 *options[OTHERS_COUNT];
+
+    for (i = 0; i < count; i++) {
+        switch (SkyOthersOptionAt(i)) {
+            case OTHERS_GAME_OPTIONS: options[i] = sSkyOthersOptions; break;
+            case OTHERS_MESSAGE_LOG: options[i] = gUnknown_80FE9F8; break;
+            case OTHERS_MISSION_OBJECTIVES: options[i] = gUnknown_80FEA10; break;
+            case OTHERS_RECRUITMENT_SEARCH:
+                options[i] = IsFloorwideFixedRoom() ? gUnknown_80FEA44 : gUnknown_80FEA28;
+                break;
+            default: options[i] = sSkyOthersHints; break;
+        }
+    }
+    /* EoS: interior 13 tiles wide. */
+    SkyShowTitledList(13, sSkyOthersTitle, options, count, sOthersCursorId);
+}
+
+static void SkyPrintQuickSaveMenuOptions(void)
+{
+    static const u8 *const sOptions[] = {sSkyRestQuicksave, sSkyRestGiveUp};
+
+    /* EoS: about 12.5 tiles wide (its Rest window is sized to the text). */
+    SkyShowTitledList(12, sSkyRestTitle, sOptions, ARRAY_COUNT(sOptions), 0);
+}
+#endif
+
 static void PrintOthersMenuOptions(void)
 {
     s32 optionsCount, currOptionId;
@@ -465,6 +609,12 @@ static void PrintOthersMenuOptions(void)
         }
     };
 
+#ifdef SKY_STORY
+    if (TRUE) {
+        SkyPrintOthersMenuOptions();
+        return;
+    }
+#endif
     header.count = 1;
     header.currId = 0;
     header.f3 = 0;
@@ -528,6 +678,12 @@ static void PrintQuickSaveMenuOptions(void)
         }
     };
 
+#ifdef SKY_STORY
+    if (TRUE) {
+        SkyPrintQuickSaveMenuOptions();
+        return;
+    }
+#endif
     header.count = 1;
     header.currId = 0;
     header.f3 = 0;

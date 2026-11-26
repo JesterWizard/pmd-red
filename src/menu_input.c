@@ -17,6 +17,7 @@
 #include "bg_palette_buffer.h"
 #include "game_options.h"
 #include "window_buffer.h"
+#include "ui_style.h"
 
 const u32 gDefaultMenuTextColors[3] = { COLOR_WHITE_2, COLOR_RED, COLOR_RED };
 
@@ -569,7 +570,12 @@ void AddMenuCursorSprite_(MenuInputStruct *menuInput, u8 *a1)
     if (menuInput->currPageEntries > 0) {
         UpdateMenuCursorSpriteCoords(menuInput);
 
+#ifdef SKY_STORY
+        /* EoS's cursor blinks 16 frames on, 16 off (Red: 8 / 8). */
+        if (!(menuInput->unk24 & (UiStyleIsSky() ? 16 : 8))) {
+#else
         if (!(menuInput->unk24 & 8)) {
+#endif
             SpriteSetAffine1(&sp, 0);
             SpriteSetAffine2(&sp, 0);
             SpriteSetObjMode(&sp, 0);

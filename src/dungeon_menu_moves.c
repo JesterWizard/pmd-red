@@ -32,6 +32,7 @@
 #include "text_1.h"
 #include "text_2.h"
 #include "text_3.h"
+#include "ui_style.h"
 
 static void ShowMovesMenuWindows(Entity *entity, EntityInfo *entInfo, bool8 redColorForChargingMoves, WindowTemplates *windows, WindowHeader *header, u8 *arg5, s32 arg6, s32 arg7);
 static void AddMovesSubMenuOptions(Entity *entity, bool8 addLinkOptions, bool8 addUseMove);
@@ -399,6 +400,10 @@ bool8 ShowDungeonMovesMenu(Entity * entity, bool8 addLinkOptions, bool8 addUseMo
     return ret;
 }
 
+#ifdef SKY_STORY
+static const u8 sSkyMovesPageFmt[] = _("(%d/%d)");
+#endif
+
 static void ShowMovesMenuWindows(Entity *entity, EntityInfo *entInfo, bool8 redColorForChargingMoves, WindowTemplates *windows, WindowHeader *header, u8 *arg5, s32 arg6, s32 arg7)
 {
     s32 i, movesCount;
@@ -431,6 +436,9 @@ static void ShowMovesMenuWindows(Entity *entity, EntityInfo *entInfo, bool8 redC
     gDungeonMenu.pagesCount = arg7;
     gDungeonMenu.unk4 = 0;
     gDungeonMenu.firstEntryY = 16;
+#ifdef SKY_STORY
+    gDungeonMenu.firstEntryY = SKY_MENU_FIRST_ENTRY_Y;
+#endif
     gDungeonMenu.unk14.x = 0;
     gDungeonMenu.windowId = 0;
     ResetTouchScreenMenuInput(&gDungeonMenu.touchScreen);
@@ -444,6 +452,10 @@ static void ShowMovesMenuWindows(Entity *entity, EntityInfo *entInfo, bool8 redC
     sub_80137B0(&gDungeonMenu, 0);
     gDungeonMenu.leftRightArrowsPos.x = (gWindows[0].x + 16) * 8;
     gDungeonMenu.leftRightArrowsPos.y = ((gWindows[0].y + 1) * 8) - 2;
+#ifdef SKY_STORY
+    /* EoS shows the member as "(1/2)" at the title's right, no arrows. */
+    gDungeonMenu.leftRightArrowsPos.x = 0;
+#endif
     SetMessageArgument_2(gFormatBuffer_Monsters[0], entInfo, 0);
     for (i = 0; i < MAX_MON_MOVES; i++) {
         Move *move = &entInfo->moves.moves[i];
@@ -460,6 +472,16 @@ static void ShowMovesMenuWindows(Entity *entity, EntityInfo *entInfo, bool8 redC
     }
 
     PrintMoveNamesOnWindow(4, entity, entInfo->moves.moves, 0, redColorForChargingMoves, arg6);
+#ifdef SKY_STORY
+    if (arg7 > 1) {
+        u8 page[16];
+
+        sprintfStatic(page, sSkyMovesPageFmt, arg6 + 1, arg7);
+        sub_80073B8(0);
+        PrintFormattedStringOnWindow(windows->id[0].width * 8 - SKY_MENU_TITLE_X - GetStringLineWidth(page), 0, page, 0, '\0');
+        sub_80073E0(0);
+    }
+#endif
     sub_80073B8(2);
     PrintFormattedStringOnWindow(4, 0, gUnknown_80FDFE8, 2, '\0');
     sub_80073E0(2);
@@ -472,7 +494,11 @@ static void PrintMoveNamesOnWindow(s32 count, Entity *entity, Move *moves, s32 w
 
     sub_80073B8(windowId);
     SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], entity, 0);
+#ifdef SKY_STORY
+    PrintFormattedStringOnWindow(SKY_MENU_TITLE_X, 0, gUnknown_80FE978, windowId, '\0');
+#else
     PrintFormattedStringOnWindow((a5 * 8) + 10, 0, gUnknown_80FE978, windowId, '\0');
+#endif
     for (i = 0; i < count; i++) {
         s32 x, y;
         MoveBufferStruct movStruct = {0, .xPPCoord = X_PP_COORD_DEFAULT, .redColor = FALSE, .useRedColorForChargingMoves = redColorForChargingMoves};
@@ -1115,6 +1141,9 @@ static void sub_8064228(Entity *entity, Move *moves, WindowTemplates *windows, W
     gDungeonMenu.pagesCount = 0;
     gDungeonMenu.unk4 = 0;
     gDungeonMenu.firstEntryY = 16;
+#ifdef SKY_STORY
+    gDungeonMenu.firstEntryY = SKY_MENU_FIRST_ENTRY_Y;
+#endif
     gDungeonMenu.leftRightArrowsPos.x = 0;
     gDungeonMenu.leftRightArrowsPos.y = 0;
     gDungeonMenu.unk14.x = 0;

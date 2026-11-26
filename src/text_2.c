@@ -1520,8 +1520,20 @@ void PrepareTextbox_8008C6C(Window *windows, u32 windowId)
 
         GetUiStyleHeaderLineColors(&lineTop, &lineShadow);
         window->unk46 = TRUE;
-        AddUnderScoreHighlightInternal(windows, windowId, 0, 10, window->width * 8, lineTop);
-        AddUnderScoreHighlightInternal(windows, windowId, 0, 11, window->width * 8, lineShadow);
+#ifdef SKY_STORY
+        if (UiStyleIsSky()) {
+            /* EoS's title separator (SKY_MENU_SEPARATOR_*). */
+            s32 w = window->width * 8 - 2 * SKY_MENU_SEPARATOR_INSET;
+
+            AddUnderScoreHighlightInternal(windows, windowId, SKY_MENU_SEPARATOR_INSET, SKY_MENU_SEPARATOR_Y, w, lineTop);
+            AddUnderScoreHighlightInternal(windows, windowId, SKY_MENU_SEPARATOR_INSET, SKY_MENU_SEPARATOR_Y + 1, w, lineShadow);
+        }
+        else
+#endif
+        {
+            AddUnderScoreHighlightInternal(windows, windowId, 0, 10, window->width * 8, lineTop);
+            AddUnderScoreHighlightInternal(windows, windowId, 0, 11, window->width * 8, lineShadow);
+        }
         window->unk46 = FALSE;
     }
 

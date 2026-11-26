@@ -47,6 +47,7 @@
 #include "string_format.h"
 #include "text_2.h"
 #include "weather.h"
+#include "ui_style.h"
 
 EWRAM_DATA s32 gTeamMenuChosenId = 0;
 static UNUSED EWRAM_DATA u8 sUnused[4] = {0};
@@ -93,6 +94,38 @@ static bool8 CanSendDungeonMemberHome(EntityInfo *info)
 // Struct only used in Blue maybe?
 static const u8 sTouchScreenArrowPressData[] = {1, 0, 56, 0, 0, 0, 24, 0, 24, 0, 0, 0, 2, 0, 56, 0, 104, 0, 24, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
+#ifdef SKY_STORY
+extern const u8 *const gTacticsNames[];
+
+/* EoS's team window (measured on DeSmuME): interior 15 tiles wide, the team
+ * name as its title ("????" before the team is named, even without a bag),
+ * names 13 px in with the HP heart at 81 px, and under it a one-line window
+ * with the chosen member's role: "Team Leader" or its tactic. */
+#define SKY_TEAM_WIDTH 15
+#define SKY_TEAM_HEART_X 81
+static const u8 sSkyTeamLeader[] = _("Team Leader");
+
+static void SkyPrintTeamMemberRole(struct UnkFieldTeamMenuStruct *a0)
+{
+    s32 id = a0->unk4[gDungeonMenu.menuIndex];
+    const u8 *text = NULL;
+
+    if (id >= 0 && EntityIsValid(gDungeon->teamPokemon[id])) {
+        EntityInfo *monInfo = GetEntInfo(gDungeon->teamPokemon[id]);
+
+        if (monInfo->isTeamLeader)
+            text = sSkyTeamLeader;
+        else if (monInfo->tactic < NUM_TACTICS)
+            text = gTacticsNames[monInfo->tactic];
+    }
+    CallPrepareTextbox_8008C54(1);
+    sub_80073B8(1);
+    if (text != NULL)
+        PrintFormattedStringOnWindow(4, 1, text, 1, '\0');
+    sub_80073E0(1);
+}
+#endif
+
 bool8 ShowDungeonTeamMenu(Entity *a0)
 {
     s32 i;
@@ -122,10 +155,14 @@ bool8 ShowDungeonTeamMenu(Entity *a0)
         }
     }
 
+#ifdef SKY_STORY
+    windows.id[0].width = SKY_TEAM_WIDTH;
+#else
     if (!gDungeon->unk644.hasInventory) {
         windows.id[0].type = WINDOW_TYPE_NORMAL;
         windows.id[0].pos.y++;
     }
+#endif
 
     while (TRUE) {
         s32 id;
@@ -134,8 +171,18 @@ bool8 ShowDungeonTeamMenu(Entity *a0)
         ret = FALSE;
         PrintOnDungeonTeamMenu(&sp, &windows, TRUE);
         r10 = FALSE;
+#ifdef SKY_STORY
+        SkyPrintTeamMemberRole(&sp);
+        i = gDungeonMenu.menuIndex;
+#endif
         while (TRUE) {
             s32 id = sp.unk4[gDungeonMenu.menuIndex];
+#ifdef SKY_STORY
+            if (i != gDungeonMenu.menuIndex) {
+                i = gDungeonMenu.menuIndex;
+                SkyPrintTeamMemberRole(&sp);
+            }
+#endif
             if (id >= 0) {
                 Entity *teamMon = gDungeon->teamPokemon[id];
                 TryPointCameraToMonster(teamMon, 0);
@@ -200,7 +247,13 @@ bool8 ShowDungeonTeamMenu(Entity *a0)
             break;
         }
 
+#ifdef SKY_STORY
+        /* Keep the role window up; one column right of Red's, past the
+         * wider team window. */
+        CreateDungeonMenuSubWindowKeepWindow1(&windows.id[0], &windows.id[1], 0x13);
+#else
         CreateDungeonMenuSubWindow(&windows.id[0], 0x12);
+#endif
         while (TRUE) {
             AddMenuCursorSprite(&gDungeonMenu);
             DungeonRunFrameActions(0x1B);
@@ -293,7 +346,11 @@ static void PrintOnDungeonTeamMenu(struct UnkFieldTeamMenuStruct *a0, WindowTemp
     gDungeonMenu.unk14.x = 0;
     gDungeonMenu.windowId = 0;
     ResetTouchScreenMenuInput(&gDungeonMenu.touchScreen);
+#ifdef SKY_STORY
+    height = CalcEntriesTotalHeight(count, SKY_MENU_ENTRY_HEIGHT);
+#else
     height = CalcEntriesTotalHeight(count, 0);
+#endif
     if (withHeader) {
         height += 2;
     }
@@ -302,14 +359,34 @@ static void PrintOnDungeonTeamMenu(struct UnkFieldTeamMenuStruct *a0, WindowTemp
     sTeamWindowHeader.width = 8;
     if (a2) {
         windows->id[1] = windows->id[3];
+#ifdef SKY_STORY
+        /* The role window, one frame row below the list (EoS: 2 rows tall). */
+        windows->id[1].type = WINDOW_TYPE_NORMAL;
+        windows->id[1].pos.x = windows->id[0].pos.x;
+        windows->id[1].pos.y = windows->id[0].pos.y + height + 2;
+        windows->id[1].width = windows->id[0].width;
+        windows->id[1].height = windows->id[1].totalHeight = 2;
+        windows->id[1].unk12 = 0;
+        windows->id[1].header = NULL;
+#endif
     }
 
+#ifdef SKY_STORY
+    if (withHeader)
+        gDungeonMenu.firstEntryY = SKY_MENU_FIRST_ENTRY_Y;
+    DungeonShowWindows(windows, 1);
+    sub_80137B0(&gDungeonMenu, count * SKY_MENU_ENTRY_HEIGHT);
+    sub_80073B8(0);
+    if (withHeader)
+        PrintFormattedStringOnWindow(SKY_MENU_TITLE_X, 0, _("$t"), 0, 0);
+#else
     DungeonShowWindows(windows, 1);
     sub_80137B0(&gDungeonMenu, 0);
     sub_80073B8(0);
     if (withHeader) {
         PrintFormattedStringOnWindow(0xC, 0, _("$t"), 0, 0);
     }
+#endif
 
     // Print hp/max hp
     for (i = 0; i < count; i++) {
@@ -355,12 +432,18 @@ static void PrintOnDungeonTeamMenu(struct UnkFieldTeamMenuStruct *a0, WindowTemp
                 gFormatArgs[0] = monInfo->HP;
                 gFormatArgs[1] = monInfo->maxHPStat;
                 y = GetMenuEntryYCoord(&gDungeonMenu, i);
+#ifdef SKY_STORY
+                /* EoS: no leader star (the role window names the leader). */
+                PrintFormattedStringOnWindow(SKY_MENU_ENTRY_X, y, _("{POKEMON_0}"), 0, 0);
+                PrintFormattedStringOnWindow(SKY_TEAM_HEART_X, y, _("{POKEMON_1}"), 0, 0);
+#else
                 if (monInfo->isTeamLeader) {
                     PrintFormattedStringOnWindow(9, y, _("{STAR_BULLET}{POKEMON_0}{MOVE_X_POSITION}{0x59}{POKEMON_1}"), 0, 0);
                 }
                 else {
                     PrintFormattedStringOnWindow(9, y, _("{ICON_BLANK}{POKEMON_0}{MOVE_X_POSITION}{0x59}{POKEMON_1}"), 0, 0);
                 }
+#endif
             }
         }
     }
