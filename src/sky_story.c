@@ -118,6 +118,15 @@ void SkyStory_ApplyFloorOverrides(void)
     }
 }
 
+s32 SkyStory_GetDungeonBgm(s32 defaultSong)
+{
+    if (!SkyStory_IsBeachCave(gDungeon->unk644.dungeonLocation.id))
+        return defaultSong;
+    if (gDungeon->floorProperties.fixedRoomNumber == FIXED_ROOM_SINISTER_WOODS_TEAM_MEANIES)
+        return MUS_SKY_IN_THE_DEPTHS_OF_THE_PIT;
+    return MUS_SKY_BEACH_CAVE;
+}
+
 s32 SkyStory_GetBeachCaveFloorCount(void)
 {
     /* GetDungeonFloorCount convention: playable floors + 1. */

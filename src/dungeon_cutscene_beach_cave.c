@@ -200,7 +200,7 @@ static void SetUpBeachCavePit(void)
 {
     Entity *leaderEntity = CutsceneGetLeader();
 
-    DungeonStartNewBGM(MUS_IN_THE_DEPTHS_OF_THE_PIT);
+    DungeonStartNewBGM(MUS_SKY_IN_THE_DEPTHS_OF_THE_PIT);
     sub_8085374();
     sub_80854D4();
     sub_8085930(DIRECTION_NORTH);
@@ -235,7 +235,7 @@ static void BeachCavePitRefightDialogue(Entity *leaderEntity, Entity *partnerEnt
     DisplayDungeonDialogue_Async(&sRe5);
     DisplayDungeonDialogue_Async(&sRe6);
     DungeonWaitFrames_Async(10, 0x46);
-    DungeonStartNewBGM(MUS_BOSS_BATTLE);
+    DungeonStartNewBGM(MUS_SKY_BOSS_BATTLE);
     ShiftCameraToPosition(&leaderEntity->pixelPos, 0x10);
 }
 
@@ -285,7 +285,7 @@ void SkyStory_BeachCavePitPreFightDialogue(void)
     DungeonWaitFrames_Async(10, 0x46);
     DisplayDungeonDialogue_Async(&sPit8);
     DungeonWaitFrames_Async(10, 0x46);
-    DungeonStartNewBGM(MUS_BOSS_BATTLE);
+    DungeonStartNewBGM(MUS_SKY_BOSS_BATTLE);
     ShiftCameraToPosition(&leaderEntity->pixelPos, 0x10);
 }
 

@@ -61,14 +61,46 @@ song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
+#ifdef SKY_STORY
+song seq_061,  0,  0
+#else
 song empty_song,  0,  0
+#endif
+#ifdef SKY_STORY
+song seq_062,  0,  0
+#else
 song empty_song,  0,  0
+#endif
+#ifdef SKY_STORY
+song seq_063,  0,  0
+#else
 song empty_song,  0,  0
+#endif
+#ifdef SKY_STORY
+song seq_064,  0,  0
+#else
 song empty_song,  0,  0
+#endif
+#ifdef SKY_STORY
+song seq_065,  0,  0
+#else
 song empty_song,  0,  0
+#endif
+#ifdef SKY_STORY
+song seq_066,  0,  0
+#else
 song empty_song,  0,  0
+#endif
+#ifdef SKY_STORY
+song seq_067,  0,  0
+#else
 song empty_song,  0,  0
+#endif
+#ifdef SKY_STORY
+song seq_068,  0,  0
+#else
 song empty_song,  0,  0
+#endif
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0

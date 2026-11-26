@@ -68,6 +68,7 @@
 #include "dungeon_mon_sprite_render.h"
 #include "adventure_info.h"
 #include "decompress_sir.h"
+#include "sky_story.h"
 
 EWRAM_INIT struct UnkStruct_203B414 *gUnknown_203B414 = NULL;
 EWRAM_INIT Dungeon *gDungeon = NULL;
@@ -333,7 +334,11 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
         sub_806AD3C();
 
         if (!r6) {
+#ifdef SKY_STORY
+            DungeonStartNewBGM(SkyStory_GetDungeonBgm(gDungeonMusic[gDungeon->unk3A10]));
+#else
             DungeonStartNewBGM(gDungeonMusic[gDungeon->unk3A10]);
+#endif
             sub_80847D4();
         }
         sub_8049840();

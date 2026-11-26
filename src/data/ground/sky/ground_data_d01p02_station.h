@@ -25,7 +25,7 @@ static const struct ScriptCommand s_gs179_g1_s0_station_sref_script[] = {
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_BEACH_CAVE_PIT),
     SELECT_ENTITIES(-1, 0),
-    BGM_SWITCH(MUS_IN_THE_DEPTHS_OF_THE_PIT),
+    BGM_SWITCH(MUS_SKY_IN_THE_DEPTHS_OF_THE_PIT),
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
