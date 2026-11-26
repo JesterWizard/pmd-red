@@ -80,6 +80,11 @@ def main() -> None:
         ]
     # Spinda Café BPC stays uncompressed in ROM for tile streaming (no heap copy).
     raw_files = [path for path in raw_files if path.name != "T01P08c.bpc"]
+    # Explorers of Sky demake maps (E*.bpc) stream from ROM the same way.
+    raw_files = [
+        path for path in raw_files
+        if not (path.name.startswith("E") and path.suffix == ".bpc")
+    ]
     COMPRESSED_DIR.mkdir(parents=True, exist_ok=True)
     raw_bytes = 0
     compressed_bytes = 0

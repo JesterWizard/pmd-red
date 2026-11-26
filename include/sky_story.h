@@ -28,6 +28,12 @@ bool8 SkyStory_IsBeachCaveStoryRun(void);
 void SkyStory_ApplyFloorOverrides(void);
 /* Fixed-room spawn remap: Gengar/Ekans -> Zubat/Koffing; Medicham dropped. */
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
+
+/* Beach Cave Pit boss cutscene (src/dungeon_cutscene_beach_cave.c). */
+bool8 SkyStory_TrySetBeachCavePitCutscene(void);
+void SkyStory_BeachCavePitSetup(void);
+void SkyStory_BeachCavePitPreFightDialogue(void);
+void SkyStory_HandleBeachCavePitBossFaint(u8 monsterBehavior);
 #endif
 
 #endif /* GUARD_SKY_STORY_H */

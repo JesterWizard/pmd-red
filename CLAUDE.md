@@ -4,6 +4,9 @@
 
 - Decompilation of Pokémon Mystery Dungeon: Red Rescue Team (GBA), plus a ROM hack.
 - Default build (`MODERN=1`) is the **modern hack build** → `pmd_red.gba`.
+- This branch: the modern build plays the **Explorers of Sky chapter 1 demake**
+  (`STORY=sky`, default; `make STORY=vanilla` for Red's story). See
+  `documentation/Features/SkyDemake.md`.
 - `MODERN=0` is the **retail-matching** build (agbcc, pinned layout). Its gate is
   `make MODERN=0 compare`.
 - `RescueEditor/` is a separate C# tool with its own tests.

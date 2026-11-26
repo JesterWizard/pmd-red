@@ -2141,6 +2141,10 @@ static s32 ExecuteScriptCommand(Action *action)
             }
             case CMD_BYTE_3D: {
                 s32 i;
+#ifdef DEBUG_BOOT_EVENT
+                /* Test hook: keep the default name so scripted runs don't stall. */
+                break;
+#endif
                 if ((s16)curCmd.arg1 != -1) {
                     Pokemon *mon = sub_80A8D54((s16) curCmd.arg1);
                     if (mon != NULL) {

@@ -1866,6 +1866,16 @@ static const struct ScriptCommand s_script_EVENT_M00E01A_L001[] = { /* 0x81251c0
 
 static const struct ScriptCommand s_script_EVENT_M01E01A_L001[] = { /* 0x8125230 */
     DEBUGINFO_O(1868),
+#ifdef SKY_STORY
+    /* Explorers of Sky demake: the opening scenes (see
+     * src/data/ground/sky/sky_d01p01_scenes.h), all on the Tiny Woods entrance
+     * script file; group 1 ends by entering Beach Cave (Tiny Woods). */
+    EXECUTE_SUBSTATION(MAP_TINY_WOODS_ENTRY, 4, 0), /* storm at sea */
+    EXECUTE_SUBSTATION(MAP_TINY_WOODS_ENTRY, 5, 0), /* washed ashore */
+    EXECUTE_SUBSTATION(MAP_TINY_WOODS_ENTRY, 6, 0), /* the guild's sentry grate */
+    EXECUTE_SUBSTATION(MAP_TINY_WOODS_ENTRY, 7, 0), /* Krabby bubbles */
+    EXECUTE_SUBSTATION(MAP_TINY_WOODS_ENTRY, 8, 0), /* Krabby at sunset */
+#endif
     EXECUTE_SUBSTATION(MAP_TINY_WOODS_ENTRY, 1, 0),
     CMD_UNK_AF(RESCUE_DUNGEON_TINY_WOODS, TRUE),
     RET,

@@ -16,6 +16,7 @@
 #include "constants/item.h"
 #include "dungeon_mon_spawn.h"
 #include "dungeon_8041AD0.h"
+#include "sky_story.h"
 
 static bool8 sub_805210C(u8 itemId);
 
@@ -43,7 +44,11 @@ static void SpawnItemAtPos(u8 itemId, s32 x, s32 y, s32 quantity, u32 itemFlags)
 static void SpawnSpeciesAtPos(s16 species_, s32 x, s32 y, u32 monsterBehav_, u32 UNUSED unused)
 {
     struct MonSpawnInfo unkStruct;
-    s32 species = SpeciesId(species_);
+    s32 species;
+#ifdef SKY_STORY
+    species_ = SkyStory_RemapFixedRoomSpecies(species_);
+#endif
+    species = SpeciesId(species_);
     u8 monsterBehav = monsterBehav_;
 
     if (species_ == MONSTER_DECOY) {

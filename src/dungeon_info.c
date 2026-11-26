@@ -14,6 +14,7 @@
 #include "strings.h"
 #include "dungeon_data.h"
 #include "runtime.h"
+#include "sky_story.h"
 
 static void AppendWithNewLines(u8 *dst, const u8 *src);
 static bool8 TeamMonWithMove(u16 moveID);
@@ -2397,6 +2398,11 @@ const u8 *GetDungeonName2(u8 dungeon)
 
 bool8 IsStairDirectionUp(u8 dungeon)
 {
+#ifdef SKY_STORY
+    /* Beach Cave goes down (B1F, B2F, ...). */
+    if (SkyStory_IsBeachCave(dungeon))
+        return FALSE;
+#endif
     return gDungeons[dungeon].stairDirectionUp;
 }
 
@@ -2499,7 +2505,7 @@ void PrintYellowDungeonNametoBuffer(u8 *buffer, DungeonLocation *dungeonLocation
 
 void PrintDungeonLocationtoBuffer(u8 *buffer, DungeonLocation *dungeonLocation)
 {
-    if (gDungeons[dungeonLocation->id].stairDirectionUp){
+    if (IsStairDirectionUp(dungeonLocation->id)){
         sprintfStatic(buffer, _("{color YELLOW_D}%s{reset}　{color CYAN}%d{reset}F"), gDungeonNames[dungeonLocation->id].name1, dungeonLocation->floor); //_F
     }
     else {

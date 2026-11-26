@@ -40,6 +40,7 @@
 #include "random.h"
 #include "sprite.h"
 #include "weather.h"
+#include "sky_story.h"
 
 extern OpenedFile *gDungeonPaletteFile;
 extern RGB_Struct gUnknown_202ECA4[33];
@@ -119,6 +120,13 @@ void sub_80847D4(void)
     gDungeon->unk1356C = FALSE;
     UpdateMinimap();
 
+#ifdef SKY_STORY
+    if (SkyStory_TrySetBeachCavePitCutscene()) {
+        FlushTempCutsceneFlags();
+        return;
+    }
+#endif
+
     for (i = 0; i < 999 && sFixedRoomCutsceneLookup[i].fixedRoomNum != FIXED_ROOM_NONE; i++) {
         fixedRoomNumber = gDungeon->fixedRoomNumber;
 
@@ -185,6 +193,11 @@ void sub_80848F0(void)
         case CUTSCENE_SINISTER_WOODS_POSTSTORY:
             sub_8086F00();
             break;
+#ifdef SKY_STORY
+        case CUTSCENE_BEACH_CAVE_PIT:
+            SkyStory_BeachCavePitSetup();
+            break;
+#endif
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT1:
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT2:
             sub_8087230();
@@ -359,6 +372,11 @@ void DisplayPreFightDialogue(void)
         case CUTSCENE_SINISTER_WOODS_POSTSTORY:
             sub_8087130();
             break;
+#ifdef SKY_STORY
+        case CUTSCENE_BEACH_CAVE_PIT:
+            SkyStory_BeachCavePitPreFightDialogue();
+            break;
+#endif
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT1:
             ZapdosPreFightDialogue();
             break;
@@ -547,6 +565,11 @@ void HandleBossFaint_Async(Entity *entity, u8 monsterBehavior, bool8 transformed
         case CUTSCENE_SINISTER_WOODS_ATTEMPT2:
             HandleMeaniesBossFaint(monsterBehavior, gDungeon->cutscene);
             break;
+#ifdef SKY_STORY
+        case CUTSCENE_BEACH_CAVE_PIT:
+            SkyStory_HandleBeachCavePitBossFaint(monsterBehavior);
+            break;
+#endif
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT1:
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT2:
         case CUTSCENE_MT_THUNDER_PEAK_POSTSTORY:

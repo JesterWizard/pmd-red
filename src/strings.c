@@ -750,7 +750,12 @@ const StatusText gStatusDescriptions[99] = {
 };
 
 const DungeonName gDungeonNames[NUM_DUNGEONS] = {
+#ifdef SKY_STORY
+    /* Explorers of Sky demake: Tiny Woods plays the part of Beach Cave. */
+    [DUNGEON_TINY_WOODS] = { _("Beach Cave"), _("Beach Cave")},
+#else
     [DUNGEON_TINY_WOODS] = { _("Tiny Woods"), _("Tiny Woods")},
+#endif
     [DUNGEON_THUNDERWAVE_CAVE] = { _("Thunderwave Cave"), _("Thunderwave Cave")},
     [DUNGEON_MT_STEEL] = { _("Mt. Steel"), _("Mt. Steel")},
     [DUNGEON_SINISTER_WOODS] = { _("Sinister Woods"), _("Sinister Woods")},

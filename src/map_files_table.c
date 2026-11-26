@@ -1479,4 +1479,48 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bmaFileName = "T01P08m",
         .bpaFileNames = {NULL, NULL, NULL, NULL},
     },
+#ifdef SKY_STORY
+    [MAP_FILE_ID_SKY_STORM_SEA] = {
+        .bplFileName = "EV0101A",
+        .bpcFileName = "EV0101Ac",
+        .bmaFileName = "EV0101Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_DUSK] = {
+        .bplFileName = "EG0101B",
+        .bpcFileName = "EG0101Bc",
+        .bmaFileName = "EG0101Bm",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_BEACH_DUSK] = {
+        .bplFileName = "ED0111B",
+        .bpcFileName = "ED0111Bc",
+        .bmaFileName = "ED0111Bm",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_KRABBY_BUBBLES] = {
+        .bplFileName = "EV0104B",
+        .bpcFileName = "EV0104Bc",
+        .bmaFileName = "EV0104Bm",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_KRABBY_SUNSET] = {
+        .bplFileName = "EV0105B",
+        .bpcFileName = "EV0105Bc",
+        .bmaFileName = "EV0105Bm",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_BEACH_CAVE_PIT] = {
+        .bplFileName = "ED0141A",
+        .bpcFileName = "ED0141Ac",
+        .bmaFileName = "ED0141Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_BEACH_DAY] = {
+        .bplFileName = "ED0111A",
+        .bpcFileName = "ED0111Ac",
+        .bmaFileName = "ED0111Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+#endif
 };

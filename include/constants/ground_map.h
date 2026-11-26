@@ -233,6 +233,16 @@ enum GroundMapID
     MAP_LOGO_WARNING,
     MAP_TEAM_BASE_WALL_MAP,
     MAP_SPINDA_CAFE,
+#ifdef SKY_STORY
+    /* Explorers of Sky demake (maps converted from the EoS ROM) */
+    MAP_SKY_STORM_SEA,
+    MAP_SKY_GUILD_DUSK,
+    MAP_SKY_BEACH_DUSK,
+    MAP_SKY_KRABBY_BUBBLES,
+    MAP_SKY_KRABBY_SUNSET,
+    MAP_SKY_BEACH_CAVE_PIT,
+    MAP_SKY_BEACH_DAY,
+#endif
     MAP_COUNT,
 };
 

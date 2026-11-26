@@ -34,6 +34,12 @@ endif
 
 # Test hook: make DEBUG_BOOT_MAP=MAP_SPINDA_CAFE → New Game boots into that map (post-game story, default team). Leave empty for normal builds.
 DEBUG_BOOT_MAP ?=
+# Test hook: make DEBUG_BOOT_EVENT=EVENT_DIVIDE → New Game skips the quiz,
+# creates the default team at story scenario (2,0) and runs that event script
+# (EVENT_DIVIDE then starts chapter 1 the normal way).
+DEBUG_BOOT_EVENT ?=
+# Test hook: make DEBUG_BOOT_FLOOR=3 → every dungeon run starts on that floor.
+DEBUG_BOOT_FLOOR ?=
 
 PREFIX := arm-none-eabi-
 OBJCOPY := $(PREFIX)objcopy
@@ -144,6 +150,12 @@ INCLUDE_PATHS += -I $(GROUND_STORY_PATH)
 ifneq ($(DEBUG_BOOT_MAP),)
 CPPFLAGS += -DDEBUG_BOOT_MAP=$(DEBUG_BOOT_MAP)
 endif
+ifneq ($(DEBUG_BOOT_EVENT),)
+CPPFLAGS += -DDEBUG_BOOT_EVENT=$(DEBUG_BOOT_EVENT)
+endif
+ifneq ($(DEBUG_BOOT_FLOOR),)
+CPPFLAGS += -DDEBUG_BOOT_FLOOR=$(DEBUG_BOOT_FLOOR)
+endif
 
 #### Files ####
 # Always emit pmd_red.gba. Matching (agbcc) and modern objects stay separated.
@@ -226,7 +238,7 @@ GROUND_STORY_STAMP := $(BUILD_DIR)/.ground_story_$(GROUND_STORY_DIR)
 # rebuilds when the story pack flips (rare; a flip is a full C rebuild).
 SKY_STORY_OBJECTS := $(C_OBJECTS)
 $(if $(wildcard $(GROUND_STORY_STAMP)),,$(shell mkdir -p $(BUILD_DIR) && rm -f $(BUILD_DIR)/.ground_story_* && touch $(GROUND_STORY_STAMP)))
-DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)
+DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)_$(if $(DEBUG_BOOT_EVENT),$(DEBUG_BOOT_EVENT),none)_$(if $(DEBUG_BOOT_FLOOR),$(DEBUG_BOOT_FLOOR),none)
 # GNU make skips a missing prerequisite that has a recipe when the target already
 # exists (the .SECONDARY: above), so the rule below would never run after a flip.
 # Create a missing stamp at parse time instead; the new mtime forces main_loops.o.
@@ -320,7 +332,7 @@ $(GROUND_STORY_STAMP):
 	@echo "Ground story pack: $(GROUND_STORY_DIR) (custom_story=$(CUSTOM_STORY_FLAG))"
 
 # Rebuild main_loops when the DEBUG_BOOT_MAP test hook flips
-$(C_BUILDDIR)/main_loops.o: $(DEBUG_BOOT_STAMP)
+$(C_BUILDDIR)/main_loops.o $(C_BUILDDIR)/ground_main.o $(C_BUILDDIR)/ground_script.o $(C_BUILDDIR)/run_dungeon.o: $(DEBUG_BOOT_STAMP)
 $(DEBUG_BOOT_STAMP):
 	@mkdir -p $(BUILD_DIR)
 	@rm -f $(BUILD_DIR)/.debug_boot_*

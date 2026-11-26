@@ -294,6 +294,11 @@ void GameLoop_Async(void)
 #ifdef DEBUG_BOOT_MAP
                 DebugBootMap_Setup();
 #endif
+#ifdef DEBUG_BOOT_EVENT
+                /* Test hook: skip the quiz; ground_main runs DEBUG_BOOT_EVENT. */
+                sub_8001064();
+                ScenarioCalc(SCENARIO_MAIN, 2, 0);
+#endif
                 tmp3 = RunGameMode_Async(0);
                 break;
             }

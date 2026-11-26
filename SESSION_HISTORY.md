@@ -643,6 +643,32 @@ Docs: [`documentation/rom_size_report.md`](documentation/rom_size_report.md),
 
 ---
 
+## 2026-11-26 — Explorers of Sky demake: chapter 1 (sky story pack)
+
+### What changed
+- New ground-script pack `src/data/ground/sky/` (copy of vanilla + the EoS
+  opening), selected by `STORY=sky` (Makefile default for modern builds) and
+  defining `SKY_STORY`. `make STORY=vanilla` restores Red's story; `MODERN=0`
+  always uses vanilla.
+- Seven EoS ground maps converted losslessly from a user-supplied EoS ROM with
+  `tools/convert_eos_ground_map.py` (`data/map_bg/E*`), registered as
+  `MAP_SKY_*` (all under `#ifdef SKY_STORY`).
+- Opening scenes (storm, washed ashore, guild sentry grate, Krabby, beach theft,
+  retry, Beach Cave Pit aftermath, Relic Fragment) follow the EoS scene scripts.
+- Tiny Woods plays Beach Cave (name, B-floors, tileset, spawns); on the story
+  run B3F is Beach Cave Pit with Zubat & Koffing (`CUTSCENE_BEACH_CAVE_PIT`).
+- New ground actor kinds 147+ (Zubat, Koffing, Wigglytuff, Krabby, Diglett).
+- Test hooks `DEBUG_BOOT_EVENT` / `DEBUG_BOOT_FLOOR`.
+- Details: `documentation/Features/SkyDemake.md`.
+
+### Reverse
+- `make STORY=vanilla` (no EoS content is compiled in).
+- To remove entirely: delete `src/data/ground/sky/`, `src/sky_story.c`,
+  `src/dungeon_cutscene_beach_cave.c`, `src/ground_map_files_sky.c`,
+  `data/map_bg*/E*`, and the `#ifdef SKY_STORY` blocks.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |

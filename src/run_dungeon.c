@@ -185,6 +185,10 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
         else {
             gDungeon->unk644.dungeonLocation = setupPtr->info.sub0.unk0;
         }
+#ifdef DEBUG_BOOT_FLOOR
+        /* Test hook (make DEBUG_BOOT_FLOOR=n): start every run on floor n. */
+        gDungeon->unk644.dungeonLocation.floor = DEBUG_BOOT_FLOOR;
+#endif
 
         gDungeon->unk644.unk30 = 0;
         EnforceMaxItemsAndMoney();

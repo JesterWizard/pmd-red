@@ -17,7 +17,11 @@ static const u8 *const sGroundPlaceNames[] = {
     [GROUND_PLACE_TEAM_BASE] =                  _("$t Team Base"),
     [GROUND_PLACE_TEAM_BASE_INSIDE] =           _("$t Team Base"),
     [GROUND_PLACE_DUNGEON] =                    _("Dungeon"),
+#ifdef SKY_STORY
+    [GROUND_PLACE_TINY_WOODS] =                 _("Beach Cave"),
+#else
     [GROUND_PLACE_TINY_WOODS] =                 _("Tiny Woods"),
+#endif
     [GROUND_PLACE_THUNDERWAVE_CAVE] =           _("Thunderwave Cave"),
     [GROUND_PLACE_MT_STEEL] =                   _("Mt. Steel"),
     [GROUND_PLACE_SINISTER_WOODS] =             _("Sinister Woods"),

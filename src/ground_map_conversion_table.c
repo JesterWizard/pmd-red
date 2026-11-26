@@ -1617,4 +1617,62 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .unk6 = -1,
         .text = _("Spinda's Café"),
     },
+#ifdef SKY_STORY
+    [MAP_SKY_STORM_SEA] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_STORM_SEA,
+        .unk6 = -1,
+        .text = _("Stormy Sea"),
+    },
+    [MAP_SKY_GUILD_DUSK] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_DUSK,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_BEACH_DUSK] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_BEACH_DUSK,
+        .unk6 = -1,
+        .text = _("Beach"),
+    },
+    [MAP_SKY_KRABBY_BUBBLES] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_KRABBY_BUBBLES,
+        .unk6 = -1,
+        .text = _("Beach"),
+    },
+    [MAP_SKY_KRABBY_SUNSET] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_KRABBY_SUNSET,
+        .unk6 = -1,
+        .text = _("Beach"),
+    },
+    [MAP_SKY_BEACH_CAVE_PIT] = {
+        /* unk0 1: single BG layer */
+        .unk0 = 1,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_BEACH_CAVE_PIT,
+        .unk6 = -1,
+        .text = _("Beach Cave Pit"),
+    },
+    [MAP_SKY_BEACH_DAY] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_BEACH_DAY,
+        .unk6 = -1,
+        .text = _("Beach"),
+    },
+#endif
 };

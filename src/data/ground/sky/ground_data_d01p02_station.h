@@ -1,140 +1,202 @@
+/*
+ * Explorers of Sky demake: Beach Cave Pit after the Zubat & Koffing battle
+ * (EoS SCRIPT/D01P41A/m01a0701), on the converted EoS map d01p41a.
+ * Replaces the Tiny Woods end-room group (gs179 group 1).
+ */
+#include "sky_story.h"
 
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_ZUBAT 2
+#define NPC_KOFFING 3
 
-
-
-
-
-
-
-
-
-static const struct ScriptCommand s_gs179_g0_s0_station_sref_script[] = { /* 0x822fcbc */
-    DEBUGINFO_O(12),
+static const struct ScriptCommand s_gs179_g0_s0_station_sref_script[] = {
+    DEBUGINFO_O(16),
     SELECT_MAP(179),
     BGM_STOP,
     JUMP_SCRIPT(COMMON_ENTER),
 };
 
-static const ScriptRef s_gs179_g0_s0_station_sref = { ENTER_CONTROL, SCRIPT_TYPE_01, NULL, s_gs179_g0_s0_station_sref_script }; /* 0x822fd28 */
+static const ScriptRef s_gs179_g0_s0_station_sref = { ENTER_CONTROL, SCRIPT_TYPE_01, NULL, s_gs179_g0_s0_station_sref_script };
 
-static const struct ScriptCommand s_gs179_g1_s0_station_sref_script[] = { /* 0x822fd34 - PART 1 0:16:37-0:17:16 - Tiny Woods end room */
-    DEBUGINFO_O(21),
-    SELECT_MAP(179),
+static const struct ScriptCommand s_gs179_g1_s0_station_sref_script[] = {
+    DEBUGINFO_O(25),
+    SET_PLACE_MODE(1),
+    FADE_OUT(TRUE, 0),
+    SELECT_MAP(MAP_SKY_BEACH_CAVE_PIT),
     SELECT_ENTITIES(-1, 0),
     BGM_SWITCH(MUS_IN_THE_DEPTHS_OF_THE_PIT),
-    FADE_IN(1, 0x1E),
+    FADE_IN(TRUE, 30),
+    SET_PLACE_MODE(4),
     AWAIT_CUE(3),
-    FADE_OUT(1, 0x1E),
-    WAIT(30),
+    BGM_FADEOUT(120),
+    FADE_OUT(TRUE, 60),
+    WAIT(60),
     RET,
 };
 
-static const ScriptRef s_gs179_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE_07, NULL, s_gs179_g1_s0_station_sref_script }; /* 0x822fdc4 */
+static const ScriptRef s_gs179_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE_07, NULL, s_gs179_g1_s0_station_sref_script };
 
-static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* 0x822fdd0 - PART 1 0:16:37-0:17:16 - Player */
-    DEBUGINFO_O(35),
+static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — drives the scene */
+    DEBUGINFO_O(42),
     SELECT_ANIMATION(2),
-    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_PLAYER, 0x0),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
     WAIT_FADE,
-    WAIT(60),
-    PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0000, 0x00000000),
-    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, 0x0001, 0x00000000),
-    PORTRAIT(PLACEMENT_MIDLEFT_TOP, 0x0002, 0x00000000),
-    ALERT_CUE(7),
-    AWAIT_CUE(5),
-    PORTRAIT_REP(0x0002, 0x00000042),
-    MSG_NPC(2, _(" Waaaaah...")),
-    MSG_NPC(2, _(" Mommy...\nWhere are you...? Sniffle...")),
+    PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_NORMAL),
+    PORTRAIT(PLACEMENT_MIDLEFT_TOP, NPC_KOFFING, EMOTION_PAINED),
+    PORTRAIT(PLACEMENT_MIDRIGHT_TOP_FLIP, NPC_ZUBAT, EMOTION_PAINED),
+    WAIT(30),
+    MSG_NPC(NPC_KOFFING, _(" Owowow...")),
+    MSG_NPC(NPC_ZUBAT, _(" Ugh...{WAIT_PRESS} We got roughed up...")),
     TEXTBOX_CLEAR,
     WAIT(30),
+    ALERT_CUE(7), /* they pull themselves together */
+    ALERT_CUE(8),
+    WAIT(30),
+    PORTRAIT(PLACEMENT_MIDLEFT_TOP, NPC_KOFFING, EMOTION_ANGRY),
+    PORTRAIT(PLACEMENT_MIDRIGHT_TOP_FLIP, NPC_ZUBAT, EMOTION_ANGRY),
+    MSG_NPC(NPC_KOFFING, _(" B-blast it... How'd we get wiped\nout by wimps like them?")),
+    MSG_NPC(NPC_ZUBAT, _(" Bah!{WAIT_PRESS} Here you go. Take it, then!")),
+    TEXTBOX_CLEAR,
+    ALERT_CUE(7), /* Zubat tosses the Relic Fragment down */
+    AWAIT_CUE(5),
+    FANFARE_PLAY2(466),
+    ALERT_CUE(6), /* partner: "!" */
+    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHWEST),
+    AWAIT_CUE(5),
+    MSG_NPC(NPC_KOFFING, _(" Whoa-ho!{WAIT_PRESS} Don't think you're so\nawesome. Your victory was a fluke!")),
+    TEXTBOX_CLEAR,
+    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTH),
+    MSG_NPC(NPC_ZUBAT, _(" Yeah, you just remember that!")),
+    TEXTBOX_CLEAR,
+    ALERT_CUE(7), /* they flee past the heroes */
+    ALERT_CUE(8),
+    WAIT(20),
+    ROTATE_TO(4, DIR_TRANS_SPINLEFT1, DIRECTION_SOUTH),
     ALERT_CUE(6),
-    WALK_GRID(256, 0),
+    WAIT(60),
+    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHWEST),
+    ALERT_CUE(6), /* partner steps up to the fragment */
+    AWAIT_CUE(5),
+    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_INSPIRED),
+    MSG_NPC(NPC_PARTNER, _(" Oh! It's my Relic Fragment!")),
+    TEXTBOX_CLEAR,
+    ALERT_CUE(6),
+    AWAIT_CUE(5),
+    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_HAPPY),
+    MSG_NPC(NPC_PARTNER, _(" Thank goodness...{WAIT_PRESS} I actually\nmanaged to get it back.")),
+    TEXTBOX_CLEAR,
+    ALERT_CUE(6), /* partner turns to the hero */
+    AWAIT_CUE(5),
+    ROTATE_TO_LIVES(4, DIR_TRANS_11, 34),
+    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_TEARY_EYE),
+    MSG_NPC(NPC_PARTNER, _(" This happened only because you\nhelped me, {NAME_0}.")),
+    TEXTBOX_CLEAR,
+    ALERT_CUE(6),
+    AWAIT_CUE(5),
+    PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_HAPPY),
+    MSG_NPC(NPC_PARTNER, _(" Thank you, {NAME_0}!")),
+    TEXTBOX_CLEAR,
     WAIT(30),
-    PORTRAIT_REP(0x0001, 0x00000000),
-    MSG_NPC(1, _(" We came to rescue you.")),
-    TEXTBOX_CLEAR,
-    WAIT(10),
-    ALERT_CUE(7),
-    AWAIT_CUE(5),
-    MSG_NPC(2, _(" Huh?")),
-    TEXTBOX_CLEAR,
-    WAIT(10),
-    MSG_NPC(1, _(" Your mom's waiting.\nLet's get you out!")),
-    TEXTBOX_CLEAR,
-    WAIT(10),
-    ALERT_CUE(7),
-    AWAIT_CUE(5),
-    PORTRAIT_REP(0x0002, 0x00000000),
-    MSG_NPC(2, _(" OK.")),
-    TEXTBOX_CLEAR,
     ALERT_CUE(3),
     HALT,
 };
 
-
-
-
-
-
-static const struct ScriptCommand s_gs179_g1_s0_lives1_dlg0[] = { /* 0x82300a8 - PART 1 0:16:37-0:17:16 - Partner */
-    DEBUGINFO_O(80),
+static const struct ScriptCommand s_gs179_g1_s0_lives1_dlg0[] = { /* Partner */
+    DEBUGINFO_O(112),
     SELECT_ANIMATION(2),
-    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_PARTNER, 0x0),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
     AWAIT_CUE(6),
-    WALK_GRID(256, 1),
-    HALT,
-};
-
-static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* 0x8230108 - PART 1 0:16:37-0:17:16 - Caterpie */
-    DEBUGINFO_O(89),
-    SELECT_ANIMATION(2),
-    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
-    AWAIT_CUE(7),
-    EMOTION_EFFECT(0x3E),
-    FANFARE_PLAY2(457),
-    WAIT_EFFECT,
-    WAIT_FANFARE2(457),
+    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHEAST),
+    CALL_SCRIPT(NOTICE_FUNC),
     ALERT_CUE(5),
-    AWAIT_CUE(7),
+    AWAIT_CUE(6),
     ROTATE_TO(4, DIR_TRANS_SPINRIGHT1, DIRECTION_SOUTH),
+    AWAIT_CUE(6),
+    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHEAST),
+    WALK_RELATIVE(204, 8, -8),
     ALERT_CUE(5),
-    AWAIT_CUE(7),
+    AWAIT_CUE(6),
+    WALK_RELATIVE(204, 8, -8),
+    ALERT_CUE(5),
+    AWAIT_CUE(6),
+    ROTATE_TO_LIVES(4, DIR_TRANS_11, 0),
+    ALERT_CUE(5),
+    AWAIT_CUE(6),
     CALL_SCRIPT(JUMP_HAPPY_FUNC),
     ALERT_CUE(5),
-    AWAIT_CUE(7),
     HALT,
 };
 
-static const struct GroundLivesData s_gs179_g1_s0_lives[] = { /* 0x8230218 */
-    /*  0 */ {   0,   4,   0,   0, {  20,  34, CPOS_HALFTILE, CPOS_HALFTILE }, {
+static const struct ScriptCommand s_gs179_g1_s0_lives2_dlg0[] = { /* Zubat */
+    DEBUGINFO_O(137),
+    SELECT_ANIMATION(GROUND_ANIM_HURT),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_ZUBAT, 0x0),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
+    FANFARE_PLAY2(470),
+    CALL_SCRIPT(SWEAT_FUNC),
+    AWAIT_CUE(7),
+    SELECT_ANIMATION(2),
+    AWAIT_CUE(7),
+    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_SOUTHWEST),
+    WAIT(20),
+    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_SOUTH),
+    ALERT_CUE(5),
+    AWAIT_CUE(7),
+    WALK_RELATIVE(640, 28, 36),
+    WALK_RELATIVE(640, 4, 128),
+    END_DELETE,
+};
+
+static const struct ScriptCommand s_gs179_g1_s0_lives3_dlg0[] = { /* Koffing */
+    DEBUGINFO_O(155),
+    SELECT_ANIMATION(GROUND_ANIM_HURT),
+    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_KOFFING, 0x0),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
+    FANFARE_PLAY2(470),
+    CALL_SCRIPT(SWEAT_FUNC),
+    AWAIT_CUE(8),
+    SELECT_ANIMATION(2),
+    AWAIT_CUE(8),
+    WALK_RELATIVE(640, -24, 36),
+    WALK_RELATIVE(640, -8, 128),
+    END_DELETE,
+};
+
+/* m01a0701: PLAYER (30,25) & ATTENDANT1 (26,25) facing up; Zubat (30,19) and
+ * Koffing (26,19) facing down. */
+static const struct GroundLivesData s_gs179_g1_s0_lives[] = {
+    /*  0 */ {   0,   4,   0,   0, {  30,  25, 0, CPOS_HALFTILE }, {
         [0] = s_gs179_g1_s0_lives0_dlg0,
     } },
-    /*  1 */ {  34,   4,   0,   0, {  24,  34, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  1 */ {  34,   4,   0,   0, {  26,  25, 0, CPOS_HALFTILE }, {
         [0] = s_gs179_g1_s0_lives1_dlg0,
     } },
-    /*  2 */ {  54,   4,   0,   0, {  22,  18, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  2 */ { SKY_LIVES_ZUBAT,   0,   0,   0, {  30,  19, 0, CPOS_HALFTILE }, {
         [0] = s_gs179_g1_s0_lives2_dlg0,
+    } },
+    /*  3 */ { SKY_LIVES_KOFFING, 0,   0,   0, {  26,  19, 0, CPOS_HALFTILE }, {
+        [0] = s_gs179_g1_s0_lives3_dlg0,
     } },
 };
 
-static const struct GroundEffectData s_gs179_g1_s0_effs[] = { /* 0x8230260 */
-    /*  0 */ {   0,   0,   1,   1, {  22,  21, CPOS_HALFTILE, 0 }, NULL },
-};
-
-static const ScriptRef * const (sStationScripts[]) = { /* 0x823026c */
+static const ScriptRef * const (sStationScripts[]) = {
     &s_gs179_g0_s0_station_sref,
     &s_gs179_g1_s0_station_sref,
 };
 
-static const struct GroundScriptSector s_gs179_g0_sectors[] = { /* 0x8230274 */
+static const struct GroundScriptSector s_gs179_g0_sectors[] = {
     { 0,NULL, 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[0], },
 };
 
-static const struct GroundScriptSector s_gs179_g1_sectors[] = { /* 0x823029c */
-    { LPARRAY(s_gs179_g1_s0_lives), 0,NULL, LPARRAY(s_gs179_g1_s0_effs), 0,NULL, 1,&sStationScripts[1], },
+static const struct GroundScriptSector s_gs179_g1_sectors[] = {
+    { LPARRAY(s_gs179_g1_s0_lives), 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[1], },
 };
 
-static const struct GroundScriptGroup s_gs179_groups[] = { /* 0x82302c4 */
+static const struct GroundScriptGroup s_gs179_groups[] = {
     { LPARRAY(s_gs179_g0_sectors) },
     { LPARRAY(s_gs179_g1_sectors) },
 };

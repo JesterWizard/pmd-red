@@ -204,6 +204,10 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
             case STARTMODE_NEW_GAME:
                 sub_8098C58();
                 sUnknown_20398B4 = STARTMODE_CONTINUE_GAME;
+#ifdef DEBUG_BOOT_EVENT
+                /* Test hook (make DEBUG_BOOT_EVENT=...): run one event script. */
+                scriptID = DEBUG_BOOT_EVENT;
+#endif
                 break;
             case STARTMODE_GROUND:
             case STARTMODE_3:

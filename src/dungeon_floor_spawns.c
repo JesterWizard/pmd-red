@@ -22,6 +22,7 @@
 #include "runtime.h"
 #include "constants/fixed_rooms.h"
 #include "structs/dungeon_mapparam.h"
+#include "sky_story.h"
 
 /* PMD2 Marowak Dojo enemy levels by floor (B1F-B5F). EXP scales with level. */
 static const u8 sPmd2TrainingGroundLevels[] = {0, 1, 10, 20, 25, 35};
@@ -121,6 +122,9 @@ void SetFloorItemMonsterSpawns(void)
     }
 
     ApplyPmd2TrainingGroundOverrides();
+#ifdef SKY_STORY
+    SkyStory_ApplyFloorOverrides();
+#endif
 
     for (i = 0; i < ITEM_SPAWN_TYPES_COUNT; i++)
     {

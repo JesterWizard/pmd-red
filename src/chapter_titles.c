@@ -39,7 +39,12 @@ typedef struct ChapterTitle
 
 /* One entry per story episode (EVENT_M01ExxA); B halves continue a chapter. */
 static const ChapterTitle sChapterTitles[CHAPTER_TITLE_COUNT] = {
+#ifdef SKY_STORY
+    /* Explorers of Sky demake: EoS chapter 1 title, over a beach-side area. */
+    {  2, FRIEND_AREA_SHALLOW_BEACH,    _("Chapter 1"),  _("A Storm at Sea") },            /* Beach Cave */
+#else
     {  2, FRIEND_AREA_OVERGROWN_FOREST, _("Chapter 1"),  _("A Pokémon Awakens") },         /* Tiny Woods */
+#endif
     {  3, FRIEND_AREA_MT_CLEFT,         _("Chapter 2"),  _("The Rescue Team Begins") },    /* Thunderwave Cave, Mt. Steel */
     {  5, FRIEND_AREA_SECRETIVE_FOREST, _("Chapter 3"),  _("Into Sinister Woods") },       /* Sinister Woods */
     {  6, FRIEND_AREA_THUNDER_MEADOW,   _("Chapter 4"),  _("Thunder on the Mountain") },   /* Silent Chasm, Mt. Thunder */

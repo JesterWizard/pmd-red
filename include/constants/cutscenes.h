@@ -63,6 +63,9 @@ enum CutsceneKind
     CUTSCENE_MEDICHAM_POSTSTORY,
     CUTSCENE_HOWLING_FOREST,
     CUTSCENE_HOWLING_FOREST_POSTSTORY,
+#ifdef SKY_STORY
+    CUTSCENE_BEACH_CAVE_PIT, /* Explorers of Sky demake: Zubat & Koffing */
+#endif
 
     NUM_CUTSCENES
 };

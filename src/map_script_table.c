@@ -369,4 +369,13 @@ const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_LOGO_WARNING] = &gGroundScript_gs227,
     [MAP_TEAM_BASE_WALL_MAP] = &gGroundScript_gs228,
     [MAP_SPINDA_CAFE] = &gGroundScript_gs229,
+#ifdef SKY_STORY
+    [MAP_SKY_STORM_SEA] = &gGroundScript_gs178,
+    [MAP_SKY_GUILD_DUSK] = &gGroundScript_gs178,
+    [MAP_SKY_BEACH_DUSK] = &gGroundScript_gs178,
+    [MAP_SKY_KRABBY_BUBBLES] = &gGroundScript_gs178,
+    [MAP_SKY_KRABBY_SUNSET] = &gGroundScript_gs178,
+    [MAP_SKY_BEACH_CAVE_PIT] = &gGroundScript_gs179, /* SELECT_MAP also selects the script file */
+    [MAP_SKY_BEACH_DAY] = &gGroundScript_gs178,
+#endif
 };
