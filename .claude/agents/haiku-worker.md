@@ -14,12 +14,9 @@ message is always a CHECK-IN report, never "done".
 - Do only the task in your brief. If it needs something outside that scope (another
   file, a design decision), stop and say so in the CHECK-IN instead of doing it.
 - The default ROM is the modern hack build. Run `make` after your changes and expect
-  it to succeed. Run `make MODERN=0 compare` and expect `pmd_red.gba: OK` only when
-  the brief's build gate says the task is retail-matching. Do not treat a retail sha1
-  mismatch on a `MODERN=1` hack change as a failure.
-- Retail-matching work must not change bytes. If C does not match, keep the existing
-  `NONMATCHING` pattern or stop and report that in the CHECK-IN. Do not "fix" a match
-  by editing the ROM or the sha1.
+  it to succeed. That is the only build gate. Do not run `make compare` or
+  `make MODERN=0 compare`: neither can match the retail sha1 on this branch.
+- Keep existing `NONMATCHING` guards. Never edit the ROM, `baserom.*` or `red.sha1`.
 - RescueEditor behavior changes: add a failing test first, then the smallest change
   that makes it pass (`RescueEditor/tests/RescueEditor.Core.Tests/`).
 - Save-layout changes (bit-packed save fields, chunk sizes, IQ flags, inventory,
@@ -40,7 +37,6 @@ Status: READY FOR REVIEW | BLOCKED | PARTIAL
 Changed files: <path> — <one line each>
 Commands run:
   make -> <exact last line of output>
-  make MODERN=0 compare -> <exact last line, or "not required">
   <other commands> -> <result>
 What I did:
   - <change> — evidence: <file / caller / behaviour>

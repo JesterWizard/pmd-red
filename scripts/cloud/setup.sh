@@ -16,7 +16,7 @@
 #
 # Usage: scripts/cloud/setup.sh [--agbcc] [--build] [-h|--help]
 #
-#   --agbcc   also install agbcc, needed only for `make MODERN=0 compare`
+#   --agbcc   also install agbcc, needed only for `make MODERN=0` (not a gate)
 #             (env: PMD_SETUP_AGBCC=1)
 #   --build   also run the full ROM build at the end
 #             (env: PMD_SETUP_BUILD=1)
@@ -51,7 +51,7 @@ usage() {
   cat <<'EOF'
 Usage: scripts/cloud/setup.sh [--agbcc] [--build] [-h|--help]
 
-  --agbcc   also install agbcc into tools/agbcc (only needed for MODERN=0 compare)
+  --agbcc   also install agbcc into tools/agbcc (only for MODERN=0, not a gate)
   --build   also run the full ROM build (make -j"$(nproc)") at the end
   -h,--help show this help
 

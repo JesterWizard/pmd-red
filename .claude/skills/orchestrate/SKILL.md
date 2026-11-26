@@ -17,11 +17,9 @@ The user's task is in the skill arguments (or the message that invoked this skil
 
 The default ROM is the modern hack build. `make` must succeed.
 
-`make compare` checks `pmd_red.gba` against the retail sha1 in `red.sha1`. The
-default `MODERN=1` hack is not expected to match that hash. Require
-`make MODERN=0 compare` (last line `pmd_red.gba: OK`) only when the task is
-retail-matching: a byte-identical agbcc decomp change. Say which gate each task
-uses in the brief.
+`make` is the only build gate. Do not require `make compare` or
+`make MODERN=0 compare`: on this branch neither build can match the retail sha1
+in `red.sha1` (see `documentation/cloud_sessions.md`).
 
 ## 1. Plan
 
@@ -33,8 +31,7 @@ uses in the brief.
    to tell worker edits apart from the user's existing uncommitted changes.
 3. Split the work into tasks that a small model can do without judgment calls. Each
    task has: an id (`T1`, `T2`, ...), the exact files in scope, what "done" looks
-   like, and the check to run (`make`, plus `make MODERN=0 compare` when the task
-   must stay retail-identical). Prefer many small tasks over one big one. Keep the
+   like, and the check to run (`make`). Prefer many small tasks over one big one. Keep the
    design decisions for yourself and put the answer in the brief.
 
 ## 2. Dispatch
@@ -51,26 +48,24 @@ Task <id>: <one-line goal>
 Scope: <files — and what is out of scope>
 Background: <the facts you already established>
 Steps: <numbered, concrete>
-Build gate: make | make and make MODERN=0 compare
+Build gate: make
 Done when: <observable result>
 End with your CHECK-IN report.
 ```
 
 **Concurrency.** Workers that edit files or run `make` share one tree and one ROM, so
 run them **one at a time**. Read-only tasks (research, "find all callers of X") can run
-in parallel. Do not use `isolation: "worktree"`: worktrees have no `baserom.gba`, so
-`make MODERN=0 compare` cannot run there.
+in parallel. Do not use `isolation: "worktree"`: worktrees have no `baserom.gba`, and the build
+needs it.
 
 ## 3. Verify every CHECK-IN
 
 A worker's report is a claim, not proof. Before accepting it:
 
-1. **Build:** run the task's build gate yourself. A failed `make`, or a retail-matching
-   task whose `make MODERN=0 compare` is not OK, means not accepted.
+1. **Build:** run `make` yourself. A failed `make` means not accepted.
 2. **Diff:** `git status --porcelain` against the baseline and `git diff` on the changed
    files. Every change must be inside the task's scope; anything else is a finding.
-3. **Rules:** no commits, no new branches, no edits to `baserom.*`. Retail-matching
-   tasks must not change bytes. RescueEditor behavior changes need a failing test
+3. **Rules:** no commits, no new branches, no edits to `baserom.*` or `red.sha1`. RescueEditor behavior changes need a failing test
    first. Save-layout changes must follow `.cursor/skills/save-sram-layout/SKILL.md`.
 4. **Evidence:** spot-check at least the items under "Please verify" and "Unsure
    about", plus one other at random. Open the code and confirm the evidence holds.
@@ -92,8 +87,7 @@ Only after a task is APPROVED does the next file-editing worker start.
 
 ## 4. Finish
 
-1. Run `make` and say explicitly that you ran it and the result. If any approved task
-   was retail-matching, also run `make MODERN=0 compare` and say that result.
+1. Run `make` and say explicitly that you ran it and the result.
 2. Do not commit unless the user asks. Do not create a branch.
 3. If the session changed `RescueEditor/`, restart RescueTemple with `./RescueEditor/dev.sh`.
 4. Report to the user:
@@ -103,7 +97,6 @@ Only after a task is APPROVED does the next file-editing worker start.
 
 - **Tasks:** N approved / M revised / K rejected
 - **make:** OK / FAILED
-- **make MODERN=0 compare:** OK / FAILED / not required
 - **Blockers:** none / <describe>
 
 | Task | Result | Rounds | Notes |

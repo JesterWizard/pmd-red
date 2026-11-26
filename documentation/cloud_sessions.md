@@ -42,7 +42,8 @@ Optional flags:
 
 - `--build` (or `PMD_SETUP_BUILD=1`) also runs `make -j$(nproc)` at the end.
 - `--agbcc` (or `PMD_SETUP_AGBCC=1`) clones `pret/agbcc` into `.cache/agbcc`
-  and installs it into `tools/agbcc`. Only `make MODERN=0 compare` needs this.
+  and installs it into `tools/agbcc`. Only `make MODERN=0` uses it, and that
+  build is not a gate (see Build).
 
 Logs for the long steps go to `build/setup-logs/` (`tools.log`, `agbcc.log`,
 `make.log`).
@@ -54,7 +55,7 @@ Run `make -j$(nproc)` yourself.
 To run setup by hand on a non-cloud Ubuntu 24.04 or WSL machine:
 
 ```bash
-scripts/cloud/setup.sh            # add --agbcc for MODERN=0 compare, --build for the ROM
+scripts/cloud/setup.sh            # add --build for the ROM
 ```
 
 It uses `sudo` for apt when not running as root.
@@ -63,16 +64,15 @@ It uses `sudo` for apt when not running as root.
 
 - `make -j$(nproc)` builds `pmd_red.gba`, the modern hack build. This is the
   default (`MODERN=1`).
-- `make MODERN=0 compare` is the retail-matching gate. It needs agbcc, so run
-  `scripts/cloud/setup.sh --agbcc` first. It must print `pmd_red.gba: OK` to pass.
-  It does not pass today. Every source compiles under agbcc, but the link fails
-  with `region 'EWRAM' overflowed`. Even if it linked, the sha1 could not match:
-  the matching build compiles the hack code too (about 64 files read
-  `gRuntimeConfig` without a `MODERN` guard, and `ld_script.ld` links the
-  achievements and runtime-config objects).
+- `make` is the only build gate on this branch.
+- `make MODERN=0 compare` is **not** a gate here. Do not use it to check work.
+  It compiles the hack code with agbcc, so it cannot match retail: about 64
+  files read `gRuntimeConfig` without a `MODERN` guard, and `ld_script.ld` links
+  the achievements and runtime-config objects. Every source still compiles under
+  agbcc (after `scripts/cloud/setup.sh --agbcc`), but the link fails with
+  `region 'EWRAM' overflowed`.
 
-A `MODERN=1` build will not match the retail sha1. That is expected for hack
-changes.
+Neither build matches the retail sha1 in `red.sha1`. That is expected.
 
 ## Smoke test
 
