@@ -53,6 +53,39 @@ void SetFullscreenArtBrightness(const RGB_Struct *pal, s32 brightness)
 #endif
 }
 
+#ifdef SKY_STORY
+/* Same screen set-up as LoadFullscreenArt, with an empty BG3 map: the caller
+ * streams its own 8bpp tiles (src/sky_cutaways.c, the CG scrolls). */
+void LoadFullscreenArtBlank(void)
+{
+    s32 i, j;
+
+    ResetSprites(TRUE);
+    UpdateFadeInTile(0);
+    InitFontPalette();
+    sub_800CDA8(2);
+    ShowWindows(NULL, TRUE, TRUE);
+    SetBG2RegOffsets(0, 0);
+    SetBG3RegOffsets(0, 0);
+    SetBGOBJEnableFlags(0);
+    for (i = 0; i < 32; i++) {
+        for (j = 0; j < 32; j++) {
+            gBgTilemaps[2][i][j] = 0;
+            gBgTilemaps[3][i][j] = 0;
+        }
+    }
+    SetTitleBg8bpp(TRUE);
+    for (i = 0; i < 20; i++) {
+        gBgTilemaps[0][i][0] = 0;
+        gBgTilemaps[1][i][0] = 0;
+    }
+    ScheduleBgTilemapCopy(0);
+    ScheduleBgTilemapCopy(1);
+    ScheduleBgTilemapCopy(2);
+    ScheduleBgTilemapCopy(3);
+}
+#endif
+
 void LoadFullscreenArt(const u8 *at4pn)
 {
     u32 outLen;

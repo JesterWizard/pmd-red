@@ -83,6 +83,16 @@ shows text on the other screen. Converted maps keep EoS's palette animations
 VRAM, EoS's BPA tile animations: the storm-sea waves (`EV0101A1.bpa`) and
 the guild torches (`EG0101B1.bpa`), in RT's BPA slots.
 
+Connected CGs pan instead of cutting: where EoS shows a top-screen CG right
+above the scene (the cliff over the stormy sea, the sky over the beach, the
+dusk clouds over the guild), the demake shows the CG and eases down into the
+scene. The 240x320 pictures come from
+[`tools/make_sky_cutaway_scrolls.py`](../../tools/make_sky_cutaway_scrolls.py)
+(`graphics/custom/sky_scrolls/`: the CG over a capture of the scene's first
+view, with the player's Pokémon replaced by the rendered map); the tiles
+stream through a 21-row ring in the cutaway's VRAM (`ScrollConnected` in
+[`src/sky_cutaways.c`](../../src/sky_cutaways.c)).
+
 The DS second screen has no GBA equivalent, so its art (sky panoramas, the
 storm cliff, the Relic Fragment close-up, the animated sunset sea) is shown as
 full-screen cutaways in the middle of scenes (`SKY_CUTAWAY(id, frames)`,
@@ -407,7 +417,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
-| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---
 

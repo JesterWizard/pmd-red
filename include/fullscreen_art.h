@@ -13,6 +13,9 @@
  */
 void LoadFullscreenArt(const u8 *at4pn);
 void UnloadFullscreenArt(void);
+#ifdef SKY_STORY
+void LoadFullscreenArtBlank(void);
+#endif
 
 /* Writes BG palette 0–239 from pal (240 RGBX) at brightness 0–32. */
 void SetFullscreenArtBrightness(const RGB_Struct *pal, s32 brightness);

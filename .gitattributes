@@ -32,3 +32,5 @@ graphics/custom/chapter_cards/*.pal binary
 
 *.h linguist-language=C
 *.inc linguist-language=Assembly
+graphics/custom/sky_scrolls/*.pal binary
+graphics/custom/sky_scrolls/*.tiles binary

@@ -94,11 +94,12 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     WAIT(90),
     SELECT_MAP(MAP_SKY_STORM_SEA), /* only now: the voices play over black */
     FADE2_IN(TRUE, 0),
-    FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
-    WAIT(120),
-    SKY_CUTAWAY(SKY_CUTAWAY_STORM, 160), /* EoS top screen: the cliff, lightning */
-    WAIT(60),
+    /* EoS: the cliff (top screen) over the stormy sea (bottom): the cliff,
+     * lightning, then a pan down to the sea, which stays on screen. */
+    SKY_CUTAWAY(SKY_CUTAWAY_STORM, 160),
+    FADE_IN(TRUE, 15),
+    WAIT(165),
     BGM_FADEOUT(120),
     FADE_OUT(TRUE, 60),
     WAIT(120),
@@ -124,14 +125,15 @@ static const struct ScriptCommand s_gs178_g5_s0_station_sref_script[] = {
     MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}..................")),
     MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}Urrgh...")),
     TEXTBOX_CLEAR,
-    SKY_CUTAWAY(SKY_CUTAWAY_SKY_DAY, 150), /* EoS top screen: the sky */
     MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}Where...")),
     MSG_ON_BG_AUTO(30, _("{CENTER_ALIGN}...Where am I?")),
     TEXTBOX_CLEAR,
     WAIT(1),
     FADE2_IN(TRUE, 0),
     SELECT_ENTITIES(-1, 0),
-    FADE_IN(TRUE, 120),
+    /* EoS: the sky (top screen) over the beach: pan down to the beach. */
+    SKY_CUTAWAY(SKY_CUTAWAY_SKY_DAY_SCROLL, 150),
+    FADE_IN(TRUE, 15),
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
     BGM_FADEOUT(120),
@@ -167,9 +169,10 @@ static const struct ScriptCommand s_gs178_g6_s0_station_sref_script[] = {
     BGM_STOP,
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_GUILD_DUSK),
-    SKY_CUTAWAY(SKY_CUTAWAY_GUILD_SKY, 90), /* EoS top screen: dusk clouds */
     SELECT_ENTITIES(-1, 0),
-    FADE_IN(TRUE, 30),
+    /* EoS: dusk clouds (top screen) over the guild: pan down to the guild. */
+    SKY_CUTAWAY(SKY_CUTAWAY_GUILD_SKY_SCROLL, 90),
+    FADE_IN(TRUE, 15),
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
     BGM_FADEOUT(120),
