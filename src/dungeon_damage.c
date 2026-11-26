@@ -1,6 +1,7 @@
 #include "global.h"
 #include "globaldata.h"
 #include "runtime.h"
+#include "sky_story.h"
 #include "dungeon_damage.h"
 #include "constants/ability.h"
 #include "constants/dungeon_modifiers.h"
@@ -773,12 +774,20 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
                         }
                     }
 
+#ifdef SKY_STORY
+                    /* Explorers of Sky: bosses grant no EXP (gSkyBossExp). */
+                    if (targetData->bossFlag && !gSkyBossExp)
+                        exp = 0;
+                    if (exp != 0)
+#endif
+                    {
                     AddExpPoints(attacker, attacker, exp);
                     for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
                         Entity *teamMember = gDungeon->teamPokemon[i];
                         if (EntityIsValid(teamMember) && teamMember != attacker) {
                             AddExpPoints(attacker, teamMember, exp);
                         }
+                    }
                     }
                     r10 = TRUE;
                     NoteAchievementEnemyDefeated();
@@ -1623,6 +1632,9 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
     s16 statusKoId = 0;
     s32 statusKoLevel = 0;
     u8 statusKoExpMult = EXP_REGULAR;
+#ifdef SKY_STORY
+    bool8 statusKoBoss = FALSE;
+#endif
 
     if (AbilityIsActive(entity, ABILITY_MAGIC_GUARD))
         return;
@@ -1643,6 +1655,9 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
                 statusKoId = info->id;
                 statusKoLevel = info->level;
                 statusKoExpMult = info->expMultiplier;
+#ifdef SKY_STORY
+                statusKoBoss = info->bossFlag;
+#endif
                 break;
         }
     }
@@ -1661,7 +1676,11 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
         NoteAchievementStatusKO();
         /* Vanilla residual damage uses a dummy attacker, so no EXP. Optionally
          * award the normal team share after a real status faint. */
-        if (gRuntimeConfig.status_condition_exp && !EntityIsValid(entity)) {
+        if (gRuntimeConfig.status_condition_exp && !EntityIsValid(entity)
+#ifdef SKY_STORY
+            && !(statusKoBoss && !gSkyBossExp)
+#endif
+            ) {
             Entity *leader = GetLeader();
             if (EntityIsValid(leader)) {
                 s32 i;

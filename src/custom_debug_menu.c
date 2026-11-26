@@ -70,6 +70,7 @@ struct CustomDebugMenuOption
 static EWRAM_INIT struct CustomDebugMenu *sCustomDebugMenu = {NULL};
 static EWRAM_INIT u8 sCustomDebugMenuState = {0};
 
+#include "sky_story.h"
 #include "data/custom_debug_menu.h"
 
 static void DisplayCustomDebugMenu(void);

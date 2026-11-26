@@ -250,6 +250,13 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
   thieves, boss music, and the dungeon ends once both are down. No cutscene
   flags are touched, so Sinister Woods is unaffected.
 - Later visits to Beach Cave have no Pit.
+- Bosses grant no EXP, as in EoS: `gSkyBossExp` (src/sky_story.c, default
+  FALSE) gates EXP from Pokémon with `bossFlag` (the Pit's Zubat and Koffing
+  set it); the debug menu's "Boss EXP" toggles it at runtime.
+- Gen 4 Pokémon have no lines in Red's per-species talk files (level-up and
+  team chat); they use a Red Pokémon's (`SkyStory_TalkSpecies`: Turtwig →
+  Bulbasaur, Chimchar → Charmander, Piplup → Squirtle, Riolu → Machop, else
+  Pikachu). Reading a missing talk file showed garbage and could crash.
 - Zubat and Koffing use EoS's fixed-floor boss stats (overlay 10's monster
   spawn stats, entries 1 and 2): Zubat L3, 15 HP, 15 Atk / Sp. Atk, 11 Def /
   Sp. Def; Koffing L6, 27 HP, 20 / 20, 8 / 8

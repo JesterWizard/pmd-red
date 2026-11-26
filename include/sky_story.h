@@ -43,6 +43,10 @@ bool8 SkyStory_IsSkyTilesetFile(const struct OpenedFile *file);
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
 struct Entity;
 void SkyStory_ApplyFixedRoomBossStats(struct Entity *entity);
+s32 SkyStory_TalkSpecies(s32 species);
+/* Runtime toggle (debug menu "Boss EXP"): FALSE = bosses grant no EXP, as
+ * in Explorers of Sky; TRUE = Red's EXP. Default in src/sky_story.c. */
+extern u8 gSkyBossExp;
 
 /* EoS music converted to Red voices (sound/songs/seq_061..068,
  * tools/eos_music/convert_eos_bgm.py). Song slots were empty in Red. */

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sky_story.h"
 #include "globaldata.h"
 #include "runtime.h"
 #include "dungeon_misc.h"
@@ -1349,6 +1350,13 @@ void sub_806A3D4(u8 *dst, s32 _a1, s32 id, bool32 _a3)
     s32 mod;
     struct UnkTalkFileStruct *strPtr;
 
+#ifdef SKY_STORY
+    /* Red's talk files (talkNN / talkpNN, ten species each) end with Red's
+     * species; a Gen 4 Pokémon read a missing file (garbage text, then a
+     * crash). Gen 4 Pokémon use a Red Pokémon's lines instead. */
+    if (a1 >= SKY_FIRST_GEN4_MONSTER)
+        a1 = SkyStory_TalkSpecies(a1);
+#endif
     if (a3) {
         sprintf(fileName, "talkp%d", (s16) (a1 / 10));
     }
