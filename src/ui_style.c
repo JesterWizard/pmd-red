@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "bg_palette_buffer.h"
 #include "cpu.h"
 #include "def_filearchives.h"
 #include "file_system.h"
@@ -65,6 +66,26 @@ bool8 UiStyleIsSky(void)
     return gRuntimeConfig.ui_style == UI_STYLE_SKY;
 }
 
+#ifdef SKY_STORY
+/* EoS's top menu (and its sub-screens) uses green frames whatever the
+ * window colour option; -1 = follow the option. */
+static EWRAM_INIT s8 sSkyFrameColorOverride = -1;
+
+void SetUiStyleFrameColorOverride(s32 color)
+{
+    s32 i;
+    RGB_Struct *ptr;
+
+    sSkyFrameColorOverride = color;
+    if (!UiStyleIsSky())
+        return;
+    ApplyUiStyleToFontPalette();
+    ptr = sub_80063B0() == 1 ? &gFontPalette[0] : &gFontPalette[16];
+    for (i = 0; i < 16; ptr++, i++)
+        SetBGPaletteBufferColorArray(i + 240, ptr);
+}
+#endif
+
 void ApplyUiStyleToFontPalette(void)
 {
     const struct SkyFrameTint *tint;
@@ -75,6 +96,10 @@ void ApplyUiStyleToFontPalette(void)
         return;
 
     color = gGameOptionsRef != NULL ? gGameOptionsRef->windowColor : WINDOW_COLOR_BLUE;
+#ifdef SKY_STORY
+    if (sSkyFrameColorOverride >= 0)
+        color = sSkyFrameColorOverride;
+#endif
     if (color >= NUM_WINDOW_COLORS)
         color = WINDOW_COLOR_BLUE;
     tint = &sSkyFrameTints[color];

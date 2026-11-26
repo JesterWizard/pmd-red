@@ -12,6 +12,7 @@
 #include "menu_input.h"
 #include "save.h"
 #include "text_1.h"
+#include "text_3.h"
 #include "sky_story.h"
 #include "sky_jukebox.h"
 
@@ -83,6 +84,19 @@ static void SkySetWindow(WindowTemplate *win, s32 x, s32 width, s32 count)
     win->totalHeight = win->height;
 }
 
+/* EoS sizes its top-menu windows to the longest entry. */
+static s32 SkyFitWidth(const MenuItem *items)
+{
+    s32 i, w = 0;
+
+    for (i = 0; items[i].text != NULL; i++) {
+        s32 lw = GetStringLineWidth(items[i].text);
+        if (lw > w)
+            w = lw;
+    }
+    return (w + 8 + 6 + 7) / 8;
+}
+
 static void SkyBuildTopMenu(void)
 {
     s32 n = 0;
@@ -115,7 +129,7 @@ static void SkyBuildTopMenu(void)
     sMainMenuItemsExtra[n++].menuAction = MENU_SKY_OTHER;
     sMainMenuItemsExtra[n].text = NULL;
     sMainMenuItemsExtra[n].menuAction = 0xFFDD;
-    SkySetWindow(&sMainMenuWindowExtra, 2, 10, n);
+    SkySetWindow(&sMainMenuWindowExtra, 2, SkyFitWidth(sMainMenuItemsExtra), n);
 }
 
 static void SkyOpenOtherMenu(void)
@@ -140,7 +154,7 @@ static void SkyOpenOtherMenu(void)
     sSkyOtherItems[n++].menuAction = MENU_SKY_EXIT;
     sSkyOtherItems[n].text = NULL;
     sSkyOtherItems[n].menuAction = 0xFFDD;
-    SkySetWindow(&sSkyOtherWindow, 14, 12, n);
+    SkySetWindow(&sSkyOtherWindow, 14, SkyFitWidth(sSkyOtherItems), n);
 
     SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 1, &sSkyOtherWindow, sSkyOtherItems, TRUE, 0, TRUE);
     sUnknown_203B34C->currMenuChoice = -1;

@@ -16,6 +16,9 @@ bool8 UiStyleIsSky(void);
 
 /* Patch the gFontPalette master copy (call after it is (re)loaded). */
 void ApplyUiStyleToFontPalette(void);
+#ifdef SKY_STORY
+void SetUiStyleFrameColorOverride(s32 color);
+#endif
 /* Upload the style's frame tiles over the font chrome sheet in VRAM. */
 void LoadUiStyleChromeTiles(void);
 /* Apply a style change immediately (reloads chrome tiles and palette). */

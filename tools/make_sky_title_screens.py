@@ -12,9 +12,11 @@ From an Explorers of Sky ROM:
     palette: the end state of the logo fade-in that opens EoS): the orange
     glow (layer 0) and the "Pokemon Mystery Dungeon" logo (layer 1). The
     logo is 245 px wide, so it is scaled to 7/8 to fit the GBA screen.
-    EoS draws "Explorers of Sky" as banner text (back_SetTitleBanner), so the
-    subtitle is set in EoS's banner font (FONT/banner.bin). "Press START" is
-    in the first picture only, for the blink.
+    Under it goes EoS's "EXPLORERS OF SKY" emblem, which EoS draws as OBJ
+    sprites on the bottom title screen; graphics/custom/sky_title/emblem_src.png
+    is that sprite layer captured from the running game (DeSmuME, main-engine
+    OBJ layer only, title loop). "Press START" is in the first picture only,
+    for the blink.
   * menu0..9: main-menu backgrounds, the CGs EoS shows on the DS top screen
     during its top menu (BACK/s09p01a..s09p10a.bgp), scaled to 240x180 and
     cropped to the middle 160 lines.
@@ -136,12 +138,12 @@ def main() -> int:
 
     bg, lg = eos_logo(rom)
     blank = bg.convert("RGBA")
-    blank.alpha_composite(lg, ((240 - lg.width) // 2, 6))
-    sub = tinted(banner, "Explorers of Sky", (200, 236, 255), (80, 160, 255))
-    blank.alpha_composite(sub, ((240 - sub.width) // 2, 6 + lg.height - 4))
+    emblem = Image.open(OUT / "emblem_src.png").convert("RGBA")
+    blank.alpha_composite(lg, ((240 - lg.width) // 2, 4))
+    blank.alpha_composite(emblem, ((240 - emblem.width) // 2, 4 + lg.height))
     press = blank.copy()
     ps = tinted(banner, "Press START", (255, 255, 255), (255, 255, 255))
-    press.alpha_composite(ps, ((240 - ps.width) // 2, 132))
+    press.alpha_composite(ps, ((240 - ps.width) // 2, 160 - ps.height - 2))
     write("title_press", press)
     write("title_blank", blank)
 

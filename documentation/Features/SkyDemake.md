@@ -208,9 +208,12 @@ writes `graphics/custom/sky_title/`:
 - The title card: EoS's English logo from ground level **S13P01B**
   (`MAP_BG/s13p01a.bma`/`.bpc` with the `s13p01b.bpl` palette, the end of the
   logo fade-in that opens EoS): the orange glow and the "Pokémon Mystery
-  Dungeon" logo, scaled to 7/8 to fit 240 px. EoS writes "Explorers of Sky"
-  as banner text (`back_SetTitleBanner`), so the subtitle uses EoS's banner
-  font. "Press START" blinks; the EoS title theme plays.
+  Dungeon" logo, scaled to 7/8 to fit 240 px (the DS top screen, the one
+  with the logo). Under it goes EoS's green "EXPLORERS OF SKY" emblem, which
+  EoS draws as OBJ sprites over the demo loop on the bottom screen:
+  `graphics/custom/sky_title/emblem_src.png` is that sprite layer captured
+  from the running game (DeSmuME, main-engine OBJ layer only). "Press START"
+  blinks; the EoS title theme plays.
 - The main-menu backgrounds: the ten CGs EoS shows on the DS top screen
   during its top menu (`BACK/s09p01a`–`s09p10a.bgp`), scaled to 240×180 and
   cropped to the middle 160 lines; one is picked at random each time
@@ -219,6 +222,10 @@ writes `graphics/custom/sky_title/`:
 `DEMO_02`/`DEMO_03`/`DEMO_04` (`src/data/ground/ground_event_data.h`) call
 `SKY_CUTAWAY_BOOT_SCREENS` / `SKY_CUTAWAY_TITLE_SCREEN` instead of Red's
 intro movie and logo map.
+
+The menu windows use EoS's green top-menu frames whatever the window-colour
+option (`SetUiStyleFrameColorOverride`, [`src/ui_style.c`](../../src/ui_style.c),
+set while the main menu is open) and, like EoS, are sized to their longest entry.
 
 The top menu follows EoS ([`src/main_menu2.c`](../../src/main_menu2.c),
 `#ifdef SKY_STORY`): **New Game / Other** without a save, **Continue**

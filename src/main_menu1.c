@@ -20,6 +20,7 @@
 #include "rescue_password_menu.h"
 #include "save_menu.h"
 #include "text_1.h"
+#include "ui_style.h"
 #include "trade_items_menu.h"
 #include "unk_menu_203B360.h"
 #include "wonder_mail_main_menu.h"
@@ -60,10 +61,16 @@ void InitMainMenu(void)
     sMainMenu->sub.unk2D = 0;
     sub_8035DA0();
     sMainMenu->unk3A = 0;
+#ifdef SKY_STORY
+    SetUiStyleFrameColorOverride(WINDOW_COLOR_GREEN);
+#endif
 }
 
 void DeleteMainMenu(void)
 {
+#ifdef SKY_STORY
+    SetUiStyleFrameColorOverride(-1);
+#endif
     if (sMainMenu) {
         MemoryFree(sMainMenu);
         sMainMenu = NULL;
