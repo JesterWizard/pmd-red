@@ -367,15 +367,17 @@ EoS keeps its SEs in DSE "sedl" banks: `SOUND/SYSTEM/se_sys.sed` (menus) and
 `SOUND/SE/*.sed` (motion, event, state, trap, waza1–15, ...). An SE id is
 `bank << 8 | sequence` (`se_Play(0x2308)` = `event_s.sed` sequence 8); each
 sequence names itself (`SE_NUM_EVENT_SIGN_SHOCK_01`). Tracks are SMDL tracks
-that pick their instrument bank per program change: `SOUND/SWD/NNN.swd`
-(one sample each: footstep, punch, bell, ...), `motion.swd`, or
-`se_sys.swd`, whose programs are DS PSG square / noise waves.
+that pick their instrument bank per program change (0xA8 hi lo): hi 0x64 =
+`SOUND/SWD/<lo>.swd` (one sample each: footstep, punch, bell, ...), hi 0x7F =
+the sedl's own bank, `motion.swd` (`motion.sed` writes 0x7F01: lo is the sedl's
+bank number, *not* `SOUND/SWD/001.swd`) or `se_sys.swd`, whose programs are DS
+PSG square / noise waves.
 [`sedl.py`](../../tools/eos_music/sedl.py) parses them;
 [`convert_eos_se.py`](../../tools/eos_music/convert_eos_se.py) writes each SE
 used as `sound/songs/sky_se_BBII.s` (m4a assembly straight from the DSE events,
 48 ticks per beat, own voicegroup `sky_vg_se_BBII`), the samples to
 `sound/songs/sky_se_samples.s` (`sound/direct_sound_samples/sky/se*.bin`,
-280 KB) and `sound/sky_red_se_table.inc`, which `sound/song_table.inc`
+300 KB) and `sound/sky_red_se_table.inc`, which `sound/song_table.inc`
 includes for ids 300–938 under `SKY_STORY` (player fields as in Red).
 
 - PSG programs become the GBA's CGB square / noise voices (the DS duty
@@ -387,6 +389,25 @@ includes for ids 300–938 under `SKY_STORY` (player fields as in Red).
 - The sky build gives every SE player 2 tracks (the EoS SEs used have 1–2),
   in IWRAM (EWRAM −720 bytes, IWRAM +960 bytes).
 - Not ported: LFOs (vibrato / tremolo) and fine / coarse tune events.
+- Volume: EoS's own levels came out at 0.4–0.8× Red's SE for the same id
+  (measured in mGBA, loudest 100 ms RMS, each SE played alone), so the
+  converter multiplies them by `SE_GAIN` = 1.6 (`PSG_GAIN` = 1.25 for SEs on
+  CGB voices only), into VOL up to 127 and the rest into the velocities, still
+  capped at the lone-SE mix level (`TARGET_LEVEL`) where the 8-bit mixer would
+  wrap. Most SEs now measure within ±30 % of Red's; a few that already hit
+  VOL / velocity 127 stay quieter (608 "middle damage": ~0.5× Red's).
+- Channels: every SE song has Red's SE priority (80–127), above the EoS
+  songs' 50, so an SE note takes a mixer channel from the BGM even when the
+  BGM holds all 8 (m4a steals the lowest-priority channel). Checked in Beach
+  Cave: every SE started in a 15000-frame run got a DirectSound or CGB channel.
+
+Motion SEs (`motion.sed`: the basic attack, hits, attack motions) used the
+wrong bank until the 0x7F01 fix above: programs missing from `001.swd` became
+silent voices (the hit SEs played when a move or attack connects, e.g. 608 /
+609 `SE_NUM_EFF_MIDDLE_DAMAGE` / `_LARGE_DAMAGE`, and 607, 610, 621 were
+silent), and the rest played `001.swd`'s PSG noise program instead (the basic
+attack 351, `SE_NUM_MOTION_ANIM_2`, sounded like crunchy low noise). With `motion.swd` the basic attack is a 50 % square wave
+with exactly Red's notes for 351.
 
 Each pair and its evidence is listed in
 [`sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py):

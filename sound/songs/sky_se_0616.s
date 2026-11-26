@@ -23,51 +23,51 @@ sky_vg_se_0616:
 sky_se_0616_0:
 	.byte	TEMPO, 135
 	.byte	KEYSH, 0
-	.byte	VOL, 94
+	.byte	VOL, 100
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N20, 53, 100
+	.byte	N20, 53, 127
 	.byte	W20
-	.byte	TIE, 51, 120
+	.byte	TIE, 51, 127
 	.byte	W24
 	.byte	W03
 	.byte	EOT, 51
 	.byte	W01
-	.byte	N12, 51, 60
+	.byte	N12, 51, 91
 	.byte	W12
-	.byte	N24, 57, 80
+	.byte	N24, 57, 121
 	.byte	W24
-	.byte	N30, 52, 120
+	.byte	N30, 52, 127
 	.byte	W30
-	.byte	N56, 52, 40
+	.byte	N56, 52, 60
 	.byte	W12
-	.byte	VOL, 117
+	.byte	VOL, 124
 	.byte	W03
-	.byte	VOL, 109
+	.byte	VOL, 115
 	.byte	W03
-	.byte	VOL, 100
+	.byte	VOL, 106
 	.byte	W03
-	.byte	VOL, 93
+	.byte	VOL, 98
 	.byte	W03
-	.byte	VOL, 84
+	.byte	VOL, 89
 	.byte	W03
-	.byte	VOL, 76
+	.byte	VOL, 80
 	.byte	W03
-	.byte	VOL, 68
+	.byte	VOL, 72
 	.byte	W03
-	.byte	VOL, 60
+	.byte	VOL, 63
 	.byte	W03
-	.byte	VOL, 52
+	.byte	VOL, 55
 	.byte	W03
-	.byte	VOL, 43
+	.byte	VOL, 46
 	.byte	W03
-	.byte	VOL, 35
+	.byte	VOL, 37
 	.byte	W03
-	.byte	VOL, 27
+	.byte	VOL, 29
 	.byte	W03
-	.byte	VOL, 19
+	.byte	VOL, 20
 	.byte	W03
-	.byte	VOL, 11
+	.byte	VOL, 12
 	.byte	W03
 	.byte	VOL, 5
 	.byte	W02
@@ -77,35 +77,35 @@ sky_se_0616_0:
 	.align	2
 sky_se_0616_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	W14
 	.byte	VOICE, 1
-	.byte	TIE, 73, 90
+	.byte	TIE, 73, 127
 	.byte	W36
 	.byte	W03
 	.byte	EOT, 73
 	.byte	VOICE, 2
-	.byte	TIE, 60, 80
+	.byte	TIE, 60, 121
 	.byte	W24
 	.byte	W01
-	.byte	VOL, 118
+	.byte	VOL, 125
 	.byte	W02
 	.byte	EOT, 60
 	.byte	W01
-	.byte	VOL, 104
+	.byte	VOL, 110
 	.byte	W03
-	.byte	VOL, 90
+	.byte	VOL, 95
 	.byte	W03
-	.byte	VOL, 76
+	.byte	VOL, 80
 	.byte	W03
-	.byte	VOL, 61
+	.byte	VOL, 65
 	.byte	W03
-	.byte	VOL, 47
+	.byte	VOL, 50
 	.byte	W03
-	.byte	VOL, 28
+	.byte	VOL, 30
 	.byte	W03
-	.byte	VOL, 14
+	.byte	VOL, 15
 	.byte	W03
 	.byte	VOL, 0
 	.byte	W68

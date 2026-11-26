@@ -15,16 +15,16 @@ sky_vg_se_110c:
 sky_se_110c_0:
 	.byte	TEMPO, 175
 	.byte	KEYSH, 0
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N10, 60, 120
+	.byte	N10, 60, 127
 	.byte	W10
-	.byte	N44, 60, 120
+	.byte	N44, 60, 127
 	.byte	W44
-	.byte	N20, 60, 40
+	.byte	N20, 60, 53
 	.byte	W20
-	.byte	N20, 60, 20
+	.byte	N20, 60, 26
 	.byte	W20
 	.byte	FINE
 

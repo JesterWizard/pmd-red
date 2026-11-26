@@ -19,49 +19,49 @@ sky_vg_se_0c1c:
 sky_se_0c1c_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
-	.byte	VOL, 108
+	.byte	VOL, 125
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N06, 66, 110
+	.byte	N06, 66, 127
 	.byte	W06
-	.byte	N21, 72, 110
+	.byte	N21, 72, 127
 	.byte	W24
-	.byte	N09, 62, 110
+	.byte	N09, 62, 127
 	.byte	W11
-	.byte	N09, 63, 100
+	.byte	N09, 63, 127
 	.byte	W12
-	.byte	N09, 64, 100
+	.byte	N09, 64, 127
 	.byte	W12
-	.byte	N09, 63, 100
+	.byte	N09, 63, 127
 	.byte	W12
-	.byte	N09, 64, 100
+	.byte	N09, 64, 127
 	.byte	W12
-	.byte	N09, 63, 100
+	.byte	N09, 63, 127
 	.byte	W12
-	.byte	N09, 64, 100
+	.byte	N09, 64, 127
 	.byte	W09
 	.byte	FINE
 
 	.align	2
 sky_se_0c1c_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 95
+	.byte	VOL, 110
 	.byte	PAN, 64
 	.byte	W30
 	.byte	VOICE, 1
-	.byte	N06, 61, 60
+	.byte	N06, 61, 83
 	.byte	W11
-	.byte	N06, 62, 60
+	.byte	N06, 62, 83
 	.byte	W12
-	.byte	N06, 63, 60
+	.byte	N06, 63, 83
 	.byte	W12
-	.byte	N06, 62, 60
+	.byte	N06, 62, 83
 	.byte	W12
-	.byte	N06, 63, 60
+	.byte	N06, 63, 83
 	.byte	W12
-	.byte	N06, 62, 60
+	.byte	N06, 62, 83
 	.byte	W12
-	.byte	N06, 63, 60
+	.byte	N06, 63, 83
 	.byte	W09
 	.byte	FINE
 

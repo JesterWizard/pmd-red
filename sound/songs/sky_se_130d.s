@@ -16,20 +16,20 @@ sky_se_130d_0:
 	.byte	TEMPO, 240
 	.byte	KEYSH, 0
 	.byte	BENDR, 29
-	.byte	VOL, 50
+	.byte	VOL, 63
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
 	.byte	TIE, 91, 110
 	.byte	W01
-	.byte	VOL, 57
+	.byte	VOL, 71
 	.byte	W01
-	.byte	VOL, 63
+	.byte	VOL, 79
 	.byte	W01
-	.byte	VOL, 69
+	.byte	VOL, 87
 	.byte	BEND, 63
 	.byte	W01
-	.byte	VOL, 76
+	.byte	VOL, 95
 	.byte	BEND, 62
 	.byte	W02
 	.byte	BEND, 61

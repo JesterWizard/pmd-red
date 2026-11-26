@@ -15,56 +15,56 @@ sky_vg_se_0e1b:
 sky_se_0e1b_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 85
+	.byte	VOL, 120
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N13, 84, 100
+	.byte	N13, 84, 113
 	.byte	W03
-	.byte	VOL, 69
+	.byte	VOL, 98
 	.byte	W01
-	.byte	VOL, 77
+	.byte	VOL, 108
 	.byte	W02
-	.byte	VOL, 79
+	.byte	VOL, 112
 	.byte	W02
-	.byte	VOL, 82
+	.byte	VOL, 116
 	.byte	W02
-	.byte	VOL, 84
+	.byte	VOL, 118
 	.byte	W02
-	.byte	VOL, 86
+	.byte	VOL, 121
 	.byte	W01
-	.byte	N13, 81, 110
+	.byte	N13, 81, 125
 	.byte	W01
-	.byte	VOL, 87
+	.byte	VOL, 123
 	.byte	W02
-	.byte	VOL, 89
+	.byte	VOL, 125
 	.byte	W01
-	.byte	VOL, 90
+	.byte	VOL, 127
 	.byte	W08
-	.byte	N13, 77, 90
+	.byte	N13, 77, 102
 	.byte	W12
-	.byte	N13, 81, 100
+	.byte	N13, 81, 113
 	.byte	W12
-	.byte	N13, 77, 80
+	.byte	N13, 77, 91
 	.byte	W12
-	.byte	N13, 74, 70
+	.byte	N13, 74, 79
 	.byte	W12
-	.byte	N14, 77, 90
+	.byte	N14, 77, 102
 	.byte	W12
-	.byte	N13, 74, 60
+	.byte	N13, 74, 68
 	.byte	W12
-	.byte	N14, 71, 40
+	.byte	N14, 71, 45
 	.byte	W13
-	.byte	N14, 74, 60
+	.byte	N14, 74, 68
 	.byte	W12
-	.byte	N13, 71, 40
+	.byte	N13, 71, 45
 	.byte	W12
-	.byte	N16, 68, 20
+	.byte	N16, 68, 23
 	.byte	W14
-	.byte	N14, 71, 40
+	.byte	N14, 71, 45
 	.byte	W12
-	.byte	N13, 68, 20
+	.byte	N13, 68, 23
 	.byte	W12
-	.byte	N16, 65, 10
+	.byte	N16, 65, 11
 	.byte	W16
 	.byte	FINE
 

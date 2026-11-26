@@ -24,44 +24,44 @@ sky_se_1109_0:
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	TIE, 25, 110
+	.byte	TIE, 25, 127
 	.byte	W48
 	.byte	W02
-	.byte	VOL, 4
+	.byte	VOL, 5
 	.byte	W02
-	.byte	VOL, 7
+	.byte	VOL, 8
 	.byte	W03
-	.byte	VOL, 12
+	.byte	VOL, 14
 	.byte	W03
-	.byte	VOL, 16
+	.byte	VOL, 19
 	.byte	W02
-	.byte	VOL, 20
+	.byte	VOL, 24
 	.byte	W03
-	.byte	VOL, 25
+	.byte	VOL, 30
 	.byte	W02
-	.byte	VOL, 29
+	.byte	VOL, 35
 	.byte	W02
-	.byte	VOL, 34
+	.byte	VOL, 41
 	.byte	W02
-	.byte	VOL, 38
+	.byte	VOL, 46
 	.byte	W02
-	.byte	VOL, 43
+	.byte	VOL, 52
 	.byte	W02
-	.byte	VOL, 49
+	.byte	VOL, 59
 	.byte	W02
-	.byte	VOL, 55
+	.byte	VOL, 66
 	.byte	W02
-	.byte	VOL, 61
+	.byte	VOL, 74
 	.byte	W01
-	.byte	VOL, 69
+	.byte	VOL, 83
 	.byte	W02
-	.byte	VOL, 77
+	.byte	VOL, 93
 	.byte	W02
-	.byte	VOL, 85
+	.byte	VOL, 103
 	.byte	W02
-	.byte	VOL, 95
+	.byte	VOL, 115
 	.byte	W02
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	W05
 	.byte	BEND, 60
 	.byte	W02
@@ -99,11 +99,11 @@ sky_se_1109_0:
 	.byte	BEND, 64
 	.byte	W01
 	.byte	VOICE, 1
-	.byte	N36, 45, 120
+	.byte	N36, 45, 127
 	.byte	W36
-	.byte	N36, 45, 80
+	.byte	N36, 45, 106
 	.byte	W36
-	.byte	TIE, 45, 20
+	.byte	TIE, 45, 26
 	.byte	W40
 	.byte	W01
 	.byte	EOT, 45

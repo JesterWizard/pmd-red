@@ -23,27 +23,27 @@ sky_vg_se_0706:
 sky_se_0706_0:
 	.byte	TEMPO, 190
 	.byte	KEYSH, 0
-	.byte	VOL, 90
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N07, 66, 110
+	.byte	N07, 66, 125
 	.byte	W07
-	.byte	N07, 63, 90
+	.byte	N07, 63, 102
 	.byte	W05
-	.byte	N07, 59, 70
+	.byte	N07, 59, 79
 	.byte	W04
-	.byte	N05, 68, 60
+	.byte	N05, 68, 68
 	.byte	W03
-	.byte	N09, 76, 70
+	.byte	N09, 76, 79
 	.byte	W08
 	.byte	VOICE, 1
-	.byte	N06, 75, 110
+	.byte	N06, 75, 125
 	.byte	W06
-	.byte	N13, 73, 110
+	.byte	N13, 73, 125
 	.byte	W16
 	.byte	VOICE, 2
-	.byte	N48, 64, 78
-	.byte	TIE, 79, 117
+	.byte	N48, 64, 88
+	.byte	TIE, 79, 127
 	.byte	W48
 	.byte	W02
 	.byte	EOT, 79

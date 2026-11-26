@@ -19,39 +19,39 @@ sky_vg_se_1111:
 sky_se_1111_0:
 	.byte	TEMPO, 190
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 64, 120
+	.byte	N12, 64, 127
 	.byte	W12
-	.byte	N17, 60, 120
+	.byte	N17, 60, 127
 	.byte	W17
 	.byte	VOICE, 1
 	.byte	N12, 48, 127
 	.byte	W12
-	.byte	N12, 48, 55
+	.byte	N12, 48, 69
 	.byte	W12
-	.byte	N52, 48, 35
+	.byte	N52, 48, 44
 	.byte	W13
-	.byte	VOL, 96
+	.byte	VOL, 122
 	.byte	W06
-	.byte	VOL, 94
+	.byte	VOL, 120
 	.byte	W04
-	.byte	VOL, 90
+	.byte	VOL, 114
+	.byte	W04
+	.byte	VOL, 106
+	.byte	W03
+	.byte	VOL, 96
 	.byte	W04
 	.byte	VOL, 83
+	.byte	W04
+	.byte	VOL, 67
+	.byte	W04
+	.byte	VOL, 49
+	.byte	W04
+	.byte	VOL, 27
 	.byte	W03
-	.byte	VOL, 76
-	.byte	W04
-	.byte	VOL, 65
-	.byte	W04
-	.byte	VOL, 53
-	.byte	W04
-	.byte	VOL, 39
-	.byte	W04
-	.byte	VOL, 21
-	.byte	W03
-	.byte	VOL, 3
+	.byte	VOL, 4
 	.byte	W01
 	.byte	VOL, 0
 	.byte	W02

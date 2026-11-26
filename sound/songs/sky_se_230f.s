@@ -20,7 +20,7 @@ sky_se_230f_0:
 	.byte	TEMPO, 120
 	.byte	KEYSH, 0
 	.byte	BENDR, 15
-	.byte	VOL, 46
+	.byte	VOL, 58
 	.byte	BEND, 64
 	.byte	VOICE, 0
 	.byte	N05, 76, 127
@@ -49,9 +49,9 @@ sky_se_230f_0:
 sky_se_230f_1:
 	.byte	KEYSH, 0
 	.byte	BENDR, 15
-	.byte	VOL, 90
+	.byte	VOL, 113
 	.byte	W12
-	.byte	VOL, 46
+	.byte	VOL, 58
 	.byte	BEND, 64
 	.byte	VOICE, 1
 	.byte	N05, 76, 127

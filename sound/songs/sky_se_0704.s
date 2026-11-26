@@ -20,44 +20,44 @@ sky_se_0704_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 34
 	.byte	BEND, 80
 	.byte	VOICE, 0
-	.byte	N04, 38, 70
+	.byte	N04, 38, 88
 	.byte	W04
 	.byte	PAN, 94
-	.byte	N04, 38, 70
+	.byte	N04, 38, 88
 	.byte	W04
 	.byte	PAN, 34
-	.byte	N04, 49, 70
+	.byte	N04, 49, 88
 	.byte	W04
 	.byte	PAN, 94
-	.byte	N08, 49, 70
+	.byte	N08, 49, 88
 	.byte	W06
 	.byte	BEND, 125
 	.byte	W02
 	.byte	PAN, 64
 	.byte	VOICE, 1
-	.byte	N08, 60, 110
+	.byte	N08, 60, 127
 	.byte	W08
-	.byte	N04, 54, 110
+	.byte	N04, 54, 127
 	.byte	W04
-	.byte	N04, 60, 100
+	.byte	N04, 60, 126
 	.byte	W04
-	.byte	N04, 70, 94
+	.byte	N04, 70, 118
 	.byte	W04
-	.byte	N04, 78, 81
+	.byte	N04, 78, 102
 	.byte	W04
-	.byte	N04, 63, 69
+	.byte	N04, 63, 87
 	.byte	W04
-	.byte	N04, 69, 56
+	.byte	N04, 69, 71
 	.byte	W04
-	.byte	N04, 79, 44
+	.byte	N04, 79, 55
 	.byte	W04
-	.byte	N04, 87, 32
+	.byte	N04, 87, 40
 	.byte	W04
-	.byte	N04, 95, 20
+	.byte	N04, 95, 25
 	.byte	W04
 	.byte	FINE
 

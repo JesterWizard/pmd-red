@@ -19,47 +19,47 @@ sky_vg_se_0719:
 sky_se_0719_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
-	.byte	VOL, 95
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N08, 40, 120
+	.byte	N08, 40, 127
 	.byte	W08
-	.byte	N04, 59, 60
+	.byte	N04, 59, 72
 	.byte	W04
-	.byte	N08, 70, 120
+	.byte	N08, 70, 127
 	.byte	W08
-	.byte	N04, 66, 60
+	.byte	N04, 66, 72
 	.byte	W04
-	.byte	N08, 54, 120
+	.byte	N08, 54, 127
 	.byte	W08
-	.byte	N04, 49, 60
+	.byte	N04, 49, 72
 	.byte	W04
-	.byte	N08, 75, 120
+	.byte	N08, 75, 127
 	.byte	W08
-	.byte	N04, 62, 60
+	.byte	N04, 62, 72
 	.byte	W04
-	.byte	N08, 44, 120
+	.byte	N08, 44, 127
 	.byte	W08
-	.byte	N04, 69, 60
+	.byte	N04, 69, 72
 	.byte	W04
-	.byte	N08, 51, 120
+	.byte	N08, 51, 127
 	.byte	W08
-	.byte	N04, 59, 60
+	.byte	N04, 59, 72
 	.byte	W04
-	.byte	N08, 77, 120
+	.byte	N08, 77, 127
 	.byte	W08
-	.byte	N04, 62, 60
+	.byte	N04, 62, 72
 	.byte	W04
-	.byte	N08, 73, 120
+	.byte	N08, 73, 127
 	.byte	W08
-	.byte	N08, 54, 60
+	.byte	N08, 54, 72
 	.byte	W08
 	.byte	VOICE, 1
-	.byte	N24, 60, 120
+	.byte	N24, 60, 127
 	.byte	W24
-	.byte	N24, 65, 60
+	.byte	N24, 65, 72
 	.byte	W24
-	.byte	N24, 71, 20
+	.byte	N24, 71, 24
 	.byte	W24
 	.byte	FINE
 

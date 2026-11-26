@@ -18,23 +18,23 @@ sky_se_070b_0:
 	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N16, 93, 100
+	.byte	N16, 93, 127
 	.byte	W15
-	.byte	N16, 95, 100
+	.byte	N16, 95, 127
 	.byte	W14
-	.byte	N16, 97, 100
+	.byte	N16, 97, 127
 	.byte	W09
-	.byte	N16, 90, 100
+	.byte	N16, 90, 127
 	.byte	W15
-	.byte	N16, 92, 100
+	.byte	N16, 92, 127
 	.byte	W15
-	.byte	N16, 94, 100
+	.byte	N16, 94, 127
 	.byte	W16
-	.byte	N16, 88, 100
+	.byte	N16, 88, 127
 	.byte	W15
-	.byte	N16, 90, 100
+	.byte	N16, 90, 127
 	.byte	W14
-	.byte	N16, 92, 100
+	.byte	N16, 92, 127
 	.byte	W16
 	.byte	FINE
 

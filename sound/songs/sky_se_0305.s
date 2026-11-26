@@ -18,9 +18,9 @@ sky_se_0305_0:
 	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N02, 77, 120
+	.byte	N02, 77, 127
 	.byte	W12
-	.byte	N02, 78, 100
+	.byte	N02, 78, 127
 	.byte	W02
 	.byte	FINE
 

@@ -16,40 +16,40 @@ sky_se_1001_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 49
 	.byte	VOICE, 0
-	.byte	N18, 49, 100
+	.byte	N18, 49, 127
 	.byte	W01
 	.byte	BEND, 45
 	.byte	W04
 	.byte	BEND, 39
 	.byte	W12
 	.byte	BEND, 45
-	.byte	N10, 55, 100
+	.byte	N10, 55, 127
 	.byte	W02
 	.byte	BEND, 63
 	.byte	W02
 	.byte	BEND, 81
 	.byte	W02
 	.byte	BEND, 84
-	.byte	N10, 58, 100
+	.byte	N10, 58, 127
 	.byte	W02
 	.byte	BEND, 88
 	.byte	W02
 	.byte	BEND, 92
 	.byte	W02
 	.byte	BEND, 96
-	.byte	N10, 59, 80
+	.byte	N10, 59, 101
 	.byte	W02
 	.byte	BEND, 101
 	.byte	W02
 	.byte	BEND, 108
 	.byte	W02
-	.byte	N16, 61, 60
+	.byte	N16, 61, 76
 	.byte	W08
-	.byte	N16, 62, 40
+	.byte	N16, 62, 51
 	.byte	W16
 	.byte	FINE
 

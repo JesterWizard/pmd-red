@@ -15,12 +15,12 @@ sky_vg_se_0607:
 sky_se_0607_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 77, 110
+	.byte	N12, 77, 127
 	.byte	W28
-	.byte	N12, 77, 110
+	.byte	N12, 77, 127
 	.byte	W12
 	.byte	FINE
 

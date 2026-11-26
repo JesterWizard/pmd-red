@@ -19,55 +19,55 @@ sky_vg_se_0225:
 sky_se_0225_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N02, 96, 81
+	.byte	N02, 96, 96
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 85, 74
+	.byte	N02, 85, 87
 	.byte	W02
 	.byte	VOICE, 0
-	.byte	N02, 94, 72
+	.byte	N02, 94, 85
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 83, 71
+	.byte	N02, 83, 84
 	.byte	W02
 	.byte	VOICE, 0
-	.byte	N02, 92, 70
+	.byte	N02, 92, 83
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 81, 69
+	.byte	N02, 81, 81
 	.byte	W02
 	.byte	VOICE, 0
-	.byte	N02, 90, 68
+	.byte	N02, 90, 80
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 79, 67
+	.byte	N02, 79, 79
 	.byte	W02
 	.byte	VOICE, 0
-	.byte	N02, 88, 66
+	.byte	N02, 88, 78
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 77, 66
+	.byte	N02, 77, 78
 	.byte	W02
 	.byte	VOICE, 0
-	.byte	N02, 86, 65
+	.byte	N02, 86, 77
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 75, 64
+	.byte	N02, 75, 76
 	.byte	W02
 	.byte	VOICE, 0
-	.byte	N02, 84, 64
+	.byte	N02, 84, 76
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 73, 63
+	.byte	N02, 73, 74
 	.byte	W02
 	.byte	VOICE, 0
-	.byte	N02, 84, 39
+	.byte	N02, 84, 46
 	.byte	W02
 	.byte	VOICE, 1
-	.byte	N02, 73, 30
+	.byte	N02, 73, 35
 	.byte	W02
 	.byte	FINE
 

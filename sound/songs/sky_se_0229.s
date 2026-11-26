@@ -22,15 +22,15 @@ sky_se_0229_0:
 	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N08, 51, 80
+	.byte	N08, 51, 127
 	.byte	W06
-	.byte	TIE, 62, 60
+	.byte	TIE, 62, 96
 	.byte	W36
 	.byte	W02
 	.byte	EOT, 62
 	.byte	W01
 	.byte	VOICE, 1
-	.byte	TIE, 62, 20
+	.byte	TIE, 62, 32
 	.byte	W32
 	.byte	W02
 	.byte	EOT, 62

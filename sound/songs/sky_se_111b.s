@@ -19,50 +19,50 @@ sky_vg_se_111b:
 sky_se_111b_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N22, 59, 120
+	.byte	N22, 59, 127
 	.byte	W22
 	.byte	VOICE, 1
-	.byte	N15, 61, 100
+	.byte	N15, 61, 126
 	.byte	W13
-	.byte	N17, 62, 88
+	.byte	N17, 62, 111
 	.byte	W12
-	.byte	N19, 65, 40
+	.byte	N19, 65, 50
 	.byte	W10
-	.byte	N19, 67, 20
+	.byte	N19, 67, 25
 	.byte	W36
 	.byte	W01
-	.byte	VOL, 99
+	.byte	VOL, 126
 	.byte	W04
-	.byte	VOL, 72
+	.byte	VOL, 92
 	.byte	W03
-	.byte	VOL, 61
+	.byte	VOL, 78
 	.byte	W04
-	.byte	VOL, 54
+	.byte	VOL, 68
 	.byte	W04
-	.byte	VOL, 46
+	.byte	VOL, 59
 	.byte	W04
-	.byte	VOL, 40
+	.byte	VOL, 51
 	.byte	W04
-	.byte	VOL, 35
+	.byte	VOL, 44
 	.byte	W03
-	.byte	VOL, 29
+	.byte	VOL, 37
 	.byte	W04
-	.byte	VOL, 24
+	.byte	VOL, 31
+	.byte	W04
+	.byte	VOL, 25
 	.byte	W04
 	.byte	VOL, 20
-	.byte	W04
-	.byte	VOL, 16
 	.byte	W02
-	.byte	VOL, 13
+	.byte	VOL, 17
 	.byte	W04
-	.byte	VOL, 9
+	.byte	VOL, 12
 	.byte	W03
-	.byte	VOL, 6
+	.byte	VOL, 7
 	.byte	W04
-	.byte	VOL, 2
+	.byte	VOL, 3
 	.byte	W02
 	.byte	VOL, 0
 	.byte	FINE

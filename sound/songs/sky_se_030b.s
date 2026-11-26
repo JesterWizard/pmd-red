@@ -15,16 +15,16 @@ sky_vg_se_030b:
 sky_se_030b_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 61, 120
+	.byte	N12, 61, 127
 	.byte	W12
-	.byte	N12, 63, 80
+	.byte	N12, 63, 111
 	.byte	W12
-	.byte	N24, 59, 60
+	.byte	N24, 59, 83
 	.byte	W24
-	.byte	N24, 58, 20
+	.byte	N24, 58, 28
 	.byte	W24
 	.byte	FINE
 

@@ -16,22 +16,22 @@ sky_se_2304_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
 	.byte	BENDR, 35
-	.byte	VOL, 28
+	.byte	VOL, 30
 	.byte	PAN, 64
 	.byte	BEND, 67
 	.byte	VOICE, 0
 	.byte	N22, 65, 127
 	.byte	W03
-	.byte	VOL, 46
+	.byte	VOL, 49
 	.byte	W01
 	.byte	BEND, 71
 	.byte	W02
-	.byte	VOL, 79
+	.byte	VOL, 83
 	.byte	BEND, 73
 	.byte	W02
 	.byte	BEND, 77
 	.byte	W01
-	.byte	VOL, 120
+	.byte	VOL, 127
 	.byte	W01
 	.byte	BEND, 80
 	.byte	W02

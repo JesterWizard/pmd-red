@@ -16,18 +16,18 @@ sky_se_0606_0:
 	.byte	TEMPO, 220
 	.byte	KEYSH, 0
 	.byte	BENDR, 13
-	.byte	VOL, 85
+	.byte	VOL, 120
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N08, 84, 120
+	.byte	N08, 84, 127
 	.byte	W05
 	.byte	BEND, 125
 	.byte	W01
 	.byte	BEND, 124
 	.byte	W02
 	.byte	BEND, 121
-	.byte	TIE, 53, 88
+	.byte	TIE, 53, 100
 	.byte	W02
 	.byte	BEND, 117
 	.byte	W02

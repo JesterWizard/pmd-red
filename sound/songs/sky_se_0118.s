@@ -8,19 +8,22 @@
 sky_vg_se_0118:
 @ voice 0
 	.byte	0x00, 60, 0x00, 0x00
-	.word	sky_wav_silent
-	.byte	255, 0, 0, 0
+	.word	sky_semotion_wav_014_1
+	.byte	178, 224, 211, 142
 
 	.align	2
 sky_se_0118_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
 	.byte	BENDR, 18
-	.byte	VOL, 115
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	W06
+	.byte	N04, 71, 116
+	.byte	W05
+	.byte	N21, 75, 127
+	.byte	W01
 	.byte	BEND, 43
 	.byte	W04
 	.byte	BEND, 11

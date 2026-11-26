@@ -15,37 +15,37 @@ sky_vg_se_130f:
 sky_se_130f_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N06, 41, 127
 	.byte	W06
-	.byte	N02, 42, 100
+	.byte	N02, 42, 127
 	.byte	W04
-	.byte	N04, 42, 80
+	.byte	N04, 42, 106
 	.byte	W08
-	.byte	N02, 42, 60
+	.byte	N02, 42, 79
 	.byte	W06
-	.byte	N02, 42, 20
+	.byte	N02, 42, 26
 	.byte	W11
 	.byte	FINE
 
 	.align	2
 sky_se_130f_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	PAN, 66
 	.byte	W09
 	.byte	VOICE, 0
-	.byte	N06, 41, 50
+	.byte	N06, 41, 66
 	.byte	W06
-	.byte	N02, 42, 35
+	.byte	N02, 42, 46
 	.byte	W04
-	.byte	N04, 42, 30
+	.byte	N04, 42, 40
 	.byte	W08
-	.byte	N02, 42, 25
+	.byte	N02, 42, 33
 	.byte	W06
-	.byte	N02, 42, 20
+	.byte	N02, 42, 26
 	.byte	W02
 	.byte	FINE
 

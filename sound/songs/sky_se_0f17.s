@@ -16,11 +16,11 @@ sky_se_0f17_0:
 	.byte	TEMPO, 245
 	.byte	KEYSH, 0
 	.byte	BENDR, 12
-	.byte	VOL, 95
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N32, 57, 120
+	.byte	N32, 57, 127
 	.byte	W07
 	.byte	BEND, 70
 	.byte	W02
@@ -34,7 +34,7 @@ sky_se_0f17_0:
 	.byte	W02
 	.byte	BEND, 127
 	.byte	W18
-	.byte	N05, 57, 30
+	.byte	N05, 57, 36
 	.byte	W05
 	.byte	FINE
 

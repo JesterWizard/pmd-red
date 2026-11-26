@@ -23,34 +23,34 @@ sky_vg_se_0f18:
 sky_se_0f18_0:
 	.byte	TEMPO, 250
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N07, 59, 110
+	.byte	N07, 59, 123
 	.byte	W06
-	.byte	N06, 70, 40
+	.byte	N06, 70, 45
 	.byte	W05
-	.byte	N28, 55, 90
+	.byte	N28, 55, 101
 	.byte	W02
-	.byte	VOL, 106
+	.byte	VOL, 122
 	.byte	W05
-	.byte	VOL, 99
+	.byte	VOL, 114
 	.byte	W04
-	.byte	VOL, 85
+	.byte	VOL, 98
 	.byte	W04
-	.byte	VOL, 65
+	.byte	VOL, 75
 	.byte	W04
-	.byte	VOL, 39
+	.byte	VOL, 45
 	.byte	W02
-	.byte	VOL, 109
+	.byte	VOL, 126
 	.byte	W06
 	.byte	VOICE, 1
-	.byte	N07, 60, 80
+	.byte	N07, 60, 90
 	.byte	W05
-	.byte	N16, 64, 110
+	.byte	N16, 64, 123
 	.byte	W03
 	.byte	VOICE, 2
-	.byte	N14, 57, 70
+	.byte	N14, 57, 78
 	.byte	W14
 	.byte	FINE
 

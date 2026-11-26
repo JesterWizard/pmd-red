@@ -20,11 +20,11 @@ sky_se_0317_0:
 	.byte	TEMPO, 240
 	.byte	KEYSH, 0
 	.byte	BENDR, 2
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
-	.byte	N20, 55, 110
+	.byte	N20, 55, 127
 	.byte	W01
 	.byte	BEND, 80
 	.byte	W04
@@ -36,7 +36,7 @@ sky_se_0317_0:
 	.byte	W02
 	.byte	BEND, 1
 	.byte	W02
-	.byte	N15, 50, 50
+	.byte	N15, 50, 69
 	.byte	W02
 	.byte	BEND, 23
 	.byte	W04
@@ -45,7 +45,7 @@ sky_se_0317_0:
 	.byte	BEND, 65
 	.byte	W01
 	.byte	BEND, 80
-	.byte	N21, 59, 110
+	.byte	N21, 59, 127
 	.byte	W04
 	.byte	BEND, 94
 	.byte	W04
@@ -55,7 +55,7 @@ sky_se_0317_0:
 	.byte	W03
 	.byte	BEND, 1
 	.byte	W02
-	.byte	N15, 52, 50
+	.byte	N15, 52, 69
 	.byte	W02
 	.byte	BEND, 23
 	.byte	W04
@@ -63,7 +63,7 @@ sky_se_0317_0:
 	.byte	W02
 	.byte	BEND, 65
 	.byte	W01
-	.byte	N21, 66, 110
+	.byte	N21, 66, 127
 	.byte	W01
 	.byte	BEND, 80
 	.byte	W04
@@ -73,59 +73,59 @@ sky_se_0317_0:
 	.byte	W04
 	.byte	BEND, 113
 	.byte	W01
-	.byte	VOL, 66
+	.byte	VOL, 76
 	.byte	W01
 	.byte	BEND, 114
 	.byte	W01
 	.byte	VOICE, 1
-	.byte	TIE, 63, 110
+	.byte	TIE, 63, 127
 	.byte	W01
-	.byte	VOL, 80
+	.byte	VOL, 92
 	.byte	W01
 	.byte	BEND, 116
 	.byte	W01
-	.byte	VOL, 85
+	.byte	VOL, 98
 	.byte	W01
 	.byte	BEND, 117
 	.byte	W01
-	.byte	VOL, 89
+	.byte	VOL, 103
 	.byte	W02
 	.byte	BEND, 118
 	.byte	W02
-	.byte	VOL, 96
+	.byte	VOL, 111
 	.byte	BEND, 119
 	.byte	W03
-	.byte	VOL, 102
+	.byte	VOL, 118
 	.byte	W04
-	.byte	VOL, 107
+	.byte	VOL, 124
 	.byte	W02
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	W13
-	.byte	VOL, 98
+	.byte	VOL, 113
 	.byte	W04
-	.byte	VOL, 82
+	.byte	VOL, 95
 	.byte	W04
-	.byte	VOL, 67
+	.byte	VOL, 77
 	.byte	W04
-	.byte	VOL, 51
+	.byte	VOL, 59
 	.byte	W02
 	.byte	BEND, 111
 	.byte	W01
-	.byte	VOL, 36
+	.byte	VOL, 41
 	.byte	W01
 	.byte	BEND, 78
 	.byte	W01
-	.byte	VOL, 28
+	.byte	VOL, 32
 	.byte	W01
 	.byte	BEND, 64
 	.byte	W01
-	.byte	VOL, 20
+	.byte	VOL, 23
 	.byte	BEND, 54
 	.byte	W02
-	.byte	VOL, 12
+	.byte	VOL, 14
 	.byte	BEND, 45
 	.byte	W02
-	.byte	VOL, 4
+	.byte	VOL, 5
 	.byte	BEND, 37
 	.byte	W01
 	.byte	VOL, 0

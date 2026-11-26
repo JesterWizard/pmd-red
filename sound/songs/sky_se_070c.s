@@ -19,21 +19,21 @@ sky_vg_se_070c:
 sky_se_070c_0:
 	.byte	TEMPO, 190
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 44, 120
+	.byte	N12, 44, 127
 	.byte	W12
-	.byte	N12, 60, 120
+	.byte	N12, 60, 127
 	.byte	W12
 	.byte	VOICE, 1
-	.byte	N06, 49, 100
+	.byte	N06, 49, 126
 	.byte	W06
-	.byte	N12, 58, 100
+	.byte	N12, 58, 126
 	.byte	W12
-	.byte	N12, 58, 40
+	.byte	N12, 58, 50
 	.byte	W12
-	.byte	N12, 58, 20
+	.byte	N12, 58, 25
 	.byte	W12
 	.byte	FINE
 

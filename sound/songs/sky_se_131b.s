@@ -15,20 +15,20 @@ sky_vg_se_131b:
 sky_se_131b_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 104
+	.byte	VOL, 120
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N06, 51, 100
-	.byte	N06, 43, 100
+	.byte	N06, 51, 127
+	.byte	N06, 43, 127
 	.byte	W24
-	.byte	N06, 51, 90
-	.byte	N06, 45, 89
+	.byte	N06, 51, 125
+	.byte	N06, 45, 123
 	.byte	W24
-	.byte	N06, 51, 96
-	.byte	N06, 47, 59
+	.byte	N06, 51, 127
+	.byte	N06, 47, 82
 	.byte	W24
-	.byte	N36, 52, 78
-	.byte	N36, 48, 78
+	.byte	N36, 52, 108
+	.byte	N36, 48, 108
 	.byte	W96
 	.byte	W96
 	.byte	W96

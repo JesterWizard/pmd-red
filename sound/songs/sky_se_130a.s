@@ -15,16 +15,16 @@ sky_vg_se_130a:
 sky_se_130a_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 110
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N13, 62, 127
 	.byte	W18
-	.byte	N13, 64, 110
+	.byte	N13, 64, 127
 	.byte	W21
-	.byte	N13, 66, 90
+	.byte	N13, 66, 125
 	.byte	W21
-	.byte	N24, 69, 60
+	.byte	N24, 69, 83
 	.byte	W24
 	.byte	FINE
 

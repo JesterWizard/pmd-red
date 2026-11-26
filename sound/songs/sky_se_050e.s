@@ -19,77 +19,77 @@ sky_vg_se_050e:
 sky_se_050e_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N04, 79, 49
+	.byte	N04, 79, 62
 	.byte	W06
-	.byte	VOL, 99
-	.byte	N04, 79, 80
+	.byte	VOL, 126
+	.byte	N04, 79, 101
 	.byte	W04
-	.byte	VOL, 96
+	.byte	VOL, 122
 	.byte	W02
-	.byte	VOL, 94
-	.byte	N04, 79, 63
+	.byte	VOL, 119
+	.byte	N04, 79, 79
 	.byte	W02
-	.byte	VOL, 93
+	.byte	VOL, 118
 	.byte	W03
-	.byte	VOL, 87
+	.byte	VOL, 111
 	.byte	W01
-	.byte	N04, 79, 54
+	.byte	N04, 79, 68
 	.byte	W01
-	.byte	VOL, 86
+	.byte	VOL, 109
 	.byte	W06
 	.byte	PAN, 44
-	.byte	VOL, 80
+	.byte	VOL, 101
 	.byte	W01
 	.byte	VOICE, 1
-	.byte	N04, 81, 44
+	.byte	N04, 81, 55
 	.byte	W01
-	.byte	VOL, 76
+	.byte	VOL, 96
 	.byte	W04
-	.byte	VOL, 70
+	.byte	VOL, 89
 	.byte	PAN, 84
 	.byte	W01
-	.byte	N04, 82, 35
+	.byte	N04, 82, 44
 	.byte	W01
-	.byte	VOL, 65
+	.byte	VOL, 83
 	.byte	W04
-	.byte	VOL, 57
+	.byte	VOL, 73
 	.byte	PAN, 44
 	.byte	W01
-	.byte	VOL, 54
-	.byte	N04, 84, 25
+	.byte	VOL, 69
+	.byte	N04, 84, 31
 	.byte	W04
-	.byte	VOL, 43
+	.byte	VOL, 55
 	.byte	W01
 	.byte	PAN, 84
 	.byte	W01
-	.byte	VOL, 39
-	.byte	N04, 87, 16
+	.byte	VOL, 50
+	.byte	N04, 87, 20
 	.byte	W04
-	.byte	VOL, 29
+	.byte	VOL, 37
 	.byte	W01
 	.byte	PAN, 44
 	.byte	W01
-	.byte	VOL, 24
-	.byte	N04, 89, 6
+	.byte	VOL, 30
+	.byte	N04, 89, 8
 	.byte	W02
-	.byte	VOL, 21
+	.byte	VOL, 27
 	.byte	W02
-	.byte	VOL, 15
+	.byte	VOL, 19
 	.byte	W01
 	.byte	PAN, 84
 	.byte	W01
-	.byte	VOL, 11
+	.byte	VOL, 14
 	.byte	N04, 91, 1
 	.byte	W01
-	.byte	VOL, 8
+	.byte	VOL, 10
 	.byte	W02
-	.byte	VOL, 4
+	.byte	VOL, 5
 	.byte	W02
 	.byte	PAN, 44
-	.byte	VOL, 2
+	.byte	VOL, 3
 	.byte	W02
 	.byte	VOL, 0
 	.byte	W04
@@ -102,7 +102,7 @@ sky_se_050e_0:
 	.align	2
 sky_se_050e_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	W01
 	.byte	VOICE, 0
@@ -112,46 +112,46 @@ sky_se_050e_1:
 	.byte	W06
 	.byte	PAN, 44
 	.byte	W01
-	.byte	VOL, 99
+	.byte	VOL, 126
 	.byte	W02
-	.byte	VOL, 98
+	.byte	VOL, 124
 	.byte	W02
-	.byte	VOL, 95
+	.byte	VOL, 121
 	.byte	W01
 	.byte	PAN, 84
 	.byte	W01
-	.byte	VOL, 92
+	.byte	VOL, 117
 	.byte	W01
-	.byte	VOL, 90
+	.byte	VOL, 114
 	.byte	W02
-	.byte	VOL, 87
+	.byte	VOL, 111
 	.byte	W02
 	.byte	PAN, 44
-	.byte	VOL, 82
+	.byte	VOL, 104
 	.byte	W02
-	.byte	VOL, 80
+	.byte	VOL, 101
 	.byte	W02
-	.byte	VOL, 74
+	.byte	VOL, 94
 	.byte	W02
-	.byte	VOL, 68
+	.byte	VOL, 86
 	.byte	PAN, 84
 	.byte	W04
-	.byte	VOL, 61
+	.byte	VOL, 78
+	.byte	W02
+	.byte	VOL, 72
+	.byte	W02
+	.byte	VOL, 64
+	.byte	PAN, 44
 	.byte	W02
 	.byte	VOL, 57
 	.byte	W02
-	.byte	VOL, 50
-	.byte	PAN, 44
-	.byte	W02
-	.byte	VOL, 45
-	.byte	W02
-	.byte	VOL, 38
+	.byte	VOL, 48
 	.byte	W01
-	.byte	VOL, 28
+	.byte	VOL, 36
 	.byte	W01
 	.byte	PAN, 84
 	.byte	W01
-	.byte	VOL, 16
+	.byte	VOL, 20
 	.byte	W02
 	.byte	VOL, 0
 	.byte	W03

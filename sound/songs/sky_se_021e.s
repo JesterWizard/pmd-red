@@ -15,7 +15,7 @@ sky_vg_se_021e:
 sky_se_021e_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 90
+	.byte	VOL, 113
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N02, 92, 100

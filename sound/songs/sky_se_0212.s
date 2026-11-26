@@ -16,7 +16,7 @@ sky_se_0212_0:
 	.byte	TEMPO, 245
 	.byte	KEYSH, 0
 	.byte	BENDR, 16
-	.byte	VOL, 100
+	.byte	VOL, 125
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0

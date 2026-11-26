@@ -15,32 +15,32 @@ sky_vg_se_040f:
 sky_se_040f_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N12, 62, 115
+	.byte	N12, 62, 127
 	.byte	W12
-	.byte	N12, 58, 115
+	.byte	N12, 58, 127
 	.byte	W12
-	.byte	N12, 59, 115
+	.byte	N12, 59, 127
 	.byte	W12
-	.byte	N12, 63, 115
+	.byte	N12, 63, 127
 	.byte	W12
-	.byte	N12, 64, 115
+	.byte	N12, 64, 127
 	.byte	W12
-	.byte	N12, 60, 115
+	.byte	N12, 60, 127
 	.byte	W12
-	.byte	N12, 61, 115
+	.byte	N12, 61, 127
 	.byte	W12
-	.byte	N24, 65, 105
+	.byte	N24, 65, 127
 	.byte	W09
-	.byte	VOL, 98
+	.byte	VOL, 124
 	.byte	W03
-	.byte	VOL, 91
+	.byte	VOL, 115
 	.byte	W04
-	.byte	VOL, 67
+	.byte	VOL, 85
 	.byte	W02
-	.byte	VOL, 50
+	.byte	VOL, 63
 	.byte	W04
 	.byte	VOL, 0
 	.byte	W02

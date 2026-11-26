@@ -19,7 +19,7 @@ sky_se_0c19_0:
 	.byte	VOL, 118
 	.byte	BEND, 54
 	.byte	VOICE, 0
-	.byte	TIE, 76, 88
+	.byte	TIE, 76, 127
 	.byte	W01
 	.byte	PAN, 64
 	.byte	W01

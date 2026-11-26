@@ -15,90 +15,90 @@ sky_vg_se_0c03:
 sky_se_0c03_0:
 	.byte	TEMPO, 200
 	.byte	KEYSH, 0
-	.byte	VOL, 82
+	.byte	VOL, 95
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N48, 32, 110
+	.byte	N48, 32, 127
 	.byte	W01
-	.byte	VOL, 86
-	.byte	TIE, 37, 87
+	.byte	VOL, 99
+	.byte	TIE, 37, 121
 	.byte	W02
-	.byte	VOL, 88
-	.byte	W02
-	.byte	VOL, 91
-	.byte	W01
-	.byte	VOL, 94
-	.byte	W02
-	.byte	VOL, 95
-	.byte	W02
-	.byte	VOL, 98
-	.byte	W02
-	.byte	VOL, 100
-	.byte	W02
-	.byte	VOL, 101
-	.byte	W02
-	.byte	VOL, 103
+	.byte	VOL, 102
 	.byte	W02
 	.byte	VOL, 105
-	.byte	W02
-	.byte	VOL, 106
-	.byte	W02
+	.byte	W01
 	.byte	VOL, 108
+	.byte	W02
+	.byte	VOL, 110
+	.byte	W02
+	.byte	VOL, 113
+	.byte	W02
+	.byte	VOL, 115
+	.byte	W02
+	.byte	VOL, 117
+	.byte	W02
+	.byte	VOL, 119
+	.byte	W02
+	.byte	VOL, 121
+	.byte	W02
+	.byte	VOL, 122
+	.byte	W02
+	.byte	VOL, 125
 	.byte	W24
-	.byte	TIE, 34, 110
+	.byte	TIE, 34, 127
 	.byte	W08
 	.byte	EOT, 37
-	.byte	TIE, 38, 87
+	.byte	TIE, 38, 121
 	.byte	W32
 	.byte	W03
 	.byte	EOT, 34
 	.byte	W01
-	.byte	TIE, 36, 110
+	.byte	TIE, 36, 127
 	.byte	W13
 	.byte	EOT, 38
-	.byte	TIE, 40, 87
+	.byte	TIE, 40, 121
 	.byte	W36
 	.byte	W02
 	.byte	EOT, 36
-	.byte	TIE, 38, 97
+	.byte	TIE, 38, 127
 	.byte	W07
-	.byte	TIE, 42, 87
+	.byte	TIE, 42, 121
 	.byte	W01
 	.byte	EOT, 40
 	.byte	W12
-	.byte	VOL, 106
+	.byte	VOL, 122
 	.byte	W10
-	.byte	VOL, 98
+	.byte	VOL, 113
 	.byte	W08
-	.byte	VOL, 91
+	.byte	VOL, 105
 	.byte	W05
 	.byte	EOT, 38
 	.byte	W01
-	.byte	VOL, 78
+	.byte	VOL, 90
+	.byte	W02
+	.byte	VOL, 76
 	.byte	W02
 	.byte	VOL, 66
-	.byte	W02
-	.byte	VOL, 57
 	.byte	W01
-	.byte	VOL, 49
+	.byte	VOL, 57
+	.byte	W02
+	.byte	VOL, 50
 	.byte	W02
 	.byte	VOL, 43
 	.byte	W02
-	.byte	VOL, 37
+	.byte	VOL, 36
 	.byte	W02
-	.byte	VOL, 31
+	.byte	VOL, 30
 	.byte	W02
-	.byte	VOL, 26
+	.byte	VOL, 25
 	.byte	W02
-	.byte	VOL, 22
+	.byte	VOL, 19
 	.byte	W02
-	.byte	VOL, 16
+	.byte	VOL, 14
 	.byte	W02
-	.byte	VOL, 12
+	.byte	VOL, 9
 	.byte	W02
-	.byte	VOL, 8
-	.byte	W02
-	.byte	VOL, 4
+	.byte	VOL, 5
 	.byte	W01
 	.byte	EOT, 42
 	.byte	VOL, 0

@@ -15,40 +15,40 @@ sky_vg_se_1116:
 sky_se_1116_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
-	.byte	VOL, 115
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N15, 67, 100
+	.byte	N15, 67, 127
 	.byte	W08
-	.byte	N12, 75, 60
+	.byte	N12, 75, 87
 	.byte	W04
-	.byte	N16, 84, 100
+	.byte	N16, 84, 127
 	.byte	W08
-	.byte	N12, 80, 60
+	.byte	N12, 80, 87
 	.byte	W04
-	.byte	N16, 70, 100
+	.byte	N16, 70, 127
 	.byte	W08
-	.byte	N12, 65, 60
+	.byte	N12, 65, 87
 	.byte	W04
-	.byte	N16, 89, 100
+	.byte	N16, 89, 127
 	.byte	W08
-	.byte	N12, 78, 60
+	.byte	N12, 78, 87
 	.byte	W04
-	.byte	N15, 60, 100
+	.byte	N15, 60, 127
 	.byte	W08
-	.byte	N12, 83, 60
+	.byte	N12, 83, 87
 	.byte	W04
-	.byte	N16, 67, 100
+	.byte	N16, 67, 127
 	.byte	W08
-	.byte	N12, 75, 60
+	.byte	N12, 75, 87
 	.byte	W04
-	.byte	N16, 91, 100
+	.byte	N16, 91, 127
 	.byte	W08
-	.byte	N12, 78, 60
+	.byte	N12, 78, 87
 	.byte	W04
-	.byte	N16, 87, 50
+	.byte	N16, 87, 72
 	.byte	W08
-	.byte	N22, 70, 20
+	.byte	N22, 70, 29
 	.byte	W22
 	.byte	FINE
 

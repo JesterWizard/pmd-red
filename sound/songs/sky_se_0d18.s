@@ -15,100 +15,100 @@ sky_vg_se_0d18:
 sky_se_0d18_0:
 	.byte	TEMPO, 160
 	.byte	KEYSH, 0
-	.byte	VOL, 95
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
+	.byte	N06, 52, 127
+	.byte	W06
+	.byte	N06, 53, 72
+	.byte	W06
+	.byte	N06, 59, 127
+	.byte	W06
+	.byte	N06, 59, 72
+	.byte	W06
 	.byte	N06, 52, 120
 	.byte	W06
-	.byte	N06, 53, 60
+	.byte	N06, 53, 72
+	.byte	W06
+	.byte	N06, 56, 127
+	.byte	W06
+	.byte	N06, 57, 72
+	.byte	W06
+	.byte	N06, 52, 127
+	.byte	W06
+	.byte	N06, 53, 72
+	.byte	W06
+	.byte	N06, 59, 127
+	.byte	W06
+	.byte	N06, 60, 72
+	.byte	W06
+	.byte	N06, 52, 120
+	.byte	W06
+	.byte	N06, 52, 72
 	.byte	W06
 	.byte	N06, 59, 120
 	.byte	W06
-	.byte	N06, 59, 60
+	.byte	N06, 59, 48
 	.byte	W06
-	.byte	N06, 52, 100
+	.byte	N06, 52, 127
 	.byte	W06
-	.byte	N06, 53, 60
+	.byte	N06, 53, 72
 	.byte	W06
-	.byte	N06, 56, 120
+	.byte	N06, 58, 127
 	.byte	W06
-	.byte	N06, 57, 60
-	.byte	W06
-	.byte	N06, 52, 120
-	.byte	W06
-	.byte	N06, 53, 60
-	.byte	W06
-	.byte	N06, 59, 120
-	.byte	W06
-	.byte	N06, 60, 60
-	.byte	W06
-	.byte	N06, 52, 100
-	.byte	W06
-	.byte	N06, 52, 60
-	.byte	W06
-	.byte	N06, 59, 100
-	.byte	W06
-	.byte	N06, 59, 40
+	.byte	N06, 59, 72
 	.byte	W06
 	.byte	N06, 52, 120
 	.byte	W06
-	.byte	N06, 53, 60
+	.byte	N06, 53, 72
+	.byte	W06
+	.byte	N06, 56, 127
+	.byte	W06
+	.byte	N06, 56, 72
+	.byte	W06
+	.byte	N06, 52, 127
+	.byte	W06
+	.byte	N06, 53, 72
+	.byte	W06
+	.byte	N06, 59, 127
+	.byte	W06
+	.byte	N06, 60, 72
+	.byte	W06
+	.byte	N06, 52, 120
+	.byte	W06
+	.byte	N06, 52, 72
 	.byte	W06
 	.byte	N06, 58, 120
 	.byte	W06
-	.byte	N06, 59, 60
-	.byte	W06
-	.byte	N06, 52, 100
-	.byte	W06
-	.byte	N06, 53, 60
-	.byte	W06
-	.byte	N06, 56, 120
-	.byte	W06
-	.byte	N06, 56, 60
+	.byte	N06, 59, 48
 	.byte	W06
 	.byte	N06, 52, 120
 	.byte	W06
-	.byte	N06, 53, 60
+	.byte	N06, 53, 48
 	.byte	W06
-	.byte	N06, 59, 120
+	.byte	N06, 56, 120
 	.byte	W06
-	.byte	N06, 60, 60
+	.byte	N06, 56, 48
 	.byte	W06
-	.byte	N06, 52, 100
+	.byte	N06, 59, 96
 	.byte	W06
-	.byte	N06, 52, 60
+	.byte	N06, 59, 24
 	.byte	W06
-	.byte	N06, 58, 100
+	.byte	N06, 52, 96
 	.byte	W06
-	.byte	N06, 59, 40
+	.byte	N06, 52, 24
 	.byte	W06
-	.byte	N06, 52, 100
+	.byte	N06, 59, 72
 	.byte	W06
-	.byte	N06, 53, 40
+	.byte	N06, 59, 24
 	.byte	W06
-	.byte	N06, 56, 100
+	.byte	N06, 52, 48
 	.byte	W06
-	.byte	N06, 56, 40
+	.byte	N06, 52, 24
 	.byte	W06
-	.byte	N06, 59, 80
+	.byte	N06, 56, 48
 	.byte	W06
-	.byte	N06, 59, 20
-	.byte	W06
-	.byte	N06, 52, 80
-	.byte	W06
-	.byte	N06, 52, 20
-	.byte	W06
-	.byte	N06, 59, 60
-	.byte	W06
-	.byte	N06, 59, 20
-	.byte	W06
-	.byte	N06, 52, 40
-	.byte	W06
-	.byte	N06, 52, 20
-	.byte	W06
-	.byte	N06, 56, 40
-	.byte	W06
-	.byte	N06, 56, 20
+	.byte	N06, 56, 24
 	.byte	W06
 	.byte	FINE
 

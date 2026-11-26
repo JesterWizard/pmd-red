@@ -20,7 +20,7 @@ sky_se_0203_0:
 	.byte	TEMPO, 180
 	.byte	KEYSH, 0
 	.byte	BENDR, 16
-	.byte	VOL, 71
+	.byte	VOL, 89
 	.byte	PAN, 64
 	.byte	BEND, 64
 	.byte	VOICE, 0
@@ -72,7 +72,7 @@ sky_se_0203_0:
 	.align	2
 sky_se_0203_1:
 	.byte	KEYSH, 0
-	.byte	VOL, 71
+	.byte	VOL, 89
 	.byte	PAN, 64
 	.byte	W24
 	.byte	VOICE, 1
@@ -80,19 +80,19 @@ sky_se_0203_1:
 	.byte	W08
 	.byte	TIE, 100, 85
 	.byte	W15
-	.byte	VOL, 60
+	.byte	VOL, 75
 	.byte	W04
-	.byte	VOL, 50
+	.byte	VOL, 62
 	.byte	W03
-	.byte	VOL, 39
+	.byte	VOL, 49
 	.byte	W04
-	.byte	VOL, 28
+	.byte	VOL, 35
 	.byte	W04
-	.byte	VOL, 21
+	.byte	VOL, 27
 	.byte	W04
-	.byte	VOL, 14
+	.byte	VOL, 18
 	.byte	W04
-	.byte	VOL, 7
+	.byte	VOL, 9
 	.byte	W05
 	.byte	VOL, 0
 	.byte	W14

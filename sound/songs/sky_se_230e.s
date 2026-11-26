@@ -16,7 +16,7 @@ sky_se_230e_0:
 	.byte	TEMPO, 120
 	.byte	KEYSH, 0
 	.byte	BENDR, 15
-	.byte	VOL, 46
+	.byte	VOL, 58
 	.byte	BEND, 64
 	.byte	VOICE, 0
 	.byte	N05, 76, 127

@@ -15,16 +15,16 @@ sky_vg_se_0d0f:
 sky_se_0d0f_0:
 	.byte	TEMPO, 250
 	.byte	KEYSH, 0
-	.byte	VOL, 100
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
 	.byte	N17, 58, 127
 	.byte	W19
 	.byte	N15, 63, 127
 	.byte	W18
-	.byte	N03, 61, 80
+	.byte	N03, 61, 101
 	.byte	W04
-	.byte	N03, 61, 100
+	.byte	N03, 61, 126
 	.byte	W02
 	.byte	TIE, 63, 127
 	.byte	W44

@@ -15,14 +15,14 @@ sky_vg_se_0d09:
 sky_se_0d09_0:
 	.byte	TEMPO, 150
 	.byte	KEYSH, 0
-	.byte	VOL, 115
+	.byte	VOL, 127
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N04, 88, 60
+	.byte	N04, 88, 87
 	.byte	W03
 	.byte	PAN, 74
 	.byte	W01
-	.byte	N07, 88, 30
+	.byte	N07, 88, 43
 	.byte	W06
 	.byte	PAN, 64
 	.byte	W01
@@ -30,63 +30,63 @@ sky_se_0d09_0:
 	.byte	W03
 	.byte	PAN, 54
 	.byte	W01
-	.byte	N04, 90, 60
+	.byte	N04, 90, 87
 	.byte	W03
 	.byte	PAN, 74
 	.byte	W01
-	.byte	N04, 90, 40
+	.byte	N04, 90, 58
 	.byte	W03
 	.byte	PAN, 54
 	.byte	W01
-	.byte	N12, 90, 20
+	.byte	N12, 90, 29
 	.byte	W13
 	.byte	PAN, 64
 	.byte	W01
-	.byte	N04, 89, 60
+	.byte	N04, 89, 87
 	.byte	W03
 	.byte	PAN, 54
 	.byte	W01
-	.byte	N07, 89, 30
+	.byte	N07, 89, 43
 	.byte	W06
 	.byte	PAN, 64
 	.byte	W01
-	.byte	N04, 91, 120
+	.byte	N04, 91, 127
 	.byte	W03
 	.byte	PAN, 74
 	.byte	W01
-	.byte	N04, 91, 60
+	.byte	N04, 91, 87
 	.byte	W03
 	.byte	PAN, 54
 	.byte	W01
-	.byte	N04, 91, 40
+	.byte	N04, 91, 58
 	.byte	W03
 	.byte	PAN, 74
 	.byte	W01
-	.byte	N12, 91, 20
+	.byte	N12, 91, 29
 	.byte	W12
 	.byte	PAN, 64
 	.byte	W01
-	.byte	N04, 92, 60
+	.byte	N04, 92, 87
 	.byte	W03
 	.byte	PAN, 74
 	.byte	W01
-	.byte	N07, 92, 30
+	.byte	N07, 92, 43
 	.byte	W06
 	.byte	PAN, 64
 	.byte	W01
-	.byte	N04, 94, 115
+	.byte	N04, 94, 127
 	.byte	W03
 	.byte	PAN, 54
 	.byte	W01
-	.byte	N04, 94, 60
+	.byte	N04, 94, 87
 	.byte	W03
 	.byte	PAN, 74
 	.byte	W01
-	.byte	N04, 94, 40
+	.byte	N04, 94, 58
 	.byte	W03
 	.byte	PAN, 54
 	.byte	W01
-	.byte	N20, 94, 20
+	.byte	N20, 94, 29
 	.byte	W20
 	.byte	FINE
 

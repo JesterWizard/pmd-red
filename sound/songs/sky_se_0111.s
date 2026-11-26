@@ -9,27 +9,27 @@ sky_vg_se_0111:
 @ voice 0
 	.byte	0x0C, 60, 0x00, 0x00
 	.word	0
-	.byte	0, 1, 0, 0
+	.byte	0, 0, 15, 0
 @ voice 1
-	.byte	0x0C, 60, 0x00, 0x00
-	.word	0
-	.byte	0, 5, 0, 1
+	.byte	0x09, 60, 0x00, 0x00
+	.word	2
+	.byte	0, 0, 15, 0
 
 	.align	2
 sky_se_0111_0:
 	.byte	TEMPO, 140
 	.byte	KEYSH, 0
-	.byte	VOL, 83
+	.byte	VOL, 100
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N21, 90, 65
+	.byte	N21, 90, 67
 	.byte	W12
 	.byte	VOICE, 1
-	.byte	N19, 81, 80
+	.byte	N19, 100, 83
 	.byte	W19
-	.byte	N12, 81, 20
+	.byte	N12, 100, 21
 	.byte	W12
-	.byte	N09, 81, 15
+	.byte	N09, 100, 16
 	.byte	W09
 	.byte	FINE
 

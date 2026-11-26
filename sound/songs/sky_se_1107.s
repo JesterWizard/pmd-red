@@ -15,50 +15,50 @@ sky_vg_se_1107:
 sky_se_1107_0:
 	.byte	TEMPO, 135
 	.byte	KEYSH, 0
-	.byte	VOL, 84
+	.byte	VOL, 102
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N16, 84, 60
+	.byte	N16, 84, 79
 	.byte	W01
-	.byte	VOL, 90
+	.byte	VOL, 109
 	.byte	W02
-	.byte	VOL, 99
+	.byte	VOL, 120
 	.byte	W01
-	.byte	VOL, 105
+	.byte	VOL, 127
 	.byte	W07
-	.byte	N60, 101, 120
+	.byte	N60, 101, 127
 	.byte	W12
-	.byte	VOL, 79
+	.byte	VOL, 96
 	.byte	W04
-	.byte	VOL, 69
+	.byte	VOL, 84
 	.byte	W04
-	.byte	VOL, 61
+	.byte	VOL, 74
 	.byte	W04
-	.byte	VOL, 55
+	.byte	VOL, 66
 	.byte	W04
-	.byte	VOL, 49
+	.byte	VOL, 59
 	.byte	W03
-	.byte	VOL, 44
+	.byte	VOL, 53
 	.byte	W04
-	.byte	VOL, 39
+	.byte	VOL, 47
 	.byte	W04
-	.byte	VOL, 34
+	.byte	VOL, 41
 	.byte	W04
-	.byte	VOL, 30
+	.byte	VOL, 36
 	.byte	W04
-	.byte	VOL, 26
+	.byte	VOL, 31
 	.byte	W03
+	.byte	VOL, 27
+	.byte	W04
 	.byte	VOL, 22
 	.byte	W04
 	.byte	VOL, 18
 	.byte	W04
-	.byte	VOL, 15
+	.byte	VOL, 14
 	.byte	W04
-	.byte	VOL, 12
-	.byte	W04
-	.byte	VOL, 8
+	.byte	VOL, 10
 	.byte	W03
-	.byte	VOL, 5
+	.byte	VOL, 6
 	.byte	W04
 	.byte	VOL, 2
 	.byte	W02

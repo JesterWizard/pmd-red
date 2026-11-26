@@ -15,101 +15,103 @@ sky_vg_se_0f05:
 sky_se_0f05_0:
 	.byte	TEMPO, 245
 	.byte	KEYSH, 0
-	.byte	VOL, 66
+	.byte	VOL, 93
 	.byte	PAN, 64
 	.byte	VOICE, 0
-	.byte	N18, 69, 120
+	.byte	N18, 69, 127
 	.byte	W02
-	.byte	VOL, 75
+	.byte	VOL, 106
 	.byte	W01
-	.byte	VOL, 79
+	.byte	VOL, 111
 	.byte	W02
-	.byte	VOL, 82
+	.byte	VOL, 116
 	.byte	W02
-	.byte	VOL, 84
+	.byte	VOL, 119
 	.byte	W02
-	.byte	VOL, 87
+	.byte	VOL, 123
 	.byte	W01
-	.byte	VOL, 89
+	.byte	VOL, 125
 	.byte	W09
-	.byte	N03, 69, 62
+	.byte	N03, 69, 70
 	.byte	W03
-	.byte	N22, 64, 120
+	.byte	N22, 64, 127
 	.byte	W04
-	.byte	VOL, 88
+	.byte	VOL, 124
 	.byte	W02
-	.byte	VOL, 85
+	.byte	VOL, 120
+	.byte	W02
+	.byte	VOL, 119
+	.byte	W02
+	.byte	VOL, 118
+	.byte	W02
+	.byte	VOL, 117
+	.byte	W02
+	.byte	VOL, 116
+	.byte	W03
+	.byte	VOL, 112
 	.byte	W02
 	.byte	VOL, 84
-	.byte	W04
-	.byte	VOL, 83
 	.byte	W02
-	.byte	VOL, 82
-	.byte	W03
-	.byte	VOL, 79
-	.byte	W02
-	.byte	VOL, 60
-	.byte	W02
-	.byte	VOL, 52
+	.byte	VOL, 73
 	.byte	W01
-	.byte	N02, 64, 62
+	.byte	N02, 64, 70
 	.byte	W01
-	.byte	VOL, 46
+	.byte	VOL, 65
 	.byte	W01
-	.byte	N48, 67, 120
+	.byte	N48, 67, 127
 	.byte	W01
-	.byte	VOL, 40
+	.byte	VOL, 57
 	.byte	W02
-	.byte	VOL, 36
-	.byte	W02
-	.byte	VOL, 31
-	.byte	W02
-	.byte	VOL, 67
-	.byte	W02
-	.byte	VOL, 72
-	.byte	W02
-	.byte	VOL, 76
-	.byte	W02
-	.byte	VOL, 79
-	.byte	W02
-	.byte	VOL, 82
-	.byte	W01
-	.byte	VOL, 84
-	.byte	W02
-	.byte	VOL, 87
-	.byte	W12
-	.byte	VOL, 86
-	.byte	W02
-	.byte	VOL, 64
-	.byte	W02
-	.byte	VOL, 56
-	.byte	W02
-	.byte	VOL, 50
+	.byte	VOL, 51
 	.byte	W02
 	.byte	VOL, 44
 	.byte	W02
-	.byte	VOL, 39
+	.byte	VOL, 95
 	.byte	W02
-	.byte	VOL, 35
+	.byte	VOL, 102
 	.byte	W02
-	.byte	VOL, 30
+	.byte	VOL, 107
 	.byte	W02
-	.byte	VOL, 27
+	.byte	VOL, 112
+	.byte	W02
+	.byte	VOL, 116
+	.byte	W01
+	.byte	VOL, 119
+	.byte	W02
+	.byte	VOL, 123
+	.byte	W12
+	.byte	VOL, 121
+	.byte	W02
+	.byte	VOL, 91
+	.byte	W02
+	.byte	VOL, 79
+	.byte	W02
+	.byte	VOL, 70
+	.byte	W02
+	.byte	VOL, 62
+	.byte	W02
+	.byte	VOL, 55
+	.byte	W02
+	.byte	VOL, 49
+	.byte	W02
+	.byte	VOL, 43
+	.byte	W02
+	.byte	VOL, 38
+	.byte	W02
+	.byte	VOL, 33
+	.byte	N03, 67, 70
+	.byte	W01
+	.byte	VOL, 28
 	.byte	W02
 	.byte	VOL, 23
-	.byte	N03, 67, 62
-	.byte	W01
-	.byte	VOL, 20
 	.byte	W02
-	.byte	VOL, 16
+	.byte	VOL, 19
 	.byte	W02
-	.byte	VOL, 13
+	.byte	VOL, 15
 	.byte	W02
 	.byte	VOL, 11
-	.byte	W02
-	.byte	VOL, 8
 	.byte	W01
-	.byte	VOL, 6
+	.byte	VOL, 9
 	.byte	FINE
 
 	.align	2
