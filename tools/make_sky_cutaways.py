@@ -34,6 +34,8 @@ import convert_title_backgrounds as title  # noqa: E402
 
 OUT = ROOT / "graphics" / "custom" / "sky_cutaways"
 GEN_C = ROOT / "src" / "sky_cutaways_data.c"
+# 8bpp tile slots in the sky build (TITLE_BG_8BPP_MAX_TILES, include/bg_control.h)
+MAX_TILES = 608
 
 # (name, EoS level, centre x, centre y in pixels) — centres follow the EoS
 # camera marks (camera2_SetPositionMark) or the picture's middle.
@@ -103,7 +105,8 @@ def main() -> int:
             im = stack
         png = OUT / f"{slug}.png"
         im.save(png)
-        raw, pal, ntiles, ncolors, merged = title.convert_image(im)
+        raw, pal, ntiles, ncolors, merged = title.convert_image(
+            im, quantized=title.quantize_gba(im), max_tiles=MAX_TILES)
         png.with_suffix(".at4px").write_bytes(title.wrap_at4px(raw))
         png.with_suffix(".pal").write_bytes(pal)
         print(f"{slug}: {level} tiles={ntiles} colors={ncolors}{' merged' if merged else ''}")

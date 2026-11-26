@@ -608,6 +608,13 @@ pictures, and the title 234. The sky build also gives this art all of VRAM
 the vanilla build), so a picture with 600 different tiles plus the blank one no
 longer has a tile merged into a look-alike.
 
+The story cutaways (`tools/make_sky_cutaways.py`), the scroll-down pictures
+(`tools/make_sky_cutaway_scrolls.py`) and the chapter cards
+(`tools/make_sky_chapter_cards.py`) use the same `quantize_gba` and 608-tile
+budget. Their EoS sources have 16–216 GBA colours and at most 586 tiles, so
+they were already shown exactly and look the same; the shared quantizer keeps
+future, richer pictures exact.
+
 `DEMO_02`/`DEMO_03`/`DEMO_04` (`src/data/ground/ground_event_data.h`) call
 `SKY_CUTAWAY_BOOT_SCREENS` / `SKY_CUTAWAY_TITLE_SCREEN` instead of Red's
 intro movie and logo map.

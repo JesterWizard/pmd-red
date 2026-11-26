@@ -31,6 +31,8 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from skytemple_files.common.types.file_types import FileType  # noqa: E402
+sys.path.insert(0, str(ROOT))
+import convert_title_backgrounds as title  # noqa: E402
 
 CUT = ROOT / "graphics" / "custom" / "sky_cutaways"
 OUT = ROOT / "graphics" / "custom" / "sky_scrolls"
@@ -200,7 +202,8 @@ def build(pair: str, cut: str, stem: str) -> int:
     tall = np.concatenate([cg[crop:], region])
     rows = tall.shape[0] // 8
     im = Image.fromarray(tall)
-    q = im.quantize(colors=240, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    # palette picked in the GBA's 15-bit colours (see quantize_gba)
+    q = title.quantize_gba(im, colors=240)
     pal = (q.getpalette()[:240 * 3] + [0] * 720)[:720]
     px = np.array(q)
     tiles = bytearray()

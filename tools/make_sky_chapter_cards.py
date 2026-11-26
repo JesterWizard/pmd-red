@@ -22,6 +22,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import convert_title_backgrounds as title  # noqa: E402
 
+# 8bpp tile slots in the sky build (TITLE_BG_8BPP_MAX_TILES, include/bg_control.h)
+MAX_TILES = 608
+
 OUT = ROOT / "graphics" / "custom" / "chapter_cards"
 GEN_C = ROOT / "src" / "chapter_cards_data.c"
 
@@ -123,7 +126,9 @@ def main() -> int:
             card.alpha_composite(b, ((240 - b.width) // 2, 82))
         png = OUT / f"chapter{n}.png"
         card.convert("RGB").save(png)
-        raw, pal, ntiles, ncolors, _ = title.convert_image(title.flatten_rgb(card))
+        flat = title.flatten_rgb(card)
+        raw, pal, ntiles, ncolors, _ = title.convert_image(
+            flat, quantized=title.quantize_gba(flat), max_tiles=MAX_TILES)
         png.with_suffix(".at4px").write_bytes(title.wrap_at4px(raw))
         png.with_suffix(".pal").write_bytes(pal)
         print(f"chapter{n}: {name!r} tiles={ntiles} colors={ncolors}")
