@@ -198,10 +198,10 @@ CONFIG_SRCS := $(CONFIG_SUBDIR)/runtime.c
 ASM_SOURCES := $(wildcard asm/*.s data/*.s)
 C_ASM_SOURCES := $(wildcard src/*.s)
 SONG_SRCS := $(wildcard sound/songs/*.s)
-# The EoS jingles (sky_me_*) are sky-only; leaving their (empty) objects out
+# The EoS jingles (sky_me_*) and sound effects (sky_se_*) are sky-only; leaving their (empty) objects out
 # of the other links keeps those builds byte-identical.
 ifneq ($(GROUND_STORY_DIR),sky)
-  SONG_SRCS := $(filter-out sound/songs/sky_me_%.s,$(SONG_SRCS))
+  SONG_SRCS := $(filter-out sound/songs/sky_me_%.s sound/songs/sky_se_%.s,$(SONG_SRCS))
 endif
 
 # Region fragments are .included by asm/ram_map.s — do not assemble alone.

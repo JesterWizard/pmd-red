@@ -362,6 +362,11 @@ song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
+#ifdef SKY_STORY
+@ Sound effects 300..938: EoS SEs (tools/eos_music/convert_eos_se.py, mapping in
+@ tools/eos_music/sky_red_se_map.py), else the Red SE.
+#include "../sound/sky_red_se_table.inc"
+#else
 song empty_song,  0,  0
 song seq_301,  2,  2
 song seq_302,  2,  2
@@ -1001,6 +1006,7 @@ song seq_935,  3,  3
 song seq_936,  2,  2
 song seq_937,  2,  2
 song seq_938,  6,  6
+#endif
 song seq_939,  6,  6
 #ifdef SKY_STORY
 #include "../sound/sky_jukebox_songs.inc"
