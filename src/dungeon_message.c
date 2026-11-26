@@ -481,7 +481,12 @@ void DisplayDungeonDialogue_Async(const struct DungeonDialogueStruct *dialogueIn
             break;
         default:
             dialogueMonId = dialogueInfo->speciesId;
+#ifdef SKY_STORY
+            /* EoS: everyone but the hero and partner speaks in light blue */
+            CopyCyanMonsterNametoBuffer(gSpeakerNameBuffer, dialogueMonId);
+#else
             CopyYellowMonsterNametoBuffer(gSpeakerNameBuffer, dialogueMonId);
+#endif
             break;
     }
 

@@ -200,6 +200,26 @@ ALIGNED(4) static const u8 sUndefineText[] = _("{COLOR RED_W}undefine{RESET}");
 ALIGNED(4) static const u8 sSpeechBubbleText[] = _("{SPEECH_BUBBLE}");
 ALIGNED(4) static const u8 sYellowSpeechBubbleText[] = _("{COLOR YELLOW_N}{SPEECH_BUBBLE}{RESET}");
 ALIGNED(4) static const u8 sYellowStringText[] = _("{COLOR YELLOW_N}%s{RESET}");
+#ifdef SKY_STORY
+/* EoS: the hero and partner speak in yellow, everyone else in light blue. */
+ALIGNED(4) static const u8 sCyanStringText[] = _("{color CYAN_RAW}%s{reset}");
+
+static const u8 *SkySpeakerNameFormat(s32 speakerId)
+{
+    s16 species = sTextbox->portraits[speakerId].speciesID;
+    Pokemon *leader = GetLeaderMon2();
+    Pokemon *partner = GetPartnerMon2();
+
+    if (speakerId <= 1
+        || (leader != NULL && leader->speciesNum == species)
+        || (partner != NULL && partner->speciesNum == species))
+        return sYellowStringText;
+    return sCyanStringText;
+}
+#define SPEAKER_NAME_FORMAT(id) SkySpeakerNameFormat(id)
+#else
+#define SPEAKER_NAME_FORMAT(id) sYellowStringText
+#endif
 
 static bool8 IsTextboxOpen_809B40C(TextboxText *a0);
 static void ResetAllTextboxPortraits(void);
@@ -819,7 +839,7 @@ void sub_809B028(const MenuItem * menuItems, s32 a1_, s32 a2, s32 a3, s32 a4_, c
             strcpy(gSpeakerNameBuffer, sYellowSpeechBubbleText);
         }
         else {
-            sprintfStatic(gSpeakerNameBuffer, sYellowStringText, gFormatBuffer_Names[a4]);
+            sprintfStatic(gSpeakerNameBuffer, SPEAKER_NAME_FORMAT(a4), gFormatBuffer_Names[a4]);
         }
     }
 
@@ -916,7 +936,7 @@ static bool8 ScriptPrintTextInternal(TextboxText *textboxText, u32 flags_, s32 s
             strcpy(gSpeakerNameBuffer, sYellowSpeechBubbleText);
         }
         else {
-            sprintfStatic(gSpeakerNameBuffer, sYellowStringText, gFormatBuffer_Names[speakerId]);
+            sprintfStatic(gSpeakerNameBuffer, SPEAKER_NAME_FORMAT(speakerId), gFormatBuffer_Names[speakerId]);
         }
     }
 
