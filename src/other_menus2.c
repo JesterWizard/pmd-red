@@ -19,8 +19,13 @@ typedef struct unkStruct_800D670
     u32 unk10;
 } unkStruct_800D670;
 
+#ifdef SKY_STORY
+// rescue_password_menu.c is not in the sky build; Trade Items still links.
+EWRAM_DATA s32 gCommsTimeout = {0}; // Counts to 100 and then errors if other player hasn't connected
+#else
 // rescue_password_menu.c
 extern s32 gCommsTimeout; // Counts to 100 and then errors if other player hasn't connected
+#endif
 
 EWRAM_DATA static s32 gUnknown_202EC38 = 0;
 UNUSED EWRAM_DATA static u8 sUnused = 0;

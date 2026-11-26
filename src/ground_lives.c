@@ -1226,6 +1226,7 @@ s32 sub_80A8C2C(s32 a0)
     return species;
 }
 
+#ifndef SKY_STORY
 s32 sub_80A8C4C(s32 id_, DungeonLocation *dungLoc)
 {
     s32 id = (s16) id_;
@@ -1246,6 +1247,7 @@ s32 sub_80A8C4C(s32 id_, DungeonLocation *dungLoc)
 
     return 0;
 }
+#endif
 
 /* Explorers casting starters (gPmd2CastingStarters; more in the sky build). */
 static bool8 IsPmd2CastingStarter(s32 species)
@@ -1496,6 +1498,7 @@ s32 sub_80A9090(s32 id_, s32 a1_)
     return livesPtr->unk2;
 }
 
+#ifndef SKY_STORY
 s16 GetFriendAreaDialogueId(s32 id_)
 {
     s32 id = (s16) id_;
@@ -1503,6 +1506,7 @@ s16 GetFriendAreaDialogueId(s32 id_)
 
     return livesPtr->friendAreaDialogueId;
 }
+#endif
 
 UNUSED static bool8 sub_80A90E8(s32 id1_, s32 id2_)
 {

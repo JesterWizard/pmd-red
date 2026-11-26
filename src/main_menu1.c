@@ -101,22 +101,26 @@ void SetUpMenu(void)
         case MENU_COMMUNICATION_2:
             sub_8036FDC(sub_8035DB4(sMainMenu->nextMenu));
             break;
+#ifndef SKY_STORY
         case MENU_FRIEND_RESCUE:
             CreateFriendRescueMenu();
             break;
         case MENU_WONDER_MAIL:
             CreateWonderMailMenu();
             break;
+#endif
         case MENU_DUAL_SLOT:
             CreateDualSlotMenu();
             break;
         case MENU_WIRELESS_COMMS:
             CreateWirelessCommsMenu();
             break;
+#ifndef SKY_STORY
         case MENU_DISPLAY_RESCUE_PASSWORD:
         case MENU_RESCUE_PASSWORD_ENTRY:
             CreateRescuePasswordMenu(sMainMenu->nextMenu);
             break;
+#endif
         case MENU_ADVENTURE_LOG:
             CreateAdventureLogMenu();
             break;
@@ -167,6 +171,7 @@ s32 UpdateMenu(void)
             if (nextMenu1 != 3)
                 nextMenu = MENU_NO_SCREEN_CHANGE;
             break;
+#ifndef SKY_STORY
         case MENU_FRIEND_RESCUE:
             nextMenu1 = UpdateFriendRescueMenu();
             nextMenu = MENU_MAIN_SCREEN;
@@ -179,6 +184,7 @@ s32 UpdateMenu(void)
             if (nextMenu1 != 3)
                 nextMenu = MENU_NO_SCREEN_CHANGE;
             break;
+#endif
         case MENU_DUAL_SLOT:
             nextMenu1 = UpdateDualSlotMenu();
             nextMenu = MENU_MAIN_SCREEN;
@@ -194,10 +200,12 @@ s32 UpdateMenu(void)
                     nextMenu = MENU_MAIN_SCREEN;
             }
             break;
+#ifndef SKY_STORY
         case MENU_DISPLAY_RESCUE_PASSWORD:
         case MENU_RESCUE_PASSWORD_ENTRY:
             nextMenu = UpdateRescuePasswordMenu();
             break;
+#endif
         case MENU_ADVENTURE_LOG:
             nextMenu = UpdateAdventureLogMenu();
             break;
@@ -257,22 +265,26 @@ void CleanUpMenu(void)
         case MENU_COMMUNICATION_2:
             sub_80370D4();
             break;
+#ifndef SKY_STORY
         case MENU_FRIEND_RESCUE:
             CleanFriendRescueMenu();
             break;
         case MENU_WONDER_MAIL:
             CleanWonderMailMenu();
             break;
+#endif
         case MENU_DUAL_SLOT:
             CleanDualSlotMenu();
             break;
         case MENU_WIRELESS_COMMS:
             CleanWirelessCommsMenu();
             break;
+#ifndef SKY_STORY
         case MENU_DISPLAY_RESCUE_PASSWORD:
         case MENU_RESCUE_PASSWORD_ENTRY:
             CleanRescuePasswordMenu();
             break;
+#endif
         case MENU_ADVENTURE_LOG:
             CleanAdventureLogMenu();
             break;

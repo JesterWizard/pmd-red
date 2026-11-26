@@ -5,6 +5,9 @@
 
 /* Names must stay sorted — OpenFile binary-searches this table. */
 const File gOrnamentFiles[ORNAMENT_FILES_COUNT] = {
+#ifndef SKY_STORY
+    /* The team-base flags: the sky build has no team base scripts (nothing
+     * places a flag object or loads a flag palette), so they are left out. */
     [0] = { "flag00c", &gFlag00Pal, },
     [1] = { "flag00p", &gAxFlag00, },
     [2] = { "flag01c", &gFlag01Pal, },
@@ -69,28 +72,29 @@ const File gOrnamentFiles[ORNAMENT_FILES_COUNT] = {
     [61] = { "flag15p", &gAxFlag15, },
     [62] = { "flag16c", &gFlag16Pal, },
     [63] = { "flag16p", &gAxFlag16, },
-    [64] = { "item01p", &gAxItem01, },
-    [65] = { "npc01p", &gAxNpc01, },
-    [66] = { "npc02p", &gAxNpc02, },
-    [67] = { "npc03p", &gAxNpc03, },
-    [68] = { "npc04p", &gAxNpc04, },
-#ifdef SKY_STORY
-    [69] = { "relicfragmentp", &gAxRelicfragment, },
 #endif
-    [69 + SKY_ORNAMENT_FILES] = { "sign01c", &gSign01Pal, },
-    [70 + SKY_ORNAMENT_FILES] = { "sign01p", &gAxSign01, },
-    [71 + SKY_ORNAMENT_FILES] = { "stairs01c", &gStairs01Pal, },
-    [72 + SKY_ORNAMENT_FILES] = { "stairs01p", &gAxStairs01, },
-    [73 + SKY_ORNAMENT_FILES] = { "stoneimc", &gStoneimPal, },
-    [74 + SKY_ORNAMENT_FILES] = { "titlebg1", &gAxTitlebg1, },
-    [75 + SKY_ORNAMENT_FILES] = { "titlebgc", &gTitlebgPal, },
-    [76 + SKY_ORNAMENT_FILES] = { "titleop1", &gAxTitleop1, },
-    [77 + SKY_ORNAMENT_FILES] = { "titleop2", &gAxTitleop2, },
-    [78 + SKY_ORNAMENT_FILES] = { "titleopc", &gTitleopPal, },
+    [64 - ORNAMENT_SKIPPED_FLAG_FILES] = { "item01p", &gAxItem01, },
+    [65 - ORNAMENT_SKIPPED_FLAG_FILES] = { "npc01p", &gAxNpc01, },
+    [66 - ORNAMENT_SKIPPED_FLAG_FILES] = { "npc02p", &gAxNpc02, },
+    [67 - ORNAMENT_SKIPPED_FLAG_FILES] = { "npc03p", &gAxNpc03, },
+    [68 - ORNAMENT_SKIPPED_FLAG_FILES] = { "npc04p", &gAxNpc04, },
 #ifdef SKY_STORY
-    [79 + SKY_ORNAMENT_FILES] = { "totempole1c", &gTotempole1Pal, },
-    [80 + SKY_ORNAMENT_FILES] = { "totempole1p", &gAxTotempole1, },
-    [81 + SKY_ORNAMENT_FILES] = { "totempole2c", &gTotempole2Pal, },
-    [82 + SKY_ORNAMENT_FILES] = { "totempole2p", &gAxTotempole2, },
+    [69 - ORNAMENT_SKIPPED_FLAG_FILES] = { "relicfragmentp", &gAxRelicfragment, },
+#endif
+    [69 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "sign01c", &gSign01Pal, },
+    [70 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "sign01p", &gAxSign01, },
+    [71 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "stairs01c", &gStairs01Pal, },
+    [72 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "stairs01p", &gAxStairs01, },
+    [73 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "stoneimc", &gStoneimPal, },
+    [74 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "titlebg1", &gAxTitlebg1, },
+    [75 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "titlebgc", &gTitlebgPal, },
+    [76 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "titleop1", &gAxTitleop1, },
+    [77 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "titleop2", &gAxTitleop2, },
+    [78 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "titleopc", &gTitleopPal, },
+#ifdef SKY_STORY
+    [79 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "totempole1c", &gTotempole1Pal, },
+    [80 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "totempole1p", &gAxTotempole1, },
+    [81 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "totempole2c", &gTotempole2Pal, },
+    [82 - ORNAMENT_SKIPPED_FLAG_FILES + SKY_ORNAMENT_FILES] = { "totempole2p", &gAxTotempole2, },
 #endif
 };

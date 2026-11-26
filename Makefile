@@ -199,6 +199,30 @@ SKY_ONLY_C_SOURCES := $(C_SUBDIR)/sky_storm.c $(C_SUBDIR)/sky_dungeon_talk.c
 ifneq ($(GROUND_STORY_DIR),sky)
   C_SOURCES := $(filter-out $(SKY_ONLY_C_SOURCES),$(C_SOURCES))
 endif
+# Red-only systems the Sky demo has no way to reach (Wonder Mail and the
+# Pelipper post office, Red's friend rescue, Friend Areas, the team-base
+# flags): the sky build leaves them out of the link to save ROM space. Their
+# callers in kept files are under #ifndef SKY_STORY (see
+# documentation/Features/SkyDemake.md, "Red-only systems left out").
+NON_SKY_C_SOURCES := $(addprefix $(C_SUBDIR)/, \
+	pokemon_mail.c pokemon_mail_pre.c mailbox.c \
+	pokemon_news1.c pokemon_news2.c pokemon_news3.c \
+	wonder_mail.c wonder_mail_2.c wonder_mail_3_mid.c wonder_mail_4.c \
+	wonder_mail_5.c wonder_mail_6.c wonder_mail_802C10C.c \
+	wonder_mail_802C4C8.c wonder_mail_802C860.c wonder_mail_802CDD4.c \
+	wonder_mail_802D098.c wonder_mail_main_menu.c \
+	thank_you_wonder_mail.c thank_you_messages.c mission_reward.c \
+	post_office_guide1.c pelipper_board.c code_802DE84.c code_803B344.c \
+	code_803C1B4.c code_8031D70.c \
+	friend_rescue.c rescue_password_menu.c \
+	friend_area_action_menu.c friend_areas_map.c friend_areas_map_util.c \
+	friend_area_intros.c friend_area_intros_data.c friend_area_dialogue.c \
+	wigglytuff_shop1.c wigglytuff_shop2.c wigglytuff_shop3.c code_8023144.c \
+	ornament_gfx1.c ornament_gfx2.c ornament_gfx3.c ornament_gfx4.c)
+NON_SKY_ASM_SOURCES := data/data_80E7D40.s
+ifeq ($(GROUND_STORY_DIR),sky)
+  C_SOURCES := $(filter-out $(NON_SKY_C_SOURCES),$(C_SOURCES))
+endif
 # Designated-initializer settings blob (modern/hack builds only).
 CONFIG_SRCS := $(CONFIG_SUBDIR)/runtime.c
 ASM_SOURCES := $(wildcard asm/*.s data/*.s)
@@ -217,6 +241,9 @@ RAM_MAP_FRAGMENTS := \
 	asm/ram_map_ewram.s \
 	asm/ram_map_sram.s
 ASM_SOURCES := $(filter-out $(RAM_MAP_FRAGMENTS),$(ASM_SOURCES))
+ifeq ($(GROUND_STORY_DIR),sky)
+  ASM_SOURCES := $(filter-out $(NON_SKY_ASM_SOURCES),$(ASM_SOURCES))
+endif
 
 # Dead retail padding blobs with no code references. Kept on disk / in the
 # matching linker script so MODERN=0 can still reproduce the baserom layout.

@@ -690,12 +690,20 @@ static u32 RunGameMode_Async(u32 a0)
     ClearScriptVarArray(NULL, EVENT_S08E01);
     while (TRUE) {
         s32 r5;
+#ifndef SKY_STORY
         struct FriendAreasMapSetupStruct friendAreasSetup;
+#endif
         struct WorldMapSetupStruct worldMapSetup;
         DungeonSetupStruct dungeonSetup;
         s16 scriptDungeon;
 
         if (mode == STARTMODE_FRIEND_AREAS) {
+#ifdef SKY_STORY
+            /* No Friend Areas map in the sky build (no ground script asks
+             * for it): back to the ground map that was left. */
+            mode = STARTMODE_GROUND;
+            continue;
+#else
             u8 friendAreaId = MapIdToFriendAreaId(GetScriptVarValue(NULL,GROUND_ENTER));
 
             friendAreasSetup.friendAreasMapPtr = MemoryAlloc(sizeof(*friendAreasSetup.friendAreasMapPtr), MEMALLOC_GROUP_8);
@@ -717,6 +725,7 @@ static u32 RunGameMode_Async(u32 a0)
             }
             mode = STARTMODE_GROUND;
             continue;
+#endif
         }
         else if (mode == STARTMODE_DUNGEON_FROM_WORLD_MAP) {
             s32 i;

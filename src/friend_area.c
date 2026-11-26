@@ -204,6 +204,7 @@ void GetFriendAreaCapacity2(u8 friendArea, FriendAreaCapacity *dst, bool8 checkL
     }
 }
 
+#ifndef SKY_STORY
 void GetFriendAreaCapacity(u8 areaId, FriendAreaCapacity *dst, bool8 checkPartner)
 {
     Pokemon *mon;
@@ -239,6 +240,7 @@ void GetFriendAreaCapacity(u8 areaId, FriendAreaCapacity *dst, bool8 checkPartne
         dst->maxPokemon = 0;
     }
 }
+#endif
 
 u32 SaveFriendAreas(u8 *r0, u32 size)
 {

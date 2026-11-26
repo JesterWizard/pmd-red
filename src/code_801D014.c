@@ -31,8 +31,10 @@
 #include "text_2.h"
 #include "text_3.h"
 #include "wigglytuff_shop2.h"
+#ifndef SKY_STORY
 #include "wonder_mail_802C4C8.h"
 #include "wonder_mail_802C860.h"
+#endif
 
 #define RANK_ICON_W 16
 #define RANK_ICON_H 16
@@ -62,13 +64,19 @@ static void sub_801D3A8(void);
 static void sub_801D4C0(void);
 static void sub_801D680(void);
 static void sub_801D760(void);
+#ifndef SKY_STORY
 static void sub_801D77C(void);
+#endif
 static void sub_801D798(void);
 static void sub_801D7CC(void);
 static void sub_801D808(void);
 static void sub_801D824(void);
+#ifndef SKY_STORY
 static void sub_801D840(void);
+#endif
+#ifndef SKY_STORY
 static void sub_801D85C(void);
+#endif
 static void sub_801D878(void);
 static void sub_801D894(void);
 
@@ -123,9 +131,11 @@ u32 sub_801D0DC(void)
         case 3:
             sub_801D760();
             break;
+#ifndef SKY_STORY
         case 4:
             sub_801D77C();
             break;
+#endif
         case 5:
             sub_801D798();
             break;
@@ -139,12 +149,16 @@ u32 sub_801D0DC(void)
         case 9:
             sub_801D824();
             break;
+#ifndef SKY_STORY
         case 10:
             sub_801D840();
             break;
+#endif
+#ifndef SKY_STORY
         case 11:
             sub_801D85C();
             break;
+#endif
         case 12:
             sub_801D878();
             break;
@@ -271,9 +285,11 @@ static void sub_801D3A8(void)
         case 3:
             sub_80227B8(sUnknown_203B250->pokeStruct);
             break;
+#ifndef SKY_STORY
         case 4:
             sub_8027074();
             break;
+#endif
         case 5:
             CreatePartyListMenu(sUnknown_203B250->pokeStruct);
             break;
@@ -289,12 +305,16 @@ static void sub_801D3A8(void)
         case 9:
             CreateIQSkillMenu(sUnknown_203B250->index);
             break;
+#ifndef SKY_STORY
         case 10:
             CreateWigglytuffShopFriendAreaMenu(sUnknown_203B250->currFriendAreaLocation, TRUE, 2);
             break;
+#endif
+#ifndef SKY_STORY
         case 11:
             InitializeJobListMenu(0);
             break;
+#endif
         case 12:
             sub_801DCC4();
             break;
@@ -321,6 +341,8 @@ static void sub_801D4C0(void)
             sUnknown_203B250->unk68[loopMax].menuAction = 4;
 
             loopMax++;
+#ifndef SKY_STORY
+            /* Sky build: no Job List (the Pelipper board and jobs are not in it). */
             if (CheckQuest(QUEST_CAN_ACCESS_JOBS)) {
                 sUnknown_203B250->unk68[loopMax].text = sJobList;
                 sUnknown_203B250->unk68[loopMax].menuAction = 9;
@@ -329,12 +351,16 @@ static void sub_801D4C0(void)
 
                 loopMax++;
             }
+#endif
         }
 
         sUnknown_203B250->unk68[loopMax].text = sOthers;
         sUnknown_203B250->unk68[loopMax].menuAction = 11;
         loopMax++;
     }
+#ifndef SKY_STORY
+    /* A Friend Area's menu: the sky build has no Friend Area maps, so
+     * currFriendAreaLocation (MapIdToFriendAreaId of the map) is always 0. */
     else {
         strcpy(gFormatBuffer_Monsters[0], sTripleQuestionMark);
 
@@ -362,6 +388,7 @@ static void sub_801D4C0(void)
 
         loopMax++;
     }
+#endif
 
     sUnknown_203B250->unk68[loopMax].text = NULL;
     sUnknown_203B250->unk68[loopMax].menuAction = 1;
@@ -446,6 +473,7 @@ static void sub_801D760(void)
     }
 }
 
+#ifndef SKY_STORY
 static void sub_801D77C(void)
 {
     switch (sub_80270A4()) {
@@ -460,6 +488,7 @@ static void sub_801D77C(void)
             break;
     }
 }
+#endif
 
 static void sub_801D798(void)
 {
@@ -531,6 +560,7 @@ static void sub_801D824(void)
     }
 }
 
+#ifndef SKY_STORY
 static void sub_801D840(void)
 {
     switch (HandleWigglytuffShopFriendAreaMenuInput()) {
@@ -545,7 +575,9 @@ static void sub_801D840(void)
             break;
     }
 }
+#endif
 
+#ifndef SKY_STORY
 static void sub_801D85C(void)
 {
     switch (sub_802C898()) {
@@ -560,6 +592,7 @@ static void sub_801D85C(void)
             break;
     }
 }
+#endif
 
 static void sub_801D878(void)
 {

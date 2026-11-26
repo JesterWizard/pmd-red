@@ -1313,6 +1313,7 @@ UNUSED static s32 sub_80A293C(u8 *param_1)
     return counter;
 }
 
+#ifndef SKY_STORY
 s32 sub_80A29B0(u8 *param_1)
 {
     bool8 *pcVar2;
@@ -1363,6 +1364,7 @@ s32 sub_80A29B0(u8 *param_1)
 
     return counter;
 }
+#endif
 
 UNUSED static s32 sub_80A2A5C(u8 *param_1)
 {

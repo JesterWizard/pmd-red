@@ -349,6 +349,84 @@ make -j$(nproc) STORY=vanilla   # Red's story, no EoS content
 - `custom_story = TRUE` in `configs/runtime.c` still wins over `STORY`.
 - Flipping `STORY` rebuilds every C object (the pack stamp is a dependency of
   all C objects, because headers test `SKY_STORY`).
+- `SKY_ONLY_C_SOURCES` (Makefile) are linked only in the sky build;
+  `NON_SKY_C_SOURCES` / `NON_SKY_ASM_SOURCES` are left out of it (Red-only
+  systems, next section). Both lists keep the vanilla link unchanged.
+
+### Red-only systems left out
+
+To save ROM space the sky build does not link Red systems that EoS does not
+have and that the demo cannot reach. The vanilla build keeps all of them
+(`make STORY=vanilla` is still byte-identical). Sizes are from the sky
+build's `pmd_red.map`; the ROM went from 25,537,529 to 25,294,397 bytes
+(243,132 bytes, 237 KB, less).
+
+| System | Left out of the link (`NON_SKY_C_SOURCES`) | Bytes |
+|---|---|---|
+| Wonder Mail, Pokémon News, mailbox, Pelipper Post Office and board, job list, thank-you mail | `pokemon_mail`, `pokemon_mail_pre`, `mailbox`, `pokemon_news1-3`, `wonder_mail*` (12 files), `thank_you_wonder_mail`, `thank_you_messages`, `mission_reward`, `post_office_guide1`, `pelipper_board`, `code_802DE84`, `code_803B344`, `code_803C1B4`, `code_8031D70`, `data/data_80E7D40.s` | 92,720 |
+| Red's friend rescue (SOS / A-OK mail, rescue passwords) | `friend_rescue`, `rescue_password_menu` | 28,749 |
+| Friend Areas (map, action menu, intros, habitat talk, Wigglytuff's shop and area info) | `friend_area_action_menu`, `friend_areas_map`, `friend_areas_map_util`, `friend_area_intros`, `friend_area_intros_data`, `friend_area_dialogue`, `wigglytuff_shop1-3`, `code_8023144` | 19,809 |
+| Team-base flags (`flag##c` / `flag##p`, 64 ornament files) | `ornament_gfx1-4`; the 64 entries leave `gOrnamentFiles` | 90,216 |
+| Code and data in kept files that only those systems used (`#ifndef SKY_STORY`) | job / mail generation and checks (`code_80958E8.c`), the password codec (`code_803D0D8.c`), the item-per-dungeon table (`items.c`), helpers in `code_8094F88.c`, `code_80A26CC.c`, `friend_area.c`, `ground_lives.c`, `world_map_sound.c`, ..., and their strings | 11,638 |
+
+`friend_area.c` (which Friend Areas the team owns, read by recruiting),
+`code_80958E8.c` / `code_8094F88.c` (the mail and job slots in the save),
+`rescue_scenario.c`, `post_office_guide2.c` (Others > Mission objectives) and
+the Trade Items link code stay.
+
+Every removed object was reachable only through one of these doors, now
+closed under `SKY_STORY` (the vanilla code is unchanged):
+
+- **Top menu**: no Friend Rescue / Wonder Mail S entry, and Continue only
+  (`main_menu2.c`). `main_menu1.c` drops the Friend Rescue, Wonder Mail and
+  rescue-password screens. No other kept screen returns those menu ids
+  (only the left-out flows, and the save menu's `0x2A`/`0x2B` modes that only
+  they open). Revive Team / Awaiting Rescue need an SOS or A-OK mail: those
+  come from the friend-rescue screens or from fainting where rescues are
+  allowed; Beach Cave (Tiny Woods) has `rescuesAllowed = -1`.
+- **Ground special texts** (`textbox.c`): Friend Rescue counter, Wonder Mail
+  2, thank-you mail, Pelipper help counter, bulletin / outlaw board, mailbox,
+  thank-you messages, Wigglytuff's shop, buying Friend Areas and picking a
+  Friend Area (`0x16`) are compiled out, so a script asking for one gets no
+  menu. The scripts the sky build links (`ground_event_data`, the d01p01 /
+  d01p02 / s01 / s04 / s05 stations; checked in the preprocessed `.i`
+  files) only ask for Save, Storage, the scripting menu, the personality
+  quiz and kind `0x29`; code asks for the ground menu, naming, yes/no boxes,
+  the dungeon / Dojo list and the custom debug menu.
+- **Ground menu** (`code_801D014.c`, B in free roam; the demo has no free
+  roam): no Job List; the Friend Area version of the menu (Info, Exit) and
+  the unused friend-area action menu are compiled out (the sky build has no
+  Friend Area maps, so `MapIdToFriendAreaId` is always 0 there).
+- **Ground script**: `CMD_BYTE_03` (to the Friend Areas map) takes its "no
+  areas" branch; special processes 0x04 (mailbox delivery) and 0x06 (tutorial
+  mail) do nothing; 0x0A (Friend Area habitat talk, `HABITAT_TALK`, used only
+  by Red's Friend Area maps) prints nothing. None is in a linked sky script.
+- **Game loop** (`main_loops.c`, `ground_main.c`): `STARTMODE_FRIEND_AREAS`
+  goes back to the ground map instead of the Friend Areas map; no Friend
+  Area intro on entering a map.
+- **Jobs**: `GeneratePelipperJobs` (run at every dungeon entry and day
+  change) only clears the board; the job and mailbox generators, Wonder Mail
+  validation and their tables are compiled out.
+- **Mission objectives** (dungeon Others): the out-on-rescue case and the
+  job list are compiled out; a job dungeon shows "Just go!".
+- **Custom debug menu**: Unlock Friend Areas, All Friend Areas, Friend Area
+  Intros, PMD2 Rescue Points, Outlaw Missions, Refresh Bulletin, Unrestricted
+  Bulletin Jobs and Expanded Job Slots are not listed.
+- **Team-base flags**: only Red's team-base scripts (not in the sky build)
+  place flag objects or load flag palettes; the sky scripts place only the
+  totem poles and the Relic Fragment and use no `SPAWN_OBJECT`. The palette
+  name table `gUnknown_81178F4` keeps the flag names, so palette slots 37 /
+  38 (the totem poles) do not move; `ORNAMENT_SKIPPED_FLAG_FILES` keeps
+  `gOrnamentFiles` sorted for `OpenFile`'s binary search.
+
+How it was checked: a symbol graph of the objects (`arm-none-eabi-nm`) gave
+every reference from a kept object into the removed set, and each one is
+closed above; the link has no undefined references. A sky build with
+`-ffunction-sections -fdata-sections --gc-sections --print-gc-sections`
+listed the code left dead in kept files, and only the pieces that the
+removed systems used were compiled out. Then the demo was played headless
+(title, both top menus, New Game, the quiz, chapter 1, Beach Cave and its
+menus, the Pit, the aftermath, the demo end and Continue).
 
 ---
 
@@ -978,13 +1056,13 @@ option (`SetUiStyleFrameColorOverride`, [`src/ui_style.c`](../../src/ui_style.c)
 set while the main menu is open) and, like EoS, are sized to their longest entry.
 
 The top menu follows EoS ([`src/main_menu2.c`](../../src/main_menu2.c),
-`#ifdef SKY_STORY`): **New Game / Other** without a save, **Continue**
-(Revive Team, Awaiting Rescue) **/ Other** with one (no Friend Rescue or
-Wonder Mail S in the demo: rescues run on Red's later-story maps, which are
-not in the sky build). **Other** opens a second window: Adventure Log, Achievements (if
+`#ifdef SKY_STORY`): **New Game / Other** without a save, **Continue / Other**
+with one. EoS's Revive Team, Awaiting Rescue, Friend Rescue and Wonder Mail S
+are not there: Red's friend rescue and Wonder Mail are left out of the sky
+build (see [Red-only systems left out](#red-only-systems-left-out)), and with
+them no SOS or A-OK mail can exist. **Other** opens a second window: Adventure Log, Achievements (if
 on), Trade Items, Delete Save Data, Sky Jukebox, Exit. The descriptions are EoS's, with the
-DS-only parts (wireless, Nintendo WFC) replaced by the GBA's link cable and
-passwords.
+DS-only parts (wireless, Nintendo WFC) replaced by the GBA's link cable.
 
 ![EoS title card and top menu](images/sky_title_menu.png)
 
@@ -1084,7 +1162,9 @@ Old saves need a new game. Following the save-layout checklist
 - Dungeon spawn entries carry species bits 9+ (`SpawnPokemonData.speciesHi`);
   `mapparam` is read through the 9-bit `FileSpawnPokemonData`.
 - Wonder Mail keeps 9-bit species, because its bits are also the rescue
-  password format; mail jobs only use species below 512.
+  password format. The mailbox, Pelipper board and job slots stay in the
+  save with the same layout, but the sky build never fills them (no job
+  generation; see [Red-only systems left out](#red-only-systems-left-out)).
 
 ---
 
@@ -1123,6 +1203,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Piece | Path |
 |-------|------|
 | Story pack select, test hooks | [`Makefile`](../../Makefile) (`STORY`, `DEBUG_BOOT_EVENT`, `DEBUG_BOOT_FLOOR`) |
+| Red-only systems left out (Wonder Mail, friend rescue, Friend Areas, team-base flags) | [`Makefile`](../../Makefile) (`NON_SKY_C_SOURCES`), the `SKY_STORY` guards in [`src/textbox.c`](../../src/textbox.c), [`src/main_menu1.c`](../../src/main_menu1.c), [`src/code_801D014.c`](../../src/code_801D014.c), [`src/code_80958E8.c`](../../src/code_80958E8.c), [`src/main_loops.c`](../../src/main_loops.c), [`src/ground_script.c`](../../src/ground_script.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c) |
 | Opening scenes (gs178 groups 1–8) | [`src/data/ground/sky/sky_d01p01_scenes.h`](../../src/data/ground/sky/sky_d01p01_scenes.h) |
 | Beach Cave Pit aftermath (gs179 group 1) | [`src/data/ground/sky/ground_data_d01p02_station.h`](../../src/data/ground/sky/ground_data_d01p02_station.h) |
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |

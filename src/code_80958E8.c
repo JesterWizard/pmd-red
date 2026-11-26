@@ -20,6 +20,9 @@
 #include "rescue_team_info.h"
 #include "runtime.h"
 
+/* Sky build: no job or mail generation (the Pelipper board, mailbox and
+ * Wonder Mail are not in it; see GeneratePelipperJobs). */
+#ifndef SKY_STORY
 static const u8 sPossibleMissionTypes[8] = {
     WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT,
     WONDER_MAIL_MISSION_TYPE_RESCUE_TARGET,
@@ -30,9 +33,11 @@ static const u8 sPossibleMissionTypes[8] = {
     WONDER_MAIL_MISSION_TYPE_FIND_ITEM,
     WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT
 };
+#endif
 
 static EWRAM_DATA unkStruct_203B490 sUnknown_2039448 = { 0 };
 
+#ifndef SKY_STORY
 /* Built once per GeneratePelipperJobs / mailbox fill — avoids re-scanning
  * MONSTER_MAX / dungeon unlocks / item LUTs on every slot. */
 static EWRAM_DATA s16 sMailJobSpecies[MONSTER_MAX] = { 0 };
@@ -44,20 +49,29 @@ static EWRAM_DATA s32 sMailJobItemCount = { 0 };
 static EWRAM_DATA u8 sMailJobItemDungeon = { 0xFF };
 static EWRAM_DATA bool8 sMailJobGenActive = { 0 };
 static EWRAM_DATA s32 sForceMissionType = { -1 };
+#endif
 
 EWRAM_INIT unkStruct_203B490 *gUnknown_203B490 = { NULL };
 
+#ifndef SKY_STORY
 static bool8 sub_8095E38(WonderMail *mail, u8 dungeon, u32 floor, u8 param_4);
 static u8 sub_8095F28(u8 param_1);
 static bool8 GenerateMailJobDungeonInfo(WonderMail *mail);
 static bool8 GenerateMailJobInfo(WonderMail *);
 static bool8 GenerateMailJobInfoForced(WonderMail *mail, s32 forceMissionType);
+#endif
 static bool8 sub_8096E80(u8);
+#ifndef SKY_STORY
 static u8 sub_8095E78(void);
 static bool8 sub_80963B4(void);
+#endif
+#ifndef SKY_STORY
 static s32 CalculateMailChecksum(WonderMail *mail);
+#endif
+#ifndef SKY_STORY
 static void BeginMailJobGeneration(void);
 static void EndMailJobGeneration(void);
+#endif
 
 void LoadMailInfo(void)
 {
@@ -100,6 +114,7 @@ void InitializeMailJobsNews(void)
     }
 }
 
+#ifndef SKY_STORY
 bool8 IsValidWonderMail(WonderMail *WonderMailData)
 {
     // Has to equal 5 for Wonder Mail
@@ -515,7 +530,9 @@ static void EndMailJobGeneration(void)
   sMailJobItemCount = 0;
   sMailJobGenActive = FALSE;
 }
+#endif
 
+#ifndef SKY_STORY
 s32 CountFilledMailboxSlots(void)
 {
     s32 index;
@@ -529,6 +546,7 @@ s32 CountFilledMailboxSlots(void)
     }
     return counter;
 }
+#endif
 
 UNUSED static bool8 sub_8095FB0(WonderMail *mail)
 {
@@ -550,6 +568,7 @@ WonderMail *GetMailboxSlotInfo(u8 index)
     return &gUnknown_203B490->mailboxSlots[index];
 }
 
+#ifndef SKY_STORY
 bool8 IsMailSlotEmpty(u8 index)
 {
     if(gUnknown_203B490->mailboxSlots[index].mailType == MAIL_TYPE_NONE)
@@ -557,6 +576,7 @@ bool8 IsMailSlotEmpty(u8 index)
     else
         return FALSE;
 }
+#endif
 
 void ResetMailbox(void)
 {
@@ -608,6 +628,7 @@ void ShiftMailboxSlotsDown(void)
   }
 }
 
+#ifndef SKY_STORY
 static void SortMailboxSlots(void)
 {
     s32 r1;
@@ -632,6 +653,7 @@ static void SortMailboxSlots(void)
         }
     }
 }
+#endif
 
 void sub_80961B4(void)
 {
@@ -640,6 +662,7 @@ void sub_80961B4(void)
   }
 }
 
+#ifndef SKY_STORY
 bool8 sub_80961D8(void)
 {
     s32 num;
@@ -793,6 +816,7 @@ void sub_80963FC(void)
     ShiftMailboxSlotsDown();
     SortMailboxSlots();
 }
+#endif
 
 void sub_8096488(void)
 {
@@ -828,6 +852,7 @@ bool8 sub_80964E4(void)
     }
 }
 
+#ifndef SKY_STORY
 s32 CountFilledPelipperBoardSlots(void)
 {
     s32 index;
@@ -841,7 +866,9 @@ s32 CountFilledPelipperBoardSlots(void)
     }
     return slots;
 }
+#endif
 
+#ifndef SKY_STORY
 UNUSED bool8 sub_8096538(WonderMail *mail)
 {
     s32 index;
@@ -855,6 +882,7 @@ UNUSED bool8 sub_8096538(WonderMail *mail)
     }
     return TRUE;
 }
+#endif
 
 WonderMail *GetPelipperBoardSlotInfo(u8 index)
 {
@@ -862,6 +890,7 @@ WonderMail *GetPelipperBoardSlotInfo(u8 index)
 }
 
 
+#ifndef SKY_STORY
 bool8 IsPelipperBoardSlotEmpty(u8 index)
 {
     if (gUnknown_203B490->pelipperBoardJobs[index].mailType == 0)
@@ -869,6 +898,7 @@ bool8 IsPelipperBoardSlotEmpty(u8 index)
     else
         return FALSE;
 }
+#endif
 
 void ResetPelipperBoardSlot(u8 index)
 {
@@ -878,6 +908,7 @@ void ResetPelipperBoardSlot(u8 index)
     gUnknown_203B490->pelipperBoardJobs[index].rewardType = 0;
 }
 
+#ifndef SKY_STORY
 void ShiftPelipperJobsDown(void)
 {
   s32 counter1; // r5
@@ -910,8 +941,10 @@ void ShiftPelipperJobsDown(void)
     gUnknown_203B490->pelipperBoardJobs[counter2].mailType = 0;
   }
 }
+#endif
 
 
+#ifndef SKY_STORY
 void SortPelipperJobs(void)
 {
     s32 index1;
@@ -936,7 +969,20 @@ void SortPelipperJobs(void)
         }
     }
 }
+#endif
 
+#ifdef SKY_STORY
+/* The sky build has no Pelipper board: the board stays empty. */
+void GeneratePelipperJobs(void)
+{
+  s32 index;
+
+  for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
+  {
+    gUnknown_203B490->pelipperBoardJobs[index].mailType = MAIL_TYPE_NONE;
+  }
+}
+#else
 void GeneratePelipperJobs(void)
 {
   s32 range;
@@ -1038,7 +1084,9 @@ void GeneratePelipperJobs(void)
   ShiftPelipperJobsDown();
   SortPelipperJobs();
 }
+#endif
 
+#ifndef SKY_STORY
 bool8 IsMailinJobSlot(WonderMail *mail)
 {
   WonderMail *jobSlot;
@@ -1062,7 +1110,9 @@ bool8 IsMailinJobSlot(WonderMail *mail)
   }
   return FALSE;
 }
+#endif
 
+#ifndef SKY_STORY
 bool8 sub_809693C(WonderMail *mail)
 {
   u8 dungeonIndex;
@@ -1091,14 +1141,18 @@ bool8 sub_809693C(WonderMail *mail)
   }
   return FALSE;
 }
+#endif
 
+#ifndef SKY_STORY
 s32 GetMaxAcceptedJobs(void)
 {
     if (gRuntimeConfig.expanded_job_slots)
         return MAX_ACCEPTED_JOBS;
     return MAX_ACCEPTED_JOBS_VANILLA;
 }
+#endif
 
+#ifndef SKY_STORY
 s32 GetNumAcceptedJobs(void)
 {
   s32 index;
@@ -1113,6 +1167,7 @@ s32 GetNumAcceptedJobs(void)
   }
   return count;
 }
+#endif
 
 s32 CountJobsinDungeon(u8 dungeon)
 {
@@ -1163,6 +1218,7 @@ bool8 sub_8096A08(u8 dungeon, Pokemon *pokemon)
   return FALSE;
 }
 
+#ifndef SKY_STORY
 bool8 AcceptJob(WonderMail *mail)
 {
   s32 index;
@@ -1177,12 +1233,14 @@ bool8 AcceptJob(WonderMail *mail)
   }
   return TRUE;
 }
+#endif
 
 WonderMail *GetJobSlotInfo(u8 index)
 {
     return &gUnknown_203B490->jobSlots[index];
 }
 
+#ifndef SKY_STORY
 bool8 IsJobSlotEmpty(u8 index)
 {
     if(gUnknown_203B490->jobSlots[index].mailType == MAIL_TYPE_NONE)
@@ -1190,6 +1248,7 @@ bool8 IsJobSlotEmpty(u8 index)
     else
         return FALSE;
 }
+#endif
 
 void sub_8096AF8(struct unkStruct_8096AF8 *param_1, u8 slotIndex,u8 dungeon)
 {
@@ -1233,6 +1292,7 @@ void sub_8096AF8(struct unkStruct_8096AF8 *param_1, u8 slotIndex,u8 dungeon)
 }
 
 // Unused
+#ifndef SKY_STORY
 s16 sub_8096B98(u8 dungeon)
 {
   WonderMail *mail;
@@ -1248,6 +1308,7 @@ s16 sub_8096B98(u8 dungeon)
   }
   return 0;
 }
+#endif
 
 void sub_8096BD0(void)
 {
@@ -1269,6 +1330,7 @@ void sub_8096BD0(void)
   SortJobSlots();
 }
 
+#ifndef SKY_STORY
 bool8 sub_8096C08(u8 *jobIndex)
 {
   s32 index;
@@ -1285,6 +1347,7 @@ bool8 sub_8096C08(u8 *jobIndex)
   }
   return FALSE;
 }
+#endif
 
 void ResetJobSlot(u8 index)
 {
@@ -1352,25 +1415,33 @@ void SortJobSlots(void)
     }
 }
 
+#ifndef SKY_STORY
 u8 *sub_8096DD8(void)
 {
     return gUnknown_203B490->unk190;
 }
+#endif
 
+#ifndef SKY_STORY
 u8 *sub_8096DE8(void)
 {
     return gUnknown_203B490->unk1B8;
 }
+#endif
 
+#ifndef SKY_STORY
 void ReceivePKMNNews(u8 index)
 {
     gUnknown_203B490->PKMNNewsReceived[index] = TRUE;
 }
+#endif
 
+#ifndef SKY_STORY
 bool8 CheckPKMNNewsSlot(u8 index)
 {
     return gUnknown_203B490->PKMNNewsReceived[index];
 }
+#endif
 
 u8 sub_8096E2C(void)
 {
@@ -1408,6 +1479,7 @@ static bool8 sub_8096E80(u8 floor)
     return FALSE;
 }
 
+#ifndef SKY_STORY
 static s32 CalculateMailChecksum(WonderMail *mail)
 {
     s32 sum;
@@ -1433,7 +1505,9 @@ static s32 CalculateMailChecksum(WonderMail *mail)
 
     return sum;
 }
+#endif
 
+#ifndef SKY_STORY
 void sub_8096EEC(WonderMail *mail)
 {
     s32 index;
@@ -1445,7 +1519,9 @@ void sub_8096EEC(WonderMail *mail)
     gUnknown_203B490->unk230[0].dungeonSeed = mail->dungeonSeed;
     gUnknown_203B490->unk230[0].checksum = CalculateMailChecksum(mail);
 }
+#endif
 
+#ifndef SKY_STORY
 bool8 sub_8096F50(WonderMail *mail)
 {
     s32 index;
@@ -1465,6 +1541,7 @@ bool8 sub_8096F50(WonderMail *mail)
 
     return FALSE;
 }
+#endif
 
 u32 RestoreMailInfo(u8 *r0, u32 size)
 {

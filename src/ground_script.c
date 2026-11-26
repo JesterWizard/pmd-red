@@ -1556,7 +1556,12 @@ static s32 ExecuteScriptCommand(Action *action)
                 break;
             }
             case CMD_BYTE_03: {
+#ifdef SKY_STORY
+                /* To the Friend Areas map: there are none in the sky build. */
+                if (TRUE) {
+#else
                 if (sub_8021700(curCmd.arg1)) {
+#endif
                     action->scriptData.script.ptr = ResolveJump(action, -1);
                 } else {
                     sub_8098D80(curCmd.argShort);
@@ -3335,12 +3340,18 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
             sub_8098CC8();
             return 0;
         case 4:
+#ifdef SKY_STORY
+            return 0; /* no mailbox in the sky build: nothing is delivered */
+#else
             return sub_80961D8() == 0 ? 0 : 1;
+#endif
         case 5:
             ResetMailbox();
             return 0;
         case 6:
+#ifndef SKY_STORY /* no mailbox in the sky build */
             sub_80963FC();
+#endif
             return 0;
         case 7:
             sub_8096488();
@@ -3364,6 +3375,7 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
             }
             break;
         case 0xA:
+#ifndef SKY_STORY /* friend-area talk: no Friend Areas in the sky build */
             {
                 if ((action->unkC).unk0 == 1)
                 {
@@ -3384,6 +3396,7 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                     }
                 }
             }
+#endif
             return 0;
         case 0xB:
             return (CountJobsinDungeon(ScriptDungeonIdToDungeonId(GetScriptVarValue(NULL, DUNGEON_ENTER_INDEX))) > 0);
