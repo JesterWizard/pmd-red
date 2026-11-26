@@ -477,8 +477,8 @@ def main() -> int:
             e["dexInternal"][1] = red_mons[sid]["dexInternal"][1]
             # Red's ax420 is an unused placeholder sprite: Munchlax uses EoS's
             # sprite (tools/convert_eos_wan_to_ax.py convert ... dex446
-            # munchlax) and its palette. Red's portraits for Munchlax stay.
-            e["overworldPalette"] = sprite_palette("Munchlax")
+            # munchlaxsky, gAxMunchlaxsky) and its palette. Red's portraits stay.
+            e["overworldPalette"] = sprite_palette("Munchlaxsky")
             e["dialogueSprites"] = red_mons[sid].get("dialogueSprites", 0)
             # Red's dummy Munchlax has no friend area, and the leader / partner
             # can only be created in a friend area slot (CreateLeaderPartnerData):

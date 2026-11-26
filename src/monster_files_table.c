@@ -424,7 +424,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_DEOXYS_ATTACK - 1] = { "ax417", &gAxDeoxysAttack,},
     [MONSTER_DEOXYS_DEFENSE - 1] = { "ax418", &gAxDeoxysDefense,},
     [MONSTER_DEOXYS_SPEED - 1] = { "ax419", &gAxDeoxysSpeed,},
+#ifdef SKY_STORY
+    [MONSTER_MUNCHLAX - 1] = { "ax420", &gAxMunchlaxsky,}, /* EoS sprite */
+#else
     [MONSTER_MUNCHLAX - 1] = { "ax420", &gAxMunchlax,},
+#endif
     [MONSTER_DECOY - 1] = { "ax421", &gAxDecoy,},
     [MONSTER_STATUE - 1] = { "ax422", &gAxStatue,},
     [MONSTER_RAYQUAZA_CUTSCENE - 1] = { "ax423", &gAxRayquazaCutscene,},

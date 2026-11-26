@@ -4,6 +4,7 @@
 
 /* Explorers of Sky demake: Gen 4 monster sprites (tools/convert_eos_wan_to_ax.py). */
 #ifdef SKY_STORY
+#include "data/ax/munchlaxsky.h" /* EoS Munchlax (Red's ax420 is a placeholder) */
 #include "data/ax/turtwig.h"
 #include "data/ax/grotle.h"
 #include "data/ax/torterra.h"
