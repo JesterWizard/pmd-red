@@ -78,7 +78,13 @@ void m4aSoundInit(void)
     m4aSoundMode(SOUND_MODE_DA_BIT_8
                | SOUND_MODE_FREQ_18157
                | (14 << SOUND_MODE_MASVOL_SHIFT)
+#ifdef SKY_STORY
+               // EoS songs play on EoS's own DirectSound instruments (up to
+               // 16 tracks, no CGB voices): give the mixer the full 12 channels.
+               | (12 << SOUND_MODE_MAXCHN_SHIFT));
+#else
                | (5 << SOUND_MODE_MAXCHN_SHIFT));
+#endif
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {

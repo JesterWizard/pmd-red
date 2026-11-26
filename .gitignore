@@ -19,6 +19,8 @@
 *.fwjpnfont
 *.bat
 sound/**/*.bin
+# EoS instrument samples for the sky demake (tools/eos_music/convert_eos_bgm.py)
+!sound/direct_sound_samples/sky/*.bin
 tools/agbcc
 *.map
 *.id0
