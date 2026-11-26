@@ -236,7 +236,8 @@ GROUND_STATION_OBJECTS := $(filter $(C_BUILDDIR)/ground_data_%_station.o,$(C_OBJ
 GROUND_STORY_STAMP := $(BUILD_DIR)/.ground_story_$(GROUND_STORY_DIR)
 # SKY_STORY is tested in C files and shared headers, so every C object
 # rebuilds when the story pack flips (rare; a flip is a full C rebuild).
-SKY_STORY_OBJECTS := $(C_OBJECTS)
+# Songs and asm (song table, sky-only seq_*/sky_bgm_* songs) test SKY_STORY too.
+SKY_STORY_OBJECTS := $(C_OBJECTS) $(SONG_OBJS) $(ASM_OBJECTS)
 $(if $(wildcard $(GROUND_STORY_STAMP)),,$(shell mkdir -p $(BUILD_DIR) && rm -f $(BUILD_DIR)/.ground_story_* && touch $(GROUND_STORY_STAMP)))
 DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)_$(if $(DEBUG_BOOT_EVENT),$(DEBUG_BOOT_EVENT),none)_$(if $(DEBUG_BOOT_FLOOR),$(DEBUG_BOOT_FLOOR),none)
 # GNU make skips a missing prerequisite that has a recipe when the target already
