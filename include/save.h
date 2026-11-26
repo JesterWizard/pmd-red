@@ -26,7 +26,18 @@ enum
     READ_SAVE_CHECKSUM_ERROR
 };
 
-// size: 0x5E4C (unk448 includes the runtime-config record in its tail)
+/* Adventure chunk (options, play time, adventure log, seen flags). The sky
+ * build's Gen 4 species / moves grow its flag arrays (MONSTER_FLAGS_U32STORAGE,
+ * MOVE_FLAGS_U32STORAGE), so the chunk and unk448 grow with it. */
+#ifdef SKY_STORY
+#define ADVENTURE_SAVE_SIZE 0x140
+#define SAVE_CHUNKS_SIZE 0x5A80
+#else
+#define ADVENTURE_SAVE_SIZE 0x100
+#define SAVE_CHUNKS_SIZE 0x5A00
+#endif
+
+// size: 0x5E4C (sky build: 0x5ECC) (unk448 includes the runtime-config record in its tail)
 struct UnkStruct_sub_8011DAC
 {
     u8 fill000[0x4];
@@ -46,7 +57,7 @@ struct UnkStruct_sub_8011DAC
     u32 unk440;
     u32 savedMailInfo;
     u32 savedAchievements;
-    u8 unk448[0x5A00];
+    u8 unk448[SAVE_CHUNKS_SIZE];
 };
 
 // size: 0x5C

@@ -48,7 +48,7 @@ void ResetAdventureInfo(void)
     gUnknown_203B494->friendRescueSuccesses = 0;
     gUnknown_203B494->numEvolved = 0;
 
-    for (index = 0; index < 14; index++)
+    for (index = 0; index < MONSTER_FLAGS_U32STORAGE; index++)
         gUnknown_203B494->unk1C[index] = 0;
 
     for (index = 0; index < ARRAY_COUNT_INT(gUnknown_203B494->learnedMoves); index++)
@@ -222,7 +222,12 @@ void UpdateAdventureAchievements(void)
         }
     }
 
+#ifdef SKY_STORY
+    /* "All Pokémon joined/led" count Red's species, not the Gen 4 additions. */
+    for (i = 0; i < SKY_FIRST_GEN4_MONSTER; i++) {
+#else
     for (i = 0; i < MONSTER_MAX; i++) {
+#endif
         if (i == MONSTER_NONE) continue;
         if (i == MONSTER_CASTFORM_SNOWY) continue;
         if (i == MONSTER_CASTFORM_SUNNY) continue;
@@ -323,10 +328,10 @@ void WriteAdventureBits(DataSerializer *r0)
     WriteBits(r0, &gUnknown_203B494->achievements, 32);
     WriteBits(r0, &gUnknown_203B494->thievingSuccesses, 14);
     WriteBits(r0, &gUnknown_203B494->numJoined, 14);
-    WriteBits(r0, &gUnknown_203B494->adventureMovesLearned, 9);
+    WriteBits(r0, &gUnknown_203B494->adventureMovesLearned, MOVE_ID_SAVE_BITS);
     WriteBits(r0, &gUnknown_203B494->numFloorsExplored, 17);
-    WriteBits(r0, gUnknown_203B494->unk1C, 14 * 32);
-    WriteBits(r0, gUnknown_203B494->unk54, 14 * 32);
+    WriteBits(r0, gUnknown_203B494->unk1C, MONSTER_FLAGS_U32STORAGE * 32);
+    WriteBits(r0, gUnknown_203B494->unk54, MONSTER_FLAGS_U32STORAGE * 32);
     WriteBits(r0, gUnknown_203B494->learnedMoves, ARRAY_COUNT_INT(gUnknown_203B494->learnedMoves) * 32);
     WriteDungeonLocationBits(r0, &gUnknown_203B494->dungeonLocation);
 }
@@ -339,10 +344,10 @@ void ReadAdventureBits(DataSerializer *r0)
     ReadBits(r0, &gUnknown_203B494->achievements, 32);
     ReadBits(r0, &gUnknown_203B494->thievingSuccesses, 14);
     ReadBits(r0, &gUnknown_203B494->numJoined, 14);
-    ReadBits(r0, &gUnknown_203B494->adventureMovesLearned, 9);
+    ReadBits(r0, &gUnknown_203B494->adventureMovesLearned, MOVE_ID_SAVE_BITS);
     ReadBits(r0, &gUnknown_203B494->numFloorsExplored, 17);
-    ReadBits(r0, gUnknown_203B494->unk1C, 14 * 32);
-    ReadBits(r0, gUnknown_203B494->unk54, 14 * 32);
+    ReadBits(r0, gUnknown_203B494->unk1C, MONSTER_FLAGS_U32STORAGE * 32);
+    ReadBits(r0, gUnknown_203B494->unk54, MONSTER_FLAGS_U32STORAGE * 32);
     ReadBits(r0, gUnknown_203B494->learnedMoves, ARRAY_COUNT_INT(gUnknown_203B494->learnedMoves) * 32);
     ReadDungeonLocationBits(r0, &gUnknown_203B494->dungeonLocation);
 }

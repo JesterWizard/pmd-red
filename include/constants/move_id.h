@@ -440,6 +440,26 @@
 #define MOVE_SNORE_ATTACK 0x1AC
 #define MOVE_SLEEP_TALK_ATTACK 0x1AD
 
+/* u32 words of per-move flags (adventure log "moves learned"). */
+#ifdef SKY_STORY
+#define MOVE_FLAGS_U32STORAGE 17 /* Gen 4 moves up to 0x21E */
+#else
+#define MOVE_FLAGS_U32STORAGE 13
+#endif
+
+/* Bits a move id takes in the save pak. */
+#ifdef SKY_STORY
+#define MOVE_ID_SAVE_BITS 10
+#else
+#define MOVE_ID_SAVE_BITS 9
+#endif
+
+#ifdef SKY_STORY
+/* Explorers of Sky demake: Gen 4 moves at their EoS ids (0x1AE-0x21E). */
+#include "constants/sky_gen4.h"
+#define NUM_MOVE_IDS (SKY_LAST_GEN4_MOVE + 1)
+#else
 #define NUM_MOVE_IDS (MOVE_SLEEP_TALK_ATTACK + 1)
+#endif
 
 #endif

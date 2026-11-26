@@ -115,7 +115,17 @@ void SetFloorItemMonsterSpawns(void)
         gDungeon->trapSpawnChances[i] = ((struct DungeonMapParam2 *)(file->data))->trapSpawnChances[strPtr->unk4][i];
     }
     for (i = 0; i < MONSTER_SPAWNS_ARR_COUNT - 1; i++) {
+#ifdef SKY_STORY
+        {
+            const FileSpawnPokemonData *src = &((struct DungeonMapParam2 *)(file->data))->monsterSpawns[strPtr->unk2][i];
+            gDungeon->fileMonsterSpawns[i].bits = src->bits;
+            gDungeon->fileMonsterSpawns[i].randNum[0] = src->randNum[0];
+            gDungeon->fileMonsterSpawns[i].randNum[1] = src->randNum[1];
+            gDungeon->fileMonsterSpawns[i].speciesHi = 0;
+        }
+#else
         gDungeon->fileMonsterSpawns[i] = ((struct DungeonMapParam2 *)(file->data))->monsterSpawns[strPtr->unk2][i];
+#endif
         if (ExtractSpeciesIndex(&gDungeon->fileMonsterSpawns[i]) == 0)
             break;
     }

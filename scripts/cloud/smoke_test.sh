@@ -138,7 +138,9 @@ if [[ $N -gt 0 ]]; then
 	DISTINCT=$(printf '%s\n' "${RECS[@]}" | awk '{print $3}' | sort -u | wc -l)
 	for ((i = 0; i < N - 1; i++)); do
 		read -r F C _ _ <<<"${RECS[$i]}"
-		if [[ -z $EARLY_OK && $C -ge 16 ]]; then
+		# >= 8: the sky build's EoS boot screens (Nintendo logo, ESRB notice)
+		# are grey antialiased art with ~14 colours; the warning text has 2.
+		if [[ -z $EARLY_OK && $C -ge 8 ]]; then
 			EARLY_OK="frame $F colors=$C"
 		fi
 	done
@@ -157,9 +159,9 @@ else
 fi
 
 if [[ -n $EARLY_OK ]]; then
-	pass "intro graphics rendered: $EARLY_OK before the final capture (>= 16 colors)"
+	pass "intro graphics rendered: $EARLY_OK before the final capture (>= 8 colors)"
 else
-	fail "no intro graphics: no capture before the final one had >= 16 colors"
+	fail "no intro graphics: no capture before the final one had >= 8 colors"
 fi
 
 if [[ -n $LAST_P ]]; then

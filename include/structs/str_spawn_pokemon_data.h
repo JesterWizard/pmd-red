@@ -10,6 +10,16 @@ typedef struct SpawnPokemonData
 {
     u16 bits; // species first 9 bits, level last 7 bits
     s16 randNum[2];
+#ifdef SKY_STORY
+    u16 speciesHi; // sky build: species bits 9+ (Gen 4 ids go past 511)
+#endif
 } SpawnPokemonData;
+
+/* One spawn entry as stored in the "mapparam" file (always the 9-bit form). */
+typedef struct FileSpawnPokemonData
+{
+    u16 bits;
+    s16 randNum[2];
+} FileSpawnPokemonData;
 
 #endif // GUARD_STR_SPAWN_POKEMON_DATA_H

@@ -90,6 +90,15 @@ typedef struct SkyCutawayArt
 } SkyCutawayArt;
 
 extern const SkyCutawayArt gSkyCutaways[SKY_CUTAWAY_COUNT];
+
+/* Gen 4 species and moves (src/data/sky_gen4_data.c, tools/make_sky_gen4_data.py):
+ * the sky build reads species, move and learnset data from these tables. */
+#include "structs/str_pokemon.h"
+#include "moves.h"
+extern const MonsterDataEntry gSkyMonsterData[];
+extern const MoveDataEntry gSkyMoveData[];
+extern const MoveLearnset gSkyMoveLearnsets[];
+extern const LevelData gSkyGen4LevelData[][100];
 extern const SkyCutawayArt gSkyTitleArt[SKY_TITLE_ART_COUNT];
 void SkyStory_ShowCutaway_Async(s32 id, s32 frames);
 

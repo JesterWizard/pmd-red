@@ -8,6 +8,7 @@
 #include "def_filearchives.h"
 #include "memory.h"
 #include "constants/move_category.h"
+#include "sky_story.h"
 #include "moves.h"
 #include "runtime.h"
 #include "string_format.h"
@@ -44,6 +45,11 @@ void LoadWazaParameters(void)
 
     sMovesData = ((MoveDataFile *)(sWazaParametersFile->data))->moveData;
     sMoveLearnsets = ((MoveDataFile *)(sWazaParametersFile->data))->moveLearnsets;
+#ifdef SKY_STORY
+    /* Red's moves + Gen 4 moves; EoS learnsets (src/data/sky_gen4_data.c). */
+    sMovesData = (MoveDataEntry *)gSkyMoveData;
+    sMoveLearnsets = (MoveLearnset *)gSkyMoveLearnsets;
+#endif
 }
 
 static u8 GetColorForMove(Move *move)
@@ -176,8 +182,10 @@ const u8 *GetLevelUpMoves(s16 species)
     s32 id = SpeciesId(species);
     if (species == MONSTER_DECOY || species == MONSTER_NONE)
         return gDummyMoves;
+#ifndef SKY_STORY
     if (id == MONSTER_MUNCHLAX)
         return gDummyMoves;
+#endif
 
     return sMoveLearnsets[id].levelUpMoves;
 }
@@ -187,8 +195,10 @@ const u8 *GetHMTMMoves(s16 species)
     s32 id = SpeciesId(species);
     if (species == MONSTER_DECOY || species == MONSTER_NONE)
         return gDummyMoves;
+#ifndef SKY_STORY
     if (id == MONSTER_MUNCHLAX)
         return gDummyMoves;
+#endif
 
     return sMoveLearnsets[id].HMTMMoves;
 }
@@ -1551,7 +1561,7 @@ void sub_8094060(Move *srcMoves, Move *destMoves)
 static void WritePoke1MoveBits(DataSerializer *r0, Move *move)
 {
     WriteBits(r0, &move->moveFlags, 4);
-    WriteBits(r0, &move->id, 9);
+    WriteBits(r0, &move->id, MOVE_ID_SAVE_BITS);
     WriteBits(r0, &move->PP, 7);
 }
 
@@ -1559,7 +1569,7 @@ static void WritePoke1MoveBits(DataSerializer *r0, Move *move)
 static void ReadPoke1MoveBits(DataSerializer *r0, Move *move)
 {
     ReadBits(r0, &move->moveFlags, 4);
-    ReadBits(r0, &move->id, 9);
+    ReadBits(r0, &move->id, MOVE_ID_SAVE_BITS);
     ReadBits(r0, &move->PP, 7);
 }
 
@@ -1586,7 +1596,7 @@ static void WritePoke2MoveBits(DataSerializer *r0, Move *move)
 {
     WriteBits(r0, &move->moveFlags, 4);
     WriteBits(r0, &move->moveFlags2, 1);
-    WriteBits(r0, &move->id, 9);
+    WriteBits(r0, &move->id, MOVE_ID_SAVE_BITS);
     WriteBits(r0, &move->PP, 7);
     WriteBits(r0, &move->ginseng, 7);
 }
@@ -1608,7 +1618,7 @@ static void ReadPoke2MoveBits(DataSerializer *r0, Move *move)
     memset(move, 0, sizeof(Move));
     ReadBits(r0, &move->moveFlags, 4);
     ReadBits(r0, &move->moveFlags2, 1);
-    ReadBits(r0, &move->id, 9);
+    ReadBits(r0, &move->id, MOVE_ID_SAVE_BITS);
     ReadBits(r0, &move->PP, 7);
     ReadBits(r0, &move->ginseng, 7);
 }

@@ -486,6 +486,11 @@ static void BeginMailJobGeneration(void)
 
   sMailJobSpeciesCount = 0;
   for (i = 1; i < MONSTER_MAX; i++) {
+#ifdef SKY_STORY
+    /* Wonder Mail stores species in 9 bits (shared with rescue passwords). */
+    if (i >= (1 << 9))
+      break;
+#endif
     if (sub_803C110(i) != 0) {
       sMailJobSpecies[sMailJobSpeciesCount] = i;
       sMailJobSpeciesCount++;

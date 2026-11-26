@@ -33,7 +33,12 @@ s32 RestoreRecruitedPokemon(u8 *a1, s32 a2);
 /* Bit-packed recruited Pokémon blob in the save pak.
  * Vanilla was 0x4650 (~24 IQ flag bits). 64-bit IQ flags need ~0x49F8;
  * 0x4B00 leaves headroom. Must stay in sync with save.c / UnkStruct_sub_8011DAC. */
+#ifdef SKY_STORY
+/* Sky build: 10-bit species and move ids (+5 bits per Pokémon) need ~0x4AFD. */
+#define RECRUITED_POKEMON_SAVE_SIZE 0x4B40
+#else
 #define RECRUITED_POKEMON_SAVE_SIZE 0x4B00
+#endif
 
 void WritePoke1Bits(DataSerializer *, Pokemon *pokemon);
 void ReadPoke1Bits(DataSerializer *, Pokemon *);

@@ -46,9 +46,10 @@ def read_define(path: Path, name: str, _stack: set[str] | None = None) -> int:
 def unk448_size() -> int:
     text = (ROOT / "include/save.h").read_text(encoding="utf-8", errors="replace")
     m = re.search(r"u8\s+unk448\[(0x[0-9A-Fa-f]+|\d+)\]", text)
-    if not m:
-        raise SystemExit("missing unk448[] size in include/save.h")
-    return int(m.group(1), 0)
+    if m:
+        return int(m.group(1), 0)
+    # unk448[SAVE_CHUNKS_SIZE]: the first #define is the sky build's (larger) size.
+    return read_define(ROOT / "include/save.h", "SAVE_CHUNKS_SIZE")
 
 
 def main() -> int:
@@ -71,9 +72,13 @@ def main() -> int:
     # WritePoke1Bits fixed fields (excluding IQSkills): see src/pokemon_3.c
     # level7 + species9 + dung14 + unkC 7*2 + IQ10 + HP10 + offense32 + exp24
     # + tactic4 + held15 + moves (4*20) + name80
+    # The sky build (STORY=sky) widens species and move ids to 10 bits
+    # (SPECIES_SAVE_BITS / MOVE_ID_SAVE_BITS): +1 species, +4 moves. Check
+    # the larger layout so both builds fit.
+    sky_extra = 1 + 4
     bits_without_iq = (
         7 + 9 + 14 + 7 + 7 + 10 + 10 + 32 + 24 + 4 + 15 + 80 + 80
-    )
+    ) + sky_extra
     per = bits_without_iq + iq_bits
     max_team = 4
     # 413 pokemon + 4 team (1 exists-bit + poke) + 6*u16 + leader u16
@@ -86,7 +91,7 @@ def main() -> int:
         ("TEAM_INVENTORY_SAVE_SIZE", inv_size),
         ("rescue", 0x10),
         ("friend areas", 0x8),
-        ("adventure", 0x100),
+        ("adventure (ADVENTURE_SAVE_SIZE)", read_define(ROOT / "include/save.h", "ADVENTURE_SAVE_SIZE")),
         ("exclusive/unk", 0x594),
         ("mail", 0x221),
         ("ACHIEVEMENTS_SAVE_SIZE", ach_size),
@@ -99,7 +104,7 @@ def main() -> int:
     print("=== save layout check ===")
     print(f"IQ flag bits:           {iq_bits}")
     print(f"NUM_MONSTERS:           {num_monsters}")
-    print(f"bits/pokemon:           {per}")
+    print(f"bits/pokemon:           {per} (sky build widths)")
     print(f"recruited needed:       {needed:#x} ({needed} bytes)")
     print(f"RECRUITED_* capacity:   {recruited_cap:#x} ({recruited_cap} bytes)")
     print(f"unk448 blob sum:        {blob:#x}")

@@ -11,7 +11,11 @@ typedef struct unkStruct_3001B5C
     u8 unk0;
     u32 unk4;
     s32 unk8;
+#ifdef SKY_STORY
+    s16 unkC[MONSTER_MAX]; /* every seen base species, Gen 4 included */
+#else
     s16 unkC[420];
+#endif
     u8 unk354;
     u8 fill355[0x35C - 0x355];
     /* 0x35C */ MenuHeaderWindow s35C;

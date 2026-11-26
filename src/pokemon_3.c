@@ -237,7 +237,11 @@ s32 GetUnownIndex(s16 index)
 // arm9.bin::02059B98
 s16 ExtractSpeciesIndex(SpawnPokemonData *data)
 {
+#ifdef SKY_STORY
+    return (data->bits & PACKED_BITS_SPECIES) | (data->speciesHi << PACKED_BITS_LEVEL_SHIFT);
+#else
     return data->bits & PACKED_BITS_SPECIES;
+#endif
 }
 
 // arm9.bin::02059B7C
@@ -245,14 +249,24 @@ void SetSpeciesToExtract(SpawnPokemonData *data, s32 species_)
 {
     s32 species = (s16) species_;
     data->bits &= (PACKED_BITS_LEVEL << PACKED_BITS_LEVEL_SHIFT);
+#ifdef SKY_STORY
+    data->bits |= species & PACKED_BITS_SPECIES;
+    data->speciesHi = species >> PACKED_BITS_LEVEL_SHIFT;
+#else
     data->bits |= species;
+#endif
 }
 
 #if (GAME_VERSION == VERSION_RED)
 void SetSpeciesLevelToExtract(SpawnPokemonData *data, s32 level, s32 species_)
 {
     s32 species = (s16) (species_);
+#ifdef SKY_STORY
+    data->bits = (species & PACKED_BITS_SPECIES) | (level << PACKED_BITS_LEVEL_SHIFT);
+    data->speciesHi = species >> PACKED_BITS_LEVEL_SHIFT;
+#else
     data->bits = species | (level << PACKED_BITS_LEVEL_SHIFT) ;
+#endif
 }
 #endif
 
@@ -603,7 +617,7 @@ s32 RestoreRecruitedPokemon(u8 *a1, s32 a2)
 void WritePoke1Bits(DataSerializer* a1, Pokemon* pokemon)
 {
     WriteBits(a1, &pokemon->level, 7);
-    WriteBits(a1, &pokemon->speciesNum, 9);
+    WriteBits(a1, &pokemon->speciesNum, SPECIES_SAVE_BITS);
     WriteDungeonLocationBits(a1, &pokemon->dungeonLocation);
     WritePoke1LevelBits(a1, &pokemon->unkC[0]);
     WritePoke1LevelBits(a1, &pokemon->unkC[1]);
@@ -633,7 +647,7 @@ void ReadPoke1Bits(DataSerializer* a1, Pokemon* pokemon)
     if (pokemon->level)
         pokemon->flags |= POKEMON_FLAG_EXISTS;
 
-    ReadBits(a1, &pokemon->speciesNum, 9);
+    ReadBits(a1, &pokemon->speciesNum, SPECIES_SAVE_BITS);
     ReadDungeonLocationBits(a1, &pokemon->dungeonLocation);
     ReadPoke1LevelBits(a1, &pokemon->unkC[0]);
     ReadPoke1LevelBits(a1, &pokemon->unkC[1]);
@@ -674,7 +688,7 @@ s32 SavePoke2s(u8* buffer, s32 size)
         WriteBits(&backup, &pokemon2->IQ, 10);
         WriteBits(&backup, &pokemon2->recruitedPokemonId, 16);
         WriteBits(&backup, &pokemon2->unkC, 16);
-        WriteBits(&backup, &pokemon2->speciesNum, 9);
+        WriteBits(&backup, &pokemon2->speciesNum, SPECIES_SAVE_BITS);
         WriteBits(&backup, &pokemon2->unk10, 10);
         WriteBits(&backup, &pokemon2->unk12, 10);
         WriteBits(&backup, &pokemon2->offense.att[0], 8);
@@ -725,7 +739,7 @@ s32 RestorePoke2s(u8* a1, s32 size)
         ReadBits(&backup, &pokemon2->IQ, 10);
         ReadBits(&backup, &pokemon2->recruitedPokemonId, 16);
         ReadBits(&backup, &pokemon2->unkC, 16);
-        ReadBits(&backup, &pokemon2->speciesNum, 9);
+        ReadBits(&backup, &pokemon2->speciesNum, SPECIES_SAVE_BITS);
         ReadBits(&backup, &pokemon2->unk10, 10);
         ReadBits(&backup, &pokemon2->unk12, 10);
         ReadBits(&backup, &pokemon2->offense.att[0], 8);

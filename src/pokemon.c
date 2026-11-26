@@ -22,6 +22,7 @@
 #include "runtime.h"
 #include "event_flag.h"
 #include "custom_portraits.h"
+#include "sky_story.h"
 #include "structs/str_mon_portrait.h"
 
 static EWRAM_DATA MonsterDataEntry *sMonsterParameters = {NULL}; // B=02135090
@@ -46,6 +47,10 @@ void LoadMonsterParameters(void)
     gRecruitedPokemonRef = &sRecruitedPokemon;
     sMonsterParametersFile = OpenFileAndGetFileDataPtr("monspara", &gSystemFileArchive);
     sMonsterParameters = (MonsterDataEntry *)sMonsterParametersFile->data;
+#ifdef SKY_STORY
+    /* Red's species + Gen 4 (src/data/sky_gen4_data.c). */
+    sMonsterParameters = (MonsterDataEntry *)gSkyMonsterData;
+#endif
     sLevelCurrentPokeId = 0;
     // More in blue
 }
@@ -1192,6 +1197,18 @@ void GetLvlUpEntry(LevelData* a1, s32 _id, s32 level)
   u8 buffer[12];
   s32 id = SpeciesId(_id);
 
+#ifdef SKY_STORY
+  /* Gen 4 species (and EoS Munchlax) use EoS's level-up tables. */
+  if (id >= SKY_FIRST_GEN4_MONSTER || id == MONSTER_MUNCHLAX) {
+    level -= 1;
+    if (level < 0)
+      level = 0;
+    if (level > 99)
+      level = 99;
+    *a1 = gSkyGen4LevelData[id == MONSTER_MUNCHLAX ? SKY_GEN4_MONSTER_COUNT : id - SKY_FIRST_GEN4_MONSTER][level];
+    return;
+  }
+#endif
   if (sLevelCurrentPokeId != id)
   {
     OpenedFile *file;
@@ -1238,7 +1255,9 @@ s32 GetMovesLearnedAtLevel(u16* dst, s16 species, s32 level, s32 IQPoints)
 
   if (species == MONSTER_DECOY) return 0;
   if (species == MONSTER_NONE) return 0;
+#ifndef SKY_STORY
   if (species == MONSTER_MUNCHLAX) return 0;
+#endif
   // get stream
   stream = GetLevelUpMoves(_species);
 
@@ -1281,7 +1300,9 @@ bool8 CanMonLearnMove(u16 moveID, s16 _species)
 
   if (species == MONSTER_DECOY) return 0;
   if (species == MONSTER_NONE) return 0;
+#ifndef SKY_STORY
   if (species == MONSTER_MUNCHLAX) return 0;
+#endif
   if (moveID == MOVE_STRUGGLE) return 0;
 
   learnsetPtr = GetLevelUpMoves(_species);
@@ -1314,7 +1335,9 @@ s32 sub_808E218(unkStruct_808E218_arg* a1, Pokemon* pokemon)
   a1->count = 0;
   if (pokemon->speciesNum == MONSTER_DECOY) return 0;
   if (pokemon->speciesNum == MONSTER_NONE) return 0;
+#ifndef SKY_STORY
   if (pokemon->speciesNum == MONSTER_MUNCHLAX) return 0;
+#endif
 
   sequence_length = GetEvolutionSequence(pokemon, evolve_sequence);
   for (i = 0; i < sequence_length; i++) {

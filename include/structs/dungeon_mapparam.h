@@ -17,7 +17,11 @@ struct DungeonMapParam2
     struct DungeonMapParam1 **unk0;
     FloorProperties *floorProperties;
     u16 **itemSpawns;
+#ifdef SKY_STORY
+    FileSpawnPokemonData **monsterSpawns;
+#else
     SpawnPokemonData **monsterSpawns;
+#endif
     u16 **trapSpawnChances;
 };
 

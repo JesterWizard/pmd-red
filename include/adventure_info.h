@@ -2,6 +2,8 @@
 #define GUARD_ADVENTURE_INFO_H
 
 #include "structs/str_dungeon_location.h"
+#include "constants/monster.h"
+#include "constants/move_id.h"
 #include "data_serializer.h"
 
 // See gAdventureLogText
@@ -53,9 +55,9 @@ struct unkStruct_203B494
     /* 0x14 */ s16 thievingSuccesses;
     /* 0x16 */ s16 numJoined;
     /* 0x18 */ s16 adventureMovesLearned;
-    u32 unk1C[14];
-    u32 unk54[14];
-    /* 0x8C */ u32 learnedMoves[13]; // Get with `learnedMoves[move / 32] & 1 << move % 32` ... Set with `learnedMoves[move / 32] |= 1 << move % 32`
+    u32 unk1C[MONSTER_FLAGS_U32STORAGE];
+    u32 unk54[MONSTER_FLAGS_U32STORAGE];
+    /* 0x8C */ u32 learnedMoves[MOVE_FLAGS_U32STORAGE]; // Get with `learnedMoves[move / 32] & 1 << move % 32` ... Set with `learnedMoves[move / 32] |= 1 << move % 32`
     /* 0xC0 */ s32 numFloorsExplored;
 };
 

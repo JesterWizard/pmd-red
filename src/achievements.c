@@ -332,7 +332,11 @@ static bool8 HasRecruitedAllSpecies(void)
 {
     s32 i;
 
+#ifdef SKY_STORY
+    for (i = 0; i < SKY_FIRST_GEN4_MONSTER; i++) { /* Red's species */
+#else
     for (i = 0; i < MONSTER_MAX; i++) {
+#endif
         if (i == MONSTER_NONE) continue;
         if (i == MONSTER_CASTFORM_SNOWY) continue;
         if (i == MONSTER_CASTFORM_SUNNY) continue;

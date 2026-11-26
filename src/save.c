@@ -44,7 +44,7 @@ static u8 *GetRuntimeConfigSaveBuffer(u8 *buffer)
     buffer += TEAM_INVENTORY_SAVE_SIZE;
     buffer += 0x10;
     buffer += 0x8;
-    buffer += 0x100;
+    buffer += ADVENTURE_SAVE_SIZE;
     buffer += 0x594;
     buffer += MAIL_INFO_SAVE_SIZE;
     buffer += ACHIEVEMENTS_SAVE_SIZE;
@@ -265,11 +265,11 @@ u32 ReadSaveFromPak(u32 *a)
             saveStatus = 3;
         }
         r4 += 0x8;
-        r1 = RestoreAdventureData(r4, 0x100);
+        r1 = RestoreAdventureData(r4, ADVENTURE_SAVE_SIZE);
         if (r1 != playerSave->unk43C) {
             saveStatus = 3;
         }
-        r4 += 0x100;
+        r4 += ADVENTURE_SAVE_SIZE;
         r1 = sub_80954CC(r4, 0x594);
         if (r1 != playerSave->unk440) {
             saveStatus = 3;
@@ -386,8 +386,8 @@ u32 WriteSavetoPak(s32 *param_1, u32 param_2)
   array_ptr += 0x10;
   playerSave->savedFriendAreas = SaveFriendAreas(array_ptr,8);
   array_ptr += 8;
-  playerSave->unk43C = SaveAdventureData(array_ptr, 0x100);
-  array_ptr += 0x100;
+  playerSave->unk43C = SaveAdventureData(array_ptr, ADVENTURE_SAVE_SIZE);
+  array_ptr += ADVENTURE_SAVE_SIZE;
   playerSave->unk440 = sub_8095624(array_ptr,0x594);
   array_ptr += 0x594;
   playerSave->savedMailInfo = SaveMailInfo(array_ptr, MAIL_INFO_SAVE_SIZE);

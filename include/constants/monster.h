@@ -428,9 +428,28 @@
 #define MONSTER_RAYQUAZA_CUTSCENE 423
 
 #define NUM_MONSTERS MONSTER_JIRACHI
+#ifdef SKY_STORY
+/* Explorers of Sky demake: Gen 4 species after Red's ids (tools/make_sky_gen4_data.py). */
+#include "constants/sky_gen4.h"
+#define MONSTER_MAX (SKY_FIRST_GEN4_MONSTER + SKY_GEN4_MONSTER_COUNT)
+#else
 #define MONSTER_MAX (MONSTER_RAYQUAZA_CUTSCENE + 1)
+#endif
 
+/* Bits a species id takes in the save pak (team, recruits). The sky build's
+ * Gen 4 ids go past 511. Wonder Mail keeps 9 bits: its bits are shared with
+ * the rescue password format. */
+#ifdef SKY_STORY
+#define SPECIES_SAVE_BITS 10
+#else
+#define SPECIES_SAVE_BITS 9
+#endif
+
+#ifdef SKY_STORY
+#define MONSTER_FLAGS_U32STORAGE 17 /* 544 bits: Gen 4 ids up to 528 */
+#else
 #define MONSTER_FLAGS_U32STORAGE 14
+#endif
 
 #define IS_CASTFORM_FORM_MONSTER(id)((id == MONSTER_CASTFORM_SNOWY || id == MONSTER_CASTFORM_SUNNY || id == MONSTER_CASTFORM_RAINY))
 #define IS_DEOXYS_FORM_MONSTER(id)((id == MONSTER_DEOXYS_ATTACK || id == MONSTER_DEOXYS_DEFENSE || id == MONSTER_DEOXYS_SPEED))

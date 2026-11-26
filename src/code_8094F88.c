@@ -341,7 +341,7 @@ u32 sub_80954CC(u8 *buffer, u32 size)
     ReadBits(&backup, &mon->isTeamLeader, 1);
     ReadBits(&backup, &mon->level, 7);
     ReadDungeonLocationBits(&backup, &mon->dungeonLocation);
-    ReadBits(&backup, &mon->speciesNum, 9);
+    ReadBits(&backup, &mon->speciesNum, SPECIES_SAVE_BITS);
     ReadPoke1LevelBits(&backup, &mon->unkC[0]);
     ReadPoke1LevelBits(&backup, &mon->unkC[1]);
     ReadBits(&backup, &mon->IQ, 10);
@@ -386,7 +386,7 @@ u32 sub_8095624(u8 *buffer, u32 b)
     WriteBits(&backup, &mon->isTeamLeader, 1);
     WriteBits(&backup, &mon->level, 7);
     WriteDungeonLocationBits(&backup, &mon->dungeonLocation);
-    WriteBits(&backup, &mon->speciesNum, 9);
+    WriteBits(&backup, &mon->speciesNum, SPECIES_SAVE_BITS);
     WritePoke1LevelBits(&backup, &mon->unkC[0]);
     WritePoke1LevelBits(&backup, &mon->unkC[1]);
     WriteBits(&backup, &mon->IQ, 10);
