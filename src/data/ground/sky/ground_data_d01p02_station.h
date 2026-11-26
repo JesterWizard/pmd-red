@@ -62,6 +62,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     ALERT_CUE(7), /* Zubat tosses the Relic Fragment down */
     AWAIT_CUE(5),
+    SELECT_ENTITIES(-1, 1), /* EoS: it lands at (28.5, 23) */
     FANFARE_PLAY2(466),
     ALERT_CUE(6), /* partner: "!" */
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHWEST),
@@ -88,6 +89,7 @@ static const struct ScriptCommand s_gs179_g1_s0_lives0_dlg0[] = { /* Player — 
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_HAPPY),
     MSG_NPC(NPC_PARTNER, _(" Thank goodness...{WAIT_PRESS} I actually\nmanaged to get it back.")),
     TEXTBOX_CLEAR,
+    ALERT_CUE(9), /* the partner has picked it up */
     ALERT_CUE(6), /* partner turns to the hero */
     AWAIT_CUE(5),
     ROTATE_TO_LIVES(4, DIR_TRANS_11, 34),
@@ -192,8 +194,22 @@ static const struct GroundScriptSector s_gs179_g0_sectors[] = {
     { 0,NULL, 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[0], },
 };
 
+static const struct ScriptCommand s_gs179_relic_fragment_dlg0[] = {
+    DEBUGINFO_O(__LINE__),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK),
+    AWAIT_CUE(9),
+    END_DELETE,
+};
+
+static const struct GroundObjectData s_gs179_g1_s1_objs[] = {
+    /*  0 */ { SKY_OBJ_RELIC_FRAGMENT, 0, 1, 1, {  28,  23, CPOS_HALFTILE, 0 }, {
+        [0] = s_gs179_relic_fragment_dlg0,
+    } },
+};
+
 static const struct GroundScriptSector s_gs179_g1_sectors[] = {
     { LPARRAY(s_gs179_g1_s0_lives), 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[1], },
+    { 0,NULL, LPARRAY(s_gs179_g1_s1_objs), 0,NULL, 0,NULL, 0,NULL, },
 };
 
 static const struct GroundScriptGroup s_gs179_groups[] = {

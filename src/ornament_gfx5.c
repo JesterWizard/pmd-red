@@ -13,3 +13,6 @@
 #include "data/ornament/titlebg.h"
 #include "data/ornament/titleop1.h"
 #include "data/ornament/titleop2.h"
+#ifdef SKY_STORY
+#include "data/ornament/relicfragment.h"
+#endif

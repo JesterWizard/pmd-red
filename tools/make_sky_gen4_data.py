@@ -168,6 +168,16 @@ def red_constants(path: Path, prefix: str) -> dict[str, int]:
     return out
 
 
+def sprite_palette(name: str) -> int:
+    """Red overworld palette tools/convert_eos_wan_to_ax.py picked for the sprite."""
+    h = ROOT / "src" / "data" / "ax" / f"{ident(name).lower()}.h"
+    if h.exists():
+        m = re.search(r"Red overworld palette (\d+)", h.read_text().split("\n", 1)[0])
+        if m:
+            return int(m.group(1))
+    return 0
+
+
 def range_bits(r) -> int:
     """EoS WazaMoveRangeSettings -> Red's u16 targeting flags (4 nibbles)."""
     return (int(r.target) & 0xF) | ((int(r.range) & 0xF) << 4) | ((int(r.condition) & 0xF) << 8) | ((int(r.unused) & 0xF) << 12)
@@ -367,7 +377,7 @@ def main() -> int:
         if types[0] == "TYPE_NORMAL" and len(types) > 1:
             fa = FRIEND_AREA_BY_TYPE[types[1]]
         entry = {
-            "overworldPalette": 0, "bodySize": e.body_size, "movementSpeed": 1,
+            "overworldPalette": sprite_palette(eos.mon_names[mdi]), "bodySize": e.body_size, "movementSpeed": 1,
             "types": types, "friendArea": fa, "abilities": abil or ["0"],
             "shadowSize": e.shadow_size, "regenSpeed": 100, "canMove": e.can_move,
             "chanceAsleep": e.chance_spawn_asleep, "baseHP": e.base_hp,

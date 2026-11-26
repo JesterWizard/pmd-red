@@ -60,6 +60,11 @@ Riolu (with Vulpix, Meowth, Phanpy). Then:
 | 9 | m01a0701 | `d01p41a` Beach Cave Pit | The thieves give the fragment back and flee |
 | 10 | m01a0702 | `d01p11b` beach (sunset) | The Relic Fragment; "Form a team / Say no"; "And so..." |
 
+The Relic Fragment is a ground object (EoS `GROUND/g01p01a1.wan`, ornament
+`relicfragmentp`, object kind `SKY_OBJ_RELIC_FRAGMENT`): it falls on the sand
+when Zubat rams the partner and is gone when Zubat grabs it (m01a0208), and it
+lands in front of the heroes when Zubat throws it back in the Pit (m01a0701).
+
 Losing in Beach Cave plays m01a0301 on the beach ("Ouch! We didn't do too
 well...") and goes straight back in; the re-fight uses m01a0501's text.
 
@@ -230,7 +235,24 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   has ([`tools/make_sky_gen4_portraits.py`](../../tools/make_sky_gen4_portraits.py)
   → `graphics/portraits/<species>/`, built by `convert_custom_portraits.py`
   into the custom portrait archive under `SKY_STORY`).
-- **Sprites**: SPRITES_TODO
+- **Sprites**: EoS's WAN sprites converted to Red's AX format by
+  [`tools/convert_eos_wan_to_ax.py`](../../tools/convert_eos_wan_to_ax.py)
+  (`batch EOS.nds 387-445 447-492 --names <dex name file>`). AX is WAN's GBA
+  ancestor, so frames, OAM pieces, offsets, shadows and the 8 directions map
+  one to one; Red's 13 animation groups are EoS's first 13 (walk, attack,
+  kick, shoot, strike, sleep, hurt, idle, swing, double, hop, charge, rotate),
+  taken from `monster.bin` / `m_attack.bin`. Each sprite uses the closest of
+  Red's 13 shared overworld palettes (written into the header comment and read
+  back as the species' `overworldPalette`). Frames over Red's VRAM budget (16
+  tiles per body-size unit) drop their outermost effect pieces. Output:
+  `graphics/ax/mon/<species>/`, `src/data/ax/<species>.h`,
+  [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), registered as
+  `ax424`–`ax528` in `src/monster_files_table.c` (≈2.5 MB).
+  Red's cutscene animation groups 13+ (lying, getting up, ...) don't exist in
+  the converted sprites; `AxResInit` falls back to Sleep for lying (13) and
+  Idle for the rest.
+
+![Turtwig and Piplup on the beach, the Relic Fragment in Beach Cave Pit, Shellos using Mud Bomb, the fragment after the theft](images/sky_demake_gen4.png)
 
 The sky build reads species, moves, learnsets and level data from these tables
 (`LoadMonsterParameters`, `LoadWazaParameters`, `GetLvlUpEntry`); Red's
@@ -290,25 +312,33 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Story pack select, test hooks | [`Makefile`](../../Makefile) (`STORY`, `DEBUG_BOOT_EVENT`, `DEBUG_BOOT_FLOOR`) |
 | Opening scenes (gs178 groups 1–8) | [`src/data/ground/sky/sky_d01p01_scenes.h`](../../src/data/ground/sky/sky_d01p01_scenes.h) |
 | Beach Cave Pit aftermath (gs179 group 1) | [`src/data/ground/sky/ground_data_d01p02_station.h`](../../src/data/ground/sky/ground_data_d01p02_station.h) |
-| Scene order (`EVENT_M01E01A_L001`) | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
-| Zubat / Koffing / Wigglytuff / Krabby / Diglett ground actors | [`src/ground_lives.c`](../../src/ground_lives.c), [`include/sky_story.h`](../../include/sky_story.h) |
-| Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c), [`src/strings.c`](../../src/strings.c), [`src/ground_place.c`](../../src/ground_place.c) |
-| Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c), [`include/constants/cutscenes.h`](../../include/constants/cutscenes.h) |
-| Chapter title | [`src/chapter_titles.c`](../../src/chapter_titles.c) |
-| EoS map converter | [`tools/convert_eos_ground_map.py`](../../tools/convert_eos_ground_map.py) |
+| Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
+| Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
+| Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
+| Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |
+| Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
+| Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c) |
+| Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
+| Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---
 
 ## Limitations
 
-- The DS second background screen (sky panoramas, the Relic Fragment
-  close-up, lightning flashes) has no GBA equivalent and is left out; scenes
-  use the main background only.
-- The Relic Fragment is not drawn as an object; the dialogue carries it.
-- EoS music is not ported; scenes use Red tracks (Stormy Sea, Oceanic friend
-  area, There's Trouble, In the Depths of the Pit, Boss Battle).
-- The dungeon floors use a Rescue Team tileset (Lapis Cave), not EoS's Beach
-  Cave tileset.
-- The re-fight text (m01a0501) is not used; a retry replays m01a0401.
-- After the chapter, Red's team-base scene runs unchanged, so its dialogue
-  refers to Red's story ("rescue team", the fissure).
+- EoS's English title logo isn't in the ROM; the title card sets it in the
+  banner font.
+- Music uses Red's instruments; only EoS's notes are ported.
+- Sprites and the Relic Fragment use Red's 13 shared overworld palettes, so
+  some colours shift (the fragment's red mark becomes grey; Turtwig loses its
+  yellow). Converted sprites lack Red's cutscene animation groups 13+ (they
+  fall back to Sleep / Idle).
+- Gen 4 moves borrow Red effect handlers; effects Red has no mechanism for
+  (Gravity, Trick Room, Heal Block, Embargo, Shadow Force's vanish turn, ...)
+  behave like the nearest Red move.
+- Gen 4 evolutions needing Gen 4 items or move/gender conditions evolve at
+  level 40. Gen 4 Pokémon only appear in the wild in Beach Cave (Shellos); the
+  rest of Red's dungeons keep Red's spawn lists.
+- Beach Cave Pit's background has some black areas at the top where the EoS
+  picture was folded into Red's 249-chunk limit.
+- Old saves need a new game in the sky build.

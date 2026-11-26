@@ -38,9 +38,6 @@ struct SkySpawn {
 
 /* EoS mappa_s.bin, Beach Cave B1F-B4F: Shellder L1, Kabuto L1, Corsola L2,
  * Shellos L2, 25% each; Kecleon L48. */
-#ifndef MONSTER_SHELLOS
-#define MONSTER_SHELLOS MONSTER_KRABBY /* until the Gen IV species exist */
-#endif
 static const struct SkySpawn sBeachCaveSpawns[] = {
     { MONSTER_SHELLDER, 1, 2500 },
     { MONSTER_KABUTO,   1, 2500 },

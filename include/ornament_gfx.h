@@ -7,6 +7,9 @@
 #include "structs/rgb.h"
 
 extern const RGB_Struct gFlag00Pal[];
+#ifdef SKY_STORY
+extern const SiroArchive gAxRelicfragment;
+#endif
 extern const SiroArchive gAxFlag00;
 extern const RGB_Struct gFlag01Pal[];
 extern const SiroArchive gAxFlag01;

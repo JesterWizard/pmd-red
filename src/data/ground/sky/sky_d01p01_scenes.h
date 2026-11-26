@@ -515,6 +515,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     ALERT_CUE(6),
     PORTRAIT(PLACEMENT_MIDLEFT_TOP, NPC_PARTNER, EMOTION_SHOUTING),
     MSG_NPC(NPC_PARTNER, _(" Yowch!")),
+    SELECT_ENTITIES(-1, 2), /* EoS: the Relic Fragment falls on the sand */
     MOVE_RELATIVE(1024, -40, 0),
     AWAIT_CUE(5),
     TEXTBOX_CLEAR,
@@ -548,6 +549,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     ALERT_CUE(7), /* Zubat swoops down and grabs it */
     AWAIT_CUE(5),
+    ALERT_CUE(9), /* the fragment is gone */
     MSG_NPC(NPC_PARTNER, _(" Aaaah!")),
     TEXTBOX_CLEAR,
     AWAIT_CUE(5),
@@ -1064,6 +1066,21 @@ static const struct GroundLivesData s_gs178_g1_s0_lives[] = {
     } },
 };
 
+/* The Relic Fragment (object kind SKY_OBJ_RELIC_FRAGMENT): on the sand until
+ * Zubat takes it (cue 9). */
+static const struct ScriptCommand s_gs178_relic_fragment_dlg0[] = {
+    DEBUGINFO_O(__LINE__),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK),
+    AWAIT_CUE(9),
+    END_DELETE,
+};
+
+static const struct GroundObjectData s_gs178_g1_s2_objs[] = {
+    /*  0 */ { SKY_OBJ_RELIC_FRAGMENT, 0, 1, 1, {  39,  23, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs178_relic_fragment_dlg0,
+    } },
+};
+
 static const struct GroundLivesData s_gs178_g1_s1_lives[] = {
     /*  0 */ { SKY_LIVES_ZUBAT,   6,   0,   0, {  58,  21, 0, CPOS_HALFTILE }, {
         [0] = s_gs178_g1_s1_lives0_dlg0,
@@ -1112,6 +1129,7 @@ static const struct GroundScriptSector s_gs178_g0_sectors[] = {
 static const struct GroundScriptSector s_gs178_g1_sectors[] = {
     { LPARRAY(s_gs178_g1_s0_lives), 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[1], },
     { LPARRAY(s_gs178_g1_s1_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { 0,NULL, LPARRAY(s_gs178_g1_s2_objs), 0,NULL, 0,NULL, 0,NULL, },
 };
 
 static const struct GroundScriptSector s_gs178_g2_sectors[] = {

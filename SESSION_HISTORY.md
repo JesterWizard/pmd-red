@@ -669,6 +669,38 @@ Docs: [`documentation/rom_size_report.md`](documentation/rom_size_report.md),
 
 ---
 
+## 2026-11-26 — Explorers of Sky demake: EoS assets, title, Gen 4
+
+### What changed
+- Sky build (`STORY=sky`) now uses EoS assets converted from a user-supplied
+  EoS ROM: second-screen art as full-screen cutaways (`SKY_CUTAWAY`), black
+  chapter cards in EoS's banner font, EoS music on Red instruments (song ids
+  61–68), the EoS Beach Cave tileset and Beach Cave Pit room/background, boot
+  screens, title card, main-menu art and quiz music, the Relic Fragment ground
+  object, the m01a0501 re-fight text and exploration-team base dialogue. UI
+  style defaults to Sky.
+- All Gen 4 species in EoS (105 new ids 424–528; Munchlax gets EoS data) with
+  EoS stats, learnsets (for every species), level tables, portraits and
+  sprites (`tools/convert_eos_wan_to_ax.py`, WAN → AX). Gen 4 moves at their
+  EoS ids 0x1AE–0x21E with EoS data; effects/animations borrowed from Red moves
+  (`src/sky_gen4_moves.c`). Starter list adds Turtwig, Chimchar, Piplup,
+  Munchlax, Riolu; Beach Cave has Shellos.
+- Sky-build save layout: 10-bit species/move ids, 17-word species/move flag
+  arrays, adventure chunk 0x140, recruited chunk 0x4B40, `unk448` 0x5A80
+  (`tools/check_save_layout.py` checks it). Old saves need a new game.
+- Smoke test: early-capture colour threshold 16 → 8 (the EoS boot screens are
+  grey art).
+- Details: `documentation/Features/SkyDemake.md`.
+
+### Reverse
+- `make STORY=vanilla` builds none of it (and the vanilla save layout).
+- To drop Gen 4 only: remove the `#ifdef SKY_STORY` Gen 4 blocks
+  (`include/constants/monster.h`, `move_id.h`, `save.h`, `pokemon_3.h`,
+  `monster_files_table.*`, loaders in `pokemon.c` / `moves.c`) and the
+  generated `src/data/sky_gen4_data.c`, `src/monster_gfx_sky.c`.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -686,5 +718,6 @@ Docs: [`documentation/rom_size_report.md`](documentation/rom_size_report.md),
 | Chapter title cards | On (`chapter_titles`; 10 chapters from `EVENT_M01ExxA`) |
 | Spinda's Café | On (`spinda_cafe`; Recycle Shop + tickets, dance, team tables) |
 | Postgame boss recruit | Off (`boss_recruit`) |
-| UI style | Red (`ui_style`; Sky = Explorers of Sky windows) |
+| UI style | Sky (`ui_style`; Red = Rescue Team windows) |
+| Story pack | Sky (`STORY=sky`: EoS chapter 1 + Gen 4; `STORY=vanilla` for Red) |
 | Matching `make compare` | Not expected to match once assets diverge |

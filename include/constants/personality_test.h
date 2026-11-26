@@ -22,7 +22,13 @@ enum NaturePersonalities
 #define NUM_PARTNERS 10
 #define NUM_STARTERS 16
 /* Explorers casting extras (Vulpix, Meowth, Phanpy); Meowth overlaps vanilla */
+#ifdef SKY_STORY
+/* Explorers of Sky starters: Vulpix, Meowth, Phanpy + Turtwig, Chimchar,
+ * Piplup, Munchlax, Riolu. */
+#define NUM_PMD2_CASTING_STARTERS 8
+#else
 #define NUM_PMD2_CASTING_STARTERS 3
+#endif
 #define NUM_STARTERS_MAX (NUM_STARTERS + NUM_PMD2_CASTING_STARTERS)
 #define NUM_QUIZ_QUESTIONS 55
 #define MAX_ASKED_QUESTIONS 8

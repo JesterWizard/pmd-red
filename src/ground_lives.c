@@ -1,4 +1,5 @@
 #include "global.h"
+#include "personality_test2.h"
 #include "globaldata.h"
 #include "ground_lives.h"
 #include "constants/ground_map.h"
@@ -1246,6 +1247,18 @@ s32 sub_80A8C4C(s32 id_, DungeonLocation *dungLoc)
     return 0;
 }
 
+/* Explorers casting starters (gPmd2CastingStarters; more in the sky build). */
+static bool8 IsPmd2CastingStarter(s32 species)
+{
+    s32 i;
+
+    for (i = 0; i < NUM_PMD2_CASTING_STARTERS; i++) {
+        if (gPmd2CastingStarters[i] == (s16)species)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 bool8 GroundLives_IsStarterMon(s32 id_)
 {
     const s16 *arr;
@@ -1258,12 +1271,8 @@ bool8 GroundLives_IsStarterMon(s32 id_)
                 return TRUE;
             }
         }
-        if (gRuntimeConfig.pmd2_casting_starters
-            && (livesPtr->speciesId == MONSTER_VULPIX
-                || livesPtr->speciesId == MONSTER_MEOWTH
-                || livesPtr->speciesId == MONSTER_PHANPY)) {
+        if (gRuntimeConfig.pmd2_casting_starters && IsPmd2CastingStarter(livesPtr->speciesId))
             return TRUE;
-        }
     }
 
     return FALSE;
@@ -1280,12 +1289,8 @@ bool8 IsStarterMonster(s32 monsterId_)
         }
     }
 
-    if (gRuntimeConfig.pmd2_casting_starters
-        && (monsterId == MONSTER_VULPIX
-            || monsterId == MONSTER_MEOWTH
-            || monsterId == MONSTER_PHANPY)) {
+    if (gRuntimeConfig.pmd2_casting_starters && IsPmd2CastingStarter(monsterId))
         return TRUE;
-    }
 
     return FALSE;
 }

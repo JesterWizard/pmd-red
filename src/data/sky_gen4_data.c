@@ -10454,7 +10454,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameTurtwig, .category = (u8 *)sSkyCategoryTurtwig,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 8, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,
@@ -10475,7 +10475,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGrotle, .category = (u8 *)sSkyCategoryGrotle,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,
@@ -10496,7 +10496,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameTorterra, .category = (u8 *)sSkyCategoryTorterra,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_GROUND }, .movementType = 0,
@@ -10517,7 +10517,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameChimchar, .category = (u8 *)sSkyCategoryChimchar,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_FIRE, TYPE_NONE }, .movementType = MOVEMENT_TYPE_LAVA,
@@ -10580,7 +10580,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNamePiplup, .category = (u8 *)sSkyCategoryPiplup,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 9, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -10601,7 +10601,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNamePrinplup, .category = (u8 *)sSkyCategoryPrinplup,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -10622,7 +10622,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameEmpoleon, .category = (u8 *)sSkyCategoryEmpoleon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 9, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_STEEL }, .movementType = MOVEMENT_TYPE_WATER,
@@ -10643,7 +10643,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameStarly, .category = (u8 *)sSkyCategoryStarly,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_FLYING }, .movementType = 0,
@@ -10664,7 +10664,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameStaravia, .category = (u8 *)sSkyCategoryStaravia,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_FLYING }, .movementType = 0,
@@ -10685,7 +10685,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameStaraptor, .category = (u8 *)sSkyCategoryStaraptor,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_FLYING }, .movementType = 0,
@@ -10706,7 +10706,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBidoof, .category = (u8 *)sSkyCategoryBidoof,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -10727,7 +10727,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBibarel, .category = (u8 *)sSkyCategoryBibarel,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_WATER }, .movementType = MOVEMENT_TYPE_WATER,
@@ -10748,7 +10748,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameKricketot, .category = (u8 *)sSkyCategoryKricketot,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_NONE }, .movementType = 0,
@@ -10769,7 +10769,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameKricketune, .category = (u8 *)sSkyCategoryKricketune,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_NONE }, .movementType = 0,
@@ -10811,7 +10811,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameLuxio, .category = (u8 *)sSkyCategoryLuxio,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ELECTRIC, TYPE_NONE }, .movementType = 0,
@@ -10832,7 +10832,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameLuxray, .category = (u8 *)sSkyCategoryLuxray,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ELECTRIC, TYPE_NONE }, .movementType = 0,
@@ -10853,7 +10853,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBudew, .category = (u8 *)sSkyCategoryBudew,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_POISON }, .movementType = 0,
@@ -10874,7 +10874,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameRoserade, .category = (u8 *)sSkyCategoryRoserade,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_POISON }, .movementType = 0,
@@ -10895,7 +10895,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameCranidos, .category = (u8 *)sSkyCategoryCranidos,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ROCK, TYPE_NONE }, .movementType = 0,
@@ -10916,7 +10916,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameRampardos, .category = (u8 *)sSkyCategoryRampardos,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ROCK, TYPE_NONE }, .movementType = 0,
@@ -10937,7 +10937,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameShieldon, .category = (u8 *)sSkyCategoryShieldon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ROCK, TYPE_STEEL }, .movementType = 0,
@@ -10958,7 +10958,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBastiodon, .category = (u8 *)sSkyCategoryBastiodon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ROCK, TYPE_STEEL }, .movementType = 0,
@@ -10979,7 +10979,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBurmy, .category = (u8 *)sSkyCategoryBurmy,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_NONE }, .movementType = 0,
@@ -11000,7 +11000,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameWormadam, .category = (u8 *)sSkyCategoryWormadam,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_GROUND }, .movementType = 0,
@@ -11021,7 +11021,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameMothim, .category = (u8 *)sSkyCategoryMothim,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11042,7 +11042,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameCombee, .category = (u8 *)sSkyCategoryCombee,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 12, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11063,7 +11063,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameVespiquen, .category = (u8 *)sSkyCategoryVespiquen,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11084,7 +11084,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNamePachirisu, .category = (u8 *)sSkyCategoryPachirisu,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ELECTRIC, TYPE_NONE }, .movementType = 0,
@@ -11105,7 +11105,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBuizel, .category = (u8 *)sSkyCategoryBuizel,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 4, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -11126,7 +11126,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameFloatzel, .category = (u8 *)sSkyCategoryFloatzel,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 4, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -11147,7 +11147,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameCherubi, .category = (u8 *)sSkyCategoryCherubi,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 10, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,
@@ -11168,7 +11168,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameCherrim, .category = (u8 *)sSkyCategoryCherrim,
-        .overworldPalette = 0, .bodySize = 2,
+        .overworldPalette = 10, .bodySize = 2,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,
@@ -11189,7 +11189,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameShellos, .category = (u8 *)sSkyCategoryShellos,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -11210,7 +11210,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGastrodon, .category = (u8 *)sSkyCategoryGastrodon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_GROUND }, .movementType = MOVEMENT_TYPE_WATER,
@@ -11231,7 +11231,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameAmbipom, .category = (u8 *)sSkyCategoryAmbipom,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 7, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -11252,7 +11252,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameDrifloon, .category = (u8 *)sSkyCategoryDrifloon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GHOST, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11273,7 +11273,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameDrifblim, .category = (u8 *)sSkyCategoryDrifblim,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GHOST, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11294,7 +11294,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBuneary, .category = (u8 *)sSkyCategoryBuneary,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 4, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -11315,7 +11315,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameLopunny, .category = (u8 *)sSkyCategoryLopunny,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 4, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -11336,7 +11336,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameMismagius, .category = (u8 *)sSkyCategoryMismagius,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 7, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GHOST, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WALL,
@@ -11357,7 +11357,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameHonchkrow, .category = (u8 *)sSkyCategoryHonchkrow,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 11, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_DARK, TYPE_FLYING }, .movementType = 0,
@@ -11378,7 +11378,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGlameow, .category = (u8 *)sSkyCategoryGlameow,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 7, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -11399,7 +11399,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNamePurugly, .category = (u8 *)sSkyCategoryPurugly,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 7, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -11420,7 +11420,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameChingling, .category = (u8 *)sSkyCategoryChingling,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_PSYCHIC, TYPE_NONE }, .movementType = 0,
@@ -11441,7 +11441,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameStunky, .category = (u8 *)sSkyCategoryStunky,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 11, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_POISON, TYPE_DARK }, .movementType = 0,
@@ -11462,7 +11462,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameSkuntank, .category = (u8 *)sSkyCategorySkuntank,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 11, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_POISON, TYPE_DARK }, .movementType = 0,
@@ -11483,7 +11483,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBronzor, .category = (u8 *)sSkyCategoryBronzor,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_STEEL, TYPE_PSYCHIC }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11504,7 +11504,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBronzong, .category = (u8 *)sSkyCategoryBronzong,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_STEEL, TYPE_PSYCHIC }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11525,7 +11525,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameBonsly, .category = (u8 *)sSkyCategoryBonsly,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 8, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ROCK, TYPE_NONE }, .movementType = 0,
@@ -11546,7 +11546,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameMimeJr, .category = (u8 *)sSkyCategoryMimeJr,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 11, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_PSYCHIC, TYPE_NONE }, .movementType = 0,
@@ -11567,7 +11567,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameHappiny, .category = (u8 *)sSkyCategoryHappiny,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 11, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -11588,7 +11588,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameChatot, .category = (u8 *)sSkyCategoryChatot,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_FLYING }, .movementType = 0,
@@ -11609,7 +11609,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameSpiritomb, .category = (u8 *)sSkyCategorySpiritomb,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 10, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GHOST, TYPE_DARK }, .movementType = 0,
@@ -11630,7 +11630,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGible, .category = (u8 *)sSkyCategoryGible,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_DRAGON, TYPE_GROUND }, .movementType = 0,
@@ -11651,7 +11651,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGabite, .category = (u8 *)sSkyCategoryGabite,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_DRAGON, TYPE_GROUND }, .movementType = 0,
@@ -11672,7 +11672,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGarchomp, .category = (u8 *)sSkyCategoryGarchomp,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 9, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_DRAGON, TYPE_GROUND }, .movementType = 0,
@@ -11693,7 +11693,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameRiolu, .category = (u8 *)sSkyCategoryRiolu,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_FIGHTING, TYPE_NONE }, .movementType = 0,
@@ -11714,7 +11714,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameLucario, .category = (u8 *)sSkyCategoryLucario,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_FIGHTING, TYPE_STEEL }, .movementType = 0,
@@ -11735,7 +11735,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameHippopotas, .category = (u8 *)sSkyCategoryHippopotas,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 4, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GROUND, TYPE_NONE }, .movementType = 0,
@@ -11756,7 +11756,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameHippowdon, .category = (u8 *)sSkyCategoryHippowdon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GROUND, TYPE_NONE }, .movementType = 0,
@@ -11777,7 +11777,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameSkorupi, .category = (u8 *)sSkyCategorySkorupi,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 9, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_POISON, TYPE_BUG }, .movementType = 0,
@@ -11798,7 +11798,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameDrapion, .category = (u8 *)sSkyCategoryDrapion,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 7, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_POISON, TYPE_DARK }, .movementType = 0,
@@ -11819,7 +11819,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameCroagunk, .category = (u8 *)sSkyCategoryCroagunk,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_POISON, TYPE_FIGHTING }, .movementType = 0,
@@ -11840,7 +11840,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameToxicroak, .category = (u8 *)sSkyCategoryToxicroak,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_POISON, TYPE_FIGHTING }, .movementType = 0,
@@ -11861,7 +11861,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameCarnivine, .category = (u8 *)sSkyCategoryCarnivine,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11882,7 +11882,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameFinneon, .category = (u8 *)sSkyCategoryFinneon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -11903,7 +11903,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameLumineon, .category = (u8 *)sSkyCategoryLumineon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -11924,7 +11924,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameMantyke, .category = (u8 *)sSkyCategoryMantyke,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -11945,7 +11945,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameSnover, .category = (u8 *)sSkyCategorySnover,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_ICE }, .movementType = 0,
@@ -11966,7 +11966,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameAbomasnow, .category = (u8 *)sSkyCategoryAbomasnow,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_ICE }, .movementType = 0,
@@ -11987,7 +11987,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameWeavile, .category = (u8 *)sSkyCategoryWeavile,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_DARK, TYPE_ICE }, .movementType = 0,
@@ -12008,7 +12008,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameMagnezone, .category = (u8 *)sSkyCategoryMagnezone,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ELECTRIC, TYPE_STEEL }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12029,7 +12029,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameLickilicky, .category = (u8 *)sSkyCategoryLickilicky,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 10, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -12050,7 +12050,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameRhyperior, .category = (u8 *)sSkyCategoryRhyperior,
-        .overworldPalette = 0, .bodySize = 2,
+        .overworldPalette = 6, .bodySize = 2,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GROUND, TYPE_ROCK }, .movementType = MOVEMENT_TYPE_LAVA,
@@ -12071,7 +12071,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameTangrowth, .category = (u8 *)sSkyCategoryTangrowth,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,
@@ -12092,7 +12092,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameElectivire, .category = (u8 *)sSkyCategoryElectivire,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ELECTRIC, TYPE_NONE }, .movementType = 0,
@@ -12113,7 +12113,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameMagmortar, .category = (u8 *)sSkyCategoryMagmortar,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_FIRE, TYPE_NONE }, .movementType = MOVEMENT_TYPE_LAVA,
@@ -12134,7 +12134,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameTogekiss, .category = (u8 *)sSkyCategoryTogekiss,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12155,7 +12155,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameYanmega, .category = (u8 *)sSkyCategoryYanmega,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 3, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_BUG, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12176,7 +12176,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameLeafeon, .category = (u8 *)sSkyCategoryLeafeon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,
@@ -12197,7 +12197,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGlaceon, .category = (u8 *)sSkyCategoryGlaceon,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ICE, TYPE_NONE }, .movementType = 0,
@@ -12218,7 +12218,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGliscor, .category = (u8 *)sSkyCategoryGliscor,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 7, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GROUND, TYPE_FLYING }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12239,7 +12239,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameMamoswine, .category = (u8 *)sSkyCategoryMamoswine,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ICE, TYPE_GROUND }, .movementType = 0,
@@ -12260,7 +12260,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNamePorygonZ, .category = (u8 *)sSkyCategoryPorygonZ,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 1, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -12281,7 +12281,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGallade, .category = (u8 *)sSkyCategoryGallade,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 10, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_PSYCHIC, TYPE_FIGHTING }, .movementType = 0,
@@ -12302,7 +12302,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameProbopass, .category = (u8 *)sSkyCategoryProbopass,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 1, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ROCK, TYPE_STEEL }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12323,7 +12323,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameDusknoir, .category = (u8 *)sSkyCategoryDusknoir,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GHOST, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WALL,
@@ -12344,7 +12344,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameFroslass, .category = (u8 *)sSkyCategoryFroslass,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 2, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ICE, TYPE_GHOST }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12365,7 +12365,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameRotom, .category = (u8 *)sSkyCategoryRotom,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_ELECTRIC, TYPE_GHOST }, .movementType = MOVEMENT_TYPE_WALL,
@@ -12428,7 +12428,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameAzelf, .category = (u8 *)sSkyCategoryAzelf,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 5, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_PSYCHIC, TYPE_NONE }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12449,7 +12449,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameDialga, .category = (u8 *)sSkyCategoryDialga,
-        .overworldPalette = 0, .bodySize = 4,
+        .overworldPalette = 9, .bodySize = 4,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_STEEL, TYPE_DRAGON }, .movementType = 0,
@@ -12470,7 +12470,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNamePalkia, .category = (u8 *)sSkyCategoryPalkia,
-        .overworldPalette = 0, .bodySize = 4,
+        .overworldPalette = 10, .bodySize = 4,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_DRAGON }, .movementType = MOVEMENT_TYPE_WATER,
@@ -12491,7 +12491,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameHeatran, .category = (u8 *)sSkyCategoryHeatran,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 6, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_FIRE, TYPE_STEEL }, .movementType = MOVEMENT_TYPE_LAVA,
@@ -12512,7 +12512,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameRegigigas, .category = (u8 *)sSkyCategoryRegigigas,
-        .overworldPalette = 0, .bodySize = 4,
+        .overworldPalette = 3, .bodySize = 4,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_NORMAL, TYPE_NONE }, .movementType = 0,
@@ -12533,7 +12533,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameGiratina, .category = (u8 *)sSkyCategoryGiratina,
-        .overworldPalette = 0, .bodySize = 4,
+        .overworldPalette = 5, .bodySize = 4,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GHOST, TYPE_DRAGON }, .movementType = 0,
@@ -12554,7 +12554,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameCresselia, .category = (u8 *)sSkyCategoryCresselia,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 7, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_PSYCHIC, TYPE_NONE }, .movementType = MOVEMENT_TYPE_CHASM,
@@ -12575,7 +12575,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNamePhione, .category = (u8 *)sSkyCategoryPhione,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 1, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_WATER, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WATER,
@@ -12617,7 +12617,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameDarkrai, .category = (u8 *)sSkyCategoryDarkrai,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 11, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_DARK, TYPE_NONE }, .movementType = MOVEMENT_TYPE_WALL,
@@ -12638,7 +12638,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)sSkyNameShaymin, .category = (u8 *)sSkyCategoryShaymin,
-        .overworldPalette = 0, .bodySize = 1,
+        .overworldPalette = 10, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,

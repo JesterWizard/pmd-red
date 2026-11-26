@@ -115,6 +115,10 @@ const struct GroundObjectKind gGroundObjectKinds[] = {
     /* Shared stairs01c palette (0x100|35) — one extend slot for stairs+sign. */
     { 1, 0x123, "stairs01p" },
     { 1, 0x123, "sign01p" },
+#ifdef SKY_STORY
+    /* Explorers of Sky demake: the Relic Fragment (EoS GROUND/g01p01a1.wan), shared palette 5. */
+    { 1, 0x005, "relicfragmentp" },
+#endif
     { -1, 0x000, NULL }
 };
 

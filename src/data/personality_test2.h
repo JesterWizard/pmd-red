@@ -39,6 +39,13 @@ const s16 gPmd2CastingStarters[NUM_PMD2_CASTING_STARTERS] =
     MONSTER_VULPIX,
     MONSTER_MEOWTH,
     MONSTER_PHANPY,
+#ifdef SKY_STORY
+    MONSTER_TURTWIG,
+    MONSTER_CHIMCHAR,
+    MONSTER_PIPLUP,
+    MONSTER_MUNCHLAX,
+    MONSTER_RIOLU,
+#endif
 };
 
 const WindowTemplate gUnknown_80F4278 =

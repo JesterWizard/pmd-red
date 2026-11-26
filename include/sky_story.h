@@ -10,6 +10,9 @@
 /* Extra ground-script NPC kinds (GroundLivesData.kind), appended after the
  * 147 vanilla entries of gGroundLivesTypeData_811E63C. */
 #define SKY_LIVES_KIND_FIRST 147
+/* Ground object kind of the Relic Fragment (src/ground_sprite_data.c). */
+#define SKY_OBJ_RELIC_FRAGMENT 69
+
 #define SKY_LIVES_ZUBAT      147
 #define SKY_LIVES_KOFFING    148
 #define SKY_LIVES_WIGGLYTUFF 149

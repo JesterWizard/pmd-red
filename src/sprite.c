@@ -576,6 +576,13 @@ void AxResInit(axdata *a0, axmain *a1, u32 a2, u32 direction, u32 a4, u32 sprite
     a0->sub1.unkC = 0;
     a0->sub1.unk10 = 0;
     a0->totalFrames = 0;
+#ifdef SKY_STORY
+    /* Sprites converted from Explorers of Sky have EoS's 13 base groups;
+     * Red's cutscene groups (13+: lying, getting up, ...) fall back to the
+     * nearest base one: lying -> Sleep (5), anything else -> Idle (7). */
+    if (a2 >= a1->animCount)
+        a2 = (a2 == 13 && a1->animCount > 5) ? 5 : (a1->animCount > 7 ? 7 : 0);
+#endif
     a0->nextAnimData = ResolveAxAnimData(a0, a1->animations[a2][direction]);
     a0->activeAnimData = a0->nextAnimData;
     a0->poseData = a1->poses;
