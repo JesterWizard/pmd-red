@@ -108,6 +108,19 @@ u16 SkyStory_MoveAnimId(u16 moveId);
 extern const SkyCutawayArt gSkyTitleArt[SKY_TITLE_ART_COUNT];
 void SkyStory_ShowCutaway_Async(s32 id, s32 frames);
 
+/* Krabby bubbles (src/sky_bubbles.c): SKY_BUBBLES(mode) in scripts. */
+enum {
+    SKY_BUBBLES_OFF,
+    SKY_BUBBLES_KRABBY_SAND,
+    SKY_BUBBLES_KRABBY_SUNSET,
+    SKY_BUBBLES_BEACH,
+};
+void SkyBubbles_Start(s32 mode);
+bool8 SkyBubbles_Active(void);
+void SkyBubbles_SetBrightness(s32 brightness);
+void SkyBubbles_Draw(void);
+void SkyBubbles_DrawCutaway(void);
+
 /* Beach Cave Pit boss cutscene (src/dungeon_cutscene_beach_cave.c). */
 bool8 SkyStory_TrySetBeachCavePitCutscene(void);
 void SkyStory_BeachCavePitSetup(void);

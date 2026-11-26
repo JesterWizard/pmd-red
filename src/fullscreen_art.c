@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sky_story.h"
 #include "fullscreen_art.h"
 #include "bg_control.h"
 #include "bg_palette_buffer.h"
@@ -22,6 +23,9 @@
 
 void RunFullscreenArtFrame(void)
 {
+#ifdef SKY_STORY
+    SkyBubbles_DrawCutaway();
+#endif
     CopyWindowBgBuffer(NULL, COPY_WINDOW_BG_BUFFER_WIN0);
     nullsub_8(FALSE);
     sub_8005180();
@@ -44,6 +48,9 @@ void SetFullscreenArtBrightness(const RGB_Struct *pal, s32 brightness)
 
     for (i = 0; i < 240; i++)
         SetBGPaletteBufferColorRGB(i, &pal[i], brightness, NULL);
+#ifdef SKY_STORY
+    SkyBubbles_SetBrightness(brightness);
+#endif
 }
 
 void LoadFullscreenArt(const u8 *at4pn)

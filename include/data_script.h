@@ -194,6 +194,7 @@
 #define SPECIAL_PROCESS(kind, a)        SPECIAL_PROCESS_EX(kind, a, 0)
 // Explorers of Sky demake (SKY_STORY): full-screen cutaway, see sky_story.h.
 #define SKY_CUTAWAY(id, frames)         SPECIAL_PROCESS_EX(0x60, id, frames)
+#define SKY_BUBBLES(mode)               SPECIAL_PROCESS_EX(0x61, mode, 0)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

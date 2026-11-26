@@ -19,3 +19,7 @@ graphics/custom/thought_bubbles/%/thought.4bpp: graphics/custom/thought_bubbles/
 	$(GBAGFX) $< $$tmp_tiles; \
 	python3 tools/repack_thought_bubble_1d.py $$tmp_tiles $@; \
 	rm -f $$tmp_tiles
+
+# Explorers of Sky demake bubbles (EoS d01p11b1 bubbles, 16x16 cells stacked).
+graphics/custom/sky_bubbles/bubbles.gbapal: graphics/custom/sky_bubbles/bubbles.png
+	$(GBAGFX) $< $@

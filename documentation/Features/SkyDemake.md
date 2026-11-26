@@ -73,6 +73,14 @@ bottom portraits kept just above the box, and a full box clears for the next
 page instead of scrolling (`sSkyTextbox` in
 [`src/string_format.c`](../../src/string_format.c)).
 
+The Krabby bubbles (EoS's `supervision_SpecialActing` 4/5 effect) drift
+over the two Krabby scenes, the sunset beach and the sunset-sea cutaway:
+`SKY_BUBBLES(mode)` in scripts, OBJ sprites captured from EoS's OBJ layer
+([`src/sky_bubbles.c`](../../src/sky_bubbles.c),
+`graphics/custom/sky_bubbles/`). Bubbles hide behind open windows, since EoS
+shows text on the other screen. Converted maps keep EoS's palette animations
+(the sea shimmer, the sunset glitter, the Pit water).
+
 The DS second screen has no GBA equivalent, so its art (sky panoramas, the
 storm cliff, the Relic Fragment close-up, the animated sunset sea) is shown as
 full-screen cutaways in the middle of scenes (`SKY_CUTAWAY(id, frames)`,

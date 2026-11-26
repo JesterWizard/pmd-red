@@ -324,10 +324,12 @@ static const struct ScriptCommand s_gs178_g7_s0_station_sref_script[] = {
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_KRABBY_BUBBLES),
     SKY_CUTAWAY(SKY_CUTAWAY_SKY_DUSK, 150), /* EoS m01a0201: the sky at dusk */
+    SKY_BUBBLES(SKY_BUBBLES_KRABBY_SAND), /* EoS supervision_SpecialActing(4, -4, 8) */
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
     WAIT(150),
     FADE_OUT(TRUE, 30),
+    SKY_BUBBLES(SKY_BUBBLES_OFF),
     WAIT(30),
     RET,
 };
@@ -340,10 +342,12 @@ static const struct ScriptCommand s_gs178_g8_s0_station_sref_script[] = {
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_KRABBY_SUNSET),
     BGM_FADEIN(30, MUS_SKY_ON_THE_BEACH_AT_DUSK), /* EoS m01a0203 */
+    SKY_BUBBLES(SKY_BUBBLES_KRABBY_SUNSET), /* EoS supervision_SpecialActing(5, -2, 4) */
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
     WAIT(150),
     FADE_OUT(TRUE, 30),
+    SKY_BUBBLES(SKY_BUBBLES_OFF),
     WAIT(30),
     RET,
 };
@@ -362,9 +366,11 @@ static const struct ScriptCommand s_gs178_g1_s0_station_sref_script[] = {
     SELECT_MAP(MAP_SKY_BEACH_DUSK),
     FADE2_IN(TRUE, 0),
     SELECT_ENTITIES(-1, 0),
+    SKY_BUBBLES(SKY_BUBBLES_BEACH), /* the Krabby's bubbles drift over the beach */
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
+    SKY_BUBBLES(SKY_BUBBLES_OFF),
     BGM_FADEOUT(60),
     NEXT_DUNGEON(30, SCRIPT_DUNGEON_TINY_WOODS),
     RET,

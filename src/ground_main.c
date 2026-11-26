@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sky_story.h"
 #include "globaldata.h"
 #include "constants/dungeon.h"
 #include "constants/move_id.h"
@@ -382,12 +383,18 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
             sub_809B638();
             nullsub_106();
             ThoughtBubble_Draw();
+#ifdef SKY_STORY
+            SkyBubbles_Draw();
+#endif
             sub_80A73EC();
             sub_8099750();
             DoScheduledMemCopies();
         }
 
         GroundMap_Reset();
+#ifdef SKY_STORY
+        SkyBubbles_Start(SKY_BUBBLES_OFF);
+#endif
         scriptID = -1;
     }
 

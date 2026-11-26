@@ -4218,6 +4218,9 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
         case 0x60:
             SkyStory_ShowCutaway_Async((s32)r2, r3);
             return 0;
+        case 0x61:
+            SkyBubbles_Start((s32)r2);
+            return 0;
 #endif
         case 0x4B: {
             static const u8 sTrieloName[] = _("Trielo");
