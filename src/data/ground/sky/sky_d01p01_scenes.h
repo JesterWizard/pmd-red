@@ -447,6 +447,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     CALL_SCRIPT(INIT_SLEEP_FUNC),
     UPDATE_NAME(UPDATE_NAME_SPEECH_SELF, NPC_PLAYER, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
+    SET_OBJ_FLAGS(0x80000), /* EoS SetOutputAttribute(2): over the beach rocks */
     WAIT_FADE,
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, NPC_PLAYER, EMOTION_NORMAL),
     PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, NPC_PARTNER, EMOTION_NORMAL),
@@ -639,6 +640,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     MSG_NPC(NPC_ZUBAT, _(" See you around, chicken.{WAIT_PRESS}\nHeh-heh-heh.")),
     TEXTBOX_CLEAR,
     BGM_FADEOUT(60),
+    SKY_CAMERA_MOVE_X(-44, 128), /* EoS: the camera drifts to m10 (33, 22) */
     ALERT_CUE(7), /* they make off toward Beach Cave */
     ALERT_CUE(8),
     WAIT(20),
@@ -721,7 +723,11 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    WALK_RELATIVE(768, -100, 0), /* EoS m4 (39, 21.5): 4 px above the hero */
+    WALK_RELATIVE(768, -104, 0), /* EoS m4 (39, 21.5): 4 px above the hero */
+    /* EoS: the camera stops at m3 (38.5, 22) instead of following the
+     * partner, so the partner's step back later doesn't move the view. */
+    SKY_CAMERA_SET(192, 100),
+    SKY_CAMERA_MOVE_X(-4, 128),
     WAIT(10),
     CALL_SCRIPT(JUMP_ANGRY_FUNC),
     ALERT_CUE(5),
