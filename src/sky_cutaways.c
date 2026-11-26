@@ -28,6 +28,7 @@
 #include "music_util.h"
 #include "random.h"
 #include "sprite.h"
+#include "structs/sprite_oam.h"
 #include "text_2.h"
 #include "text_3.h"
 #include "window_buffer.h"
@@ -86,7 +87,7 @@ static u16 ScrollSlot(s32 row, s32 col)
     return n < SCROLL_MAIN_SLOTS ? ART_8BPP_TILE_BASE + n : 32 + (n - SCROLL_MAIN_SLOTS);
 }
 
-static void ScrollLoadRow(const u8 *tiles, s32 row)
+void SkyCutaway_LoadScrollRow(const u8 *tiles, s32 row)
 {
     s32 c;
 
@@ -207,7 +208,7 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
     /* BG0-BG2 are unused during the pan; their VRAM takes the cover. */
     SetBGOBJEnableFlags(0x7);
     for (r = 0; r < SCROLL_RING; r++)
-        ScrollLoadRow(tiles, r);
+        SkyCutaway_LoadScrollRow(tiles, r);
     loaded = SCROLL_RING - 1;
     SetBG3RegOffsets(0, 0);
     if (fadeIn) {
@@ -233,7 +234,7 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
         if (y > dist)
             y = dist;
         while (loaded < (y + 159) / 8 && loaded < rows - 1)
-            ScrollLoadRow(tiles, ++loaded);
+            SkyCutaway_LoadScrollRow(tiles, ++loaded);
         SetBG3RegOffsets(0, y);
         SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist + y);
         RunFullscreenArtFrame();
@@ -321,28 +322,78 @@ static void ShowBootScreens(void)
     }
 }
 
+/* "Press START" is OBJ tiles 0.. with OBJ palette 0 (the title card is BG3
+ * art only), so the blink leaves the picture's palette and tiles alone. */
+#define PRESS_START_TILE 0
+#define PRESS_START_PAL 0
+
+static void SetPressStartBrightness(s32 brightness)
+{
+    s32 i;
+
+    for (i = 0; i < 16; i++) {
+        u16 c = gSkyPressStartPal[i];
+        RGB_Struct rgb = { (c & 0x1F) << 3, ((c >> 5) & 0x1F) << 3, ((c >> 10) & 0x1F) << 3, 0 };
+        SetBGPaletteBufferColorRGB(256 + PRESS_START_PAL * 16 + i, &rgb, brightness, NULL);
+    }
+}
+
+static void DrawPressStart(void)
+{
+    s32 i;
+
+    for (i = 0; i < gSkyPressStartPos[2]; i++) {
+        SpriteOAM sprite;
+
+        sprite.attrib1 = 0;
+        sprite.attrib2 = 0;
+        sprite.attrib3 = 0;
+        sprite.unk6 = 0;
+        SpriteSetShape(&sprite, 1); /* horizontal */
+        SpriteSetSize(&sprite, 3);  /* 64x32 */
+        SpriteSetPalNum(&sprite, PRESS_START_PAL);
+        SpriteSetPriority(&sprite, 0);
+        SpriteSetX(&sprite, gSkyPressStartPos[0] + 64 * i);
+        SpriteSetY(&sprite, gSkyPressStartPos[1]);
+        SpriteSetTileNum(&sprite, PRESS_START_TILE + 32 * i);
+        AddSprite(&sprite, 0, NULL, NULL);
+    }
+}
+
+static void TitleFade(const SkyCutawayArt *art, bool8 in, bool8 shown)
+{
+    s32 b;
+
+    for (b = 0; b <= FADE_STEPS; b++) {
+        SetFullscreenArtBrightness((const RGB_Struct *)art->pal, in ? b : FADE_STEPS - b);
+        SetPressStartBrightness(in ? b : FADE_STEPS - b);
+        if (shown)
+            DrawPressStart();
+        RunFullscreenArtFrame();
+    }
+}
+
 /* EoS title: logo over the sky, "Press START" blinking. START or A (or the
  * time running out, like Red's title) goes on to the main menu. */
 static void ShowTitleScreen(s32 frames)
 {
-    const SkyCutawayArt *press = &gSkyTitleArt[SKY_TITLE_PRESS_START];
-    const SkyCutawayArt *blank = &gSkyTitleArt[SKY_TITLE_BLANK];
+    const SkyCutawayArt *card = &gSkyTitleArt[SKY_TITLE_CARD];
     bool8 shown = TRUE;
     s32 i;
 
-    LoadFullscreenArt(press->at4px);
-    Fade(press, TRUE);
+    LoadFullscreenArt(card->at4px);
+    CpuCopy((u8 *)OBJ_VRAM0 + PRESS_START_TILE * 32, gSkyPressStartGfx, gSkyPressStartPos[2] * 32 * 32);
+    TitleFade(card, TRUE, shown);
     for (i = 0; i < frames; i++) {
-        if (i % 32 == 31) {
+        if (i % 32 == 31)
             shown = !shown;
-            SwapArt(shown ? press : blank);
-        }
-        else
-            RunFullscreenArtFrame();
+        if (shown)
+            DrawPressStart();
+        RunFullscreenArtFrame();
         if (gRealInputs.pressed & (A_BUTTON | START_BUTTON))
             break;
     }
-    Fade(shown ? press : blank, FALSE);
+    TitleFade(card, FALSE, shown);
     UnloadFullscreenArt();
 }
 
@@ -356,10 +407,12 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
 
     if (frames <= 0)
         frames = 120;
-    if (id == SKY_CUTAWAY_BOOT_SCREENS || id == SKY_CUTAWAY_TITLE_SCREEN) {
+    if (id == SKY_CUTAWAY_BOOT_SCREENS || id == SKY_CUTAWAY_TITLE_SCREEN || id == SKY_CUTAWAY_OPENING) {
         /* Nothing to go back to: leave BG2/BG3 hidden and the screen black. */
         if (id == SKY_CUTAWAY_BOOT_SCREENS)
             ShowBootScreens();
+        else if (id == SKY_CUTAWAY_OPENING)
+            SkyOpening_Play(); /* src/sky_opening.c */
         else
             ShowTitleScreen(frames);
         SetBGOBJEnableFlags((~savedLayers & 0x1F) | 0xC);

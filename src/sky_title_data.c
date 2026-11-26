@@ -7,15 +7,15 @@ static const u8 sNintendoGfx[] = INCBIN_U8("graphics/custom/sky_title/nintendo.a
 static const u8 sNintendoPal[] = INCBIN_U8("graphics/custom/sky_title/nintendo.pal");
 static const u8 sEsrbGfx[] = INCBIN_U8("graphics/custom/sky_title/esrb.at4px");
 static const u8 sEsrbPal[] = INCBIN_U8("graphics/custom/sky_title/esrb.pal");
-static const u8 sTitlePressGfx[] = INCBIN_U8("graphics/custom/sky_title/title_press.at4px");
-static const u8 sTitlePressPal[] = INCBIN_U8("graphics/custom/sky_title/title_press.pal");
-static const u8 sTitleBlankGfx[] = INCBIN_U8("graphics/custom/sky_title/title_blank.at4px");
-static const u8 sTitleBlankPal[] = INCBIN_U8("graphics/custom/sky_title/title_blank.pal");
+static const u8 sTitleGfx[] = INCBIN_U8("graphics/custom/sky_title/title.at4px");
+static const u8 sTitlePal[] = INCBIN_U8("graphics/custom/sky_title/title.pal");
 
 const SkyCutawayArt gSkyTitleArt[SKY_TITLE_ART_COUNT] = {
     { sNintendoGfx, sNintendoPal },
     { sEsrbGfx, sEsrbPal },
-    { sTitlePressGfx, sTitlePressPal },
-    { sTitleBlankGfx, sTitleBlankPal },
+    { sTitleGfx, sTitlePal },
 };
+const u8 gSkyPressStartGfx[] = INCBIN_U8("graphics/custom/sky_title/press_start.4bpp");
+const u16 gSkyPressStartPal[] = INCBIN_U16("graphics/custom/sky_title/press_start.gbapal");
+const u8 gSkyPressStartPos[3] = { 24, 128, 3 }; /* x, y, 64x32 pieces */
 #endif

@@ -195,7 +195,7 @@ C_SRCS_IN := $(wildcard $(C_SUBDIR)/*.c $(C_SUBDIR)/*/*.c $(C_SUBDIR)/*/*/*.c)
 C_SOURCES := $(foreach src,$(C_SRCS_IN),$(if $(findstring .inc.c,$(src)),,$(src)))
 # Sky-only C files added after the vanilla ROM was pinned: even an empty object
 # moves the vanilla link, so the other builds leave them out.
-SKY_ONLY_C_SOURCES := $(C_SUBDIR)/sky_storm.c $(C_SUBDIR)/sky_dungeon_talk.c
+SKY_ONLY_C_SOURCES := $(C_SUBDIR)/sky_storm.c $(C_SUBDIR)/sky_dungeon_talk.c $(C_SUBDIR)/sky_opening.c
 ifneq ($(GROUND_STORY_DIR),sky)
   C_SOURCES := $(filter-out $(SKY_ONLY_C_SOURCES),$(C_SOURCES))
 endif

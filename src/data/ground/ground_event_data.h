@@ -1844,8 +1844,8 @@ static const struct ScriptCommand s_script_DEMO_02[] = { /* 0x81250d0 */
 static const struct ScriptCommand s_script_DEMO_03[] = { /* 0x8125110 */
     DEBUGINFO_O(1841),
 #ifdef SKY_STORY
-    /* Explorers of Sky title screen instead of Red's intro and logo. */
-    BGM_SWITCH(MUS_SKY_TITLE_THEME),
+    /* EoS's opening (Shaymin) and title instead of Red's intro and logo (same line count: #line). */
+    SKY_CUTAWAY(SKY_CUTAWAY_OPENING, 0), BGM_SWITCH(MUS_SKY_TITLE_THEME),
     SKY_CUTAWAY(SKY_CUTAWAY_TITLE_SCREEN, 3600),
     UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1), /* as Red's title (gs224 g3): no DEMO_04 */
     BGM_FADEOUT(30),
