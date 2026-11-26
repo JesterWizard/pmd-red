@@ -705,7 +705,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(JUMP_SURPRISE_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6),
-    WALK_RELATIVE(768, -100, 0),
+    WALK_RELATIVE(768, -100, -4), /* level with the hero (y 21.5 tiles) */
     WAIT(10),
     CALL_SCRIPT(JUMP_ANGRY_FUNC),
     ALERT_CUE(5),
