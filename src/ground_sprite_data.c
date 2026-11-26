@@ -40,6 +40,10 @@ const char *const gUnknown_81178F4[] = {
     "stoneimc",
     "stairs01c",
     "sign01c",
+#ifdef SKY_STORY
+    "totempole1c", /* 37: 0x125 */
+    "totempole2c", /* 38: 0x126 */
+#endif
     NULL
 };
 
@@ -118,6 +122,10 @@ const struct GroundObjectKind gGroundObjectKinds[] = {
 #ifdef SKY_STORY
     /* Explorers of Sky demake: the Relic Fragment (EoS GROUND/g01p01a1.wan), shared palette 5. */
     { 1, 0x005, "relicfragmentp" },
+    /* The guild's totem poles (EoS GROUND/t01p01a1.wan, t01p01a3.wan): 32x64,
+     * two 16-tile units each, each on its own EoS palette (extend slots). */
+    { 2, 0x125, "totempole1p" },
+    { 2, 0x126, "totempole2p" },
 #endif
     { -1, 0x000, NULL }
 };

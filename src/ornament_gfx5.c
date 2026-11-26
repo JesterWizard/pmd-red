@@ -15,4 +15,6 @@
 #include "data/ornament/titleop2.h"
 #ifdef SKY_STORY
 #include "data/ornament/relicfragment.h"
+#include "data/ornament/totempole1.h"
+#include "data/ornament/totempole2.h"
 #endif

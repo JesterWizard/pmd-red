@@ -1116,6 +1116,13 @@ static const struct GroundLivesData s_gs178_g6_s0_lives[] = {
     } },
 };
 
+/* The guild's totem poles: EoS places them from SCRIPT/G01P01B/enter.sse
+ * (t01p01a1_174 at (18,22.5), t01p01a3_176 at (42,22.5), hitbox 2x1). */
+static const struct GroundObjectData s_gs178_g6_s0_objs[] = {
+    /*  0 */ { SKY_OBJ_TOTEM_POLE_1, 0, 2, 1, {  18,  22, 0, CPOS_HALFTILE }, { } },
+    /*  1 */ { SKY_OBJ_TOTEM_POLE_2, 0, 2, 1, {  42,  22, 0, CPOS_HALFTILE }, { } },
+};
+
 static const struct GroundLivesData s_gs178_g6_s1_lives[] = {
     /*  0 */ { SKY_LIVES_ZUBAT,   2,   0,   0, {  20,  22, 0, CPOS_HALFTILE }, {
         [0] = s_gs178_g6_s1_lives0_dlg0,
@@ -1219,7 +1226,7 @@ static const struct GroundScriptSector s_gs178_g5_sectors[] = {
 };
 
 static const struct GroundScriptSector s_gs178_g6_sectors[] = {
-    { LPARRAY(s_gs178_g6_s0_lives), 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[6], },
+    { LPARRAY(s_gs178_g6_s0_lives), LPARRAY(s_gs178_g6_s0_objs), 0,NULL, 0,NULL, 1,&sStationScripts[6], },
     { LPARRAY(s_gs178_g6_s1_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
 };
 

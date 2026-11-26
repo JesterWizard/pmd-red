@@ -87,4 +87,10 @@ const File gOrnamentFiles[ORNAMENT_FILES_COUNT] = {
     [76 + SKY_ORNAMENT_FILES] = { "titleop1", &gAxTitleop1, },
     [77 + SKY_ORNAMENT_FILES] = { "titleop2", &gAxTitleop2, },
     [78 + SKY_ORNAMENT_FILES] = { "titleopc", &gTitleopPal, },
+#ifdef SKY_STORY
+    [79 + SKY_ORNAMENT_FILES] = { "totempole1c", &gTotempole1Pal, },
+    [80 + SKY_ORNAMENT_FILES] = { "totempole1p", &gAxTotempole1, },
+    [81 + SKY_ORNAMENT_FILES] = { "totempole2c", &gTotempole2Pal, },
+    [82 + SKY_ORNAMENT_FILES] = { "totempole2p", &gAxTotempole2, },
+#endif
 };

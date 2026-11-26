@@ -12,6 +12,10 @@
 #define SKY_LIVES_KIND_FIRST 147
 /* Ground object kind of the Relic Fragment (src/ground_sprite_data.c). */
 #define SKY_OBJ_RELIC_FRAGMENT 69
+/* The guild's totem poles (EoS GROUND/t01p01a1.wan, t01p01a3.wan): kinds past
+ * the end of the vanilla gGroundObjectTypes table (see ground_object.c). */
+#define SKY_OBJ_TOTEM_POLE_1   70
+#define SKY_OBJ_TOTEM_POLE_2   71
 
 #define SKY_LIVES_ZUBAT      147
 #define SKY_LIVES_KOFFING    148
