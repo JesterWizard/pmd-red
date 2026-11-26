@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sky_story.h"
 #include "globaldata.h"
 #include "code_8099360.h"
 #include "ground_sprite.h"
@@ -697,6 +698,19 @@ void sub_80A6E80(void)
     sub_8005180();
     nullsub_12();
 }
+
+#ifdef SKY_STORY
+/* Explorers of Sky demake: draw the ground actors with the view's top-left
+ * at (x, y) in map pixels, outside the ground loop (the CG pans,
+ * src/sky_cutaways.c). */
+void SkyGroundSprite_DrawActors(s32 x, s32 y)
+{
+    gUnknown_2039DD8.x = x;
+    gUnknown_2039DD8.y = y;
+    sub_80ABA7C();
+    sub_80ACAD4();
+}
+#endif
 
 void sub_80A6EC8(struct UnkGroundSpriteStruct *ptr, s32 a1)
 {

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "ui_style.h"
 #include "globaldata.h"
 #include "constants/dungeon.h"
 #include "constants/trap.h"
@@ -553,6 +554,11 @@ void UpdateBgTilemapForDungeonMap(bool8 a0)
     }
     else if (a0) {
         count1 = 14;
+#ifdef SKY_STORY
+        /* The Sky message box starts at row 13 (src/dungeon_vram.c). */
+        if (UiStyleIsSky())
+            count1 = 12;
+#endif
         count2 = 0;
     }
     else {

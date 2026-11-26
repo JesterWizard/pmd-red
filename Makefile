@@ -495,6 +495,10 @@ $(DATA_ASM_BUILDDIR)/%.o: $(DATA_ASM_SUBDIR)/%.s dungeon_pokemon dungeon_floor d
 	@$(PREPROC) $(DATA_ASM_BUILDDIR)/$*.i.s charmap.txt > $(DATA_ASM_BUILDDIR)/$*.s
 	$(AS) $(ASFLAGS) -o $@ $(DATA_ASM_BUILDDIR)/$*.s
 
+# The song table's #include chain (sound/*.inc: the sky BGM / SE / jukebox tables)
+# is not seen by scaninc.
+$(DATA_ASM_BUILDDIR)/sound_data.o: $(wildcard sound/*.inc)
+
 $(DATA_ASM_BUILDDIR)/%.d: $(DATA_ASM_SUBDIR)/%.s
 	@$(call scaninc,$(INCLUDE_PATHS))
 

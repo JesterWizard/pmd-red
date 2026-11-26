@@ -41,6 +41,8 @@ bool8 SkyStory_LoadDungeonTileset(struct OpenedFile **paletteFile, struct Opened
 bool8 SkyStory_IsSkyTilesetFile(const struct OpenedFile *file);
 /* Fixed-room spawn remap: Gengar/Ekans -> Zubat/Koffing; Medicham dropped. */
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
+struct Entity;
+void SkyStory_ApplyFixedRoomBossStats(struct Entity *entity);
 
 /* EoS music converted to Red voices (sound/songs/seq_061..068,
  * tools/eos_music/convert_eos_bgm.py). Song slots were empty in Red. */
@@ -52,6 +54,7 @@ s16 SkyStory_RemapFixedRoomSpecies(s16 species);
 #define MUS_SKY_TOP_MENU_THEME              66
 #define MUS_SKY_EXPLORATION_TEAM_THEME      67
 #define MUS_SKY_WELCOME_TO_THE_WORLD        68
+#define MUS_SKY_STORM                       69 /* EoS BGM_STORM (bgm0101) */
 
 #ifndef __ASSEMBLER__
 s32 SkyStory_GetDungeonBgm(s32 defaultSong);
@@ -114,6 +117,7 @@ u16 SkyStory_MoveAnimId(u16 moveId);
 extern const SkyCutawayArt gSkyTitleArt[SKY_TITLE_ART_COUNT];
 void SkyStory_ShowCutaway_Async(s32 id, s32 frames);
 void SkyCutaway_UpdateCover(void);
+void SkyGroundSprite_DrawActors(s32 x, s32 y);
 extern bool8 gSkyCoverActive;
 
 /* Krabby bubbles (src/sky_bubbles.c): SKY_BUBBLES(mode) in scripts. */

@@ -31,6 +31,47 @@
 #include "dungeon_portrait_placement.h"
 #include "dungeon_random.h"
 
+#ifdef SKY_STORY
+#include "ui_style.h"
+/* Explorers of Sky UI: the message log box matches the Sky dialogue box
+ * (6 tiles tall, text 5 px in, 13 px between lines; see sSkyTextbox in
+ * src/string_format.c and sub_803EAF0 kind 3). The first line is 6 px down
+ * so the fourth (drawn below, then scrolled in) fits the 7-row window. */
+#define LOG_X (UiStyleIsSky() ? 5 : 4)
+#define LOG_Y0 (UiStyleIsSky() ? 6 : 4)
+#define LOG_LINE (UiStyleIsSky() ? 13 : 11)
+
+/* gIwramTextFunc4 scrolls a 7-row window and keeps its top 3 pixel rows;
+ * the Sky box has 8 rows and clears its top margin, so a line leaving the
+ * first text row disappears instead of showing its lower half. */
+static void SkyLogScrollUp(void)
+{
+    Window *window = &gWindows[0];
+    s32 stride = window->unk20 + 8;
+    s32 rows = window->totalHeight * 8;
+    s32 i, p;
+
+    for (i = 0; i < window->width; i++) {
+        u32 *col = window->winGFX + i * 8;
+#define LOG_PX(p) col[((p) >> 3) * stride + ((p) & 7)]
+        for (p = 0; p < LOG_Y0 - 1; p++)
+            LOG_PX(p) = 0;
+        for (p = LOG_Y0 - 1; p < rows - 1; p++)
+            LOG_PX(p) = LOG_PX(p + 1);
+        LOG_PX(rows - 1) = 0;
+#undef LOG_PX
+    }
+    window->unk30 = window->unk28;
+    window->unk34 = window->unk1C;
+    window->unk38 = window->unk2C;
+    window->unk44 = TRUE;
+}
+#else
+#define LOG_X 4
+#define LOG_Y0 4
+#define LOG_LINE 11
+#endif
+
 static EWRAM_DATA Entity *sLastLogMsgEntity = NULL;
 static UNUSED EWRAM_DATA u8 sUnused = 0;
 static EWRAM_DATA SpriteOAM sUnknown_202F1F0 = {0};
@@ -62,7 +103,7 @@ void sub_8052210(bool8 a0)
     gDungeon->unk1BDD4.unk1C060 = 0;
     gDungeon->unk1BDD4.unk1C062 = 0;
     gDungeon->unk1BDD4.unk1C064 = 0;
-    gDungeon->unk1BDD4.unk1C066 = 4;
+    gDungeon->unk1BDD4.unk1C066 = LOG_Y0;
     gDungeon->unk1BDD4.unk1C06C = 0;
 
     if (a0 && gUnknown_202EDD0 == 3) {
@@ -223,7 +264,7 @@ void xxx_draw_string_80524F0(void)
             else {
                 const u8 *txtPtr = strPtr->unk0[id];
 
-                sp.x = 4;
+                sp.x = LOG_X;
                 sp.y = strPtr->unk1C066;
                 sp.unk10 = 7;
                 sub_80073B8(0);
@@ -249,9 +290,9 @@ void xxx_draw_string_80524F0(void)
                     id = 0;
                 }
                 strPtr->unk1C062 = id;
-                strPtr->unk1C066 += 11;
-                if (strPtr->unk1C066 >= 48) {
-                    strPtr->unk1C066 = 37;
+                strPtr->unk1C066 += LOG_LINE;
+                if (strPtr->unk1C066 >= LOG_Y0 + 4 * LOG_LINE) {
+                    strPtr->unk1C066 = LOG_Y0 + 3 * LOG_LINE;
                     strPtr->unk1C068 = 0;
                     strPtr->unk1C06C = 3;
                 }
@@ -260,10 +301,15 @@ void xxx_draw_string_80524F0(void)
         }
     case 3:
         strPtr->unk1C068++;
+#ifdef SKY_STORY
+        if (UiStyleIsSky())
+            SkyLogScrollUp();
+        else
+#endif
         gIwramTextFunc4(0);
         /* Rows below 4 move up 1px; row 3 and above are erased. */
         ScrollPokeCoinObjSprites(0, -1, 4);
-        if (strPtr->unk1C068 > 10) {
+        if (strPtr->unk1C068 > LOG_LINE - 1) {
             strPtr->unk1C06C = 2;
         }
         break;

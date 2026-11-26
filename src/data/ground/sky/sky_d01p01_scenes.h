@@ -65,7 +65,7 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     SKY_SHOW_MAP(FALSE),
     FADE_IN(TRUE, 0),
     FADE2_IN(TRUE, 0),
-    BGM_FADEIN(160, MUS_STORMY_SEA),
+    BGM_FADEIN(160, MUS_SKY_STORM),
     WAIT(60),
     CAMERA_SHAKE(CAMERA_SHAKE_CUSTOM, 2, 3),
     FANFARE_PLAY2(461), /* EoS thunder */
@@ -118,15 +118,15 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     FLASH_FROM(TRUE, PALUTIL_KIND_01, 1, RGB_U32(0xFF, 0xFF, 0xFF)), /* the map is hidden: black */
     FADE_OUT(TRUE, 0),
     WAIT(30),
-    BGM_FADEIN(30, MUS_STORMY_SEA),
+    BGM_FADEIN(30, MUS_SKY_STORM),
     SET_PLACE_MODE(4),
     SKY_SHOW_MAP(TRUE),
-    /* EoS: the cliff (top screen) over the stormy sea (bottom): the cliff,
-     * lightning, then a pan down to the sea, which stays on screen. */
+    /* EoS: the cliff (top screen) over the stormy sea (bottom): the cliff
+     * and its lightning, then the cliff fades out and the sea fades in. */
     SKY_BUBBLES(SKY_BUBBLES_RAIN), /* EoS: rain over the cliff and the sea */
     SKY_CUTAWAY(SKY_CUTAWAY_STORM, 160),
-    FADE_IN(TRUE, 0), /* the pan ends on this exact view */
-    WAIT(165),
+    FADE_IN(TRUE, 30),
+    WAIT(135),
     BGM_FADEOUT(120),
     FADE_OUT(TRUE, 60),
     SKY_BUBBLES(SKY_BUBBLES_OFF),
@@ -159,6 +159,7 @@ static const struct ScriptCommand s_gs178_g5_s0_station_sref_script[] = {
     TEXTBOX_CLEAR,
     WAIT(1),
     SELECT_ENTITIES(-1, 0),
+    WAIT(1), /* the actors take their poses; the pan draws them */
     /* EoS: the sky (top screen) over the beach: pan down to the beach. */
     SKY_CUTAWAY(SKY_CUTAWAY_SKY_DAY_SCROLL, 150),
     FADE_IN(TRUE, 0), /* the pan ends on this exact view */
@@ -198,6 +199,7 @@ static const struct ScriptCommand s_gs178_g6_s0_station_sref_script[] = {
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_GUILD_DUSK),
     SELECT_ENTITIES(-1, 0),
+    WAIT(1), /* the actors take their poses; the pan draws them */
     /* EoS: dusk clouds (top screen) over the guild: pan down to the guild. */
     SKY_CUTAWAY(SKY_CUTAWAY_GUILD_SKY_SCROLL, 90),
     FADE_IN(TRUE, 0), /* the pan ends on this exact view */
@@ -311,6 +313,7 @@ static const struct ScriptCommand s_gs178_g6_s1_lives0_dlg0[] = { /* Zubat — d
     SELECT_ANIMATION(2),
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_ZUBAT, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
+    SET_OBJ_FLAGS(0x80000), /* EoS SetOutputAttribute(8): drawn over the bushes */
     AWAIT_CUE(7),
     ALERT_CUE(8),
     /* EoS: the camera rises 88 pixels as the two walk in from off screen. */
@@ -346,6 +349,7 @@ static const struct ScriptCommand s_gs178_g6_s1_lives1_dlg0[] = { /* Koffing */
     SELECT_ANIMATION(2),
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_KOFFING, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
+    SET_OBJ_FLAGS(0x80000), /* EoS SetOutputAttribute(8): drawn over the bushes */
     AWAIT_CUE(8),
     WAIT(10),
     WALK_RELATIVE(307, 88, 24),
@@ -444,9 +448,6 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     MSG_NPC(NPC_PARTNER, _(" All those bubbles, reflecting the\nsetting sun off the waves...")),
     MSG_NPC(NPC_PARTNER, _(" It's always beautiful.")),
     TEXTBOX_CLEAR,
-    FADE_OUT(TRUE, 20), /* fade the scene out and back in around the CG */
-    SKY_CUTAWAY(SKY_CUTAWAY_SUNSET_SEA_ANIM, 240), /* EoS m01a0207 */
-    FADE_IN(TRUE, 20),
     WAIT(40),
     MSG_NPC(NPC_PARTNER, _(" ............")),
     MSG_NPC(NPC_PARTNER, _(" This is where I always come\nwhen I'm feeling down on myself.")),

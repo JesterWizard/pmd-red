@@ -23,6 +23,7 @@
 #include "text_1.h"
 #include "graphics_memory.h"
 #include "palette_util.h"
+#include "palette_fade_util.h"
 #include "code_800C9CC.h"
 #include "music_util.h"
 #include "random.h"
@@ -40,8 +41,6 @@
  * the map from its top edge down to the scene's first view (as EoS's two
  * screens), raw 8bpp tiles, 30 per row. */
 #include "data/sky_scrolls.h"
-static const u8 sScrollStormTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/storm.tiles");
-static const u8 sScrollStormPal[] = INCBIN_U8("graphics/custom/sky_scrolls/storm.pal");
 static const u8 sScrollBeachTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/beach.tiles");
 static const u8 sScrollBeachPal[] = INCBIN_U8("graphics/custom/sky_scrolls/beach.pal");
 static const u8 sScrollGuildTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/guild.tiles");
@@ -49,13 +48,10 @@ static const u8 sScrollGuildPal[] = INCBIN_U8("graphics/custom/sky_scrolls/guild
 
 /* Covers (tools/make_sky_cutaway_scrolls.py): each pan's last view as the
  * map's own tiles on the text layers, shown while the map is rebuilt. */
-static const u8 sCoverStormTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/storm_cover.tiles");
-static const u16 sCoverStormMap[] = INCBIN_U16("graphics/custom/sky_scrolls/storm_cover.tilemap");
 static const u8 sCoverBeachTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/beach_cover.tiles");
 static const u16 sCoverBeachMap[] = INCBIN_U16("graphics/custom/sky_scrolls/beach_cover.tilemap");
 static const u8 sCoverGuildTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/guild_cover.tiles");
 static const u16 sCoverGuildMap[] = INCBIN_U16("graphics/custom/sky_scrolls/guild_cover.tilemap");
-extern const u8 gFileEV0101A[];
 extern const u8 gFileED0111A[];
 extern const u8 gFileEG0101B[];
 
@@ -66,11 +62,11 @@ struct SkyCover
     const u8 *bpl;        /* the map's palettes (RT BPL) */
     u16 numTiles;
     u8 x, y;              /* camera sub-tile offset */
+    s16 camX, camY;       /* the map's first view (top-left, map pixels) */
 };
 
-static const struct SkyCover sCoverStorm = { sCoverStormTiles, sCoverStormMap, gFileEV0101A, SKY_SCROLL_STORM_COVER_TILES, SKY_SCROLL_STORM_COVER_X, SKY_SCROLL_STORM_COVER_Y };
-static const struct SkyCover sCoverBeach = { sCoverBeachTiles, sCoverBeachMap, gFileED0111A, SKY_SCROLL_BEACH_COVER_TILES, SKY_SCROLL_BEACH_COVER_X, SKY_SCROLL_BEACH_COVER_Y };
-static const struct SkyCover sCoverGuild = { sCoverGuildTiles, sCoverGuildMap, gFileEG0101B, SKY_SCROLL_GUILD_COVER_TILES, SKY_SCROLL_GUILD_COVER_X, SKY_SCROLL_GUILD_COVER_Y };
+static const struct SkyCover sCoverBeach = { sCoverBeachTiles, sCoverBeachMap, gFileED0111A, SKY_SCROLL_BEACH_COVER_TILES, SKY_SCROLL_BEACH_COVER_X, SKY_SCROLL_BEACH_COVER_Y, SKY_SCROLL_BEACH_CAM_X, SKY_SCROLL_BEACH_CAM_Y };
+static const struct SkyCover sCoverGuild = { sCoverGuildTiles, sCoverGuildMap, gFileEG0101B, SKY_SCROLL_GUILD_COVER_TILES, SKY_SCROLL_GUILD_COVER_X, SKY_SCROLL_GUILD_COVER_Y, SKY_SCROLL_GUILD_CAM_X, SKY_SCROLL_GUILD_CAM_Y };
 
 #define COVER_FRAMES 6
 static EWRAM_DATA s8 sCoverFrames = 0;
@@ -180,6 +176,12 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
     s32 dist = rows * 8 - 160;
     s32 frames = dist * 3 / 5;
 
+    /* The scene's actors are on the map already (SELECT_ENTITIES before the
+     * cutaway): unfade the ground palettes so their OBJ palettes are lit
+     * (the art then takes BG palettes 0-239), and draw them over the pan. */
+    sub_80999E8(0);
+    sub_8099BE4(); /* apply it now: the ground loop is not running */
+    RunPaletteFadeFunctions();
     LoadFullscreenArtBlank();
     /* BG0-BG2 are unused during the pan; their VRAM takes the cover. */
     SetBGOBJEnableFlags(0x7);
@@ -190,15 +192,19 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
     if (fadeIn) {
         for (f = 0; f <= FADE_STEPS; f++) {
             SetFullscreenArtBrightness((const RGB_Struct *)pal, f);
+            SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist);
             RunFullscreenArtFrame();
         }
     }
     else {
         SetFullscreenArtBrightness((const RGB_Struct *)pal, FADE_STEPS);
+        SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist);
         RunFullscreenArtFrame();
     }
-    for (f = 0; f < hold; f++)
+    for (f = 0; f < hold; f++) {
+        SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist);
         RunFullscreenArtFrame();
+    }
     for (f = 1; f <= frames; f++) {
         /* smoothstep: dist * t^2 (3 - 2t), t in 1/256 */
         s32 t = (f << 8) / frames;
@@ -208,8 +214,10 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
         while (loaded < (y + 159) / 8 && loaded < rows - 1)
             ScrollLoadRow(tiles, ++loaded);
         SetBG3RegOffsets(0, y);
+        SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist + y);
         RunFullscreenArtFrame();
     }
+    SkyGroundSprite_DrawActors(cover->camX, cover->camY);
     ShowCover(cover, gGroundMapDungeon_3001B70 != NULL ? gGroundMapDungeon_3001B70->unk52C.unk0 : 0);
 }
 
@@ -351,9 +359,9 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
             SwapArt(first);
             Hold(frames / 4);
         }
-        /* EoS shows the cliff above the stormy sea: pan down to the sea. */
-        ScrollConnected(sScrollStormTiles, sScrollStormPal, SKY_SCROLL_STORM_ROWS, 0, FALSE, &sCoverStorm);
-        connected = TRUE;
+        /* EoS shows the cliff (top screen) over the stormy sea (bottom
+         * screen): fade the cliff out; the script fades the sea in. */
+        Fade(first, FALSE);
     }
     else if (id == SKY_CUTAWAY_SKY_DAY_SCROLL || id == SKY_CUTAWAY_GUILD_SKY_SCROLL) {
         if (id == SKY_CUTAWAY_SKY_DAY_SCROLL)

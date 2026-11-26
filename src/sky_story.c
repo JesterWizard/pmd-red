@@ -15,6 +15,7 @@
 
 #include "globaldata.h"
 #include "sky_story.h"
+#include "dungeon_util.h"
 #include "constants/dungeon.h"
 #include "constants/event_flag.h"
 #include "constants/fixed_rooms.h"
@@ -55,8 +56,8 @@ static const struct SkySpawn sBeachCaveSpawns[] = {
  * table needs nonzero weights (random spawning loops on an all-zero table);
  * enemyDensity is forced to 0 so only the two bosses appear. */
 static const struct SkySpawn sBeachCavePitSpawns[] = {
-    { MONSTER_ZUBAT,    4, 5000 }, /* EoS: Zubat L4, Koffing L7 */
-    { MONSTER_KOFFING,  7, 5000 },
+    { MONSTER_ZUBAT,    3, 5000 }, /* EoS fixed-floor bosses: Zubat L3, Koffing L6 */
+    { MONSTER_KOFFING,  6, 5000 },
     { MONSTER_KECLEON, 90,    0 },
     { MONSTER_DECOY,    1,    0 },
 };
@@ -205,6 +206,29 @@ s16 SkyStory_RemapFixedRoomSpecies(s16 species)
             return MONSTER_NONE; /* only two thieves */
     }
     return species;
+}
+
+/* EoS gives fixed-floor bosses their own stats (overlay 10's monster spawn
+ * stats table, entries 1 and 2 for Beach Cave Pit's Zubat and Koffing):
+ * level, HP, Attack / Sp. Atk, Defense / Sp. Def. */
+void SkyStory_ApplyFixedRoomBossStats(Entity *entity)
+{
+    EntityInfo *info;
+    s32 hp, atk, def;
+
+    if (entity == NULL || !SkyStory_IsBeachCave(gDungeon->unk644.dungeonLocation.id))
+        return;
+    if (gDungeon->floorProperties.fixedRoomNumber != FIXED_ROOM_SINISTER_WOODS_TEAM_MEANIES)
+        return;
+    info = GetEntInfo(entity);
+    switch (info->id) {
+        case MONSTER_ZUBAT:   info->level = 3; hp = 15; atk = 15; def = 11; break;
+        case MONSTER_KOFFING: info->level = 6; hp = 27; atk = 20; def = 8;  break;
+        default: return;
+    }
+    info->HP = info->maxHPStat = hp;
+    info->atk[0] = info->atk[1] = atk;
+    info->def[0] = info->def[1] = def;
 }
 
 #endif /* SKY_STORY */

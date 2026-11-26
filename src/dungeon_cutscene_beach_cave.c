@@ -206,7 +206,9 @@ static void SetUpBeachCavePit(void)
     sub_8085930(DIRECTION_NORTH);
     sub_80855E4(sub_8086A3C);
     sub_808563C(sub_8086A54);
-    sub_8085860(leaderEntity->pos.x, leaderEntity->pos.y - 3);
+    /* One tile left of the leader: the middle of the Pit's sand, between
+     * the leader and the partner (and between the thieves). */
+    sub_8085860(leaderEntity->pos.x - 1, leaderEntity->pos.y - 3);
     CopyMonsterNameToBuffer(gFormatBuffer_Monsters[2], MONSTER_ZUBAT);
     CopyMonsterNameToBuffer(gFormatBuffer_Monsters[3], MONSTER_KOFFING);
 }
@@ -220,7 +222,7 @@ static void BeachCavePitRefightDialogue(Entity *leaderEntity, Entity *partnerEnt
     DisplayDungeonDialogue_Async(&sRe1);
     if (EntityIsValid(zubatEntity)) {
         sub_806CDD4(zubatEntity, 0, DIRECTION_SOUTH);
-        bossPos.x = zubatEntity->pixelPos.x;
+        bossPos.x = zubatEntity->pixelPos.x - 0x1800; /* centre the Pit */
         bossPos.y = zubatEntity->pixelPos.y + 0x1800;
         ShiftCameraToPosition(&bossPos, 0x30);
     }
@@ -262,7 +264,7 @@ void SkyStory_BeachCavePitPreFightDialogue(void)
         sub_806CDD4(koffingEntity, 0, DIRECTION_SOUTH);
     /* Bring the thieves into view, as the EoS scene frames both groups. */
     if (EntityIsValid(zubatEntity)) {
-        bossPos.x = zubatEntity->pixelPos.x;
+        bossPos.x = zubatEntity->pixelPos.x - 0x1800; /* centre the Pit */
         bossPos.y = zubatEntity->pixelPos.y + 0x1800;
         ShiftCameraToPosition(&bossPos, 0x30);
     }

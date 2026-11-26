@@ -11,7 +11,7 @@ voicegroup (sky_vg_bgmNNNN) generated from bgmNNNN.swd in front of it
 (see sky_soundfont.py). The EoS samples every song uses become WaveData in
 sound/songs/sky_samples.s (+ sound/direct_sound_samples/sky/*.bin).
 
-  * SONGS (song ids 61..68) are the story songs, used by the sky scenes.
+  * SONGS (song ids 61..69) are the story songs, used by the sky scenes.
   * every Sky Jukebox track (EoS overlay 9's track -> bgm table, names from
     the "Music Tracks" strings) not in SONGS becomes sound/songs/sky_bgm_NNNN.s,
     appended to the song table after its last entry
@@ -55,8 +55,6 @@ MIDI_DIR = SONG_DIR / "midi"
 
 # (song slot / music id, EoS bgm id, name)
 SONGS = [
-    # EoS bgm0101 "Storm" is an ambient storm-noise loop, not music: the storm
-    # scene keeps Red's Stormy Sea.
     (61, 69, "sky_on_the_beach_at_dusk"),
     (62, 21, "sky_beach_cave"),
     (63, 15, "sky_boss_battle"),
@@ -65,6 +63,8 @@ SONGS = [
     (66, 2, "sky_top_menu_theme"),
     (67, 1, "sky_exploration_team_theme"),
     (68, 6, "sky_welcome_to_the_world_of_pokemon"),
+    # EoS bgm0101 "Storm" (BGM_STORM, m01a0101/0102): the storm at sea.
+    (69, 101, "sky_storm"),
 ]
 
 RENDER_SECONDS = 90
@@ -278,8 +278,8 @@ def sky_song_count(path: Path) -> int:
         elif all(stack):
             if "sky_jukebox_songs.inc" in s:
                 break
-            if "sky_red_bgm_table.inc" in s:   # song ids 0..128 (sky_red_bgm_map.py)
-                inc = path.parent / "sky_red_bgm_table.inc"
+            if s.startswith("#include"):   # sky_red_bgm_table.inc (ids 0..128), sky_red_se_table.inc (300..938)
+                inc = path.parent / s.split('"')[1].split("/")[-1]
                 count += sum(1 for l in inc.read_text().splitlines() if l.startswith("song "))
                 continue
             if s.startswith("song "):

@@ -3153,4 +3153,31 @@ sky_wav_707_5:
 	.word	3578 @ size
 	.incbin	"sound/direct_sound_samples/sky/eos_707.bin"
 
+	.align	2
+	.global	sky_wav_903_0
+sky_wav_903_0:
+	.hword	0x0000, 0x4000
+	.word	16382881 @ 15998.91 Hz at key 60
+	.word	72 @ loop start
+	.word	13640 @ size
+	.incbin	"sound/direct_sound_samples/sky/eos_903.bin"
+
+	.align	2
+	.global	sky_wav_904_0
+sky_wav_904_0:
+	.hword	0x0000, 0x4000
+	.word	14344099 @ 14007.91 Hz at key 60
+	.word	6448 @ loop start
+	.word	14560 @ size
+	.incbin	"sound/direct_sound_samples/sky/eos_904.bin"
+
+	.align	2
+	.global	sky_wav_905_0
+sky_wav_905_0:
+	.hword	0x0000, 0x4000
+	.word	18434860 @ 18002.79 Hz at key 60
+	.word	224 @ loop start
+	.word	9640 @ size
+	.incbin	"sound/direct_sound_samples/sky/eos_905.bin"
+
 #endif

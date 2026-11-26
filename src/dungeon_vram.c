@@ -1,4 +1,5 @@
 #include "global.h"
+#include "ui_style.h"
 #include "globaldata.h"
 #include "dungeon_vram.h"
 #include "structs/str_dungeon.h"
@@ -583,6 +584,19 @@ void sub_803EAF0(u32 kind, u8 *name)
             break;
         }
         case 3: {
+#ifdef SKY_STORY
+            if (UiStyleIsSky()) {
+                /* Same box as the Sky dialogue box (src/string_format.c). */
+                WindowTemplates sky = gUnknown_80F62B0;
+                sky.id[0].pos.y = 13;
+                sky.id[0].height = 6;
+                /* 7 rows, as Red: an 8th would reach the minimap's tiles
+                 * (0xB8 on); the text fits (src/dungeon_message.c). */
+                sky.id[0].totalHeight = 7;
+                ShowWindows(&sky, TRUE, TRUE);
+            }
+            else
+#endif
             ShowWindows(&gUnknown_80F62B0, TRUE, TRUE);
             if (gUnknown_203B40C != 0)
                 UpdateBgTilemapForDungeonMap(TRUE);

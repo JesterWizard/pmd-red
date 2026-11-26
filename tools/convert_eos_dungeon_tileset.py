@@ -92,12 +92,27 @@ def background(dbin, bg: int, name: str) -> list[str]:
     for y in range(24):
         w("    " + ", ".join(str(remap[c]) for c in grid[y]) + ",")
     w("};")
+    # palettes 10-11 are animated colours (the Pit's water), as in a tileset
+    emit_anim(w, name, dbin.get(f"dungeon_bg{bg}.dpla"))
+    return out
+
+
+def emit_anim(w, name, dpla):
+    """Animated colours (palettes 10-11): per slot, frames of RGB and a
+    per-frame duration (Red's canm)."""
+    for i in range(32):
+        cols = list(dpla.colors[i])
+        n = len(cols) // 3
+        if n == 0:
+            continue
+        frames = ", ".join(f"{{{cols[k * 3]}, {cols[k * 3 + 1]}, {cols[k * 3 + 2]}}}" for k in range(n))
+        w(f"static const struct {{ s16 count; s16 duration; RGB_Struct colors[{n}]; }} {name}Anim{i} = "
+          f"{{ {n}, {max(1, dpla.durations_per_frame_for_colors[i])}, {{ {frames} }} }};")
     w(f"static const struct {{ s16 count; s16 duration; }} {name}AnimNone = {{ 0, 0 }};")
     w(f"static const void *const {name}Anim[32] = {{")
-    for _ in range(32):
-        w(f"    &{name}AnimNone,")
+    for i in range(32):
+        w(f"    &{name}Anim{i}," if len(dpla.colors[i]) else f"    &{name}AnimNone,")
     w("};")
-    return out
 
 
 def main() -> int:
@@ -156,20 +171,7 @@ def main() -> int:
         w("    " + ", ".join(row) + ",")
     w("};")
 
-    # animated colours: per slot, frames of RGB and a per-frame duration
-    for i in range(32):
-        cols = list(dpla.colors[i])
-        n = len(cols) // 3
-        if n == 0:
-            continue
-        frames = ", ".join(f"{{{cols[k * 3]}, {cols[k * 3 + 1]}, {cols[k * 3 + 2]}}}" for k in range(n))
-        w(f"static const struct {{ s16 count; s16 duration; RGB_Struct colors[{n}]; }} {name}Anim{i} = "
-          f"{{ {n}, {max(1, dpla.durations_per_frame_for_colors[i])}, {{ {frames} }} }};")
-    w(f"static const struct {{ s16 count; s16 duration; }} {name}AnimNone = {{ 0, 0 }};")
-    w(f"static const void *const {name}Anim[32] = {{")
-    for i in range(32):
-        w(f"    &{name}Anim{i}," if len(dpla.colors[i]) else f"    &{name}AnimNone,")
-    w("};")
+    emit_anim(w, name, dpla)
     print("\n".join(out))
     return 0
 

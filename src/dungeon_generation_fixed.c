@@ -69,7 +69,11 @@ static void SpawnSpeciesAtPos(s16 species_, s32 x, s32 y, u32 monsterBehav_, u32
         unkStruct.unk10 = 0;
         unkStruct.pos.x = x;
         unkStruct.pos.y = y;
+#ifdef SKY_STORY
+        SkyStory_ApplyFixedRoomBossStats(SpawnWildMon(&unkStruct, TRUE));
+#else
         SpawnWildMon(&unkStruct, TRUE);
+#endif
     }
 }
 
