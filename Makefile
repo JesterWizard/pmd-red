@@ -195,7 +195,7 @@ C_SRCS_IN := $(wildcard $(C_SUBDIR)/*.c $(C_SUBDIR)/*/*.c $(C_SUBDIR)/*/*/*.c)
 C_SOURCES := $(foreach src,$(C_SRCS_IN),$(if $(findstring .inc.c,$(src)),,$(src)))
 # Sky-only C files added after the vanilla ROM was pinned: even an empty object
 # moves the vanilla link, so the other builds leave them out.
-SKY_ONLY_C_SOURCES := $(C_SUBDIR)/sky_storm.c
+SKY_ONLY_C_SOURCES := $(C_SUBDIR)/sky_storm.c $(C_SUBDIR)/sky_dungeon_talk.c
 ifneq ($(GROUND_STORY_DIR),sky)
   C_SOURCES := $(filter-out $(SKY_ONLY_C_SOURCES),$(C_SOURCES))
 endif
@@ -501,6 +501,17 @@ $(DATA_ASM_BUILDDIR)/%.o: $(DATA_ASM_SUBDIR)/%.s dungeon_pokemon dungeon_floor d
 	@$(CPP) -x assembler-with-cpp $(CPPFLAGS) $< -o $(DATA_ASM_BUILDDIR)/$*.i.s
 	@$(PREPROC) $(DATA_ASM_BUILDDIR)/$*.i.s charmap.txt > $(DATA_ASM_BUILDDIR)/$*.s
 	$(AS) $(ASFLAGS) -o $@ $(DATA_ASM_BUILDDIR)/$*.s
+
+# Explorers of Sky demake: the sky build's dungeon file archive leaves out Red's
+# dungeon tilesets and talk files (tools/make_sky_dungeon_archive.py); the
+# other builds assemble data/dungeon_sbin.s as it is.
+ifeq ($(GROUND_STORY_DIR),sky)
+$(DATA_ASM_BUILDDIR)/dungeon_sbin.o: $(DATA_ASM_SUBDIR)/dungeon_sbin.s tools/make_sky_dungeon_archive.py dungeon_pokemon dungeon_floor dungeon_trap dungeon_item data_monster data_item data_move data_learnset data_learnset_ptrs data_dungeon
+	@$(CPP) -x assembler-with-cpp $(CPPFLAGS) $< -o $(DATA_ASM_BUILDDIR)/dungeon_sbin.i.s
+	@$(PREPROC) $(DATA_ASM_BUILDDIR)/dungeon_sbin.i.s charmap.txt > $(DATA_ASM_BUILDDIR)/dungeon_sbin.s
+	python3 tools/make_sky_dungeon_archive.py $(DATA_ASM_BUILDDIR)/dungeon_sbin.s $(DATA_ASM_BUILDDIR)/dungeon_sbin.sky.s --report
+	$(AS) $(ASFLAGS) -o $@ $(DATA_ASM_BUILDDIR)/dungeon_sbin.sky.s
+endif
 
 # The song table's #include chain (sound/*.inc: the sky BGM / SE / jukebox tables)
 # is not seen by scaninc.

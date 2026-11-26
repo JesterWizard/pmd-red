@@ -11,6 +11,7 @@
 - [Beach Cave and the boss](#beach-cave-and-the-boss)
 - [Music](#music)
 - [Dungeon tilesets](#dungeon-tilesets)
+- [Dungeon talk](#dungeon-talk)
 - [Title screens](#title-screens)
 - [Gen 4 Pokémon and moves](#gen-4-pokémon-and-moves)
 - [Testing](#testing)
@@ -739,6 +740,97 @@ floor background (`dungeon_bgN`) becomes Red's pre-drawn "emap" tileset
 `src/data/sky_beach_cave_tileset.h`, `src/data/sky_beach_cave_pit_tileset.h`,
 loaded by [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c).
 
+The sky ROM has none of Red's dungeon tilesets. Every tileset id draws Beach
+Cave (`SkyStory_LoadDungeonTileset` in `LoadDungeonTilesetAssets`): ids
+0x40 and up (Red's pre-drawn boss-room backgrounds; the Pit uses 64) get the
+Beach Cave Pit background, the rest the Beach Cave floors. Game logic keeps
+the tileset id (Beach Cave floors keep Lapis Cave's, `SKY_BEACH_CAVE_TILESET`,
+for its water rules). Dungeon-type ground maps (Red's dungeon entrances and
+summits, map types 10 and 11; `sub_80ADD9C` in
+[`src/unk_dungeon_load_maybe.c`](../../src/unk_dungeon_load_maybe.c)) draw the
+Beach Cave floor tiles too (`SkyStory_LoadGroundDungeonTileset`), so nothing
+the sky build can reach opens a `b##...` file.
+
+### The sky dungeon archive
+
+`gDungeonFileArchive` (`data/dungeon_sbin.s`, a pksdir0 table of 455 files)
+is assembled as it is by the vanilla and retail builds. For `STORY=sky` the
+Makefile passes the preprocessed archive through
+[`tools/make_sky_dungeon_archive.py`](../../tools/make_sky_dungeon_archive.py)
+before assembling it:
+
+- Entries named `b##fon` / `b##cel` / `b##cex` / `b##pal` / `b##canm` /
+  `b##emap#` (Red's tilesets) and `talk##` / `talkp##` (Red's talk lines,
+  see [Dungeon talk](#dungeon-talk)) leave the table: 442 of 455 entries. The
+  13 kept (`banfont`, `banrpal`, `colvec`, `etcfont`, `etcfonta`, `fixedmap`,
+  `hp5font`, `itempat`, `jyochu`, `levfont`, `mapparam`, `trappat`,
+  `zmappat`) stay sorted, so `OpenFile`'s binary search works, and the entry
+  count is rewritten. A name that is no longer there makes `OpenFile` return
+  NULL; nothing in the sky build asks for one.
+- Each labelled block of data goes when the full table reaches it and the
+  reduced table does not (6787 blocks, 1,104,744 bytes). Blocks nothing
+  points at (padding, data read by falling through from the label before)
+  stay. Each kept block keeps its original address modulo 4 (`.balign 4`
+  plus `.skip`), so word reads and `.align` inside the archive behave as in
+  Red's layout.
+
+With the EoS talk data added back (about 20 KB), the sky ROM is 1,086,172
+bytes smaller (25,537,529 → 24,451,357 bytes).
+
+---
+
+## Dungeon talk
+
+Talking to a team member in a dungeon, and a team member levelling up, show
+EoS's lines, picked the way EoS picks them. Red keeps these lines in
+per-species files (`talkNN`, and `talkpNN` for the partner: 4 lines per
+species for HP high / half / low and level-up), opened by `sub_806A3D4` in
+[`src/dungeon_misc.c`](../../src/dungeon_misc.c); the sky ROM leaves those
+files out and calls `SkyStory_TalkLine`
+([`src/sky_dungeon_talk.c`](../../src/sky_dungeon_talk.c)) instead.
+
+How EoS does it (NA ROM: `MESSAGE/tbl_talk.tlk`, `GetTalkLine` arm9
+0x202598C, `GetPersonalityIndex` ov29 0x234CFEC, the talk handler ov29
+0x22F5A40, the level-up message in ov29 0x2302CC8; checked on DeSmuME in
+Beach Cave, where an Eevee partner said "We'd better approach any Kabuto
+carefully."):
+
+- `tbl_talk.tlk` holds personality groups; each lists, per talk type
+  (healthy, half HP, pinch, level up, and two waiting types), offsets into
+  `text_e.str` from `TBL_TALK_GROUP_STRING_ID_START`. A byte per species
+  picks the group; 36 more bytes are special personalities.
+- **The partner** (joined at 0xD7) uses special personality 0, 1 or 2 by the
+  `PARTNER_TALK_KIND` script variable, set from `PARTNER_TALK_KIND_TABLE`
+  when the partner is chosen: kind 1 for Squirtle, Totodile, Chimchar, Meowth
+  and Munchlax, kind 3 for Torchic, Chikorita, Eevee, Vulpix and Skitty,
+  kind 2 for every other partner (Turtwig, Piplup, Riolu, Pikachu, ...). Each
+  has 15 healthy lines and 5 each for half HP, pinch and level up. Other team
+  members use their species' group (17 groups of 4-12 lines).
+- **The situation**: healthy at HP ≥ 80% of max, pinch below 25%, half HP in
+  between. In a full-floor fixed room (Beach Cave Pit) the line is always the
+  group's third; in a future dungeon or on a secret floor one of the first
+  two; elsewhere any. A line naming a move is retried, up to 20 times, when
+  the speaker knows no move.
+- **Tags**: `[player]` the hero, `[kind:0]` a random species of the floor's
+  spawn list (not Kecleon), `[kind:1]` the speaker's species, `[move:1]` one
+  of its moves, `[item:0]` a random item of the floor's item list.
+- **Level up**: team members other than the leader say a level-up line; the
+  hero says none. In a pinch the partner's portrait is the pained one.
+
+[`tools/make_sky_dungeon_talk.py`](../../tools/make_sky_dungeon_talk.py)
+reads `tbl_talk.tlk`, `text_e.str` and the partner table from the EoS ROM and
+writes [`src/data/sky_dungeon_talk.h`](../../src/data/sky_dungeon_talk.h): the
+30 groups the sky build's species and partners use (460 lines, about 19 KB),
+a group per species (`MONSTER_MAX` entries, Red and Gen 4) and the partner
+kinds. Tags become Red placeholders (`[player]` → `$m1`, `[kind:0]` → `$m2`,
+`[kind:1]` → `$m3`, `[move:1]` → `$i0`, `[item:0]` → `$i1`) that
+`SkyStory_TalkLine` fills before copying the line. Every hero / partner
+choice of the sky build (Red's starters and Turtwig, Chimchar, Piplup,
+Munchlax, Riolu) has lines; the old Gen 4 → Red talk-file remapping
+(`SkyStory_TalkSpecies`) is gone.
+
+![Squirtle (kind 1) on B1F, Eevee (kind 3) on B1F, Piplup (kind 2) naming its move on B4F, Eevee's level-up line, Eevee's fixed third line in Beach Cave Pit, the Pit](images/sky_dungeon_talk.png)
+
 ---
 
 ## Title screens
@@ -946,12 +1038,14 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
 | Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |
 | Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
-| Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c) |
+| Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c), [`src/unk_dungeon_load_maybe.c`](../../src/unk_dungeon_load_maybe.c) |
+| Sky dungeon archive (no Red tilesets / talk files) | [`tools/make_sky_dungeon_archive.py`](../../tools/make_sky_dungeon_archive.py) (run by the [`Makefile`](../../Makefile) for `STORY=sky`) |
+| Dungeon talk (EoS lines and rules) | [`src/sky_dungeon_talk.c`](../../src/sky_dungeon_talk.c), [`src/data/sky_dungeon_talk.h`](../../src/data/sky_dungeon_talk.h), [`src/dungeon_action_handler.c`](../../src/dungeon_action_handler.c), [`src/dungeon_leveling.c`](../../src/dungeon_leveling.c) |
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout, word wrap (`SkyWrapDialogueText`) | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
 | Dungeon menus (main menu, Items, Team, Moves, Others, Rest), frame and cursor | [`src/dungeon_main.c`](../../src/dungeon_main.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/dungeon_menu_items.c`](../../src/dungeon_menu_items.c), [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c), [`src/dungeon_menu_moves.c`](../../src/dungeon_menu_moves.c), [`src/dungeon_menu_others.c`](../../src/dungeon_menu_others.c), [`src/dungeon_submenu.c`](../../src/dungeon_submenu.c), [`src/ui_style.c`](../../src/ui_style.c), [`src/menu_input.c`](../../src/menu_input.c) |
-| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---
 
@@ -992,5 +1086,13 @@ Winning the boss fight by mashing A needs a strong team; for that test set
   for: every starter shares one team base (Pikachu's; `BASE_KIND` is ignored
   in `GetAdjustedGroundMap`, and the other 15 bases' map files are not linked,
   about 640 KB), and there are no Friend Area pictures (Red's chapter-card
-  backgrounds, also shown on entering a Friend Area; about 1.5 MB). The
-  vanilla build keeps all of them.
+  backgrounds, also shown on entering a Friend Area; about 1.5 MB), no Red
+  dungeon tilesets and no Red dungeon talk files (about 1.1 MB, see
+  [The sky dungeon archive](#the-sky-dungeon-archive)). The vanilla build
+  keeps all of them.
+- Dungeon talk: each group's last `tbl_talk.tlk` entry is an unfinished
+  `[M:D1]TALK_MESSAGE_...` placeholder, which EoS can pick at random; the sky
+  build leaves those out. Future dungeons and secret floors (EoS's "first two
+  lines" rule) don't exist in the sky build. `[player]` is blank in
+  `DEBUG_BOOT_EVENT` test runs, where the hero's name is empty (Red's own
+  messages show it empty there too).

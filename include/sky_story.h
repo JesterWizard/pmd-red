@@ -37,18 +37,33 @@ s32 SkyStory_GetBeachCaveFloorCount(void);
 u8 SkyStory_RemapDataFloor(u8 dungeonId, u8 floor);
 struct OpenedFile;
 void SkyStory_PatchFixedMap(struct OpenedFile *file);
-/* EoS Beach Cave dungeon tileset (src/sky_dungeon_tileset.c). The Pit floor
- * borrows Red tileset 64 (a pre-drawn background tileset, no water) for its
- * game logic and shows the EoS Beach Cave Pit background. */
+/* EoS Beach Cave dungeon tileset (src/sky_dungeon_tileset.c). Beach Cave's
+ * floors keep Lapis Cave's tileset id for game logic (water terrain); the Pit
+ * floor borrows Red tileset 64 (a pre-drawn background tileset, no water) and
+ * shows the EoS Beach Cave Pit background. The sky ROM has no Red dungeon
+ * tilesets: every tileset id draws Beach Cave (0x40+: the Pit background). */
+#define SKY_BEACH_CAVE_TILESET 0x2D
 #define SKY_BEACH_CAVE_PIT_TILESET 64
-bool8 SkyStory_LoadDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, u16 (*cel)[9], u8 *cex);
+void SkyStory_LoadDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, u16 (*cel)[9], u8 *cex);
+void SkyStory_LoadGroundDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, void *tiles, void *cel, u8 *cex);
 bool8 SkyStory_IsSkyTilesetFile(const struct OpenedFile *file);
 void SkyStory_RelocateGridTiles(s32 firstFree);
 /* Fixed-room spawn remap: Gengar/Ekans -> Zubat/Koffing; Medicham dropped. */
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
 struct Entity;
 void SkyStory_ApplyFixedRoomBossStats(struct Entity *entity);
-s32 SkyStory_TalkSpecies(s32 species);
+/* Dungeon talk with EoS's lines (src/sky_dungeon_talk.c); types as EoS's
+ * MESSAGE/tbl_talk.tlk. */
+#define SKY_TALK_HEALTHY    0
+#define SKY_TALK_HALF_HP    1
+#define SKY_TALK_PINCH      2
+#define SKY_TALK_LEVEL_UP   3
+#define SKY_TALK_TYPE_COUNT 4
+struct EntityInfo;
+s32 SkyStory_TalkType(struct EntityInfo *info);
+u8 SkyStory_TalkEmotion(struct EntityInfo *info);
+void SkyStory_TalkLine(u8 *dst, struct Entity *speaker, s32 type);
+bool8 SkyStory_HasLevelUpLine(struct EntityInfo *info);
 /* Runtime toggle (debug menu "Boss EXP"): FALSE = bosses grant no EXP, as
  * in Explorers of Sky; TRUE = Red's EXP. Default in src/sky_story.c. */
 extern u8 gSkyBossExp;

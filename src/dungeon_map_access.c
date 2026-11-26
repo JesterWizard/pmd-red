@@ -83,11 +83,11 @@ void LoadDungeonTilesetAssets(void)
   u8 fileName [12];
 
 #ifdef SKY_STORY
-  if (SkyStory_LoadDungeonTileset(&gDungeonPaletteFile, &gDungeonAnimatedColorsFile,
-                                  gDungeon->unk11884, gDungeon->unk12C24)) {
-    ReadAnimatedColorData(gDungeonAnimatedColors,gDungeonAnimatedColorsFile,0x20);
-    goto terrain;
-  }
+  /* No Red dungeon tilesets in the sky ROM: every dungeon draws Beach Cave. */
+  SkyStory_LoadDungeonTileset(&gDungeonPaletteFile, &gDungeonAnimatedColorsFile,
+                              gDungeon->unk11884, gDungeon->unk12C24);
+  ReadAnimatedColorData(gDungeonAnimatedColors,gDungeonAnimatedColorsFile,0x20);
+  goto terrain;
 #endif
   sprintf(fileName,"b%02dfon",gUnknown_8108EC0[gDungeon->tileset]);
   file = OpenFileAndGetFileDataPtr(fileName,&gDungeonFileArchive);

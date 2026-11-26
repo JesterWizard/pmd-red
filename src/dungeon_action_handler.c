@@ -48,6 +48,9 @@
 #include "warp_target.h"
 #include "move_orb_effects_5.h"
 #include "runtime.h"
+#ifdef SKY_STORY
+#include "sky_story.h"
+#endif
 
 static void sub_8067558(Entity *entity, Entity *targetEntity, s32 a2);
 static Entity *sub_806773C(Entity *entity);
@@ -654,12 +657,19 @@ static void sub_8067558(Entity *entity, Entity *targetEntity, s32 a2)
         }
         else {
             u8 txt[300];
+#ifndef SKY_STORY
             s32 r2;
             s32 speciesId = info2->apparentID;
             bool8 r6 = FALSE;
+#endif
             struct MonDialogueSpriteInfo dialogueInfo;
             struct MonDialogueSpriteInfo *dialogueInfoPtr = NULL;
 
+#ifdef SKY_STORY
+            /* Explorers of Sky demake: EoS's lines and rules (no Red talk
+             * files in the sky ROM). */
+            SkyStory_TalkLine(txt, targetEntity, SkyStory_TalkType(info2));
+#else
             if (info2->joinedAt.id == DUNGEON_JOIN_LOCATION_CLIENT_POKEMON) {
                 speciesId = MONSTER_MUNCHLAX;
             }
@@ -681,9 +691,14 @@ static void sub_8067558(Entity *entity, Entity *targetEntity, s32 a2)
             }
 
             sub_806A3D4(txt, speciesId,  r2, r6);
+#endif
             if (gRuntimeConfig.show_dungeon_portraits) {
                 dialogueInfo.species = info2->apparentID;
+#ifdef SKY_STORY
+                dialogueInfo.spriteId = SkyStory_TalkEmotion(info2);
+#else
                 dialogueInfo.spriteId = 0;
+#endif
                 dialogueInfoPtr = &dialogueInfo;
             }
             DisplayDungeonMessage_Async(dialogueInfoPtr, txt, TRUE);
