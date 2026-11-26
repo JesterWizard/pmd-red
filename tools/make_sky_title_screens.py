@@ -22,6 +22,9 @@ From an Explorers of Sky ROM:
     during its top menu (BACK/s09p01a..s09p10a.bgp), scaled to 240x180 and
     cropped to the middle 160 lines.
 
+All are full-colour 8bpp (up to 239 colours, picked in the GBA's 15-bit
+colours by convert_title_backgrounds.quantize_gba) with up to MAX_TILES tiles.
+
 Writes graphics/custom/sky_title/<name>.{png,at4px,pal} and src/sky_title_data.c.
 The panoramas come from graphics/custom/sky_cutaways (tools/make_sky_cutaways.py).
 """
@@ -46,6 +49,9 @@ CUT = ROOT / "graphics" / "custom" / "sky_cutaways"
 GEN_C = ROOT / "src" / "sky_title_data.c"
 
 LOGO_SCALE = 7 / 8
+# 8bpp tile slots in the sky build (TITLE_BG_8BPP_MAX_TILES, include/bg_control.h):
+# the blank tile and up to 600 picture tiles, so nothing is merged.
+MAX_TILES = 608
 
 
 def bgp(rom, name: str) -> Image.Image:
@@ -122,23 +128,17 @@ def eos_logo(rom) -> tuple[Image.Image, Image.Image]:
 def split_quantize(im: Image.Image, mask: Image.Image, fg_colors: int = 96,
                    total: int = title.MAX_COLORS) -> Image.Image:
     """Quantize the overlay (mask > 0: logo, emblem, "Press START") and the
-    background with separate shares of the 8bpp palette. One median cut over
-    the whole picture spends nearly every colour on the glow's gradients and
-    leaves the emblem's whites and greens speckled."""
+    background with separate shares of the 8bpp palette. One palette fitted
+    to the whole picture spends nearly every colour on the glow's gradients
+    and leaves the emblem's whites and greens speckled. Both shares are
+    picked in the GBA's 15-bit colours (title.quantize_gba)."""
     rgb = im.convert("RGB")
-    fg_px = Image.new("RGB", rgb.size)
-    fg_px.paste(rgb, (0, 0), mask)
-    fg_bbox = mask.getbbox()
-    fg_src = rgb.crop(fg_bbox)
-    fg_mask = mask.crop(fg_bbox)
-    fg_only = [p for p, m in zip(fg_src.get_flattened_data(), fg_mask.get_flattened_data()) if m]
-    fg_img = Image.new("RGB", (len(fg_only), 1))
-    fg_img.putdata(fg_only)
-    fg_n = min(fg_colors, len(set(fg_only)))
-    fg_q = fg_img.quantize(colors=fg_n, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
-    bg_q = rgb.quantize(colors=total - fg_n, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
-    out = bg_q.convert("RGB")
-    fg_mapped = rgb.quantize(palette=fg_q, dither=Image.Dither.NONE).convert("RGB")
+    fg_only = {(r >> 3, g >> 3, b >> 3) for (r, g, b), m in
+               zip(rgb.get_flattened_data(), mask.get_flattened_data()) if m}
+    fg_n = min(fg_colors, len(fg_only))
+    bg_mask = mask.point(lambda v: 0 if v else 255)
+    out = title.quantize_gba(rgb, total - fg_n, train_mask=bg_mask).convert("RGB")
+    fg_mapped = title.quantize_gba(rgb, fg_n, train_mask=mask).convert("RGB")
     out.paste(fg_mapped, (0, 0), mask)
     return out
 
@@ -156,7 +156,8 @@ def write(name: str, im: Image.Image) -> None:
     png = OUT / f"{name}.png"
     im = im.convert("RGB")
     im.save(png)
-    raw, pal, ntiles, ncolors, merged = title.convert_image(im)
+    raw, pal, ntiles, ncolors, merged = title.convert_image(
+        im, quantized=title.quantize_gba(im), max_tiles=MAX_TILES)
     png.with_suffix(".at4px").write_bytes(title.wrap_at4px(raw))
     png.with_suffix(".pal").write_bytes(pal)
     print(f"{name}: tiles={ntiles} colors={ncolors}{' merged' if merged else ''}")

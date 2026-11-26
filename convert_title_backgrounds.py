@@ -106,11 +106,95 @@ def best_flags(target: tuple[int, ...], surv: tuple[int, ...]) -> int:
     return best_fl
 
 
-def convert_image(im: Image.Image) -> tuple[bytes, bytes, int, int, bool]:
-    ncolors = min(MAX_COLORS, max(1, len(set(im.getdata()))))
-    q = im.quantize(
-        colors=ncolors, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE
-    )
+def _gba8(c5):
+    """5-bit GBA channel -> the 8-bit value that converts back to it."""
+    return (c5 << 3) | (c5 >> 2)
+
+
+def quantize_gba(
+    im: Image.Image,
+    colors: int = MAX_COLORS,
+    train_mask: Image.Image | None = None,
+    iters: int = 12,
+) -> Image.Image:
+    """Palette image whose colours are all distinct on the GBA (15-bit).
+
+    Median cut over 24-bit colours spends many of its entries on shades that
+    the GBA's 5-bit channels show as one colour, and leaves the rest of the
+    picture banded. This picks the palette in 15-bit space: exact when the
+    picture has `colors` or fewer GBA colours, else median cut refined by
+    k-means. `train_mask` (L, > 0 = use) limits the pixels the palette is
+    fitted to; every pixel is mapped. Deterministic.
+    """
+    import numpy as np
+
+    rgb = np.asarray(im.convert("RGB"), dtype=np.int32)
+    h, w, _ = rgb.shape
+    px = (rgb >> 3).reshape(-1, 3)
+    train = px
+    if train_mask is not None:
+        sel = np.asarray(train_mask.convert("L")).reshape(-1) > 0
+        if sel.any():
+            train = px[sel]
+
+    uniq = np.unique(train, axis=0)
+    if len(uniq) <= colors:
+        pal = uniq
+    else:
+        seed_img = Image.fromarray(_gba8(train).reshape(1, -1, 3).astype(np.uint8))
+        seed = seed_img.quantize(
+            colors=colors, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE
+        )
+        seed_pal = np.asarray(seed.getpalette(), dtype=np.int32).reshape(-1, 3)
+        seed_used = sorted(set(seed.get_flattened_data()))
+        pal = np.unique(seed_pal[seed_used] >> 3, axis=0).astype(np.float64)
+        for _ in range(iters):
+            idx = _nearest(train, pal)
+            sums = np.zeros_like(pal)
+            np.add.at(sums, idx, train)
+            counts = np.bincount(idx, minlength=len(pal))
+            used = counts > 0
+            pal[used] = sums[used] / counts[used, None]
+        pal = np.unique(np.clip(np.rint(pal), 0, 31).astype(np.int32), axis=0)
+
+    idx = _nearest(px, pal)
+    used = np.unique(idx)
+    pal = pal[used]
+    idx = np.searchsorted(used, idx)
+    out = Image.fromarray(idx.reshape(h, w).astype(np.uint8), "P")
+    flat = _gba8(pal).astype(np.uint8).reshape(-1).tolist()
+    out.putpalette(flat + [0] * (768 - len(flat)))
+    return out
+
+
+def _nearest(px, pal):
+    import numpy as np
+
+    best = np.zeros(len(px), dtype=np.int32)
+    dist = np.full(len(px), np.iinfo(np.int64).max, dtype=np.int64)
+    p = np.asarray(pal, dtype=np.float64)
+    for k in range(len(p)):
+        d = ((px - p[k]) ** 2).sum(1)
+        closer = d < dist
+        dist[closer] = d[closer]
+        best[closer] = k
+    return best
+
+
+def convert_image(
+    im: Image.Image,
+    quantized: Image.Image | None = None,
+    max_tiles: int = MAX_TILES,
+) -> tuple[bytes, bytes, int, int, bool]:
+    """`quantized`: a ready palette image (e.g. quantize_gba) in place of the
+    median cut; `max_tiles`: tile budget including the blank tile 0."""
+    if quantized is not None:
+        q = quantized
+    else:
+        ncolors = min(MAX_COLORS, max(1, len(set(im.getdata()))))
+        q = im.quantize(
+            colors=ncolors, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE
+        )
     raw_pal = q.getpalette()
     used = sorted(set(q.getdata()))
     colors = [(raw_pal[i * 3], raw_pal[i * 3 + 1], raw_pal[i * 3 + 2]) for i in used]
@@ -148,8 +232,8 @@ def convert_image(im: Image.Image) -> tuple[bytes, bytes, int, int, bool]:
 
     merged = False
     index_map = list(range(len(tiles)))
-    if len(tiles) > MAX_TILES:
-        tiles, index_map = merge_tiles(tiles, usages, MAX_TILES)
+    if len(tiles) > max_tiles:
+        tiles, index_map = merge_tiles(tiles, usages, max_tiles)
         merged = True
 
     # Rebuild key table for flip lookup after possible merge

@@ -29,6 +29,14 @@ extern bool8 gUnknown_202D7FE;
  * BG0–2 maps at screenbases 6–8 (0x3000–0x47FF); BG3 map at 31 (0xF800).
  * 8bpp tiles at VRAM+0x6000 (CHARBASE1 index +128, max 600 → 0xF600). */
 extern bool8 gTitleBg8bpp;
+/* Tile slots for that 8bpp art. The sky build takes all of 0x6000-0xF7FF
+ * (608, up to the BG3 map): a 30x20 picture needs up to 600 tiles plus the
+ * blank tile 0, so EoS's menu CGs and title load without merged tiles. */
+#ifdef SKY_STORY
+#define TITLE_BG_8BPP_MAX_TILES 608
+#else
+#define TITLE_BG_8BPP_MAX_TILES 600
+#endif
 /* Spinda Café (and any ground map with 8bpp BPL marker): BG2+BG3 256-color,
  * CHARBASE1 @ 0x4000, screenbases 0/1. Mutually exclusive with gTitleBg8bpp. */
 extern bool8 gGroundMap8bpp;

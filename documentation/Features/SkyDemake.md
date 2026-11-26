@@ -564,6 +564,20 @@ writes `graphics/custom/sky_title/`:
   cropped to the middle 160 lines; one is picked at random each time
   (`CUSTOM_TITLE_BG_COUNT` 10 in the sky build).
 
+All of these are full-colour 8bpp pictures on BG3 (not 16-colour 4bpp
+art): up to 239 colours each, palette 15 (indices 240–255) stays the font's,
+and the menu windows draw over them on BG0/BG1 as before. The palette is picked
+in the GBA's 15-bit colours (`quantize_gba` in
+[`convert_title_backgrounds.py`](../../convert_title_backgrounds.py): exact
+when a picture has 239 GBA colours or fewer, else median cut refined by
+k-means). A 24-bit median cut wasted entries on shades the GBA shows as one
+colour: the CGs showed 112–217 colours (fewer than EoS's own 121–203) and the
+title 146. Now the CGs show 236–239 colours, 3–7 dB closer to the scaled EoS
+pictures, and the title 234. The sky build also gives this art all of VRAM
+0x6000–0xF7FF (`TITLE_BG_8BPP_MAX_TILES` 608, `include/bg_control.h`; 600 in
+the vanilla build), so a picture with 600 different tiles plus the blank one no
+longer has a tile merged into a look-alike.
+
 `DEMO_02`/`DEMO_03`/`DEMO_04` (`src/data/ground/ground_event_data.h`) call
 `SKY_CUTAWAY_BOOT_SCREENS` / `SKY_CUTAWAY_TITLE_SCREEN` instead of Red's
 intro movie and logo map.
