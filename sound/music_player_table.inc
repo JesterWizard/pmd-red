@@ -12,12 +12,22 @@
 #else
 	.equiv NUM_TRACKS_FANFARE, 6
 #endif
+#ifdef SKY_STORY
+	@ EoS sound effects (sky_se_*, ids 300..938) use up to 2 tracks.
+	.equiv NUM_TRACKS_SE1, 2
+	.equiv NUM_TRACKS_SE2, 2
+#else
 	.equiv NUM_TRACKS_SE1, 1
 	.equiv NUM_TRACKS_SE2, 1
+#endif
 	.equiv NUM_TRACKS_SE3, 2
 	.equiv NUM_TRACKS_SE4, 2
 	.equiv NUM_TRACKS_SE5, 2
+#ifdef SKY_STORY
+	.equiv NUM_TRACKS_SE6, 2
+#else
 	.equiv NUM_TRACKS_SE6, 1
+#endif
 
     .bss
 
@@ -37,6 +47,11 @@ gMPlayTrack_Fanfare::
     .bss
 #endif
 
+#ifdef SKY_STORY
+	@ ... and so do the SE tracks.
+    .section iwram_data, "aw", %nobits
+    .align 2
+#endif
 gMPlayTrack_SE1::
     .space TRACK_SIZE * NUM_TRACKS_SE1
     .size gMPlayTrack_SE1, .-gMPlayTrack_SE1
@@ -60,6 +75,9 @@ gMPlayTrack_SE5::
 gMPlayTrack_SE6::
     .space TRACK_SIZE * NUM_TRACKS_SE6
     .size gMPlayTrack_SE6, .-gMPlayTrack_SE6
+#ifdef SKY_STORY
+    .bss
+#endif
 
     .section .rodata
 

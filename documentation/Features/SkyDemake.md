@@ -220,8 +220,9 @@ and otherwise by place and mood (Pokémon Square → Treasure Town, team base �
 Wigglytuff's Guild, Makuhita Dojo → Marowak Dojo, Tiny Woods → Apple Woods,
 Magma Cavern → Steam Cave, ...). Red's music sequences, its music
 voicegroups (`bank_000`–`bank_024`, the drum kits) and the 75 samples only
-they use are left out of the sky build (about 780 KB). Red's sound effects
-keep Red's instruments (`bank_025`–`bank_028`).
+they use are left out of the sky build (about 780 KB). Most sound effects are
+EoS's too ([Sound effects](#sound-effects)); the ones that stay Red's keep
+Red's instruments (`bank_025`–`bank_028`).
 
 EoS's sequences on EoS's own instruments
 ([`tools/eos_music/convert_eos_bgm.py`](../../tools/eos_music/convert_eos_bgm.py)):
@@ -320,6 +321,87 @@ jingles are Red's, re-orchestrated.
 | 217 | unused | me0011 | 6 notes, 10.8 beats at 160 bpm in both |
 | 218 | unused | me0012 | 150 bpm, ~2 s in both |
 | 219 | unused | me0013 | 3 notes at 240 bpm in both |
+
+### Sound effects
+
+394 of Red's 489 sound effects (song ids 300–938) play EoS's own sound
+effect in the sky build, on EoS's own instruments; the other 95 keep Red's.
+
+EoS keeps its SEs in DSE "sedl" banks: `SOUND/SYSTEM/se_sys.sed` (menus) and
+`SOUND/SE/*.sed` (motion, event, state, trap, waza1–15, ...). An SE id is
+`bank << 8 | sequence` (`se_Play(0x2308)` = `event_s.sed` sequence 8); each
+sequence names itself (`SE_NUM_EVENT_SIGN_SHOCK_01`). Tracks are SMDL tracks
+that pick their instrument bank per program change: `SOUND/SWD/NNN.swd`
+(one sample each: footstep, punch, bell, ...), `motion.swd`, or
+`se_sys.swd`, whose programs are DS PSG square / noise waves.
+[`sedl.py`](../../tools/eos_music/sedl.py) parses them;
+[`convert_eos_se.py`](../../tools/eos_music/convert_eos_se.py) writes each SE
+used as `sound/songs/sky_se_BBII.s` (m4a assembly straight from the DSE events,
+48 ticks per beat, own voicegroup `sky_vg_se_BBII`), the samples to
+`sound/songs/sky_se_samples.s` (`sound/direct_sound_samples/sky/se*.bin`,
+280 KB) and `sound/sky_red_se_table.inc`, which `sound/song_table.inc`
+includes for ids 300–938 under `SKY_STORY` (player fields as in Red).
+
+- PSG programs become the GBA's CGB square / noise voices (the DS duty
+  (d+1)/8 → 12.5 / 25 / 50 / 75 %), like Red's own menu sounds.
+- Pitch bend and SweepTune (0xD4, a glide from each note's start) become
+  BEND with one BENDR per track; volume / pan sweeps become VOL / PAN steps;
+  repeats are unrolled; envelope overrides give the track its own voice.
+- A looping EoS SE loops only if Red's SE for that id loops.
+- The sky build gives every SE player 2 tracks (the EoS SEs used have 1–2),
+  in IWRAM (EWRAM −720 bytes, IWRAM +960 bytes).
+- Not ported: LFOs (vibrato / tremolo) and fine / coarse tune events.
+
+Each pair and its evidence is listed in
+[`sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py):
+
+- **Effect animations (336 ids).** Red's effect animation table
+  (`gUnknown_80B9CC4`, `src/effect_data.c`) and EoS's (overlay 10
+  `EFFECT_ANIMATION_INFO`) are the same table: 426 of 448 rows are identical
+  (the rest differ only in the animation type number). Each row names its SE,
+  so Red's SE of row *n* becomes EoS's SE of row *n*. This covers the move,
+  item and status effects.
+- **Move animations (13 ids).** The move and per-species move animation tables
+  (`gUnknown_80BDBC4` / `gUnknown_80C183C` vs `MOVE_ANIMATION_INFO` /
+  `SPECIAL_MONSTER_MOVE_ANIMATION_INFO`), matched by move and species name.
+- **Code and scripts (43 ids).** Menus: EoS's `PlaySeVolumeWrapper` table
+  (arm9 `0x0209915C`: 3F02 3F03 3F03 3F01 3F04 3F06 3F07 3F0B) has the layout
+  of Red's `sMenuSoundEffects`; EoS's text blip (0x3F05) has Red's 3-frame
+  counter. Dungeon actions: the EoS functions that play SEs with a constant
+  id (found by scanning arm9 / the overlays for calls to `PlaySeByIdVolume`
+  and its wrappers) against Red's functions (stairs, item / money pick-up,
+  throws, misses, hunger, traps, orbs, revive, learning a move). Emotes: Red's
+  `FANFARE_PLAY2(n)` + `CALL_SCRIPT(<emote>_FUNC)` against EoS's
+  `se_Play(n)` + `SetEffect(EFFECT_<emote>)` over all EoS scripts.
+- **Same notes (2 ids).** Many of Red's SEs are EoS's (same keys, ticks and
+  lengths); two were matched only that way (door, trap mine).
+
+| Red id | Red use | EoS SE |
+|---|---|---|
+| 301–307 | menu cursor, accept, back, info, text blip, sort, toggle | `SE_NUM_SYS_01`–`07` |
+| 312 | learned a move | `SE_NUM_SYS_WAZA` |
+| 330 / 332 | item / money picked up | `SE_NUM_MOTION_ITEM` / `_MONEY` |
+| 336–338 | thrown item | `SE_NUM_MOTION_THROW`, `_02`, `_03` |
+| 339 | belly empty | `SE_NUM_MOTION_HUNGRY` |
+| 340 / 341 | stairs up / down | `SE_NUM_MOTION_STAIRS_UP` / `_DOWN` |
+| 342 / 343 | move missed (leader / other) | `SE_NUM_MOTION_MISS_PLAYER` / `_ENEMY` |
+| 351–370 | attack motions | `SE_NUM_MOTION_ANIM_*` |
+| 400–404 | trip, sticky, pitfall, summon traps | `SE_NUM_TRAP_*` |
+| 463 / 482 / 473 | shock emote | `SE_NUM_EVENT_SIGN_SHOCK_01` / `_02` / `_03` |
+| 465 / 466 / 464 | notice emote | `SE_NUM_EVENT_SIGN_NOTICE_01` / `_04` / `_02` |
+| 469 | question emote | `SE_NUM_EVENT_SIGN_HATENA_02` |
+| 470 | sweat emote | `SE_NUM_EVENT_SIGN_TENSION_01` |
+| 455 / 458 | jump | `SE_NUM_EVENT_MOTION_JUNP_01` / `_02` |
+| 457 / 471 / 472 | anger | `SE_NUM_EVENT_SIGN_ANGER_02` / `_01` / `_02` |
+| 600–938 | move / item / status effects | by effect animation row |
+
+Red's SE stays for: 308–311, 313, 331, 335, 345, 347, 360, 364, 371, 390–392,
+401, 405–409, 411–414, 416, 421, 422, 424–426 (some dungeon and status sounds
+with no EoS equivalent found: curse, confusion, sleep, whiffer, charging, ...),
+450–517 except the emotes above (Red's own ground-scene sounds: footsteps,
+doors, crowd, cries of the legendaries, ...; the chapter 1 scenes use only the
+emotes), 727, 804, 916, 917 (effect rows whose EoS SE is none) and 633–635,
+637, 894, 923 (no caller found). The chapter 1 scenes' SEs (463, 466, 469, 470, 482) are all EoS's.
 
 ---
 
@@ -506,7 +588,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
-| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---
 
