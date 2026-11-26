@@ -9,6 +9,10 @@
 extern const RGB_Struct gFlag00Pal[];
 #ifdef SKY_STORY
 extern const SiroArchive gAxRelicfragment;
+extern const SiroArchive gAxTotempole1;
+extern const RGB_Struct gTotempole1Pal[];
+extern const SiroArchive gAxTotempole2;
+extern const RGB_Struct gTotempole2Pal[];
 #endif
 extern const SiroArchive gAxFlag00;
 extern const RGB_Struct gFlag01Pal[];

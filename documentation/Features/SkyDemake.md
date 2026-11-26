@@ -77,6 +77,22 @@ The Relic Fragment is a ground object (EoS `GROUND/g01p01a1.wan`, ornament
 when Zubat rams the partner and is gone when Zubat grabs it (m01a0208), and it
 lands in front of the heroes when Zubat throws it back in the Pit (m01a0701).
 
+The two totem poles beside the guild entrance are ground objects too, not part
+of the map: EoS places them from the level's `SCRIPT/G01P01B/enter.sse`
+(`t01p01a1_174` at tile (18, 22.5), `t01p01a3_176` at (42, 22.5), hitbox 2x1),
+and they stay up through the cutscene. They are converted from
+`GROUND/t01p01a1.wan` and `GROUND/t01p01a3.wan` (32x64, two 32x32 pieces each)
+with `convert_eos_wan_to_ax.py ornament ... totempole1|totempole2
+--own-palette`: ornaments `totempole1p`/`totempole2p` on their own EoS
+palettes `totempole1c`/`totempole2c`, which load into the two ground
+extend-palette slots (OBJ palettes 13 and 14; object palette field
+`0x125`/`0x126`). Object kinds `SKY_OBJ_TOTEM_POLE_1`/`_2` (70, 71) are past
+the end of the vanilla `gGroundObjectTypes` table, so
+[`src/ground_object.c`](../../src/ground_object.c) gives them type 1 (a plain
+prop, no flags) from `sSkyGroundObjectTypes`. m01a0104 (group 6, sector 0 of
+`sky_d01p01_scenes.h`) places them at EoS's positions; they are drawn over the
+map like other sprites, and Koffing passes in front of the left one as in EoS.
+
 Losing in Beach Cave plays m01a0301 on the beach ("Ouch! We didn't do too
 well...") and goes straight back in; the re-fight uses m01a0501's text.
 

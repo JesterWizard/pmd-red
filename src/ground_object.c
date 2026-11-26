@@ -116,6 +116,17 @@ static const struct ScriptCommand gUnknown_8118350[] = {
     JUMP_LABEL(0),
 };
 
+/* Below the DEBUGINFO scripts: modern builds use __LINE__ there. */
+#ifdef SKY_STORY
+#include "sky_story.h"
+/* Object kinds the demake adds past the 70 vanilla gGroundObjectTypes
+ * entries: type 1 (plain prop, no flags), hitbox from GroundObjectData. */
+static const struct GroundObjectTypeData sSkyGroundObjectTypes[] = {
+    [SKY_OBJ_TOTEM_POLE_1 - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_TOTEM_POLE_2 - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+};
+#endif
+
 static const s16 gUnknown_81183A0[] = {
 -1,
 0x800,
@@ -307,6 +318,11 @@ s32 GroundObject_Add(s32 id_, const GroundObjectData *objectData, s32 group_, s3
         }
       }
 
+#ifdef SKY_STORY
+      if (kind >= SKY_OBJ_TOTEM_POLE_1)
+          typeDataPtr = (struct GroundObjectTypeData *)&sSkyGroundObjectTypes[kind - SKY_OBJ_TOTEM_POLE_1];
+      else
+#endif
       typeDataPtr = &gGroundObjectTypes[kind];
 
       if (id < 0) {
