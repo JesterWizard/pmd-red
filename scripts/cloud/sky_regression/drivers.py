@@ -1,0 +1,164 @@
+"""Input drivers: what each test ROM's run presses, frame by frame.
+
+A driver is a generator: it yields the keys to hold for the next frame and is
+sent the frame that was just emulated. It can post named events
+(run.events[name] = frame number) so checks know when a step happened, e.g.
+"main_menu" when the dungeon menu has been opened. Everything is driven by
+frame counts and game state, so runs are deterministic.
+"""
+
+from emu import keymask
+
+# The boot presses the other tools use: skip the logos, START at the title,
+# then A every 60 frames from 2100 (the press holds 6 frames).
+BOOT = {600: "START", 900: "A", 1200: "A", 1500: "A", 1800: "A"}
+MASH_FROM, MASH_EVERY, HOLD = 2100, 60, 6
+
+
+def story_keys(n):
+    for s in range(HOLD):
+        m = n - s
+        if m in BOOT:
+            return keymask(BOOT[m])
+        if m >= MASH_FROM and (m - MASH_FROM) % MASH_EVERY == 0:
+            return keymask("A")
+    return 0
+
+
+class D:
+    """Helpers for writing drivers with `yield from`."""
+
+    def __init__(self, run):
+        self.run = run
+        self.game = None
+        self.f = None
+        self.n = 0  # frames emulated so far
+
+    def step(self, keys=0):
+        f = yield keymask(keys)
+        self.f, self.n = f, f.n
+        self.game = self.run.game
+        return f
+
+    def hold(self, keys, frames):
+        for _ in range(frames):
+            yield from self.step(keys)
+
+    def idle(self, frames):
+        yield from self.hold(0, frames)
+
+    def press(self, keys, hold=4, after=12):
+        yield from self.hold(keys, hold)
+        yield from self.idle(after)
+
+    def mash_until(self, cond, limit=None):
+        """The story presses (boot, then A every 60 frames) until cond(f)."""
+        while True:
+            f = yield from self.step(story_keys(self.n + 1))
+            if cond(f):
+                return f
+
+    def mash(self):
+        while True:
+            yield from self.step(story_keys(self.n + 1))
+
+    def wait_control(self, frames=20, limit=3000):
+        """Idle until the dungeon has waited for the leader's input for
+        `frames` frames in a row (sArrowsFrames advancing)."""
+        prev, streak, start = None, 0, self.n
+        while streak < frames:
+            f = yield from self.step(0)
+            v = self.game.input_waits(f)
+            streak = streak + 1 if prev is not None and v != prev else 0
+            prev = v
+            if self.n - start > limit:
+                self.post("control_timeout")
+                return f
+        return self.f
+
+    def post(self, name, value=None):
+        self.run.events[name] = self.n
+        if value is not None:
+            self.run.data[name] = value
+
+
+def story(run):
+    """Mash through the story (the after-Pit scenes)."""
+    d = D(run)
+    yield from d.mash()
+
+
+def divide(run):
+    """Chapter 1 from the storm to Beach Cave B1F; then the dungeon menu."""
+    d = D(run)
+    yield from d.mash_until(lambda f: d.game.in_dungeon(f) and d.game.input_waits(f) > 0)
+    yield from d.wait_control()
+    d.post("dungeon_control")
+    yield from d.press("B", 4, 36)
+    d.post("main_menu")
+    yield from d.press("B", 4, 30)
+    yield from d.wait_control()
+    d.post("menu_closed")
+    yield from d.idle(40)
+    yield from d.mash()
+
+
+def pit(run):
+    """Beach Cave Pit: the cutscene, then (in the fight) rotate mode."""
+    d = D(run)
+    boss = run.game.song_headers[63]  # MUS_SKY_BOSS_BATTLE
+    yield from d.mash_until(lambda f: f.songs.get("bgm") == boss)
+    d.post("boss_music")
+    yield from d.wait_control()
+    d.post("rotate_before")
+    yield from d.press("R", 3, 40)  # a short R press: rotate mode, grid shown
+    d.post("rotate_shown")
+    yield from d.press("B", 4, 30)
+    yield from d.mash()
+
+
+JUKEBOX_PER_PAGE = 6
+
+
+def jukebox(run):
+    """Top menu > Other > Sky Jukebox, then play every track for a moment.
+
+    Stores [(track index, BGM song header, rms, peak)] in run.data["jukebox"]."""
+    d = D(run)
+    nav = dict(BOOT)
+    del nav[1800]
+    nav.update({2100: "START", 2550: "DOWN", 2600: "A", 2700: "DOWN", 2750: "A"})
+
+    def keys(n):
+        for s in range(HOLD):
+            if n - s in nav:
+                return keymask(nav[n - s])
+        return 0
+    jb = run.syms["sJukebox"]
+    while True:
+        f = yield from d.step(keys(d.n + 1))
+        if 0x02000000 <= f.u32(jb) < 0x02040000:
+            break
+        if d.n > 4000:
+            d.post("jukebox_missing")
+            yield from d.idle(1)
+            return
+    yield from d.idle(60)
+    d.post("jukebox_open")
+    tracks = run.game.jukebox_tracks
+    bgm = run.syms["gMPlayInfo_BGM"]
+    out = []
+    for page in range((len(tracks) + JUKEBOX_PER_PAGE - 1) // JUKEBOX_PER_PAGE):
+        rows = min(JUKEBOX_PER_PAGE, len(tracks) - page * JUKEBOX_PER_PAGE)
+        for row in range(rows):
+            yield from d.press("A", 4, 16)
+            run.emu.audio()
+            yield from d.idle(50)
+            _, rms, peak = run.emu.audio()
+            hdr = d.f.u32(bgm)
+            status = d.f.u32(bgm + 4)
+            out.append((page * JUKEBOX_PER_PAGE + row, hdr, status, rms, peak))
+            yield from d.press("DOWN", 4, 8)
+        yield from d.press("RIGHT", 4, 10)
+    d.post("jukebox_done", out)
+    yield from d.idle(1)
