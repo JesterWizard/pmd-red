@@ -201,7 +201,7 @@ static const ax_pose sProbopassPose43[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sProbopassPose44[] = {
-	AX_POSE(23, OAM1(2, ST_OAM_SQUARE     , 0), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
+	AX_POSE(23, OAM1(2, ST_OAM_SQUARE     , 2), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE(17, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(230, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE_TERMINATOR
 };
@@ -210,7 +210,7 @@ static const ax_pose sProbopassPose45[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sProbopassPose46[] = {
-	AX_POSE(23, OAM1(4, ST_OAM_SQUARE     , 0), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
+	AX_POSE(23, OAM1(4, ST_OAM_SQUARE     , 2), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE(17, OAM1(244, ST_OAM_SQUARE     , 1), OAM2(229, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE_TERMINATOR
 };
@@ -277,7 +277,7 @@ static const ax_pose sProbopassPose58[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sProbopassPose59[] = {
-	AX_POSE(23, OAM1(2, ST_OAM_SQUARE     , 0), OAM2(252, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
+	AX_POSE(23, OAM1(2, ST_OAM_SQUARE     , 2), OAM2(252, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE(17, OAM1(244, ST_OAM_SQUARE     , 1), OAM2(275, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE(-1, OAM1(244, ST_OAM_SQUARE     , 1), OAM2(230, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE_TERMINATOR
@@ -287,13 +287,13 @@ static const ax_pose sProbopassPose60[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sProbopassPose61[] = {
-	AX_POSE(23, OAM1(4, ST_OAM_SQUARE     , 0), OAM2(252, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
+	AX_POSE(23, OAM1(4, ST_OAM_SQUARE     , 2), OAM2(252, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE(17, OAM1(245, ST_OAM_SQUARE     , 1), OAM2(276, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE(-1, OAM1(245, ST_OAM_SQUARE     , 1), OAM2(229, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sProbopassPose62[] = {
-	AX_POSE(23, OAM1(6, ST_OAM_SQUARE     , 0), OAM2(252, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
+	AX_POSE(23, OAM1(6, ST_OAM_SQUARE     , 2), OAM2(252, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE(17, OAM1(246, ST_OAM_SQUARE     , 1), OAM2(277, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE(-1, OAM1(246, ST_OAM_SQUARE     , 1), OAM2(228, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE_TERMINATOR
@@ -350,7 +350,7 @@ static const ax_pose sProbopassPose72[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sProbopassPose73[] = {
-	AX_POSE(23, OAM1(2, ST_OAM_SQUARE     , 0), OAM2(257, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
+	AX_POSE(23, OAM1(2, ST_OAM_SQUARE     , 2), OAM2(257, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE(17, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(275, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(1, 3, 1)),
 	AX_POSE_TERMINATOR
 };

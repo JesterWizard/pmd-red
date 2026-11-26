@@ -183,7 +183,7 @@ static const ax_pose sUxiePose43[] = {
 };
 static const ax_pose sUxiePose44[] = {
 	AX_POSE(34, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(247, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(35, OAM1(3, ST_OAM_H_RECTANGLE, 0), OAM2(247, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(35, OAM1(3, ST_OAM_H_RECTANGLE, 2), OAM2(247, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sUxiePose45[] = {
@@ -196,7 +196,7 @@ static const ax_pose sUxiePose46[] = {
 };
 static const ax_pose sUxiePose47[] = {
 	AX_POSE(38, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(247, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(39, OAM1(3, ST_OAM_H_RECTANGLE, 0), OAM2(247, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(39, OAM1(3, ST_OAM_H_RECTANGLE, 2), OAM2(247, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sUxiePose48[] = {
@@ -209,7 +209,7 @@ static const ax_pose sUxiePose49[] = {
 };
 static const ax_pose sUxiePose50[] = {
 	AX_POSE(42, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(247, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(43, OAM1(3, ST_OAM_H_RECTANGLE, 0), OAM2(247, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(43, OAM1(3, ST_OAM_H_RECTANGLE, 2), OAM2(247, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sUxiePose51[] = {
@@ -234,7 +234,7 @@ static const ax_pose sUxiePose55[] = {
 };
 static const ax_pose sUxiePose56[] = {
 	AX_POSE(42, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(43, OAM1(3, ST_OAM_H_RECTANGLE, 0), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(43, OAM1(3, ST_OAM_H_RECTANGLE, 2), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sUxiePose57[] = {
@@ -247,7 +247,7 @@ static const ax_pose sUxiePose58[] = {
 };
 static const ax_pose sUxiePose59[] = {
 	AX_POSE(38, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(39, OAM1(3, ST_OAM_H_RECTANGLE, 0), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(39, OAM1(3, ST_OAM_H_RECTANGLE, 2), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sUxiePose60[] = {
@@ -260,7 +260,7 @@ static const ax_pose sUxiePose61[] = {
 };
 static const ax_pose sUxiePose62[] = {
 	AX_POSE(34, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(35, OAM1(3, ST_OAM_H_RECTANGLE, 0), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(35, OAM1(3, ST_OAM_H_RECTANGLE, 2), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sUxiePose63[] = {

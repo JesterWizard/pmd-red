@@ -203,7 +203,7 @@ static const ax_pose sDrapionPose47[] = {
 static const ax_pose sDrapionPose48[] = {
 	AX_POSE(56, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(233, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 7)),
 	AX_POSE(57, OAM1(234, ST_OAM_V_RECTANGLE, 1), OAM2(265, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 7)),
-	AX_POSE(58, OAM1(2, ST_OAM_H_RECTANGLE, 0), OAM2(233, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(12, 3, 7)),
+	AX_POSE(58, OAM1(2, ST_OAM_H_RECTANGLE, 2), OAM2(233, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(12, 3, 7)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDrapionPose49[] = {
@@ -235,7 +235,7 @@ static const ax_pose sDrapionPose55[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDrapionPose56[] = {
-	AX_POSE(86, OAM1(1, ST_OAM_H_RECTANGLE, 0), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 7)),
+	AX_POSE(86, OAM1(1, ST_OAM_H_RECTANGLE, 2), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 7)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDrapionPose57[] = {

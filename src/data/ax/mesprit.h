@@ -123,7 +123,7 @@ static const ax_pose sMespritPose28[] = {
 };
 static const ax_pose sMespritPose29[] = {
 	AX_POSE(20, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(21, OAM1(2, ST_OAM_H_RECTANGLE, 0), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(21, OAM1(2, ST_OAM_H_RECTANGLE, 2), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sMespritPose30[] = {
@@ -132,7 +132,7 @@ static const ax_pose sMespritPose30[] = {
 };
 static const ax_pose sMespritPose31[] = {
 	AX_POSE(23, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(24, OAM1(2, ST_OAM_H_RECTANGLE, 0), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(24, OAM1(2, ST_OAM_H_RECTANGLE, 2), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sMespritPose32[] = {
@@ -149,7 +149,7 @@ static const ax_pose sMespritPose34[] = {
 };
 static const ax_pose sMespritPose35[] = {
 	AX_POSE(23, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(250, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(24, OAM1(2, ST_OAM_H_RECTANGLE, 0), OAM2(250, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(24, OAM1(2, ST_OAM_H_RECTANGLE, 2), OAM2(250, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sMespritPose36[] = {
@@ -158,7 +158,7 @@ static const ax_pose sMespritPose36[] = {
 };
 static const ax_pose sMespritPose37[] = {
 	AX_POSE(20, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(250, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 0)),
-	AX_POSE(21, OAM1(2, ST_OAM_H_RECTANGLE, 0), OAM2(250, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
+	AX_POSE(21, OAM1(2, ST_OAM_H_RECTANGLE, 2), OAM2(250, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(8, 3, 0)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sMespritPose38[] = {
