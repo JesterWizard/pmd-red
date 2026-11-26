@@ -23,13 +23,15 @@
 
 void RunFullscreenArtFrame(void)
 {
-#ifdef SKY_STORY
-    SkyBubbles_DrawCutaway();
-#endif
     CopyWindowBgBuffer(NULL, COPY_WINDOW_BG_BUFFER_WIN0);
     nullsub_8(FALSE);
     sub_8005180();
     ToggleWindowBgBuffer();
+#ifdef SKY_STORY
+    /* After the window buffer calls, which reset the blend weights (the rain
+     * sets its own). */
+    SkyBubbles_DrawCutaway();
+#endif
     UpdateSoundEffectCounters();
     WaitForNextFrameAndAdvanceRNG();
     LoadBufferedInputs();

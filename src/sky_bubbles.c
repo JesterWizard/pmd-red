@@ -9,8 +9,9 @@
  *
  * The same system draws the rain over the storm (SKY_BUBBLES_RAIN, EoS
  * m01a0102): 1 px teal streaks (graphics/custom/sky_rain/rain.png) falling
- * steeply over the cliff and the stormy sea. EoS blends its rain over the
- * picture; here the streaks are solid, in EoS's rain colours.
+ * steeply over the cliff and the stormy sea. Like EoS, the rain is blended
+ * over the picture: semi-transparent OBJs alpha-blended with BG2/BG3/backdrop
+ * (gBldCnt second targets, RAIN_BLEND weights), restored when it stops.
  *
  * Scripts: SKY_BUBBLES(mode) (SPECIAL_PROCESS 0x61). 0 stops.
  * VRAM: OBJ tiles 0x300.. (shared with the thought bubbles, which never show
@@ -23,6 +24,7 @@
 #ifdef SKY_STORY
 
 #include "globaldata.h"
+#include "bg_control.h"
 #include "bg_palette_buffer.h"
 #include "cpu.h"
 #include "palette_fade_util.h"
@@ -40,6 +42,10 @@
 #define BUBBLE_BIG_CELLS 4
 #define BUBBLE_MAX 44
 #define RAIN_CELLS 3
+/* rain weight 10/16 over 8/16 of the picture: dim over the cliff, bright
+ * over the sky, as in EoS */
+#define RAIN_BLEND BLDALPHA_BLEND(10, 8)
+#define RAIN_BLEND_TARGETS (BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_BD)
 
 static const u8 sBubbleTiles[] = INCBIN_U8("graphics/custom/sky_bubbles/bubbles.4bpp");
 static const u16 sBubblePal[] = INCBIN_U16("graphics/custom/sky_bubbles/bubbles.gbapal");
@@ -57,6 +63,9 @@ struct SkyBubble
 static EWRAM_DATA struct SkyBubble sBubbles[BUBBLE_MAX] = {0};
 static EWRAM_INIT u8 sBubbleMode = 0;
 static EWRAM_INIT u8 sBubbleCount = 0;
+static EWRAM_INIT bool8 sBlendSaved = FALSE;
+static EWRAM_INIT u16 sSavedBldCnt = 0;
+static EWRAM_INIT u16 sSavedBldAlpha = 0;
 
 /* Drift per mode: EoS's {SpecialActing 4: Krabby on the sand, 5: Krabby at
  * sunset}, then the sunset beach / sea. */
@@ -109,6 +118,17 @@ static void LoadBubblePalette(bool8 fade, s32 brightness)
 void SkyBubbles_Start(s32 mode)
 {
     s32 i;
+
+    if (sBlendSaved) {
+        gBldCnt = sSavedBldCnt;
+        gBldAlpha = sSavedBldAlpha;
+        sBlendSaved = FALSE;
+    }
+    if (mode == SKY_BUBBLES_RAIN) {
+        sSavedBldCnt = gBldCnt;
+        sSavedBldAlpha = gBldAlpha;
+        sBlendSaved = TRUE;
+    }
 
     if (mode <= 0 || mode >= (s32)ARRAY_COUNT(sModes)) {
         sBubbleMode = 0;
@@ -181,8 +201,12 @@ static void DrawBubbles(void)
     s32 i;
     bool8 rain = (sBubbleMode == SKY_BUBBLES_RAIN);
 
-    if (rain)
+    if (rain) {
         CpuCopy((void *)(OBJ_VRAM0 + BUBBLE_TILE_NUM * 32), sRainTiles, RAIN_CELLS * 4 * 32);
+        /* every frame: screen changes (cutaway <-> map) rewrite the blend */
+        gBldCnt |= RAIN_BLEND_TARGETS;
+        gBldAlpha = RAIN_BLEND;
+    }
     else
         CpuCopy((void *)(OBJ_VRAM0 + BUBBLE_TILE_NUM * 32), sBubbleTiles, BUBBLE_CELLS * 4 * 32);
 
@@ -217,6 +241,7 @@ static void DrawBubbles(void)
         if (rain) {
             SpriteSetShape(&sprite, 2); /* tall */
             SpriteSetSize(&sprite, 1);  /* 8x32 */
+            SpriteSetObjMode(&sprite, 1); /* semi-transparent */
         }
         else {
             SpriteSetShape(&sprite, 0); /* square */
