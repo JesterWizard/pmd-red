@@ -122,8 +122,18 @@ endif
 # Ground station scripts: compile only vanilla/ or custom/ pack matching configs/runtime.c
 RUNTIME_CONFIG := configs/runtime.c
 CUSTOM_STORY_FLAG := $(shell sed -n 's/.*\.custom_story *= *\(TRUE\|FALSE\).*/\1/p' $(RUNTIME_CONFIG) | head -1)
+# Explorers of Sky demake (opening chapter): STORY=sky is the default for the
+# modern build on this branch. `make STORY=vanilla` restores the Red story.
+# The retail-matching build (MODERN=0) always uses vanilla.
+ifeq ($(MODERN),0)
+  STORY := vanilla
+endif
+STORY ?= sky
 ifeq ($(CUSTOM_STORY_FLAG),TRUE)
   GROUND_STORY_DIR := custom
+else ifeq ($(STORY),sky)
+  GROUND_STORY_DIR := sky
+  CPPFLAGS += -DSKY_STORY=1
 else
   GROUND_STORY_DIR := vanilla
 endif
@@ -212,6 +222,10 @@ GROUND_MAP_OBJECTS := $(filter $(C_BUILDDIR)/ground_map_files_%.o,$(C_OBJECTS))
 # Stamp path for pack flips (rule attached after `all:` so it is not the default goal)
 GROUND_STATION_OBJECTS := $(filter $(C_BUILDDIR)/ground_data_%_station.o,$(C_OBJECTS))
 GROUND_STORY_STAMP := $(BUILD_DIR)/.ground_story_$(GROUND_STORY_DIR)
+# SKY_STORY is tested in C files and shared headers, so every C object
+# rebuilds when the story pack flips (rare; a flip is a full C rebuild).
+SKY_STORY_OBJECTS := $(C_OBJECTS)
+$(if $(wildcard $(GROUND_STORY_STAMP)),,$(shell mkdir -p $(BUILD_DIR) && rm -f $(BUILD_DIR)/.ground_story_* && touch $(GROUND_STORY_STAMP)))
 DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)
 # GNU make skips a missing prerequisite that has a recipe when the target already
 # exists (the .SECONDARY: above), so the rule below would never run after a flip.
@@ -298,10 +312,10 @@ $(GROUND_ALIAS_STAMP): src/ground_files_table.c $(wildcard src/ground_map_files_
 $(C_BUILDDIR)/ground_files_table.o: $(GROUND_ALIAS_STAMP)
 
 # Rebuild station scripts when custom_story pack selection flips
-$(GROUND_STATION_OBJECTS): $(GROUND_STORY_STAMP)
+$(GROUND_STATION_OBJECTS) $(SKY_STORY_OBJECTS): $(GROUND_STORY_STAMP)
 $(GROUND_STORY_STAMP):
 	@mkdir -p $(BUILD_DIR)
-	@rm -f $(BUILD_DIR)/.ground_story_vanilla $(BUILD_DIR)/.ground_story_custom
+	@rm -f $(BUILD_DIR)/.ground_story_vanilla $(BUILD_DIR)/.ground_story_custom $(BUILD_DIR)/.ground_story_sky
 	@touch $@
 	@echo "Ground story pack: $(GROUND_STORY_DIR) (custom_story=$(CUSTOM_STORY_FLAG))"
 

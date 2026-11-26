@@ -110,6 +110,28 @@ struct GroundLiveTypeData
 
 extern const struct GroundLiveTypeData gGroundLivesTypeData_811E63C[];
 
+#ifdef SKY_STORY
+/* Explorers of Sky demake: extra NPC kinds appended after the 147 vanilla
+ * entries (kind 147 = Zubat, 148 = Koffing, ...). See include/sky_story.h. */
+#include "sky_story.h"
+static const struct GroundLiveTypeData sSkyLivesTypeData[SKY_LIVES_KIND_COUNT] = {
+    [SKY_LIVES_ZUBAT - SKY_LIVES_KIND_FIRST]      = { 5, MONSTER_ZUBAT,      "", 2, 1 },
+    [SKY_LIVES_KOFFING - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_KOFFING,    "", 2, 1 },
+    [SKY_LIVES_WIGGLYTUFF - SKY_LIVES_KIND_FIRST] = { 5, MONSTER_WIGGLYTUFF, "", 2, 1 },
+    [SKY_LIVES_KRABBY - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_KRABBY,     "", 2, 1 },
+    [SKY_LIVES_DIGLETT - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_DIGLETT,    "", 2, 1 },
+};
+
+static inline const struct GroundLiveTypeData *GetLivesTypeData(s32 kind)
+{
+    if (kind >= SKY_LIVES_KIND_FIRST)
+        return &sSkyLivesTypeData[kind - SKY_LIVES_KIND_FIRST];
+    return &gGroundLivesTypeData_811E63C[kind];
+}
+#else
+#define GetLivesTypeData(kind) (&gGroundLivesTypeData_811E63C[kind])
+#endif
+
 static s32 sub_80A7B94(s16 *a0);
 static s32 GroundLives_Add(s32 id_, const GroundLivesData *ptr, s32 group_, s32 sector_);
 static void GroundLives_Delete(s32 id_);
@@ -389,7 +411,7 @@ static s32 GetTeamSlotMembers(s32 *indices)
 static s32 sub_80A7B94(s16 *a0)
 {
     s32 id = *a0;
-    const struct GroundLiveTypeData *dataPtr = &gGroundLivesTypeData_811E63C[id];
+    const struct GroundLiveTypeData *dataPtr = GetLivesTypeData(id);
     s32 ret = -1;
 
     if (dataPtr->unk0 == 1) {
@@ -553,7 +575,7 @@ s32 sub_80A7DDC(s16 *a0, s16 *speciesDst)
         return -1;
     }
 
-    dataPtr = &gGroundLivesTypeData_811E63C[*a0];
+    dataPtr = GetLivesTypeData(*a0);
     if (dataPtr->unk0 == 3) {
         if (*a0 >= 10 && *a0 < 14) {
             s32 val;
@@ -713,7 +735,7 @@ static s32 GroundLives_Add(s32 id_, const GroundLivesData *ptr, s32 group_, s32 
             break;
     }
 
-    typeDataPtr = &gGroundLivesTypeData_811E63C[sp12];
+    typeDataPtr = GetLivesTypeData(sp12);
     if (id < 0) {
         switch (sp12) {
             case 0x21:
@@ -1365,7 +1387,7 @@ void sub_80A8EC0(u8 *buffer, s32 a1)
         CopyMonsterNameToBuffer(buffer, species);
     }
     else if (sp != -1) {
-        const struct GroundLiveTypeData *dataPtr = &gGroundLivesTypeData_811E63C[sp];
+        const struct GroundLiveTypeData *dataPtr = GetLivesTypeData(sp);
 
         switch (sp) {
             case 52:
