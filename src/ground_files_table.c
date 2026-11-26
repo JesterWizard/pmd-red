@@ -590,6 +590,9 @@ extern const u8 gFileEV0104Bm[];
 extern const u8 gFileEV0105B[];
 extern const u8 gFileEV0105Bc[];
 extern const u8 gFileEV0105Bm[];
+extern const u8 gFileEV0107B[];
+extern const u8 gFileEV0107Bc[];
+extern const u8 gFileEV0107Bm[];
 #endif
 
 const File gGroundFiles[GROUND_FILES_COUNT] = {
@@ -2453,6 +2456,9 @@ const File gGroundFiles[GROUND_FILES_COUNT] = {
     [416] = { "EV0105B", &gFileEV0105B, },
     [417] = { "EV0105Bc", &gFileEV0105Bc, },
     [418] = { "EV0105Bm", &gFileEV0105Bm, },
+    [419] = { "EV0107B", &gFileEV0107B, },
+    [420] = { "EV0107Bc", &gFileEV0107Bc, },
+    [421] = { "EV0107Bm", &gFileEV0107Bm, },
 #endif
 #ifdef SKY_STORY
     [396 + SKY_GROUND_FILES] = { "H01P01", &gFileED0111A, }, /* sky: Red story file not linked */

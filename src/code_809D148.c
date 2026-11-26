@@ -308,4 +308,16 @@ void SkyCamera_MoveBy(s32 dx, s32 dy, s32 speed)
     sUnknown_20399E8.unkC = speed;
     sUnknown_20399E8.unk8 = 1;
 }
+
+/* Put the (fixed) camera's view top-left at map pixel (x, y) at once
+ * (sub_809D25C turns the camera position into the view's top-left). */
+void SkyCamera_SetView(s32 x, s32 y)
+{
+    PixelPos pos;
+
+    pos.x = x * 256 + 30976 + 0x80;
+    pos.y = y * 256 + 20480 + 2944;
+    sub_809D158(0, &pos);
+    sUnknown_20399E8.unk14 = pos;
+}
 #endif

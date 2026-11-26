@@ -1522,5 +1522,12 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bmaFileName = "ED0111Am",
         .bpaFileNames = {NULL, NULL, NULL, NULL},
     },
+    [MAP_FILE_ID_SKY_STORM_WAVES] = {
+        /* v01p07b's waves animation is v01p01a's (same BPA) */
+        .bplFileName = "EV0107B",
+        .bpcFileName = "EV0107Bc",
+        .bmaFileName = "EV0107Bm",
+        .bpaFileNames = {"EV0101A1", NULL, NULL, NULL},
+    },
 #endif
 };

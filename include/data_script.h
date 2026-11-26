@@ -201,6 +201,10 @@
 #define SKY_SHOW_MAP(on)                SPECIAL_PROCESS(0x64, on)
 /* Move the fixed camera dy pixels at spd/256 pixels a frame (no wait). */
 #define SKY_CAMERA_MOVE(dy, spd)        SPECIAL_PROCESS_EX(0x65, dy, spd)
+/* Put the fixed camera's view (top-left) at map pixel (x, y) at once. */
+#define SKY_CAMERA_SET(x, y)            SPECIAL_PROCESS_EX(0x66, x, y)
+/* Move the fixed camera dx pixels at spd/256 pixels a frame (no wait). */
+#define SKY_CAMERA_MOVE_X(dx, spd)      SPECIAL_PROCESS_EX(0x67, dx, spd)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

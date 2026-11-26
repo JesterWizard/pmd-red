@@ -39,4 +39,9 @@ const u8 gFileEV0104Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0104Bm.bma.lz"
 const u8 gFileEV0105B[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0105B.bpl");
 const u8 gFileEV0105Bc[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0105Bc.bpc");
 const u8 gFileEV0105Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0105Bm.bma.lz");
+/* EoS v01p07b: the stormy sea before the cliff (sky, waves, clouds;
+ * tools/make_sky_storm_waves_map.py; waves animation: EV0101A1) */
+const u8 gFileEV0107B[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0107B.bpl");
+const u8 gFileEV0107Bc[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0107Bc.bpc");
+const u8 gFileEV0107Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0107Bm.bma.lz");
 #endif
