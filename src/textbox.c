@@ -231,12 +231,16 @@ static u8 *sub_809B428(u8 *a0, s32 a1, u8 *a2);
 static bool8 sub_809B648(void);
 static void sub_809C39C(void);
 static void sub_809C3D8(void);
+#ifndef SKY_STORY
 static void sub_809C414(void);
+#endif
 static void sub_809C464(void);
 static void sub_809C478(void);
 static void sub_809C4B0(void);
+#ifndef SKY_STORY
 static void sub_809C504(void);
 static void sub_809C550(void);
+#endif
 
 void TextboxInit(void)
 {
@@ -870,11 +874,13 @@ bool8 ScriptSpecialTextHandler2(s32 kind, u32 a1, MonOrStrPtr_Arg monOrStr)
 bool8 ScriptSpecialTextHandler(s32 kind, u32 a1, s32 a2, MonOrStrPtr_Arg monOrStr)
 {
     switch (kind) {
+#ifndef SKY_STORY
         case SPECIAL_TEXT_BUY_FRIEND_AREAS:
             if (sub_8021700(a1)) {
                 return FALSE;
             }
             break;
+#endif
         case SPECIAL_TEXT_DUNGEON_LIST:
             sub_8001D88();
             if (HasZeroAvailableDungeons()) {
@@ -1165,6 +1171,7 @@ static const unkStruct_3001B64_unk418 gUnknown_8116208 =
     .unkC = sub_801FC40,
 };
 
+#ifndef SKY_STORY /* Wigglytuff's Friend Area shop: no Friend Areas in the sky build */
 static const unkStruct_3001B64_unk418 gUnknown_8116218 =
 {
     .unk0 = 1,
@@ -1172,7 +1179,10 @@ static const unkStruct_3001B64_unk418 gUnknown_8116218 =
     .unk8 = CleanWigglytuffShop,
     .unkC = sub_8021C5C,
 };
+#endif
 
+/* Wonder Mail, friend rescue and the Pelipper Post Office: not in the sky build. */
+#ifndef SKY_STORY
 static const unkStruct_3001B64_unk418 gUnknown_8116228 =
 {
     .unk0 = 1,
@@ -1228,6 +1238,7 @@ static const unkStruct_3001B64_unk418 gUnknown_8116288 =
     .unk8 = TYM_Destroy,
     .unkC = TYM_Update,
 };
+#endif
 
 // These 3 are identical
 static const unkStruct_3001B64_unk418 gUnknown_8116298 =
@@ -1278,6 +1289,7 @@ static const unkStruct_3001B64_unk418 gUnknown_81162E8 =
     .unkC = sub_803B120,
 };
 
+#ifndef SKY_STORY
 static const unkStruct_3001B64_unk418 gUnknown_81162F8 =
 {
     .unk0 = 1,
@@ -1285,6 +1297,7 @@ static const unkStruct_3001B64_unk418 gUnknown_81162F8 =
     .unk8 = sub_809C414,
     .unkC = sub_8025354,
 };
+#endif
 
 static const unkStruct_3001B64_unk418 gUnknown_8116308 =
 {
@@ -1494,6 +1507,7 @@ static bool8 sub_809B648(void)
                 }
             }
             return 1;
+#ifndef SKY_STORY
           case SPECIAL_TEXT_BUY_FRIEND_AREAS:
             if (sTextbox->unk420 == 1) {
                 ResetTextbox();
@@ -1516,6 +1530,7 @@ static bool8 sub_809B648(void)
                 }
             }
             return 1;
+#endif
         case SPECIAL_TEXT_DUNGEON_LIST:
             if (sTextbox->unk420 == 1) {
                 s32 rescueDungeonID = ScriptDungeonIDToRescueDungeonID(GetScriptVarValue(NULL, DUNGEON_SELECT));
@@ -1674,6 +1689,7 @@ static bool8 sub_809B648(void)
                 }
             }
            return 0;
+#ifndef SKY_STORY
         case SPECIAL_TEXT_FRIEND_SHOP: {
             u32 mode = CheckQuest(QUEST_SQUARE_ASLEEP) ? 1 : 0;
             ResetTextbox();
@@ -1684,6 +1700,8 @@ static bool8 sub_809B648(void)
             sTextbox->unk430 = -1;
             return 0;
         }
+#endif
+#ifndef SKY_STORY
           case SPECIAL_TEXT_FRIEND_RESCUE:
             sTextbox->unk418 = &gUnknown_8116228;
             return 1;
@@ -1775,6 +1793,7 @@ static bool8 sub_809B648(void)
                 return 1;
             }
           }
+#endif
           case SPECIAL_TEXT_DOJO_ENTER:
             if (sTextbox->unk420 == 1) {
               u32 uVar19 = CheckQuest(QUEST_SQUARE_ASLEEP) == FALSE ? 0 : 4;
@@ -1873,6 +1892,7 @@ static bool8 sub_809B648(void)
         case SPECIAL_TEXT_UNK_15:
             ResetTextbox();
             return 0;
+#ifndef SKY_STORY /* pick a Friend Area to warp to: no Friend Areas in the sky build */
           case 0x16:
             if (CreateFriendListMenu(2)) {
                 sTextbox->unk418 = &gUnknown_81162F8;
@@ -1880,6 +1900,7 @@ static bool8 sub_809B648(void)
             }
             sTextbox->unk430 = -2;
             return 0;
+#endif
         case SPECIAL_TEXT_ITEM_REWARD:
             sTextbox->unk430 = TryGiveScriptItem(sTextbox->unk424, sTextbox->unk428);
             sTextbox->unk418 = &gUnknown_8116308;
@@ -2011,6 +2032,7 @@ static void sub_809C3D8(void)
     sub_801D1E0();
 }
 
+#ifndef SKY_STORY
 static void sub_809C414(void)
 {
     u8 val;
@@ -2029,6 +2051,7 @@ static void sub_809C414(void)
     CleanFriendListMenu();
 
 }
+#endif
 
 static void sub_809C464(void)
 {
@@ -2079,6 +2102,7 @@ static void sub_809C4B0(void)
         GroundMap_ExecuteEvent(scriptID, FALSE);
 }
 
+#ifndef SKY_STORY
 static void sub_809C504(void)
 {
     u8 temp;
@@ -2121,3 +2145,4 @@ static void sub_809C550(void)
     }
     sTextbox->unk430 = val;
 }
+#endif

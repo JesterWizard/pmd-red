@@ -167,6 +167,7 @@ bool8 sub_8095298(s32 param_1)
   return FALSE;
 }
 
+#ifndef SKY_STORY
 void sub_80952C4(void)
 {
   s32 index;
@@ -177,6 +178,7 @@ void sub_80952C4(void)
     gUnknown_203B48C->unk4[index] = -1;
   }
 }
+#endif
 
 bool8 HasMail(u8 mailType, u32 param_2)
 {
@@ -203,6 +205,7 @@ s32 CountMailType(u8 mailType)
   return total;
 }
 
+#ifndef SKY_STORY
 u32 CountAllMail(void)
 {
   unkStruct_203B480 *ptr;
@@ -215,7 +218,9 @@ u32 CountAllMail(void)
   }
   return total;
 }
+#endif
 
+#ifndef SKY_STORY
 s32 sub_8095374(void)
 {
   unkStruct_203B480 *ptr;
@@ -228,6 +233,7 @@ s32 sub_8095374(void)
   }
   return retvar;
 }
+#endif
 
 /* With mailType and (additonal data??), search mail and return exact index */
 s32 GetMailIndex(u8 mailType, u32 param_2)
@@ -255,6 +261,7 @@ s32 GetFirstIndexofMailType(u8 mailType)
   return -1;
 }
 
+#ifndef SKY_STORY
 s32 sub_8095400(u32 param_1)
 {
   u32 *ptr;
@@ -266,6 +273,7 @@ s32 sub_8095400(u32 param_1)
   }
   return -1;
 }
+#endif
 
 void sub_809542C(DungeonMailSeed *param_1)
 {
@@ -282,6 +290,7 @@ void sub_809542C(DungeonMailSeed *param_1)
   gUnknown_203B480->rescuesAllowed = GetRescuesAllowed(gUnknown_203B480->dungeonSeed.location.id);
 }
 
+#ifndef SKY_STORY
 void sub_8095494(DungeonMailSeed *param_1, u8 index)
 {
   u32 seed;
@@ -296,7 +305,9 @@ void sub_8095494(DungeonMailSeed *param_1, u8 index)
   param_1->location = dungeon;
   param_1->seed = seed;
 }
+#endif
 
+#ifndef SKY_STORY
 u32 sub_80954B4(void)
 {
     if(CountMailType(3) != 0)
@@ -304,6 +315,7 @@ u32 sub_80954B4(void)
     else
         return 0;
 }
+#endif
 
 
 

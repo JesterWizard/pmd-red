@@ -7,6 +7,7 @@
 
 // Also used for the friend areas map.
 
+#ifndef SKY_STORY
 void PlayFriendAreasMapBGM(void)
 {
     if (CheckQuest(QUEST_IN_WORLD_CALAMITY))
@@ -14,6 +15,7 @@ void PlayFriendAreasMapBGM(void)
     else if (CheckQuest(QUEST_UNK12))
         StartNewBGM(MUS_POKEMON_SQUARE);
 }
+#endif
 
 void PlayWorldMapBGM(void)
 {
@@ -23,11 +25,13 @@ void PlayWorldMapBGM(void)
         StartNewBGM(MUS_POKEMON_SQUARE);
 }
 
+#ifndef SKY_STORY
 void FadeOutFriendAreasMapBGM(void)
 {
     if (!CheckQuest(QUEST_IN_WORLD_CALAMITY))
         FadeOutBGM(30);
 }
+#endif
 
 void FadeOutWorldMapBGM(void)
 {

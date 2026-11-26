@@ -25,10 +25,12 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Refills the dungeon leader's Belly\nto its maximum."),
       NULL, CUSTOM_DEBUG_MENU_OPTION_ACTION, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, CUSTOM_DEBUG_MENU_FILL_BELLY },
+#ifndef SKY_STORY /* no Friend Areas in the sky build */
     { _("Unlock areas"), _("Unlock Friend Areas"),
       _("Unlocks every Friend Area so they\ncan all be visited."),
       NULL, CUSTOM_DEBUG_MENU_OPTION_ACTION, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS },
+#endif
 
     { _("Always run"), _("Always Run"),
       _("Run in the overworld and dungeons\nwithout holding {B_BUTTON}."),
@@ -46,10 +48,12 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Applies a Friend Bow-style bonus\nto recruitment rates."),
       &gRuntimeConfig.recruit_rate_boost, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#ifndef SKY_STORY /* no Friend Areas in the sky build */
     { _("All areas"), _("All Friend Areas"),
       _("Visit or recruit into any Friend\nArea. Unlock flags stay vanilla.\nOne-way: cannot turn off here."),
       &gRuntimeConfig.all_friend_areas, CUSTOM_DEBUG_MENU_OPTION_ONE_WAY, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#endif
     { _("Wind off"), _("Disable Something Approaches"),
       _("Skips the dungeon wind timer and\nthe Something's approaching blow-out."),
       &gRuntimeConfig.disable_something_approaches, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
@@ -82,10 +86,12 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Makuhita Dojo: 5 floors, auto-exit,\nno boss, with scaled enemy levels.\nTakes effect on next Dojo entry."),
       &gRuntimeConfig.pmd2_training_grounds, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#ifndef SKY_STORY /* no jobs or Pelipper board in the sky build */
     { _("Rescue pts"), _("PMD2 Rescue Points"),
       _("Shows each job's rescue-point\nreward beside its difficulty."),
       &gRuntimeConfig.pmd2_rescue_points, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#endif
     { _("Send home"), _("PMD2 Send Home"),
       _("Adds Team Send Home for new\nrecruits, including full-party\nrecruit handling."),
       &gRuntimeConfig.pmd2_send_home, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
@@ -138,6 +144,7 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Uses SpriteCollab portraits for\nGen 1-3 plus expanded packs for\nstarter evolutions and Spinda."),
       &gRuntimeConfig.custom_portraits, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#ifndef SKY_STORY /* no jobs or Pelipper board in the sky build */
     { _("Outlaw jobs"), _("Outlaw Missions"),
       _("Adds Wanted Board to the Pelipper\nboard menu (usual + outlaw jobs).\nTakes effect after the board refreshes."),
       &gRuntimeConfig.outlaw_missions, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
@@ -154,6 +161,7 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Accept up to 16 Job List slots\ninstead of the vanilla 8."),
       &gRuntimeConfig.expanded_job_slots, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#endif
     { _("Damage view"), _("Damage Preview"),
       _("While facing a foe, shows estimated\ndamage, accuracy, and effect."),
       &gRuntimeConfig.damage_preview, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
@@ -218,10 +226,12 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       _("Shows floating HP bars above\nPokémon visible in the dungeon.\nTakes effect on next dungeon entry."),
       &gRuntimeConfig.dungeon_hp_bars, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#ifndef SKY_STORY /* no Friend Areas in the sky build */
     { _("Area intros"), _("Friend Area Intros"),
       _("Shows a full-screen art splash for\nabout 2 seconds when entering a\nFriend Area. Skip with {A_BUTTON}.\nTakes effect on next area visit."),
       &gRuntimeConfig.friend_area_intros, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+#endif
     { _("Team ACT"), _("Team ACT"),
       _("Unlocks Team ACT with the other\npostgame Makuhita Dojo team courses.\nTakes effect on next Dojo entry."),
       &gRuntimeConfig.team_act, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,

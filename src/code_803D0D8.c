@@ -7,10 +7,16 @@
 #include "code_80958E8.h"
 #include "memory.h"
 
+/* Sky build: only the password-character check (sub_803D0F0, used by the
+ * naming screen) is kept; the Wonder Mail / rescue password codec is not
+ * linked (its callers are not in the sky build). */
+#ifndef SKY_STORY
 static EWRAM_INIT u8 sUnknown_203B408 = {1};
+#endif
 
 #include "data/code_803D0D8.h"
 
+#ifndef SKY_STORY
 // arm9.bin::02059A08
 u8 sub_803D0D8()
 {
@@ -22,11 +28,15 @@ UNUSED static void sub_803D0E4(u8 a0)
     sUnknown_203B408 = a0;
 }
 
+#endif
+
 // arm9.bin::020599F8
 u8 sub_803D0F0(u8 r0)
 {
     return sUnknown_80F42F0[r0];
 }
+
+#ifndef SKY_STORY
 
 // arm9.bin::020599E8
 u8 sub_803D100(u8 r0)
@@ -246,3 +256,4 @@ void sub_803D414(u8 *buffer,WonderMail *mail)
     }
     MemoryCopy8(buffer,auStack_44,sizeof(auStack_44));
 }
+#endif

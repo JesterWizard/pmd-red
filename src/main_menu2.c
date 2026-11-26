@@ -35,10 +35,11 @@ static EWRAM_DATA WindowTemplate sMainMenuWindowExtra = {0};
 #ifdef SKY_STORY
 /*
  * Explorers of Sky demake: EoS's top menu. The top level is New Game / Other,
- * or Continue (Revive Team, Awaiting Rescue) / Friend Rescue / Wonder Mail S /
- * Other; "Other" opens a second window (Adventure Log, Achievements, Trade
- * Items, Delete Save Data, Exit). Descriptions are EoS's, with the DS-only
- * parts (wireless, Nintendo WFC) changed to the GBA's.
+ * or Continue / Other (EoS's Revive Team, Awaiting Rescue, Friend Rescue and
+ * Wonder Mail S have no counterpart: Red's rescue and Wonder Mail are not in
+ * the sky build); "Other" opens a second window (Adventure Log, Achievements,
+ * Trade Items, Delete Save Data, Sky Jukebox, Exit). Descriptions are EoS's,
+ * with the DS-only parts (wireless, Nintendo WFC) changed to the GBA's.
  */
 #define MENU_SKY_OTHER 60
 #define MENU_SKY_EXIT  61
@@ -51,14 +52,6 @@ static const MenuItem sSkyDescNewGame[] = {
     {_("Start an entirely new adventure."), 0xFFDE}, {_("  "), 0xFFDE}, {NULL, 0xFFDD} };
 static const MenuItem sSkyDescContinue[] = {
     {_("Resume your adventure from your last"), 0xFFDE}, {_("save point."), 0xFFDE}, {NULL, 0xFFDD} };
-static const MenuItem sSkyDescRevive[] = {
-    {_("Resume your adventure from where your"), 0xFFDE}, {_("team was last defeated."), 0xFFDE}, {NULL, 0xFFDD} };
-static const MenuItem sSkyDescAwaiting[] = {
-    {_("You are waiting for rescue by a friend."), 0xFFDE}, {_("You may also choose to give up waiting."), 0xFFDE}, {NULL, 0xFFDD} };
-static const MenuItem sSkyDescFriendRescue[] = {
-    {_("Using a Game Link cable or passwords,"), 0xFFDE}, {_("friends may rescue each other."), 0xFFDE}, {NULL, 0xFFDD} };
-static const MenuItem sSkyDescWonderMail[] = {
-    {_("Using passwords, you can receive"), 0xFFDE}, {_("Wonder Mail S."), 0xFFDE}, {NULL, 0xFFDD} };
 static const MenuItem sSkyDescOther[] = {
     {_("View saved game data, trade items,"), 0xFFDE}, {_("and more..."), 0xFFDE}, {NULL, 0xFFDD} };
 static const MenuItem sSkyDescAdventureLog[] = {
@@ -106,20 +99,12 @@ static void SkyBuildTopMenu(void)
         sMainMenuItemsExtra[n++].menuAction = MENU_NEW_GAME;
     }
     else {
-        if (CountMailType(WONDER_MAIL_TYPE_SOS) != 0) {
-            sMainMenuItemsExtra[n].text = _("Awaiting Rescue");
-            sMainMenuItemsExtra[n++].menuAction = MENU_AWAITING_RESCUE;
-        }
-        else if (CountMailType(WONDER_MAIL_TYPE_OKD) != 0) {
-            sMainMenuItemsExtra[n].text = _("Revive Team");
-            sMainMenuItemsExtra[n++].menuAction = MENU_CONTINUE;
-        }
-        else {
-            sMainMenuItemsExtra[n].text = _("Continue");
-            sMainMenuItemsExtra[n++].menuAction = MENU_CONTINUE;
-        }
-        /* The demo has no Friend Rescue / Wonder Mail S: rescues run on
-         * Red's later-story maps, which are not in the sky build. */
+        /* The demo has no Friend Rescue / Wonder Mail S (Red's are left out
+         * of the sky build). Without them no SOS or A-OK mail can exist:
+         * Beach Cave (Tiny Woods) allows no rescues, so fainting there never
+         * writes an SOS, so there is no Awaiting Rescue / Revive Team. */
+        sMainMenuItemsExtra[n].text = _("Continue");
+        sMainMenuItemsExtra[n++].menuAction = MENU_CONTINUE;
     }
     sMainMenuItemsExtra[n].text = _("Other");
     sMainMenuItemsExtra[n++].menuAction = MENU_SKY_OTHER;
@@ -180,10 +165,7 @@ static bool8 SkySetMenuText(s32 menuIndex)
 
     switch (choice) {
         case MENU_NEW_GAME: desc = sSkyDescNewGame; break;
-        case MENU_CONTINUE: desc = CountMailType(WONDER_MAIL_TYPE_OKD) != 0 ? sSkyDescRevive : sSkyDescContinue; break;
-        case MENU_AWAITING_RESCUE: desc = sSkyDescAwaiting; break;
-        case MENU_FRIEND_RESCUE: desc = sSkyDescFriendRescue; break;
-        case MENU_WONDER_MAIL: desc = sSkyDescWonderMail; break;
+        case MENU_CONTINUE: desc = sSkyDescContinue; break;
         case MENU_SKY_OTHER: desc = sSkyDescOther; break;
         case MENU_ADVENTURE_LOG: desc = sSkyDescAdventureLog; break;
         case MENU_ACHIEVEMENTS: desc = sSkyDescAchievements; break;

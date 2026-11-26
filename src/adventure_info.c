@@ -94,6 +94,7 @@ UNUSED static void SetNumAdventures(s32 numAdventures)
     gUnknown_203B494->numAdventures = numAdventures;
 }
 
+#ifndef SKY_STORY
 void IncrementFriendRescueSuccesses(void)
 {
     gUnknown_203B494->friendRescueSuccesses++;
@@ -103,6 +104,7 @@ void IncrementFriendRescueSuccesses(void)
     SetAdventureAchievement(AA_NUM_FRIEND_RESCUE_SUCCESSES);
     EvaluateAchievements();
 }
+#endif
 
 s32 GetFriendRescueSuccesses(void)
 {

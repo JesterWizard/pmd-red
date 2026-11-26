@@ -64,6 +64,7 @@ void sub_80972F4(void)
 void nullsub_128(void)
 {}
 
+#ifndef SKY_STORY
 bool8 sub_8097318(s16 param_1)
 {
     s32 param_1_s32 = param_1;
@@ -73,6 +74,7 @@ bool8 sub_8097318(s16 param_1)
 
     return GetScriptVarArrayValue(NULL, RESCUE_SCENARIO_ORDER_LIST, (u16)param_1_s32) != 0;
 }
+#endif
 
 void sub_809733C(s32 _rescueDungId, bool32 param_2)
 {

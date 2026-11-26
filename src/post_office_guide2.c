@@ -99,6 +99,10 @@ static void DisplayMissionObjectives(void)
     PrintStringOnWindow(10, 0, sObjectives, sUnknown_203B330->unk10, 0);
 
     switch (sUnknown_203B330->dungeonMissionKind) {
+#ifndef SKY_STORY
+        /* Sky build: no rescue mail and no jobs (Red's friend rescue and the
+         * Pelipper board are not in it): never out on a rescue, and a job
+         * dungeon has no jobs to list. */
         case DUNGEON_MISSION_OUTONRESCUE: {
             unkStruct_203B480 *mail;
             u8 buffer[100];
@@ -115,7 +119,11 @@ static void DisplayMissionObjectives(void)
             PrintStringOnWindow(40, 16, buffer, sUnknown_203B330->unk10, 0);
             break;
         }
+#endif
         case DUNGEON_MISSION_ACCEPTEDJOB_RELATED: {
+#ifdef SKY_STORY
+            PrintStringOnWindow(10, 16, sJustGo, sUnknown_203B330->unk10, 0);
+#else
             if (CountJobsinDungeon(sUnknown_203B330->dungeonIndex) == 0)
                 PrintStringOnWindow(10, 16, sJustGo, sUnknown_203B330->unk10, 0);
             else {
@@ -167,6 +175,7 @@ static void DisplayMissionObjectives(void)
                     }
                 }
             }
+#endif
             break;
         }
         case DUNGEON_MISSION_UNK3:

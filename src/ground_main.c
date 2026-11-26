@@ -315,12 +315,14 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
         UpdateAdventureAchievements();
         FlushBossFightAchievementUnlocks(FALSE);
         EvaluateAchievements();
+#ifndef SKY_STORY /* no Friend Areas in the sky build */
         {
             u8 introAreaId = MapIdToFriendAreaId(sUnknown_20398BC);
 
             if (introAreaId != FRIEND_AREA_NONE)
                 ShowFriendAreaIntro_Async(introAreaId);
         }
+#endif
         if (scriptID != -1) {
             GroundMap_ExecuteEvent(scriptID, FALSE);
         }
@@ -876,6 +878,7 @@ void sub_8099220(DungeonSetupInfo *param_1, s32 scriptDungeon)
     }
 }
 
+#ifndef SKY_STORY
 void sub_809927C(u8 param_1)
 {
     sUnknown_203B49C = TRUE;
@@ -890,6 +893,7 @@ void sub_809927C(u8 param_1)
     sUnknown_20398C8.sub0.unk4 = 0;
     sUnknown_20398C8.sub0.unkD = 0;
 }
+#endif
 
 bool8 sub_80992E0(s16 *param_1, s16 *rescueDungeonId)
 {
