@@ -95,6 +95,15 @@ void sprintfStatic(char *buffer, const char *text, ...);
 
 #define asm_unified(x) asm(".syntax unified\n" x "\n.syntax divided\n")
 
+// Compile-time check. agbcc (gnu89) has no _Static_assert, so it falls back to
+// a typedef whose array size is negative when cond is false. name must be a
+// unique identifier within the file.
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
+#define STATIC_ASSERT(cond, name) _Static_assert(cond, #name)
+#else
+#define STATIC_ASSERT(cond, name) typedef char static_assert_##name[(cond) ? 1 : -1]
+#endif
+
 #define ARRAY_COUNT(array) (sizeof(array) / sizeof((array)[0]))
 #define ARRAY_COUNT_INT(array) ((s32)(ARRAY_COUNT(array))) // When an int is needed to match.
 

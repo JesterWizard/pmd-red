@@ -4,6 +4,7 @@
 #include "constants/item.h"
 #include "constants/monster.h"
 #include "achievements.h"
+#include "code_800D090.h"
 #include "common_strings.h"
 #include "input.h"
 #include "items.h"

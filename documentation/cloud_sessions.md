@@ -65,7 +65,11 @@ It uses `sudo` for apt when not running as root.
   default (`MODERN=1`).
 - `make MODERN=0 compare` is the retail-matching gate. It needs agbcc, so run
   `scripts/cloud/setup.sh --agbcc` first. It must print `pmd_red.gba: OK` to pass.
-  Whether it currently passes has not been checked yet.
+  It does not pass today. Every source compiles under agbcc, but the link fails
+  with `region 'EWRAM' overflowed`. Even if it linked, the sha1 could not match:
+  the matching build compiles the hack code too (about 64 files read
+  `gRuntimeConfig` without a `MODERN` guard, and `ld_script.ld` links the
+  achievements and runtime-config objects).
 
 A `MODERN=1` build will not match the retail sha1. That is expected for hack
 changes.

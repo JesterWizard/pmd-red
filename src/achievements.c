@@ -573,9 +573,9 @@ void NoteAchievementDungeonVisited(u8 dungeonId)
     EvaluateAchievements();
 }
 
-_Static_assert(sizeof(struct AchievementsData) == ACHIEVEMENTS_DATA_SIZE, "AchievementsData layout");
-_Static_assert(NUMBER_OF_ITEM_IDS <= sizeof(((struct AchievementsData *)0)->itemsEverGot) * 8,
-               "itemsEverGot needs a bit per item ID");
+STATIC_ASSERT(sizeof(struct AchievementsData) == ACHIEVEMENTS_DATA_SIZE, AchievementsData_layout);
+STATIC_ASSERT(NUMBER_OF_ITEM_IDS <= sizeof(((struct AchievementsData *)0)->itemsEverGot) * 8,
+              itemsEverGot_needs_a_bit_per_item_ID);
 
 void NoteAchievementItemObtained(u8 itemId)
 {

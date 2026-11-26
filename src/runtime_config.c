@@ -20,8 +20,8 @@ struct RuntimeConfigSave
     u32 checksum;
 };
 
-_Static_assert(sizeof(struct RuntimeConfigSave) <= RUNTIME_CONFIG_SAVE_SIZE,
-               "RuntimeConfig outgrew RUNTIME_CONFIG_SAVE_SIZE");
+STATIC_ASSERT(sizeof(struct RuntimeConfigSave) <= RUNTIME_CONFIG_SAVE_SIZE,
+              RuntimeConfig_outgrew_RUNTIME_CONFIG_SAVE_SIZE);
 
 EWRAM_DATA RuntimeConfig gRuntimeConfigData = {0};
 

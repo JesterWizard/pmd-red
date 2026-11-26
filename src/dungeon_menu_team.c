@@ -383,7 +383,7 @@ static void AddTeamSubMenuOptions(struct UnkFieldTeamMenuStruct *a0)
             /* unk2=1 → menu label "Send Home" when Farewell commits to Friend Area. */
             u8 sendHomeLabel = 0;
 
-            if (monInfo->teamIndex >= 0 && monInfo->teamIndex < MAX_TEAM_MEMBERS) {
+            if (monInfo->teamIndex < MAX_TEAM_MEMBERS) {
                 DungeonMon *mon = &gRecruitedPokemonRef->dungeonTeam[monInfo->teamIndex];
 
                 if (sub_806A58C(mon->recruitedPokemonId)
