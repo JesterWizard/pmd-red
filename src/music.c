@@ -144,6 +144,9 @@ void QueueBGM(u16 songIndex)
 
 void StopBGM(void)
 {
+#ifdef SKY_STORY
+    SkyAmbience_FadeOut(0); /* EoS sound_Stop(): the second BGM too */
+#endif
     bool8 interruptFlag = DisableInterrupts();
 
     if (sFanfareMusicPlayerState == 0) {
@@ -779,3 +782,80 @@ static void nullsub_20(u16 songIndex)
 static void nullsub_21(u16 songIndex)
 {
 }
+
+#ifdef SKY_STORY
+/*
+ * Explorers of Sky demake: EoS's second BGM player (bgm2_PlayFadeIn /
+ * bgm2_FadeOut / bgm2_Stop), which layers an ambience (the waves, "Ocean1")
+ * under the music on the beach. Here it is an extra m4a music player that is
+ * not in gMPlayTable (the vanilla player table and gNumMusicPlayers stay as
+ * they are), opened the first time it is used. Scripts: SKY_AMBIENCE(song,
+ * frames) and SKY_AMBIENCE_FADEOUT(frames). EoS's sound_Stop() also stops
+ * it: StopBGM and FadeOutAllMusic stop / fade it too.
+ */
+#define SKY_AMBIENCE_TRACKS 6
+
+static IWRAM_DATA struct MusicPlayerInfo sSkyAmbienceInfo = {0};
+static IWRAM_DATA struct MusicPlayerTrack sSkyAmbienceTracks[SKY_AMBIENCE_TRACKS] = {0};
+static IWRAM_DATA u16 sSkyAmbienceSong = 0;
+static IWRAM_DATA bool8 sSkyAmbienceOpen = FALSE;
+
+static u16 SkyFadeSpeed(u16 frames)
+{
+    if (frames > 256)
+        return 16;
+    frames >>= 4;
+    return frames == 0 ? 1 : frames;
+}
+
+static bool8 SkyAmbience_Playing(void)
+{
+    return sSkyAmbienceOpen && sSkyAmbienceSong != 0
+        && (sSkyAmbienceInfo.status & MUSICPLAYER_STATUS_TRACK) != 0
+        && !(sSkyAmbienceInfo.status & MUSICPLAYER_STATUS_PAUSE);
+}
+
+void SkyAmbience_Play(u16 songIndex, u16 frames)
+{
+    bool8 interruptFlag;
+
+    /* As EoS: playing the song that is already on leaves it running. */
+    if (songIndex == sSkyAmbienceSong && SkyAmbience_Playing())
+        return;
+
+    interruptFlag = DisableInterrupts();
+    if (!sSkyAmbienceOpen) {
+        MPlayOpen(&sSkyAmbienceInfo, sSkyAmbienceTracks, SKY_AMBIENCE_TRACKS);
+        sSkyAmbienceInfo.memAccArea = gMPlayMemAccArea;
+        sSkyAmbienceOpen = TRUE;
+    }
+    sSkyAmbienceSong = songIndex;
+    MPlayStart(&sSkyAmbienceInfo, gSongTable[songIndex].header);
+    if (frames != 0) {
+        m4aMPlayImmInit(&sSkyAmbienceInfo);
+        m4aMPlayVolumeControl(&sSkyAmbienceInfo, 0xFF, 0);
+        m4aMPlayFadeIn(&sSkyAmbienceInfo, SkyFadeSpeed(frames));
+    }
+    if (interruptFlag)
+        EnableInterrupts();
+}
+
+/* frames == 0 stops at once. */
+void SkyAmbience_FadeOut(u16 frames)
+{
+    bool8 interruptFlag;
+
+    if (!SkyAmbience_Playing())
+        return;
+    interruptFlag = DisableInterrupts();
+    if (frames == 0) {
+        m4aMPlayStop(&sSkyAmbienceInfo);
+        sSkyAmbienceSong = 0;
+    }
+    else {
+        m4aMPlayFadeOut(&sSkyAmbienceInfo, SkyFadeSpeed(frames));
+    }
+    if (interruptFlag)
+        EnableInterrupts();
+}
+#endif

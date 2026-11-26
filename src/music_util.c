@@ -52,6 +52,9 @@ void StopAllMusic_1(void)
 
 void FadeOutAllMusic(u16 speed)
 {
+#ifdef SKY_STORY
+    SkyAmbience_FadeOut(speed);
+#endif
     FadeOutBGM(speed);
     FadeOutFanfareSE(STOP_FANFARE, speed);
     FadeOutFanfareSE(STOP_SOUND_EFFECT, speed);

@@ -392,6 +392,7 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
             nullsub_106();
             ThoughtBubble_Draw();
 #ifdef SKY_STORY
+            SkyStorm_Draw(); /* before the rain: the bolts go over it */
             SkyBubbles_Draw();
             SkyCutaway_UpdateCover();
 #endif
@@ -403,6 +404,7 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
         GroundMap_Reset();
 #ifdef SKY_STORY
         SkyBubbles_Start(SKY_BUBBLES_OFF);
+        SkyStorm_Stop();
 #endif
         scriptID = -1;
     }

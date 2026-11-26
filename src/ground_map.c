@@ -1562,3 +1562,26 @@ void sub_80A5E70(void)
 
     sub_80A62D0();
 }
+
+#ifdef SKY_STORY
+#include "sky_story.h"
+
+/* Explorers of Sky demake: restart the map's palette animations from their
+ * first frame on the next tick. The stormy sea (MAP_SKY_STORM_WAVES) does
+ * this so that its sky flickers in step with the lightning, as in EoS. */
+void GroundMap_SkyRestartPaletteAnims(void)
+{
+    GroundBg *groundBg = gGroundMapDungeon_3001B70;
+    SubStruct_0 *sub0Ptr;
+    s32 i;
+
+    if (groundBg == NULL || !groundBg->bplHeader.hasPalAnimations)
+        return;
+    for (i = 0, sub0Ptr = groundBg->unk0; i < groundBg->bplHeader.numPalettes; i++, sub0Ptr++) {
+        if (sub0Ptr->unk4 != NULL) {
+            sub0Ptr->unk0 = 0;
+            sub0Ptr->unk2 = 1;
+        }
+    }
+}
+#endif
