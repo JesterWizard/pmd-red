@@ -1204,7 +1204,12 @@ static bool8 xxx_update_bg_vram(Window *windows)
             /* First 4 tile rows as-is (vanilla hardcoded 0xD00 for a 26-wide box;
              * the café's 8bpp dialogue is 25 wide), then the 5th row gets the
              * bottom frame rows. */
+#ifdef SKY_STORY
+            /* The Sky dialogue box is 6 tiles tall: frame the last one. */
+            s32 topBytes = window->width * (window->height - 1) * 32;
+#else
             s32 topBytes = window->width * 4 * 32;
+#endif
 
             CpuCopy(window->unk28, window->winGFX, topBytes);
             // The reason for the casts is because we want to add topBytes directly to pointers. Because pointers are u32, without the casts, it would multiply the value by 4.

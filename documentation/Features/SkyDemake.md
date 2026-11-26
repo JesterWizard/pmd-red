@@ -67,6 +67,12 @@ lands in front of the heroes when Zubat throws it back in the Pit (m01a0701).
 Losing in Beach Cave plays m01a0301 on the beach ("Ouch! We didn't do too
 well...") and goes straight back in; the re-fight uses m01a0501's text.
 
+Dialogue uses EoS's box layout (Sky UI style): 6 tiles tall with a margin
+under it, text 4 px below and 6 px right of the frame, 13 px between lines,
+bottom portraits kept just above the box, and a full box clears for the next
+page instead of scrolling (`sSkyTextbox` in
+[`src/string_format.c`](../../src/string_format.c)).
+
 The DS second screen has no GBA equivalent, so its art (sky panoramas, the
 storm cliff, the Relic Fragment close-up, the animated sunset sea) is shown as
 full-screen cutaways in the middle of scenes (`SKY_CUTAWAY(id, frames)`,
@@ -352,6 +358,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c) |
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
+| Dialogue box layout | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
 | Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---

@@ -12,6 +12,7 @@
 #include "rescue_team_info.h"
 #include "sprite.h"
 #include "string_format.h"
+#include "ui_style.h"
 #include "bg_control.h"
 #include "custom_graphics.h"
 #include "text_1.h"
@@ -193,7 +194,21 @@ void CreateYesNoDialogueBoxAndPortrait_DefaultNo(const u8 *text, MonPortraitMsg 
     CreateMenuDialogueBoxAndPortrait(text, NULL, -1, sYesNoMenuItems_DefaultNo, NULL, 3, 0, monPortraitPtr, flags | 0x300);
 }
 
+#ifdef SKY_STORY
+/* Explorers of Sky dialogue box: 6 tiles tall with a bottom margin, text 4 px
+ * below and 6 px right of the frame, 13 px between lines (measured on EoS's
+ * bottom-screen box). New pages clear instead of scrolling like Red. */
+static EWRAM_INIT bool8 sSkyTextbox = FALSE;
+#define TEXTBOX_TEXT_X (sSkyTextbox ? 5 : 4)
+#define TEXTBOX_TEXT_Y (sSkyTextbox ? 8 : 4)
+#define TEXTBOX_LINE_HEIGHT (sSkyTextbox ? 13 : 11)
+#define TEXTBOX_ARROW_Y (sSkyTextbox ? 40 : TEXTBOX_HEIGHT)
+#else
+#define TEXTBOX_TEXT_X 4
+#define TEXTBOX_TEXT_Y 4
 #define TEXTBOX_LINE_HEIGHT 11
+#define TEXTBOX_ARROW_Y TEXTBOX_HEIGHT
+#endif
 #define TEXTBOX_HEIGHT ((TEXTBOX_LINE_HEIGHT * 3) + 1)
 #define TEXTBOX_OUT_OF_SPACE(y)(y > TEXTBOX_HEIGHT)
 
@@ -216,6 +231,14 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
     else {
         sDialogueBoxWinTemplates.id[0] = sDialogueBoxWindowTemplate;
     }
+#ifdef SKY_STORY
+    sSkyTextbox = !(flags & STR_FORMAT_FLAG_ONLY_TEXT) && UiStyleIsSky();
+    if (sSkyTextbox) {
+        sDialogueBoxWinTemplates.id[0].pos.y = 13;
+        sDialogueBoxWinTemplates.id[0].height = 6;
+        sDialogueBoxWinTemplates.id[0].totalHeight = 8;
+    }
+#endif
 
     /* Café window tiles are 128..383 (256 slots before UI maps). A 26-wide
      * dialogue + 5×5 portrait + side menu is 257 tiles — one over. Shrink
@@ -233,6 +256,11 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
 
         sDialogueBoxWinTemplates.id[1].pos.x = monPortraitPtr->pos.x;
         sDialogueBoxWinTemplates.id[1].pos.y = monPortraitPtr->pos.y;
+#ifdef SKY_STORY
+        /* EoS keeps a small gap between a bottom portrait and the box. */
+        if (sSkyTextbox && sDialogueBoxWinTemplates.id[1].pos.y > 7)
+            sDialogueBoxWinTemplates.id[1].pos.y = 7;
+#endif
         sDialogueBoxWinTemplates.id[1].width = 5;
         sDialogueBoxWinTemplates.id[1].height = 5;
         sDialogueBoxWinTemplates.id[1].totalHeight = 5;
@@ -265,10 +293,10 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
     }
     ResetUnusedInputStruct();
     ShowWindows(&sDialogueBoxWinTemplates, TRUE, TRUE);
-    sTextPrintStruct.x = 4;
-    sTextPrintStruct.y = 4;
+    sTextPrintStruct.x = TEXTBOX_TEXT_X;
+    sTextPrintStruct.y = TEXTBOX_TEXT_Y;
     sTextPrintStruct.arrowSpritePosX = 112;
-    sTextPrintStruct.arrowSpritePosY = (gWindows[0].y * 8) + TEXTBOX_HEIGHT;
+    sTextPrintStruct.arrowSpritePosY = (gWindows[0].y * 8) + TEXTBOX_ARROW_Y;
     sTextPrintStruct.unk10 = 7;
     sTextPrintStruct.unk1C = 0;
     sTextPrintStruct.waitButtonPress = 0;
@@ -366,7 +394,7 @@ void DrawDialogueBoxString_Async(void)
                      }
 
                      if (*str == '\r' || *str == '\n') {
-                        sTextPrintStruct.x = 4;
+                        sTextPrintStruct.x = TEXTBOX_TEXT_X;
                         sTextPrintStruct.y += TEXTBOX_LINE_HEIGHT;
                         str++;
                      }
@@ -388,7 +416,7 @@ void DrawDialogueBoxString_Async(void)
                             break;
                         }
                         else {
-                            sTextPrintStruct.y = 4;
+                            sTextPrintStruct.y = TEXTBOX_TEXT_Y;
                         }
                      }
                      txtSpeed--;
@@ -525,14 +553,18 @@ void DrawDialogueBoxString_Async(void)
                         sPrintStringState = 11;
                     }
                     else if (sPrintStringState == 8) {
-                        sTextPrintStruct.x = 4;
+                        sTextPrintStruct.x = TEXTBOX_TEXT_X;
                         if (TEXTBOX_OUT_OF_SPACE(sTextPrintStruct.y)) {
-                            sTextPrintStruct.y = 4;
+                            sTextPrintStruct.y = TEXTBOX_TEXT_Y;
                             if (sStringFormatFlags & STR_FORMAT_FLAG_ONLY_TEXT) {
                                 CallPrepareTextbox_8008C54(0);
                                 sPrintStringState = STATE_PRINT_CHAR;
                             }
-                            else if (sTextPrintStruct.unk1C != 0) {
+                            else if (sTextPrintStruct.unk1C != 0
+#ifdef SKY_STORY
+                                     || sSkyTextbox
+#endif
+                                     ) {
                                 CallPrepareTextbox_8008C54(0);
                                 sPrintStringState = STATE_PRINT_CHAR;
                             }
@@ -550,7 +582,7 @@ void DrawDialogueBoxString_Async(void)
                     }
 
                     sTextPrintStruct.arrowSpritePosX = 0x70;
-                    sTextPrintStruct.arrowSpritePosY = (gWindows[0].y * 8) + TEXTBOX_HEIGHT;
+                    sTextPrintStruct.arrowSpritePosY = (gWindows[0].y * 8) + TEXTBOX_ARROW_Y;
                 }
                 keepLooping = FALSE;
             }
@@ -652,6 +684,10 @@ static void sub_8014A88(void)
     sDialogueBoxWinTemplates.id[2].height = r2;
     sDialogueBoxWinTemplates.id[2].pos.x = 28 - r1;
     sDialogueBoxWinTemplates.id[2].pos.y = 14 - r2;
+#ifdef SKY_STORY
+    if (sSkyTextbox)
+        sDialogueBoxWinTemplates.id[2].pos.y = 12 - r2;
+#endif
     sDialogueBoxWinTemplates.id[0].flags = WINTEMPLATE_FLAG_x80;
     sDialogueBoxWinTemplates.id[1].flags = WINTEMPLATE_FLAG_x40 | WINTEMPLATE_FLAG_x80;
     if (sNeverWrittenToUnknownStructPtr != NULL) {
