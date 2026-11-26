@@ -65,6 +65,8 @@
 #include "status_checks.h"
 #include "adventure_info.h"
 #include "event_flag.h"
+#include "ui_style.h"
+#include "text_util.h"
 
 static EWRAM_DATA bool8 sInDiagonalMode = 0;
 static EWRAM_DATA bool8 sInRotateMode = 0;
@@ -1131,6 +1133,11 @@ enum
     MAIN_MENU_TEAM,
     MAIN_MENU_OTHERS,
     MAIN_MENU_GROUND,
+#ifdef SKY_STORY
+    /* EoS adds these two below Ground. */
+    MAIN_MENU_REST,
+    MAIN_MENU_EXIT,
+#endif
 };
 
 static void ShowMainMenu(bool8 fromBPress, bool8 a1)
@@ -1199,6 +1206,10 @@ static void ShowMainMenu(bool8 fromBPress, bool8 a1)
             printAll = TRUE;
         }
 
+#ifdef SKY_STORY
+        if (chosenOption == MAIN_MENU_EXIT)
+            chosenOption = -1;
+#endif
         r10 = chosenOption;
         if (chosenOption == MAIN_MENU_ITEMS) {
             u16 action;
@@ -1488,6 +1499,16 @@ static void ShowMainMenu(bool8 fromBPress, bool8 a1)
                 break;
             r10 = -1;
         }
+#ifdef SKY_STORY
+        else if (chosenOption == MAIN_MENU_REST) {
+            ShowDungeonRestMenu();
+            if (gDungeon->unk4)
+                break;
+            if (GetLeaderActionId() != ACTION_NOTHING)
+                break;
+            r10 = -1;
+        }
+#endif
 
         // B button
         if (chosenOption < 0)
@@ -1507,10 +1528,113 @@ static void ShowMainMenu(bool8 fromBPress, bool8 a1)
     ResetUnusedInputStruct();
 }
 
+#ifdef SKY_STORY
+/* EoS's dungeon main menu (measured on DeSmuME; layout in sub_803EAF0 kinds
+ * 6/7): Moves, Items, Team, Others, Ground, Rest, Exit; option text 13 px
+ * right of the window's inner edge, the cursor 1 px; the dungeon name in
+ * the font's coral (no free palette slot for EoS's orange); the info
+ * panel's values at EoS's columns (HP at 68, Belly / Money / Weather / Play
+ * at 160). */
+static const u8 sSkyMenuRest[] = _("{UNK_MACRO_5F_6}Rest");
+static const u8 sSkyMenuExit[] = _("{UNK_MACRO_5F_7}Exit");
+static const u8 sSkyDungeonName[] = _("{COLOR RED}{POKEMON_0}{RESET}");
+static const u8 sSkyBelly[] = _("$-Belly:{UNK_MACRO_3E}160.{VALUE_0}/{VALUE_1}");
+static const u8 sSkyMoney[] = _("Money:{UNK_MACRO_3E}160.{color CYAN_RAW}{VALUE_0}{reset}{POKE}");
+static const u8 sSkyWeather[] = _("Weather:{UNK_MACRO_3E}160.{POKEMON_0}");
+static const u8 sSkyPlay[] = _("Play:{UNK_MACRO_3E}160.{VALUE_0}:$V12:$V22");
+static const u8 sSkyTeamHp[] = _("{POKEMON_0}{UNK_MACRO_3E}68.$v03/$v13");
+
+#define SKY_MAIN_MENU_COUNT 7
+#define SKY_MAIN_MENU_TEXT_X 13
+
+static void SkyPrintOnMainMenu(bool8 printAll)
+{
+    s32 i, x, yLoop;
+    const u8 *const options[SKY_MAIN_MENU_COUNT] = {
+        gFieldMenuMovesPtr, gFieldMenuItemsPtr, gFieldMenuTeamPtr, gFieldMenuOthersPtr,
+        gFieldMenuGroundPtr, sSkyMenuRest, sSkyMenuExit,
+    };
+
+    gDungeonMenu.menuIndex = 0;
+    gDungeonMenu.currPageEntries = SKY_MAIN_MENU_COUNT;
+    gDungeonMenu.entriesPerPage = SKY_MAIN_MENU_COUNT;
+    gDungeonMenu.currPage = 0;
+    gDungeonMenu.unk4 = 0;
+    /* 9 rows (72 px): 10 px per option, 2 px above the first and 4 px of
+     * fill below the last (EoS: 14 px per option in 96 px). */
+    gDungeonMenu.firstEntryY = 2;
+    gDungeonMenu.leftRightArrowsPos.x = 0;
+    gDungeonMenu.leftRightArrowsPos.y = 0;
+    gDungeonMenu.windowId = 0;
+    gDungeonMenu.unk14.x = 0;
+    ResetTouchScreenMenuInput(&gDungeonMenu.touchScreen);
+    sub_80137B0(&gDungeonMenu, SKY_MAIN_MENU_COUNT * 10);
+    sub_803EAF0(printAll ? 7 : 6, NULL);
+
+    sub_80073B8(0);
+    /* A fleeing leader (ShouldMonsterRunAwayAndShowEffect) can only use
+     * Others, as in Red; Rest was part of Others, and Exit always works. */
+    for (i = 1; i <= SKY_MAIN_MENU_COUNT; i++)
+        gUnknown_202749A[i] = 7;
+    if (ShouldMonsterRunAwayAndShowEffect(GetLeader(), TRUE)) {
+        gUnknown_202749A[1 + MAIN_MENU_MOVES] = 2;
+        gUnknown_202749A[1 + MAIN_MENU_ITEMS] = 2;
+        gUnknown_202749A[1 + MAIN_MENU_TEAM] = 2;
+        gUnknown_202749A[1 + MAIN_MENU_GROUND] = 2;
+    }
+    for (i = 0; i < SKY_MAIN_MENU_COUNT; i++)
+        PrintStringOnWindow(SKY_MAIN_MENU_TEXT_X, GetMenuEntryYCoord(&gDungeonMenu, i), options[i], 0, 0);
+    sub_80073E0(0);
+
+    if (printAll) {
+        u32 hours, minutes, seconds;
+        EntityInfo *leaderInfo = GetEntInfo(GetLeader());
+
+        CopyStringtoBuffer(gFormatBuffer_Monsters[0], GetCurrentDungeonName());
+        x = (17 * 8 - GetStringLineWidth(gFormatBuffer_Monsters[0])) / 2;
+        sub_80073B8(1);
+        PrintFormattedStringOnWindow(x, 2, sSkyDungeonName, 1, 0);
+        sub_80073E0(1);
+
+        sub_80073B8(2);
+        DeconstructPlayTime(gPlayTimeRef, &hours, &minutes, &seconds);
+        gFormatArgs[0] = FixedPointToInt(leaderInfo->belly);
+        gFormatArgs[1] = FixedPointToInt(leaderInfo->maxBelly);
+        PrintFormattedStringOnWindow(0x73, 0, sSkyBelly, 2, 0);
+        gFormatArgs[0] = gTeamInventoryRef->teamMoney;
+        PrintFormattedStringOnWindow(0x73, 12, sSkyMoney, 2, 0);
+        GetWeatherName(gFormatBuffer_Monsters[0], GetApparentWeather(NULL));
+        PrintFormattedStringOnWindow(0x73, 24, sSkyWeather, 2, 0);
+        gFormatArgs[0] = hours;
+        gFormatArgs[1] = minutes;
+        gFormatArgs[2] = seconds;
+        PrintFormattedStringOnWindow(0x73, 36, sSkyPlay, 2, 0);
+        for (yLoop = 0, i = 0; i < MAX_TEAM_MEMBERS; i++) {
+            Entity *teamMon = gDungeon->teamPokemon[i];
+            if (EntityIsValid(teamMon)) {
+                EntityInfo *monInfo = GetEntInfo(teamMon);
+                SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], teamMon, 0);
+                gFormatArgs[0] = monInfo->HP;
+                gFormatArgs[1] = monInfo->maxHPStat;
+                PrintFormattedStringOnWindow(4, yLoop, sSkyTeamHp, 2, 0);
+                yLoop += 12;
+                if (yLoop >= 12 * MAX_TEAM_MEMBERS)
+                    break;
+            }
+        }
+        sub_80073E0(2);
+    }
+}
+#endif
+
 static void PrintOnMainMenu(bool8 printAll)
 {
     s32 i, x, y, yLoop;
 
+#ifdef SKY_STORY
+    SkyPrintOnMainMenu(printAll);
+    return;
+#endif
     gDungeonMenu.menuIndex = 0;
     gDungeonMenu.currPageEntries = 5;
     gDungeonMenu.entriesPerPage = 5;

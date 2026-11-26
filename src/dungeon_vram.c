@@ -538,6 +538,67 @@ static const WindowTemplates gUnknown_80F6370 =
     }
 };
 
+#ifdef SKY_STORY
+/* EoS's dungeon main menu (overlay 31 DUNGEON_WINDOW_PARAMS_1/2/4, measured on
+ * DeSmuME): the 7-option menu at (2,2), auto width (6 tiles), 12 rows; the
+ * dungeon name at (11,4) 19x2, right-aligned with the team info at (2,16)
+ * 28x6. EoS's screen is 32x24 tiles, the GBA's 30x20: keep the columns and
+ * the name window's row, trim each width by the 2 missing columns, keep the
+ * info panel's 6 rows at the bottom, and give the menu the 9 rows left
+ * above it (EoS's 14 px option spacing becomes 10 px). */
+static const WindowTemplates sSkyMainMenuOnly =
+{
+    .id = {
+        [0] = {
+            .type = WINDOW_TYPE_NORMAL,
+            .pos = { 2, 2 },
+            .width = 6,
+            .height = 9,
+            .totalHeight = 9,
+            .unk12 = 0,
+            .header = NULL,
+        },
+        [1] = WIN_TEMPLATE_DUMMY,
+        [2] = WIN_TEMPLATE_DUMMY,
+        [3] = WIN_TEMPLATE_DUMMY,
+    }
+};
+
+static const WindowTemplates sSkyMainMenu =
+{
+    .id = {
+        [0] = {
+            .type = WINDOW_TYPE_NORMAL,
+            .pos = { 2, 2 },
+            .width = 6,
+            .height = 9,
+            .totalHeight = 9,
+            .unk12 = 0,
+            .header = NULL,
+        },
+        [1] = {
+            .type = WINDOW_TYPE_NORMAL,
+            .pos = { 11, 4 },
+            .width = 17,
+            .height = 2,
+            .totalHeight = 2,
+            .unk12 = 0,
+            .header = NULL,
+        },
+        [2] = {
+            .type = WINDOW_TYPE_NORMAL,
+            .pos = { 2, 13 },
+            .width = 26,
+            .height = 6,
+            .totalHeight = 6,
+            .unk12 = 0,
+            .header = NULL,
+        },
+        [3] = WIN_TEMPLATE_DUMMY,
+    }
+};
+#endif
+
 static const WindowTemplates gUnknown_80F63D0 =
 {
     .id = {
@@ -608,7 +669,13 @@ void sub_803EAF0(u32 kind, u8 *name)
                 sub_8052210(0);
 
             ResetUnusedInputStruct();
+#ifdef SKY_STORY
+            /* The Sky story's menu has EoS's options and layout in either
+             * window style. */
+            ShowWindows(&sSkyMainMenuOnly, TRUE, TRUE);
+#else
             ShowWindows(&gUnknown_80F6310, TRUE, TRUE);
+#endif
             break;
         }
         case 7: {
@@ -616,7 +683,13 @@ void sub_803EAF0(u32 kind, u8 *name)
                 sub_8052210(0);
 
             ResetUnusedInputStruct();
+#ifdef SKY_STORY
+            /* The Sky story's menu has EoS's options and layout in either
+             * window style. */
+            ShowWindows(&sSkyMainMenu, TRUE, TRUE);
+#else
             ShowWindows(&gUnknown_80F6370, TRUE, TRUE);
+#endif
             break;
         }
         case 2:

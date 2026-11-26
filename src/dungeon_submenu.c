@@ -68,3 +68,67 @@ void CreateDungeonMenuSubWindow(WindowTemplate *mainWindow, s32 subWindowX)
     }
     sub_80073E0(1);
 }
+
+#ifdef SKY_STORY
+/* As CreateDungeonMenuSubWindow, but keeps a second window of the menu (the
+ * Sky item list's description box) on screen: it stays window 1, so its
+ * graphics tiles are untouched, and the sub-window becomes window 2. */
+void CreateDungeonMenuSubWindowKeepWindow1(WindowTemplate *mainWindow, const WindowTemplate *keptWindow, s32 subWindowX)
+{
+    s32 i;
+    WindowTemplates windows = {
+        .id = {
+            [0] = WIN_TEMPLATE_DUMMY,
+            [1] = WIN_TEMPLATE_DUMMY,
+            [2] = {
+                .flags = WINTEMPLATE_FLAG_NONE,
+                .type = WINDOW_TYPE_NORMAL,
+                .pos = { 22, 4 },
+                .width = 6,
+                .height = 4,
+                .totalHeight = 4,
+                .unk12 = 0,
+                .header = NULL,
+            },
+            [3] = WIN_TEMPLATE_DUMMY,
+        }
+    };
+
+    windows.id[0] = *mainWindow;
+    windows.id[0].flags = WINTEMPLATE_FLAG_x80;
+    windows.id[1] = *keptWindow;
+    windows.id[1].flags = WINTEMPLATE_FLAG_x80;
+
+    gDungeonMenu.menuIndex = 0;
+    gDungeonMenu.entriesPerPage = gDungeonSubMenuItemsCount;
+    gDungeonMenu.currPageEntries = gDungeonSubMenuItemsCount;
+    gDungeonMenu.currPage = 0;
+    gDungeonMenu.pagesCount = 0;
+    gDungeonMenu.unk4 = 0;
+    gDungeonMenu.firstEntryY = 0;
+    gDungeonMenu.windowId = 2;
+    gDungeonMenu.leftRightArrowsPos.x = 0;
+    gDungeonMenu.leftRightArrowsPos.y = 0;
+    gDungeonMenu.unk14 = gDungeonMenu.cursorArrowPos;
+
+    ResetTouchScreenMenuInput(&gDungeonMenu.touchScreen);
+
+    windows.id[2].pos.x = subWindowX;
+    windows.id[2].width = 28 - subWindowX;
+    windows.id[2].height = windows.id[2].totalHeight = CalcEntriesTotalHeight(gDungeonMenu.entriesPerPage, 0);
+    DungeonShowWindows(&windows, FALSE);
+    sub_80137B0(&gDungeonMenu, windows.id[2].height * 8);
+    sub_80073B8(2);
+
+    for (i = 0; i < gDungeonSubMenuItemsCount; i++) {
+        s32 colorId, y;
+        u8 text[20];
+
+        colorId = CanSubMenuItemBeChosen(i) ? 7 : 2;
+        sprintfStatic(text, _("{COLOR}%c%s"), colorId, GetDungeonSubMenuItemString(i));
+        y = GetMenuEntryYCoord(&gDungeonMenu, i);
+        PrintStringOnWindow(8, y, text, 2, 0);
+    }
+    sub_80073E0(2);
+}
+#endif

@@ -26,6 +26,10 @@ STORY_TILES = [
     ("portrait_left", 0x2DE),
     ("dialogue_top_right", 0x2FF),
     ("dialogue_bottom_right", 0x2E6),
+    # Menu window top edge (flipped for the bottom): EoS's frame sits 2 px in
+    # from the tile edge, as in the dialogue box. Slot 0x2F8 is a spare copy of
+    # the all-white tile vanilla never draws.
+    ("menu_top", 0x2F8),
 ]
 
 # Tile order in the PNG -> font chrome tile ids it replaces.
