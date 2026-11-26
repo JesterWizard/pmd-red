@@ -15,7 +15,8 @@ rather than re-quantized.
   * Maps with more than 1024 tiles are streamed by src/ground_bg_tile_stream.c,
     which treats tilemap bits 0-11 as a source tile id and has no flip bits;
     for those, flipped tiles are baked into the pool.
-  * Palette animations and BPA animations are dropped (static frame 0).
+  * Palette animations are kept (RT's BPL has EoS's layout). BPA tile
+    animations are dropped (static frame 0).
   * Collision comes from the EoS BMA's first collision layer.
 
 The EoS ROM is never copied into the repository; only the converted map files
@@ -165,13 +166,35 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
         raise SystemExit(f"{name}: uses {n_pals} palettes > {MAX_PALETTES}")
 
     out_dir = ROOT / "data" / "map_bg"
-    # BPL: u16 count, u16 anim flag (0), then colours 1..15 of each palette.
-    bpl_data = bytearray(struct.pack("<HH", n_pals, 0))
+    # BPL: u16 count, u16 anim flag, colours 1..15 of each palette, then (if
+    # animated) one {s16 duration, s16 frames} per palette and the animation
+    # frames (15 colours each) in palette order: the same layout as EoS.
+    anims = []
+    if bpl.has_palette_animation:
+        frames = list(bpl.animation_palette)
+        pos = 0
+        for p, spec in enumerate(bpl.animation_specs):
+            n = spec.number_of_frames
+            if p < n_pals:
+                anims.append((spec.duration_per_frame, n, frames[pos:pos + n]))
+            pos += n
+        if not any(n for _, n, _ in anims):
+            anims = []
+    bpl_data = bytearray(struct.pack("<HH", n_pals, 1 if anims else 0))
     for p in range(n_pals):
         pal = bpl.palettes[p]
         for ci in range(1, 16):
             r, g, b = pal[ci * 3:ci * 3 + 3]
             bpl_data += bytes((r, g, b, 0))
+    if anims:
+        for dur, n, _ in anims:
+            bpl_data += struct.pack("<hh", dur if n else 0, n)
+        for _, n, fr in anims:
+            for f in fr:
+                for ci in range(15):
+                    r, g, b = f[ci * 3:ci * 3 + 3]
+                    bpl_data += bytes((r, g, b, 0))
+        print(f"{name}: palette animations " + ", ".join(f"pal {p}: {n}x{d}f" for p, (d, n, _) in enumerate(anims) if n))
     (out_dir / f"{stem}.bpl").write_bytes(bpl_data)
 
     # BPC: header, tiles 1..N-1, chunks 1..M-1.
