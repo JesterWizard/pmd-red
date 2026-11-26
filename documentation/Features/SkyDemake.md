@@ -41,9 +41,8 @@ rest of the game stays playable.
 ## What plays
 
 Boot: EoS's Nintendo logo and ESRB notice, Red's logo screens, then the EoS
-title (the EoS sky panorama, the logo set in EoS's banner font, blinking
-"Press START", EoS title theme). The main menu uses EoS sky panoramas and the
-EoS top-menu theme; the quiz uses EoS's intro wording and "Welcome to the World
+title (EoS's English logo, blinking "Press START", EoS title theme). The top
+menu has EoS's options and background and plays the EoS top-menu theme; the quiz uses EoS's intro wording and "Welcome to the World
 of Pokémon". The starter list adds Turtwig, Chimchar, Piplup, Munchlax and
 Riolu (with Vulpix, Meowth, Phanpy). Then:
 
@@ -197,13 +196,31 @@ loaded by [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c).
 ## Title screens
 
 [`tools/make_sky_title_screens.py`](../../tools/make_sky_title_screens.py)
-writes `graphics/custom/sky_title/`: the Nintendo logo and ESRB notice
-(`BACK/n_logo.bgp`, `BACK/w_esrb.bgp`), the title card and the main-menu
-backgrounds. EoS's English logo is not a file in the ROM (`TOP/logo_*` are the
-Japanese logos, `TOP/title_*` Rescue Team leftovers), so the logo is set in
-EoS's banner font over the EoS sky panorama. `DEMO_02`/`DEMO_03`/`DEMO_04`
-(`src/data/ground/ground_event_data.h`) call `SKY_CUTAWAY_BOOT_SCREENS` /
-`SKY_CUTAWAY_TITLE_SCREEN` instead of Red's intro movie and logo map.
+writes `graphics/custom/sky_title/`:
+
+- The Nintendo logo and ESRB notice (`BACK/n_logo.bgp`, `BACK/w_esrb.bgp`).
+- The title card: EoS's English logo from ground level **S13P01B**
+  (`MAP_BG/s13p01a.bma`/`.bpc` with the `s13p01b.bpl` palette, the end of the
+  logo fade-in that opens EoS): the orange glow and the "Pokémon Mystery
+  Dungeon" logo, scaled to 7/8 to fit 240 px. EoS writes "Explorers of Sky"
+  as banner text (`back_SetTitleBanner`), so the subtitle uses EoS's banner
+  font. "Press START" blinks; the EoS title theme plays.
+- The main-menu background: `BACK/expback.bgp`, the picture behind EoS's top
+  menu (overlay 1).
+
+`DEMO_02`/`DEMO_03`/`DEMO_04` (`src/data/ground/ground_event_data.h`) call
+`SKY_CUTAWAY_BOOT_SCREENS` / `SKY_CUTAWAY_TITLE_SCREEN` instead of Red's
+intro movie and logo map.
+
+The top menu follows EoS ([`src/main_menu2.c`](../../src/main_menu2.c),
+`#ifdef SKY_STORY`): **New Game / Other** without a save, **Continue**
+(Revive Team, Awaiting Rescue) **/ Friend Rescue / Wonder Mail S / Other**
+with one. **Other** opens a second window: Adventure Log, Achievements (if
+on), Trade Items, Delete Save Data, Exit. The descriptions are EoS's, with the
+DS-only parts (wireless, Nintendo WFC) replaced by the GBA's link cable and
+passwords.
+
+![EoS title card and top menu](images/sky_title_menu.png)
 
 ---
 
@@ -326,8 +343,9 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 
 ## Limitations
 
-- EoS's English title logo isn't in the ROM; the title card sets it in the
-  banner font.
+- The EoS logo is scaled to 7/8 to fit the GBA screen. EoS options with no
+  Red feature (Sky Jukebox, Trade Team, Rename Team, Send Demo Dungeon,
+  Nintendo WFC) are left out of the top menu.
 - Music uses Red's instruments; only EoS's notes are ported.
 - Sprites and the Relic Fragment use Red's 13 shared overworld palettes, so
   some colours shift (the fragment's red mark becomes grey; Turtwig loses its

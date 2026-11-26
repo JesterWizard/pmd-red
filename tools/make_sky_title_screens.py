@@ -7,13 +7,16 @@ From an Explorers of Sky ROM:
 
   * nintendo / esrb: EoS's boot screens (BACK/n_logo.bgp, BACK/w_esrb.bgp),
     the 240x160 middle of the 256x192 DS pictures.
-  * title_press / title_blank: the title screen. EoS's English logo is not a
-    file in the ROM (TOP/logo_*.bgp are the Japanese Time/Darkness logos and
-    TOP/title_*.bgp are Rescue Team leftovers), so the logo is set in EoS's
-    own banner font (FONT/banner.bin) over the EoS sky panorama (v01p03a);
-    "Press START" is in the second picture only, for the blink.
-  * menu0..5: main-menu backgrounds, EoS sky / sea panoramas without text
-    (the menu windows cover the top-left and the bottom).
+  * title_press / title_blank: the title screen. EoS's English logo is the
+    ground level S13P01B (MAP_BG/s13p01a.bma/.bpc with the s13p01b.bpl
+    palette: the end state of the logo fade-in that opens EoS): the orange
+    glow (layer 0) and the "Pokemon Mystery Dungeon" logo (layer 1). The
+    logo is 245 px wide, so it is scaled to 7/8 to fit the GBA screen.
+    EoS draws "Explorers of Sky" as banner text (back_SetTitleBanner), so the
+    subtitle is set in EoS's banner font (FONT/banner.bin). "Press START" is
+    in the first picture only, for the blink.
+  * menu0: the main-menu background, BACK/expback.bgp (the picture behind
+    EoS's top menu, overlay 1), 240x160 from its middle.
 
 Writes graphics/custom/sky_title/<name>.{png,at4px,pal} and src/sky_title_data.c.
 The panoramas come from graphics/custom/sky_cutaways (tools/make_sky_cutaways.py).
@@ -38,8 +41,7 @@ OUT = ROOT / "graphics" / "custom" / "sky_title"
 CUT = ROOT / "graphics" / "custom" / "sky_cutaways"
 GEN_C = ROOT / "src" / "sky_title_data.c"
 
-# Order must match enum SkyTitleArt in include/sky_story.h.
-MENU = ["sky_day", "sky_dusk", "sunset_sea0", "guild_sky", "sunset_sky", "sunset_sea4"]
+LOGO_SCALE = 7 / 8
 
 
 def bgp(rom, name: str) -> Image.Image:
@@ -96,6 +98,23 @@ def logo(banner: Banner) -> Image.Image:
     return img
 
 
+def eos_logo(rom) -> tuple[Image.Image, Image.Image]:
+    """(background 240x160, logo RGBA) from level S13P01B."""
+    get = lambda n: rom.getFileByName("MAP_BG/" + n)
+    bma = FileType.BMA.deserialize(get("s13p01a.bma"))
+    bpc = FileType.BPC.deserialize(get("s13p01a.bpc"))
+    pals = FileType.BPL.deserialize(get("s13p01b.bpl")).palettes
+    bg = bma.to_pil_single_layer(bpc, pals, [None] * 8, 0).convert("RGB").crop((0, 0, 256, 192))
+    bg = bg.resize((240, 180), Image.LANCZOS).crop((0, 10, 240, 170))
+    idx = bma.to_pil_single_layer(bpc, pals, [None] * 8, 1).crop((0, 0, 256, 192))
+    rgba = idx.convert("RGBA")
+    mask = idx.point(lambda v: 0 if v % 16 == 0 else 255).convert("L")
+    rgba.putalpha(mask)
+    rgba = rgba.crop(rgba.getbbox())
+    w, h = round(rgba.width * LOGO_SCALE), round(rgba.height * LOGO_SCALE)
+    return bg, rgba.resize((w, h), Image.LANCZOS)
+
+
 def write(name: str, im: Image.Image) -> None:
     png = OUT / f"{name}.png"
     im = im.convert("RGB")
@@ -114,18 +133,18 @@ def main() -> int:
     write("nintendo", bgp(rom, "BACK/n_logo.bgp"))
     write("esrb", bgp(rom, "BACK/w_esrb.bgp"))
 
-    sky = Image.open(CUT / "sky_day.png").convert("RGBA")
-    lg = logo(banner)
-    blank = sky.copy()
-    blank.alpha_composite(lg, ((240 - lg.width) // 2, 14))
+    bg, lg = eos_logo(rom)
+    blank = bg.convert("RGBA")
+    blank.alpha_composite(lg, ((240 - lg.width) // 2, 6))
+    sub = tinted(banner, "Explorers of Sky", (200, 236, 255), (80, 160, 255))
+    blank.alpha_composite(sub, ((240 - sub.width) // 2, 6 + lg.height - 4))
     press = blank.copy()
     ps = tinted(banner, "Press START", (255, 255, 255), (255, 255, 255))
-    press.alpha_composite(ps, ((240 - ps.width) // 2, 112))
+    press.alpha_composite(ps, ((240 - ps.width) // 2, 132))
     write("title_press", press)
     write("title_blank", blank)
 
-    for i, src in enumerate(MENU):
-        write(f"menu{i}", Image.open(CUT / f"{src}.png"))
+    write("menu0", bgp(rom, "BACK/expback.bgp"))
 
     names = ["nintendo", "esrb", "title_press", "title_blank"]
     lines = [
