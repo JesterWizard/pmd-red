@@ -34,7 +34,7 @@
 #include "structs/str_ground_bg.h"
 
 #define ART_8BPP_TILE_BASE 128
-#define ART_8BPP_MAX_TILES 600
+#define ART_8BPP_MAX_TILES TITLE_BG_8BPP_MAX_TILES
 #define FADE_STEPS 31
 
 /* Connected CGs (tools/make_sky_cutaway_scrolls.py): the top-screen CG over
@@ -75,7 +75,7 @@ static EWRAM_DATA u8 sCoverRestoreMask = 0;
 
 #define SCROLL_COLS 30
 #define SCROLL_RING 21            /* rows visible at a sub-tile offset */
-#define SCROLL_MAIN_SLOTS 608     /* 8bpp tiles 128.. (0x6000-0xF7FF) */
+#define SCROLL_MAIN_SLOTS TITLE_BG_8BPP_MAX_TILES /* 8bpp tiles 128.. (0x6000-0xF7FF) */
 
 /* BG3 (CHARBASE 1, 0x4000) tile number for a ring position: the cutaway
  * area first, then 0x4800-0x4EFF (free in title-BG mode, below the font). */

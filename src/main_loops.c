@@ -353,12 +353,13 @@ typedef struct TitleMenuFile
     /* 0x1000 */ u8 vramStuff[0x4B20];
 } TitleMenuFile;
 
-/* Max 8bpp tiles (CHARBASE1 tile 128 @ 0x6000 → 0xF600).
+/* Max 8bpp tiles (CHARBASE1 tile 128 @ 0x6000 → 0xF600; 0xF800 in the sky
+ * build, TITLE_BG_8BPP_MAX_TILES).
  * Indices 0–127 left free so VRAM 0x4F00–0x5FFF (window chrome) stays intact.
  * Title mode: BG0–2 maps at screenbases 6–8 (0x3000–0x47FF, above Continue
  * window GFX); BG3 map at screenbase 31 (0xF800, after the tile blob). */
 #define CUSTOM_TITLE_8BPP_TILE_BASE 128
-#define CUSTOM_TITLE_8BPP_MAX_TILES 600
+#define CUSTOM_TITLE_8BPP_MAX_TILES TITLE_BG_8BPP_MAX_TILES
 
 static void LoadTitleScreen(void)
 {

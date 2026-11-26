@@ -19,7 +19,7 @@
 
 /* Same VRAM layout as custom title backgrounds. */
 #define ART_8BPP_TILE_BASE 128
-#define ART_8BPP_MAX_TILES 600
+#define ART_8BPP_MAX_TILES TITLE_BG_8BPP_MAX_TILES
 
 void RunFullscreenArtFrame(void)
 {
