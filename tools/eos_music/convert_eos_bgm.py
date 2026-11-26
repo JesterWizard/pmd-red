@@ -23,6 +23,10 @@ sample to full 8-bit scale) scale note velocities; EoS volume x expression
 becomes MIDI volume; each song's master volume is chosen with an offline m4a
 mix model (m4a_render.py) so the 8-bit mixer keeps headroom.
 
+Loops: one song-wide loop, except for ambient songs whose tracks loop on
+their own with different lengths (per_track_loops): those are converted one
+track at a time (midi/<name>_trackN.mid) so every track keeps its own loop.
+
 `--jukebox-only` keeps seq_061..068 as they are (their voicegroups are still
 built, so sky_samples.s keeps their samples).
 
@@ -36,6 +40,7 @@ the jingles.
 """
 from __future__ import annotations
 
+import re
 import struct
 import subprocess
 import sys
@@ -122,26 +127,46 @@ def song_programs(song: smdl.Song) -> set[int]:
     return {p for t in song.tracks if t.notes for _, p in t.programs}
 
 
+def per_track_loops(song: smdl.Song) -> bool:
+    """DSE loops every track on its own (0x99 loop point .. 0x98 end of
+    track). In music the tracks loop together (equal loops, give or take a
+    trailing rest), so the song gets one loop for all tracks, as mid2agb
+    writes it. Ambient songs (bgm0100..0118, 0179..0193: storm, wind, waves)
+    instead layer short loops of different lengths, e.g. bgm0101 "Storm":
+    wind noise looping every 145 / 150 / 85 ticks over a 3420-tick rumble.
+    One song-wide loop would play each short loop once and then leave it
+    silent until the longest track loops, so these get a loop per track."""
+    lens = [t.end_tick - t.loop_tick for t in song.tracks if t.notes and t.loop_tick is not None]
+    return bool(lens) and min(lens) * 2 < max(lens)
+
+
 def song_to_midi(song: smdl.Song, tones: dict, sf: sky_soundfont.SoundFont):
-    """Returns (midi bytes, master volume, stats)."""
+    """Returns (MIDI files, master volume, stats). One MIDI file for the
+    song, or, with per-track loops (per_track_loops), one per track: mid2agb
+    puts a MIDI file's loop markers in every track, so each track is
+    converted on its own with its own loop."""
     loop = None
     end = 0
     for t in song.tracks:
         if t.loop_tick is not None:
             loop = t.loop_tick if loop is None else min(loop, t.loop_tick)
         end = max(end, t.end_tick)
+    per_track = per_track_loops(song)
 
     # conductor: tempo + loop markers ("[" / "]" for mid2agb)
-    cond = []
+    tempo = []
     for t in song.tracks:
         for tick, bpm in t.tempos:
             us = int(60_000_000 / max(bpm, 1))
-            cond.append((tick, 0, b"\xFF\x51\x03" + us.to_bytes(3, "big")))
-    if not cond:
-        cond.append((0, 0, b"\xFF\x51\x03" + (500000).to_bytes(3, "big")))
-    if loop is not None:
-        cond.append((loop, 1, b"\xFF\x06\x01["))
-        cond.append((end, 9, b"\xFF\x06\x01]"))
+            tempo.append((tick, 0, b"\xFF\x51\x03" + us.to_bytes(3, "big")))
+    if not tempo:
+        tempo.append((0, 0, b"\xFF\x51\x03" + (500000).to_bytes(3, "big")))
+
+    def loop_marks(lo, hi) -> list:
+        if lo is None:
+            return []
+        return [(lo, 1, b"\xFF\x06\x01["), (hi, 9, b"\xFF\x06\x01]")]
+    cond = tempo + loop_marks(loop, end)
 
     # pass 1: notes with their split's velocity factor
     tracks = []
@@ -199,19 +224,55 @@ def song_to_midi(song: smdl.Song, tones: dict, sf: sky_soundfont.SoundFont):
             vv = vel(raw)
             ev.append((n.tick, 3, bytes([0x90 | c, key, vv])))
             ev.append((n.tick + dur, 2, bytes([0x80 | c, key, 0])))
-            start = to_s(n.tick)
-            if start < RENDER_SECONDS:
+            # the mix model hears a per-track loop repeat (a song-wide loop
+            # only plays once, as before)
+            period = t.end_tick - t.loop_tick if per_track and t.loop_tick is not None else 0
+            tick = n.tick
+            while True:
+                start = to_s(tick)
+                if start >= RENDER_SECONDS:
+                    break
                 drum = tone.pan != 0
-                render_notes.append((start, to_s(n.tick + dur) - start, key, vv,
+                render_notes.append((start, to_s(tick + dur) - start, key, vv,
                                      _at(vol_changes, n.tick, 127),
                                      _at(t.pans, n.tick, 64) - 64,
                                      tone.pan if drum else 0, tone.adsr, tone.wave_label, key))
+                if period <= 0 or n.tick < t.loop_tick:
+                    break
+                tick += period
         out.append(midi_track(ev))
 
-    header = b"MThd" + struct.pack(">IHHH", 6, 1, len(out), song.tpqn)
+    def midi(chunks: list) -> bytes:
+        return b"MThd" + struct.pack(">IHHH", 6, 1, len(chunks), song.tpqn) + b"".join(chunks)
+    if per_track:
+        # tempo in the first track only: m4a's tempo is the player's
+        mids = [midi([midi_track((tempo if i == 0 else []) + loop_marks(t.loop_tick, t.end_tick)), chunk])
+                for i, ((t, *_), chunk) in enumerate(zip(tracks, out[1:]))]
+        end = max(t.end_tick for t, *_ in tracks)
+    else:
+        mids = [midi(out)]
     seconds = min(RENDER_SECONDS, to_s(end) + 2)
     mvl, level = m4a_render.headroom_mvl(render_notes, sf.render_waves(), seconds)
-    return header + b"".join(out), mvl, level
+    return mids, mvl, level
+
+
+TRACK_RULE = "@******************************************************@"
+
+
+def splice_tracks(texts: list[str], label: str) -> str:
+    """One song from mid2agb outputs of one track each (per-track loops):
+    track 1 of output i becomes track i + 1."""
+    head = texts[0].split("@**************** Track 1 ")[0]
+    foot = texts[0].split(TRACK_RULE)[1]
+    body = []
+    for i, text in enumerate(texts):
+        trk = "@**************** Track 1 " + text.split("@**************** Track 1 ")[1].split(TRACK_RULE)[0]
+        trk = trk.replace("Track 1 ", f"Track {i + 1} ", 1)
+        body.append(re.sub(rf"\b{label}_1(?=\b|_)", f"{label}_{i + 1}", trk))
+    foot = re.sub(r"\.byte\t1\t@ NumTrks", f".byte\t{len(texts)}\t@ NumTrks", foot)
+    foot = foot.replace(f"\t.word\t{label}_1\n",
+                        "".join(f"\t.word\t{label}_{i + 1}\n" for i in range(len(texts))))
+    return head + "".join(body) + TRACK_RULE + foot
 
 
 def convert_smd(rom, sf, smd: str, bank: str, vg_label: str, label: str, out: Path,
@@ -219,12 +280,21 @@ def convert_smd(rom, sf, smd: str, bank: str, vg_label: str, label: str, out: Pa
     """smd (EoS sequence) on bank's programs -> m4a song `label` in `out`."""
     song = smdl.parse(rom.getFileByName(smd))
     vg, vg_asm, tones = sf.voicegroup_from(bank, vg_label, song_programs(song))
-    data, mvl, level = song_to_midi(song, tones, sf)
-    mid = MIDI_DIR / f"{midi_name}.mid"
-    mid.write_bytes(data)
-    subprocess.run([str(MID2AGB), str(mid), str(out), f"-L{label}", f"-V{mvl:03d}",
-                    "-G000", "-P050", "-E"], check=True)
-    text = out.read_text().replace("voicegroup000", vg)
+    mids, mvl, level = song_to_midi(song, tones, sf)
+
+    def mid2agb(data: bytes, name: str) -> str:
+        mid = MIDI_DIR / f"{name}.mid"
+        mid.write_bytes(data)
+        subprocess.run([str(MID2AGB), str(mid), str(out), f"-L{label}", f"-V{mvl:03d}",
+                        "-G000", "-P050", "-E"], check=True)
+        return out.read_text()
+    if len(mids) == 1:
+        text = mid2agb(mids[0], midi_name)
+    else:
+        (MIDI_DIR / f"{midi_name}.mid").unlink(missing_ok=True)
+        text = splice_tracks([mid2agb(m, f"{midi_name}_track{i + 1}") for i, m in enumerate(mids)],
+                             label)
+    text = text.replace("voicegroup000", vg)
     out.write_text(f"@ Explorers of Sky demake: EoS {desc} on EoS's own instruments\n"
                    f"@ ({bank.rsplit('/', 1)[-1]}), generated by tools/eos_music/convert_eos_bgm.py\n"
                    f"#ifdef SKY_STORY\n" + vg_asm + text + "#endif\n")

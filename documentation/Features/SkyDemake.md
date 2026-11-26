@@ -322,6 +322,19 @@ Instruments come from EoS's DSE sound banks
   bends are kept. Each song's master volume comes from an offline model of the
   m4a mixer ([`m4a_render.py`](../../tools/eos_music/m4a_render.py)) so the
   8-bit mix, which wraps instead of clipping, keeps headroom.
+- **Loops**: DSE loops each track by itself (its 0x99 loop point to its end).
+  In music every track loops together, so a song has one loop, as mid2agb
+  writes it. EoS's ambient songs (bgm0100–0118, 0179–0193) layer short loops
+  of different lengths instead. In bgm0101 "Storm" the wind noise (sample
+  903) loops every 85, 145 and 150 ticks, and the low rumble loops every 3420.
+  With one loop for the whole song, the wind played once for 1–3 s and was
+  then silent until the 36 s loop came round, so the storm voices had no wind.
+  When a track's loop is under half the longest track's loop
+  (`per_track_loops`), the converter runs mid2agb once per track, giving each
+  track its own `GOTO`, and splices the tracks into one song. The MIDI files
+  are then `midi/<name>_trackN.mid`. Of the converted songs, only `seq_069`
+  does this. Some music songs have one track whose end is 256 ticks
+  later than the others' (a trailing rest). They keep the shared loop.
 - **Engine**: in the sky build the mixer uses 12 DirectSound channels instead
   of Red's 5, and the BGM player has 16 tracks instead of 12 (`src/m4a.c`,
   `sound/music_player_table.inc`). The vanilla build is unchanged.
