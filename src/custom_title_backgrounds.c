@@ -8,20 +8,28 @@
  */
 
 #ifdef SKY_STORY
-/* Explorers of Sky demake: EoS's top-menu background (BACK/expback.bgp,
- * tools/make_sky_title_screens.py) in every slot. */
+/* Explorers of Sky demake: the CGs EoS shows on the DS top screen during its
+ * top menu (BACK/s09p01a-s09p10a.bgp, tools/make_sky_title_screens.py). */
 const u8 gCustomTitleBg0[] = INCBIN_U8("graphics/custom/sky_title/menu0.at4px");
 const u8 gCustomTitleBg0Pal[] = INCBIN_U8("graphics/custom/sky_title/menu0.pal");
-#define gCustomTitleBg1 gCustomTitleBg0
-#define gCustomTitleBg1Pal gCustomTitleBg0Pal
-#define gCustomTitleBg2 gCustomTitleBg0
-#define gCustomTitleBg2Pal gCustomTitleBg0Pal
-#define gCustomTitleBg3 gCustomTitleBg0
-#define gCustomTitleBg3Pal gCustomTitleBg0Pal
-#define gCustomTitleBg4 gCustomTitleBg0
-#define gCustomTitleBg4Pal gCustomTitleBg0Pal
-#define gCustomTitleBg5 gCustomTitleBg0
-#define gCustomTitleBg5Pal gCustomTitleBg0Pal
+const u8 gCustomTitleBg1[] = INCBIN_U8("graphics/custom/sky_title/menu1.at4px");
+const u8 gCustomTitleBg1Pal[] = INCBIN_U8("graphics/custom/sky_title/menu1.pal");
+const u8 gCustomTitleBg2[] = INCBIN_U8("graphics/custom/sky_title/menu2.at4px");
+const u8 gCustomTitleBg2Pal[] = INCBIN_U8("graphics/custom/sky_title/menu2.pal");
+const u8 gCustomTitleBg3[] = INCBIN_U8("graphics/custom/sky_title/menu3.at4px");
+const u8 gCustomTitleBg3Pal[] = INCBIN_U8("graphics/custom/sky_title/menu3.pal");
+const u8 gCustomTitleBg4[] = INCBIN_U8("graphics/custom/sky_title/menu4.at4px");
+const u8 gCustomTitleBg4Pal[] = INCBIN_U8("graphics/custom/sky_title/menu4.pal");
+const u8 gCustomTitleBg5[] = INCBIN_U8("graphics/custom/sky_title/menu5.at4px");
+const u8 gCustomTitleBg5Pal[] = INCBIN_U8("graphics/custom/sky_title/menu5.pal");
+const u8 gCustomTitleBg6[] = INCBIN_U8("graphics/custom/sky_title/menu6.at4px");
+const u8 gCustomTitleBg6Pal[] = INCBIN_U8("graphics/custom/sky_title/menu6.pal");
+const u8 gCustomTitleBg7[] = INCBIN_U8("graphics/custom/sky_title/menu7.at4px");
+const u8 gCustomTitleBg7Pal[] = INCBIN_U8("graphics/custom/sky_title/menu7.pal");
+const u8 gCustomTitleBg8[] = INCBIN_U8("graphics/custom/sky_title/menu8.at4px");
+const u8 gCustomTitleBg8Pal[] = INCBIN_U8("graphics/custom/sky_title/menu8.pal");
+const u8 gCustomTitleBg9[] = INCBIN_U8("graphics/custom/sky_title/menu9.at4px");
+const u8 gCustomTitleBg9Pal[] = INCBIN_U8("graphics/custom/sky_title/menu9.pal");
 #else
 const u8 gCustomTitleBg0[] = INCBIN_U8("graphics/title_screen_backgrounds/title_01.at4px");
 const u8 gCustomTitleBg0Pal[] = INCBIN_U8("graphics/title_screen_backgrounds/title_01.pal");
@@ -52,6 +60,16 @@ const File gCustomTitleBgFiles[CUSTOM_TITLE_BG_FILES_COUNT] = {
     [9] = { "ctitle4p", gCustomTitleBg4Pal },
     [10] = { "ctitle5", gCustomTitleBg5 },
     [11] = { "ctitle5p", gCustomTitleBg5Pal },
+#ifdef SKY_STORY
+    [12] = { "ctitle6", gCustomTitleBg6 },
+    [13] = { "ctitle6p", gCustomTitleBg6Pal },
+    [14] = { "ctitle7", gCustomTitleBg7 },
+    [15] = { "ctitle7p", gCustomTitleBg7Pal },
+    [16] = { "ctitle8", gCustomTitleBg8 },
+    [17] = { "ctitle8p", gCustomTitleBg8Pal },
+    [18] = { "ctitle9", gCustomTitleBg9 },
+    [19] = { "ctitle9p", gCustomTitleBg9Pal },
+#endif
 };
 
 const FileArchive gCustomTitleBgArchive = {

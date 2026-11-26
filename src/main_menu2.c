@@ -13,6 +13,7 @@
 #include "save.h"
 #include "text_1.h"
 #include "sky_story.h"
+#include "sky_jukebox.h"
 
 static EWRAM_INIT MainMenu2Work *sUnknown_203B34C = {NULL};
 static EWRAM_INIT u32 sUnknown_203B350 = {-1};
@@ -67,6 +68,8 @@ static const MenuItem sSkyDescTradeItems[] = {
     {_("Using a Game Link cable, you can"), 0xFFDE}, {_("trade stored items with a friend."), 0xFFDE}, {NULL, 0xFFDD} };
 static const MenuItem sSkyDescDeleteSave[] = {
     {_("This will delete your saved game data."), 0xFFDE}, {_("{COLOR RED}Caution{RESET}: This will delete it permanently!"), 0xFFDE}, {NULL, 0xFFDD} };
+static const MenuItem sSkyDescJukebox[] = {
+    {_("Listen to music from \"Explorers of Sky.\""), 0xFFDE}, {_("  "), 0xFFDE}, {NULL, 0xFFDD} };
 static const MenuItem sSkyDescExit[] = {
     {_("Return to the Top Menu."), 0xFFDE}, {_("  "), 0xFFDE}, {NULL, 0xFFDD} };
 
@@ -131,6 +134,8 @@ static void SkyOpenOtherMenu(void)
         sSkyOtherItems[n].text = _("Delete Save Data");
         sSkyOtherItems[n++].menuAction = MENU_DELETE_SAVE_PROMPT;
     }
+    sSkyOtherItems[n].text = _("Sky Jukebox");
+    sSkyOtherItems[n++].menuAction = MENU_SKY_JUKEBOX;
     sSkyOtherItems[n].text = _("Exit");
     sSkyOtherItems[n++].menuAction = MENU_SKY_EXIT;
     sSkyOtherItems[n].text = NULL;
@@ -174,6 +179,7 @@ static bool8 SkySetMenuText(s32 menuIndex)
         case MENU_ACHIEVEMENTS: desc = sSkyDescAchievements; break;
         case MENU_TRADE_ITEMS: desc = sSkyDescTradeItems; break;
         case MENU_DELETE_SAVE_PROMPT: desc = sSkyDescDeleteSave; break;
+        case MENU_SKY_JUKEBOX: desc = sSkyDescJukebox; break;
         case MENU_SKY_EXIT: desc = sSkyDescExit; break;
     }
     if (desc != NULL)

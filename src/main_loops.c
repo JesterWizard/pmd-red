@@ -359,9 +359,15 @@ static void LoadTitleScreen(void)
     static const u8 *const sVanillaPal[3] = {"titlen0p", "titlen1p", "titlen2p"};
     static const u8 *const sCustomBG[CUSTOM_TITLE_BG_COUNT] = {
         "ctitle0", "ctitle1", "ctitle2", "ctitle3", "ctitle4", "ctitle5",
+#ifdef SKY_STORY
+        "ctitle6", "ctitle7", "ctitle8", "ctitle9",
+#endif
     };
     static const u8 *const sCustomPal[CUSTOM_TITLE_BG_COUNT] = {
         "ctitle0p", "ctitle1p", "ctitle2p", "ctitle3p", "ctitle4p", "ctitle5p",
+#ifdef SKY_STORY
+        "ctitle6p", "ctitle7p", "ctitle8p", "ctitle9p",
+#endif
     };
     OpenedFile *bgFile;
     s32 i, j;

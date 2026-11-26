@@ -1,4 +1,7 @@
 #include "global.h"
+#ifdef SKY_STORY
+#include "data/sky_jukebox_data.h"
+#endif
 #include "constants/bg_music.h"
 #include "m4a.h"
 #include "reg_control.h"
@@ -734,6 +737,11 @@ static bool8 IsBGSong(u32 songIndex)
 {
     if (songIndex <= NUM_BG_SONGS)
         return TRUE;
+#ifdef SKY_STORY
+    /* Sky Jukebox: EoS songs appended after Red's song table. */
+    if (songIndex - SKY_JUKEBOX_FIRST_SONG < SKY_JUKEBOX_SONG_COUNT)
+        return TRUE;
+#endif
     return FALSE;
 }
 

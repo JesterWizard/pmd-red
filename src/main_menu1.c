@@ -4,6 +4,7 @@
 #include "constants/main_menu.h"
 #include "adventure_log_menu.h"
 #include "achievements_menu.h"
+#include "sky_jukebox.h"
 #include "code_8099360.h"
 #include "debug_menu1.h"
 #include "ds_menus.h"
@@ -115,6 +116,11 @@ void SetUpMenu(void)
         case MENU_ACHIEVEMENTS:
             CreateAchievementsMenu();
             break;
+#ifdef SKY_STORY
+        case MENU_SKY_JUKEBOX:
+            CreateSkyJukeboxMenu();
+            break;
+#endif
         case 0x29:
         case 0x2A:
         case 0x2B:
@@ -191,6 +197,11 @@ s32 UpdateMenu(void)
         case MENU_ACHIEVEMENTS:
             nextMenu = UpdateAchievementsMenu();
             break;
+#ifdef SKY_STORY
+        case MENU_SKY_JUKEBOX:
+            nextMenu = UpdateSkyJukeboxMenu();
+            break;
+#endif
         case 0x24:
         case 0x25:
         case 0x26:
@@ -261,6 +272,11 @@ void CleanUpMenu(void)
         case MENU_ACHIEVEMENTS:
             CleanAchievementsMenu();
             break;
+#ifdef SKY_STORY
+        case MENU_SKY_JUKEBOX:
+            CleanSkyJukeboxMenu();
+            break;
+#endif
         case 0x24:
         case 0x25:
         case 0x26:

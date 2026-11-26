@@ -205,8 +205,10 @@ writes `graphics/custom/sky_title/`:
   Dungeon" logo, scaled to 7/8 to fit 240 px. EoS writes "Explorers of Sky"
   as banner text (`back_SetTitleBanner`), so the subtitle uses EoS's banner
   font. "Press START" blinks; the EoS title theme plays.
-- The main-menu background: `BACK/expback.bgp`, the picture behind EoS's top
-  menu (overlay 1).
+- The main-menu backgrounds: the ten CGs EoS shows on the DS top screen
+  during its top menu (`BACK/s09p01a`–`s09p10a.bgp`), scaled to 240×180 and
+  cropped to the middle 160 lines; one is picked at random each time
+  (`CUSTOM_TITLE_BG_COUNT` 10 in the sky build).
 
 `DEMO_02`/`DEMO_03`/`DEMO_04` (`src/data/ground/ground_event_data.h`) call
 `SKY_CUTAWAY_BOOT_SCREENS` / `SKY_CUTAWAY_TITLE_SCREEN` instead of Red's
@@ -216,11 +218,24 @@ The top menu follows EoS ([`src/main_menu2.c`](../../src/main_menu2.c),
 `#ifdef SKY_STORY`): **New Game / Other** without a save, **Continue**
 (Revive Team, Awaiting Rescue) **/ Friend Rescue / Wonder Mail S / Other**
 with one. **Other** opens a second window: Adventure Log, Achievements (if
-on), Trade Items, Delete Save Data, Exit. The descriptions are EoS's, with the
+on), Trade Items, Delete Save Data, Sky Jukebox, Exit. The descriptions are EoS's, with the
 DS-only parts (wireless, Nintendo WFC) replaced by the GBA's link cable and
 passwords.
 
 ![EoS title card and top menu](images/sky_title_menu.png)
+
+### Sky Jukebox
+
+[`src/sky_jukebox.c`](../../src/sky_jukebox.c) lists EoS's 141 Sky Jukebox
+tracks in EoS's order with EoS's names (A play, SELECT/START stop, Left/Right
+page, B back to the top menu theme). The track → song table comes from EoS's
+overlay 9 (the jukebox) and the names from the "Music Tracks" strings;
+`tools/eos_music/convert_eos_bgm.py` converts every track. The eight the story
+uses keep song ids 61–68; the other 133 are `sound/songs/sky_bgm_NNNN.s`,
+appended after Red's song table (`sound/sky_jukebox_songs.inc`, song ids
+948–1080), and `IsBGSong` accepts that range (≈800 KB).
+
+![Sky Jukebox](images/sky_jukebox.png)
 
 ---
 
@@ -345,7 +360,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 
 - The EoS logo is scaled to 7/8 to fit the GBA screen. EoS options with no
   Red feature (Sky Jukebox, Trade Team, Rename Team, Send Demo Dungeon,
-  Nintendo WFC) are left out of the top menu.
+  Nintendo WFC) are left out of the top menu. The jukebox has no Loop or
+  Lock; every track loops as converted.
 - Music uses Red's instruments; only EoS's notes are ported.
 - Sprites and the Relic Fragment use Red's 13 shared overworld palettes, so
   some colours shift (the fragment's red mark becomes grey; Turtwig loses its

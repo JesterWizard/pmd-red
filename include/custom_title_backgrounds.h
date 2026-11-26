@@ -3,7 +3,11 @@
 
 #include "structs/str_file_system.h"
 
+#ifdef SKY_STORY
+#define CUSTOM_TITLE_BG_COUNT 10 /* EoS top-menu CGs (BACK/s09p01a-s09p10a) */
+#else
 #define CUSTOM_TITLE_BG_COUNT 6
+#endif
 
 extern const FileArchive gCustomTitleBgArchive;
 

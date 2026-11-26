@@ -15,8 +15,9 @@ From an Explorers of Sky ROM:
     EoS draws "Explorers of Sky" as banner text (back_SetTitleBanner), so the
     subtitle is set in EoS's banner font (FONT/banner.bin). "Press START" is
     in the first picture only, for the blink.
-  * menu0: the main-menu background, BACK/expback.bgp (the picture behind
-    EoS's top menu, overlay 1), 240x160 from its middle.
+  * menu0..9: main-menu backgrounds, the CGs EoS shows on the DS top screen
+    during its top menu (BACK/s09p01a..s09p10a.bgp), scaled to 240x180 and
+    cropped to the middle 160 lines.
 
 Writes graphics/custom/sky_title/<name>.{png,at4px,pal} and src/sky_title_data.c.
 The panoramas come from graphics/custom/sky_cutaways (tools/make_sky_cutaways.py).
@@ -144,7 +145,9 @@ def main() -> int:
     write("title_press", press)
     write("title_blank", blank)
 
-    write("menu0", bgp(rom, "BACK/expback.bgp"))
+    for i in range(10):
+        cg = FileType.BGP.deserialize(rom.getFileByName(f"BACK/s09p{i + 1:02d}a.bgp")).to_pil().convert("RGB")
+        write(f"menu{i}", cg.resize((240, 180), Image.LANCZOS).crop((0, 10, 240, 170)))
 
     names = ["nintendo", "esrb", "title_press", "title_blank"]
     lines = [

@@ -972,6 +972,9 @@ song seq_936,  2,  2
 song seq_937,  2,  2
 song seq_938,  6,  6
 song seq_939,  6,  6
+#ifdef SKY_STORY
+#include "../sound/sky_jukebox_songs.inc"
+#endif
 
 .align 2
 empty_song:
