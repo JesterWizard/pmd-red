@@ -192,6 +192,18 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
 
 ## Music
 
+The sky build plays no Red music: every Red song id (0–128) points at an
+EoS track instead ([`tools/eos_music/sky_red_bgm_map.py`](../../tools/eos_music/sky_red_bgm_map.py)
+→ `sound/sky_red_bgm_table.inc`). EoS has no versions of Red's songs, so the
+mapping is by name where EoS has the same piece (Rising Fear, Kecleon's
+Shop, Monster House!, Heartwarming, In the Depths of the Pit, Boss Battle!)
+and otherwise by place and mood (Pokémon Square → Treasure Town, team base →
+Wigglytuff's Guild, Makuhita Dojo → Marowak Dojo, Tiny Woods → Apple Woods,
+Magma Cavern → Steam Cave, ...). Red's music sequences, its music
+voicegroups (`bank_000`–`bank_024`, the drum kits) and the 75 samples only
+they use are left out of the sky build (about 780 KB). Red's sound effects
+keep Red's instruments (`bank_025`–`bank_028`).
+
 EoS's sequences on EoS's own instruments
 ([`tools/eos_music/convert_eos_bgm.py`](../../tools/eos_music/convert_eos_bgm.py)):
 SMDL → MIDI (`sound/songs/midi/sky_*.mid`) → `mid2agb` →

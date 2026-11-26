@@ -1,5 +1,9 @@
 	.align 2
 gSongTable:: @ 9E866BC
+#ifdef SKY_STORY
+/* Explorers of Sky demake: EoS tracks for Red's music (tools/eos_music/sky_red_bgm_map.py) */
+#include "../sound/sky_red_bgm_table.inc"
+#else
 song seq_000,  0,  0
 song seq_001,  0,  0
 song seq_002,  0,  0
@@ -161,6 +165,7 @@ song seq_125,  0,  0
 song seq_126,  0,  0
 song seq_127,  0,  0
 song seq_128,  0,  0
+#endif
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0

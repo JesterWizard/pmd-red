@@ -246,6 +246,10 @@ def sky_song_count(path: Path) -> int:
         elif all(stack):
             if "sky_jukebox_songs.inc" in s:
                 break
+            if "sky_red_bgm_table.inc" in s:   # song ids 0..128 (sky_red_bgm_map.py)
+                inc = path.parent / "sky_red_bgm_table.inc"
+                count += sum(1 for l in inc.read_text().splitlines() if l.startswith("song "))
+                continue
             if s.startswith("song "):
                 count += 1
     return count
