@@ -827,5 +827,6 @@ const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_SKY_KRABBY_SUNSET] = &gGroundScript_gs178,
     [MAP_SKY_BEACH_CAVE_PIT] = &gGroundScript_gs179, /* SELECT_MAP also selects the script file */
     [MAP_SKY_BEACH_DAY] = &gGroundScript_gs178,
+    [MAP_SKY_STORM_WAVES] = &gGroundScript_gs178,
 #endif
 };

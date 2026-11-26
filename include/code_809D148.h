@@ -21,6 +21,7 @@ void sub_809D25C(void);
 void nullsub_120(void);
 #ifdef SKY_STORY
 void SkyCamera_MoveBy(s32 dx, s32 dy, s32 speed);
+void SkyCamera_SetView(s32 x, s32 y);
 #endif
 
 #endif // GUARD_CODE_809D148_H

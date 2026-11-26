@@ -1674,5 +1674,13 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .unk6 = -1,
         .text = _("Beach"),
     },
+    [MAP_SKY_STORM_WAVES] = {
+        /* unk0 6: dual BG layers (waves and clouds in front, sky behind) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_STORM_WAVES,
+        .unk6 = -1,
+        .text = _("Stormy Sea"),
+    },
 #endif
 };

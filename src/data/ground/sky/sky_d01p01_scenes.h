@@ -117,6 +117,22 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     WAIT(120),
     FLASH_FROM(TRUE, PALUTIL_KIND_01, 1, RGB_U32(0xFF, 0xFF, 0xFF)), /* the map is hidden: black */
     FADE_OUT(TRUE, 0),
+    /* EoS (v01p07b): the stormy sea in the rain, cloudy sky and dark clouds,
+     * panning left at 0.4 px a frame: 60 frames of black, a 40-frame fade
+     * in, 325 frames, a 20-frame fade out. */
+    SELECT_MAP(MAP_SKY_STORM_WAVES),
+    SKY_CAMERA_SET(350, 64),
+    WAIT(5), /* the map loads hidden (its palettes come in unfaded) */
+    SKY_SHOW_MAP(TRUE),
+    SKY_BUBBLES(SKY_BUBBLES_RAIN),
+    WAIT(55),
+    SKY_CAMERA_MOVE_X(-154, 102),
+    FADE_IN(TRUE, 40),
+    WAIT(325),
+    FADE_OUT(TRUE, 20),
+    SKY_BUBBLES(SKY_BUBBLES_OFF),
+    SKY_SHOW_MAP(FALSE),
+    SELECT_MAP(MAP_SKY_STORM_SEA),
     WAIT(30),
     BGM_FADEIN(30, MUS_SKY_STORM),
     SET_PLACE_MODE(4),

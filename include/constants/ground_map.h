@@ -242,6 +242,7 @@ enum GroundMapID
     MAP_SKY_KRABBY_SUNSET,
     MAP_SKY_BEACH_CAVE_PIT,
     MAP_SKY_BEACH_DAY,
+    MAP_SKY_STORM_WAVES,
 #endif
     MAP_COUNT,
 };

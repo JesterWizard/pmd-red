@@ -62,7 +62,7 @@ Riolu (with Vulpix, Meowth, Phanpy). Then:
 | # | EoS script | Map (converted EoS level) | Scene |
 |---|---|---|---|
 | 1 | — | — | Chapter card: black screen, EoS banner font, **Chapter 1 — A Storm at Sea** |
-| 2 | m01a0101/0102 | `v01p01a` storm at sea | Lightning on black, voices, the storm-cliff art lit by lightning, then a fade to the waves (EoS's "Storm") |
+| 2 | m01a0101/0102 | `v01p07b` stormy sea, `v01p01a` storm at sea | Lightning on black, voices, the stormy sea in the rain, the storm-cliff art lit by lightning, then a fade to the waves (EoS's "Storm") |
 | 3 | m01a0103 | `d01p11a` beach (day) | The EoS sky panorama, the hero washed up on the sand |
 | 4 | m01a0104 | `g01p01b` Wigglytuff's Guild (dusk) | Guild sky; the partner loses their nerve on the sentry grate; the Relic Fragment close-up; Zubat & Koffing watch and follow |
 | 5 | m01a0202/0203 | `v01p04b`, `v01p05b` | Dusk sky; Krabby blowing bubbles at sunset ("On the Beach at Dusk") |
@@ -148,6 +148,19 @@ Red ids 461/467) with each white flash, and after "Waaaaaah!" (`..._WARP`,
 id 488) a 90-frame white-out with the text box up, a hold on white, then
 black before the cliff, whose lightning plays the same thunder.
 
+Between the white-out and the cliff, EoS shows the stormy sea on the bottom
+screen (level `v01p07b`, timed in DeSmuME): 60 frames of black, a 40-frame
+fade in, about 325 frames, a 20-frame fade out. The waves (front layer, with
+their 6-frame BPA animation) roll under a cloudy sky (back layer, palette
+animation flickering grey to brown), dark clouds hang over it, the rain
+falls, and the view pans left at 0.4 px a frame (EoS: 48 px in 120 frames,
+from x 342 to 187). The demake plays it on `MAP_SKY_STORM_WAVES`: the view
+starts at map (350, 64), 8 px right of EoS's so the 240 px screen keeps
+EoS's centre, 64 px down so the 160 px screen shows the sky's lower half and
+the waves, and `SKY_CAMERA_MOVE_X(-154, 102)` pans it. `SKY_CAMERA_SET(x, y)`
+places the view's top-left at once (`SkyCamera_SetView`); the map loads
+hidden for 5 frames, since a freshly loaded map's palettes are unfaded.
+
 Zubat and Koffing walk in from off screen at the guild as in m01a0104: the
 camera follows the partner 104 px down, the two spawn above the view, and
 `SKY_CAMERA_MOVE(dy, speed)` (`SkyCamera_MoveBy` in
@@ -199,6 +212,7 @@ The EoS ROM is never committed. Only the converted map files are:
 | `MAP_SKY_KRABBY_SUNSET` | `EV0105B` | `v01p05b` | 1080 (streamed) |
 | `MAP_SKY_BEACH_DUSK` | `ED0111B` | `d01p11b` | 1767 (streamed) |
 | `MAP_SKY_BEACH_CAVE_PIT` | `ED0141A` | `d01p41a` | 1503 (streamed) |
+| `MAP_SKY_STORM_WAVES` | `EV0107B` | `v01p07b` | 546 + 240 animated (VRAM) |
 
 Converter: [`tools/convert_eos_ground_map.py`](../../tools/convert_eos_ground_map.py)
 
@@ -219,6 +233,19 @@ tools/convert_eos_ground_map.py EOS.nds d01p11b ED0111B --render check.png
 - Collision comes from the EoS BMA.
 - New BPCs stay uncompressed in ROM (streamed like the café's);
   `compress_ground_assets.py` skips `E*.bpc`.
+
+The stormy sea (`EV0107B`) has its own builder,
+[`tools/make_sky_storm_waves_map.py`](../../tools/make_sky_storm_waves_map.py)
+(`tools/make_sky_storm_waves_map.py EOS.nds`). `v01p07b`'s sky is 680 tiles,
+too many next to the waves' 48 tiles and 240 animated ones, so the builder
+leaves out the sky's top two chunk rows (above the view) and pools only the
+chunks the map uses. EoS draws the dark clouds as sprites fixed in the
+world; they were captured from DeSmuME's OBJ layer, placed in map
+coordinates (`graphics/custom/sky_storm/clouds.png`, two colours), and baked
+into the front layer's empty chunks above the waves on palette 1 (unused by
+EoS's chunks), so they move with the sky. Its waves BPA is byte-identical to
+`v01p01a`'s, so the map reuses `EV0101A1.bpa`. The lightning bolts EoS draws
+over the sea now and then (sprites, with lit clouds) are left out.
 
 Map registration: `include/constants/ground_map.h`, `include/map_files_table.h`,
 `src/map_files_table.c`, `src/ground_map_conversion_table.c`,
@@ -680,7 +707,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
-| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
 
 ---
 
