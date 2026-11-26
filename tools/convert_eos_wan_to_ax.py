@@ -25,9 +25,15 @@ so the conversion is mostly a re-encode. The differences handled here:
     MONSTER/m_attack.bin (attacks); missing groups fall back (see GROUP_FALLBACK).
   * VRAM: Red gives a monster 16 tiles per body-size unit. The tool reports
     the largest pose in tiles and the body size it needs.
+  * Ground-only groups: EoS's ground set (m_ground.bin) has 16 groups; 13-15
+    are cutscene poses (Zubat / Koffing: 13 nod, 15 "beaten"; script
+    animations 22 -> 0x100D and 24 -> 0x100F, the same in Red's table).
+    `--ground-groups 13,15` appends them at their EoS index, so the script
+    animation ids stay EoS's; a gap below gets the group AxResInit falls
+    back to anyway (13 -> Sleep, others -> Idle). Off by default.
 
 Usage:
-    tools/convert_eos_wan_to_ax.py convert EOS.nds <eos_md_id|dexN> <name> [--palette N]
+    tools/convert_eos_wan_to_ax.py convert EOS.nds <eos_md_id|dexN> <name> [--palette N] [--ground-groups 13,15]
     tools/convert_eos_wan_to_ax.py batch   EOS.nds [--gen4 | dexA-dexB ...]
     tools/convert_eos_wan_to_ax.py check   EOS.nds <eos_md_id|dexN> <name> OUTDIR
     tools/convert_eos_wan_to_ax.py render-ax <name> OUT.png [--palette N]
@@ -79,6 +85,10 @@ DIR_NAMES = ["S", "SE", "E", "NE", "N", "NW", "W", "SW"]
 GROUP_NAMES = ["Walk", "Attack", "Kick", "Shoot", "Strike", "Sleep", "Hurt",
                "Idle", "Swing", "Double", "Hop", "Charge", "Rotate"]
 NUM_RED_GROUPS = 13
+# Groups past Red's 13 (--ground-groups): EoS ground-set index -> sheet label.
+# A gap below a requested group gets AxResInit's fallback (sprite.c, SKY_STORY).
+EXTRA_GROUP_NAMES = {13: "Nod", 14: "G14", 15: "Beaten"}  # as for Zubat / Koffing
+EXTRA_GROUP_FALLBACK = {13: 5}  # others -> 7 (Idle)
 TILES_PER_BODY_SIZE = 16
 
 # Where each Red group is taken from: list of (bin, eos group) tried in order.
@@ -473,7 +483,7 @@ def group_seqs(wan, g):
     return [grp[0]] * NUM_DIRS
 
 
-def build_monster_model(wans: dict, max_tiles=None, groups=NUM_RED_GROUPS):
+def build_monster_model(wans: dict, max_tiles=None, groups=NUM_RED_GROUPS, ground_groups=()):
     conv = WanConverter(max_tiles)
     used_wans = {}
     mapping = []
@@ -491,6 +501,20 @@ def build_monster_model(wans: dict, max_tiles=None, groups=NUM_RED_GROUPS):
         used_wans[kind] = wan
         seqs = group_seqs(wan, eg)
         conv.model.anims.append([conv.add_sequence(wan, s) for s in seqs])
+    # Ground-only groups at their EoS index; gaps repeat the fallback group
+    # (identical sequences are emitted once by write_ax_header).
+    for g in range(groups, max(ground_groups, default=groups - 1) + 1):
+        if g in ground_groups:
+            seqs = group_seqs(wans["ground"], g) if "ground" in wans else None
+            if not seqs:
+                raise SystemExit(f"EoS ground set has no group {g}")
+            mapping.append((g, "ground", g))
+            used_wans["ground"] = wans["ground"]
+            conv.model.anims.append([conv.add_sequence(wans["ground"], s) for s in seqs])
+        else:
+            fb = EXTRA_GROUP_FALLBACK.get(g, 7)
+            mapping.append((g, "alias", fb))
+            conv.model.anims.append([list(seq) for seq in conv.model.anims[fb]])
     return conv, mapping, used_wans
 
 
@@ -593,7 +617,9 @@ def write_ax_header(model: Model, name: str, gfx_dir: Path, hdr_path: Path,
             shape, size = DIMS[(p.w, p.h)]
             yraw = (p.y + 512) & 0x3FF
             xraw = (p.x + 256) & 0x1FF
-            ybit = (yraw >> 8) & 1
+            # bits 8-9 of the 10-bit y (sprite.c reads flags1 & 0x3FF);
+            # pieces below the origin (y >= 0) need bit 9, like Red's own "2"
+            ybit = (yraw >> 8) & 3
             L.append(f"\tAX_POSE({p.sprite}, OAM1({yraw & 0xFF}, {SHAPE_NAMES[shape]}, {ybit}), "
                      f"OAM2({xraw}, ST_OAM_SIZE_{size}, FLIP({int(p.hflip)}, {int(p.vflip)}), 0, 0), "
                      f"OAM3({p.tile}, 3, {pal_num})),")
@@ -857,7 +883,7 @@ def render_sheet(model: Model, groups, out: Path, cell=64, title=""):
     dr.text((2, 1), title, fill=(255, 255, 255, 255))
     for r, (g, d, seq) in enumerate(rows):
         y0 = 14 + r * cell
-        name = GROUP_NAMES[g] if g < len(GROUP_NAMES) else f"g{g}"
+        name = GROUP_NAMES[g] if g < len(GROUP_NAMES) else EXTRA_GROUP_NAMES.get(g, f"g{g}")
         dr.text((2, y0 + cell // 2 - 5), f"{g}:{name} {DIR_NAMES[d]}", fill=(255, 255, 255, 255))
         for c, f in enumerate(seq):
             x0 = lw + c * cell
@@ -876,9 +902,9 @@ def render_sheet(model: Model, groups, out: Path, cell=64, title=""):
     return out
 
 
-def wan_model_unquantised(wans: dict):
+def wan_model_unquantised(wans: dict, ground_groups=()):
     """EoS-native reference model (original palette) for side-by-side checks."""
-    conv, mapping, used = build_monster_model(wans, max_tiles=None)
+    conv, mapping, used = build_monster_model(wans, max_tiles=None, ground_groups=ground_groups)
     conv.model.palette = wan_palette(next(iter(used.values())))
     return conv.model, mapping
 
@@ -895,7 +921,7 @@ def species_slug(rom: EosRom, md_id: int) -> str:
 
 
 def convert_monster(rom: EosRom, md_id: int, name: str, forced_palette=None,
-                    max_tiles=None, quiet=False, dry_run=False):
+                    max_tiles=None, quiet=False, dry_run=False, ground_groups=()):
     wans = rom.monster_wans(md_id)
     if not wans:
         raise SystemExit(f"EoS id {md_id}: no sprite")
@@ -903,12 +929,15 @@ def convert_monster(rom: EosRom, md_id: int, name: str, forced_palette=None,
     if max_tiles is None:
         # Red reserves 16 OBJ tiles per body-size unit (dungeon_util.c, ground_sprite.c)
         max_tiles = TILES_PER_BODY_SIZE * max(1, entry.body_size)
-    conv, mapping, used = build_monster_model(wans, max_tiles=max_tiles or None)
+    conv, mapping, used = build_monster_model(wans, max_tiles=max_tiles or None,
+                                              ground_groups=ground_groups)
     pidx, err, mp, ranking = finalize_palette(conv, used, forced_palette)
     model = conv.model
     N = c_name(name)
     note = (f"EoS md {md_id} (dex {entry.national_pokedex_number}, sprite {entry.sprite_index}) -> "
             f"Red overworld palette {pidx}")
+    if ground_groups:
+        note += "; ground groups " + ",".join(str(g) for g in ground_groups) + " appended"
     if not dry_run:
         write_ax_header(model, name, AX_MON_DIR / name, AX_HDR_DIR / f"{name}.h", pidx,
                         f"gAx{N}", note)
@@ -930,19 +959,29 @@ def convert_monster(rom: EosRom, md_id: int, name: str, forced_palette=None,
     return info, model, wans
 
 
+def parse_ground_groups(text):
+    gg = tuple(sorted({int(g) for g in text.split(",") if g.strip()})) if text else ()
+    for g in gg:
+        if g < NUM_RED_GROUPS:
+            raise SystemExit(f"--ground-groups: {g} is one of Red's 13 groups")
+    return gg
+
+
 def cmd_convert(a):
     rom = EosRom(a.rom)
     md = rom.resolve_id(a.id)
-    convert_monster(rom, md, a.name, a.palette, a.max_tiles)
+    convert_monster(rom, md, a.name, a.palette, a.max_tiles,
+                    ground_groups=parse_ground_groups(a.ground_groups))
 
 
 def cmd_check(a):
     rom = EosRom(a.rom)
     md = rom.resolve_id(a.id)
-    info, model, wans = convert_monster(rom, md, a.name, a.palette, a.max_tiles)
+    gg = parse_ground_groups(a.ground_groups)
+    info, model, wans = convert_monster(rom, md, a.name, a.palette, a.max_tiles, ground_groups=gg)
     out = Path(a.outdir)
     groups = [int(g) for g in a.groups.split(",")]
-    ref, _ = wan_model_unquantised(wans)
+    ref, _ = wan_model_unquantised(wans, gg)
     p1 = render_sheet(ref, groups, out / f"{a.name}_eos.png", title=f"EoS md {md} (original palette)")
     red = read_ax_header(AX_HDR_DIR / f"{a.name}.h")
     p2 = render_sheet(red, groups, out / f"{a.name}_ax.png",
@@ -1165,11 +1204,16 @@ def main(argv=None):
         p.add_argument("--max-tiles", type=int, default=None,
                        help="crop poses to this many VRAM tiles (default 16 x EoS body size; 0 = never crop)")
 
+    def monster_opts(p):
+        common(p)
+        p.add_argument("--ground-groups", default="",
+                       help="EoS ground-set groups past Red's 13 to append at their own index, e.g. 13,15")
+
     p = sub.add_parser("convert")
     p.add_argument("rom")
     p.add_argument("id", help="EoS monster.md index, or dexN")
     p.add_argument("name")
-    common(p)
+    monster_opts(p)
     p.set_defaults(fn=cmd_convert)
 
     p = sub.add_parser("check")
@@ -1178,7 +1222,7 @@ def main(argv=None):
     p.add_argument("name")
     p.add_argument("outdir")
     p.add_argument("--groups", default="7,0")
-    common(p)
+    monster_opts(p)
     p.set_defaults(fn=cmd_check)
 
     p = sub.add_parser("render-ax")

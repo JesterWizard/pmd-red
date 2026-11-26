@@ -352,6 +352,10 @@ static const struct ScriptCommand s_gs178_g6_s1_lives0_dlg0[] = { /* Zubat — d
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_WEST),
     MSG_NPC(NPC_ZUBAT, _(" We do.")),
     TEXTBOX_CLEAR,
+    ALERT_CUE(8), /* Koffing nods too */
+    SELECT_ANIMATION(GROUND_ANIM_TWITCH), /* EoS SetAnimation(22): the nod (EoS sprite group 13) */
+    STOP_ANIMATION_ON_CURRENT_FRAME, /* EoS WaitAnimation */
+    SELECT_ANIMATION(2),
     WAIT(30),
     ALERT_CUE(8),
     WAIT(15),
@@ -373,6 +377,10 @@ static const struct ScriptCommand s_gs178_g6_s1_lives1_dlg0[] = { /* Koffing */
     AWAIT_CUE(8),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_EAST),
     ALERT_CUE(5),
+    AWAIT_CUE(8),
+    SELECT_ANIMATION(GROUND_ANIM_TWITCH), /* EoS SetAnimation(22): the nod */
+    STOP_ANIMATION_ON_CURRENT_FRAME, /* EoS WaitAnimation */
+    SELECT_ANIMATION(2),
     AWAIT_CUE(8),
     WALK_RELATIVE(256, 0, 180),
     END_DELETE,
