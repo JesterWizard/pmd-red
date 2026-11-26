@@ -26,6 +26,9 @@ Makefile text eol=lf
 graphics/custom/backgrounds/*.pal binary
 graphics/portraits/**/*.pal binary
 graphics/title_screen_backgrounds/*.pal binary
+graphics/custom/sky_title/*.pal binary
+graphics/custom/sky_cutaways/*.pal binary
+graphics/custom/chapter_cards/*.pal binary
 
 *.h linguist-language=C
 *.inc linguist-language=Assembly
