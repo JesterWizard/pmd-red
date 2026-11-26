@@ -187,12 +187,22 @@ over the two Krabby scenes, the sunset beach and the sunset-sea cutaway:
 ([`src/sky_bubbles.c`](../../src/sky_bubbles.c),
 `graphics/custom/sky_bubbles/`). Bubbles hide behind open windows, since EoS
 shows text on the other screen. The same effect draws the rain over the
-storm (`SKY_BUBBLES_RAIN`, m01a0102): 1 px teal streaks falling steeply over
-the cliff, through the lightning and over the sea after the pan
-(`graphics/custom/sky_rain/`). As in EoS the rain is blended over the
-picture: the streaks are semi-transparent OBJs, alpha-blended (10/16 over
-8/16) with BG2/BG3/the backdrop, so they are dim over the cliff and bright
-over the sky; the previous blend settings come back when the rain stops. Converted maps keep EoS's palette animations
+storm (`SKY_BUBBLES_RAIN`: the stormy sea, m01d0112, and the cliff,
+m01a0102). Both EoS scenes use the same `EFFECT_VERY_HEAVY_RAIN`, a 3D-layer
+effect, measured in DeSmuME with only BG0 shown: about 146 streaks on the
+256x192 screen, 18–72 px long (median 36), 26.5° from vertical (dx/dy 0.5),
+falling 7 px down and 3.5 px right a frame, added as rain + half the picture
+(every rain colour: background weight 0.5). The demake tiles the screen with
+three 64x64 sheets cut from EoS's own streaks (screen cell (c, r) shows
+sheet (c + r) % 3, which wraps seamlessly; `graphics/custom/sky_rain/`,
+built by [`tools/make_sky_storm_fx.py`](../../tools/make_sky_storm_fx.py)
+from a capture of that layer, `eos_rain_layer.png`) and scrolls them at
+EoS's speed: 20 semi-transparent 64x64 OBJs, blended 16/16 over 8/16 of the
+picture, which is EoS's formula. No BG is a first blend target while it
+rains (the waves would blend into the sky), and the weights also go to
+`gUnknown_2026E4E`, which `ToggleWindowBgBuffer` reloads into BLDALPHA every
+frame (before, it reset them to 16/0 and the streaks were drawn opaque);
+the previous settings come back when the rain stops. Converted maps keep EoS's palette animations
 (the sea shimmer, the sunset glitter, the Pit water) and, on maps that fit
 VRAM, EoS's BPA tile animations: the storm-sea waves (`EV0101A1.bpa`) and
 the guild torches (`EG0101B1.bpa`), in RT's BPA slots.
@@ -236,13 +246,68 @@ Red ids 461/467) with each white flash, and after "Waaaaaah!" (`..._WARP`,
 id 488) a 90-frame white-out with the text box up, a hold on white, then
 black before the cliff, whose lightning plays the same thunder.
 
-Between the white-out and the cliff, EoS shows the stormy sea on the bottom
-screen (level `v01p07b`, timed in DeSmuME): 60 frames of black, a 40-frame
-fade in, about 325 frames, a 20-frame fade out. The waves (front layer, with
-their 6-frame BPA animation) roll under a cloudy sky (back layer, palette
-animation flickering grey to brown), dark clouds hang over it, the rain
-falls, and the view pans left at 0.4 px a frame (EoS: 48 px in 120 frames,
-from x 342 to 187). The demake plays it on `MAP_SKY_STORM_WAVES`: the view
+Between the white-out and the cliff, EoS plays `V01P07B/m01d0112` (the
+unionall runs it between m01a0101 and m01a0102): the stormy sea on the
+bottom screen. Its script, with the timing measured in DeSmuME (frames from
+the start of the fade in, F):
+
+| EoS | Frame | Demake |
+|---|---|---|
+| `sound_Stop()`, `back_SetGround(LEVEL_V01P07B)` | about F−47 | `BGM_STOP`, `SELECT_MAP(MAP_SKY_STORM_WAVES)` (60 frames of black) |
+| `bgm_PlayFadeIn(BGM_STORM, 160, 256)` | F−7 | `BGM_FADEIN(160, MUS_SKY_STORM)` |
+| `screen_FadeIn(1, 60)` | F | `FADE_IN(TRUE, 60)` |
+| `SetAnimation<object V01P07B1_192>(18)` | F+119 | `SKY_STORM_BOLT` |
+| `screen_FadeOut(1, 30)` | F+359 | `FADE_OUT(TRUE, 30)` |
+
+There is no `se_Play` in the scene (hooked `PlaySeByIdVolume` and the other
+SE / BGM entry points in DeSmuME: the only calls are the BGM stop, the
+storm BGM at F−7, and the cliff's own `bgm_PlayFadeIn(BGM_STORM, 0)` and
+thunder `se_Play(6401)` after it). The sound of the sea is the storm BGM
+(wind and rumble, EoS bgm0101) fading in. The demake used to fade the BGM
+out at the white-out and keep the sea silent until the cliff; it now
+restarts it at F−7 as EoS does, and the cliff's `BGM_FADEIN(30,
+MUS_SKY_STORM)` leaves the playing song alone (EoS's level runs on with no
+break there either). Recorded with `sndshot`: silence from the white-out to
+F−7, then the BGM from −46 dB rising to about −21 dB RMS, unbroken into the
+cliff.
+
+The waves (front layer, with their 6-frame BPA animation) roll under a
+cloudy sky (back layer, palette animation flickering grey to brown), dark
+clouds hang over it, the rain falls, and the view pans left at 0.4 px a
+frame (EoS: 48 px in 120 frames, from x 342 to 187).
+
+The lightning is the cloud object's WAN (`GROUND/v01p07b1.wan`) animation 1,
+played once (118 frames; WAN frame 0 is the dark clouds, 1–3 the hidden
+cloud above the view lit from below with a spark, 4 a lit puff and lit
+rims, 5 and 6 a bolt from the puff into the sea):
+
+| From F+ | Frames | WAN frame |
+|---|---|---|
+| 119 | 2 | 4 |
+| 123 | 4 | 4 |
+| 151 | 2, 2, 2, 2, 2 | 4, 1, (dark 4), 1, 2, 3, 1 |
+| 209 | 2 | 4 |
+| 211 | 22 | 5 and 6 alternating every 2 frames (the bolt, map x 365–400, from the puff at the top of the view to the waves) |
+| 233 | 2 | 4 |
+
+The sky's palette animation flashes brown at F+90, 122, 150, 210, 242, 270,
+330 and 362 (a 120-frame cycle), so the lit frames land on its flashes.
+There is no screen flash and no thunder SE. The demake
+([`src/sky_storm.c`](../../src/sky_storm.c)) plays the same animation: a
+lit frame turns the two baked cloud colours to EoS's lit body colours
+((16,24,24) → (0,8,8), (40,40,48) → (0,48,24), BG palette 1) and draws the
+rest of the frame (yellow light, puff, bolt) as up to 33 OBJs placed in map
+pixels, cut from EoS's own frames (captured from DeSmuME's OBJ layer in map
+coordinates, `graphics/custom/sky_storm/lit_1..6.png`; OBJs, tiles and the
+14-colour palette built by `tools/make_sky_storm_fx.py`:
+`graphics/custom/sky_storm/bolts.png`, `src/data/sky_storm_bolts.h`). Each
+frame's tiles (up to 201) are uploaded into whichever of two VRAM slots
+(OBJ tiles 0x100–0x292) the displayed OAM does not use; OBJ palette 15. The
+bolt's foot is behind the waves (OBJ priority 3 below map row 160), as in
+EoS. `SKY_MAP_PAL_RESTART` restarts the map's palette animation at F−7 so
+the GBA's sky flashes on the same frames as EoS's; measured on the GBA, the
+flashes and the lit frames fall on exactly EoS's frames. The OAM budget in
+the scene: 20 rain OBJs + at most 33 lightning OBJs. The demake plays it on `MAP_SKY_STORM_WAVES`: the view
 starts at map (350, 64), 8 px right of EoS's so the 240 px screen keeps
 EoS's centre, 64 px down so the 160 px screen shows the sky's lower half and
 the waves, and `SKY_CAMERA_MOVE_X(-154, 102)` pans it. `SKY_CAMERA_SET(x, y)`
@@ -332,8 +397,9 @@ world; they were captured from DeSmuME's OBJ layer, placed in map
 coordinates (`graphics/custom/sky_storm/clouds.png`, two colours), and baked
 into the front layer's empty chunks above the waves on palette 1 (unused by
 EoS's chunks), so they move with the sky. Its waves BPA is byte-identical to
-`v01p01a`'s, so the map reuses `EV0101A1.bpa`. The lightning bolts EoS draws
-over the sea now and then (sprites, with lit clouds) are left out.
+`v01p01a`'s, so the map reuses `EV0101A1.bpa`. The lightning (the same
+cloud object's lit frames) is drawn over the map at run time, see
+[What plays](#what-plays).
 
 Map registration: `include/constants/ground_map.h`, `include/map_files_table.h`,
 `src/map_files_table.c`, `src/ground_map_conversion_table.c`,
@@ -447,8 +513,8 @@ Instruments come from EoS's DSE sound banks
   When a track's loop is under half the longest track's loop
   (`per_track_loops`), the converter runs mid2agb once per track, giving each
   track its own `GOTO`, and splices the tracks into one song. The MIDI files
-  are then `midi/<name>_trackN.mid`. Of the converted songs, only `seq_069`
-  does this. Some music songs have one track whose end is 256 ticks
+  are then `midi/<name>_trackN.mid`. Of the converted songs, `seq_069` and
+  `seq_070` do this. Some music songs have one track whose end is 256 ticks
   later than the others' (a trailing rest). They keep the shared loop.
 - **Engine**: in the sky build the mixer uses 12 DirectSound channels instead
   of Red's 5, and the BGM player has 16 tracks instead of 12 (`src/m4a.c`,
@@ -467,11 +533,45 @@ wins).
 | 66 | bgm0002 Top Menu Theme | Main menu |
 | 67 | bgm0001 Exploration team theme | (available) |
 | 68 | bgm0006 Welcome to the World of Pokémon! | Personality quiz |
-| 69 | bgm0101 Storm | The storm at sea (m01a0101/0102) |
+| 69 | bgm0101 Storm | The storm at sea (m01a0101, m01d0112 stormy sea, m01a0102) |
+| 70 | bgm0100 Ocean1 | The waves on the beach (m01a0103, m01a0201–0208, m01a0301, m01a0702) |
 
-`seq_069` is past Red's music ids, so non-sky builds leave its object out of
-the link (Makefile `SONG_SRCS`): an extra object reorders the linker's
-long-call stubs and would change the vanilla ROM.
+`seq_069` and `seq_070` are past Red's music ids, so non-sky builds leave
+their objects out of the link (Makefile `SONG_SRCS`): an extra object
+reorders the linker's long-call stubs and would change the vanilla ROM. The
+same goes for sky-only C files added since (`SKY_ONLY_C_SOURCES`:
+`src/sky_storm.c`).
+
+### The beach's waves (EoS's second BGM player)
+
+EoS plays its ambience "Ocean1" (bgm0100: five looping tracks of wave noise)
+on a second BGM player, under the music (`bgm2_PlayFadeIn`, `bgm2_Stop`,
+`bgm2_FadeOut`), and in some scenes on the main player instead. Its
+chapter 1 uses, from the decompiled scripts, and the demake's equivalents:
+
+| EoS script | EoS | Demake (gs178) |
+|---|---|---|
+| m01a0103 (beach, day) | `sound_Stop(); bgm_PlayFadeIn(BGM_OCEAN1, 120)` … `bgm_FadeOut(120)` | group 5: `BGM_FADEIN(120, MUS_SKY_OCEAN)`; its `BGM_FADEOUT(120)` |
+| m01a0201 (beach at dusk, not in the demake) | `sound_Stop(); bgm2_PlayFadeIn(BGM_OCEAN1, 160)` | group 7 (Krabby): `SKY_AMBIENCE(MUS_SKY_OCEAN, 160)` |
+| m01a0202–0208 | `bgm2_PlayFadeIn(BGM_OCEAN1, 0)` (keeps playing) | groups 8 and 1: `SKY_AMBIENCE(MUS_SKY_OCEAN, 0)` |
+| m01a0208, Zubat strikes | `bgm2_Stop()` | `SKY_AMBIENCE_FADEOUT(0)` |
+| m01a0208, "See you around, chicken." | `bgm_PlayFadeIn(BGM_OCEAN1, 150)` … `bgm_FadeOut(60)` | `BGM_FADEIN(150, MUS_SKY_OCEAN)` (was a `BGM_FADEOUT(60)` of nothing); the station's `BGM_FADEOUT(60)` |
+| m01a0301 (defeated) | `bgm_PlayFadeIn(BGM_OCEAN1, 160)` … `bgm_FadeOut(60)` | group 2: `BGM_FADEIN(160, MUS_SKY_OCEAN)`; its `BGM_FADEOUT(60)` |
+| m01a0702 (the team) | `sound_Stop(); bgm2_PlayFadeIn(BGM_OCEAN1, 160)`, the music at "It's my precious treasure.", `bgm_FadeOut(180); bgm2_FadeOut(180)` | group 3: `SKY_AMBIENCE(MUS_SKY_OCEAN, 160)`, `BGM_SWITCH(MUS_SKY_ON_THE_BEACH_AT_DUSK)` after that line (it used to start with the scene), `SKY_AMBIENCE_FADEOUT(180)` |
+
+The second player (`SkyAmbience_Play` / `SkyAmbience_FadeOut` in
+[`src/music.c`](../../src/music.c)) is an m4a music player that is not in
+`gMPlayTable` (so `gNumMusicPlayers` and the vanilla table stay as they are):
+opened the first time it is used, 6 tracks in IWRAM. Playing the song that
+is already on leaves it running, as in EoS. `StopBGM` (EoS `sound_Stop()`,
+the scripts' `BGM_STOP`) and `FadeOutAllMusic` (scene exits, entering a
+dungeon) stop or fade it too, so it never outlives its scenes. Script
+commands: `SKY_AMBIENCE(song, frames)` and `SKY_AMBIENCE_FADEOUT(frames)`
+(SPECIAL_PROCESS 0x70 / 0x71). Checked in mGBA (`sndshot`, player status
+watched): the ambience starts with the Krabby scene and plays under "On the
+Beach at Dusk", alone after the music fades, stops as Zubat strikes (exact
+silence between the scene's other sounds), and the ocean comes back on the
+main player after "chicken" until the fade into Beach Cave.
 
 ### Jingles
 
@@ -843,6 +943,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
 | Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
+| Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
 | Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |
 | Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
 | Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c) |

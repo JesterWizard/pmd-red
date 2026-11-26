@@ -193,16 +193,22 @@ MID_BUILDDIR = $(BUILD_DIR)/$(MID_SUBDIR)
 
 C_SRCS_IN := $(wildcard $(C_SUBDIR)/*.c $(C_SUBDIR)/*/*.c $(C_SUBDIR)/*/*/*.c)
 C_SOURCES := $(foreach src,$(C_SRCS_IN),$(if $(findstring .inc.c,$(src)),,$(src)))
+# Sky-only C files added after the vanilla ROM was pinned: even an empty object
+# moves the vanilla link, so the other builds leave them out.
+SKY_ONLY_C_SOURCES := $(C_SUBDIR)/sky_storm.c
+ifneq ($(GROUND_STORY_DIR),sky)
+  C_SOURCES := $(filter-out $(SKY_ONLY_C_SOURCES),$(C_SOURCES))
+endif
 # Designated-initializer settings blob (modern/hack builds only).
 CONFIG_SRCS := $(CONFIG_SUBDIR)/runtime.c
 ASM_SOURCES := $(wildcard asm/*.s data/*.s)
 C_ASM_SOURCES := $(wildcard src/*.s)
 SONG_SRCS := $(wildcard sound/songs/*.s)
 # The EoS jingles (sky_me_*), sound effects (sky_se_*) and the songs added after Red's ids
-# (seq_069: EoS Storm) are sky-only; leaving their (empty) objects out of the other links keeps
+# (seq_069: EoS Storm, seq_070: EoS Ocean1) are sky-only; leaving their (empty) objects out of the other links keeps
 # those builds byte-identical (a new object reorders the linker's long-call stubs).
 ifneq ($(GROUND_STORY_DIR),sky)
-  SONG_SRCS := $(filter-out sound/songs/sky_me_%.s sound/songs/sky_se_%.s sound/songs/seq_069.s,$(SONG_SRCS))
+  SONG_SRCS := $(filter-out sound/songs/sky_me_%.s sound/songs/sky_se_%.s sound/songs/seq_069.s sound/songs/seq_070.s,$(SONG_SRCS))
 endif
 
 # Region fragments are .included by asm/ram_map.s — do not assemble alone.

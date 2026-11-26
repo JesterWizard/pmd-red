@@ -24,6 +24,9 @@ graphics/custom/thought_bubbles/%/thought.4bpp: graphics/custom/thought_bubbles/
 graphics/custom/sky_bubbles/bubbles.gbapal: graphics/custom/sky_bubbles/bubbles.png
 	$(GBAGFX) $< $@
 
-# Explorers of Sky demake rain (8x32 streaks stacked, OBJ 1D order).
-graphics/custom/sky_rain/rain.gbapal: graphics/custom/sky_rain/rain.png
+# Explorers of Sky demake rain (three 64x64 sheets stacked, OBJ 1D order) and
+# lightning (8x8 tiles stacked, OBJ 1D order); tools/make_sky_storm_fx.py.
+graphics/custom/sky_rain/rain_sheets.gbapal: graphics/custom/sky_rain/rain_sheets.png
+	$(GBAGFX) $< $@
+graphics/custom/sky_storm/bolts.gbapal: graphics/custom/sky_storm/bolts.png
 	$(GBAGFX) $< $@

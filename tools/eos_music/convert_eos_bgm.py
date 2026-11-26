@@ -11,7 +11,7 @@ voicegroup (sky_vg_bgmNNNN) generated from bgmNNNN.swd in front of it
 (see sky_soundfont.py). The EoS samples every song uses become WaveData in
 sound/songs/sky_samples.s (+ sound/direct_sound_samples/sky/*.bin).
 
-  * SONGS (song ids 61..69) are the story songs, used by the sky scenes.
+  * SONGS (song ids 61..70) are the story songs, used by the sky scenes.
   * every Sky Jukebox track (EoS overlay 9's track -> bgm table, names from
     the "Music Tracks" strings) not in SONGS becomes sound/songs/sky_bgm_NNNN.s,
     appended to the song table after its last entry
@@ -70,6 +70,10 @@ SONGS = [
     (68, 6, "sky_welcome_to_the_world_of_pokemon"),
     # EoS bgm0101 "Storm" (BGM_STORM, m01a0101/0102): the storm at sea.
     (69, 101, "sky_storm"),
+    # EoS bgm0100 "Ocean1" (BGM_OCEAN1): the waves on the beach. EoS layers it
+    # under the music on its second BGM player (bgm2_*); the demake plays it
+    # on the ambience player (src/sky_ambience.c).
+    (70, 100, "sky_ocean"),
 ]
 
 RENDER_SECONDS = 90

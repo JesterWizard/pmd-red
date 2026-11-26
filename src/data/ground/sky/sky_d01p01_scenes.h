@@ -117,19 +117,29 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     WAIT(120),
     FLASH_FROM(TRUE, PALUTIL_KIND_01, 1, RGB_U32(0xFF, 0xFF, 0xFF)), /* the map is hidden: black */
     FADE_OUT(TRUE, 0),
-    /* EoS (v01p07b): the stormy sea in the rain, cloudy sky and dark clouds,
-     * panning left at 0.4 px a frame: 60 frames of black, a 40-frame fade
-     * in, 325 frames, a 20-frame fade out. */
+    BGM_STOP, /* EoS m01d0112: sound_Stop() */
+    /* EoS m01d0112 (v01p07b, timed in DeSmuME): the stormy sea in the rain,
+     * cloudy sky and dark clouds, panning left at 0.4 px a frame: 60 frames
+     * of black, the storm BGM fading in over 160 frames from 7 frames before
+     * a 60-frame fade in, the lightning 60 frames after it (SetAnimation(18)
+     * on the cloud object; no SE), the fade out 240 frames after that, over
+     * 30 frames. The sky's flicker (map palette animation) is restarted so
+     * that it flashes with the lit clouds, as in EoS. */
     SELECT_MAP(MAP_SKY_STORM_WAVES),
     SKY_CAMERA_SET(350, 64),
     WAIT(5), /* the map loads hidden (its palettes come in unfaded) */
     SKY_SHOW_MAP(TRUE),
     SKY_BUBBLES(SKY_BUBBLES_RAIN),
-    WAIT(55),
+    WAIT(48),
+    BGM_FADEIN(160, MUS_SKY_STORM), /* EoS: sound_Stop(); bgm_PlayFadeIn(BGM_STORM, 160) */
+    SKY_MAP_PAL_RESTART,
+    WAIT(7),
     SKY_CAMERA_MOVE_X(-154, 102),
-    FADE_IN(TRUE, 40),
-    WAIT(325),
-    FADE_OUT(TRUE, 20),
+    FADE_IN(TRUE, 60),
+    WAIT(53), /* + 1: the lightning starts the frame after SKY_STORM_BOLT */
+    SKY_STORM_BOLT,
+    WAIT(240),
+    FADE_OUT(TRUE, 30),
     SKY_BUBBLES(SKY_BUBBLES_OFF),
     SKY_SHOW_MAP(FALSE),
     SELECT_MAP(MAP_SKY_STORM_SEA),
@@ -163,6 +173,7 @@ static const struct ScriptCommand s_gs178_g5_s0_station_sref_script[] = {
     FADE_OUT(TRUE, 0),
     FADE2_IN(TRUE, 0), /* EoS: the thoughts are in a text box on black */
     SELECT_MAP(MAP_SKY_BEACH_DAY),
+    BGM_FADEIN(120, MUS_SKY_OCEAN), /* EoS: bgm_PlayFadeIn(BGM_OCEAN1, 120) */
     WAIT(120),
     MSG_QUIET(-1, _("......")),
     MSG_QUIET(-1, _("............")),
@@ -396,6 +407,9 @@ static const struct ScriptCommand s_gs178_g7_s0_station_sref_script[] = {
     BGM_STOP,
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_KRABBY_BUBBLES),
+    /* EoS m01a0201 (the beach at dusk, not in the demake) starts the waves
+     * on the second BGM player, under the music until Zubat attacks. */
+    SKY_AMBIENCE(MUS_SKY_OCEAN, 160),
     SKY_BUBBLES(SKY_BUBBLES_KRABBY_SAND), /* EoS supervision_SpecialActing(4, -4, 8) */
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
@@ -413,6 +427,7 @@ static const struct ScriptCommand s_gs178_g8_s0_station_sref_script[] = {
     SET_PLACE_MODE(1),
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_KRABBY_SUNSET),
+    SKY_AMBIENCE(MUS_SKY_OCEAN, 0), /* EoS m01a0203: bgm2_PlayFadeIn(BGM_OCEAN1, 0) */
     BGM_FADEIN(30, MUS_SKY_ON_THE_BEACH_AT_DUSK), /* EoS m01a0203 */
     SKY_BUBBLES(SKY_BUBBLES_KRABBY_SUNSET), /* EoS supervision_SpecialActing(5, -2, 4) */
     FADE_IN(TRUE, 30),
@@ -438,6 +453,7 @@ static const struct ScriptCommand s_gs178_g1_s0_station_sref_script[] = {
     SELECT_MAP(MAP_SKY_BEACH_DUSK),
     FADE2_IN(TRUE, 0),
     SELECT_ENTITIES(-1, 0),
+    SKY_AMBIENCE(MUS_SKY_OCEAN, 0), /* EoS m01a0204..0208: bgm2_PlayFadeIn(BGM_OCEAN1, 0) */
     SKY_BUBBLES(SKY_BUBBLES_BEACH), /* the Krabby's bubbles drift over the beach */
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
@@ -596,6 +612,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     ALERT_CUE(7),
     ALERT_CUE(8),
     AWAIT_CUE(5), /* Zubat rams into the partner */
+    SKY_AMBIENCE_FADEOUT(0), /* EoS: bgm2_Stop() as Zubat strikes */
     ALERT_CUE(6),
     AWAIT_CUE(5), /* partner knocked back, shocked */
     SELECT_ENTITIES(-1, 2), /* EoS: the Relic Fragment falls on the sand */
@@ -647,7 +664,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     TEXTBOX_CLEAR,
     MSG_NPC(NPC_ZUBAT, _(" See you around, chicken.{WAIT_PRESS}\nHeh-heh-heh.")),
     TEXTBOX_CLEAR,
-    BGM_FADEOUT(60),
+    BGM_FADEIN(150, MUS_SKY_OCEAN), /* EoS: bgm_PlayFadeIn(BGM_OCEAN1, 150) */
     SKY_CAMERA_MOVE_X(-44, 128), /* EoS: the camera drifts to m10 (33, 22) */
     ALERT_CUE(7), /* they make off toward Beach Cave */
     ALERT_CUE(8),
@@ -848,6 +865,7 @@ static const struct ScriptCommand s_gs178_g2_s0_station_sref_script[] = {
     WAIT(60),
     SELECT_MAP(MAP_SKY_BEACH_DUSK),
     SELECT_ENTITIES(-1, 0),
+    BGM_FADEIN(160, MUS_SKY_OCEAN), /* EoS m01a0301: bgm_PlayFadeIn(BGM_OCEAN1, 160) */
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
@@ -932,11 +950,14 @@ static const struct ScriptCommand s_gs178_g3_s0_station_sref_script[] = {
     FADE_OUT(TRUE, 0),
     SELECT_MAP(MAP_SKY_BEACH_DUSK),
     SELECT_ENTITIES(-1, 0),
-    BGM_FADEIN(160, MUS_SKY_ON_THE_BEACH_AT_DUSK),
+    /* EoS m01a0702: the waves (bgm2) first; the music starts at the Relic
+     * Fragment ("It's my precious treasure."). */
+    SKY_AMBIENCE(MUS_SKY_OCEAN, 160),
     FADE_IN(TRUE, 30),
     SET_PLACE_MODE(4),
     AWAIT_CUE(3),
     BGM_FADEOUT(180),
+    SKY_AMBIENCE_FADEOUT(180), /* EoS: bgm2_FadeOut(180) */
     FADE_OUT(TRUE, 90),
     FADE2_OUT(TRUE, 0),
     UPDATE_NAME(UPDATE_NAME_ACTOR_TYPE, 0x0, 0x21),
@@ -981,6 +1002,7 @@ static const struct ScriptCommand s_gs178_g3_s0_lives0_dlg0[] = { /* Player */
     MSG_NPC(NPC_PARTNER, _(" Here's what they stole.")),
     MSG_NPC(NPC_PARTNER, _(" This is a Relic Fragment.{WAIT_PRESS}\n...Well, at least, that's what\nI started calling it...")),
     MSG_NPC(NPC_PARTNER, _(" But this Relic Fragment...{WAIT_PRESS}\nIt's my precious treasure.")),
+    BGM_SWITCH(MUS_SKY_ON_THE_BEACH_AT_DUSK), /* EoS: bgm_PlayFadeIn(BGM_ON_THE_BEACH_AT_DUSK, 0) */
     TEXTBOX_CLEAR,
     MSG_NPC(NPC_PARTNER, _(" You see, I've always liked\nlegends and lore...")),
     MSG_NPC(NPC_PARTNER, _(" I always get so excited when I\nhear tales from the past!")),

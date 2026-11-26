@@ -64,6 +64,7 @@ extern u8 gSkyBossExp;
 #define MUS_SKY_EXPLORATION_TEAM_THEME      67
 #define MUS_SKY_WELCOME_TO_THE_WORLD        68
 #define MUS_SKY_STORM                       69 /* EoS BGM_STORM (bgm0101) */
+#define MUS_SKY_OCEAN                       70 /* EoS BGM_OCEAN1 (bgm0100): the waves */
 
 #ifndef __ASSEMBLER__
 s32 SkyStory_GetDungeonBgm(s32 defaultSong);
@@ -141,6 +142,13 @@ void SkyBubbles_Start(s32 mode);
 bool8 SkyBubbles_Active(void);
 void SkyBubbles_SetBrightness(s32 brightness);
 void SkyBubbles_Draw(void);
+
+/* Lightning over the stormy sea (src/sky_storm.c): SKY_STORM_BOLT in scripts. */
+void SkyStorm_StartBolt(void);
+void SkyStorm_Stop(void);
+void SkyStorm_Draw(void);
+/* src/ground_map.c: restart the map's palette animations (SKY_MAP_PAL_RESTART). */
+void GroundMap_SkyRestartPaletteAnims(void);
 
 /* Demo end after chapter 1 (SKY_SAVE_GAME / SKY_DEMO_TO_TITLE). The demo-end
  * event reuses Red's chapter 2 start slot, which the sky build never reaches. */

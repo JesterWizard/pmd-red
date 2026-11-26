@@ -205,6 +205,15 @@
 #define SKY_CAMERA_SET(x, y)            SPECIAL_PROCESS_EX(0x66, x, y)
 /* Move the fixed camera dx pixels at spd/256 pixels a frame (no wait). */
 #define SKY_CAMERA_MOVE_X(dx, spd)      SPECIAL_PROCESS_EX(0x67, dx, spd)
+/* EoS's second BGM player (bgm2_*): an ambience under the music. Start song
+ * with a fade in of frames (0: at once; no-op if it is already playing). */
+#define SKY_AMBIENCE(song, frames)      SPECIAL_PROCESS_EX(0x70, song, frames)
+/* Fade the ambience out over frames (0: stop at once). */
+#define SKY_AMBIENCE_FADEOUT(frames)    SPECIAL_PROCESS_EX(0x71, frames, 0)
+/* The stormy sea: EoS's lit clouds and lightning bolt, once (no wait). */
+#define SKY_STORM_BOLT                  SPECIAL_PROCESS(0x72, 0)
+/* Restart the map's palette animations from their first frame. */
+#define SKY_MAP_PAL_RESTART             SPECIAL_PROCESS(0x73, 0)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 
