@@ -62,7 +62,7 @@ Riolu (with Vulpix, Meowth, Phanpy). Then:
 | # | EoS script | Map (converted EoS level) | Scene |
 |---|---|---|---|
 | 1 | — | — | Chapter card: black screen, EoS banner font, **Chapter 1 — A Storm at Sea** |
-| 2 | m01a0101/0102 | `v01p01a` storm at sea | Lightning on black, voices, the storm-cliff art lit by lightning, then the waves |
+| 2 | m01a0101/0102 | `v01p01a` storm at sea | Lightning on black, voices, the storm-cliff art lit by lightning, then a fade to the waves (EoS's "Storm") |
 | 3 | m01a0103 | `d01p11a` beach (day) | The EoS sky panorama, the hero washed up on the sand |
 | 4 | m01a0104 | `g01p01b` Wigglytuff's Guild (dusk) | Guild sky; the partner loses their nerve on the sentry grate; the Relic Fragment close-up; Zubat & Koffing watch and follow |
 | 5 | m01a0202/0203 | `v01p04b`, `v01p05b` | Dusk sky; Krabby blowing bubbles at sunset ("On the Beach at Dusk") |
@@ -84,7 +84,14 @@ Dialogue uses EoS's box layout (Sky UI style): 6 tiles tall with a margin
 under it, text 4 px below and 6 px right of the frame, 13 px between lines,
 bottom portraits kept just above the box, and a full box clears for the next
 page instead of scrolling (`sSkyTextbox` in
-[`src/string_format.c`](../../src/string_format.c)).
+[`src/string_format.c`](../../src/string_format.c)). The dungeon message box has
+the same frame and spacing: 6 tiles tall from row 13, text 5 px in, 13 px
+between lines; it keeps Red's 7-row window (an 8th would reach the
+minimap's tiles), so its first line is 6 px down and the fourth fits below
+before it scrolls in, and the minimap's tilemap stops at row 12 while it is
+up (`LOG_*` in [`src/dungeon_message.c`](../../src/dungeon_message.c),
+`sub_803EAF0` kind 3 in [`src/dungeon_vram.c`](../../src/dungeon_vram.c),
+`UpdateBgTilemapForDungeonMap`).
 
 The Krabby bubbles (EoS's `supervision_SpecialActing` 4/5 effect; spawn
 points, sizes and velocities measured frame by frame in EoS: down-right from
@@ -106,9 +113,9 @@ VRAM, EoS's BPA tile animations: the storm-sea waves (`EV0101A1.bpa`) and
 the guild torches (`EG0101B1.bpa`), in RT's BPA slots.
 
 Connected CGs pan instead of cutting: where EoS shows a top-screen CG right
-above the scene (the cliff over the stormy sea, the sky over the beach, the
-dusk clouds over the guild), the demake shows the CG and eases down into the
-scene. The 240x320 pictures come from
+above the scene (the sky over the beach, the dusk clouds over the guild), the
+demake shows the CG and eases down into the scene. The storm cliff instead
+fades out and the stormy sea fades in, as the two screens fade on the DS. The 240x320 pictures come from
 [`tools/make_sky_cutaway_scrolls.py`](../../tools/make_sky_cutaway_scrolls.py)
 (`graphics/custom/sky_scrolls/`: the CG over a capture of the scene's first
 view, with the player's Pokémon replaced by the rendered map; between them
@@ -126,7 +133,12 @@ and keeps it up for a few frames while `GroundMap_Select` rebuilds BG2/BG3
 (`ShowCover` / `SkyCutaway_UpdateCover`; `gSkyCoverActive` lets BG1 show
 outside the text windows, see `REG_WINOUT` in
 [`src/cpu.c`](../../src/cpu.c)). Mid-scene CGs (the Relic Fragment, the
-sunset sea) fade out of and back into the scene.
+sunset sea) fade out of and back into the scene. The scene's actors are on
+screen during the pan (the hero lying on the sand, the partner at the
+grate): the pan draws them each frame with the ground camera at the map
+position the picture shows (`SKY_SCROLL_<PAIR>_CAM_X/Y`,
+`SkyGroundSprite_DrawActors` in [`src/ground_sprite.c`](../../src/ground_sprite.c)),
+after unfading the ground palettes the scene's `FADE_OUT` darkened.
 
 The storm voices follow m01a0101: EoS's thunder (`SE_NUM_EVENT_MAIN01_THUNDER_01/02`,
 Red ids 461/467) with each white flash, and after "Waaaaaah!" (`..._WARP`,
@@ -137,7 +149,9 @@ Zubat and Koffing walk in from off screen at the guild as in m01a0104: the
 camera follows the partner 104 px down, the two spawn above the view, and
 `SKY_CAMERA_MOVE(dy, speed)` (`SkyCamera_MoveBy` in
 [`src/code_809D148.c`](../../src/code_809D148.c)) raises the camera 88 px
-while they walk to their marks.
+while they walk to their marks. Both carry lives flag `0x80000` (EoS
+`SetOutputAttribute(8)`), the higher OBJ priority, so they are drawn over the
+guild's bushes.
 
 EoS's `SetAnimation` ids match Red's ground animation ids for the common
 ones (2 still, 5 walking in place, 11 surprised/hurt, 12 attack), so the
@@ -233,6 +247,12 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
   thieves, boss music, and the dungeon ends once both are down. No cutscene
   flags are touched, so Sinister Woods is unaffected.
 - Later visits to Beach Cave have no Pit.
+- Zubat and Koffing use EoS's fixed-floor boss stats (overlay 10's monster
+  spawn stats, entries 1 and 2): Zubat L3, 15 HP, 15 Atk / Sp. Atk, 11 Def /
+  Sp. Def; Koffing L6, 27 HP, 20 / 20, 8 / 8
+  (`SkyStory_ApplyFixedRoomBossStats`).
+- The Pit's background keeps EoS's animated water colours (palettes 10-11,
+  `dungeon_bg0.dpla`); the cutscene camera is centred on the sand.
 - Red's species (all 419 that EoS also has, except Munchlax) use EoS's base
   stats, EXP yield and level-up growth (`gSkyRedLevelData`, generated by
   [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)), so the
@@ -306,6 +326,11 @@ wins).
 | 66 | bgm0002 Top Menu Theme | Main menu |
 | 67 | bgm0001 Exploration team theme | (available) |
 | 68 | bgm0006 Welcome to the World of Pokémon! | Personality quiz |
+| 69 | bgm0101 Storm | The storm at sea (m01a0101/0102) |
+
+`seq_069` is past Red's music ids, so non-sky builds leave its object out of
+the link (Makefile `SONG_SRCS`): an extra object reorders the linker's
+long-call stubs and would change the vanilla ROM.
 
 ### Jingles
 
@@ -668,8 +693,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 - Gen 4 evolutions needing Gen 4 items or move/gender conditions evolve at
   level 40. Gen 4 Pokémon only appear in the wild in Beach Cave (Shellos); the
   rest of Red's dungeons keep Red's spawn lists.
-- Beach Cave Pit's background has some black areas at the top where the EoS
-  picture was folded into Red's 249-chunk limit.
+- Beach Cave Pit's background is folded into Red's 249-chunk limit: the
+  dark cave ceiling at the top repeats a few chunks.
 - Old saves need a new game in the sky build.
 - Test hooks: `DEBUG_BOOT_STARTER=<id> DEBUG_BOOT_PARTNER=<id>` pick the team
   `DEBUG_BOOT_EVENT` creates.
