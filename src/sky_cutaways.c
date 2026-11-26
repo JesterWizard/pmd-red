@@ -72,6 +72,7 @@ static const struct SkyCover sCoverGuild = { sCoverGuildTiles, sCoverGuildMap, g
 static EWRAM_DATA s8 sCoverFrames = 0;
 EWRAM_DATA bool8 gSkyCoverActive = FALSE;
 static EWRAM_DATA u8 sCoverRestoreMask = 0;
+static EWRAM_DATA const struct SkyCover *sActiveCover = NULL;
 
 #define SCROLL_COLS 30
 #define SCROLL_RING 21            /* rows visible at a sub-tile offset */
@@ -150,21 +151,41 @@ static void ShowCover(const struct SkyCover *cover, s32 palBank)
     DoScheduledMemCopies();
     xxx_call_update_bg_sound_input();
     ResetSprites(FALSE);
+    /* keep the actors on screen while the map is rebuilt under the cover */
+    SkyGroundSprite_DrawActors(cover->camX, cover->camY);
 }
 
 /* Ground frames (src/ground_main.c): take the cover away once the rebuilt map
  * shows the same view. */
+static EWRAM_DATA bool8 sCoverEnding = FALSE;
+
 void SkyCutaway_UpdateCover(void)
 {
+    if (sCoverEnding) {
+        /* One frame after ShowWindows: its window tilemaps have replaced the
+         * cover on BG0/BG1 now, so their usual priorities (in front of the
+         * sprites) and offsets can come back. */
+        sCoverEnding = FALSE;
+        gSkyCoverActive = FALSE;
+        gBG0Control.hofs = gBG1Control.hofs = 0;
+        gBG0Control.vofs = gBG1Control.vofs = 0;
+        /* the pre-pan mask had OBJ off (black screen); the actors stay shown */
+        SetBGOBJEnableFlags(sCoverRestoreMask & ~0x10);
+        return;
+    }
     if (sCoverFrames <= 0)
         return;
+    /* The ground loop does not draw the actors in view until its camera has
+     * settled; keep them where the pan left them while the cover is up. */
+    if (sActiveCover != NULL)
+        SkyGroundSprite_DrawActors(sActiveCover->camX, sActiveCover->camY);
     if (--sCoverFrames > 0)
         return;
     ShowWindows(NULL, TRUE, TRUE);
-    gSkyCoverActive = FALSE;
-    gBG0Control.hofs = gBG1Control.hofs = 0;
-    gBG0Control.vofs = gBG1Control.vofs = 0;
-    SetBGOBJEnableFlags(sCoverRestoreMask);
+    if (sActiveCover != NULL) /* ShowWindows dropped this frame's sprites */
+        SkyGroundSprite_DrawActors(sActiveCover->camX, sActiveCover->camY);
+    sActiveCover = NULL;
+    sCoverEnding = TRUE;
 }
 
 /* Fade in on the CG (or arrive on it from the cutaway already shown), hold,
@@ -218,6 +239,7 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
         RunFullscreenArtFrame();
     }
     SkyGroundSprite_DrawActors(cover->camX, cover->camY);
+    sActiveCover = cover;
     ShowCover(cover, gGroundMapDungeon_3001B70 != NULL ? gGroundMapDungeon_3001B70->unk52C.unk0 : 0);
 }
 
@@ -406,7 +428,8 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
         sub_80999E8(0);
         sCoverRestoreMask = ~savedLayers & 0x1F;
         sCoverFrames = COVER_FRAMES;
-        SetBGOBJEnableFlags(sCoverRestoreMask | 0xC);
+        /* OBJ stays on: the actors are shown over the cover */
+        SetBGOBJEnableFlags((sCoverRestoreMask | 0xC) & ~0x10);
         return;
     }
     UnloadFullscreenArt();

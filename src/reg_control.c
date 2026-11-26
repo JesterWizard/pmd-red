@@ -10,6 +10,9 @@
 #include "runtime.h"
 #include "sprite.h"
 #include "text_1.h"
+#ifdef SKY_STORY
+#include "sky_story.h"
+#endif
 
 extern void (gUnknown_202DBB8)(void);
 
@@ -422,6 +425,15 @@ static void UpdateBGControlRegisters(void)
         BGCNT_Priority[BG2] = BGCNT_PRIORITY(2);
         BGCNT_Priority[BG3] = BGCNT_PRIORITY(3);
     }
+#ifdef SKY_STORY
+    /* The pan cover (src/sky_cutaways.c) shows the map's front / back layers
+     * on BG0 / BG1: give them BG2 / BG3's priorities so the actors stay in
+     * front of the back layer, as on the rebuilt map. */
+    if (gSkyCoverActive) {
+        BGCNT_Priority[BG0] = BGCNT_PRIORITY(2);
+        BGCNT_Priority[BG1] = BGCNT_PRIORITY(3);
+    }
+#endif
 
     REG_BG0HOFS = gBG0Control.hofs;
     REG_BG0VOFS = gBG0Control.vofs;

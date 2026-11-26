@@ -156,7 +156,13 @@ BG0 = front and BG1 = back, using the map's own tiles, flips and palettes)
 and keeps it up for a few frames while `GroundMap_Select` rebuilds BG2/BG3
 (`ShowCover` / `SkyCutaway_UpdateCover`; `gSkyCoverActive` lets BG1 show
 outside the text windows, see `REG_WINOUT` in
-[`src/cpu.c`](../../src/cpu.c)). Mid-scene CGs (the Relic Fragment, the
+[`src/cpu.c`](../../src/cpu.c)). While the cover is up its layers take BG2 /
+BG3's priorities (`src/reg_control.c`), OBJ stays on and the actors are drawn
+at the cover's view, so nobody blinks out; the priorities come back one frame
+after `ShowWindows` has replaced the cover. The cover's view (`CAM_X/CAM_Y` in
+`src/data/sky_scrolls.h`) must equal the map's real first view, found by
+matching `<pair>_bottom.png` (a capture of that view) against the map; the
+beach's is (166, 88). Mid-scene CGs (the Relic Fragment, the
 sunset sea) fade out of and back into the scene. The scene's actors are on
 screen during the pan (the hero lying on the sand, the partner at the
 grate): the pan draws them each frame with the ground camera at the map
