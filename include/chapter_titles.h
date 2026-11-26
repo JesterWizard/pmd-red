@@ -12,6 +12,18 @@
 
 #define CHAPTER_TITLE_COUNT 10
 
+#ifdef SKY_STORY
+/* Explorers of Sky look: black card with the title in the EoS banner font
+ * (graphics/custom/chapter_cards, tools/make_sky_chapter_cards.py). */
+typedef struct ChapterCardAssets
+{
+    const u8 *at4px;
+    const u8 *pal;
+} ChapterCardAssets;
+
+extern const ChapterCardAssets gChapterCards[CHAPTER_TITLE_COUNT];
+#endif
+
 /* Called by ScenarioCalc for SCENARIO_MAIN changes. */
 void ChapterTitles_NotifyScenarioMain(s32 oldMain, s32 oldSub, s32 newMain, s32 newSub);
 

@@ -2495,6 +2495,9 @@ void GeneralizeMazeDungeonLoc(DungeonLocation *dst, const DungeonLocation *src)
     }
     else {
         *dst = *src;
+#ifdef SKY_STORY
+        dst->floor = SkyStory_RemapDataFloor(src->id, src->floor);
+#endif
     }
 }
 
@@ -2531,6 +2534,10 @@ s32 GetDungeonFloorCount(u8 dungeon)
     }
     else if (dungeon > DUNGEON_PURITY_FOREST)
         return 1;
+#ifdef SKY_STORY
+    else if (SkyStory_IsBeachCave(dungeon))
+        return SkyStory_GetBeachCaveFloorCount();
+#endif
     else
         return sDungeonFloorCount[dungeon];
 }

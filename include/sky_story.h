@@ -26,6 +26,10 @@ bool8 SkyStory_IsBeachCave(u8 dungeonId);
 bool8 SkyStory_IsBeachCaveStoryRun(void);
 /* Called after floor data is loaded (SetFloorItemMonsterSpawns). */
 void SkyStory_ApplyFloorOverrides(void);
+s32 SkyStory_GetBeachCaveFloorCount(void);
+u8 SkyStory_RemapDataFloor(u8 dungeonId, u8 floor);
+struct OpenedFile;
+void SkyStory_PatchFixedMap(struct OpenedFile *file);
 /* Fixed-room spawn remap: Gengar/Ekans -> Zubat/Koffing; Medicham dropped. */
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
 

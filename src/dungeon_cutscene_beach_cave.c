@@ -46,6 +46,8 @@
 #include "dungeon_cutscene.h"
 #include "sky_story.h"
 #include "weather.h"
+#include "event_flag.h"
+#include "constants/event_flag.h"
 #include "dungeon_cutscenes.h"
 
 static const struct DungeonDialogueStruct sPit1 = {
@@ -113,6 +115,59 @@ static const struct DungeonDialogueStruct sPit8 = {
     .str = _(" If you want it back that\nbadly...{WAIT_PRESS} Come and get it! Heh-heh-heh!"),
 };
 
+/* Re-fight (EoS m01a0501): used once the Pit has been reached before. */
+static const struct DungeonDialogueStruct sRe1 = {
+    .type = 0,
+    .spriteId = EMOTION_WORRIED,
+    .spritePlacementId = 2,
+    .speciesId = DIALOGUE_MONSTER_PARTNER,
+    .allowType = DIALOGUE_ALLOW_ALL,
+    .str = _(" Oh... What?{EXTRA_MSG} Why are you still here?{EXTRA_MSG} I expected you to have gotten\nfar away by now."),
+};
+static const struct DungeonDialogueStruct sRe2 = {
+    .type = 0,
+    .spriteId = EMOTION_NORMAL,
+    .spritePlacementId = 12,
+    .speciesId = MONSTER_KOFFING,
+    .allowType = DIALOGUE_ALLOW_ALL,
+    .str = _(" Y-you...{WAIT_PRESS} Shut up!"),
+};
+static const struct DungeonDialogueStruct sRe3 = {
+    .type = 0,
+    .spriteId = EMOTION_NORMAL,
+    .spritePlacementId = 13,
+    .speciesId = MONSTER_ZUBAT,
+    .allowType = DIALOGUE_ALLOW_ALL,
+    .str = _(" We can't find our way out of\nthis place!"),
+};
+static const struct DungeonDialogueStruct sRe4 = {
+    .type = 0,
+    .spriteId = EMOTION_NORMAL,
+    .spritePlacementId = 12,
+    .speciesId = MONSTER_KOFFING,
+    .allowType = DIALOGUE_ALLOW_ALL,
+    .str = _(" Whoa-ho-ho!{WAIT_PRESS} But there's nothing\nto fear, is there? It's only you!"),
+};
+static const struct DungeonDialogueStruct sRe5 = {
+    .type = 0,
+    .spriteId = EMOTION_NORMAL,
+    .spritePlacementId = 13,
+    .speciesId = MONSTER_ZUBAT,
+    .allowType = DIALOGUE_ALLOW_ALL,
+    .str = _(" Heh-heh-heh! Once a pushover,\nalways a pushover!"),
+};
+static const struct DungeonDialogueStruct sRe6 = {
+    .type = 0,
+    .spriteId = EMOTION_NORMAL,
+    .spritePlacementId = 12,
+    .speciesId = MONSTER_KOFFING,
+    .allowType = DIALOGUE_ALLOW_ALL,
+    .str = _(" We'll show you what a wimp you\nare all over again!{WAIT_PRESS} You ready?"),
+};
+
+/* EoS marks the first arrival with SCENARIO_MAIN (2,3) (m01a0401). */
+static EWRAM_DATA bool8 sBeachCavePitRefight = FALSE;
+
 static void SetUpBeachCavePit(void);
 
 /* Called from sub_80847D4 before the fixed-room cutscene lookup. */
@@ -123,6 +178,13 @@ bool8 SkyStory_TrySetBeachCavePitCutscene(void)
     if (gDungeon->fixedRoomNumber != FIXED_ROOM_SINISTER_WOODS_TEAM_MEANIES)
         return FALSE;
     gDungeon->cutscene = CUTSCENE_BEACH_CAVE_PIT;
+    {
+        u32 main, sub;
+        GetScriptVarScenario(SCENARIO_MAIN, &main, &sub);
+        sBeachCavePitRefight = (main == 2 && sub >= 3);
+        if (main == 2 && sub < 3)
+            ScenarioCalc(SCENARIO_MAIN, 2, 3);
+    }
     gDungeon->unk644.unk31 = 1;
     sub_807E5E4(WEATHER_CLEAR);
     return TRUE;
@@ -149,6 +211,34 @@ static void SetUpBeachCavePit(void)
     CopyMonsterNameToBuffer(gFormatBuffer_Monsters[3], MONSTER_KOFFING);
 }
 
+static void BeachCavePitRefightDialogue(Entity *leaderEntity, Entity *partnerEntity, Entity *zubatEntity, Entity *koffingEntity)
+{
+    PixelPos bossPos;
+
+    if (EntityIsValid(partnerEntity))
+        SpriteShockEffect(partnerEntity);
+    DisplayDungeonDialogue_Async(&sRe1);
+    if (EntityIsValid(zubatEntity)) {
+        sub_806CDD4(zubatEntity, 0, DIRECTION_SOUTH);
+        bossPos.x = zubatEntity->pixelPos.x;
+        bossPos.y = zubatEntity->pixelPos.y + 0x1800;
+        ShiftCameraToPosition(&bossPos, 0x30);
+    }
+    if (EntityIsValid(koffingEntity))
+        sub_806CDD4(koffingEntity, 0, DIRECTION_SOUTH);
+    DungeonWaitFrames_Async(10, 0x46);
+    DisplayDungeonDialogue_Async(&sRe2);
+    DisplayDungeonDialogue_Async(&sRe3);
+    if (EntityIsValid(partnerEntity))
+        SpriteShockEffect(partnerEntity);
+    DisplayDungeonDialogue_Async(&sRe4);
+    DisplayDungeonDialogue_Async(&sRe5);
+    DisplayDungeonDialogue_Async(&sRe6);
+    DungeonWaitFrames_Async(10, 0x46);
+    DungeonStartNewBGM(MUS_BOSS_BATTLE);
+    ShiftCameraToPosition(&leaderEntity->pixelPos, 0x10);
+}
+
 void SkyStory_BeachCavePitPreFightDialogue(void)
 {
     Entity *leaderEntity = CutsceneGetLeader();
@@ -160,6 +250,10 @@ void SkyStory_BeachCavePitPreFightDialogue(void)
 
     sub_8086448();
     DungeonWaitFrames_Async(10, 0x46);
+    if (sBeachCavePitRefight) {
+        BeachCavePitRefightDialogue(leaderEntity, partnerEntity, zubatEntity, koffingEntity);
+        return;
+    }
     DisplayDungeonDialogue_Async(&sPit1);
     DungeonWaitFrames_Async(10, 0x46);
     if (EntityIsValid(zubatEntity))
@@ -169,7 +263,7 @@ void SkyStory_BeachCavePitPreFightDialogue(void)
     /* Bring the thieves into view, as the EoS scene frames both groups. */
     if (EntityIsValid(zubatEntity)) {
         bossPos.x = zubatEntity->pixelPos.x;
-        bossPos.y = zubatEntity->pixelPos.y + 0x2800;
+        bossPos.y = zubatEntity->pixelPos.y + 0x1800;
         ShiftCameraToPosition(&bossPos, 0x30);
     }
     DungeonWaitFrames_Async(20, 0x46);

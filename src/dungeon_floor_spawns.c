@@ -96,6 +96,9 @@ void SetFloorItemMonsterSpawns(void)
     if (gDungeon->unk1C570.id == gDungeon->unk644.dungeonLocation2.id && gDungeon->unk1C570.floor == gDungeon->unk644.dungeonLocation2.floor) {
         /* Floors 3-5 share remapped B2F data; still refresh per-floor levels. */
         ApplyPmd2TrainingGroundOverrides();
+#ifdef SKY_STORY
+        SkyStory_ApplyFloorOverrides();
+#endif
         return;
     }
 

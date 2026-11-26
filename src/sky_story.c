@@ -22,10 +22,13 @@
 #include "event_flag.h"
 #include "pokemon_3.h"
 #include "structs/str_dungeon.h"
+#include "structs/str_file_system.h"
 
 /* Beach Cave floors: tileset borrowed from Lapis Cave (blue rock). */
 #define BEACH_CAVE_TILESET 0x2D
-#define BEACH_CAVE_FLOORS 3
+/* EoS: Beach Cave B1F-B4F, then Beach Cave Pit (fixed floor 1) on the story run. */
+#define BEACH_CAVE_FLOORS 4
+#define BEACH_CAVE_PIT_FLOOR 5
 
 struct SkySpawn {
     s16 species;
@@ -33,14 +36,17 @@ struct SkySpawn {
     u16 weight; /* out of 10000; 0 = only used to look up a level */
 };
 
-/* EoS Beach Cave: Shellos, Kabuto, Corsola, Shellder. Shellos is a Gen IV
- * Pokémon (not in Rescue Team), so Krabby from the opening takes its place. */
+/* EoS mappa_s.bin, Beach Cave B1F-B4F: Shellder L1, Kabuto L1, Corsola L2,
+ * Shellos L2, 25% each; Kecleon L48. */
+#ifndef MONSTER_SHELLOS
+#define MONSTER_SHELLOS MONSTER_KRABBY /* until the Gen IV species exist */
+#endif
 static const struct SkySpawn sBeachCaveSpawns[] = {
-    { MONSTER_KRABBY,   2, 3000 },
-    { MONSTER_SHELLDER, 2, 2500 },
-    { MONSTER_KABUTO,   3, 2500 },
-    { MONSTER_CORSOLA,  3, 2000 },
-    { MONSTER_KECLEON, 90,    0 },
+    { MONSTER_SHELLDER, 1, 2500 },
+    { MONSTER_KABUTO,   1, 2500 },
+    { MONSTER_CORSOLA,  2, 2500 },
+    { MONSTER_SHELLOS,  2, 2500 },
+    { MONSTER_KECLEON, 48,    0 },
     { MONSTER_DECOY,    1,    0 },
 };
 
@@ -48,8 +54,8 @@ static const struct SkySpawn sBeachCaveSpawns[] = {
  * table needs nonzero weights (random spawning loops on an all-zero table);
  * enemyDensity is forced to 0 so only the two bosses appear. */
 static const struct SkySpawn sBeachCavePitSpawns[] = {
-    { MONSTER_ZUBAT,    5, 5000 },
-    { MONSTER_KOFFING,  5, 5000 },
+    { MONSTER_ZUBAT,    4, 5000 }, /* EoS: Zubat L4, Koffing L7 */
+    { MONSTER_KOFFING,  7, 5000 },
     { MONSTER_KECLEON, 90,    0 },
     { MONSTER_DECOY,    1,    0 },
 };
@@ -99,7 +105,7 @@ void SkyStory_ApplyFloorOverrides(void)
     floor = gDungeon->unk644.dungeonLocation.floor;
     gDungeon->floorProperties.tileset = BEACH_CAVE_TILESET;
 
-    if (floor >= BEACH_CAVE_FLOORS && SkyStory_IsBeachCaveStoryRun()) {
+    if (floor >= BEACH_CAVE_PIT_FLOOR && SkyStory_IsBeachCaveStoryRun()) {
         /* Beach Cave Pit */
         gDungeon->floorProperties.fixedRoomNumber = FIXED_ROOM_SINISTER_WOODS_TEAM_MEANIES;
         gDungeon->floorProperties.enemyDensity = 0;
@@ -110,6 +116,66 @@ void SkyStory_ApplyFloorOverrides(void)
     else {
         LoadSpawns(sBeachCaveSpawns, ARRAY_COUNT(sBeachCaveSpawns));
     }
+}
+
+s32 SkyStory_GetBeachCaveFloorCount(void)
+{
+    /* GetDungeonFloorCount convention: playable floors + 1. */
+    return (SkyStory_IsBeachCaveStoryRun() ? BEACH_CAVE_PIT_FLOOR : BEACH_CAVE_FLOORS) + 1;
+}
+
+/* Tiny Woods only has floor data for 3 floors: floors 4+ read floor 3's. */
+u8 SkyStory_RemapDataFloor(u8 dungeonId, u8 floor)
+{
+    if (SkyStory_IsBeachCave(dungeonId) && floor > 3)
+        return 3;
+    return floor;
+}
+
+/*
+ * Beach Cave Pit: the EoS fixed floor (BALANCE/fixed.bin #1, 14x15) in Red's
+ * fixedmap encoding (header w, h, flags; then nibble RLE, 0x0E = literal).
+ * 60 room floor, 2 wall, 4 player spawn, 18 Zubat (Gengar slot), 19 Koffing
+ * (Ekans slot), 22 leader, 23 partner, 24-27 other team members (as in the
+ * Team Meanies room; a room without tile 4 fails generation).
+ *   ##.....#######
+ *   ##.K.Z.#######
+ *   #.......######
+ *   #..P.L..######
+ *   ##.....#######   (then the room narrows to 5 wide down to row 10)
+ */
+static const u8 sBeachCavePitRoom[] = {
+    0x0e, 0x0f, 0x00, 0x21, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c,
+    0x0e, 0x3c, 0x28, 0x0e, 0x3c, 0x0e, 0x13, 0x0e, 0x3c, 0x0e, 0x12, 0x0e,
+    0x3c, 0x27, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c,
+    0x0e, 0x3c, 0x0e, 0x3c, 0x26, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x17, 0x0e,
+    0x3c, 0x0e, 0x16, 0x0e, 0x3c, 0x0e, 0x3c, 0x27, 0x0e, 0x3c, 0x0e, 0x3c,
+    0x0e, 0x18, 0x0e, 0x3c, 0x0e, 0x3c, 0x27, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e,
+    0x3c, 0x0e, 0x19, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c, 0x27, 0x0e, 0x3c,
+    0x0e, 0x3c, 0x40, 0x0e, 0x3c, 0x0e, 0x3c, 0x28, 0x0e, 0x3c, 0x0e, 0x3c,
+    0x0e, 0x1a, 0x0e, 0x3c, 0x0e, 0x3c, 0x28, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e,
+    0x1b, 0x0e, 0x3c, 0x0e, 0x3c, 0x28, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c,
+    0x0e, 0x3c, 0x0e, 0x3c, 0x28, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e, 0x3c, 0x0e,
+    0x3c, 0x0e, 0x3c, 0x2f, 0x2f, 0x2f, 0x2e,
+};
+
+#define FIXEDMAP_ENTRIES 141
+static EWRAM_DATA const void *sFixedMapTable[FIXEDMAP_ENTRIES] = {0};
+
+/* Called after the dungeon opens "fixedmap": in Beach Cave, the Team Meanies
+ * room number points at the EoS Beach Cave Pit layout instead. */
+void SkyStory_PatchFixedMap(OpenedFile *file)
+{
+    s32 i;
+    const void *const *src;
+
+    if (file == NULL || !SkyStory_IsBeachCave(gDungeon->unk644.dungeonLocation.id))
+        return;
+    src = file->data;
+    for (i = 0; i < FIXEDMAP_ENTRIES; i++)
+        sFixedMapTable[i] = src[i];
+    sFixedMapTable[FIXED_ROOM_SINISTER_WOODS_TEAM_MEANIES] = sBeachCavePitRoom;
+    file->data = sFixedMapTable;
 }
 
 s16 SkyStory_RemapFixedRoomSpecies(s16 species)

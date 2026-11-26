@@ -100,6 +100,39 @@ static void PrintCentered(s32 y, const u8 *str)
     PrintStringOnWindow((CHAPTER_WIN_WIDTH * 8 - GetStringLineWidth(str)) / 2, y, str, 0, 0);
 }
 
+#ifdef SKY_STORY
+/* EoS: the title fades in on black and fades back out. */
+static void ShowSkyChapterCard_Async(const ChapterCardAssets *card)
+{
+    const RGB_Struct *pal = (const RGB_Struct *)card->pal;
+    s32 brightness, frames;
+    u32 savedLayers = (REG_DISPCNT >> 8) & 0x1F;
+
+    LoadFullscreenArt(card->at4px);
+    for (frames = 0; frames < 30; frames++)
+        RunFullscreenArtFrame();
+    for (brightness = 0; brightness <= 32; brightness++) {
+        SetFullscreenArtBrightness(pal, brightness);
+        for (frames = 0; frames < CHAPTER_ART_FADE_FRAMES; frames++)
+            RunFullscreenArtFrame();
+    }
+    for (frames = 0; frames < CHAPTER_HOLD_FRAMES; frames++) {
+        RunFullscreenArtFrame();
+        if (frames >= CHAPTER_HOLD_MIN_FRAMES && (gRealInputs.pressed & (A_BUTTON | B_BUTTON)))
+            break;
+    }
+    for (brightness = 32; brightness >= 0; brightness--) {
+        SetFullscreenArtBrightness(pal, brightness);
+        for (frames = 0; frames < CHAPTER_ART_FADE_FRAMES; frames++)
+            RunFullscreenArtFrame();
+    }
+    for (frames = 0; frames < 20; frames++)
+        RunFullscreenArtFrame();
+    UnloadFullscreenArt();
+    SetBGOBJEnableFlags(~savedLayers & 0x1F);
+}
+#endif
+
 void ShowPendingChapterTitle_Async(void)
 {
     const ChapterTitle *chapter;
@@ -113,6 +146,16 @@ void ShowPendingChapterTitle_Async(void)
     if (sPendingChapter == 0)
         return;
     chapter = &sChapterTitles[sPendingChapter - 1];
+#ifdef SKY_STORY
+    {
+        const ChapterCardAssets *card = &gChapterCards[sPendingChapter - 1];
+        sPendingChapter = 0;
+        if (!gRuntimeConfig.chapter_titles)
+            return;
+        ShowSkyChapterCard_Async(card);
+        return;
+    }
+#endif
     sPendingChapter = 0;
     if (!gRuntimeConfig.chapter_titles)
         return;

@@ -21,6 +21,7 @@
 #include "dungeon_data.h"
 #include "dungeon_mon_spawn.h"
 #include "run_dungeon.h"
+#include "sky_story.h"
 
 enum CardinalDirection
 {
@@ -164,6 +165,9 @@ void GenerateFloor(void)
     FloorProperties *floorProps = &gDungeon->floorProperties;
 
     gDungeon->unk13568 = OpenFileAndGetFileDataPtr("fixedmap", &gDungeonFileArchive);
+#ifdef SKY_STORY
+    SkyStory_PatchFixedMap(gDungeon->unk13568);
+#endif
     sHasKecleonShop = FALSE;
     sHasMonsterHouse = 0;
     sHasMaze = FALSE;
