@@ -137,7 +137,8 @@ heights are trimmed to fit 160 px.
   all-white tile vanilla never draws; `menu_top` in
   `sky_story_chrome.png`), swapped in by `RemapSkyFrameEntry`
   ([`src/ui_style.c`](../../src/ui_style.c)). Fill and translucency are
-  unchanged (60% fill in a dungeon).
+  unchanged (60% fill in a dungeon). A speaker's dialogue box in a dungeon (cutscenes,
+  talking to the partner) stays opaque, as in EoS (`gSkyDungeonTalkOpaque`).
 - **Cursor.** EoS's arrow blinks 16 frames on, 16 off (Red: 8 / 8;
   `AddMenuCursorSprite_` in [`src/menu_input.c`](../../src/menu_input.c)).
 - **Main menu** (B): EoS's options **Moves, Items, Team, Others, Ground,

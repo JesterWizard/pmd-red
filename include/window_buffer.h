@@ -19,5 +19,8 @@ typedef enum CopyWindowBgBufferType {
 void WindowBgBufferInit(void);
 void CopyWindowBgBuffer(s32 *pos, u8 kind);
 void ToggleWindowBgBuffer(void);
+#ifdef SKY_STORY
+extern bool8 gSkyDungeonTalkOpaque;
+#endif
 
 #endif // GUARD_WINDOW_BUFFER_H

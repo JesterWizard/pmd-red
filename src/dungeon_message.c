@@ -32,7 +32,16 @@
 #include "dungeon_random.h"
 
 #ifdef SKY_STORY
+#include "window_buffer.h"
+/* EoS: a speaker's dialogue box in a dungeon is opaque (src/window_buffer.c) */
+#define SKY_TALK_OPAQUE(on) do { gSkyDungeonTalkOpaque = (on); } while (0)
+#else
+#define SKY_TALK_OPAQUE(on) do { } while (0)
+#endif
+
+#ifdef SKY_STORY
 #include "ui_style.h"
+
 /* Explorers of Sky UI: the message log box is the Sky dialogue box (52 px,
  * 5 px frames, text 4 px below and 6 px right of the frame's inner edge,
  * 13 px between lines; see sSkyTextbox in src/string_format.c and
@@ -404,9 +413,11 @@ void DisplayDungeonMessage_Async(struct MonDialogueSpriteInfo *monSpriteInfo, co
         }
     }
 
+    SKY_TALK_OPAQUE(monSpriteInfo != NULL);
     CreateMenuDialogueBoxAndPortrait(str, 0, 0, NULL, NULL, 3, 0, monPortraitPtr, a2 ? 0x701 : 0x400);
     gDungeon->unk1BDD4.unk1C05F = 1;
     PRINT_STRING_WAIT_PRESS_ASYNC(&chosenMenuIndex);
+    SKY_TALK_OPAQUE(FALSE);
     gDungeon->unk1BDD4.unk1C05F = 0;
 
     TRY_CLOSE_FILE(monPortrait.faceFile);
@@ -535,8 +546,10 @@ void DisplayDungeonDialogue_Async(const struct DungeonDialogueStruct *dialogueIn
     sub_8052740(10);
     sub_803EAF0(2, NULL);
     sub_8052210(FALSE);
+    SKY_TALK_OPAQUE(TRUE);
     CreateDialogueBoxAndPortrait(dialogueInfo->str, 0, monPortraitPtr, sUnknownDialogueFlags[dialogueInfo->type]);
     PRINT_STRING_WAIT_PRESS_ASYNC(&chosenMenuIndex);
+    SKY_TALK_OPAQUE(FALSE);
 
     if (monPortraitPtr != NULL) {
         CloseFile(monPortraitPtr->faceFile);
@@ -578,6 +591,7 @@ bool32 DisplayDungeonYesNoMessage_Async(struct MonDialogueSpriteInfo *monSpriteI
         }
     }
 
+    SKY_TALK_OPAQUE(monSpriteInfo != NULL);
     if (defaultYes == TRUE) {
         CreateYesNoDialogueBoxAndPortrait_DefaultYes(str, monPortraitPtr, 0x300); // Yes/No - cursor starts at Yes
     }
@@ -586,6 +600,7 @@ bool32 DisplayDungeonYesNoMessage_Async(struct MonDialogueSpriteInfo *monSpriteI
     }
 
     PRINT_STRING_WAIT_PRESS_ASYNC(&chosenMenuIndex);
+    SKY_TALK_OPAQUE(FALSE);
 
     TRY_CLOSE_FILE(monPortrait.faceFile);
 
@@ -627,8 +642,10 @@ s32 DisplayDungeonMenuMessage(struct MonDialogueSpriteInfo *monSpriteInfo, const
         }
     }
 
+    SKY_TALK_OPAQUE(monSpriteInfo != NULL);
     CreateMenuDialogueBoxAndPortrait(str, 0, -1, menuItems, NULL, 3, 0, monPortraitPtr, unkArg);
     PRINT_STRING_WAIT_PRESS_ASYNC(&chosenMenuIndex);
+    SKY_TALK_OPAQUE(FALSE);
 
     TRY_CLOSE_FILE(monPortrait.faceFile);
 

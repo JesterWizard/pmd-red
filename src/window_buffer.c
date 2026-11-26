@@ -302,6 +302,12 @@ UNUSED static void sub_80060A8(void)
 }
 #endif
 
+#ifdef SKY_STORY
+/* EoS: dungeon talk (a speaker's dialogue box) is opaque; only the menus and
+ * the message log are translucent. Set by src/dungeon_message.c. */
+EWRAM_INIT bool8 gSkyDungeonTalkOpaque = FALSE;
+#endif
+
 // arm9.bin::020056C0
 void ToggleWindowBgBuffer(void)
 {
@@ -313,7 +319,7 @@ void ToggleWindowBgBuffer(void)
         /* EoS dungeon windows are translucent: 60% fill over 40% of the
          * dungeon (measured on DeSmuME). The dungeon keeps 0x808 here once
          * its fade-in is done; ground windows stay opaque as in EoS. */
-        if (gUnknown_2026E4E == 0x808)
+        if (gUnknown_2026E4E == 0x808 && !gSkyDungeonTalkOpaque)
             SetBldAlphaReg(10, 6);
         else
 #endif
