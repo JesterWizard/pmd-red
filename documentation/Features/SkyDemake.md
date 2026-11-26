@@ -472,7 +472,10 @@ Magma Cavern → Steam Cave, ...). Red's music sequences, its music
 voicegroups (`bank_000`–`bank_024`, the drum kits) and the 75 samples only
 they use are left out of the sky build (about 780 KB). Most sound effects are
 EoS's too ([Sound effects](#sound-effects)); the ones that stay Red's keep
-Red's instruments (`bank_025`–`bank_028`).
+Red's instruments (`bank_026`–`bank_028`). Red's jingles (`seq_200`–`seq_219`)
+are left out too ([Jingles](#jingles)), and so are the Red SEs the remap
+replaces, with the samples only they used
+([Red sound data left out](#red-sound-data-left-out)).
 
 EoS's sequences on EoS's own instruments
 ([`tools/eos_music/convert_eos_bgm.py`](../../tools/eos_music/convert_eos_bgm.py)):
@@ -746,6 +749,43 @@ doors, crowd, cries of the legendaries, ...; the chapter 1 scenes use only the
 emotes), 727, 804, 916, 917 (effect rows whose EoS SE is none) and 633–635,
 637, 894, 923 (no caller found). The chapter 1 scenes' SEs (455, 457, 463,
 465, 466, 469, 470, 473, 519–528) are all EoS's.
+
+#### Red sound data left out
+
+The remap replaces the song-table entry itself: under `SKY_STORY`
+`sound/song_table.inc` includes `sound/sky_red_se_table.inc` for ids 300–938,
+so a remapped id's entry names `sky_se_BBII`, and nothing else in the ROM names
+Red's `seq_NNN` for it. Every song the game plays goes through `gSongTable`
+(`m4aSongNumStart`, and `SkyAmbience_Play` reads `gSongTable[id].header`), so
+a Red sequence the table does not name can never play. The sky build leaves
+those out:
+
+- **SE sequences**: the 397 Red `seq_3NN`–`seq_9NN` that
+  `sky_red_se_table.inc` does not name are not linked (Makefile `SONG_SRCS`,
+  computed from that file, so it follows the map when `convert_eos_se.py`
+  regenerates it). The 92 Red SEs that stay Red's ([above](#sound-effects)) and
+  `seq_939` (past the remap) stay. A table entry naming a dropped sequence
+  would fail the link.
+- **Voicegroup `bank_025`**: only Red's jingles and two remapped SEs (746, 869)
+  use it (`sound/voice_groups.inc`).
+- **Samples**: 36 of the 69 samples in `bank_025`–`bank_028` are used only by
+  voices that no kept sequence selects (`VOICE` commands of the 93 kept Red
+  SEs). In the sky build `sound/waves.inc` leaves them out and points their
+  names at `sky_red_unused_wave`, a silent one-sample stub, so the voicegroups
+  keep their size and indexing. This list is fixed: if the map changes so that
+  another Red SE plays again, its voices' samples must come back out of the
+  `#ifndef SKY_STORY` blocks, or it plays silence where those samples were.
+
+The sky ROM is 254,836 bytes smaller (50,684 bytes of sequences, 204,150 of
+`sound_data.o`: `bank_025` and 202,738 bytes of samples). The vanilla build
+is unchanged. Checked by dumping `gSongTable` from both ROMs: every one of the
+1073 entries names the same song with the same player fields, and every voice
+a kept Red SE selects has the same bytes and the same sample data. The four
+`sndshot` runs of chapter 1 (`EVENT_DIVIDE`; `EVENT_DIVIDE` with
+`DEBUG_BOOT_FLOOR=5` through the Pit fight; `EVENT_M01E01A_L003`; title, top
+menu, 12 Sky Jukebox tracks and the quiz) log the same song starts and stops
+on every player, and the WAVs and screenshots are bit-identical before and
+after.
 
 ### Chapter 1 audio audit
 

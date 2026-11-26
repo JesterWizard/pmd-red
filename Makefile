@@ -210,6 +210,13 @@ SONG_SRCS := $(wildcard sound/songs/*.s)
 ifneq ($(GROUND_STORY_DIR),sky)
   SONG_SRCS := $(filter-out sound/songs/sky_me_%.s sound/songs/sky_se_%.s sound/songs/seq_069.s sound/songs/seq_070.s sound/songs/seq_071.s,$(SONG_SRCS))
 endif
+# The sky build's song table plays EoS SEs for most of Red's SE ids
+# (sound/sky_red_se_table.inc); the Red SE sequences it no longer names are
+# never played, so they are left out of the sky link (seq_939 is outside the remap).
+ifeq ($(GROUND_STORY_DIR),sky)
+  SKY_RED_SE_KEPT := $(patsubst %,sound/songs/%.s,$(shell grep -o 'seq_[0-9]*' sound/sky_red_se_table.inc)) sound/songs/seq_939.s
+  SONG_SRCS := $(filter-out $(filter-out $(SKY_RED_SE_KEPT),$(wildcard sound/songs/seq_[3-9][0-9][0-9].s)),$(SONG_SRCS))
+endif
 
 # Region fragments are .included by asm/ram_map.s — do not assemble alone.
 RAM_MAP_FRAGMENTS := \

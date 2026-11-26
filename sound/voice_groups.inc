@@ -80,7 +80,10 @@
 #ifndef SKY_STORY
 	.include "sound/voicegroups/bank_024.s"
 #endif
+/* bank_025: only Red's jingles and two Red SEs the sky remap replaces (746, 869) use it. */
+#ifndef SKY_STORY
 	.include "sound/voicegroups/bank_025.s"
+#endif
 	.include "sound/voicegroups/bank_028.s"
 	.include "sound/voicegroups/bank_027.s"
 	.include "sound/voicegroups/bank_026.s"
