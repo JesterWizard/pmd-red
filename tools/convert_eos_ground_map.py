@@ -17,7 +17,7 @@ rather than re-quantized.
     for those, flipped tiles are baked into the pool.
   * Palette animations are kept (RT's BPL has EoS's layout). On maps that fit
     VRAM, up to two animated BPAs keep their animation (RT BPA slots 0/1,
-    written as <STEM>1.bpa / <STEM>2.bpa); streamed maps and further BPAs use
+    written as data/map_bg_anim/<STEM>1.bpa / <STEM>2.bpa); streamed maps and further BPAs use
     frame 0.
   * Collision comes from the EoS BMA's first collision layer.
 
@@ -251,7 +251,7 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
     # BPA (RT layout, as EoS): u16 tiles, u16 frames, u32 duration per frame,
     # then every frame's tiles, frame-major. Written as <STEM>1.bpa, <STEM>2.bpa.
     for i in range(2):
-        f = out_dir / f"{stem}{i + 1}.bpa"
+        f = ROOT / "data" / "map_bg_anim" / f"{stem}{i + 1}.bpa"  # raw, not LZ
         if i < len(anim_slots):
             bpa, n = anim_slots[i]
             data = bytearray(struct.pack("<HH", n, bpa.number_of_frames))
