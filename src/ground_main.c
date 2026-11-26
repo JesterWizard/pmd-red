@@ -393,6 +393,7 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
             ThoughtBubble_Draw();
 #ifdef SKY_STORY
             SkyBubbles_Draw();
+            SkyCutaway_UpdateCover();
 #endif
             sub_80A73EC();
             sub_8099750();

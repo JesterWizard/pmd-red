@@ -468,9 +468,32 @@ def main() -> int:
     if report:
         print("friend areas after Gen 4 (max 16):", max(area_count.values()))
 
+    # Red species EoS also has: EoS's base stats, EXP yield and level-up growth
+    # (m_level.bin), so they are as strong as in EoS at the same level (Red's
+    # Corsola has 45 HP at L1, EoS's 11). Matched by name; forms and Red-only
+    # entries (Decoy, Statue, ...) keep Red's data.
+    def mon_key(n: str) -> str:
+        return re.sub(r"[^a-z0-9]", "", n.lower().replace("é", "e").replace("♀", "f").replace("♂", "m"))
+    eos_by_name: dict[str, int] = {}
+    for i, n in enumerate(eos.mon_names[:600]):
+        if i < len(eos.md.entries) and eos.md.entries[i].national_pokedex_number:
+            eos_by_name.setdefault(mon_key(n), i)
+    red_level_rows: list[int] = []        # md index per row
+    red_level_index: dict[int, int] = {}  # Red sid -> row
+
     c.append("const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {")
     for sid, e in enumerate(red_mons):
         e = dict(e)
+        mdi_red = eos_by_name.get(mon_key(red_names.get(e["name"], ""))) if 0 < sid < RED_MONSTER_COUNT and sid != RED_MUNCHLAX else None
+        if mdi_red is not None:
+            em = eos.md.entries[mdi_red]
+            e["baseHP"] = em.base_hp
+            e["baseAtkSpAtk"] = [em.base_atk, em.base_sp_atk]
+            e["baseDefSpDef"] = [em.base_def, em.base_sp_def]
+            e["expYield"] = max(1, round(em.exp_yield * exp_ratio))
+            if mdi_red not in red_level_rows:
+                red_level_rows.append(mdi_red)
+            red_level_index[sid] = red_level_rows.index(mdi_red)
         pre = e.get("preEvolution")
         if sid == RED_MUNCHLAX:
             e = gen4_entries[sid]
@@ -494,6 +517,22 @@ def main() -> int:
         c += mon_entry(gen4_entries[sid], f"sSkyName{cm}", f"sSkyCategory{cm}", sid)
     c.append("};")
     c.append("")
+
+    # Red species' EoS level data
+    c.append(f"const s16 gSkyRedLevelIndex[{RED_MONSTER_COUNT}] = {{")
+    c.append("    " + ", ".join(str(red_level_index.get(i, -1)) for i in range(RED_MONSTER_COUNT)))
+    c.append("};")
+    c.append(f"const LevelData gSkyRedLevelData[{len(red_level_rows)}][100] = {{")
+    for mdi in red_level_rows:
+        d = eos.level_data(mdi)
+        rows = []
+        for lv in range(100):
+            exp, hp, a, sa, df, sd, _ = struct.unpack_from("<iHBBBBH", d, lv * 12)
+            rows.append(f"{{{exp},{hp},{{{a},{sa}}},{{{df},{sd}}},0}}")
+        c.append("    { " + ", ".join(rows) + " },")
+    c.append("};")
+    c.append("")
+    print(f"Red species with EoS stats / growth: {len(red_level_index)} ({len(red_level_rows)} EoS tables)")
 
     # Gen 4 level data (uncompressed LevelData[100])
     c.append("const LevelData gSkyGen4LevelData[SKY_GEN4_MONSTER_COUNT + 1][100] = {")

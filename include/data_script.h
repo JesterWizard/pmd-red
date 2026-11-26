@@ -199,6 +199,8 @@
 #define SKY_DEMO_TO_TITLE               SPECIAL_PROCESS(0x63, 0)
 /* Hide (0) or show (1) the ground map and its sprites; text boxes stay. */
 #define SKY_SHOW_MAP(on)                SPECIAL_PROCESS(0x64, on)
+/* Move the fixed camera dy pixels at spd/256 pixels a frame (no wait). */
+#define SKY_CAMERA_MOVE(dy, spd)        SPECIAL_PROCESS_EX(0x65, dy, spd)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

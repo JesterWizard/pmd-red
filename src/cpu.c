@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sky_story.h"
 #include "bg_control.h"
 #include "window_buffer.h"
 #include "cpu.h"
@@ -77,7 +78,13 @@ void VBlank_CB(void)
     REG_DMA0CNT_H = cnt & ~(DMA_ENABLE);
 
     REG_WININ = WININ_WIN0_ALL | WININ_WIN1_ALL;
+#ifdef SKY_STORY
+    /* The pan cover (src/sky_cutaways.c) uses BG1 outside the text windows. */
+    REG_WINOUT = WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR | WINOUT_WIN01_BG3 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG0
+               | (gSkyCoverActive ? WINOUT_WIN01_BG1 : 0);
+#else
     REG_WINOUT = WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR | WINOUT_WIN01_BG3 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG0;
+#endif
     REG_BLDCNT = gBldCnt;
     REG_BLDALPHA = gBldAlpha;
     if (gDrawWindow) {

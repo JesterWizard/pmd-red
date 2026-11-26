@@ -19,5 +19,8 @@ bool8 sub_809D234(void);
 u8 sub_809D248(PixelPos *r0);
 void sub_809D25C(void);
 void nullsub_120(void);
+#ifdef SKY_STORY
+void SkyCamera_MoveBy(s32 dx, s32 dy, s32 speed);
+#endif
 
 #endif // GUARD_CODE_809D148_H

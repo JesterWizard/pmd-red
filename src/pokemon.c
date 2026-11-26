@@ -1208,6 +1208,16 @@ void GetLvlUpEntry(LevelData* a1, s32 _id, s32 level)
     *a1 = gSkyGen4LevelData[id == MONSTER_MUNCHLAX ? SKY_GEN4_MONSTER_COUNT : id - SKY_FIRST_GEN4_MONSTER][level];
     return;
   }
+  /* Red species EoS also has: EoS's growth, as their EoS base stats. */
+  if (id > 0 && id < SKY_FIRST_GEN4_MONSTER && gSkyRedLevelIndex[id] >= 0) {
+    level -= 1;
+    if (level < 0)
+      level = 0;
+    if (level > 99)
+      level = 99;
+    *a1 = gSkyRedLevelData[gSkyRedLevelIndex[id]][level];
+    return;
+  }
 #endif
   if (sLevelCurrentPokeId != id)
   {

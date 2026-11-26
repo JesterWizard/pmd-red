@@ -105,11 +105,16 @@ extern const MonsterDataEntry gSkyMonsterData[];
 extern const MoveDataEntry gSkyMoveData[];
 extern const MoveLearnset gSkyMoveLearnsets[];
 extern const LevelData gSkyGen4LevelData[][100];
+/* Red species EoS also has: index into gSkyRedLevelData, or -1 (Red's own). */
+extern const s16 gSkyRedLevelIndex[];
+extern const LevelData gSkyRedLevelData[][100];
 /* Gen 4 moves borrow Red effect handlers / animations (src/sky_gen4_moves.c). */
 u16 SkyStory_MoveEffectId(u16 moveId);
 u16 SkyStory_MoveAnimId(u16 moveId);
 extern const SkyCutawayArt gSkyTitleArt[SKY_TITLE_ART_COUNT];
 void SkyStory_ShowCutaway_Async(s32 id, s32 frames);
+void SkyCutaway_UpdateCover(void);
+extern bool8 gSkyCoverActive;
 
 /* Krabby bubbles (src/sky_bubbles.c): SKY_BUBBLES(mode) in scripts. */
 enum {

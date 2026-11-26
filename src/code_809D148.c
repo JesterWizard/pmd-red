@@ -295,3 +295,17 @@ void sub_809D25C(void)
 
 void nullsub_120(void)
 {}
+
+#ifdef SKY_STORY
+/* Explorers of Sky demake: move the (fixed) camera by (dx, dy) pixels at
+ * speed/256 pixels a frame, without waiting (EoS MovePositionOffset on the
+ * camera performer). */
+void SkyCamera_MoveBy(s32 dx, s32 dy, s32 speed)
+{
+    sUnknown_20399E8.unk0 = 0;
+    sUnknown_20399E8.unk1C.x = sUnknown_20399E8.unk14.x + dx * 256;
+    sUnknown_20399E8.unk1C.y = sUnknown_20399E8.unk14.y + dy * 256;
+    sUnknown_20399E8.unkC = speed;
+    sUnknown_20399E8.unk8 = 1;
+}
+#endif

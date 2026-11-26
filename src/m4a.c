@@ -79,9 +79,11 @@ void m4aSoundInit(void)
                | SOUND_MODE_FREQ_18157
                | (14 << SOUND_MODE_MASVOL_SHIFT)
 #ifdef SKY_STORY
-               // EoS songs play on EoS's own DirectSound instruments (up to
-               // 16 tracks, no CGB voices): give the mixer the full 12 channels.
-               | (12 << SOUND_MODE_MAXCHN_SHIFT));
+               // EoS songs play on EoS's own DirectSound instruments (no CGB
+               // voices). 8 mixer channels: 12 cost ~45% more dropped frames in
+               // Beach Cave (2.9% vs 2.0% of frames, Red's own level); m4a
+               // steals the oldest voice when a song needs more.
+               | (8 << SOUND_MODE_MAXCHN_SHIFT));
 #else
                | (5 << SOUND_MODE_MAXCHN_SHIFT));
 #endif

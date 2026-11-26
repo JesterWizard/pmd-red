@@ -22,6 +22,15 @@
 #include "structs/rgb.h"
 #include "text_1.h"
 #include "graphics_memory.h"
+#include "palette_util.h"
+#include "code_800C9CC.h"
+#include "music_util.h"
+#include "random.h"
+#include "sprite.h"
+#include "text_2.h"
+#include "text_3.h"
+#include "window_buffer.h"
+#include "structs/str_ground_bg.h"
 
 #define ART_8BPP_TILE_BASE 128
 #define ART_8BPP_MAX_TILES 600
@@ -37,6 +46,36 @@ static const u8 sScrollBeachTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/bea
 static const u8 sScrollBeachPal[] = INCBIN_U8("graphics/custom/sky_scrolls/beach.pal");
 static const u8 sScrollGuildTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/guild.tiles");
 static const u8 sScrollGuildPal[] = INCBIN_U8("graphics/custom/sky_scrolls/guild.pal");
+
+/* Covers (tools/make_sky_cutaway_scrolls.py): each pan's last view as the
+ * map's own tiles on the text layers, shown while the map is rebuilt. */
+static const u8 sCoverStormTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/storm_cover.tiles");
+static const u16 sCoverStormMap[] = INCBIN_U16("graphics/custom/sky_scrolls/storm_cover.tilemap");
+static const u8 sCoverBeachTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/beach_cover.tiles");
+static const u16 sCoverBeachMap[] = INCBIN_U16("graphics/custom/sky_scrolls/beach_cover.tilemap");
+static const u8 sCoverGuildTiles[] = INCBIN_U8("graphics/custom/sky_scrolls/guild_cover.tiles");
+static const u16 sCoverGuildMap[] = INCBIN_U16("graphics/custom/sky_scrolls/guild_cover.tilemap");
+extern const u8 gFileEV0101A[];
+extern const u8 gFileED0111A[];
+extern const u8 gFileEG0101B[];
+
+struct SkyCover
+{
+    const u8 *tiles;
+    const u16 *tilemap;   /* front layer (BG0) then back layer (BG1), 32x32 each */
+    const u8 *bpl;        /* the map's palettes (RT BPL) */
+    u16 numTiles;
+    u8 x, y;              /* camera sub-tile offset */
+};
+
+static const struct SkyCover sCoverStorm = { sCoverStormTiles, sCoverStormMap, gFileEV0101A, SKY_SCROLL_STORM_COVER_TILES, SKY_SCROLL_STORM_COVER_X, SKY_SCROLL_STORM_COVER_Y };
+static const struct SkyCover sCoverBeach = { sCoverBeachTiles, sCoverBeachMap, gFileED0111A, SKY_SCROLL_BEACH_COVER_TILES, SKY_SCROLL_BEACH_COVER_X, SKY_SCROLL_BEACH_COVER_Y };
+static const struct SkyCover sCoverGuild = { sCoverGuildTiles, sCoverGuildMap, gFileEG0101B, SKY_SCROLL_GUILD_COVER_TILES, SKY_SCROLL_GUILD_COVER_X, SKY_SCROLL_GUILD_COVER_Y };
+
+#define COVER_FRAMES 6
+static EWRAM_DATA s8 sCoverFrames = 0;
+EWRAM_DATA bool8 gSkyCoverActive = FALSE;
+static EWRAM_DATA u8 sCoverRestoreMask = 0;
 
 #define SCROLL_COLS 30
 #define SCROLL_RING 21            /* rows visible at a sub-tile offset */
@@ -62,16 +101,88 @@ static void ScrollLoadRow(const u8 *tiles, s32 row)
     ScheduleBgTilemapCopy(3);
 }
 
+/* The pan's last frame: swap the 8bpp picture for the cover in one vblank.
+ * The cover is the same image built from the map's own tiles and palettes on
+ * BG0/BG1 (the map's front / back layers; gSkyCoverActive lets BG1 show
+ * outside text windows, src/cpu.c), which the ground map rebuild does not
+ * touch; BG2/BG3 stay hidden
+ * until SkyCutaway_UpdateCover removes the cover. */
+static void ShowCover(const struct SkyCover *cover, s32 palBank)
+{
+    const u8 *bpl = cover->bpl;
+    s32 numPals = bpl[0] | (bpl[1] << 8);
+    s32 p, c, i, j;
+
+    CpuCopy((void *)VRAM, cover->tiles, cover->numTiles * 32);
+    for (i = 0; i < 32; i++) {
+        for (j = 0; j < 32; j++) {
+            u16 e0 = cover->tilemap[i * 32 + j];
+            u16 e1 = cover->tilemap[1024 + i * 32 + j];
+            gBgTilemaps[0][i][j] = e0 ? e0 + (palBank << 12) : 0;
+            gBgTilemaps[1][i][j] = e1 ? e1 + (palBank << 12) : 0;
+        }
+    }
+    ScheduleBgTilemapCopy(0);
+    ScheduleBgTilemapCopy(1);
+    for (p = 0; p < numPals && palBank + p < 14; p++) {
+        RGB_Struct black = { 0, 0, 0, 0 };
+        SetBGPaletteBufferColorRGB((palBank + p) * 16, &black, 31, NULL);
+        for (c = 0; c < 15; c++) {
+            const u8 *rgb = &bpl[4 + (p * 15 + c) * 4];
+            RGB_Struct col = { rgb[0], rgb[1], rgb[2], 0 };
+            SetBGPaletteBufferColorRGB((palBank + p) * 16 + 1 + c, &col, 31, NULL);
+        }
+    }
+    gSkyCoverActive = TRUE;
+    gBG0Control.hofs = gBG1Control.hofs = cover->x;
+    gBG0Control.vofs = gBG1Control.vofs = cover->y;
+    SetTitleBg8bpp(FALSE);
+    /* RunFullscreenArtFrame, with the layer switch inside the same vblank as
+     * the palette and tilemap copies. */
+    CopyWindowBgBuffer(NULL, COPY_WINDOW_BG_BUFFER_WIN0);
+    nullsub_8(FALSE);
+    sub_8005180();
+    ToggleWindowBgBuffer();
+    UpdateSoundEffectCounters();
+    WaitForNextFrameAndAdvanceRNG();
+    SetBGOBJEnableFlags(0xC);
+    LoadBufferedInputs();
+    CopySpritesToOam();
+    sub_8005304();
+    TransferBGPaletteBuffer();
+    xxx_call_update_bg_vram();
+    DoScheduledMemCopies();
+    xxx_call_update_bg_sound_input();
+    ResetSprites(FALSE);
+}
+
+/* Ground frames (src/ground_main.c): take the cover away once the rebuilt map
+ * shows the same view. */
+void SkyCutaway_UpdateCover(void)
+{
+    if (sCoverFrames <= 0)
+        return;
+    if (--sCoverFrames > 0)
+        return;
+    ShowWindows(NULL, TRUE, TRUE);
+    gSkyCoverActive = FALSE;
+    gBG0Control.hofs = gBG1Control.hofs = 0;
+    gBG0Control.vofs = gBG1Control.vofs = 0;
+    SetBGOBJEnableFlags(sCoverRestoreMask);
+}
+
 /* Fade in on the CG (or arrive on it from the cutaway already shown), hold,
  * then ease down until the screen shows exactly the map's first view. The
  * map is rebuilt behind one black frame; the script shows it at once. */
-static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, bool8 fadeIn)
+static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, bool8 fadeIn, const struct SkyCover *cover)
 {
     s32 r, f, y, loaded;
     s32 dist = rows * 8 - 160;
     s32 frames = dist * 3 / 5;
 
     LoadFullscreenArtBlank();
+    /* BG0-BG2 are unused during the pan; their VRAM takes the cover. */
+    SetBGOBJEnableFlags(0x7);
     for (r = 0; r < SCROLL_RING; r++)
         ScrollLoadRow(tiles, r);
     loaded = SCROLL_RING - 1;
@@ -99,8 +210,7 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
         SetBG3RegOffsets(0, y);
         RunFullscreenArtFrame();
     }
-    SetFullscreenArtBrightness((const RGB_Struct *)pal, 0);
-    RunFullscreenArtFrame();
+    ShowCover(cover, gGroundMapDungeon_3001B70 != NULL ? gGroundMapDungeon_3001B70->unk52C.unk0 : 0);
 }
 
 /* Swap the picture without re-initialising windows/sprites (animation frames).
@@ -212,6 +322,7 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
     u32 savedLayers = (REG_DISPCNT >> 8) & 0x1F;
     const SkyCutawayArt *first;
     s32 i;
+    bool8 connected = FALSE;
 
     if (frames <= 0)
         frames = 120;
@@ -240,13 +351,15 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
             Hold(frames / 4);
         }
         /* EoS shows the cliff above the stormy sea: pan down to the sea. */
-        ScrollConnected(sScrollStormTiles, sScrollStormPal, SKY_SCROLL_STORM_ROWS, 0, FALSE);
+        ScrollConnected(sScrollStormTiles, sScrollStormPal, SKY_SCROLL_STORM_ROWS, 0, FALSE, &sCoverStorm);
+        connected = TRUE;
     }
     else if (id == SKY_CUTAWAY_SKY_DAY_SCROLL || id == SKY_CUTAWAY_GUILD_SKY_SCROLL) {
         if (id == SKY_CUTAWAY_SKY_DAY_SCROLL)
-            ScrollConnected(sScrollBeachTiles, sScrollBeachPal, SKY_SCROLL_BEACH_ROWS, frames, TRUE);
+            ScrollConnected(sScrollBeachTiles, sScrollBeachPal, SKY_SCROLL_BEACH_ROWS, frames, TRUE, &sCoverBeach);
         else
-            ScrollConnected(sScrollGuildTiles, sScrollGuildPal, SKY_SCROLL_GUILD_ROWS, frames, TRUE);
+            ScrollConnected(sScrollGuildTiles, sScrollGuildPal, SKY_SCROLL_GUILD_ROWS, frames, TRUE, &sCoverGuild);
+        connected = TRUE;
     }
     else if (id == SKY_CUTAWAY_SUNSET_SEA_ANIM) {
         /* EoS m01a0205/0207: the sea glittering at sunset (8-frame loop). */
@@ -274,6 +387,19 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
     }
 
     SetBG3RegOffsets(0, 0);
+    if (connected) {
+        /* The cover is up (ShowCover): rebuild the map under it; the ground
+         * loop removes it (SkyCutaway_UpdateCover). No black frames. */
+        ClearTitleBgMapsForGround();
+        InitFontPalette();
+        if (map >= 0)
+            GroundMap_Select(map);
+        sub_80999E8(0);
+        sCoverRestoreMask = ~savedLayers & 0x1F;
+        sCoverFrames = COVER_FRAMES;
+        SetBGOBJEnableFlags(sCoverRestoreMask | 0xC);
+        return;
+    }
     UnloadFullscreenArt();
     if (map >= 0)
         GroundMap_Select(map);

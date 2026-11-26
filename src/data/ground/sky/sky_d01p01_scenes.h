@@ -94,10 +94,24 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
     WAIT(30),
+    FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
+    FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
+    WAIT(5),
+    FLASH_TO(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
+    FLASH_FROM(TRUE, PALUTIL_KIND_05, 2, RGB_U32(0xFF, 0xFF, 0xFF)),
+    WAIT(20),
     MSG_NPC(-1, _(" Waaaaaah!")),
+    /* EoS: screen_WhiteOutAll(1, 90) with the text box still up, a hold on
+     * white, then straight to black before the cliff. */
+    BGM_FADEOUT(120),
+    FLASH_TO(TRUE, PALUTIL_KIND_01, 90, RGB_U32(0xFF, 0xFF, 0xFF)),
     TEXTBOX_CLEAR,
     CAMERA_SHAKE(CAMERA_SHAKE_OFF, 0, 0),
-    WAIT(90),
+    WAIT(120),
+    FLASH_FROM(TRUE, PALUTIL_KIND_01, 1, RGB_U32(0xFF, 0xFF, 0xFF)), /* the map is hidden: black */
+    FADE_OUT(TRUE, 0),
+    WAIT(30),
+    BGM_FADEIN(30, MUS_STORMY_SEA),
     SET_PLACE_MODE(4),
     SKY_SHOW_MAP(TRUE),
     /* EoS: the cliff (top screen) over the stormy sea (bottom): the cliff,
@@ -216,12 +230,15 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     WAIT(30),
     FANFARE_PLAY2(463),
     CALL_SCRIPT(SHOCK_FUNC),
+    CALL_SCRIPT(JUMP_SURPRISE_FUNC), /* EoS CORO_JUMP_SURPRISE */
     MSG_NPC(-1, _(" Pokémon detected! Pokémon detected!")),
     MSG_NPC(-1, _(" Whose footprint? Whose footprint?")),
     MSG_NPC(-1, _(" The footprint is {POKEMON_1}'s!{WAIT_PRESS}\nThe footprint is {POKEMON_1}'s!")),
     TEXTBOX_CLEAR,
     CALL_SCRIPT(SHOCK_FUNC),
+    SELECT_ANIMATION(5), /* EoS: backs off, feet still moving */
     MOVE_RELATIVE(768, 0, 24),
+    SELECT_ANIMATION(2),
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SUPRISED),
     MSG_NPC(NPC_PARTNER, _(" Waah!")),
     TEXTBOX_CLEAR,
@@ -246,14 +263,20 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     TEXTBOX_CLEAR,
     WALK_RELATIVE(128, 0, -8),
     WAIT(15),
+    SELECT_ANIMATION(5),
     MOVE_RELATIVE(128, 0, 8),
+    SELECT_ANIMATION(2),
     WAIT(30),
+    FADE_OUT(TRUE, 20), /* fade the scene out and back in around the CG */
     SKY_CUTAWAY(SKY_CUTAWAY_RELIC_FRAGMENT, 90), /* EoS: the Relic Fragment close-up */
+    FADE_IN(TRUE, 20),
     MSG_NPC(NPC_PARTNER, _(" I thought that holding on to my\npersonal treasure would inspire\nme...")),
     TEXTBOX_CLEAR,
     WALK_RELATIVE(128, 0, -8),
     WAIT(15),
+    SELECT_ANIMATION(5),
     MOVE_RELATIVE(128, 0, 8),
+    SELECT_ANIMATION(2),
     WAIT(45),
     ROTATE_TO(4, DIR_TRANS_SPINLEFT1, DIRECTION_NORTHWEST),
     ROTATE_TO(4, DIR_TRANS_SPINRIGHT1, DIRECTION_NORTHEAST),
@@ -265,9 +288,13 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     TEXTBOX_CLEAR,
     ROTATE_TO(8, DIR_TRANS_10, DIRECTION_SOUTH),
     WAIT(20),
+    /* EoS: the camera follows the partner 104 pixels down, then stays while
+     * the partner walks off. */
+    WALK_RELATIVE(179, 0, 104),
     CAMERA_END_PAN,
-    SELECT_LIVES(-1, 1), /* Zubat & Koffing step out of the shadows */
-    WALK_RELATIVE(179, 0, 200),
+    SELECT_LIVES(-1, 1), /* Zubat & Koffing, off screen above the camera */
+    WALK_RELATIVE(179, 0, 96),
+    WAIT(90),
     ALERT_CUE(7),
     END_DELETE,
 };
@@ -278,8 +305,9 @@ static const struct ScriptCommand s_gs178_g6_s1_lives0_dlg0[] = { /* Zubat — d
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_ZUBAT, 0x0),
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
     AWAIT_CUE(7),
-    WAIT(60),
     ALERT_CUE(8),
+    /* EoS: the camera rises 88 pixels as the two walk in from off screen. */
+    SKY_CAMERA_MOVE(-88, 256),
     WALK_RELATIVE(307, 96, 24),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_SOUTH),
     WAIT(20), /* Koffing (shorter walk) is in place */
@@ -401,13 +429,17 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_INSPIRED),
     MSG_NPC(NPC_PARTNER, _(" Wow! What a beautiful sight!")),
     TEXTBOX_CLEAR,
+    FADE_OUT(TRUE, 20), /* fade the scene out and back in around the CG */
     SKY_CUTAWAY(SKY_CUTAWAY_SUNSET_SEA_ANIM, 240), /* EoS m01a0205 */
+    FADE_IN(TRUE, 20),
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_NORMAL),
     MSG_NPC(NPC_PARTNER, _(" When the weather's good, the\nKrabby come out at sundown to\nblow bubbles...")),
     MSG_NPC(NPC_PARTNER, _(" All those bubbles, reflecting the\nsetting sun off the waves...")),
     MSG_NPC(NPC_PARTNER, _(" It's always beautiful.")),
     TEXTBOX_CLEAR,
+    FADE_OUT(TRUE, 20), /* fade the scene out and back in around the CG */
     SKY_CUTAWAY(SKY_CUTAWAY_SUNSET_SEA_ANIM, 240), /* EoS m01a0207 */
+    FADE_IN(TRUE, 20),
     WAIT(40),
     MSG_NPC(NPC_PARTNER, _(" ............")),
     MSG_NPC(NPC_PARTNER, _(" This is where I always come\nwhen I'm feeling down on myself.")),
@@ -462,6 +494,10 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     MSG_NPC(NPC_PARTNER, _(" I don't think I've seen you\naround before.")),
     TEXTBOX_CLEAR,
     WAIT(20),
+    SELECT_ANIMATION(5), /* EoS CORO_EXPLANATION_FUNC: the hero explains */
+    WAIT(45),
+    SELECT_ANIMATION(2),
+    WAIT(30),
     ALERT_CUE(6), /* partner jumps in surprise */
     AWAIT_CUE(5),
     PORTRAIT(PLACEMENT_KEEP, NPC_PARTNER, EMOTION_SUPRISED),
@@ -531,7 +567,9 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     ALERT_CUE(6),
     AWAIT_CUE(5), /* partner knocked back, shocked */
     SELECT_ENTITIES(-1, 2), /* EoS: the Relic Fragment falls on the sand */
+    SELECT_ANIMATION(5),
     MOVE_RELATIVE(1024, -40, 0),
+    SELECT_ANIMATION(2),
     PORTRAIT(PLACEMENT_MIDLEFT_TOP, NPC_PARTNER, EMOTION_SHOUTING),
     MSG_NPC(NPC_PARTNER, _(" Yowch!")),
     TEXTBOX_CLEAR,
@@ -666,7 +704,9 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     AWAIT_CUE(6),
     FANFARE_PLAY2(466),
     CALL_SCRIPT(NOTICE_FUNC),
+    SELECT_ANIMATION(5),
     MOVE_RELATIVE(256, 16, 0),
+    SELECT_ANIMATION(2),
     ALERT_CUE(5),
     AWAIT_CUE(6),
     UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, NPC_PARTNER, 0x0),
@@ -681,7 +721,9 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(SWEAT_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6), /* rammed by Zubat */
+    SELECT_ANIMATION(11), /* EoS: knocked back, hurt */
     MOVE_RELATIVE(768, -40, 0),
+    SELECT_ANIMATION(2),
     FANFARE_PLAY2(463),
     CALL_SCRIPT(SHOCK_FUNC),
     ALERT_CUE(5),
@@ -719,8 +761,10 @@ static const struct ScriptCommand s_gs178_g1_s1_lives0_dlg0[] = { /* Zubat */
     CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK), /* scripted: no collision */
     AWAIT_CUE(7),
     WALK_RELATIVE(307, -116, 4),
+    SELECT_ANIMATION(12), /* EoS: the tackle */
     ALERT_CUE(5),
     AWAIT_CUE(7),
+    SELECT_ANIMATION(2),
     ROTATE_TO(4, DIR_TRANS_10, DIRECTION_SOUTHWEST),
     ALERT_CUE(5),
     AWAIT_CUE(7),
@@ -920,7 +964,9 @@ static const struct ScriptCommand s_gs178_g3_s0_lives0_dlg0[] = { /* Player */
     MSG_NPC(NPC_PARTNER, _(" And it just so happened...{WAIT_PRESS}that I\nfound this Relic Fragment.")),
     MSG_NPC(NPC_PARTNER, _(" Sure, it does look like junk, but\ntake a closer look.")),
     TEXTBOX_CLEAR,
+    FADE_OUT(TRUE, 20), /* fade the scene out and back in around the CG */
     SKY_CUTAWAY(SKY_CUTAWAY_RELIC_FRAGMENT, 150), /* EoS: the Relic Fragment close-up */
+    FADE_IN(TRUE, 20),
     MSG_NPC(NPC_PARTNER, _(" Look there.{WAIT_PRESS} See that strange\npattern inscribed on it?")),
     TEXTBOX_CLEAR,
     PORTRAIT(PLACEMENT_KEEP, NPC_PLAYER, EMOTION_NORMAL),

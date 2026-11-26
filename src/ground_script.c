@@ -4231,6 +4231,9 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
             /* BG0/BG1 (windows) stay; BG2/BG3 (map) and OBJ (sprites) toggle. */
             SetBGOBJEnableFlags(r2 ? 0 : 0x1C);
             return 0;
+        case 0x65:
+            SkyCamera_MoveBy(0, (s16)r2, r3);
+            return 0;
 #endif
         case 0x4B: {
             static const u8 sTrieloName[] = _("Trielo");
