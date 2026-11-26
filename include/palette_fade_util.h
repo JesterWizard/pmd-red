@@ -12,5 +12,8 @@ void SetPaletteFade_Modulate(u16 idx, s32 fadeAmount, RGB_Array param_3);
 void sub_8003810(u16 idx, RGB_Array param_2);
 void sub_800388C(u16 idx1, const RGB_Union *param_2, s32 param_3);
 void RunPaletteFadeFunctions(void);
+#ifdef SKY_STORY
+RGB_Array SkyPaletteFade_GetColor(u16 idx);
+#endif
 
 #endif // GUARD_PALETTE_FADE_UTIL_H

@@ -304,7 +304,10 @@ coordinates, `graphics/custom/sky_storm/lit_1..6.png`; OBJs, tiles and the
 14-colour palette built by `tools/make_sky_storm_fx.py`:
 `graphics/custom/sky_storm/bolts.png`, `src/data/sky_storm_bolts.h`). Each
 frame's tiles (up to 201) are uploaded into whichever of two VRAM slots
-(OBJ tiles 0x100–0x292) the displayed OAM does not use; OBJ palette 15. The
+(OBJ tiles 0x100–0x292) the displayed OAM does not use; OBJ palette 15. OBJ
+palette 15 is the text arrow's, the emotes' and the dungeon map dot's in
+other scenes, so `sky_storm.c` saves it before the bolt and puts it back when
+the bolt ends. The
 bolt's foot is behind the waves (OBJ priority 3 below map row 160), as in
 EoS. `SKY_MAP_PAL_RESTART` restarts the map's palette animation at F−7 so
 the GBA's sky flashes on the same frames as EoS's; measured on the GBA, the

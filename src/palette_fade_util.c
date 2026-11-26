@@ -185,6 +185,13 @@ void sub_8003810(u16 idx, RGB_Array param_2)
     sUpdatePaletteFade = TRUE;
 }
 
+#ifdef SKY_STORY
+RGB_Array SkyPaletteFade_GetColor(u16 idx)
+{
+    return sRGBPaletteBuffer[idx].asArr;
+}
+#endif
+
 static UNUSED void sub_8003844(u16 idx1, u16 idx2)
 {
     PaletteFadeEntry *a = &sPaletteFadeTable[idx1 / 16];

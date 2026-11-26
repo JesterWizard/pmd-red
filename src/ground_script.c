@@ -1148,6 +1148,17 @@ s16 HandleAction(Action *action, const DebugLocation *debug)
                                 if (id != -1) {
                                     Pokemon *mon = sub_80A8D54((s16) id);
                                     s32 i;
+#ifdef SKY_STORY
+                                    /* No Pokémon is left nameless: an empty entry
+                                     * takes the species name. */
+                                    if (sPokeNameBuffer[0] == '\0') {
+                                        const char *sp = GetMonSpecies(mon->speciesNum);
+                                        for (i = 0; i < POKEMON_NAME_LENGTH && sp[i] != '\0'; i++)
+                                            sPokeNameBuffer[i] = sp[i];
+                                        for (; i < POKEMON_NAME_LENGTH; i++)
+                                            sPokeNameBuffer[i] = '\0';
+                                    }
+#endif
                                     for (i = 0; i < POKEMON_NAME_LENGTH; i++) {
                                         mon->name[i] = sPokeNameBuffer[i];
                                     }
@@ -2149,7 +2160,16 @@ static s32 ExecuteScriptCommand(Action *action)
             case CMD_BYTE_3D: {
                 s32 i;
 #ifdef DEBUG_BOOT_EVENT
-                /* Test hook: keep the default name so scripted runs don't stall. */
+                /* Test hook: no naming screen, so scripted runs don't stall;
+                 * a nameless Pokémon takes its species name. */
+                if ((s16)curCmd.arg1 != -1) {
+                    Pokemon *mon = sub_80A8D54((s16) curCmd.arg1);
+                    if (mon != NULL && mon->name[0] == '\0') {
+                        const char *sp = GetMonSpecies(mon->speciesNum);
+                        for (i = 0; i < POKEMON_NAME_LENGTH && sp[i] != '\0'; i++)
+                            mon->name[i] = sp[i];
+                    }
+                }
                 break;
 #endif
                 if ((s16)curCmd.arg1 != -1) {

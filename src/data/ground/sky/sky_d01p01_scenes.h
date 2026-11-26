@@ -1135,6 +1135,8 @@ static const struct ScriptCommand s_gs178_g3_s0_lives1_dlg0[] = { /* Partner */
     AWAIT_CUE(6),
     WALK_RELATIVE(128, 12, 0),
     FANFARE_PLAY2(SE_SKY_RELIC_FRAGMENT), /* EoS se_Play(6410): the Relic Fragment comes out */
+    SELECT_ENTITIES(-1, 1), /* EoS supervision_Acting(1): it lies on the sand from here on */
+    WAIT(15),
     MOVE_RELATIVE(128, -12, 0),
     ALERT_CUE(5),
     AWAIT_CUE(6),
@@ -1240,6 +1242,20 @@ static const struct GroundLivesData s_gs178_g2_s0_lives[] = {
     } },
 };
 
+/* g3: the Relic Fragment the partner sets down (EoS layer 1: g01p01a1 at
+ * (50,22), between the two); it stays for the rest of the scene. */
+static const struct ScriptCommand s_gs178_g3_relic_fragment_dlg0[] = {
+    DEBUGINFO_O(__LINE__),
+    CLEAR_OBJ_FLAGS(OBJ_FLAG_INTERACT_MASK),
+    HALT,
+};
+
+static const struct GroundObjectData s_gs178_g3_s1_objs[] = {
+    /*  0 */ { SKY_OBJ_RELIC_FRAGMENT, 0, 1, 1, {  50,  22, 0, CPOS_HALFTILE }, {
+        [0] = s_gs178_g3_relic_fragment_dlg0,
+    } },
+};
+
 /* g3 / m01a0702: PLAYER (53,22) facing left, ATTENDANT1 (47,22) facing right */
 static const struct GroundLivesData s_gs178_g3_s0_lives[] = {
     /*  0 */ {   0,   6,   0,   0, {  53,  22, 0, CPOS_HALFTILE }, {
@@ -1278,6 +1294,7 @@ static const struct GroundScriptSector s_gs178_g2_sectors[] = {
 
 static const struct GroundScriptSector s_gs178_g3_sectors[] = {
     { LPARRAY(s_gs178_g3_s0_lives), 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[3], },
+    { 0,NULL, LPARRAY(s_gs178_g3_s1_objs), 0,NULL, 0,NULL, 0,NULL, },
 };
 
 static const struct GroundScriptSector s_gs178_g4_sectors[] = {

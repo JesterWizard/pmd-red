@@ -288,11 +288,18 @@ void xxx_draw_string_80524F0(void)
                 sub_80073B8(0);
 #ifdef SKY_STORY
                 if (strPtr->unk1C054[id] != 0 && strPtr->unk1C066 > LOG_Y0) {
+                    /* EoS: the turn divider is one white line mid-gap, with
+                     * a pixel of padding above and below it */
+                    if (UiStyleIsSky())
+                        AddUnderScoreHighlight(0, 0, strPtr->unk1C066 - 2, 0xE0, 7);
+                    else
+                        AddDoubleUnderScoreHighlight(0, 0, strPtr->unk1C066 - 1, 0xE0, 7);
+                }
 #else
                 if (strPtr->unk1C054[id] != 0 && strPtr->unk1C066 >= 8) {
-#endif
                     AddDoubleUnderScoreHighlight(0, 0, strPtr->unk1C066 - 1, 0xE0, 7);
                 }
+#endif
 
                 while (TRUE) {
                     txtPtr = HandleSpecialCharFormat(txtPtr, &sp);

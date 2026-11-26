@@ -94,9 +94,20 @@ static void SetCloudsLit(bool8 lit)
     }
 }
 
+/* OBJ bank 15 is the thought bubbles' / text arrow's palette in other
+ * scenes: keep what was there and put it back when the bolt is done. */
+static EWRAM_DATA RGB_Array sSavedObjPal[16] = {0};
+static EWRAM_DATA bool8 sObjPalSaved = FALSE;
+
 static void LoadBoltPalette(void)
 {
     s32 i;
+
+    if (!sObjPalSaved) {
+        for (i = 0; i < 16; i++)
+            sSavedObjPal[i] = SkyPaletteFade_GetColor(BOLT_PAL_BASE + i);
+        sObjPalSaved = TRUE;
+    }
 
     for (i = 0; i < 16; i++) {
         u16 c = sBoltPal[i];
@@ -117,8 +128,15 @@ void SkyStorm_StartBolt(void)
 
 void SkyStorm_Stop(void)
 {
+    s32 i;
+
     if (sBoltActive && sBoltFrame != 0)
         SetCloudsLit(FALSE);
+    if (sObjPalSaved) {
+        for (i = 0; i < 16; i++)
+            sub_8003810(BOLT_PAL_BASE + i, sSavedObjPal[i]);
+        sObjPalSaved = FALSE;
+    }
     sBoltActive = FALSE;
     sBoltFrame = 0;
 }
