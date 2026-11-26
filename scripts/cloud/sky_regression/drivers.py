@@ -125,8 +125,7 @@ def jukebox(run):
 
     Stores [(track index, BGM song header, rms, peak)] in run.data["jukebox"]."""
     d = D(run)
-    nav = dict(BOOT)
-    del nav[1800]
+    nav = dict(BOOT)  # A at 1800 skips the Shaymin opening, START at 2100 the title
     nav.update({2100: "START", 2550: "DOWN", 2600: "A", 2700: "DOWN", 2750: "A"})
 
     def keys(n):
