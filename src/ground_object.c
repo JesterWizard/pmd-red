@@ -294,7 +294,11 @@ s32 GroundObject_Add(s32 id_, const GroundObjectData *objectData, s32 group_, s3
         else {
           sVar4 = GetScriptVarValue(NULL,FLAG_KIND);
           if (sVar4 == 0) {
+#ifdef SKY_STORY
+            sVar3 = 0x1c; /* one team base (see GetAdjustedGroundMap) */
+#else
             sVar3 = GetScriptVarValue(NULL,BASE_KIND) + 0x1c;
+#endif
           }
           else {
             sVar3 = sVar4 + 0x2b;

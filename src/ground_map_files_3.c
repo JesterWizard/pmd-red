@@ -1,53 +1,153 @@
 #include "global.h"
 #include "globaldata.h"
 
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB08P01B[] ALIGNED(4) = INCBIN_U8("data/map_bg/B08P01B.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB08P01B3[] ALIGNED(4) = INCBIN_U8("data/map_bg/B08P01B3.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB08P01C[] ALIGNED(4) = INCBIN_U8("data/map_bg/B08P01C.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB08P01Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B08P01Cc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01A[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P01A.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01A1[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P01A1.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P01Ac.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P01Am.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01B[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P01B.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01B1[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P01B1.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01B3[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P01B3.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01Bc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P01Bc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P01Bm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01C[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P01C.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01C1[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P01C1.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P01Cc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P01Cm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P01Cm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P021[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P021.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02A[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P02A.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P02Am.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P02Bm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02C[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P02C.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02C1[] ALIGNED(4) = INCBIN_U8("data/map_bg/B09P02C1.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P02Cc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02Cm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P02Cm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB09P02c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B09P02c.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB10P01A[] ALIGNED(4) = INCBIN_U8("data/map_bg/B10P01A.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB10P01B[] ALIGNED(4) = INCBIN_U8("data/map_bg/B10P01B.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB10P01B3[] ALIGNED(4) = INCBIN_U8("data/map_bg/B10P01B3.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB10P01C[] ALIGNED(4) = INCBIN_U8("data/map_bg/B10P01C.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB10P01Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B10P01Cc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB10P01Cm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B10P01Cm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB11P01B[] ALIGNED(4) = INCBIN_U8("data/map_bg/B11P01B.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB11P01B3[] ALIGNED(4) = INCBIN_U8("data/map_bg/B11P01B3.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB11P01C[] ALIGNED(4) = INCBIN_U8("data/map_bg/B11P01C.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB11P01C1[] ALIGNED(4) = INCBIN_U8("data/map_bg/B11P01C1.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB11P01Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B11P01Cc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB11P01Cm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B11P01Cm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01A[] ALIGNED(4) = INCBIN_U8("data/map_bg/B12P01A.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B12P01Ac.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B12P01Am.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01B[] ALIGNED(4) = INCBIN_U8("data/map_bg/B12P01B.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01B3[] ALIGNED(4) = INCBIN_U8("data/map_bg/B12P01B3.bpa");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01Bc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B12P01Bc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B12P01Bm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01C[] ALIGNED(4) = INCBIN_U8("data/map_bg/B12P01C.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B12P01Cc.bpc.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P01Cm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B12P01Cm.bma.lz");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P02A[] ALIGNED(4) = INCBIN_U8("data/map_bg/B12P02A.bpl");
+#endif
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB12P02Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B12P02Am.bma.lz");
+#endif

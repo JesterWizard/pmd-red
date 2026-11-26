@@ -449,3 +449,9 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 - Beach Cave Pit's background has some black areas at the top where the EoS
   picture was folded into Red's 249-chunk limit.
 - Old saves need a new game in the sky build.
+- To save ROM space, the sky build leaves out Red-only art EoS has no use
+  for: every starter shares one team base (Pikachu's; `BASE_KIND` is ignored
+  in `GetAdjustedGroundMap`, and the other 15 bases' map files are not linked,
+  about 640 KB), and there are no Friend Area pictures (Red's chapter-card
+  backgrounds, also shown on entering a Friend Area; about 1.5 MB). The
+  vanilla build keeps all of them.

@@ -661,201 +661,865 @@ const File gGroundFiles[GROUND_FILES_COUNT] = {
     [65] = { "B01P02Cm", &gFileB01P02Cm, },
     [66] = { "B01P02c", &gFileB01P02c, },
     [67] = { "B02P01A", &gFileB01P01A, }, /* alias: data/map_bg/B02P01A.bpl */
+#ifdef SKY_STORY
+    [68] = { "B02P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [68] = { "B02P01B", &gFileB02P01B, },
+#endif
+#ifdef SKY_STORY
+    [69] = { "B02P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [69] = { "B02P01B3", &gFileB02P01B3, },
+#endif
+#ifdef SKY_STORY
+    [70] = { "B02P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [70] = { "B02P01C", &gFileB02P01C, },
+#endif
     [71] = { "B02P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B02P01C1.bpa */
+#ifdef SKY_STORY
+    [72] = { "B02P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [72] = { "B02P01Cc", &gFileB02P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [73] = { "B02P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [73] = { "B02P01Cm", &gFileB02P01Cm, },
+#endif
     [74] = { "B02P02A", &gFileB01P02A, }, /* alias: data/map_bg/B02P02A.bpl */
     [75] = { "B02P02B", &gFileB01P02A, }, /* alias: data/map_bg/B02P02B.bpl */
     [76] = { "B02P02C", &gFileB01P02C, }, /* alias: data/map_bg/B02P02C.bpl */
     [77] = { "B03P01A", &gFileB01P01A, }, /* alias: data/map_bg/B03P01A.bpl */
+#ifdef SKY_STORY
+    [78] = { "B03P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [78] = { "B03P01B", &gFileB03P01B, },
+#endif
+#ifdef SKY_STORY
+    [79] = { "B03P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [79] = { "B03P01B3", &gFileB03P01B3, },
+#endif
+#ifdef SKY_STORY
+    [80] = { "B03P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [80] = { "B03P01C", &gFileB03P01C, },
+#endif
     [81] = { "B03P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B03P01C1.bpa */
+#ifdef SKY_STORY
+    [82] = { "B03P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [82] = { "B03P01Cc", &gFileB03P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [83] = { "B03P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [83] = { "B03P01Cm", &gFileB03P01Cm, },
+#endif
     [84] = { "B03P02A", &gFileB01P02A, }, /* alias: data/map_bg/B03P02A.bpl */
     [85] = { "B03P02B", &gFileB01P02A, }, /* alias: data/map_bg/B03P02B.bpl */
     [86] = { "B03P02C", &gFileB01P02C, }, /* alias: data/map_bg/B03P02C.bpl */
     [87] = { "B04P01A", &gFileB01P01A, }, /* alias: data/map_bg/B04P01A.bpl */
+#ifdef SKY_STORY
+    [88] = { "B04P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [88] = { "B04P01B", &gFileB04P01B, },
+#endif
+#ifdef SKY_STORY
+    [89] = { "B04P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [89] = { "B04P01B3", &gFileB04P01B3, },
+#endif
+#ifdef SKY_STORY
+    [90] = { "B04P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [90] = { "B04P01C", &gFileB04P01C, },
+#endif
     [91] = { "B04P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B04P01C1.bpa */
+#ifdef SKY_STORY
+    [92] = { "B04P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [92] = { "B04P01Cc", &gFileB04P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [93] = { "B04P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [93] = { "B04P01Cm", &gFileB04P01Cm, },
+#endif
     [94] = { "B04P02A", &gFileB01P02A, }, /* alias: data/map_bg/B04P02A.bpl */
     [95] = { "B04P02B", &gFileB01P02A, }, /* alias: data/map_bg/B04P02B.bpl */
     [96] = { "B04P02C", &gFileB01P02C, }, /* alias: data/map_bg/B04P02C.bpl */
+#ifdef SKY_STORY
+    [97] = { "B05P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [97] = { "B05P01A", &gFileB05P01A, },
+#endif
     [98] = { "B05P01A1", &gFileB01P01A1, }, /* alias: data/map_bg/B05P01A1.bpa */
+#ifdef SKY_STORY
+    [99] = { "B05P01Ac", &gFileB01P01Ac, }, /* sky: one team base */
+#else
     [99] = { "B05P01Ac", &gFileB05P01Ac, },
+#endif
+#ifdef SKY_STORY
+    [100] = { "B05P01Am", &gFileB01P01Am, }, /* sky: one team base */
+#else
     [100] = { "B05P01Am", &gFileB05P01Am, },
+#endif
+#ifdef SKY_STORY
+    [101] = { "B05P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [101] = { "B05P01B", &gFileB05P01B, },
+#endif
     [102] = { "B05P01B1", &gFileB01P01A1, }, /* alias: data/map_bg/B05P01B1.bpa */
+#ifdef SKY_STORY
+    [103] = { "B05P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [103] = { "B05P01B3", &gFileB05P01B3, },
+#endif
+#ifdef SKY_STORY
+    [104] = { "B05P01Bc", &gFileB01P01Bc, }, /* sky: one team base */
+#else
     [104] = { "B05P01Bc", &gFileB05P01Bc, },
+#endif
+#ifdef SKY_STORY
+    [105] = { "B05P01Bm", &gFileB01P01Bm, }, /* sky: one team base */
+#else
     [105] = { "B05P01Bm", &gFileB05P01Bm, },
+#endif
+#ifdef SKY_STORY
+    [106] = { "B05P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [106] = { "B05P01C", &gFileB05P01C, },
+#endif
     [107] = { "B05P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B05P01C1.bpa */
+#ifdef SKY_STORY
+    [108] = { "B05P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [108] = { "B05P01Cc", &gFileB05P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [109] = { "B05P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [109] = { "B05P01Cm", &gFileB05P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [110] = { "B05P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [110] = { "B05P02A", &gFileB05P02A, },
+#endif
+#ifdef SKY_STORY
+    [111] = { "B05P02Am", &gFileB01P02Am, }, /* sky: one team base */
+#else
     [111] = { "B05P02Am", &gFileB05P02Am, },
+#endif
+#ifdef SKY_STORY
+    [112] = { "B05P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [112] = { "B05P02B", &gFileB05P02A, }, /* alias: data/map_bg/B05P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [113] = { "B05P02Bm", &gFileB01P02Bm, }, /* sky: one team base */
+#else
     [113] = { "B05P02Bm", &gFileB05P02Bm, },
+#endif
+#ifdef SKY_STORY
+    [114] = { "B05P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [114] = { "B05P02C", &gFileB05P02C, },
+#endif
+#ifdef SKY_STORY
+    [115] = { "B05P02Cc", &gFileB01P02Cc, }, /* sky: one team base */
+#else
     [115] = { "B05P02Cc", &gFileB05P02Cc, },
+#endif
+#ifdef SKY_STORY
+    [116] = { "B05P02Cm", &gFileB01P02Cm, }, /* sky: one team base */
+#else
     [116] = { "B05P02Cm", &gFileB05P02Cm, },
+#endif
+#ifdef SKY_STORY
+    [117] = { "B05P02c", &gFileB01P02c, }, /* sky: one team base */
+#else
     [117] = { "B05P02c", &gFileB05P02c, },
+#endif
+#ifdef SKY_STORY
+    [118] = { "B06P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [118] = { "B06P01A", &gFileB05P01A, }, /* alias: data/map_bg/B06P01A.bpl */
+#endif
+#ifdef SKY_STORY
+    [119] = { "B06P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [119] = { "B06P01B", &gFileB06P01B, },
+#endif
+#ifdef SKY_STORY
+    [120] = { "B06P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [120] = { "B06P01B3", &gFileB06P01B3, },
+#endif
+#ifdef SKY_STORY
+    [121] = { "B06P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [121] = { "B06P01C", &gFileB06P01C, },
+#endif
     [122] = { "B06P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B06P01C1.bpa */
+#ifdef SKY_STORY
+    [123] = { "B06P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [123] = { "B06P01Cc", &gFileB06P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [124] = { "B06P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [124] = { "B06P01Cm", &gFileB05P01Cm, }, /* alias: data/map_bg_lz/B06P01Cm.bma.lz */
+#endif
+#ifdef SKY_STORY
+    [125] = { "B06P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [125] = { "B06P02A", &gFileB05P02A, }, /* alias: data/map_bg/B06P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [126] = { "B06P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [126] = { "B06P02B", &gFileB05P02A, }, /* alias: data/map_bg/B06P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [127] = { "B06P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [127] = { "B06P02C", &gFileB05P02C, }, /* alias: data/map_bg/B06P02C.bpl */
+#endif
+#ifdef SKY_STORY
+    [128] = { "B07P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [128] = { "B07P01A", &gFileB05P01A, }, /* alias: data/map_bg/B07P01A.bpl */
+#endif
+#ifdef SKY_STORY
+    [129] = { "B07P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [129] = { "B07P01B", &gFileB07P01B, },
+#endif
+#ifdef SKY_STORY
+    [130] = { "B07P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [130] = { "B07P01B3", &gFileB07P01B3, },
+#endif
+#ifdef SKY_STORY
+    [131] = { "B07P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [131] = { "B07P01C", &gFileB07P01C, },
+#endif
     [132] = { "B07P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B07P01C1.bpa */
+#ifdef SKY_STORY
+    [133] = { "B07P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [133] = { "B07P01Cc", &gFileB07P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [134] = { "B07P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [134] = { "B07P01Cm", &gFileB07P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [135] = { "B07P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [135] = { "B07P02A", &gFileB05P02A, }, /* alias: data/map_bg/B07P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [136] = { "B07P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [136] = { "B07P02B", &gFileB05P02A, }, /* alias: data/map_bg/B07P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [137] = { "B07P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [137] = { "B07P02C", &gFileB05P02C, }, /* alias: data/map_bg/B07P02C.bpl */
+#endif
+#ifdef SKY_STORY
+    [138] = { "B08P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [138] = { "B08P01A", &gFileB05P01A, }, /* alias: data/map_bg/B08P01A.bpl */
+#endif
+#ifdef SKY_STORY
+    [139] = { "B08P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [139] = { "B08P01B", &gFileB08P01B, },
+#endif
+#ifdef SKY_STORY
+    [140] = { "B08P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [140] = { "B08P01B3", &gFileB08P01B3, },
+#endif
+#ifdef SKY_STORY
+    [141] = { "B08P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [141] = { "B08P01C", &gFileB08P01C, },
+#endif
     [142] = { "B08P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B08P01C1.bpa */
+#ifdef SKY_STORY
+    [143] = { "B08P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [143] = { "B08P01Cc", &gFileB08P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [144] = { "B08P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [144] = { "B08P01Cm", &gFileB07P01Cm, }, /* alias: data/map_bg_lz/B08P01Cm.bma.lz */
+#endif
+#ifdef SKY_STORY
+    [145] = { "B08P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [145] = { "B08P02A", &gFileB05P02A, }, /* alias: data/map_bg/B08P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [146] = { "B08P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [146] = { "B08P02B", &gFileB05P02A, }, /* alias: data/map_bg/B08P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [147] = { "B08P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [147] = { "B08P02C", &gFileB05P02C, }, /* alias: data/map_bg/B08P02C.bpl */
+#endif
+#ifdef SKY_STORY
+    [148] = { "B09P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [148] = { "B09P01A", &gFileB09P01A, },
+#endif
+#ifdef SKY_STORY
+    [149] = { "B09P01A1", &gFileB01P01A1, }, /* sky: one team base */
+#else
     [149] = { "B09P01A1", &gFileB09P01A1, },
+#endif
+#ifdef SKY_STORY
+    [150] = { "B09P01Ac", &gFileB01P01Ac, }, /* sky: one team base */
+#else
     [150] = { "B09P01Ac", &gFileB09P01Ac, },
+#endif
+#ifdef SKY_STORY
+    [151] = { "B09P01Am", &gFileB01P01Am, }, /* sky: one team base */
+#else
     [151] = { "B09P01Am", &gFileB09P01Am, },
+#endif
+#ifdef SKY_STORY
+    [152] = { "B09P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [152] = { "B09P01B", &gFileB09P01B, },
+#endif
+#ifdef SKY_STORY
+    [153] = { "B09P01B1", &gFileB01P01A1, }, /* sky: one team base */
+#else
     [153] = { "B09P01B1", &gFileB09P01B1, },
+#endif
+#ifdef SKY_STORY
+    [154] = { "B09P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [154] = { "B09P01B3", &gFileB09P01B3, },
+#endif
+#ifdef SKY_STORY
+    [155] = { "B09P01Bc", &gFileB01P01Bc, }, /* sky: one team base */
+#else
     [155] = { "B09P01Bc", &gFileB09P01Bc, },
+#endif
+#ifdef SKY_STORY
+    [156] = { "B09P01Bm", &gFileB01P01Bm, }, /* sky: one team base */
+#else
     [156] = { "B09P01Bm", &gFileB09P01Bm, },
+#endif
+#ifdef SKY_STORY
+    [157] = { "B09P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [157] = { "B09P01C", &gFileB09P01C, },
+#endif
+#ifdef SKY_STORY
+    [158] = { "B09P01C1", &gFileB01P01A1, }, /* sky: one team base */
+#else
     [158] = { "B09P01C1", &gFileB09P01C1, },
+#endif
+#ifdef SKY_STORY
+    [159] = { "B09P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [159] = { "B09P01Cc", &gFileB09P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [160] = { "B09P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [160] = { "B09P01Cm", &gFileB09P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [161] = { "B09P021", &gFileB01P01A, }, /* sky: one team base */
+#else
     [161] = { "B09P021", &gFileB09P021, },
+#endif
+#ifdef SKY_STORY
+    [162] = { "B09P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [162] = { "B09P02A", &gFileB09P02A, },
+#endif
+#ifdef SKY_STORY
+    [163] = { "B09P02Am", &gFileB01P02Am, }, /* sky: one team base */
+#else
     [163] = { "B09P02Am", &gFileB09P02Am, },
+#endif
+#ifdef SKY_STORY
+    [164] = { "B09P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [164] = { "B09P02B", &gFileB09P02A, }, /* alias: data/map_bg/B09P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [165] = { "B09P02Bm", &gFileB01P02Bm, }, /* sky: one team base */
+#else
     [165] = { "B09P02Bm", &gFileB09P02Bm, },
+#endif
+#ifdef SKY_STORY
+    [166] = { "B09P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [166] = { "B09P02C", &gFileB09P02C, },
+#endif
+#ifdef SKY_STORY
+    [167] = { "B09P02C1", &gFileB01P01A, }, /* sky: one team base */
+#else
     [167] = { "B09P02C1", &gFileB09P02C1, },
+#endif
+#ifdef SKY_STORY
+    [168] = { "B09P02Cc", &gFileB01P02Cc, }, /* sky: one team base */
+#else
     [168] = { "B09P02Cc", &gFileB09P02Cc, },
+#endif
+#ifdef SKY_STORY
+    [169] = { "B09P02Cm", &gFileB01P02Cm, }, /* sky: one team base */
+#else
     [169] = { "B09P02Cm", &gFileB09P02Cm, },
+#endif
+#ifdef SKY_STORY
+    [170] = { "B09P02c", &gFileB01P02c, }, /* sky: one team base */
+#else
     [170] = { "B09P02c", &gFileB09P02c, },
+#endif
+#ifdef SKY_STORY
+    [171] = { "B10P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [171] = { "B10P01A", &gFileB10P01A, },
+#endif
+#ifdef SKY_STORY
+    [172] = { "B10P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [172] = { "B10P01B", &gFileB10P01B, },
+#endif
+#ifdef SKY_STORY
+    [173] = { "B10P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [173] = { "B10P01B3", &gFileB10P01B3, },
+#endif
+#ifdef SKY_STORY
+    [174] = { "B10P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [174] = { "B10P01C", &gFileB10P01C, },
+#endif
+#ifdef SKY_STORY
+    [175] = { "B10P01C1", &gFileB01P01A1, }, /* sky: one team base */
+#else
     [175] = { "B10P01C1", &gFileB09P01B1, }, /* alias: data/map_bg/B10P01C1.bpa */
+#endif
+#ifdef SKY_STORY
+    [176] = { "B10P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [176] = { "B10P01Cc", &gFileB10P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [177] = { "B10P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [177] = { "B10P01Cm", &gFileB10P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [178] = { "B10P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [178] = { "B10P02A", &gFileB09P02A, }, /* alias: data/map_bg/B10P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [179] = { "B10P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [179] = { "B10P02B", &gFileB09P02A, }, /* alias: data/map_bg/B10P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [180] = { "B10P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [180] = { "B10P02C", &gFileB09P02C, }, /* alias: data/map_bg/B10P02C.bpl */
+#endif
+#ifdef SKY_STORY
+    [181] = { "B11P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [181] = { "B11P01A", &gFileB10P01A, }, /* alias: data/map_bg/B11P01A.bpl */
+#endif
+#ifdef SKY_STORY
+    [182] = { "B11P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [182] = { "B11P01B", &gFileB11P01B, },
+#endif
+#ifdef SKY_STORY
+    [183] = { "B11P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [183] = { "B11P01B3", &gFileB11P01B3, },
+#endif
+#ifdef SKY_STORY
+    [184] = { "B11P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [184] = { "B11P01C", &gFileB11P01C, },
+#endif
+#ifdef SKY_STORY
+    [185] = { "B11P01C1", &gFileB01P01A1, }, /* sky: one team base */
+#else
     [185] = { "B11P01C1", &gFileB11P01C1, },
+#endif
+#ifdef SKY_STORY
+    [186] = { "B11P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [186] = { "B11P01Cc", &gFileB11P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [187] = { "B11P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [187] = { "B11P01Cm", &gFileB11P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [188] = { "B11P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [188] = { "B11P02A", &gFileB09P02A, }, /* alias: data/map_bg/B11P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [189] = { "B11P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [189] = { "B11P02B", &gFileB09P02A, }, /* alias: data/map_bg/B11P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [190] = { "B11P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [190] = { "B11P02C", &gFileB09P02C, }, /* alias: data/map_bg/B11P02C.bpl */
+#endif
+#ifdef SKY_STORY
+    [191] = { "B12P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [191] = { "B12P01A", &gFileB12P01A, },
+#endif
     [192] = { "B12P01A1", &gFileB01P01A1, }, /* alias: data/map_bg/B12P01A1.bpa */
+#ifdef SKY_STORY
+    [193] = { "B12P01Ac", &gFileB01P01Ac, }, /* sky: one team base */
+#else
     [193] = { "B12P01Ac", &gFileB12P01Ac, },
+#endif
+#ifdef SKY_STORY
+    [194] = { "B12P01Am", &gFileB01P01Am, }, /* sky: one team base */
+#else
     [194] = { "B12P01Am", &gFileB12P01Am, },
+#endif
+#ifdef SKY_STORY
+    [195] = { "B12P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [195] = { "B12P01B", &gFileB12P01B, },
+#endif
     [196] = { "B12P01B1", &gFileB01P01A1, }, /* alias: data/map_bg/B12P01B1.bpa */
+#ifdef SKY_STORY
+    [197] = { "B12P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [197] = { "B12P01B3", &gFileB12P01B3, },
+#endif
+#ifdef SKY_STORY
+    [198] = { "B12P01Bc", &gFileB01P01Bc, }, /* sky: one team base */
+#else
     [198] = { "B12P01Bc", &gFileB12P01Bc, },
+#endif
+#ifdef SKY_STORY
+    [199] = { "B12P01Bm", &gFileB01P01Bm, }, /* sky: one team base */
+#else
     [199] = { "B12P01Bm", &gFileB12P01Bm, },
+#endif
+#ifdef SKY_STORY
+    [200] = { "B12P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [200] = { "B12P01C", &gFileB12P01C, },
+#endif
     [201] = { "B12P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B12P01C1.bpa */
+#ifdef SKY_STORY
+    [202] = { "B12P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [202] = { "B12P01Cc", &gFileB12P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [203] = { "B12P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [203] = { "B12P01Cm", &gFileB12P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [204] = { "B12P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [204] = { "B12P02A", &gFileB12P02A, },
+#endif
+#ifdef SKY_STORY
+    [205] = { "B12P02Am", &gFileB01P02Am, }, /* sky: one team base */
+#else
     [205] = { "B12P02Am", &gFileB12P02Am, },
+#endif
+#ifdef SKY_STORY
+    [206] = { "B12P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [206] = { "B12P02B", &gFileB12P02A, }, /* alias: data/map_bg/B12P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [207] = { "B12P02Bm", &gFileB01P02Bm, }, /* sky: one team base */
+#else
     [207] = { "B12P02Bm", &gFileB12P02Bm, },
+#endif
+#ifdef SKY_STORY
+    [208] = { "B12P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [208] = { "B12P02C", &gFileB12P02C, },
+#endif
+#ifdef SKY_STORY
+    [209] = { "B12P02Cc", &gFileB01P02Cc, }, /* sky: one team base */
+#else
     [209] = { "B12P02Cc", &gFileB12P02Cc, },
+#endif
+#ifdef SKY_STORY
+    [210] = { "B12P02Cm", &gFileB01P02Cm, }, /* sky: one team base */
+#else
     [210] = { "B12P02Cm", &gFileB12P02Cm, },
+#endif
+#ifdef SKY_STORY
+    [211] = { "B12P02c", &gFileB01P02c, }, /* sky: one team base */
+#else
     [211] = { "B12P02c", &gFileB12P02c, },
+#endif
+#ifdef SKY_STORY
+    [212] = { "B13P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [212] = { "B13P01A", &gFileB12P01A, }, /* alias: data/map_bg/B13P01A.bpl */
+#endif
+#ifdef SKY_STORY
+    [213] = { "B13P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [213] = { "B13P01B", &gFileB13P01B, },
+#endif
+#ifdef SKY_STORY
+    [214] = { "B13P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [214] = { "B13P01B3", &gFileB13P01B3, },
+#endif
+#ifdef SKY_STORY
+    [215] = { "B13P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [215] = { "B13P01C", &gFileB13P01C, },
+#endif
     [216] = { "B13P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B13P01C1.bpa */
+#ifdef SKY_STORY
+    [217] = { "B13P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [217] = { "B13P01Cc", &gFileB13P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [218] = { "B13P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [218] = { "B13P01Cm", &gFileB13P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [219] = { "B13P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [219] = { "B13P02A", &gFileB12P02A, }, /* alias: data/map_bg/B13P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [220] = { "B13P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [220] = { "B13P02B", &gFileB12P02A, }, /* alias: data/map_bg/B13P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [221] = { "B13P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [221] = { "B13P02C", &gFileB12P02C, }, /* alias: data/map_bg/B13P02C.bpl */
+#endif
+#ifdef SKY_STORY
+    [222] = { "B14P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [222] = { "B14P01A", &gFileB14P01A, },
+#endif
     [223] = { "B14P01A1", &gFileB01P01A1, }, /* alias: data/map_bg/B14P01A1.bpa */
+#ifdef SKY_STORY
+    [224] = { "B14P01Ac", &gFileB01P01Ac, }, /* sky: one team base */
+#else
     [224] = { "B14P01Ac", &gFileB14P01Ac, },
+#endif
+#ifdef SKY_STORY
+    [225] = { "B14P01Am", &gFileB01P01Am, }, /* sky: one team base */
+#else
     [225] = { "B14P01Am", &gFileB14P01Am, },
+#endif
+#ifdef SKY_STORY
+    [226] = { "B14P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [226] = { "B14P01B", &gFileB14P01B, },
+#endif
     [227] = { "B14P01B1", &gFileB01P01A1, }, /* alias: data/map_bg/B14P01B1.bpa */
+#ifdef SKY_STORY
+    [228] = { "B14P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [228] = { "B14P01B3", &gFileB14P01B3, },
+#endif
+#ifdef SKY_STORY
+    [229] = { "B14P01Bc", &gFileB01P01Bc, }, /* sky: one team base */
+#else
     [229] = { "B14P01Bc", &gFileB14P01Bc, },
+#endif
+#ifdef SKY_STORY
+    [230] = { "B14P01Bm", &gFileB01P01Bm, }, /* sky: one team base */
+#else
     [230] = { "B14P01Bm", &gFileB14P01Bm, },
+#endif
+#ifdef SKY_STORY
+    [231] = { "B14P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [231] = { "B14P01C", &gFileB14P01C, },
+#endif
     [232] = { "B14P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B14P01C1.bpa */
+#ifdef SKY_STORY
+    [233] = { "B14P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [233] = { "B14P01Cc", &gFileB14P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [234] = { "B14P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [234] = { "B14P01Cm", &gFileB14P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [235] = { "B14P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [235] = { "B14P02A", &gFileB14P02A, },
+#endif
+#ifdef SKY_STORY
+    [236] = { "B14P02Am", &gFileB01P02Am, }, /* sky: one team base */
+#else
     [236] = { "B14P02Am", &gFileB14P02Am, },
+#endif
+#ifdef SKY_STORY
+    [237] = { "B14P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [237] = { "B14P02B", &gFileB14P02A, }, /* alias: data/map_bg/B14P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [238] = { "B14P02Bm", &gFileB01P02Bm, }, /* sky: one team base */
+#else
     [238] = { "B14P02Bm", &gFileB14P02Bm, },
+#endif
+#ifdef SKY_STORY
+    [239] = { "B14P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [239] = { "B14P02C", &gFileB14P02C, },
+#endif
+#ifdef SKY_STORY
+    [240] = { "B14P02Cc", &gFileB01P02Cc, }, /* sky: one team base */
+#else
     [240] = { "B14P02Cc", &gFileB14P02Cc, },
+#endif
+#ifdef SKY_STORY
+    [241] = { "B14P02Cm", &gFileB01P02Cm, }, /* sky: one team base */
+#else
     [241] = { "B14P02Cm", &gFileB14P02Cm, },
+#endif
+#ifdef SKY_STORY
+    [242] = { "B14P02c", &gFileB01P02c, }, /* sky: one team base */
+#else
     [242] = { "B14P02c", &gFileB14P02c, },
+#endif
+#ifdef SKY_STORY
+    [243] = { "B15P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [243] = { "B15P01A", &gFileB14P01A, }, /* alias: data/map_bg/B15P01A.bpl */
+#endif
+#ifdef SKY_STORY
+    [244] = { "B15P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [244] = { "B15P01B", &gFileB15P01B, },
+#endif
+#ifdef SKY_STORY
+    [245] = { "B15P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [245] = { "B15P01B3", &gFileB15P01B3, },
+#endif
+#ifdef SKY_STORY
+    [246] = { "B15P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [246] = { "B15P01C", &gFileB15P01C, },
+#endif
     [247] = { "B15P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B15P01C1.bpa */
+#ifdef SKY_STORY
+    [248] = { "B15P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [248] = { "B15P01Cc", &gFileB15P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [249] = { "B15P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [249] = { "B15P01Cm", &gFileB15P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [250] = { "B15P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [250] = { "B15P02A", &gFileB14P02A, }, /* alias: data/map_bg/B15P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [251] = { "B15P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [251] = { "B15P02B", &gFileB14P02A, }, /* alias: data/map_bg/B15P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [252] = { "B15P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [252] = { "B15P02C", &gFileB14P02C, }, /* alias: data/map_bg/B15P02C.bpl */
+#endif
+#ifdef SKY_STORY
+    [253] = { "B16P01A", &gFileB01P01A, }, /* sky: one team base */
+#else
     [253] = { "B16P01A", &gFileB14P01A, }, /* alias: data/map_bg/B16P01A.bpl */
+#endif
+#ifdef SKY_STORY
+    [254] = { "B16P01B", &gFileB01P01B, }, /* sky: one team base */
+#else
     [254] = { "B16P01B", &gFileB16P01B, },
+#endif
+#ifdef SKY_STORY
+    [255] = { "B16P01B3", &gFileB01P01B3, }, /* sky: one team base */
+#else
     [255] = { "B16P01B3", &gFileB16P01B3, },
+#endif
+#ifdef SKY_STORY
+    [256] = { "B16P01C", &gFileB01P01C, }, /* sky: one team base */
+#else
     [256] = { "B16P01C", &gFileB16P01C, },
+#endif
     [257] = { "B16P01C1", &gFileB01P01A1, }, /* alias: data/map_bg/B16P01C1.bpa */
+#ifdef SKY_STORY
+    [258] = { "B16P01Cc", &gFileB01P01Cc, }, /* sky: one team base */
+#else
     [258] = { "B16P01Cc", &gFileB16P01Cc, },
+#endif
+#ifdef SKY_STORY
+    [259] = { "B16P01Cm", &gFileB01P01Cm, }, /* sky: one team base */
+#else
     [259] = { "B16P01Cm", &gFileB16P01Cm, },
+#endif
+#ifdef SKY_STORY
+    [260] = { "B16P02A", &gFileB01P02A, }, /* sky: one team base */
+#else
     [260] = { "B16P02A", &gFileB14P02A, }, /* alias: data/map_bg/B16P02A.bpl */
+#endif
+#ifdef SKY_STORY
+    [261] = { "B16P02B", &gFileB01P02A, }, /* sky: one team base */
+#else
     [261] = { "B16P02B", &gFileB14P02A, }, /* alias: data/map_bg/B16P02B.bpl */
+#endif
+#ifdef SKY_STORY
+    [262] = { "B16P02C", &gFileB01P02C, }, /* sky: one team base */
+#else
     [262] = { "B16P02C", &gFileB14P02C, }, /* alias: data/map_bg/B16P02C.bpl */
+#endif
     [263] = { "D01P01", &gFileD01P01, },
     [264] = { "D01P01c", &gFileD01P01c, },
     [265] = { "D01P01m", &gFileD01P01m, },

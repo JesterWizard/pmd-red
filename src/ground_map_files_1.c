@@ -65,4 +65,6 @@ const u8 gFileB01P02C[] ALIGNED(4) = INCBIN_U8("data/map_bg/B01P02C.bpl");
 const u8 gFileB01P02Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B01P02Cc.bpc.lz");
 const u8 gFileB01P02Cm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B01P02Cm.bma.lz");
 const u8 gFileB01P02c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/B01P02c.bpc.lz");
+#ifndef SKY_STORY /* other starters' team bases: not in the sky build */
 const u8 gFileB02P01B[] ALIGNED(4) = INCBIN_U8("data/map_bg/B02P01B.bpl");
+#endif

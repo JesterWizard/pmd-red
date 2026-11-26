@@ -385,7 +385,13 @@ s16 GetAdjustedGroundMap(s32 mapId)
     switch (retMapId) {
         case MAP_TEAM_BASE:
         case MAP_TEAM_BASE_INSIDE:
+#ifdef SKY_STORY
+            /* Explorers of Sky demake: one team base for every starter (the
+             * other starters' base maps are not in the sky build). */
+            retMapId = (s16)(retMapId + GetScriptVarValue(NULL, BASE_LEVEL));
+#else
             retMapId = (s16)(retMapId + ((GetScriptVarValue(NULL, BASE_KIND) * TEAM_BASE_MAPS_PER_SPECIES) + GetScriptVarValue(NULL, BASE_LEVEL)));
+#endif
             break;
         case MAP_WHISCASH_POND:
             if (CheckQuest(QUEST_REACHED_POSTGAME)) {
