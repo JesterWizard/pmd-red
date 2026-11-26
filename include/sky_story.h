@@ -117,6 +117,7 @@ enum {
     SKY_BUBBLES_KRABBY_SAND,
     SKY_BUBBLES_KRABBY_SUNSET,
     SKY_BUBBLES_BEACH,
+    SKY_BUBBLES_RAIN, /* the storm in m01a0102 */
 };
 void SkyBubbles_Start(s32 mode);
 bool8 SkyBubbles_Active(void);

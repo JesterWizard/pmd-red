@@ -7,6 +7,11 @@
  * bubbles in four tints (graphics/custom/sky_bubbles/bubbles.png, captured
  * from EoS's OBJ layer) drifting up the screen with a slight sway.
  *
+ * The same system draws the rain over the storm (SKY_BUBBLES_RAIN, EoS
+ * m01a0102): 1 px teal streaks (graphics/custom/sky_rain/rain.png) falling
+ * steeply over the cliff and the stormy sea. EoS blends its rain over the
+ * picture; here the streaks are solid, in EoS's rain colours.
+ *
  * Scripts: SKY_BUBBLES(mode) (SPECIAL_PROCESS 0x61). 0 stops.
  * VRAM: OBJ tiles 0x300.. (shared with the thought bubbles, which never show
  * in a cutscene); palette: OBJ bank 14 (Red's second ornament palette slot).
@@ -33,10 +38,13 @@
 #define BUBBLE_PAL_BASE ((16 + BUBBLE_OBJ_PAL) * 16)
 #define BUBBLE_CELLS 6
 #define BUBBLE_BIG_CELLS 4
-#define BUBBLE_MAX 14
+#define BUBBLE_MAX 44
+#define RAIN_CELLS 3
 
 static const u8 sBubbleTiles[] = INCBIN_U8("graphics/custom/sky_bubbles/bubbles.4bpp");
 static const u16 sBubblePal[] = INCBIN_U16("graphics/custom/sky_bubbles/bubbles.gbapal");
+static const u8 sRainTiles[] = INCBIN_U8("graphics/custom/sky_rain/rain.4bpp");
+static const u16 sRainPal[] = INCBIN_U16("graphics/custom/sky_rain/rain.gbapal");
 
 struct SkyBubble
 {
@@ -56,26 +64,36 @@ static const struct { s16 vxMin, vxMax, vyMin, vyMax; u8 count; } sModes[] = {
     [SKY_BUBBLES_KRABBY_SAND]   = { -70, -20, -150, -70, 14 },
     [SKY_BUBBLES_KRABBY_SUNSET] = { -60, -10, -110, -50, 12 },
     [SKY_BUBBLES_BEACH]         = { -30,  30,  -70, -30, 10 },
+    /* falling: about 7 px down and 1.75 px right per frame */
+    [SKY_BUBBLES_RAIN]          = { 400, 480, 1700, 2000, 44 },
 };
 
 static void SpawnBubble(struct SkyBubble *b, bool8 anywhere)
 {
     s32 m = sBubbleMode;
 
-    b->x = RandRange(-8, 240) << 8;
-    b->y = (anywhere ? RandRange(0, 176) : RandRange(160, 184)) << 8;
     b->vx = RandRange(sModes[m].vxMin, sModes[m].vxMax + 1);
     b->vy = RandRange(sModes[m].vyMin, sModes[m].vyMax + 1);
-    b->cell = (RandInt(3) == 0) ? BUBBLE_BIG_CELLS + RandInt(BUBBLE_CELLS - BUBBLE_BIG_CELLS) : RandInt(BUBBLE_BIG_CELLS);
     b->phase = RandInt(64);
+    if (m == SKY_BUBBLES_RAIN) {
+        b->x = RandRange(-48, 240) << 8;
+        b->y = (anywhere ? RandRange(-32, 160) : RandRange(-48, -24)) << 8;
+        b->cell = RandInt(RAIN_CELLS);
+        return;
+    }
+    b->x = RandRange(-8, 240) << 8;
+    b->y = (anywhere ? RandRange(0, 176) : RandRange(160, 184)) << 8;
+    b->cell = (RandInt(3) == 0) ? BUBBLE_BIG_CELLS + RandInt(BUBBLE_CELLS - BUBBLE_BIG_CELLS) : RandInt(BUBBLE_BIG_CELLS);
 }
 
 static void LoadBubblePalette(bool8 fade, s32 brightness)
 {
     s32 i;
 
+    const u16 *pal = sBubbleMode == SKY_BUBBLES_RAIN ? sRainPal : sBubblePal;
+
     for (i = 0; i < 16; i++) {
-        u16 c = sBubblePal[i];
+        u16 c = pal[i];
         RGB_Array rgb = { .c = { (c & 0x1F) << 3, ((c >> 5) & 0x1F) << 3, ((c >> 10) & 0x1F) << 3, 0 } };
 
         if (fade) {
@@ -161,8 +179,12 @@ void SkyBubbles_DrawCutaway(void)
 static void DrawBubbles(void)
 {
     s32 i;
+    bool8 rain = (sBubbleMode == SKY_BUBBLES_RAIN);
 
-    CpuCopy((void *)(OBJ_VRAM0 + BUBBLE_TILE_NUM * 32), sBubbleTiles, BUBBLE_CELLS * 4 * 32);
+    if (rain)
+        CpuCopy((void *)(OBJ_VRAM0 + BUBBLE_TILE_NUM * 32), sRainTiles, RAIN_CELLS * 4 * 32);
+    else
+        CpuCopy((void *)(OBJ_VRAM0 + BUBBLE_TILE_NUM * 32), sBubbleTiles, BUBBLE_CELLS * 4 * 32);
 
     for (i = 0; i < sBubbleCount; i++) {
         struct SkyBubble *b = &sBubbles[i];
@@ -172,23 +194,34 @@ static void DrawBubbles(void)
         b->x += b->vx;
         b->y += b->vy;
         b->phase++;
-        if ((b->y >> 8) < -16 || (b->x >> 8) < -16 || (b->x >> 8) > 240)
+        if (rain) {
+            if ((b->y >> 8) > 160 || (b->x >> 8) > 240)
+                SpawnBubble(b, FALSE);
+        }
+        else if ((b->y >> 8) < -16 || (b->x >> 8) < -16 || (b->x >> 8) > 240) {
             SpawnBubble(b, FALSE);
+        }
 
         /* gentle sway: triangle wave, +-2 px over 64 frames */
         sway = (b->phase & 63);
-        sway = (sway < 32 ? sway : 63 - sway) / 8 - 2;
+        sway = rain ? 0 : (sway < 32 ? sway : 63 - sway) / 8 - 2;
         sx = (b->x >> 8) + sway;
         sy = b->y >> 8;
-        if (sy > 160 || OverWindow(sx, sy))
+        if (sy > 160 || sy < -32 || (!rain && OverWindow(sx, sy)))
             continue;
 
         sprite.attrib1 = 0;
         sprite.attrib2 = 0;
         sprite.attrib3 = 0;
         sprite.unk6 = 0;
-        SpriteSetShape(&sprite, 0); /* square */
-        SpriteSetSize(&sprite, 1);  /* 16x16 */
+        if (rain) {
+            SpriteSetShape(&sprite, 2); /* tall */
+            SpriteSetSize(&sprite, 1);  /* 8x32 */
+        }
+        else {
+            SpriteSetShape(&sprite, 0); /* square */
+            SpriteSetSize(&sprite, 1);  /* 16x16 */
+        }
         SpriteSetPalNum(&sprite, BUBBLE_OBJ_PAL);
         SpriteSetPriority(&sprite, 1);
         SpriteSetX(&sprite, sx & 0x1FF);

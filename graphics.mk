@@ -23,3 +23,7 @@ graphics/custom/thought_bubbles/%/thought.4bpp: graphics/custom/thought_bubbles/
 # Explorers of Sky demake bubbles (EoS d01p11b1 bubbles, 16x16 cells stacked).
 graphics/custom/sky_bubbles/bubbles.gbapal: graphics/custom/sky_bubbles/bubbles.png
 	$(GBAGFX) $< $@
+
+# Explorers of Sky demake rain (8x32 streaks stacked, OBJ 1D order).
+graphics/custom/sky_rain/rain.gbapal: graphics/custom/sky_rain/rain.png
+	$(GBAGFX) $< $@

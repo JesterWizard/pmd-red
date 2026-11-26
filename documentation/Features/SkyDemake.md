@@ -78,7 +78,10 @@ over the two Krabby scenes, the sunset beach and the sunset-sea cutaway:
 `SKY_BUBBLES(mode)` in scripts, OBJ sprites captured from EoS's OBJ layer
 ([`src/sky_bubbles.c`](../../src/sky_bubbles.c),
 `graphics/custom/sky_bubbles/`). Bubbles hide behind open windows, since EoS
-shows text on the other screen. Converted maps keep EoS's palette animations
+shows text on the other screen. The same effect draws the rain over the
+storm (`SKY_BUBBLES_RAIN`, m01a0102): 1 px teal streaks falling steeply over
+the cliff, through the lightning and over the sea after the pan
+(`graphics/custom/sky_rain/`; EoS blends its rain, the GBA draws it solid). Converted maps keep EoS's palette animations
 (the sea shimmer, the sunset glitter, the Pit water) and, on maps that fit
 VRAM, EoS's BPA tile animations: the storm-sea waves (`EV0101A1.bpa`) and
 the guild torches (`EG0101B1.bpa`), in RT's BPA slots.

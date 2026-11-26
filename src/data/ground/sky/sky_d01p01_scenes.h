@@ -97,11 +97,13 @@ static const struct ScriptCommand s_gs178_g4_s0_station_sref_script[] = {
     SET_PLACE_MODE(4),
     /* EoS: the cliff (top screen) over the stormy sea (bottom): the cliff,
      * lightning, then a pan down to the sea, which stays on screen. */
+    SKY_BUBBLES(SKY_BUBBLES_RAIN), /* EoS: rain over the cliff and the sea */
     SKY_CUTAWAY(SKY_CUTAWAY_STORM, 160),
     FADE_IN(TRUE, 15),
     WAIT(165),
     BGM_FADEOUT(120),
     FADE_OUT(TRUE, 60),
+    SKY_BUBBLES(SKY_BUBBLES_OFF),
     WAIT(120),
     RET,
 };
