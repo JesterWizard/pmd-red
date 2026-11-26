@@ -5,6 +5,7 @@
 #include "constants/move_id.h"
 #include "constants/trap.h"
 #include "effect_data.h"
+#include "sky_story.h"
 
 static const unkStruct_80B9CC4 gUnknown_80B9CC4[448] = {
     [0] = {.animType = 1, .effectId = 0, .unk8 = 0, .animId = 0, .unk10 = -1, .unk14 = 0, .unk18 = 0, .unk1c = -1, .unk20 = 0, .loop = 0},
@@ -5518,6 +5519,9 @@ const unkStruct_80B9CC4 *sub_800ECA4(s32 param_1)
 
 const unkStruct_80BDBC4 *sub_800ECB8(u16 moveId)
 {
+#ifdef SKY_STORY
+    moveId = SkyStory_MoveAnimId(moveId);
+#endif
     return &gUnknown_80BDBC4[moveId];
 }
 
@@ -5543,5 +5547,8 @@ s16 sub_800ED0C(u8 param_1)
 
 s32 sub_800ED20(u16 moveId)
 {
+#ifdef SKY_STORY
+    moveId = SkyStory_MoveAnimId(moveId);
+#endif
     return gUnknown_80BDBC4[moveId].unkC;
 }

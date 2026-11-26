@@ -1,6 +1,7 @@
 #include "global.h"
 #include "globaldata.h"
 #include "runtime.h"
+#include "sky_story.h"
 #include "dungeon_move.h"
 #include "dungeon_move_util.h"
 #include "constants/ability.h"
@@ -342,7 +343,11 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
                     sub_803ED30(9999, currTarget, 1, -1);
                 }
 
+#ifdef SKY_STORY
+                switch (SkyStory_MoveEffectId(moveId)) {
+#else
                 switch (moveId) {
+#endif
                     case MOVE_HI_JUMP_KICK:
                         HiJumpKickMoveAction(attacker, currTarget, move, itemId, 1);
                         break;
@@ -391,7 +396,11 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
                 targetInfo->unk158 = 1;
 
                 // They really must've had a soft spot for all these giant switches
+#ifdef SKY_STORY
+                switch (SkyStory_MoveEffectId(moveId)) {
+#else
                 switch (moveId) {
+#endif
                     case MOVE_THRASH:
                     case MOVE_CUT:
                     case MOVE_ROCK_THROW:

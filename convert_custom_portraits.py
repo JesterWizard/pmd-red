@@ -43,6 +43,9 @@ OUT_DIR = ROOT / "graphics" / "portraits"
 GEN_C = ROOT / "src" / "custom_portraits_data.c"
 MONSTER_H = ROOT / "include" / "constants" / "monster.h"
 MONSTER_JSON = ROOT / "data" / "monster" / "monster_data.json"
+# Explorers of Sky demake: Gen 4 species (sky build only), faces exported from
+# EoS by tools/make_sky_gen4_portraits.py; wrapped in #ifdef SKY_STORY.
+SKY_GEN4_H = ROOT / "include" / "constants" / "sky_gen4.h"
 RAW_BASE = "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/master/portrait"
 
 # Game emotion slot → SpriteCollab filename (standard 13-emotion kao layout)
@@ -222,9 +225,17 @@ def build_species_table() -> list[tuple[int, str, int, bool]]:
         full = folder in FULL_EMOTION_FOLDERS
         rows_by_sid[sid] = (sid, folder, dex, full)
 
+    if SKY_GEN4_H.exists():
+        for suffix, sid_s in re.findall(r"#define MONSTER_(\w+) (\d+)", SKY_GEN4_H.read_text()):
+            sid = int(sid_s)
+            if sid not in rows_by_sid:
+                rows_by_sid[sid] = (sid, suffix.lower(), 0, True)  # dex 0: not fetched
+                SKY_SIDS.add(sid)
+
     return [rows_by_sid[k] for k in sorted(rows_by_sid)]
 
 
+SKY_SIDS: set[int] = set()
 SPECIES_TABLE: list[tuple[int, str, int, bool]] = build_species_table()
 
 
@@ -388,7 +399,17 @@ def generate_c(species_emotions: dict[str, list[str]]) -> bool:
         if species_emotions.get(folder)
     ]
 
+    def sky_open(sid: int) -> None:
+        if sid in SKY_SIDS:
+            lines.append("#ifdef SKY_STORY")
+
+    def sky_close(sid: int) -> None:
+        if sid in SKY_SIDS:
+            lines.append("#endif")
+
+    n_red = sum(1 for sid, _ in present if sid not in SKY_SIDS)
     for sid, folder in present:
+        sky_open(sid)
         emotions = species_emotions[folder]
         camel_name = camel(folder)
         slots = slot_layout_for(folder, emotions)
@@ -418,12 +439,19 @@ def generate_c(species_emotions: dict[str, list[str]]) -> bool:
         lines.append(
             f"const SiroArchive gCustomKao{camel_name} = {{ \"SIRO\", &s{camel_name}Portraits }};"
         )
+        sky_close(sid)
         lines.append("")
 
+    lines.append("#ifdef SKY_STORY")
     lines.append(f"#define CUSTOM_PORTRAIT_COUNT {len(present)}")
+    lines.append("#else")
+    lines.append(f"#define CUSTOM_PORTRAIT_COUNT {n_red}")
+    lines.append("#endif")
     lines.append("const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {")
     for sid, folder in present:
+        sky_open(sid)
         lines.append(f"    {sid}, /* {folder} */")
+        sky_close(sid)
     lines.append("};")
     lines.append("")
     lines.append("const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {")
@@ -433,7 +461,9 @@ def generate_c(species_emotions: dict[str, list[str]]) -> bool:
         for i, game_name in enumerate(slots):
             if game_name is not None:
                 mask |= 1 << i
+        sky_open(sid)
         lines.append(f"    0x{mask:04X}, /* {folder} */")
+        sky_close(sid)
     lines.append("};")
     lines.append("")
     lines.append("const u16 gCustomPortraitCount = CUSTOM_PORTRAIT_COUNT;")
@@ -442,7 +472,9 @@ def generate_c(species_emotions: dict[str, list[str]]) -> bool:
     lines.append("static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {")
     for sid, folder in present:
         camel_name = camel(folder)
+        sky_open(sid)
         lines.append(f'    {{ "ckao{sid:03d}", &gCustomKao{camel_name} }},')
+        sky_close(sid)
     lines.append("};")
     lines.append("")
     lines.append("const FileArchive gCustomPortraitArchive = {")
@@ -506,6 +538,8 @@ def main() -> int:
 
     if args.fetch or args.force_fetch:
         for sid, folder, dex, full in SPECIES_TABLE:
+            if sid in SKY_SIDS:
+                continue  # EoS faces, not SpriteCollab
             n = fetch_species(folder, dex, full, force=args.force_fetch)
             if not args.quiet:
                 mode = "full" if full else "Normal"

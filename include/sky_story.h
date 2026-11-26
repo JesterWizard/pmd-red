@@ -99,6 +99,9 @@ extern const MonsterDataEntry gSkyMonsterData[];
 extern const MoveDataEntry gSkyMoveData[];
 extern const MoveLearnset gSkyMoveLearnsets[];
 extern const LevelData gSkyGen4LevelData[][100];
+/* Gen 4 moves borrow Red effect handlers / animations (src/sky_gen4_moves.c). */
+u16 SkyStory_MoveEffectId(u16 moveId);
+u16 SkyStory_MoveAnimId(u16 moveId);
 extern const SkyCutawayArt gSkyTitleArt[SKY_TITLE_ART_COUNT];
 void SkyStory_ShowCutaway_Async(s32 id, s32 frames);
 

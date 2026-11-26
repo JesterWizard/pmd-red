@@ -1,0 +1,171 @@
+/*
+ * Explorers of Sky demake: Gen 4 move effects and animations.
+ *
+ * The Gen 4 moves keep their EoS ids, data (power, type, category, range,
+ * accuracy, PP) and names (src/data/sky_gen4_data.c). Red has no handlers or
+ * animations for them, so each one borrows the effect handler of the Red
+ * move whose effect is closest and an animation of a Red move that looks
+ * alike. Range, power, type and accuracy still come from the Gen 4 data, so
+ * e.g. Dark Pulse hits like Dark Pulse and only its 20% flinch comes from
+ * Headbutt's handler. Effects Red has no mechanism for (Gravity, Embargo,
+ * Heal Block, Trick Room, ...) use the nearest Red status move.
+ */
+#include "global.h"
+
+#ifdef SKY_STORY
+
+#include "constants/move_id.h"
+#include "sky_story.h"
+
+struct SkyMoveProxy
+{
+    u16 effect;
+    u16 anim;
+};
+
+#define P(move, eff, anm) [move - SKY_FIRST_GEN4_MOVE] = { eff, anm }
+
+static const struct SkyMoveProxy sProxies[SKY_LAST_GEN4_MOVE - SKY_FIRST_GEN4_MOVE + 1] = {
+    P(MOVE_HAMMER_ARM,    MOVE_TACKLE,        MOVE_MEGA_PUNCH),
+    P(MOVE_IRON_HEAD,     MOVE_HEADBUTT,      MOVE_HEADBUTT),
+    P(MOVE_AQUA_JET,      MOVE_TACKLE,        MOVE_QUICK_ATTACK),
+    P(MOVE_AQUA_TAIL,     MOVE_TACKLE,        MOVE_WATERFALL),
+    P(MOVE_AQUA_RING,     MOVE_INGRAIN,       MOVE_WATER_SPORT),
+    P(MOVE_SPACIAL_REND,  MOVE_SLASH,         MOVE_AEROBLAST),
+    P(MOVE_DARK_PULSE,    MOVE_HEADBUTT,      MOVE_FAINT_ATTACK),
+    P(MOVE_OMINOUS_WIND,  MOVE_SILVER_WIND,   MOVE_SILVER_WIND),
+    P(MOVE_GASTRO_ACID,   MOVE_DISABLE,       MOVE_ACID),
+    P(MOVE_HEALING_WISH,  MOVE_HEAL_BELL,     MOVE_WISH),
+    P(MOVE_CLOSE_COMBAT,  MOVE_SUPERPOWER,    MOVE_CROSS_CHOP),
+    P(MOVE_WOOD_HAMMER,   MOVE_DOUBLE_EDGE,   MOVE_RAZOR_LEAF),
+    P(MOVE_AIR_SLASH,     MOVE_HEADBUTT,      MOVE_AIR_CUTTER),
+    P(MOVE_ENERGY_BALL,   MOVE_PSYCHIC,       MOVE_SOLARBEAM),
+    P(MOVE_TAILWIND,      MOVE_AGILITY,       MOVE_GUST),
+    P(MOVE_PUNISHMENT,    MOVE_TACKLE,        MOVE_FAINT_ATTACK),
+    P(MOVE_CHATTER,       MOVE_PSYBEAM,       MOVE_SUPERSONIC),
+    P(MOVE_LUCKY_CHANT,   MOVE_SAFEGUARD,     MOVE_SAFEGUARD),
+    P(MOVE_GUARD_SWAP,    MOVE_PSYCH_UP,      MOVE_PSYCH_UP),
+    P(MOVE_HEAL_ORDER,    MOVE_MILK_DRINK,    MOVE_RECOVER),
+    P(MOVE_HEAL_BLOCK,    MOVE_TAUNT,         MOVE_TAUNT),
+    P(MOVE_SHADOW_SNEAK,  MOVE_TACKLE,        MOVE_SHADOW_PUNCH),
+    P(MOVE_THUNDER_FANG,  MOVE_THUNDERPUNCH,  MOVE_BITE),
+    P(MOVE_ROCK_WRECKER,  MOVE_HYPER_BEAM,    MOVE_ROCK_THROW),
+    P(MOVE_FOCUS_BLAST,   MOVE_PSYCHIC,       MOVE_FOCUS_PUNCH),
+    P(MOVE_GIGA_IMPACT,   MOVE_HYPER_BEAM,    MOVE_TAKE_DOWN),
+    P(MOVE_DEFOG,         MOVE_SWEET_SCENT,   MOVE_WHIRLWIND),
+    P(MOVE_TRUMP_CARD,    MOVE_SWIFT,         MOVE_SWIFT),
+    P(MOVE_GRASS_KNOT,    MOVE_TACKLE,        MOVE_VINE_WHIP),
+    P(MOVE_CROSS_POISON,  MOVE_POISON_TAIL,   MOVE_CROSS_CHOP),
+    P(MOVE_ATTACK_ORDER,  MOVE_SLASH,         MOVE_PIN_MISSILE),
+    P(MOVE_ICE_FANG,      MOVE_ICE_PUNCH,     MOVE_BITE),
+    P(MOVE_ICE_SHARD,     MOVE_TACKLE,        MOVE_ICE_BEAM),
+    P(MOVE_PSYCHO_CUT,    MOVE_SLASH,         MOVE_PSYCHIC),
+    P(MOVE_PSYCHO_SHIFT,  MOVE_REFRESH,       MOVE_PSYCHIC),
+    P(MOVE_ME_FIRST,      MOVE_MIRROR_MOVE,   MOVE_MIRROR_MOVE),
+    P(MOVE_EMBARGO,       MOVE_TORMENT,       MOVE_TORMENT),
+    P(MOVE_SEED_FLARE,    MOVE_MIST_BALL,     MOVE_SOLARBEAM),
+    P(MOVE_BRINE,         MOVE_TACKLE,        MOVE_WATER_PULSE),
+    P(MOVE_X_SCISSOR,     MOVE_TACKLE,        MOVE_FURY_CUTTER),
+    P(MOVE_NATURAL_GIFT,  MOVE_TACKLE,        MOVE_SECRET_POWER),
+    P(MOVE_PAYBACK,       MOVE_COUNTER,       MOVE_COUNTER),
+    P(MOVE_ZEN_HEADBUTT,  MOVE_HEADBUTT,      MOVE_ZAP_CANNON),
+    P(MOVE_WRING_OUT,     MOVE_TACKLE,        MOVE_CONSTRICT),
+    P(MOVE_GYRO_BALL,     MOVE_TACKLE,        MOVE_RAPID_SPIN),
+    P(MOVE_SHADOW_CLAW,   MOVE_SLASH,         MOVE_SHADOW_PUNCH),
+    P(MOVE_SHADOW_FORCE,  MOVE_TACKLE,        MOVE_SHADOW_BALL),
+    P(MOVE_GRAVITY,       MOVE_FORESIGHT,     MOVE_PSYCHIC),
+    P(MOVE_VACUUM_WAVE,   MOVE_TACKLE,        MOVE_FOCUS_PUNCH),
+    P(MOVE_STEALTH_ROCK,  MOVE_SPIKES,        MOVE_SPIKES),
+    P(MOVE_STONE_EDGE,    MOVE_SLASH,         MOVE_ROCK_SLIDE),
+    P(MOVE_SWITCHEROO,    MOVE_TRICK,         MOVE_TRICK),
+    P(MOVE_DARK_VOID,     MOVE_HYPNOSIS,      MOVE_HYPNOSIS),
+    P(MOVE_EARTH_POWER,   MOVE_PSYCHIC,       MOVE_EARTHQUAKE),
+    P(MOVE_GUNK_SHOT,     MOVE_SLUDGE_BOMB,   MOVE_SLUDGE_BOMB),
+    P(MOVE_SEED_BOMB,     MOVE_TACKLE,        MOVE_BULLET_SEED),
+    P(MOVE_DOUBLE_HIT,    MOVE_DOUBLE_KICK,   MOVE_DOUBLE_KICK),
+    P(MOVE_ASSURANCE,     MOVE_TACKLE,        MOVE_FAINT_ATTACK),
+    P(MOVE_CHARGE_BEAM,   MOVE_METAL_CLAW,    MOVE_THUNDERBOLT),
+    P(MOVE_PLUCK,         MOVE_TACKLE,        MOVE_PECK),
+    P(MOVE_NIGHT_SLASH,   MOVE_SLASH,         MOVE_SLASH),
+    P(MOVE_ACUPRESSURE,   MOVE_GROWTH,        MOVE_GROWTH),
+    P(MOVE_MAGNET_RISE,   MOVE_DEFENSE_CURL,  MOVE_MAGNITUDE),
+    P(MOVE_ROAR_OF_TIME,  MOVE_HYPER_BEAM,    MOVE_HYPER_BEAM),
+    P(MOVE_POISON_JAB,    MOVE_POISON_STING,  MOVE_POISON_STING),
+    P(MOVE_TOXIC_SPIKES,  MOVE_SPIKES,        MOVE_SPIKES),
+    P(MOVE_LAST_RESORT,   MOVE_TACKLE,        MOVE_GIGA_DRAIN),
+    P(MOVE_DRAGON_RUSH,   MOVE_HEADBUTT,      MOVE_DRAGON_CLAW),
+    P(MOVE_TRICK_ROOM,    MOVE_HAZE,          MOVE_HAZE),
+    P(MOVE_DRAIN_PUNCH,   MOVE_GIGA_DRAIN,    MOVE_MEGA_PUNCH),
+    P(MOVE_MUD_BOMB,      MOVE_MUD_SLAP,      MOVE_MUD_SHOT),
+    P(MOVE_U_TURN,        MOVE_TACKLE,        MOVE_QUICK_ATTACK),
+    P(MOVE_FLING,         MOVE_TACKLE,        MOVE_ROCK_THROW),
+    P(MOVE_WORRY_SEED,    MOVE_TORMENT,       MOVE_LEECH_SEED),
+    P(MOVE_CRUSH_GRIP,    MOVE_TACKLE,        MOVE_VICEGRIP),
+    P(MOVE_HEART_SWAP,    MOVE_PSYCH_UP,      MOVE_PSYCH_UP),
+    P(MOVE_FORCE_PALM,    MOVE_BODY_SLAM,     MOVE_ARM_THRUST),
+    P(MOVE_AURA_SPHERE,   MOVE_SWIFT,         MOVE_FOCUS_PUNCH),
+    P(MOVE_ROOST,         MOVE_RECOVER,       MOVE_RECOVER),
+    P(MOVE_BULLET_PUNCH,  MOVE_TACKLE,        MOVE_METEOR_MASH),
+    P(MOVE_POWER_WHIP,    MOVE_TACKLE,        MOVE_VINE_WHIP),
+    P(MOVE_POWER_GEM,     MOVE_TACKLE,        MOVE_ANCIENTPOWER),
+    P(MOVE_POWER_SWAP,    MOVE_PSYCH_UP,      MOVE_PSYCH_UP),
+    P(MOVE_POWER_TRICK,   MOVE_BULK_UP,       MOVE_BULK_UP),
+    P(MOVE_SUCKER_PUNCH,  MOVE_TACKLE,        MOVE_FAINT_ATTACK),
+    P(MOVE_FEINT,         MOVE_TACKLE,        MOVE_FAKE_OUT),
+    P(MOVE_FLARE_BLITZ,   MOVE_DOUBLE_EDGE,   MOVE_BLAZE_KICK),
+    P(MOVE_BRAVE_BIRD,    MOVE_DOUBLE_EDGE,   MOVE_SKY_ATTACK),
+    P(MOVE_LAVA_PLUME,    MOVE_FLAMETHROWER,  MOVE_ERUPTION),
+    P(MOVE_DEFEND_ORDER,  MOVE_COSMIC_POWER,  MOVE_HARDEN),
+    P(MOVE_DISCHARGE,     MOVE_THUNDERBOLT,   MOVE_THUNDERBOLT),
+    P(MOVE_FIRE_FANG,     MOVE_EMBER,         MOVE_BITE),
+    P(MOVE_MAGNET_BOMB,   MOVE_SWIFT,         MOVE_ZAP_CANNON),
+    P(MOVE_MAGMA_STORM,   MOVE_FIRE_SPIN,     MOVE_FIRE_SPIN),
+    P(MOVE_COPYCAT,       MOVE_MIRROR_MOVE,   MOVE_MIRROR_MOVE),
+    P(MOVE_LUNAR_DANCE,   MOVE_HEAL_BELL,     MOVE_MOONLIGHT),
+    P(MOVE_MIRROR_SHOT,   MOVE_OCTAZOOKA,     MOVE_FLASH),
+    P(MOVE_MIRACLE_EYE,   MOVE_FORESIGHT,     MOVE_FORESIGHT),
+    P(MOVE_BUG_BITE,      MOVE_TACKLE,        MOVE_BITE),
+    P(MOVE_BUG_BUZZ,      MOVE_PSYCHIC,       MOVE_SIGNAL_BEAM),
+    P(MOVE_WAKE_UP_SLAP,  MOVE_TACKLE,        MOVE_SMELLINGSALT),
+    P(MOVE_METAL_BURST,   MOVE_COUNTER,       MOVE_METAL_SOUND),
+    P(MOVE_HEAD_SMASH,    MOVE_DOUBLE_EDGE,   MOVE_HEADBUTT),
+    P(MOVE_CAPTIVATE,     MOVE_CHARM,         MOVE_CHARM),
+    P(MOVE_AVALANCHE,     MOVE_BIDE,          MOVE_BLIZZARD),
+    P(MOVE_FLASH_CANNON,  MOVE_PSYCHIC,       MOVE_ZAP_CANNON),
+    P(MOVE_LEAF_STORM,    MOVE_OVERHEAT,      MOVE_MAGICAL_LEAF),
+    P(MOVE_DRACO_METEOR,  MOVE_OVERHEAT,      MOVE_DRAGON_CLAW),
+    P(MOVE_DRAGON_PULSE,  MOVE_TACKLE,        MOVE_DRAGONBREATH),
+    P(MOVE_ROCK_POLISH,   MOVE_AGILITY,       MOVE_HARDEN),
+    P(MOVE_ROCK_CLIMB,    MOVE_DIZZY_PUNCH,   MOVE_ROCK_SMASH),
+    P(MOVE_NASTY_PLOT,    MOVE_TAIL_GLOW,     MOVE_TAIL_GLOW),
+};
+
+#undef P
+
+static const struct SkyMoveProxy *GetProxy(u16 moveId)
+{
+    const struct SkyMoveProxy *p;
+
+    if (moveId < SKY_FIRST_GEN4_MOVE || moveId > SKY_LAST_GEN4_MOVE)
+        return NULL;
+    p = &sProxies[moveId - SKY_FIRST_GEN4_MOVE];
+    if (p->effect == 0)
+        return NULL; /* unused EoS slot */
+    return p;
+}
+
+/* Move id whose effect handler runs (UseMoveAgainstTargets). */
+u16 SkyStory_MoveEffectId(u16 moveId)
+{
+    const struct SkyMoveProxy *p = GetProxy(moveId);
+    return p != NULL ? p->effect : moveId;
+}
+
+/* Move id whose animation plays (sub_800ECB8 and friends). */
+u16 SkyStory_MoveAnimId(u16 moveId)
+{
+    const struct SkyMoveProxy *p = GetProxy(moveId);
+    return p != NULL ? p->anim : moveId;
+}
+
+#endif /* SKY_STORY */

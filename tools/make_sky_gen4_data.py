@@ -74,6 +74,12 @@ FRIEND_AREA_BY_TYPE = {
 }
 
 
+# EoS descriptions too long for Red's 4-line box.
+DESC_OVERRIDES = {
+    "Metal Burst": "Gives the user the Metal Burst status,\nwhich counters damage from moves and\nregular attacks.",
+}
+
+
 def ident(name: str) -> str:
     """'Mime Jr.' -> 'MIME_JR', 'Porygon-Z' -> 'PORYGON_Z'."""
     s = name.replace("é", "e").replace("♀", "_F").replace("♂", "_M")
@@ -101,8 +107,17 @@ def clean_desc(raw: str) -> str:
     text = re.sub(r"\[LS:\d+\](.*?)\[LE\]", r"\1", text)
     text = re.sub(r"\[[^\]]*\]", "", text)
     text = " ".join(text.split())
-    lines = textwrap.wrap(text, 38)
-    return "\n".join(lines[:4])
+    # Whole sentences only, as many as fit in 4 lines of ~38 characters.
+    sentences = re.split(r"(?<=[.!])\s+", text)
+    keep = sentences[:1]
+    for sent in sentences[1:]:
+        if len(textwrap.wrap(" ".join(keep + [sent]), 38)) > 4:
+            break
+        keep.append(sent)
+    lines = textwrap.wrap(" ".join(keep), 38)
+    if len(lines) > 4:
+        lines = textwrap.wrap(" ".join(keep), 42)[:4]
+    return "\n".join(lines)
 
 
 class EoS:
@@ -477,7 +492,8 @@ def main() -> int:
     for mid in new_moves:
         cm = camel(eos.move_names[mid])
         c.append(f'static const u8 sSkyMoveName{cm}[] = _("{cstr(eos.move_names[mid])}");')
-        c.append(f'static const u8 sSkyMoveDesc{cm}[] = _("{cstr(clean_desc(eos.move_descs[mid]))}");')
+        desc = DESC_OVERRIDES.get(eos.move_names[mid]) or clean_desc(eos.move_descs[mid])
+        c.append(f'static const u8 sSkyMoveDesc{cm}[] = _("{cstr(desc)}");')
     c.append("")
 
     def move_entry(m: dict, name: str, desc: str, use: str) -> str:
