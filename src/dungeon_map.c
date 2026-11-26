@@ -555,9 +555,9 @@ void UpdateBgTilemapForDungeonMap(bool8 a0)
     else if (a0) {
         count1 = 14;
 #ifdef SKY_STORY
-        /* The Sky message box starts at row 13 (src/dungeon_vram.c). */
+        /* The Sky message box starts at row 12 (src/dungeon_vram.c). */
         if (UiStyleIsSky())
-            count1 = 12;
+            count1 = 11;
 #endif
         count2 = 0;
     }

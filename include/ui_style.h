@@ -28,6 +28,13 @@ void ApplyUiStyle(void);
  * the last tile row) drawn into the window graphics. */
 void GetUiStyleDialogueTopRows(u32 rows[4]);
 void GetUiStyleDialogueBottomRows(u32 rows[3]);
+#ifdef SKY_STORY
+/* Sky style (UiStyleIsSky): EoS's 52 px dialogue box in a 7-row window. */
+#define SKY_DIALOGUE_INSET 2   /* transparent pixel rows above and below */
+#define SKY_DIALOGUE_FRAME 5   /* frame rows top and bottom */
+void GetSkyDialogueTopTileRows(u32 rows[8]);
+void GetSkyDialogueBottomTileRows(u32 rows[6]);
+#endif
 /* Dialogue (WINDOW_TYPE_0) left corner tilemap entries; flip H for the right. */
 u16 GetUiStyleDialogueCornerTile(bool8 bottom);
 /* Swap flipped left-hand frame pieces for the Sky right-hand tiles inside

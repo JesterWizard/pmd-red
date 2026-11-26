@@ -195,14 +195,16 @@ void CreateYesNoDialogueBoxAndPortrait_DefaultNo(const u8 *text, MonPortraitMsg 
 }
 
 #ifdef SKY_STORY
-/* Explorers of Sky dialogue box: 6 tiles tall with a bottom margin, text 4 px
- * below and 6 px right of the frame, 13 px between lines (measured on EoS's
- * bottom-screen box). New pages clear instead of scrolling like Red. */
+/* Explorers of Sky dialogue box (measured on EoS's bottom-screen box): 52 px
+ * tall with 5 px frames, in a 7-tile window from row 12 (2 transparent rows
+ * above and below, src/ui_style.c), so the bottom margin is 10 px as on the
+ * DS; text 4 px below and 6 px right of the frame's inner edge, 13 px between
+ * lines. New pages clear instead of scrolling like Red. */
 static EWRAM_INIT bool8 sSkyTextbox = FALSE;
 #define TEXTBOX_TEXT_X (sSkyTextbox ? 5 : 4)
-#define TEXTBOX_TEXT_Y (sSkyTextbox ? 8 : 4)
+#define TEXTBOX_TEXT_Y (sSkyTextbox ? 11 : 4)
 #define TEXTBOX_LINE_HEIGHT (sSkyTextbox ? 13 : 11)
-#define TEXTBOX_ARROW_Y (sSkyTextbox ? 40 : TEXTBOX_HEIGHT)
+#define TEXTBOX_ARROW_Y (sSkyTextbox ? 43 : TEXTBOX_HEIGHT)
 #else
 #define TEXTBOX_TEXT_X 4
 #define TEXTBOX_TEXT_Y 4
@@ -234,8 +236,8 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
 #ifdef SKY_STORY
     sSkyTextbox = !(flags & STR_FORMAT_FLAG_ONLY_TEXT) && UiStyleIsSky();
     if (sSkyTextbox) {
-        sDialogueBoxWinTemplates.id[0].pos.y = 13;
-        sDialogueBoxWinTemplates.id[0].height = 6;
+        sDialogueBoxWinTemplates.id[0].pos.y = 12;
+        sDialogueBoxWinTemplates.id[0].height = 7;
         sDialogueBoxWinTemplates.id[0].totalHeight = 8;
     }
 #endif
@@ -257,9 +259,9 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
         sDialogueBoxWinTemplates.id[1].pos.x = monPortraitPtr->pos.x;
         sDialogueBoxWinTemplates.id[1].pos.y = monPortraitPtr->pos.y;
 #ifdef SKY_STORY
-        /* EoS keeps a small gap between a bottom portrait and the box. */
-        if (sSkyTextbox && sDialogueBoxWinTemplates.id[1].pos.y > 7)
-            sDialogueBoxWinTemplates.id[1].pos.y = 7;
+        /* EoS: 14 px between a bottom portrait's frame (4 px) and the box. */
+        if (sSkyTextbox && sDialogueBoxWinTemplates.id[1].pos.y > 5)
+            sDialogueBoxWinTemplates.id[1].pos.y = 5;
 #endif
         sDialogueBoxWinTemplates.id[1].width = 5;
         sDialogueBoxWinTemplates.id[1].height = 5;

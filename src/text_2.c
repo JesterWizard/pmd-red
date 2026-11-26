@@ -1216,6 +1216,22 @@ static bool8 xxx_update_bg_vram(Window *windows)
             r2 = (u32 *)(((u8 *)window->winGFX) + topBytes);
             r1 = (u32 *)(((u8 *)window->unk28) + topBytes);
             GetUiStyleDialogueBottomRows(bottomRows);
+#ifdef SKY_STORY
+            if (UiStyleIsSky()) {
+                u32 skyRows[6];
+
+                GetSkyDialogueBottomTileRows(skyRows);
+                for (j = 0; j < window->width; j++) {
+                    s32 r;
+                    *(r1++) = *(r2++);
+                    for (r = 0; r < 6; r++)
+                        *(r1++) = skyRows[r];
+                    *(r1++) = 0;
+                    r2 += 7;
+                }
+            }
+            else
+#endif
             for (j = 0; j < window->width; j++) {
                 *(r1++) = *(r2++);
                 *(r1++) = *(r2++);
@@ -1403,6 +1419,13 @@ void DrawWindowBg(const WindowTemplate *window, DungeonPos *pos)
             if (window->type == WINDOW_TYPE_0) {
                 yStart += 8;
                 yEnd = ((window->pos.y + pos->y + window->height) * 8) - 3;
+#ifdef SKY_STORY
+                /* The fill starts 3 px inside the box, as Red's does. */
+                if (UiStyleIsSky()) {
+                    yStart += SKY_DIALOGUE_INSET;
+                    yEnd -= SKY_DIALOGUE_INSET;
+                }
+#endif
             }
             if (yStart < 0)
                 yStart = 0;
@@ -1463,6 +1486,19 @@ void PrepareTextbox_8008C6C(Window *windows, u32 windowId)
         u32 topRows[4];
 
         GetUiStyleDialogueTopRows(topRows);
+#ifdef SKY_STORY
+        if (UiStyleIsSky()) {
+            u32 skyRows[8];
+
+            GetSkyDialogueTopTileRows(skyRows);
+            for (i = 0; i < window->width; i++) {
+                s32 r;
+                for (r = 0; r < 8; r++)
+                    *(ptr++) = skyRows[r];
+            }
+        }
+        else
+#endif
         for (i = 0; i < window->width; i++) {
             *(ptr++) = topRows[0];
             *(ptr++) = topRows[1];

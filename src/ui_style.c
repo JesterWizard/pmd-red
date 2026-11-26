@@ -36,7 +36,14 @@ struct SkyFrameTint
  * pink / blue averaged along JPEG frame edges), rounded to GBA 5-bit steps.
  * Indexed by enum windowColor. */
 static const struct SkyFrameTint sSkyFrameTints[NUM_WINDOW_COLORS] = {
+#ifdef SKY_STORY
+    /* Measured on EoS's dialogue and portrait frames (DeSmuME, lossless):
+     * 2828C0 inner line, 3030F8 / 4050F8 inner blue, 5068F8-90C0F8 mid
+     * blue, C0E8F8 / E0F8F8 light band. */
+    [WINDOW_COLOR_BLUE]  = { RGB8(40, 40, 192), RGB8(56, 64, 248),  RGB8(96, 136, 248),  RGB8(224, 248, 248) },
+#else
     [WINDOW_COLOR_BLUE]  = { RGB8(40, 40, 168), RGB8(48, 48, 216),  RGB8(144, 176, 232), RGB8(224, 248, 248) },
+#endif
     [WINDOW_COLOR_RED]   = { RGB8(128, 56, 88), RGB8(160, 72, 112), RGB8(224, 104, 176), RGB8(248, 192, 240) },
     [WINDOW_COLOR_GREEN] = { RGB8(24, 120, 24), RGB8(32, 160, 32),  RGB8(72, 184, 72),   RGB8(240, 248, 240) },
 };
@@ -128,6 +135,13 @@ void LoadUiStyleChromeTiles(void)
 
         CpuCopy((void *)(FONT_CHROME_VRAM + tile * 32), &sUiStyleSkyChromeTiles[i * 32], 32);
     }
+#ifdef SKY_STORY
+    for (i = 0; i < UI_STYLE_SKY_STORY_CHROME_TILE_COUNT; i++) {
+        u32 tile = sUiStyleSkyStoryChromeTileIds[i] - FONT_CHROME_FIRST_TILE;
+
+        CpuCopy((void *)(FONT_CHROME_VRAM + tile * 32), &sUiStyleSkyStoryChromeTiles[i * 32], 32);
+    }
+#endif
 }
 
 /* Menu cursor (OBJ tile 0x3F4 of the fontsp sheet, OBJ bank 15). Sky: EoS's
@@ -196,6 +210,34 @@ void GetUiStyleDialogueTopRows(u32 rows[4])
         rows[3] = 0;
     }
 }
+
+#ifdef SKY_STORY
+/* EoS's dialogue box is 52 px tall: a 7-row window with 2 transparent pixel
+ * rows above and below, and 5-row frames (outer mid, light, light, inner
+ * blue, inner line; inner line, inner blue, light, light, mid). */
+void GetSkyDialogueTopTileRows(u32 rows[8])
+{
+    rows[0] = 0;
+    rows[1] = 0;
+    rows[2] = 0xEEEEEEEE;
+    rows[3] = 0xFFFFFFFF;
+    rows[4] = 0xFFFFFFFF;
+    rows[5] = 0x99999999;
+    rows[6] = 0xDDDDDDDD;
+    rows[7] = 0;
+}
+
+void GetSkyDialogueBottomTileRows(u32 rows[6])
+{
+    /* rows 1-5 of the last tile row (row 0 is text, 6-7 transparent) */
+    rows[0] = 0xDDDDDDDD;
+    rows[1] = 0x99999999;
+    rows[2] = 0xFFFFFFFF;
+    rows[3] = 0xFFFFFFFF;
+    rows[4] = 0xEEEEEEEE;
+    rows[5] = 0;
+}
+#endif
 
 void GetUiStyleDialogueBottomRows(u32 rows[3])
 {

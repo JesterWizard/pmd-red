@@ -80,16 +80,19 @@ lands in front of the heroes when Zubat throws it back in the Pit (m01a0701).
 Losing in Beach Cave plays m01a0301 on the beach ("Ouch! We didn't do too
 well...") and goes straight back in; the re-fight uses m01a0501's text.
 
-Dialogue uses EoS's box layout (Sky UI style): 6 tiles tall with a margin
-under it, text 4 px below and 6 px right of the frame, 13 px between lines,
+Dialogue uses EoS's box, measured on the DS (Sky UI style): 52 px tall with
+5 px bevelled frames and EoS's rounded corners (a 7-tile window from row 12,
+2 px left transparent above and below, so the bottom margin is 10 px as on
+the DS; corner tiles in `graphics/custom/ui_style/sky_story_chrome.png`,
+frame blues measured from EoS), text 4 px below and 6 px right of the frame's
+inner edge, 13 px between lines; portraits have EoS's 4 px frame, 14 px above
+the box,
 bottom portraits kept just above the box, and a full box clears for the next
 page instead of scrolling (`sSkyTextbox` in
 [`src/string_format.c`](../../src/string_format.c)). The dungeon message box has
-the same frame and spacing: 6 tiles tall from row 13, text 5 px in, 13 px
-between lines; it keeps Red's 7-row window (an 8th would reach the
-minimap's tiles), so its first line is 6 px down and the fourth fits below
-before it scrolls in, and the minimap's tilemap stops at row 12 while it is
-up (`LOG_*` in [`src/dungeon_message.c`](../../src/dungeon_message.c),
+the same box; it keeps Red's 7-row window (an 8th would reach the minimap's
+tiles), so when it is full it scrolls a line up before writing the next,
+and the minimap's tilemap stops at row 11 while it is up (`LOG_*` in [`src/dungeon_message.c`](../../src/dungeon_message.c),
 `sub_803EAF0` kind 3 in [`src/dungeon_vram.c`](../../src/dungeon_vram.c),
 `UpdateBgTilemapForDungeonMap`).
 

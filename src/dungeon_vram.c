@@ -588,10 +588,11 @@ void sub_803EAF0(u32 kind, u8 *name)
             if (UiStyleIsSky()) {
                 /* Same box as the Sky dialogue box (src/string_format.c). */
                 WindowTemplates sky = gUnknown_80F62B0;
-                sky.id[0].pos.y = 13;
-                sky.id[0].height = 6;
+                sky.id[0].pos.y = 12;
+                sky.id[0].height = 7;
                 /* 7 rows, as Red: an 8th would reach the minimap's tiles
-                 * (0xB8 on); the text fits (src/dungeon_message.c). */
+                 * (0xB8 on), so the log scrolls before it writes a line
+                 * (src/dungeon_message.c). */
                 sky.id[0].totalHeight = 7;
                 ShowWindows(&sky, TRUE, TRUE);
             }

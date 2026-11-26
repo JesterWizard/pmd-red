@@ -16,6 +16,17 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "graphics" / "custom" / "ui_style" / "sky_chrome.png"
 DST = ROOT / "src" / "data" / "ui_style_sky_chrome.h"
+SRC_STORY = ROOT / "graphics" / "custom" / "ui_style" / "sky_story_chrome.png"
+# sky_story_chrome.png tile order -> the font chrome tile each replaces.
+STORY_TILES = [
+    ("dialogue_top", 0x2E4),
+    ("dialogue_bottom", 0x2E5),
+    ("portrait_corner", 0x2DC),
+    ("portrait_top", 0x2DD),
+    ("portrait_left", 0x2DE),
+    ("dialogue_top_right", 0x2FF),
+    ("dialogue_bottom_right", 0x2E6),
+]
 
 # Tile order in the PNG -> font chrome tile ids it replaces.
 TILES = [
@@ -91,6 +102,22 @@ def main() -> None:
         for row in range(0, 32, 16):
             lines.append("    " + ", ".join(f"0x{b:02X}" for b in raw[row:row + 16]) + ",")
     lines.append("};")
+    # The Explorers of Sky demake (SKY_STORY) draws EoS's own dialogue box
+    # (52 px tall, 5 px bevelled frame, rounded corners) and portrait frame
+    # (4 px): sky_story_chrome.png, measured from EoS, replaces these tiles.
+    story = Image.open(SRC_STORY)
+    lines += ["", "#ifdef SKY_STORY",
+              f"#define UI_STYLE_SKY_STORY_CHROME_TILE_COUNT {len(STORY_TILES)}",
+              "static const u16 sUiStyleSkyStoryChromeTileIds[UI_STYLE_SKY_STORY_CHROME_TILE_COUNT] = {",
+              "    " + ", ".join(f"0x{t:03X}" for _, t in STORY_TILES) + ",",
+              "};",
+              "static const u8 sUiStyleSkyStoryChromeTiles[UI_STYLE_SKY_STORY_CHROME_TILE_COUNT * 32] ALIGNED(4) = {"]
+    for i, (_, tile_id) in enumerate(STORY_TILES):
+        raw = tile_bytes(story, i)
+        lines.append(f"    /* 0x{tile_id:03X} */")
+        for row in range(0, 32, 16):
+            lines.append("    " + ", ".join(f"0x{b:02X}" for b in raw[row:row + 16]) + ",")
+    lines += ["};", "#endif"]
     DST.write_text("\n".join(lines) + "\n")
     print(f"Wrote {DST.relative_to(ROOT)} ({len(ids)} tiles)")
 
