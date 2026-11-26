@@ -54,8 +54,10 @@ file). This saves about 3.7 MB. The vanilla build keeps everything.
 
 ## What plays
 
-Boot: EoS's Nintendo logo and ESRB notice, Red's logo screens, then the EoS
-title (EoS's English logo, blinking "Press START", EoS title theme). The top
+Boot: EoS's Nintendo logo and ESRB notice, Red's logo screens, the first
+scene of EoS's opening (Shaymin flying over the land, see
+[The opening](#the-opening-shaymin)), then the EoS title (EoS's English logo,
+blinking "Press START", EoS title theme). The top
 menu has EoS's options and background and plays the EoS top-menu theme; the quiz uses EoS's intro wording and "Welcome to the World
 of Pokémon". The starter list adds Turtwig, Chimchar, Piplup, Munchlax and
 Riolu (with Vulpix, Meowth, Phanpy). Then:
@@ -1060,8 +1062,14 @@ writes `graphics/custom/sky_title/`:
   `graphics/custom/sky_title/emblem_src.png` is that sprite layer captured
   from the running game (DeSmuME, main-engine OBJ layer only; pure black is
   kept where the full frame is black too, so the outlines survive). The logo,
-  emblem and "Press START" get their own share of the 8bpp palette. "Press START"
-  blinks; the EoS title theme plays.
+  emblem get their own share of the 8bpp palette. The EoS title theme plays.
+- "Press START" (`press_start.png`, EoS's banner font) is OBJ tiles with its
+  own OBJ palette over the card, and blinks by being drawn or not (32 frames
+  on, 32 off). It used to be a second full picture swapped in for the blink;
+  the two pictures were quantized separately, so the background's colours
+  shifted slightly with every blink. Now the card's tiles and palette never
+  change while it is up (checked on every frame of twelve blink toggles: no pixel
+  outside the text changes).
 - The main-menu backgrounds: the ten CGs EoS shows on the DS top screen
   during its top menu (`BACK/s09p01a`–`s09p10a.bgp`), scaled to 240×180 and
   cropped to the middle 160 lines; one is picked at random each time
@@ -1089,8 +1097,10 @@ they were already shown exactly and look the same; the shared quantizer keeps
 future, richer pictures exact.
 
 `DEMO_02`/`DEMO_03`/`DEMO_04` (`src/data/ground/ground_event_data.h`) call
-`SKY_CUTAWAY_BOOT_SCREENS` / `SKY_CUTAWAY_TITLE_SCREEN` instead of Red's
-intro movie and logo map.
+`SKY_CUTAWAY_BOOT_SCREENS` / `SKY_CUTAWAY_OPENING` / `SKY_CUTAWAY_TITLE_SCREEN`
+instead of Red's intro movie and logo map. (`ground_event_data.h` keeps
+Red's line count in its `SKY_STORY` blocks: its `DEBUGINFO` lines take
+`__LINE__` up to the next `#line`, and an extra line changes the vanilla ROM.)
 
 The menu windows use EoS's green top-menu frames whatever the window-colour
 option (`SetUiStyleFrameColorOverride`, [`src/ui_style.c`](../../src/ui_style.c),
@@ -1106,6 +1116,76 @@ on), Trade Items, Delete Save Data, Sky Jukebox, Exit. The descriptions are EoS'
 DS-only parts (wireless, Nintendo WFC) replaced by the GBA's link cable.
 
 ![EoS title card and top menu](images/sky_title_menu.png)
+
+### The opening (Shaymin)
+
+EoS boots into an opening movie (`unionall.ssb` coroutine `DEMO_02`) before
+its title. Its first scene, `SCRIPT/S13P02A/t02a0201.ssb`, is the one with
+Shaymin: the sky with the sun and a lens flare on the top screen, a white
+flash, then the camera pans down level **S13P02A** (the sky over a
+landscape, 256x576 across the two screens) while Shaymin (Sky Forme) flies in
+from far away towards the camera and up past it, trailing Gracidea petals,
+to "Pokémon Exploration Team Theme" (bgm0001). START skips it (a 30-frame
+fade). The rest of EoS's opening (Lapras with Wingull at sea, `S13P03A`;
+the treasure CG, `S13P04A/B`; the Time Gear, `S13P05A`; the logo over the
+hero and partner, `S13P06A`) is not in the demake.
+
+[`tools/make_sky_opening.py`](../../tools/make_sky_opening.py) converts it
+from the ROM into `graphics/custom/sky_opening/`:
+
+- `sky.tiles` / `sky.pal`: the level's two layers (layer 1 the sky, lines
+  0-263; layer 0 the land) as one picture, the middle 240 of its 256 columns
+  and its top 528 lines, as raw 8bpp tiles (30 a row) with its 163 colours.
+- `flare.png`, `shaymin.png`, `petals.png`: the objects `GROUND/s13p02a1.wan`
+  (the lens flare, 15 frames), `s13p02a2.wan` (Shaymin, 110 frames from a dot
+  to 200 px) and `s13p02a3.wan` (the petals, 75 frames): their WAN fragments
+  as OBJ tiles (8 px wide, stacked in OBJ 1D order; the build makes the
+  `.4bpp` / `.gbapal`), and `src/data/sky_opening.h` with every frame's
+  pieces (offset, shape, size, tiles: the DS and the GBA have the same OBJ
+  shapes, so each WAN piece is one OBJ) and the frame sequences the script
+  plays (`SetAnimation` 18 for the flare, 17 for Shaymin and the petals).
+
+[`src/sky_opening.c`](../../src/sky_opening.c) (`SKY_CUTAWAY_OPENING`, a
+sky-only source) plays it. The picture streams onto BG3 a tile row at a time
+like the connected CG pans (`SkyCutaway_LoadScrollRow`); the objects are OBJs
+whose tiles go each frame to the half of OBJ VRAM not on screen (two 512-tile
+halves; at most 283 tiles a frame). Timing, in frames from the start of the
+fade-in, measured in DeSmuME frame by frame with the BG layers off:
+
+| Frames | EoS | GBA |
+|---|---|---|
+| 0-16 | `screen_FadeIn(1, 15)`; the flare (frame 0) is up | the same |
+| 34-65 | `screen2_WhiteOut(0, 15)` and back: the top screen goes white | the whole screen (the GBA is showing the top screen's sky) |
+| 74 | the flare plays frames 1-13 as the camera starts moving | the same |
+| 80-376 | `MovePosition(0.5)`: the camera moves down 148 px | from the sky, eased (smoothstep) down to the bottom screen's middle 160 lines by frame 200, then EoS's 0.5 px a frame |
+| 215-313 | Shaymin: WAN frames 1-99, one a frame, at level (176, 324) | the same |
+| 290-375 | the petals: frame 0 for 12 frames, then 1-74, at (180, 324) | the same |
+| 387-447 | `screen_FadeOut(1, 60)` | the same, and the music fades out |
+
+The DS shows 256x384 at once; the GBA starts on the top screen's sky (the sun
+and the flare at level (180, 88)) and ends on the bottom screen, so Shaymin and
+the petals cross the ground exactly as in EoS (the comparison: every
+Shaymin frame lands on the same spot of the land). EoS draws the flare every
+other frame against an empty frame (its half transparency); the GBA blends it
+8/8 as a semi-transparent OBJ (`BLDALPHA`, set every frame as the rain does).
+Data: 127 KB of picture tiles, 35 KB of OBJ tiles, 15 KB of piece tables.
+
+### Continue: the Adventure Record
+
+Choosing Continue (or Delete Save Data) in EoS's top menu shows, over the
+top-menu CG, a titled window **Adventure Record** (EoS's separator line under
+the title) with `Name:` (the hero, then the team name, `????` until it has
+one), `Location:`, a blank line, `Play time:` and `Adventures:`, and under it
+EoS's question with a Yes/No box on its right, the cursor on Yes. EoS's
+strings (`MESSAGE/text_e.str` 511-529): "OK to resume the saved adventure?",
+after a quicksave "Stop resting and continue playing using the quicksave
+data?", for deleting "Your saved game data will be deleted. Is that OK?" and
+"All of your save data will be erased. Is that OK?" (cursor on No). Red's
+Team and Helper lines are not in EoS's window; EoS leaves the adventure count
+blank until there is one. The sky build draws this layout in
+[`src/load_screen.c`](../../src/load_screen.c) (`DrawSkyAdventureRecord`,
+`#ifdef SKY_STORY`) with the top menu's green Sky frames. The EoS capture is
+from a quicksave in Beach Cave (DeSmuME: Rest, Quicksave, then Continue).
 
 ### Sky Jukebox
 
@@ -1250,6 +1330,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
 | Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
+| The opening's Shaymin scene | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py) |
+| Continue / Delete Save Data window (EoS's Adventure Record) | [`src/load_screen.c`](../../src/load_screen.c) |
 | Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
 | Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |
 | Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |

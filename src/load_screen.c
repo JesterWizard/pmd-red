@@ -29,6 +29,9 @@
 #include "text_2.h"
 #include "text_3.h"
 #include "text_util.h"
+#ifdef SKY_STORY
+#include "ui_style.h"
+#endif
 
 #define LEGEND_ICON_W 16
 #define LEGEND_ICON_H 16
@@ -195,6 +198,71 @@ const MenuItem gLoadScreenYesNoMenu[] = {
     { NULL, 3 },
 };
 
+#ifdef SKY_STORY
+/* Explorers of Sky's top-menu "Adventure Record" (Continue / Delete Save
+ * Data): one titled window (EoS's separator under the title) with the hero's
+ * name and team, the location, a blank line, the play time and the number of
+ * adventures; under it EoS's question and a Yes/No box. EoS's English
+ * strings (MESSAGE/text_e.str 511-529). Red's Team and Helper lines are not
+ * in EoS's window. */
+static const WindowTemplate sSkyAdventureRecordWindow = {
+    .flags = WINTEMPLATE_FLAG_NONE,
+    .type = WINDOW_TYPE_NORMAL,
+    .pos = { 2, 1 },
+    .width = 26,
+    .height = 11,
+    .totalHeight = 11,
+    .unk12 = 0,
+    .header = NULL
+};
+
+static const WindowTemplate sSkyLoadQuestionWindow = {
+    .flags = WINTEMPLATE_FLAG_NONE,
+    .type = WINDOW_TYPE_NORMAL,
+    .pos = { 2, 15 },
+    .width = 20,
+    .height = 3,
+    .totalHeight = 3,
+    .unk12 = 0,
+    .header = NULL
+};
+
+static const WindowTemplate sSkyLoadYesNoWindow = {
+    .flags = WINTEMPLATE_FLAG_NONE,
+    .type = WINDOW_TYPE_NORMAL,
+    .pos = { 25, 15 },
+    .width = 3,
+    .height = 3,
+    .totalHeight = 3,
+    .unk12 = 0,
+    .header = NULL
+};
+
+static const MenuItem sSkyResumeQuicksaveMenuItems[] = {
+    { "Stop resting and continue playing", 5 },
+    { "using the quicksave data?", 5 },
+    { NULL, 3 },
+};
+
+static const MenuItem sSkyResumeAdventureMenuItems[] = {
+    { "OK to resume the saved", 5 },
+    { "adventure?", 5 },
+    { NULL, 3 },
+};
+
+static const MenuItem sSkyDeleteSavePromptMenuItems[] = {
+    { "Your saved game data will be", 5 },
+    { "deleted. Is that OK?", 5 },
+    { NULL, 3 },
+};
+
+static const MenuItem sSkyDeleteSaveConfirmMenuItems[] = {
+    { "All of your save data will be", 5 },
+    { "erased. Is that OK?", 5 },
+    { NULL, 3 },
+};
+#endif
+
 static void DrawLoadScreenText(void);
 static void DrawQuestIcons(void);
 static u8 IsQuickSave(void);
@@ -214,6 +282,37 @@ void CreateLoadScreen(u32 currMenu)
 
     ResetUnusedInputStruct();
     ShowWindows(&gLoadScreen->unk144, TRUE, TRUE);
+#ifdef SKY_STORY
+    {
+        const MenuItem *question = NULL;
+
+        SetMenuItems(gLoadScreen->unk4, &gLoadScreen->unk144, 0, &sSkyAdventureRecordWindow, gUnknown_203B378, FALSE, 6, FALSE);
+        switch (gLoadScreen->currMenu) {
+            case MENU_CONTINUE:
+                question = IsQuickSave() ? sSkyResumeQuicksaveMenuItems : sSkyResumeAdventureMenuItems;
+                break;
+            case MENU_AWAITING_RESCUE:
+                question = gQuitWaitingRescueMenuItems;
+                break;
+            case MENU_DELETE_SAVE_PROMPT:
+                question = sSkyDeleteSavePromptMenuItems;
+                break;
+            case MENU_DELETE_SAVE_CONFIRM:
+                question = sSkyDeleteSaveConfirmMenuItems;
+                break;
+        }
+        if (question != NULL)
+            SetMenuItems(gLoadScreen->unk4, &gLoadScreen->unk144, 1, &sSkyLoadQuestionWindow, question, FALSE, 6, FALSE);
+        /* EoS's cursor starts on Yes for Continue, on No for deleting */
+        SetMenuItems(gLoadScreen->unk4, &gLoadScreen->unk144, 2, &sSkyLoadYesNoWindow, gLoadScreenYesNoMenu, TRUE,
+                     gLoadScreen->currMenu == MENU_CONTINUE ? 1 : 2, FALSE);
+        sub_8035CF4(gLoadScreen->unk4, 0, FALSE);
+        sub_8035CF4(gLoadScreen->unk4, 1, FALSE);
+        sub_8035CF4(gLoadScreen->unk4, 2, TRUE);
+        DrawLoadScreenText();
+        return;
+    }
+#endif
     SetMenuItems(gLoadScreen->unk4, &gLoadScreen->unk144, 0, &gUnknown_80E7610, gUnknown_203B378, FALSE, 6, FALSE);
 
     switch (gLoadScreen->currMenu) {
@@ -312,6 +411,87 @@ u32 UpdateLoadScreenMenu(void)
     return nextMenu;
 }
 
+#ifdef SKY_STORY
+#define SKY_RECORD_LABEL_X 8
+#define SKY_RECORD_VALUE_X 72
+#define SKY_RECORD_TEAM_X 136
+#define SKY_RECORD_Y0 17
+#define SKY_RECORD_LINE 12
+
+/* EoS's Adventure Record, on window 0: the title, EoS's separator line under
+ * it (as titled windows draw it, SKY_MENU_SEPARATOR_*), then the lines. */
+static void DrawSkyAdventureRecord(s32 quicksaveMagic)
+{
+    u8 buffer[100];
+    u8 name[40];
+    u32 hours, minutes, seconds;
+    Pokemon *leader;
+    s32 numAdventures;
+    u8 lineTop, lineShadow;
+
+    PrintStringOnWindow(4, 0, _("Adventure Record"), 0, 0);
+    GetUiStyleHeaderLineColors(&lineTop, &lineShadow);
+    AddUnderScoreHighlight(0, SKY_MENU_SEPARATOR_INSET, SKY_MENU_SEPARATOR_Y, 26 * 8 - 2 * SKY_MENU_SEPARATOR_INSET, lineTop);
+    AddUnderScoreHighlight(0, SKY_MENU_SEPARATOR_INSET, SKY_MENU_SEPARATOR_Y + 1, 26 * 8 - 2 * SKY_MENU_SEPARATOR_INSET, lineShadow);
+    PrintStringOnWindow(SKY_RECORD_LABEL_X, SKY_RECORD_Y0, _("Name:"), 0, 0);
+    PrintStringOnWindow(SKY_RECORD_LABEL_X, SKY_RECORD_Y0 + SKY_RECORD_LINE, _("Location:"), 0, 0);
+    PrintStringOnWindow(SKY_RECORD_LABEL_X, SKY_RECORD_Y0 + 3 * SKY_RECORD_LINE, _("Play time:"), 0, 0);
+    PrintStringOnWindow(SKY_RECORD_LABEL_X, SKY_RECORD_Y0 + 4 * SKY_RECORD_LINE, _("Adventures:"), 0, 0);
+
+    /* Name: the hero, then the team ("????" before it has a name) */
+    leader = GetLeaderMon1();
+    if (leader == NULL)
+        StrncpyCustom(name, _("???"), POKEMON_NAME_LENGTH);
+    else
+        StrncpyCustom(name, leader->name, POKEMON_NAME_LENGTH);
+    sprintfStatic(gLoadScreen->formattedPlayerName, "%s ", name);
+    PrintStringOnWindow(SKY_RECORD_VALUE_X, SKY_RECORD_Y0, gLoadScreen->formattedPlayerName, 0, 0);
+    if (CheckQuest(QUEST_SET_TEAM_NAME))
+        StrncpyTeamName(name);
+    else
+        InlineStrcpy(name, _("？？？？"));
+    sprintfStatic(gLoadScreen->formattedTeamName, "%s ", name);
+    PrintStringOnWindow(SKY_RECORD_TEAM_X, SKY_RECORD_Y0, gLoadScreen->formattedTeamName, 0, 0);
+
+    /* Location: as Red's */
+    switch (sub_8011C1C()) {
+        case 1:
+            switch (GetScriptVarValue(NULL, START_MODE)) {
+                default:
+                    sprintfStatic(buffer, "%s ", GetCurrentGroundPlaceName());
+                    FormatString(buffer, gLoadScreen->formattedLocation, gLoadScreen->formattedPlayTime, 0);
+                    break;
+                case STARTMODE_CONTINUE_QUICKSAVE:
+                case STARTMODE_11:
+                    sprintfStatic(gLoadScreen->formattedLocation, _("Quicksave data deleted."));
+                    break;
+            }
+            break;
+        case 2:
+            if (quicksaveMagic == 0xF1207)
+                PrintDungeonLocationtoBuffer(gLoadScreen->formattedLocation, GetDungeonLocationInfo());
+            else
+                sprintfStatic(gLoadScreen->formattedLocation, _("Quicksave data deleted."));
+            break;
+        default:
+            sprintfStatic(gLoadScreen->formattedLocation, _("Location unknown."));
+            break;
+    }
+    PrintStringOnWindow(SKY_RECORD_VALUE_X, SKY_RECORD_Y0 + SKY_RECORD_LINE, gLoadScreen->formattedLocation, 0, 0);
+
+    DeconstructPlayTime(gPlayTimeRef, &hours, &minutes, &seconds);
+    sprintfStatic(gLoadScreen->formattedPlayTime, "%d:%02d:%02d ", hours, minutes, seconds);
+    PrintStringOnWindow(SKY_RECORD_VALUE_X, SKY_RECORD_Y0 + 3 * SKY_RECORD_LINE, gLoadScreen->formattedPlayTime, 0, 0);
+
+    /* EoS leaves the count out until the first adventure is done */
+    numAdventures = GetNumAdventures();
+    if (numAdventures > 0) {
+        sprintfStatic(gLoadScreen->formattedAdventures, "%d", numAdventures);
+        PrintStringOnWindow(SKY_RECORD_VALUE_X, SKY_RECORD_Y0 + 4 * SKY_RECORD_LINE, gLoadScreen->formattedAdventures, 0, 0);
+    }
+}
+#endif
+
 static void DrawLoadScreenText(void)
 {
     s32 iVar2;
@@ -330,6 +510,11 @@ static void DrawLoadScreenText(void)
     iVar2 = sub_8011FA8();
     CallPrepareTextbox_8008C54(0);
     sub_80073B8(0);
+#ifdef SKY_STORY
+    DrawSkyAdventureRecord(iVar2);
+    sub_80073E0(0);
+    return;
+#endif
     PrintStringOnWindow(8, 0, _("Team:"), 0, 0);
     PrintStringOnWindow(8, 12, _("Name:"), 0, 0);
     PrintStringOnWindow(8, 24, _("Location:"), 0, 0);

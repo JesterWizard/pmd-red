@@ -7,7 +7,7 @@ From an Explorers of Sky ROM:
 
   * nintendo / esrb: EoS's boot screens (BACK/n_logo.bgp, BACK/w_esrb.bgp),
     the 240x160 middle of the 256x192 DS pictures.
-  * title_press / title_blank: the title screen. EoS's English logo is the
+  * title: the title card. EoS's English logo is the
     ground level S13P01B (MAP_BG/s13p01a.bma/.bpc with the s13p01b.bpl
     palette: the end state of the logo fade-in that opens EoS): the orange
     glow (layer 0) and the "Pokemon Mystery Dungeon" logo (layer 1). The
@@ -16,8 +16,11 @@ From an Explorers of Sky ROM:
     sprites on the bottom title screen; graphics/custom/sky_title/emblem_src.png
     is that sprite layer captured from the running game (DeSmuME, main-engine
     OBJ layer only, title loop; black pixels are kept where the full picture
-    is black too, so the emblem's black outlines are not taken for backdrop). "Press START" is in the first picture only,
-    for the blink.
+    is black too, so the emblem's black outlines are not taken for backdrop).
+  * press_start: "Press START" as OBJ tiles (4bpp, its own 16 colours) over
+    the title card, so its blink never touches the picture's palette or
+    tiles (two separately quantized pictures, one with the text, made the
+    background's colours shift with every blink).
   * menu0..9: main-menu backgrounds, the CGs EoS shows on the DS top screen
     during its top menu (BACK/s09p01a..s09p10a.bgp), scaled to 240x180 and
     cropped to the middle 160 lines.
@@ -163,6 +166,36 @@ def write(name: str, im: Image.Image) -> None:
     print(f"{name}: tiles={ntiles} colors={ncolors}{' merged' if merged else ''}")
 
 
+def write_press_start(ps: Image.Image) -> int:
+    """The "Press START" text as OBJ tiles: 64x32 pieces side by side (1D
+    mapping, 32 tiles each), index 0 transparent, 15 colours picked in GBA
+    colours. Returns the padded width."""
+    w = (ps.width + 63) // 64 * 64
+    canvas = Image.new("RGBA", (w, 32), (0, 0, 0, 0))
+    canvas.alpha_composite(ps, ((w - ps.width) // 2, (32 - ps.height) // 2))
+    mask = canvas.getchannel("A").point(lambda a: 255 if a >= 128 else 0)
+    q = title.quantize_gba(canvas.convert("RGB"), 15, train_mask=mask)
+    pal = q.getpalette()
+    idx = [v + 1 if m else 0 for v, m in zip(q.get_flattened_data(), mask.get_flattened_data())]
+    ncol = max(idx)
+    data = bytearray()
+    for piece in range(w // 64):
+        for ty in range(4):
+            for tx in range(8):
+                for yy in range(8):
+                    row = (ty * 8 + yy) * w + piece * 64 + tx * 8
+                    for xx in range(0, 8, 2):
+                        data.append(idx[row + xx] | (idx[row + xx + 1] << 4))
+    cols = [(0, 0, 0)] + [tuple(pal[i * 3:i * 3 + 3]) for i in range(ncol)]
+    cols += [(0, 0, 0)] * (16 - len(cols))
+    # tiles stacked in an 8-px-wide PNG; the build makes .4bpp / .gbapal
+    sys.path.insert(0, str(ROOT / "tools"))
+    from make_sky_opening import save_tiles_png
+    save_tiles_png(OUT / "press_start.png", bytes(data), cols)
+    print(f"press_start: {w}x32, {ncol} colours")
+    return w
+
+
 def main() -> int:
     rom = ndspy.rom.NintendoDSRom.fromFile(sys.argv[1])
     banner = Banner(rom)
@@ -178,18 +211,18 @@ def main() -> int:
     em_pos = ((240 - emblem.width) // 2, 4 + lg.height)
     blank.alpha_composite(lg, lg_pos)
     blank.alpha_composite(emblem, em_pos)
-    press = blank.copy()
+    write("title", split_quantize(blank, overlay_mask((240, 160), [(lg, lg_pos), (emblem, em_pos)])))
     ps = tinted(banner, "Press START", (255, 255, 255), (255, 255, 255))
     ps_pos = ((240 - ps.width) // 2, 160 - ps.height - 2)
-    press.alpha_composite(ps, ps_pos)
-    write("title_press", split_quantize(press, overlay_mask((240, 160), [(lg, lg_pos), (emblem, em_pos), (ps, ps_pos)])))
-    write("title_blank", split_quantize(blank, overlay_mask((240, 160), [(lg, lg_pos), (emblem, em_pos)])))
+    press_w = write_press_start(ps)
+    # the sprites' top left: the text is centred in the 64x32 pieces
+    ps_pos = (ps_pos[0] - (press_w - ps.width) // 2, ps_pos[1] - (32 - ps.height) // 2)
 
     for i in range(10):
         cg = FileType.BGP.deserialize(rom.getFileByName(f"BACK/s09p{i + 1:02d}a.bgp")).to_pil().convert("RGB")
         write(f"menu{i}", cg.resize((240, 180), Image.LANCZOS).crop((0, 10, 240, 170)))
 
-    names = ["nintendo", "esrb", "title_press", "title_blank"]
+    names = ["nintendo", "esrb", "title"]
     lines = [
         '#include "global.h"',
         '#include "sky_story.h"',
@@ -207,6 +240,9 @@ def main() -> int:
         ident = "".join(p.capitalize() for p in n.split("_"))
         lines.append(f"    {{ s{ident}Gfx, s{ident}Pal }},")
     lines.append("};")
+    lines.append('const u8 gSkyPressStartGfx[] = INCBIN_U8("graphics/custom/sky_title/press_start.4bpp");')
+    lines.append('const u16 gSkyPressStartPal[] = INCBIN_U16("graphics/custom/sky_title/press_start.gbapal");')
+    lines.append(f"const u8 gSkyPressStartPos[3] = {{ {ps_pos[0]}, {ps_pos[1]}, {press_w // 64} }}; /* x, y, 64x32 pieces */")
     lines.append("#endif")
     GEN_C.write_text("\n".join(lines) + "\n")
     return 0

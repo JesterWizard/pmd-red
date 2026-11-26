@@ -30,3 +30,11 @@ graphics/custom/sky_rain/rain_sheets.gbapal: graphics/custom/sky_rain/rain_sheet
 	$(GBAGFX) $< $@
 graphics/custom/sky_storm/bolts.gbapal: graphics/custom/sky_storm/bolts.png
 	$(GBAGFX) $< $@
+
+# Explorers of Sky demake opening (Shaymin scene) objects and the title's
+# "Press START": 8x8 tiles stacked in OBJ 1D order; tools/make_sky_opening.py,
+# tools/make_sky_title_screens.py.
+SKY_OBJ_PALETTES := $(addprefix graphics/custom/sky_opening/,flare.gbapal shaymin.gbapal petals.gbapal) \
+	graphics/custom/sky_title/press_start.gbapal
+$(SKY_OBJ_PALETTES): %.gbapal: %.png
+	$(GBAGFX) $< $@
