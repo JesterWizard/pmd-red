@@ -37,6 +37,8 @@ PERF_SEED = 7
 # so the walk to B6F's stairs survives.
 BLUFF_SEED = 7
 BLUFF_LEVEL = 8
+# Chapter 2's run: the level-1 debug team faints in Drenched Bluff on this seed's floor.
+CH2_SEED = 7
 
 # Test ROMs: make variables, the input driver and how many frames to play.
 # "sky" (the plain build) is built last so pmd_red.gba is the normal ROM again.
@@ -47,11 +49,13 @@ ROMS = {
                 frames=21000, what="chapter 1, then Beach Cave Pit (B5F) and the boss fight"),
     "perf": dict(vars=["DEBUG_BOOT_EVENT=EVENT_DIVIDE", f"DEBUG_BOOT_SEED={PERF_SEED}"], driver=drivers.perf,
                  frames=40000, what="Beach Cave B1F on a fixed floor: walking and dashing, CPU load measured"),
-    "after": dict(vars=["DEBUG_BOOT_EVENT=EVENT_M01E01A_L003"], driver=drivers.story, frames=9300,
-                  what="the scenes after the Pit (m01a0701, m01a0702)"),
+    "after": dict(vars=["DEBUG_BOOT_EVENT=EVENT_M01E01A_L003"], driver=drivers.story, frames=12000,
+                  what="the scenes after the Pit (m01a0701, m01a0702), the save prompt, chapter 2's start"),
     "bluff": dict(vars=["DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BLUFF_SEED}",
-                        f"DEBUG_BOOT_LEVEL={BLUFF_LEVEL}"], driver=drivers.bluff, frames=21000,
-                  what="Drenched Bluff (chapter 2) from B1F to B6F's stairs and the dungeon's end"),
+                        f"DEBUG_BOOT_LEVEL={BLUFF_LEVEL}"], driver=drivers.bluff, frames=30000,
+                  what="Drenched Bluff (chapter 2) from B1F to B6F's stairs, the cleared scenes, the demo end"),
+    "ch2": dict(vars=["DEBUG_BOOT_EVENT=SKY_CH2_START", f"DEBUG_BOOT_SEED={CH2_SEED}"], driver=drivers.ch2,
+                frames=60000, what="chapter 2 from its card to Drenched Bluff, fainting, the faint path back"),
     "sky": dict(vars=[], driver=drivers.jukebox, frames=16000,
                 what="the normal sky ROM: boot, the Sky Jukebox"),
     # more runs of the plain ROM (`rom`: they play that test ROM's build)

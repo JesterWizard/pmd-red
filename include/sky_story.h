@@ -288,6 +288,9 @@ void GroundMap_SkyRestartPaletteAnims(void);
  * saved, chapter 2 goes on from the next morning. */
 #define SKY_SCENARIO_MAIN_BIT_FLAG EVENT_T01P01
 #define SKY_CH2_FLAG_MORNING       8
+/* Bit 7 (EoS's): the morning after fainting in Drenched Bluff was saved
+ * (c00a0201); Continue goes on with EVENT_M02_07B. */
+#define SKY_CH2_FLAG_FAINTED_MORNING 7
 bool8 SkyStory_SaveGame(void);
 void SkyStory_DemoToTitle(void);
 void SkyBubbles_DrawCutaway(void);

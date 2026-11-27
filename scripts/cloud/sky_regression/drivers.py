@@ -285,6 +285,81 @@ def bluff(run):
     yield from d.mash()
 
 
+CH2_BOX_DELAY = 20   # frames a waiting box stays up before the A press
+CH2_IDLE_A = 300     # frames with no box (a menu, the save prompt) before A every 60
+CH2_DUNGEON_LIMIT = 12000  # frames in Drenched Bluff before the driver gives up
+
+
+def ch2_story(d, stop):
+    """Chapter 2's story presses until stop(f): A 20 frames into each waiting
+    box (CH2_BOX_DELAY); the team's name (after "good name for us": START, A
+    on END, Up to Yes, A); A now and then when no box is up (the save
+    prompts); free roam on B2F (after "HOORAY!"): walk up off the address's
+    spot. Posts "team_named", "free_roam" and "free_roam_left"."""
+    game = d.game
+    waiting, idle, seen = None, 0, set()
+    while True:
+        f = yield from d.step(0)
+        if stop(f):
+            return f
+        if game.print_state(f) in PRINT_WAITING:
+            idle = 0
+            text = f.text
+            if waiting is None:
+                waiting = d.n
+                for key in ("good name for us", "HOORAY!"):
+                    if key in text:
+                        seen.add(key)
+            if d.n - waiting >= CH2_BOX_DELAY:
+                yield from d.press("A", 4, 4)
+                waiting = None
+            continue
+        waiting = None
+        idle += 1
+        if "good name for us" in seen and "team_named" not in d.run.events and idle > 150:
+            # Red's team name keyboard (RENAME_TEAM): END, then Yes (the cursor starts on No)
+            yield from d.press("START", 4, 40)
+            yield from d.press("A", 4, 60)
+            yield from d.press("UP", 4, 30)
+            yield from d.press("A", 4, 20)
+            d.post("team_named")
+            idle = 0
+            continue
+        if "HOORAY!" in seen and "free_roam_left" not in d.run.events and idle > 300:
+            d.post("free_roam")
+            yield from d.hold("UP", 40)   # onto UM02's trigger above the address's spot
+            d.post("free_roam_left")
+            idle = 0
+            continue
+        if idle > CH2_IDLE_A and idle % 60 == 0:
+            yield from d.press("A", 4, 4)
+
+
+def ch2(run):
+    """Chapter 2 from its start (DEBUG_BOOT_EVENT=SKY_CH2_START, the level-1
+    debug team): the boot presses, then the story (ch2_story) to Drenched
+    Bluff, where the leader stands and attacks forward (A every 40 frames)
+    until the team faints; the faint path's scenes back to the bluff. Posts
+    "dungeon_1" / "dungeon_2" on entering the dungeon, "fainted" when the
+    first run is over."""
+    d = D(run)
+    game = run.game
+    yield from d.mash_until(lambda f: (game.map_name(f) or "").startswith("MAP_SKY_GUILD"))
+    d.post("ch2_first_map")
+    yield from ch2_story(d, lambda f: game.in_dungeon(f))
+    d.post("dungeon_1")
+    start = d.n
+    while game.in_dungeon(d.f) and d.n - start < CH2_DUNGEON_LIMIT:
+        if game.print_state(d.f) in PRINT_WAITING:
+            yield from d.press("A", 4, 8)
+        else:
+            yield from d.press("A", 4, 36)
+    d.post("fainted")
+    yield from ch2_story(d, lambda f: game.in_dungeon(f))
+    d.post("dungeon_2")
+    yield from d.idle(60)
+
+
 JUKEBOX_PER_PAGE = 6
 
 

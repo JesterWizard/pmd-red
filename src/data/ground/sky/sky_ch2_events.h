@@ -138,6 +138,9 @@ static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_CLEARED[] = {
 static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_FAINTED[] = {
     DEBUGINFO_O(1892),
     SET_PLACE_MODE(1),
+    /* Continue from the morning's save (c00a0201 sets EoS's bit 7, then asks
+     * to save): EVENT_M02_07B. */
+    JUMPIF_ARRAY(SKY_SCENARIO_MAIN_BIT_FLAG, SKY_CH2_FLAG_FAINTED_MORNING, /* to label */ 3),
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_B1F, 20, 0),               /* m02a0501: back at the guild */
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_B2F, 17, 0),               /* c00a0501: "Dinner's on!" */
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_MESS_HALL, 18, 0),         /* c00a0601: dinner */
@@ -149,7 +152,9 @@ static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_FAINTED[] = {
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_B2F_NIGHT, 22, 0),         /* m02a0602 */
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_WIGGLYTUFF_NIGHT, 23, 0),  /* m02a0603: Wigglytuff's gift */
   LABEL(2),
-    EXECUTE_SUBSTATION(MAP_SKY_GUILD_CREW_ROOM, 25, 0),         /* c00a0201: the morning */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_CREW_ROOM, 25, 0),         /* c00a0201: the morning (the save) */
+  LABEL(3),
+    SET_ARRAYVAL(SKY_SCENARIO_MAIN_BIT_FLAG, SKY_CH2_FLAG_FAINTED_MORNING, 0),
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_B2F, 26, 0),               /* c00a0101: the morning address */
     EXECUTE_SUBSTATION(MAP_SKY_DRENCHED_BLUFF_ENTRANCE, 27, 0), /* m02a0701: into the dungeon again */
     CMD_UNK_AF(RESCUE_DUNGEON_THUNDERWAVE_CAVE, TRUE),
