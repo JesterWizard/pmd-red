@@ -4285,6 +4285,20 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
         case 0x73:
             GroundMap_SkyRestartPaletteAnims();
             return 0;
+        case 0x74:
+            /* SKY_GIVE_ITEM(id): EoS message_Menu(MENU_GIVE_ITEM) after item_Set.
+             * Into the bag, or the storage when the bag is full (as GIVE_WISH_STONE). */
+            if ((u32)r2 == ITEM_NOTHING || (u32)r2 >= NUMBER_OF_ITEM_IDS)
+                return 0;
+            if (IsBagFull()) {
+                if (IsNotMoneyOrUsedTMItem(r2) && CanAddQuantityToStorage(r2, 1))
+                    gTeamInventoryRef->teamStorage[r2] += 1;
+            }
+            else {
+                AddItemIdToInventory(r2, FALSE);
+                FillInventoryGaps();
+            }
+            return 0;
 #endif
         case 0x4B: {
             static const u8 sTrieloName[] = _("Trielo");

@@ -1,0 +1,185 @@
+prefix s_sky_g01p05c_
+debug_file src/data/ground/sky/sky_g01p05c_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0603), on G01P05C.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0603  (EoS SCRIPT/G01P05C/m02a0603.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_WIGGLYTUFF 2
+#define NPC_CHATOT 3
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0603 (G01P05C)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_WIGGLYTUFF_NIGHT
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=88 y=152   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 30
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" Guildmaster, I've brought you\nTeam {TEAM_NAME}."
+    TEXTBOX_CLEAR
+    WAIT 60
+    FANFARE_PLAY2 465   # EoS se_Play(8964)
+    # TODO eos: SetEffect<actor ACTOR_NPC_PERAPPU>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
+    AWAIT_CUE 65   # <- CHATOT done
+    MSG_NPC who=CHATOT text=" Guildmaster...{WAIT_PRESS} Guildmaster?\n"
+    TEXTBOX_CLEAR
+    WAIT 60
+    AWAIT_CUE_COND 66 0   # -> WIGGLYTUFF (waits until it is ready)
+    AWAIT_CUE 67   # <- WIGGLYTUFF done
+    FANFARE_PLAY2 455   # EoS se_Play(8974)
+    ALERT_CUE 64   # -> CHATOT
+    AWAIT_CUE_COND 68 0   # -> PLAYER (waits until it is ready)
+    AWAIT_CUE_COND 70 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 71   # <- PARTNER done
+    BGM_SWITCH SKY_GUILDMASTER_WIGGLYTUFF
+    PORTRAIT place=MIDLEFT_TOP who=WIGGLYTUFF emotion=NORMAL
+    MSG_NPC who=WIGGLYTUFF text=" Hiya!"
+    MSG_NPC who=WIGGLYTUFF text=" Job not going well? That stinks!"
+    MSG_NPC who=WIGGLYTUFF text=" That's why I'm giving you these!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 66   # -> WIGGLYTUFF
+    ALERT_CUE 70   # -> PARTNER
+    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
+    AWAIT_CUE 67   # <- WIGGLYTUFF done
+    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
+    ALERT_CUE 66   # -> WIGGLYTUFF
+    AWAIT_CUE 67   # <- WIGGLYTUFF done
+    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
+    WAIT 20
+    FANFARE_PLAY 203   # EoS me_Play(4)
+    MSG_INSTANT text="{CENTER_ALIGN}Wigglytuff gave you\n{CENTER_ALIGN}a Reviver Seed!"   # EoS message_Mail
+    WAIT_FANFARE1 203
+    TEXTBOX_CLEAR
+    # eos: item_Set(0, 73, 0); (item slot 0: Reviver Seed)
+    SKY_GIVE_ITEM item=ITEM_REVIVER_SEED   # EoS item_Set(0, 73); message_Menu(MENU_GIVE_ITEM)
+    WAIT 10
+    FANFARE_PLAY 203   # EoS me_Play(4)
+    MSG_INSTANT text="{CENTER_ALIGN}In addition, he also gave you an Oran Berry!"   # EoS message_Mail
+    WAIT_FANFARE1 203
+    TEXTBOX_CLEAR
+    # eos: item_Set(0, 70, 0); (item slot 0: Oran Berry)
+    SKY_GIVE_ITEM item=ITEM_ORAN_BERRY   # EoS item_Set(0, 70); message_Menu(MENU_GIVE_ITEM)
+    WAIT 10
+    FANFARE_PLAY 203   # EoS me_Play(4)
+    MSG_INSTANT text="{CENTER_ALIGN}Incredibly, he also gave you a Max Elixir!"   # EoS message_Mail
+    WAIT_FANFARE1 203
+    TEXTBOX_CLEAR
+    # eos: item_Set(0, 99, 0); (item slot 0: Max Elixir)
+    SKY_GIVE_ITEM item=ITEM_MAX_ELIXIR   # EoS item_Set(0, 99); message_Menu(MENU_GIVE_ITEM)
+    WAIT 10
+    WAIT 20
+    PORTRAIT place=CENTERLEFT_CENTER who=WIGGLYTUFF emotion=NORMAL
+    # TODO eos: message_FacePositionOffset(2, -1);
+    MSG_NPC who=WIGGLYTUFF text=" Those items I gave you are all\nvery useful in dungeons."
+    MSG_NPC who=WIGGLYTUFF text=" Please give it your best effort\nagain tomorrow!"
+    TEXTBOX_CLEAR
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=60
+    WAIT_BGM MUS_SKY_GUILDMASTER_WIGGLYTUFF
+    RET
+end
+
+script g0_s0_wigglytuff   # EoS actor NPC_PUKURIN, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=WIGGLYTUFF id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    ROTATE_TO speed=1 turn=DIR_TRANS_10 direction=SOUTH
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    WALK_RELATIVE speed=256 dx=20 dy=36   # EoS MovePositionMark to Position<'m0', 27.5, 28.5>
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    HALT
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 68
+    EMOTION_EFFECT NOTICE
+    HALT
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 70
+    CALL_SCRIPT JUMP_SURPRISE_FUNC   # EoS CORO_JUMP_SURPRISE_FUNC_SERIES
+    AWAIT_CUE_COND 71 0   # done: the station waits for this
+    AWAIT_CUE 70
+    ROTATE_TO speed=16 turn=DIR_TRANS_10 direction=NORTHEAST
+    HALT
+end
+
+script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    WAIT_EFFECT
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    EMOTION_EFFECT SHOCK
+    AWAIT_CUE 64
+    ROTATE_TO speed=16 turn=DIR_TRANS_10 direction=WEST
+    AWAIT_CUE 64
+    SELECT_ANIMATION 5
+    MOVE_RELATIVE speed=256 dx=8 dy=0
+    AWAIT_CUE 64
+    SELECT_ANIMATION 2
+    HALT
+end
+
+actors g0_s0_lives
+    actor kind=SKY_LIVES_WIGGLYTUFF facing=NORTH x=25.5 y=24.5 script=g0_s0_wigglytuff   # EoS NPC_PUKURIN
+    actor kind=0 facing=NORTH x=27.5 y=30.5 script=g0_s0_player   # EoS PLAYER
+    actor kind=34 facing=NORTH x=23.5 y=30.5 script=g0_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_CHATOT facing=NORTHWEST x=31 y=28.5 script=g0_s0_chatot   # EoS NPC_PERAPPU
+end
+
+stations
+    g0_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+end
+
+groups
+    g0
+end

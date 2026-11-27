@@ -214,6 +214,9 @@
 #define SKY_STORM_BOLT                  SPECIAL_PROCESS(0x72, 0)
 /* Restart the map's palette animations from their first frame. */
 #define SKY_MAP_PAL_RESTART             SPECIAL_PROCESS(0x73, 0)
+/* Give an item (ITEM_*): into the bag, or the storage when the bag is full
+ * (EoS item_Set + message_Menu(MENU_GIVE_ITEM): the Exploration Team kit). */
+#define SKY_GIVE_ITEM(item)             SPECIAL_PROCESS(0x74, item)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

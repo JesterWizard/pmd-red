@@ -1,0 +1,264 @@
+prefix s_sky_d02p11a_
+debug_file src/data/ground/sky/sky_d02p11a_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0401, m02a0701), on D02P11A.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0401  (EoS SCRIPT/D02P11A/m02a0401.ssb)
+#   group 1  m02a0701  (EoS SCRIPT/D02P11A/m02a0701.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0401 (D02P11A)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_DRENCHED_BLUFF_ENTRANCE
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=148 y=64   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    BGM_SWITCH SKY_DRENCHED_BLUFF
+    AWAIT_CUE_COND 64 1   # -> PLAYER: batch 1
+    AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
+    AWAIT_CUE 67   # <- PARTNER done
+    WAIT 30
+    AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 64 2   # -> PLAYER: batch 2
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" This must be the\nbluff's entrance."
+    MSG_NPC who=PARTNER text=" Spoink's mission description said\nthe pearl is deep down on the B7F level."
+    MSG_NPC who=PARTNER text=" It's supposedly very dangerous.\nLet's be really careful."
+    MSG_NPC who=PARTNER text=" Let's do our best, {NAME_0}!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 3   # -> PLAYER: batch 3
+    AWAIT_CUE_COND 66 3   # -> PARTNER: batch 3
+    AWAIT_CUE 65   # <- PLAYER done
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 64 4   # -> PLAYER: batch 4
+    AWAIT_CUE_COND 66 4   # -> PARTNER: batch 4
+    WAIT 30
+    AWAIT_CUE_COND 64 5   # -> PLAYER: batch 5
+    WAIT 20
+    AWAIT_CUE_COND 66 5   # -> PARTNER: batch 5
+    WAIT 20
+    FADE_OUT wait=TRUE frames=30
+    SCENARIO_CALC SCENARIO_MAIN 3 3   # EoS scenario numbers
+    NEXT_DUNGEON frames=30 dungeon=SKY_DRENCHED_BLUFF   # EoS main_EnterDungeon(3)
+    # TODO eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    # TODO eos: main_EnterDungeon(-1, 0);
+    HALT
+    JUMP_LABEL 1001
+  LABEL 1002
+  LABEL 0
+    BGM_STOP
+    MSG_NPC who=-1 text="You wake up one day, only to realize that\nyou've been turned into a Pokémon and are\nnow in a world inhabited only by Pokémon!"   # EoS message_Explanation
+    MSG_NPC who=-1 text="It's up to you to form an exploration team\nand embark on the adventure of a lifetime!"   # EoS message_Explanation
+    MSG_NPC who=-1 text="Welcome to the fascinating world of\nPokémon Mystery Dungeon: Explorers of Sky!\nNow YOU are the Pokémon!"   # EoS message_Explanation
+    FADE_OUT wait=TRUE frames=30
+    SCENARIO_CALC SCENARIO_MAIN 3 3   # EoS scenario numbers
+    # TODO eos: main_EnterDungeon(123, 0);
+    # TODO eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    # TODO eos: main_EnterDungeon(-1, 0);
+    HALT
+    RET
+    JUMP_LABEL 1001
+  LABEL 1001
+    RET
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    JUMP_LABEL 3000
+  LABEL 3001
+    WALK_RELATIVE speed=256 dx=4 dy=-108   # EoS MovePositionMark to Position<'m0', 34.5, 19.5>
+    JUMP_LABEL 3000
+  LABEL 3002
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    JUMP_LABEL 3000
+  LABEL 3003
+    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(71); (no such Red animation id)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    SELECT_ANIMATION 2
+    JUMP_LABEL 3000
+  LABEL 3005
+    WALK_RELATIVE speed=256 dx=-12 dy=-64   # EoS MovePositionMark to Position<'m2', 33, 11.5>
+    JUMP_LABEL 3000
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    JUMP_LABEL 3000
+  LABEL 3001
+    WALK_RELATIVE speed=256 dx=0 dy=-92   # EoS MovePositionMark to Position<'m1', 31, 19.5>
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3002
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3003
+    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(71); (no such Red animation id)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    SELECT_ANIMATION 2
+    JUMP_LABEL 3000
+  LABEL 3005
+    WALK_RELATIVE speed=256 dx=16 dy=-64   # EoS MovePositionMark to Position<'m3', 33, 11.5>
+    JUMP_LABEL 3000
+end
+
+actors g0_s0_lives
+    actor kind=0 facing=NORTH x=34.5 y=33.5 script=g0_s0_player   # EoS PLAYER
+    actor kind=34 facing=NORTH x=31 y=31.5 script=g0_s0_partner   # EoS ATTENDANT1
+end
+
+# ------------------------------------------------------------------------
+# group 1: EoS m02a0701 (D02P11A)
+# ------------------------------------------------------------------------
+
+script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_DRENCHED_BLUFF_ENTRANCE
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=148 y=64   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    BGM_SWITCH SKY_DRENCHED_BLUFF
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 67   # <- PARTNER done
+    WAIT 45
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" Spoink's pearl should be down on\nthe B7F level."
+    TEXTBOX_CLEAR
+    ALERT_CUE 66   # -> PARTNER
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    MSG_NPC who=PARTNER text=" Let's hang in there and finish\nthe job this time, {NAME_0}!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    WAIT 20
+    ALERT_CUE 66   # -> PARTNER
+    WAIT 20
+    FADE_OUT wait=TRUE frames=30
+    # TODO eos: switch ( scn($SCENARIO_MAIN)[1] ) { (the first case is taken)
+    JUMP_LABEL 1002
+  LABEL 1002
+  LABEL 0
+    SCENARIO_CALC SCENARIO_MAIN 3 4   # EoS scenario numbers
+  LABEL 2
+    NEXT_DUNGEON frames=30 dungeon=SKY_DRENCHED_BLUFF   # EoS main_EnterDungeon(3)
+    # TODO eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    # TODO eos: main_EnterDungeon(-1, 0);
+    HALT
+    RET
+  LABEL 1003
+    SCENARIO_CALC SCENARIO_MAIN 3 5   # EoS scenario numbers
+    JUMP_LABEL 2
+  LABEL 1004
+    JUMP_LABEL 2
+  LABEL 1001
+    RET
+end
+
+script g1_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    WALK_RELATIVE speed=256 dx=4 dy=-108   # EoS MovePositionMark to Position<'m0', 34.5, 19.5>
+    AWAIT_CUE 64
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    AWAIT_CUE 64
+    WALK_RELATIVE speed=256 dx=-12 dy=-64   # EoS MovePositionMark to Position<'m2', 33, 11.5>
+    HALT
+end
+
+script g1_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    WALK_RELATIVE speed=256 dx=0 dy=-92   # EoS MovePositionMark to Position<'m1', 31, 19.5>
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    WALK_RELATIVE speed=256 dx=16 dy=-64   # EoS MovePositionMark to Position<'m3', 33, 11.5>
+    HALT
+end
+
+actors g1_s0_lives
+    actor kind=0 facing=NORTH x=34.5 y=33.5 script=g1_s0_player   # EoS PLAYER
+    actor kind=34 facing=NORTH x=31 y=31.5 script=g1_s0_partner   # EoS ATTENDANT1
+end
+
+stations
+    g0_s0_station
+    g1_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+end
+
+sectors g1
+    sector actors=g1_s0_lives station=1
+end
+
+groups
+    g0
+    g1
+end

@@ -1,0 +1,629 @@
+prefix s_sky_g01p07a_
+debug_file src/data/ground/sky/sky_g01p07a_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0111, m02a0201, c00a0201), on G01P07A.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0111  (EoS SCRIPT/G01P07A/m02a0111.ssb)
+#   group 1  m02a0201  (EoS SCRIPT/G01P07A/m02a0201.ssb)
+#   group 2  c00a0201  (EoS SCRIPT/G01P07A/c00a0201.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_CHATOT 2
+#define NPC_LOUDRED 3
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0111 (G01P07A)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_GUILD_CREW_ROOM
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=52 y=108   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    BGM_SWITCH SKY_WIGGLYTUFFS_GUILD_REMIX
+    WAIT 30
+    PORTRAIT place=LEFT_MIDTOP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" This is your room! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    WAIT 10
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 65   # <- PLAYER done
+    ALERT_CUE 64   # -> PLAYER
+    AWAIT_CUE 67   # <- PARTNER done
+    ALERT_CUE 66   # -> PARTNER
+    AWAIT_CUE 67   # <- PARTNER done
+    WAIT 20
+    ALERT_CUE 66   # -> PARTNER
+    WAIT 1
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    WAIT 2
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    WAIT 1
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=PARTNER emotion=JOYOUS
+    # TODO eos: message_FacePositionOffset(-2, -1);
+    MSG_NPC who=PARTNER text=" Yay! We get beds!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    MSG_NPC who=CHATOT text=" You will live here while you\nwork for us."
+    MSG_NPC who=CHATOT text=" Things will start getting busy\nfor you tomorrow! ♪{WAIT_PRESS} So rise early and start\nliving up to our code!"
+    MSG_NPC who=CHATOT text=" Don't stay up late. Get to sleep\nearly tonight! ♪{WAIT_PRESS} That is all."
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 68 0   # -> CHATOT (waits until it is ready)
+    AWAIT_CUE 69   # <- CHATOT done
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    ALERT_CUE 68   # -> CHATOT
+    AWAIT_CUE 69   # <- CHATOT done
+    ALERT_CUE 68   # -> CHATOT
+    WAIT 30
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=90
+    WAIT_BGM MUS_SKY_WIGGLYTUFFS_GUILD_REMIX
+    RET
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    WALK_RELATIVE speed=256 dx=108 dy=0   # EoS MovePositionMark to Position<'m0', 25.5, 23>
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    ROTATE_TO speed=4 turn=SPINRIGHT1 direction=WEST
+    AWAIT_CUE 64
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
+    HALT
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    WALK_RELATIVE speed=256 dx=84 dy=0   # EoS MovePositionMark to Position<'m1', 19.5, 23>
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    SELECT_ANIMATION 3
+    HEIGHT_TO 512 10
+    AWAIT_CUE 66
+    HEIGHT_TO 512 0
+    AWAIT_CUE 66
+    HEIGHT_TO 512 10
+    AWAIT_CUE 66
+    HEIGHT_TO 512 0
+    SELECT_ANIMATION 2
+    EMOTION_EFFECT SMILE
+    AWAIT_CUE 66
+    EMOTION_EFFECT NONE
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHWEST
+    AWAIT_CUE 66
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    HALT
+end
+
+script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 68
+    WALK_RELATIVE speed=256 dx=-8 dy=8
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    WALK_RELATIVE speed=256 dx=-88 dy=0
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    END_DELETE
+end
+
+actors g0_s0_lives
+    actor kind=0 facing=EAST x=12.5 y=23 script=g0_s0_player   # EoS PLAYER
+    actor kind=34 facing=EAST x=9.5 y=23 script=g0_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_CHATOT facing=EAST x=14 y=21.5 script=g0_s0_chatot   # EoS NPC_PERAPPU
+end
+
+# ------------------------------------------------------------------------
+# group 1: EoS m02a0201 (G01P07A)
+# ------------------------------------------------------------------------
+
+script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}The next morning..."
+    TEXTBOX_CLEAR
+    WAIT 30
+    FANFARE_PLAY2 457   # EoS se_Play(8971)
+    # eos: message_ResetActor(); (no speaker)
+    MSG_NPC who=-1 text=" HEY!{WAIT_PRESS} HEY THERE!"
+    # eos: message_KeyWait(); (the line above waits for a button)
+    FANFARE_PLAY2 471   # EoS se_Play(8970)
+    MSG_NPC who=-1 text=" RISE AND SHINE!"
+    WAIT_FANFARE2 471
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PLAYER emotion=DIZZY
+    MSG_QUIET who=PLAYER text="(Ugh!)"
+    MSG_QUIET who=PLAYER text="(M-my head is pounding!)"
+    MSG_QUIET who=PLAYER text="(Wh-what a ridiculously loud voice! It almost\nblasted my eardrums!)"
+    TEXTBOX_CLEAR
+    SELECT_MAP SKY_GUILD_CREW_ROOM
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 67   # <- PARTNER done
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 30
+    FANFARE_PLAY2 457   # EoS se_Play(8971)
+    CAMERA_SHAKE mode=CUSTOM amp=2 period=3   # EoS camera_SetEffect(2, 2, 3.0);
+    AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
+    CAMERA_SHAKE mode=OFF amp=0 period=0
+    PORTRAIT place=LEFT_MIDTOP who=LOUDRED emotion=ANGRY
+    MSG_NPC who=LOUDRED text=" Why are you still ASLEEP?!{WAIT_PRESS} WAKE UP!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
+    MSG_QUIET who=PLAYER text="(Ugh!)"
+    TEXTBOX_CLEAR
+    PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=PARTNER emotion=DIZZY
+    # TODO eos: message_FacePositionOffset(-3, 0);
+    MSG_NPC who=PARTNER text=" M-my poor ears..."
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 457   # EoS se_Play(8971)
+    CAMERA_SHAKE mode=CUSTOM amp=2 period=3   # EoS camera_SetEffect(2, 2, 3.0);
+    AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
+    CAMERA_SHAKE mode=OFF amp=0 period=0
+    PORTRAIT place=KEEP who=LOUDRED emotion=NORMAL
+    MSG_NPC who=LOUDRED text=" C'mon! Snap OUT of it!"
+    MSG_NPC who=LOUDRED text=" I'm Loudred!{WAIT_PRESS} And I'm a fellow apprentice!"
+    MSG_NPC who=LOUDRED text=" If you're late for our morning\nbriefing, you'll be SORRY! So MOVE it!"
+    MSG_NPC who=LOUDRED text=" Guildmaster Wigglytuff has got\na BIG temper. If you make him lose it..."
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
+    AWAIT_CUE 69   # <- LOUDRED done
+    PORTRAIT place=LEFT_MIDTOP_FLIP who=LOUDRED emotion=NORMAL
+    MSG_NPC who=LOUDRED text=" YOWEEE! That would be one very\nscary scene!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_FLASH_HEAVY   # EoS se_Play(5143)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 2
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 5
+    FANFARE_PLAY2 SE_SKY_FLASH_HEAVY   # EoS se_Play(5143)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 2
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 30
+    ALERT_CUE 68   # -> LOUDRED
+    MSG_NPC who=LOUDRED text=" I've got goose bumps just\nthinking about it! YEESH!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
+    WAIT 45
+    AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
+    AWAIT_CUE 69   # <- LOUDRED done
+    FANFARE_PLAY2 457   # EoS se_Play(8971)
+    CAMERA_SHAKE mode=CUSTOM amp=2 period=3   # EoS camera_SetEffect(2, 2, 3.0);
+    ALERT_CUE 68   # -> LOUDRED
+    AWAIT_CUE 69   # <- LOUDRED done
+    ALERT_CUE 68   # -> LOUDRED
+    CAMERA_SHAKE mode=OFF amp=0 period=0
+    PORTRAIT place=LEFT_MIDTOP who=LOUDRED emotion=NORMAL
+    MSG_NPC who=LOUDRED text=" So ANYWAY..."
+    MSG_NPC who=LOUDRED text=" I'm not about to get in trouble\nbecause you rookies got up LATE!"
+    MSG_NPC who=LOUDRED text=" SO GET IT IN GEAR!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
+    AWAIT_CUE 69   # <- LOUDRED done
+    ALERT_CUE 68   # -> LOUDRED
+    WAIT 60
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=DIZZY
+    MSG_NPC who=PARTNER text=" Urk! My ears are still ringing..."
+    MSG_NPC who=PARTNER text=" What did he say? Something\nabout getting ready?"
+    TEXTBOX_CLEAR
+    WAIT 20
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    ALERT_CUE 66   # -> PARTNER
+    FANFARE_PLAY2 466   # EoS se_Play(8967)
+    AWAIT_CUE 67   # <- PARTNER done
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Er...{WAIT_PRESS} Oh yeah!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    ALERT_CUE 66   # -> PARTNER
+    AWAIT_CUE 67   # <- PARTNER done
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" We signed up as apprentices at\nWigglytuff's guild, that's right!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    PORTRAIT place=KEEP who=PARTNER emotion=WORRIED
+    MSG_NPC who=PARTNER text=" But that means..."
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 455   # EoS se_Play(8974)
+    ALERT_CUE 66   # -> PARTNER
+    AWAIT_CUE 67   # <- PARTNER done
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Waaaah! We overslept!\nCome on, {NAME_0}!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    ALERT_CUE 66   # -> PARTNER
+    WAIT 45
+    FADE_OUT wait=TRUE frames=30
+    RET
+end
+
+script g1_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(68); (no such Red animation id)
+    AWAIT_CUE 64
+    SELECT_ANIMATION 2
+    EMOTION_EFFECT NOTICE
+    AWAIT_CUE 64
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    AWAIT_CUE 64
+    WALK_RELATIVE speed=768 dx=-180 dy=0
+    HALT
+end
+
+script g1_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(68); (no such Red animation id)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    SELECT_ANIMATION 2
+    CALL_SCRIPT NOTICE_FUNC
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    CALL_SCRIPT JUMP_SURPRISE_FUNC   # EoS CORO_JUMP_SURPRISE_FUNC_SERIES
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    WALK_RELATIVE speed=768 dx=-160 dy=0
+    HALT
+end
+
+script g1_s0_loudred   # EoS actor NPC_DOGOOMU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 68
+    SELECT_ANIMATION 19
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    SELECT_ANIMATION 2
+    EMOTION_EFFECT ANGRY
+    AWAIT_CUE 68
+    EMOTION_EFFECT NONE
+    AWAIT_CUE 68
+    SELECT_ANIMATION 18
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    SELECT_ANIMATION 2
+    AWAIT_CUE 68
+    ROTATE_RELATIVE 4 10 DIR_TRANS_FLIP
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    SELECT_ANIMATION 9
+    AWAIT_CUE 68
+    SELECT_ANIMATION 2
+    AWAIT_CUE 68
+    ROTATE_RELATIVE 1 10 DIR_TRANS_FLIP
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    SELECT_ANIMATION 18
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    SELECT_ANIMATION 2
+    AWAIT_CUE 68
+    WALK_RELATIVE speed=384 dx=-96 dy=0
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    END_DELETE
+end
+
+actors g1_s0_lives
+    actor kind=0 facing=SOUTH x=25.5 y=23 script=g1_s0_player   # EoS PLAYER
+    actor kind=34 facing=SOUTH x=19.5 y=23 script=g1_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_LOUDRED facing=EAST x=14 y=22.5 script=g1_s0_loudred   # EoS NPC_DOGOOMU
+end
+
+# ------------------------------------------------------------------------
+# group 2: EoS c00a0201 (G01P07A)
+# ------------------------------------------------------------------------
+
+script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 1002   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 5 0 1003   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 6 0 1004   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 7 0 1005   # EoS scenario numbers
+    JUMP_LABEL 4
+    JUMP_LABEL 1001
+  LABEL 1002
+  LABEL 0
+    # TODO eos: chapter card "The Scream" (back_SetBanner2(LEVEL_S21P01A, 0, 128, 96, 3,): sky_chapter_card / chapter_titles.h
+    FADE_IN wait=TRUE frames=45
+    SET_PLACE_MODE 4
+    WAIT 160
+    FADE_OUT wait=TRUE frames=45
+    WAIT 15
+  LABEL 4
+    SET_ARRAYVAL SCENARIO_MAIN_BIT_FLAG 1 1   # EoS $SCENARIO_MAIN_BIT_FLAG[1] = 1;
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}The next morning..."
+    TEXTBOX_CLEAR
+    WAIT 30
+    PORTRAIT place=LEFT_BOTTOM_2 who=LOUDRED emotion=NORMAL
+    MSG_NPC who=LOUDRED text=" UP AND AT 'EM!{WAIT_PRESS} IT'S MORNING!"
+    TEXTBOX_CLEAR
+    SELECT_MAP SKY_GUILD_CREW_ROOM
+    # eos: supervision_StationCommon(0); (the map's own NPCs: none in a scene)
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
+    AWAIT_CUE_COND 64 1   # -> PLAYER: batch 1
+    AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
+    FADE_IN wait=TRUE frames=30
+    FANFARE_PLAY2 457   # EoS se_Play(8971)
+    CAMERA_SHAKE mode=CUSTOM amp=2 period=3   # EoS camera_SetEffect(2, 2, 3.0);
+    AWAIT_CUE_COND 68 1   # -> LOUDRED: batch 1
+    AWAIT_CUE 69   # <- LOUDRED done
+    AWAIT_CUE_COND 68 2   # -> LOUDRED: batch 2
+    CAMERA_SHAKE mode=OFF amp=0 period=0
+    WAIT 10
+    AWAIT_CUE_COND 68 3   # -> LOUDRED: batch 3
+    AWAIT_CUE 69   # <- LOUDRED done
+    AWAIT_CUE_COND 68 4   # -> LOUDRED: batch 4
+    AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
+    AWAIT_CUE 67   # <- PARTNER done
+    WAIT 2
+    AWAIT_CUE_COND 64 2   # -> PLAYER: batch 2
+    AWAIT_CUE_COND 66 3   # -> PARTNER: batch 3
+    AWAIT_CUE 67   # <- PARTNER done
+    WAIT 2
+    AWAIT_CUE_COND 64 3   # -> PLAYER: batch 3
+    AWAIT_CUE_COND 66 4   # -> PARTNER: batch 4
+    AWAIT_CUE 67   # <- PARTNER done
+    WAIT 2
+    AWAIT_CUE_COND 64 4   # -> PLAYER: batch 4
+    AWAIT_CUE_COND 66 5   # -> PARTNER: batch 5
+    AWAIT_CUE 67   # <- PARTNER done
+    WAIT 2
+    AWAIT_CUE_COND 64 5   # -> PLAYER: batch 5
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=DIZZY
+    MSG_NPC who=PARTNER text=" Ugh! Good morning,\n{NAME_0}..."
+    TEXTBOX_CLEAR
+    WAIT 30
+    BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
+    AWAIT_CUE_COND 64 6   # -> PLAYER: batch 6
+    AWAIT_CUE_COND 66 6   # -> PARTNER: batch 6
+    WAIT 10
+    AWAIT_CUE_COND 64 7   # -> PLAYER: batch 7
+    AWAIT_CUE_COND 66 7   # -> PARTNER: batch 7
+    WAIT 30
+    # TODO eos: main_SetGround(LEVEL_G01P07A);
+    SET_ARRAYVAL SCENARIO_MAIN_BIT_FLAG 7 1   # EoS $SCENARIO_MAIN_BIT_FLAG[7] = 1;
+    ASK2 flag=FALSE default=-1 who=-1 text="{CENTER_ALIGN}Would you like to save your adventure?"
+    CHOICE label=1006 text="Save"
+    CHOICE label=1007 text="Don't save"
+  LABEL 1006
+    TEXTBOX_CLEAR
+    SKY_SAVE_GAME   # EoS CORO_HANYOU_SAVE_FUNC
+    COND_EQUAL 0 1008
+    MSG_INSTANT text="{CENTER_ALIGN}Your adventure has been saved."
+    JUMP_LABEL 1007
+  LABEL 1008
+    MSG_INSTANT text="{CENTER_ALIGN}The data could not be saved."
+  LABEL 1007
+    TEXTBOX_CLEAR
+    # TODO eos: CallCommon(CORO_EVENT_END_MAPIN);
+    # TODO eos: supervision_ExecuteStationCommon(LEVEL_G01P07A, 1);
+    RET
+    JUMP_LABEL 1001
+  LABEL 1003
+    # TODO eos: chapter card "The Gatekeepers" (back_SetBanner2(LEVEL_V04P02A, 0, 156, 136, 4,): sky_chapter_card / chapter_titles.h
+    FADE_IN wait=TRUE frames=45
+    WAIT 160
+    FADE_OUT wait=TRUE frames=45
+    WAIT 15
+    JUMP_LABEL 4
+    JUMP_LABEL 1001
+  LABEL 1004
+    # TODO eos: chapter card "The First Official Exploration" (back_SetBanner2(LEVEL_D04P11A, 0, 252, 180, 5,): sky_chapter_card / chapter_titles.h
+    FADE_IN wait=TRUE frames=45
+    WAIT 160
+    FADE_OUT wait=TRUE frames=45
+    WAIT 15
+    JUMP_LABEL 4
+    JUMP_LABEL 1001
+  LABEL 1005
+    # TODO eos: chapter card "Team Skull" (back_SetBanner2(LEVEL_D05P31A, 0, 276, 128, 6,): sky_chapter_card / chapter_titles.h
+    FADE_IN wait=TRUE frames=45
+    WAIT 160
+    FADE_OUT wait=TRUE frames=45
+    WAIT 15
+    JUMP_LABEL 4
+    JUMP_LABEL 1001
+  LABEL 1001
+    RET
+end
+
+script g2_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    COND_EQUAL 7 3007
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(76); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    MOVE_RELATIVE speed=256 dx=1 dy=0
+    JUMP_LABEL 3000
+  LABEL 3003
+    MOVE_RELATIVE speed=256 dx=-1 dy=0
+    JUMP_LABEL 3000
+  LABEL 3004
+    MOVE_RELATIVE speed=256 dx=1 dy=0
+    JUMP_LABEL 3000
+  LABEL 3005
+    MOVE_RELATIVE speed=256 dx=-1 dy=0
+    JUMP_LABEL 3000
+  LABEL 3006
+    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(63); (no such Red animation id)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    JUMP_LABEL 3000
+  LABEL 3007
+    SELECT_ANIMATION 2
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    JUMP_LABEL 3000
+end
+
+script g2_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    COND_EQUAL 7 3007
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(76); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    MOVE_RELATIVE speed=256 dx=1 dy=0
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3003
+    MOVE_RELATIVE speed=256 dx=-1 dy=0
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    MOVE_RELATIVE speed=256 dx=1 dy=0
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3005
+    MOVE_RELATIVE speed=256 dx=-1 dy=0
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3006
+    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(63); (no such Red animation id)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    JUMP_LABEL 3000
+  LABEL 3007
+    SELECT_ANIMATION 2
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    JUMP_LABEL 3000
+end
+
+script g2_s0_loudred   # EoS actor NPC_DOGOOMU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 68
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 18
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3002
+    SELECT_ANIMATION 2
+    JUMP_LABEL 3000
+  LABEL 3003
+    WALK_RELATIVE speed=384 dx=-96 dy=0
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    END_DELETE
+end
+
+actors g2_s0_lives
+    actor kind=0 facing=EAST x=25.5 y=23 script=g2_s0_player   # EoS PLAYER
+    actor kind=34 facing=WEST x=19.5 y=23 script=g2_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_LOUDRED facing=EAST x=14 y=22.5 script=g2_s0_loudred   # EoS NPC_DOGOOMU
+end
+
+stations
+    g0_s0_station
+    g1_s0_station
+    g2_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+end
+
+sectors g1
+    sector actors=g1_s0_lives station=1
+end
+
+sectors g2
+    sector actors=g2_s0_lives station=2
+end
+
+groups
+    g0
+    g1
+    g2
+end
