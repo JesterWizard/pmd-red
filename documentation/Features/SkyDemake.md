@@ -66,7 +66,7 @@ Riolu (with Vulpix, Meowth, Phanpy). Then:
 | # | EoS script | Map (converted EoS level) | Scene |
 |---|---|---|---|
 | 1 | — | — | Chapter card: EoS banner font over Sharpedo Bluff (`v01p02a` darkened, as EoS's `back_SetBanner2`), **Chapter 1 — A Storm at Sea** |
-| 2 | m01a0101/0102 | `v01p07b` stormy sea, `v01p01a` storm at sea | Lightning on black, voices, the stormy sea in the rain, the storm-cliff art lit by lightning, then a fade to the waves (EoS's "Storm") |
+| 2 | m01a0101/0102 | `v01p07b` stormy sea, `v01p01a` storm at sea | Lightning on black, voices, the stormy sea in the rain, the storm cliff lit by lightning twice, frame for frame as in EoS, then a fade to the waves (EoS's "Storm") |
 | 3 | m01a0103 | `d01p11a` beach (day) | The EoS sky panorama, the hero washed up on the sand |
 | 4 | m01a0104 | `g01p01b` Wigglytuff's Guild (dusk) | Guild sky; the partner loses their nerve on the sentry grate; the Relic Fragment close-up; Zubat & Koffing watch and follow |
 | 5 | m01a0202/0203 | `v01p04b`, `v01p05b` | Dusk sky; Krabby blowing bubbles at sunset ("On the Beach at Dusk") |
@@ -342,6 +342,62 @@ The DS second screen has no GBA equivalent, so its art (sky panoramas, the
 storm cliff, the Relic Fragment close-up, the animated sunset sea) is shown as
 full-screen cutaways in the middle of scenes (`SKY_CUTAWAY(id, frames)`,
 [`src/sky_cutaways.c`](../../src/sky_cutaways.c)).
+
+### The storm cliff
+
+EoS's m01a0102 shows Sharpedo Bluff (`v01p02a`) on the top screen over the
+sea (`v01p01a`) on the bottom one. `v01p02a` is two 288x216 pictures side by
+side, the cliff in the dark and the cliff lit by lightning, and the script
+flashes by jumping the top screen's camera between them
+(`camera2_SetPositionMark`: the DS screen shows the picture from (0, 0) in
+the dark and from (287, 0) when lit). Nothing flashes white and no palette
+changes. Over the lit picture, object `V01P02A1_181` plays its bolt
+(`SetAnimation(17)`): four frames, yellow on five colours. The sea screen
+does nothing in time with the flashes (waves and rain only).
+
+Recorded in DeSmuME frame by frame (frame 0: the first frame the cliff is
+visible; the top screen fades with the DS master brightness, read from the
+register, in sixteenths):
+
+| Frames | EoS |
+|---|---|
+| 0–27 | `screen2_FadeIn(0, 30)`: darkening 15, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1 |
+| 28–151 | the dark cliff |
+| 149 | `se_Play(6401)`, thunder |
+| 152–153 | lit (2 frames) |
+| 154–158 | dark (5 frames: `Wait(2)` and the frames EoS takes to load the sound and the bolt object) |
+| 159–192 | lit, with the bolt: none 4, frame 1 for 2, none 1, frame 2 for 6, none 1, then three times (frame 3 for 2, frame 4 for 2, none 1), none 5 more (34 frames) |
+| 193–242 | dark (`Wait(50)`) |
+| 242 | `se_Play(6401)` |
+| 243–244 | lit (2 frames) |
+| 245–246 | dark (2 frames) |
+| 247–280 | lit, with the same bolt animation |
+| 281–373 | dark (`Wait(90)`) |
+| 374–429 | `screen2_FadeOut(0, 60)`: darkening `(frame - 370) * 16 / 60` |
+| 430 | black |
+
+The demake plays the same 431 frames (`ShowStormCliff` in
+[`src/sky_cutaways.c`](../../src/sky_cutaways.c); `SKY_CUTAWAY_STORM`'s frame
+count is not used). Both pictures are in VRAM at once as EoS's own 4bpp
+tiles and 14 palettes (837 tiles at 0x6000: the dark picture on BG3, the lit
+one on BG2 over it, the layer mode EoS's opening uses), so a flash is one
+tilemap copy in a vblank, with no decompression in between. The GBA shows
+the middle 240x160 of the DS screen ((8, 16); the lit layer is scrolled 7 px
+because EoS's lit view starts at 287, not 288). The fades use the DS
+formula on the 5-bit palette, `c - c * d / 16`, and the rain's palette
+follows. The bolt is 16x16 OBJs (at most 27) from captures of EoS's OBJ
+layer, OBJ palette 15 and OBJ tiles 0x100–0x21F, both saved before and put
+back after (the ground emotes and the UI palette live there). Thunder is
+SE 461 on frames 149 and 242. Before, the demake showed two flashes of
+2 white frames, 4 lit, 2 white and 6 lit (the lit picture was decompressed
+between them), 80 and 40 frames apart, with no bolt, and a 32-frame fade.
+
+[`tools/make_sky_storm_cliff.py`](../../tools/make_sky_storm_cliff.py)
+(`tools/make_sky_storm_cliff.py EOS.nds`) writes
+`graphics/custom/sky_storm_cliff/` (`cliff.tiles`, `dark.tilemap`,
+`lit.tilemap`, `cliff.pal`, `bolt.tiles`, previews `dark.png` / `lit.png`)
+and `src/data/sky_storm_cliff.h` from the ROM and from `bolt_1..4.png`, the
+bolt's four frames as captured (DS screen coordinates).
 
 ---
 
@@ -1573,6 +1629,7 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `guild_gate_and_totems` | divide | at the guild's first view (118, 112): ≥ 100 portcullis bar pixels in the gate; ground objects 70/71 and four totem OBJ pieces |
 | `stormy_sea` | divide | `MAP_SKY_STORM_WAVES`: ≥ 10 semi-transparent rain OBJs and BLDALPHA 16/8 on ≥ 90% of frames; lightning OBJs on ≥ 20 frames; the Storm BGM |
 | `obj_palette15_restored` | divide | OBJ palette 15 is vanilla's UI palette at the guild and in Beach Cave (the bolt borrows it) |
+| `storm_cliff_lightning` | divide | the storm cliff's 431 frames: each frame's darkening (from the BG palettes), dark / lit picture (BG2's map) and bolt frame (the OBJs' positions) equal EoS's recorded sequence; thunder (SE 461) starts on frames 149 and 242; rain on ≥ 95% of frames |
 | `emote_tiles_restored` | divide | OBJ tiles 0x100–0x292 (the ground emotes) are identical before the storm bolt and at the guild |
 | `text_arrow_white` | divide | the text arrow (tile 0x3F0) uses the UI palette; its brightest colour is white |
 | `hero_named_ground` | divide | "So you're named ...?" has a name (debug boot: the species name) |
@@ -1669,7 +1726,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
 | EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`src/data/sky_opening_scenes.h`](../../src/data/sky_opening_scenes.h), [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py) |
 | Continue / Delete Save Data window (EoS's Adventure Record) | [`src/load_screen.c`](../../src/load_screen.c) |
-| Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
+| Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), the storm cliff in [`src/sky_cutaways.c`](../../src/sky_cutaways.c) with [`src/data/sky_storm_cliff.h`](../../src/data/sky_storm_cliff.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
 | Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |
 | Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |
 | Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
@@ -1681,7 +1738,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout, word wrap (`SkyWrapDialogueText`) | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
 | Dungeon menus (main menu, Items, Team, Moves, Others, Rest), frame and cursor | [`src/dungeon_main.c`](../../src/dungeon_main.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/dungeon_menu_items.c`](../../src/dungeon_menu_items.c), [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c), [`src/dungeon_menu_moves.c`](../../src/dungeon_menu_moves.c), [`src/dungeon_menu_others.c`](../../src/dungeon_menu_others.c), [`src/dungeon_submenu.c`](../../src/dungeon_submenu.c), [`src/ui_style.c`](../../src/ui_style.c), [`src/menu_input.c`](../../src/menu_input.c) |
-| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py`, `tools/make_sky_boss_wipe.py` (DeSmuME) |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_storm_cliff.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py`, `tools/make_sky_boss_wipe.py` (DeSmuME) |
 
 ---
 
@@ -1715,6 +1772,11 @@ Winning the boss fight by mashing A needs a strong team; for that test set
   for EoS's orange (F8C060) or light pink (F8C8C8); the item description is
   the first line of Red's long description, not EoS's short one; EoS's
   Others > Window and Map have no screens of their own.
+- Storm cliff: the rain over it is the sea screen's rain (the OBJ sheets of
+  `EFFECT_VERY_HEAVY_RAIN`). EoS draws the top screen's rain as its own BG
+  layer (effect 699: a three-picture loop, 4 frames each, half-blended), and
+  that rain passes over the bolt; on the GBA the bolt is over the rain. The
+  cliff and the sea are shown one after the other, not together.
 - Old saves need a new game in the sky build.
 - Boss transition: the GBA shows the middle 240×160 of EoS's screen; the
   strips' x can differ by a pixel from EoS's (the DS rasteriser rounds their

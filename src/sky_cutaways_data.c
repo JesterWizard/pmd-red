@@ -7,10 +7,6 @@ static const u8 sSkyDayGfx[] = INCBIN_U8("graphics/custom/sky_cutaways/sky_day.a
 static const u8 sSkyDayPal[] = INCBIN_U8("graphics/custom/sky_cutaways/sky_day.pal");
 static const u8 sSkyDuskGfx[] = INCBIN_U8("graphics/custom/sky_cutaways/sky_dusk.at4px");
 static const u8 sSkyDuskPal[] = INCBIN_U8("graphics/custom/sky_cutaways/sky_dusk.pal");
-static const u8 sStormCliffGfx[] = INCBIN_U8("graphics/custom/sky_cutaways/storm_cliff.at4px");
-static const u8 sStormCliffPal[] = INCBIN_U8("graphics/custom/sky_cutaways/storm_cliff.pal");
-static const u8 sStormLitGfx[] = INCBIN_U8("graphics/custom/sky_cutaways/storm_lit.at4px");
-static const u8 sStormLitPal[] = INCBIN_U8("graphics/custom/sky_cutaways/storm_lit.pal");
 static const u8 sGuildSkyGfx[] = INCBIN_U8("graphics/custom/sky_cutaways/guild_sky.at4px");
 static const u8 sGuildSkyPal[] = INCBIN_U8("graphics/custom/sky_cutaways/guild_sky.pal");
 static const u8 sRelicFragmentGfx[] = INCBIN_U8("graphics/custom/sky_cutaways/relic_fragment.at4px");
@@ -37,8 +33,6 @@ static const u8 sSunsetSea7Pal[] = INCBIN_U8("graphics/custom/sky_cutaways/sunse
 const SkyCutawayArt gSkyCutaways[SKY_CUTAWAY_COUNT] = {
     { sSkyDayGfx, sSkyDayPal },
     { sSkyDuskGfx, sSkyDuskPal },
-    { sStormCliffGfx, sStormCliffPal },
-    { sStormLitGfx, sStormLitPal },
     { sGuildSkyGfx, sGuildSkyPal },
     { sRelicFragmentGfx, sRelicFragmentPal },
     { sSunsetSkyGfx, sSunsetSkyPal },

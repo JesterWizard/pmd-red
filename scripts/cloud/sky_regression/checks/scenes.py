@@ -160,3 +160,94 @@ def emote_tiles_restored(t):
     diff = sum(1 for a, b in zip(before, after) if a != b)
     expect(diff == 0, f"{diff} bytes of OBJ tiles 0x100..0x292 differ after the storm (bolt frames left behind)")
     return "OBJ tiles 0x100..0x292 identical before and after the storm"
+
+
+# The storm cliff (EoS m01a0102, v01p02a on the top screen), as recorded from
+# EoS frame by frame (SkyDemake.md, "The storm cliff"). Frame 0 is the first
+# frame the cliff shows. Each frame has a state: the DS master-brightness
+# darkening in sixteenths, dark or lit picture, and the bolt's frame (0: none).
+CLIFF_FADE_IN = [15, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]
+CLIFF_FADE_OUT, CLIFF_FRAMES = 370, 431
+# (thunder se_Play(6401), lit for 2 frames, dark again, lit with the bolt for 34)
+CLIFF_FLASHES = [(149, 152, 154, 159), (242, 243, 245, 247)]
+CLIFF_BOLT = [(4, 0), (2, 1), (1, 0), (6, 2), (1, 0), (2, 3), (2, 4), (1, 0),
+              (2, 3), (2, 4), (1, 0), (2, 3), (2, 4), (6, 0)]
+CLIFF_THUNDER = 461
+
+
+def cliff_expected(k):
+    """(darkening, lit, bolt frame) of frame k in EoS."""
+    if k < len(CLIFF_FADE_IN):
+        dark = CLIFF_FADE_IN[k]
+    else:
+        dark = min(16, max(0, (k - CLIFF_FADE_OUT) * 16 // 60))
+    bolt_anim = [b for n, b in CLIFF_BOLT for _ in range(n)]
+    for _, lit, back, bolt in CLIFF_FLASHES:
+        if lit <= k < back:
+            return dark, True, 0
+        if bolt <= k < bolt + len(bolt_anim):
+            return dark, True, bolt_anim[k - bolt]
+    return dark, False, 0
+
+
+def cliff_data():
+    import re
+    import struct
+    from game import ROOT
+    d = ROOT / "graphics" / "custom" / "sky_storm_cliff"
+    pal = struct.unpack("<224H", (d / "cliff.pal").read_bytes())
+    lit0 = struct.unpack_from("<H", (d / "lit.tilemap").read_bytes())[0]
+    text = (ROOT / "src" / "data" / "sky_storm_cliff.h").read_text()
+    objs = [(int(x), int(y)) for x, y in re.findall(r"^    \{ (-?\d+), (-?\d+), \d+ \},$", text, re.M)]
+    frames = [(int(a), int(n)) for a, n in re.findall(r"^    \{ (\d+), (\d+) \},$", text, re.M)]
+    return pal, lit0, [frozenset(objs[a:a + n]) for a, n in frames]
+
+
+def cliff_state(f, pal, lit0, bolts):
+    """(darkening or None, lit, bolt frame or None) of what the GBA shows."""
+    def darken(c, d):
+        return sum((v - (v * d >> 4)) << (5 * i) for i, v in enumerate(((c & 31), (c >> 5) & 31, (c >> 10) & 31)))
+    shown = [f.bg_color(i // 16, i % 16) for i in range(224)]
+    dark = next((d for d in range(17) if all(darken(c, d) == s for c, s in zip(pal, shown))), None)
+    lit = f.u16(0x06004000) == lit0  # BG2's map (screen base 8), first entry
+    objs = frozenset((o["x"], o["y"]) for o in f.oam()
+                     if o["pal"] == 15 and o["mode"] == 0 and (o["w"], o["h"]) == (16, 16))
+    bolt = 0 if not objs else next((i + 1 for i, b in enumerate(bolts) if b == objs), None)
+    return dark, lit, bolt
+
+
+@check("divide", "Storm cliff: EoS's lightning frame for frame (2 flashes, bolt frames, fades, thunder)")
+def storm_cliff_lightning(t):
+    pal, lit0, bolts = cliff_data()
+
+    def showing(f):
+        # the cutaway's 4bpp layers: BG3 at char base 1 / screen base 31, shown
+        return (t.game.map_name(f) == "MAP_SKY_STORM_SEA" and f.bgcnt(3) & 0x1F8C == 0x1F04
+                and f.dispcnt() & 0x0800 and cliff_state(f, pal, lit0, bolts)[0] not in (None, 16))
+    f = yield from t.wait(showing, "the storm cliff")
+    start = f.n
+    wrong, thunder, rain = [], [], 0
+    clocks = {}
+    hdr = t.game.song_headers[CLIFF_THUNDER]
+    for k in range(CLIFF_FRAMES):
+        got, want = cliff_state(f, pal, lit0, bolts), cliff_expected(k)
+        if got != want and len(wrong) < 5:
+            wrong.append(f"frame {k}: {got}, EoS {want}")
+            t.snap(f, f"k{k}")
+        if sum(1 for o in f.oam() if o["w"] == 64 and o["h"] == 64 and o["mode"] == 1) >= 10:
+            rain += 1
+        for label, addr in t.game.players:
+            if label.startswith("se"):
+                on = f.songs.get(label) == hdr
+                clock = f.u32(addr + 12)
+                was = clocks.get(label)
+                if on and (was is None or clock < was):
+                    thunder.append(k)
+                clocks[label] = clock if on else None
+        f = yield from t.next("the end of the storm cliff")
+    expect(not wrong, "; ".join(wrong))
+    want = [se for se, _, _, _ in CLIFF_FLASHES]
+    expect(thunder == want, f"thunder (SE {CLIFF_THUNDER}) starts at frames {thunder}, expected {want}")
+    expect(rain >= 0.95 * CLIFF_FRAMES, f"rain on {rain}/{CLIFF_FRAMES} frames")
+    return (f"{CLIFF_FRAMES} frames from f{start} match EoS: flashes at "
+            f"{[x[1] for x in CLIFF_FLASHES]}, thunder at {thunder}, rain on {rain} frames")

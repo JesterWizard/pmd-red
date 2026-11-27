@@ -35,3 +35,6 @@ graphics/custom/chapter_cards/*.pal binary
 graphics/custom/sky_scrolls/*.pal binary
 graphics/custom/sky_scrolls/*.tiles binary
 graphics/custom/sky_scrolls/*.tilemap binary
+graphics/custom/sky_storm_cliff/*.pal binary
+graphics/custom/sky_storm_cliff/*.tiles binary
+graphics/custom/sky_storm_cliff/*.tilemap binary

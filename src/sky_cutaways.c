@@ -293,14 +293,225 @@ static void Hold(s32 frames)
         RunFullscreenArtFrame();
 }
 
-static void WhiteFlash(const SkyCutawayArt *art, s32 frames)
+/*
+ * The storm cliff (EoS m01a0102, level v01p02a on the top screen), frame for
+ * frame as recorded from EoS (documentation/Features/SkyDemake.md, "The
+ * storm cliff"). The picture's two halves (dark / lit by lightning) are in
+ * VRAM together as EoS's own 4bpp tiles: the dark half on BG3, the lit half
+ * on BG2 over it, so a flash is one tilemap copy (EoS moves the camera). The
+ * bolt (object V01P02A1_181) is OBJs over the lit half. EoS fades the top
+ * screen with the DS master brightness: the same sixteenths here.
+ * Frame 0 is the first frame the cliff is visible.
+ */
+struct SkyCliffBoltObj
+{
+    s16 x, y;
+    u16 tile;
+};
+
+#include "data/sky_storm_cliff.h"
+static const u32 sCliffTiles[] = INCBIN_U32("graphics/custom/sky_storm_cliff/cliff.tiles");
+static const u16 sCliffDarkMap[] = INCBIN_U16("graphics/custom/sky_storm_cliff/dark.tilemap");
+static const u16 sCliffLitMap[] = INCBIN_U16("graphics/custom/sky_storm_cliff/lit.tilemap");
+static const u16 sCliffPal[] = INCBIN_U16("graphics/custom/sky_storm_cliff/cliff.pal");
+static const u32 sCliffBoltTiles[] = INCBIN_U32("graphics/custom/sky_storm_cliff/bolt.tiles");
+
+#define CLIFF_BOLT_TILE_NUM 0x100 /* the ground emotes' tiles: saved and put back */
+#define CLIFF_BOLT_OBJ_PAL 15
+#define CLIFF_BOLT_PAL_BASE ((16 + CLIFF_BOLT_OBJ_PAL) * 16)
+#define CLIFF_THUNDER_SE 461      /* EoS se_Play(6401) */
+#define CLIFF_FADE_OUT 370        /* screen2_FadeOut(0, 60) */
+#define CLIFF_FRAMES 431          /* the last one is black */
+#define CLIFF_BOLT_FRAMES 34
+
+/* The darkening (sixteenths) of the fade-in's frames, as EoS shows them. */
+static const u8 sCliffFadeIn[] = {
+    15, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1,
+};
+
+/* A flash: the thunder, the lit picture for two frames, the dark one again,
+ * then the lit picture with the bolt for CLIFF_BOLT_FRAMES. EoS's first
+ * flash is slower than its second (it loads the sound and the object). */
+static const s16 sCliffFlashes[][4] = {
+    /* se, lit, dark, lit + bolt */
+    { 149, 152, 154, 159 },
+    { 242, 243, 245, 247 },
+};
+
+/* The bolt animation: (frames, bolt frame; 0: none) */
+static const u8 sCliffBoltAnim[][2] = {
+    { 4, 0 }, { 2, 1 }, { 1, 0 }, { 6, 2 }, { 1, 0 }, { 2, 3 }, { 2, 4 }, { 1, 0 },
+    { 2, 3 }, { 2, 4 }, { 1, 0 }, { 2, 3 }, { 2, 4 }, { 6, 0 },
+};
+
+static s32 CliffDarkening(s32 frame)
+{
+    if (frame < (s32)ARRAY_COUNT(sCliffFadeIn))
+        return sCliffFadeIn[frame];
+    if (frame >= CLIFF_FADE_OUT) {
+        s32 d = (frame - CLIFF_FADE_OUT) * 16 / 60;
+        return d > 16 ? 16 : d;
+    }
+    return 0;
+}
+
+static bool8 CliffLit(s32 frame, s32 *boltFrame)
+{
+    s32 i, j;
+
+    *boltFrame = 0;
+    for (i = 0; i < (s32)ARRAY_COUNT(sCliffFlashes); i++) {
+        const s16 *f = sCliffFlashes[i];
+
+        if (frame >= f[1] && frame < f[2])
+            return TRUE;
+        if (frame >= f[3] && frame < f[3] + CLIFF_BOLT_FRAMES) {
+            s32 t = frame - f[3];
+
+            for (j = 0; t >= sCliffBoltAnim[j][0]; j++)
+                t -= sCliffBoltAnim[j][0];
+            *boltFrame = sCliffBoltAnim[j][1];
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+/* DS master brightness (darken): c - c * d / 16 on each 5-bit channel. */
+static void SetCliffDarkening(s32 d)
 {
     s32 i;
-    static const RGB_Struct sWhite = { 255, 255, 255 };
-    for (i = 0; i < 240; i++)
-        SetBGPaletteBufferColorRGB(i, &sWhite, 31, NULL);
-    Hold(frames);
-    SetFullscreenArtBrightness((const RGB_Struct *)art->pal, 31);
+
+    for (i = 0; i < (s32)ARRAY_COUNT(sCliffPal); i++) {
+        u16 c = sCliffPal[i];
+        s32 r = c & 0x1F, g = (c >> 5) & 0x1F, b = (c >> 10) & 0x1F;
+
+        c = (r - (r * d >> 4)) | ((g - (g * d >> 4)) << 5) | ((b - (b * d >> 4)) << 10);
+        SetBGPaletteBufferColor(i, &c);
+    }
+    SkyBubbles_SetBrightness((16 - d) * FADE_STEPS / 16); /* the rain fades with it */
+}
+
+static void SetCliffLit(bool8 lit)
+{
+    s32 r, c;
+
+    for (r = 0; r < SKY_CLIFF_ROWS; r++)
+        for (c = 0; c < SKY_CLIFF_LIT_COLS; c++)
+            gBgTilemaps[2][r][c] = lit ? sCliffLitMap[r * SKY_CLIFF_LIT_COLS + c]
+                                       : SKY_CLIFF_BLANK + SKY_CLIFF_BG2_BASE;
+    ScheduleBgTilemapCopy(2);
+}
+
+static void DrawCliffBolt(s32 boltFrame)
+{
+    const u8 *f = sCliffBoltFrames[boltFrame - 1];
+    s32 i;
+
+    for (i = 0; i < f[1]; i++) {
+        const struct SkyCliffBoltObj *o = &sCliffBoltObjs[f[0] + i];
+        SpriteOAM sprite;
+
+        sprite.attrib1 = 0;
+        sprite.attrib2 = 0;
+        sprite.attrib3 = 0;
+        sprite.unk6 = 0;
+        SpriteSetShape(&sprite, 0); /* square */
+        SpriteSetSize(&sprite, 1);  /* 16x16 */
+        SpriteSetPalNum(&sprite, CLIFF_BOLT_OBJ_PAL);
+        SpriteSetPriority(&sprite, 1);
+        SpriteSetX(&sprite, o->x & 0x1FF);
+        SpriteSetY(&sprite, o->y & 0xFF);
+        SpriteSetTileNum(&sprite, CLIFF_BOLT_TILE_NUM + o->tile);
+        /* added before the rain's OBJs (RunFullscreenArtFrame) */
+        AddSprite(&sprite, 0, NULL, NULL);
+    }
+}
+
+static void ShowStormCliff(void)
+{
+    void *boltVram = (void *)(OBJ_VRAM0 + CLIFF_BOLT_TILE_NUM * 32);
+    u32 *savedTiles = MemoryAlloc(sizeof(sCliffBoltTiles), MEMALLOC_GROUP_0);
+    u16 savedPal[16];
+    bool8 lit = FALSE;
+    s32 darkening = -1;
+    s32 frame, i, r, c;
+
+    /* As LoadFullscreenArtBlank, with every layer off until the maps, the
+     * tiles and a black palette are in place (two black frames). */
+    SetBGOBJEnableFlags(0x1F);
+    ResetSprites(TRUE);
+    UpdateFadeInTile(0);
+    InitFontPalette();
+    sub_800CDA8(2);
+    ShowWindows(NULL, TRUE, TRUE);
+    SetBG2RegOffsets(SKY_CLIFF_LIT_HOFS, 0);
+    SetBG3RegOffsets(0, 0);
+    CpuClear(gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuClear(gBgTilemaps[3], BG_SCREEN_SIZE);
+    SetTitleBg8bpp(TRUE);
+    gSkyOpeningBg4bpp = TRUE; /* BG2 / BG3 4bpp, char bases 0x8000 / 0x4000 (src/reg_control.c) */
+    for (r = 0; r < 20; r++) {
+        gBgTilemaps[0][r][0] = 0;
+        gBgTilemaps[1][r][0] = 0;
+    }
+    ScheduleBgTilemapCopy(0);
+    ScheduleBgTilemapCopy(1);
+    CpuCopy((void *)(VRAM + 0x6000), sCliffTiles, sizeof(sCliffTiles));
+    for (r = 0; r < SKY_CLIFF_ROWS; r++)
+        for (c = 0; c < SKY_CLIFF_DARK_COLS; c++)
+            gBgTilemaps[3][r][c] = sCliffDarkMap[r * SKY_CLIFF_DARK_COLS + c];
+    ScheduleBgTilemapCopy(3);
+    SetCliffLit(FALSE);
+    SetCliffDarkening(16);
+    for (i = 0; i < 16; i++) {
+        u16 col = sCliffBoltPal[i];
+
+        savedPal[i] = GetBGPaletteBufferColor(CLIFF_BOLT_PAL_BASE + i);
+        SetBGPaletteBufferColor(CLIFF_BOLT_PAL_BASE + i, &col);
+    }
+    RunFullscreenArtFrame();
+    RunFullscreenArtFrame();
+    SetBGOBJEnableFlags(0);
+    if (savedTiles != NULL) {
+        CpuCopy(savedTiles, boltVram, sizeof(sCliffBoltTiles));
+        CpuCopy(boltVram, sCliffBoltTiles, sizeof(sCliffBoltTiles));
+    }
+
+    for (frame = 0; frame < CLIFF_FRAMES; frame++) {
+        s32 boltFrame;
+        bool8 nowLit = CliffLit(frame, &boltFrame);
+        s32 d = CliffDarkening(frame);
+
+        if (d != darkening) {
+            darkening = d;
+            SetCliffDarkening(d);
+        }
+        if (nowLit != lit) {
+            lit = nowLit;
+            SetCliffLit(lit);
+        }
+        for (i = 0; i < (s32)ARRAY_COUNT(sCliffFlashes); i++)
+            if (frame == sCliffFlashes[i][0])
+                PlaySoundWithVolume(CLIFF_THUNDER_SE, 256);
+        if (boltFrame != 0 && savedTiles != NULL)
+            DrawCliffBolt(boltFrame);
+        RunFullscreenArtFrame();
+    }
+
+    for (i = 0; i < 16; i++)
+        SetBGPaletteBufferColor(CLIFF_BOLT_PAL_BASE + i, &savedPal[i]);
+    if (savedTiles != NULL) {
+        CpuCopy(boltVram, savedTiles, sizeof(sCliffBoltTiles));
+        MemoryFree(savedTiles);
+    }
+    /* black: hide the 4bpp layers before BG3 goes back to 8bpp */
+    SetBGOBJEnableFlags(0xC);
+    gSkyOpeningBg4bpp = FALSE;
+    SetBG2RegOffsets(0, 0);
+    /* The ground's BG0 / BG1 maps (screen bases 12, 13) are where the
+     * cliff's first tiles were: blank until the ground redraws them. */
+    CpuClear((void *)BG_SCREEN_ADDR(12), 2 * BG_SCREEN_SIZE);
 }
 
 /* EoS boot: the Nintendo logo, then the ESRB online notice (A skips). */
@@ -450,24 +661,11 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
         return;
     }
     if (id == SKY_CUTAWAY_STORM) {
-        /* EoS m01a0102: the cliff in the storm, lit up by lightning twice. */
-        first = &gSkyCutaways[SKY_CUTAWAY_STORM_CLIFF];
-        LoadFullscreenArt(first->at4px);
-        Fade(first, TRUE);
-        Hold(frames / 2);
-        for (i = 0; i < 2; i++) {
-            PlaySoundWithVolume(461, 256); /* EoS se_Play(6401): thunder */
-            WhiteFlash(first, 2);
-            SwapArt(&gSkyCutaways[SKY_CUTAWAY_STORM_LIT]);
-            Hold(4);
-            WhiteFlash(&gSkyCutaways[SKY_CUTAWAY_STORM_LIT], 2);
-            Hold(6);
-            SwapArt(first);
-            Hold(frames / 4);
-        }
-        /* EoS shows the cliff (top screen) over the stormy sea (bottom
-         * screen): fade the cliff out; the script fades the sea in. */
-        Fade(first, FALSE);
+        /* EoS m01a0102: the cliff in the storm, lit up by lightning twice,
+         * then it fades out; the script fades the stormy sea in (EoS shows
+         * the cliff on the top screen over the sea on the bottom one). The
+         * sequence has EoS's own length: `frames` is not used. */
+        ShowStormCliff();
     }
     else if (id == SKY_CUTAWAY_SKY_DAY_SCROLL || id == SKY_CUTAWAY_GUILD_SKY_SCROLL) {
         if (id == SKY_CUTAWAY_SKY_DAY_SCROLL)
