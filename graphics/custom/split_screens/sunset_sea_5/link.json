@@ -1,0 +1,27 @@
+{
+  "name": "sunset_sea_5",
+  "what": "The sunset sky over the glittering sea, frame 5 of 8",
+  "source": "EoS levels (MAP_BG), no sprites",
+  "eos_scripts": "m01a0205, m01a0207",
+  "gba": "rows 92-171 of the sky over rows 0-79 of the sea, cut at y 80 (SKY_CUTAWAY SUNSET_SEA0 + i)",
+  "top": {
+    "eos_level": "V26P06A",
+    "level_box": [24, 28, 256, 192],
+    "file": "top.png",
+    "size": [256, 256],
+    "screen": [0, 0, 256, 192],
+    "gap": [0, 192, 256, 64]
+  },
+  "bottom": {
+    "eos_level": "V26P05A",
+    "level_box": [652, 252, 256, 192],
+    "file": "bottom.png",
+    "size": [256, 256],
+    "gap": [0, 0, 256, 64],
+    "screen": [0, 64, 256, 192]
+  },
+  "joined": {
+    "size": [256, 512],
+    "how": "top.png at y 0, bottom.png right under it at y 256: the two transparent strips meet at y 256"
+  }
+}

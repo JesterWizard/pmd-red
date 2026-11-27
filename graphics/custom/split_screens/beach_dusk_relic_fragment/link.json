@@ -1,0 +1,27 @@
+{
+  "name": "beach_dusk_relic_fragment",
+  "what": "The Relic Fragment close-up, over the heroes on the beach",
+  "source": "EoS levels (MAP_BG), no sprites",
+  "eos_scripts": "m01a0702",
+  "gba": "the close-up full screen between fades",
+  "top": {
+    "eos_level": "V01P06B",
+    "level_box": [40, 24, 256, 192],
+    "file": "top.png",
+    "size": [256, 256],
+    "screen": [0, 0, 256, 192],
+    "gap": [0, 192, 256, 64]
+  },
+  "bottom": {
+    "eos_level": "D01P11B",
+    "level_box": [272, 80, 256, 192],
+    "file": "bottom.png",
+    "size": [256, 256],
+    "gap": [0, 0, 256, 64],
+    "screen": [0, 64, 256, 192]
+  },
+  "joined": {
+    "size": [256, 512],
+    "how": "top.png at y 0, bottom.png right under it at y 256: the two transparent strips meet at y 256"
+  }
+}

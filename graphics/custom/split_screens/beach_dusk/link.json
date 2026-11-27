@@ -1,0 +1,27 @@
+{
+  "name": "beach_dusk",
+  "what": "The sky at dusk, over the beach at sunset",
+  "source": "EoS levels (MAP_BG), no sprites",
+  "eos_scripts": "m01a0201, m01a0206, m01a0208, m01a0301, m01a0702",
+  "gba": "the map only (the top CG is not shown)",
+  "top": {
+    "eos_level": "V01P03B",
+    "level_box": [136, 0, 256, 192],
+    "file": "top.png",
+    "size": [256, 256],
+    "screen": [0, 0, 256, 192],
+    "gap": [0, 192, 256, 64]
+  },
+  "bottom": {
+    "eos_level": "D01P11B",
+    "level_box": [180, 84, 256, 192],
+    "file": "bottom.png",
+    "size": [256, 256],
+    "gap": [0, 0, 256, 64],
+    "screen": [0, 64, 256, 192]
+  },
+  "joined": {
+    "size": [256, 512],
+    "how": "top.png at y 0, bottom.png right under it at y 256: the two transparent strips meet at y 256"
+  }
+}

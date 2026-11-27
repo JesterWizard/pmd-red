@@ -1,0 +1,26 @@
+{
+  "name": "op_lapras_end",
+  "what": "Opening: the camera up at the Wingull",
+  "source": "EoS as shown (DeSmuME, power-on, no input), sprites included",
+  "eos_scripts": "S13P03A/t02a0202",
+  "eos_frame": 1420,
+  "gba": "the opening (src/sky_opening.c, events/sky/opening.cfg)",
+  "top": {
+    "eos_screen": "top",
+    "file": "top.png",
+    "size": [256, 256],
+    "screen": [0, 0, 256, 192],
+    "gap": [0, 192, 256, 64]
+  },
+  "bottom": {
+    "eos_screen": "bottom",
+    "file": "bottom.png",
+    "size": [256, 256],
+    "gap": [0, 0, 256, 64],
+    "screen": [0, 64, 256, 192]
+  },
+  "joined": {
+    "size": [256, 512],
+    "how": "top.png at y 0, bottom.png right under it at y 256: the two transparent strips meet at y 256"
+  }
+}

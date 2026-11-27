@@ -300,3 +300,12 @@ PNGs and converted maps in the repository.
   run by `scripts/cloud/sky_regression.sh` (`event_editor_tests`).
 - `python3 tools/event_editor/scenes.py check|fmt FILE.scene`,
   `cutaways.py check`, `opening.py check` check the files from the command line.
+
+## Split screens
+
+Where EoS shows two screens at once (the pans, the sunset sea, the opening,
+the title), [`graphics/custom/split_screens/`](../graphics/custom/split_screens)
+has each moment as `top.png` + `bottom.png` with a transparent strip between
+them to paint the gap, and a `link.json`. They are reference art: the build
+does not read them yet.
+

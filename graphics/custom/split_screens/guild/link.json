@@ -1,0 +1,27 @@
+{
+  "name": "guild",
+  "what": "Dusk clouds over Wigglytuff's Guild, over the guild",
+  "source": "EoS levels (MAP_BG), no sprites",
+  "eos_scripts": "m01a0104",
+  "gba": "pans down from the clouds CG into the map (GUILD_SKY_SCROLL)",
+  "top": {
+    "eos_level": "V02P01A",
+    "level_box": [4, 0, 256, 192],
+    "file": "top.png",
+    "size": [256, 256],
+    "screen": [0, 0, 256, 192],
+    "gap": [0, 192, 256, 64]
+  },
+  "bottom": {
+    "eos_level": "G01P01B2",
+    "level_box": [110, 96, 256, 192],
+    "file": "bottom.png",
+    "size": [256, 256],
+    "gap": [0, 0, 256, 64],
+    "screen": [0, 64, 256, 192]
+  },
+  "joined": {
+    "size": [256, 512],
+    "how": "top.png at y 0, bottom.png right under it at y 256: the two transparent strips meet at y 256"
+  }
+}
