@@ -285,6 +285,90 @@ def bluff(run):
     yield from d.mash()
 
 
+def _walk_run(d, prefix, limit=BLUFF_FLOOR_LIMIT):
+    """One dungeon run, as `bluff`: each floor to its stairs; on a floor with
+    no stairs (a boss room) to the nearest wild Pokémon, which is attacked.
+    Posts "<prefix>floor_<n>" when the leader first waits for input on floor
+    n, "<prefix>stairs_<n>" on reaching the stairs, "<prefix>fight" when the
+    leader first heads for a Pokémon on a floor without stairs. Returns when
+    the dungeon is over."""
+    game = d.run.game
+    floor = None
+    floor_start = d.n
+    while game.in_dungeon(d.f):
+        f = d.f
+        if game.print_state(f) in PRINT_WAITING:
+            yield from d.press("A", 4, 8)
+            continue
+        loc = game.dungeon_location(f)
+        if loc[1] != floor:
+            yield from d.wait_control(10, nudge=90)
+            if not game.in_dungeon(d.f):
+                break
+            floor, floor_start = game.dungeon_location(d.f)[1], d.n
+            d.post(f"{prefix}floor_{floor}", game.dungeon_location(d.f))
+            continue
+        if d.n - floor_start > limit:
+            d.post(f"{prefix}stuck")
+            break
+        m = game.dungeon_map(f)
+        p = tuple(game.leader_pos(f))
+        boss = not any("S" in row for row in m)
+        path = _path(m, p, "m" if boss else "S")
+        if boss and f"{prefix}fight" not in d.run.events:
+            d.post(f"{prefix}fight")
+        if path is None:
+            # on the stairs: A on the stairs menu's "Proceed" (a boss floor:
+            # nobody to reach, wait a turn)
+            yield from d.press("A", 4, 30)
+            continue
+        c = path[0]
+        keys = WALK[(c[0] - p[0], c[1] - p[1])]
+        if len(path) == 1 and not boss:
+            d.post(f"{prefix}stairs_{floor}")
+        n = 0
+        while tuple(game.leader_pos(d.f)) == p and n < BLUFF_STEP_LIMIT and game.in_dungeon(d.f):
+            if game.print_state(d.f) in PRINT_WAITING:
+                break
+            yield from d.step(keys)
+            n += 1
+        if tuple(game.leader_pos(d.f)) == p and game.in_dungeon(d.f):
+            # blocked: facing a Pokémon (or the stairs menu is up): A
+            yield from d.press("A", 4, 30)
+
+
+def bristle(run):
+    """Mt. Bristle (chapter 3) 1F-9F, then (the placeholder cleared event
+    enters it) Mt. Bristle Peak: the cutscene, then walk to Drowzee and
+    attack until the dungeon ends. Events as `_walk_run` ("floor_<n>",
+    "stairs_<n>"; "peak_floor_1", "peak_fight"), "left_bristle",
+    "peak_start" (the peak run's first frame), "left_peak"."""
+    d = D(run)
+    game = run.game
+    yield from d.mash_until(lambda f: game.in_dungeon(f) and game.input_waits(f) > 0)
+    yield from _walk_run(d, "")
+    d.post("left_bristle")
+    yield from _peak(d)
+
+
+def _peak(d):
+    game = d.run.game
+    yield from d.mash_until(lambda f: game.in_dungeon(f) and game.dungeon_location(f)[1] == 1)
+    d.post("peak_start")
+    yield from d.mash_until(lambda f: game.in_dungeon(f) and game.input_waits(f) > 0)
+    yield from _walk_run(d, "peak_")
+    d.post("left_peak")
+    yield from d.mash()
+
+
+def peak(run):
+    """Mt. Bristle Peak from its debug boot (a level-1 team): the cutscene,
+    then at Drowzee until the dungeon ends (the team faints)."""
+    d = D(run)
+    yield from d.mash_until(lambda f: run.game.in_dungeon(f))
+    yield from _peak(d)
+
+
 JUKEBOX_PER_PAGE = 6
 
 

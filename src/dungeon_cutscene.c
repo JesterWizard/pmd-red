@@ -121,7 +121,7 @@ void sub_80847D4(void)
     UpdateMinimap();
 
 #ifdef SKY_STORY
-    if (SkyStory_TrySetBeachCavePitCutscene()) {
+    if (SkyStory_TrySetBeachCavePitCutscene() || SkyStory_TrySetMtBristlePeakCutscene()) {
         FlushTempCutsceneFlags();
         return;
     }
@@ -167,6 +167,12 @@ static void sub_8084854(const FixedRoomCutsceneData *data)
 
 bool8 ShouldShowDungeonBanner(void)
 {
+#ifdef SKY_STORY
+    /* Mt. Bristle Peak: EoS shows the peak's banner before m03a0801 on the
+     * ground; the fight comes in without one. */
+    if (SkyStory_IsMtBristle(gDungeon->unk644.dungeonLocation.id) && SkyStory_IsMtBristlePeakRun())
+        return FALSE;
+#endif
     return TRUE;
 }
 
@@ -196,6 +202,9 @@ void sub_80848F0(void)
 #ifdef SKY_STORY
         case CUTSCENE_BEACH_CAVE_PIT:
             SkyStory_BeachCavePitSetup();
+            break;
+        case CUTSCENE_MT_BRISTLE_PEAK:
+            SkyStory_MtBristlePeakSetup();
             break;
 #endif
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT1:
@@ -375,6 +384,9 @@ void DisplayPreFightDialogue(void)
 #ifdef SKY_STORY
         case CUTSCENE_BEACH_CAVE_PIT:
             SkyStory_BeachCavePitPreFightDialogue();
+            break;
+        case CUTSCENE_MT_BRISTLE_PEAK:
+            SkyStory_MtBristlePeakPreFightDialogue();
             break;
 #endif
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT1:
@@ -568,6 +580,9 @@ void HandleBossFaint_Async(Entity *entity, u8 monsterBehavior, bool8 transformed
 #ifdef SKY_STORY
         case CUTSCENE_BEACH_CAVE_PIT:
             SkyStory_HandleBeachCavePitBossFaint(monsterBehavior);
+            break;
+        case CUTSCENE_MT_BRISTLE_PEAK:
+            SkyStory_HandleMtBristlePeakBossFaint(monsterBehavior);
             break;
 #endif
         case CUTSCENE_MT_THUNDER_PEAK_ATTEMPT1:

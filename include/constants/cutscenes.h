@@ -65,6 +65,7 @@ enum CutsceneKind
     CUTSCENE_HOWLING_FOREST_POSTSTORY,
 #ifdef SKY_STORY
     CUTSCENE_BEACH_CAVE_PIT, /* Explorers of Sky demake: Zubat & Koffing */
+    CUTSCENE_MT_BRISTLE_PEAK, /* Explorers of Sky demake: Drowzee */
 #endif
 
     NUM_CUTSCENES

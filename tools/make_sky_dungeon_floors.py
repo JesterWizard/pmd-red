@@ -3,6 +3,8 @@
 sky build's dungeon overrides (src/sky_story.c).
 
     tools/make_sky_dungeon_floors.py EOS.nds 3 sDrenchedBluff > src/data/sky_drenched_bluff_floors.h
+    tools/make_sky_dungeon_floors.py EOS.nds 4 sMtBristle > src/data/sky_mt_bristle_floors.h
+    tools/make_sky_dungeon_floors.py EOS.nds 5 sMtBristlePeak --boss-codes 16 > src/data/sky_mt_bristle_peak_floors.h
 
 For each floor of EoS dungeon N (the dungeon list in arm9 gives its floors in
 mappa_s.bin) it writes:
@@ -20,13 +22,23 @@ mappa_s.bin) it writes:
     weights, cumulative per category out of 10000, in Red's item ids (by name,
     ITEM_EOS_TO_RED for renamed ones). EoS items Red does not have are left
     out and the rest of the category is scaled back to 10000; EoS's
-    "guaranteed" items (weight 0xFFFF) are listed apart.
+    "guaranteed" items (weight 0xFFFF) are listed apart;
+  - a fixed floor (BALANCE/fixed.bin, EoS's boss rooms) in Red's "fixedmap"
+    encoding, with its bosses' stats (overlay 10's monster spawn stats) and
+    a spawn list at the bosses' levels. --boss-codes gives the Red fixed-room
+    entity code (16 + the sFixedRoomEntities index, src/dungeon_generation_fixed.c)
+    each EoS entity plays, in EoS entity id order: 16 is Skarmory's slot
+    (Mt. Steel's boss room), 18 / 19 Gengar's / Ekans's (Team Meanies').
+    `... EOS.nds 2 sBeachCavePit --boss-codes 18,19` gives Beach Cave Pit's
+    room byte for byte as written by hand in src/sky_story.c.
 
-Everything left out or approximated is printed to stderr and written into the
-header as a comment.
+Floors are labelled 1F or B1F by EoS's stairs direction (arm9's dungeon
+restrictions). Everything left out or approximated is printed to stderr and
+written into the header as a comment.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -34,7 +46,7 @@ from pathlib import Path
 
 import ndspy.rom
 from skytemple_files.common.types.file_types import FileType
-from skytemple_files.common.util import get_ppmdu_config_for_rom
+from skytemple_files.common.util import get_binary_from_rom, get_ppmdu_config_for_rom
 from skytemple_files.hardcoded.dungeons import HardcodedDungeons
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,8 +61,23 @@ ITEM_EOS_TO_RED = {
     "Mix Elixir": None,   # EoS's look-alike items ("...?"): no Red counterpart
     "Oren Berry": None,
     "Dough Seed": None,
+    "Dropeye Seed": None,  # EoS: the map can't be seen; Red has no such status
+    "Reviser Seed": None,  # EoS-only items (Gen 4 seeds and orbs): no Red counterpart
+    "Slip Seed": None,
+    "Via Seed": None,
+    "Spurn Orb": None,
+    "All-Hit Orb": None,
+    "Foe-Seal Orb": None,
     "Poké": "ITEM_POKE",
 }
+
+# Red fixedmap codes (PlaceFixedRoomTile) for EoS's fixed-floor tile rules.
+RED_FLOOR = 60        # floor, room 0 (sFixedRoomEntities[44]: nothing on it), as in Red's boss rooms
+RED_WALL = 2          # impassable wall
+RED_PLAYER_SPAWN = 4  # gDungeon->playerSpawn (a room without one fails generation)
+RED_TEAM = [22, 23, 24, 25, 26, 27]  # team slots 1-6 (gDungeon->unkE220: leader, partner, ...)
+EOS_TILE_TO_RED = {0x00: RED_FLOOR, 0x02: RED_WALL, 0x04: RED_TEAM[0], 0x60: RED_TEAM[1],
+                   0x61: RED_TEAM[2], 0x62: RED_TEAM[3]}
 
 
 def constants(path, prefix):
@@ -65,9 +92,105 @@ def const_name(name, prefix):
     return prefix + s
 
 
+def item_name(n):
+    """EoS item names carry text markup ("[M:I1]Warp Orb"): drop it."""
+    return re.sub(r"\[[^\]]*\]", "", n)
+
+
+def encode_fixedmap(w, h, codes):
+    """Red's fixedmap room (read by sub_80511F0): width, height, flags, then
+    runs: a byte (value << 4) | (count - 1) for values 0-15, or 0x0E and the
+    value for a single tile (values 16 and up)."""
+    out = [w, h, 0]
+    i = 0
+    while i < len(codes):
+        v = codes[i]
+        if v >= 16:
+            out += [0x0E, v]
+            i += 1
+            continue
+        n = 1
+        while i + n < len(codes) and codes[i + n] == v and n < 16:
+            n += 1
+        if v == 0 and n == 15:  # 0x0E is the escape byte
+            n = 14
+        out.append((v << 4) | (n - 1))
+        i += n
+    return out
+
+
+def fixed_floor(rom, cfg, fid, boss_codes, species, note):
+    """EoS fixed floor `fid` -> (Red fixedmap bytes, [(species, EoS entity,
+    Red code, spawn stats)], the room as text rows)."""
+    from skytemple_files.dungeon_data.fixed_bin.model import EntityRule, TileRule
+    from skytemple_files.hardcoded.fixed_floor import HardcodedFixedFloorTables as Tables
+
+    fixed = FileType.FIXED_BIN.deserialize(rom.getFileByName("BALANCE/fixed.bin"), static_data=cfg)
+    ov29 = get_binary_from_rom(rom, cfg.bin_sections.overlay29)
+    ov10 = get_binary_from_rom(rom, cfg.bin_sections.overlay10)
+    ents = Tables.get_entity_spawn_table(ov29, cfg)
+    mons = Tables.get_monster_spawn_list(ov29, cfg)
+    stats = Tables.get_monster_spawn_stats_table(ov10, cfg)
+    ff = fixed.fixed_floors[fid]
+    used = sorted({a.entity_rule_id for a in ff.actions if isinstance(a, EntityRule)})
+    if len(boss_codes) != len(used):
+        raise SystemExit(f"fixed floor {fid}: {len(used)} entities {used}, --boss-codes gives {len(boss_codes)}")
+    code_of = dict(zip(used, boss_codes))
+    grid = []
+    for a in ff.actions:
+        if isinstance(a, EntityRule):
+            grid.append(code_of[a.entity_rule_id])
+        elif isinstance(a, TileRule) and a.tr_type.value in EOS_TILE_TO_RED:
+            grid.append(EOS_TILE_TO_RED[a.tr_type.value])
+        else:
+            raise SystemExit(f"fixed floor {fid}: no Red code for {a}")
+    width, height = ff.width, ff.height
+
+    def at(x, y):
+        return grid[y * width + x]
+
+    # Red's boss cutscenes put the team on the team slots and need a player
+    # spawn: the slots EoS does not give go on the floor tiles below the
+    # leader, in the column between leader and partner, as in Red's rooms.
+    cells = [(x, y) for y in range(height) for x in range(width)]
+    lead = next((p for p in cells if at(*p) == RED_TEAM[0]), None)
+    if lead is None:
+        raise SystemExit(f"fixed floor {fid}: no leader spawn")
+    part = next((p for p in cells if at(*p) == RED_TEAM[1]), lead)
+    extra = [c for c in RED_TEAM[2:] if c not in grid]
+    extra = extra[:2] + [RED_PLAYER_SPAWN] + extra[2:]
+    mx = (lead[0] + part[0]) // 2
+    spots = [(mx, y) for y in range(lead[1] + 1, height) if at(mx, y) == RED_FLOOR]
+    spots += sorted((p for p in cells if p[1] > lead[1] and at(*p) == RED_FLOOR and p not in spots),
+                    key=lambda p: (abs(p[0] - mx) + abs(p[1] - lead[1]), p[1], p[0]))
+    if len(spots) < len(extra):
+        raise SystemExit(f"fixed floor {fid}: no room below the leader for the team slots")
+    for c, (x, y) in zip(extra, spots):
+        grid[y * width + x] = c
+    bosses = []
+    for e in used:
+        m = mons[ents[e].monster_id]
+        st = stats[m.stats_entry]
+        bosses.append((species(m.md_idx % 600), e, code_of[e], st))
+        if st.exp_yield:
+            note(f"fixed floor {fid}: {species(m.md_idx % 600)} gives {st.exp_yield} EXP in EoS")
+    sym = {RED_FLOOR: ".", RED_WALL: "#", RED_PLAYER_SPAWN: "S", RED_TEAM[0]: "L", RED_TEAM[1]: "P"}
+    sym.update({c: str(k + 1) for k, c in enumerate(RED_TEAM) if k >= 2})
+    rows = ["".join(sym.get(c, "B") for c in grid[y * width:(y + 1) * width]) for y in range(height)]
+    return encode_fixedmap(width, height, grid), bosses, rows
+
+
 def main() -> int:
-    rom_path, dungeon, name = sys.argv[1], int(sys.argv[2]), sys.argv[3]
-    rom = ndspy.rom.NintendoDSRom.fromFile(rom_path)
+    ap = argparse.ArgumentParser(description="EoS dungeon floors (mappa_s.bin) as C data for src/sky_story.c")
+    ap.add_argument("rom", help="the EoS ROM")
+    ap.add_argument("dungeon", type=int, help="EoS dungeon id")
+    ap.add_argument("name", help="C name prefix, e.g. sMtBristle")
+    ap.add_argument("--boss-codes", default="",
+                    help="for a fixed floor: the Red room code of each EoS entity, e.g. 16 or 18,19")
+    args = ap.parse_args()
+    dungeon, name = args.dungeon, args.name
+    boss_codes = [int(c) for c in args.boss_codes.split(",") if c]
+    rom = ndspy.rom.NintendoDSRom.fromFile(args.rom)
     cfg = get_ppmdu_config_for_rom(rom)
     strings = FileType.STR.deserialize(rom.getFileByName("MESSAGE/text_e.str")).strings
     blocks = cfg.string_index_data.string_blocks
@@ -79,6 +202,10 @@ def main() -> int:
     mappa = FileType.MAPPA_BIN.deserialize(rom.getFileByName("BALANCE/mappa_s.bin"))
     floors = mappa.floor_lists[dlist.mappa_index][dlist.start_after:dlist.start_after + dlist.number_floors]
     dname = text("Dungeon Names (Main)", dungeon)
+    up = HardcodedDungeons.get_dungeon_restrictions(rom.arm9, cfg)[dungeon].direction.value == 1
+
+    def label(n):
+        return f"{n}F" if up else f"B{n}F"
 
     monsters = constants("include/constants/monster.h", "MONSTER_")
     monsters.update(constants("include/constants/sky_gen4.h", "MONSTER_"))
@@ -106,7 +233,7 @@ def main() -> int:
         return c
 
     def red_item(eos_id):
-        n = text("Item Names", eos_id)
+        n = item_name(text("Item Names", eos_id))
         if n in ITEM_EOS_TO_RED:
             c = ITEM_EOS_TO_RED[n]
             if c is None:
@@ -162,7 +289,7 @@ def main() -> int:
             if cum and cum != p:
                 r = 0 if t == EOS_TRIP_TRAP else t if 1 <= t < RED_TRAPS else None
                 if r is None:
-                    raise SystemExit(f"B{n}F: EoS trap {t} has no Red trap")
+                    raise SystemExit(f"{label(n)}: EoS trap {t} has no Red trap")
                 single[r] = cum - p
                 p = cum
         red = [0] * RED_TRAPS
@@ -182,7 +309,7 @@ def main() -> int:
             c, iname = red_item(eos_id)
             if cum == GUARANTEED:
                 if c is None:
-                    note(f"B{n}F: guaranteed {iname} left out")
+                    note(f"{label(n)}: guaranteed {iname} left out")
                 else:
                     guaranteed.append(c)
                 continue
@@ -196,7 +323,7 @@ def main() -> int:
             item_weights.setdefault(ec, {})
             item_weights[ec][items[c]] = item_weights[ec].get(items[c], 0) + weight
         # categories: EoS's ids are Red's (0 thrown line, 1 thrown arc, 2
-        # berries seeds vitamins, 3 food gummies, ... 6 Poké)
+        # berries seeds vitamins, 3 food gummies, ... 6 Poké, ... 9 orbs)
         red_cats = [0] * len(cat_by_id)
         cat_weights = {}
         p = 0
@@ -207,7 +334,7 @@ def main() -> int:
         cat_cum = {}
         for ec in sorted(cat_weights):
             if cat_by_id[ec] != "CATEGORY_POKE" and not item_weights.get(ec):
-                note(f"B{n}F: {cat_by_id[ec]} has no Red items, left out")
+                note(f"{label(n)}: {cat_by_id[ec]} has no Red items, left out")
                 continue
             a += cat_weights[ec]
             cat_cum[ec] = a
@@ -232,11 +359,47 @@ def main() -> int:
         tables[-1]["cats"] = red_cats
         tables[-1]["guaranteed"] = guaranteed
 
+        # a fixed floor: the room, its bosses, a spawn list at their levels
+        if lay.fixed_floor_id:
+            room, bosses, rows = fixed_floor(rom, cfg, lay.fixed_floor_id, boss_codes, species, note)
+            w(f"/* {label(n)}: EoS fixed floor {lay.fixed_floor_id} ({len(rows[0])}x{len(rows)}) in Red's fixedmap "
+              f"encoding: # wall, . floor, B boss,")
+            w(" * L leader, P partner, 3-6 the other team slots, S the player spawn.")
+            for r in rows:
+                w(f" *   {r}")
+            w(" */")
+            w(f"static const u8 {name}Room{n}[] = {{")
+            for i in range(0, len(room), 12):
+                w("    " + ", ".join(f"0x{b:02x}" for b in room[i:i + 12]) + ",")
+            w("};")
+            w("/* The bosses (overlay 10's monster spawn stats): species, Red room code, level, HP,")
+            w(" * Attack, Sp. Atk, Defense, Sp. Def. */")
+            w(f"static const struct SkyBoss {name}Bosses{n}[] = {{")
+            for c, e, code, st in bosses:
+                w(f"    {{ {c}, {code}, {st.level}, {st.hp}, {st.attack}, {st.special_attack}, "
+                  f"{st.defense}, {st.special_defense} }}, /* EoS entity {e} */")
+            w("};")
+            # the room's species spawn at the level of the floor's spawn list
+            # (GetSpawnedMonsterLevel): a list at the bosses' levels
+            w(f"static const struct SkySpawn {name}BossSpawns{n}[] = {{")
+            share = 10000 // len(bosses)
+            for k, (c, e, code, st) in enumerate(bosses):
+                w(f"    {{ {c}, {st.level}, {share if k else 10000 - share * (len(bosses) - 1)} }},")
+                listed = next((lvl for cc, lvl, _ in mons if cc == c), None)
+                if listed is not None and listed != st.level:
+                    note(f"{label(n)}: the floor's spawn list has {c} L{listed}; the room's boss is "
+                         f"L{st.level} (its spawn stats), which the GBA spawns")
+            for c, lvl, wt in mons:
+                if wt == 0:
+                    w(f"    {{ {c}, {lvl}, 0 }},")
+            w("};")
+            tables[-1]["fixed"] = len(bosses)
+
     w("")
     w(f"static const struct SkyFloor {name}Floors[{name}FloorCount] = {{")
     for n, t in enumerate(tables, 1):
         lay = t["lay"]
-        w(f"    {{ /* B{n}F: layout {lay.structure}, rooms {lay.room_density}, connectivity {lay.floor_connectivity}, "
+        w(f"    {{ /* {label(n)}: layout {lay.structure}, rooms {lay.room_density}, connectivity {lay.floor_connectivity}, "
           f"enemies {lay.initial_enemy_density}, items {lay.item_density}, traps {lay.trap_density}, "
           f"water {lay.water_density}, darkness {int(lay.darkness_level)}, weather {lay.weather}, "
           f"EoS tileset {lay.tileset_id}, music {lay.music_id}, coins {lay.max_coin_amount} */")
@@ -247,8 +410,11 @@ def main() -> int:
         w(f"        .items = {name}Items{n},")
         g = t["guaranteed"]
         if len(g) > 2:
-            raise SystemExit(f"B{n}F: {len(g)} guaranteed items (SkyFloor holds 2)")
+            raise SystemExit(f"{label(n)}: {len(g)} guaranteed items (SkyFloor holds 2)")
         w("        .guaranteed = { " + (", ".join(g) if g else "0") + " },")
+        if "fixed" in t:
+            w(f"        .room = {name}Room{n}, .bosses = {name}Bosses{n}, .bossCount = {t['fixed']},")
+            w(f"        .bossSpawns = {name}BossSpawns{n}, .bossSpawnCount = ARRAY_COUNT({name}BossSpawns{n}),")
         w("    },")
     w("};")
     if notes:

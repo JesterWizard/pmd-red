@@ -4117,6 +4117,90 @@ static const struct ScriptCommand s_script_GETOUT_M01E02A[] = { /* 0x812aa14 */
     JUMP_SCRIPT(EVENT_DIVIDE),
 };
 
+#ifdef SKY_STORY
+/* Chapter 3: Mt. Bristle (Red's Mt. Steel run, SCRIPT_DUNGEON_MT_STEEL,
+ * DUNGEON_ENTER 2) and Mt. Bristle Peak (Red's second Mt. Steel entry,
+ * SCRIPT_DUNGEON_3, DUNGEON_ENTER 3). After either run GETOUT_M01E02B (the
+ * sky version below; Red's sets SCENARIO_MAIN (4,7) / (4,8) on its own) runs:
+ * Mt. Bristle cleared -> EVENT_M01E02B_L005 (SKY_MT_BRISTLE_CLEARED_EVENT);
+ * the peak won -> EVENT_M01E02B_L008 (SKY_MT_BRISTLE_PEAK_CLEARED_EVENT);
+ * fainted, or left early (STARTMODE_10: EoS counts that as a failure too),
+ * in either -> EVENT_M01E02B_L006 (SKY_MT_BRISTLE_FAINTED_EVENT). The
+ * three are placeholders until chapter 3's scenes exist
+ * (documentation/Features/SkyChapter3.md, "Mt. Bristle"). */
+static const struct ScriptCommand s_script_SKY_MT_BRISTLE_DEBUG[] = {
+    DEBUGINFO_O(4039),
+    /* m03a0601 (d03p11a): $SCENARIO_MAIN = scn[4, 5]; main_EnterDungeon(4, 0) */
+    SCENARIO_CALC(SCENARIO_MAIN,  4,  5),
+    CMD_UNK_AF(RESCUE_DUNGEON_MT_STEEL, TRUE),
+    NEXT_DUNGEON(0, SCRIPT_DUNGEON_MT_STEEL),
+    RET,
+};
+
+static const struct ScriptCommand s_script_SKY_MT_BRISTLE_PEAK_DEBUG[] = {
+    DEBUGINFO_O(4040),
+    /* the end of m03a0801 (d03p41a): $SCENARIO_MAIN = scn[4, 6]; main_EnterDungeon(5, 30) */
+    SCENARIO_CALC(SCENARIO_MAIN,  4,  6),
+    CMD_UNK_AF(RESCUE_DUNGEON_MT_STEEL, TRUE),
+    NEXT_DUNGEON(0, SCRIPT_DUNGEON_3),
+    RET,
+};
+
+/* EoS: after 9F, m03a0801 at D03P41A (scn[4, 5]: Azurill and Drowzee; it
+ * sets scn[4, 6]) or m03a0901 (scn[4, 6]: the re-fight), each ending with
+ * Drowzee's closing speech, the boss transition and main_EnterDungeon(5, 30).
+ * On the GBA the scene stops before Drowzee's closing speech: the peak's
+ * cutscene plays it, then the transition. Placeholder: straight to the peak. */
+static const struct ScriptCommand s_script_SKY_MT_BRISTLE_CLEARED[] = {
+    DEBUGINFO_O(4041),
+    SCENARIO_CALC(SCENARIO_MAIN,  4,  6),
+    NEXT_DUNGEON(-1, SCRIPT_DUNGEON_3),
+    HALT,
+};
+
+/* EoS EVENT_M03_10_13: m03a1001 (d03p41a, Azurill saved; scn[4, 7]),
+ * m03a1002 (d03p11a, Magnezone), ... Placeholder: cleared, then the demo end. */
+static const struct ScriptCommand s_script_SKY_MT_BRISTLE_PEAK_CLEARED[] = {
+    DEBUGINFO_O(4042),
+    SET_RESCUE_CONQUERED(RESCUE_DUNGEON_MT_STEEL),
+    SCENARIO_CALC(SCENARIO_MAIN,  4,  7),
+    JUMP_SCRIPT(SKY_DEMO_END_EVENT),
+};
+
+/* EoS EVENT_M03_07A: m03a0701 (g01p03a), m03a0702 (g01p04a); then
+ * EVENT_M03_07B (back to Mt. Bristle). Placeholder: the demo end. */
+static const struct ScriptCommand s_script_SKY_MT_BRISTLE_FAINTED[] = {
+    DEBUGINFO_O(4043),
+    JUMP_SCRIPT(SKY_DEMO_END_EVENT),
+};
+
+static const struct ScriptCommand s_script_GETOUT_M01E02B[] = {
+    DEBUGINFO_O(4012),
+    CJUMP_VAR(DUNGEON_ENTER),
+    COND_EQUAL(2, /* to label */ 0),
+    COND_EQUAL(3, /* to label */ 1),
+    JUMP_LABEL(2),
+  LABEL(0), /* Mt. Bristle */
+    JUMPIF_EQUAL(SCENARIO_MAIN, 4, /* to label */ 3),
+    JUMP_LABEL(2),
+  LABEL(3),
+    JUMPIF_EQUAL(START_MODE, STARTMODE_DUNGEON_WON, /* to label */ 4),
+    JUMP_SCRIPT(SKY_MT_BRISTLE_FAINTED_EVENT),
+  LABEL(4),
+    JUMP_SCRIPT(SKY_MT_BRISTLE_CLEARED_EVENT),
+  LABEL(1), /* Mt. Bristle Peak */
+    JUMPIF_EQUAL(SCENARIO_MAIN, 4, /* to label */ 5),
+    JUMP_LABEL(2),
+  LABEL(5),
+    JUMPIF_EQUAL(START_MODE, STARTMODE_DUNGEON_WON, /* to label */ 6),
+    JUMP_SCRIPT(SKY_MT_BRISTLE_FAINTED_EVENT),
+  LABEL(6),
+    JUMP_SCRIPT(SKY_MT_BRISTLE_PEAK_CLEARED_EVENT),
+  LABEL(2),
+    JUMP_SCRIPT(EVENT_DIVIDE),
+};
+#else
+#line 4039
 static const struct ScriptCommand s_script_GETOUT_M01E02B[] = { /* 0x812ab34 */
     DEBUGINFO_O(4012),
     CJUMP_VAR(DUNGEON_ENTER),
@@ -4164,6 +4248,8 @@ static const struct ScriptCommand s_script_GETOUT_M01E02B[] = { /* 0x812ab34 */
   LABEL(3), /* = 0x03 */
     JUMP_SCRIPT(EVENT_DIVIDE),
 };
+#endif
+#line 4086
 
 static const struct ScriptCommand s_script_GETOUT_M01E03A[] = { /* 0x812ae04 */
     DEBUGINFO_O(4060),
@@ -5519,6 +5605,18 @@ const ScriptRef gFunctionScriptTable[NUM_SCRIPT_IDS] = {
     [EVENT_M01E02A_L006] =           { EVENT_M01E02A_L006,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L006"),           s_script_EVENT_M01E02A_L006           },
 #endif
 #line 5425
+#ifdef SKY_STORY
+    [EVENT_M01E02B_L001] =           { EVENT_M01E02B_L001,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L001"),           s_script_SKY_MT_BRISTLE_DEBUG         },
+    [EVENT_M01E02B_L002] =           { EVENT_M01E02B_L002,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L002"),           s_script_SKY_MT_BRISTLE_PEAK_DEBUG    },
+    [EVENT_M01E02B_L003] =           { EVENT_M01E02B_L003,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L003"),           s_script_EVENT_M01E02B_L003           },
+    [EVENT_M01E02B_L004] =           { EVENT_M01E02B_L004,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L004"),           s_script_EVENT_M01E02B_L004           },
+    [EVENT_M01E02B_L004B] =          { EVENT_M01E02B_L004B,          SCRIPT_TYPE_10, _("EVENT_M01E02B_L004B"),          s_script_EVENT_M01E02B_L004B          },
+    [EVENT_M01E02B_L005] =           { EVENT_M01E02B_L005,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L005"),           s_script_SKY_MT_BRISTLE_CLEARED       },
+    [EVENT_M01E02B_L006] =           { EVENT_M01E02B_L006,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L006"),           s_script_SKY_MT_BRISTLE_FAINTED       },
+    [EVENT_M01E02B_L007] =           { EVENT_M01E02B_L007,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L007"),           s_script_EVENT_M01E02B_L007           },
+    [EVENT_M01E02B_L008] =           { EVENT_M01E02B_L008,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L008"),           s_script_SKY_MT_BRISTLE_PEAK_CLEARED  },
+#else
+#line 5425
     [EVENT_M01E02B_L001] =           { EVENT_M01E02B_L001,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L001"),           s_script_EVENT_M01E02B_L001           },
     [EVENT_M01E02B_L002] =           { EVENT_M01E02B_L002,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L002"),           s_script_EVENT_M01E02B_L002           },
     [EVENT_M01E02B_L003] =           { EVENT_M01E02B_L003,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L003"),           s_script_EVENT_M01E02B_L003           },
@@ -5528,6 +5626,8 @@ const ScriptRef gFunctionScriptTable[NUM_SCRIPT_IDS] = {
     [EVENT_M01E02B_L006] =           { EVENT_M01E02B_L006,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L006"),           s_script_EVENT_M01E02B_L006           },
     [EVENT_M01E02B_L007] =           { EVENT_M01E02B_L007,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L007"),           s_script_EVENT_M01E02B_L007           },
     [EVENT_M01E02B_L008] =           { EVENT_M01E02B_L008,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L008"),           s_script_EVENT_M01E02B_L008           },
+#endif
+#line 5434
     [EVENT_M01E03A_L000] =           { EVENT_M01E03A_L000,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L000"),           s_script_EVENT_M01E03A_L000           },
     [EVENT_M01E03A_L001] =           { EVENT_M01E03A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L001"),           s_script_EVENT_M01E03A_L001           },
     [EVENT_M01E03A_L002] =           { EVENT_M01E03A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L002"),           s_script_EVENT_M01E03A_L002           },

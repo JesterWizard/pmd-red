@@ -653,6 +653,10 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
 Chapter 2's dungeon, **Drenched Bluff**, is played by Thunderwave Cave the
 same way, with EoS's floor layouts, traps and floor items as well (generated
 from mappa_s.bin): see [SkyChapter2.md, "Drenched Bluff"](SkyChapter2.md#drenched-bluff).
+Chapter 3's **Mt. Bristle** and its peak are played by Mt. Steel's two
+entries; the peak is EoS's fixed floor 2 in Red's Skarmory room with Drowzee
+at EoS's boss stats, its cutscene ends in the same boss battle transition:
+see [SkyChapter3.md, "Mt. Bristle"](SkyChapter3.md#mt-bristle).
 
 ### Dungeon speed
 
@@ -1269,11 +1273,18 @@ fon/cel/cex/pal/canm data as C arrays; both engines share the layout. A fixed
 floor background (`dungeon_bgN`) becomes Red's pre-drawn "emap" tileset
 (24×24 chunks over ≤249 deduplicated chunks). Output:
 `src/data/sky_beach_cave_tileset.h`, `src/data/sky_beach_cave_pit_tileset.h`,
-`src/data/sky_drenched_bluff_tileset.h` (EoS tileset 2), loaded by
-[`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c).
+`src/data/sky_drenched_bluff_tileset.h` (EoS tileset 2),
+`src/data/sky_mt_bristle_tileset.h` (EoS tileset 3),
+`src/data/sky_mt_bristle_peak_tileset.h` (`dungeon_bg1`), loaded by
+[`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c). A slot of
+palettes 10-11 EoS does not animate gets its static `dpl` colour when the
+chunks use that palette (Red reads palettes 10-11 only from the animation
+data).
 
 The sky ROM has none of Red's dungeon tilesets. Tileset id 0x2A
-(`SKY_DRENCHED_BLUFF_TILESET`, Drenched Bluff's floors) draws Drenched Bluff;
+(`SKY_DRENCHED_BLUFF_TILESET`, Drenched Bluff's floors) draws Drenched Bluff,
+0x27 (`SKY_MT_BRISTLE_TILESET`) Mt. Bristle, 0x42
+(`SKY_MT_BRISTLE_PEAK_TILESET`) the Mt. Bristle Peak background;
 every other tileset id draws Beach
 Cave (`SkyStory_LoadDungeonTileset` in `LoadDungeonTilesetAssets`): ids
 0x40 and up (Red's pre-drawn boss-room backgrounds; the Pit uses 64) get the
@@ -1925,6 +1936,8 @@ path is printed. The script exits 1 when a check fails. It builds the tools
 | `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702 | 9300 |
 | `perf` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_SEED=7` | the story to Beach Cave B1F (always the same floor); stand 120 frames, walk 60 tiles towards the farthest tile, dash 60 tiles (B held), with CPU load measured | ~22500 |
 | `bluff` | `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=8` | boot into Drenched Bluff B1F; on each floor walk to the stairs (a Pokémon in the way is attacked, a hint box gets A) and take them; after B6F the story presses | ~17000 |
+| `bristle` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=15` | as `bluff` through Mt. Bristle 1F-9F; the cleared placeholder enters the peak: the story presses through the cutscene, then walk to Drowzee and attack (a floor without stairs: the nearest wild Pokémon) until the dungeon ends | ~21500 |
+| `peak` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_PEAK_DEBUG_EVENT DEBUG_BOOT_SEED=7` | the peak fight from its debug boot with a level-1 team, as `bristle`'s peak (the team faints) | ~3700 |
 | `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
 | `opening` | plain (plays `sky`'s build) | START at 600 (the health warning), then nothing: the whole opening to the title; START there | ~7700 |
 | `skip` | plain (plays `sky`'s build) | START at 600, then START 60 frames into Bidoof's scene, then START at the title | ~4500 |
@@ -1998,6 +2011,18 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `bluff_music` | bluff | `MUS_SKY_DRENCHED_BLUFF` (944) on the BGM player on every floor |
 | `bluff_guaranteed_items` | bluff | EoS's guaranteed items lie on their floor: a Big Apple on B3F, a Max Elixir on B4F |
 | `bluff_end` | bluff | B6F's stairs end the dungeon (no B7F): `START_MODE` is `STARTMODE_DUNGEON_WON`, `DUNGEON_ENTER` 1, `SCENARIO_MAIN` 3, then the cleared event shows a message on the ground |
+| `bristle_boots` | bristle | the debug boot reaches Mt. Bristle (dungeon 2, `DUNGEON_ENTER` 2) 1F with the team under control |
+| `bristle_tileset` | bristle | on 1F-9F the BG tiles at VRAM 0x06008000 are `sMtBristleTiles`, and gDungeon holds EoS's floor properties (from `sky_mt_bristle_floors.h`, tileset 0x27, money cap rescaled) |
+| `bristle_enemies` | bristle | on every floor each wild Pokémon is one of EoS's species for that floor, at EoS's level, knowing only moves of its EoS learnset up to that level, with PP |
+| `bristle_music` | bristle | `MUS_SKY_MT_BRISTLE` (950) on the BGM player on every floor |
+| `bristle_guaranteed_items` | bristle | EoS's guaranteed item lies on its floor: a Big Apple on 5F |
+| `bristle_end` | bristle | 9F's stairs end Mt. Bristle (no 10F): `STARTMODE_DUNGEON_WON`, `DUNGEON_ENTER` 2, `SCENARIO_MAIN` 4; then the peak run starts with `DUNGEON_ENTER` 3 (`SCRIPT_DUNGEON_3`) |
+| `peak_room` | bristle | the peak's BG tiles are `sMtBristlePeakTiles`; EoS's floor properties with Red's Skarmory room (1), tileset 0x42, no random enemies; the room's walls are EoS's fixed floor 2 (24×22 at (5, 5)); the only wild Pokémon is Drowzee |
+| `peak_boss` | bristle | Drowzee L12, 100 HP, 30/30 Atk/Sp. Atk, 20/20 Def/Sp. Def (EntityInfo in gDungeon), moves Hypnosis, Pound, Disable, Confusion with PP; `gSkyBossExp` off |
+| `peak_moves_used` | bristle | Drowzee's moves are Red moves (ids below 0x1AE) and it uses one in the fight (PP drop); a team member asleep is reported |
+| `peak_transition` | bristle | In the Depths of the Pit on the peak, Drowzee's last line, then before Boss Battle! two flashes and the white-out (BLDY brighten) and the streaks (BG1/BG2 alpha blend) |
+| `peak_won` | bristle | Drowzee down ends the peak: `STARTMODE_DUNGEON_WON`, `DUNGEON_ENTER` 3, `SCENARIO_MAIN` 4 at the end of the run (GETOUT_M01E02B's peak branch), then the cleared event shows a message on the ground |
+| `peak_fainted` | peak | the fight starts at the peak (`DUNGEON_ENTER` 3); the level-1 team faints: `STARTMODE_DUNGEON_LOST`, `SCENARIO_MAIN` 4, then the fainted event shows a message on the ground |
 | `jukebox_no_stop_bgm` | sky | no track in `src/data/sky_jukebox_data.h` is song 999 (STOP_BGM) |
 | `jukebox_tracks_play` | sky | each of the 141 tracks: the BGM player plays the track's song and the audio peak is ≥ 256 (track 68 "Dialga's Fight to the Finish!" included) |
 | `jukebox_window_top` | sky | the list window's top frame highlight is at y ≥ 3, with the fill under it |
@@ -2080,6 +2105,11 @@ make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
   Drenched Bluff at scenario (3,3) (see
   [SkyChapter2.md](SkyChapter2.md#debug-boot)); with `DEBUG_BOOT_LEVEL=8` the
   team survives it, with `DEBUG_BOOT_FLOOR=6` it starts on the last floor.
+- `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT` / `SKY_MT_BRISTLE_PEAK_DEBUG_EVENT`:
+  straight into chapter 3's Mt. Bristle at scenario (4,5), or into the peak's
+  Drowzee fight at (4,6) (see
+  [SkyChapter3.md](SkyChapter3.md#debug-boot)); with `DEBUG_BOOT_LEVEL=15`
+  the team clears Mt. Bristle and beats Drowzee.
 
 Then drive it with `mgba_shot` (A every 60 frames reaches the dungeon at about
 frame 15000):
@@ -2116,6 +2146,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |
 | Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |
 | Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
+| Mt. Bristle and its peak (chapter 3: floors, the boss room, Drowzee, the peak's cutscene, end and faint events) | [`src/sky_story.c`](../../src/sky_story.c), [`src/data/sky_mt_bristle_floors.h`](../../src/data/sky_mt_bristle_floors.h), [`src/data/sky_mt_bristle_peak_floors.h`](../../src/data/sky_mt_bristle_peak_floors.h) ([`tools/make_sky_dungeon_floors.py`](../../tools/make_sky_dungeon_floors.py)), [`src/dungeon_cutscene_mt_bristle.c`](../../src/dungeon_cutscene_mt_bristle.c), [`src/code_80A26CC.c`](../../src/code_80A26CC.c) (`SCRIPT_DUNGEON_3` runs a dungeon), the `SKY_MT_BRISTLE_*` scripts and the sky `GETOUT_M01E02B` in [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h); [SkyChapter3.md](SkyChapter3.md#mt-bristle) |
 | Drenched Bluff (chapter 2: floors, spawns, traps, items, music, end and faint events) | [`src/sky_story.c`](../../src/sky_story.c), [`src/data/sky_drenched_bluff_floors.h`](../../src/data/sky_drenched_bluff_floors.h) ([`tools/make_sky_dungeon_floors.py`](../../tools/make_sky_dungeon_floors.py)), [`src/dungeon_items.c`](../../src/dungeon_items.c) (guaranteed items), the `SKY_DRENCHED_BLUFF_*` scripts in [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h); [SkyChapter2.md](SkyChapter2.md#drenched-bluff) |
 | Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c), [`src/unk_dungeon_load_maybe.c`](../../src/unk_dungeon_load_maybe.c) |
 | Sky dungeon archive (no Red tilesets / talk files) | [`tools/make_sky_dungeon_archive.py`](../../tools/make_sky_dungeon_archive.py) (run by the [`Makefile`](../../Makefile) for `STORY=sky`) |

@@ -65,7 +65,15 @@ u8 SkyStory_RemapDataFloor(u8 dungeonId, u8 floor);
  * 3): EoS's six floors, wild Pokémon, traps and floor items from mappa_s.bin
  * (src/data/sky_drenched_bluff_floors.h), EoS's tileset and music. */
 bool8 SkyStory_IsDrenchedBluff(u8 dungeonId);
-s32 SkyStory_GetDrenchedBluffFloorCount(void);
+/* Chapter 3: Mt. Steel plays Mt. Bristle (EoS dungeon 4, nine floors) on the
+ * run entered through SCRIPT_DUNGEON_MT_STEEL, and Mt. Bristle Peak (EoS
+ * dungeon 5, Drowzee's fixed floor) on the run entered through
+ * SCRIPT_DUNGEON_3 (documentation/Features/SkyChapter3.md, "Mt. Bristle"). */
+bool8 SkyStory_IsMtBristle(u8 dungeonId);
+bool8 SkyStory_IsMtBristlePeakRun(void);
+/* GetDungeonFloorCount for a dungeon that plays an EoS dungeon (floors + 1),
+ * 0 for any other. */
+s32 SkyStory_GetEosFloorCount(u8 dungeonId);
 /* Called after the floor's item lists are loaded (SetFloorItemMonsterSpawns). */
 void SkyStory_ApplyFloorItemOverrides(void);
 /* Floor item placement: EoS's guaranteed items take the first normal spots. */
@@ -83,10 +91,18 @@ void SkyStory_PatchFixedMap(struct OpenedFile *file);
  * logic (water terrain, Rock camouflage, Nature Power: Rock Slide, as EoS's
  * tileset 2). */
 #define SKY_DRENCHED_BLUFF_TILESET 0x2A
+/* Mt. Bristle draws EoS tileset 3 on Red's Mt. Steel tileset id 0x27 (Rock
+ * camouflage, Nature Power: Rock Slide, no water, as EoS's tileset 3); the
+ * peak draws EoS's fixed-floor background 1 (tileset 171) on Red's
+ * pre-drawn-background id 0x42 (Rock, Rock Slide, as EoS's 171). */
+#define SKY_MT_BRISTLE_TILESET 0x27
+#define SKY_MT_BRISTLE_PEAK_TILESET 0x42
 void SkyStory_LoadDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, u16 (*cel)[9], u8 *cex);
 void SkyStory_LoadGroundDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, void *tiles, void *cel, u8 *cex);
 bool8 SkyStory_IsSkyTilesetFile(const struct OpenedFile *file);
 void SkyStory_RelocateGridTiles(s32 firstFree);
+/* The pre-drawn background chunk of tile (x, y) (sub_80498A8). */
+u8 SkyStory_BackgroundChunk(const u8 *emap, s32 x, s32 y);
 /* Fixed-room spawn remap: Gengar/Ekans -> Zubat/Koffing; Medicham dropped. */
 s16 SkyStory_RemapFixedRoomSpecies(s16 species);
 struct Entity;
@@ -122,6 +138,7 @@ extern u8 gSkyBossExp;
 #define MUS_SKY_FIRE_CRACKLING              71 /* EoS BGM_FIRE_CRACKLING_LOUDER (bgm0116): the guild's torches */
 /* Sky Jukebox range (src/data/sky_jukebox_data.h, SKY_JUKEBOX_FIRST_SONG). */
 #define MUS_SKY_DRENCHED_BLUFF              944 /* EoS BGM_DRENCHED_BLUFF (bgm 22, dungeon music 2) */
+#define MUS_SKY_MT_BRISTLE                  950 /* EoS BGM_MT_BRISTLE (bgm 23, dungeon music 3) */
 
 /* EoS scene sound effects with no Red equivalent (song table slots that are
  * empty in Red; tools/eos_music/sky_red_se_map.py). */
@@ -247,6 +264,21 @@ void GroundMap_SkyRestartPaletteAnims(void);
 #define SKY_DRENCHED_BLUFF_DEBUG_EVENT   EVENT_M01E02A_L002
 #define SKY_DRENCHED_BLUFF_FAINTED_EVENT EVENT_M01E02A_L004
 #define SKY_DRENCHED_BLUFF_CLEARED_EVENT EVENT_M01E02A_L006
+/* Chapter 3, Mt. Bristle and its peak (Red's Mt. Steel slots, see
+ * documentation/Features/SkyChapter3.md, "Mt. Bristle"): after either run
+ * GETOUT_M01E02B (sky version) runs, by DUNGEON_ENTER: Mt. Bristle cleared
+ * (2, STARTMODE_DUNGEON_WON) -> SKY_MT_BRISTLE_CLEARED_EVENT (m03a0801 /
+ * m03a0901, then the peak: NEXT_DUNGEON SCRIPT_DUNGEON_3); the peak won (3)
+ * -> SKY_MT_BRISTLE_PEAK_CLEARED_EVENT (m03a1001); fainted or left early in
+ * either -> SKY_MT_BRISTLE_FAINTED_EVENT (EVENT_M03_07A). The debug events
+ * enter Mt. Bristle at scenario (4,5) (m03a0601) or the peak at (4,6)
+ * (m03a0801): make DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT or
+ * SKY_MT_BRISTLE_PEAK_DEBUG_EVENT. */
+#define SKY_MT_BRISTLE_DEBUG_EVENT          EVENT_M01E02B_L001
+#define SKY_MT_BRISTLE_PEAK_DEBUG_EVENT     EVENT_M01E02B_L002
+#define SKY_MT_BRISTLE_CLEARED_EVENT        EVENT_M01E02B_L005
+#define SKY_MT_BRISTLE_FAINTED_EVENT        EVENT_M01E02B_L006
+#define SKY_MT_BRISTLE_PEAK_CLEARED_EVENT   EVENT_M01E02B_L008
 bool8 SkyStory_SaveGame(void);
 void SkyStory_DemoToTitle(void);
 void SkyBubbles_DrawCutaway(void);
@@ -256,6 +288,13 @@ bool8 SkyStory_TrySetBeachCavePitCutscene(void);
 void SkyStory_BeachCavePitSetup(void);
 void SkyStory_BeachCavePitPreFightDialogue(void);
 void SkyStory_HandleBeachCavePitBossFaint(u8 monsterBehavior);
+/* Mt. Bristle Peak (src/dungeon_cutscene_mt_bristle.c): Drowzee's closing
+ * lines, the boss battle transition, Boss Battle!; the dungeon is won once
+ * Drowzee is down. */
+bool8 SkyStory_TrySetMtBristlePeakCutscene(void);
+void SkyStory_MtBristlePeakSetup(void);
+void SkyStory_MtBristlePeakPreFightDialogue(void);
+void SkyStory_HandleMtBristlePeakBossFaint(u8 monsterBehavior);
 #endif
 
 #endif /* GUARD_SKY_STORY_H */
