@@ -77,6 +77,135 @@ Ground objects: `g01p05a1`, `g01p06b1`, `d02p31a1` (the pearl?) as
 `BGM_FIRE_CRACKLING_LOUDER`, `BGM_IN_THE_DEPTHS_OF_THE_PIT`) are already
 converted in the Sky Jukebox range; the story uses them as `MUS_SKY_*` ids.
 
+## Maps and CGs (piece 1: done)
+
+### Ground maps
+
+Converted with `tools/convert_eos_ground_map.py EOS.nds LEVEL STEM` and
+registered like chapter 1's (SkyDemake.md, [EoS maps](SkyDemake.md#eos-maps)).
+Every one renders pixel-identical to skytemple's render of the EoS level
+(`--compare`, BPA frame 0) and was looked at in the emulator over a 3x3 grid
+of camera views (each view equal to the render, animated tiles aside).
+"Tiles" is the map's tile pool (+ animated BPA tiles in their VRAM slots);
+"view" is the most distinct tiles one screen of a streamed map needs (the
+VRAM pool is 1023).
+
+| Map id | Files | EoS level | Tiles | Animation | Collision |
+|---|---|---|---|---|---|
+| `MAP_SKY_GUILD_ENTRANCE` | `EG0101B` | g01p01b | 878 + 78 (VRAM) | torches (BPA) | EoS's |
+| `MAP_SKY_GUILD_1F` | `EG0102A` | g01p02a | 752 (VRAM) | none in EoS | EoS's |
+| `MAP_SKY_GUILD_B1F` | `EG0103A` | g01p03a | 1984 (streamed, view 854) | none in EoS | EoS's |
+| `MAP_SKY_GUILD_B2F` | `EG0104A` | g01p04a | 1982 (streamed, view 680) | none in EoS | EoS's |
+| `MAP_SKY_GUILD_B2F_DOOR` | `EG0104A`, `EG0104Ac`, `EG0104A2m` | g01p04a2 | 1982 (streamed, view 686) | none in EoS | EoS's |
+| `MAP_SKY_GUILD_B2F_NIGHT` | `EG0104C` | g01p04c | 1982 (streamed, view 680) | none in EoS | EoS's |
+| `MAP_SKY_GUILD_WIGGLYTUFF` | `EG0105A` | g01p05a | 734 + 24 (VRAM) | BPA kept | EoS's |
+| `MAP_SKY_GUILD_WIGGLYTUFF_NIGHT` | `EG0105C` | g01p05c | 734 + 24 (VRAM) | braziers (BPA) kept | EoS's |
+| `MAP_SKY_GUILD_MESS_HALL` | `EG0106B` | g01p06b | 1336 (streamed, view 752) | BPA: frame 0 baked | EoS's |
+| `MAP_SKY_GUILD_CREW_ROOM` | `EG0107A` | g01p07a | 763 (VRAM, one layer) | none in EoS | EoS's |
+| `MAP_SKY_GUILD_CREW_ROOM_NIGHT` | `EG0107C`, `EG0107Ac`, `EG0107Am` | g01p07c | 763 (VRAM, one layer) | palette animation left out | EoS's |
+| `MAP_SKY_DRENCHED_BLUFF_ENTRANCE` | `ED0211A` | d02p11a | 1268 (streamed, view 646) | none in EoS | none (EoS has none) |
+| `MAP_SKY_DRENCHED_BLUFF_END` | `ED0231A` | d02p31a | 2313 (streamed, view 971) | BPA: frame 0 baked | none (EoS has none) |
+
+- **Shared files, as EoS shares them.** g01p01b and chapter 1's g01p01b2
+  are two BMAs over one BPC, BPL and BPA: `EG0101B` (bpl, c.bpc, 1.bpa,
+  m.bma) is g01p01b, and `MAP_SKY_GUILD_DUSK` now takes its BMA from
+  `EG0101B2m` (chapter 1's gate-closed BMA, renamed; same bytes). g01p04a2
+  is g01p04a's BPC and BPL with its own BMA (`EG0104A2m`: the door, 6
+  chunks, 14 collision tiles). g01p07c is g01p07a's BPC and BMA with its own
+  BPL (`EG0107C.bpl`). g01p04c and g01p05c have their own BPCs in EoS (26 and
+  2 tiles differ from the day maps) and BMAs whose collision differs, so they
+  are separate files.
+- **Dropped.** The mess hall's and the bluff end's BPA animations (streamed
+  maps have no animated slots; frame 0 is baked in). g01p07c's BPL has a
+  32-step palette animation at 1 frame a step (dark, then brighter than the
+  base, then back): played as a loop, as the engine plays map palette
+  animations, it strobes the room every half second (seen in the emulator),
+  and no chapter-2 script starts or stops it, so the room is converted with
+  `--no-palette-animation` (the base palettes; colours otherwise identical).
+- **The bluff end** needs 2313 tiles with flips baked (EoS: 1339), past the
+  streamer's old 2048. The sky build now allocates the streamer's
+  source-to-slot table from the heap (2 bytes a tile, while a map streams)
+  instead of a static 2048-entry table in EWRAM (4 KB of EWRAM freed), and
+  takes up to 4096 tiles. One screen of it needs up to 971 of the 1023 VRAM
+  slots; after a camera jump the slot allocator used to scan the whole pool
+  for every tile (a second of lag per `SKY_CAMERA_SET`); now, once a remap
+  has found no aged slot, it takes the next unstamped one
+  (`sNoAgedSlotClock`, sky build only). A jump costs 1-2 frames.
+- **No collision** in EoS's d02p11a / d02p31a (cutscene maps), so none here.
+
+### Station: gs180
+
+`gMapScriptTable` points every chapter-2 map at **gs180** (Red's Thunderwave
+Cave entrance, `src/data/ground/sky/ground_data_d02p01_station.h`, which the
+sky build did not use). Its scenes are
+[`events/sky/scenes/sky_d02p01_scenes.scene`](../../events/sky/scenes/sky_d02p01_scenes.scene):
+for now one placeholder group (group 0, an `ENTER_CONTROL` station that
+selects `MAP_SKY_GUILD_B2F`), so `SELECT_MAP` of any chapter-2 map works.
+The scenes piece replaces it. `MAP_THUNDERWAVE_CAVE_ENTRY` itself keeps no
+script in the sky build.
+
+### Objects EoS places (for the sprites piece)
+
+From each level's `SCRIPT/<LEVEL>/enter.sse`, layer 0 (always on the map);
+positions in tiles, as the scene files write them. `NULL_6` objects are
+invisible: a hitbox the player talks to (a sign or a board), with the
+`enterNN.ssb` script it runs. No sprites to convert for those.
+
+| Level | Object | Position | Hitbox | What |
+|---|---|---|---|---|
+| g01p01b | `t01p01a1_174` | (18, 22.5) | 2x1 | totem pole (chapter 1's `SKY_OBJ_TOTEM_POLE_1`) |
+| g01p01b | `t01p01a3_176` | (42, 22.5) | 2x1 | totem pole (`SKY_OBJ_TOTEM_POLE_2`) |
+| g01p02a | `NULL_6` | (19.5, 24.5) | 5x1 | sign: "Ten Rules for Exploration Teams" (enter07) |
+| g01p02a | `NULL_6` | (33.5, 24.5) | 5x1 | sign: "Welcome! Wigglytuff's Guild!" (enter08) |
+| g01p03a | `NULL_6` | (31.5, 22.5) | 5x5 | bulletin board (enter11) |
+| g01p03a | `NULL_6` | (55.5, 22.5) | 5x5 | bulletin board (enter12) |
+| g01p03a | `NULL_6` | (22.5, 31.5) | 5x1 | the guild's notice board, `MENU_GUILD_F_A_Q_BOARD` (enter13) |
+| g01p04a | `NULL_6` | (4.5, 32.5) | 5x1 | sign: "← Mess Hall" (enter24) |
+| g01p04a | `NULL_6` | (76.5, 32.5) | 5x1 | sign: "Crew Rooms →" (enter25) |
+| g01p07a | `NULL_6` | (7.5, 21.5) | 5x1 | sign: "GET UP ALREADY! -Loudred" (enter07) |
+
+g01p04c, g01p05a, g01p05c, g01p06b, g01p07c, d02p11a and d02p31a place no
+objects (g01p04a2 has no enter.sse). enter.sse also has the exits (event
+triggers: g01p02a (21, 31) 9x2 and (24, 20) 3x2; g01p03a (40, 14) 3x2 and
+(44, 21) 4x1; g01p04a (39, 11) 3x2, (0, 31) 2x7, (50, 21) 5x2, (79, 31) 2x7;
+g01p05a (18, 43) 15x2; g01p07a (0, 19) 2x7, and (24, 21) 3x3 on layer 5: the
+beds) and, on g01p04a, Croagunk (`NPC_GUREGGURU`, layer 99, (28.5, 27.5),
+script 5) and Chatot / Loudred (layer 10, (21, 11.5)).
+
+Objects the chapter's scenes place (their `.ssa`, not enter.sse):
+`g01p01a3_95` (g01p01b (30, 18), m02a0105: animations 9 and 17, the gate),
+`g01p05a1_106` (g01p05a (25.5, 27.5), m02a0110: the Exploration Team Kit's
+box, animation 18), `g01p06b1_107` (g01p06b (32, 26.5), c00a0601),
+`d02p31a1_17` (d02p31a (30, 23), m02a0801).
+
+### Story CGs
+
+Rendered with skytemple and cropped to 240x160 by
+[`tools/make_sky_cutaways.py`](../../tools/make_sky_cutaways.py) (`EOS.nds`),
+in [`events/sky/cutaways.cfg`](../../events/sky/cutaways.cfg); each was
+looked at in the emulator (`SKY_CUTAWAY`).
+
+| CG | Id | EoS level | Script | Crop centre (px) |
+|---|---|---|---|---|
+| `GUILD_SKY` (chapter 1's) | 4 | v02p01a | m02a0101, m02a0105, m02d0112 | |
+| `GUILD_GATE` | 15 | v01p08b | m02a0101 | (128, 204) |
+| `SENTRY_GRATE` | 16 | v02p02a | m02a0101 | (156, 140): camera2 m2 (19.5, 17.5) |
+| `SENTRY_POST` | 17 | v02p03a | m02a0104 | (128, 508) |
+| `NIGHT_SKY` | 18 | v02p06a | m02a0113, m02a1003 | (156, 124): camera2 m0 (19.5, 15.5) |
+| `EXPLORATION_KIT` | 19 | v02p08a | m02a0110 | (128, 108): performer 0 of layer 2 |
+
+v02p02a and v02p06a are top-screen pictures (`back2_SetGround`). v01p08b,
+v02p03a and v02p08a are main-screen levels (`back_SetGround`, the camera on
+performer 0). v01p08b and v02p03a are tall pictures EoS shows over both
+screens (`back2_SetMode(5)`, used only by these two scripts), so their crop
+sits above the bottom screen's centre: the gate at the seam (Wigglytuff's
+face over the bars; the camera ends at (128, 300) after rising 32 px); the
+sentry post 48 px up, so the floor Diglett stands on (y 548) shows under the
+shaft. EoS plays m02a0104 *on* v02p03a: the camera pans 256 px down the shaft
+(from (128, 300) to m0 (16, 69.5)) and Diglett is an actor there. As a CG
+the GBA shows the pan's end without him; if the scene needs him, v02p03a can
+be converted as a ground map instead (33x87 tiles).
+
 ## Pieces
 
 1. Maps and CGs.

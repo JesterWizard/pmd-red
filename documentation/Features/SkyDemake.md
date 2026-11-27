@@ -48,7 +48,8 @@ Red's story after chapter 1 is not in the sky build: only the ground maps the
 demo visits keep their scripts and map files (Tiny Woods entrance/end, which
 host the Sky scenes, the personality test, the two logo maps and the Sky
 maps; found by tracing a full playthrough). The other 130 station script
-files compile to nothing under `SKY_STORY`, their `gMapScriptTable` entries
+files compile to nothing under `SKY_STORY` (but d02p01, gs180, which became
+chapter 2's station: [SkyChapter2.md](SkyChapter2.md#station-gs180)), their `gMapScriptTable` entries
 are empty (`GetGroundScript` returns the null script) and their map files
 are not linked (their names in the sorted ground file table point at a kept
 file). This saves about 3.7 MB. The vanilla build keeps everything.
@@ -475,7 +476,7 @@ closed under `SKY_STORY` (the vanilla code is unchanged):
   thank-you messages, Wigglytuff's shop, buying Friend Areas and picking a
   Friend Area (`0x16`) are compiled out, so a script asking for one gets no
   menu. The scripts the sky build links (`ground_event_data`, the d01p01 /
-  d01p02 / s01 / s04 / s05 stations; checked in the preprocessed `.i`
+  d01p02 / s01 / s04 / s05 stations, and chapter 2's d02p01 placeholder; checked in the preprocessed `.i`
   files) only ask for Save, Storage, the scripting menu, the personality
   quiz and kind `0x29`; code asks for the ground menu, naming, yes/no boxes,
   the dungeon / Dojo list and the custom debug menu.
@@ -525,29 +526,54 @@ The EoS ROM is never committed. Only the converted map files are:
 |---|---|---|---|
 | `MAP_SKY_STORM_SEA` | `EV0101A` | `v01p01a` | 613 (VRAM) |
 | `MAP_SKY_BEACH_DAY` | `ED0111A` | `d01p11a` | 1651 (streamed) |
-| `MAP_SKY_GUILD_DUSK` | `EG0101B` | `g01p01b2` (gate closed) | 952 (VRAM) |
+| `MAP_SKY_GUILD_DUSK` | `EG0101B` + `EG0101B2m` | `g01p01b2` (gate closed) | 878 + 78 animated (VRAM) |
 | `MAP_SKY_KRABBY_BUBBLES` | `EV0104B` | `v01p04b` | 1067 (streamed) |
 | `MAP_SKY_KRABBY_SUNSET` | `EV0105B` | `v01p05b` | 1080 (streamed) |
 | `MAP_SKY_BEACH_DUSK` | `ED0111B` | `d01p11b` | 1767 (streamed) |
 | `MAP_SKY_BEACH_CAVE_PIT` | `ED0141A` | `d01p41a` | 1503 (streamed) |
 | `MAP_SKY_STORM_WAVES` | `EV0107B` | `v01p07b` | 546 + 240 animated (VRAM) |
+| `MAP_SKY_GUILD_ENTRANCE` | `EG0101B` | `g01p01b` (gate open) | 878 + 78 animated (VRAM) |
+| `MAP_SKY_GUILD_1F` | `EG0102A` | `g01p02a` | 752 (VRAM) |
+| `MAP_SKY_GUILD_B1F` | `EG0103A` | `g01p03a` | 1984 (streamed) |
+| `MAP_SKY_GUILD_B2F` | `EG0104A` | `g01p04a` | 1982 (streamed) |
+| `MAP_SKY_GUILD_B2F_DOOR` | `EG0104A` + `EG0104A2m` | `g01p04a2` | 1982 (streamed) |
+| `MAP_SKY_GUILD_B2F_NIGHT` | `EG0104C` | `g01p04c` | 1982 (streamed) |
+| `MAP_SKY_GUILD_WIGGLYTUFF` | `EG0105A` | `g01p05a` | 734 + 24 animated (VRAM) |
+| `MAP_SKY_GUILD_WIGGLYTUFF_NIGHT` | `EG0105C` | `g01p05c` | 734 + 24 animated (VRAM) |
+| `MAP_SKY_GUILD_MESS_HALL` | `EG0106B` | `g01p06b` | 1336 (streamed) |
+| `MAP_SKY_GUILD_CREW_ROOM` | `EG0107A` | `g01p07a` | 763 (VRAM, one layer) |
+| `MAP_SKY_GUILD_CREW_ROOM_NIGHT` | `EG0107C` + `EG0107A`'s BPC, BMA | `g01p07c` | 763 (VRAM, one layer) |
+| `MAP_SKY_DRENCHED_BLUFF_ENTRANCE` | `ED0211A` | `d02p11a` | 1268 (streamed) |
+| `MAP_SKY_DRENCHED_BLUFF_END` | `ED0231A` | `d02p31a` | 2313 (streamed) |
+
+The chapter-2 maps (from `MAP_SKY_GUILD_ENTRANCE`) and what was left out of
+them: [SkyChapter2.md](SkyChapter2.md#ground-maps). Where EoS has two levels
+over one BPC (g01p01b / g01p01b2, g01p04a / g01p04a2, g01p07a / g01p07c),
+the demake shares the files the same way: a `<STEM>2m` BMA, or one map's
+BPC and BMA under another's BPL (`gMapFilesTable` names each file).
 
 Converter: [`tools/convert_eos_ground_map.py`](../../tools/convert_eos_ground_map.py)
 
 ```bash
 tools/convert_eos_ground_map.py EOS.nds d01p11b ED0111B --render check.png
+tools/convert_eos_ground_map.py EOS.nds g01p04a2 EG0104A --bma EG0104A2 --compare   # files already written
 ```
 
 - Lossless: EoS and RT share 4bpp tiles, 3×3-tile chunks and 16-colour
   palettes, so tiles, palettes and chunk layouts are copied, not re-quantized.
-  `--render` draws the written RT files back to a PNG; for all seven maps it is
-  pixel-identical to skytemple's render of the EoS original.
+  `--render` draws the written RT files back to a PNG; `--compare` compares
+  them (BPA frame 0) with skytemple's render of the EoS level: every map
+  except the hand-built `EV0107B` is pixel-identical. The regression check
+  `sky_map_files` keeps each render's sha1.
 - Both EoS layers become the RT dual-layer map (EoS upper layer → RT layer 0,
-  in front of sprites). Frame 0 of BPA tile animations is baked in; palette
-  and tile animations are dropped.
+  in front of sprites). On maps that fit VRAM, palette animations and up to
+  two animated BPAs are kept (`--no-palette-animation` leaves the palette
+  animation out); streamed maps bake BPA frame 0.
 - Maps over the VRAM tile budget (1024 dual-layer, 896 single-layer) are
   streamed by `src/ground_bg_tile_stream.c`, which has no tile-flip bits, so
-  the converter bakes flipped tiles for those.
+  the converter bakes flipped tiles for those. In the sky build a streamed map
+  can have up to 4096 tiles (the source-to-slot table comes from the heap
+  while it streams), and one screen of it must fit the 1023 VRAM slots.
 - Collision comes from the EoS BMA.
 - New BPCs stay uncompressed in ROM (streamed like the café's);
   `compress_ground_assets.py` skips `E*.bpc`.
@@ -574,7 +600,8 @@ block is inserted under `#ifdef SKY_STORY` and later indices shift by
 
 `SELECT_MAP` also selects the script file of the map in `gMapScriptTable`, so
 each EoS map points at the station file whose groups use it (gs178 for the
-beach, guild and storm scenes, gs179 for Beach Cave Pit).
+beach, guild and storm scenes, gs179 for Beach Cave Pit, gs180 for every
+chapter-2 map: [SkyChapter2.md](SkyChapter2.md#station-gs180)).
 
 ---
 
@@ -1909,6 +1936,7 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `vanilla_sha1` | — | STORY=vanilla byte-identical |
 | `smoke_boot` | sky | `smoke_test.sh` on the sky ROM |
 | `event_editor_tests` | tools | `tools/event_editor/test_event_editor.py`: the scene files read back unchanged (also through the editor's JSON), keep their debug lines, compile; the CG and opening settings as shipped give the shipped tables; CG ids stay put; re-aiming an opening scene by nothing rebuilds its blob's frames exactly |
+| `sky_map_files` | tools | every `MAP_SKY_*` map (`scripts/cloud/sky_regression/checks/maps.py`): a `gMapScriptTable` entry; its files in `ground_map_files_sky.c` and `gGroundFiles`; VRAM maps within their slots (animated tiles included), streamed maps ≤ 4096 tiles with every screen's tiles ≤ the VRAM slots; the render (`render_rt_image`) has the sha1 recorded when it was found identical to EoS's |
 | `pan_beach_handoff`, `pan_guild_handoff` | divide | from 20 frames before the cover (`gSkyCoverActive`) to 20 frames after it: OBJ layer on and the actors' sprite pixels ≥ 50% of their count before the cover (no blink); the best-matching shift between consecutive frames ≤ 2 px (no jump) |
 | `dialogue_box_frame` | divide | every ground box: the Sky frame's colours (top, bottom, sides) and the (33,33,33) fill |
 | `dialogue_wrap_opening`, `dialogue_wrap_aftermath` | divide, after | every box: no glyph pixels in the fill's last columns (x 223–224) |

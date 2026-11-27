@@ -144,7 +144,7 @@ class CutawaysFile(unittest.TestCase):
 
     def test_shipped(self):
         h = self.header(cutaways.CFG.read_text())
-        for line in ("#define SKY_CG_COUNT 15", "#define SKY_CG_PANS_AS_SHIPPED 1", "#define SKY_CG_FADE_FRAMES_PER_STEP 1",
+        for line in ("#define SKY_CG_COUNT 20", "#define SKY_CG_PANS_AS_SHIPPED 1", "#define SKY_CG_FADE_FRAMES_PER_STEP 1",
                      "#define SKY_CG_SKIP_AFTER 30", "#define SKY_CG_SEA_FRAMES 8", "#define SKY_CG_PAN_BEACH_NUM 3",
                      "#define SKY_CG_PAN_BEACH_DEN 5", "[SKY_CUTAWAY_GUILD_SKY] = { sGuildSkyGfx, sGuildSkyPal },",
                      "[SKY_CUTAWAY_SUNSET_SEA0 + 7] = { sSunsetSea7Gfx, sSunsetSea7Pal },"):
@@ -161,10 +161,10 @@ class CutawaysFile(unittest.TestCase):
                         "\n[cg NEW2]\nid = 15\npicture = graphics/custom/sky_cutaways/sky_day.png\n")
         # a removed CG leaves a hole; an added one keeps its id
         text = re.sub(r"\[cg SKY_DUSK\]\n(.*\n)*?\n", "", base, count=1)
-        h = self.header(text + "\n[cg NEW]\nid = 16\npicture = graphics/custom/sky_cutaways/sky_day.png\n")
+        h = self.header(text + "\n[cg NEW]\nid = 20\npicture = graphics/custom/sky_cutaways/sky_day.png\n")
         self.assertNotIn("SKY_CUTAWAY_SKY_DUSK]", h)
-        self.assertIn("[16] = { sNewGfx, sNewPal },", h)
-        self.assertIn("#define SKY_CG_COUNT 17", h)
+        self.assertIn("[20] = { sNewGfx, sNewPal },", h)
+        self.assertIn("#define SKY_CG_COUNT 21", h)
 
     def test_pan_settings(self):
         text = cutaways.CFG.read_text().replace("direction = down\nspeed = 100", "direction = up\nspeed = 150", 1)

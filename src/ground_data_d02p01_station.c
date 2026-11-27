@@ -1,5 +1,5 @@
-/* Red's story: not in the sky build (the demo ends after chapter 1). */
-#ifndef SKY_STORY
+/* Red's Thunderwave Cave entrance (gs180). The sky build reuses the slot for
+ * chapter 2's station (src/data/ground/sky/ground_data_d02p01_station.h). */
 #include "global.h"
 #include "data_script.h"
 
@@ -7,4 +7,3 @@
 
 #include "globaldata.h"
 #include "ground_data_d02p01_station.h"
-#endif
