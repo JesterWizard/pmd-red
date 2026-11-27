@@ -32,7 +32,7 @@ TOOL = os.path.join(ROOT, "build", "tools", "mgba_rpc")
 # Test ROMs: make variables, the input driver and how many frames to play.
 # "sky" (the plain build) is built last so pmd_red.gba is the normal ROM again.
 ROMS = {
-    "divide": dict(vars=["DEBUG_BOOT_EVENT=EVENT_DIVIDE"], driver=drivers.divide, frames=21000,
+    "divide": dict(vars=["DEBUG_BOOT_EVENT=EVENT_DIVIDE"], driver=drivers.divide, frames=23000,
                    what="chapter 1 from the storm to Beach Cave B1F"),
     "pit": dict(vars=["DEBUG_BOOT_EVENT=EVENT_DIVIDE", "DEBUG_BOOT_FLOOR=5"], driver=drivers.pit,
                 frames=21000, what="chapter 1, then Beach Cave Pit (B5F) and the boss fight"),
