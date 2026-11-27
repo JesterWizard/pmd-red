@@ -21,6 +21,11 @@ Used by tools/make_sky_opening.py. Per scene (make_sky_opening.SCENES):
   * The GBA shows 240x160 of the DS's 256x384: a view per frame, from the
     scene's keyframes, in "canvas" pixels (the top screen over the bottom
     one).
+  * A frame in which EoS shows nothing but white in that view (a white-out
+    that is complete) is marked: the GBA shows white, all of it.
+
+Lapras's scene is not stitched from pictures: its layers are EoS's map
+itself and its sprites are completed (tools/sky_opening_map.py).
 """
 from __future__ import annotations
 
@@ -468,52 +473,6 @@ def segment_versions(idx_images, cams, thresh=0.03, max_versions=1):
     return version
 
 
-def register_rows(images, skip=()):
-    """Vertical camera only, from each frame's row profile (the mean colour of
-    every row): for a layer whose bands slide sideways at their own speeds
-    (Lapras's sky and sea), only the rows' order tells where it is."""
-    n = len(images)
-    prof = []
-    for img in images:
-        ch = chan(img).astype(np.float64)
-        known = (img != 0).sum(1)
-        p = ch.sum(1) / np.maximum(known, 1)[:, None]
-        p[known < 64] = np.nan
-        prof.append(p)
-    # each frame against all the rows seen so far (no drift)
-    H = images[0].shape[0]
-    OFF = 1024
-    world = np.full((OFF * 2 + H, 3), np.nan)
-    cams = [None] * n
-    pred = None
-    for i in range(n):
-        if i in skip or np.isnan(prof[i]).all():
-            continue
-        if pred is None:
-            y = 0
-        else:
-            best = None
-            for y in range(pred - 16, pred + 17):
-                a = world[OFF + y:OFF + y + H]
-                m = ~np.isnan(a).any(1) & ~np.isnan(prof[i]).any(1)
-                if m.sum() < 32:
-                    continue
-                err = np.abs(a[m] - prof[i][m]).mean() + 0.002 * abs(y - pred)
-                if best is None or err < best[0]:
-                    best = (err, y)
-            y = best[1] if best else pred
-        w = world[OFF + y:OFF + y + H]
-        new = np.isnan(w).any(1) & ~np.isnan(prof[i]).any(1)
-        w[new] = prof[i][new]
-        cams[i] = (0, y)
-        pred = y
-    known = [i for i in range(n) if cams[i] is not None]
-    for i in range(n):
-        if cams[i] is None:
-            cams[i] = cams[min(known, key=lambda k: abs(k - i))] if known else (0, 0)
-    return cams
-
-
 def build_layer(scene: Scene, layers, region, max_versions=1, thresh=0.03, lock=None, find_cuts=False):
     n = scene.rec.n
     images = [scene.layer_image(i, layers, region) for i in range(n)]
@@ -555,10 +514,7 @@ def build_layer(scene: Scene, layers, region, max_versions=1, thresh=0.03, lock=
         worlds = [stitch(scene, images, cams, region, faded, [i]) for i in kept]
         return Layer(worlds, version, cams, region), images
     cuts = []
-    if lock == "rows":
-        cams = register_rows(images, skip=[i for i in range(n) if faded[i]])
-    else:
-        cams = register(idx, skip=[i for i in range(n) if faded[i]], lock=lock, cuts=cuts if find_cuts else None)
+    cams = register(idx, skip=[i for i in range(n) if faded[i]], lock=lock, cuts=cuts if find_cuts else None)
     if lock == "x":
         cams = [(0, c[1]) for c in cams]
     elif lock == "y":
@@ -625,11 +581,11 @@ def _period(get, n, m, tol=0.1):
     return best
 
 
-def reduce_period(world: World, axes="xy"):
+def reduce_period(world: World):
     """A layer that scrolls by itself (EoS's back-scroll) repeats: keep one
-    period, along the axes given. Returns (world, wrap_x, wrap_y)."""
+    period. Returns (world, wrap_x, wrap_y)."""
     wrap_x = wrap_y = False
-    if world.w > 40 and "x" in axes:
+    if world.w > 40:
         p = _period(lambda i, j: world.tiles[j][i], world.w, world.h)
         if p:
             for y in range(world.h):
@@ -649,7 +605,7 @@ def reduce_period(world: World, axes="xy"):
                     if col[y] is None:
                         j = min(known, key=lambda k: abs(k - y))
                         world.tiles[y][x] = col[j]
-    if world.h > 40 and "y" in axes:
+    if world.h > 40:
         p = _period(lambda i, j: world.tiles[i][j], world.h, world.w)
         if p:
             world.tiles = [[next((world.tiles[y2][x] for y2 in range(y, world.h, p) if world.tiles[y2][x] is not None), None)
@@ -738,13 +694,13 @@ class SlotAlloc:
         return {k: self.slots.index(k) for k in keys}
 
 
-def obj_canvas(eng, a0, a1):
+def obj_canvas(eng, a0, a1, gap=0):
     x, y = a1 & 511, a0 & 255
     if x >= 256:
         x -= 512
     if y >= 192:
         y -= 256
-    return x, y + (192 if eng == "A" else 0)
+    return x, y + (192 + gap if eng == "A" else 0)
 
 
 def ext_votes(rec: Rec, i, eng, a0, a1, data, votes):
@@ -794,8 +750,9 @@ def to_4bpp(data, w, h, mapping):
     return bytes(out)
 
 
-def view_track(keys, n):
-    """Canvas (wx, wy) of the GBA view per frame, smoothstep between keyframes."""
+def view_track(keys, n, ease=True):
+    """Canvas (wx, wy) of the GBA view per frame, smoothstep (or straight,
+    for a view that follows EoS's own steady camera) between keyframes."""
     out = []
     for i in range(n):
         if i <= keys[0][0]:
@@ -807,22 +764,30 @@ def view_track(keys, n):
         for (a, ax, ay), (b, bx, by) in zip(keys, keys[1:]):
             if a <= i <= b:
                 t = (i - a) / (b - a)
-                t = t * t * (3 - 2 * t)
+                if ease:
+                    t = t * t * (3 - 2 * t)
                 out.append((round(ax + (bx - ax) * t), round(ay + (by - ay) * t)))
                 break
     return out
 
 
-def convert_scene(cache: Path, cfg):
+def convert_scene(cache: Path, cfg, rom=None):
     """One GBA scene (a frame range of a recorded scene) -> its data."""
     rec = Rec(cache, cfg["rec"])
     sc = Scene(rec)
     a, b = cfg.get("frames", (0, rec.n - 1))
     n = b - a + 1
-    views = view_track([(k - a, x, y) for k, x, y in cfg["view"]], n)
+    views = view_track([(k - a, x, y) for k, x, y in cfg["view"]], n, cfg.get("ease", True))
+    # a scene whose backgrounds are EoS's map itself, on a canvas with a gap
+    # between the screens (tools/sky_opening_map.py)
+    ms = filled = None
+    if cfg.get("map"):
+        import sky_opening_map as som
+        ms = som.MapScene(rom, cfg["map"], rec)
+        filled = som.complete_objs(rec, ms.gap, [ms.top_y[0] - y for y in ms.top_y], first=a)
     layers = []
     opts_of = {}
-    for spec in cfg["bg"]:
+    for spec in ([] if ms else cfg["bg"]):
         if spec is None:
             layers.append(None)
             continue
@@ -832,15 +797,6 @@ def convert_scene(cache: Path, cfg):
                                 thresh=opts.get("thresh", 0.03), lock=opts.get("lock"),
                                 find_cuts=opts.get("cuts", False))
         lay.images, lay.ds_layers = imgs, dsl
-        if opts.get("top"):
-            # the layer's picture starts at an edge EoS clips it at (the sea
-            # under Lapras): what scrolls in from above that edge later (out
-            # of the GBA's view) must not show above it earlier
-            i0 = next(i for i in range(rec.n) if imgs[i].any())
-            edge = int(np.nonzero(imgs[i0].any(1))[0][0])
-            for w in lay.worlds:
-                for ty in range(max(0, min(w.h, (lay.cams[i0][1] + edge - w.oy) // 8))):
-                    w.tiles[ty] = [None] * w.w
         opts_of[id(lay)] = opts
         layers.append(lay)
     # BG palette slots: every (engine, palette) the tiles use; DS palette p
@@ -854,6 +810,12 @@ def convert_scene(cache: Path, cfg):
                 for t in row:
                     if t:
                         keys[t[1]] = keys.get(t[1], 0) + 1
+    if ms:
+        for ml in ms.layers:
+            for row in ml.cells:
+                for c in row:
+                    if c:
+                        keys[("A", c[3])] = keys.get(("A", c[3]), 0) + 1
     # the two screens of one map have the same palettes: one slot for both
     alias = {}
     for k in list(keys):
@@ -884,13 +846,20 @@ def convert_scene(cache: Path, cfg):
         vers = []
         bank, index = [], {}
         for v in sorted({lay.version[i] for i in range(a, b + 1)}):
-            w, wrap_x, wrap_y = reduce_period(lay.worlds[v], opts_of[id(lay)].get("wrap", "xy"))
+            w, wrap_x, wrap_y = reduce_period(lay.worlds[v])
             mp = world_to_gba(w, slot_of, bank, index)
             vers.append(dict(w=w.w, h=w.h, wrapx=wrap_x, wrapy=wrap_y, map=mp, src=v))
         tiles = b"".join(bank)
         for d in vers:
             d["tiles"] = tiles
         gl.append(dict(versions=vers, vindex={d["src"]: k for k, d in enumerate(vers)}, layer=lay, tiles=tiles))
+    if ms:
+        for ml in ms.layers:
+            # a tileset: the map's own tiles (0 blank), then the animated ones
+            mp = [e if e == 0xFFFFFFFF else (e & 0xFFFF0FFF) | (slot_of[("A", (e >> 12) & 15)] << 12) for e in ml.gba_map()]
+            v = dict(w=ml.w, h=ml.h, wrapx=True, wrapy=False, map=mp, src=0, tiles=b"".join(ml.tiles), tileset=True,
+                     anim=dict(first=ml.first, count=ml.count, frames=[b"".join(f) for f in ml.frames]))
+            gl.append(dict(versions=[v], vindex={0: 0}, layer=None, tiles=v["tiles"]))
     frames, objs, obj_bank, obj_index = [], [], [], {}
     bg_sets, obj_sets = [], []
     alloc = SlotAlloc()
@@ -910,6 +879,12 @@ def convert_scene(cache: Path, cfg):
         eng_view = "A" if wy + 80 >= 192 else "B"
         for li, g in enumerate(gl):
             if g is None:
+                continue
+            if ms:
+                ml = ms.layers[li]
+                fr["x"][li] = (ms.x[li][i] + wx) % (ml.w * 8)
+                fr["y"][li] = ms.top_y[i] + wy - ml.row0 * 8
+                fr["ver"][li] = ms.anim[li][i]   # (a tileset layer: its animation frame)
                 continue
             lay = g["layer"]
             # EoS shows nothing of this layer in the view (a flash that is
@@ -953,34 +928,37 @@ def convert_scene(cache: Path, cfg):
             for (px, py, tile, pal) in over["pieces"]:
                 ents.append(dict(x=over["x"] + px, y=over["y"] + py, tile=tile, shape=0, size=1, hf=0, vf=0,
                                  semi=0, prio=0, pk=("L", pal), eng="A", ntiles=4))
-        for eng in "AB":
-            for (oi, a0, a1, a2, bk) in rec.states[i][eng]["ents"]:
-                x, y = obj_canvas(eng, a0, a1)
-                w, h = OBJ_W[a0 >> 14][a1 >> 14], OBJ_H[a0 >> 14][a1 >> 14]
-                gx, gy = x - wx, y - wy
-                for (x0, y0, x1, y1, dx, dy) in shifts:   # canvas box -> moved on the GBA
-                    if x0 <= x < x1 and y0 <= y < y1:
-                        gx, gy = gx + dx, gy + dy
-                if gx >= GBA_W or gx + w <= 0 or gy >= GBA_H or gy + h <= 0:
-                    continue
-                if (eng == "B" and y >= 192) or (eng == "A" and y + h <= 192):
-                    continue
-                data = rec.blobs[bk]
-                if a0 & 0x2000:
-                    pk = ("X", eng, a2 >> 12)
-                    mapping = ext_tables.setdefault(pk + ("map",), {})
-                    for v in sorted(set(data) - {0}):
-                        if v not in mapping and len(mapping) < 15:
-                            mapping[v] = len(mapping) + 1
-                    data = to_4bpp(data, w, h, mapping)
-                else:
-                    pk = (eng, a2 >> 12)
-                if data not in obj_index:
-                    obj_index[data] = sum(len(d) for d in obj_bank) // 32
-                    obj_bank.append(data)
-                ents.append(dict(x=gx, y=gy, tile=obj_index[data], shape=a0 >> 14, size=a1 >> 14,
-                                 hf=(a1 >> 12) & 1, vf=(a1 >> 13) & 1, semi=int((a0 >> 10) & 3 == 1),
-                                 prio=(a2 >> 10) & 3, pk=pk, eng=eng, ntiles=w * h // 64))
+        if filled is not None:
+            raw = filled[i]
+        else:
+            raw = [(eng, a0, a1, a2, bk) + obj_canvas(eng, a0, a1)
+                   for eng in "AB" for (oi, a0, a1, a2, bk) in rec.states[i][eng]["ents"]]
+        for (eng, a0, a1, a2, bk, x, y) in raw:
+            w, h = OBJ_W[a0 >> 14][a1 >> 14], OBJ_H[a0 >> 14][a1 >> 14]
+            gx, gy = x - wx, y - wy
+            for (x0, y0, x1, y1, dx, dy) in shifts:   # canvas box -> moved on the GBA
+                if x0 <= x < x1 and y0 <= y < y1:
+                    gx, gy = gx + dx, gy + dy
+            if gx >= GBA_W or gx + w <= 0 or gy >= GBA_H or gy + h <= 0:
+                continue
+            if filled is None and ((eng == "B" and y >= 192) or (eng == "A" and y + h <= 192)):
+                continue
+            data = rec.blobs[bk]
+            if a0 & 0x2000:
+                pk = ("X", eng, a2 >> 12)
+                mapping = ext_tables.setdefault(pk + ("map",), {})
+                for v in sorted(set(data) - {0}):
+                    if v not in mapping and len(mapping) < 15:
+                        mapping[v] = len(mapping) + 1
+                data = to_4bpp(data, w, h, mapping)
+            else:
+                pk = (eng, a2 >> 12)
+            if data not in obj_index:
+                obj_index[data] = sum(len(d) for d in obj_bank) // 32
+                obj_bank.append(data)
+            ents.append(dict(x=gx, y=gy, tile=obj_index[data], shape=a0 >> 14, size=a1 >> 14,
+                             hf=(a1 >> 12) & 1, vf=(a1 >> 13) & 1, semi=int((a0 >> 10) & 3 == 1),
+                             prio=(a2 >> 10) & 3, pk=pk, eng=eng, ntiles=w * h // 64))
         total, kept = 0, []
         for e in ents:
             if total + e["ntiles"] > 512:
@@ -1024,6 +1002,15 @@ def convert_scene(cache: Path, cfg):
             fr["first"] = frames[-1]["first"]
         fr["count"] = len(lst)
         fr["fadeA"], fr["fadeB"] = display_fade(rec, i, "A"), display_fade(rec, i, "B")
+        if ms:
+            # one picture from both screens: the top screen's fade (the one
+            # that is read, not estimated) for all of it
+            fr["fadeA"] = fr["fadeB"]
+        elif (rec.layers["full"][i][wy:wy + GBA_H, wx:wx + GBA_W] == 0x7FFF).all():
+            # EoS shows nothing but white here (a white-out that is complete):
+            # so does the GBA, whatever a blend's rounding or an estimated
+            # fade would leave
+            fr["flags"] |= 8
         semi = next((e for e in kept if e["semi"]), None)
         if fr["bgblend"]:
             fr["eva"], fr["evb"] = fr["bgblend"]
@@ -1034,7 +1021,8 @@ def convert_scene(cache: Path, cfg):
             fr["eva"], fr["evb"] = 16, 0
         frames.append(fr)
     return dict(name=cfg["name"], layers=gl, frames=frames, objs=objs, obj_tiles=b"".join(obj_bank),
-                bg_sets=bg_sets, obj_sets=obj_sets, max_tiles=max_tiles, rec=rec, views=views, start=a)
+                bg_sets=bg_sets, obj_sets=obj_sets, max_tiles=max_tiles, rec=rec, views=views, start=a,
+                gap=ms.gap if ms else 0)
 
 
 # ------------------------------------------------------------ preview render
@@ -1052,6 +1040,8 @@ def render_gba(conv, fi):
     """What src/sky_opening.c should show for frame fi (240x160, 15-bit):
     a check of the converted data, and the GBA side of the comparison sheets."""
     fr = conv["frames"][fi]
+    if fr["flags"] & 8:
+        return np.full((GBA_H, GBA_W), 0x7FFF, dtype=np.int32)
     bgc, bgm = conv["bg_sets"][fr["bgpal"]]
     obc, obm = conv["obj_sets"][fr["objpal"]]
     bgc = np.array(bgc, dtype=np.int32)
@@ -1068,7 +1058,8 @@ def render_gba(conv, fi):
         if g is None or fr["flags"] & (2 << li):
             continue
         blend = li == 0 and fr["flags"] & 1
-        v = g["versions"][fr["ver"][li]]
+        v = g["versions"][0 if g["versions"][0].get("tileset") else fr["ver"][li]]
+        anim = v.get("anim")
         X, Y = fr["x"][li], fr["y"][li]
         for ty in range(GBA_H // 8 + 1):
             for tx in range(GBA_W // 8 + 1):
@@ -1083,7 +1074,11 @@ def render_gba(conv, fi):
                 if e == 0xFFFFFFFF:
                     continue
                 t = e >> 16
-                d = np.frombuffer(v["tiles"][t * 32:t * 32 + 32], dtype=np.uint8)
+                if anim and t >= anim["first"]:
+                    t -= anim["first"]
+                    d = np.frombuffer(anim["frames"][fr["ver"][li]][t * 32:t * 32 + 32], dtype=np.uint8)
+                else:
+                    d = np.frombuffer(v["tiles"][t * 32:t * 32 + 32], dtype=np.uint8)
                 pix = np.stack([d & 15, d >> 4], -1).reshape(8, 8)
                 if e & 0x400:
                     pix = pix[:, ::-1]

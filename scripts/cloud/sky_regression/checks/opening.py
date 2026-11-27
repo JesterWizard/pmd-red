@@ -9,9 +9,9 @@ drivers.opening_skip presses START in the middle of it.
 
 from drivers import OPENING_SCENES, SCENE_BIDOOF, SCENE_TITLE
 from emu import PAL, VRAM
-from harness import check, expect
+from harness import check, expect, fail
 
-THEME = 67          # MUS_SKY_EXPLORATION_TEAM_THEME (EoS bgm0001)
+THEME = 67         # MUS_SKY_EXPLORATION_TEAM_THEME (EoS bgm0001)
 MIN_SCENE = 60      # frames each scene is on screen at least
 MIN_RMS = 200       # 16-bit; the song never goes this quiet while it plays
 PLAYING = 0xFFFF    # MUSICPLAYER_STATUS_TRACK
@@ -175,3 +175,142 @@ def opening_logo_over_field(t):
     expect(frames >= 100, f"the field part lasted {frames} frames")
     expect(not errs, "; ".join(errs[:4]))
     return f"{frames} frames: 44 logo OBJs at the top, the emblem's OBJs under them"
+
+
+def _scene(f):
+    return f.var("gSkyOpeningScene", "u8")
+
+
+def _not_white(f):
+    """Pixels of the frame that are not (255, 255, 255)."""
+    return int((f.fb != 255).any(axis=2).sum())
+
+
+SCENE_HILLS = OPENING_SCENES[-1]
+MIN_WHITE_HOLD = 60     # frames (EoS holds its white screens 102 before the title)
+
+
+@check("opening", "The last scene's white-out is complete: every pixel white from the hills to the title, which fades in from white")
+def opening_white_before_title(t):
+    f = yield from t.wait(lambda f: _scene(f) == SCENE_HILLS and f.var("gSkyOpeningFrame", "u16") >= 200,
+                          "the end of the hills scene")
+    first, white, errs = None, 0, []
+    while True:
+        left = _not_white(f)
+        if left == 0:
+            first = f.n if first is None else first
+            white += 1
+        elif first is not None and _scene(f) == SCENE_TITLE:
+            break   # the title's first step out of white
+        elif first is not None:
+            if not errs:
+                t.snap(f, "not_white")
+            errs.append(f"frame {f.n} (scene {_scene(f):#x}): {left} pixels not white, darkest value {int(f.fb.min())}")
+        elif _scene(f) != SCENE_HILLS:
+            t.snap(f, "never_white")
+            fail(f"the hills scene ended (frame {f.n}) with {left} pixels not white")
+        f = yield from t.next("the title after the white-out")
+    expect(not errs, "; ".join(errs[:4]))
+    expect(white >= MIN_WHITE_HOLD, f"the screen was all white for {white} frames only")
+    # out of white, not up from black: nothing dark on the first step, then
+    # the picture settles (EoS: 15 steps of its master brightness)
+    darkest = int(f.fb.min())
+    if darkest < 200:
+        t.snap(f, "title_from_white")
+    expect(darkest >= 200, f"the title's first frame out of white (frame {f.n}) has a pixel value of {darkest}")
+    start, means = f.n, []
+    for _ in range(20):
+        means.append(float(f.fb.mean()))
+        f = yield from t.next("the title's fade-in")
+    expect(all(b <= a + 0.01 for a, b in zip(means, means[1:])) and means[-1] < means[0] - 40,
+           f"the title does not fade in steadily from white: mean brightness {[round(m) for m in means]}")
+    return (f"all {240 * 160} pixels white for {white} frames in a row from frame {first}; the title fades in from "
+            f"white at {start} (darkest value on its first step {darkest})")
+
+
+# (scene, what): EoS whites these out completely too, and holds the white
+# until the next scene, which fades in from it
+WHITE_OUTS = ((4, "the Time Gear"), (10, "the floating island"), (13, "the forest's light"))
+
+
+@check("opening", "The other white-outs (Time Gear, island, forest) are complete: all white until the next scene starts")
+def opening_whiteouts_complete(t):
+    out = []
+    for scene, what in WHITE_OUTS:
+        f = yield from t.wait(lambda f: _scene(f) == scene + 1, f"the end of scene {scene} ({what})")
+        stale = f.var("gSkyOpeningFrame", "u16")
+        hold = []
+        # the scene's last frame stays up until the next one's first frame
+        while _scene(f) == scene + 1 and f.var("gSkyOpeningFrame", "u16") == stale:
+            hold.append((f.n, _not_white(f)))
+            f = yield from t.next(f"scene {scene + 1}")
+        bad = [(n, left) for n, left in hold[:-2] if left]
+        if bad:
+            t.snap(f, f"whiteout_{scene}")
+        expect(len(hold) >= 20, f"{what}: only {len(hold)} frames between scenes {scene} and {scene + 1}")
+        expect(not bad, f"{what}: {len(bad)} of {len(hold)} frames after the white-out are not all white"
+                        + (f" (frame {bad[0][0]}: {bad[0][1]} pixels)" if bad else ""))
+        out.append(f"{what} {len(hold)}")
+    return "all white between the scenes, frames: " + ", ".join(out)
+
+
+SCENE_LAPRAS = 2
+LAPRAS_X = 133          # EoS's x 141, less the 8 columns the GBA does not show
+OBJ_TILES = VRAM + 0x10000
+
+
+def _piece_pixels(f, o):
+    """An OBJ's opaque pixels as (x, y, colour) on screen (4bpp, 1D tiles, no flip)."""
+    data = f.read(OBJ_TILES + o["tile"] * 32, (o["w"] // 8) * (o["h"] // 8) * 32)
+    pal = f.read(PAL + 0x200 + o["pal"] * 32, 32)
+    out = []
+    for ty in range(o["h"] // 8):
+        for tx in range(o["w"] // 8):
+            tile = data[(ty * (o["w"] // 8) + tx) * 32:][:32]
+            for k in range(64):
+                v = (tile[k // 2] >> (4 * (k % 2))) & 15
+                if v:
+                    c = pal[2 * v] | (pal[2 * v + 1] << 8)
+                    out.append((o["x"] + tx * 8 + k % 8, o["y"] + ty * 8 + k // 8, c & 0x7FFF))
+    return out
+
+
+@check("opening", "Lapras's scene: Lapras is whole on every frame (head, body and wake), its head as its tiles draw it, no jumps")
+def opening_lapras_whole(t):
+    f = yield from t.wait(lambda f: _scene(f) == SCENE_LAPRAS and f.var("gSkyOpeningFrame", "u16") >= 2,
+                          "Lapras's scene")
+    frames, errs, prev_y, sizes, ys = 0, [], None, set(), []
+    while f is not None and _scene(f) == SCENE_LAPRAS:
+        objs = f.oam()
+        big = {(o["x"], o["y"]): o for o in objs if (o["w"], o["h"]) == (32, 32)}
+        heads = [o for (x, y), o in big.items()
+                 if x == LAPRAS_X and (x, y + 32) in big and (x + 32, y + 32) in big]
+        if len(heads) != 1:
+            errs.append(f"frame {f.n}: Lapras's three 32x32 pieces are not all there "
+                        f"(32x32 OBJs at {sorted(big)})")
+        else:
+            head = heads[0]
+            y = head["y"]
+            wake = [o for o in objs if (o["w"], o["h"]) == (32, 16) and o["y"] == y + 54]
+            if len(wake) != 4:
+                errs.append(f"frame {f.n}: {len(wake)} of the wake's 4 pieces under Lapras")
+            if prev_y is not None and abs(y - prev_y) > 1:
+                errs.append(f"frame {f.n}: Lapras jumps from y {prev_y} to {y}")
+            prev_y = y
+            ys.append(y)
+            px = _piece_pixels(f, head)
+            sizes.add(len(px))
+            wrong = sum(1 for x, yy, c in px
+                        if not (0 <= x < 240 and 0 <= yy < 160)
+                        or tuple(int(v) >> 3 for v in f.fb[yy, x]) != (c & 31, (c >> 5) & 31, (c >> 10) & 31))
+            if wrong:
+                errs.append(f"frame {f.n}: {wrong} of the head's {len(px)} pixels are not on screen as its tiles have them")
+        if len(errs) == 1 and errs[0].startswith(f"frame {f.n}:"):
+            t.snap(f, "lapras")
+        frames += 1
+        f = yield
+    expect(frames >= 250, f"the scene lasted {frames} frames")
+    expect(not errs, f"{len(errs)} bad frames: " + "; ".join(errs[:4]))
+    expect(len(sizes) == 1 and min(sizes) >= 300, f"the head piece's opaque pixels vary: {sorted(sizes)}")
+    return (f"{frames} frames: head + 2 body pieces + 4 wake pieces on every one, the head's {min(sizes)} pixels "
+            f"on screen as drawn, y {ys[0]} -> {ys[-1]} in steps of at most 1")

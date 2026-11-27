@@ -83,7 +83,7 @@ SCENES = [
     dict(name="dialga", script="V26P07A/t02a0310", start=3882, end=4021),
     dict(name="forest", script="S13P08A/t02a0311", start=4112, end=4401),
     dict(name="march", script="S13P06A/t02a0401", start=4510, end=4867),
-    dict(name="hills", script="S13P09A/t02a0402", start=4935, end=5179),
+    dict(name="hills", script="S13P09A/t02a0402", start=4935, end=5182),
 ]
 
 # The GBA scenes: which recording, its frame range (indices into the
@@ -91,19 +91,25 @@ SCENES = [
 # two DS map layers of the top screen, the bottom one or both (EoS's
 # continuous two-screen maps), with options: versions (the layer's content
 # changes: animated tiles, a growing glow; "frames": a still layer, a version
-# per different picture), lock (the axis that does not
-# move; "rows": only vertical, from the rows' mean colours, for a sky and sea
-# whose bands slide sideways at their own speeds), wrap (the axes along which
-# a layer that repeats is cut to one period: "x" for a sea that scrolls
-# sideways but has a top edge), top (nothing of the layer above the top edge
-# of its first picture), cuts
-# (the camera jumps: each jump starts a new world), and
+# per different picture), lock (the axis that does not move), cuts (the
+# camera jumps: each jump starts a new world), and
 # the GBA view: keyframes (index, x, y) in "canvas" pixels, the DS's top
 # screen (y 0-191) over its bottom one (y 192-383).
 GBA_SCENES = [
+    # t02a0202 (tools/sky_opening_map.py): back2_SetMode(6) leaves 64 lines
+    # between the screens (the canvas: the bottom screen from y 256), the far
+    # sea is animated tiles and the layers scroll by themselves, so the two
+    # layers come from the map itself: `top` is the map line at the top of
+    # the top screen when the scene starts, `cam` the frame EoS's camera
+    # starts to rise and for how many lines (MovePositionMark, 1 a frame),
+    # `scroll` back_SetBackScrollSpeed (1/8 px a frame; the front layer, the
+    # near sea, then the back one). The view follows the camera at 0.65 of its
+    # speed (straight, not eased, like the camera): Lapras, standing still in
+    # the map, sinks 64 lines down the screen, from the near sea rushing
+    # under it to the sky with the Wingull.
     dict(name="lapras", rec="lapras",
-         bg=[("both", [2], dict(wrap="x", top=True)), ("both", [3], dict(lock="rows"))],
-         view=[(0, 8, 70), (100, 8, 95), (200, 8, 165), (288, 8, 170)]),
+         map=dict(level="s13p03a", gap=64, top=200, cam=(23, 184), scroll=(-120, -6)),
+         view=[(0, 8, 116), (23, 8, 116), (207, 8, 236), (288, 8, 236)], ease=False),
     dict(name="treasure", rec="treasure",
          bg=[("both", [2]), ("both", [3])],
          view=[(0, 8, 16), (60, 8, 16), (330, 8, 208), (390, 8, 208)]),
@@ -270,7 +276,7 @@ def write_scenes(rom_path: str, cache: Path, check) -> None:
             lg = sky_opening_logo.logo_objs(ndspy.rom.NintendoDSRom.fromFile(rom_path), cfg["logo"]["width"])
             # centred on the 16-px grid's picture, not the padded pieces
             cfg = dict(cfg, overlay=dict(lg, x=(240 - lg["w"]) // 2, y=cfg["logo"]["y"]))
-        cv = so.convert_scene(cache, cfg)
+        cv = so.convert_scene(cache, cfg, ndspy.rom.NintendoDSRom.fromFile(rom_path))
         name = cfg["name"]
         blob = bytearray()
 
@@ -305,9 +311,16 @@ def write_scenes(rom_path: str, cache: Path, check) -> None:
             blob += g["tiles"]
             align()
             for v in g["versions"]:
+                # a tileset layer (EoS's map itself): its animated tiles' frames
+                an = v.get("anim") or dict(first=0, count=0, frames=[])
+                ao = len(blob)
+                for f in an["frames"]:
+                    blob += f
                 mo = len(blob)
                 blob += st.pack(f"<{len(v['map'])}I", *v["map"])
-                vers.append((v["w"], v["h"], int(v["wrapx"]) | (int(v["wrapy"]) << 1), mo, to))
+                vers.append((v["w"], v["h"], int(v["wrapx"]) | (int(v["wrapy"]) << 1) | (4 if v.get("tileset") else 0),
+                             len(an["frames"]), len(g["tiles"]) // 32 if v.get("tileset") else 0,
+                             an["first"], an["count"], mo, to, ao))
         (SCENES_OUT / f"{name}.bin").write_bytes(bytes(blob))
         total += len(blob)
         first = cv["start"] + rec_start[cfg["rec"]]
@@ -315,8 +328,8 @@ def write_scenes(rom_path: str, cache: Path, check) -> None:
         synced.add(cfg["rec"])
         lines.append(f'static const u32 sOpBlob_{name}[] = INCBIN_U32("graphics/custom/sky_opening/scenes/{name}.bin");')
         lines.append(f"static const struct SkyOpVersion sOpVer_{name}[] = {{")
-        for (w, h, fl, mo, to) in vers or [(0, 0, 0, 0, 0)]:
-            lines.append(f"    {{ {w}, {h}, {fl}, 0, {mo}, {to} }},")
+        for ver in vers or [(0,) * 10]:
+            lines.append(f"    {{ {', '.join(map(str, ver))} }},")
         lines.append("};")
         table.append(f"    {{ sOpBlob_{name}, sOpVer_{name}, {len(cv['frames'])}, {tick}, {{ {nver[0]}, {nver[1]} }}, 0, "
                      f"{off['frames']}, {off['objs']}, {off['bgsets']}, {off['objsets']}, {off['objtiles']} }}, "
@@ -343,7 +356,10 @@ def write_check(cv, path: Path, so, step=24) -> None:
     for fi in range(0, len(cv["frames"]), step):
         i = cv["start"] + fi
         wx, wy = cv["views"][fi]
-        ds = so.rgb8(cv["rec"].layers["full"][i][wy:wy + 160, wx:wx + 240])
+        full = cv["rec"].layers["full"][i]
+        if cv["gap"]:   # (what EoS does not draw between its screens: black)
+            full = np.concatenate([full[:192], np.zeros((cv["gap"], 256), full.dtype), full[192:]])
+        ds = so.rgb8(full[wy:wy + 160, wx:wx + 240])
         gba = so.rgb8(so.render_gba(cv, fi))
         rows.append(np.concatenate([ds, np.full((160, 4, 3), 255, np.uint8), gba], 1))
     cols = 3
