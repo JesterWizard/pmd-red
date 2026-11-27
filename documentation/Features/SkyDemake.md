@@ -1346,8 +1346,8 @@ with no input (frames from power-on, EoS starts the song at about frame
 | 11 | `t02a0310` | V26P07A (both) | Dialga; the camera flies up into the night sky | 3882–4021 | |
 | 12 | `t02a0311` | S13P07A / S13P08A | the hero and partner find the treasure box in the forest; light, white-out | 4112–4401 | |
 | 13 | `t02a0401` | S13P06A (both) | the guild marches across the field | 4510–4867 | signal 6 |
-| 14 | `t02a0402` | S13P09A (both) | everyone gathers on the hills; the camera rises to the sky and the flare; white-out | 4935–5179 | |
-| — | `t02a0501` | S13P01A / V03P07A | the title: logo, "EXPLORERS OF SKY", PRESS START, fading in from white | 5283– | signal 7 |
+| 14 | `t02a0402` | S13P09A (both) | everyone gathers on the hills; the camera rises to the sky and the flare; white-out (30 frames from 5151, both screens all white from 5181) | 4935–5182 | |
+| — | `t02a0501` | S13P01A / V03P07A | the title: logo, "EXPLORERS OF SKY", PRESS START, fading in from white (15 steps, 5282–5296) | 5283– | signal 7 |
 
 The song ends at tick 8160, frame 5394, under the title, about 110 frames
 after the title appears; the title then stays silent. After 2000 frames
@@ -1373,6 +1373,32 @@ fades in from white (`gSkyTitleFromWhite`, `TitleFadeFromWhite` in
 end. START (or A) skips to the title at any point: a 30-frame fade of the
 picture and the song, then the silent title.
 
+**The white-outs.** EoS ends four scenes by whitening its screens with the
+master brightness until both are white all over, holds that, and fades the
+next scene in from it (measured in DeSmuME, frames from power-on):
+
+| Scene | White-out | All white | Next scene fades in from white |
+|---|---|---|---|
+| 4, the Time Gear | 2159 (bottom screen, 30 frames; top, 60) | 2216–2300 | 2301 (the logo) |
+| 9, the island | 3513 | 3542–3629 | 3630 (Crystal Lake) |
+| 12, the forest | 4372 | 4401–4510 | 4511 (the march) |
+| 14, the hills | 5151 (30 frames) | 5181–5281: 102 frames | 5282 (the title, 15 steps) |
+
+On the GBA a frame in which EoS shows only white in the GBA's view is marked
+in the data (frame flag 8). For such a frame every colour is set to white
+(the BG and OBJ palettes and the backdrop) and the blend is switched off:
+white blended with white by weights that do not add up to 16 is a shade
+darker, so the forest's light (BG2 blended over the scene) never reached
+white. The hold between two scenes keeps that. The hills scene was recorded
+up to 5179, a frame before EoS reaches full white (brightness 15 of 16), so
+the GBA held a pale picture of the sky for 102 frames and only then cut to
+white: the recording now runs to 5182, and after the last scene the screen
+is set white whatever the data says. The title then fades in from that
+white: the card from (31, 31, 31) (it started a shade grey: 255 × 31 / 256),
+and "Press START" with it (it came up from black: black letters on the first
+white frames). Measured on the GBA: 102 frames with all 38400 pixels white,
+then the title's first step, on the song's last signal.
+
 **How it is converted.** Re-implementing EoS's ground engine for these
 scripts (actors, effects, camera moves, scrolling layers, palette and tile
 animation, OBJ blending) would be most of a game. Instead
@@ -1396,7 +1422,7 @@ turns that into GBA data, using only what EoS put on screen:
   the recorded palette RAM. A layer whose content changes, not just moves
   (Crystal Lake's flames, the Time Gear's glow), gets a world per state
   ("version"); a layer that scrolls by itself is cut to one period and
-  wraps (Lapras's sea).
+  wraps.
 - **Sprites**: every frame's OAM entries of both screens, piece for piece (the
   DS and the GBA have the same OBJ shapes and sizes), with their tiles
   deduplicated. The few 8bpp entries (EoS's extended palettes: shadows,
@@ -1426,13 +1452,64 @@ turns that into GBA data, using only what EoS put on screen:
   with EVA 4–9) is blended on the GBA with EoS's weights, and its captures,
   darkened by the blend, are read back through the palette. The forest's
   rays grow: that layer has a world per different picture
-  (`versions="frames"`). Lapras's sea is clipped at its top edge (`top`),
-  and repeats sideways only (`wrap="x"`): it used to be drawn 24 lines too
-  high, over Lapras, for the scene's first second.
+  (`versions="frames"`).
+- **A white-out that is complete**: a frame in which EoS shows nothing but
+  white in the view is marked (see above).
 - **Shadows** (EoS's 8bpp OBJs): each value's colour is the one most of its
   pixels show over the whole scene. Taken from the first frame, a shadow
   under a sprite got that sprite's colour (green under Grovyle, orange under
   the partner).
+
+**Lapras's sea (scene 2) is EoS's map itself**
+([`tools/sky_opening_map.py`](../../tools/sky_opening_map.py)). Stitched
+from pictures like the others, it glitched: Lapras was a head alone for 40
+frames, then nothing, then a lower half; its wake was missing or sat on its
+head; the Wingull blinked out; the near sea was a flat band that reached up
+to Lapras. Three things in `t02a0202` are unlike the other scenes:
+
+- `back2_SetMode(6)` leaves **64 lines between the two screens**: the bottom
+  screen shows the map 256 lines under the top one, not 192. What is in
+  between is not drawn on either screen. Lapras takes 60 frames to cross it:
+  the top screen keeps its head (the body's pieces are dropped once they are
+  wholly below line 192), the bottom screen gets it all from frame 82; a
+  Wingull is gone for 32 frames. The old conversion put the two screens
+  together as if they touched.
+- The far sea is **animated tiles** (`MAP_BG/s13p03a5.bpa`: 132 tiles, 8
+  frames, frames 0 and 1 for two game frames each): rows of waves that slide
+  2 to 12 px a frame. That is the "banded scroll": EoS writes its scroll
+  registers once a frame, there is no line scroll.
+- Both layers **scroll by themselves** (`back_SetBackScrollSpeed(-120, -6)`:
+  the near sea 15 px a frame, the sky and far sea 0.75) while the camera
+  rises 184 lines, one a frame (frames 24–207).
+
+So the two layers come from `s13p03a.bma` / `.bpc` / `.bpa`: the map's own
+tiles, flips and palettes as a tileset per GBA layer (452 and 219 tiles),
+plus the 8 frames of the 132 animated ones; the palettes are the recorded
+palette RAM (palette 10 cycles). Where everything is at each frame is a
+model with the script's speeds whose phases are fitted to the recording and
+then checked: drawn that way, both layers equal EoS's recorded pictures
+pixel for pixel on all 217 frames without a fade (the tool stops if not).
+The bottom screen's animated tiles run a frame ahead of the top screen's;
+the GBA plays the bottom screen's.
+
+The sprites are the OAM entries of both screens on one canvas with the gap.
+Every piece is followed through the scene (17 pieces: all stand still in the
+map). Where EoS leaves one out because it is off its screen (439
+piece-frames: Lapras's body for 16 frames, its wake for 38, the foam under
+it for the first 67, two Wingull for 31 and 32), it is put back where it
+stands, its picture and bob repeating with the period of its animation
+(the wake 42 frames, a Wingull 44), taken from the frames where EoS draws
+it. (EoS restarts a sprite's animation when it comes onto the other screen;
+the GBA carries the old phase through the gap.)
+
+The view is in that canvas: it follows the camera at 0.65 of its speed, in
+a straight line like the camera, from the near sea rushing under Lapras
+(Lapras at the top of the screen) to the sky with the Wingull (Lapras
+below the middle): Lapras sinks 64 lines. Between frames 47 and 229 the
+GBA's picture equals EoS's in every pixel EoS draws (before that the top
+screen's far sea is one animation frame behind the bottom one's).
+
+![Lapras's scene: EoS's two screens with the gap and the GBA's view, the GBA before (top) and after](images/sky_opening_lapras.png)
 
 `python3 tools/make_sky_opening.py EOS.nds [--check DIR]` re-records (into
 `build/sky_opening_rec/`, about a minute on four cores) and rewrites
@@ -1457,7 +1534,12 @@ vertical blank, before the tilemap that uses it (up to 400 a frame). With
 was overwritten while it was still shown (a band of wrong tiles at the
 trailing edge of every pan), and an animated layer showed new tiles under the
 old tilemap for a frame. The work memory (slot tables, the queue, the OBJ
-cache) is 7 KB of heap while the scenes play. Per frame: the view's place in each world, the palette set
+cache) is 7 KB of heap while the scenes play. A layer can instead be a
+**tileset** (Lapras's two): its tiles are copied once into the ring's slots
+when the scene starts (the screen is one colour then), only tilemap entries
+stream as it moves (15 px a frame costs 42 entries, no tile copies), and
+its animated tiles are one block (132 tiles, 4 KB) copied in the vertical
+blank when the animation's frame changes. Per frame: the view's place in each world, the palette set
 and each screen's fade (written only when they change), the OAM entries
 (tiles double-buffered in OBJ VRAM as in the Shaymin scene; a sprite whose
 tiles are already in its place is not copied again, and the two halves
@@ -1479,19 +1561,20 @@ frame that took longer than a GBA frame drops the frames it overran, so the
 picture stays on the music (mostly during the fades at a scene's start and
 end, where every palette changes every frame; the fade is computed a
 palette row at a time straight into the palette buffer).
-The title waits for tick 3984 (signal 7) and fades in from white.
+The title waits for the song's last signal (tick 3983), less the 27 ticks
+(31 frames) it takes to give the layers back, go on to `DEMO_03` and unpack
+the card (`OP_TITLE_LEAD_TICKS`; the screen is white all the while), and
+fades in from white on the signal, as in EoS.
 
-Data: 1.34 MB (`graphics/custom/sky_opening/scenes/`: BG tiles and maps,
+Data: 1.36 MB (`graphics/custom/sky_opening/scenes/`: BG tiles and maps,
 OBJ tiles, OAM lists, palette sets, frames); EWRAM: about ten bytes (flags,
 the scene counters for the tests, the work memory's pointer).
 
 Not matched:
 
-- EoS's Lapras sea (`S13P03A`) scrolls in bands at different speeds
-  (line scroll); the GBA moves the sky-and-sea layer as one (its clouds stay
-  put). While Lapras crosses from the top screen to the bottom one EoS draws
-  only the part on the top screen (the gap between the DS's screens hides
-  it); the GBA shows that as Lapras's head alone for about 40 frames.
+- Lapras's scene: the GBA's view moves at 0.65 of EoS's camera, so the sea
+  sinks 64 lines where EoS's sinks 184 over two screens; the Wingull that
+  fly in over the top screen late in the scene (above the view) are not seen.
 - `V24P05A` (scene 9) flashes the view through eight spots of the level in
   its first 16 frames, during its fade-in; the GBA fades in on the last one.
 - The Time Gear's glow is ten states of its 80-frame growth, not every frame.
@@ -1714,6 +1797,9 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `opening_start_skips` | skip | START in Bidoof's scene: the title within 90 frames, the theme stopped within 90 |
 | `opening_window_frames`, `opening_skip_window_frames` | opening, skip | at the top menu after the whole opening / after START in Bidoof's scene: the font and window-frame tiles (VRAM 0x4F00–0x5FFF), the cursor's OBJ tiles and OBJ palette 15 are what they were before the opening, and the description window's frame is EoS's green (top rows, left columns, fill) |
 | `opening_logo_over_field` | opening | in the field part of the logo scene: the logo's 44 OBJs at the top (y 2–82), "EXPLORERS OF SKY" under them (its OBJs' tops at y ≥ 70), every frame |
+| `opening_white_before_title` | opening | from the end of the hills scene: once every pixel is (255, 255, 255) it stays so on every frame until the title, for ≥ 60 frames; the title's first frame out of white has no value under 200 (nothing comes up from black) and the next 20 frames get steadily darker |
+| `opening_whiteouts_complete` | opening | after the Time Gear, island and forest scenes: every pixel white on every frame until the next scene's first frame (≥ 20 frames each) |
+| `opening_lapras_whole` | opening | every frame of Lapras's scene: its three 32×32 OBJs in place (head, two body pieces), the wake's four 32×16 OBJs under them, the head's opaque pixels (from its OBJ tiles and palette) on screen exactly, the same count on every frame, and Lapras moves at most 1 px a frame |
 
 The `xfail="reason"` mark tags a check for a known bug that is not fixed yet.
 Its failure is reported as `XFAIL` and does not fail the suite. When the bug
@@ -1784,7 +1870,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
 | Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
-| EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`src/data/sky_opening_scenes.h`](../../src/data/sky_opening_scenes.h), [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py) |
+| EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`src/data/sky_opening_scenes.h`](../../src/data/sky_opening_scenes.h), [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py), [`tools/sky_opening_map.py`](../../tools/sky_opening_map.py) |
 | Continue / Delete Save Data window (EoS's Adventure Record) | [`src/load_screen.c`](../../src/load_screen.c) |
 | Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), the storm cliff in [`src/sky_cutaways.c`](../../src/sky_cutaways.c) with [`src/data/sky_storm_cliff.h`](../../src/data/sky_storm_cliff.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
 | Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |

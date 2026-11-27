@@ -5,98 +5,98 @@
 
 static const u32 sOpBlob_lapras[] = INCBIN_U32("graphics/custom/sky_opening/scenes/lapras.bin");
 static const struct SkyOpVersion sOpVer_lapras[] = {
-    { 36, 74, 1, 0, 55076, 40036 },
-    { 32, 63, 0, 0, 73764, 65732 },
+    { 36, 24, 5, 0, 452, 452, 0, 54712, 40248, 54712 },
+    { 36, 57, 5, 8, 219, 219, 132, 98968, 58168, 65176 },
 };
 static const u32 sOpBlob_treasure[] = INCBIN_U32("graphics/custom/sky_opening/scenes/treasure.bin");
 static const struct SkyOpVersion sOpVer_treasure[] = {
-    { 49, 48, 0, 0, 27156, 8852 },
-    { 44, 48, 0, 0, 90676, 36564 },
+    { 49, 48, 0, 0, 0, 0, 0, 27156, 8852, 27156 },
+    { 44, 48, 0, 0, 0, 0, 0, 90676, 36564, 90676 },
 };
 static const u32 sOpBlob_timegear[] = INCBIN_U32("graphics/custom/sky_opening/scenes/timegear.bin");
 static const struct SkyOpVersion sOpVer_timegear[] = {
-    { 33, 48, 0, 0, 61840, 45328 },
-    { 33, 48, 0, 0, 68176, 45328 },
-    { 33, 49, 0, 0, 74512, 45328 },
-    { 33, 57, 0, 0, 80980, 45328 },
-    { 32, 48, 0, 0, 177528, 88504 },
-    { 33, 48, 0, 0, 183672, 88504 },
-    { 33, 48, 0, 0, 190008, 88504 },
-    { 33, 48, 0, 0, 196344, 88504 },
-    { 33, 48, 0, 0, 202680, 88504 },
-    { 33, 48, 0, 0, 209016, 88504 },
-    { 33, 48, 0, 0, 215352, 88504 },
-    { 33, 48, 0, 0, 221688, 88504 },
-    { 33, 48, 0, 0, 228024, 88504 },
-    { 33, 48, 0, 0, 234360, 88504 },
+    { 33, 48, 0, 0, 0, 0, 0, 61840, 45328, 61840 },
+    { 33, 48, 0, 0, 0, 0, 0, 68176, 45328, 68176 },
+    { 33, 49, 0, 0, 0, 0, 0, 74512, 45328, 74512 },
+    { 33, 57, 0, 0, 0, 0, 0, 80980, 45328, 80980 },
+    { 32, 48, 0, 0, 0, 0, 0, 177528, 88504, 177528 },
+    { 33, 48, 0, 0, 0, 0, 0, 183672, 88504, 183672 },
+    { 33, 48, 0, 0, 0, 0, 0, 190008, 88504, 190008 },
+    { 33, 48, 0, 0, 0, 0, 0, 196344, 88504, 196344 },
+    { 33, 48, 0, 0, 0, 0, 0, 202680, 88504, 202680 },
+    { 33, 48, 0, 0, 0, 0, 0, 209016, 88504, 209016 },
+    { 33, 48, 0, 0, 0, 0, 0, 215352, 88504, 215352 },
+    { 33, 48, 0, 0, 0, 0, 0, 221688, 88504, 221688 },
+    { 33, 48, 0, 0, 0, 0, 0, 228024, 88504, 228024 },
+    { 33, 48, 0, 0, 0, 0, 0, 234360, 88504, 234360 },
 };
 static const u32 sOpBlob_logo_top[] = INCBIN_U32("graphics/custom/sky_opening/scenes/logo_top.bin");
 static const struct SkyOpVersion sOpVer_logo_top[] = {
-    { 32, 24, 0, 0, 25488, 15120 },
-    { 32, 24, 0, 0, 53136, 28560 },
+    { 32, 24, 0, 0, 0, 0, 0, 25488, 15120, 25488 },
+    { 32, 24, 0, 0, 0, 0, 0, 53136, 28560, 53136 },
 };
 static const u32 sOpBlob_logo_field[] = INCBIN_U32("graphics/custom/sky_opening/scenes/logo_field.bin");
 static const struct SkyOpVersion sOpVer_logo_field[] = {
-    { 56, 24, 0, 0, 64320, 55872 },
-    { 50, 24, 0, 0, 81696, 69696 },
+    { 56, 24, 0, 0, 0, 0, 0, 64320, 55872, 64320 },
+    { 50, 24, 0, 0, 0, 0, 0, 81696, 69696, 81696 },
 };
 static const u32 sOpBlob_bidoof[] = INCBIN_U32("graphics/custom/sky_opening/scenes/bidoof.bin");
 static const struct SkyOpVersion sOpVer_bidoof[] = {
-    { 46, 24, 0, 0, 39856, 20976 },
-    { 46, 24, 0, 0, 47536, 44272 },
+    { 46, 24, 0, 0, 0, 0, 0, 39856, 20976, 39856 },
+    { 46, 24, 0, 0, 0, 0, 0, 47536, 44272, 47536 },
 };
 static const u32 sOpBlob_charms[] = INCBIN_U32("graphics/custom/sky_opening/scenes/charms.bin");
 static const struct SkyOpVersion sOpVer_charms[] = {
-    { 32, 36, 0, 0, 42092, 24844 },
-    { 33, 36, 0, 0, 68972, 46700 },
+    { 32, 36, 0, 0, 0, 0, 0, 42092, 24844, 42092 },
+    { 33, 36, 0, 0, 0, 0, 0, 68972, 46700, 68972 },
 };
 static const u32 sOpBlob_sableye[] = INCBIN_U32("graphics/custom/sky_opening/scenes/sableye.bin");
 static const struct SkyOpVersion sOpVer_sableye[] = {
-    { 33, 24, 0, 0, 42716, 35996 },
-    { 33, 25, 0, 0, 59324, 45884 },
+    { 33, 24, 0, 0, 0, 0, 0, 42716, 35996, 42716 },
+    { 33, 25, 0, 0, 0, 0, 0, 59324, 45884, 59324 },
 };
 static const u32 sOpBlob_island[] = INCBIN_U32("graphics/custom/sky_opening/scenes/island.bin");
 static const struct SkyOpVersion sOpVer_island[] = {
-    { 32, 24, 0, 0, 24488, 18856 },
-    { 34, 28, 0, 0, 46312, 27560 },
+    { 32, 24, 0, 0, 0, 0, 0, 24488, 18856, 24488 },
+    { 34, 28, 0, 0, 0, 0, 0, 46312, 27560, 46312 },
 };
 static const u32 sOpBlob_crystal[] = INCBIN_U32("graphics/custom/sky_opening/scenes/crystal.bin");
 static const struct SkyOpVersion sOpVer_crystal[] = {
-    { 32, 48, 0, 0, 111720, 62600 },
-    { 32, 48, 0, 0, 117864, 62600 },
-    { 33, 49, 0, 0, 124008, 62600 },
-    { 33, 49, 0, 0, 130476, 62600 },
-    { 32, 49, 0, 0, 136944, 62600 },
-    { 32, 49, 0, 0, 143216, 62600 },
-    { 33, 48, 0, 0, 174352, 149488 },
+    { 32, 48, 0, 0, 0, 0, 0, 111720, 62600, 111720 },
+    { 32, 48, 0, 0, 0, 0, 0, 117864, 62600, 117864 },
+    { 33, 49, 0, 0, 0, 0, 0, 124008, 62600, 124008 },
+    { 33, 49, 0, 0, 0, 0, 0, 130476, 62600, 130476 },
+    { 32, 49, 0, 0, 0, 0, 0, 136944, 62600, 136944 },
+    { 32, 49, 0, 0, 0, 0, 0, 143216, 62600, 143216 },
+    { 33, 48, 0, 0, 0, 0, 0, 174352, 149488, 174352 },
 };
 static const u32 sOpBlob_dialga[] = INCBIN_U32("graphics/custom/sky_opening/scenes/dialga.bin");
 static const struct SkyOpVersion sOpVer_dialga[] = {
-    { 32, 119, 0, 0, 49404, 22588 },
+    { 32, 119, 0, 0, 0, 0, 0, 49404, 22588, 49404 },
 };
 static const u32 sOpBlob_forest[] = INCBIN_U32("graphics/custom/sky_opening/scenes/forest.bin");
 static const struct SkyOpVersion sOpVer_forest[] = {
-    { 32, 25, 0, 0, 53368, 43480 },
-    { 32, 24, 0, 0, 56568, 43480 },
-    { 32, 24, 0, 0, 59640, 43480 },
-    { 32, 24, 0, 0, 62712, 43480 },
-    { 47, 25, 0, 0, 82360, 65784 },
+    { 32, 25, 0, 0, 0, 0, 0, 53368, 43480, 53368 },
+    { 32, 24, 0, 0, 0, 0, 0, 56568, 43480, 56568 },
+    { 32, 24, 0, 0, 0, 0, 0, 59640, 43480, 59640 },
+    { 32, 24, 0, 0, 0, 0, 0, 62712, 43480, 62712 },
+    { 47, 25, 0, 0, 0, 0, 0, 82360, 65784, 82360 },
 };
 static const u32 sOpBlob_march[] = INCBIN_U32("graphics/custom/sky_opening/scenes/march.bin");
 static const struct SkyOpVersion sOpVer_march[] = {
-    { 39, 48, 0, 0, 63948, 55660 },
-    { 38, 48, 0, 0, 84428, 71436 },
+    { 39, 48, 0, 0, 0, 0, 0, 63948, 55660, 63948 },
+    { 38, 48, 0, 0, 0, 0, 0, 84428, 71436, 84428 },
 };
 static const u32 sOpBlob_hills[] = INCBIN_U32("graphics/custom/sky_opening/scenes/hills.bin");
 static const struct SkyOpVersion sOpVer_hills[] = {
-    { 32, 66, 0, 0, 61436, 52476 },
-    { 32, 66, 0, 0, 102492, 69884 },
+    { 32, 66, 0, 0, 0, 0, 0, 61736, 52776, 61736 },
+    { 32, 66, 0, 0, 0, 0, 0, 102792, 70184, 102792 },
 };
 
 #define SKY_OP_SCENE_COUNT 14
 #define SKY_OP_TITLE_TICK 3983
 static const struct SkyOpScene sOpScenes[SKY_OP_SCENE_COUNT] = {
-    { sOpBlob_lapras, sOpVer_lapras, 289, 431, { 1, 1 }, 0, 0, 5780, 21524, 28748, 31844 }, /* lapras: EoS frames 1196-1484 */
+    { sOpBlob_lapras, sOpVer_lapras, 289, 431, { 1, 1 }, 0, 0, 5780, 22252, 29476, 32056 }, /* lapras: EoS frames 1196-1484 */
     { sOpBlob_treasure, sOpVer_treasure, 391, 767, { 1, 1 }, 0, 0, 7820, 7820, 8336, 8852 }, /* treasure: EoS frames 1583-1973 */
     { sOpBlob_timegear, sOpVer_timegear, 186, 1157, { 4, 10 }, 0, 0, 3720, 17936, 26192, 30320 }, /* timegear: EoS frames 2031-2216 */
     { sOpBlob_logo_top, sOpVer_logo_top, 111, 1391, { 1, 1 }, 0, 0, 2220, 2220, 14604, 15120 }, /* logo_top: EoS frames 2300-2410 */
@@ -109,5 +109,5 @@ static const struct SkyOpScene sOpScenes[SKY_OP_SCENE_COUNT] = {
     { sOpBlob_dialga, sOpVer_dialga, 140, 2766, { 0, 1 }, 0, 0, 2800, 3632, 4148, 5180 }, /* dialga: EoS frames 3882-4021 */
     { sOpBlob_forest, sOpVer_forest, 290, 2966, { 4, 1 }, 0, 0, 5800, 10496, 27524, 30104 }, /* forest: EoS frames 4112-4401 */
     { sOpBlob_march, sOpVer_march, 358, 3312, { 1, 1 }, 0, 0, 7160, 28760, 29276, 35468 }, /* march: EoS frames 4510-4867 */
-    { sOpBlob_hills, sOpVer_hills, 245, 3681, { 1, 1 }, 0, 0, 4900, 20684, 23780, 31004 }, /* hills: EoS frames 4935-5179 */
+    { sOpBlob_hills, sOpVer_hills, 248, 3681, { 1, 1 }, 0, 0, 4960, 20856, 23952, 31176 }, /* hills: EoS frames 4935-5182 */
 };

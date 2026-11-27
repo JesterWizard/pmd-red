@@ -587,6 +587,24 @@ static void TitleFade(const SkyCutawayArt *art, bool8 in, bool8 shown)
 /* After the whole opening EoS fades its title in from white (t02a0501:
  * screen2_FadeIn after the white-out), "Press START" coming with it. */
 #define TITLE_WHITE_FRAMES 15
+
+/* A colour as the title shows it (brightness FADE_STEPS), `w` of
+ * TITLE_WHITE_FRAMES of the way to white: w = TITLE_WHITE_FRAMES is white
+ * itself, (31, 31, 31). */
+static u16 TitleWhiteColor(s32 r, s32 g, s32 b, s32 w)
+{
+    r = (r * FADE_STEPS / 256) & 0x1F;
+    g = (g * FADE_STEPS / 256) & 0x1F;
+    b = (b * FADE_STEPS / 256) & 0x1F;
+    r += (31 - r) * w / TITLE_WHITE_FRAMES;
+    g += (31 - g) * w / TITLE_WHITE_FRAMES;
+    b += (31 - b) * w / TITLE_WHITE_FRAMES;
+    return RGB2(r, g, b);
+}
+
+/* EoS's master brightness whitens everything on the screen: the card, and
+ * "Press START" too (it used to come up from black, black letters on the
+ * first white frames, and the white was a shade grey: 255 * 31 / 256). */
 static void TitleFadeFromWhite(const SkyCutawayArt *art)
 {
     const RGB_Struct *pal = (const RGB_Struct *)art->pal;
@@ -596,14 +614,16 @@ static void TitleFadeFromWhite(const SkyCutawayArt *art)
         s32 w = TITLE_WHITE_FRAMES - f;
 
         for (i = 0; i < 240; i++) {
-            RGB_Struct c = pal[i];
+            u16 c = TitleWhiteColor(pal[i].r, pal[i].g, pal[i].b, w);
 
-            c.r += (255 - c.r) * w / TITLE_WHITE_FRAMES;
-            c.g += (255 - c.g) * w / TITLE_WHITE_FRAMES;
-            c.b += (255 - c.b) * w / TITLE_WHITE_FRAMES;
-            SetBGPaletteBufferColorRGB(i, &c, FADE_STEPS, NULL);
+            SetBGPaletteBufferColor(i, &c);
         }
-        SetPressStartBrightness(f * FADE_STEPS / TITLE_WHITE_FRAMES);
+        for (i = 0; i < 16; i++) {
+            u16 p = gSkyPressStartPal[i];
+            u16 c = TitleWhiteColor((p & 0x1F) << 3, ((p >> 5) & 0x1F) << 3, ((p >> 10) & 0x1F) << 3, w);
+
+            SetBGPaletteBufferColor(256 + PRESS_START_PAL * 16 + i, &c);
+        }
         DrawPressStart();
         RunFullscreenArtFrame();
     }
