@@ -101,8 +101,12 @@ sentry-duty songs in these scripts belong to it.
 - **The dream** (v03p11a, `back_SetBackScrollSpeed(-12.0, 0)`): the lower
   layer scrolls 12 px a frame and wraps; `bgm2_ChangeVolume` sets the rain's
   volume at once (no gradual change on the GBA).
-- `back_SetBackEffect(4)` / `(5)` (EoS's other screen effects in the
-  visions) are left out; EoS's top screen shows nothing on the GBA.
+- m03a1002 ends after the bag message: its "one more message" (the Special
+  Episode "Bidoof's Wish" unlocked, on Bidoof's home with
+  `back_SetBackEffect(4)` / `(5)`) is cut, the GBA has no special episodes
+  (`tools/event_editor/ch3/station.py`'s cuts, as m03a0801's and m03a0901's
+  ends). The bag message is EoS's; Red's bag size does not change. EoS's top
+  screen shows nothing on the GBA.
 - `EFFECT_TWO_ARROWS_AT_SIDE_RIGHT` has no GBA picture: the Notice emote.
 - Drowzee's closing speech after 9F plays in the peak's dungeon cutscene
   (the boss transition is a dungeon effect on the GBA).
