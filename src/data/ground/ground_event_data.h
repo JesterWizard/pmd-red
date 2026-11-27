@@ -4096,8 +4096,8 @@ static const struct ScriptCommand s_script_GETOUT_M01E02A[] = { /* 0x812aa14 */
  * the peak won -> EVENT_M01E02B_L008 (SKY_MT_BRISTLE_PEAK_CLEARED_EVENT);
  * fainted, or left early (STARTMODE_10: EoS counts that as a failure too),
  * in either -> EVENT_M01E02B_L006 (SKY_MT_BRISTLE_FAINTED_EVENT). The
- * three are placeholders until chapter 3's scenes exist
- * (documentation/Features/SkyChapter3.md, "Mt. Bristle"). */
+ * three play chapter 3's scenes
+ * (documentation/Features/SkyChapter3.md, "What plays", "Mt. Bristle"). */
 static const struct ScriptCommand s_script_SKY_MT_BRISTLE_DEBUG[] = {
     DEBUGINFO_O(4039),
     /* m03a0601 (d03p11a): $SCENARIO_MAIN = scn[4, 5]; main_EnterDungeon(4, 0) */

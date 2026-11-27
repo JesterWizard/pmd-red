@@ -4,7 +4,7 @@
 
 - Decompilation of Pokémon Mystery Dungeon: Red Rescue Team (GBA), plus a ROM hack.
 - Default build (`MODERN=1`) is the **modern hack build** → `pmd_red.gba`.
-- This branch: the modern build plays the **Explorers of Sky chapter 1 demake**
+- This branch: the modern build plays the **Explorers of Sky demake, chapters 1–3**
   (`STORY=sky`, default; `make STORY=vanilla` for Red's story). See
   `documentation/Features/SkyDemake.md`.
 - `MODERN=0` is the **retail-matching** build (agbcc, pinned layout). Its gate is
@@ -19,7 +19,7 @@ make MODERN=0 compare           # retail-matching gate (needs agbcc, see below)
 scripts/cloud/setup.sh          # toolchain, baserom.gba, mgba_shot (--agbcc, --build)
 scripts/cloud/smoke_test.sh     # headless boot check (prints SMOKE TEST PASSED)
 scripts/cloud/screenshot.sh     # screenshots into build/screenshots/
-scripts/cloud/sky_regression.sh # sky demake regression suite (PASS/FAIL per check, ~2 min)
+scripts/cloud/sky_regression.sh # sky demake regression suite (PASS/FAIL per check, ~4 min)
 ```
 
 - Run the sky regression suite after any sky change. `--no-vanilla` skips the

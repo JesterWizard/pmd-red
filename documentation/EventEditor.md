@@ -242,6 +242,10 @@ python3 tools/event_editor/eos_import.py EOS.nds --chapter2 events/sky/draft/ch2
 python3 tools/event_editor/eos_import.py EOS.nds --chapter2-station \
     events/sky/draft/ch2/sky_d02p01_scenes.scene     # chapter 2 as one file: gs180's groups, in play order
 python3 tools/event_editor/ch2/station.py            # ... into events/sky/scenes/sky_d02p01_scenes.scene
+python3 tools/event_editor/eos_import.py EOS.nds --chapter3-station \
+    events/sky/draft/ch3/sky_d02p02_scenes.scene     # chapter 3: gs181's groups 20-66, in play order
+python3 tools/event_editor/ch3/free_roam.py EOS.nds # chapter 3's free roam (groups 0-12) from EoS's um03 stations
+python3 tools/event_editor/ch3/station.py            # ... both into events/sky/scenes/sky_d02p02_scenes.scene
 python3 tools/event_editor/eos_import.py EOS.nds SCRIPT/G01P01B/m01a0104 \
     --compare events/sky/scenes/sky_d01p01_scenes.scene:g6 --detail       # against a hand-made group
 ```
@@ -291,6 +295,13 @@ in each group (a label is a byte) and at most 10 coloured name slots a group.
 `ch2/free_roam.scene`) and the hand edits made in the emulator (its `HAND`
 list), formats the file and numbers its `DEBUGINFO`s. Tune chapter 2 there
 or in the translator, not in the generated file, so a rerun keeps it.
+Chapter 3's station is made the same way (`--chapter3-station`, then
+`ch3/free_roam.py` and `ch3/station.py`: SkyChapter3.md, "What plays"); its
+translator adds `back_SetBackEffect` → `SKY_BACK_EFFECT`,
+`back_SetBackScrollSpeed` → `SKY_BACK_SCROLL`, `bgm2_ChangeVolume` →
+`SKY_AMBIENCE_VOLUME`, `back_SetBanner2` → `SKY_CHAPTER_CARD`, the shop
+menus → Red's `SPECIAL_TEXT` shops and the story coroutines a free-roam
+script starts → the event scripts that play them.
 
 What the translator does for chapter 2 beyond chapter 1's mappings:
 `back_ChangeGround` → `SKY_CHANGE_GROUND` (the actors stay; `SELECT_MAP`

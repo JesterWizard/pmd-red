@@ -1,11 +1,125 @@
-# Sky demake: chapter 3 plan
+# Sky demake: chapter 3
 
-Explorers of Sky's chapter 3 on the GBA. Planned while chapter 2 is being
-integrated ([SkyChapter2.md](SkyChapter2.md)); work starts once chapter 2
-plays end to end. Same pipeline as chapter 2: maps
-(`tools/convert_eos_ground_map.py`), sprites (`tools/convert_eos_wan_to_ax.py
---ground-groups all`), the dungeon (`tools/make_sky_dungeon_floors.py`), the
-scenes (`tools/event_editor/eos_import.py`), then the flow.
+Explorers of Sky's chapter 3, "The Scream", on the GBA: it plays end to end,
+from chapter 2's good night to the night of the dream, then the demo ends.
+Same pipeline as chapter 2: maps (`tools/convert_eos_ground_map.py`),
+sprites (`tools/convert_eos_wan_to_ax.py --ground-groups all`), the dungeon
+(`tools/make_sky_dungeon_floors.py`), the scenes
+(`tools/event_editor/eos_import.py --chapter3-station`, then
+`tools/event_editor/ch3/free_roam.py` and `tools/event_editor/ch3/station.py`),
+then the flow. The sections after "What plays" are the plan the work
+followed, kept for its notes.
+
+## What plays
+
+Chapter 2's good night (m02a1003) runs `EVENT_DIVIDE` at scenario (4, 0),
+which plays EoS's coroutines as event scripts
+([`src/data/ground/sky/sky_ch3_events.h`](../../src/data/ground/sky/sky_ch3_events.h);
+the Mt. Bristle ones next to `GETOUT_M01E02B` in
+[`ground_event_data.h`](../../src/data/ground/ground_event_data.h)). Each runs
+the scenes, groups of chapter 3's station gs181
+([`events/sky/scenes/sky_d02p02_scenes.scene`](../../events/sky/scenes/sky_d02p02_scenes.scene)),
+with `EXECUTE_SUBSTATION`; the chapter's guild maps have map ids of their own
+(`MAP_SKY_GUILD_*_CH3`, same files) so that `SELECT_MAP` picks gs181.
+
+| # | EoS | Scripts | gs181 groups | What the player sees |
+|---|---|---|---|---|
+| 1 | EVENT_HA_KI at (4, 0) | c00a0201 | 20 | Chapter 3's card ("The Scream", `SKY_CHAPTER_CARD 3`); "The next morning..."; Loudred; the save prompt; free roam in the crew room |
+| 2 | G01P07A's exit: EVENT_HA_CHO | c00a0101 (its sector 2) | 21 | The morning address; free roam on B2F |
+| 3 | EVENT_M03_01B (B2F's trigger) | m03a0101, 0102, 0105, 0106, m00p1101, m03a0107, 0108, 0109 | 22-29 | Chatot sends the team to the Outlaw Notice Board; Bidoof; out of the guild by day; the crossroads; Treasure Town (the square, Kecleon Market, the other shops); scenario (4, 1) |
+| 4 | free roam | the um03 stations of t01p01a, t01p02a, p01p01a, p01p02a, p02p01a, g01p01a, g01p02a-p08a | 0-12 | Treasure Town (both maps), the crossroads, the beach path and the beach, the guild by day and its floors: EoS's NPCs and their chapter-3 lines, signs, exits, shops (below) |
+| 5 | EVENT_M03_02 (the square's east edge at (4, 1)) | m03a0201 | 30 | "The Kecleon Market isn't over this way."; back to free roam |
+| 6 | EVENT_M03_03 (after the Kecleon brothers' shop) | m03a0301, c00a0701, m03d0313, c00a1701, m03d0314 | 31, 32, 33, 34, 35 | Marill and Azurill, the apple; the partner's dizzy spell; "H-h-h...HELP!"; scenario (4, 2) |
+| 7 | EVENT_M03_04 (the square at (4, 2)) | m03a0401, c00a0701, m03d0812 (sector 1), c00a1701, m03a0403 | 36, 32, 37, 34, 38 | Drowzee bumps the hero; the hero's vision of Azurill on Mt. Bristle; scenario (4, 3) |
+| 8 | B1F: m03a0501 (Bidoof, "Yes"), then EVENT_M03_05_06 | m03a0502, 0505, 0506, 0511, 0601 | free roam, 39-43 | Chatot and the outlaw board, Dugtrio, Drowzee's poster, Marill at the crossroads, Mt. Bristle's foot; scenario (4, 5); into Mt. Bristle |
+| 9 | the dungeon, EVENT_M03_08 | Mt. Bristle 1F-9F; m03a0801 or m03a0901; the peak | 44 or 45 | [Mt. Bristle](#mt-bristle); after 9F the peak's scene stops before Drowzee's closing speech, which the peak's cutscene plays before the fight |
+| 10 | EVENT_M03_10_13 (Drowzee down) | m03a1001, 1002, 1201, m03d0812 (sector 0), m03a1203, c00a0501 / c00a0601 (chapter 2's gs180 groups 17, 18), m03a1301-1314 | 46-50, 51-64 | Azurill saved (4, 7); Officer Magnezone; the reward; the vision again; dinner; the storm; the Time Gears (forest, lake, volcano, the flow of time); the dream: Grovyle in the rain; m03a1314; then the demo end |
+| fail | EVENT_M03_07A / 07B (fainted or left early, either run) | m03a0701, c00a0201, then out of the crew room c00a0101 and m03a0702 | 65, 20, 21, 66 | "That didn't end well..."; the next morning (the save); the address; "Hurry! We have to rescue Azurill!"; free roam on B2F; the crossroads' exploration exit goes back to Mt. Bristle (the peak is then m03a0901's re-fight) |
+| end | ($SCENARIO_MAIN_BIT_FLAG[10]) | `SKY_DEMO_END_EVENT` | | The save prompt, "The demo ends here. Look forward to updates!", the title |
+
+Saves and Continue
+([`src/ground_main.c`](../../src/ground_main.c), `EVENT_DIVIDE_FIRST`): the
+morning's save (c00a0201, scenario (4, 0) with
+`SKY_CH3_FLAG_MORNING`) and the crew room bed's (free roam: the hero's bed,
+EoS's layer-5 step-on event) come back to free roam in the crew room; any
+later (4, x) to free roam on `GROUND_ENTER`'s map (the fainted morning's is
+the crew room); the demo end's save (`SKY_CH3_FLAG_DONE`) to the demo end.
+Debug boot: `make DEBUG_BOOT_EVENT=SKY_CH3_START` (scenario (4, 0), the card).
+
+Not played: m03a1101 and m03d0813 (the peak's "It's impossible to go any
+farther.": the GBA's peak is a dungeon floor that ends at Drowzee),
+m03d0312 and m03d0412 (no coroutine on this path runs them).
+
+### Free roam and the shops
+
+Generated by [`tools/event_editor/ch3/free_roam.py`](../../tools/event_editor/ch3/free_roam.py)
+from EoS's um03 stations: gs181's group 0 is a hub that runs the map's group
+(by `GROUND_ENTER`), each map's sectors are its exits, always-on objects
+(signs, the shopkeepers, invisible counter objects so the shopkeepers
+answer across their counters) and one actor set per scenario. The story
+triggers are EoS's: B2F's at (4, 0), the square's east edge at (4, 1), the
+Kecleon brothers, the square at (4, 2), Bidoof at (4, 3), the crossroads'
+exploration exit at (4, 5) / (4, 6) (before that the partner's "We can't
+take any detours..." lines).
+
+- **Kecleon Market**: the green brother opens Red's Kecleon shop (buy, sell),
+  the purple one Red's TM shop; Red's menus and lines (the same
+  characters in Red). The purple brother shows the green one's face (one
+  portrait a species).
+- **Kangaskhan Storage**: Red's storage, Kangaskhan's name and face, Red's lines.
+- **Duskull Bank**: Red's bank as Duskull's: name, face and EoS's lines
+  (text_e.str 884-898, in
+  [`src/data/locale/felicity_bank_usa.h`](../../src/data/locale/felicity_bank_usa.h));
+  Red's rules (EoS's speech still says half the money is lost).
+- **Croagunk's Swap Shop** and Electivire (not there in EoS's chapter 3):
+  Croagunk only talks (Red has no swap shop).
+- The beach cave, the dojo (Marowak's) and Sharpedo Bluff's entrance say
+  they are not in this demo; the mess hall's free roam (G01P06A) uses
+  g01p06b's map.
+
+### Sentry duty
+
+Not in chapter 3's main path: the footprint mini-game starts in a later chapter.
+`c00a1701` here is only the dizzy spell's return (S04P01A); its namesake
+`c00a1701__G01P04A` is the sentry results scene of later chapters, and the
+sentry-duty songs in these scripts belong to it.
+
+### Differences from EoS, and why
+
+- **The dizzy spell** (c00a0701 / c00a1701, EoS effects 621 and 635 over a
+  black screen): white pulses quickening into the vision and slowing out of
+  it (`FLASH_TO` / `FLASH_FROM`), with EoS's sounds; the swirl effect has no
+  GBA picture.
+- **The storm in the crew room** (m03a1302-1311, `back_SetBackEffect(3)` /
+  `(1)`): `SKY_BACK_EFFECT` plays g01p07c's own palette animation from EoS
+  (`data/map_bg/EG0107CS.bpl`, `MAP_FILE_ID_SKY_GUILD_CREW_ROOM_STORM`) in a
+  loop and puts the base palettes back; the storm clouds (v03p05c) use
+  chapter 1's lightning (`SKY_STORM_BOLT`).
+- **The flow of time** (v03p09a, `back_SetEffect(5, 0)` with
+  `back_SetBackEffect(2)`): the upper layer blended half over the lower one
+  (BG2 over BG3, 8/8); EoS's exact weights were not measured.
+- **The dream** (v03p11a, `back_SetBackScrollSpeed(-12.0, 0)`): the lower
+  layer scrolls 12 px a frame and wraps; `bgm2_ChangeVolume` sets the rain's
+  volume at once (no gradual change on the GBA).
+- `back_SetBackEffect(4)` / `(5)` (EoS's other screen effects in the
+  visions) are left out; EoS's top screen shows nothing on the GBA.
+- `EFFECT_TWO_ARROWS_AT_SIDE_RIGHT` has no GBA picture: the Notice emote.
+- Drowzee's closing speech after 9F plays in the peak's dungeon cutscene
+  (the boss transition is a dungeon effect on the GBA).
+- c00a0501 ("Dinner's on!") plays nothing at (4, 7), as in EoS.
+- Two Magnemite on screen need two ground kinds (`SKY_LIVES_MAGNEMITE2`):
+  Red keeps one ground actor a kind.
+
+### Tests
+
+The `ch3` test ROM (`DEBUG_BOOT_EVENT=SKY_CH3_START`) plays the card, the
+morning, Continue, the town scenes, the free roam's triggers and Bidoof into
+Mt. Bristle; the `bristle` ROM goes on after the peak to the demo end and
+Continue; the `peak` ROM faints and plays the faint path and Continue; the
+`bluff` ROM goes from chapter 2's good night into chapter 3's morning and
+Continue. Checks:
+[`scripts/cloud/sky_regression/checks/chapter3.py`](../../scripts/cloud/sky_regression/checks/chapter3.py);
+see [SkyDemake.md, "Testing"](SkyDemake.md#testing).
 
 ## What EoS plays
 
@@ -26,8 +140,8 @@ From `unionall.ssb` (coroutines `EVENT_M03_*`); 45 `m03*` scripts plus
 | fail | EVENT_M03_07A / 07B | m03a0701 (g01p03a), m03a0702 (g01p04a) | Fainted on Mt. Bristle |
 | stop | d03p41a | m03a0901, m03a1101 | "It's impossible to go any farther." |
 
-Sentry-duty music (`BGM_*_SENTRY_DUTY`) appears in these scripts: check
-whether the footprint mini-game belongs to chapter 3 or only its results.
+Sentry-duty music (`BGM_*_SENTRY_DUTY`) appears in these scripts: only
+in the results scene of later chapters ([Sentry duty](#sentry-duty)).
 
 ## New pieces
 
@@ -643,9 +757,7 @@ and runs `GETOUT_M01E02B`, which the sky build replaces
 ([`ground_event_data.h`](../../src/data/ground/ground_event_data.h); Red's
 also set `SCENARIO_MAIN` (4,7) / (4,8) by itself): `DUNGEON_ENTER` 2,
 `SCENARIO_MAIN` 4, won → **`EVENT_M01E02B_L005` = `SKY_MT_BRISTLE_CLEARED_EVENT`**
-(`s_script_SKY_MT_BRISTLE_CLEARED`; placeholder: `SCENARIO_CALC(SCENARIO_MAIN,
-4, 6)`, `NEXT_DUNGEON(-1, SCRIPT_DUNGEON_3)`). The scenes agent replaces its
-body with m03a0801 / m03a0901 on the D03P41A map (by `SCENARIO_MAIN`: (4, 5)
+(`s_script_SKY_MT_BRISTLE_CLEARED`). It plays m03a0801 / m03a0901 on the D03P41A map (by `SCENARIO_MAIN`: (4, 5)
 the first fight, (4, 6) the re-fight), **stopping before Drowzee's closing
 speech** (the peak's cutscene plays it, then the transition), setting
 scn[4, 6], then `NEXT_DUNGEON(..., SCRIPT_DUNGEON_3)`. The return maps
@@ -659,8 +771,8 @@ c00a0501/0601, m03a1301-1314.
 
 GBA: the peak run ends won; `GETOUT_M01E02B` with `DUNGEON_ENTER` 3,
 `SCENARIO_MAIN` 4, won → **`EVENT_M01E02B_L008` = `SKY_MT_BRISTLE_PEAK_CLEARED_EVENT`**
-(`s_script_SKY_MT_BRISTLE_PEAK_CLEARED`; placeholder:
-`SET_RESCUE_CONQUERED(RESCUE_DUNGEON_MT_STEEL)`, scn[4, 7], then the demo end).
+(`s_script_SKY_MT_BRISTLE_PEAK_CLEARED`: `SET_RESCUE_CONQUERED(RESCUE_DUNGEON_MT_STEEL)`,
+EVENT_M03_10_13's scenes, then the demo end; [What plays](#what-plays)).
 
 ### Fainting: hook for the flow
 
@@ -673,7 +785,8 @@ bag item with a 50% chance and the held items) and loads `mapID3`;
 `GETOUT_M01E02B` sends **any result but won**, in either run (fainted, or
 `STARTMODE_10`, left early, which EoS also counts as a failure), to
 **`EVENT_M01E02B_L006` = `SKY_MT_BRISTLE_FAINTED_EVENT`**
-(`s_script_SKY_MT_BRISTLE_FAINTED`; placeholder: the demo end); another
+(`s_script_SKY_MT_BRISTLE_FAINTED`: m03a0701, c00a0201, free roam in the crew
+room; [What plays](#what-plays)); another
 `SCENARIO_MAIN` goes to `EVENT_DIVIDE`. Seen working: a level-1 team falls
 to Drowzee and the fainted event runs (the `peak` test ROM).
 
@@ -685,7 +798,7 @@ make DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_PEAK_DEBUG_EVENT [DEBUG_BOOT_LEVEL=15]
 ```
 
 `SKY_MT_BRISTLE_DEBUG_EVENT` (`EVENT_M01E02B_L001`'s slot) sets scn[4, 5]
-(m03a0601) and enters Mt. Bristle; its cleared placeholder then enters the
+(m03a0601) and enters Mt. Bristle; its cleared event then enters the
 peak. `SKY_MT_BRISTLE_PEAK_DEBUG_EVENT` (`EVENT_M01E02B_L002`) sets scn[4, 6]
 and enters the peak fight. A level-12 team walks the nine floors but loses to
 Drowzee when the partner falls; the `bristle` test ROM uses level 15.

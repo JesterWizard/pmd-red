@@ -58,16 +58,22 @@ ROMS = {
     "after": dict(vars=["DEBUG_BOOT_EVENT=EVENT_M01E01A_L003"], driver=drivers.after, frames=15000,
                   what="the scenes after the Pit (m01a0701, m01a0702), the save prompt, Continue: chapter 2's start"),
     "bluff": dict(vars=["DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BLUFF_SEED}",
-                        f"DEBUG_BOOT_LEVEL={BLUFF_LEVEL}"], driver=drivers.bluff, frames=36000,
-                  what="Drenched Bluff (chapter 2) from B1F to B6F's stairs, the cleared scenes, the demo end, Continue"),
+                        f"DEBUG_BOOT_LEVEL={BLUFF_LEVEL}"], driver=drivers.bluff, frames=42000,
+                  what="Drenched Bluff (chapter 2) from B1F to B6F's stairs, the cleared scenes, chapter 3's "
+                       "morning, Continue"),
     "bristle": dict(vars=["DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BRISTLE_SEED}",
-                          f"DEBUG_BOOT_LEVEL={BRISTLE_LEVEL}"], driver=drivers.bristle, frames=26000,
-                    what="Mt. Bristle (chapter 3) 1F to 9F's stairs, then the peak: Drowzee's cutscene and fight"),
+                          f"DEBUG_BOOT_LEVEL={BRISTLE_LEVEL}"], driver=drivers.bristle, frames=50000,
+                    what="Mt. Bristle (chapter 3) 1F to 9F's stairs, then the peak: Drowzee's cutscene and fight; "
+                         "EVENT_M03_10_13 to the demo end, Continue"),
     "peak": dict(vars=["DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_PEAK_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BRISTLE_SEED}"],
-                 driver=drivers.peak, frames=6000,
-                 what="Mt. Bristle Peak from its debug boot, a level-1 team: the fight lost"),
+                 driver=drivers.peak, frames=20000,
+                 what="Mt. Bristle Peak from its debug boot, a level-1 team: the fight lost; the faint path, "
+                      "Continue"),
     "ch2": dict(vars=["DEBUG_BOOT_EVENT=SKY_CH2_START", f"DEBUG_BOOT_SEED={CH2_SEED}"], driver=drivers.ch2,
                 frames=66000, what="chapter 2 from its card to Drenched Bluff, fainting, the faint path back; Continue from both saves"),
+    "ch3": dict(vars=["DEBUG_BOOT_EVENT=SKY_CH3_START"], driver=drivers.ch3, frames=48000,
+                what="chapter 3 from its card: the morning, Continue, Treasure Town, the free roam's story "
+                     "triggers (the shop, the visions), Bidoof, into Mt. Bristle"),
     "sky": dict(vars=[], driver=drivers.jukebox, frames=16000,
                 what="the normal sky ROM: boot, the Sky Jukebox"),
     # more runs of the plain ROM (`rom`: they play that test ROM's build)

@@ -7,7 +7,8 @@
  * The scene scripts, actors and sectors are in
  * events/sky/scenes/sky_d02p02_scenes.scene; the build compiles them into
  * sky_d02p02_scenes.h (tools/event_editor/scenes.py, documentation/EventEditor.md).
- * As yet a placeholder: group 0, the enter script.
+ * Group 0 is the free roam's hub (it runs the map's group), 1-12 the free roam,
+ * 20-66 EoS's scenes (src/data/ground/sky/sky_ch3_events.h lists them).
  */
 #include "sky_d02p02_scenes.h"
 

@@ -232,25 +232,22 @@ def ch2_continue_faint(t):
            f"{t.events['dungeon_2']}"
 
 
-@check("bluff", "Continue from the demo end's save: the demo end again (scenario (4, 0))")
-def bluff_continue_demo_end(t):
-    yield from t.wait_event("demo_end_continued_reset")
-    f = yield from t.wait(lambda f: "save your adventure" in f.text or
-                          (dialogue_ready(t.game, f) and t.game.map_id(f) is not None),
-                          "the save prompt after Continue")
-    expect("save your adventure" in f.text, f"the first box after Continue is {f.text!r}")
-    f = yield from t.wait(lambda f: dialogue_ready(t.game, f) and "demo ends here" in f.text,
-                          "'The demo ends here.' after Continue")
-    main = t.game.script_var(f, "SCENARIO_MAIN")
-    expect(main == 4, f"SCENARIO_MAIN {main}")
-    return f"Continue: the save prompt, 'The demo ends here.' at frame {f.n}"
+@check("bluff", "Continue from chapter 3's morning save: free roam in the crew room (scenario (4, 0))")
+def bluff_continue_ch3_morning(t):
+    yield from t.wait_event("ch3_morning_continued_reset")
+    f = yield from t.wait_event("ch3_morning_continued")
+    where = t.run.data.get("ch3_morning_continued")
+    expect(where == "MAP_SKY_GUILD_CREW_ROOM_CH3", f"Continue went to {where}, expected the crew room")
+    main = t.game.scenario(f)
+    expect(main == (4, 0), f"scenario {main}, expected (4, 0)")
+    return f"Continue: free roam on {where} at frame {f.n}, scenario {main}"
 
 
 @check("bluff", "Drenched Bluff cleared: EVENT_M02_09_10's scenes in order (the pearl, the reward, dinner, good night)")
 def bluff_cleared_scenes(t):
     yield from t.wait_event("left_dungeon")
     return (yield from maps_in_order(t, CLEARED_MAPS,
-                                     lambda f: dialogue_ready(t.game, f) and "demo ends here" in f.text))
+                                     lambda f: t.game.map_name(f) == "MAP_SKY_GUILD_CREW_ROOM_CH3"))
 
 
 @check("bluff", "Drenched Bluff cleared: Job Clear on B1F, Eating in the mess hall, Goodnight in the crew room")
@@ -262,20 +259,23 @@ def bluff_cleared_music(t):
         ("c00a0601 dinner", "MAP_SKY_GUILD_MESS_HALL", MUS["eating"]),
         ("m02a1003 good night", "MAP_SKY_GUILD_CREW_ROOM_NIGHT", MUS["goodnight"]),
     ]
-    return (yield from scene_songs(t, table, lambda f: dialogue_ready(t.game, f) and "demo ends here" in f.text))
+    return (yield from scene_songs(t, table, lambda f: t.game.map_name(f) == "MAP_SKY_GUILD_CREW_ROOM_CH3"))
 
 
-@check("bluff", "The demo ends after chapter 2's good night: save prompt, 'The demo ends here', scenario (4, 0)")
-def bluff_demo_end(t):
+@check("bluff", "Chapter 2's good night leads to chapter 3: its card ('The Scream'), the morning, the save, free roam in the crew room")
+def bluff_to_ch3(t):
     yield from t.wait_event("left_dungeon")
     f = yield from t.wait(lambda f: dialogue_ready(t.game, f) and "Sleep tight" in f.text,
                           "the partner's good night (m02a1003)")
-    f = yield from t.wait(lambda f: "save your adventure" in f.text, "the save prompt")
-    f = yield from t.wait(lambda f: dialogue_ready(t.game, f) and "demo ends here" in f.text,
-                          "'The demo ends here.'")
-    main = t.game.script_var(f, "SCENARIO_MAIN")
-    expect(main == 4, f"SCENARIO_MAIN {main}, expected 4 (chapter 2 done)")
-    return f"'The demo ends here.' at frame {f.n}, scenario main {main}"
+    from .chapter3 import card_shown
+    best, f = yield from card_shown(t, lambda f: "save your adventure" in f.text)
+    expect(best[0] < 14, f"no frame like chapter 3's card (closest: mean difference {best[0]:.1f})")
+    expect(t.game.scenario(f) == (4, 0), f"scenario {t.game.scenario(f)} at the save prompt, expected (4, 0)")
+    f = yield from t.wait(lambda f: "save your adventure" in f.text, "the morning's save prompt (c00a0201)")
+    f = yield from t.wait_event("ch3_morning_free")
+    where = t.run.data.get("ch3_morning_free")
+    expect(where == "MAP_SKY_GUILD_CREW_ROOM_CH3", f"free roam on {where}, expected the crew room")
+    return f"card, save prompt, free roam on {where} at frame {f.n}"
 
 
 @check("after", "Chapter 1's end asks to save; Continue from that save starts chapter 2 (its card, the guild at dusk)")

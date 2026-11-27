@@ -20,6 +20,13 @@ static EWRAM_DATA bool8 sFelicityBankInterestPending = {FALSE};
 
 #include "data/felicity_bank.h"
 
+#ifdef SKY_STORY
+/* Explorers of Sky demake: Duskull Bank (EoS's lines: data/locale/felicity_bank_usa.h) */
+#define BANK_SPECIES MONSTER_DUSKULL
+#else
+#define BANK_SPECIES MONSTER_PERSIAN
+#endif
+
 static void CreateFelicityBankShopMenu(void);
 static void CreateFelicityMoneySavingsHeader(u32);
 static void Felicity_DepositMoney(void);
@@ -87,9 +94,9 @@ bool8 CreateFelicityBank(s32 mode)
     sFelicityBankWork = MemoryAlloc(sizeof(FelicityBankWork), MEMALLOC_GROUP_8);
     sFelicityBankWork->menuAction = 0;
     sFelicityBankWork->mode = mode;
-    CopyYellowMonsterNametoBuffer(gSpeakerNameBuffer, MONSTER_PERSIAN);
-    CopyYellowMonsterNametoBuffer(gFormatBuffer_Monsters[7], MONSTER_PERSIAN);
-    monName = GetMonSpecies(MONSTER_PERSIAN);
+    CopyYellowMonsterNametoBuffer(gSpeakerNameBuffer, BANK_SPECIES);
+    CopyYellowMonsterNametoBuffer(gFormatBuffer_Monsters[7], BANK_SPECIES);
+    monName = GetMonSpecies(BANK_SPECIES);
     strcpy(gFormatBuffer_Monsters[6], monName);
 
     if (sFelicityBankWork->mode == FEL_MODE_ASLEEP)
@@ -97,7 +104,7 @@ bool8 CreateFelicityBank(s32 mode)
     else
         sFelicityBankWork->monPortraitPtr = &sFelicityBankWork->monPortrait;
 
-    faceFile = GetDialogueSpriteDataPtr(MONSTER_PERSIAN);
+    faceFile = GetDialogueSpriteDataPtr(BANK_SPECIES);
     sFelicityBankWork->monPortrait.faceFile = faceFile;
     sFelicityBankWork->monPortrait.faceData = (PortraitGfx *) faceFile->data;
     sFelicityBankWork->monPortrait.spriteId = 0;

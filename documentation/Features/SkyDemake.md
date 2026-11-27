@@ -36,15 +36,18 @@ is never committed). The choreography and text follow the EoS scene scripts
 ![Chapter 1 in the GBA engine](images/sky_demake.png)
 
 It is the default story of the modern build on this branch (`STORY=sky`).
-The game is a demo of chapters 1 and 2: after chapter 1's beach epilogue
+The game is a demo of chapters 1 to 3: after chapter 1's beach epilogue
 ("And so...") it asks whether to save and goes on with chapter 2, "The New
 Guild Recruits" (Wigglytuff's Guild, the team's name, Drenched Bluff:
-[SkyChapter2.md](SkyChapter2.md#what-plays)). After chapter 2's good night
-it asks whether to save, shows "The demo ends here. Look forward to
-updates!" and returns to the title screen. Continuing a finished save shows
-the same ending again; a save made earlier (chapter 1's end, chapter 2's
-good night, the morning after fainting in Drenched Bluff) goes on from
-there (`s_script_SKY_DEMO_END` in
+[SkyChapter2.md](SkyChapter2.md#what-plays)); after chapter 2's good night
+chapter 3, "The Scream", starts with its card and the morning's save
+(Treasure Town, the visions, Mt. Bristle and Drowzee, the dream:
+[SkyChapter3.md](SkyChapter3.md#what-plays)). After chapter 3's last scene
+(m03a1314) it asks whether to save, shows "The demo ends here. Look forward
+to updates!" and returns to the title screen. Continuing a finished save
+shows the same ending again; a save made earlier (chapter 1's end, chapter
+2's good night, the morning after fainting in Drenched Bluff, chapter 3's
+mornings and the crew room's bed) goes on from there (`s_script_SKY_DEMO_END` in
 [`src/data/ground/sky/sky_ch2_events.h`](../../src/data/ground/sky/sky_ch2_events.h),
 `SKY_SAVE_GAME` / `SKY_DEMO_TO_TITLE` in [`src/sky_story.c`](../../src/sky_story.c),
 the Continue check in [`src/ground_main.c`](../../src/ground_main.c)).
@@ -87,7 +90,8 @@ Riolu (with Vulpix, Meowth, Phanpy). Then:
 | 9 | m01a0701 | `d01p41a` Beach Cave Pit | The thieves give the fragment back and flee |
 | 10 | m01a0702 | `d01p11b` beach (sunset) | The Relic Fragment; "Form a team / Say no"; "And so..." |
 | 11 | — | — | The save prompt; chapter 2 (card, the guild, Drenched Bluff, the faint path): [SkyChapter2.md](SkyChapter2.md#what-plays) |
-| 12 | m02a1003, then the demo end | `g01p07c` crew room (night) | After chapter 2's good night: the save prompt, "The demo ends here. Look forward to updates!", the title |
+| 12 | — | — | After chapter 2's good night: chapter 3 (card, Treasure Town, Mt. Bristle, the dream): [SkyChapter3.md](SkyChapter3.md#what-plays) |
+| 13 | m03a1314, then the demo end | `v03p12a` | The save prompt, "The demo ends here. Look forward to updates!", the title |
 
 The Relic Fragment is a ground object (EoS `GROUND/g01p01a1.wan`, ornament
 `relicfragmentp`, object kind `SKY_OBJ_RELIC_FRAGMENT`): at the guild grate
@@ -1987,9 +1991,10 @@ path is printed. The script exits 1 when a check fails. It builds the tools
 | `pit` | the same + `DEBUG_BOOT_FLOOR=5` | the story to the Pit; when Boss Battle! starts, tap R (rotate mode), B, mash A | 21000 |
 | `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702; A at the save prompt (Save); reset, Continue; the story presses into chapter 2 | 15000 |
 | `perf` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_SEED=7` | the story to Beach Cave B1F (always the same floor); stand 120 frames, walk 60 tiles towards the farthest tile, dash 60 tiles (B held), with CPU load measured | ~22500 |
-| `bluff` | `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=8` | boot into Drenched Bluff B1F; on each floor walk to the stairs (a Pokémon in the way is attacked, a hint box gets A) and take them; after B6F the story presses to the demo end (Save); reset, Continue | ~26600 |
-| `bristle` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=15` | as `bluff` through Mt. Bristle 1F-9F; the cleared placeholder enters the peak: the story presses through the cutscene, then walk to Drowzee and attack (a floor without stairs: the nearest wild Pokémon) until the dungeon ends | ~21500 |
-| `peak` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_PEAK_DEBUG_EVENT DEBUG_BOOT_SEED=7` | the peak fight from its debug boot with a level-1 team, as `bristle`'s peak (the team faints) | ~3700 |
+| `bluff` | `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=8` | boot into Drenched Bluff B1F; on each floor walk to the stairs (a Pokémon in the way is attacked, a hint box gets A) and take them; after B6F the story presses through chapter 2's end into chapter 3's card and morning (Save) to free roam in the crew room; reset, Continue | ~26700 |
+| `bristle` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=15` | as `bluff` through Mt. Bristle 1F-9F; the cleared placeholder enters the peak: the story presses through the cutscene, then walk to Drowzee and attack (a floor without stairs: the nearest wild Pokémon) until the dungeon ends; then chapter 3's story presses (`ch3_story`) through EVENT_M03_10_13 to the demo end (Save); reset, Continue | ~46200 |
+| `peak` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_PEAK_DEBUG_EVENT DEBUG_BOOT_SEED=7` | the peak fight from its debug boot with a level-1 team, as `bristle`'s peak (the team faints); `ch3_story` through the faint path to free roam (the morning's save), reset, Continue, out of the crew room: the address and m03a0702 to free roam on B2F | ~8100 |
+| `ch3` | `DEBUG_BOOT_EVENT=SKY_CH3_START` | chapter 3 from its card (`ch3_story`: A 20 frames into each box and menu, the save prompts: Save; A every 60 frames out of free roam; free roam = no map script, no box, the hero's flags 0x1D); after the morning's save reset, Continue; walks by the hero's tile (`gGroundLives`): out of the crew room, up off B2F's address spot, the square's east edge, west to the Kecleon brothers (A, then B out of the shop), back into the square, the crossroads, the guild's entrance, 1F, B1F; A on Bidoof (Yes) into Mt. Bristle | ~39200 |
 | `ch2` | `DEBUG_BOOT_EVENT=SKY_CH2_START DEBUG_BOOT_SEED=7` | chapter 2 from its card: A 20 frames into each box, A every 60 frames when none is up (the save prompts: Save); the team's name (START, A, Up, A); free roam: Up off the address's spot; after the good night's save, reset and Continue; in Drenched Bluff (the level-1 team) A every 40 frames until it faints; the faint path to the morning's save, reset and Continue, back into the bluff | ~44400 |
 | `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
 | `opening` | plain (plays `sky`'s build) | START at 600 (the health warning), then nothing: the whole opening to the title; START there | ~7700 |
@@ -2078,10 +2083,23 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `peak_transition` | bristle | In the Depths of the Pit on the peak, Drowzee's last line, then before Boss Battle! two flashes and the white-out (BLDY brighten) and the streaks (BG1/BG2 alpha blend) |
 | `peak_won` | bristle | Drowzee down ends the peak: `STARTMODE_DUNGEON_WON`, `DUNGEON_ENTER` 3, `SCENARIO_MAIN` 4 at the end of the run (GETOUT_M01E02B's peak branch), then the cleared event shows a message on the ground |
 | `peak_fainted` | peak | the fight starts at the peak (`DUNGEON_ENTER` 3); the level-1 team faints: `STARTMODE_DUNGEON_LOST`, `SCENARIO_MAIN` 4, then the fainted event shows a message on the ground |
-| `bluff_cleared_scenes` | bluff | after the clear: EVENT_M02_09_10's maps in order (the bluff's end, B1F, B2F, the mess hall, the crew room at night) up to "The demo ends here." |
+| `bluff_cleared_scenes` | bluff | after the clear: EVENT_M02_09_10's maps in order (the bluff's end, B1F, B2F, the mess hall, the crew room at night) up to chapter 3's crew room |
 | `bluff_cleared_music` | bluff | In the Depths of the Pit (64) for the pearl, Job Clear! (945) on B1F, the eating jingle (72) in the mess hall, Goodnight (942) in the crew room: each 120 frames in a row |
-| `bluff_demo_end` | bluff | the partner's good night (m02a1003), the save prompt, "The demo ends here." with `SCENARIO_MAIN` 4 |
-| `bluff_continue_demo_end` | bluff | reset, Continue from the demo end's save: the save prompt and "The demo ends here." again, `SCENARIO_MAIN` 4 |
+| `bluff_to_ch3` | bluff | the partner's good night (m02a1003), then a frame like `graphics/custom/chapter_cards/chapter3.png` (mean difference < 14) before the morning's save prompt at scenario (4, 0), then free roam in `MAP_SKY_GUILD_CREW_ROOM_CH3` |
+| `bluff_continue_ch3_morning` | bluff | reset, Continue from chapter 3's morning save: free roam in the crew room, scenario (4, 0) |
+| `ch3_chapter_card` | ch3 | a frame like `chapter3.png` (mean difference < 14) before the morning's save prompt |
+| `ch3_morning_continue` | ch3 | the morning's save prompt at scenario (4, 0), free roam in the crew room; reset, Continue: free roam in the crew room |
+| `ch3_town_scenes` | ch3 | out of the crew room: the address and EVENT_M03_01B's maps in order (B2F, B1F, B2F, the entrance by day, the crossroads, the square, the west side, the square), free roam in the square at (4, 1) |
+| `ch3_detour` | ch3 | the square's east edge: m03a0201's "isn't over this way", free roam again at (4, 1) |
+| `ch3_kecleon` | ch3 | the green Kecleon's shop text, then EVENT_M03_03: at least 3 white pulses on the black dizzy-spell map, "HELP!", scenario (4, 2) |
+| `ch3_vision` | ch3 | the square at (4, 2): Drowzee named, the vision's map (`MAP_SKY_MT_BRISTLE_PEAK`), scenario (4, 3) |
+| `ch3_outlaw` | ch3 | walked to `MAP_SKY_GUILD_B1F_CH3`; after Bidoof EVENT_M03_05_06's maps in order (Dugtrio's tunnel, B1F, the crossroads, Mt. Bristle's foot), then Mt. Bristle 1F at (4, 5) |
+| `ch3_after_scenes` | bristle | after the peak: EVENT_M03_10_13's 20 maps in order up to "The demo ends here." |
+| `ch3_lightning` | bristle | the crew room at night (m03a1302): at least 4 BG palette states (the lightning) before the first box, and the map's own palettes again at that box |
+| `ch3_time_flow_blend` | bristle | v03p09a: BLDCNT BG2 over BG3 with BLDALPHA 8/8 on 120 frames or more |
+| `ch3_grovyle_run` | bristle | v03p11a: at least 30 values of the map's lower-layer scroll (`gGroundMapAction.unkF8`); Grovyle moves 20 tiles or more and is on screen on 10 frames or more |
+| `ch3_demo_end` | bristle | after m03a1314: the save prompt, "The demo ends here." at scenario (4, x); reset, Continue: the demo end again |
+| `ch3_faint_path` | peak | after fainting: m03a0701's "didn't end well", the save prompt, free roam in the crew room; reset, Continue there; out of it: m03a0702's "rescue Azurill", free roam on `MAP_SKY_GUILD_B2F_CH3` |
 | `after_into_chapter2` | after | chapter 1's save prompt at `SCENARIO_MAIN` 3; reset, Continue: chapter 2's card queued (`sPendingChapter` 2) and m02a0101's map (`MAP_SKY_GUILD_DUSK2`) |
 | `ch2_chapter_card` | ch2 | chapter 2's card is queued and a frame like `graphics/custom/chapter_cards/chapter2.png` (mean difference < 14) is on screen before the first box; nothing queued at the first box |
 | `ch2_scenes_in_order` | ch2 | EVENT_M02_01_02 and 03_04: the 16 maps of m02a0101 .. m02a0401 in play order, to Drenched Bluff |
@@ -2178,6 +2196,9 @@ make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
   Drenched Bluff at scenario (3,3) (see
   [SkyChapter2.md](SkyChapter2.md#debug-boot-1)); with `DEBUG_BOOT_LEVEL=8` the
   team survives it, with `DEBUG_BOOT_FLOOR=6` it starts on the last floor.
+- `DEBUG_BOOT_EVENT=SKY_CH3_START`: chapter 3 from its start (scenario (4,0),
+  EVENT_DIVIDE: the card, then the morning), as after chapter 2's good night
+  ([SkyChapter3.md](SkyChapter3.md#what-plays)).
 - `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT` / `SKY_MT_BRISTLE_PEAK_DEBUG_EVENT`:
   straight into chapter 3's Mt. Bristle at scenario (4,5), or into the peak's
   Drowzee fight at (4,6) (see

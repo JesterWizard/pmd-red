@@ -206,6 +206,47 @@ class GameInfo:
             out.setdefault(struct.unpack_from("<h", e, 8)[0], e)
         return out
 
+    def lives_positions(self, f):
+        """[(kind, species, (x, y) centre in tiles)] of the ground actors
+        (GroundLive: stride 0x1F4, kind at 2, position x1, y1, x2, y2 in
+        1/256 px at 0x144)."""
+        base = f.u32(self.syms["gGroundLives"])
+        if not 0x02000000 <= base < 0x03008000:
+            return []
+        out = []
+        for i in range(24):
+            e = f.read(base + i * 0x1F4, 0x1F4)
+            idn, kind, _, _, species = struct.unpack_from("<hhhhh", e, 0)
+            if idn == -1:
+                continue
+            x1, y1, x2, y2 = struct.unpack_from("<iiii", e, 0x144)
+            out.append((kind, species, ((x1 + x2) / 4096, (y1 + y2) / 4096)))
+        return out
+
+    def map_scroll(self, f):
+        """The map's own layer scroll (gGroundMapAction.unkF8, pixels:
+        MAP_NIGHTMARE's, SKY_BACK_SCROLL's)."""
+        a = f.u32(self.syms["gGroundMapAction"])
+        return struct.unpack("<ii", f.read(a + 0xF8, 8))
+
+    def hero_tile(self, f):
+        """The hero's (ground actor 0) centre in tiles, or None."""
+        lives = self.lives_positions(f)
+        return lives[0][2] if lives else None
+
+    def ground_free(self, f):
+        """Free roam: the map runs no event script (gGroundMapAction's
+        script state, at 0x24, is -1) and no box or menu is up."""
+        a = f.u32(self.syms["gGroundMapAction"])
+        if not 0x02000000 <= a < 0x03008000 or not (self.map_name(f) or "").startswith("MAP_SKY"):
+            return False
+        if struct.unpack("<h", f.read(a + 0x24, 2))[0] != -1 or self.print_state(f) in (4, 7, 8, 9):
+            return False
+        # and the hero takes the player's input: its flags (0x11C) hold 0x1D
+        # in free roam (0x2300181D), not in a scene (0x23001800)
+        base = f.u32(self.syms["gGroundLives"])
+        return 0x02000000 <= base < 0x03008000 and f.u32(base + 0x11C) & 0x1D == 0x1D
+
     def camera_view(self, f):
         """The ground camera's view, top-left in map pixels. The camera
         (sUnknown_20399E8.unk14, src/code_809D148.c) holds the view centre in

@@ -309,12 +309,13 @@ def bluff(run):
             # blocked: facing a Pokémon (or the stairs menu is up): A
             yield from d.press("A", 4, 30)
     d.post("left_dungeon")
-    # the demo end (its save prompt: A saves), then Continue from that save
-    yield from d.mash_until(lambda f: game.print_state(f) in PRINT_WAITING and "demo ends here" in f.text)
-    yield from d.idle(60)
-    yield from d.reset_and_continue("demo_end_continued",
-                                    lambda f: "save your adventure" in f.text or "demo ends here" in f.text)
-    yield from d.mash()
+    # chapter 3's start (the card, the morning, its save: Yes) to free roam
+    # in the crew room, then Continue from that save
+    yield from ch3_story(d, lambda f: False, free_frames=30, limit=20000)
+    d.post("ch3_morning_free", game.map_name(d.f))
+    yield from d.idle(30)
+    yield from d.reset_and_continue("ch3_morning_continued", lambda f: game.ground_free(f))
+    yield from d.idle(30)
 
 
 def _walk_run(d, prefix, limit=BLUFF_FLOOR_LIMIT):
@@ -370,17 +371,26 @@ def _walk_run(d, prefix, limit=BLUFF_FLOOR_LIMIT):
 
 
 def bristle(run):
-    """Mt. Bristle (chapter 3) 1F-9F, then (the placeholder cleared event
-    enters it) Mt. Bristle Peak: the cutscene, then walk to Drowzee and
-    attack until the dungeon ends. Events as `_walk_run` ("floor_<n>",
+    """Mt. Bristle (chapter 3) 1F-9F, then (the cleared event enters it)
+    Mt. Bristle Peak: the cutscene, then walk to Drowzee and attack until
+    the dungeon ends; then EVENT_M03_10_13 (the story presses) to the demo
+    end, its save, reset and Continue. Events as `_walk_run` ("floor_<n>",
     "stairs_<n>"; "peak_floor_1", "peak_fight"), "left_bristle",
-    "peak_start" (the peak run's first frame), "left_peak"."""
+    "peak_start" (the peak run's first frame), "left_peak", "demo_end",
+    "demo_end_continued"."""
     d = D(run)
     game = run.game
     yield from d.mash_until(lambda f: game.in_dungeon(f) and game.input_waits(f) > 0)
     yield from _walk_run(d, "")
     d.post("left_bristle")
     yield from _peak(d)
+    yield from ch3_story(d, lambda f: game.print_state(f) in PRINT_WAITING and "demo ends here" in f.text,
+                         limit=30000)
+    d.post("demo_end")
+    yield from d.idle(60)
+    yield from d.reset_and_continue("demo_end_continued",
+                                    lambda f: "save your adventure" in f.text or "demo ends here" in f.text)
+    yield from d.mash()
 
 
 def _peak(d):
@@ -390,15 +400,29 @@ def _peak(d):
     yield from d.mash_until(lambda f: game.in_dungeon(f) and game.input_waits(f) > 0)
     yield from _walk_run(d, "peak_")
     d.post("left_peak")
-    yield from d.mash()
 
 
 def peak(run):
     """Mt. Bristle Peak from its debug boot (a level-1 team): the cutscene,
-    then at Drowzee until the dungeon ends (the team faints)."""
+    then at Drowzee until the dungeon ends (the team faints); EVENT_M03_07A
+    (m03a0701, the morning's save) to free roam in the crew room
+    ("faint_free"), reset and Continue ("faint_continued"); out of the
+    crew room: EVENT_M03_07B (the address, m03a0702) to free roam on B2F
+    ("faint_b2f_free", run.data: the map)."""
     d = D(run)
+    game = run.game
     yield from d.mash_until(lambda f: run.game.in_dungeon(f))
     yield from _peak(d)
+    yield from ch3_story(d, lambda f: False, free_frames=30)
+    d.post("faint_free", game.map_name(d.f))
+    yield from d.idle(30)
+    yield from d.reset_and_continue("faint_continued", lambda f: game.ground_free(f))
+    yield from d.idle(20)
+    yield from ch3_walk(d, "LEFT", 400, lambda f: not game.ground_free(f))
+    yield from ch3_settle(d)
+    d.post("faint_b2f_free", game.map_name(d.f))
+    yield from d.idle(30)
+
 
 CH2_BOX_DELAY = 20   # frames a waiting box stays up before the A press
 CH2_IDLE_A = 300     # frames with no box (a menu, the save prompt) before A every 60
@@ -485,6 +509,167 @@ def ch2(run):
     yield from ch2_story(d, lambda f: game.in_dungeon(f))
     d.post("dungeon_2")
     yield from d.idle(60)
+
+
+CH3_BOX_DELAY = 20    # frames a waiting box or menu stays up before the A press
+CH3_IDLE_A = 200      # frames with no box (out of free roam) before A every 60
+CH3_LIMIT = 20000     # frames one stretch of story may take before the driver gives up
+
+
+def ch3_story(d, stop, free_frames=None, limit=CH3_LIMIT):
+    """Chapter 3's story presses until stop(f), or (free_frames) until the
+    game has been in free roam that many frames: A 20 frames into each
+    waiting box and menu (the save prompts: Yes), A every 60 frames when
+    nothing is up out of free roam. Returns the frame, or None on the limit
+    (posts "ch3_stuck")."""
+    game = d.game or d.run.game
+    waiting, idle, free, start = None, 0, 0, d.n
+    while d.n - start < limit:
+        f = yield from d.step(0)
+        if stop(f):
+            return f
+        free = free + 1 if game.ground_free(f) else 0
+        if free_frames is not None and free >= free_frames:
+            return f
+        if game.print_state(f) in PRINT_WAITING or game.print_state(f) == 4:
+            idle = 0
+            if waiting is None:
+                waiting = d.n
+            if d.n - waiting >= CH3_BOX_DELAY:
+                yield from d.press("A", 4, 4)
+                waiting = None
+            continue
+        waiting = None
+        idle += 1
+        if idle > CH3_IDLE_A and idle % 60 == 0 and not free:
+            yield from d.press("A", 4, 4)
+    d.post("ch3_stuck", game.map_name(d.f))
+    return None
+
+
+def ch3_settle(d):
+    """On after a map change or a scene, until free roam (20 frames)."""
+    return (yield from ch3_story(d, lambda f: False, free_frames=45))
+
+
+def ch3_goto(d, tx=None, ty=None, stop=None, limit=400, tol=0.3):
+    """Walk the hero to (tx, ty) (tiles): x first, then y. False when
+    stop(f) or when stuck."""
+    game = d.run.game
+    for axis, goal in ((0, tx), (1, ty)):
+        if goal is None:
+            continue
+        for _ in range(limit):
+            v = game.hero_tile(d.f)[axis]
+            if abs(v - goal) <= tol:
+                break
+            if axis == 0:
+                keys = "RIGHT" if goal > v else "LEFT"
+            else:
+                keys = "DOWN" if goal > v else "UP"
+            f = yield from d.step(keys)
+            if stop and stop(f):
+                return False
+        else:
+            return False
+    yield from d.idle(2)
+    return True
+
+
+def ch3_through(d, x=None, y=None):
+    """Walk to (x, y) (x first) until the map changes, then settle."""
+    game = d.run.game
+    m0 = game.map_name(d.f)
+    moved = lambda f: game.map_name(f) != m0  # noqa: E731
+    if (yield from ch3_goto(d, x, None, stop=moved)):
+        yield from ch3_goto(d, None, y, stop=moved)
+    yield from ch3_settle(d)
+
+
+def ch3_walk(d, keys, frames, stop):
+    for _ in range(frames):
+        f = yield from d.step(keys)
+        if stop(f):
+            return f
+    return None
+
+
+def ch3(run):
+    """Chapter 3 from its start (DEBUG_BOOT_EVENT=SKY_CH3_START): the card,
+    the morning and its save; reset and Continue (the crew room); the
+    address, EVENT_M03_01B to Treasure Town; free roam: the detour (the
+    square's east edge), the Kecleon brothers (their shop, then
+    EVENT_M03_03), the square (EVENT_M03_04), the guild by the crossroads,
+    Bidoof on B1F (EVENT_M03_05_06) into Mt. Bristle. Posts "ch3_first_map",
+    "morning_free", "morning_continued" (run.data: the map), "b2f_free",
+    "square_free", "detour_done", "west_free", "kecleon_shop" (the shop's
+    first box), "kecleon_done", "vision_done", "guild_b1f", "bidoof_talk",
+    "bristle_entered"; "ch3_stuck" when a stretch runs out of frames."""
+    d = D(run)
+    game = run.game
+    not_free = lambda f: not game.ground_free(f)  # noqa: E731
+    yield from d.mash_until(lambda f: (game.map_name(f) or "").startswith("MAP_SKY"))
+    d.post("ch3_first_map")
+    yield from ch3_story(d, lambda f: False, free_frames=30)
+    d.post("morning_free")
+    yield from d.idle(30)
+    yield from d.reset_and_continue("morning_continued", lambda f: game.ground_free(f))
+    yield from d.idle(20)
+    # the crew room's exit: the address (c00a0101), B2F's triggers: EVENT_M03_01B
+    yield from ch3_walk(d, "LEFT", 400, not_free)
+    yield from ch3_settle(d)
+    d.post("b2f_free")
+    yield from ch3_walk(d, "UP", 200, not_free)
+    yield from ch3_settle(d)
+    d.post("square_free")
+    # the square's east edge: "The Kecleon Market isn't over this way."
+    yield from ch3_walk(d, "RIGHT", 400, not_free)
+    yield from ch3_settle(d)
+    d.post("detour_done")
+    # west to Kecleon Market: talk to the green brother (his shop), then B out
+    yield from ch3_goto(d, None, 26.5)
+    yield from ch3_through(d, -2, None)
+    yield from ch3_goto(d, 41.5, None)
+    yield from ch3_goto(d, None, 21.5)
+    yield from d.hold("UP", 3)
+    yield from d.press("A", 4, 30)
+    for _ in range(60):
+        if game.print_state(d.f) in (4, 7, 8, 9) or not game.ground_free(d.f):
+            break
+        yield from d.idle(10)
+    d.post("kecleon_shop")
+    for _ in range(6):
+        yield from d.idle(60)
+        yield from d.press("B", 4, 30)
+    yield from ch3_settle(d)
+    d.post("kecleon_done")
+    # back to the square: EVENT_M03_04 (Drowzee, the vision)
+    yield from ch3_goto(d, None, 26.5)
+    yield from ch3_through(d, 70, None)
+    yield from ch3_goto(d, None, 26.5)
+    yield from ch3_goto(d, 40, None, stop=not_free)
+    yield from ch3_settle(d)
+    d.post("vision_done")
+    # the crossroads, the guild's entrance, 1F, B1F
+    yield from ch3_goto(d, None, 26.5)
+    yield from ch3_through(d, 85, None)
+    yield from ch3_through(d, 27, 0)
+    yield from ch3_through(d, 30, 15)
+    yield from ch3_through(d, 25.5, 18)
+    d.post("guild_b1f", game.map_name(d.f))
+    # Bidoof (m03a0501): "Yes" -> EVENT_M03_05_06 -> Mt. Bristle
+    yield from ch3_goto(d, None, 25.5)
+    yield from ch3_goto(d, 56.5, None)
+    yield from d.hold("RIGHT", 3)
+    yield from d.press("A", 4, 30)
+    d.post("bidoof_talk")
+    for _ in range(40):
+        yield from d.press("A", 4, 26)
+        if not game.ground_free(d.f) and game.print_state(d.f) not in (4, 7, 8, 9):
+            break
+    yield from ch3_story(d, lambda f: game.in_dungeon(f), limit=20000)
+    d.post("bristle_entered")
+    yield from d.idle(600)
 
 
 JUKEBOX_PER_PAGE = 6

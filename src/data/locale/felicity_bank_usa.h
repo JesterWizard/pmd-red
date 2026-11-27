@@ -166,3 +166,65 @@
     "{NAME_0}...{WAIT_PRESS}\n" \
     "Your account has had {COLOR CYAN}{VALUE_0}{RESET}%\n" \
     "interest added to it..."))
+
+#ifdef SKY_STORY
+/* Explorers of Sky demake: Duskull Bank (src/felicity_bank.c), EoS's lines
+ * (text_e.str 884-898); Red's bank rules and its asleep mode stay. */
+#undef FEL_AWAKE_WELCOME
+#define FEL_AWAKE_WELCOME (_(" Welcome to Duskull Bank!"))
+#undef FEL_AWAKE_HOW_MAY_I_SERVE__NO_MONEY
+#define FEL_AWAKE_HOW_MAY_I_SERVE__NO_MONEY (_(" How may I help? Hee-hee..."))
+#undef FEL_AWAKE_HOW_MAY_I_SERVE__HAS_MONEY
+#define FEL_AWAKE_HOW_MAY_I_SERVE__HAS_MONEY (_( \
+    " Your bank balance is\n" \
+    "{COLOR CYAN}{VALUE_0}{RESET} {POKE}. Now, how may I serve you?\n" \
+    "Hee-hee..."))
+#undef FEL_AWAKE_BYE__NO_MONEY
+#define FEL_AWAKE_BYE__NO_MONEY (_(" I look forward to your next\nvisit! Hee-hee!"))
+#undef FEL_AWAKE_BYE__HAS_MONEY
+#define FEL_AWAKE_BYE__HAS_MONEY (_(" I look forward to your next\nvisit. Hee-hee!"))
+#undef FEL_AWAKE_DEPOSIT__HOW_MUCH
+#define FEL_AWAKE_DEPOSIT__HOW_MUCH (_(" How much do you want to\ndeposit?"))
+#undef FEL_AWAKE_DEPOSIT__NO_MONEY
+#define FEL_AWAKE_DEPOSIT__NO_MONEY (_(" What?{WAIT_PRESS} Oh, deepest sorrow! You\nhave no money!"))
+#undef FEL_AWAKE_DEPOSIT__BANK_FULL
+#define FEL_AWAKE_DEPOSIT__BANK_FULL (_( \
+    " Whoooa! What a vast stash of\n" \
+    "money you have here!{WAIT_PRESS} Our safe is about to\n" \
+    "burst! Hee-hee!{EXTRA_MSG}" \
+    " Unfortunately, we can't take any\n" \
+    "more."))
+#undef FEL_AWAKE_DEPOSIT__RECEIPT
+#define FEL_AWAKE_DEPOSIT__RECEIPT (_( \
+    " {COLOR CYAN}{VALUE_0}{RESET} {POKE}! It will rest here\n" \
+    "in peace. Forever, if you wish. Hee-hee!"))
+#undef FEL_AWAKE_WITHDRAW__HOW_MUCH
+#define FEL_AWAKE_WITHDRAW__HOW_MUCH (_(" How much will you withdraw?"))
+#undef FEL_AWAKE_WITHDRAW__NO_MONEY
+#define FEL_AWAKE_WITHDRAW__NO_MONEY (_( \
+    " What?{WAIT_PRESS} I'm sorry to say that you\n" \
+    "have no money here. Your vault is barren!"))
+#undef FEL_AWAKE_WITHDRAW__WALLET_FULL
+#define FEL_AWAKE_WITHDRAW__WALLET_FULL (_( \
+    " What?{WAIT_PRESS} I'm sorry, but you can't\n" \
+    "carry any more money! {WAIT_PRESS}There's not even a\n" \
+    "ghost of a chance! Hee-hee!"))
+#undef FEL_AWAKE_WITHDRAW__RECEIPT
+#define FEL_AWAKE_WITHDRAW__RECEIPT (_(" {COLOR CYAN}{VALUE_0}{RESET} {POKE}? OK, here it is!"))
+#undef FEL_AWAKE_HOW_IT_WORKS
+#define FEL_AWAKE_HOW_IT_WORKS (_( \
+    " Did you know that if you fall in\n" \
+    "a dungeon, half of your money will be spirited\n" \
+    "away, never to be found again? Hee-hee...{EXTRA_MSG}" \
+    " Avoid that fate...{WAIT_PRESS}hee-hee...{WAIT_PRESS}\n" \
+    "by leaving your money in Duskull Bank.{EXTRA_MSG}" \
+    " Then, if you are defeated in a\n" \
+    "dungeon, you'll find your money safe and sound\n" \
+    "with me.{EXTRA_MSG}" \
+    " I admit that I may appear\n" \
+    "rather sinister...{WAIT_PRESS}hee-hee...{EXTRA_MSG}" \
+    " But don't judge me by my looks!\n" \
+    "I'm hauntingly honest...{WAIT_PRESS}hee-hee!{EXTRA_MSG}" \
+    " So leave your money with me.\n" \
+    "It will rest in peace...{WAIT_PRESS}hee-hee!"))
+#endif
