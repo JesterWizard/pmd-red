@@ -843,5 +843,23 @@ const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_SKY_GUILD_CREW_ROOM_NIGHT] = &gGroundScript_gs180,
     [MAP_SKY_DRENCHED_BLUFF_ENTRANCE] = &gGroundScript_gs180,
     [MAP_SKY_DRENCHED_BLUFF_END] = &gGroundScript_gs180,
+    /* chapter 3: one station file, gs181 (Red's Thunderwave Cave end
+     * slot; documentation/Features/SkyChapter3.md) */
+    [MAP_SKY_TREASURE_TOWN_SQUARE] = &gGroundScript_gs181,
+    [MAP_SKY_TREASURE_TOWN_WEST] = &gGroundScript_gs181,
+    [MAP_SKY_CROSSROADS] = &gGroundScript_gs181,
+    [MAP_SKY_BEACH_PATH] = &gGroundScript_gs181,
+    [MAP_SKY_GUILD_ENTRANCE_DAY] = &gGroundScript_gs181,
+    [MAP_SKY_MT_BRISTLE_ENTRANCE] = &gGroundScript_gs181,
+    [MAP_SKY_MT_BRISTLE_PEAK] = &gGroundScript_gs181,
+    [MAP_SKY_BIDOOF_HOME] = &gGroundScript_gs181,
+    [MAP_SKY_DUGTRIO_TUNNEL] = &gGroundScript_gs181,
+    [MAP_SKY_STORM_CLOUDS] = &gGroundScript_gs181,
+    [MAP_SKY_TIME_GEAR_FOREST] = &gGroundScript_gs181,
+    [MAP_SKY_TIME_GEAR_LAKE] = &gGroundScript_gs181,
+    [MAP_SKY_TIME_GEAR_VOLCANO] = &gGroundScript_gs181,
+    [MAP_SKY_TIME_FLOW] = &gGroundScript_gs181,
+    [MAP_SKY_GROVYLE_RUN] = &gGroundScript_gs181,
+    [MAP_SKY_GROVYLE_CLOSEUP] = &gGroundScript_gs181,
 #endif
 };

@@ -37,6 +37,15 @@ import convert_title_backgrounds as title  # noqa: E402
 OUT = ROOT / "graphics" / "custom" / "sky_cutaways"
 # 8bpp tile slots in the sky build (TITLE_BG_8BPP_MAX_TILES, include/bg_control.h)
 MAX_TILES = 608
+# A CG is decompressed into one heap buffer (0x1000 + 64 bytes a tile,
+# src/sky_cutaways.c SwapArt) while the ground map stays loaded. Over the
+# guild's B1F (streamed, about 107 KB of the 144 KB heap in use) and Treasure
+# Town's square a 600-tile picture does not fit, so the chapter-3 bulletin
+# board pictures, which EoS shows over g01p03a, keep to this many tiles
+# (34 KB). documentation/Features/SkyChapter3.md, "Story CGs".
+BOARD_TILES = 480
+TILE_BUDGET = {"outlaw_board": BOARD_TILES, "outlaw_board_flipped": BOARD_TILES,
+               "drowzee_poster": BOARD_TILES}
 
 # (name, EoS level, centre x, centre y in pixels) — centres follow the EoS
 # camera marks (camera2_SetPositionMark) or the picture's middle.
@@ -59,10 +68,78 @@ CUTAWAYS = [
     ("sentry_post",   "v02p03a", 16 * 8, 69.5 * 8 - 48),        # m02a0104: the pan's end, m0
     ("night_sky",     "v02p06a", 19.5 * 8, 15.5 * 8),       # m02a0113 / m02a1003 camera2 m0
     ("exploration_kit", "v02p08a", 16 * 8, 13.5 * 8),       # m02a0110 layer 2 performer
+    # chapter 3: the top-screen pictures at the guild's bulletin boards, at
+    # their camera2 marks (all at (19.5, 16.5))
+    ("outlaw_board",  "v03p01a", 19.5 * 8, 16.5 * 8),   # m03a0102, m03a0502, m03a0506
+    ("outlaw_board_flipped", "v03p02a", 19.5 * 8, 16.5 * 8),  # m03a0502, m03a0506
+    ("drowzee_poster", "v03p04a", 19.5 * 8, 16.5 * 8),  # m03a0506
 ] + [
     (f"sunset_sea{i}", "v26p05a", (19.5 + 39 * (i % 3)) * 8, (13.5 + 30 * (i // 3)) * 8)
     for i in range(8)
 ]
+
+
+def reduce_tiles(q: Image.Image, budget: int) -> Image.Image:
+    """Cut the palette image `q` down to `budget` tiles (blank tile 0 counted):
+    repeatedly replace the tile whose nearest other tile (in RGB, flips
+    allowed) is closest by that tile, so the pictures lose detail evenly
+    rather than where convert_image's index-order merge would. Returns the
+    picture as the GBA shows it."""
+    import numpy as np
+    idx = np.asarray(q, dtype=np.int32)
+    pal = np.array(q.getpalette()[:768], dtype=np.int32).reshape(-1, 3)
+    H, W = idx.shape
+    cells = [(ty, tx) for ty in range(H // 8) for tx in range(W // 8)]
+    key_of = {}
+    uniq = []                      # index tiles (8x8)
+    for ty, tx in cells:
+        t = idx[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8]
+        if t.tobytes() not in key_of:
+            known = None
+            for f in (t[:, ::-1], t[::-1, :], t[::-1, ::-1]):
+                if f.tobytes() in key_of:
+                    known = key_of[f.tobytes()]
+                    break
+            key_of[t.tobytes()] = known if known is not None else len(uniq)
+            if known is None:
+                uniq.append(t.copy())
+    n = len(uniq)
+    if n + 1 <= budget:
+        return q
+    rgb = np.stack([pal[u].reshape(-1) for u in uniq]).astype(np.float64)
+    flips = [np.stack([pal[f(u)].reshape(-1) for u in uniq]).astype(np.float64)
+             for f in (lambda u: u, lambda u: u[:, ::-1], lambda u: u[::-1, :], lambda u: u[::-1, ::-1])]
+    sq = (rgb ** 2).sum(1)
+    dist = np.full((n, n), np.inf)
+    for fl in flips:
+        d = sq[:, None] + (fl ** 2).sum(1)[None, :] - 2 * rgb @ fl.T
+        dist = np.minimum(dist, d)
+    np.fill_diagonal(dist, np.inf)
+    rep = list(range(n))
+    alive = np.ones(n, bool)
+    for _ in range(n + 1 - budget):
+        i, j = np.unravel_index(np.argmin(dist), dist.shape)
+        # j replaces i: i's cells show j (flipped as fits best)
+        rep[i] = j
+        for k in range(n):
+            if rep[k] == i:
+                rep[k] = j
+        alive[i] = False
+        dist[i, :] = np.inf
+        dist[:, i] = np.inf
+    out = idx.copy()
+    for ty, tx in cells:
+        t = idx[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8]
+        k = key_of[t.tobytes()]
+        if rep[k] == k:
+            continue
+        r = uniq[rep[k]]
+        cand = [r, r[:, ::-1], r[::-1, :], r[::-1, ::-1]]
+        best = min(cand, key=lambda c: ((pal[c] - pal[t]) ** 2).sum())
+        out[ty * 8:ty * 8 + 8, tx * 8:tx * 8 + 8] = best
+    res = Image.fromarray(out.astype(np.uint8), "P")
+    res.putpalette(q.getpalette())
+    return res
 
 
 def render(rom, files, name):
@@ -116,9 +193,14 @@ def main() -> int:
             stack.paste(im.crop((0, 0, 240, 80)), (0, 80))
             im = stack
         png = OUT / f"{slug}.png"
+        q = title.quantize_gba(im)
+        if slug in TILE_BUDGET:
+            # the PNG is then the reduced picture, as the GBA shows it
+            q = reduce_tiles(q, TILE_BUDGET[slug])
+            im = q.convert("RGB")
         im.save(png)
         raw, pal, ntiles, ncolors, merged = title.convert_image(
-            im, quantized=title.quantize_gba(im), max_tiles=MAX_TILES)
+            im, quantized=q, max_tiles=TILE_BUDGET.get(slug, MAX_TILES))
         png.with_suffix(".at4px").write_bytes(title.wrap_at4px(raw))
         png.with_suffix(".pal").write_bytes(pal)
         print(f"{slug}: {level} tiles={ntiles} colors={ncolors}{' merged' if merged else ''}")

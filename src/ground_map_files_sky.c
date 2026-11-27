@@ -27,6 +27,20 @@ const u8 gFileED0211Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/ED0211Am.bma.lz"
 const u8 gFileED0231A[] ALIGNED(4) = INCBIN_U8("data/map_bg/ED0231A.bpl");
 const u8 gFileED0231Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/ED0231Ac.bpc");
 const u8 gFileED0231Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/ED0231Am.bma.lz");
+/* EoS d03p11a: Mt. Bristle's entrance */
+const u8 gFileED0311A[] ALIGNED(4) = INCBIN_U8("data/map_bg/ED0311A.bpl");
+const u8 gFileED0311Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/ED0311Ac.bpc");
+const u8 gFileED0311Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/ED0311Am.bma.lz");
+/* EoS d03p41a: Mt. Bristle's peak (one layer) */
+const u8 gFileED0341A[] ALIGNED(4) = INCBIN_U8("data/map_bg/ED0341A.bpl");
+const u8 gFileED0341Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/ED0341Ac.bpc");
+const u8 gFileED0341Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/ED0341Am.bma.lz");
+/* EoS g01p01a: Wigglytuff's Guild by day */
+const u8 gFileEG0101A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0101A.bpl");
+const u8 gFileEG0101Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0101Ac.bpc");
+const u8 gFileEG0101Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EG0101Am.bma.lz");
+/* BPA tile animation */
+const u8 gFileEG0101A1[] ALIGNED(4) = INCBIN_U8("data/map_bg_anim/EG0101A1.bpa");
 /* EoS g01p01b: Wigglytuff's Guild, gate open. g01p01b2 (gate closed, at
  * dusk) is EoS's second BMA over the same BPC, BPL and BPA: EG0101B2m */
 const u8 gFileEG0101B[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0101B.bpl");
@@ -75,6 +89,35 @@ const u8 gFileEG0107A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0107A.bpl");
 const u8 gFileEG0107Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0107Ac.bpc");
 const u8 gFileEG0107Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EG0107Am.bma.lz");
 const u8 gFileEG0107C[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0107C.bpl");
+/* EoS p01p01a: the crossroads */
+const u8 gFileEP0101A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP0101A.bpl");
+const u8 gFileEP0101Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP0101Ac.bpc");
+const u8 gFileEP0101Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EP0101Am.bma.lz");
+/* BPA tile animation */
+const u8 gFileEP0101A1[] ALIGNED(4) = INCBIN_U8("data/map_bg_anim/EP0101A1.bpa");
+/* EoS p01p02a: the path from the crossroads to the beach */
+const u8 gFileEP0102A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP0102A.bpl");
+const u8 gFileEP0102Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP0102Ac.bpc");
+const u8 gFileEP0102Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EP0102Am.bma.lz");
+/* BPA tile animation */
+const u8 gFileEP0102A1[] ALIGNED(4) = INCBIN_U8("data/map_bg_anim/EP0102A1.bpa");
+/* EoS p15p01a: Bidoof's family's lodge (its top-left 19x12 chunks; EoS's BMA is 60x40) */
+const u8 gFileEP1501A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP1501A.bpl");
+const u8 gFileEP1501Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP1501Ac.bpc");
+const u8 gFileEP1501Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EP1501Am.bma.lz");
+/* BPA tile animation */
+const u8 gFileEP1501A1[] ALIGNED(4) = INCBIN_U8("data/map_bg_anim/EP1501A1.bpa");
+/* EoS t01p01a: the main square (east): Duskull Bank, Electivire,
+ * Chansey, the Dojo; streamed, its river BPA's frame 0 baked */
+const u8 gFileET0101A[] ALIGNED(4) = INCBIN_U8("data/map_bg/ET0101A.bpl");
+const u8 gFileET0101Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/ET0101Ac.bpc");
+const u8 gFileET0101Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/ET0101Am.bma.lz");
+/* EoS t01p02a: the west: Kecleon Market, Kangaskhan Storage, Xatu */
+const u8 gFileET0102A[] ALIGNED(4) = INCBIN_U8("data/map_bg/ET0102A.bpl");
+const u8 gFileET0102Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/ET0102Ac.bpc");
+const u8 gFileET0102Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/ET0102Am.bma.lz");
+/* BPA tile animation */
+const u8 gFileET0102A1[] ALIGNED(4) = INCBIN_U8("data/map_bg_anim/ET0102A1.bpa");
 /* EoS v01p01a: storm at sea */
 const u8 gFileEV0101A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0101A.bpl");
 const u8 gFileEV0101Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0101Ac.bpc");
@@ -94,4 +137,36 @@ const u8 gFileEV0105Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0105Bm.bma.lz"
 const u8 gFileEV0107B[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0107B.bpl");
 const u8 gFileEV0107Bc[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0107Bc.bpc");
 const u8 gFileEV0107Bm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0107Bm.bma.lz");
+/* EoS v03p03a: behind the boards: Dugtrio's tunnel (m03a0505) */
+const u8 gFileEV0303A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0303A.bpl");
+const u8 gFileEV0303Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0303Ac.bpc");
+const u8 gFileEV0303Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0303Am.bma.lz");
+/* EoS v03p05c: storm clouds (one layer, streamed) */
+const u8 gFileEV0305C[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0305C.bpl");
+const u8 gFileEV0305Cc[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0305Cc.bpc");
+const u8 gFileEV0305Cm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0305Cm.bma.lz");
+/* EoS v03p06a: a Time Gear in a forest (streamed) */
+const u8 gFileEV0306A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0306A.bpl");
+const u8 gFileEV0306Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0306Ac.bpc");
+const u8 gFileEV0306Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0306Am.bma.lz");
+/* EoS v03p07a: a Time Gear at an underground lake */
+const u8 gFileEV0307A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0307A.bpl");
+const u8 gFileEV0307Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0307Ac.bpc");
+const u8 gFileEV0307Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0307Am.bma.lz");
+/* EoS v03p08a: a Time Gear in a volcano */
+const u8 gFileEV0308A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0308A.bpl");
+const u8 gFileEV0308Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0308Ac.bpc");
+const u8 gFileEV0308Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0308Am.bma.lz");
+/* EoS v03p09a: time flowing (palette animation; streamed) */
+const u8 gFileEV0309A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0309A.bpl");
+const u8 gFileEV0309Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0309Ac.bpc");
+const u8 gFileEV0309Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0309Am.bma.lz");
+/* EoS v03p11a: the dream: Grovyle running through the rain (streamed) */
+const u8 gFileEV0311A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0311A.bpl");
+const u8 gFileEV0311Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0311Ac.bpc");
+const u8 gFileEV0311Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0311Am.bma.lz");
+/* EoS v03p12a: the dream: Grovyle close up, his silhouette (streamed) */
+const u8 gFileEV0312A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0312A.bpl");
+const u8 gFileEV0312Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0312Ac.bpc");
+const u8 gFileEV0312Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0312Am.bma.lz");
 #endif

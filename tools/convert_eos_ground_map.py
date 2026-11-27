@@ -22,6 +22,9 @@ rather than re-quantized.
     written as data/map_bg_anim/<STEM>1.bpa / <STEM>2.bpa); streamed maps and further BPAs use
     frame 0.
   * Collision comes from the EoS BMA's first collision layer.
+  * --crop-chunks X Y W H keeps only that rectangle of the EoS map (and only
+    the tiles its chunks use): for a level larger than what its scripts show
+    (p15p01a) or one whose every screen needs too many tiles (v03p09a).
 
 The EoS ROM is never copied into the repository; only the converted map files
 are written. Usage:
@@ -98,10 +101,34 @@ def layer_tiles(bpc, layer: int, bpas) -> list[bytes]:
     return tiles
 
 
+def crop_bma(bma, crop: tuple[int, int, int, int] | None) -> None:
+    """Keep only the chunks `crop` = (x, y, width, height) of the BMA (both
+    layers, collision): for an EoS level that is larger than what its scripts
+    show (p15p01a: 60x40 chunks, 19x12 drawn) or whose full view does not fit
+    the GBA's tiles (v03p09a: cut to what its camera shows)."""
+    if not crop:
+        return
+    x0, y0, w, h = crop
+
+    def cut(cells, width, x0, y0, w, h):
+        if cells is None:
+            return None
+        return [cells[(y0 + y) * width + x0 + x] for y in range(h) for x in range(w)]
+
+    W, Wc = bma.map_width_chunks, bma.map_width_camera
+    bma.layer0 = cut(bma.layer0, W, x0, y0, w, h)
+    bma.layer1 = cut(bma.layer1, W, x0, y0, w, h)
+    for attr in ("collision", "collision2", "unknown_data_block"):
+        setattr(bma, attr, cut(getattr(bma, attr), Wc, x0 * CHUNK, y0 * CHUNK, w * CHUNK, h * CHUNK))
+    bma.map_width_chunks, bma.map_height_chunks = w, h
+    bma.map_width_camera, bma.map_height_camera = w * CHUNK, h * CHUNK
+
+
 def convert(rom_path: Path, name: str, stem: str, render: Path | None,
-            palette_animation: bool = True) -> None:
+            palette_animation: bool = True, crop: tuple[int, int, int, int] | None = None) -> None:
     rom = ndspy.rom.NintendoDSRom.fromFile(str(rom_path))
     bpc, bma, bpl, bpas = load_eos(rom, name)
+    crop_bma(bma, crop)
 
     # BMA layer -> BPC layer (skytemple: BMA layer0 is the LOWER layer, which
     # is BPC layer 1 when there are two BPC layers).
@@ -111,9 +138,25 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None,
         sources = [("upper", 0, bma.layer1), ("lower", 1, bma.layer0)]
 
     # Pass 1: collect (tile bytes, flip) usages to decide on flip baking.
+    # A cropped map keeps only the chunks its BMA still uses, and counts the
+    # distinct tiles of those.
+    used_chunks = None
+    if crop:
+        used_chunks = {layer: set(bma_layer) for _, layer, bma_layer in sources}
     raw_entries = 0
+    distinct = set()
     for _, layer, _ in sources:
-        raw_entries += len(layer_tiles(bpc, layer, bpas)) - 1
+        if used_chunks is None:
+            raw_entries += len(layer_tiles(bpc, layer, bpas)) - 1
+            continue
+        tiles = layer_tiles(bpc, layer, bpas)
+        tilemap = bpc.layers[layer].tilemap
+        for c in used_chunks[layer]:
+            for e in tilemap[c * 9:(c + 1) * 9]:
+                distinct.add(bytes(tiles[e.idx]) if e.idx < len(tiles) else bytes(32))
+    if used_chunks is not None:
+        distinct.discard(bytes(32))
+        raw_entries = len(distinct)
     # Dual-layer maps (conversion-table unk0 6) get 1024 VRAM tile slots;
     # single-layer maps use the default config with 0x380 slots.
     vram_slots = VRAM_TILE_SLOTS if len(sources) == 2 else 0x380
@@ -165,6 +208,8 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None,
         n_chunks = len(tilemap) // 9
         remap = [0] * n_chunks
         for c in range(1, n_chunks):
+            if used_chunks is not None and c not in used_chunks[layer]:
+                continue
             out = []
             for e in tilemap[c * 9:(c + 1) * 9]:
                 used_pals.add(e.pal_idx)
@@ -362,8 +407,9 @@ def render_rt_image(bpl: str, bpc: str | None = None, bma: str | None = None,
     return Image.fromarray(img[:m.map_height_camera * 8, :m.map_width_camera * 8])
 
 
-def render_eos_image(rom_path: Path, name: str) -> Image.Image:
-    """skytemple's render of the EoS level `name` (BPA frame 0)."""
+def render_eos_image(rom_path: Path, name: str, crop: tuple[int, int, int, int] | None = None) -> Image.Image:
+    """skytemple's render of the EoS level `name` (BPA frame 0; with `crop`,
+    the chunks (x, y, width, height) of it)."""
     # skytemple hands Pillow an iterator as the palette; newer Pillow wants a
     # sequence (as tools/make_sky_cutaways.py)
     orig = Image.Image.putpalette
@@ -379,6 +425,9 @@ def render_eos_image(rom_path: Path, name: str) -> Image.Image:
     img = bma.to_pil(bpc, bpl, bpas, False, False)
     if isinstance(img, list):
         img = img[0]
+    if crop:
+        x0, y0, w, h = (v * CHUNK * 8 for v in crop)
+        img = img.crop((x0, y0, x0 + w, y0 + h))
     return img.convert("RGB")
 
 
@@ -390,6 +439,9 @@ def main() -> int:
     ap.add_argument("--render", type=Path, help="also render the result to this PNG")
     ap.add_argument("--no-palette-animation", action="store_true",
                     help="leave the BPL's palette animation out (the base palettes only)")
+    ap.add_argument("--crop-chunks", type=int, nargs=4, metavar=("X", "Y", "W", "H"),
+                    help="keep only the W x H chunks from chunk (X, Y) of the EoS map and the "
+                         "tiles they use (also with --compare)")
     ap.add_argument("--compare", action="store_true",
                     help="only compare the files already written for STEM (--bpl/--bpc/--bma for "
                          "files shared with another map) with skytemple's render of NAME")
@@ -400,7 +452,7 @@ def main() -> int:
     if args.compare:
         import numpy as np
         ours = render_rt_image(args.bpl or args.stem, args.bpc or args.stem, args.bma or args.stem)
-        eos = render_eos_image(args.rom, args.name)
+        eos = render_eos_image(args.rom, args.name, args.crop_chunks)
         a, b = np.asarray(ours), np.asarray(eos)
         if a.shape != b.shape:
             print(f"{args.name}: size {a.shape[1]}x{a.shape[0]} != EoS {b.shape[1]}x{b.shape[0]}")
@@ -410,7 +462,8 @@ def main() -> int:
         if args.render:
             ours.save(args.render)
         return 1 if diff else 0
-    convert(args.rom, args.name, args.stem, args.render, not args.no_palette_animation)
+    convert(args.rom, args.name, args.stem, args.render, not args.no_palette_animation,
+            tuple(args.crop_chunks) if args.crop_chunks else None)
     return 0
 
 

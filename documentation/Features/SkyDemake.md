@@ -48,8 +48,10 @@ Red's story after chapter 1 is not in the sky build: only the ground maps the
 demo visits keep their scripts and map files (Tiny Woods entrance/end, which
 host the Sky scenes, the personality test, the two logo maps and the Sky
 maps; found by tracing a full playthrough). The other 130 station script
-files compile to nothing under `SKY_STORY` (but d02p01, gs180, which became
-chapter 2's station: [SkyChapter2.md](SkyChapter2.md#station-gs180)), their `gMapScriptTable` entries
+files compile to nothing under `SKY_STORY` (but d02p01, gs180, and d02p02,
+gs181, which became chapter 2's and chapter 3's stations:
+[SkyChapter2.md](SkyChapter2.md#station-gs180),
+[SkyChapter3.md](SkyChapter3.md#station-gs181)), their `gMapScriptTable` entries
 are empty (`GetGroundScript` returns the null script) and their map files
 are not linked (their names in the sorted ground file table point at a kept
 file). This saves about 3.7 MB. The vanilla build keeps everything.
@@ -476,7 +478,7 @@ closed under `SKY_STORY` (the vanilla code is unchanged):
   thank-you messages, Wigglytuff's shop, buying Friend Areas and picking a
   Friend Area (`0x16`) are compiled out, so a script asking for one gets no
   menu. The scripts the sky build links (`ground_event_data`, the d01p01 /
-  d01p02 / s01 / s04 / s05 stations, and chapter 2's d02p01 placeholder; checked in the preprocessed `.i`
+  d01p02 / s01 / s04 / s05 stations, and chapters 2's and 3's d02p01 / d02p02 placeholders; checked in the preprocessed `.i`
   files) only ask for Save, Storage, the scripting menu, the personality
   quiz and kind `0x29`; code asks for the ground menu, naming, yes/no boxes,
   the dungeon / Dojo list and the custom debug menu.
@@ -546,9 +548,27 @@ The EoS ROM is never committed. Only the converted map files are:
 | `MAP_SKY_GUILD_CREW_ROOM_NIGHT` | `EG0107C` + `EG0107A`'s BPC, BMA | `g01p07c` | 763 (VRAM, one layer) |
 | `MAP_SKY_DRENCHED_BLUFF_ENTRANCE` | `ED0211A` | `d02p11a` | 1268 (streamed) |
 | `MAP_SKY_DRENCHED_BLUFF_END` | `ED0231A` | `d02p31a` | 2313 (streamed) |
+| `MAP_SKY_TREASURE_TOWN_SQUARE` | `ET0101A` | `t01p01a` | 1749 (streamed) |
+| `MAP_SKY_TREASURE_TOWN_WEST` | `ET0102A` | `t01p02a` | 902 + 75 animated (VRAM) |
+| `MAP_SKY_CROSSROADS` | `EP0101A` | `p01p01a` | 785 + 64 animated (VRAM) |
+| `MAP_SKY_BEACH_PATH` | `EP0102A` | `p01p02a` | 232 + 6 animated (VRAM) |
+| `MAP_SKY_GUILD_ENTRANCE_DAY` | `EG0101A` | `g01p01a` | 877 + 23 animated (VRAM) |
+| `MAP_SKY_MT_BRISTLE_ENTRANCE` | `ED0311A` | `d03p11a` | 1007 (VRAM) |
+| `MAP_SKY_MT_BRISTLE_PEAK` | `ED0341A` | `d03p41a` | 533 (VRAM, one layer) |
+| `MAP_SKY_BIDOOF_HOME` | `EP1501A` | `p15p01a` (cropped) | 833 + 117 animated (VRAM) |
+| `MAP_SKY_DUGTRIO_TUNNEL` | `EV0303A` | `v03p03a` | 459 (VRAM) |
+| `MAP_SKY_STORM_CLOUDS` | `EV0305C` | `v03p05c` | 978 (streamed, one layer) |
+| `MAP_SKY_TIME_GEAR_FOREST` | `EV0306A` | `v03p06a` | 2070 (streamed) |
+| `MAP_SKY_TIME_GEAR_LAKE` | `EV0307A` | `v03p07a` | 834 (VRAM) |
+| `MAP_SKY_TIME_GEAR_VOLCANO` | `EV0308A` | `v03p08a` | 1021 (VRAM) |
+| `MAP_SKY_TIME_FLOW` | `EV0309A` | `v03p09a` (cropped) | 889 (VRAM) |
+| `MAP_SKY_GROVYLE_RUN` | `EV0311A` | `v03p11a` | 1039 (streamed) |
+| `MAP_SKY_GROVYLE_CLOSEUP` | `EV0312A` | `v03p12a` | 1195 (streamed) |
 
 The chapter-2 maps (from `MAP_SKY_GUILD_ENTRANCE`) and what was left out of
-them: [SkyChapter2.md](SkyChapter2.md#ground-maps). Where EoS has two levels
+them: [SkyChapter2.md](SkyChapter2.md#ground-maps); the chapter-3 maps (from
+`MAP_SKY_TREASURE_TOWN_SQUARE`), the two cropped ones and the river left
+still on the square: [SkyChapter3.md](SkyChapter3.md#ground-maps). Where EoS has two levels
 over one BPC (g01p01b / g01p01b2, g01p04a / g01p04a2, g01p07a / g01p07c),
 the demake shares the files the same way: a `<STEM>2m` BMA, or one map's
 BPC and BMA under another's BPL (`gMapFilesTable` names each file).
@@ -558,6 +578,7 @@ Converter: [`tools/convert_eos_ground_map.py`](../../tools/convert_eos_ground_ma
 ```bash
 tools/convert_eos_ground_map.py EOS.nds d01p11b ED0111B --render check.png
 tools/convert_eos_ground_map.py EOS.nds g01p04a2 EG0104A --bma EG0104A2 --compare   # files already written
+tools/convert_eos_ground_map.py EOS.nds v03p09a EV0309A --crop-chunks 1 2 11 8      # only chunks x 1-11, y 2-9
 ```
 
 - Lossless: EoS and RT share 4bpp tiles, 3×3-tile chunks and 16-colour
@@ -602,7 +623,8 @@ block is inserted under `#ifdef SKY_STORY` and later indices shift by
 `SELECT_MAP` also selects the script file of the map in `gMapScriptTable`, so
 each EoS map points at the station file whose groups use it (gs178 for the
 beach, guild and storm scenes, gs179 for Beach Cave Pit, gs180 for every
-chapter-2 map: [SkyChapter2.md](SkyChapter2.md#station-gs180)).
+chapter-2 map: [SkyChapter2.md](SkyChapter2.md#station-gs180), gs181 for
+every chapter-3 map: [SkyChapter3.md](SkyChapter3.md#station-gs181)).
 
 ---
 

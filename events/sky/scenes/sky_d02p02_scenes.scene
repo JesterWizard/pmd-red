@@ -1,0 +1,31 @@
+prefix s_gs181_
+debug_file src/data/ground/sky/ground_data_d02p02_station.h
+
+# Explorers of Sky demake, chapter 3 (documentation/Features/SkyChapter3.md):
+# the one station file of every chapter-3 map (Treasure Town, the
+# crossroads, the guild entrance by day, Mt. Bristle, the visions).
+# gMapScriptTable points them all at gs181, Red's Thunderwave Cave end
+# slot, which the sky build does not use. A placeholder until the chapter's
+# scenes come in: group 0, the station's enter script.
+```c
+#include "sky_story.h"
+```
+
+script g0_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01
+    DEBUGINFO line=15
+    SELECT_MAP SKY_TREASURE_TOWN_SQUARE
+    BGM_STOP
+    JUMP_SCRIPT COMMON_ENTER
+end
+
+stations
+    g0_s0_station
+end
+
+sectors g0
+    sector station=0
+end
+
+groups
+    g0
+end
