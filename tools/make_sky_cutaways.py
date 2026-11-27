@@ -42,8 +42,6 @@ MAX_TILES = 608
 CUTAWAYS = [
     ("sky_day",       "v01p03a", 33 * 8, 9.5 * 8 + 4),
     ("sky_dusk",      "v01p03b", 33 * 8, 9.5 * 8 + 4),
-    ("storm_cliff",   "v01p02a", 144, 108),
-    ("storm_lit",     "v01p02a", 288 + 144, 108),
     ("guild_sky",     "v02p01a", 132, 96),
     ("relic_fragment","v01p06b", 21 * 8, 15 * 8),
     ("sunset_sky",    "v26p06a", 19 * 8, 15.5 * 8),
