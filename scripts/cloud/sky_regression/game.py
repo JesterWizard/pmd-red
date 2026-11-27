@@ -37,6 +37,24 @@ def load_enum(header, prefix):
     return out
 
 
+def load_enum_block(header, enum_name):
+    """NAME -> value for the members of `enum enum_name { ... }` (plain
+    members counted from 0, `= value` honoured; #if lines are ignored)."""
+    text = (ROOT / header).read_text()
+    body = text[text.index("enum " + enum_name):]
+    body = body[body.index("{") + 1:body.index("};")]
+    body = re.sub(r"/\*.*?\*/|//[^\n]*", "", body, flags=re.S)
+    out, val = {}, -1
+    for line in body.splitlines():
+        line = line.strip().rstrip(",")
+        if not line or line.startswith("#"):
+            continue
+        name, _, expr = (p.strip() for p in line.partition("="))
+        val = int(expr, 0) if expr else val + 1
+        out[name] = val
+    return out
+
+
 def load_defines(header, prefix):
     text = (ROOT / header).read_text()
     return {m.group(1): int(m.group(2), 0) for m in
@@ -276,6 +294,78 @@ class GameInfo:
                 row.append(c)
             rows.append("".join(row))
         return rows
+
+    def dungeon_location(self, f):
+        """(dungeon id, floor) of gDungeon->unk644.dungeonLocation (Dungeon
+        offset 0x644; include/structs/str_dungeon.h)."""
+        base = f.u32(self.syms["gDungeon"])
+        return f.u8(base + 0x644), f.u8(base + 0x645)
+
+    # EntityInfo.moves in this build (the header's offset comments are
+    # Red's, 0x118): 4 moves of 8 bytes, flags at +0 (bit 0: the slot is
+    # used), id at +2, PP at +4.
+    INFO_MOVES = 0x120
+
+    def pokemon(self, f, wild=True):
+        """The wild (or team) Pokémon on the floor, as dicts: species, level,
+        hp, max_hp, moves [(id, PP)], pos. gDungeon->wildPokemon[16] follows
+        teamPokemon[4]; Entity: type at 0 (1 = monster), pos at 4,
+        EntityInfo * at 0x70; EntityInfo: species at 2, level at 9, HP and
+        max HP at 0xE (include/structs/dungeon_entity.h)."""
+        base = f.u32(self.syms["gDungeon"])
+        team = self._dungeon_offsets(f)[0]
+        first, count = (team + 16, 16) if wild else (team, 4)
+        out = []
+        for k in range(count):
+            ent = f.u32(base + first + 4 * k)
+            if not 0x02000000 <= ent < 0x02040000 or f.u32(ent) != 1:
+                continue
+            info = f.u32(ent + 0x70)
+            if not 0x02000000 <= info < 0x02040000:
+                continue
+            raw = f.read(info, self.INFO_MOVES + 32)
+            hp, mhp = struct.unpack_from("<hh", raw, 0xE)
+            moves = []
+            for i in range(4):
+                o = self.INFO_MOVES + 8 * i
+                if raw[o] & 1:  # MOVE_FLAG_EXISTS
+                    moves.append((struct.unpack_from("<H", raw, o + 2)[0], raw[o + 4]))
+            out.append(dict(species=struct.unpack_from("<h", raw, 2)[0], level=raw[9], hp=hp,
+                            max_hp=mhp, moves=moves, pos=struct.unpack("<hh", f.read(ent + 4, 4))))
+        return out
+
+    def floor_items(self, f):
+        """Item ids lying on the floor: the objects on the tiles (Tile.object
+        at 0x14) that are items (Entity.type 3), Item * at Entity 0x70
+        (Item: flags, quantity, id)."""
+        base = f.u32(self.syms["gDungeon"])
+        tiles = self._dungeon_offsets(f)[1]
+        raw = f.read(base, 0x14000)
+        ptrs = struct.unpack_from("<%dI" % (32 * 56), raw, tiles)
+        out = []
+        for p in ptrs:
+            obj, = struct.unpack_from("<I", raw, p - base + 0x14)
+            if 0x02000000 <= obj < 0x02040000 and f.u32(obj) == 3:
+                item = f.u32(obj + 0x70)
+                if 0x02000000 <= item < 0x02040000:
+                    out.append(f.u8(item + 2))
+        return out
+
+    def script_var(self, f, name):
+        """A script variable (enum ScriptVarId in include/constants/event_flag.h)
+        as GetScriptVarValue reads it: gScriptVarInfo[id] (type, bufOffset)
+        into gScriptVarBuffer. Bit, u8, s8, u16, s16 and s32 types."""
+        if getattr(self, "_var_ids", None) is None:
+            self._var_ids = load_enum_block("include/constants/event_flag.h", "ScriptVarId")
+        vid = self._var_ids[name]
+        typ, _, off, bit = struct.unpack("<hhhh", f.read(self.syms["gScriptVarInfo"] + 16 * vid, 8))
+        buf = self.syms["gScriptVarBuffer"] + off
+        fmt = {2: "<B", 3: "<b", 4: "<H", 5: "<h", 6: "<i", 7: "<B"}
+        if typ == 1:
+            return (f.u8(buf) >> bit) & 1
+        if typ in fmt:
+            return struct.unpack(fmt[typ], f.read(buf, struct.calcsize(fmt[typ])))[0]
+        return None
 
     def input_waits(self, f):
         """sArrowsFrames (src/dungeon_main.c): counts frames while the dungeon

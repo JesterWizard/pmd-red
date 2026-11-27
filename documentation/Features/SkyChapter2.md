@@ -87,3 +87,155 @@ converted in the Sky Jukebox range; the story uses them as `MUS_SKY_*` ids.
    team naming, the chapter card, free roam, the faint path; chapter 2 ends
    with "The demo ends here."
 6. Tests in the regression suite.
+
+## Drenched Bluff
+
+EoS dungeon 3, played by Red's **Thunderwave Cave** slot
+(`DUNGEON_THUNDERWAVE_CAVE` = 1, `SCRIPT_DUNGEON_THUNDERWAVE_CAVE`,
+`RESCUE_DUNGEON_THUNDERWAVE_CAVE`), the way Tiny Woods plays Beach Cave.
+Red's own Thunderwave Cave is chapter 2's dungeon too (`SCENARIO_MAIN` 3),
+so its after-dungeon script (`GETOUT_M01E02A`) already checks the right
+scenario. Code: `SkyStory_IsDrenchedBluff` and friends in
+[`src/sky_story.c`](../../src/sky_story.c).
+
+### What EoS has
+
+Read from the EoS ROM (`BALANCE/mappa_s.bin` through the arm9 dungeon list:
+dungeon 3 is mappa list 2, floors 0-5; `BALANCE/item_p.bin`;
+`BALANCE/waza_p.bin`; overlay 10's tileset properties and music list):
+
+| Floor | Layout (Red's `LAYOUT_*`) | Rooms | Enemies | Items | Wild Pokémon (level, weight) |
+|---|---|---|---|---|---|
+| B1F | 1 SMALL | 9 | 5 | 3 | Lileep L3 33%, Anorith L3 33%, Shellos L4 33% |
+| B2F | 1 SMALL, dead ends | 9 | 5 | 3 | as B1F |
+| B3F | 11 MEDIUM | 8 | 6 | 4 | Lileep L3, Anorith L3, Shellos L4 (29% each), Chingling L4 14% |
+| B4F | 11 MEDIUM, dead ends | 8 | 6 | 4 | as B3F |
+| B5F | 11 MEDIUM | 7 | 6 | 4 | as B3F |
+| B6F | 8 LARGE_0x8, dead ends | 7 | 7 | 4 | Lileep L4, Anorith L4, Shellos L5, Chingling L5 |
+
+Every floor: connectivity 12, water density 8 (secondary terrain on), trap
+density 3 (only Wonder Tiles), no darkness, clear weather, no Kecleon shop
+or Monster House (Kecleon L48/L49 and the decoy are listed with weight 0),
+maze-room chance 1% on B1F-B3F, coins up to 75, EoS tileset 2, music 2
+(`BGM_DRENCHED_BLUFF`), enemy IQ 1. Restrictions: stairs down, recruiting
+allowed, no rescues, 4 party members, 48 items, 1000-turn limit.
+Floor items (cumulative weights per category, the same on every floor with
+small changes): Geo Pebble 14%; Heal Seed, Oran Berry, X-Eye Seed, Pecha
+Berry, Sleep, Warp, Blast and Stun Seeds, Max Elixir 42%; Apple and six
+Gummis 11%; Poké 33%. EoS's **guaranteed** items (weight 0xFFFF): a Big
+Apple on B3F, a Max Elixir on B4F, an Oren Berry on B5F.
+The enemies' moves at those levels are all Red moves (Astonish, Constrict;
+Harden, Scratch; Mud-Slap, Mud Sport, Harden; Wrap), so no Gen 4 proxy is
+involved.
+
+### On the GBA
+
+- [`tools/make_sky_dungeon_floors.py`](../../tools/make_sky_dungeon_floors.py)
+  `EOS.nds 3 sDrenchedBluff` writes
+  [`src/data/sky_drenched_bluff_floors.h`](../../src/data/sky_drenched_bluff_floors.h):
+  per floor the 28 floor-property bytes (EoS's floor layout is Red's
+  `FloorProperties` byte for byte), the spawns (species by name, Gen 4 ids
+  from `sky_gen4.h`), the traps and the floor items in Red's ids. The tool
+  works for any EoS dungeon (`... 1 sBeachCave` gives Beach Cave's
+  table, identical to the hand-written one in `sky_story.c`).
+- `SetFloorItemMonsterSpawns` loads Red's Thunderwave Cave data (B6F reads
+  B5F's, `SkyStory_RemapDataFloor`), then `SkyStory_ApplyFloorOverrides`
+  replaces the floor properties (tileset `SKY_DRENCHED_BLUFF_TILESET` 0x2A,
+  Red's music byte kept, money cap EoS byte × 5 / 40), the trap weights and
+  the spawns, and `SkyStory_ApplyFloorItemOverrides` the normal floor item
+  list. `GetDungeonFloorCount` gives 7 (6 floors + 1): B6F's stairs clear
+  the dungeon. The name is "Drenched Bluff" (`strings.c`, `ground_place.c`),
+  the floor title "Drenched Bluff B1F".
+- Guaranteed items: `SkyStory_TakeGuaranteedItem` (called from the floor
+  item placement in `dungeon_items.c`) turns the floor's first normal item
+  spot into it.
+- Music: `SkyStory_GetDungeonBgm` returns `MUS_SKY_DRENCHED_BLUFF` (944, the
+  Sky Jukebox's converted `BGM_DRENCHED_BLUFF`) on every floor.
+- Tileset: EoS `dungeon.bin` #2 converted by
+  `tools/convert_eos_dungeon_tileset.py EOS.nds 2 sDrenchedBluff`
+  ([`src/data/sky_drenched_bluff_tileset.h`](../../src/data/sky_drenched_bluff_tileset.h):
+  478 tiles, 250 chunks, the autotile table, palettes 0-9 and the animated
+  water colours of palettes 10-11), loaded by `SkyStory_LoadDungeonTileset`
+  ([`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c)) for
+  tileset id 0x2A. Red's tileset 0x2A was picked for game logic: not lava,
+  not a "water tileset", Rock camouflage, Nature Power → Rock Slide, as EoS's
+  tileset 2. It is C data, so the sky dungeon archive needs no change (it
+  already has no Red tilesets).
+
+**Approximated:** X-Eye Seed (hallucination, a status Red does not have)
+spawns as a Totter Seed; EoS's look-alike items Mix Elixir, Oren Berry and
+Dough Seed do not exist in Red and are left out (their category's other
+items scaled back to 100%; B5F's guaranteed Oren Berry is gone); shop,
+Monster House and buried item lists stay Red's (EoS's chances and density
+for them are 0 on every floor); Red has no enemy IQ per floor; the coin cap
+is 80 (Red's steps of 40), not 75; party size stays Red's 3. A guaranteed
+item replaces a random one instead of being added. EoS's 0xFFFF weight is
+SkyTemple's "guaranteed"; it was not checked in DeSmuME (no EoS save reaches
+chapter 2).
+
+### The pearl
+
+Spoink's pearl is **not a dungeon item** in EoS: no floor of mappa_s.bin
+lists it. It is ground object `d02p31a1` (object 17, at (30, 23)) in
+m02a0801's layer of the end map D02P31A, which the partner spots ("This has
+to be Spoink's pearl!"). m02a1001's rewards are `item_Set` Protein / Calcium
+/ Iron. So nothing was added to the item table; the pearl is a
+`SKY_OBJ_*` ground object for the sprites agent (naming contract above).
+
+### The end: hook for the scenes
+
+EoS: after B6F, `GETOUT_SCENARIO_DUNGEON` (GROUND_START_MODE 8, conquest)
+jumps to `EVENT_M02_09_10`: m02a0801 at D02P31A (its banner is EoS's
+"Drenched Bluff / B7F", `back_SetDungeonBanner(3, 0)`; it sets
+`$SCENARIO_MAIN` scn[3, 6], or scn[3, 7] on a second clear), then m02a1001,
+c00a0501, c00a0601, m02a1003 and EVENT_DIVIDE.
+
+GBA: clearing Drenched Bluff returns `STARTMODE_DUNGEON_WON`; ground_main
+sets `START_MODE` / `DUNGEON_RESULT`, marks `DUNGEON_CLEAR_LIST[1]`, loads
+the return map (`sScriptDungeonData[SCRIPT_DUNGEON_THUNDERWAVE_CAVE].mapID2`
+in [`src/code_80A26CC.c`](../../src/code_80A26CC.c), Red's
+`MAP_TEAM_BASE_INSIDE`) and runs `GETOUT_M01E02A`
+([`ground_event_data.h`](../../src/data/ground/ground_event_data.h)):
+`DUNGEON_ENTER` 1 and `SCENARIO_MAIN` 3 → `START_MODE` won →
+**`EVENT_M01E02A_L006` = `SKY_DRENCHED_BLUFF_CLEARED_EVENT`**. In the sky
+build that event slot points at `s_script_SKY_DRENCHED_BLUFF_CLEARED` (a
+placeholder: `SET_RESCUE_CONQUERED`, scn[3, 6], then the demo end). The
+scenes agent replaces that script's body with EVENT_M02_09_10's scenes
+(`EXECUTE_SUBSTATION(MAP_SKY_DRENCHED_BLUFF_END, ...)` for m02a0801, ...)
+and sets the return maps (`mapID2` cleared, `mapID3` fainted) under
+`SKY_STORY`.
+
+Entering the dungeon from a scene (m02a0401 / m02a0701's
+`main_EnterDungeon(3, 0)`): `NEXT_DUNGEON frames=0 dungeon=THUNDERWAVE_CAVE`
+in a `.scene` file (as chapter 1's `dungeon=TINY_WOODS`), after
+`$SCENARIO_MAIN = scn[3, 3]` (`SCENARIO_CALC(SCENARIO_MAIN, 3, 3)`).
+
+### Fainting: hook for the flow
+
+EoS: EVENT_DIVIDE with scn[3, 3/4/5] → `EVENT_M02_05_07A` (m02a0501 at
+g01p03a, c00a0501, c00a0601, the night: m02a0601-0603 or c00a0301, then
+c00a0201), then `EVENT_M02_07B` (c00a0101, m02a0701: back to the bluff).
+
+GBA: fainting returns `STARTMODE_DUNGEON_LOST` (12); Red's engine removes all
+money, each bag item with a 50% chance and the held items
+(`RemoveMoneyAndRandomItems`, `src/main_loops.c`), loads `mapID3` (Red's
+`MAP_TEAM_BASE_INSIDE`) and runs `GETOUT_M01E02A`: any result but won and
+`STARTMODE_10` → **`EVENT_M01E02A_L004` = `SKY_DRENCHED_BLUFF_FAINTED_EVENT`**
+(`s_script_SKY_DRENCHED_BLUFF_FAINTED`, placeholder: the demo end).
+`STARTMODE_10` (left early, e.g. an Escape Orb) goes to `EVENT_DIVIDE`; EoS
+treats that as a failure too, so the flow should send it to the fainted
+event (edit `GETOUT_M01E02A`'s `STARTMODE_10` line under `SKY_STORY`).
+Seen working: a level-1 debug team falls on B1F and the fainted event runs.
+
+### Debug boot
+
+```bash
+make DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_LEVEL=8 [DEBUG_BOOT_FLOOR=6] [DEBUG_BOOT_SEED=7]
+```
+
+`SKY_DRENCHED_BLUFF_DEBUG_EVENT` (`EVENT_M01E02A_L002`'s slot,
+`s_script_SKY_DRENCHED_BLUFF_DEBUG`) sets scn[3, 3] and enters the dungeon
+(`NEXT_DUNGEON`). `DEBUG_BOOT_LEVEL=n` levels the debug team to n with
+EoS's stat gains and moves (Red's starters start at level 1, and a level-1
+team does not survive the bluff). The `bluff` test ROM of the regression
+suite is this build with seed 7 and level 8.

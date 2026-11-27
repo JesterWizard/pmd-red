@@ -756,7 +756,12 @@ const DungeonName gDungeonNames[NUM_DUNGEONS] = {
 #else
     [DUNGEON_TINY_WOODS] = { _("Tiny Woods"), _("Tiny Woods")},
 #endif
+#ifdef SKY_STORY
+    /* Chapter 2: Thunderwave Cave plays the part of Drenched Bluff. */
+    [DUNGEON_THUNDERWAVE_CAVE] = { _("Drenched Bluff"), _("Drenched Bluff")},
+#else
     [DUNGEON_THUNDERWAVE_CAVE] = { _("Thunderwave Cave"), _("Thunderwave Cave")},
+#endif
     [DUNGEON_MT_STEEL] = { _("Mt. Steel"), _("Mt. Steel")},
     [DUNGEON_SINISTER_WOODS] = { _("Sinister Woods"), _("Sinister Woods")},
     [DUNGEON_SILENT_CHASM] = { _("Silent Chasm"), _("Silent Chasm")},

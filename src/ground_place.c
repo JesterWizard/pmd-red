@@ -22,7 +22,11 @@ static const u8 *const sGroundPlaceNames[] = {
 #else
     [GROUND_PLACE_TINY_WOODS] =                 _("Tiny Woods"),
 #endif
+#ifdef SKY_STORY
+    [GROUND_PLACE_THUNDERWAVE_CAVE] =           _("Drenched Bluff"),
+#else
     [GROUND_PLACE_THUNDERWAVE_CAVE] =           _("Thunderwave Cave"),
+#endif
     [GROUND_PLACE_MT_STEEL] =                   _("Mt. Steel"),
     [GROUND_PLACE_SINISTER_WOODS] =             _("Sinister Woods"),
     [GROUND_PLACE_SILENT_CHASM] =               _("Silent Chasm"),
