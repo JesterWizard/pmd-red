@@ -127,16 +127,28 @@ def background(dbin, bg: int, name: str) -> list[str]:
         w("    " + ", ".join(str(remap[c]) for c in grid[y]) + ",")
     w("};")
     # palettes 10-11 are animated colours (the Pit's water), as in a tileset
-    emit_anim(w, name, dbin.get(f"dungeon_bg{bg}.dpla"))
+    emit_anim(w, name, dbin.get(f"dungeon_bg{bg}.dpla"), dpl, used_palettes(chunks))
     return out
 
 
-def emit_anim(w, name, dpla):
+def used_palettes(chunks):
+    return {e.pal_idx for c in chunks for e in c if e is not None}
+
+
+def emit_anim(w, name, dpla, dpl=None, used=()):
     """Animated colours (palettes 10-11): per slot, frames of RGB and a
-    per-frame duration (Red's canm)."""
+    per-frame duration (Red's canm). Red loads palettes 10-11 only from
+    there: a slot EoS does not animate, in a palette the chunks use, gets
+    its dpl colour as a one-frame animation (Mt. Bristle Peak's floor is
+    drawn in a static palette 10)."""
     for i in range(32):
         cols = list(dpla.colors[i])
         n = len(cols) // 3
+        if n == 0 and dpl is not None and 10 + i // 16 in used and len(dpl.palettes) > 10 + i // 16:
+            cols = list(dpl.palettes[10 + i // 16][(i % 16) * 3:(i % 16) * 3 + 3])
+            n = 1
+            dpla.colors[i] = cols
+            dpla.durations_per_frame_for_colors[i] = 1
         if n == 0:
             continue
         frames = ", ".join(f"{{{cols[k * 3]}, {cols[k * 3 + 1]}, {cols[k * 3 + 2]}}}" for k in range(n))
@@ -205,7 +217,7 @@ def main() -> int:
         w("    " + ", ".join(row) + ",")
     w("};")
 
-    emit_anim(w, name, dpla)
+    emit_anim(w, name, dpla, dpl, used_palettes(dpc.chunks[:RED_CHUNKS]))
     print("\n".join(out))
     return 0
 

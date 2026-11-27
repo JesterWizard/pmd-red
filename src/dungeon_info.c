@@ -2537,8 +2537,8 @@ s32 GetDungeonFloorCount(u8 dungeon)
 #ifdef SKY_STORY
     else if (SkyStory_IsBeachCave(dungeon))
         return SkyStory_GetBeachCaveFloorCount();
-    else if (SkyStory_IsDrenchedBluff(dungeon))
-        return SkyStory_GetDrenchedBluffFloorCount();
+    else if (SkyStory_GetEosFloorCount(dungeon) != 0)
+        return SkyStory_GetEosFloorCount(dungeon); /* Drenched Bluff, Mt. Bristle and its peak */
 #endif
     else
         return sDungeonFloorCount[dungeon];

@@ -762,7 +762,12 @@ const DungeonName gDungeonNames[NUM_DUNGEONS] = {
 #else
     [DUNGEON_THUNDERWAVE_CAVE] = { _("Thunderwave Cave"), _("Thunderwave Cave")},
 #endif
+#ifdef SKY_STORY
+    /* Chapter 3: Mt. Steel plays the part of Mt. Bristle (and its peak). */
+    [DUNGEON_MT_STEEL] = { _("Mt. Bristle"), _("Mt. Bristle")},
+#else
     [DUNGEON_MT_STEEL] = { _("Mt. Steel"), _("Mt. Steel")},
+#endif
     [DUNGEON_SINISTER_WOODS] = { _("Sinister Woods"), _("Sinister Woods")},
     [DUNGEON_SILENT_CHASM] = { _("Silent Chasm"), _("Silent Chasm")},
     [DUNGEON_MT_THUNDER] = { _("Mt. Thunder"), _("Mt. Thunder")},

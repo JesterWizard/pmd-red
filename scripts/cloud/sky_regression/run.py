@@ -37,6 +37,12 @@ PERF_SEED = 7
 # so the walk to B6F's stairs survives.
 BLUFF_SEED = 7
 BLUFF_LEVEL = 8
+# Mt. Bristle's floors come from this seed; the debug team starts at level 15
+# (EoS's team reaches Mt. Bristle at about L10-12, with IQ and four members;
+# a level-12 Red pair walks the nine floors but loses to Drowzee when the
+# partner falls). The peak's lose test boots straight into the fight at level 1.
+BRISTLE_SEED = 7
+BRISTLE_LEVEL = 15
 
 # Test ROMs: make variables, the input driver and how many frames to play.
 # "sky" (the plain build) is built last so pmd_red.gba is the normal ROM again.
@@ -52,6 +58,12 @@ ROMS = {
     "bluff": dict(vars=["DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BLUFF_SEED}",
                         f"DEBUG_BOOT_LEVEL={BLUFF_LEVEL}"], driver=drivers.bluff, frames=21000,
                   what="Drenched Bluff (chapter 2) from B1F to B6F's stairs and the dungeon's end"),
+    "bristle": dict(vars=["DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BRISTLE_SEED}",
+                          f"DEBUG_BOOT_LEVEL={BRISTLE_LEVEL}"], driver=drivers.bristle, frames=26000,
+                    what="Mt. Bristle (chapter 3) 1F to 9F's stairs, then the peak: Drowzee's cutscene and fight"),
+    "peak": dict(vars=["DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_PEAK_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BRISTLE_SEED}"],
+                 driver=drivers.peak, frames=6000,
+                 what="Mt. Bristle Peak from its debug boot, a level-1 team: the fight lost"),
     "sky": dict(vars=[], driver=drivers.jukebox, frames=16000,
                 what="the normal sky ROM: boot, the Sky Jukebox"),
     # more runs of the plain ROM (`rom`: they play that test ROM's build)

@@ -203,12 +203,18 @@ void sub_80498A8(s32 x,s32 y)
   r7 = 0;
   sp_0x20 = GetTile(x, y)->terrainFlags & (TERRAIN_TYPE_NORMAL | TERRAIN_TYPE_SECONDARY);
   if (gDungeon->tileset >= 0x40) {
+#ifdef SKY_STORY
+    if (TRUE) {
+        GetTileMut(x,y)->unk8 = SkyStory_BackgroundChunk(gDungeon->unk12C24, x, y);
+    }
+#else
     if ((0x17 >= x) && (0x17 >= y)) {
         GetTileMut(x,y)->unk8 = gDungeon->unk12C24[y * 0x18 + x];
     }
     else {
       GetTileMut(x,y)->unk8 = 0;
     }
+#endif
   }
   else
   {

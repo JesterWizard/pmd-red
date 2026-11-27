@@ -351,6 +351,17 @@ class GameInfo:
                     out.append(f.u8(item + 2))
         return out
 
+    def scenario(self, f, name="SCENARIO_MAIN"):
+        """(main, sub) of a scenario variable (GetScriptVarScenario: array
+        elements 0 and 1)."""
+        main = self.script_var(f, name)
+        vid = self._var_ids[name]
+        typ, _, off, _ = struct.unpack("<hhhh", f.read(self.syms["gScriptVarInfo"] + 16 * vid, 8))
+        size = {2: 1, 3: 1, 4: 2, 5: 2, 6: 4, 7: 1}.get(typ, 1)
+        fmt = {1: "<B", 2: "<B", 4: "<H", 6: "<i"}.get(size)
+        sub = struct.unpack(fmt, f.read(self.syms["gScriptVarBuffer"] + off + size, size))[0]
+        return main, sub
+
     def script_var(self, f, name):
         """A script variable (enum ScriptVarId in include/constants/event_flag.h)
         as GetScriptVarValue reads it: gScriptVarInfo[id] (type, bufOffset)

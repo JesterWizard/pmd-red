@@ -53,7 +53,13 @@ static const DungeonInfo sScriptDungeonData[SCRIPT_DUNGEON_COUNT] = {
         .dungeonID = DUNGEON_MT_STEEL,
         .rescueDungeonID = RESCUE_DUNGEON_MT_STEEL,
         .unk10 = 1,
+#ifdef SKY_STORY
+        /* Mt. Bristle Peak (chapter 3) is a real run of this entry; Red's
+         * (FALSE) only chains GETOUT_M01E02B to its won branch. */
+        .unk11 = TRUE,
+#else
         .unk11 = FALSE,
+#endif
     },
     [SCRIPT_DUNGEON_SINISTER_WOODS] = {
         .mapID1 = MAP_TEAM_BASE,
