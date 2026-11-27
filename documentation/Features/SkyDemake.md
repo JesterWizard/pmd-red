@@ -1820,7 +1820,9 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
 - **Learnsets**: every species (Red's too) uses its EoS level-up and TM/HM
   learnset, so old species can learn Gen 4 moves.
 - **Portraits**: EoS's `FONT/kaomado.kao` faces, each of Red's 13 emotions EoS
-  has ([`tools/make_sky_gen4_portraits.py`](../../tools/make_sky_gen4_portraits.py)
+  has, plus EoS's Dizzy (13) and Sigh (16), which the story scripts use and the
+  sky build's portrait code can show ([SkyChapter2.md](SkyChapter2.md#portraits))
+  ([`tools/make_sky_gen4_portraits.py`](../../tools/make_sky_gen4_portraits.py)
   → `graphics/portraits/<species>/`, built by `convert_custom_portraits.py`
   into the custom portrait archive under `SKY_STORY`).
   The same tool exports EoS's faces for every Red hero / partner choice and
@@ -1842,9 +1844,10 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   `graphics/ax/mon/<species>/`, `src/data/ax/<species>.h`,
   [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), registered as
   `ax424`–`ax528` in `src/monster_files_table.c` (≈2.5 MB).
-  Red's cutscene animation groups 13+ (lying, getting up, ...) don't exist in
-  the converted sprites; `AxResInit` falls back to Sleep for lying (13) and
-  Idle for the rest.
+  The batch converts the dungeon groups only; a sprite without a cutscene
+  group 13+ (lying, getting up, ...) falls back in `AxResInit` to Sleep for
+  lying (13) and Idle for the rest. The hero / partner choices and the story's
+  actors carry EoS's ground groups (below).
 - **Zubat and Koffing** use EoS's sprites too (`gAxZubatsky`,
   `gAxKoffingsky` in `monster_gfx_sky.c`; Red's `gAxZubat` / `gAxKoffing`
   are left out of the sky build). EoS drew their dungeon groups from Red's
@@ -1858,6 +1861,15 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   (what `AxResInit` would pick anyway). `--max-tiles 0` keeps Koffing's
   24-tile attack frames whole (gold gas puffs), as Red's own Koffing has them.
   Both match Red's overworld palettes (7 and 2) exactly.
+- **The hero and partner**: every species the player can be or pick (Red's
+  16 starters, Vulpix, Meowth, Phanpy, Turtwig, Chimchar, Piplup, Munchlax,
+  Riolu) has EoS's ground groups 13-34 at their EoS index (the Red species:
+  new `gAx<Name>sky` headers that keep Red's own 13 dungeon groups,
+  `convert ... --colours-from <red> --keep-red --ground-groups all`; the Gen 4
+  ones and Munchlax regenerated in place). Psyduck, Machop and Cubone keep
+  Red's sprites, whose 28 groups are EoS's. Chapter 1's lying / getting-up
+  poses (`INIT_SLEEP_FUNC`, `WAKEUP_FUNC`: groups 13 and 14) are EoS's for
+  everyone now. Details: [SkyChapter2.md](SkyChapter2.md#hero-and-partner).
 - **Chapter 2's ground actors** (Chatot, Loudred, Dugtrio, Sunflora, Bidoof,
   Chimecho, Corphish, Croagunk, Spoink, Wurmple, Swellow, Pidgey, Ledyba,
   Seedot, and chapter 1's Wigglytuff and Diglett kinds) are EoS's sprites in
@@ -1963,6 +1975,7 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `speaker_name_colours`, `_pit` | divide, pit | the name's pixels: Squirtle yellow (255,255,0); Zubat and Koffing light blue (0,255,255) |
 | `portrait_sides_opening`, `_pit`, `_aftermath` | divide, pit, after | the portrait window (`sDialogueBoxWinTemplates` id 1) per scene and speaker, as EoS's FACE_POS: guild, m01a0208, the "Yowch!" face-out, the Pit cutscene, m01a0701, m01a0702 |
 | `guild_no_determined` | divide | "No. I refuse...": BG palette 14 colour 1 is Squirtle's Determined pink (from `graphics/portraits_sky`), not Happy |
+| `guild_whew_sigh` | divide | "Whew...": the partner's face is Squirtle's EoS Sigh (emotion 16): BG palette 14 is `Sigh.pal` and the 40x40 face on screen is `Sigh.png` pixel for pixel (it showed Normal while the portrait code kept 4 bits) |
 | `beach_meeting_camera` | divide | the camera view is (188, 100) at "(My name?" |
 | `guild_gate_and_totems` | divide | at the guild's first view (118, 112): ≥ 100 portcullis bar pixels in the gate; ground objects 70/71 and four totem OBJ pieces |
 | `stormy_sea` | divide | `MAP_SKY_STORM_WAVES`: ≥ 10 semi-transparent rain OBJs and BLDALPHA 16/8 on ≥ 90% of frames; lightning OBJs on ≥ 20 frames; the Storm BGM |
@@ -2123,6 +2136,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
 | Boss battle transition | [`src/sky_boss_wipe.c`](../../src/sky_boss_wipe.c), [`src/data/sky_boss_wipe.h`](../../src/data/sky_boss_wipe.h), hooks in [`src/cpu.c`](../../src/cpu.c) and [`src/reg_control.c`](../../src/reg_control.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
+| Portraits: EoS faces, the emotions past Red's 13 (`PORTRAIT_EMOTION`, `PortraitGfxSky`, `CustomPortraitMask`) | [`tools/make_sky_gen4_portraits.py`](../../tools/make_sky_gen4_portraits.py), [`convert_custom_portraits.py`](../../convert_custom_portraits.py), [`include/structs/str_mon_portrait.h`](../../include/structs/str_mon_portrait.h), [`include/custom_portraits.h`](../../include/custom_portraits.h), [`src/textbox.c`](../../src/textbox.c), [`src/pokemon.c`](../../src/pokemon.c) |
 | Dialogue box layout, word wrap (`SkyWrapDialogueText`) | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
 | Dungeon menus (main menu, Items, Team, Moves, Others, Rest), frame and cursor | [`src/dungeon_main.c`](../../src/dungeon_main.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/dungeon_menu_items.c`](../../src/dungeon_menu_items.c), [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c), [`src/dungeon_menu_moves.c`](../../src/dungeon_menu_moves.c), [`src/dungeon_menu_others.c`](../../src/dungeon_menu_others.c), [`src/dungeon_submenu.c`](../../src/dungeon_submenu.c), [`src/ui_style.c`](../../src/ui_style.c), [`src/menu_input.c`](../../src/menu_input.c) |
 | Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_storm_cliff.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_floors.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py`, `tools/make_sky_boss_wipe.py` (DeSmuME) |
@@ -2140,9 +2154,13 @@ Winning the boss fight by mashing A needs a strong team; for that test set
   8 mixer channels cost more CPU than Red's 5.
 - Sprites and the Relic Fragment use Red's 13 shared overworld palettes, so
   some colours shift (the fragment's red mark becomes grey; Turtwig loses its
-  yellow). Converted sprites lack Red's cutscene animation groups 13+ (they
-  fall back to Sleep / Idle); only Zubat and Koffing carry EoS ground-only
-  poses (groups 13 and 15).
+  yellow). Gen 4 sprites other than the hero / partner choices and the story's
+  actors lack the cutscene groups 13+ (they fall back to Sleep / Idle). The
+  hero / partner choices' group 18 (a shake with "!" lines) loses its lines on
+  the one frame that is over the 16 ground OBJ tiles.
+- Portraits: EoS emotions past Red's 13 other than Dizzy and Sigh (Stunned,
+  the specials) are not exported; a species without a Dizzy or Sigh face
+  (Psyduck, Machop, Cubone, most townsfolk) shows Normal.
 - Gen 4 moves borrow Red effect handlers; effects Red has no mechanism for
   (Gravity, Trick Room, Heal Block, Embargo, Shadow Force's vanish turn, ...)
   behave like the nearest Red move.

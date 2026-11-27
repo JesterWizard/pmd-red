@@ -194,6 +194,38 @@ The commands with friendly fields (the editor lists every other command of
 | **Story CGs** | | |
 | `SKY_CUTAWAY` | `cg= frames=` | Show a story CG. Still pictures: shown for frames (A/B skips after a while). Pans: the picture is held for frames, then the pan. |
 
+### Emotions
+
+`PORTRAIT`'s `emotion=` takes an `EMOTION_` name of
+[`include/constants/emotions.h`](../include/constants/emotions.h) (the prefix
+may be left out). The numbers are EoS's, so EoS's `message_SetFace(...,
+FACE_X, ...)` becomes `emotion=X`:
+
+| `emotion=` | No. | EoS `FACE_` | Notes |
+|---|---|---|---|
+| `NORMAL` | 0 | `NORMAL` | |
+| `HAPPY` | 1 | `HAPPY` | |
+| `PAINED` | 2 | `PAIN` | |
+| `ANGRY` | 3 | `ANGRY` | |
+| `WORRIED` | 4 | `WORRIED` | |
+| `SAD` | 5 | `SAD` | |
+| `CRYING` | 6 | `CRYING` | |
+| `SHOUTING` | 7 | `SHOUTING` | |
+| `TEARY_EYE` | 8 | `TEARY_EYED` | |
+| `DETERMINED` | 9 | `DETERMINED` | |
+| `JOYOUS` | 10 | `JOYOUS` | |
+| `INSPIRED` | 11 | `INSPIRED` | |
+| `SUPRISED` | 12 | `SURPRISED` | spelled as in Red's code |
+| `DIZZY` | 13 | `DIZZY` | sky build only: EoS's face for the hero / partner choices, Chatot, Bidoof |
+| `SIGH` | 16 | `SIGH` | sky build only: EoS's face for the hero / partner choices, Wigglytuff, Chatot, Loudred, Sunflora, Bidoof |
+| `STUNNED` | 17 | `STUNNED` | no faces exported: shows Normal |
+
+Red's portraits have only the first 13. In the sky build, `DIZZY` and `SIGH`
+show EoS's face where the species has one (exported by
+`tools/make_sky_gen4_portraits.py`) and Normal where it has none (Psyduck,
+Machop, Cubone, most townsfolk). How the portrait code holds them:
+[SkyChapter2.md](Features/SkyChapter2.md#portraits).
+
 ## Import from EoS
 
 `tools/event_editor/eos_import.py` turns an EoS scene script into a draft

@@ -27,6 +27,25 @@
 #include "data/ax/spoinksky.h"
 #include "data/ax/corphishsky.h"
 #include "data/ax/chimechosky.h"
+/* The hero / partner choices (Red species): Red's own 13 groups (dungeon frames
+ * unchanged) and then EoS's ground groups 13-34 (convert ... --colours-from <red>
+ * --keep-red --ground-groups all), so EoS's SetAnimation ids pick EoS's cutscene poses.
+ * Red's own copies are left out of the sky build. See documentation/Features/SkyChapter2.md. */
+#include "data/ax/bulbasaursky.h"
+#include "data/ax/charmandersky.h"
+#include "data/ax/squirtlesky.h"
+#include "data/ax/pikachusky.h"
+#include "data/ax/meowthsky.h"
+#include "data/ax/eeveesky.h"
+#include "data/ax/chikoritasky.h"
+#include "data/ax/cyndaquilsky.h"
+#include "data/ax/totodilesky.h"
+#include "data/ax/treeckosky.h"
+#include "data/ax/torchicsky.h"
+#include "data/ax/mudkipsky.h"
+#include "data/ax/skittysky.h"
+#include "data/ax/vulpixsky.h"
+#include "data/ax/phanpysky.h"
 #include "data/ax/turtwig.h"
 #include "data/ax/grotle.h"
 #include "data/ax/torterra.h"
