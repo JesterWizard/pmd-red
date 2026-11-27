@@ -619,11 +619,14 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* Player — 
     SKY_AMBIENCE_FADEOUT(0), /* EoS: bgm2_Stop() as Zubat strikes */
     FANFARE_PLAY2(SE_SKY_TACKLE), /* EoS se_Play(5121) */
     ALERT_CUE(6),
-    AWAIT_CUE(5), /* partner knocked back, shocked */
+    /* The partner is knocked back into the hero, who is pushed along as the
+     * partner arrives (EoS: partner slides at 3 px a frame, the hero at 4). */
+    WAIT(15 + 5),
     SELECT_ENTITIES(-1, 2), /* EoS: the Relic Fragment falls on the sand */
     SELECT_ANIMATION(5),
     MOVE_RELATIVE(1024, -40, 0),
     SELECT_ANIMATION(2),
+    AWAIT_CUE(5), /* partner knocked back, shocked */
     PORTRAIT(PLACEMENT_MIDLEFT_TOP_FLIP, NPC_PARTNER, EMOTION_SHOUTING),
     MSG_NPC(NPC_PARTNER, _(" Yowch!")),
     TEXTBOX_CLEAR,
@@ -783,6 +786,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives1_dlg0[] = { /* Partner */
     CALL_SCRIPT(SWEAT_FUNC),
     ALERT_CUE(5),
     AWAIT_CUE(6), /* rammed by Zubat */
+    WAIT(15), /* EoS: Wait(15) between the tackle and the knock-back */
     SELECT_ANIMATION(11), /* EoS: knocked back, hurt */
     MOVE_RELATIVE(768, -40, 0),
     SELECT_ANIMATION(2),
