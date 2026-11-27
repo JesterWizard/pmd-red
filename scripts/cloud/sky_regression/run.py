@@ -98,7 +98,7 @@ def main():
     ap = argparse.ArgumentParser(description="Sky demake regression suite (headless).")
     ap.add_argument("-k", action="append", default=[], metavar="TEXT",
                     help="only checks whose name contains TEXT (repeatable)")
-    ap.add_argument("--rom", action="append", default=[], choices=list(ROMS) + ["vanilla"],
+    ap.add_argument("--rom", action="append", default=[], choices=list(ROMS) + ["vanilla", "tools"],
                     help="only checks on this test ROM (repeatable)")
     ap.add_argument("--no-build", action="store_true",
                     help="reuse build/sky_tests/roms (skips the vanilla check)")

@@ -1,0 +1,1305 @@
+prefix s_gs178_
+debug_file src/data/ground/sky/sky_d01p01_scenes.h
+
+# Explorers of Sky demake — opening chapter, ground scenes on the
+# MAP_TINY_WOODS_ENTRY script file (gs178). Each group selects one of the maps
+# converted from the Explorers of Sky ROM (tools/convert_eos_ground_map.py) and
+# follows the matching EoS scene script (SCRIPT/<level>/m01a0xxx.ssb):
+#
+#   group 4  m01a0101/0102  Storm at sea: voices in the dark, then the waves.
+#   group 5  m01a0103       The hero washed up on the beach (daytime).
+#   group 6  m01a0104       Wigglytuff's Guild at dusk: the partner loses their
+#                           nerve on the sentry grate; Zubat & Koffing watch.
+#   group 7  m01a0202       Krabby blowing bubbles.
+#   group 8  m01a0203       Krabby against the sunset.
+#   group 1  m01a0204-0208  Beach at sunset: the partner finds the hero, the
+#                           hero wakes up as a Pokémon, Zubat & Koffing steal
+#                           the Relic Fragment. -> NEXT_DUNGEON (Beach Cave).
+#   group 2  m01a0301       Defeated in Beach Cave: back on the beach.
+#   group 3  m01a0702       After the battle: the Relic Fragment, a team.
+#
+# Positions are EoS level coordinates (8px tiles); the converted maps keep the
+# EoS tile grid, so they carry over unchanged. Text follows the EoS default
+# dialogue variant, broken into GBA text boxes.
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_ZUBAT 2
+#define NPC_KOFFING 3
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# Cue protocol (as in the vanilla scenes): the driving script alerts an actor
+# cue (6 = partner, 7 = Zubat, 8 = Koffing, 9 = player), the actor performs one
+# step and alerts 5 ("done"); 3 tells the station script the scene is over.
+
+# ------------------------------------------------------------------------
+# group 0 — plain map enter
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01
+    DEBUGINFO line=44
+    SELECT_MAP TINY_WOODS_ENTRY
+    BGM_STOP
+    JUMP_SCRIPT COMMON_ENTER
+end
+
+# ------------------------------------------------------------------------
+# group 4 — m01a0101 / m01a0102: a storm at sea
+# ------------------------------------------------------------------------
+
+script g4_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=57
+    SET_PLACE_MODE 1
+    BGM_STOP
+    FADE_OUT wait=TRUE frames=0
+    # Load the storm map first (behind the fade): the chapter card shows on
+    # this map load, then the voices play in a text box on black, as in EoS.
+    SELECT_MAP SKY_STORM_SEA
+    WAIT 1   # the chapter card runs on this map load
+    SKY_SHOW_MAP FALSE
+    FADE_IN wait=TRUE frames=0
+    FADE2_IN wait=TRUE frames=0
+    BGM_FADEIN frames=160 song=SKY_STORM
+    WAIT 60
+    CAMERA_SHAKE mode=CUSTOM amp=2 period=3
+    FANFARE_PLAY2 461   # EoS thunder
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 10
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 30
+    MSG_NPC who=-1 text=" Whoa! Wh-wh-whoa...!"
+    MSG_NPC who=-1 text=" Are...{WAIT_PRESS} Are you OK?!"
+    TEXTBOX_CLEAR
+    WAIT 30
+    FANFARE_PLAY2 461   # EoS thunder
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    MSG_NPC who=-1 text=" No!{WAIT_PRESS} Don't let go!"
+    MSG_NPC who=-1 text=" Just a little longer...{WAIT_PRESS}\nCome on! Hang on!"
+    TEXTBOX_CLEAR
+    WAIT 30
+    FANFARE_PLAY2 461   # EoS thunder
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    MSG_NPC who=-1 text=" N-n-no!{WAIT_PRESS} I can't...{WAIT_PRESS}hold on...!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 467   # EoS thunder
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 5
+    FANFARE_PLAY2 467   # EoS thunder
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 30
+    FANFARE_PLAY2 461   # EoS thunder
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 5
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_05 frames=2 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    WAIT 20
+    FANFARE_PLAY2 488   # EoS se_Play(6403)
+    MSG_NPC who=-1 text=" Waaaaaah!"
+    # EoS: screen_WhiteOutAll(1, 90) with the text box still up, a hold on
+    # white, then straight to black before the cliff.
+    BGM_FADEOUT 120
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=90 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    TEXTBOX_CLEAR
+    CAMERA_SHAKE mode=OFF amp=0 period=0
+    WAIT 120
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=1 color=RGB_U32(0xFF, 0xFF, 0xFF)   # the map is hidden: black
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP   # EoS m01d0112: sound_Stop()
+    # EoS m01d0112 (v01p07b, timed in DeSmuME): the stormy sea in the rain,
+    # cloudy sky and dark clouds, panning left at 0.4 px a frame: 60 frames
+    # of black, the storm BGM fading in over 160 frames from 7 frames before
+    # a 60-frame fade in, the lightning 60 frames after it (SetAnimation(18)
+    # on the cloud object; no SE), the fade out 240 frames after that, over
+    # 30 frames. The sky's flicker (map palette animation) is restarted so
+    # that it flashes with the lit clouds, as in EoS.
+    SELECT_MAP SKY_STORM_WAVES
+    SKY_CAMERA_SET x=350 y=64
+    WAIT 5   # the map loads hidden (its palettes come in unfaded)
+    SKY_SHOW_MAP TRUE
+    SKY_BUBBLES RAIN
+    WAIT 48
+    BGM_FADEIN frames=160 song=SKY_STORM   # EoS: sound_Stop(); bgm_PlayFadeIn(BGM_STORM, 160)
+    SKY_MAP_PAL_RESTART
+    WAIT 7
+    SKY_CAMERA_MOVE_X dx=-154 speed=102
+    FADE_IN wait=TRUE frames=60
+    WAIT 53   # + 1: the lightning starts the frame after SKY_STORM_BOLT
+    SKY_STORM_BOLT
+    WAIT 240
+    FADE_OUT wait=TRUE frames=30
+    SKY_BUBBLES OFF
+    SKY_SHOW_MAP FALSE
+    SELECT_MAP SKY_STORM_SEA
+    WAIT 30
+    BGM_FADEIN frames=30 song=SKY_STORM
+    SET_PLACE_MODE 4
+    SKY_SHOW_MAP TRUE
+    # EoS: the cliff (top screen) over the stormy sea (bottom): the cliff
+    # and its lightning, then the cliff fades out and the sea fades in.
+    SKY_BUBBLES RAIN   # EoS: rain over the cliff and the sea
+    SKY_CUTAWAY cg=STORM frames=160
+    FADE_IN wait=TRUE frames=30
+    WAIT 135
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=60
+    SKY_BUBBLES OFF
+    WAIT 120
+    RET
+end
+
+# ------------------------------------------------------------------------
+# group 5 — m01a0103: washed up on the beach
+# ------------------------------------------------------------------------
+
+script g5_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=170
+    SET_PLACE_MODE 1
+    BGM_STOP
+    FADE_OUT wait=TRUE frames=0
+    FADE2_IN wait=TRUE frames=0   # EoS: the thoughts are in a text box on black
+    SELECT_MAP SKY_BEACH_DAY
+    BGM_FADEIN frames=120 song=SKY_OCEAN   # EoS: bgm_PlayFadeIn(BGM_OCEAN1, 120)
+    WAIT 120
+    MSG_QUIET who=-1 text="......"
+    MSG_QUIET who=-1 text="............"
+    MSG_QUIET who=-1 text=".................."
+    MSG_QUIET who=-1 text="Urrgh..."
+    TEXTBOX_CLEAR
+    WAIT 30
+    MSG_QUIET who=-1 text="Where..."
+    MSG_QUIET who=-1 text="...Where am I?"
+    TEXTBOX_CLEAR
+    WAIT 1
+    SELECT_ENTITIES group=-1 sector=0
+    WAIT 1   # the actors take their poses; the pan draws them
+    # EoS: the sky (top screen) over the beach: pan down to the beach.
+    SKY_CUTAWAY cg=SKY_DAY_SCROLL frames=150
+    FADE_IN wait=TRUE frames=0   # the pan ends on this exact view
+    SET_PLACE_MODE 4
+    AWAIT_CUE 3
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=150
+    WAIT 60
+    RET
+end
+
+script g5_s0_lives0_dlg0   # Player, unconscious
+    DEBUGINFO line=204
+    CALL_SCRIPT INIT_SLEEP_FUNC
+    UPDATE_NAME kind=SPEECH_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    WAIT_FADE
+    WAIT 60
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=PAINED
+    MSG_QUIET who=PLAYER text="...{WAIT_PRESS}I can't...{WAIT_PRESS} Drifting off..."
+    TEXTBOX_CLEAR
+    WAIT 90
+    ALERT_CUE 3
+    HALT
+end
+
+# ------------------------------------------------------------------------
+# group 6 — m01a0104: Wigglytuff's Guild, the sentry grate
+# ------------------------------------------------------------------------
+
+script g6_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=223
+    SET_PLACE_MODE 1
+    BGM_STOP
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_GUILD_DUSK
+    SELECT_ENTITIES group=-1 sector=0
+    WAIT 1   # the actors take their poses; the pan draws them
+    BGM_FADEIN frames=120 song=SKY_FIRE_CRACKLING   # EoS: bgm_PlayFadeIn(BGM_FIRE_CRACKLING_LOUDER, 120)
+    # EoS: dusk clouds (top screen) over the guild: pan down to the guild.
+    SKY_CUTAWAY cg=GUILD_SKY_SCROLL frames=90
+    FADE_IN wait=TRUE frames=0   # the pan ends on this exact view
+    SET_PLACE_MODE 4
+    AWAIT_CUE 3
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=30
+    WAIT 60
+    RET
+end
+
+# The partner drives this scene; there is no hero on screen yet.
+script g6_s0_lives0_dlg0
+    DEBUGINFO line=246
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    CAMERA_INIT_PAN
+    WAIT_FADE
+    WAIT 30
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=WORRIED
+    MSG_NPC who=PARTNER text=" Hmm..."
+    TEXTBOX_CLEAR
+    WALK_RELATIVE speed=204 dx=24 dy=0
+    WALK_RELATIVE speed=204 dx=-48 dy=0
+    WALK_RELATIVE speed=204 dx=48 dy=0
+    WALK_RELATIVE speed=204 dx=-24 dy=0
+    WAIT 45
+    ROTATE_TO speed=1 turn=DIR_TRANS_10 direction=NORTH
+    PORTRAIT place=KEEP who=PARTNER emotion=DETERMINED
+    MSG_NPC who=PARTNER text=" No.{WAIT_PRESS} I refuse to be paralyzed\nby this any longer!"
+    MSG_NPC who=PARTNER text=" This is it. Today I'm going to\nbe brave."
+    TEXTBOX_CLEAR
+    WALK_RELATIVE speed=256 dx=0 dy=-24
+    WAIT 30
+    FANFARE_PLAY2 463
+    CALL_SCRIPT SHOCK_FUNC
+    CALL_SCRIPT JUMP_SURPRISE_FUNC   # EoS CORO_JUMP_SURPRISE
+    MSG_NPC who=-1 text=" Pokémon detected! Pokémon detected!"
+    MSG_NPC who=-1 text=" Whose footprint? Whose footprint?"
+    MSG_NPC who=-1 text=" The footprint is {POKEMON_1}'s!{WAIT_PRESS}\nThe footprint is {POKEMON_1}'s!"
+    TEXTBOX_CLEAR
+    CALL_SCRIPT SHOCK_FUNC
+    SELECT_ANIMATION 5   # EoS: backs off, feet still moving
+    MOVE_RELATIVE speed=768 dx=0 dy=24
+    SELECT_ANIMATION 2
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Waah!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_FLUSTERED   # EoS se_Play(8963)
+    CALL_SCRIPT SWEAT_FUNC
+    ROTATE_TO speed=3 turn=SPINLEFT1 direction=NORTH
+    WAIT 5
+    ROTATE_TO speed=5 turn=SPINRIGHT1 direction=NORTH
+    WAIT 15
+    ROTATE_TO speed=5 turn=SPINLEFT1 direction=NORTH
+    WAIT 45
+    MSG_NPC who=PARTNER text=" That shocked me!"
+    TEXTBOX_CLEAR
+    WAIT 30
+    FANFARE_PLAY2 SE_SKY_SWEAT_DROP   # EoS se_Play(8961) + EFFECT_SWEAT_DROP
+    CALL_SCRIPT SWEAT_FUNC
+    PORTRAIT place=KEEP who=PARTNER emotion=SIGH
+    MSG_NPC who=PARTNER text=" Whew..."
+    TEXTBOX_CLEAR
+    WAIT 15
+    PORTRAIT place=KEEP who=PARTNER emotion=SAD
+    MSG_NPC who=PARTNER text=" ...{WAIT_PRESS}I can't...{WAIT_PRESS} I can't bring myself\nto go in."
+    MSG_NPC who=PARTNER text=" I vowed that I would do it\ntoday, but..."
+    TEXTBOX_CLEAR
+    WALK_RELATIVE speed=128 dx=0 dy=-8
+    FANFARE_PLAY2 SE_SKY_RELIC_FRAGMENT   # EoS se_Play(6410): the treasure comes out
+    SELECT_OBJECTS group=-1 sector=2   # EoS supervision_Acting(2): the Relic Fragment at (30, 23)
+    WAIT 15
+    SELECT_ANIMATION 5
+    MOVE_RELATIVE speed=128 dx=0 dy=8
+    SELECT_ANIMATION 2
+    WAIT 30
+    FADE_OUT wait=TRUE frames=20   # fade the scene out and back in around the CG
+    SKY_CUTAWAY cg=RELIC_FRAGMENT frames=90   # EoS: the Relic Fragment close-up
+    FADE_IN wait=TRUE frames=20
+    MSG_NPC who=PARTNER text=" I thought that holding on to my\npersonal treasure would inspire\nme..."
+    TEXTBOX_CLEAR
+    WALK_RELATIVE speed=128 dx=0 dy=-8
+    ALERT_CUE 9   # EoS supervision_RemoveActing(2): the partner picks it up
+    WAIT 15
+    SELECT_ANIMATION 5
+    MOVE_RELATIVE speed=128 dx=0 dy=8
+    SELECT_ANIMATION 2
+    WAIT 45
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=NORTHWEST
+    ROTATE_TO speed=4 turn=SPINRIGHT1 direction=NORTHEAST
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=NORTH
+    WAIT 30
+    MSG_NPC who=PARTNER text=" Sigh...I just can't do it."
+    MSG_NPC who=PARTNER text=" I'm such a coward..."
+    MSG_NPC who=PARTNER text=" This is so discouraging..."
+    TEXTBOX_CLEAR
+    ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=SOUTH
+    WAIT 20
+    # EoS: the camera follows the partner 104 pixels down, then stays while
+    # the partner walks off.
+    WALK_RELATIVE speed=179 dx=0 dy=104
+    CAMERA_END_PAN
+    SELECT_LIVES group=-1 sector=1   # Zubat & Koffing, off screen above the camera
+    WALK_RELATIVE speed=179 dx=0 dy=96
+    WAIT 90
+    ALERT_CUE 7
+    END_DELETE
+end
+
+script g6_s1_lives0_dlg0   # Zubat — drives the second half
+    DEBUGINFO line=345
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=ZUBAT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    SET_OBJ_FLAGS 0x80000   # EoS SetOutputAttribute(8): drawn over the bushes
+    AWAIT_CUE 7
+    ALERT_CUE 8
+    # EoS: the camera rises 88 pixels as the two walk in from off screen.
+    SKY_CAMERA_MOVE dy=-88 speed=256
+    WALK_RELATIVE speed=307 dx=96 dy=24
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    WAIT 20   # Koffing (shorter walk) is in place
+    WAIT 45
+    PORTRAIT place=MIDLEFT_TOP who=KOFFING emotion=NORMAL
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=ZUBAT emotion=NORMAL
+    MSG_NPC who=KOFFING text=" Hey, Zubat.{WAIT_PRESS} Did you get a load\nof that?!"
+    MSG_NPC who=ZUBAT text=" You bet I did, Koffing."
+    MSG_NPC who=KOFFING text=" That little wimp that was pacing\naround...{WAIT_PRESS}had something good,\nright?"
+    MSG_NPC who=ZUBAT text=" That wimp had something, that's\nfor sure.{WAIT_PRESS} It looked like some kind\nof treasure."
+    TEXTBOX_CLEAR
+    ALERT_CUE 8
+    AWAIT_CUE 5
+    MSG_NPC who=KOFFING text=" Do we go after it?"
+    TEXTBOX_CLEAR
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    MSG_NPC who=ZUBAT text=" We do."
+    TEXTBOX_CLEAR
+    ALERT_CUE 8   # Koffing nods too
+    SELECT_ANIMATION TWITCH   # EoS SetAnimation(22): the nod (EoS sprite group 13)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    SELECT_ANIMATION 2
+    WAIT 30
+    ALERT_CUE 8
+    WAIT 15
+    WALK_RELATIVE speed=256 dx=0 dy=180
+    ALERT_CUE 3
+    END_DELETE
+end
+
+script g6_s1_lives1_dlg0   # Koffing
+    DEBUGINFO line=385
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=KOFFING id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    SET_OBJ_FLAGS 0x80000   # EoS SetOutputAttribute(8): drawn over the bushes
+    AWAIT_CUE 8
+    WAIT 10
+    WALK_RELATIVE speed=307 dx=88 dy=24
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    AWAIT_CUE 8
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
+    ALERT_CUE 5
+    AWAIT_CUE 8
+    SELECT_ANIMATION TWITCH   # EoS SetAnimation(22): the nod
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    SELECT_ANIMATION 2
+    AWAIT_CUE 8
+    WALK_RELATIVE speed=256 dx=0 dy=180
+    END_DELETE
+end
+
+# ------------------------------------------------------------------------
+# groups 7, 8 — m01a0202 / m01a0203: Krabby at sunset
+# ------------------------------------------------------------------------
+
+script g7_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=411
+    SET_PLACE_MODE 1
+    BGM_STOP
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_KRABBY_BUBBLES
+    # EoS m01a0201 (the beach at dusk, not in the demake) starts the waves
+    # on the second BGM player, under the music until Zubat attacks.
+    SKY_AMBIENCE song=SKY_OCEAN frames=160
+    SKY_BUBBLES KRABBY_SAND   # EoS supervision_SpecialActing(4, -4, 8)
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 150
+    FADE_OUT wait=TRUE frames=30
+    SKY_BUBBLES OFF
+    WAIT 30
+    RET
+end
+
+script g8_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=432
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_KRABBY_SUNSET
+    SKY_AMBIENCE song=SKY_OCEAN frames=0   # EoS m01a0203: bgm2_PlayFadeIn(BGM_OCEAN1, 0)
+    BGM_FADEIN frames=30 song=SKY_ON_THE_BEACH_AT_DUSK   # EoS m01a0203
+    SKY_BUBBLES KRABBY_SUNSET   # EoS supervision_SpecialActing(5, -2, 4)
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 150
+    FADE_OUT wait=TRUE frames=30
+    SKY_BUBBLES OFF
+    WAIT 30
+    RET
+end
+
+# ------------------------------------------------------------------------
+# group 1 — m01a0204..0208: the beach at sunset
+# ------------------------------------------------------------------------
+
+script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=455
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    FADE2_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_BEACH_DUSK
+    FADE2_IN wait=TRUE frames=0
+    SELECT_ENTITIES group=-1 sector=0
+    SKY_AMBIENCE song=SKY_OCEAN frames=0   # EoS m01a0204..0208: bgm2_PlayFadeIn(BGM_OCEAN1, 0)
+    SKY_BUBBLES BEACH   # the Krabby's bubbles drift over the beach
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    AWAIT_CUE 3
+    SKY_BUBBLES OFF
+    BGM_FADEOUT 60
+    NEXT_DUNGEON frames=30 dungeon=TINY_WOODS
+    RET
+end
+
+script g1_s0_lives0_dlg0   # Player — drives the scene
+    DEBUGINFO line=476
+    CALL_SCRIPT INIT_SLEEP_FUNC
+    UPDATE_NAME kind=SPEECH_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    SET_OBJ_FLAGS 0x80000   # EoS SetOutputAttribute(2): over the beach rocks
+    WAIT_FADE
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=NORMAL
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=NORMAL
+    ALERT_CUE 6   # partner strolls along the shore and looks out to sea
+    AWAIT_CUE 5
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" Wow! What a beautiful sight!"
+    TEXTBOX_CLEAR
+    FADE_OUT wait=TRUE frames=20   # fade the scene out and back in around the CG
+    SKY_CUTAWAY cg=SUNSET_SEA_ANIM frames=240   # EoS m01a0205
+    FADE_IN wait=TRUE frames=20
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" When the weather's good, the\nKrabby come out at sundown to\nblow bubbles..."
+    MSG_NPC who=PARTNER text=" All those bubbles, reflecting the\nsetting sun off the waves..."
+    MSG_NPC who=PARTNER text=" It's always beautiful."
+    TEXTBOX_CLEAR
+    WAIT 40
+    MSG_NPC who=PARTNER text=" ............"
+    MSG_NPC who=PARTNER text=" This is where I always come\nwhen I'm feeling down on myself."
+    MSG_NPC who=PARTNER text=" But it makes me feel good to be\nhere, like always."
+    MSG_NPC who=PARTNER text=" Coming here heals my spirits."
+    TEXTBOX_CLEAR
+    BGM_FADEOUT 120
+    WAIT 60
+    ALERT_CUE 6   # partner turns left and notices something
+    AWAIT_CUE 5
+    MSG_NPC who=PARTNER text=" Hey...{WAIT_PRESS}what's that?{WAIT_PRESS} What's going\non over there?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner walks closer
+    AWAIT_CUE 5
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Waah!{WAIT_PRESS} Someone has collapsed on\nthe sand!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner runs over
+    AWAIT_CUE 5
+    MSG_NPC who=PARTNER text=" What happened?!{WAIT_PRESS} Are you OK?"
+    TEXTBOX_CLEAR
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=PAINED
+    MSG_QUIET who=PLAYER text="(..................)"
+    MSG_QUIET who=PLAYER text="(...Ugh...)"
+    TEXTBOX_CLEAR
+    CALL_SCRIPT WAKEUP_FUNC
+    WAIT 30
+    ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=SOUTH
+    ALERT_CUE 6   # partner: "!"
+    AWAIT_CUE 5
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" You're awake!{WAIT_PRESS} Thank goodness!"
+    TEXTBOX_CLEAR
+    CALL_SCRIPT LOOK_AROUND_FUNC
+    WAIT 45
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=NORMAL
+    MSG_QUIET who=PLAYER text="(Where...where am I...?)"
+    TEXTBOX_CLEAR
+    WAIT 10
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    MSG_NPC who=PARTNER text=" You wouldn't move at all. I was\nreally scared for you!"
+    MSG_NPC who=PARTNER text=" Do you have any idea how you\nended up unconscious out here?"
+    TEXTBOX_CLEAR
+    MSG_QUIET who=PLAYER text="(I... I was unconscious?{WAIT_PRESS}\nWhat happened...?)"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner introduces themself
+    AWAIT_CUE 5
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=HAPPY
+    MSG_NPC who=PARTNER text=" Anyway, I'm {NAME_1}.{WAIT_PRESS}\nHappy to meet you!"
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" And who are you?"
+    MSG_NPC who=PARTNER text=" I don't think I've seen you\naround before."
+    TEXTBOX_CLEAR
+    WAIT 20
+    SELECT_ANIMATION 5   # EoS CORO_EXPLANATION_FUNC: the hero explains
+    WAIT 45
+    SELECT_ANIMATION 2
+    WAIT 30
+    ALERT_CUE 6   # partner jumps in surprise
+    AWAIT_CUE 5
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" What?{WAIT_PRESS} You say you're a human?"
+    MSG_NPC who=PARTNER text=" You look like a totally normal\n{POKEMON_0} to me!"
+    TEXTBOX_CLEAR
+    CALL_SCRIPT LOOK_AROUND_FUNC   # EoS: no sound
+    WAIT 30
+    FANFARE_PLAY2 463   # EoS se_Play(8968) + EFFECT_SHOCKED_MIRRORED
+    CALL_SCRIPT SHOCK_FUNC
+    WAIT_FANFARE2 463
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=SUPRISED
+    MSG_QUIET who=PLAYER text="(It's...it's true!)"
+    MSG_QUIET who=PLAYER text="(I've turned into a {POKEMON_0}!)"
+    TEXTBOX_CLEAR
+    WAIT 15
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=WORRIED
+    MSG_QUIET who=PLAYER text="(...But how did this happen?{WAIT_PRESS}\nI don't remember anything...)"
+    TEXTBOX_CLEAR
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=WORRIED
+    MSG_NPC who=PARTNER text=" You're...{WAIT_PRESS}a little odd..."
+    MSG_NPC who=PARTNER text=" Are you pulling some kind of\ntrick on me?"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 466   # EoS se_Play(8967)
+    CALL_SCRIPT SHOCK_FUNC
+    WAIT 15
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=EAST
+    ROTATE_TO speed=4 turn=SPINRIGHT1 direction=EAST
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=EAST
+    WAIT 30
+    MSG_NPC who=PARTNER text=" You're telling me the truth?"
+    MSG_NPC who=PARTNER text=" OK, how about your name?{WAIT_PRESS}\nWhat's your name?"
+    TEXTBOX_CLEAR
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=NORMAL
+    MSG_QUIET who=PLAYER text="(My name?{WAIT_PRESS} That's right,\nmy name is...)"
+    TEXTBOX_CLEAR
+    WAIT 20
+    CLEAR_HERO_NAME
+    RENAME_ALLY 1
+    WAIT 20
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=WORRIED
+    MSG_NPC who=PARTNER text=" So you're named {NAME_0}?"
+    TEXTBOX_CLEAR
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" OK.{WAIT_PRESS} Well, you don't seem to be a\nbad Pokémon, at least."
+    TEXTBOX_CLEAR
+    WAIT 15
+    ALERT_CUE 6   # partner: sweat
+    AWAIT_CUE 5
+    MSG_NPC who=PARTNER text=" Sorry that I doubted you."
+    MSG_NPC who=PARTNER text=" More and more bad Pokémon\nhave been turning up lately,\nyou see!"
+    MSG_NPC who=PARTNER text=" A lot of Pokémon have gotten\naggressive lately.{WAIT_PRESS} It's just not\nsafe anymore..."
+    TEXTBOX_CLEAR
+    SELECT_LIVES group=-1 sector=1   # Zubat & Koffing swoop in from the right
+    WAIT 1
+    # Cues are only delivered to scripts already waiting (GroundScript_Unlock):
+    # every ALERT here is followed straight away by its AWAIT (Zubat's flight
+    # takes longer than the 30 frames before the "!").
+    ALERT_CUE 7
+    ALERT_CUE 8
+    WAIT 30   # EoS: the "!" 30 frames into their approach
+    FANFARE_PLAY2 465   # EoS se_Play(8964) + EFFECT_EXCLAMATION_MARK
+    EMOTION_EFFECT NOTICE
+    AWAIT_CUE 5   # Zubat rams into the partner
+    SKY_AMBIENCE_FADEOUT 0   # EoS: bgm2_Stop() as Zubat strikes
+    FANFARE_PLAY2 SE_SKY_TACKLE   # EoS se_Play(5121)
+    ALERT_CUE 6
+    # The partner is knocked back into the hero, who is pushed along as the
+    # partner arrives (EoS: partner slides at 3 px a frame, the hero at 4).
+    WAIT (15 + 5)
+    SELECT_ENTITIES group=-1 sector=2   # EoS: the Relic Fragment falls on the sand
+    SELECT_ANIMATION 5
+    MOVE_RELATIVE speed=1024 dx=-40 dy=0
+    SELECT_ANIMATION 2
+    AWAIT_CUE 5   # partner knocked back, shocked
+    PORTRAIT place=MIDLEFT_TOP_FLIP who=PARTNER emotion=SHOUTING
+    MSG_NPC who=PARTNER text=" Yowch!"
+    TEXTBOX_CLEAR
+    PORTRAIT place=MIDLEFT_TOP who=KOFFING emotion=NORMAL
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=ZUBAT emotion=NORMAL
+    MSG_NPC who=KOFFING text=" Well, I do beg your pardon."
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner turns on them, angry
+    AWAIT_CUE 5
+    PORTRAIT place=MIDLEFT_TOP who=PARTNER emotion=ANGRY
+    MSG_NPC who=PARTNER text=" Hey! Why'd you do that?!"
+    TEXTBOX_CLEAR
+    MSG_NPC who=ZUBAT text=" Heh-heh-heh! Can't figure it out?"
+    MSG_NPC who=ZUBAT text=" We wanted to mess with you!\nCan't face up to us, can you?!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner jumps
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Wh-what?!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 7   # Zubat eyes the fallen treasure
+    AWAIT_CUE 5
+    MSG_NPC who=ZUBAT text=" That's yours, isn't it?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner looks down: "!"
+    AWAIT_CUE 5
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHEAST
+    MSG_NPC who=PARTNER text=" Oh! That's...!"
+    TEXTBOX_CLEAR
+    MSG_NPC who=ZUBAT text=" Sorry, kiddo. We'll take that!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 7   # Zubat swoops down and grabs it
+    AWAIT_CUE 5
+    ALERT_CUE 9   # the fragment is gone
+    FANFARE_PLAY2 463   # EoS se_Play(8968) + EFFECT_SHOCKED_MIRRORED on the partner
+    AWAIT_CUE 5   # Zubat back in place
+    MSG_NPC who=PARTNER text=" Aaaah!"
+    TEXTBOX_CLEAR
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_ZUBAT
+    MSG_NPC who=KOFFING text=" Whoa-ho-ho!{WAIT_PRESS} Not gonna make a\nmove to get that back?{WAIT_PRESS} What's the\nmatter?{WAIT_PRESS} Too scared?"
+    MSG_NPC who=KOFFING text=" I didn't expect that you'd be such\na big coward!"
+    TEXTBOX_CLEAR
+    MSG_NPC who=KOFFING text=" Come on. Let's get out of here."
+    TEXTBOX_CLEAR
+    MSG_NPC who=ZUBAT text=" See you around, chicken.{WAIT_PRESS}\nHeh-heh-heh."
+    TEXTBOX_CLEAR
+    BGM_FADEIN frames=150 song=SKY_OCEAN   # EoS: bgm_PlayFadeIn(BGM_OCEAN1, 150)
+    SKY_CAMERA_MOVE_X dx=-44 speed=128   # EoS: the camera drifts to m10 (33, 22)
+    ALERT_CUE 7   # they make off toward Beach Cave
+    ALERT_CUE 8
+    WAIT 20
+    ALERT_CUE 6   # partner watches them go
+    WAIT 20
+    ROTATE_TO speed=32 turn=DIR_TRANS_10 direction=SOUTHWEST
+    WAIT 120
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PARTNER emotion=SAD
+    MSG_NPC who=PARTNER text=" ...{WAIT_PRESS}Ohhh..."
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner turns to the hero
+    AWAIT_CUE 5
+    MSG_NPC who=PARTNER text=" Wh-what should I do?"
+    TEXTBOX_CLEAR
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    WAIT 10
+    MSG_NPC who=PARTNER text=" That's my personal treasure.\nIt means everything to me."
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PARTNER emotion=TEARY_EYE
+    MSG_NPC who=PARTNER text=" If I lose that..."
+    TEXTBOX_CLEAR
+    WAIT 30
+    PORTRAIT place=KEEP who=PARTNER emotion=DETERMINED
+    MSG_NPC who=PARTNER text=" No! There's no time to waste!"
+    ASK2 flag=FALSE default=-1 who=PARTNER text=" I have to get it back!{WAIT_PRESS} Say, can\nyou please help me?"
+    CHOICE label=2 text="Yes"
+    CHOICE label=3 text="No"
+  LABEL 3   # = 0x03
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 463   # EoS se_Play(8968)
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Awww! You won't help me?"
+    MSG_NPC who=PARTNER text=" That thing is important to me!"
+    PORTRAIT place=KEEP who=PARTNER emotion=TEARY_EYE
+    MSG_NPC who=PARTNER text=" If I can't get it back..."
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PARTNER emotion=DETERMINED
+    ASK2 flag=FALSE default=-1 who=PARTNER text=" Oh, please?{WAIT_PRESS} Please help me get\nthat treasure of mine back from\nthose guys!"
+    CHOICE label=2 text="Yes"
+    CHOICE label=3 text="No"
+  LABEL 2   # = 0x02
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner jumps for joy
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" R-really?{WAIT_PRESS}\nYou'll really help?!"
+    MSG_NPC who=PARTNER text=" Th-thanks! Can we go take\ncare of it right now?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner runs for the cave
+    ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=SOUTHWEST
+    WAIT 20
+    ALERT_CUE 3   # before walking: the two may bump into each other
+    WALK_RELATIVE speed=256 dx=-120 dy=48
+    HALT
+end
+
+script g1_s0_lives1_dlg0   # Partner
+    DEBUGINFO line=737
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=SPEECH_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    SET_OBJ_FLAGS 0x80000   # drawn over the beach rocks, as in EoS
+    CAMERA_INIT_PAN
+    AWAIT_CUE 6
+    WALK_RELATIVE speed=179 dx=-156 dy=4
+    WAIT 10
+    ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=NORTH
+    WAIT 20
+    WALK_RELATIVE speed=128 dx=0 dy=-24
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=WEST
+    WAIT 30
+    FANFARE_PLAY2 465   # EoS se_Play(8964)
+    CALL_SCRIPT NOTICE_FUNC
+    WAIT_FANFARE2 465
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    WALK_RELATIVE speed=256 dx=-116 dy=0
+    FANFARE_PLAY2 455   # EoS se_Play(8974)
+    CALL_SCRIPT JUMP_SURPRISE_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    WALK_RELATIVE speed=768 dx=-104 dy=0   # EoS m4 (39, 21.5): 4 px above the hero
+    # EoS: the camera stops at m3 (38.5, 22) instead of following the
+    # partner, so the partner's step back later doesn't move the view.
+    SKY_CAMERA_SET x=192 y=100
+    SKY_CAMERA_MOVE_X dx=-4 speed=128
+    WAIT 10
+    CALL_SCRIPT JUMP_ANGRY_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    FANFARE_PLAY2 465   # EoS se_Play(8964)
+    CALL_SCRIPT NOTICE_FUNC
+    SELECT_ANIMATION 5
+    MOVE_RELATIVE speed=256 dx=16 dy=0
+    SELECT_ANIMATION 2
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    FANFARE_PLAY2 455   # EoS se_Play(8974)
+    CALL_SCRIPT JUMP_SURPRISE_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    FANFARE_PLAY2 470
+    CALL_SCRIPT SWEAT_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6   # rammed by Zubat
+    WAIT 15   # EoS: Wait(15) between the tackle and the knock-back
+    SELECT_ANIMATION 11   # EoS: knocked back, hurt
+    MOVE_RELATIVE speed=768 dx=-40 dy=0
+    SELECT_ANIMATION 2
+    CALL_SCRIPT SHOCK_FUNC   # EoS: EFFECT_SHOCKED, no sound (the tackle's)
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    ROTATE_TO speed=1 turn=DIR_TRANS_10 direction=EAST
+    FANFARE_PLAY2 457   # EoS se_Play(8971) + EFFECT_ANGRY
+    CALL_SCRIPT ANGRY_START_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    CALL_SCRIPT ANGRY_END_FUNC   # EoS SetEffect(EFFECT_NONE)
+    CALL_SCRIPT JUMP_SURPRISE_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHEAST
+    FANFARE_PLAY2 466
+    CALL_SCRIPT NOTICE_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6   # after the thieves leave
+    ROTATE_TO speed=16 turn=DIR_TRANS_10 direction=SOUTHWEST
+    AWAIT_CUE 6
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    ALERT_CUE 5
+    AWAIT_CUE 6   # "Yes": jump for joy, then run for the cave
+    CALL_SCRIPT JUMP_HAPPY_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=SOUTHWEST
+    WALK_RELATIVE speed=384 dx=-144 dy=40
+    WALK_RELATIVE speed=384 dx=-40 dy=0
+    HALT
+end
+
+script g1_s1_lives0_dlg0   # Zubat
+    DEBUGINFO line=827
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=ZUBAT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 7
+    WALK_RELATIVE speed=307 dx=-116 dy=4
+    SELECT_ANIMATION 12   # EoS: the tackle
+    ALERT_CUE 5
+    AWAIT_CUE 7
+    SELECT_ANIMATION 2
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHWEST
+    ALERT_CUE 5
+    AWAIT_CUE 7
+    WALK_RELATIVE speed=256 dx=-28 dy=24
+    ALERT_CUE 5
+    WAIT 10
+    MOVE_RELATIVE speed=256 dx=28 dy=-24
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    ALERT_CUE 5
+    AWAIT_CUE 7
+    WAIT 30
+    WALK_RELATIVE speed=256 dx=0 dy=40
+    WALK_RELATIVE speed=256 dx=-244 dy=0
+    END_DELETE
+end
+
+script g1_s1_lives1_dlg0   # Koffing
+    DEBUGINFO line=854
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=KOFFING id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 8
+    WALK_RELATIVE speed=307 dx=-124 dy=4
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    AWAIT_CUE 8
+    WALK_RELATIVE speed=256 dx=-252 dy=16
+    END_DELETE
+end
+
+# ------------------------------------------------------------------------
+# group 2 — m01a0301: defeated in Beach Cave
+# ------------------------------------------------------------------------
+
+script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=871
+    SET_PLACE_MODE 1
+    BGM_STOP
+    FADE_OUT wait=TRUE frames=0
+    WAIT 30
+    PORTRAIT place=LEFT_BOTTOM_2 who=-1 emotion=PAINED
+    MSG_NPC who=-1 text=" ...Wh-what?"
+    TEXTBOX_CLEAR
+    WAIT 60
+    SELECT_MAP SKY_BEACH_DUSK
+    SELECT_ENTITIES group=-1 sector=0
+    BGM_FADEIN frames=160 song=SKY_OCEAN   # EoS m01a0301: bgm_PlayFadeIn(BGM_OCEAN1, 160)
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    AWAIT_CUE 3
+    BGM_FADEOUT 60
+    NEXT_DUNGEON frames=30 dungeon=TINY_WOODS
+    RET
+end
+
+script g2_s0_lives0_dlg0   # Player
+    DEBUGINFO line=894
+    CALL_SCRIPT INIT_SLEEP_FUNC
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    WAIT_FADE
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=NORMAL
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=PAINED
+    CALL_SCRIPT WAKEUP_FUNC
+    CALL_SCRIPT LOOK_AROUND_DOWN_FUNC
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    WAIT 20
+    MSG_NPC who=PARTNER text=" Ouch! We didn't do too well..."
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" I guess if either of us faints,\nthe other one can't carry on!"
+    MSG_NPC who=PARTNER text=" ...Could this be what they're\ncalling a mystery dungeon?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Oh! There's no time to waste!"
+    MSG_NPC who=PARTNER text=" We need to catch Koffing and\nhis buddy and get my treasure\nback!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=DETERMINED
+    MSG_NPC who=PARTNER text=" Let's go, {NAME_0}!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    WAIT 10
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    ALERT_CUE 3
+    WALK_RELATIVE speed=384 dx=-184 dy=4
+    HALT
+end
+
+script g2_s0_lives1_dlg0   # Partner
+    DEBUGINFO line=932
+    CALL_SCRIPT INIT_SLEEP_FUNC
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 6
+    CALL_SCRIPT WAKEUP_FUNC
+    CALL_SCRIPT LOOK_AROUND_FUNC
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    CALL_SCRIPT SWEAT_FUNC   # EoS m01a0301: the sweat drops play no sound
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    FANFARE_PLAY2 466
+    CALL_SCRIPT NOTICE_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    CALL_SCRIPT JUMP_HAPPY_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    WALK_RELATIVE speed=384 dx=-144 dy=4
+    HALT
+end
+
+# ------------------------------------------------------------------------
+# group 3 — m01a0702: back on the beach with the Relic Fragment
+# ------------------------------------------------------------------------
+
+script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=960
+    SET_PLACE_MODE 1
+    BGM_STOP
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_BEACH_DUSK
+    SELECT_ENTITIES group=-1 sector=0
+    # EoS m01a0702: the waves (bgm2) first; the music starts at the Relic
+    # Fragment ("It's my precious treasure.").
+    SKY_AMBIENCE song=SKY_OCEAN frames=160
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    AWAIT_CUE 3
+    BGM_FADEOUT 180
+    SKY_AMBIENCE_FADEOUT 180   # EoS: bgm2_FadeOut(180)
+    FADE_OUT wait=TRUE frames=90
+    FADE2_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=0x0 id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=0x1 id=0x22
+    WAIT 60
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}And so..."
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}{NAME_1} and {NAME_0}..."
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}formed an exploration team."
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}This turned out to be..."
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}their very first step into..."
+    MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}many fantastic realms of adventure\n{CENTER_ALIGN}that awaited their arrival."
+    TEXTBOX_CLEAR
+    WAIT 1
+    FADE2_IN wait=TRUE frames=0
+    RET
+end
+
+script g3_s0_lives0_dlg0   # Player
+    DEBUGINFO line=994
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    WAIT_FADE
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PLAYER emotion=NORMAL
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=HAPPY
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    MSG_NPC who=PARTNER text=" Thank you very much!"
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PLAYER emotion=WORRIED
+    MSG_QUIET who=PLAYER text="(............)"
+    MSG_QUIET who=PLAYER text="(I only helped because I happened\nto be there... Was that the right\nthing to do?)"
+    PORTRAIT place=KEEP who=PLAYER emotion=HAPPY
+    MSG_QUIET who=PLAYER text="(I guess so.{WAIT_PRESS} This Pokémon is\nclearly grateful.)"
+    MSG_QUIET who=PLAYER text="(It's nice to be appreciated.)"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" Here's what they stole."
+    MSG_NPC who=PARTNER text=" This is a Relic Fragment.{WAIT_PRESS}\n...Well, at least, that's what\nI started calling it..."
+    MSG_NPC who=PARTNER text=" But this Relic Fragment...{WAIT_PRESS}\nIt's my precious treasure."
+    BGM_SWITCH SKY_ON_THE_BEACH_AT_DUSK   # EoS: bgm_PlayFadeIn(BGM_ON_THE_BEACH_AT_DUSK, 0)
+    TEXTBOX_CLEAR
+    MSG_NPC who=PARTNER text=" You see, I've always liked\nlegends and lore..."
+    MSG_NPC who=PARTNER text=" I always get so excited when I\nhear tales from the past!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    MSG_NPC who=PARTNER text=" Don't you feel the same way?"
+    MSG_NPC who=PARTNER text=" Hidden troves full of treasure\nand strange relics..."
+    PORTRAIT place=KEEP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" ...uncharted territories veiled\nin darkness..."
+    MSG_NPC who=PARTNER text=" ...and new lands just waiting to\nbe discovered!"
+    MSG_NPC who=PARTNER text=" Such places must be full of gold\nand treasure!"
+    MSG_NPC who=PARTNER text=" And history! Wouldn't it be\ndramatic to make historic\ndiscoveries?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" That's what I always dream of.\nIt's all so exciting to me."
+    MSG_NPC who=PARTNER text=" And it just so happened...{WAIT_PRESS}that I\nfound this Relic Fragment."
+    MSG_NPC who=PARTNER text=" Sure, it does look like junk, but\ntake a closer look."
+    TEXTBOX_CLEAR
+    FADE_OUT wait=TRUE frames=20   # fade the scene out and back in around the CG
+    SKY_CUTAWAY cg=RELIC_FRAGMENT frames=150   # EoS: the Relic Fragment close-up
+    FADE_IN wait=TRUE frames=20
+    MSG_NPC who=PARTNER text=" Look there.{WAIT_PRESS} See that strange\npattern inscribed on it?"
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PLAYER emotion=NORMAL
+    MSG_QUIET who=PLAYER text="(It's true. There is a strange\ninscription.)"
+    MSG_QUIET who=PLAYER text="(I've never seen a pattern like\nthis.)"
+    TEXTBOX_CLEAR
+    MSG_NPC who=PARTNER text=" There must be some meaning to\nthis pattern."
+    MSG_NPC who=PARTNER text=" This Relic Fragment must be the\nkey to legendary places! To areas\nwhere precious treasure lies!"
+    MSG_NPC who=PARTNER text=" At least that's the feeling I get."
+    MSG_NPC who=PARTNER text=" That's why I want to join an\nexploration team."
+    MSG_NPC who=PARTNER text=" This fragment must fit into\nsomething...somewhere! I want to\ndiscover where that is."
+    MSG_NPC who=PARTNER text=" I want to solve the mystery of\nmy Relic Fragment!"
+    MSG_NPC who=PARTNER text=" So earlier, I tried joining an\nexploration team as an\napprentice..."
+    PORTRAIT place=KEEP who=PARTNER emotion=SAD
+    MSG_NPC who=PARTNER text=" But...{WAIT_PRESS}I was too cowardly..."
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PARTNER emotion=WORRIED
+    MSG_NPC who=PARTNER text=" What about you, {NAME_0}?\nWhat are you going to do now?"
+    MSG_NPC who=PARTNER text=" You lost your memory. And you\nsomehow transformed into a\nPokémon..."
+    MSG_NPC who=PARTNER text=" Do you have anyplace where\nyou can stay?"
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PLAYER emotion=WORRIED
+    MSG_QUIET who=PLAYER text="(............)"
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PARTNER emotion=SAD
+    MSG_NPC who=PARTNER text=" If not, can I ask a big favor?"
+    MSG_NPC who=PARTNER text=" Would you form an exploration\nteam with me?"
+    MSG_NPC who=PARTNER text=" I think we could make a good\nexploration team together,\n{NAME_0}."
+    MSG_NPC who=PARTNER text=" So will you do that with me?{WAIT_PRESS}\nPlease?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    FANFARE_PLAY2 470   # EoS se_Play(8972) + sweat drops on the hero
+    CALL_SCRIPT SWEAT_FUNC
+    PORTRAIT place=KEEP who=PLAYER emotion=SUPRISED
+    MSG_QUIET who=PLAYER text="(Wah! What should I do?{WAIT_PRESS} I'm getting\nrecruited out of the blue!)"
+    PORTRAIT place=KEEP who=PLAYER emotion=WORRIED
+    MSG_QUIET who=PLAYER text="(I don't know what an exploration\nteam is...)"
+  LABEL 1   # = 0x01
+    ASK2 flag=FALSE default=-1 who=PLAYER text="(What should I do?{WAIT_PRESS} Should I join this\nPokémon and form an exploration\nteam?)"
+    CHOICE label=2 text="Form a team"
+    CHOICE label=3 text="Say no"
+  LABEL 3   # = 0x03
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 463   # EoS se_Play(8968)
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" What?! Oh, please!"
+    PORTRAIT place=KEEP who=PARTNER emotion=SAD
+    MSG_NPC who=PARTNER text=" But I'm braver when I'm with\nyou, {NAME_0}..."
+    MSG_NPC who=PARTNER text=" And you were fantastic when\nwe faced Koffing and his sidekick."
+    MSG_NPC who=PARTNER text=" When I saw that, I realized\nyou're no ordinary Pokémon,\n{NAME_0}!"
+    MSG_NPC who=PARTNER text=" I thought that you could be a\nfirst-class explorer, {NAME_0}."
+    MSG_NPC who=PARTNER text=" So, please?{WAIT_PRESS} Will you please form\nan exploration team with me?"
+    TEXTBOX_CLEAR
+    JUMP_LABEL 1
+  LABEL 2   # = 0x02
+    TEXTBOX_CLEAR
+    PORTRAIT place=KEEP who=PLAYER emotion=WORRIED
+    MSG_QUIET who=PLAYER text="(It's true, I do have nowhere to go...)"
+    MSG_QUIET who=PLAYER text="(I don't have any clue what I should\ndo next.)"
+    MSG_QUIET who=PLAYER text="(I guess it wouldn't hurt to team up\nwith {NAME_1} for now.)"
+    MSG_QUIET who=PLAYER text="(Maybe I'll eventually discover who or\nwhat I am by hanging out with this\nPokémon.)"
+    PORTRAIT place=KEEP who=PLAYER emotion=NORMAL
+    MSG_QUIET who=PLAYER text="(OK! That's settled!)"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" Oh?{WAIT_PRESS} Really?!"
+    MSG_NPC who=PARTNER text=" You'll really form an exploration\nteam with me?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=JOYOUS
+    MSG_NPC who=PARTNER text=" Yay! Thank you!"
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" We're going to be a great\ncombination! Let's make this work!"
+    MSG_NPC who=PARTNER text=" First, we need to go to\nWigglytuff's place and sign up as\napprentices."
+    MSG_NPC who=PARTNER text=" That's where we can get the\ntraining to become a proper\nexploration team."
+    MSG_NPC who=PARTNER text=" I think the training will be very\ntough..."
+    PORTRAIT place=KEEP who=PARTNER emotion=HAPPY
+    MSG_NPC who=PARTNER text=" So let's give it our best,\n{NAME_0}!"
+    TEXTBOX_CLEAR
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    ALERT_CUE 6
+    WAIT 60
+    ALERT_CUE 3
+    HALT
+end
+
+script g3_s0_lives1_dlg0   # Partner
+    DEBUGINFO line=1134
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 6
+    CALL_SCRIPT JUMP_ANGRY_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    WALK_RELATIVE speed=128 dx=12 dy=0
+    FANFARE_PLAY2 SE_SKY_RELIC_FRAGMENT   # EoS se_Play(6410): the Relic Fragment comes out
+    SELECT_ENTITIES group=-1 sector=1   # EoS supervision_Acting(1): it lies on the sand from here on
+    WAIT 15
+    MOVE_RELATIVE speed=128 dx=-12 dy=0
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    CALL_SCRIPT JUMP_HAPPY_FUNC
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    CALL_SCRIPT JUMP_HAPPY_FUNC
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    CALL_SCRIPT JUMP_HAPPY_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6   # "Oh? Really?!"
+    FANFARE_PLAY2 465   # EoS se_Play(8964)
+    CALL_SCRIPT NOTICE_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6   # "Yay!"
+    CALL_SCRIPT JUMP_ANGRY_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6   # both look out to sea
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    HALT
+end
+
+# ------------------------------------------------------------------------
+# Lives / sectors
+# ------------------------------------------------------------------------
+
+# g5 / m01a0103: PLAYER (36,22) facing right
+actors g5_s0_lives
+    actor kind=0 facing=EAST x=36 y=22.5 script=g5_s0_lives0_dlg0
+end
+
+# g6 / m01a0104: ATTENDANT1 (30,25) facing up; Zubat (20,22) and Koffing
+# (17,22) facing right appear in sector 1 when the partner leaves.
+actors g6_s0_lives
+    actor kind=34 facing=NORTH x=30 y=25.5 script=g6_s0_lives0_dlg0
+end
+
+# The guild's totem poles: EoS places them from SCRIPT/G01P01B/enter.sse
+# (t01p01a1_174 at (18,22.5), t01p01a3_176 at (42,22.5), hitbox 2x1).
+objects g6_s0_objs
+    object kind=SKY_OBJ_TOTEM_POLE_1 w=2 h=1 x=18 y=22.5
+    object kind=SKY_OBJ_TOTEM_POLE_2 w=2 h=1 x=42 y=22.5
+end
+
+actors g6_s1_lives
+    actor kind=SKY_LIVES_ZUBAT facing=EAST x=20 y=22.5 script=g6_s1_lives0_dlg0
+    actor kind=SKY_LIVES_KOFFING facing=EAST x=17 y=22.5 script=g6_s1_lives1_dlg0
+end
+
+# g1 / m01a0204-0208: PLAYER (36,22) asleep, ATTENDANT1 enters from (86,24);
+# Zubat (58,21) / Koffing (59,24) arrive from the right in sector 1.
+actors g1_s0_lives
+    actor kind=0 facing=EAST x=36 y=22.5 script=g1_s0_lives0_dlg0
+    actor kind=34 facing=WEST x=86 y=24.5 script=g1_s0_lives1_dlg0
+end
+
+# The Relic Fragment (object kind SKY_OBJ_RELIC_FRAGMENT): on the sand until
+# Zubat takes it (cue 9).
+script relic_fragment_dlg0
+    DEBUGINFO line=1220
+    CLEAR_OBJ_FLAGS INTERACT_MASK
+    AWAIT_CUE 9
+    END_DELETE
+end
+
+objects g1_s2_objs
+    object kind=SKY_OBJ_RELIC_FRAGMENT w=1 h=1 x=39.5 y=23.5 script=relic_fragment_dlg0
+end
+
+# g6: the Relic Fragment the partner holds out at the grate (EoS m01a0104
+# layer 2: g01p01a1 at (30,23)), until the partner takes it back (cue 9).
+objects g6_s2_objs
+    object kind=SKY_OBJ_RELIC_FRAGMENT w=1 h=1 x=30 y=23.5 script=relic_fragment_dlg0
+end
+
+actors g1_s1_lives
+    actor kind=SKY_LIVES_ZUBAT facing=WEST x=58 y=21.5 script=g1_s1_lives0_dlg0
+    actor kind=SKY_LIVES_KOFFING facing=WEST x=59 y=24.5 script=g1_s1_lives1_dlg0
+end
+
+# g2 / m01a0301: PLAYER (36,25), ATTENDANT1 (30,25), both knocked out
+actors g2_s0_lives
+    actor kind=0 facing=EAST x=36 y=25.5 script=g2_s0_lives0_dlg0
+    actor kind=34 facing=WEST x=30 y=25.5 script=g2_s0_lives1_dlg0
+end
+
+# g3: the Relic Fragment the partner sets down (EoS layer 1: g01p01a1 at
+# (50,22), between the two); it stays for the rest of the scene.
+script g3_relic_fragment_dlg0
+    DEBUGINFO line=1262
+    CLEAR_OBJ_FLAGS INTERACT_MASK
+    HALT
+end
+
+objects g3_s1_objs
+    object kind=SKY_OBJ_RELIC_FRAGMENT w=1 h=1 x=50 y=22.5 script=g3_relic_fragment_dlg0
+end
+
+# g3 / m01a0702: PLAYER (53,22) facing left, ATTENDANT1 (47,22) facing right
+actors g3_s0_lives
+    actor kind=0 facing=WEST x=53 y=22.5 script=g3_s0_lives0_dlg0
+    actor kind=34 facing=EAST x=47 y=22.5 script=g3_s0_lives1_dlg0
+end
+
+stations
+    g0_s0_station
+    g1_s0_station
+    g2_s0_station
+    g3_s0_station
+    g4_s0_station
+    g5_s0_station
+    g6_s0_station
+    g7_s0_station
+    g8_s0_station
+end
+
+sectors g0
+    sector station=0
+end
+
+sectors g1
+    sector actors=g1_s0_lives station=1
+    sector actors=g1_s1_lives
+    sector objects=g1_s2_objs
+end
+
+sectors g2
+    sector actors=g2_s0_lives station=2
+end
+
+sectors g3
+    sector actors=g3_s0_lives station=3
+    sector objects=g3_s1_objs
+end
+
+sectors g4
+    sector station=4
+end
+
+sectors g5
+    sector actors=g5_s0_lives station=5
+end
+
+sectors g6
+    sector actors=g6_s0_lives objects=g6_s0_objs station=6
+    sector actors=g6_s1_lives
+    sector objects=g6_s2_objs
+end
+
+sectors g7
+    sector station=7
+end
+
+sectors g8
+    sector station=8
+end
+
+groups
+    g0
+    g1
+    g2
+    g3
+    g4
+    g5
+    g6
+    g7
+    g8
+end

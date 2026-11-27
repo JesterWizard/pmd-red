@@ -175,6 +175,15 @@ else
   BUILD_DIR := $(BUILD_DIR_MODERN)
 endif
 
+# Explorers of Sky demake: the event sources under events/sky/ (scene scripts,
+# story CG settings, the opening's timings; documentation/EventEditor.md) are
+# compiled by tools/event_editor/ into headers here, in the sky build only.
+ifeq ($(GROUND_STORY_DIR),sky)
+  SKY_GEN_DIR := $(BUILD_DIR)/gen/sky
+  CPPFLAGS += -iquote $(SKY_GEN_DIR) -I $(SKY_GEN_DIR)
+  INCLUDE_PATHS += -I $(SKY_GEN_DIR)
+endif
+
 ROM := pmd_red.gba
 ELF := pmd_red.elf
 MAP := pmd_red.map
@@ -550,6 +559,37 @@ $(DATA_ASM_BUILDDIR)/dungeon_sbin.o: $(DATA_ASM_SUBDIR)/dungeon_sbin.s tools/mak
 	@$(PREPROC) $(DATA_ASM_BUILDDIR)/dungeon_sbin.i.s charmap.txt > $(DATA_ASM_BUILDDIR)/dungeon_sbin.s
 	python3 tools/make_sky_dungeon_archive.py $(DATA_ASM_BUILDDIR)/dungeon_sbin.s $(DATA_ASM_BUILDDIR)/dungeon_sbin.sky.s --report
 	$(AS) $(ASFLAGS) -o $@ $(DATA_ASM_BUILDDIR)/dungeon_sbin.sky.s
+endif
+
+# Explorers of Sky demake: the event sources (documentation/EventEditor.md).
+# events/sky/scenes/sky_<map>_scenes.scene becomes $(SKY_GEN_DIR)/sky_<map>_scenes.h,
+# which src/data/ground/sky/ground_data_<map>_station.h includes. The headers
+# are listed as prerequisites of the station objects (and their .d files) so a
+# clean build makes them first.
+ifeq ($(GROUND_STORY_DIR),sky)
+EVENT_EDITOR_PY := $(wildcard tools/event_editor/*.py)
+SKY_SCENE_SOURCES := $(wildcard events/sky/scenes/*.scene)
+$(SKY_GEN_DIR)/%.h: events/sky/scenes/%.scene $(EVENT_EDITOR_PY) events/sky/cutaways.cfg
+	@mkdir -p $(dir $@)
+	python3 tools/event_editor/scenes.py compile $< $@
+# Story CGs: the picture table and the fade / pan settings (new pictures are
+# converted into $(SKY_GEN_DIR)/cutaways/).
+$(SKY_GEN_DIR)/sky_cg_config.h: events/sky/cutaways.cfg $(EVENT_EDITOR_PY) $(wildcard graphics/custom/sky_cutaways/*.png)
+	@mkdir -p $(dir $@)
+	python3 tools/event_editor/cutaways.py header $@
+$(C_BUILDDIR)/sky_cutaways.o $(C_BUILDDIR)/sky_cutaways_data.o: $(SKY_GEN_DIR)/sky_cg_config.h
+# EoS's opening: the Shaymin scene's timings and the recorded scenes' table
+# (a scene whose view is moved gets its blob rewritten into $(SKY_GEN_DIR)/opening/).
+SKY_OPENING_GEN := $(SKY_GEN_DIR)/sky_opening_config.h $(SKY_GEN_DIR)/sky_opening_scenes.h
+$(SKY_GEN_DIR)/sky_opening_scenes.h: $(SKY_GEN_DIR)/sky_opening_config.h ;
+$(SKY_GEN_DIR)/sky_opening_config.h: events/sky/opening.cfg graphics/custom/sky_opening/scenes/baked.json $(EVENT_EDITOR_PY)
+	@mkdir -p $(dir $@)
+	python3 tools/event_editor/opening.py headers $(SKY_GEN_DIR)
+$(C_BUILDDIR)/sky_opening.o $(C_BUILDDIR)/sky_opening.d: $(SKY_OPENING_GEN)
+define SKY_SCENE_DEPS
+$(C_BUILDDIR)/ground_data_$(1)_station.o $(C_BUILDDIR)/ground_data_$(1)_station.d: $(SKY_GEN_DIR)/sky_$(1)_scenes.h
+endef
+$(foreach s,$(SKY_SCENE_SOURCES),$(eval $(call SKY_SCENE_DEPS,$(patsubst sky_%_scenes,%,$(basename $(notdir $(s)))))))
 endif
 
 # The song table's #include chain (sound/*.inc: the sky BGM / SE / jukebox tables)

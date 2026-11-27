@@ -1,0 +1,218 @@
+prefix s_gs179_
+debug_file src/data/ground/sky/ground_data_d01p02_station.h
+
+# Explorers of Sky demake: Beach Cave Pit after the Zubat & Koffing battle
+# (EoS SCRIPT/D01P41A/m01a0701), on the converted EoS map d01p41a.
+# Replaces the Tiny Woods end-room group (gs179 group 1).
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_ZUBAT 2
+#define NPC_KOFFING 3
+```
+
+script g0_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01
+    DEBUGINFO line=14
+    SELECT_MAP 179
+    BGM_STOP
+    JUMP_SCRIPT COMMON_ENTER
+end
+
+script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO line=23
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_BEACH_CAVE_PIT
+    SELECT_ENTITIES group=-1 sector=0
+    BGM_SWITCH SKY_IN_THE_DEPTHS_OF_THE_PIT
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    AWAIT_CUE 3
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=60
+    WAIT 60
+    RET
+end
+
+script g1_s0_lives0_dlg0   # Player — drives the scene
+    DEBUGINFO line=41
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    WAIT_FADE
+    PORTRAIT place=LEFT_BOTTOM_2 who=PLAYER emotion=NORMAL
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
+    PORTRAIT place=MIDLEFT_TOP who=KOFFING emotion=NORMAL
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=ZUBAT emotion=NORMAL
+    WAIT 30
+    MSG_NPC who=KOFFING text=" Owowow..."
+    TEXTBOX_CLEAR
+    ALERT_CUE 7   # EoS: Zubat sweats after Koffing's line
+    AWAIT_CUE 5
+    MSG_NPC who=ZUBAT text=" Ugh...{WAIT_PRESS} We got roughed up..."
+    TEXTBOX_CLEAR
+    WAIT 30
+    ALERT_CUE 7   # they pull themselves together
+    ALERT_CUE 8
+    WAIT 30
+    PORTRAIT place=MIDLEFT_TOP who=KOFFING emotion=NORMAL
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=ZUBAT emotion=NORMAL
+    MSG_NPC who=KOFFING text=" B-blast it... How'd we get wiped\nout by wimps like them?"
+    MSG_NPC who=ZUBAT text=" Bah!{WAIT_PRESS} Here you go. Take it, then!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 7   # Zubat tosses the Relic Fragment down
+    AWAIT_CUE 5
+    FANFARE_PLAY2 SE_SKY_FRAGMENT_TOSS   # EoS se_Play(6406)
+    SELECT_ENTITIES group=-1 sector=1   # EoS: it lands at (28.5, 23)
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHWEST
+    ALERT_CUE 6   # partner: "!"
+    AWAIT_CUE 5
+    MSG_NPC who=KOFFING text=" Whoa-ho!{WAIT_PRESS} Don't think you're so\nawesome. Your victory was a fluke!"
+    TEXTBOX_CLEAR
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    MSG_NPC who=ZUBAT text=" Yeah, you just remember that!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_FLEE   # EoS se_Play(7430)
+    ALERT_CUE 7   # they flee past the heroes
+    ALERT_CUE 8
+    WAIT 20
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=SOUTH
+    ALERT_CUE 6
+    WAIT 60
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHWEST
+    ALERT_CUE 6   # partner steps up to the fragment
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" Oh! It's my Relic Fragment!"
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    # EoS: se_Play(8710) as the fragment is picked up, WaitSe, then the line.
+    FANFARE_PLAY2 SE_SKY_PICK_UP
+    ALERT_CUE 9   # the partner has picked it up
+    WAIT_FANFARE2 SE_SKY_PICK_UP
+    PORTRAIT place=KEEP who=PARTNER emotion=HAPPY
+    MSG_NPC who=PARTNER text=" Thank goodness...{WAIT_PRESS} I actually\nmanaged to get it back."
+    TEXTBOX_CLEAR
+    ALERT_CUE 6   # partner turns to the hero
+    AWAIT_CUE 5
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=34
+    PORTRAIT place=KEEP who=PARTNER emotion=TEARY_EYE
+    MSG_NPC who=PARTNER text=" This happened only because you\nhelped me, {NAME_0}."
+    TEXTBOX_CLEAR
+    ALERT_CUE 6
+    AWAIT_CUE 5
+    PORTRAIT place=KEEP who=PARTNER emotion=HAPPY
+    MSG_NPC who=PARTNER text=" Thank you, {NAME_0}!"
+    TEXTBOX_CLEAR
+    WAIT 30
+    ALERT_CUE 3
+    HALT
+end
+
+script g1_s0_lives1_dlg0   # Partner
+    DEBUGINFO line=117
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 6
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHEAST
+    CALL_SCRIPT NOTICE_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    ROTATE_TO speed=4 turn=SPINRIGHT1 direction=SOUTH
+    AWAIT_CUE 6
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHEAST
+    WALK_RELATIVE speed=204 dx=8 dy=-8
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    WALK_RELATIVE speed=204 dx=8 dy=-8
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=0
+    ALERT_CUE 5
+    AWAIT_CUE 6
+    CALL_SCRIPT JUMP_HAPPY_FUNC
+    ALERT_CUE 5
+    HALT
+end
+
+script g1_s0_lives2_dlg0   # Zubat
+    DEBUGINFO line=144
+    SELECT_ANIMATION BEATEN   # EoS SetAnimation(24)
+    UPDATE_NAME kind=ACTOR_SELF who=ZUBAT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 7   # EoS: se_Play(8972) + sweat after Koffing's "Owowow..."
+    FANFARE_PLAY2 470
+    CALL_SCRIPT SWEAT_FUNC
+    ALERT_CUE 5
+    AWAIT_CUE 7
+    SELECT_ANIMATION 2
+    AWAIT_CUE 7
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHWEST
+    WAIT 20
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    ALERT_CUE 5
+    AWAIT_CUE 7
+    WALK_RELATIVE speed=640 dx=28 dy=36
+    WALK_RELATIVE speed=640 dx=4 dy=128
+    END_DELETE
+end
+
+script g1_s0_lives3_dlg0   # Koffing
+    DEBUGINFO line=166
+    SELECT_ANIMATION BEATEN   # EoS SetAnimation(24)
+    UPDATE_NAME kind=ACTOR_SELF who=KOFFING id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    FANFARE_PLAY2 470
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE 8
+    SELECT_ANIMATION 2
+    AWAIT_CUE 8
+    WALK_RELATIVE speed=640 dx=-24 dy=36
+    WALK_RELATIVE speed=640 dx=-8 dy=128
+    END_DELETE
+end
+
+# m01a0701: PLAYER (30,25) & ATTENDANT1 (26,25) facing up; Zubat (30,19) and
+# Koffing (26,19) facing down.
+actors g1_s0_lives
+    actor kind=0 facing=NORTH x=30 y=25.5 script=g1_s0_lives0_dlg0
+    actor kind=34 facing=NORTH x=26 y=25.5 script=g1_s0_lives1_dlg0
+    actor kind=SKY_LIVES_ZUBAT x=30 y=19.5 script=g1_s0_lives2_dlg0
+    actor kind=SKY_LIVES_KOFFING x=26 y=19.5 script=g1_s0_lives3_dlg0
+end
+
+stations
+    g0_s0_station
+    g1_s0_station
+end
+
+sectors g0
+    sector station=0
+end
+
+script relic_fragment_dlg0
+    DEBUGINFO line=207
+    CLEAR_OBJ_FLAGS INTERACT_MASK
+    AWAIT_CUE 9
+    END_DELETE
+end
+
+objects g1_s1_objs
+    object kind=SKY_OBJ_RELIC_FRAGMENT w=1 h=1 x=28.5 y=23 script=relic_fragment_dlg0
+end
+
+sectors g1
+    sector actors=g1_s0_lives station=1
+    sector objects=g1_s1_objs
+end
+
+groups
+    g0
+    g1
+end

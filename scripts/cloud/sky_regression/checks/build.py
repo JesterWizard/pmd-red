@@ -1,8 +1,9 @@
-"""Build-level checks: the vanilla ROM and the boot smoke test."""
+"""Build-level checks: the vanilla ROM, the boot smoke test and the event editor's tests."""
 
 import hashlib
 import os
 import subprocess
+import sys
 
 from harness import check, expect, fail
 
@@ -41,3 +42,13 @@ def smoke_boot(t):
     fails = [ln for ln in p.stdout.splitlines() if ln.startswith("FAIL")]
     expect(p.returncode == 0, "; ".join(fails) or p.stdout[-500:] + p.stderr[-500:])
     return "SMOKE TEST PASSED"
+
+
+@check("tools", "The event editor's formats round-trip and compile as shipped (tools/event_editor/test_event_editor.py)")
+def event_editor_tests(t):
+    p = subprocess.run([sys.executable, "-m", "unittest", "tools/event_editor/test_event_editor.py"],
+                       cwd=t.env["root"], capture_output=True, text=True)
+    last = (p.stderr.strip().splitlines() or ["?"])
+    expect(p.returncode == 0, "\n      ".join(p.stderr.strip().splitlines()[-25:]))
+    ran = next((ln for ln in last if ln.startswith("Ran ")), "")
+    return f"{ran}: OK"

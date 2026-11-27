@@ -3,7 +3,9 @@
  * (sky panoramas, the Relic Fragment close-up, the storm cliff with lightning,
  * the animated sunset sea). Scripts call SKY_CUTAWAY(id, frames), which is
  * SPECIAL_PROCESS 0x60 (src/ground_script.c). The ground map is rebuilt
- * afterwards, so a cutaway can sit in the middle of a scene.
+ * afterwards, so a cutaway can sit in the middle of a scene. The pictures,
+ * fades and pans are set in events/sky/cutaways.cfg (SKY_CG_* in
+ * <sky_cg_config.h>, documentation/EventEditor.md).
  */
 #include "global.h"
 
@@ -33,6 +35,10 @@
 #include "text_3.h"
 #include "window_buffer.h"
 #include "structs/str_ground_bg.h"
+/* The CG settings (fades, pans, the number of CGs): generated from
+ * events/sky/cutaways.cfg (tools/event_editor/cutaways.py, the sky build only;
+ * <> keeps scaninc away from it, the Makefile lists it). */
+#include <sky_cg_config.h>
 
 #define ART_8BPP_TILE_BASE 128
 #define ART_8BPP_MAX_TILES TITLE_BG_8BPP_MAX_TILES
@@ -189,6 +195,7 @@ void SkyCutaway_UpdateCover(void)
     sCoverEnding = TRUE;
 }
 
+#if SKY_CG_PANS_AS_SHIPPED
 /* Fade in on the CG (or arrive on it from the cutaway already shown), hold,
  * then ease down until the screen shows exactly the map's first view. The
  * map is rebuilt behind one black frame; the script shows it at once. */
@@ -243,6 +250,78 @@ static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, 
     sActiveCover = cover;
     ShowCover(cover, gGroundMapDungeon_3001B70 != NULL ? gGroundMapDungeon_3001B70->unk52C.unk0 : 0);
 }
+#else
+/* A pan as events/sky/cutaways.cfg sets it (SKY_CG_PAN_*). */
+struct SkyCgPan
+{
+    u8 dir;            /* SKY_CG_PAN_DOWN / _UP / _NONE */
+    bool8 ease;        /* smoothstep, or one speed */
+    bool8 fadeIn;
+    u16 num, den;      /* the pan's frames: distance * num / den */
+};
+
+static const struct SkyCgPan sPanBeach = { SKY_CG_PAN_BEACH_DIR, SKY_CG_PAN_BEACH_EASE, SKY_CG_PAN_BEACH_FADE_IN, SKY_CG_PAN_BEACH_NUM, SKY_CG_PAN_BEACH_DEN };
+static const struct SkyCgPan sPanGuild = { SKY_CG_PAN_GUILD_DIR, SKY_CG_PAN_GUILD_EASE, SKY_CG_PAN_GUILD_FADE_IN, SKY_CG_PAN_GUILD_NUM, SKY_CG_PAN_GUILD_DEN };
+
+/* Fade in (or not), hold, then pan. Down ends exactly on the map's first view
+ * and hands over to the cover (as the shipped pan); up (from the map's view to
+ * the CG) and none (the CG only) fade out on the CG instead. */
+static void ScrollConnected(const u8 *tiles, const u8 *pal, s32 rows, s32 hold, const struct SkyCgPan *pan, const struct SkyCover *cover)
+{
+    s32 r, f, lo, hi, y;
+    s32 dist = rows * 8 - 160;
+    s32 frames = pan->dir == SKY_CG_PAN_NONE ? 0 : dist * pan->num / pan->den;
+    s32 from = pan->dir == SKY_CG_PAN_UP ? dist : 0;
+
+    sub_80999E8(0);
+    sub_8099BE4(); /* apply it now: the ground loop is not running */
+    RunPaletteFadeFunctions();
+    LoadFullscreenArtBlank();
+    SetBGOBJEnableFlags(0x7);
+    lo = from / 8;
+    hi = lo + SCROLL_RING - 1;
+    if (hi > rows - 1)
+        hi = rows - 1;
+    for (r = lo; r <= hi; r++)
+        SkyCutaway_LoadScrollRow(tiles, r);
+    SetBG3RegOffsets(0, from);
+    for (f = pan->fadeIn ? 0 : FADE_STEPS; f <= FADE_STEPS; f++) {
+        SetFullscreenArtBrightness((const RGB_Struct *)pal, f);
+        SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist + from);
+        RunFullscreenArtFrame();
+    }
+    for (f = 0; f < hold; f++) {
+        SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist + from);
+        RunFullscreenArtFrame();
+    }
+    y = from;
+    for (f = 1; f <= frames; f++) {
+        s32 t = (f << 8) / frames;
+        s32 d = pan->ease ? (dist * ((t * t) >> 8) * (768 - 2 * t)) >> 16 : dist * f / frames;
+
+        if (d > dist)
+            d = dist;
+        y = pan->dir == SKY_CG_PAN_UP ? dist - d : d;
+        while (hi < (y + 159) / 8 && hi < rows - 1)
+            SkyCutaway_LoadScrollRow(tiles, ++hi);
+        while (lo > y / 8)
+            SkyCutaway_LoadScrollRow(tiles, --lo);
+        SetBG3RegOffsets(0, y);
+        SkyGroundSprite_DrawActors(cover->camX, cover->camY - dist + y);
+        RunFullscreenArtFrame();
+    }
+    if (pan->dir == SKY_CG_PAN_DOWN) {
+        SkyGroundSprite_DrawActors(cover->camX, cover->camY);
+        sActiveCover = cover;
+        ShowCover(cover, gGroundMapDungeon_3001B70 != NULL ? gGroundMapDungeon_3001B70->unk52C.unk0 : 0);
+        return;
+    }
+    for (f = FADE_STEPS; f >= 0; f--) {
+        SetFullscreenArtBrightness((const RGB_Struct *)pal, f);
+        RunFullscreenArtFrame();
+    }
+}
+#endif
 
 /* Swap the picture without re-initialising windows/sprites (animation frames).
  * Tiles and tilemap go through the scheduled copies of one frame, so they
@@ -281,7 +360,7 @@ static void Fade(const SkyCutawayArt *art, bool8 in)
     s32 b, f;
     for (b = 0; b <= FADE_STEPS; b++) {
         SetFullscreenArtBrightness((const RGB_Struct *)art->pal, in ? b : FADE_STEPS - b);
-        for (f = 0; f < 1; f++)
+        for (f = 0; f < SKY_CG_FADE_FRAMES_PER_STEP; f++)
             RunFullscreenArtFrame();
     }
 }
@@ -688,32 +767,43 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
         ShowStormCliff();
     }
     else if (id == SKY_CUTAWAY_SKY_DAY_SCROLL || id == SKY_CUTAWAY_GUILD_SKY_SCROLL) {
+#if SKY_CG_PANS_AS_SHIPPED
         if (id == SKY_CUTAWAY_SKY_DAY_SCROLL)
             ScrollConnected(sScrollBeachTiles, sScrollBeachPal, SKY_SCROLL_BEACH_ROWS, frames, TRUE, &sCoverBeach);
         else
             ScrollConnected(sScrollGuildTiles, sScrollGuildPal, SKY_SCROLL_GUILD_ROWS, frames, TRUE, &sCoverGuild);
         connected = TRUE;
+#else
+        const struct SkyCgPan *pan = id == SKY_CUTAWAY_SKY_DAY_SCROLL ? &sPanBeach : &sPanGuild;
+
+        if (id == SKY_CUTAWAY_SKY_DAY_SCROLL)
+            ScrollConnected(sScrollBeachTiles, sScrollBeachPal, SKY_SCROLL_BEACH_ROWS, frames, pan, &sCoverBeach);
+        else
+            ScrollConnected(sScrollGuildTiles, sScrollGuildPal, SKY_SCROLL_GUILD_ROWS, frames, pan, &sCoverGuild);
+        /* up / none end on the CG, faded out: the map is rebuilt as after a still */
+        connected = pan->dir == SKY_CG_PAN_DOWN;
+#endif
     }
     else if (id == SKY_CUTAWAY_SUNSET_SEA_ANIM) {
         /* EoS m01a0205/0207: the sea glittering at sunset (8-frame loop). */
         first = &gSkyCutaways[SKY_CUTAWAY_SUNSET_SEA0];
         LoadFullscreenArt(first->at4px);
         Fade(first, TRUE);
-        for (i = 0; i < frames / 8; i++) {
+        for (i = 0; i < frames / SKY_CG_SEA_FRAMES; i++) {
             SwapArt(&gSkyCutaways[SKY_CUTAWAY_SUNSET_SEA0 + (i % 8)]);
-            Hold(7);
+            Hold(SKY_CG_SEA_FRAMES - 1);
         }
         Fade(&gSkyCutaways[SKY_CUTAWAY_SUNSET_SEA0 + ((i - 1) % 8)], FALSE);
     }
     else {
-        if (id < 0 || id >= SKY_CUTAWAY_COUNT || gSkyCutaways[id].at4px == NULL)
+        if (id < 0 || id >= SKY_CG_COUNT || gSkyCutaways[id].at4px == NULL)
             return;
         first = &gSkyCutaways[id];
         LoadFullscreenArt(first->at4px);
         Fade(first, TRUE);
         for (i = 0; i < frames; i++) {
             RunFullscreenArtFrame();
-            if (i >= 30 && (gRealInputs.pressed & (A_BUTTON | B_BUTTON)))
+            if (i >= SKY_CG_SKIP_AFTER && (gRealInputs.pressed & (A_BUTTON | B_BUTTON)))
                 break;
         }
         Fade(first, FALSE);

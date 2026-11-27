@@ -101,20 +101,25 @@ static const struct SkyOpeningObject sObjects[OBJ_COUNT] = {
     [OBJ_PETALS]  = { sPetalsPieces, sPetalsFrames, sPetalsGfx, sPetalsPal, 180, 324, 3, FALSE },
 };
 
+/* The timings below are set in events/sky/opening.cfg, [shaymin] (the build
+ * writes sky_opening_config.h from it; tools/event_editor/opening.py). As
+ * shipped they are EoS's, measured as above. */
+#include "sky_opening_config.h"
+
 #define CROP_X 56          /* the picture is level columns 56..295 */
-#define T_FADE_IN 16
-#define T_WHITE_START 34
-#define T_WHITE_LEN 16
-#define T_FLARE_SEQ 74
-#define T_PAN 80
-#define T_JOIN 200         /* the GBA camera reaches EoS's bottom screen */
-#define T_PAN_END 376
-#define T_SHAYMIN 215
-#define T_PETALS 290
-#define T_FADE_OUT 387
-#define FADE_OUT_LEN 60
-#define SKIP_FADE_LEN 30
-#define BOTTOM_VIEW_Y 208  /* 192 (top screen) + 16: the bottom screen's middle 160 lines */
+#define T_FADE_IN SKY_OP_SHAYMIN_FADE_IN
+#define T_WHITE_START SKY_OP_SHAYMIN_WHITE_START
+#define T_WHITE_LEN SKY_OP_SHAYMIN_WHITE_LEN
+#define T_FLARE_SEQ SKY_OP_SHAYMIN_FLARE_SEQ
+#define T_PAN SKY_OP_SHAYMIN_PAN
+#define T_JOIN SKY_OP_SHAYMIN_JOIN /* the GBA camera reaches EoS's bottom screen */
+#define T_PAN_END SKY_OP_SHAYMIN_PAN_END
+#define T_SHAYMIN SKY_OP_SHAYMIN_SHAYMIN
+#define T_PETALS SKY_OP_SHAYMIN_PETALS
+#define T_FADE_OUT SKY_OP_SHAYMIN_FADE_OUT
+#define FADE_OUT_LEN SKY_OP_SHAYMIN_FADE_OUT_LEN
+#define SKIP_FADE_LEN SKY_OP_SHAYMIN_SKIP_FADE_LEN
+#define BOTTOM_VIEW_Y SKY_OP_SHAYMIN_BOTTOM_VIEW_Y /* 192 (top screen) + 16: the bottom screen's middle 160 lines */
 
 #define SCROLL_COLS 30
 #define OBJ_BUF_TILES 512
@@ -134,7 +139,7 @@ static s32 CameraY(s32 t)
         return 0;
     if (t > T_PAN_END)
         t = T_PAN_END;
-    track = BOTTOM_VIEW_Y + (t - T_PAN) / 2;
+    track = BOTTOM_VIEW_Y + (t - T_PAN) / SKY_OP_SHAYMIN_PAN_DIV;
     if (t >= T_JOIN)
         return track;
     /* smoothstep from the sky onto the bottom screen's track */
@@ -235,8 +240,11 @@ static void DrawObject(s32 obj, s32 frameId, s32 camY, s32 *tile)
 
 /* ------------------------------------------------------------------------
  * The rest of EoS's opening: thirteen EoS scenes as fourteen GBA ones
- * (the logo scene shows one screen, then the other; src/data/sky_opening_scenes.h,
- * tools/make_sky_opening.py), played back as EoS showed them.
+ * (the logo scene shows one screen, then the other; tools/make_sky_opening.py),
+ * played back as EoS showed them. The scene table, sky_opening_scenes.h, is
+ * written by the build from events/sky/opening.cfg and
+ * graphics/custom/sky_opening/scenes/baked.json (tools/event_editor/opening.py:
+ * which frames play, where the view is).
  *
  * Each scene has two BG layers (BG2 in front, BG3 behind), 4bpp with EoS's
  * own tiles and palettes, each a "world" (a version per change of content)
@@ -316,7 +324,7 @@ struct SkyOpScene
     u32 framesOff, objsOff, bgSetsOff, objSetsOff, objTilesOff;
 };
 
-#include "data/sky_opening_scenes.h"
+#include "sky_opening_scenes.h"
 
 #define OP_RING_W 32
 #define OP_RING_H 22

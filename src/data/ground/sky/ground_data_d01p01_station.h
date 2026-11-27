@@ -1,5 +1,6 @@
 /* Explorers of Sky demake: the opening-chapter scenes replace the Tiny Woods
- * entrance groups. See sky_d01p01_scenes.h. */
+ * entrance groups. They are in events/sky/scenes/sky_d01p01_scenes.scene; the
+ * build compiles them into sky_d01p01_scenes.h (documentation/EventEditor.md). */
 #include "sky_d01p01_scenes.h"
 
 static const struct GroundLink s_gs178_links[] = { /* 0x822fc18 */

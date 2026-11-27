@@ -4,6 +4,9 @@
 
 ## Index
 
+The chapter-1 scenes, the story CGs and the opening's timings are text files
+under `events/sky/`, with a local editor: see [EventEditor.md](../EventEditor.md).
+
 - [Introduction](#introduction)
 - [What plays](#what-plays)
 - [Building](#building)
@@ -105,7 +108,7 @@ extend-palette slots (OBJ palettes 13 and 14; object palette field
 the end of the vanilla `gGroundObjectTypes` table, so
 [`src/ground_object.c`](../../src/ground_object.c) gives them type 1 (a plain
 prop, no flags) from `sSkyGroundObjectTypes`. m01a0104 (group 6, sector 0 of
-`sky_d01p01_scenes.h`) places them at EoS's positions; they are drawn over the
+`events/sky/scenes/sky_d01p01_scenes.scene`) places them at EoS's positions; they are drawn over the
 map like other sprites, and Koffing passes in front of the left one as in EoS.
 
 Losing in Beach Cave plays m01a0301 on the beach ("Ouch! We didn't do too
@@ -1648,7 +1651,11 @@ screen's far sea is one animation frame behind the bottom one's).
 `python3 tools/make_sky_opening.py EOS.nds [--check DIR]` re-records (into
 `build/sky_opening_rec/`, about a minute on four cores) and rewrites
 `graphics/custom/sky_opening/scenes/*.bin` and
-[`src/data/sky_opening_scenes.h`](../../src/data/sky_opening_scenes.h);
+`graphics/custom/sky_opening/scenes/baked.json` (what each blob was made
+with), taking each scene's frames and view from
+[`events/sky/opening.cfg`](../../events/sky/opening.cfg); the build makes the
+scene table from those two (`tools/event_editor/opening.py`,
+[EventEditor.md](../EventEditor.md#the-opening));
 `--check` also writes, per scene, EoS's picture beside the converted data
 drawn the way the GBA draws it.
 
@@ -1901,6 +1908,7 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 |---|---|---|
 | `vanilla_sha1` | — | STORY=vanilla byte-identical |
 | `smoke_boot` | sky | `smoke_test.sh` on the sky ROM |
+| `event_editor_tests` | tools | `tools/event_editor/test_event_editor.py`: the scene files read back unchanged (also through the editor's JSON), keep their debug lines, compile; the CG and opening settings as shipped give the shipped tables; CG ids stay put; re-aiming an opening scene by nothing rebuilds its blob's frames exactly |
 | `pan_beach_handoff`, `pan_guild_handoff` | divide | from 20 frames before the cover (`gSkyCoverActive`) to 20 frames after it: OBJ layer on and the actors' sprite pixels ≥ 50% of their count before the cover (no blink); the best-matching shift between consecutive frames ≤ 2 px (no jump) |
 | `dialogue_box_frame` | divide | every ground box: the Sky frame's colours (top, bottom, sides) and the (33,33,33) fill |
 | `dialogue_wrap_opening`, `dialogue_wrap_aftermath` | divide, after | every box: no glyph pixels in the fill's last columns (x 223–224) |
@@ -2035,12 +2043,13 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Story pack select, test hooks | [`Makefile`](../../Makefile) (`STORY`, `DEBUG_BOOT_EVENT`, `DEBUG_BOOT_FLOOR`, `DEBUG_BOOT_SEED`) |
 | Dungeon speed (minimap redraw, DMA copies, log scroll) | [`src/dungeon_map.c`](../../src/dungeon_map.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/cpu.c`](../../src/cpu.c), [`src/dungeon_message.c`](../../src/dungeon_message.c), [`src/dungeon_range.c`](../../src/dungeon_range.c); measured by [`scripts/cloud/sky_regression/checks/perf.py`](../../scripts/cloud/sky_regression/checks/perf.py) |
 | Red-only systems left out (Wonder Mail, friend rescue, Friend Areas, team-base flags) | [`Makefile`](../../Makefile) (`NON_SKY_C_SOURCES`), the `SKY_STORY` guards in [`src/textbox.c`](../../src/textbox.c), [`src/main_menu1.c`](../../src/main_menu1.c), [`src/code_801D014.c`](../../src/code_801D014.c), [`src/code_80958E8.c`](../../src/code_80958E8.c), [`src/main_loops.c`](../../src/main_loops.c), [`src/ground_script.c`](../../src/ground_script.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c) |
-| Opening scenes (gs178 groups 1–8) | [`src/data/ground/sky/sky_d01p01_scenes.h`](../../src/data/ground/sky/sky_d01p01_scenes.h) |
-| Beach Cave Pit aftermath (gs179 group 1) | [`src/data/ground/sky/ground_data_d01p02_station.h`](../../src/data/ground/sky/ground_data_d01p02_station.h) |
+| Opening scenes (gs178 groups 1–8) | [`events/sky/scenes/sky_d01p01_scenes.scene`](../../events/sky/scenes/sky_d01p01_scenes.scene) (compiled into the build's `sky_d01p01_scenes.h`, [EventEditor.md](../EventEditor.md)) |
+| Beach Cave Pit aftermath (gs179 group 1) | [`events/sky/scenes/sky_d01p02_scenes.scene`](../../events/sky/scenes/sky_d01p02_scenes.scene), the links in [`src/data/ground/sky/ground_data_d01p02_station.h`](../../src/data/ground/sky/ground_data_d01p02_station.h) |
+| Event editor (scene compiler, CG and opening settings, the web page) | [`tools/event_editor/`](../../tools/event_editor), [`events/sky/`](../../events/sky), [EventEditor.md](../EventEditor.md) |
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
 | Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
-| Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
-| EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`src/data/sky_opening_scenes.h`](../../src/data/sky_opening_scenes.h), [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py), [`tools/sky_opening_map.py`](../../tools/sky_opening_map.py) |
+| Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`events/sky/cutaways.cfg`](../../events/sky/cutaways.cfg), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
+| EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`events/sky/opening.cfg`](../../events/sky/opening.cfg), `graphics/custom/sky_opening/scenes/baked.json`, [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py), [`tools/sky_opening_map.py`](../../tools/sky_opening_map.py) |
 | Continue / Delete Save Data window (EoS's Adventure Record) | [`src/load_screen.c`](../../src/load_screen.c) |
 | Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), the storm cliff in [`src/sky_cutaways.c`](../../src/sky_cutaways.c) with [`src/data/sky_storm_cliff.h`](../../src/data/sky_storm_cliff.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
 | Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |

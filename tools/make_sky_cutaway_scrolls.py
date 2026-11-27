@@ -6,7 +6,7 @@ sits at the top of the map (the cliff over the stormy sea, the sky over the
 beach, the dusk clouds over the guild tent). The GBA has one screen, so the
 demake shows the CG and pans down into the scene. Each picture is:
 
-    the CG (graphics/custom/sky_cutaways/<cutaway>.png, 160 lines)
+    the CG (events/sky/cutaways.cfg: the pan's top =, 240x160)
     the converted map from its top edge down to the GBA camera's first view,
     rendered from data/map_bg (+ BPA frame 0 from data/map_bg_anim),
     ending with graphics/custom/sky_scrolls/<pair>_bottom.png: that first view
@@ -43,6 +43,17 @@ PAIRS = [
     ("beach", "sky_day", "ED0111A"),
     ("guild", "guild_sky", "EG0101B"),
 ]
+# the pans' names in events/sky/cutaways.cfg, whose `top =` picks the CG
+PAN_NAMES = {"beach": "SKY_DAY_SCROLL", "guild": "GUILD_SKY_SCROLL"}
+
+
+def top_picture(pair: str, cut: str) -> Path:
+    """The CG at the top of a pan: [pan NAME] top= in events/sky/cutaways.cfg."""
+    sys.path.insert(0, str(ROOT / "tools" / "event_editor"))
+    from cfgfile import Cfg
+    cfg = ROOT / "events" / "sky" / "cutaways.cfg"
+    top = Cfg.load(cfg).get(f"pan {PAN_NAMES[pair]}", "top") if cfg.exists() else None
+    return ROOT / top if top else CUT / f"{cut}.png"
 
 
 def build_cover(pair: str, stem: str, cx: int, cy: int) -> tuple[int, int, int]:
@@ -197,7 +208,9 @@ def build(pair: str, cut: str, stem: str) -> int:
     region = full[0:cy + 160, cx:cx + 240].copy()
     # (the render, not the capture: the cover shown at the hand-off is the
     # same render, and captures catch palette animations mid-cycle)
-    cg = np.array(Image.open(CUT / f"{cut}.png").convert("RGB"))[0:160]
+    cg = np.array(Image.open(top_picture(pair, cut)).convert("RGB"))
+    if cg.shape[:2] != (160, 240):
+        cg = np.array(Image.fromarray(cg).resize((240, 160), Image.LANCZOS))
     crop = (160 + region.shape[0]) % 8      # whole tile rows: trim the CG's top
     tall = np.concatenate([cg[crop:], region])
     rows = tall.shape[0] // 8

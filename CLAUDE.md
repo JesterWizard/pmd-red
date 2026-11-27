@@ -44,3 +44,5 @@ scripts/cloud/sky_regression.sh # sky demake regression suite (PASS/FAIL per che
 - `.claude/agents/haiku-worker.md`: the worker brief and CHECK-IN format.
 - `.claude/skills/rom-screenshot`: boot the ROM and look at it in-game.
 - Save-layout changes follow `.cursor/skills/save-sram-layout/SKILL.md`.
+- Sky scenes, story CGs and opening timings are text under `events/sky/` (compiled by the build;
+  editor: `python3 tools/event_editor/serve.py`): `documentation/EventEditor.md`.
