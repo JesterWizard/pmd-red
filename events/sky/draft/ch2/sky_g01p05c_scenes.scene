@@ -32,6 +32,8 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=WIGGLYTUFF id=SKY_LIVES_WIGGLYTUFF   # the text names it
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_STOP
     SELECT_MAP SKY_GUILD_WIGGLYTUFF_NIGHT
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
@@ -94,7 +96,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 10
     WAIT 20
     PORTRAIT place=CENTERLEFT_CENTER who=WIGGLYTUFF emotion=NORMAL
-    PORTRAIT_POS NPC_WIGGLYTUFF 16 -8   # EoS message_FacePositionOffset(2, -1); (tiles)
+    # eos: message_FacePositionOffset(2, -1); (the face stays at its place on the GBA)
     MSG_NPC who=WIGGLYTUFF text=" Those items I gave you are all\nvery useful in dungeons."
     MSG_NPC who=WIGGLYTUFF text=" Please give it your best effort\nagain tomorrow!"
     TEXTBOX_CLEAR

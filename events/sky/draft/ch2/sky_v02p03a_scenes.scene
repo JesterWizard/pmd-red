@@ -32,6 +32,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=DIGLETT id=SKY_LIVES_DIGLETT   # the text names it
     BGM_STOP
     # eos: back2_SetMode(5); (the top screen)
     SELECT_MAP SKY_SENTRY_POST

@@ -412,7 +412,8 @@ class EosImport(unittest.TestCase):
         self.assertIn("AWAIT_CUE 5", croagunk)
         self.assertIn("STOP_ANIMATION_ON_CURRENT_FRAME", croagunk)
         chatot = self.rows(model, "g0_s0_chatot")
-        self.assertIn("COND_EQUAL 1 3001", chatot)                        # sent from a branch: a dispatch table
+        self.assertIn("COND_EQUAL 1 1", chatot)                           # sent from a branch: a dispatch table
+        self.assertIn("LABEL 1", chatot)                                  # (labels renumbered from 0: a byte)
         self.assertIn("ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER", chatot)
         # the names chapter 2 still has to add
         unk = {w for _, w in scenes.unknown_names(model)}
@@ -426,9 +427,11 @@ class EosImport(unittest.TestCase):
         self.assertNotIn("PLAYER", unk)
 
     def test_chapter1_names_are_defined(self):
-        """scenes.py check --names: chapter 1's files name nothing a header doesn't define."""
+        """scenes.py check --names: the built scene files (chapters 1 and 2) name nothing a header
+        (or events/sky/cutaways.cfg, for the CGs) doesn't define."""
         for f in SCENE_FILES:
-            self.assertEqual(scenes.unknown_names(scenes.parse(f.read_text(), f.name)), [], f.name)
+            self.assertEqual(scenes.unknown_names(scenes.parse(f.read_text(), f.name), scenes.cg_extra_names()),
+                             [], f.name)
 
     def test_drafts_read(self):
         """The chapter-2 drafts parse, compile up to the names they still need, and no cue waits for ever."""

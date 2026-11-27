@@ -31,6 +31,8 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
     BGM_STOP
     SELECT_MAP SKY_DRENCHED_BLUFF_ENTRANCE
     # eos: if ( variation ): never in the story (EoS's variation run)
@@ -91,6 +93,7 @@ end
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
   LABEL 0
     AWAIT_CUE 64
@@ -166,6 +169,8 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
     SELECT_MAP SKY_DRENCHED_BLUFF_ENTRANCE
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SKY_CAMERA_SET x=148 y=64   # EoS camera_SetMyself<performer 0>
@@ -214,6 +219,7 @@ end
 script g1_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
     WALK_RELATIVE speed=256 dx=4 dy=-108   # EoS MovePositionMark to Position<'m0', 34.5, 19.5>

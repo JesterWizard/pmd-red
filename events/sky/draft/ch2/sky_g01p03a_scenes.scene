@@ -43,6 +43,8 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_STOP
     SELECT_MAP SKY_GUILD_B1F
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
@@ -410,6 +412,9 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     SELECT_MAP SKY_GUILD_B1F
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SKY_CAMERA_SET x=228 y=152   # EoS camera_SetMyself<performer 0>
@@ -818,9 +823,11 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_STOP
     # eos: if ( variation ): never in the story (EoS's variation run)
-    SELECT_MAP SKY_STORM_SEA   # EoS LEVEL_S04P01A: a black screen
+    SELECT_MAP SKY_GUILD_B1F   # EoS LEVEL_S04P01A: a black screen
     SKY_SHOW_MAP FALSE
     FADE_IN wait=TRUE frames=0
     SET_PLACE_MODE 4
@@ -838,6 +845,7 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SKY_CAMERA_SET x=136 y=160   # EoS camera_SetMyself<performer 0>
     FADE_IN wait=TRUE frames=30
+    FADE2_IN wait=TRUE frames=0   # the text layer (screen_FadeOutAll faded it)
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
     WAIT 30
     PORTRAIT place=MIDRIGHT_TOP_FLIP who=CHATOT emotion=NORMAL
@@ -933,6 +941,10 @@ script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=SPOINK id=SKY_LIVES_SPOINK   # the text names it
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_STOP
     SELECT_MAP SKY_GUILD_B1F
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
@@ -1001,7 +1013,7 @@ script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     MSG_NPC who=PARTNER text=" Oh, wow! 2,000 Poké?!{WAIT_PRESS} We can\nhave all this money?"
     TEXTBOX_CLEAR
     PORTRAIT place=MIDRIGHT_TOP_FLIP who=SPOINK emotion=NORMAL
-    PORTRAIT_POS NPC_SPOINK -32 8   # EoS message_FacePositionOffset(-4, 1); (tiles)
+    # eos: message_FacePositionOffset(-4, 1); (the face stays at its place on the GBA)
     MSG_NPC who=SPOINK text=" Of course! Of course! That's\nnothing compared to my pearl's value!"
     MSG_NPC who=SPOINK text=" Farewell!"
     TEXTBOX_CLEAR
@@ -1037,7 +1049,7 @@ script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 66 7   # -> PARTNER: batch 7
     AWAIT_CUE_COND 68 4   # -> PLAYER: batch 4
     PORTRAIT place=CENTERLEFT_CENTER who=CHATOT emotion=NORMAL
-    PORTRAIT_POS NPC_CHATOT 16 -8   # EoS message_FacePositionOffset(2, -1); (tiles)
+    # eos: message_FacePositionOffset(2, -1); (the face stays at its place on the GBA)
     MSG_NPC who=CHATOT text=" Now hand that money over, if\nyou please!"
     TEXTBOX_CLEAR
     FANFARE_PLAY2 463   # EoS se_Play(8968)
@@ -1051,8 +1063,7 @@ script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 70 5   # -> CHATOT: batch 5
     AWAIT_CUE 71   # <- CHATOT done
     PORTRAIT place=CENTERRIGHT_TOP_FLIP who=CHATOT emotion=NORMAL
-    PORTRAIT_POS NPC_CHATOT 0 0   # (EoS's offset ends with a new place)
-    PORTRAIT_POS NPC_CHATOT 16 16   # EoS message_FacePositionOffset(2, 2); (tiles)
+    # eos: message_FacePositionOffset(2, 2); (the face stays at its place on the GBA)
     MSG_NPC who=CHATOT text=" Most of the money from jobs\ngoes to the Guildmaster, you see! ♪"
     MSG_NPC who=CHATOT text=" And your team's share of the\nmoney comes out to this much...! ♪"
     TEXTBOX_CLEAR
@@ -1076,8 +1087,7 @@ script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 70 7   # -> CHATOT: batch 7
     AWAIT_CUE 71   # <- CHATOT done
     PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=CHATOT emotion=NORMAL
-    PORTRAIT_POS NPC_CHATOT 0 0   # (EoS's offset ends with a new place)
-    PORTRAIT_POS NPC_CHATOT 16 -8   # EoS message_FacePositionOffset(2, -1); (tiles)
+    # eos: message_FacePositionOffset(2, -1); (the face stays at its place on the GBA)
     MSG_NPC who=CHATOT text=" Well that's the guild's rule.{WAIT_PRESS}\nYou simply have to accept it! ♪"
     TEXTBOX_CLEAR
     FANFARE_PLAY2 SE_SKY_SWEAT_DROP   # EoS se_Play(8961)
@@ -1100,6 +1110,7 @@ end
 script g3_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
   LABEL 0
     AWAIT_CUE 68

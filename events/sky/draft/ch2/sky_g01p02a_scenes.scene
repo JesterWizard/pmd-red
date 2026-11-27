@@ -30,6 +30,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
     BGM_STOP
     SELECT_MAP SKY_GUILD_1F
     SKY_CAMERA_SET x=92 y=120   # EoS camera_SetPositionMark(Position<'m0', 26, 24.5>);

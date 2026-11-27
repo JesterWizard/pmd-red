@@ -37,6 +37,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
     BGM_STOP
     # eos: if ( variation ): never in the story (EoS's variation run)
     # eos: back_SetDungeonBanner(3, 0): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
@@ -206,6 +207,7 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
     BGM_STOP
     # eos: back_SetDungeonBanner(3, 0): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
     FADE_IN wait=TRUE frames=16
@@ -275,6 +277,7 @@ end
 script g1_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
   LABEL 0
     AWAIT_CUE 66

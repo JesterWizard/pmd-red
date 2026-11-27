@@ -115,6 +115,8 @@ CGS = {
     "V02P01A": ("GUILD_SKY", "GUILD_SKY_SCROLL"), "V01P06B": ("RELIC_FRAGMENT", None),
     "V26P06A": ("SUNSET_SKY", None),
 }
+# the view each pan ends on (src/data/sky_scrolls.h, SKY_SCROLL_*_CAM_X/Y): a scene after it starts there
+PAN_VIEWS = {"GUILD_SKY_SCROLL": (118, 112), "SKY_DAY_SCROLL": (166, 88)}
 # chapter 2's (SkyChapter2.md, Story CGs; events/sky/cutaways.cfg)
 CGS.update({"V02P02A": ("SENTRY_GRATE", None), "V02P06A": ("NIGHT_SKY", None)})
 # main-screen levels with no actor and no text over them, shown as a CG
@@ -155,6 +157,11 @@ FACES = {   # EoS FACE_* -> EMOTION_*
     "DETERMINED": "DETERMINED", "JOYOUS": "JOYOUS", "INSPIRED": "INSPIRED", "SURPRISED": "SUPRISED",
     "DIZZY": "DIZZY", "SIGH": "SIGH", "STUNNED": "STUNNED",
 }
+
+# EoS faces Red's portrait archive has no picture for: Normal shows (EMOTION_DIZZY, 13, would
+# show nothing; EMOTION_STUNNED, 17, masked to 4 bits, Happy). EMOTION_SIGH (16) masks to Normal
+# by itself (chapter 1 uses it).
+FACES_MISSING = {"DIZZY", "STUNNED"}
 
 DIRS = {   # EoS DIR_* / SSA direction -> DIRECTION_*
     "DIR_DOWN": "SOUTH", "DIR_DOWNRIGHT": "SOUTHEAST", "DIR_RIGHT": "EAST", "DIR_UPRIGHT": "NORTHEAST",
@@ -664,6 +671,15 @@ class Translator:
                         e.has_own = True
         st = self.station.rows
         st += ["SET_PLACE_MODE 1", "FADE_OUT wait=TRUE frames=0"]
+        if self.layers and not any(t.kind == "call" and t.name in ("back_SetGround", "supervision_Acting")
+                                   for t in walk(main.body)):
+            # a scene that goes on on the map as it is (m02a0301): its layer 0 is what is there
+            st += [f"SELECT_MAP {self.map_of(self.level)}   # EoS: the scene goes on on the map as it is",
+                   "SELECT_ENTITIES group=-1 sector=0   # (its layer 0: who is there)"]
+            for e in self.layers[0]:
+                e.spawned = True
+            st += ["FADE_IN wait=TRUE frames=0", "SET_PLACE_MODE 4"]
+            self.faded_in, self.screen = True, "shown"
         self.block(main.body, None, st)
         self.close_batches()
         self.flush_cg(st)
@@ -721,6 +737,8 @@ class Translator:
             if s.name in ("end", "return") and me is None:
                 self.close_batches()
                 self.flush_cg(rows)
+                if getattr(self, "text_faded", False):
+                    rows.append("FADE2_IN wait=TRUE frames=0   # the text layer back for the next scene")
                 rows.append("RET")
             elif s.name in ("end", "return"):
                 rows.append("END_DELETE" if s.name == "end" else "RET")
@@ -1444,10 +1462,12 @@ class Translator:
             return       # the same face again: chapter 1 leaves it out
         p = "KEEP" if (self.placed.get(who) or (None,))[0] == place else place
         self.placed[who] = (place, emo)
+        if emo in FACES_MISSING:
+            # Red's portraits have 13 faces (PortraitGfx.sprites[13], the emotion masked to 4 bits)
+            rows.append(f"PORTRAIT place={p} who={who if who else -1} emotion=NORMAL   "
+                        f"# TODO emotion: EoS FACE_{emo} (not among Red's faces yet)")
+            return
         rows.append(f"PORTRAIT place={p} who={who if who else -1} emotion={emo}")
-        if getattr(self, "offset_who", None) == who and p != "KEEP":
-            rows.append(f"PORTRAIT_POS NPC_{who} 0 0   # (EoS's offset ends with a new place)")
-            self.offset_who = None
 
     def c_message_SetFace(self, s, a, me, rows, nxt):
         who = self.who(a[0][1])
@@ -1457,12 +1477,10 @@ class Translator:
         return self.portrait(who, a[1][1], a[2][1], rows)
 
     def c_message_FacePositionOffset(self, s, a, me, rows, nxt):
-        who = self.speaker if self.speaker is not None else -1
-        dx, dy = ival(a[0]), ival(a[1])
-        if dx is None or dy is None:
-            return False
-        rows.append(f"PORTRAIT_POS {who if who == -1 else 'NPC_' + who} {dx * 8} {dy * 8}   # EoS {s.src} (tiles)")
-        self.offset_who = who
+        # EoS nudges a face by (dx, dy) from its place; the GBA's places are laid out for its
+        # narrower screen (checked in the emulator: Chatot's TOP_C_FACEL + (2, 2) in m02a1001 ends
+        # up past the right edge), so each face stays at its place's own position.
+        rows.append(f"# eos: {s.src} (the face stays at its place on the GBA)")
 
     def c_message_SetFaceOnly(self, s, a, me, rows, nxt):
         return self.c_message_SetFace(s, a, me, rows, nxt)
@@ -1510,6 +1528,10 @@ class Translator:
             rows.append(f'MSG_OVERHEARD text="{text}"   # EoS message_ImitationSound')
         elif n == "message_Narration":
             frames = ival(s.args[0]) if len(s.args) > 1 else 30
+            if not getattr(self, "narrating", False):
+                # on-black text fades the text layer: out before, back in after (chapter 1, Red)
+                rows.append("FADE2_OUT wait=TRUE frames=0   # the text on black (message_Narration)")
+                self.narrating = True
             rows.append(f'MSG_ON_BG_AUTO frames={frames} text="{text}"')
         else:
             return False
@@ -1534,6 +1556,9 @@ class Translator:
                 continue
             break
         rows.append("TEXTBOX_CLEAR")
+        if getattr(self, "narrating", False):
+            rows += ["WAIT 1", "FADE2_IN wait=TRUE frames=0   # the text layer back after the text on black"]
+            self.narrating = False
 
     def c_message_Close(self, s, a, me, rows, nxt):
         return self.close(s, me, rows, nxt)
@@ -1628,12 +1653,25 @@ class Translator:
         else:
             pan = getattr(self, "pending_pan", None)
             if pan:
+                view = PAN_VIEWS.get(pan)
+                for j in range(len(rows) - 1, -1, -1):
+                    m = re.match(r"SKY_CAMERA_SET x=(-?\d+) y=(-?\d+)", rows[j]) if isinstance(rows[j], str) else None
+                    if m and view and max(abs(int(m.group(1)) - view[0]), abs(int(m.group(2)) - view[1])) <= 16:
+                        # the pan ends on its own view (src/data/sky_scrolls.h): the scene starts there
+                        rows[j] = (f"SKY_CAMERA_SET x={view[0]} y={view[1]}   # the pan's last view "
+                                   f"(EoS's centre: ({m.group(1)}, {m.group(2)}))")
+                        break
+                    if m:
+                        break
                 rows.append("WAIT 1   # the actors take their poses; the pan draws them")
                 rows.append(f"SKY_CUTAWAY cg={pan} frames=90   # EoS: the top screen's picture over the map: pan down to it")
                 rows.append("FADE_IN wait=TRUE frames=0   # the pan ends on this exact view")
                 self.pending_pan = None
             else:
                 rows.append(f"FADE_IN wait={'TRUE' if w else 'FALSE'} frames={f}")
+        if getattr(self, "text_faded", False):
+            rows.append("FADE2_IN wait=TRUE frames=0   # the text layer (screen_FadeOutAll faded it)")
+            self.text_faded = False
         self.screen = "shown"
         if not self.faded_in:
             self.faded_in = True
@@ -1670,6 +1708,7 @@ class Translator:
     def c_screen_FadeOutAll(self, s, a, me, rows, nxt):
         self.c_screen_FadeOut(s, a, me, rows, nxt)
         rows.append("FADE2_OUT wait=TRUE frames=0")
+        self.text_faded = True
 
     def white(self, s, a, me, rows, kind):
         w, f = ival(a[0]), ival(a[1])
@@ -1739,7 +1778,8 @@ class Translator:
             self.main_cg = [MAIN_CGS[lv], 0, rows, len(rows) - 1]
             return
         if lv == "S04P01A":     # EoS's black level (voices in the dark): chapter 1's storm map, hidden
-            rows += ["SELECT_MAP SKY_STORM_SEA   # EoS LEVEL_S04P01A: a black screen", "SKY_SHOW_MAP FALSE"]
+            black = "SKY_GUILD_B1F" if self.chapter2 else "SKY_STORM_SEA"   # a map of the scene's station
+            rows += [f"SELECT_MAP {black}   # EoS LEVEL_S04P01A: a black screen", "SKY_SHOW_MAP FALSE"]
             self.hidden_map = True
             return
         if getattr(self, "hidden_map", False):
@@ -1755,7 +1795,8 @@ class Translator:
         rows.append(f"SELECT_MAP {self.map_of(lv)}")
 
     def c_back_ChangeGround(self, s, a, me, rows, nxt):
-        return self.c_back_SetGround(s, a, me, rows, nxt)
+        lv = re.sub(r"^LEVEL_", "", a[0][1])
+        rows.append(f"SKY_CHANGE_GROUND map={self.map_of(lv)}   # EoS {s.src.rstrip(';')}: the actors stay")
 
     def c_back_SetBanner2(self, s, a, me, rows, nxt):
         title = self.text(a[-1]).replace("\\n", " ")
@@ -1764,6 +1805,7 @@ class Translator:
             # from (3, 0) to (3, 1) and it shows at the next SELECT_MAP, as chapter 1's does
             rows.append(f"# eos: chapter card \"{title}\" ({s.src.split('{')[0].strip()}): shown at the next "
                         "SELECT_MAP (src/chapter_titles.c, queued by EVENT_DIVIDE)")
+            rows.append(f"SELECT_MAP {self.map_of(self.level)}   # the chapter card, before the scene's pictures")
             self.banner = True
             return
         rows.append(f"# TODO eos: chapter card \"{title}\" ({s.src.split('{')[0].strip()}): "
@@ -2104,8 +2146,9 @@ class SceneFile:
         for tr in self.groups:
             out += ["", "# " + "-" * 72, f"# group {tr.group}: EoS {tr.name} ({tr.level})", "# " + "-" * 72, ""]
             st = tr.station
-            named = [n for n in sorted(getattr(tr, "named", set())) if not any(
-                e.npc == n for e in tr.ents)]
+            # every name the group's text uses or speaks with, bound at the start: an actor may
+            # speak before its layer is on the map (off screen, in the dark)
+            named = sorted(getattr(tr, "named", set()))
             rows = list(st.rows)
             # names the text uses for actors not on the map (chapter 1's g3 station)
             for n in named:

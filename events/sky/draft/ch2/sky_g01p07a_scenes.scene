@@ -34,6 +34,8 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     SELECT_MAP SKY_GUILD_CREW_ROOM
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SKY_CAMERA_SET x=52 y=108   # EoS camera_SetMyself<performer 0>
@@ -61,7 +63,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 1
     AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
     PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=PARTNER emotion=JOYOUS
-    PORTRAIT_POS NPC_PARTNER -16 -8   # EoS message_FacePositionOffset(-2, -1); (tiles)
+    # eos: message_FacePositionOffset(-2, -1); (the face stays at its place on the GBA)
     MSG_NPC who=PARTNER text=" Yay! We get beds!"
     TEXTBOX_CLEAR
     AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
@@ -156,9 +158,15 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=LOUDRED id=SKY_LIVES_LOUDRED   # the text names it
     BGM_STOP
+    FADE2_OUT wait=TRUE frames=0   # the text on black (message_Narration)
     MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}The next morning..."
     TEXTBOX_CLEAR
+    WAIT 1
+    FADE2_IN wait=TRUE frames=0   # the text layer back after the text on black
     WAIT 30
     FANFARE_PLAY2 457   # EoS se_Play(8971)
     # eos: message_ResetActor(); (no speaker)
@@ -168,7 +176,7 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     MSG_NPC who=-1 text=" RISE AND SHINE!"
     WAIT_FANFARE2 471
     # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
-    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PLAYER emotion=DIZZY
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PLAYER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
     MSG_QUIET who=PLAYER text="(Ugh!)"
     MSG_QUIET who=PLAYER text="(M-my head is pounding!)"
     MSG_QUIET who=PLAYER text="(Wh-what a ridiculously loud voice! It almost\nblasted my eardrums!)"
@@ -192,8 +200,8 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
     MSG_QUIET who=PLAYER text="(Ugh!)"
     TEXTBOX_CLEAR
-    PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=PARTNER emotion=DIZZY
-    PORTRAIT_POS NPC_PARTNER -24 0   # EoS message_FacePositionOffset(-3, 0); (tiles)
+    PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=PARTNER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
+    # eos: message_FacePositionOffset(-3, 0); (the face stays at its place on the GBA)
     MSG_NPC who=PARTNER text=" M-my poor ears..."
     TEXTBOX_CLEAR
     FANFARE_PLAY2 457   # EoS se_Play(8971)
@@ -243,8 +251,7 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE 69   # <- LOUDRED done
     ALERT_CUE 68   # -> LOUDRED
     WAIT 60
-    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=DIZZY
-    PORTRAIT_POS NPC_PARTNER 0 0   # (EoS's offset ends with a new place)
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
     MSG_NPC who=PARTNER text=" Urk! My ears are still ringing..."
     MSG_NPC who=PARTNER text=" What did he say? Something\nabout getting ready?"
     TEXTBOX_CLEAR
@@ -372,6 +379,9 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=LOUDRED id=SKY_LIVES_LOUDRED   # the text names it
     BGM_STOP
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 0   # EoS scenario numbers
     JUMPIF_SCENE_EQ SCENARIO_MAIN 5 0 6   # EoS scenario numbers
@@ -389,8 +399,11 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 15
   LABEL 2
     SET_ARRAYVAL SKY_SCENARIO_MAIN_BIT_FLAG 1 1   # EoS $SCENARIO_MAIN_BIT_FLAG[1] = 1;
+    FADE2_OUT wait=TRUE frames=0   # the text on black (message_Narration)
     MSG_ON_BG_AUTO frames=30 text="{CENTER_ALIGN}The next morning..."
     TEXTBOX_CLEAR
+    WAIT 1
+    FADE2_IN wait=TRUE frames=0   # the text layer back after the text on black
     WAIT 30
     PORTRAIT place=LEFT_BOTTOM_2 who=LOUDRED emotion=NORMAL
     MSG_NPC who=LOUDRED text=" UP AND AT 'EM!{WAIT_PRESS} IT'S MORNING!"
@@ -428,7 +441,7 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE 67   # <- PARTNER done
     WAIT 2
     AWAIT_CUE_COND 64 5   # -> PLAYER: batch 5
-    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=DIZZY
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
     MSG_NPC who=PARTNER text=" Ugh! Good morning,\n{NAME_0}..."
     TEXTBOX_CLEAR
     WAIT 30
@@ -489,6 +502,7 @@ end
 script g2_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
   LABEL 0
     AWAIT_CUE 64

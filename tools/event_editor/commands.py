@@ -136,6 +136,8 @@ _C = [
     ("SKY_SAVE_GAME", [], "Scene", "Ask to save (the demo's end)."),
     ("SKY_GIVE_ITEM", [("item", "item")], "Scene", "Give an item: into the bag, or the storage when the bag is full."),
     ("SKY_DEMO_TO_TITLE", [], "Scene", "Back to the title screen."),
+    ("SKY_CHANGE_GROUND", [("map", "map")], "Scene",
+     "Show another map's picture under the actors and objects on the map (SELECT_MAP deletes them): EoS back_ChangeGround."),
     ("DEBUGINFO", [("line", "int")], "Flow",
      "The first line of every script (a debug marker). line: kept from the original C file; leave it out in new scripts."),
 ]
