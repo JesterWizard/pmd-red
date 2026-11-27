@@ -136,10 +136,10 @@ script g0_s0_player   # EoS actor PLAYER, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 
@@ -154,10 +154,10 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 
@@ -331,10 +331,10 @@ script g2_s0_player   # EoS actor PLAYER, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 
@@ -349,10 +349,10 @@ script g2_s0_partner   # EoS actor ATTENDANT1, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 

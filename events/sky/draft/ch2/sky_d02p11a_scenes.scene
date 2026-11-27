@@ -110,8 +110,8 @@ script g0_s0_player   # EoS actor PLAYER, layer 0
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
     JUMP_LABEL 0
   LABEL 3
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 65 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 4
@@ -144,8 +144,8 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 3
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 4

@@ -1004,7 +1004,7 @@ script g3_s0_player   # EoS actor PLAYER, layer 0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 84
     SET_DIR_WAIT DIRECTION_NORTH 0
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(66) is SELECT_ANIMATION 26 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     AWAIT_CUE 84
     SELECT_ANIMATION 2
     ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=WEST
@@ -1023,7 +1023,7 @@ script g3_s0_partner   # EoS actor ATTENDANT1, layer 0
     EMOTION_EFFECT SMILE
     AWAIT_CUE 78
     SET_DIR_WAIT DIRECTION_NORTH 0
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(66) is SELECT_ANIMATION 26 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     AWAIT_CUE 78
     SELECT_ANIMATION 2
     EMOTION_EFFECT NONE

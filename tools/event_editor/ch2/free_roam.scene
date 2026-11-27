@@ -1,0 +1,105 @@
+# ------------------------------------------------------------------------
+# group 0: free roam on B2F after the morning address (made by hand from EoS
+# G01P04A's enter00 and its station UM02 at scenario (3, 1): EVENT_M02_01_02
+# ends with CORO_EVENT_END_MAPIN, main_SetGround(G01P04A) and
+# supervision_ExecuteStationCommon(G01P04A, 1)). The hero and partner are
+# where the address left them; walking off the address's spot (UM02's three
+# triggers) runs EVENT_M02_03_04 (SKY_CH2_JOB_EVENT): Chatot calls them back.
+# Loudred and Diglett (UM02's actors 1, 2) say their lines; Chatot waits by
+# Wigglytuff's door. B2F's two signs (enter24, enter25) read as in EoS.
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the map's enter script (GROUND_ENTER)
+    DEBUGINFO
+    SELECT_MAP SKY_GUILD_B2F
+    UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
+    SELECT_ENTITIES group=0 sector=1   # the crew, the signs
+    SELECT_LIVES group=0 sector=2   # the hero and the partner
+    BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
+    JUMP_SCRIPT COMMON_ENTER   # SELECT_EVENTS(0, 0): the triggers; then the fade in
+end
+
+script g0_leave control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS um0204-um0206
+    DEBUGINFO
+    EXECUTE_FUNCTION SKY_CH2_JOB_EVENT   # EoS supervision_ExecuteCommon(CORO_EVENT_M02_03_04)
+    HALT
+end
+
+```c
+/* UM02's triggers (tiles; width, height first): leaving the address's spot. */
+static const struct GroundEventData s_gs180_g0_s0_evts[] = {
+    { 2, 10, 0, 0, { 67, 29, 0, 0 }, &s_gs180_g0_leave_sref },
+    { 2, 14, 0, 0, { 46, 29, 0, 0 }, &s_gs180_g0_leave_sref },
+    { 23, 2, 0, 0, { 46, 29, 0, 0 }, &s_gs180_g0_leave_sref },
+};
+```
+
+script g0_s2_hero
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    CALL_SCRIPT WAIT_START_FUNC
+    RET
+end
+
+script g0_s2_partner
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    CALL_SCRIPT WAIT_START_FUNC
+    RET
+end
+
+script g0_loudred_talk   # EoS um0201, scenario (3, 1)
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
+    WAIT 1
+    PORTRAIT place=LEFT_BOTTOM_2 who=LOUDRED emotion=NORMAL
+    MSG_NPC who=LOUDRED text=" All right!{WAIT_PRESS} Time to buck up and\nWORK HARD!"
+    JUMP_SCRIPT END_TALK
+end
+
+script g0_diglett_talk   # EoS um0202, scenario (3, 1)
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=DIGLETT id=0x0
+    WAIT 1
+    PORTRAIT place=LEFT_BOTTOM_2 who=DIGLETT emotion=NORMAL
+    MSG_NPC who=DIGLETT text=" Yes!{WAIT_PRESS} I'll try my hardest!"
+    JUMP_SCRIPT END_TALK
+end
+
+script g0_stand   # UM02's actors stand where they are (no wandering)
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    HALT
+end
+
+script g0_sign_mess_hall   # EoS G01P04A enter24
+    DEBUGINFO
+    WAIT 1
+    MSG_INSTANT text="\n{CENTER_ALIGN}← Mess Hall"
+    JUMP_SCRIPT END_TALK
+end
+
+script g0_sign_crew_rooms   # EoS G01P04A enter25
+    DEBUGINFO
+    WAIT 1
+    MSG_INSTANT text="\n{CENTER_ALIGN}Crew Rooms →"
+    JUMP_SCRIPT END_TALK
+end
+
+actors g0_s1_lives
+    actor kind=SKY_LIVES_LOUDRED facing=EAST x=33 y=35.5 script=g0_stand script2=g0_loudred_talk   # EoS UM02 NPC_DOGOOMU
+    actor kind=SKY_LIVES_DIGLETT facing=WEST x=37 y=35.5 script=g0_stand script2=g0_diglett_talk   # EoS UM02 NPC_DIGUDA
+    actor kind=SKY_LIVES_CHATOT facing=SOUTH x=57 y=27.5 script=g0_stand   # EoS UM02 NPC_PERAPPU (no script: he waits by the door)
+end
+
+objects g0_s1_objs
+    object kind=15 w=5 h=1 x=4.5 y=32.5 script2=g0_sign_mess_hall   # EoS enter.sse NULL_6 (enter24)
+    object kind=15 w=5 h=1 x=76.5 y=32.5 script2=g0_sign_crew_rooms   # EoS enter.sse NULL_6 (enter25)
+end
+
+actors g0_s2_lives
+    actor kind=0 facing=WEST x=60.5 y=31.5 script=g0_s2_hero   # where m02a0202 leaves them
+    actor kind=4 facing=WEST x=60.5 y=34 script=g0_s2_partner
+end

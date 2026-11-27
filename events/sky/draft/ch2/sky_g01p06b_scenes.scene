@@ -127,7 +127,7 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(64) is SELECT_ANIMATION 32 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 32   # EoS SetAnimation(64)
     # TODO emotion: EoS SetEffect<actor ACTOR_ATTENDANT1>(EFFECT_EATING, 3); (no GBA picture: none shown)
     JUMP_LABEL 0
   LABEL 2
@@ -144,7 +144,7 @@ script g0_s0_player   # EoS actor PLAYER, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(64) is SELECT_ANIMATION 32 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 32   # EoS SetAnimation(64)
     # TODO emotion: EoS SetEffect<actor ACTOR_PLAYER>(EFFECT_EATING, 3); (no GBA picture: none shown)
     JUMP_LABEL 0
   LABEL 2

@@ -1713,12 +1713,12 @@ script g7_s0_partner   # EoS actor ATTENDANT1, layer 0
     AWAIT_CUE 70
     CALL_SCRIPT NOTICE_FUNC
     AWAIT_CUE 70
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 71 0   # done: the station waits for this
     AWAIT_CUE 70
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 71 0   # done: the station waits for this
     AWAIT_CUE 70
     SELECT_ANIMATION 2
@@ -1809,13 +1809,13 @@ script g7_s3_player   # EoS actor PLAYER, layer 3
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
     JUMP_LABEL 0
   LABEL 3
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 79 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 4
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 79 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 5
@@ -1826,8 +1826,8 @@ script g7_s3_player   # EoS actor PLAYER, layer 3
     AWAIT_CUE_COND 79 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 7
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(66) is SELECT_ANIMATION 26 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     JUMP_LABEL 0
 end
 
@@ -1866,8 +1866,8 @@ script g7_s3_partner   # EoS actor ATTENDANT1, layer 3
     AWAIT_CUE_COND 77 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 6
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(66) is SELECT_ANIMATION 26 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     JUMP_LABEL 0
 end
 
@@ -2153,10 +2153,10 @@ script g9_s0_player   # EoS actor PLAYER, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 
@@ -2171,10 +2171,10 @@ script g9_s0_partner   # EoS actor ATTENDANT1, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 
@@ -2209,7 +2209,7 @@ script g10_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     MSG_NPC who=-1 text=" RISE AND SHINE!"
     WAIT_FANFARE2 471
     # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
-    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PLAYER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PLAYER emotion=DIZZY
     MSG_QUIET who=PLAYER text="(Ugh!)"
     MSG_QUIET who=PLAYER text="(M-my head is pounding!)"
     MSG_QUIET who=PLAYER text="(Wh-what a ridiculously loud voice! It almost\nblasted my eardrums!)"
@@ -2233,7 +2233,7 @@ script g10_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 68 0   # -> LOUDRED (waits until it is ready)
     MSG_QUIET who=PLAYER text="(Ugh!)"
     TEXTBOX_CLEAR
-    PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=PARTNER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
+    PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=PARTNER emotion=DIZZY
     # eos: message_FacePositionOffset(-3, 0); (the face stays at its place on the GBA)
     MSG_NPC who=PARTNER text=" M-my poor ears..."
     TEXTBOX_CLEAR
@@ -2284,7 +2284,7 @@ script g10_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE 69   # <- LOUDRED done
     ALERT_CUE 68   # -> LOUDRED
     WAIT 60
-    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=DIZZY
     MSG_NPC who=PARTNER text=" Urk! My ears are still ringing..."
     MSG_NPC who=PARTNER text=" What did he say? Something\nabout getting ready?"
     TEXTBOX_CLEAR
@@ -2324,7 +2324,7 @@ script g10_s0_player   # EoS actor PLAYER, layer 0
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(68) is SELECT_ANIMATION 28 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 28   # EoS SetAnimation(68)
     AWAIT_CUE 64
     SELECT_ANIMATION 2
     EMOTION_EFFECT NOTICE
@@ -2341,8 +2341,8 @@ script g10_s0_partner   # EoS actor ATTENDANT1, layer 0
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(68) is SELECT_ANIMATION 28 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 28   # EoS SetAnimation(68)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     AWAIT_CUE 66
     SELECT_ANIMATION 2
@@ -3594,8 +3594,8 @@ script g14_s0_player   # EoS actor PLAYER, layer 0
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
     JUMP_LABEL 0
   LABEL 3
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 65 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 4
@@ -3628,8 +3628,8 @@ script g14_s0_partner   # EoS actor ATTENDANT1, layer 0
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 3
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 4
@@ -4460,7 +4460,7 @@ script g18_s0_partner   # EoS actor ATTENDANT1, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(64) is SELECT_ANIMATION 32 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 32   # EoS SetAnimation(64)
     # TODO emotion: EoS SetEffect<actor ACTOR_ATTENDANT1>(EFFECT_EATING, 3); (no GBA picture: none shown)
     JUMP_LABEL 0
   LABEL 2
@@ -4477,7 +4477,7 @@ script g18_s0_player   # EoS actor PLAYER, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(64) is SELECT_ANIMATION 32 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 32   # EoS SetAnimation(64)
     # TODO emotion: EoS SetEffect<actor ACTOR_PLAYER>(EFFECT_EATING, 3); (no GBA picture: none shown)
     JUMP_LABEL 0
   LABEL 2
@@ -4772,10 +4772,10 @@ script g19_s0_player   # EoS actor PLAYER, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 
@@ -4790,10 +4790,10 @@ script g19_s0_partner   # EoS actor ATTENDANT1, layer 0
     COND_EQUAL 2 2
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
-    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    SELECT_ANIMATION 30   # EoS SetAnimation(62): asleep
     JUMP_LABEL 0
 end
 
@@ -5334,7 +5334,7 @@ script g25_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE 67   # <- PARTNER done
     WAIT 2
     AWAIT_CUE_COND 64 5   # -> PLAYER: batch 5
-    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL   # TODO emotion: EoS FACE_DIZZY (not among Red's faces yet)
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=DIZZY
     MSG_NPC who=PARTNER text=" Ugh! Good morning,\n{NAME_0}..."
     TEXTBOX_CLEAR
     WAIT 30
@@ -5408,7 +5408,7 @@ script g25_s0_player   # EoS actor PLAYER, layer 0
     COND_EQUAL 7 7
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
     MOVE_RELATIVE speed=256 dx=1 dy=0
@@ -5423,8 +5423,8 @@ script g25_s0_player   # EoS actor PLAYER, layer 0
     MOVE_RELATIVE speed=256 dx=-1 dy=0
     JUMP_LABEL 0
   LABEL 6
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(63) is SELECT_ANIMATION 23 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 23   # EoS SetAnimation(63)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     JUMP_LABEL 0
   LABEL 7
     SELECT_ANIMATION 2
@@ -5448,7 +5448,7 @@ script g25_s0_partner   # EoS actor ATTENDANT1, layer 0
     COND_EQUAL 7 7
     JUMP_LABEL 0
   LABEL 1
-    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 52   # EoS SetAnimation(76)
     JUMP_LABEL 0
   LABEL 2
     MOVE_RELATIVE speed=256 dx=1 dy=0
@@ -5467,8 +5467,8 @@ script g25_s0_partner   # EoS actor ATTENDANT1, layer 0
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     JUMP_LABEL 0
   LABEL 6
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(63) is SELECT_ANIMATION 23 once the hero and partner have EoS ground groups (ch2-heroanims)
-    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
+    SELECT_ANIMATION 23   # EoS SetAnimation(63)
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     JUMP_LABEL 0
   LABEL 7
     SELECT_ANIMATION 2
@@ -5622,7 +5622,7 @@ script g26_s0_player   # EoS actor PLAYER, layer 0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 84
     SET_DIR_WAIT DIRECTION_NORTH 0
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(66) is SELECT_ANIMATION 26 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     AWAIT_CUE 84
     SELECT_ANIMATION 2
     ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=WEST
@@ -5641,7 +5641,7 @@ script g26_s0_partner   # EoS actor ATTENDANT1, layer 0
     EMOTION_EFFECT SMILE
     AWAIT_CUE 78
     SET_DIR_WAIT DIRECTION_NORTH 0
-    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(66) is SELECT_ANIMATION 26 once the hero and partner have EoS ground groups (ch2-heroanims)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     AWAIT_CUE 78
     SELECT_ANIMATION 2
     EMOTION_EFFECT NONE

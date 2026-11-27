@@ -158,10 +158,10 @@ FACES = {   # EoS FACE_* -> EMOTION_*
     "DIZZY": "DIZZY", "SIGH": "SIGH", "STUNNED": "STUNNED",
 }
 
-# EoS faces Red's portrait archive has no picture for: Normal shows (EMOTION_DIZZY, 13, would
-# show nothing; EMOTION_STUNNED, 17, masked to 4 bits, Happy). EMOTION_SIGH (16) masks to Normal
-# by itself (chapter 1 uses it).
-FACES_MISSING = {"DIZZY", "STUNNED"}
+# EoS faces with no exported picture yet: the emotion is kept (Normal shows) and
+# marked. DIZZY (13) and SIGH (16) show EoS's face in the sky build
+# (EventEditor.md, "Emotions").
+FACES_MISSING = {"STUNNED"}
 
 DIRS = {   # EoS DIR_* / SSA direction -> DIRECTION_*
     "DIR_DOWN": "SOUTH", "DIR_DOWNRIGHT": "SOUTHEAST", "DIR_RIGHT": "EAST", "DIR_UPRIGHT": "NORTHEAST",
@@ -236,13 +236,13 @@ TEXT_TAGS = {"K": "{WAIT_PRESS}", "CN": "{CENTER_ALIGN}", "hero": "{NAME_0}", "p
              "MP": ",", "M:S0": " Poké", "W:30": ""}   # [MP] the thousands mark, [M:S0] the Poké sign
 
 # The hero's and partner's EoS ground animations past Red's table (62-76: lying in
-# bed, waking, eating...): (the Red id that holds EoS's value, as SkyChapter2.md
-# "Animation ids" lists; the nearest pose the starters have now). The hero and
-# partner sprites have no ground groups yet (branch ch2-heroanims), so each
-# plays the nearest pose there is and is marked `# TODO anim` with the id to
-# put back.
-HERO_ANIMS = {62: (30, 6), 63: (23, 2), 64: (32, 2), 65: (33, 2), 66: (26, 2), 67: (27, 2), 68: (28, 2),
-              69: (37, 2), 70: (46, 2), 71: (47, 2), 72: (48, 2), 74: (50, 2), 75: (51, 2), 76: (52, 6)}
+# bed, waking, eating...) are in EOS_RED_ANIM, as for any actor: every hero /
+# partner choice carries EoS's ground groups 13-27 (SkyChapter2.md, "Hero and
+# partner"). 62 (lying asleep) is Red's id 30 for them; anyone else sleeps with
+# Red's sleep pose (6). Red ids whose value loops (0x800): WaitAnimation on them
+# would wait for ever, so it becomes a WAIT.
+HERO_SLEEP_ANIM = 30
+RED_ANIM_LOOPS = {1, 4, 5, 6, 9, 20, 21, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 49, 51, 52}
 
 
 def ival(e):
@@ -1212,10 +1212,10 @@ class Translator:
         if not isinstance(e, Entity):
             return False
         rr = rows if me is e else (e.batches[-1].rows if e.batches and e.batches[-1].open else [])
-        if rr and isinstance(rr[-1], str) and "TODO anim" in rr[-1]:
-            # the stand-in pose loops: STOP_ANIMATION_ON_CURRENT_FRAME would wait for ever
-            self.emit(e, me, rows, "WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME "
-                                   "once the animation is there)")
+        m = re.match(r"SELECT_ANIMATION (\d+)", rr[-1]) if rr and isinstance(rr[-1], str) else None
+        if m and not e.is_object and int(m.group(1)) in RED_ANIM_LOOPS:
+            # a looping pose never ends: STOP_ANIMATION_ON_CURRENT_FRAME would wait for ever
+            self.emit(e, me, rows, "WAIT 30   # EoS WaitAnimation (the pose loops)")
             return
         self.emit(e, me, rows, "STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation")
 
@@ -1231,13 +1231,11 @@ class Translator:
         if e.is_object and n in OBJECT_ANIMS:     # an object's states are the directions of its group
             self.emit(e, me, rows, f"SELECT_ANIMATION {OBJECT_ANIMS[n]}   # EoS SetAnimation({n}): {OBJECT_ANIM_NOTES[n]}")
             return
-        if n == 62:          # EoS's lying asleep (INIT_SLEEP_FUNC): Red's sleep pose
-            self.emit(e, me, rows, "SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep")
-            return
-        if e.npc in ("PLAYER", "PARTNER") and n in HERO_ANIMS and n != 62:
-            red, now = HERO_ANIMS[n]
-            self.emit(e, me, rows, f"SELECT_ANIMATION {now}   # TODO anim: EoS SetAnimation({n}) is "
-                                   f"SELECT_ANIMATION {red} once the hero and partner have EoS ground groups (ch2-heroanims)")
+        if n == 62:          # EoS's lying asleep (INIT_SLEEP_FUNC)
+            if e.npc in ("PLAYER", "PARTNER"):
+                self.emit(e, me, rows, f"SELECT_ANIMATION {HERO_SLEEP_ANIM}   # EoS SetAnimation(62): asleep")
+            else:
+                self.emit(e, me, rows, "SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep (Red's sleep pose)")
             return
         if n in EOS_RED_ANIM and not e.is_object:   # the Red id that holds EoS's value
             red = EOS_RED_ANIM[n]
@@ -1464,8 +1462,8 @@ class Translator:
         self.placed[who] = (place, emo)
         if emo in FACES_MISSING:
             # Red's portraits have 13 faces (PortraitGfx.sprites[13], the emotion masked to 4 bits)
-            rows.append(f"PORTRAIT place={p} who={who if who else -1} emotion=NORMAL   "
-                        f"# TODO emotion: EoS FACE_{emo} (not among Red's faces yet)")
+            rows.append(f"PORTRAIT place={p} who={who if who else -1} emotion={emo}   "
+                        f"# TODO emotion: no FACE_{emo} picture exported yet (Normal shows)")
             return
         rows.append(f"PORTRAIT place={p} who={who if who else -1} emotion={emo}")
 
