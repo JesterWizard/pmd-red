@@ -32,9 +32,18 @@ so the conversion is mostly a re-encode. The differences handled here:
     the script animation ids stay EoS's; a gap below gets the group AxResInit
     falls back to anyway (13 -> Sleep, others -> Idle). `--ground-groups all`
     takes every one the species has (chapter 2's actors). Off by default.
+    `--ground-max-tiles N` crops only those groups (the hero / partner
+    choices: `--max-tiles 0 --ground-max-tiles 16`, so Red's 13 groups stay
+    whole as Red has them and the cutscene poses fit a ground VRAM slot).
+  * Red species (the hero / partner choices): `--colours-from charmander`
+    maps EoS's colours onto Red's indices as Red's own sprite shows them, and
+    `--keep-red` keeps that sprite's 13 dungeon groups untouched and appends
+    EoS's ground groups (documentation/Features/SkyChapter2.md, "Hero and
+    partner").
 
 Usage:
     tools/convert_eos_wan_to_ax.py convert EOS.nds <eos_md_id|dexN> <name> [--palette N] [--ground-groups 13,15|all]
+                                   [--max-tiles N] [--ground-max-tiles N] [--colours-from RED_AX [--keep-red]]
     tools/convert_eos_wan_to_ax.py batch   EOS.nds [--gen4 | dexA-dexB ...]
     tools/convert_eos_wan_to_ax.py check   EOS.nds <eos_md_id|dexN> <name> OUTDIR
     tools/convert_eos_wan_to_ax.py render-ax <name> OUT.png [--palette N]
@@ -379,7 +388,9 @@ class WanConverter:
 
     def pose_for(self, wan, frame_index):
         from skytemple_files.graphics.chara_wan.model import DIM_TABLE
-        key = (id(wan), frame_index)
+        # the crop limit is part of the key: --ground-max-tiles crops a frame
+        # in a ground-only group but not the same frame in Red's 13 groups
+        key = (id(wan), frame_index, self.max_tiles)
         if key in self._pose_cache:
             return self._pose_cache[key]
         pieces = []
@@ -498,7 +509,9 @@ def group_seqs(wan, g):
     return [grp[0]] * NUM_DIRS
 
 
-def build_monster_model(wans: dict, max_tiles=None, groups=NUM_RED_GROUPS, ground_groups=()):
+def build_monster_model(wans: dict, max_tiles=None, groups=NUM_RED_GROUPS, ground_groups=(),
+                        ground_max_tiles=None):
+    """ground_max_tiles: crop limit for the ground-only groups (None = max_tiles)."""
     conv = WanConverter(max_tiles)
     used_wans = {}
     mapping = []
@@ -518,6 +531,8 @@ def build_monster_model(wans: dict, max_tiles=None, groups=NUM_RED_GROUPS, groun
         conv.model.anims.append([conv.add_sequence(wan, s) for s in seqs])
     # Ground-only groups at their EoS index; gaps repeat the fallback group
     # (identical sequences are emitted once by write_ax_header).
+    if ground_max_tiles is not None:
+        conv.max_tiles = ground_max_tiles or None
     for g in range(groups, max(ground_groups, default=groups - 1) + 1):
         if g in ground_groups:
             seqs = group_seqs(wans["ground"], g) if "ground" in wans else None
@@ -533,16 +548,85 @@ def build_monster_model(wans: dict, max_tiles=None, groups=NUM_RED_GROUPS, groun
     return conv, mapping, used_wans
 
 
-def finalize_palette(conv, wans_used, forced_palette=None, src_pal=None):
+def finalize_palette(conv, wans_used, forced_palette=None, src_pal=None, learned=None):
     counts = [0] * 16
     for w in wans_used.values():
         count_pixels(w, counts)
     if src_pal is None:
         src_pal = wan_palette(next(iter(wans_used.values())))
     (err, pidx, mp), ranking = choose_palette(src_pal, counts, forced_palette)
+    if learned:
+        mp = [mp[i] if learned[i] is None else learned[i] for i in range(16)]
+        mp[0] = 0
     conv.model.sprites = [remap_4bpp(s, mp) for s in conv.model.sprites]
     conv.model.palette = load_red_palette(pidx)
     return pidx, err, mp, ranking
+
+
+def learn_colours(model: Model, red: Model, groups=range(NUM_RED_GROUPS)):
+    """--colours-from: map EoS colour indices onto a Red sprite's indices.
+
+    EoS drew a Red species' dungeon groups from Red's art, so most of their frames
+    have exactly the Red sprite's shape. Each EoS index takes the Red index its
+    pixels show in those frames (a vote over every pixel), which keeps Red's own
+    colour choices where nearest-colour matching would pick another (Cyndaquil's
+    cream back is yellow on Red's palette 2, not white). Indices no frame decides
+    keep their nearest colour (None).
+    """
+    ids = [(i, 0, 0) for i in range(16)]
+    votes = [[0] * 16 for _ in range(16)]
+
+    def render(m, pid):
+        saved, m.palette = m.palette, ids
+        im = Image.new("RGBA", (192, 192), (0, 0, 0, 0))
+        render_pose(m, pid, im, 96, 128)
+        m.palette = saved
+        return im.tobytes()
+
+    for g in groups:
+        if g >= len(model.anims) or g >= len(red.anims):
+            continue
+        for d in range(NUM_DIRS):
+            for fe, fr in zip(model.anims[g][d], red.anims[g][d]):
+                a, b = render(model, fe.pose), render(red, fr.pose)
+                if a[3::4] != b[3::4]:
+                    continue  # redrawn frame: not a pixel-for-pixel copy
+                for k in range(0, len(a), 4):
+                    if a[k + 3]:
+                        votes[a[k]][b[k]] += 1
+    return [max(range(16), key=lambda j: v[j]) if any(v) else None for v in votes]
+
+
+def keep_red_groups(red: Model, eos: Model, keep=NUM_RED_GROUPS) -> Model:
+    """--keep-red: Red's own groups 0..keep-1 (its poses, tiles and timing, untouched)
+    followed by the EoS model's groups from `keep` on. Poses and tiles only Red's
+    dropped groups used are left out; identical tiles are stored once."""
+    out = Model(palette=red.palette)
+    sprite_ids = {}
+
+    def sprite(data):
+        if data not in sprite_ids:
+            sprite_ids[data] = len(out.sprites)
+            out.sprites.append(data)
+        return sprite_ids[data]
+
+    pose_ids = {}
+
+    def pose(src, pid):
+        key = (id(src), pid)
+        if key not in pose_ids:
+            pieces = [Piece(**{**p.__dict__, "sprite": sprite(src.sprites[p.sprite]) if p.sprite >= 0 else -1})
+                      for p in src.poses[pid]]
+            pose_ids[key] = len(out.poses)
+            out.poses.append(pieces)
+            out.positions.append(src.positions[pid])
+        return pose_ids[key]
+
+    for src, groups in ((red, red.anims[:keep]), (eos, eos.anims[keep:])):
+        for grp in groups:
+            out.anims.append([[Frame(**{**f.__dict__, "pose": pose(src, f.pose)}) for f in seq]
+                              for seq in grp])
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -936,7 +1020,8 @@ def species_slug(rom: EosRom, md_id: int) -> str:
 
 
 def convert_monster(rom: EosRom, md_id: int, name: str, forced_palette=None,
-                    max_tiles=None, quiet=False, dry_run=False, ground_groups=()):
+                    max_tiles=None, quiet=False, dry_run=False, ground_groups=(),
+                    ground_max_tiles=None, colours_from=None, keep_red=False):
     wans = rom.monster_wans(md_id)
     if not wans:
         raise SystemExit(f"EoS id {md_id}: no sprite")
@@ -945,14 +1030,30 @@ def convert_monster(rom: EosRom, md_id: int, name: str, forced_palette=None,
         # Red reserves 16 OBJ tiles per body-size unit (dungeon_util.c, ground_sprite.c)
         max_tiles = TILES_PER_BODY_SIZE * max(1, entry.body_size)
     conv, mapping, used = build_monster_model(wans, max_tiles=max_tiles or None,
-                                              ground_groups=ground_groups)
-    pidx, err, mp, ranking = finalize_palette(conv, used, forced_palette)
+                                              ground_groups=ground_groups,
+                                              ground_max_tiles=ground_max_tiles)
+    learned = None
+    if keep_red and not colours_from:
+        raise SystemExit("--keep-red needs --colours-from (the Red sprite to keep)")
+    if colours_from:
+        red = read_ax_header(AX_HDR_DIR / f"{colours_from}.h")
+        learned = learn_colours(conv.model, red)
+        pm = re.search(r"OAM3\(\d+, \d+, (\d+)\)", (AX_HDR_DIR / f"{colours_from}.h").read_text())
+        if forced_palette is None and pm:
+            forced_palette = int(pm.group(1))
+    pidx, err, mp, ranking = finalize_palette(conv, used, forced_palette, learned=learned)
     model = conv.model
+    if keep_red:
+        model = keep_red_groups(red, model)
     N = c_name(name)
     note = (f"EoS md {md_id} (dex {entry.national_pokedex_number}, sprite {entry.sprite_index}) -> "
             f"Red overworld palette {pidx}")
     if ground_groups:
         note += "; ground groups " + ",".join(str(g) for g in ground_groups) + " appended"
+    if colours_from:
+        note += f"; colours as in {colours_from}.h"
+    if keep_red:
+        note += f"; groups 0-12 are {colours_from}.h's own"
     if not dry_run:
         write_ax_header(model, name, AX_MON_DIR / name, AX_HDR_DIR / f"{name}.h", pidx,
                         f"gAx{N}", note)
@@ -996,14 +1097,18 @@ def cmd_convert(a):
     rom = EosRom(a.rom)
     md = rom.resolve_id(a.id)
     convert_monster(rom, md, a.name, a.palette, a.max_tiles,
-                    ground_groups=resolve_ground_groups(rom, md, a.ground_groups))
+                    ground_groups=resolve_ground_groups(rom, md, a.ground_groups),
+                    ground_max_tiles=a.ground_max_tiles, colours_from=a.colours_from,
+                    keep_red=a.keep_red)
 
 
 def cmd_check(a):
     rom = EosRom(a.rom)
     md = rom.resolve_id(a.id)
     gg = resolve_ground_groups(rom, md, a.ground_groups)
-    info, model, wans = convert_monster(rom, md, a.name, a.palette, a.max_tiles, ground_groups=gg)
+    info, model, wans = convert_monster(rom, md, a.name, a.palette, a.max_tiles, ground_groups=gg,
+                                        ground_max_tiles=a.ground_max_tiles,
+                                        colours_from=a.colours_from, keep_red=a.keep_red)
     out = Path(a.outdir)
     groups = [int(g) for g in a.groups.split(",")]
     ref, _ = wan_model_unquantised(wans, gg)
@@ -1264,6 +1369,17 @@ def main(argv=None):
         p.add_argument("--ground-groups", default="",
                        help="EoS ground-set groups past Red's 13 to append at their own index, "
                             "e.g. 13,15, or 'all'")
+        p.add_argument("--ground-max-tiles", type=int, default=None,
+                       help="crop limit for the ground-only groups only (default: as --max-tiles; "
+                            "0 = never crop). The starters: --max-tiles 0 keeps Red's dungeon "
+                            "frames whole, --ground-max-tiles 16 keeps the cutscene poses in a "
+                            "body-size-1 ground VRAM slot")
+        p.add_argument("--colours-from", metavar="RED_AX",
+                       help="take each EoS colour's Red index from this Red sprite (src/data/ax/RED_AX.h), "
+                            "by matching the frames EoS copied from it; also its palette")
+        p.add_argument("--keep-red", action="store_true",
+                       help="with --colours-from: keep that Red sprite's own 13 groups (dungeon "
+                            "frames unchanged) and append EoS's ground groups after them")
 
     p = sub.add_parser("convert")
     p.add_argument("rom")

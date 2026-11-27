@@ -10,7 +10,10 @@ the custom portrait archive; the sky build includes them (SKY_STORY).
 
 EoS keeps each emotion at slot 2*e (2*e+1 is a pre-mirrored copy) and uses
 Red's emotion order (Normal, Happy, Pain, Angry, Worried, Sad, Crying,
-Shouting, Teary-Eyed, Determined, Joyous, Inspired, Surprised).
+Shouting, Teary-Eyed, Determined, Joyous, Inspired, Surprised), then 13 Dizzy,
+14-15 special, 16 Sigh, 17 Stunned, 18-19 special. The sky build also takes the
+EoS emotions past Red's 13 that the story scripts use (EXTRA_EMOTIONS: Dizzy,
+Sigh); convert_custom_portraits.py keeps them at their EoS numbers.
 """
 from __future__ import annotations
 
@@ -40,10 +43,15 @@ SKY_RED_SPECIES = {  # folder: national dex
     "wigglytuff": 40, "diglett": 50, "dugtrio": 51, "pidgey": 16, "ledyba": 165,
     "sunflora": 192, "wurmple": 265, "swellow": 277, "seedot": 273, "loudred": 294,
     "spoink": 325, "corphish": 341, "chimecho": 358,
+    # Munchlax keeps Red's id 420 (a partner choice): EoS's faces, not SpriteCollab's Normal
+    "munchlax": 446,
 }
 GEN4_H = ROOT / "include" / "constants" / "sky_gen4.h"
 EMOTIONS = ["Normal", "Happy", "Pained", "Angry", "Worried", "Sad", "Crying",
             "Shouting", "TearyEye", "Determined", "Joyous", "Inspired", "Surprised"]
+# EoS emotion number -> file name (EMOTION_DIZZY / EMOTION_SIGH in emotions.h)
+EXTRA_EMOTIONS = {13: "Dizzy", 16: "Sigh"}
+ALL_EMOTIONS = list(enumerate(EMOTIONS)) + sorted(EXTRA_EMOTIONS.items())
 
 
 def main() -> int:
@@ -64,7 +72,7 @@ def main() -> int:
         folder = OUT / name.lower()
         folder.mkdir(parents=True, exist_ok=True)
         n = 0
-        for e, emo in enumerate(EMOTIONS):
+        for e, emo in ALL_EMOTIONS:
             img = kao.get(by_dex[dex] - 1, 2 * e)
             if img is None:
                 continue
@@ -76,7 +84,7 @@ def main() -> int:
     for name, dex in sorted(SKY_RED_SPECIES.items()):
         folder = SKY_RED_OUT / name
         folder.mkdir(parents=True, exist_ok=True)
-        for e, emo in enumerate(EMOTIONS):
+        for e, emo in ALL_EMOTIONS:
             img = kao.get(by_dex[dex] - 1, 2 * e)
             if img is not None:
                 img.get().convert("RGBA").save(folder / f"{emo}.png")

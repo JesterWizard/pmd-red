@@ -221,3 +221,32 @@ def guild_no_determined(t):
     expect(bg == tuple((v << 3) | (v >> 2) for v in want),
            f"portrait corner pixel {bg} is not the Determined background")
     return f"BG palette 14 colour 1 = {got} (Squirtle Determined), shown at {(x, y)}"
+
+
+def portrait_on_screen(f, species, emotion, x0, y0):
+    """Pixels of the 40x40 face at (x0, y0) that differ from EoS's face
+    (graphics/portraits_sky/<species>/<emotion>.png), the best of both flips."""
+    from PIL import Image
+    im = np.asarray(Image.open(ROOT / "graphics/portraits_sky" / species / f"{emotion}.png")
+                    .convert("RGB")).astype(int)
+    im = ((im >> 3) << 3) | (im >> 5)  # as the GBA shows its 5-bit colours
+    shot = f.fb[y0:y0 + 40, x0:x0 + 40].astype(int)
+    return min(int((np.abs(shot - face).sum(axis=2) > 0).sum()) for face in (im, im[:, ::-1]))
+
+
+@check("divide", "Guild 'Whew...': the partner's EoS Sigh face (emotion 16), not Normal")
+def guild_whew_sigh(t):
+    from emu import rgb555
+    f = yield from t.wait(lambda f: dialogue_ready(t.game, f) and " Whew..." in f.text,
+                          "the partner's 'Whew...' line at the guild")
+    got = [rgb555(c) for c in f.bg_palette(14)]  # portraits load into BG palette 14
+    want = portrait_pal("squirtle", "Sigh")
+    x, y, w = t.game.portrait_window(f)
+    expect(w == 5, "no portrait shown")
+    off = {e: portrait_on_screen(f, "squirtle", e, x * 8, y * 8) for e in ("Sigh", "Normal")}
+    if got[1:] != want[1:] or off["Sigh"]:
+        t.snap(f, "face")
+        what = "Normal" if got[1:] == portrait_pal("squirtle", "Normal")[1:] else "another face"
+        fail(f"BG palette 14 is {what}'s; {off['Sigh']} of 1600 pixels differ from Squirtle's Sigh face")
+    return (f"Squirtle's Sigh face at {(x, y)}: palette and all 1600 pixels as EoS's "
+            f"(Normal would differ in {off['Normal']})")
