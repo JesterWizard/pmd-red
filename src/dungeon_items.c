@@ -31,6 +31,7 @@
 #include "sprite.h"
 #include "runtime.h"
 #include "constants/colors.h"
+#include "sky_story.h"
 
 static void MusicBoxCreation_Async(void);
 static bool8 sub_8046D70(void);
@@ -157,6 +158,10 @@ void CreateFloorItems(void)
                     }
                 }
                 itemID = GetRandomFloorItem(spawnType);
+#ifdef SKY_STORY
+                if (spawnType == ITEM_SPAWN_NORMAL)
+                    itemID = SkyStory_TakeGuaranteedItem(itemID);
+#endif
                 if (!IsShoppableItem(itemID)) {
                     shopFlag = FALSE;
                 }

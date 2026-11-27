@@ -98,6 +98,7 @@ void SetFloorItemMonsterSpawns(void)
         ApplyPmd2TrainingGroundOverrides();
 #ifdef SKY_STORY
         SkyStory_ApplyFloorOverrides();
+        SkyStory_ApplyFloorItemOverrides();
 #endif
         return;
     }
@@ -168,6 +169,9 @@ void SetFloorItemMonsterSpawns(void)
             arrId++;
         }
     }
+#ifdef SKY_STORY
+    SkyStory_ApplyFloorItemOverrides();
+#endif
 
     CloseFile(file);
 }

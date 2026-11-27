@@ -650,6 +650,10 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
 - The sky build mixes 8 DirectSound channels instead of 12 (`src/m4a.c`),
   which cuts the frames the dungeon falls behind in Beach Cave by about a third.
 
+Chapter 2's dungeon, **Drenched Bluff**, is played by Thunderwave Cave the
+same way, with EoS's floor layouts, traps and floor items as well (generated
+from mappa_s.bin): see [SkyChapter2.md, "Drenched Bluff"](SkyChapter2.md#drenched-bluff).
+
 ### Dungeon speed
 
 How fast the dungeon plays was measured in mGBA (`build/tools/mgba_rpc`,
@@ -1265,9 +1269,12 @@ fon/cel/cex/pal/canm data as C arrays; both engines share the layout. A fixed
 floor background (`dungeon_bgN`) becomes Red's pre-drawn "emap" tileset
 (24×24 chunks over ≤249 deduplicated chunks). Output:
 `src/data/sky_beach_cave_tileset.h`, `src/data/sky_beach_cave_pit_tileset.h`,
-loaded by [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c).
+`src/data/sky_drenched_bluff_tileset.h` (EoS tileset 2), loaded by
+[`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c).
 
-The sky ROM has none of Red's dungeon tilesets. Every tileset id draws Beach
+The sky ROM has none of Red's dungeon tilesets. Tileset id 0x2A
+(`SKY_DRENCHED_BLUFF_TILESET`, Drenched Bluff's floors) draws Drenched Bluff;
+every other tileset id draws Beach
 Cave (`SkyStory_LoadDungeonTileset` in `LoadDungeonTilesetAssets`): ids
 0x40 and up (Red's pre-drawn boss-room backgrounds; the Pit uses 64) get the
 Beach Cave Pit background, the rest the Beach Cave floors. Game logic keeps
@@ -1917,6 +1924,7 @@ path is printed. The script exits 1 when a check fails. It builds the tools
 | `pit` | the same + `DEBUG_BOOT_FLOOR=5` | the story to the Pit; when Boss Battle! starts, tap R (rotate mode), B, mash A | 21000 |
 | `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702 | 9300 |
 | `perf` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_SEED=7` | the story to Beach Cave B1F (always the same floor); stand 120 frames, walk 60 tiles towards the farthest tile, dash 60 tiles (B held), with CPU load measured | ~22500 |
+| `bluff` | `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=8` | boot into Drenched Bluff B1F; on each floor walk to the stairs (a Pokémon in the way is attacked, a hint box gets A) and take them; after B6F the story presses | ~17000 |
 | `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
 | `opening` | plain (plays `sky`'s build) | START at 600 (the health warning), then nothing: the whole opening to the title; START there | ~7700 |
 | `skip` | plain (plays `sky`'s build) | START at 600, then START 60 frames into Bidoof's scene, then START at the title | ~4500 |
@@ -1984,6 +1992,12 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `dungeon_cpu_load` | perf | CPU load ≤ 62% of a frame standing still (60.7%; 63.4%) and ≤ 65% over the walk (62.4%; 67.5%) |
 | `thieves_beaten_pose` | after | Zubat's and Koffing's actors are in animation 0x100F at "Owowow..." |
 | `relic_fragment_on_beach` | after | ground object 69 on every frame of m01a0702 from "Here's what they stole." |
+| `bluff_boots` | bluff | the debug boot reaches Drenched Bluff (dungeon 1) B1F with the team under control |
+| `bluff_tileset` | bluff | on B1F-B6F the BG tiles at VRAM 0x06008000 are `sDrenchedBluffTiles`, and gDungeon holds EoS's floor properties (from `sky_drenched_bluff_floors.h`, tileset 0x2A, money cap rescaled) |
+| `bluff_enemies` | bluff | on every floor each wild Pokémon is one of EoS's species for that floor, at EoS's level, knowing only moves of its EoS learnset up to that level, with PP |
+| `bluff_music` | bluff | `MUS_SKY_DRENCHED_BLUFF` (944) on the BGM player on every floor |
+| `bluff_guaranteed_items` | bluff | EoS's guaranteed items lie on their floor: a Big Apple on B3F, a Max Elixir on B4F |
+| `bluff_end` | bluff | B6F's stairs end the dungeon (no B7F): `START_MODE` is `STARTMODE_DUNGEON_WON`, `DUNGEON_ENTER` 1, `SCENARIO_MAIN` 3, then the cleared event shows a message on the ground |
 | `jukebox_no_stop_bgm` | sky | no track in `src/data/sky_jukebox_data.h` is song 999 (STOP_BGM) |
 | `jukebox_tracks_play` | sky | each of the 141 tracks: the BGM player plays the track's song and the audio peak is ≥ 256 (track 68 "Dialga's Fight to the Finish!" included) |
 | `jukebox_window_top` | sky | the list window's top frame highlight is at y ≥ 3, with the fill under it |
@@ -2044,7 +2058,7 @@ e.profdump("build/idle.prof")
 
 ### Debug boot hooks
 
-Three test-only Makefile hooks (normal builds are unaffected):
+Test-only Makefile hooks (normal builds are unaffected):
 
 ```bash
 make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
@@ -2060,6 +2074,12 @@ make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
   and the Pokémon on it are the same in every run. Without it the floor
   depends on how many frames the story before it took, which changes with
   almost any code change. Works in the vanilla build too.
+- `DEBUG_BOOT_LEVEL=<n>` (with `DEBUG_BOOT_EVENT`): the team starts at level
+  n, with the stat gains and moves of each level on the way.
+- `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT`: straight into chapter 2's
+  Drenched Bluff at scenario (3,3) (see
+  [SkyChapter2.md](SkyChapter2.md#debug-boot)); with `DEBUG_BOOT_LEVEL=8` the
+  team survives it, with `DEBUG_BOOT_FLOOR=6` it starts on the last floor.
 
 Then drive it with `mgba_shot` (A every 60 frames reaches the dungeon at about
 frame 15000):
@@ -2080,7 +2100,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 
 | Piece | Path |
 |-------|------|
-| Story pack select, test hooks | [`Makefile`](../../Makefile) (`STORY`, `DEBUG_BOOT_EVENT`, `DEBUG_BOOT_FLOOR`, `DEBUG_BOOT_SEED`) |
+| Story pack select, test hooks | [`Makefile`](../../Makefile) (`STORY`, `DEBUG_BOOT_EVENT`, `DEBUG_BOOT_FLOOR`, `DEBUG_BOOT_SEED`, `DEBUG_BOOT_LEVEL`) |
 | Dungeon speed (minimap redraw, DMA copies, log scroll) | [`src/dungeon_map.c`](../../src/dungeon_map.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/cpu.c`](../../src/cpu.c), [`src/dungeon_message.c`](../../src/dungeon_message.c), [`src/dungeon_range.c`](../../src/dungeon_range.c); measured by [`scripts/cloud/sky_regression/checks/perf.py`](../../scripts/cloud/sky_regression/checks/perf.py) |
 | Red-only systems left out (Wonder Mail, friend rescue, Friend Areas, team-base flags) | [`Makefile`](../../Makefile) (`NON_SKY_C_SOURCES`), the `SKY_STORY` guards in [`src/textbox.c`](../../src/textbox.c), [`src/main_menu1.c`](../../src/main_menu1.c), [`src/code_801D014.c`](../../src/code_801D014.c), [`src/code_80958E8.c`](../../src/code_80958E8.c), [`src/main_loops.c`](../../src/main_loops.c), [`src/ground_script.c`](../../src/ground_script.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c) |
 | Opening scenes (gs178 groups 1–8) | [`events/sky/scenes/sky_d01p01_scenes.scene`](../../events/sky/scenes/sky_d01p01_scenes.scene) (compiled into the build's `sky_d01p01_scenes.h`, [EventEditor.md](../EventEditor.md)) |
@@ -2096,6 +2116,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |
 | Chapter cards | [`src/chapter_titles.c`](../../src/chapter_titles.c), [`src/chapter_cards_data.c`](../../src/chapter_cards_data.c) |
 | Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
+| Drenched Bluff (chapter 2: floors, spawns, traps, items, music, end and faint events) | [`src/sky_story.c`](../../src/sky_story.c), [`src/data/sky_drenched_bluff_floors.h`](../../src/data/sky_drenched_bluff_floors.h) ([`tools/make_sky_dungeon_floors.py`](../../tools/make_sky_dungeon_floors.py)), [`src/dungeon_items.c`](../../src/dungeon_items.c) (guaranteed items), the `SKY_DRENCHED_BLUFF_*` scripts in [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h); [SkyChapter2.md](SkyChapter2.md#drenched-bluff) |
 | Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c), [`src/unk_dungeon_load_maybe.c`](../../src/unk_dungeon_load_maybe.c) |
 | Sky dungeon archive (no Red tilesets / talk files) | [`tools/make_sky_dungeon_archive.py`](../../tools/make_sky_dungeon_archive.py) (run by the [`Makefile`](../../Makefile) for `STORY=sky`) |
 | Dungeon talk (EoS lines and rules) | [`src/sky_dungeon_talk.c`](../../src/sky_dungeon_talk.c), [`src/data/sky_dungeon_talk.h`](../../src/data/sky_dungeon_talk.h), [`src/dungeon_action_handler.c`](../../src/dungeon_action_handler.c), [`src/dungeon_leveling.c`](../../src/dungeon_leveling.c) |
@@ -2104,7 +2125,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout, word wrap (`SkyWrapDialogueText`) | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
 | Dungeon menus (main menu, Items, Team, Moves, Others, Rest), frame and cursor | [`src/dungeon_main.c`](../../src/dungeon_main.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/dungeon_menu_items.c`](../../src/dungeon_menu_items.c), [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c), [`src/dungeon_menu_moves.c`](../../src/dungeon_menu_moves.c), [`src/dungeon_menu_others.c`](../../src/dungeon_menu_others.c), [`src/dungeon_submenu.c`](../../src/dungeon_submenu.c), [`src/ui_style.c`](../../src/ui_style.c), [`src/menu_input.c`](../../src/menu_input.c) |
-| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_storm_cliff.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py`, `tools/make_sky_boss_wipe.py` (DeSmuME) |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_storm_cliff.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_floors.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py`, `tools/make_sky_boss_wipe.py` (DeSmuME) |
 
 ---
 
@@ -2126,7 +2147,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
   (Gravity, Trick Room, Heal Block, Embargo, Shadow Force's vanish turn, ...)
   behave like the nearest Red move.
 - Gen 4 evolutions needing Gen 4 items or move/gender conditions evolve at
-  level 40. Gen 4 Pokémon only appear in the wild in Beach Cave (Shellos); the
+  level 40. Gen 4 Pokémon only appear in the wild in Beach Cave (Shellos) and
+  Drenched Bluff (Shellos, Chingling); the
   rest of Red's dungeons keep Red's spawn lists.
 - Beach Cave Pit's background is folded into Red's 249-chunk limit by
   merging the most alike chunks (pixel distance weighted by use), so the

@@ -10,7 +10,8 @@
  * every tileset id draws Beach Cave: pre-drawn background tilesets (ids 0x40+,
  * Red's boss rooms) the Beach Cave Pit background, the rest the Beach Cave
  * floors. Dungeon-type ground maps (Red's dungeon entrances and summits) draw
- * the Beach Cave floor tiles too.
+ * the Beach Cave floor tiles too. Drenched Bluff's floors (tileset id
+ * SKY_DRENCHED_BLUFF_TILESET) draw EoS dungeon.bin #2.
  */
 #include "global.h"
 
@@ -25,16 +26,20 @@
 
 #include "data/sky_beach_cave_tileset.h"
 #include "data/sky_beach_cave_pit_tileset.h"
+#include "data/sky_drenched_bluff_tileset.h"
 
 static const OpenedFile sPaletteFile = { NULL, sBeachCavePalette };
 static const OpenedFile sAnimFile = { NULL, sBeachCaveAnim };
 static const OpenedFile sPitPaletteFile = { NULL, sBeachCavePitPalette };
 static const OpenedFile sPitAnimFile = { NULL, sBeachCavePitAnim };
+static const OpenedFile sDrenchedBluffPaletteFile = { NULL, sDrenchedBluffPalette };
+static const OpenedFile sDrenchedBluffAnimFile = { NULL, sDrenchedBluffAnim };
 
 bool8 SkyStory_IsSkyTilesetFile(const OpenedFile *file)
 {
     return file == &sPaletteFile || file == &sAnimFile
-        || file == &sPitPaletteFile || file == &sPitAnimFile;
+        || file == &sPitPaletteFile || file == &sPitAnimFile
+        || file == &sDrenchedBluffPaletteFile || file == &sDrenchedBluffAnimFile;
 }
 
 static void LoadBeachCaveFloorTiles(void *tiles, void *cel, u8 *cex, OpenedFile **paletteFile, OpenedFile **animFile)
@@ -59,6 +64,16 @@ void SkyStory_LoadDungeonTileset(OpenedFile **paletteFile, OpenedFile **animFile
             SkyStory_RelocateGridTiles(sizeof(sBeachCavePitTiles) / 0x20);
         *paletteFile = (OpenedFile *)&sPitPaletteFile;
         *animFile = (OpenedFile *)&sPitAnimFile;
+        return;
+    }
+    if (gDungeon->tileset == SKY_DRENCHED_BLUFF_TILESET) {
+        /* Drenched Bluff: EoS dungeon.bin #2 (478 tiles; water colours
+         * animated in palettes 10-11 like Beach Cave's). */
+        CpuCopy((void *)0x06008000, sDrenchedBluffTiles, sizeof(sDrenchedBluffTiles));
+        CpuCopy(cel, sDrenchedBluffChunks, sizeof(sDrenchedBluffChunks));
+        CpuCopy(cex, sDrenchedBluffCex, sizeof(sDrenchedBluffCex));
+        *paletteFile = (OpenedFile *)&sDrenchedBluffPaletteFile;
+        *animFile = (OpenedFile *)&sDrenchedBluffAnimFile;
         return;
     }
     LoadBeachCaveFloorTiles((void *)0x06008000, cel, cex, paletteFile, animFile);

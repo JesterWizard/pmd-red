@@ -139,6 +139,47 @@ static void DebugBootMap_Setup(void)
 }
 #endif
 
+#if defined(DEBUG_BOOT_EVENT) && defined(DEBUG_BOOT_LEVEL)
+/* Test hook (make DEBUG_BOOT_EVENT=... DEBUG_BOOT_LEVEL=n): the team starts
+ * at level n, with the level-up stat gains and moves of every level on the
+ * way (as ApplyMaxLevelStatsToTeam, up to n). */
+static void DebugBootLevel_Apply(s32 target)
+{
+    s32 monId;
+
+    for (monId = 0; monId < NUM_MONSTERS; monId++) {
+        Pokemon *mon = &gRecruitedPokemonRef->pokemon[monId];
+        s32 level;
+
+        if (!PokemonExists(mon) || (!IsMonTeamLeader(mon) && !IsMonPartner(mon)))
+            continue;
+        for (level = mon->level + 1; level <= target && level <= 100; level++) {
+            LevelData levelData;
+            u16 learnedMoves[16];
+            s32 movesCount, i, slot;
+
+            GetLvlUpEntry(&levelData, mon->speciesNum, level);
+            mon->level = level;
+            mon->currExp = levelData.expRequired;
+            mon->pokeHP = min(mon->pokeHP + levelData.gainHP, 999);
+            mon->offense.att[0] = min(mon->offense.att[0] + levelData.gainAtt[0], 255);
+            mon->offense.att[1] = min(mon->offense.att[1] + levelData.gainAtt[1], 255);
+            mon->offense.def[0] = min(mon->offense.def[0] + levelData.gainDef[0], 255);
+            mon->offense.def[1] = min(mon->offense.def[1] + levelData.gainDef[1], 255);
+            movesCount = GetMovesLearnedAtLevel(learnedMoves, mon->speciesNum, level, 999);
+            for (i = 0; i < movesCount; i++) {
+                for (slot = 0; slot < MAX_MON_MOVES; slot++) {
+                    if (!MoveFlagExists(&mon->moves[slot])) {
+                        InitZeroedPPPokemonMove(&mon->moves[slot], learnedMoves[i]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+#endif
+
 // arm9.bin::0200E0A8
 void GameLoop_Async(void)
 {
@@ -310,6 +351,9 @@ void GameLoop_Async(void)
                 /* Test hook: skip the quiz; ground_main runs DEBUG_BOOT_EVENT. */
                 sub_8001064();
                 ScenarioCalc(SCENARIO_MAIN, 2, 0);
+#ifdef DEBUG_BOOT_LEVEL
+                DebugBootLevel_Apply(DEBUG_BOOT_LEVEL);
+#endif
 #endif
                 tmp3 = RunGameMode_Async(0);
                 break;

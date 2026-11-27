@@ -61,6 +61,15 @@ bool8 SkyStory_IsBeachCaveStoryRun(void);
 void SkyStory_ApplyFloorOverrides(void);
 s32 SkyStory_GetBeachCaveFloorCount(void);
 u8 SkyStory_RemapDataFloor(u8 dungeonId, u8 floor);
+/* Chapter 2: Thunderwave Cave plays the part of Drenched Bluff (EoS dungeon
+ * 3): EoS's six floors, wild Pokémon, traps and floor items from mappa_s.bin
+ * (src/data/sky_drenched_bluff_floors.h), EoS's tileset and music. */
+bool8 SkyStory_IsDrenchedBluff(u8 dungeonId);
+s32 SkyStory_GetDrenchedBluffFloorCount(void);
+/* Called after the floor's item lists are loaded (SetFloorItemMonsterSpawns). */
+void SkyStory_ApplyFloorItemOverrides(void);
+/* Floor item placement: EoS's guaranteed items take the first normal spots. */
+u8 SkyStory_TakeGuaranteedItem(u8 itemId);
 struct OpenedFile;
 void SkyStory_PatchFixedMap(struct OpenedFile *file);
 /* EoS Beach Cave dungeon tileset (src/sky_dungeon_tileset.c). Beach Cave's
@@ -70,6 +79,10 @@ void SkyStory_PatchFixedMap(struct OpenedFile *file);
  * tilesets: every tileset id draws Beach Cave (0x40+: the Pit background). */
 #define SKY_BEACH_CAVE_TILESET 0x2D
 #define SKY_BEACH_CAVE_PIT_TILESET 64
+/* Drenched Bluff draws EoS tileset 2; its floors use Red tileset 0x2A for game
+ * logic (water terrain, Rock camouflage, Nature Power: Rock Slide, as EoS's
+ * tileset 2). */
+#define SKY_DRENCHED_BLUFF_TILESET 0x2A
 void SkyStory_LoadDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, u16 (*cel)[9], u8 *cex);
 void SkyStory_LoadGroundDungeonTileset(struct OpenedFile **paletteFile, struct OpenedFile **animFile, void *tiles, void *cel, u8 *cex);
 bool8 SkyStory_IsSkyTilesetFile(const struct OpenedFile *file);
@@ -107,6 +120,8 @@ extern u8 gSkyBossExp;
 #define MUS_SKY_STORM                       69 /* EoS BGM_STORM (bgm0101) */
 #define MUS_SKY_OCEAN                       70 /* EoS BGM_OCEAN1 (bgm0100): the waves */
 #define MUS_SKY_FIRE_CRACKLING              71 /* EoS BGM_FIRE_CRACKLING_LOUDER (bgm0116): the guild's torches */
+/* Sky Jukebox range (src/data/sky_jukebox_data.h, SKY_JUKEBOX_FIRST_SONG). */
+#define MUS_SKY_DRENCHED_BLUFF              944 /* EoS BGM_DRENCHED_BLUFF (bgm 22, dungeon music 2) */
 
 /* EoS scene sound effects with no Red equivalent (song table slots that are
  * empty in Red; tools/eos_music/sky_red_se_map.py). */
@@ -223,6 +238,15 @@ void GroundMap_SkyRestartPaletteAnims(void);
 /* Demo end after chapter 1 (SKY_SAVE_GAME / SKY_DEMO_TO_TITLE). The demo-end
  * event reuses Red's chapter 2 start slot, which the sky build never reaches. */
 #define SKY_DEMO_END_EVENT EVENT_M01E02A_L001
+/* Chapter 2, Drenched Bluff (Red's Thunderwave Cave slots, see
+ * documentation/Features/SkyChapter2.md, "Drenched Bluff"): after the
+ * dungeon, GETOUT_M01E02A runs the cleared event (STARTMODE_DUNGEON_WON) or
+ * the fainted event (any other result but STARTMODE_10, which goes to
+ * EVENT_DIVIDE). SKY_DRENCHED_BLUFF_DEBUG_EVENT enters the dungeon at
+ * scenario (3,3), as m02a0401: make DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT. */
+#define SKY_DRENCHED_BLUFF_DEBUG_EVENT   EVENT_M01E02A_L002
+#define SKY_DRENCHED_BLUFF_FAINTED_EVENT EVENT_M01E02A_L004
+#define SKY_DRENCHED_BLUFF_CLEARED_EVENT EVENT_M01E02A_L006
 bool8 SkyStory_SaveGame(void);
 void SkyStory_DemoToTitle(void);
 void SkyBubbles_DrawCutaway(void);

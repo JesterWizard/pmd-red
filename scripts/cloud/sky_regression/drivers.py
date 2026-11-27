@@ -8,6 +8,8 @@ frame counts and game state, so runs are deterministic.
 """
 
 from emu import keymask
+from game import PRINT_WAITING
+
 
 # The boot presses the other tools use: skip the logos, START at the title,
 # then A every 60 frames from 2100 (the press holds 6 frames).
@@ -62,15 +64,22 @@ class D:
         while True:
             yield from self.step(story_keys(self.n + 1))
 
-    def wait_control(self, frames=20, limit=3000):
+    def wait_control(self, frames=20, limit=3000, nudge=None):
         """Idle until the dungeon has waited for the leader's input for
-        `frames` frames in a row (sArrowsFrames advancing)."""
-        prev, streak, start = None, 0, self.n
+        `frames` frames in a row (sArrowsFrames advancing). With `nudge`,
+        press A after that many frames without control (a floor's hint box
+        waits for a press)."""
+        prev, streak, start, still = None, 0, self.n, 0
         while streak < frames:
             f = yield from self.step(0)
             v = self.game.input_waits(f)
             streak = streak + 1 if prev is not None and v != prev else 0
+            still = 0 if streak else still + 1
             prev = v
+            if nudge and still >= nudge:
+                yield from self.press("A", 4, 8)
+                still = 0
+                f = self.f
             if self.n - start > limit:
                 self.post("control_timeout")
                 return f
@@ -194,6 +203,86 @@ def perf(run):
     run.profile = False
     d.post("perf_done", data)
     yield from d.idle(2)
+
+
+BLUFF_PASS = ".,PLoSm"  # tiles a path to the stairs may cross ('m': fight it)
+BLUFF_STEP_LIMIT = 40    # frames holding a direction before the step counts as blocked
+BLUFF_FLOOR_LIMIT = 9000  # frames for one floor before the driver gives up
+
+
+def _path(m, start, goal="S"):
+    """Breadth-first from `start` to the nearest tile in `goal`: the list of
+    tiles after start, or None."""
+    prev = {start: None}
+    order = [start]
+    for c in order:
+        if m[c[1]][c[0]] in goal and c != start:
+            path = []
+            while c != start:
+                path.append(c)
+                c = prev[c]
+            return path[::-1]
+        for d in WALK:
+            n = (c[0] + d[0], c[1] + d[1])
+            if n not in prev and 0 <= n[1] < len(m) and 0 <= n[0] < len(m[0]) and m[n[1]][n[0]] in BLUFF_PASS:
+                prev[n] = c
+                order.append(n)
+    return None
+
+
+def bluff(run):
+    """Drenched Bluff from its first floor to the end: on each floor walk to
+    the stairs (a Pokémon in the way is faced and attacked; a waiting
+    dialogue box gets A) and take them (A on the stairs menu). Posts
+    "floor_<n>" when the leader first waits for input on floor n
+    (run.data: the frame's (dungeon, floor)), "stairs_<n>" on reaching the
+    stairs, "left_dungeon" when the dungeon is over, then the story presses."""
+    d = D(run)
+    game = run.game
+    yield from d.mash_until(lambda f: game.in_dungeon(f) and game.input_waits(f) > 0)
+    floor_start = d.n
+    floor = None
+    while game.in_dungeon(d.f):
+        f = d.f
+        if game.print_state(f) in PRINT_WAITING:
+            yield from d.press("A", 4, 8)
+            continue
+        loc = game.dungeon_location(f)
+        if loc[1] != floor:
+            # a new floor: wait for control (the floor title, the log; A
+            # for a hint box)
+            yield from d.wait_control(10, nudge=90)
+            if not game.in_dungeon(d.f):
+                break
+            floor, floor_start = game.dungeon_location(d.f)[1], d.n
+            d.post(f"floor_{floor}", game.dungeon_location(d.f))
+            continue
+        if d.n - floor_start > BLUFF_FLOOR_LIMIT:
+            d.post("bluff_stuck")
+            break
+        m = game.dungeon_map(f)
+        p = tuple(game.leader_pos(f))
+        path = _path(m, p)
+        if path is None:
+            # on the stairs (the map shows the leader over them): A on
+            # the stairs menu's "Proceed"
+            yield from d.press("A", 4, 30)
+            continue
+        c = path[0]
+        keys = WALK[(c[0] - p[0], c[1] - p[1])]
+        if len(path) == 1:
+            d.post(f"stairs_{floor}")
+        n = 0
+        while tuple(game.leader_pos(d.f)) == p and n < BLUFF_STEP_LIMIT and game.in_dungeon(d.f):
+            if game.print_state(d.f) in PRINT_WAITING:
+                break
+            yield from d.step(keys)
+            n += 1
+        if tuple(game.leader_pos(d.f)) == p and game.in_dungeon(d.f):
+            # blocked: facing a Pokémon (or the stairs menu is up): A
+            yield from d.press("A", 4, 30)
+    d.post("left_dungeon")
+    yield from d.mash()
 
 
 JUKEBOX_PER_PAGE = 6

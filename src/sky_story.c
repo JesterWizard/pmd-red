@@ -7,6 +7,10 @@
  * the Team Meanies boss-room layout with Zubat and Koffing in it, and its own
  * cutscene (CUTSCENE_BEACH_CAVE_PIT, src/dungeon_cutscene_beach_cave.c).
  *
+ * Thunderwave Cave plays the part of Drenched Bluff (chapter 2): EoS's six
+ * floors (layout, traps, wild Pokémon, floor items) from mappa_s.bin
+ * (src/data/sky_drenched_bluff_floors.h), EoS's tileset and music.
+ *
  * Only built when the Makefile selects STORY=sky (defines SKY_STORY).
  */
 #include "global.h"
@@ -19,7 +23,9 @@
 #include "constants/dungeon.h"
 #include "constants/event_flag.h"
 #include "constants/fixed_rooms.h"
+#include "constants/item.h"
 #include "constants/monster.h"
+#include "constants/trap.h"
 #include "event_flag.h"
 #include "adventure_info.h"
 #include "menu_input.h"
@@ -60,10 +66,55 @@ static const struct SkySpawn sBeachCavePitSpawns[] = {
     { MONSTER_DECOY,    1,    0 },
 };
 
+/* EoS floors from BALANCE/mappa_s.bin (tools/make_sky_dungeon_floors.py). */
+struct SkyItemWeight {
+    u8 item;
+    u16 value; /* cumulative within the item's category, out of 10000 */
+};
+
+struct SkyFloor {
+    u8 props[0x1C]; /* EoS floor properties, laid out as Red's FloorProperties */
+    const struct SkySpawn *spawns;
+    u8 spawnCount;
+    u16 traps[NUM_TRAPS]; /* cumulative, out of 10000 */
+    s16 categories[NUM_ITEM_CATEGORIES]; /* floor items: cumulative, out of 10000 */
+    const struct SkyItemWeight *items; /* ends with { 0, 0 } */
+    u8 guaranteed[2]; /* EoS's "guaranteed" floor items (weight 0xFFFF) */
+};
+
+#include "data/sky_drenched_bluff_floors.h"
+
+_Static_assert(sizeof(FloorProperties) == 0x1C, "FloorProperties is EoS's floor layout (0x00-0x1B)");
+
 bool8 SkyStory_IsBeachCave(u8 dungeonId)
 {
     return dungeonId == DUNGEON_TINY_WOODS;
 }
+
+bool8 SkyStory_IsDrenchedBluff(u8 dungeonId)
+{
+    return dungeonId == DUNGEON_THUNDERWAVE_CAVE;
+}
+
+s32 SkyStory_GetDrenchedBluffFloorCount(void)
+{
+    /* GetDungeonFloorCount convention: playable floors + 1. */
+    return sDrenchedBluffFloorCount + 1;
+}
+
+static const struct SkyFloor *DrenchedBluffFloor(void)
+{
+    s32 floor = gDungeon->unk644.dungeonLocation.floor;
+
+    if (floor < 1)
+        floor = 1;
+    if (floor > sDrenchedBluffFloorCount)
+        floor = sDrenchedBluffFloorCount;
+    return &sDrenchedBluffFloors[floor - 1];
+}
+
+/* EoS's next guaranteed floor items (SkyStory_TakeGuaranteedItem). */
+static EWRAM_DATA u8 sSkyGuaranteedItems[2] = {0};
 
 bool8 SkyStory_IsBeachCaveStoryRun(void)
 {
@@ -95,10 +146,75 @@ static void LoadSpawns(const struct SkySpawn *spawns, s32 count)
         SetSpeciesToExtract(&gDungeon->fileMonsterSpawns[i], 0);
 }
 
+/* Drenched Bluff: the floor layout, traps and wild Pokémon of EoS's floor.
+ * EoS's floor properties are Red's FloorProperties byte for byte; the
+ * tileset is the sky one, Red's music byte stays (SkyStory_GetDungeonBgm
+ * picks the song) and the money cap is rescaled (EoS: byte x 5 Poké, Red:
+ * byte x 40). */
+static void ApplyDrenchedBluffFloor(void)
+{
+    const struct SkyFloor *fl = DrenchedBluffFloor();
+    FloorProperties *fp = &gDungeon->floorProperties;
+    u8 *dst = (u8 *)fp;
+    u8 music = fp->bgMusic;
+    s32 i;
+
+    for (i = 0; i < (s32)sizeof(FloorProperties); i++)
+        dst[i] = fl->props[i];
+    fp->tileset = SKY_DRENCHED_BLUFF_TILESET;
+    fp->bgMusic = music;
+    fp->fixedRoomNumber = 0;
+    fp->moneyUpperBound = (fl->props[0x17] * 5 + 39) / 40; /* 0x17: moneyUpperBound */
+    for (i = 0; i < NUM_TRAPS; i++)
+        gDungeon->trapSpawnChances[i] = fl->traps[i];
+    LoadSpawns(fl->spawns, fl->spawnCount);
+}
+
+void SkyStory_ApplyFloorItemOverrides(void)
+{
+    const struct SkyFloor *fl;
+    const struct SkyItemWeight *it;
+    ItemSpawns *dst;
+    s32 i;
+
+    if (!SkyStory_IsDrenchedBluff(gDungeon->unk644.dungeonLocation.id))
+        return;
+    fl = DrenchedBluffFloor();
+    dst = &gDungeon->itemSpawns[ITEM_SPAWN_NORMAL];
+    for (i = 0; i < NUM_ITEM_CATEGORIES; i++)
+        dst->categoryValues[i] = fl->categories[i];
+    for (i = 0; i < NUMBER_OF_ITEM_IDS; i++)
+        dst->itemValues[i] = 0;
+    for (it = fl->items; it->value != 0; it++)
+        dst->itemValues[it->item] = it->value;
+    sSkyGuaranteedItems[0] = fl->guaranteed[0];
+    sSkyGuaranteedItems[1] = fl->guaranteed[1];
+}
+
+u8 SkyStory_TakeGuaranteedItem(u8 itemId)
+{
+    s32 i;
+
+    if (!SkyStory_IsDrenchedBluff(gDungeon->unk644.dungeonLocation.id))
+        return itemId;
+    for (i = 0; i < 2; i++) {
+        if (sSkyGuaranteedItems[i] != ITEM_NOTHING) {
+            itemId = sSkyGuaranteedItems[i];
+            sSkyGuaranteedItems[i] = ITEM_NOTHING;
+            break;
+        }
+    }
+    return itemId;
+}
+
 void SkyStory_ApplyFloorOverrides(void)
 {
     u8 floor;
 
+    if (SkyStory_IsDrenchedBluff(gDungeon->unk644.dungeonLocation.id)) {
+        ApplyDrenchedBluffFloor();
+        return;
+    }
     if (!SkyStory_IsBeachCave(gDungeon->unk644.dungeonLocation.id))
         return;
 
@@ -121,6 +237,8 @@ void SkyStory_ApplyFloorOverrides(void)
 
 s32 SkyStory_GetDungeonBgm(s32 defaultSong)
 {
+    if (SkyStory_IsDrenchedBluff(gDungeon->unk644.dungeonLocation.id))
+        return MUS_SKY_DRENCHED_BLUFF; /* EoS mappa music 2 on every floor */
     if (!SkyStory_IsBeachCave(gDungeon->unk644.dungeonLocation.id))
         return defaultSong;
     if (gDungeon->floorProperties.fixedRoomNumber == FIXED_ROOM_SINISTER_WOODS_TEAM_MEANIES)
@@ -134,11 +252,15 @@ s32 SkyStory_GetBeachCaveFloorCount(void)
     return (SkyStory_IsBeachCaveStoryRun() ? BEACH_CAVE_PIT_FLOOR : BEACH_CAVE_FLOORS) + 1;
 }
 
-/* Tiny Woods only has floor data for 3 floors: floors 4+ read floor 3's. */
+/* Tiny Woods only has floor data for 3 floors: floors 4+ read floor 3's.
+ * Thunderwave Cave has 5: Drenched Bluff B6F reads B5F's (then replaced by
+ * EoS's floor, SkyStory_ApplyFloorOverrides). */
 u8 SkyStory_RemapDataFloor(u8 dungeonId, u8 floor)
 {
     if (SkyStory_IsBeachCave(dungeonId) && floor > 3)
         return 3;
+    if (SkyStory_IsDrenchedBluff(dungeonId) && floor > 5)
+        return 5;
     return floor;
 }
 

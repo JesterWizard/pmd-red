@@ -1948,6 +1948,40 @@ static const struct ScriptCommand s_script_SKY_DEMO_END[] = {
     SKY_DEMO_TO_TITLE,
     HALT,
 };
+
+/* Chapter 2: Drenched Bluff (Red's Thunderwave Cave, SCRIPT_DUNGEON_THUNDERWAVE_CAVE).
+ * After the dungeon GETOUT_M01E02A runs (DUNGEON_ENTER 1, SCENARIO_MAIN 3):
+ * STARTMODE_DUNGEON_WON -> EVENT_M01E02A_L006 (SKY_DRENCHED_BLUFF_CLEARED_EVENT),
+ * STARTMODE_10 (left early) -> EVENT_DIVIDE, anything else (fainted) ->
+ * EVENT_M01E02A_L004 (SKY_DRENCHED_BLUFF_FAINTED_EVENT). The two below are
+ * placeholders until chapter 2's scenes exist
+ * (documentation/Features/SkyChapter2.md, "Drenched Bluff"). */
+static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_DEBUG[] = {
+    DEBUGINFO_O(1883),
+    /* m02a0401: $SCENARIO_MAIN = scn[3, 3]; main_EnterDungeon(3, 0) */
+    SCENARIO_CALC(SCENARIO_MAIN,  3,  3),
+    CMD_UNK_AF(RESCUE_DUNGEON_THUNDERWAVE_CAVE, TRUE),
+    NEXT_DUNGEON(0, SCRIPT_DUNGEON_THUNDERWAVE_CAVE),
+    RET,
+};
+
+/* EoS EVENT_M02_09_10: m02a0801 (d02p31a, the pearl; scn[3, 6]), m02a1001,
+ * c00a0501, c00a0601, m02a1003, EVENT_DIVIDE. Placeholder: cleared, then the
+ * demo end. */
+static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_CLEARED[] = {
+    DEBUGINFO_O(1884),
+    SET_RESCUE_CONQUERED(RESCUE_DUNGEON_THUNDERWAVE_CAVE),
+    SCENARIO_CALC(SCENARIO_MAIN,  3,  6),
+    JUMP_SCRIPT(SKY_DEMO_END_EVENT),
+};
+
+/* EoS EVENT_M02_05_07A: m02a0501 (g01p03a), c00a0501, c00a0601, the night
+ * (m02a0601-0603 or c00a0301), c00a0201; then EVENT_M02_07B (back to the
+ * bluff). Placeholder: the demo end. */
+static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_FAINTED[] = {
+    DEBUGINFO_O(1885),
+    JUMP_SCRIPT(SKY_DEMO_END_EVENT),
+};
 #else
 #line 1908
 static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = { /* 0x81252a0 */
@@ -5470,11 +5504,21 @@ const ScriptRef gFunctionScriptTable[NUM_SCRIPT_IDS] = {
 #line 5418
     [EVENT_M01E02A_L001B] =          { EVENT_M01E02A_L001B,          SCRIPT_TYPE_12, _("EVENT_M01E02A_L001B"),          s_script_EVENT_M01E02A_L001B          },
     [EVENT_M01E02A_L001C] =          { EVENT_M01E02A_L001C,          SCRIPT_TYPE_10, _("EVENT_M01E02A_L001C"),          s_script_EVENT_M01E02A_L001C          },
+#ifdef SKY_STORY
+    [EVENT_M01E02A_L002] =           { EVENT_M01E02A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L002"),           s_script_SKY_DRENCHED_BLUFF_DEBUG     },
+    [EVENT_M01E02A_L003] =           { EVENT_M01E02A_L003,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L003"),           s_script_EVENT_M01E02A_L003           },
+    [EVENT_M01E02A_L004] =           { EVENT_M01E02A_L004,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L004"),           s_script_SKY_DRENCHED_BLUFF_FAINTED   },
+    [EVENT_M01E02A_L005] =           { EVENT_M01E02A_L005,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L005"),           s_script_EVENT_M01E02A_L005           },
+    [EVENT_M01E02A_L006] =           { EVENT_M01E02A_L006,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L006"),           s_script_SKY_DRENCHED_BLUFF_CLEARED   },
+#else
+#line 5420
     [EVENT_M01E02A_L002] =           { EVENT_M01E02A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L002"),           s_script_EVENT_M01E02A_L002           },
     [EVENT_M01E02A_L003] =           { EVENT_M01E02A_L003,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L003"),           s_script_EVENT_M01E02A_L003           },
     [EVENT_M01E02A_L004] =           { EVENT_M01E02A_L004,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L004"),           s_script_EVENT_M01E02A_L004           },
     [EVENT_M01E02A_L005] =           { EVENT_M01E02A_L005,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L005"),           s_script_EVENT_M01E02A_L005           },
     [EVENT_M01E02A_L006] =           { EVENT_M01E02A_L006,           SCRIPT_TYPE_10, _("EVENT_M01E02A_L006"),           s_script_EVENT_M01E02A_L006           },
+#endif
+#line 5425
     [EVENT_M01E02B_L001] =           { EVENT_M01E02B_L001,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L001"),           s_script_EVENT_M01E02B_L001           },
     [EVENT_M01E02B_L002] =           { EVENT_M01E02B_L002,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L002"),           s_script_EVENT_M01E02B_L002           },
     [EVENT_M01E02B_L003] =           { EVENT_M01E02B_L003,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L003"),           s_script_EVENT_M01E02B_L003           },

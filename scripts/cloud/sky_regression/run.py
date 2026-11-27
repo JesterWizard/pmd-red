@@ -32,6 +32,11 @@ TOOL = os.path.join(ROOT, "build", "tools", "mgba_rpc")
 # Every dungeon floor of the perf ROM comes from this seed, so Beach Cave B1F
 # is the same floor in every run (the perf checks' limits are for this floor).
 PERF_SEED = 7
+# Drenched Bluff's floors come from this seed; the debug team starts at level 8
+# (EoS's team reaches the bluff at about L5-8; Red's starters start at L1),
+# so the walk to B6F's stairs survives.
+BLUFF_SEED = 7
+BLUFF_LEVEL = 8
 
 # Test ROMs: make variables, the input driver and how many frames to play.
 # "sky" (the plain build) is built last so pmd_red.gba is the normal ROM again.
@@ -44,6 +49,9 @@ ROMS = {
                  frames=40000, what="Beach Cave B1F on a fixed floor: walking and dashing, CPU load measured"),
     "after": dict(vars=["DEBUG_BOOT_EVENT=EVENT_M01E01A_L003"], driver=drivers.story, frames=9300,
                   what="the scenes after the Pit (m01a0701, m01a0702)"),
+    "bluff": dict(vars=["DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT", f"DEBUG_BOOT_SEED={BLUFF_SEED}",
+                        f"DEBUG_BOOT_LEVEL={BLUFF_LEVEL}"], driver=drivers.bluff, frames=21000,
+                  what="Drenched Bluff (chapter 2) from B1F to B6F's stairs and the dungeon's end"),
     "sky": dict(vars=[], driver=drivers.jukebox, frames=16000,
                 what="the normal sky ROM: boot, the Sky Jukebox"),
     # more runs of the plain ROM (`rom`: they play that test ROM's build)
