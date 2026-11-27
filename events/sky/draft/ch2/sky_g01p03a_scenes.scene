@@ -1,0 +1,1324 @@
+prefix s_sky_g01p03a_
+debug_file src/data/ground/sky/sky_g01p03a_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0108, m02a0302, m02a0501, m02a1001), on G01P03A.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0108  (EoS SCRIPT/G01P03A/m02a0108.ssb)
+#   group 1  m02a0302  (EoS SCRIPT/G01P03A/m02a0302.ssb)
+#   group 2  m02a0501  (EoS SCRIPT/G01P03A/m02a0501.ssb)
+#   group 3  m02a1001  (EoS SCRIPT/G01P03A/m02a1001.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_WURMPLE 2
+#define NPC_SWELLOW 3
+#define NPC_LEDYBA 4
+#define NPC_SEEDOT 5
+#define NPC_PIDGEY 6
+#define NPC_BIDOOF 7
+#define NPC_SUNFLORA 8
+#define NPC_CHATOT 9
+#define NPC_CHIMECHO 10
+#define NPC_SPOINK 11
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0108 (G01P03A)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_B1F
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=232 y=128   # EoS camera_SetMyself<performer 0>
+    AWAIT_CUE_COND 64 0   # -> PIDGEY (waits until it is ready)
+    AWAIT_CUE_COND 66 0   # -> BIDOOF (waits until it is ready)
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
+    WAIT 30
+    AWAIT_CUE_COND 68 0   # -> PARTNER (waits until it is ready)
+    PORTRAIT place=MIDLEFT_TOP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" Wow!"
+    TEXTBOX_CLEAR
+    SKY_CAMERA_MOVE dy=88 speed=128   # EoS MovePositionMark<performer 0>(0.5, Position<'m0', 43.5, 36>);
+    SKY_CAMERA_MOVE_X dx=4 speed=128
+    AWAIT_CUE_COND 70 0   # -> PLAYER (waits until it is ready)
+    WAIT 10
+    AWAIT_CUE_COND 68 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 71   # <- PLAYER done
+    # eos: WaitExecutePerformer(0); (the camera has arrived)
+    WAIT 30
+    AWAIT_CUE_COND 68 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 69   # <- PARTNER done
+    ALERT_CUE 70   # -> PLAYER
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" So this is Wigglytuff's Guild!"
+    MSG_NPC who=PARTNER text=" There are sure a lot of Pokémon\nhere. Do they all belong to exploration teams?"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    # eos: message_ResetActor(); (no speaker)
+    MSG_NPC who=-1 text=" Excuse me!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_EVENT_SIGN_NOTICE_05   # EoS se_Play(8978) = SE_NUM_EVENT_SIGN_NOTICE_05: not converted yet
+    AWAIT_CUE_COND 70 0   # -> PLAYER (waits until it is ready)
+    ALERT_CUE 68   # -> PARTNER
+    AWAIT_CUE 69   # <- PARTNER done
+    AWAIT_CUE_COND 70 0   # -> PLAYER (waits until it is ready)
+    WAIT 30
+    SELECT_LIVES group=-1 sector=1   # EoS supervision_Acting(1)
+    WAIT 1
+    SKY_CAMERA_MOVE dy=-60 speed=256   # EoS MovePositionMark<performer 0>(1, Position<'m3', 43.5, 28.5>);
+    AWAIT_CUE_COND 72 0   # -> CHATOT (waits until it is ready)
+    WAIT 60   # EoS WaitExecutePerformer(0): the rest of the camera's move
+    WAIT 45
+    SKY_CAMERA_MOVE dy=60 speed=256   # EoS MovePositionMark<performer 0>(1, Position<'m4', 43.5, 36>);
+    AWAIT_CUE_COND 72 0   # -> CHATOT (waits until it is ready)
+    AWAIT_CUE 73   # <- CHATOT done
+    # eos: WaitExecutePerformer(0); (the camera has arrived)
+    WAIT 15
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" It was you two that just came in, right?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 68   # -> PARTNER
+    AWAIT_CUE 69   # <- PARTNER done
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" Y-yes!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=CHATOT text=" I'm Chatot! ♪{WAIT_PRESS} I'm the Pokémon in the\nknow around these parts!"
+    MSG_NPC who=CHATOT text=" I am Guildmaster Wigglytuff's\nright-hand Pokémon! ♪"
+    MSG_NPC who=CHATOT text=" Now, shoo! Leave the premises!\nWe have no time for salespeople or silly\nsurveys.{WAIT_PRESS} Off you go, if you please!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 470   # EoS se_Play(8972)
+    ALERT_CUE 68   # -> PARTNER
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" N-no! That's not why we're here!"
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" We want to form an\nexploration team..."
+    MSG_NPC who=PARTNER text=" So we came here. We want to\nget proper training as an exploration team."
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 482   # EoS se_Play(8969)
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE 73   # <- CHATOT done
+    PORTRAIT place=KEEP who=CHATOT emotion=SUPRISED
+    MSG_NPC who=CHATOT text=" Wh-what?! Exploration team?"
+    TEXTBOX_CLEAR
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE 73   # <- CHATOT done
+    PORTRAIT place=KEEP who=CHATOT emotion=WORRIED
+    MSG_NPC who=CHATOT text=" It's rare to see a kid like this\nwant to apprentice at the guild."
+    MSG_NPC who=CHATOT text=" Especially given how hard our\ntraining is!"
+    MSG_NPC who=CHATOT text=" Surely the steady stream of\nPokémon that run away from our rigorous\ntraining proves how true that is!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 469   # EoS se_Play(8962)
+    AWAIT_CUE_COND 68 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 69   # <- PARTNER done
+    PORTRAIT place=KEEP who=PARTNER emotion=WORRIED
+    MSG_NPC who=PARTNER text=" Excuse me."
+    MSG_NPC who=PARTNER text=" Is the exploration team training\nthat harsh?"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 473   # EoS se_Play(8973)
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE 73   # <- CHATOT done
+    PORTRAIT place=KEEP who=CHATOT emotion=SUPRISED
+    MSG_NPC who=CHATOT text=" What?!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 470   # EoS se_Play(8972)
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE 73   # <- CHATOT done
+    ALERT_CUE 72   # -> CHATOT
+    MSG_NPC who=CHATOT text=" Well...no! No, no, no!"
+    MSG_NPC who=CHATOT text=" It's not true in the slightest!{WAIT_PRESS}\nOur training program for exploration teams is\nas easy as can be!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 72 0   # -> CHATOT (waits until it is ready)
+    PORTRAIT place=KEEP who=CHATOT emotion=JOYOUS
+    MSG_NPC who=CHATOT text=" Well, well, well! ♪{WAIT_PRESS} I wish you\nhad told me up front that you wanted to be\nan exploration team! ♪ Hee-heeee! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 72 0   # -> CHATOT (waits until it is ready)
+    FANFARE_PLAY2 SE_SKY_SWEAT_DROP   # EoS se_Play(8961)
+    AWAIT_CUE_COND 70 0   # -> PLAYER (waits until it is ready)
+    ALERT_CUE 68   # -> PARTNER
+    WAIT 60
+    AWAIT_CUE_COND 68 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 69   # <- PARTNER done
+    AWAIT_CUE_COND 70 0   # -> PLAYER (waits until it is ready)
+    PORTRAIT place=KEEP who=PARTNER emotion=SAD
+    MSG_NPC who=PARTNER text=" What a shift in attitude!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    PORTRAIT place=KEEP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" OK! Let's get your team signed\nup right away. Follow me! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 70 0   # -> PLAYER (waits until it is ready)
+    ALERT_CUE 68   # -> PARTNER
+    AWAIT_CUE_COND 72 0   # -> CHATOT (waits until it is ready)
+    AWAIT_CUE 73   # <- CHATOT done
+    WAIT 20
+    FANFARE_PLAY2 SE_SKY_EVENT_SIGN_NOTICE_05   # EoS se_Play(8978) = SE_NUM_EVENT_SIGN_NOTICE_05: not converted yet
+    # TODO eos: SetEffect<actor ACTOR_NPC_PERAPPU>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE 73   # <- CHATOT done
+    WAIT 10
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE 73   # <- CHATOT done
+    WAIT 10
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE 73   # <- CHATOT done
+    PORTRAIT place=KEEP who=CHATOT emotion=HAPPY
+    MSG_NPC who=CHATOT text=" Oh, anything wrong? Come on!\nOver here! ♪{WAIT_PRESS} Quickly, please! ♪"
+    TEXTBOX_CLEAR
+    ALERT_CUE 72   # -> CHATOT
+    AWAIT_CUE_COND 70 0   # -> PLAYER (waits until it is ready)
+    WAIT 25
+    AWAIT_CUE_COND 68 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE_COND 72 0   # -> CHATOT (waits until it is ready)
+    WAIT 20
+    FADE_OUT wait=TRUE frames=30
+    RET
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 70
+    WALK_RELATIVE speed=128 dx=4 dy=92   # EoS MovePositionMark to Position<'m1', 45.5, 35.5>
+    AWAIT_CUE_COND 71 0   # done: the station waits for this
+    AWAIT_CUE 70
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    AWAIT_CUE 70
+    EMOTION_EFFECT NOTICE
+    AWAIT_CUE 70
+    ROTATE_TO speed=4 turn=SPINRIGHT1 direction=NORTH
+    AWAIT_CUE 70
+    EMOTION_EFFECT SWEAT
+    AWAIT_CUE 70
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    AWAIT_CUE 70
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    AWAIT_CUE 70
+    WALK_RELATIVE speed=256 dx=0 dy=-88
+    HALT
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 68
+    CALL_SCRIPT NOTICE_FUNC
+    AWAIT_CUE 68
+    WALK_RELATIVE speed=128 dx=4 dy=92   # EoS MovePositionMark to Position<'m2', 41.5, 35.5>
+    AWAIT_CUE 68
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    CALL_SCRIPT NOTICE_FUNC
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=NORTH
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    CALL_SCRIPT JUMP_HAPPY_FUNC   # EoS CORO_JUMP_HAPPY_FUNC_SERIES
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    EMOTION_EFFECT SWEAT
+    AWAIT_CUE 68
+    CALL_SCRIPT QUESTION_FUNC
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE 68
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    AWAIT_CUE 68
+    WALK_RELATIVE speed=256 dx=32 dy=-104   # EoS MovePositionMark to Position<'m7', 45.5, 22.5>
+    HALT
+end
+
+script g0_s0_wurmple   # EoS actor NPC_KEMUSSO, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=WURMPLE id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g0_s0_swellow   # EoS actor NPC_OOSUBAME, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=SWELLOW id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    # EoS: its own coroutine (def ... for actor NPC_OOSUBAME)
+    SELECT_ANIMATION 2
+    WAIT 30
+  LABEL 1
+  LABEL 2001
+    EMOTION_EFFECT SMILE
+    WAIT_RANDOM 90 180
+    EMOTION_EFFECT NONE
+    WAIT_RANDOM 60 180
+    WAIT 1   # (a forever loop)
+    JUMP_LABEL 2001
+  LABEL 2002
+end
+
+script g0_s0_ledyba   # EoS actor NPC_REDIBA, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=LEDYBA id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g0_s0_seedot   # EoS actor NPC_TANEBOO, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=SEEDOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    # EoS: its own coroutine (def ... for actor NPC_TANEBOO)
+    SELECT_ANIMATION 2
+    WAIT 30
+  LABEL 0
+  LABEL 2001
+    EMOTION_EFFECT SMILE
+    WAIT_RANDOM 90 180
+    EMOTION_EFFECT NONE
+    WAIT_RANDOM 60 180
+    WAIT 1   # (a forever loop)
+    JUMP_LABEL 2001
+  LABEL 2002
+end
+
+script g0_s0_pidgey   # EoS actor NPC_POPPO, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PIDGEY id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    SELECT_ANIMATION 4
+    HALT
+end
+
+script g0_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    SELECT_ANIMATION 4
+    HALT
+end
+
+script g0_s0_sunflora   # EoS actor NPC_KIMAWARI, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=SUNFLORA id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    # EoS: its own coroutine (def ... for actor NPC_KIMAWARI)
+    SELECT_ANIMATION 2
+    WAIT 30
+  LABEL 2
+  LABEL 2001
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    EMOTION_EFFECT SMILE
+    WAIT_RANDOM 90 180
+    EMOTION_EFFECT NONE
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    WAIT_RANDOM 120 180
+    WAIT 1   # (a forever loop)
+    JUMP_LABEL 2001
+  LABEL 2002
+end
+
+script g0_s1_chatot   # EoS actor NPC_PERAPPU, layer 1
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 72
+    WALK_RELATIVE speed=204 dx=0 dy=8
+    AWAIT_CUE 72
+    WALK_RELATIVE speed=204 dx=-12 dy=68   # EoS MovePositionMark to Position<'m5', 43.5, 31.5>
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    CALL_SCRIPT SHOCK_FUNC
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    ROTATE_RELATIVE 4 1 DIR_TRANS_FLIP
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    CALL_SCRIPT SHOCK_FUNC
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    ROTATE_TO speed=1 turn=SPINLEFT1 direction=SOUTH
+    EMOTION_EFFECT SWEAT
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    AWAIT_CUE 72
+    SELECT_ANIMATION 2
+    SELECT_ANIMATION 44   # EoS animation 44: check the sprite has it
+    AWAIT_CUE 72
+    SELECT_ANIMATION 2
+    AWAIT_CUE 72
+    WALK_RELATIVE speed=128 dx=0 dy=-40
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    WAIT_EFFECT
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    ROTATE_TO speed=1 turn=SPINLEFT1 direction=SOUTH
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    CALL_SCRIPT JUMP_ANGRY_FUNC   # EoS CORO_JUMP_ANGRY_FUNC_SERIES
+    AWAIT_CUE_COND 73 0   # done: the station waits for this
+    AWAIT_CUE 72
+    WALK_RELATIVE speed=204 dx=16 dy=-32   # EoS MovePositionMark to Position<'m6', 45.5, 22.5>
+    AWAIT_CUE 72
+    END_DELETE
+end
+
+actors g0_s0_lives
+    actor kind=0 facing=SOUTH x=45.5 y=24.5 script=g0_s0_player   # EoS PLAYER
+    actor kind=34 facing=SOUTH x=41.5 y=24.5 script=g0_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_WURMPLE facing=NORTHEAST x=34 y=35.5 script=g0_s0_wurmple   # EoS NPC_KEMUSSO
+    actor kind=SKY_LIVES_SWELLOW facing=SOUTHWEST x=37 y=33.5 script=g0_s0_swellow   # EoS NPC_OOSUBAME
+    actor kind=SKY_LIVES_LEDYBA facing=NORTHEAST x=27 y=27.5 script=g0_s0_ledyba   # EoS NPC_REDIBA
+    actor kind=SKY_LIVES_SEEDOT facing=WEST x=52 y=36.5 script=g0_s0_seedot   # EoS NPC_TANEBOO
+    actor kind=SKY_LIVES_PIDGEY facing=EAST x=49 y=36.5 script=g0_s0_pidgey   # EoS NPC_POPPO
+    actor kind=SKY_LIVES_BIDOOF facing=NORTH x=54 y=26.5 script=g0_s0_bidoof   # EoS NPC_BIPPA
+    actor kind=SKY_LIVES_SUNFLORA facing=NORTH x=58 y=26.5 script=g0_s0_sunflora   # EoS NPC_KIMAWARI
+end
+
+actors g0_s1_lives
+    actor kind=SKY_LIVES_CHATOT facing=SOUTH x=45.5 y=22.5 script=g0_s1_chatot   # EoS NPC_PERAPPU
+end
+
+# ------------------------------------------------------------------------
+# group 1: EoS m02a0302 (G01P03A)
+# ------------------------------------------------------------------------
+
+script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    SELECT_MAP SKY_GUILD_B1F
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=228 y=152   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    BGM_SWITCH SKY_WIGGLYTUFFS_GUILD_REMIX
+    SELECT_LIVES group=-1 sector=1   # EoS supervision_Acting(1)
+    WAIT 30
+    AWAIT_CUE_COND 64 1   # -> CHATOT: batch 1
+    WAIT 30
+    SELECT_LIVES group=-1 sector=2   # EoS supervision_Acting(2)
+    WAIT 30
+    AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
+    WAIT 30
+    SELECT_LIVES group=-1 sector=3   # EoS supervision_Acting(3)
+    WAIT 30
+    AWAIT_CUE_COND 68 1   # -> PLAYER: batch 1
+    SKY_CAMERA_MOVE dy=4 speed=256   # EoS MovePositionMark<performer 0>(1, Position<'m3', 31.5, 28.5>);
+    SKY_CAMERA_MOVE_X dx=-88 speed=256
+    AWAIT_CUE 65   # <- CHATOT done
+    AWAIT_CUE_COND 64 2   # -> CHATOT: batch 2
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
+    AWAIT_CUE 69   # <- PLAYER done
+    AWAIT_CUE_COND 68 2   # -> PLAYER: batch 2
+    AWAIT_CUE 65   # <- CHATOT done
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE 69   # <- PLAYER done
+    # eos: WaitExecutePerformer(0); (the camera has arrived)
+    WAIT 30
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" You're just beginners."
+    MSG_NPC who=CHATOT text=" We'll have you start off with\nthis assignment. ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 3   # -> CHATOT: batch 3
+    AWAIT_CUE 65   # <- CHATOT done
+    MSG_NPC who=CHATOT text=" This is the Job Bulletin Board.\nPokémon from various regions post job\nrequests here."
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 4   # -> CHATOT: batch 4
+    AWAIT_CUE 65   # <- CHATOT done
+    MSG_NPC who=CHATOT text=" You're aware that bad Pokémon\nare cropping up in greater numbers, right?"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" Yup.{WAIT_PRESS} Because the flow of time is\ngetting messed up. It's wreaking havoc, right?"
+    MSG_NPC who=PARTNER text=" Which is why lots of bad\nPokémon are appearing!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    PORTRAIT place=RIGHT_BOTTOM_FLIP who=PLAYER emotion=WORRIED
+    MSG_QUIET who=PLAYER text="(The flow of time is getting messed up?)"
+    MSG_QUIET who=PLAYER text="(Time? As in hours and minutes?{WAIT_PRESS} Do they mean\nsomething has gone wrong with time here?)"
+    MSG_QUIET who=PLAYER text="(And, because of that, more and more bad\nPokémon are popping up?)"
+    MSG_QUIET who=PLAYER text="(What's going on here?!)"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=CHATOT text=" Precisely.{WAIT_PRESS} Time getting out of\nwhack has caused an outbreak of bad Pokémon.\nPerhaps because of all that..."
+    MSG_NPC who=CHATOT text=" We have noticed an increase\nin the number of jobs."
+    MSG_NPC who=CHATOT text=" In addition...and it's unknown if\nthis is because of time's influence..."
+    MSG_NPC who=CHATOT text=" There has also been a mass\noutbreak of...{WAIT_PRESS}mystery dungeons."
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_QUIET who=PLAYER text="(Mystery dungeons?!)"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 3   # -> PARTNER: batch 3
+    AWAIT_CUE 67   # <- PARTNER done
+    MSG_NPC who=PARTNER text=" So, {NAME_0}!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 68 3   # -> PLAYER: batch 3
+    AWAIT_CUE 69   # <- PLAYER done
+    MSG_NPC who=PARTNER text=" You know how we got my Relic\nFragment back yesterday?"
+    MSG_NPC who=PARTNER text=" The place where we found it\nwas a mystery dungeon."
+    MSG_NPC who=PARTNER text=" A mystery dungeon changes each\ntime you go into it. There's a different layout\nand different items every time you enter!"
+    MSG_NPC who=PARTNER text=" If you faint in the middle of a\ndungeon, you lose half of your money..."
+    MSG_NPC who=PARTNER text=" You can even lose half your\nitems or more..."
+    MSG_NPC who=PARTNER text=" Finally, you get kicked right out.\nThey're very strange places."
+    PORTRAIT place=KEEP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" But every time you go inside\none, there are always new things to discover!"
+    MSG_NPC who=PARTNER text=" They really are fantastic places\nto go explore!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_EVENT_MOTION_WING_01   # EoS se_Play(5122) = SE_NUM_EVENT_MOTION_WING_01: not converted yet
+    AWAIT_CUE_COND 64 5   # -> CHATOT: batch 5
+    AWAIT_CUE 65   # <- CHATOT done
+    AWAIT_CUE_COND 64 6   # -> CHATOT: batch 6
+    MSG_NPC who=CHATOT text=" Well! You're quite informed,\naren't you! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 4   # -> PARTNER: batch 4
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 68 4   # -> PLAYER: batch 4
+    AWAIT_CUE 69   # <- PLAYER done
+    PORTRAIT place=KEEP who=CHATOT emotion=HAPPY
+    MSG_NPC who=CHATOT text=" That makes things much easier\nfor me to explain! ♪"
+    MSG_NPC who=CHATOT text=" Jobs all take place in\nmystery dungeons."
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 7   # -> CHATOT: batch 7
+    AWAIT_CUE 65   # <- CHATOT done
+    PORTRAIT place=KEEP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" So...{WAIT_PRESS}let's look for a job that you\nshould perform! ♪"
+    TEXTBOX_CLEAR
+    WAIT 30
+    FANFARE_PLAY2 465   # EoS se_Play(8964)
+    AWAIT_CUE_COND 64 8   # -> CHATOT: batch 8
+    AWAIT_CUE 65   # <- CHATOT done
+    AWAIT_CUE_COND 64 9   # -> CHATOT: batch 9
+    AWAIT_CUE 65   # <- CHATOT done
+    MSG_NPC who=CHATOT text=" Ah, yes. ♪ Maybe this will do?"
+    TEXTBOX_CLEAR
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    JUMP_LABEL 1001
+  LABEL 1002
+    JUMP_LABEL 1001
+  LABEL 1001
+  LABEL 0
+    AWAIT_CUE_COND 64 10   # -> CHATOT: batch 10
+    AWAIT_CUE_COND 66 5   # -> PARTNER: batch 5
+    AWAIT_CUE_COND 68 5   # -> PLAYER: batch 5
+    AWAIT_CUE 65   # <- CHATOT done
+    FANFARE_PLAY2 SE_SKY_EVENT_MOTION_TALE_01   # EoS se_Play(5124) = SE_NUM_EVENT_MOTION_TALE_01: not converted yet
+    WAIT 45
+    AWAIT_CUE_COND 64 11   # -> CHATOT: batch 11
+    AWAIT_CUE 65   # <- CHATOT done
+    AWAIT_CUE_COND 64 12   # -> CHATOT: batch 12
+    WAIT 20
+    AWAIT_CUE_COND 68 6   # -> PLAYER: batch 6
+    BGM_FADEOUT 120
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" Oh, really? Let's read it!"
+    TEXTBOX_CLEAR
+    MSG_INSTANT text="\"Hello! My name is Spoink!\""   # EoS message_Mail
+    MSG_INSTANT text="\"An outlaw has run off with my most prized\npossession. My precious pearl!\""   # EoS message_Mail
+    MSG_INSTANT text="\"That pearl is life itself...to me!\""   # EoS message_Mail
+    MSG_INSTANT text="\"I just can't seem to settle down if that pearl\nisn't in its proper place atop my head!\""   # EoS message_Mail
+    MSG_INSTANT text="\"But I've heard my pearl has been sighted!\""   # EoS message_Mail
+    MSG_INSTANT text="\"It's said to be on a rocky bluff. But this bluff\nis reported to be extremely unsafe.\""   # EoS message_Mail
+    MSG_INSTANT text="\"I could never go somewhere so frightening!\""   # EoS message_Mail
+    MSG_INSTANT text="\"Oh, friendly readers! Would you be so kind as\nto go to the bluff and get my pearl?\""   # EoS message_Mail
+    MSG_INSTANT text="\"I beg your help, exploration team members!\"\n\n                                        From Spoink"   # EoS message_Mail
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=PARTNER text=" Wait a second..."
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 457   # EoS se_Play(8971)
+    AWAIT_CUE_COND 66 6   # -> PARTNER: batch 6
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 66 7   # -> PARTNER: batch 7
+    PORTRAIT place=KEEP who=PARTNER emotion=ANGRY
+    MSG_NPC who=PARTNER text=" We're going to fetch an item\nthat someone dropped?"
+    # eos: message_KeyWait(); (the line above waits for a button)
+    AWAIT_CUE_COND 66 8   # -> PARTNER: batch 8
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" I'd rather go on a bigger\nadventure than that."
+    PORTRAIT place=KEEP who=PARTNER emotion=INSPIRED
+    MSG_NPC who=PARTNER text=" I'd rather look for treasure or\nexplore unknown places. Things like that!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_EVENT_MOTION_WING_01   # EoS se_Play(5122) = SE_NUM_EVENT_MOTION_WING_01: not converted yet
+    AWAIT_CUE_COND 64 13   # -> CHATOT: batch 13
+    AWAIT_CUE 65   # <- CHATOT done
+    AWAIT_CUE_COND 64 14   # -> CHATOT: batch 14
+    AWAIT_CUE_COND 68 7   # -> PLAYER: batch 7
+    PORTRAIT place=KEEP who=CHATOT emotion=ANGRY
+    MSG_NPC who=CHATOT text=" Hush!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 455   # EoS se_Play(8974)
+    AWAIT_CUE_COND 66 9   # -> PARTNER: batch 9
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Yikes!"
+    AWAIT_CUE 67   # <- PARTNER done
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=CHATOT text=" It's important that you rookies\npay your dues!"
+    MSG_NPC who=CHATOT text=" Now pay attention!{WAIT_PRESS} I'll repeat\nthe warnings again to make sure they stick!"
+    MSG_NPC who=CHATOT text=" You'll be forced out of a dungeon\nand sent back here if either of you faints."
+    MSG_NPC who=CHATOT text=" You'll lose half your money!{WAIT_PRESS}\nAnd you could lose half your items or more.\nYou'd best be careful!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_EVENT_MOTION_WING_01   # EoS se_Play(5122) = SE_NUM_EVENT_MOTION_WING_01: not converted yet
+    AWAIT_CUE_COND 64 15   # -> CHATOT: batch 15
+    AWAIT_CUE 65   # <- CHATOT done
+    AWAIT_CUE_COND 64 16   # -> CHATOT: batch 16
+    PORTRAIT place=KEEP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" If you've understood all that,\nI suggest you get on with the job! ♪"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_SWEAT_DROP   # EoS se_Play(8961)
+    AWAIT_CUE_COND 66 10   # -> PARTNER: batch 10
+    PORTRAIT place=KEEP who=PARTNER emotion=PAINED
+    MSG_NPC who=PARTNER text=" Hmm..."
+    AWAIT_CUE 67   # <- PARTNER done
+    TEXTBOX_CLEAR
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=60
+    WAIT 30
+    # TODO eos: dungeon_mode(3) = DMODE_OPEN;   (script variable)
+    RET
+end
+
+script g1_s0_chimecho   # EoS actor NPC_CHIRIIN, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHIMECHO id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g1_s1_chatot   # EoS actor NPC_PERAPPU, layer 1
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    COND_EQUAL 7 3007
+    COND_EQUAL 8 3008
+    COND_EQUAL 9 3009
+    COND_EQUAL 10 3010
+    COND_EQUAL 11 3011
+    COND_EQUAL 12 3012
+    COND_EQUAL 13 3013
+    COND_EQUAL 14 3014
+    COND_EQUAL 15 3015
+    COND_EQUAL 16 3016
+    JUMP_LABEL 3000
+  LABEL 3001
+    WALK_RELATIVE speed=256 dx=-88 dy=36   # EoS MovePositionMark to Position<'m0', 34, 26.5>
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3002
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3003
+    ROTATE_TO speed=4 turn=SPINRIGHT1 direction=NORTH
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=SOUTH
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3005
+    SELECT_ANIMATION 18
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3006
+    SELECT_ANIMATION 2
+    JUMP_LABEL 3000
+  LABEL 3007
+    ROTATE_TO speed=4 turn=SPINRIGHT1 direction=NORTH
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3008
+    CALL_SCRIPT NOTICE_FUNC
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3009
+    ROTATE_TO speed=4 turn=SPINLEFT1 direction=SOUTH
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3010
+    WALK_RELATIVE speed=256 dx=-16 dy=16
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3011
+    SELECT_ANIMATION 5
+    MOVE_RELATIVE speed=256 dx=16 dy=-16
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3012
+    SELECT_ANIMATION 2
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHWEST
+    JUMP_LABEL 3000
+  LABEL 3013
+    SELECT_ANIMATION 18
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3014
+    SELECT_ANIMATION 2
+    JUMP_LABEL 3000
+  LABEL 3015
+    SELECT_ANIMATION 18
+    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3016
+    SELECT_ANIMATION 2
+    JUMP_LABEL 3000
+end
+
+script g1_s2_partner   # EoS actor ATTENDANT1, layer 2
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    COND_EQUAL 7 3007
+    COND_EQUAL 8 3008
+    COND_EQUAL 9 3009
+    COND_EQUAL 10 3010
+    JUMP_LABEL 3000
+  LABEL 3001
+    WALK_RELATIVE speed=256 dx=-124 dy=68   # EoS MovePositionMark to Position<'m1', 29.5, 30.5>
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3002
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3003
+    ROTATE_TO_LIVES speed=4 turn=SPINRIGHT1 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3005
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHEAST
+    JUMP_LABEL 3000
+  LABEL 3006
+    CALL_SCRIPT JUMP_ANGRY_FUNC   # EoS CORO_JUMP_ANGRY_FUNC_SERIES
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3007
+    EMOTION_EFFECT ANGRY
+    JUMP_LABEL 3000
+  LABEL 3008
+    EMOTION_EFFECT NONE
+    JUMP_LABEL 3000
+  LABEL 3009
+    CALL_SCRIPT JUMP_SURPRISE_FUNC   # EoS CORO_JUMP_SURPRISE_FUNC_SERIES
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3010
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+end
+
+script g1_s3_player   # EoS actor PLAYER, layer 3
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 68
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    COND_EQUAL 7 3007
+    JUMP_LABEL 3000
+  LABEL 3001
+    WALK_RELATIVE speed=256 dx=-92 dy=68   # EoS MovePositionMark to Position<'m2', 33.5, 30.5>
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3002
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3003
+    ROTATE_TO_LIVES speed=4 turn=SPINLEFT1 kind=LIVES_KIND_PARTNER
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3005
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHWEST
+    JUMP_LABEL 3000
+  LABEL 3006
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    JUMP_LABEL 3000
+  LABEL 3007
+    ROTATE_TO speed=1 turn=DIR_TRANS_10 direction=NORTH
+    JUMP_LABEL 3000
+end
+
+actors g1_s0_lives
+    actor kind=SKY_LIVES_CHIMECHO facing=SOUTH x=64.5 y=32.5 script=g1_s0_chimecho   # EoS NPC_CHIRIIN
+end
+
+actors g1_s1_lives
+    actor kind=SKY_LIVES_CHATOT facing=SOUTH x=45.5 y=22.5 script=g1_s1_chatot   # EoS NPC_PERAPPU
+end
+
+actors g1_s2_lives
+    actor kind=34 facing=SOUTH x=45.5 y=22.5 script=g1_s2_partner   # EoS ATTENDANT1
+end
+
+actors g1_s3_lives
+    actor kind=0 facing=SOUTH x=45.5 y=22.5 script=g1_s3_player   # EoS PLAYER
+end
+
+# ------------------------------------------------------------------------
+# group 2: EoS m02a0501 (G01P03A)
+# ------------------------------------------------------------------------
+
+script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    SELECT_MAP SKY_STORM_SEA   # EoS LEVEL_S04P01A: a black screen
+    SKY_SHOW_MAP FALSE
+    FADE_IN wait=TRUE frames=0
+    SET_PLACE_MODE 4
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=PAINED
+    MSG_NPC who=PARTNER text=" Ugh... That didn't work at all..."
+    # eos: message_KeyWait(); (the line above waits for a button)
+    FADE_OUT wait=TRUE frames=60
+    FADE2_OUT wait=TRUE frames=0
+    TEXTBOX_CLEAR
+    WAIT 60
+    # eos: CallCommon(CORO_FADE_OUT_ALL_AFTER) (the scene's end)
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    SKY_SHOW_MAP TRUE
+    SELECT_MAP SKY_GUILD_B1F
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=136 y=160   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
+    WAIT 30
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" Well...{WAIT_PRESS} It appears that your\nouting was less than a total success."
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_SWEAT_DROP   # EoS se_Play(8961)
+    AWAIT_CUE_COND 64 1   # -> PARTNER: batch 1
+    AWAIT_CUE 65   # <- PARTNER done
+    MSG_NPC who=PARTNER text=" Ugh..."
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=CHATOT text=" Of course, you're just beginners\nat all this. No need to fret! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 1   # -> CHATOT: batch 1
+    PORTRAIT place=KEEP who=CHATOT emotion=HAPPY
+    MSG_NPC who=CHATOT text=" These things happen! ♪{WAIT_PRESS} You can\nattempt another challenge tomorrow! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 2   # -> CHATOT: batch 2
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=60
+    WAIT_BGM MUS_SKY_WIGGLYTUFFS_GUILD
+    RET
+    JUMP_LABEL 1003
+  LABEL 1004
+    # TODO eos: supervision_ExecuteActing(LEVEL_D02P11A, 'M02A0701', 0);
+    HALT
+    JUMP_LABEL 1003
+  LABEL 1003
+    JUMP_LABEL 1001
+  LABEL 1002
+  LABEL 0
+    # TODO eos: switch ( ProcessSpecial(53, -1, 0) ) { }   (ProcessSpecial: see SkyChapter2.md, engine gaps)
+    TEXTBOX_AUTO_PRESS 300 300   # EoS message_SetWaitMode
+    MSG_NPC who=-1 text="{CENTER_ALIGN}Thanks for playing!\n{CENTER_ALIGN}We hope you enjoyed\n{CENTER_ALIGN}the demo!"   # EoS message_Explanation
+    # eos: message_KeyWait(); (the line above waits for a button)
+    SKY_DEMO_TO_TITLE   # EoS ProcessSpecial(PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN)
+    RET
+    JUMP_LABEL 1001
+  LABEL 1001
+    RET
+end
+
+script g2_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g2_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    JUMP_LABEL 3000
+  LABEL 3001
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+end
+
+script g2_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 44   # EoS animation 44: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    SELECT_ANIMATION 2
+    JUMP_LABEL 3000
+end
+
+actors g2_s0_lives
+    actor kind=0 facing=NORTH x=33.5 y=29.5 script=g2_s0_player   # EoS PLAYER
+    actor kind=34 facing=NORTH x=29.5 y=29.5 script=g2_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_CHATOT facing=SOUTH x=31.5 y=25.5 script=g2_s0_chatot   # EoS NPC_PERAPPU
+end
+
+# ------------------------------------------------------------------------
+# group 3: EoS m02a1001 (G01P03A)
+# ------------------------------------------------------------------------
+
+script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_B1F
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=136 y=152   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    BGM_SWITCH SKY_JOB_CLEAR
+    WAIT 30
+    PORTRAIT place=CENTERRIGHT_TOP_FLIP who=SPOINK emotion=NORMAL
+    MSG_NPC who=SPOINK text=" Th-thank you!"
+    MSG_NPC who=SPOINK text=" That pearl must be propped on\nmy head, you see. I missed it so much!"
+    MSG_NPC who=SPOINK text=" I just couldn't settle down\nwithout it up there!"
+    MSG_NPC who=SPOINK text=" So I was just boinging and\nsproinging everywhere!"
+    MSG_NPC who=SPOINK text=" That's why I'm covered in dings\nand bumps."
+    MSG_NPC who=SPOINK text=" But thanks to you, that long\nnightmare is over!"
+    MSG_NPC who=SPOINK text=" You have my sincere thanks!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 1   # -> SPOINK: batch 1
+    AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
+    AWAIT_CUE 65   # <- SPOINK done
+    FANFARE_PLAY 203   # EoS me_Play(4)
+    MSG_INSTANT text="{CENTER_ALIGN}{NAME_0}'s team was rewarded with\n{CENTER_ALIGN}a Protein!"   # EoS message_Mail
+    WAIT_FANFARE1 203
+    TEXTBOX_CLEAR
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    # eos: item_Set(0, 100, 0); (item slot 0: Protein)
+    SKY_GIVE_ITEM item=ITEM_PROTEIN   # EoS item_Set(0, 100); message_Menu(MENU_GIVE_ITEM)
+    WAIT 10
+    JUMP_LABEL 0
+    JUMP_LABEL 1001
+  LABEL 1002
+  LABEL 0
+    FANFARE_PLAY 203   # EoS me_Play(4)
+    MSG_INSTANT text="{CENTER_ALIGN}You also received a Calcium!"   # EoS message_Mail
+    WAIT_FANFARE1 203
+    TEXTBOX_CLEAR
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    # eos: item_Set(0, 101, 0); (item slot 0: Calcium)
+    SKY_GIVE_ITEM item=ITEM_CALCIUM   # EoS item_Set(0, 101); message_Menu(MENU_GIVE_ITEM)
+    WAIT 10
+    JUMP_LABEL 1
+    JUMP_LABEL 1003
+  LABEL 1004
+  LABEL 1
+    FANFARE_PLAY 203   # EoS me_Play(4)
+    MSG_INSTANT text="{CENTER_ALIGN}You also received an Iron!"   # EoS message_Mail
+    WAIT_FANFARE1 203
+    TEXTBOX_CLEAR
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    # eos: item_Set(0, 102, 0); (item slot 0: Iron)
+    SKY_GIVE_ITEM item=ITEM_IRON   # EoS item_Set(0, 102); message_Menu(MENU_GIVE_ITEM)
+    WAIT 10
+    JUMP_LABEL 2
+    JUMP_LABEL 1005
+  LABEL 1006
+  LABEL 2
+    FANFARE_PLAY 212   # EoS me_Play(9)
+    # TODO eos: text tags left out: [MP], [M:S0]
+    MSG_INSTANT text="{CENTER_ALIGN}You were also given\n{CENTER_ALIGN}2000! Incredible!"   # EoS message_Mail
+    WAIT_FANFARE1 212
+    TEXTBOX_CLEAR
+    WAIT 15
+    FANFARE_PLAY2 455   # EoS se_Play(8974)
+    AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
+    AWAIT_CUE 67   # <- PARTNER done
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=SUPRISED
+    # TODO eos: text tags left out: [MP], [M:S0]
+    MSG_NPC who=PARTNER text=" Oh, wow! 2000?!{WAIT_PRESS} We can\nhave all this money?"
+    TEXTBOX_CLEAR
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=SPOINK emotion=NORMAL
+    # TODO eos: message_FacePositionOffset(-4, 1);
+    MSG_NPC who=SPOINK text=" Of course! Of course! That's\nnothing compared to my pearl's value!"
+    MSG_NPC who=SPOINK text=" Farewell!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 2   # -> SPOINK: batch 2
+    AWAIT_CUE_COND 68 1   # -> PLAYER: batch 1
+    AWAIT_CUE_COND 66 3   # -> PARTNER: batch 3
+    AWAIT_CUE_COND 70 1   # -> CHATOT: batch 1
+    AWAIT_CUE 65   # <- SPOINK done
+    AWAIT_CUE_COND 64 3   # -> SPOINK: batch 3
+    AWAIT_CUE 65   # <- SPOINK done
+    AWAIT_CUE_COND 64 4   # -> SPOINK: batch 4
+    AWAIT_CUE 65   # <- SPOINK done
+    AWAIT_CUE_COND 64 5   # -> SPOINK: batch 5
+    WAIT 60
+    AWAIT_CUE_COND 66 4   # -> PARTNER: batch 4
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 68 2   # -> PLAYER: batch 2
+    AWAIT_CUE_COND 66 5   # -> PARTNER: batch 5
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 70 2   # -> CHATOT: batch 2
+    PORTRAIT place=KEEP who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" We're rich, {NAME_0}! All of\na sudden, we're rich!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    PORTRAIT place=MIDLEFT_TOP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" Well done, team! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 6   # -> PARTNER: batch 6
+    AWAIT_CUE 67   # <- PARTNER done
+    AWAIT_CUE_COND 68 3   # -> PLAYER: batch 3
+    AWAIT_CUE_COND 70 3   # -> CHATOT: batch 3
+    AWAIT_CUE 71   # <- CHATOT done
+    AWAIT_CUE_COND 70 4   # -> CHATOT: batch 4
+    AWAIT_CUE_COND 66 7   # -> PARTNER: batch 7
+    AWAIT_CUE_COND 68 4   # -> PLAYER: batch 4
+    PORTRAIT place=CENTERLEFT_CENTER who=CHATOT emotion=NORMAL
+    # TODO eos: message_FacePositionOffset(2, -1);
+    MSG_NPC who=CHATOT text=" Now hand that money over, if\nyou please!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 463   # EoS se_Play(8968)
+    BGM_STOP
+    AWAIT_CUE_COND 68 5   # -> PLAYER: batch 5
+    AWAIT_CUE_COND 66 8   # -> PARTNER: batch 8
+    PORTRAIT place=KEEP who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Excuse me?!"
+    AWAIT_CUE 67   # <- PARTNER done
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 70 5   # -> CHATOT: batch 5
+    AWAIT_CUE 71   # <- CHATOT done
+    PORTRAIT place=CENTERRIGHT_TOP_FLIP who=CHATOT emotion=NORMAL
+    # TODO eos: message_FacePositionOffset(2, 2);
+    MSG_NPC who=CHATOT text=" Most of the money from jobs\ngoes to the Guildmaster, you see! ♪"
+    MSG_NPC who=CHATOT text=" And your team's share of the\nmoney comes out to this much...! ♪"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 70 6   # -> CHATOT: batch 6
+    AWAIT_CUE 71   # <- CHATOT done
+    FANFARE_PLAY2 SE_SKY_DUN_MOTION_MONEY   # EoS se_Play(8713) = SE_NUM_DUN_MOTION_MONEY: not converted yet
+    UPDATE_VARINT CALC_ADD GOLD 200   # EoS $CARRY_GOLD += 200;
+    WAIT_FANFARE2 SE_SKY_DUN_MOTION_MONEY
+    WAIT 10
+    FANFARE_PLAY2 455   # EoS se_Play(8974)
+    AWAIT_CUE_COND 68 6   # -> PLAYER: batch 6
+    AWAIT_CUE_COND 66 9   # -> PARTNER: batch 9
+    # TODO eos: text tags left out: [M:S0]
+    MSG_NPC who=PARTNER text=" Huh?!{WAIT_PRESS} We keep only 200?"
+    AWAIT_CUE 67   # <- PARTNER done
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 470   # EoS se_Play(8972)
+    AWAIT_CUE_COND 66 10   # -> PARTNER: batch 10
+    AWAIT_CUE 67   # <- PARTNER done
+    MSG_NPC who=PARTNER text=" That's not fair!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 70 7   # -> CHATOT: batch 7
+    AWAIT_CUE 71   # <- CHATOT done
+    PORTRAIT place=CENTERRIGHT_CENTER_FLIP who=CHATOT emotion=NORMAL
+    # TODO eos: message_FacePositionOffset(2, -1);
+    MSG_NPC who=CHATOT text=" Well that's the guild's rule.{WAIT_PRESS}\nYou simply have to accept it! ♪"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 SE_SKY_SWEAT_DROP   # EoS se_Play(8961)
+    AWAIT_CUE_COND 66 11   # -> PARTNER: batch 11
+    AWAIT_CUE 67   # <- PARTNER done
+    PORTRAIT place=KEEP who=PARTNER emotion=SAD
+    MSG_NPC who=PARTNER text=" Hmph..."
+    TEXTBOX_CLEAR
+    FADE_OUT wait=TRUE frames=60
+    RET
+    JUMP_LABEL 1005
+  LABEL 1005
+    JUMP_LABEL 1003
+  LABEL 1003
+    JUMP_LABEL 1001
+  LABEL 1001
+    RET
+end
+
+script g3_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 68
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    JUMP_LABEL 3000
+  LABEL 3001
+    ROTATE_TO speed=16 turn=DIR_TRANS_10 direction=NORTHEAST
+    JUMP_LABEL 3000
+  LABEL 3002
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    JUMP_LABEL 3000
+  LABEL 3003
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
+    JUMP_LABEL 3000
+  LABEL 3004
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
+    JUMP_LABEL 3000
+  LABEL 3005
+    EMOTION_EFFECT SHOCK
+    JUMP_LABEL 3000
+  LABEL 3006
+    EMOTION_EFFECT SHOCK
+    JUMP_LABEL 3000
+end
+
+script g3_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    COND_EQUAL 7 3007
+    COND_EQUAL 8 3008
+    COND_EQUAL 9 3009
+    COND_EQUAL 10 3010
+    COND_EQUAL 11 3011
+    JUMP_LABEL 3000
+  LABEL 3001
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHEAST
+    JUMP_LABEL 3000
+  LABEL 3002
+    CALL_SCRIPT NOTICE_FUNC
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3003
+    ROTATE_TO speed=16 turn=DIR_TRANS_10 direction=NORTHEAST
+    JUMP_LABEL 3000
+  LABEL 3004
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3005
+    CALL_SCRIPT JUMP_HAPPY_FUNC   # EoS CORO_JUMP_HAPPY_FUNC_SERIES
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3006
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3007
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
+    JUMP_LABEL 3000
+  LABEL 3008
+    CALL_SCRIPT SHOCK_FUNC
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3009
+    CALL_SCRIPT JUMP_SURPRISE_FUNC   # EoS CORO_JUMP_SURPRISE_FUNC_SERIES
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3010
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3011
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    JUMP_LABEL 3000
+end
+
+script g3_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 70
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    COND_EQUAL 6 3006
+    COND_EQUAL 7 3007
+    JUMP_LABEL 3000
+  LABEL 3001
+    ROTATE_TO speed=16 turn=DIR_TRANS_10 direction=EAST
+    JUMP_LABEL 3000
+  LABEL 3002
+    ROTATE_TO speed=16 turn=DIR_TRANS_10 direction=SOUTHEAST
+    JUMP_LABEL 3000
+  LABEL 3003
+    WALK_RELATIVE speed=256 dx=52 dy=28   # EoS MovePositionMark to Position<'m2', 33.5, 28.5>
+    AWAIT_CUE_COND 71 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    JUMP_LABEL 3000
+  LABEL 3005
+    WALK_RELATIVE speed=256 dx=0 dy=-16
+    AWAIT_CUE_COND 71 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3006
+    WALK_RELATIVE speed=256 dx=0 dy=16
+    AWAIT_CUE_COND 71 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3007
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHWEST
+    AWAIT_CUE_COND 71 0   # done: the station waits for this
+    JUMP_LABEL 3000
+end
+
+script g3_s0_spoink   # EoS actor NPC_BANEBUU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=SPOINK id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    COND_EQUAL 3 3003
+    COND_EQUAL 4 3004
+    COND_EQUAL 5 3005
+    JUMP_LABEL 3000
+  LABEL 3001
+    WALK_RELATIVE speed=204 dx=16 dy=16
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3002
+    WALK_RELATIVE speed=204 dx=40 dy=0
+    WALK_RELATIVE speed=204 dx=28 dy=-20   # EoS MovePositionMark to Position<'m0', 41.5, 25.5>
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3003
+    WALK_RELATIVE speed=204 dx=0 dy=-24   # EoS MovePositionMark to Position<'m1', 41.5, 22.5>
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3004
+    WALK_RELATIVE speed=204 dx=0 dy=-64
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    JUMP_LABEL 3000
+  LABEL 3005
+    END_DELETE
+end
+
+actors g3_s0_lives
+    actor kind=0 facing=NORTH x=33.5 y=30.5 script=g3_s0_player   # EoS PLAYER
+    actor kind=34 facing=NORTH x=29.5 y=30.5 script=g3_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_CHATOT facing=SOUTHEAST x=27.5 y=25.5 script=g3_s0_chatot   # EoS NPC_PERAPPU
+    actor kind=SKY_LIVES_SPOINK facing=SOUTH x=31.5 y=26.5 script=g3_s0_spoink   # EoS NPC_BANEBUU
+end
+
+stations
+    g0_s0_station
+    g1_s0_station
+    g2_s0_station
+    g3_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+    sector actors=g0_s1_lives
+end
+
+sectors g1
+    sector actors=g1_s0_lives station=1
+    sector actors=g1_s1_lives
+    sector actors=g1_s2_lives
+    sector actors=g1_s3_lives
+end
+
+sectors g2
+    sector actors=g2_s0_lives station=2
+end
+
+sectors g3
+    sector actors=g3_s0_lives station=3
+end
+
+groups
+    g0
+    g1
+    g2
+    g3
+end

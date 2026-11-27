@@ -41,6 +41,7 @@ TYPES = {
     "shake":     ("CAMERA_SHAKE_", ["include/constants/ground_script_params.h"]),
     "flashKind": ("PALUTIL_KIND_", ["include/constants/palette_util.h"]),
     "dungeon":   ("SCRIPT_DUNGEON_", ["include/constants/script_dungeon_id.h"]),
+    "item":      ("ITEM_", ["include/constants/item.h"]),
 }
 # names a type offers: the C names that start with this (prefix of the type
 # when it has one)
@@ -61,6 +62,8 @@ _C = [
      "A line of dialogue with the speaker's name. who=-1: no name. {WAIT_PRESS} waits for a button, \\n starts a new line."),
     ("MSG_QUIET", [("who", "npc"), ("text", "text")], "Text", "A line of text without a speaker name (thoughts)."),
     ("MSG_ON_BG_AUTO", [("frames", "frames"), ("text", "text")], "Text", "Text over a black screen that goes on by itself."),
+    ("MSG_INSTANT", [("text", "text")], "Text", "A whole message at once, without a speaker (EoS message_Mail: item received...)."),
+    ("MSG_OVERHEARD", [("text", "text")], "Text", "Text heard from the background (EoS message_ImitationSound)."),
     ("TEXTBOX_CLEAR", [], "Text", "Close the text box."),
     ("PORTRAIT", [("place", "placement"), ("who", "npc"), ("emotion", "emotion")], "Text",
      "Show the speaker's portrait. place=KEEP keeps it where it is and only changes the face."),
@@ -131,6 +134,7 @@ _C = [
     ("SKY_STORM_BOLT", [], "Screen", "The stormy sea's lightning, once."),
     ("SKY_MAP_PAL_RESTART", [], "Screen", "Restart the map's palette animations."),
     ("SKY_SAVE_GAME", [], "Scene", "Ask to save (the demo's end)."),
+    ("SKY_GIVE_ITEM", [("item", "item")], "Scene", "Give an item: into the bag, or the storage when the bag is full."),
     ("SKY_DEMO_TO_TITLE", [], "Scene", "Back to the title screen."),
     ("DEBUGINFO", [("line", "int")], "Flow",
      "The first line of every script (a debug marker). line: kept from the original C file; leave it out in new scripts."),

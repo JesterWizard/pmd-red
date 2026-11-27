@@ -1,0 +1,102 @@
+prefix s_sky_g01p04c_
+debug_file src/data/ground/sky/sky_g01p04c_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0602), on G01P04C.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0602  (EoS SCRIPT/G01P04C/m02a0602.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_CHATOT 2
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0602 (G01P04C)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_B2F_NIGHT
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=304 y=152   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 30
+    PORTRAIT place=MIDRIGHT_TOP_FLIP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" Now, this could just be a wild\nguess on my part, but..."
+    MSG_NPC who=CHATOT text=" I would guess that it's because\nyou fail so often. Our Guildmaster must be\nseething with anger over you."
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
+    WAIT 30
+    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
+    PORTRAIT place=KEEP who=CHATOT emotion=PAINED
+    MSG_NPC who=CHATOT text=" Our Guildmaster is truly a\nterror when enraged..."
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    PORTRAIT place=KEEP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" So watch yourself and do your\nbest to avoid displeasing our Guildmaster."
+    TEXTBOX_CLEAR
+    FADE_OUT wait=TRUE frames=30
+    RET
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    SELECT_ANIMATION 9
+    AWAIT_CUE 64
+    SELECT_ANIMATION 2
+    HALT
+end
+
+actors g0_s0_lives
+    actor kind=0 facing=NORTH x=54.5 y=29.5 script=g0_s0_player   # EoS PLAYER
+    actor kind=34 facing=NORTH x=50.5 y=29.5 script=g0_s0_partner   # EoS ATTENDANT1
+    actor kind=SKY_LIVES_CHATOT facing=SOUTH x=52.5 y=25.5 script=g0_s0_chatot   # EoS NPC_PERAPPU
+end
+
+stations
+    g0_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+end
+
+groups
+    g0
+end

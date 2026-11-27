@@ -77,6 +77,98 @@ Ground objects: `g01p05a1`, `g01p06b1`, `d02p31a1` (the pearl?) as
 `BGM_FIRE_CRACKLING_LOUDER`, `BGM_IN_THE_DEPTHS_OF_THE_PIT`) are already
 converted in the Sky Jukebox range; the story uses them as `MUS_SKY_*` ids.
 
+## Scenes: the translator
+
+`tools/event_editor/eos_import.py` (documentation/EventEditor.md, "Import
+from EoS") translates an EoS acting script and its SSA into a `.scene` group.
+`eos_import.py EOS.nds --chapter2 events/sky/draft/ch2` writes chapter 2's
+drafts: a file a map (the script's SCRIPT/ folder), the scripts of the table
+above as its groups, and `needs.txt`, the names they use that no header
+defines yet. The drafts are not built: integrating one means adding the
+names it needs (`scenes.py names FILE`), moving it to `events/sky/scenes/`
+and including it from the map's station header, as chapter 1's.
+
+### Coverage
+
+Checked against chapter 1's hand-made scenes (`--compare`, what each group
+does by category, cue plumbing and actor setup left out; "same" = the same
+command with the same values, wherever it is):
+
+| EoS script | Chapter 1 group | Text lines | All commands | Text order |
+|---|---|---|---|---|
+| m01a0101, m01a0102, m01d0112 | gs178 g4 | 6 / 6 | 59 / 81 (72%) | 100% |
+| m01a0103 | g5 | 7 / 7 | 21 / 26 (80%) | 100% |
+| m01a0104 | g6 | 21 / 21 | 98 / 111 (88%) | 100% |
+| m01a0202 / m01a0203 | g7 / g8 | — | 6 / 10, 7 / 10 | — |
+| m01a0204–0208 | g1 | 66 / 66 | 181 / 227 (79%) | 83% |
+| m01a0301 | g2 | 7 / 7 | 33 / 41 (80%) | 100% |
+| m01a0702 | g3 | 68 / 68 | 121 / 127 (95%) | 83% |
+| m01a0701 | gs179 g1 | 10 / 10 | 51 / 65 (78%) | 100% |
+
+Every chapter-1 line comes out word for word (line breaks are EoS's;
+`SkyWrapDialogueText` re-wraps them as it does chapter 1's). The text order
+is below 100% where chapter 1 left out EoS's other answers to a question
+(they are in the translation). The rest of the difference is chapter 1's hand
+tuning: the storm's and the beach's timings measured in DeSmuME, its own
+approximations of `Turn2DirectionTurn` (the translator uses EoS's turn codes,
+which are Red's: EoS's `LOOK_AROUND_FUNC` is `Turn2DirectionTurn(4, 2, 4)`,
+Red's `ROTATE_RELATIVE(4, 2, DIR_TRANS_SPINLEFT2)`), camera choices (a
+followed actor where EoS moves a performer), scenes joined into one group,
+and the EoS starting positions where chapter 1 moved an actor. The mappings
+chapter 1 shows were taken over: FACE_POS → PLACEMENT, a portrait left out
+when the face is unchanged, `Turn2DirectionLives` 10 → `DIR_TRANS_11`, the
+SE ids, the top screen's still pictures left out at a scene's start,
+`SELECT_ENTITIES` for sector 0, walks worked out from the SSA tile without
+its half-tile offset.
+
+Chapter 2 (29 scripts, 13 files): 2492 commands translated, 88 `TODO eos`
+(96.6%). What is left, by kind: animations past Red's table (EoS ids
+62–76: lying, waking, eating; 23), emotes the GBA has no picture for (eating,
+the two arrows; 19), switches on what the GBA can't ask (`sector()`, the
+sub-scenario; 11, the first case is taken), portrait offsets (7), dungeon
+entry and the flow between scenes (`main_EnterDungeon(-1)`,
+`supervision_ExecuteStationCommon`, `LoadStation`, `main_SetGround`,
+`CORO_EVENT_END_MAPIN`, `back_SetDungeonBanner`; 13), the chapter cards (6,
+in c00a0201's per-chapter branches), `screen_FadeChange`, three text tags.
+
+Names the drafts use beyond the naming contract: the maps
+`MAP_SKY_V01P08B`, `MAP_SKY_V02P03A` (the sentry's pit under the grate: EoS
+plays m02a0104 on it as a map, with Diglett and a camera move, not as a
+picture) and `MAP_SKY_V02P08A`; objects `SKY_OBJ_G01P01A3`, `_G01P05A1`,
+`_G01P06B1`, `_D02P31A1` (named after their EoS file until they are drawn);
+CGs `SKY_CUTAWAY_V01P08B`, `_V02P02A`, `_V02P03A`, `_V02P06A`, `_V02P08A`;
+nine scene SEs not converted yet (`SE_SKY_EVENT_*`); the kit's bows
+(`ITEM_*_BOW`); `SCRIPT_DUNGEON_SKY_DRENCHED_BLUFF`; m02a0901's generic team
+actors (`SKY_LIVES_ADVENTURE_NPC1`...: they stand for the team's members).
+`needs.txt` has the full list.
+
+### Engine gaps
+
+What chapter 2's scripts do that the GBA script engine (src/ground_script.c,
+include/data_script.h) could not, and what is done about each:
+
+| EoS | Status | GBA |
+|---|---|---|
+| Team naming, `message_Menu(MENU_TEAM_NAME)`, `[team:]` | exists | Red names its rescue team with `RENAME_TEAM` (CMD 0x3E: the team name input, `SetRescueTeamName`; vanilla b01p01a); `{TEAM_NAME}` prints it |
+| Hero naming, `MENU_PLAYER_NAME` | exists | `CLEAR_HERO_NAME` + `RENAME_ALLY 1` (chapter 1) |
+| Giving items, `item_Set` + `message_Menu(MENU_GIVE_ITEM)` (the Exploration Team kit, rewards) | **implemented** | `SKY_GIVE_ITEM(item)`, SPECIAL_PROCESS 0x74 under `SKY_STORY`: into the bag, or the storage when the bag is full (as `GIVE_WISH_STONE`). `[s_item:0]` becomes the item's name. The kit's bows are EoS items: the items piece adds them |
+| Money, `$CARRY_GOLD += 200` | exists | `UPDATE_VARINT CALC_ADD GOLD 200` (Red's `GOLD` is the team's money) |
+| Scenario, `$SCENARIO_MAIN = scn[3, 1]`, `scn(...) == [a, b]` | exists | `SCENARIO_CALC` / `JUMPIF_SCENE_EQ`; the sky build already numbers chapters as EoS does (`SKY_DEMO_END` sets (3, 0)) |
+| The save prompt, `CORO_HANYOU_SAVE_FUNC` | partly | the translator writes chapter 1's prompt (`ASK2` + `SKY_SAVE_GAME`). Proposed: `SKY_SAVE_GAME` takes a resume point and Continue resumes there (today it always shows the demo end) |
+| Bulletin board | not needed by the story | m02a0302 is scripted (Chatot picks Spoink's job); the board in free roam is piece 5. Proposed: Red's Pelipper board UI with a sky job list |
+| Faint path (EVENT_M02_05_07A/B) | proposed | as chapter 1's Beach Cave loss: the dungeon result (`DUNGEON_RESULT`) picks m02a0501 in the event flow (sky_story.c / ground_event_data.h) |
+| Flags `$SCENARIO_MAIN_BIT_FLAG[n]`, `$PERFORMANCE_PROGRESS_LIST[n]`, `$COMPULSORY_SAVE_POINT`, `$CONFIG_COLOR_KIND` | proposed | not in Red's variable table: new sky script variables (a save-layout change, `.cursor/skills/save-sram-layout`), or Red's spare ones. `PERFORMANCE_PROGRESS_LIST` only unlocks EoS menus and can go; `CONFIG_COLOR_KIND` (the quiz's colour, which picks the kit's bow) needs the quiz to ask it |
+| `dungeon_mode(3) = DMODE_OPEN`, `main_EnterDungeon` | proposed | `NEXT_DUNGEON` with Drenched Bluff's script dungeon (piece 3); opening it: Red's dungeon-open list |
+| `ProcessSpecial(GET_HERO_KIND)` | translated | 0, the story's hero: the special episodes' cases are kept but not taken |
+| `ProcessSpecial(53)` | not needed | only in EoS's `variation` runs (the demo version), which the translator treats as never taken |
+| Chapter cards, `back_SetBanner2` | proposed | chapter 1's card runs on a map load (`sky_chapter_card`, `chapter_titles.h`): a `SKY_CHAPTER_CARD(n)` special, or the same hook keyed on `SCENARIO_MAIN` |
+| `screen_FadeChange(w, frames, from, to)` (half dark) | proposed | CMD 0x24 (fade between two brightness levels) is not decompiled yet; a special on `palette_util` |
+| Emotes without a GBA picture (eating, two arrows, apple, rain on a performer) | proposed | EoS's effect sprites converted as new ground emotes (`EMOTION_EFFECT_*`) |
+| Animations 62–76 | proposed | the sprites piece: EoS ground groups past Red's 52 (`gUnknown_8117F64`), as Zubat's 22 / 24 |
+| `message_FacePositionOffset` | proposed | `PORTRAIT_POS` (a delta, in pixels): EoS's offset is in tiles |
+| `supervision_ExecuteStationCommon`, `LoadStation`, `ExecuteActing`, `CORO_EVENT_END_MAPIN` | proposed | the flow (piece 5): `EXECUTE_STATION` / `EXECUTE_SUBSTATION`, free roam on the guild's maps |
+| An actor with its own coroutine that the main routine also moves (1) | by hand | the translator sends its commands without waiting and marks it |
+
 ## Pieces
 
 1. Maps and CGs.

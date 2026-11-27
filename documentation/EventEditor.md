@@ -128,6 +128,8 @@ The commands with friendly fields (the editor lists every other command of
 | `MSG_NPC` | `who= text=` | A line of dialogue with the speaker's name. who=-1: no name. {WAIT_PRESS} waits for a button, \n starts a new line. |
 | `MSG_QUIET` | `who= text=` | A line of text without a speaker name (thoughts). |
 | `MSG_ON_BG_AUTO` | `frames= text=` | Text over a black screen that goes on by itself. |
+| `MSG_INSTANT` | `text=` | A whole message at once, without a speaker (EoS `message_Mail`: an item received...). |
+| `MSG_OVERHEARD` | `text=` | Text heard from the background (EoS `message_ImitationSound`). |
 | `TEXTBOX_CLEAR` |  | Close the text box. |
 | `PORTRAIT` | `place= who= emotion=` | Show the speaker's portrait. place=KEEP keeps it where it is and only changes the face. |
 | `ASK2` | `flag= default= who= text=` | Ask a question; the CHOICE lines after it are the answers. |
@@ -162,6 +164,7 @@ The commands with friendly fields (the editor lists every other command of
 | `SET_PLACE_MODE` | `mode=` | 1 before a scene is set up, 4 when it starts. |
 | `NEXT_DUNGEON` | `frames= dungeon=` | Go to a dungeon. |
 | `SKY_SAVE_GAME` |  | Ask to save (the demo's end). |
+| `SKY_GIVE_ITEM` | `item=` | Give an item (`ITEM_` name): into the bag, or the storage when the bag is full. |
 | `SKY_DEMO_TO_TITLE` |  | Back to the title screen. |
 | **Screen** | | |
 | `FADE_IN` | `wait= frames=` | Fade the scene in from black over frames (0: at once). |
@@ -190,6 +193,71 @@ The commands with friendly fields (the editor lists every other command of
 | `SKY_AMBIENCE_FADEOUT` | `frames=` | Fade the ambience out (0: stop at once). |
 | **Story CGs** | | |
 | `SKY_CUTAWAY` | `cg= frames=` | Show a story CG. Still pictures: shown for frames (A/B skips after a while). Pans: the picture is held for frames, then the pan. |
+
+## Import from EoS
+
+`tools/event_editor/eos_import.py` turns an EoS scene script into a draft
+scene file to hand-tune. It reads the EoS ROM (never commit it) with
+skytemple-files: the script (`SCRIPT/<LEVEL>/<name>.ssb`, decompiled to
+ExplorerScript) and its `.ssa` (who stands where, in which layer).
+
+```bash
+python3 tools/event_editor/eos_import.py EOS.nds SCRIPT/G01P01B/m02a0101 m02a0105 -o out.scene
+python3 tools/event_editor/eos_import.py EOS.nds m02a0101 --dump DIR      # the .exps and .ssa.json
+python3 tools/event_editor/eos_import.py --exps x.exps --ssa x.ssa.json -o out.scene   # no ROM
+python3 tools/event_editor/eos_import.py EOS.nds --chapter2 events/sky/draft/ch2       # all of chapter 2
+python3 tools/event_editor/eos_import.py EOS.nds SCRIPT/G01P01B/m01a0104 \
+    --compare events/sky/scenes/sky_d01p01_scenes.scene:g6 --detail       # against a hand-made group
+```
+
+Each script becomes a group: an SSA layer is a sector (`actors` / `objects`
+at the SSA positions), the main routine (`def 0`) is the station script and
+every actor and object gets a script. A command EoS gives an actor
+(`MovePositionOffset<actor X>(...)`) runs in X's script: the station sends X a
+cue and X runs the commands that came with it; `WaitExecuteLives(X)` waits
+for X's "done" cue. Both sides meet with `AWAIT_CUE_COND`, which waits until
+the other side is waiting, so no cue is lost (an `ALERT_CUE` reaches only
+scripts already waiting). Commands sent from inside a branch use a
+dispatch table in the actor (`AWAIT_CUE`, then `COND_EQUAL batch label`).
+`def N for actor X` (an actor's own coroutine) becomes the start of X's
+script; `Lock(n)` / `Unlock(n)` become `AWAIT_CUE n` / `AWAIT_CUE_COND n`.
+
+The mappings are chapter 1's (checked against its hand-made scenes with
+`--compare`): `message_SetFace` → `PORTRAIT` (FACE_POS → PLACEMENT,
+FACE → EMOTION; KEEP when the place is unchanged, nothing when the face is),
+`message_Talk` / `Monologue` / `Mail` / `Narration` → `MSG_NPC` / `MSG_QUIET`
+/ `MSG_INSTANT` / `MSG_ON_BG_AUTO`, `message_SwitchTalk` → its default
+variant, a close followed by another line → nothing (the lines run on),
+`[K]` → `{WAIT_PRESS}`, `[hero]` / `[partner]` → `{NAME_0}` / `{NAME_1}`,
+`[c_kind:X]` / `[c_name:X]` → `{POKEMON_n}` / `{NAME_n}`, `[CN]` →
+`{CENTER_ALIGN}`, `[team:]` → `{TEAM_NAME}`, colours left out; `se_Play(id)`
+→ the Red id that plays that EoS SE (`tools/eos_music/sky_red_se_map.py`,
+`SE_SKY_*`), `me_Play` → Red's jingle id, `BGM_X` → `MUS_SKY_X`;
+`Move*` / `Slide*` → `WALK_RELATIVE` / `MOVE_RELATIVE` (speed × 256, marks as
+offsets from the tracked position), `Turn2Direction*` → `ROTATE_*`
+(EoS's turn codes are Red's), `SetAnimation` → `SELECT_ANIMATION`,
+`SetEffect` (+ `WaitEffect`) → `EMOTION_EFFECT` (or the `*_FUNC` that waits),
+the common coroutines → `CALL_SCRIPT` (`JUMP_*_FUNC`, `LOOK_AROUND_*`) or
+their commands (head shake, explanation), `supervision_Acting(n)` →
+`SELECT_LIVES` / `SELECT_OBJECTS`, `supervision_RemoveActing(n)` →
+`END_DELETE` in that layer's scripts, the camera on a performer →
+`SKY_CAMERA_SET` / `SKY_CAMERA_MOVE`, `back2_SetGround` (the top screen) →
+a pan at the start or `SKY_CUTAWAY` in the middle, white-outs → `FLASH_*`,
+questions → `ASK2` + `CHOICE`, `if` / `switch` on scenario or variables →
+`JUMPIF_*`, the team name → `RENAME_TEAM`, the save prompt → `ASK2` +
+`SKY_SAVE_GAME`, an item given → `SKY_GIVE_ITEM`.
+
+Anything else becomes `# TODO eos: <the EoS line>` and does nothing; nothing
+is dropped without a mark. The station's sense of time (walk lengths,
+camera moves) is estimated, so check `WAIT`s after moves in the game.
+
+**Names that don't exist yet.** A draft uses the names chapter 2's other
+pieces will add (`MAP_SKY_GUILD_B2F`, `SKY_LIVES_CHATOT`, `MUS_SKY_*`, new
+`SE_SKY_*`...). `scenes.py check --allow-unknown FILE...` parses and compiles
+a file and lists the names no header defines yet; `scenes.py names FILE...`
+prints just those; `scenes.py check --names` makes them errors (chapter 1's
+files pass it). `events/sky/draft/ch2/needs.txt` lists what all of chapter 2
+needs. The drafts are not compiled by the build.
 
 ## Story CGs
 
@@ -297,7 +365,12 @@ PNGs and converted maps in the repository.
 - `sky_cutaways.c` / `sky_cutaways_data.c` include `<sky_cg_config.h>` (angle
   brackets: the vanilla build compiles them too, and scaninc skips `<>`).
 - Tests: `python3 -m unittest tools/event_editor/test_event_editor.py`, also
-  run by `scripts/cloud/sky_regression.sh` (`event_editor_tests`).
+  run by `scripts/cloud/sky_regression.sh` (`event_editor_tests`). `EosImport`
+  translates two small EoS scripts (no ROM needed), checks chapter 1's files
+  name nothing undefined and that the chapter-2 drafts read back and leave no
+  cue unanswered (`eos_import.cue_problems`).
+- The importer: `eos_import.py` (translation, `--compare`, `--chapter2`) and
+  `exps.py` (a reader for the ExplorerScript SkyTemple writes).
 - `python3 tools/event_editor/scenes.py check|fmt FILE.scene`,
   `cutaways.py check`, `opening.py check` check the files from the command line.
 

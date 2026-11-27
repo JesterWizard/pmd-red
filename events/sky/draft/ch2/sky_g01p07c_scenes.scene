@@ -1,0 +1,433 @@
+prefix s_sky_g01p07c_
+debug_file src/data/ground/sky/sky_g01p07c_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0113, m02a0601, m02a1003, c00a0301), on G01P07C.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0113  (EoS SCRIPT/G01P07C/m02a0113.ssb)
+#   group 1  m02a0601  (EoS SCRIPT/G01P07C/m02a0601.ssb)
+#   group 2  m02a1003  (EoS SCRIPT/G01P07C/m02a1003.ssb)
+#   group 3  c00a0301  (EoS SCRIPT/G01P07C/c00a0301.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_CHATOT 2
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0113 (G01P07C)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    JUMPIF_ARRAY SCENARIO_MAIN_BIT_FLAG 8 1002
+    # eos: back2_SetMode(4); (the top screen)
+    # eos: back2_SetGround(LEVEL_V02P06A); (the top screen's picture: V02P06A; left out as in chapter 1)
+    # eos: camera2_SetPositionMark(Position<'m0', 19.5, 15.5>); (the top screen's view)
+    # eos: screen2_FadeIn(1, 60); (the top screen)
+    WAIT 150
+    # eos: screen2_FadeOut(1, 60); (the top screen)
+    # eos: back2_SetMode(0); (the top screen)
+    SELECT_MAP SKY_GUILD_CREW_ROOM_NIGHT
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
+    AWAIT_CUE_COND 64 1   # -> PLAYER: batch 1
+    AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
+    # TODO eos: screen_FadeChange(1, 60, 0, 192);
+    BGM_SWITCH SKY_GOODNIGHT
+    WAIT 30
+    # eos: message_SetActor(ACTOR_ATTENDANT1);
+    MSG_NPC who=PARTNER text=" ..."
+    MSG_NPC who=PARTNER text=" ......"
+    MSG_NPC who=PARTNER text=" Say, are you still awake,\n{NAME_0}?"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=PARTNER text=" My heart's been racing all day..."
+    MSG_NPC who=PARTNER text=" But I'm glad I finally forced\nmyself to come here."
+    MSG_NPC who=PARTNER text=" I thought Wigglytuff would be\nkind of scary, but he was pretty nice."
+    MSG_NPC who=PARTNER text=" We'll experience all sorts of\nnew stuff starting tomorrow, but I'm not\nvery frightened."
+    MSG_NPC who=PARTNER text=" Actually, I can't wait to find\nout what new adventures are in store for us!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=PARTNER text=" I'm getting a little sleepy..."
+    MSG_NPC who=PARTNER text=" Let's give it our all tomorrow."
+    MSG_NPC who=PARTNER text=" OK, {NAME_0}. Sleep tight."
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
+    WAIT 90
+    BGM_FADEOUT 120
+    # eos: message_EmptyActor(); (no speaker)
+    MSG_QUIET who=-1 text="(Um...)"
+    MSG_QUIET who=-1 text="(Now I'm suddenly apprenticing at the guild...)"
+    MSG_QUIET who=-1 text="(I gotta admit, it's pretty exciting to be in an\nexploration team.)"
+    MSG_QUIET who=-1 text="(And it's fun to be friends with\n{NAME_1}...)"
+    MSG_QUIET who=-1 text="(But first things first...)"
+    MSG_QUIET who=-1 text="(Who am I?)"
+    MSG_QUIET who=-1 text="(How did I turn into a Pokémon?)"
+    MSG_QUIET who=-1 text="(How did I end up unconscious on that beach?)"
+    MSG_QUIET who=-1 text="(I'm feeling sleepy too...)"
+    MSG_QUIET who=-1 text="(Well, thinking about it won't help right now.\nI'd better focus on the guild's work for now...)"
+    MSG_QUIET who=-1 text="(If I do that, well, everything should become\nclear eventually...)"
+    MSG_QUIET who=-1 text="(I'll surely get to the bottom of this in time.)"
+    TEXTBOX_CLEAR
+    WAIT 30
+    AWAIT_CUE_COND 64 2   # -> PLAYER: batch 2
+    WAIT 120
+    FADE_OUT wait=TRUE frames=120
+    WAIT 60
+    SET_ARRAYVAL SCENARIO_MAIN_BIT_FLAG 8 1   # EoS $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    UPDATE_VARINT CALC_SET COMPULSORY_SAVE_POINT 1   # EoS $COMPULSORY_SAVE_POINT = 1;
+    ASK2 flag=FALSE default=-1 who=-1 text="{CENTER_ALIGN}Would you like to save your adventure?"
+    CHOICE label=1003 text="Save"
+    CHOICE label=1004 text="Don't save"
+  LABEL 1003
+    TEXTBOX_CLEAR
+    SKY_SAVE_GAME   # EoS CORO_HANYOU_SAVE_FUNC
+    COND_EQUAL 0 1005
+    MSG_INSTANT text="{CENTER_ALIGN}Your adventure has been saved."
+    JUMP_LABEL 1004
+  LABEL 1005
+    MSG_INSTANT text="{CENTER_ALIGN}The data could not be saved."
+  LABEL 1004
+    TEXTBOX_CLEAR
+    JUMP_LABEL 0
+    JUMP_LABEL 1001
+  LABEL 1002
+  LABEL 0
+    SET_ARRAYVAL SCENARIO_MAIN_BIT_FLAG 8 0   # EoS $SCENARIO_MAIN_BIT_FLAG[8] = 0;
+    WAIT 30
+    FANFARE_PLAY 207   # EoS me_Play(7)
+    # TODO eos: text tags left out: [W:30]
+    MSG_NPC who=-1 text="{CENTER_ALIGN}Exploration Team\n{CENTER_ALIGN}Quick Tip"   # EoS message_Explanation
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=-1 text="{CENTER_ALIGN}You can save a record of your progress\n{CENTER_ALIGN}by climbing onto your bed from now on."   # EoS message_Explanation
+    MSG_NPC who=-1 text="{CENTER_ALIGN}So whenever you want to save your\n{CENTER_ALIGN}progress, just climb onto your bed."   # EoS message_Explanation
+    TEXTBOX_CLEAR
+    WAIT 60
+    RET
+    JUMP_LABEL 1001
+  LABEL 1001
+    RET
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(76); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    JUMP_LABEL 3000
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(76); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    JUMP_LABEL 3000
+end
+
+actors g0_s0_lives
+    actor kind=0 facing=EAST x=25.5 y=23 script=g0_s0_player   # EoS PLAYER
+    actor kind=34 facing=WEST x=19.5 y=23 script=g0_s0_partner   # EoS ATTENDANT1
+end
+
+# ------------------------------------------------------------------------
+# group 1: EoS m02a0601 (G01P07C)
+# ------------------------------------------------------------------------
+
+script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_CREW_ROOM_NIGHT
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 30
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" Why don't we get some sleep?"
+    TEXTBOX_CLEAR
+    SELECT_LIVES group=-1 sector=1   # EoS supervision_Acting(1)
+    WAIT 1
+    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
+    WAIT 20
+    FANFARE_PLAY2 SE_SKY_EVENT_SIGN_NOTICE_05   # EoS se_Play(8978) = SE_NUM_EVENT_SIGN_NOTICE_05: not converted yet
+    # TODO eos: SetEffect<actor ACTOR_PLAYER>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    AWAIT_CUE 65   # <- CHATOT done
+    PORTRAIT place=LEFT_MIDTOP who=CHATOT emotion=NORMAL
+    MSG_NPC who=CHATOT text=" Hey, beginners!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 465   # EoS se_Play(8964)
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 67   # <- PARTNER done
+    ALERT_CUE 66   # -> PARTNER
+    MSG_NPC who=CHATOT text=" Before you go to bed, our\nGuildmaster wants to speak with you."
+    TEXTBOX_CLEAR
+    FADE_OUT wait=TRUE frames=30
+    RET
+end
+
+script g1_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g1_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    CALL_SCRIPT NOTICE_FUNC
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    HALT
+end
+
+script g1_s1_chatot   # EoS actor NPC_PERAPPU, layer 1
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    WALK_RELATIVE speed=307 dx=96 dy=0   # EoS MovePositionMark to Position<'m0', 14, 23>
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    HALT
+end
+
+actors g1_s0_lives
+    actor kind=0 facing=WEST x=25.5 y=23 script=g1_s0_player   # EoS PLAYER
+    actor kind=34 facing=EAST x=19.5 y=23 script=g1_s0_partner   # EoS ATTENDANT1
+end
+
+actors g1_s1_lives
+    actor kind=SKY_LIVES_CHATOT facing=EAST x=2 y=23 script=g1_s1_chatot   # EoS NPC_PERAPPU
+end
+
+# ------------------------------------------------------------------------
+# group 2: EoS m02a1003 (G01P07C)
+# ------------------------------------------------------------------------
+
+script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    # eos: back2_SetMode(4); (the top screen)
+    # eos: back2_SetGround(LEVEL_V02P06A); (the top screen's picture: V02P06A; left out as in chapter 1)
+    # eos: camera2_SetPositionMark(Position<'m0', 19.5, 15.5>); (the top screen's view)
+    # eos: screen2_FadeIn(1, 60); (the top screen)
+    WAIT 150
+    # eos: screen2_FadeOut(1, 60); (the top screen)
+    # eos: back2_SetMode(0); (the top screen)
+    SELECT_MAP SKY_GUILD_CREW_ROOM_NIGHT
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
+    AWAIT_CUE_COND 64 1   # -> PLAYER: batch 1
+    AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
+    # TODO eos: screen_FadeChange(1, 60, 0, 192);
+    BGM_SWITCH SKY_GOODNIGHT
+    WAIT 30
+    # eos: message_SetActor(ACTOR_ATTENDANT1);
+    MSG_NPC who=PARTNER text=" Say, {NAME_0}..."
+    MSG_NPC who=PARTNER text=" Today was pretty hectic with\neverything we went through, wasn't it?"
+    MSG_NPC who=PARTNER text=" But I'm glad our first job turned\nout so well."
+    MSG_NPC who=PARTNER text=" I was really mad about how\nWigglytuff's Guild took most of the money..."
+    MSG_NPC who=PARTNER text=" That's just the cost of training,\nI guess. We can't do anything about it."
+    MSG_NPC who=PARTNER text=" But what made me really happy\ntoday, though, was getting thanked by Spoink!"
+    TEXTBOX_CLEAR
+    WAIT 45
+    MSG_NPC who=PARTNER text=" Yawn... I'm getting sleepy."
+    MSG_NPC who=PARTNER text=" I'm going to sleep.{WAIT_PRESS} Let's try our\nbest again tomorrow."
+    MSG_NPC who=PARTNER text=" Sleep tight, {NAME_0}..."
+    TEXTBOX_CLEAR
+    WAIT 30
+    AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
+    WAIT 10
+    AWAIT_CUE_COND 64 2   # -> PLAYER: batch 2
+    WAIT 80
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=120
+    WAIT_BGM MUS_SKY_GOODNIGHT
+    WAIT 30
+    # eos: if ( variation ): never in the story (EoS's variation run)
+    SCENARIO_CALC SCENARIO_MAIN 4 0   # EoS scenario numbers
+    RET
+    JUMP_LABEL 1003
+  LABEL 1004
+    JUMP_LABEL 0
+    JUMP_LABEL 1003
+  LABEL 1003
+    JUMP_LABEL 1001
+  LABEL 1002
+  LABEL 0
+    # TODO eos: switch ( ProcessSpecial(53, -1, 0) ) { }   (ProcessSpecial: see SkyChapter2.md, engine gaps)
+    TEXTBOX_AUTO_PRESS 300 300   # EoS message_SetWaitMode
+    MSG_NPC who=-1 text="{CENTER_ALIGN}Thanks for playing!\n{CENTER_ALIGN}We hope you enjoyed\n{CENTER_ALIGN}the demo!"   # EoS message_Explanation
+    # eos: message_KeyWait(); (the line above waits for a button)
+    SKY_DEMO_TO_TITLE   # EoS ProcessSpecial(PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN)
+    RET
+    JUMP_LABEL 1001
+  LABEL 1001
+    RET
+end
+
+script g2_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(76); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    JUMP_LABEL 3000
+end
+
+script g2_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(76); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
+    JUMP_LABEL 3000
+end
+
+actors g2_s0_lives
+    actor kind=0 facing=EAST x=25.5 y=23 script=g2_s0_player   # EoS PLAYER
+    actor kind=34 facing=WEST x=19.5 y=23 script=g2_s0_partner   # EoS ATTENDANT1
+end
+
+# ------------------------------------------------------------------------
+# group 3: EoS c00a0301 (G01P07C)
+# ------------------------------------------------------------------------
+
+script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_CREW_ROOM_NIGHT
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    BGM_SWITCH SKY_GOODNIGHT
+    WAIT 30
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
+    MSG_NPC who=PARTNER text=" We should get some sleep too."
+    MSG_NPC who=PARTNER text=" Let's make tomorrow another\ngood day, {NAME_0}!"
+    MSG_NPC who=PARTNER text=" OK, good night."
+    TEXTBOX_CLEAR
+    BGM_FADEOUT 120
+    FADE_OUT wait=TRUE frames=60
+    WAIT_BGM MUS_SKY_GOODNIGHT
+    RET
+end
+
+script g3_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+script g3_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    HALT
+end
+
+actors g3_s0_lives
+    actor kind=0 facing=WEST x=25.5 y=23 script=g3_s0_player   # EoS PLAYER
+    actor kind=34 facing=EAST x=19.5 y=23 script=g3_s0_partner   # EoS ATTENDANT1
+end
+
+stations
+    g0_s0_station
+    g1_s0_station
+    g2_s0_station
+    g3_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+end
+
+sectors g1
+    sector actors=g1_s0_lives station=1
+    sector actors=g1_s1_lives
+end
+
+sectors g2
+    sector actors=g2_s0_lives station=2
+end
+
+sectors g3
+    sector actors=g3_s0_lives station=3
+end
+
+groups
+    g0
+    g1
+    g2
+    g3
+end

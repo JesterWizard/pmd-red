@@ -1,0 +1,381 @@
+prefix s_sky_g01p06b_
+debug_file src/data/ground/sky/sky_g01p06b_scenes.h
+
+# Explorers of Sky chapter 2 (c00a0601), on G01P06B.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  c00a0601  (EoS SCRIPT/G01P06B/c00a0601.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_LOUDRED 2
+#define NPC_BIDOOF 3
+#define NPC_CORPHISH 4
+#define NPC_CHIMECHO 5
+#define NPC_CHATOT 6
+#define NPC_DIGLETT 7
+#define NPC_DUGTRIO 8
+#define NPC_CROAGUNK 9
+#define NPC_SUNFLORA 10
+#define NPC_WIGGLYTUFF 11
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS c00a0601 (G01P06B)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_MESS_HALL
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=252 y=136   # EoS camera_SetMyself<performer 0>
+    SKY_CAMERA_MOVE_X dx=-200 speed=128   # EoS MovePositionOffset<performer 0>(0.5, -200, 0);
+    WAIT 1
+    AWAIT_CUE_COND 64 1   # -> PLAYER: batch 1
+    AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
+    AWAIT_CUE_COND 68 1   # -> CHATOT: batch 1
+    AWAIT_CUE_COND 70 1   # -> LOUDRED: batch 1
+    AWAIT_CUE_COND 72 1   # -> DIGLETT: batch 1
+    AWAIT_CUE_COND 74 1   # -> DUGTRIO: batch 1
+    AWAIT_CUE_COND 76 1   # -> SUNFLORA: batch 1
+    AWAIT_CUE_COND 78 1   # -> CORPHISH: batch 1
+    AWAIT_CUE_COND 80 1   # -> BIDOOF: batch 1
+    AWAIT_CUE_COND 82 1   # -> CROAGUNK: batch 1
+    AWAIT_CUE_COND 84 1   # -> CHIMECHO: batch 1
+    # TODO eos: SetEffect<actor ACTOR_NPC_PERAPPU>(EFFECT_EATING, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_CHIRIIN>(EFFECT_EATING, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_HEIGANI>(EFFECT_EATING, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_BIPPA>(EFFECT_EATING, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_DOGOOMU>(EFFECT_EATING, 3);
+    # TODO eos: SetEffect<actor ACTOR_PLAYER>(EFFECT_EATING, 3);
+    # TODO eos: SetEffect<actor ACTOR_ATTENDANT1>(EFFECT_EATING, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_DIGUDA>(EFFECT_EATING_SLOW, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_DAGUTORIO>(EFFECT_EATING_SLOW, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_GUREGGURU>(EFFECT_EATING_SLOW, 3);
+    # TODO eos: SetEffect<actor ACTOR_NPC_KIMAWARI>(EFFECT_EATING_SLOW, 3);
+    # TODO eos: switch ( sector() ) { (the first case is taken)
+    JUMP_LABEL 1002
+  LABEL 1002
+  LABEL 0
+    ALERT_CUE 86   # -> WIGGLYTUFF
+  LABEL 1
+    BGM_FADEIN frames=60 song=SKY_EATING
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    MSG_OVERHEARD text="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!"   # EoS message_ImitationSound
+    MSG_OVERHEARD text="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!"   # EoS message_ImitationSound
+    MSG_OVERHEARD text="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!"   # EoS message_ImitationSound
+    MSG_OVERHEARD text="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!"   # EoS message_ImitationSound
+    MSG_OVERHEARD text="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!"   # EoS message_ImitationSound
+    MSG_OVERHEARD text="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!"   # EoS message_ImitationSound
+    TEXTBOX_CLEAR
+    BGM_FADEOUT 60
+    FADE_OUT wait=TRUE frames=30
+    WAIT_BGM MUS_SKY_EATING
+    WAIT 30
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 3 1005   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 6 1005   # EoS scenario numbers
+    RET
+    JUMP_LABEL 1004
+  LABEL 1005
+    AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
+    AWAIT_CUE_COND 64 2   # -> PLAYER: batch 2
+    AWAIT_CUE_COND 70 2   # -> LOUDRED: batch 2
+    AWAIT_CUE_COND 80 2   # -> BIDOOF: batch 2
+    AWAIT_CUE_COND 78 2   # -> CORPHISH: batch 2
+    AWAIT_CUE_COND 84 2   # -> CHIMECHO: batch 2
+    AWAIT_CUE_COND 68 2   # -> CHATOT: batch 2
+    AWAIT_CUE_COND 72 2   # -> DIGLETT: batch 2
+    AWAIT_CUE_COND 74 2   # -> DUGTRIO: batch 2
+    AWAIT_CUE_COND 82 2   # -> CROAGUNK: batch 2
+    AWAIT_CUE_COND 76 2   # -> SUNFLORA: batch 2
+    AWAIT_CUE_COND 88 1   # -> G01P06B1_107: batch 1
+    # eos: supervision_RemoveActing(0);
+    # eos: message_ResetActor(); (no speaker)
+    MSG_NPC who=-1 text=" Aaaaah! I'm done eating! Excellent meal!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=-1 text=" I'm stuffed, and now I'm getting sleepy..."
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=-1 text=" Yep, I'm off to bed! Good night, gang!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    MSG_NPC who=-1 text=" Good night!"
+    TEXTBOX_CLEAR
+    WAIT 30
+    RET
+    JUMP_LABEL 1004
+  LABEL 1004
+    JUMP_LABEL 1001
+  LABEL 1003
+    # eos: WaitLockLives(5, ACTOR_NPC_PUKURIN); (Unlock below waits for it)
+    AWAIT_CUE_COND 5 0   # EoS Unlock(5): once it is waiting
+    JUMP_LABEL 1
+  LABEL 1001
+    RET
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 66
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(64); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 64
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(64); (no such Red animation id)
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_loudred   # EoS actor NPC_DOGOOMU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 70
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 80
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_corphish   # EoS actor NPC_HEIGANI, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CORPHISH id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 78
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_chimecho   # EoS actor NPC_CHIRIIN, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHIMECHO id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 84
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 68
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 43   # EoS animation 43: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_diglett   # EoS actor NPC_DIGUDA, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=DIGLETT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 72
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_dugtrio   # EoS actor NPC_DAGUTORIO, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=DUGTRIO id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 74
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_croagunk   # EoS actor NPC_GUREGGURU, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=CROAGUNK id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 82
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_sunflora   # EoS actor NPC_KIMAWARI, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=SUNFLORA id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 76
+    COND_EQUAL 1 3001
+    COND_EQUAL 2 3002
+    JUMP_LABEL 3000
+  LABEL 3001
+    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
+    JUMP_LABEL 3000
+  LABEL 3002
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+script g0_s0_wigglytuff   # EoS actor NPC_PUKURIN, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=WIGGLYTUFF id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    # EoS: its own coroutine (def ... for actor NPC_PUKURIN)
+    SELECT_ANIMATION 5
+    # TODO eos: SetEffect(EFFECT_APPLE_ON_HEAD, 3);
+    AWAIT_CUE 5   # EoS Lock(5)
+  LABEL 3
+  LABEL 2001
+    ROTATE_TO speed=8 turn=SPINRIGHT1 direction=NORTH
+    WAIT 20
+    ROTATE_TO speed=8 turn=SPINRIGHT1 direction=SOUTH
+    WAIT 20
+    WAIT 1   # (a forever loop)
+    JUMP_LABEL 2001
+  LABEL 2002
+    # TODO eos: the station also sends this one commands (below), which its own coroutine never reaches
+    AWAIT_CUE 86
+    END_DELETE
+end
+
+script g0_s0_obj0_g01p06b1   # EoS object G01P06B1_107, layer 0
+    DEBUGINFO
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+  LABEL 3000
+    AWAIT_CUE 88
+    COND_EQUAL 1 3001
+    JUMP_LABEL 3000
+  LABEL 3001
+    END_DELETE   # EoS supervision_RemoveActing(0)
+end
+
+actors g0_s0_lives
+    actor kind=34 facing=SOUTH x=24.5 y=23 script=g0_s0_partner   # EoS ATTENDANT1
+    actor kind=0 facing=SOUTH x=27.5 y=23 script=g0_s0_player   # EoS PLAYER
+    actor kind=SKY_LIVES_LOUDRED facing=SOUTH x=30.5 y=23 script=g0_s0_loudred   # EoS NPC_DOGOOMU
+    actor kind=SKY_LIVES_BIDOOF facing=SOUTH x=33.5 y=23 script=g0_s0_bidoof   # EoS NPC_BIPPA
+    actor kind=SKY_LIVES_CORPHISH facing=SOUTH x=36.5 y=23 script=g0_s0_corphish   # EoS NPC_HEIGANI
+    actor kind=SKY_LIVES_CHIMECHO facing=SOUTH x=39.5 y=23 script=g0_s0_chimecho   # EoS NPC_CHIRIIN
+    actor kind=SKY_LIVES_CHATOT facing=WEST x=42.5 y=26 script=g0_s0_chatot   # EoS NPC_PERAPPU
+    actor kind=SKY_LIVES_DIGLETT facing=NORTH x=39.5 y=28.5 script=g0_s0_diglett   # EoS NPC_DIGUDA
+    actor kind=SKY_LIVES_DUGTRIO facing=NORTH x=36.5 y=28.5 script=g0_s0_dugtrio   # EoS NPC_DAGUTORIO
+    actor kind=SKY_LIVES_CROAGUNK facing=NORTH x=33.5 y=28.5 script=g0_s0_croagunk   # EoS NPC_GUREGGURU
+    actor kind=SKY_LIVES_SUNFLORA facing=NORTH x=30.5 y=28.5 script=g0_s0_sunflora   # EoS NPC_KIMAWARI
+    actor kind=SKY_LIVES_WIGGLYTUFF facing=SOUTH x=46 y=28.5 script=g0_s0_wigglytuff   # EoS NPC_PUKURIN
+end
+
+objects g0_s0_objs
+    object kind=SKY_OBJ_G01P06B1 w=2 h=1 x=32 y=26.5 script=g0_s0_obj0_g01p06b1   # EoS G01P06B1_107
+end
+
+stations
+    g0_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives objects=g0_s0_objs station=0
+end
+
+groups
+    g0
+end

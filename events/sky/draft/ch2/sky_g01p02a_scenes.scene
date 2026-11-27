@@ -1,0 +1,99 @@
+prefix s_sky_g01p02a_
+debug_file src/data/ground/sky/sky_g01p02a_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0106), on G01P02A.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0106  (EoS SCRIPT/G01P02A/m02a0106.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0106 (G01P02A)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    BGM_STOP
+    SELECT_MAP SKY_GUILD_1F
+    SKY_CAMERA_SET x=92 y=120   # EoS camera_SetPositionMark(Position<'m0', 26, 24.5>);
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 30
+    FANFARE_PLAY2 466   # EoS se_Play(8967)
+    AWAIT_CUE_COND 64 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 65   # <- PARTNER done
+    PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=SUPRISED
+    MSG_NPC who=PARTNER text=" Th-there's a hatch that leads\nunderground here!"
+    TEXTBOX_CLEAR
+    AWAIT_CUE_COND 66 0   # -> PLAYER (waits until it is ready)
+    WAIT 20
+    ALERT_CUE 64   # -> PARTNER
+    AWAIT_CUE 67   # <- PLAYER done
+    ALERT_CUE 66   # -> PLAYER
+    AWAIT_CUE 65   # <- PARTNER done
+    ALERT_CUE 64   # -> PARTNER
+    FADE_OUT wait=TRUE frames=30
+    RET
+end
+
+script g0_s0_player   # EoS actor PLAYER, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    WALK_RELATIVE speed=256 dx=-12 dy=-36   # EoS MovePositionMark to Position<'m1', 25.5, 20.5>
+    AWAIT_CUE_COND 67 0   # done: the station waits for this
+    AWAIT_CUE 66
+    END_DELETE
+end
+
+script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    CALL_SCRIPT NOTICE_FUNC
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    WALK_RELATIVE speed=256 dx=20 dy=-36   # EoS MovePositionMark to Position<'m2', 25.5, 20.5>
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    END_DELETE
+end
+
+actors g0_s0_lives
+    actor kind=0 facing=NORTH x=27.5 y=25.5 script=g0_s0_player   # EoS PLAYER
+    actor kind=34 facing=NORTH x=23.5 y=25.5 script=g0_s0_partner   # EoS ATTENDANT1
+end
+
+stations
+    g0_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+end
+
+groups
+    g0
+end

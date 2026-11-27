@@ -4,6 +4,8 @@
     tools/event_editor/scenes.py compile IN.scene OUT.h   # what the build runs
     tools/event_editor/scenes.py check IN.scene...        # parse and compile, print errors
     tools/event_editor/scenes.py fmt IN.scene...          # rewrite in the canonical layout
+    tools/event_editor/scenes.py check --allow-unknown IN.scene...   # and list the names no header defines yet
+    tools/event_editor/scenes.py names IN.scene...        # only those names, one a line
 
 The format (documentation/EventEditor.md has the full description):
 
@@ -573,7 +575,99 @@ def compile_file(src: Path, dst: Path) -> None:
     dst.write_text(text)
 
 
+# ---------------------------------------------------------------- names (drafts)
+
+_C_WORDS = {"TRUE", "FALSE", "NULL", "RGB_U32", "sizeof"}
+_known_names: set | None = None
+
+
+def known_names() -> set:
+    """Every #define and enum member of include/ (what a scene's values can name)."""
+    global _known_names
+    if _known_names is None:
+        out = set()
+        for h in (ROOT / "include").rglob("*.h"):
+            for line in h.read_text(errors="replace").splitlines():
+                m = re.match(r"\s*#\s*define\s+([A-Za-z_]\w*)", line)
+                if m:
+                    out.add(m.group(1))
+                    continue
+                m = re.match(r"\s*(?:/\*.*?\*/\s*)?([A-Z][A-Z0-9_]*)\s*(=[^,;]*)?,?\s*(//.*|/\*.*)?$", line)
+                if m:
+                    out.add(m.group(1))
+        _known_names = out
+    return _known_names
+
+
+def unknown_names(model: dict, extra_names: dict | None = None) -> list:
+    """[(line, name)]: the C names a scene file uses that no header (or the file's own
+    ```c blocks) defines: what a draft needs before it can be built (maps, actors, songs...)."""
+    known = cmds.all_commands()
+    extra = dict(extra_names or {})
+    extra["npc"] = npc_names(model)
+    own = set()
+    for b in model["blocks"]:
+        if b["type"] == "c":
+            for ln in b["lines"]:
+                m = re.match(r"\s*#\s*define\s+([A-Za-z_]\w*)", ln)
+                if m:
+                    own.add(m.group(1))
+    for v in extra.values():
+        own.update(v)
+    names = known_names() | own | _C_WORDS
+    out = []
+
+    def check(n, value, typ="expr"):
+        v = cmds.full(typ, value, extra) if typ != "expr" else value
+        prefix = cmds.TYPES.get(typ, ("", []))[0]
+        if prefix and re.fullmatch(r"[A-Za-z_]\w*", v) and v not in names and not v.startswith(prefix):
+            v = prefix + v       # a name not defined yet: report it as the C name it will have
+        for w in re.findall(r"(?<![\w.])[A-Za-z_]\w*", v):
+            if w not in names and not re.fullmatch(r"0[xX][0-9a-fA-F]+", w):
+                out.append((n, w))
+    for b in model["blocks"]:
+        for r in b.get("rows", []):
+            if r.get("type") == "cmd":
+                spec = known[r["op"]]
+                for j, v in enumerate(r["args"]):
+                    a = spec["args"][j]
+                    if a["type"] != "text":
+                        check(r["line"], v, a["type"])
+            elif r.get("type") in ("actor", "object"):
+                check(r["line"], r["kind"])
+    return out
+
+
 def main(argv) -> int:
+    if len(argv) >= 2 and argv[0] in ("check", "names") and any(a in ("--allow-unknown", "--names") for a in argv[1:]) \
+            or len(argv) >= 2 and argv[0] == "names":
+        # check --allow-unknown FILES: parse and compile, list the names nothing defines yet (exit 0)
+        # check --names FILES:         the same, but an unknown name is an error
+        # names FILES:                 just the unknown names, one a line (for an integration list)
+        strict = "--names" in argv
+        files = [a for a in argv[1:] if not a.startswith("--")]
+        bad = 0
+        for p in files:
+            try:
+                m = parse(Path(p).read_text(), p)
+                compile_c(m, p, cg_extra_names())
+                unk = unknown_names(m, cg_extra_names())
+            except SceneError as e:
+                print(f"{p}:{e.line or 0}: error: {e.msg}", file=sys.stderr)
+                bad = 1
+                continue
+            if argv[0] == "names":
+                for w in sorted({w for _, w in unk}):
+                    print(w)
+                continue
+            if unk and strict:
+                for n, w in unk:
+                    print(f"{p}:{n}: error: {w} is not defined", file=sys.stderr)
+                bad = 1
+            else:
+                print(f"{p}: OK" + (f" up to {len({w for _, w in unk})} names not defined yet: "
+                                    + ", ".join(sorted({w for _, w in unk})) if unk else ""))
+        return bad
     if len(argv) >= 1 and argv[0] == "compile" and len(argv) == 3:
         try:
             compile_file(Path(argv[1]), Path(argv[2]))

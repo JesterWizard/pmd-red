@@ -1,0 +1,121 @@
+prefix s_sky_v02p03a_
+debug_file src/data/ground/sky/sky_v02p03a_scenes.h
+
+# Explorers of Sky chapter 2 (m02a0104), on V02P03A.
+# Draft: translated by tools/event_editor/eos_import.py --chapter2; not built yet.
+# Hand-tune it; lines marked `TODO eos` are what the translator could not do.
+#
+#   group 0  m02a0104  (EoS SCRIPT/V02P03A/m02a0104.ssb)
+
+```c
+#include "sky_story.h"
+```
+
+```c
+#define NPC_PLAYER 0
+#define NPC_PARTNER 1
+#define NPC_DIGLETT 2
+```
+
+# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
+```c
+#define LIVES_KIND_PLAYER 0
+#define LIVES_KIND_PARTNER 34
+```
+
+# ------------------------------------------------------------------------
+# group 0: EoS m02a0104 (V02P03A)
+# ------------------------------------------------------------------------
+
+script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
+    DEBUGINFO
+    SET_PLACE_MODE 1
+    FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    BGM_STOP
+    # eos: back2_SetMode(5); (the top screen)
+    SELECT_MAP SKY_V02P03A
+    SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
+    SKY_CAMERA_SET x=12 y=224   # EoS camera_SetMyself<performer 0>
+    # eos: screen2_FadeIn(0, 30); (the top screen)
+    FADE_IN wait=TRUE frames=30
+    SET_PLACE_MODE 4
+    WAIT 90
+    SKY_CAMERA_MOVE dy=260 speed=256   # EoS MovePositionMark<performer 0>(1, Position<'m0', 16, 69.5>);
+    SKY_CAMERA_MOVE_X dx=4 speed=256
+    WAIT 261   # EoS WaitExecutePerformer(0): the rest of the camera's move
+    WAIT 15
+    FANFARE_PLAY2 SE_SKY_SWEAT_DROP   # EoS se_Play(8961)
+    AWAIT_CUE_COND 64 0   # -> DIGLETT (waits until it is ready)
+    AWAIT_CUE 65   # <- DIGLETT done
+    PORTRAIT place=LEFT_BOTTOM_2 who=DIGLETT emotion=NORMAL
+    MSG_NPC who=DIGLETT text=" Umm...{WAIT_PRESS} The footprint is..."
+    TEXTBOX_CLEAR
+    ALERT_CUE 64   # -> DIGLETT
+    AWAIT_CUE 65   # <- DIGLETT done
+    PORTRAIT place=LEFT_BOTTOM_FLIP who=DIGLETT emotion=NORMAL
+    MSG_NPC who=DIGLETT text=" Maybe {POKEMON_0}'s!{WAIT_PRESS}\nMaybe {POKEMON_0}'s!"
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    # eos: message_ResetActor(); (no speaker)
+    MSG_NPC who=-1 text=" What?! MAYBE?!"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 470   # EoS se_Play(8972)
+    ALERT_CUE 64   # -> DIGLETT
+    AWAIT_CUE 65   # <- DIGLETT done
+    PORTRAIT place=KEEP who=DIGLETT emotion=PAINED
+    MSG_NPC who=DIGLETT text=" B-but...{WAIT_PRESS} It's not a footprint that\nyou normally see around here..."
+    # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
+    # eos: message_ResetActor(); (no speaker)
+    MSG_NPC who=-1 text=" UGH! That's pretty crummy!"
+    MSG_NPC who=-1 text=" Checking the footprints of visiting\nPokémon..."
+    MSG_NPC who=-1 text=" That's your job, ISN'T it, Diglett?"
+    TEXTBOX_CLEAR
+    FANFARE_PLAY2 470   # EoS se_Play(8972)
+    ALERT_CUE 64   # -> DIGLETT
+    WAIT 45
+    AWAIT_CUE_COND 64 0   # -> DIGLETT (waits until it is ready)
+    MSG_NPC who=DIGLETT text=" Yes, but...{WAIT_PRESS} I don't know what\nI don't know."
+    TEXTBOX_CLEAR
+    # eos: screen2_FadeOut(0, 30); (the top screen)
+    FADE_OUT wait=TRUE frames=30
+    # eos: back2_SetMode(0); (the top screen)
+    RET
+end
+
+script g0_s0_diglett   # EoS actor NPC_DIGUDA, layer 0
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    UPDATE_NAME kind=ACTOR_SELF who=DIGLETT id=0x0
+    CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    CALL_SCRIPT SWEAT_FUNC
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    EMOTION_EFFECT SWEAT
+    SELECT_ANIMATION 4
+    AWAIT_CUE 64
+    SELECT_ANIMATION 2
+    HALT
+end
+
+actors g0_s0_lives
+    actor kind=SKY_LIVES_DIGLETT facing=NORTH x=17 y=68.5 script=g0_s0_diglett   # EoS NPC_DIGUDA
+end
+
+stations
+    g0_s0_station
+end
+
+sectors g0
+    sector actors=g0_s0_lives station=0
+end
+
+groups
+    g0
+end
