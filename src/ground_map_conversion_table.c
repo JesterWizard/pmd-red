@@ -1913,6 +1913,7 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .mapFileTableId = MAP_FILE_ID_SKY_GROVYLE_CLOSEUP,
         .unk6 = -1,
         .text = _("Time Gear"),
+    },
     [MAP_SKY_SENTRY_POST] = {
         /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
         .unk0 = 6,

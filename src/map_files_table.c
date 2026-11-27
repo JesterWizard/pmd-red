@@ -1733,6 +1733,8 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bplFileName = "EV0312A",
         .bpcFileName = "EV0312Ac",
         .bmaFileName = "EV0312Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
     [MAP_FILE_ID_SKY_SENTRY_POST] = {
         /* v02p03a */
         .bplFileName = "EV0203A",
