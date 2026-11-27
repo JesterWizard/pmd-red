@@ -8,7 +8,9 @@
 #include "data/ax/azurill.h"
 #endif
 #include "data/ax/nosepass.h"
+#ifndef SKY_STORY /* the sky build uses gAxSkittysky (monster_gfx_sky.c) */
 #include "data/ax/skitty.h"
+#endif
 #include "data/ax/delcatty.h"
 #include "data/ax/sableye.h"
 #include "data/ax/mawile.h"

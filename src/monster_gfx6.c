@@ -5,7 +5,9 @@
 #ifndef SKY_STORY /* the sky build uses gAxDugtriosky (monster_gfx_sky.c) */
 #include "data/ax/dugtrio.h"
 #endif
+#ifndef SKY_STORY /* the sky build uses gAxMeowthsky (monster_gfx_sky.c) */
 #include "data/ax/meowth.h"
+#endif
 #include "data/ax/persian.h"
 #include "data/ax/psyduck.h"
 #include "data/ax/golduck.h"

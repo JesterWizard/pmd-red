@@ -14,7 +14,7 @@ bool8 HasCustomPortrait(s16 speciesId)
     return FALSE;
 }
 
-u16 GetCustomPortraitMask(s16 speciesId)
+CustomPortraitMask GetCustomPortraitMask(s16 speciesId)
 {
     s32 i;
     s32 id = speciesId;

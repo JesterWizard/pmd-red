@@ -69,6 +69,27 @@ EMOTIONS: list[tuple[str, str]] = [
     ("Surprised", "Surprised.png"),
 ]
 
+# Explorers of Sky emotions past Red's 13, at their EoS number (emotions.h):
+# the sky build's EoS faces only (graphics/portraits_sky and the Gen 4 species).
+# A species with any of them gets a PortraitGfxSky (str_mon_portrait.h).
+SKY_EXTRA_EMOTIONS: list[tuple[int, str]] = [
+    (13, "Dizzy"),
+    (16, "Sigh"),
+]
+SKY_EMOTION_NAMES = [name for name, _ in EMOTIONS] + [name for _, name in SKY_EXTRA_EMOTIONS]
+
+
+def sky_slots(emotions: list[str]) -> list[str | None]:
+    """Slot layout of a sky EoS-face species: Red's 13, then EoS's extra emotions
+    at their EoS numbers (only as far as the last one the species has)."""
+    slots = [name if name in emotions else None for name, _ in EMOTIONS]
+    for num, name in SKY_EXTRA_EMOTIONS:
+        if name in emotions:
+            slots += [None] * (num + 1 - len(slots))
+            slots[num] = name
+    return slots
+
+
 # Vanilla NPC kao for Charizard / Blastoise does NOT use the standard layout.
 VANILLA_SLOT_LAYOUTS: dict[str, list[str | None]] = {
     "charizard": [
@@ -380,9 +401,11 @@ def slot_layout_for(folder: str, available: list[str]) -> list[str | None]:
     return [name if name in avail else None for name, _ in EMOTIONS]
 
 
-def emotions_for_species(folder: str, full_emotions: bool) -> list[str]:
+def emotions_for_species(folder: str, full_emotions: bool, sky: bool = False) -> list[str]:
     dest = OUT_DIR / folder
     wanted = [name for name, _ in (EMOTIONS if full_emotions else EMOTIONS[:1])]
+    if sky:
+        wanted += [name for _, name in SKY_EXTRA_EMOTIONS]
     return [name for name in wanted if (dest / f"{name}.png").exists()]
 
 
@@ -427,8 +450,8 @@ def generate_c(species_emotions: dict[str, list[str]],
     for cond, sid, folder, emotions, base_dir, prefix in present:
         cond_open(cond)
         camel_name = prefix + camel(folder)
-        slots = (slot_layout_for(folder, emotions) if not prefix
-                 else [name if name in emotions else None for name, _ in EMOTIONS])
+        slots = (sky_slots(emotions) if prefix or cond == "sky"
+                 else slot_layout_for(folder, emotions))
         used = sorted(
             {e for e in slots if e is not None},
             key=lambda e: emotions.index(e) if e in emotions else 99,
@@ -439,7 +462,8 @@ def generate_c(species_emotions: dict[str, list[str]],
             lines.append(f"static const u8 {label}Pal[] = INCBIN_U8(\"{base}.pal\");")
             lines.append(f"static const u8 {label}Gfx[] = INCBIN_U8(\"{base}.at4px\");")
         lines.append("")
-        lines.append(f"static const PortraitGfx s{camel_name}Portraits = {{")
+        gfx_type = "PortraitGfxSky" if len(slots) > len(EMOTIONS) else "PortraitGfx"
+        lines.append(f"static const {gfx_type} s{camel_name}Portraits = {{")
         lines.append("    .sprites = {")
         for game_name in slots:
             if game_name is not None:
@@ -470,10 +494,10 @@ def generate_c(species_emotions: dict[str, list[str]],
         cond_close(cond)
     lines.append("};")
     lines.append("")
-    lines.append("const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {")
+    lines.append("const CustomPortraitMask gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {")
     for cond, sid, folder, emotions, _dir, prefix in present:
-        slots = (slot_layout_for(folder, emotions) if not prefix
-                 else [name if name in emotions else None for name, _ in EMOTIONS])
+        slots = (sky_slots(emotions) if prefix or cond == "sky"
+                 else slot_layout_for(folder, emotions))
         mask = 0
         for i, game_name in enumerate(slots):
             if game_name is not None:
@@ -564,7 +588,7 @@ def main() -> int:
 
     species_emotions: dict[str, list[str]] = {}
     for sid, folder, _dex, full in SPECIES_TABLE:
-        emos = emotions_for_species(folder, full)
+        emos = emotions_for_species(folder, full, sky=sid in SKY_SIDS)
         for game_name in emos:
             png = OUT_DIR / folder / f"{game_name}.png"
             if args.convert:
@@ -579,7 +603,7 @@ def main() -> int:
     sky_red_emotions: dict[str, list[str]] = {}
     if SKY_RED_DIR.exists():
         for folder_dir in sorted(p for p in SKY_RED_DIR.iterdir() if p.is_dir()):
-            emos = [name for name, _ in EMOTIONS if (folder_dir / f"{name}.png").exists()]
+            emos = [name for name in SKY_EMOTION_NAMES if (folder_dir / f"{name}.png").exists()]
             for game_name in emos:
                 png = folder_dir / f"{game_name}.png"
                 if args.convert or not (png.with_suffix(".pal").exists()

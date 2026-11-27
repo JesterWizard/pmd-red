@@ -992,7 +992,7 @@ bool8 CustomPortraitHasEmotion(s16 id, s32 spriteId)
 {
     if (!gRuntimeConfig.custom_portraits || !HasCustomPortrait(id))
         return FALSE;
-    return (GetCustomPortraitMask(id) >> (spriteId & 0xF)) & 1;
+    return (GetCustomPortraitMask(id) >> PORTRAIT_EMOTION(spriteId)) & 1;
 }
 
 /* TRUE if opened custom/vanilla kao has a non-NULL gfx pointer for emotion. */
@@ -1003,7 +1003,7 @@ static bool8 PortraitFileHasEmotionGfx(OpenedFile *file, s32 spriteId)
     if (file == NULL || file->data == NULL)
         return FALSE;
     gfx = (PortraitGfx *)file->data;
-    return gfx->sprites[spriteId & 0xF].gfx != NULL;
+    return gfx->sprites[PORTRAIT_EMOTION(spriteId)].gfx != NULL;
 }
 
 static OpenedFile *OpenVanillaKao(s16 id)
@@ -1020,7 +1020,7 @@ static OpenedFile *OpenVanillaKao(s16 id)
 OpenedFile *OpenPokemonDialogueSpriteFile(s16 index, s32 spriteId)
 {
     char buffer[0xC];
-    s32 emotion = spriteId & 0xF;
+    s32 emotion = PORTRAIT_EMOTION(spriteId);
     OpenedFile *file;
 
     if (CustomPortraitHasEmotion(index, emotion)) {
@@ -1048,7 +1048,7 @@ OpenedFile *GetDialogueSpriteDataPtr(s32 index)
     OpenedFile *file;
 
     if (gRuntimeConfig.custom_portraits && HasCustomPortrait(id)) {
-        u16 customMask = GetCustomPortraitMask(id);
+        CustomPortraitMask customMask = GetCustomPortraitMask(id);
 
         if (vanillaMask == 0 || (customMask & vanillaMask) == vanillaMask) {
             sprintf(buffer, "ckao%03d", id);
@@ -1073,7 +1073,7 @@ OpenedFile *GetDialogueSpriteDataPtrForEmotion(s32 index, s32 spriteId)
 {
     char buffer[0xC];
     s16 id = SpeciesId(index);
-    s32 emotion = spriteId & 0xF;
+    s32 emotion = PORTRAIT_EMOTION(spriteId);
     OpenedFile *file;
 
     if (CustomPortraitHasEmotion(id, emotion)) {
