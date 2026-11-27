@@ -6,7 +6,7 @@
 #include "debug.h"
 #include "gba/macro.h"
 
-#define STREAM_MAX_SOURCE_TILES 2048
+#define STREAM_MAX_SOURCE_TILES GROUND_STREAM_MAX_SOURCE_TILES
 /* Café screens can need ~640 unique 8bpp tiles in one remap; keep them queued so
  * FlushUploads commits with the tilemap DMA instead of mid-frame copies. */
 #define STREAM_MAX_UPLOADS 640
@@ -26,7 +26,7 @@ static EWRAM_DATA s16 sNumTiles = 0;      /* includes null tile 0 */
 static EWRAM_DATA s16 sVramSlots = 0;
 static EWRAM_DATA u8 *sTileGfx = NULL;    /* pointer to tile 1..N-1 gfx */
 static EWRAM_DATA void *sOwnedBase = NULL;
-static EWRAM_DATA u16 sSourceToSlot[STREAM_MAX_SOURCE_TILES];
+static EWRAM_DATA GROUND_STREAM_SOURCE_TABLE(sSourceToSlot);
 static EWRAM_DATA u16 sSlotToSource[1024];
 static EWRAM_DATA u16 sSlotStamp[1024];
 static EWRAM_DATA u32 sFreeBits[32];
@@ -70,7 +70,7 @@ void GroundBgTileStream_Reset(void)
     sCachedTileX = -1;
     sCachedTileY = -1;
     sUploadCount = 0;
-    CpuFill16(0, sSourceToSlot, sizeof(sSourceToSlot));
+    GROUND_STREAM_SOURCE_TABLE_FREE(sSourceToSlot);
     CpuFill16(0, sSlotToSource, sizeof(sSlotToSource));
     CpuFill16(0, sSlotStamp, sizeof(sSlotStamp));
     CpuFill16(0, sFreeBits, sizeof(sFreeBits));
@@ -165,7 +165,7 @@ static bool8 ActivateStream(const u16 *tileData, s32 numTiles, s32 vramSlots, vo
     sOwnedBase = ownedBase;
     sTileGfx = (u8 *)tileData;
     sNumTiles = numTiles;
-    sVramSlots = vramSlots;
+    sVramSlots = vramSlots; GROUND_STREAM_SOURCE_TABLE_ALLOC(sSourceToSlot, numTiles);
     ClearVramPool(vramSlots);
     sActive = TRUE;
     return TRUE;
@@ -307,6 +307,16 @@ static u16 PopFreeSlot(void)
     return 0;
 }
 
+#ifdef SKY_STORY
+/* The remap (sClock) whose AllocSlot already swept the whole pool without
+ * finding an aged slot: its later allocations take the next unstamped slot
+ * instead of scanning the pool again for each tile. After a camera jump on a
+ * map whose view fills the pool (d02p31a: up to 971 of 1023 slots), every
+ * free slot holds the previous view, and a full scan per tile cost about a
+ * second of frames. */
+static EWRAM_DATA u16 sNoAgedSlotClock = 0;
+#endif
+
 /* Prefer free/empty/aged slots; else steal from the previous frame's map.
  * Never evict a slot stamped for the current Remap (avoids upload thrash).
  * One clock sweep — a failed “aged-only” pass then a second full scan was the
@@ -340,7 +350,11 @@ static u16 AllocSlot(void)
         if (sSlotStamp[slot] == sClock)
             continue;
 
+#ifdef SKY_STORY
+        if (sSlotStamp[slot] != sOnScreenClock || sNoAgedSlotClock == sClock) {
+#else
         if (sSlotStamp[slot] != sOnScreenClock) {
+#endif
             sSourceToSlot[sSlotToSource[slot]] = 0;
             sSlotToSource[slot] = 0;
             return slot;
@@ -351,6 +365,9 @@ static u16 AllocSlot(void)
     }
 
     if (onScreenSteal != 0) {
+#ifdef SKY_STORY
+        sNoAgedSlotClock = sClock;
+#endif
         if (sSlotToSource[onScreenSteal] != 0)
             sSourceToSlot[sSlotToSource[onScreenSteal]] = 0;
         sSlotToSource[onScreenSteal] = 0;
@@ -450,7 +467,7 @@ void GroundBgTileStream_Invalidate(void)
     sUploadCount = 0;
     /* Drop any provisional slot cache so the next Remap starts clean. */
     if (sActive && sVramSlots > 0) {
-        CpuFill16(0, sSourceToSlot, sizeof(sSourceToSlot));
+        CpuFill16(0, sSourceToSlot, GROUND_STREAM_SOURCE_TABLE_BYTES(sSourceToSlot));
         CpuFill16(0, sSlotToSource, sizeof(sSlotToSource));
         CpuFill16(0, sSlotStamp, sizeof(sSlotStamp));
         BuildFreeList(sVramSlots);

@@ -46,6 +46,19 @@ CUTAWAYS = [
     ("guild_sky",     "v02p01a", 132, 96),
     ("relic_fragment","v01p06b", 21 * 8, 15 * 8),
     ("sunset_sky",    "v26p06a", 19 * 8, 15.5 * 8),
+    # chapter 2. back2_SetGround pictures at their camera2 mark; the
+    # back_SetGround close-ups from their camera (performer 0 of the scene's
+    # layer, where it ends up). v01p08b and v02p03a are tall pictures EoS
+    # shows on both screens (back2_SetMode(5): the top screen shows the 192
+    # pixels above the camera's), so their crop is moved up from the bottom
+    # screen's centre: the gate to the seam between the screens (Wigglytuff's
+    # face over the bars), the sentry post by 48 px (the wall over the floor
+    # Diglett stands on, y 548).
+    ("guild_gate",    "v01p08b", 16 * 8, 41.5 * 8 - 32 - 96),  # m02a0101: performer up 32 px
+    ("sentry_grate",  "v02p02a", 19.5 * 8, 17.5 * 8),           # m02a0101 camera2 m2
+    ("sentry_post",   "v02p03a", 16 * 8, 69.5 * 8 - 48),        # m02a0104: the pan's end, m0
+    ("night_sky",     "v02p06a", 19.5 * 8, 15.5 * 8),       # m02a0113 / m02a1003 camera2 m0
+    ("exploration_kit", "v02p08a", 16 * 8, 13.5 * 8),       # m02a0110 layer 2 performer
 ] + [
     (f"sunset_sea{i}", "v26p05a", (19.5 + 39 * (i % 3)) * 8, (13.5 + 30 * (i // 3)) * 8)
     for i in range(8)

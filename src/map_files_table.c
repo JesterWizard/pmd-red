@@ -1487,9 +1487,10 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bpaFileNames = {"EV0101A1", NULL, NULL, NULL},
     },
     [MAP_FILE_ID_SKY_GUILD_DUSK] = {
+        /* g01p01b2: g01p01b's BPC, BPL and BPA, its own BMA (gate closed) */
         .bplFileName = "EG0101B",
         .bpcFileName = "EG0101Bc",
-        .bmaFileName = "EG0101Bm",
+        .bmaFileName = "EG0101B2m",
         .bpaFileNames = {"EG0101B1", NULL, NULL, NULL},
     },
     [MAP_FILE_ID_SKY_BEACH_DUSK] = {
@@ -1528,6 +1529,97 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bpcFileName = "EV0107Bc",
         .bmaFileName = "EV0107Bm",
         .bpaFileNames = {"EV0101A1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_ENTRANCE] = {
+        /* g01p01b: gate open */
+        .bplFileName = "EG0101B",
+        .bpcFileName = "EG0101Bc",
+        .bmaFileName = "EG0101Bm",
+        .bpaFileNames = {"EG0101B1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_1F] = {
+        /* g01p02a */
+        .bplFileName = "EG0102A",
+        .bpcFileName = "EG0102Ac",
+        .bmaFileName = "EG0102Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_B1F] = {
+        /* g01p03a: the bulletin boards */
+        .bplFileName = "EG0103A",
+        .bpcFileName = "EG0103Ac",
+        .bmaFileName = "EG0103Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_B2F] = {
+        /* g01p04a */
+        .bplFileName = "EG0104A",
+        .bpcFileName = "EG0104Ac",
+        .bmaFileName = "EG0104Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_B2F_DOOR] = {
+        /* g01p04a2: g01p04a's BPC and BPL, its own BMA (as EoS) */
+        .bplFileName = "EG0104A",
+        .bpcFileName = "EG0104Ac",
+        .bmaFileName = "EG0104A2m",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_B2F_NIGHT] = {
+        /* g01p04c */
+        .bplFileName = "EG0104C",
+        .bpcFileName = "EG0104Cc",
+        .bmaFileName = "EG0104Cm",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_WIGGLYTUFF] = {
+        /* g01p05a: Wigglytuff's room */
+        .bplFileName = "EG0105A",
+        .bpcFileName = "EG0105Ac",
+        .bmaFileName = "EG0105Am",
+        .bpaFileNames = {"EG0105A1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_WIGGLYTUFF_NIGHT] = {
+        /* g01p05c */
+        .bplFileName = "EG0105C",
+        .bpcFileName = "EG0105Cc",
+        .bmaFileName = "EG0105Cm",
+        .bpaFileNames = {"EG0105C1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_MESS_HALL] = {
+        /* g01p06b */
+        .bplFileName = "EG0106B",
+        .bpcFileName = "EG0106Bc",
+        .bmaFileName = "EG0106Bm",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_CREW_ROOM] = {
+        /* g01p07a */
+        .bplFileName = "EG0107A",
+        .bpcFileName = "EG0107Ac",
+        .bmaFileName = "EG0107Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_CREW_ROOM_NIGHT] = {
+        /* g01p07c: g01p07a's BPC and BMA, its own BPL (as EoS) */
+        .bplFileName = "EG0107C",
+        .bpcFileName = "EG0107Ac",
+        .bmaFileName = "EG0107Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_DRENCHED_BLUFF_ENTRANCE] = {
+        /* d02p11a */
+        .bplFileName = "ED0211A",
+        .bpcFileName = "ED0211Ac",
+        .bmaFileName = "ED0211Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_DRENCHED_BLUFF_END] = {
+        /* d02p31a */
+        .bplFileName = "ED0231A",
+        .bpcFileName = "ED0231Ac",
+        .bmaFileName = "ED0231Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
     },
 #endif
 };

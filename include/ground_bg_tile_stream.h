@@ -17,6 +17,33 @@
 #define GROUND_STREAM_4BPP 0
 #define GROUND_STREAM_8BPP 1
 
+/* The source-tile -> VRAM-slot table (sSourceToSlot). Red's build keeps a
+ * static 2048-entry table in EWRAM. The sky build allocates one entry per
+ * source tile from the heap while a map streams (EoS maps go past 2048 tiles:
+ * d02p31a has 2313 with flips baked) and frees it with the stream, which also
+ * leaves those 4 KB of EWRAM free. Macros so ground_bg_tile_stream.c keeps
+ * its line numbers (FATAL_ERROR records __LINE__) in the vanilla build. */
+#ifdef SKY_STORY
+#define GROUND_STREAM_MAX_SOURCE_TILES 4096
+#define GROUND_STREAM_SOURCE_TABLE(name) u16 *name
+#define GROUND_STREAM_SOURCE_TABLE_BYTES(name) ((name) != NULL ? (u32)sNumTiles * sizeof(u16) : 0)
+#define GROUND_STREAM_SOURCE_TABLE_FREE(name) \
+    do { if ((name) != NULL) MemoryFree(name); (name) = NULL; } while (0)
+#define GROUND_STREAM_SOURCE_TABLE_ALLOC(name, n) \
+    do { \
+        (name) = MemoryAlloc((n) * sizeof(u16), MEMALLOC_GROUP_6); \
+        if ((name) == NULL) \
+            FATAL_ERROR("ground tile stream: table alloc failed"); \
+        CpuFill16(0, (name), (n) * sizeof(u16)); \
+    } while (0)
+#else
+#define GROUND_STREAM_MAX_SOURCE_TILES 2048
+#define GROUND_STREAM_SOURCE_TABLE(name) u16 name[GROUND_STREAM_MAX_SOURCE_TILES]
+#define GROUND_STREAM_SOURCE_TABLE_BYTES(name) sizeof(name)
+#define GROUND_STREAM_SOURCE_TABLE_FREE(name) CpuFill16(0, (name), sizeof(name))
+#define GROUND_STREAM_SOURCE_TABLE_ALLOC(name, n) do { } while (0)
+#endif
+
 #define GROUND_STREAM_8BPP_FIRST_SLOT 128
 #define GROUND_STREAM_8BPP_VRAM_SLOTS 768 /* absolute end; free pool = 128..767 */
 /* Wide-UI: art maps park at SB 30/31 (CHARBASE1 slots 704–767). */

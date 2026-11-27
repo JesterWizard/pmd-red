@@ -21,7 +21,7 @@ def beach_meeting_camera(t):
     return f"view {view} at 'My name?'"
 
 
-# The portcullis bars (EG0101B from g01p01b2) at the guild's first view
+# The portcullis bars (EG0101B2m, g01p01b2's BMA) at the guild's first view
 # (118, 112): screen x 106-136, y 17-34.
 GATE_BOX = (106, 17, 137, 35)
 GATE_BAR_COLOURS = [(82, 66, 57), (115, 107, 90)]

@@ -828,5 +828,20 @@ const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_SKY_BEACH_CAVE_PIT] = &gGroundScript_gs179, /* SELECT_MAP also selects the script file */
     [MAP_SKY_BEACH_DAY] = &gGroundScript_gs178,
     [MAP_SKY_STORM_WAVES] = &gGroundScript_gs178,
+    /* chapter 2: one station file, gs180 (Red's Thunderwave Cave entrance
+     * slot; documentation/Features/SkyChapter2.md) */
+    [MAP_SKY_GUILD_ENTRANCE] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_1F] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_B1F] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_B2F] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_B2F_DOOR] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_B2F_NIGHT] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_WIGGLYTUFF] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_WIGGLYTUFF_NIGHT] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_MESS_HALL] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_CREW_ROOM] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_CREW_ROOM_NIGHT] = &gGroundScript_gs180,
+    [MAP_SKY_DRENCHED_BLUFF_ENTRANCE] = &gGroundScript_gs180,
+    [MAP_SKY_DRENCHED_BLUFF_END] = &gGroundScript_gs180,
 #endif
 };

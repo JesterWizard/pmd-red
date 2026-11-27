@@ -13,9 +13,11 @@ rather than re-quantized.
     matching the RT dual-layer convention used by Spinda's Cafe (layer0 = BG2,
     drawn in front of sprites; layer1 = BG3, behind them).
   * Maps with more than 1024 tiles are streamed by src/ground_bg_tile_stream.c,
-    which treats tilemap bits 0-11 as a source tile id and has no flip bits;
-    for those, flipped tiles are baked into the pool.
-  * Palette animations are kept (RT's BPL has EoS's layout). On maps that fit
+    which treats tilemap bits 0-11 as a source tile id (up to 4096 tiles in the
+    sky build) and has no flip bits; for those, flipped tiles are baked into
+    the pool.
+  * Palette animations are kept (RT's BPL has EoS's layout) unless
+    --no-palette-animation. On maps that fit
     VRAM, up to two animated BPAs keep their animation (RT BPA slots 0/1,
     written as data/map_bg_anim/<STEM>1.bpa / <STEM>2.bpa); streamed maps and further BPAs use
     frame 0.
@@ -42,7 +44,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CHUNK = 3
 MAX_PALETTES = 14          # SubStruct_52C.unk2 for dual-layer ground maps
 VRAM_TILE_SLOTS = 1024     # SubStruct_52C.unk6
-STREAM_MAX_TILES = 2048    # STREAM_MAX_SOURCE_TILES
+STREAM_MAX_TILES = 4096    # GROUND_STREAM_MAX_SOURCE_TILES (sky build; 12-bit ids)
 
 
 def flip_tile(tile: bytes, fx: bool, fy: bool) -> bytes:
@@ -96,7 +98,8 @@ def layer_tiles(bpc, layer: int, bpas) -> list[bytes]:
     return tiles
 
 
-def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
+def convert(rom_path: Path, name: str, stem: str, render: Path | None,
+            palette_animation: bool = True) -> None:
     rom = ndspy.rom.NintendoDSRom.fromFile(str(rom_path))
     bpc, bma, bpl, bpas = load_eos(rom, name)
 
@@ -209,7 +212,7 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
     # animated) one {s16 duration, s16 frames} per palette and the animation
     # frames (15 colours each) in palette order: the same layout as EoS.
     anims = []
-    if bpl.has_palette_animation:
+    if bpl.has_palette_animation and palette_animation:
         frames = list(bpl.animation_palette)
         pos = 0
         for p, spec in enumerate(bpl.animation_specs):
@@ -293,54 +296,90 @@ def convert(rom_path: Path, name: str, stem: str, render: Path | None) -> None:
 
 def render_rt(stem: str, out: Path, vram_slots: int = VRAM_TILE_SLOTS) -> None:
     """Render the written RT files back to a PNG (for checking against EoS)."""
+    render_rt_image(stem).save(out)
+
+
+def render_rt_image(bpl: str, bpc: str | None = None, bma: str | None = None,
+                    bpas: tuple = (), frame: int = 0) -> Image.Image:
+    """Render RT ground-map files the way the game draws them: the BPL
+    `bpl`.bpl, the BPC `bpc`c.bpc, the BMA `bma`m.bma (each defaults to
+    `bpl`) and the animated BPA files `bpas` (names under data/map_bg_anim,
+    without .bpa; default <bpl>1, <bpl>2 where the BPC has those slots) at
+    animation `frame`. Back layer first, then the front layer; colour 0 is
+    transparent, the backdrop black."""
+    import numpy as np
     d = ROOT / "data" / "map_bg"
-    bpl = d.joinpath(f"{stem}.bpl").read_bytes()
-    n_pals = struct.unpack_from("<H", bpl, 0)[0]
-    pals = []
+    raw = d.joinpath(f"{bpl}.bpl").read_bytes()
+    n_pals = struct.unpack_from("<H", raw, 0)[0]
+    pals = np.zeros((16, 16, 3), np.uint8)
     for p in range(n_pals):
-        cols = [(0, 0, 0)]
         for ci in range(15):
             o = 4 + (p * 15 + ci) * 4
-            cols.append(tuple(bpl[o:o + 3]))
-        pals.append(cols)
-    bpc = d.joinpath(f"{stem}c.bpc").read_bytes()
-    hdr = struct.unpack_from("<8h", bpc, 0)
-    n_tiles, n_chunks = hdr[2], hdr[7]
-    tiles = [bytes(32)] + [bpc[16 + i * 32:16 + (i + 1) * 32] for i in range(n_tiles - 1)]
+            pals[p, ci + 1] = tuple(raw[o:o + 3])
+    data = d.joinpath(f"{bpc or bpl}c.bpc").read_bytes()
+    hdr = struct.unpack_from("<8h", data, 0)
+    n_tiles, slot_tiles, n_chunks = hdr[2], hdr[3:7], hdr[7]
+    tiles = [bytes(32)] + [data[16 + i * 32:16 + (i + 1) * 32] for i in range(n_tiles - 1)]
     off = 16 + (n_tiles - 1) * 32
-    chunks = [[0] * 9] + [list(struct.unpack_from("<9H", bpc, off + i * 18)) for i in range(n_chunks - 1)]
-    bma = FileType.BMA.deserialize(d.joinpath(f"{stem}m.bma").read_bytes())
-    W, H = bma.map_width_camera * 8, bma.map_height_camera * 8
-    img = Image.new("RGB", (W, H), (0, 0, 0))
-    px = img.load()
-    layers = [bma.layer1, bma.layer0] if bma.number_of_layers == 2 else [bma.layer0]
+    chunks = [[0] * 9] + [list(struct.unpack_from("<9H", data, off + i * 18)) for i in range(n_chunks - 1)]
+    anim_dir = ROOT / "data" / "map_bg_anim"
+    names = list(bpas) or [f"{bpl}{k + 1}" for k in range(4) if slot_tiles[k]]
+    for k, n in enumerate(names):
+        if not slot_tiles[k]:
+            break
+        a = anim_dir.joinpath(f"{n}.bpa").read_bytes()
+        nt, nf = struct.unpack_from("<HH", a, 0)
+        o = 4 + 4 * nf + (frame % nf) * nt * 32
+        tiles += [a[o + t * 32:o + (t + 1) * 32] for t in range(nt)]
+    m = FileType.BMA.deserialize(d.joinpath(f"{bma or bpl}m.bma").read_bytes())
+    # dual-layer maps get 1024 VRAM tile slots, single-layer 0x380; past
+    # that the map is streamed: 12-bit tile ids, no flip bits
+    streamed = n_tiles > (VRAM_TILE_SLOTS if m.number_of_layers == 2 else 0x380)
+    tile_px = np.zeros((len(tiles), 8, 8), np.uint8)
+    for t, b in enumerate(tiles):
+        v = np.frombuffer(b, np.uint8)
+        tile_px[t] = np.stack([v & 0xF, v >> 4], axis=1).reshape(8, 8)
+    W, H = m.map_width_chunks * 24, m.map_height_chunks * 24
+    img = np.zeros((H, W, 3), np.uint8)
+    layers = [m.layer1, m.layer0] if m.number_of_layers == 2 else [m.layer0]
     for layer in layers:
         for ci, c in enumerate(layer):
-            cx, cy = ci % bma.map_width_chunks, ci // bma.map_width_chunks
+            cx, cy = ci % m.map_width_chunks, ci // m.map_width_chunks
             for k, e in enumerate(chunks[c]):
-                streamed = n_tiles > vram_slots
                 tid = e & (0xFFF if streamed else 0x3FF)
-                fx, fy, pal = (e >> 10) & 1, (e >> 11) & 1, e >> 12
-                if streamed:
-                    fx = fy = 0
                 if tid == 0 or tid >= len(tiles):
-                    continue  # null tile, or an animated BPA slot tile
-                t = tiles[tid]
-                tx, ty = cx * 3 + k % 3, cy * 3 + k // 3
-                for i in range(64):
-                    b = t[i // 2]
-                    v = (b >> 4) if i & 1 else (b & 0xF)
-                    if v == 0:
-                        continue
-                    x, y = i % 8, i // 8
-                    if fx:
-                        x = 7 - x
-                    if fy:
-                        y = 7 - y
-                    X, Y = tx * 8 + x, ty * 8 + y
-                    if X < W and Y < H:
-                        px[X, Y] = pals[pal][v]
-    img.save(out)
+                    continue
+                t = tile_px[tid]
+                if not streamed:
+                    if e & 0x400:
+                        t = t[:, ::-1]
+                    if e & 0x800:
+                        t = t[::-1, :]
+                X, Y = (cx * 3 + k % 3) * 8, (cy * 3 + k // 3) * 8
+                region = img[Y:Y + 8, X:X + 8]
+                mask = t != 0
+                region[mask] = pals[e >> 12][t[mask]]
+    return Image.fromarray(img[:m.map_height_camera * 8, :m.map_width_camera * 8])
+
+
+def render_eos_image(rom_path: Path, name: str) -> Image.Image:
+    """skytemple's render of the EoS level `name` (BPA frame 0)."""
+    # skytemple hands Pillow an iterator as the palette; newer Pillow wants a
+    # sequence (as tools/make_sky_cutaways.py)
+    orig = Image.Image.putpalette
+    if not getattr(orig, "_sky_patched", False):
+        def putpalette(self, data, rawmode="RGB"):
+            if not isinstance(data, (bytes, bytearray, list)):
+                data = list(data)
+            return orig(self, data, rawmode)
+        putpalette._sky_patched = True
+        Image.Image.putpalette = putpalette
+    rom = ndspy.rom.NintendoDSRom.fromFile(str(rom_path))
+    bpc, bma, bpl, bpas = load_eos(rom, name)
+    img = bma.to_pil(bpc, bpl, bpas, False, False)
+    if isinstance(img, list):
+        img = img[0]
+    return img.convert("RGB")
 
 
 def main() -> int:
@@ -349,8 +388,29 @@ def main() -> int:
     ap.add_argument("name", help="EoS MAP_BG name, e.g. d01p11b")
     ap.add_argument("stem", help="RT output stem under data/map_bg, e.g. SKYD0111B")
     ap.add_argument("--render", type=Path, help="also render the result to this PNG")
+    ap.add_argument("--no-palette-animation", action="store_true",
+                    help="leave the BPL's palette animation out (the base palettes only)")
+    ap.add_argument("--compare", action="store_true",
+                    help="only compare the files already written for STEM (--bpl/--bpc/--bma for "
+                         "files shared with another map) with skytemple's render of NAME")
+    ap.add_argument("--bpl", help="with --compare: the BPL stem (default STEM)")
+    ap.add_argument("--bpc", help="with --compare: the BPC stem (default STEM)")
+    ap.add_argument("--bma", help="with --compare: the BMA stem (default STEM)")
     args = ap.parse_args()
-    convert(args.rom, args.name, args.stem, args.render)
+    if args.compare:
+        import numpy as np
+        ours = render_rt_image(args.bpl or args.stem, args.bpc or args.stem, args.bma or args.stem)
+        eos = render_eos_image(args.rom, args.name)
+        a, b = np.asarray(ours), np.asarray(eos)
+        if a.shape != b.shape:
+            print(f"{args.name}: size {a.shape[1]}x{a.shape[0]} != EoS {b.shape[1]}x{b.shape[0]}")
+            return 1
+        diff = int((a != b).any(axis=2).sum())
+        print(f"{args.name} vs {args.stem}: " + ("identical" if not diff else f"{diff} pixels differ"))
+        if args.render:
+            ours.save(args.render)
+        return 1 if diff else 0
+    convert(args.rom, args.name, args.stem, args.render, not args.no_palette_animation)
     return 0
 
 

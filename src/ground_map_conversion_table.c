@@ -1682,5 +1682,109 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .unk6 = -1,
         .text = _("Stormy Sea"),
     },
+    [MAP_SKY_GUILD_ENTRANCE] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_ENTRANCE,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_1F] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_1F,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_B1F] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_B1F,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_B2F] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_B2F,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_B2F_DOOR] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_B2F_DOOR,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_B2F_NIGHT] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_B2F_NIGHT,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_WIGGLYTUFF] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_WIGGLYTUFF,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_WIGGLYTUFF_NIGHT] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_WIGGLYTUFF_NIGHT,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_MESS_HALL] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_MESS_HALL,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_CREW_ROOM] = {
+        /* unk0 1: single BG layer */
+        .unk0 = 1,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_CREW_ROOM,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_CREW_ROOM_NIGHT] = {
+        /* unk0 1: single BG layer */
+        .unk0 = 1,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_CREW_ROOM_NIGHT,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_DRENCHED_BLUFF_ENTRANCE] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_DRENCHED_BLUFF_ENTRANCE,
+        .unk6 = -1,
+        .text = _("Drenched Bluff"),
+    },
+    [MAP_SKY_DRENCHED_BLUFF_END] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_DRENCHED_BLUFF_END,
+        .unk6 = -1,
+        .text = _("Drenched Bluff"),
+    },
 #endif
 };

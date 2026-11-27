@@ -43,6 +43,9 @@ PAIRS = [
     ("beach", "sky_day", "ED0111A"),
     ("guild", "guild_sky", "EG0101B"),
 ]
+# maps whose BMA has its own stem: the guild at dusk is g01p01b2, EoS's
+# second BMA over g01p01b's tiles (EG0101B2m.bma)
+BMA_STEM = {"EG0101B": "EG0101B2"}
 # the pans' names in events/sky/cutaways.cfg, whose `top =` picks the CG
 PAN_NAMES = {"beach": "SKY_DAY_SCROLL", "guild": "GUILD_SKY_SCROLL"}
 
@@ -76,7 +79,7 @@ def build_cover(pair: str, stem: str, cx: int, cy: int) -> tuple[int, int, int]:
             tiles += [bpa[off + i * 32:off + (i + 1) * 32] for i in range(nt)]
     off = 16 + (n_tiles - 1) * 32
     chunks = [[0] * 9] + [list(struct.unpack_from("<9H", bpc, off + i * 18)) for i in range(n_chunks - 1)]
-    bma = FileType.BMA.deserialize((d / f"{stem}m.bma").read_bytes())
+    bma = FileType.BMA.deserialize((d / f"{BMA_STEM.get(stem, stem)}m.bma").read_bytes())
     streamed = n_tiles > 1024
     layers = [bma.layer0, bma.layer1] if bma.number_of_layers == 2 else [bma.layer0]
     bpl_raw = (d / f"{stem}.bpl").read_bytes()
@@ -154,7 +157,7 @@ def render_map(stem: str) -> np.ndarray:
             tiles += [bpa[off + i * 32:off + (i + 1) * 32] for i in range(nt)]
     off = 16 + (n_tiles - 1) * 32
     chunks = [[0] * 9] + [list(struct.unpack_from("<9H", bpc, off + i * 18)) for i in range(n_chunks - 1)]
-    bma = FileType.BMA.deserialize((d / f"{stem}m.bma").read_bytes())
+    bma = FileType.BMA.deserialize((d / f"{BMA_STEM.get(stem, stem)}m.bma").read_bytes())
     W, H = bma.map_width_camera * 8, bma.map_height_camera * 8
     img = np.zeros((H, W, 3), np.uint8)
     streamed = n_tiles > 1024

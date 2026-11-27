@@ -576,10 +576,45 @@ extern const u8 gFileED0111Bm[];
 extern const u8 gFileED0141A[];
 extern const u8 gFileED0141Ac[];
 extern const u8 gFileED0141Am[];
+extern const u8 gFileED0211A[];
+extern const u8 gFileED0211Ac[];
+extern const u8 gFileED0211Am[];
+extern const u8 gFileED0231A[];
+extern const u8 gFileED0231Ac[];
+extern const u8 gFileED0231Am[];
 extern const u8 gFileEG0101B[];
 extern const u8 gFileEG0101Bc[];
 extern const u8 gFileEG0101Bm[];
+extern const u8 gFileEG0101B2m[];
 extern const u8 gFileEG0101B1[];
+extern const u8 gFileEG0102A[];
+extern const u8 gFileEG0102Ac[];
+extern const u8 gFileEG0102Am[];
+extern const u8 gFileEG0103A[];
+extern const u8 gFileEG0103Ac[];
+extern const u8 gFileEG0103Am[];
+extern const u8 gFileEG0104A[];
+extern const u8 gFileEG0104Ac[];
+extern const u8 gFileEG0104Am[];
+extern const u8 gFileEG0104A2m[];
+extern const u8 gFileEG0104C[];
+extern const u8 gFileEG0104Cc[];
+extern const u8 gFileEG0104Cm[];
+extern const u8 gFileEG0105A[];
+extern const u8 gFileEG0105Ac[];
+extern const u8 gFileEG0105Am[];
+extern const u8 gFileEG0105A1[];
+extern const u8 gFileEG0105C[];
+extern const u8 gFileEG0105Cc[];
+extern const u8 gFileEG0105Cm[];
+extern const u8 gFileEG0105C1[];
+extern const u8 gFileEG0106B[];
+extern const u8 gFileEG0106Bc[];
+extern const u8 gFileEG0106Bm[];
+extern const u8 gFileEG0107A[];
+extern const u8 gFileEG0107Ac[];
+extern const u8 gFileEG0107Am[];
+extern const u8 gFileEG0107C[];
 extern const u8 gFileEV0101A[];
 extern const u8 gFileEV0101Ac[];
 extern const u8 gFileEV0101Am[];
@@ -2442,23 +2477,58 @@ const File gGroundFiles[GROUND_FILES_COUNT] = {
     [402] = { "ED0141A", &gFileED0141A, },
     [403] = { "ED0141Ac", &gFileED0141Ac, },
     [404] = { "ED0141Am", &gFileED0141Am, },
-    [405] = { "EG0101B", &gFileEG0101B, },
-    [406] = { "EG0101B1", &gFileEG0101B1, },
-    [407] = { "EG0101Bc", &gFileEG0101Bc, },
-    [408] = { "EG0101Bm", &gFileEG0101Bm, },
-    [409] = { "EV0101A", &gFileEV0101A, },
-    [410] = { "EV0101A1", &gFileEV0101A1, },
-    [411] = { "EV0101Ac", &gFileEV0101Ac, },
-    [412] = { "EV0101Am", &gFileEV0101Am, },
-    [413] = { "EV0104B", &gFileEV0104B, },
-    [414] = { "EV0104Bc", &gFileEV0104Bc, },
-    [415] = { "EV0104Bm", &gFileEV0104Bm, },
-    [416] = { "EV0105B", &gFileEV0105B, },
-    [417] = { "EV0105Bc", &gFileEV0105Bc, },
-    [418] = { "EV0105Bm", &gFileEV0105Bm, },
-    [419] = { "EV0107B", &gFileEV0107B, },
-    [420] = { "EV0107Bc", &gFileEV0107Bc, },
-    [421] = { "EV0107Bm", &gFileEV0107Bm, },
+    [405] = { "ED0211A", &gFileED0211A, },
+    [406] = { "ED0211Ac", &gFileED0211Ac, },
+    [407] = { "ED0211Am", &gFileED0211Am, },
+    [408] = { "ED0231A", &gFileED0231A, },
+    [409] = { "ED0231Ac", &gFileED0231Ac, },
+    [410] = { "ED0231Am", &gFileED0231Am, },
+    [411] = { "EG0101B", &gFileEG0101B, },
+    [412] = { "EG0101B1", &gFileEG0101B1, },
+    [413] = { "EG0101B2m", &gFileEG0101B2m, },
+    [414] = { "EG0101Bc", &gFileEG0101Bc, },
+    [415] = { "EG0101Bm", &gFileEG0101Bm, },
+    [416] = { "EG0102A", &gFileEG0102A, },
+    [417] = { "EG0102Ac", &gFileEG0102Ac, },
+    [418] = { "EG0102Am", &gFileEG0102Am, },
+    [419] = { "EG0103A", &gFileEG0103A, },
+    [420] = { "EG0103Ac", &gFileEG0103Ac, },
+    [421] = { "EG0103Am", &gFileEG0103Am, },
+    [422] = { "EG0104A", &gFileEG0104A, },
+    [423] = { "EG0104A2m", &gFileEG0104A2m, },
+    [424] = { "EG0104Ac", &gFileEG0104Ac, },
+    [425] = { "EG0104Am", &gFileEG0104Am, },
+    [426] = { "EG0104C", &gFileEG0104C, },
+    [427] = { "EG0104Cc", &gFileEG0104Cc, },
+    [428] = { "EG0104Cm", &gFileEG0104Cm, },
+    [429] = { "EG0105A", &gFileEG0105A, },
+    [430] = { "EG0105A1", &gFileEG0105A1, },
+    [431] = { "EG0105Ac", &gFileEG0105Ac, },
+    [432] = { "EG0105Am", &gFileEG0105Am, },
+    [433] = { "EG0105C", &gFileEG0105C, },
+    [434] = { "EG0105C1", &gFileEG0105C1, },
+    [435] = { "EG0105Cc", &gFileEG0105Cc, },
+    [436] = { "EG0105Cm", &gFileEG0105Cm, },
+    [437] = { "EG0106B", &gFileEG0106B, },
+    [438] = { "EG0106Bc", &gFileEG0106Bc, },
+    [439] = { "EG0106Bm", &gFileEG0106Bm, },
+    [440] = { "EG0107A", &gFileEG0107A, },
+    [441] = { "EG0107Ac", &gFileEG0107Ac, },
+    [442] = { "EG0107Am", &gFileEG0107Am, },
+    [443] = { "EG0107C", &gFileEG0107C, },
+    [444] = { "EV0101A", &gFileEV0101A, },
+    [445] = { "EV0101A1", &gFileEV0101A1, },
+    [446] = { "EV0101Ac", &gFileEV0101Ac, },
+    [447] = { "EV0101Am", &gFileEV0101Am, },
+    [448] = { "EV0104B", &gFileEV0104B, },
+    [449] = { "EV0104Bc", &gFileEV0104Bc, },
+    [450] = { "EV0104Bm", &gFileEV0104Bm, },
+    [451] = { "EV0105B", &gFileEV0105B, },
+    [452] = { "EV0105Bc", &gFileEV0105Bc, },
+    [453] = { "EV0105Bm", &gFileEV0105Bm, },
+    [454] = { "EV0107B", &gFileEV0107B, },
+    [455] = { "EV0107Bc", &gFileEV0107Bc, },
+    [456] = { "EV0107Bm", &gFileEV0107Bm, },
 #endif
 #ifdef SKY_STORY
     [396 + SKY_GROUND_FILES] = { "H01P01", &gFileED0111A, }, /* sky: Red story file not linked */
