@@ -31,7 +31,7 @@ GEN_C = ROOT / "src" / "chapter_cards_data.c"
 # Must match sChapterTitles in src/chapter_titles.c (sky story).
 CHAPTERS = [
     "A Storm at Sea",
-    "The Rescue Team Begins",
+    "The New\nGuild Recruits",  # EoS m02a0101 (two lines)
     "Into Sinister Woods",
     "Thunder on the Mountain",
     "The Hill of the Ancients",
@@ -71,9 +71,12 @@ class Banner:
         return img.crop((0, 0, max(1, x), 24))
 
 
-# Chapter -> (EoS level shown behind the title, brightness): EoS m01a0101
-# back_SetBanner2(LEVEL_V01P02A, ...) shows Sharpedo Bluff behind chapter 1.
-BACKGROUNDS = {1: ("v01p02a", 0.44)}
+# Chapter -> (EoS level shown behind the title, brightness, view centre):
+# EoS back_SetBanner2(LEVEL, 0, x, y, lines, text) shows the level around
+# (x, y): m01a0101 Sharpedo Bluff (V01P02A, 120, 96), m02a0101 the crew
+# room at night (G01P07C, 148, 168).
+BACKGROUNDS = {1: ("v01p02a", 0.44, (120, 96)), 2: ("g01p07c", 0.44, (148, 168))}
+LINE_GAP = 22  # a two-line title's second line, under the first
 
 
 def top(img: Image.Image) -> int:
@@ -109,21 +112,24 @@ def main() -> int:
     for n, name in enumerate(CHAPTERS, 1):
         card = Image.new("RGBA", (240, 160), (0, 0, 0, 255))
         a = banner.render(f"Chapter {n}")
-        b = banner.render(name)
+        lines = [banner.render(t) for t in name.split("\n")]
         if n in BACKGROUNDS:
             # EoS back_SetBanner2(level, 0, x, y, ...): the level's picture
-            # from its top-left, darkened (measured: x0.44 on chapter 1's
-            # Sharpedo Bluff); the GBA's 160 lines take DS lines 16-175.
-            level, k = BACKGROUNDS[n]
-            bg = render_level(rom, level).crop((0, 16, 240, 176))
+            # around (x, y), darkened (measured: x0.44 on chapter 1's
+            # Sharpedo Bluff); the GBA's 240x160 view has the same centre.
+            level, k, (cx, cy) = BACKGROUNDS[n]
+            bg = render_level(rom, level).crop((cx - 120, cy - 80, cx + 120, cy + 80))
             bg = bg.point(lambda v: int(v * k + 0.5))
             card.alpha_composite(bg.convert("RGBA"), (0, 0))
             # text tops as in EoS (DS lines 38 / 89), moved up with the crop
             card.alpha_composite(a, ((240 - a.width) // 2, 38 - 16 - top(a)))
-            card.alpha_composite(b, ((240 - b.width) // 2, 89 - 16 - top(b)))
+            y = 89 - 16 - top(lines[0])
         else:
             card.alpha_composite(a, ((240 - a.width) // 2, 50))
-            card.alpha_composite(b, ((240 - b.width) // 2, 82))
+            y = 82
+        for b in lines:
+            card.alpha_composite(b, ((240 - b.width) // 2, y))
+            y += LINE_GAP
         png = OUT / f"chapter{n}.png"
         card.convert("RGB").save(png)
         flat = title.flatten_rgb(card)

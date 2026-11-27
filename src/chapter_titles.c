@@ -45,7 +45,12 @@ static const ChapterTitle sChapterTitles[CHAPTER_TITLE_COUNT] = {
 #else
     {  2, FRIEND_AREA_OVERGROWN_FOREST, _("Chapter 1"),  _("A Pokémon Awakens") },         /* Tiny Woods */
 #endif
+#ifdef SKY_STORY
+    /* EoS m02a0101: chapter 2 starts as $SCENARIO_MAIN becomes scn[3, 1]. */
+    {  3, FRIEND_AREA_MT_CLEFT,         _("Chapter 2"),  _("The New Guild Recruits") },
+#else
     {  3, FRIEND_AREA_MT_CLEFT,         _("Chapter 2"),  _("The Rescue Team Begins") },    /* Thunderwave Cave, Mt. Steel */
+#endif
     {  5, FRIEND_AREA_SECRETIVE_FOREST, _("Chapter 3"),  _("Into Sinister Woods") },       /* Sinister Woods */
     {  6, FRIEND_AREA_THUNDER_MEADOW,   _("Chapter 4"),  _("Thunder on the Mountain") },   /* Silent Chasm, Mt. Thunder */
     {  8, FRIEND_AREA_RAINBOW_PEAK,     _("Chapter 5"),  _("The Hill of the Ancients") },  /* Great Canyon */
