@@ -452,6 +452,13 @@ static void UpdateBGControlRegisters(void)
         REG_BG1CNT = BGCNT_Priority[BG1] | BGCNT_SCREENBASE(7) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(8) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(31) | BGCNT_CHARBASE(1) | BGCNT_256COLOR;
+#ifdef SKY_STORY
+        /* EoS's opening scenes (src/sky_opening.c): two 4bpp map layers */
+        if (gSkyOpeningBg4bpp) {
+            REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(8) | BGCNT_CHARBASE(2);
+            REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(31) | BGCNT_CHARBASE(1);
+        }
+#endif
     }
     else if (gGroundMap8bpp) {
         /* Spinda Café: dual-layer 8bpp art on BG2+BG3.

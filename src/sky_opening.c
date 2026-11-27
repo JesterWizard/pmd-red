@@ -42,11 +42,15 @@
 #include "bg_palette_buffer.h"
 #include "cpu.h"
 #include "fullscreen_art.h"
+#include "graphics_memory.h"
 #include "input.h"
+#include "m4a.h"
+#include "memory.h"
 #include "music_util.h"
 #include "sky_story.h"
 #include "sprite.h"
 #include "structs/sprite_oam.h"
+#include "text_1.h"
 #include "window_buffer.h"
 
 struct SkyOpeningPiece
@@ -226,13 +230,371 @@ static void DrawObject(s32 obj, s32 frameId, s32 camY, s32 *tile)
     }
 }
 
+/* ------------------------------------------------------------------------
+ * The rest of EoS's opening: thirteen EoS scenes as fourteen GBA ones
+ * (the logo scene shows one screen, then the other; src/data/sky_opening_scenes.h,
+ * tools/make_sky_opening.py), played back as EoS showed them.
+ *
+ * Each scene has two BG layers (BG2 in front, BG3 behind), 4bpp with EoS's
+ * own tiles and palettes, each a "world" (a version per change of content)
+ * that streams into a 31x21-tile ring as the view moves; every frame gives
+ * the view's position in each world, the OAM entries (EoS's sprites, piece
+ * for piece), the palette set and each screen's fade. Scenes start when the
+ * song reaches the tick EoS starts them at (EoS waits for the song's
+ * signals), so they keep in time with the music.
+ *
+ * VRAM (gTitleBg8bpp's maps: BG2 at screen base 8, BG3 at 31):
+ *   BG3: char base 1, ring tiles 64-714 (0x4800-0x995F), blank tile 715
+ *   BG2: char base 2, ring tiles 204-854 (0x9980-0xEADF), blank tile 855
+ */
+struct SkyOpFrame
+{
+    s16 pos[4];        /* BG2 x, y, BG3 x, y: world pixel of the view's top-left */
+    u16 firstObj;
+    u8 numObj;
+    u8 ver[2];
+    u8 bgPal, objPal;
+    s8 fadeA, fadeB;   /* bottom / top screen: -16 (black) .. 16 (white) */
+    u8 eva, evb;       /* semi-transparent OBJs */
+    u8 pad;
+};
+
+struct SkyOpObj
+{
+    s16 x, y;
+    u16 tile;
+    u16 attr;          /* shape 0-1, size 2-3, hflip 4, vflip 5, semi 6, priority 7-8, palette 9-12, bottom screen 13 */
+};
+
+struct SkyOpPalSet
+{
+    u16 cols[256];
+    u16 engA;          /* bit p: palette p fades with the bottom screen */
+    u16 pad;
+};
+
+struct SkyOpVersion
+{
+    u16 w, h;          /* in tiles */
+    u8 flags, pad;     /* bit 0: wraps across, bit 1: wraps down */
+    u32 mapOff, tilesOff;
+};
+
+struct SkyOpScene
+{
+    const u32 *blob;
+    const struct SkyOpVersion *ver;
+    u16 numFrames;
+    s16 startTick;     /* the song's m4a clock to start at; -1: right after the scene before */
+    u8 numVer[2];
+    u16 pad;
+    u32 framesOff, objsOff, bgSetsOff, objSetsOff, objTilesOff;
+};
+
+#include "data/sky_opening_scenes.h"
+
+#define OP_RING_W 31
+#define OP_RING_H 21
+#define OP_WAIT_LIMIT 600   /* frames: if the song does not play, do not wait for it */
+/* bgm0001 at 130 bpm: m4a's clock (24 a quarter) moves 130/150 a frame */
+#define OP_FRAMES_PER_TICK_X256 (150 * 256 / 130)
+
+EWRAM_DATA bool8 gSkyOpeningBg4bpp = FALSE;
+EWRAM_DATA bool8 gSkyTitleFromWhite = FALSE;
+/* What is on screen, for the regression suite: 1 the Shaymin scene, 2-15
+ * the scenes after it (sOpScenes), SKY_OPENING_SCENE_TITLE the title, else 0. */
+EWRAM_DATA u8 gSkyOpeningScene = 0;
+EWRAM_DATA u16 gSkyOpeningFrame = 0;   /* the frame within the scene */
+
+static const u16 sOpRingBase[2] = { 204, 64 };
+#define OP_RING_SLOTS (OP_RING_W * OP_RING_H)
+/* per ring slot, the tile it holds + 1 (0: unknown); heap, while playing */
+static EWRAM_DATA u16 *sOpSlotIds = NULL;
+static const u16 sOpBlank[2] = { 855, 715 };
+
+struct OpRing
+{
+    s16 cx, cy;
+    s16 ver;
+};
+
+static s32 OpMod(s32 a, s32 n)
+{
+    a %= n;
+    return a < 0 ? a + n : a;
+}
+
+static u8 *OpChar(s32 l)
+{
+    return (u8 *)VRAM + (l == 0 ? 0x8000 : 0x4000);
+}
+
+/* Loads cells c0..c1-1 of ring row cy: tile data into the ring's slots,
+ * tilemap entries (EoS's flips and palette) pointing at them. */
+static void OpLoadCells(const u8 *blob, const struct SkyOpVersion *v, s32 l, s32 cy, s32 c0, s32 c1)
+{
+    u16 *tmRow = gBgTilemaps[l == 0 ? 2 : 3][cy & 31];
+    u32 *chr = (u32 *)OpChar(l);
+    const u32 *map = (const u32 *)(blob + v->mapOff);
+    const u32 *tiles = (const u32 *)(blob + v->tilesOff);
+    s32 slotRow = sOpRingBase[l] + OpMod(cy, OP_RING_H) * OP_RING_W;
+    s32 col = OpMod(c0, OP_RING_W);
+    s32 y = (v->flags & 2) ? OpMod(cy, v->h) : cy;
+    s32 x = (v->flags & 1) ? OpMod(c0, v->w) : c0;
+    bool8 rowIn = y >= 0 && y < v->h;
+    s32 cx;
+
+    for (cx = c0; cx < c1; cx++) {
+        u32 e = 0xFFFFFFFF;
+
+        if (rowIn && x >= 0 && x < v->w)
+            e = map[y * v->w + x];
+        if (e == 0xFFFFFFFF) {
+            tmRow[cx & 31] = sOpBlank[l];
+        }
+        else {
+            s32 slot = slotRow + col;
+            u16 *held = &sOpSlotIds[l * OP_RING_SLOTS + slot - sOpRingBase[l]];
+
+            /* the slot may hold this tile already (the layer's versions share
+             * their tiles: an animation reloads only what changes) */
+            if (*held != (e >> 16) + 1) {
+                const u32 *src = tiles + (e >> 16) * 8;
+                u32 *dst = chr + slot * 8;
+
+                dst[0] = src[0]; dst[1] = src[1]; dst[2] = src[2]; dst[3] = src[3];
+                dst[4] = src[4]; dst[5] = src[5]; dst[6] = src[6]; dst[7] = src[7];
+                *held = (e >> 16) + 1;
+            }
+            tmRow[cx & 31] = slot | (e & 0xFC00);
+        }
+        if (++col == OP_RING_W)
+            col = 0;
+        if (++x == v->w && (v->flags & 1))
+            x = 0;
+    }
+}
+
+/* Streams the cells the view needs that the ring does not hold yet. */
+static void OpUpdateLayer(const struct SkyOpScene *sc, s32 l, s32 ver, s32 x, s32 y, struct OpRing *r)
+{
+    const u8 *blob = (const u8 *)sc->blob;
+    const struct SkyOpVersion *v = &sc->ver[(l == 1 ? sc->numVer[0] : 0) + ver];
+    s32 nx = x >> 3, ny = y >> 3, cy;
+    bool8 all = r->ver != ver || nx - r->cx >= OP_RING_W || r->cx - nx >= OP_RING_W
+             || ny - r->cy >= OP_RING_H || r->cy - ny >= OP_RING_H;
+
+    if (all || nx != r->cx || ny != r->cy) {
+        for (cy = ny; cy < ny + OP_RING_H; cy++) {
+            bool8 rowNew = all || cy < r->cy || cy >= r->cy + OP_RING_H;
+            /* the columns that came into view (a whole row if the row did) */
+            s32 c0 = nx, c1 = nx + OP_RING_W;
+
+            if (!rowNew) {
+                if (nx > r->cx)
+                    c0 = r->cx + OP_RING_W;
+                else
+                    c1 = r->cx;
+            }
+            if (c0 < c1)
+                OpLoadCells(blob, v, l, cy, c0, c1);
+        }
+        r->cx = nx;
+        r->cy = ny;
+        r->ver = ver;
+        ScheduleBgTilemapCopy(l == 0 ? 2 : 3);
+    }
+    if (l == 0)
+        SetBG2RegOffsets(x & 0xFF, y & 0xFF);
+    else
+        SetBG3RegOffsets(x & 0xFF, y & 0xFF);
+}
+
+static void OpClearLayer(s32 l)
+{
+    s32 i, j;
+
+    for (i = 0; i < 32; i++)
+        for (j = 0; j < 32; j++)
+            gBgTilemaps[l == 0 ? 2 : 3][i][j] = sOpBlank[l];
+    ScheduleBgTilemapCopy(l == 0 ? 2 : 3);
+}
+
+/* level: -16 (black) .. 16 (white); dim: 16 .. 0 (the START fade on top) */
+static u16 OpFade(u16 c, s32 level, s32 dim)
+{
+    s32 r = c & 0x1F, g = (c >> 5) & 0x1F, b = (c >> 10) & 0x1F;
+
+    if (level < 0) {
+        r = r * (16 + level) / 16;
+        g = g * (16 + level) / 16;
+        b = b * (16 + level) / 16;
+    }
+    else if (level > 0) {
+        r += (31 - r) * level / 16;
+        g += (31 - g) * level / 16;
+        b += (31 - b) * level / 16;
+    }
+    return RGB2(r * dim / 16, g * dim / 16, b * dim / 16);
+}
+
+static void OpSetPalettes(const struct SkyOpPalSet *set, s32 base, s32 fadeA, s32 fadeB, s32 dim)
+{
+    s32 i;
+
+    for (i = 0; i < 256; i++) {
+        s32 level = (set->engA >> (i >> 4)) & 1 ? fadeA : fadeB;
+        u16 c = (level == 0 && dim == 16) ? set->cols[i] : OpFade(set->cols[i], level, dim);
+        SetBGPaletteBufferColor(base + i, &c);
+    }
+}
+
+static void OpDrawObjs(const u8 *blob, const struct SkyOpScene *sc, const struct SkyOpFrame *fr, s32 half)
+{
+    const struct SkyOpObj *objs = (const struct SkyOpObj *)(blob + sc->objsOff);
+    const u8 *gfx = blob + sc->objTilesOff;
+    s32 tile = half * OBJ_BUF_TILES, k;
+
+    for (k = 0; k < fr->numObj; k++) {
+        const struct SkyOpObj *o = &objs[fr->firstObj + k];
+        s32 shape = o->attr & 3, size = (o->attr >> 2) & 3;
+        s32 n = (sObjW[shape][size] / 8) * (sObjH[shape][size] / 8);
+        SpriteOAM sprite;
+
+        if ((tile & (OBJ_BUF_TILES - 1)) + n > OBJ_BUF_TILES)
+            break;
+        CpuCopy((u8 *)OBJ_VRAM0 + tile * 32, gfx + o->tile * 32, n * 32);
+        sprite.attrib1 = 0;
+        sprite.attrib2 = 0;
+        sprite.attrib3 = 0;
+        sprite.unk6 = 0;
+        SpriteSetShape(&sprite, shape);
+        SpriteSetSize(&sprite, size);
+        SpriteSetMatrixNum(&sprite, ((o->attr >> 4) & 3) << 3);
+        SpriteSetObjMode(&sprite, (o->attr >> 6) & 1);
+        SpriteSetPalNum(&sprite, (o->attr >> 9) & 15);
+        SpriteSetPriority(&sprite, (o->attr >> 7) & 3);
+        SpriteSetX(&sprite, o->x & 0x1FF);
+        SpriteSetY(&sprite, o->y & 0xFF);
+        SpriteSetTileNum(&sprite, tile);
+        /* one sort layer: the first one added is in front (as on the DS) */
+        AddSprite(&sprite, 4, NULL, NULL);
+        tile += n;
+    }
+}
+
+static bool8 OpSkipPressed(void)
+{
+    return (gRealInputs.pressed & (A_BUTTON | START_BUTTON)) != 0;
+}
+
+/* Waits (the screen as it is) until the song reaches `tick`. TRUE: skipped. */
+static bool8 OpWaitTick(s32 tick)
+{
+    s32 n;
+
+    for (n = 0; (s32)gMPlayInfo_BGM.clock < tick && n < OP_WAIT_LIMIT; n++) {
+        RunFullscreenArtFrame();
+        if (OpSkipPressed())
+            return TRUE;
+    }
+    return FALSE;
+}
+
+/* Plays the scenes. Returns TRUE when START (or A) skipped, after fading out. */
+static bool8 OpPlayScenes(void)
+{
+    s32 s, t, l, dim = 16, skipAt = -1;
+    u32 key, lastKey = 0, lastObjKey = 0, clock0;
+    const struct SkyOpScene *sc = NULL;
+    const struct SkyOpFrame *fr = NULL;
+
+    gSkyOpeningBg4bpp = TRUE;
+    sOpSlotIds = MemoryAlloc(2 * OP_RING_SLOTS * sizeof(u16), MEMALLOC_GROUP_0);
+    CpuFill32(0, (u8 *)VRAM + 0x4000 + 715 * 32, 32);
+    CpuFill32(0, (u8 *)VRAM + 0x8000 + 855 * 32, 32);
+    for (s = 0; s < SKY_OP_SCENE_COUNT; s++) {
+        struct OpRing ring[2] = { { 0, 0, -1 }, { 0, 0, -1 } };
+        const u8 *blob;
+
+        sc = &sOpScenes[s];
+        blob = (const u8 *)sc->blob;
+        gSkyOpeningScene = s + 2;
+        CpuFill16(0, sOpSlotIds, 2 * OP_RING_SLOTS * sizeof(u16));
+        if (sc->startTick >= 0 && OpWaitTick(sc->startTick)) {
+            skipAt = 0;
+            break;
+        }
+        for (l = 0; l < 2; l++)
+            if (sc->numVer[l] == 0)
+                OpClearLayer(l);
+        clock0 = gMPlayInfo_BGM.clock;
+        for (t = 0; t < sc->numFrames; ) {
+            s32 next, due;
+
+            fr = &((const struct SkyOpFrame *)(blob + sc->framesOff))[t];
+            gSkyOpeningFrame = t;
+            for (l = 0; l < 2; l++)
+                if (sc->numVer[l] != 0)
+                    OpUpdateLayer(sc, l, fr->ver[l], fr->pos[l * 2], fr->pos[l * 2 + 1], &ring[l]);
+            /* palettes only when they change (a set or a fade level) */
+            key = (fr->bgPal << 16) | ((u8)fr->fadeA << 8) | (u8)fr->fadeB;
+            if (t == 0 || key != lastKey)
+                OpSetPalettes(&((const struct SkyOpPalSet *)(blob + sc->bgSetsOff))[fr->bgPal], 0, fr->fadeA, fr->fadeB, 16);
+            lastKey = key;
+            key = (fr->objPal << 16) | ((u8)fr->fadeA << 8) | (u8)fr->fadeB;
+            if (t == 0 || key != lastObjKey)
+                OpSetPalettes(&((const struct SkyOpPalSet *)(blob + sc->objSetsOff))[fr->objPal], 256, fr->fadeA, fr->fadeB, 16);
+            lastObjKey = key;
+            OpDrawObjs(blob, sc, fr, t & 1);
+            gBldCnt = (gBldCnt & ~(BLDCNT_TGT1_ALL | BLDCNT_EFFECT_MASK)) | BLDCNT_EFFECT_BLEND
+                    | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_BD;
+            gBldAlpha = BLDALPHA_BLEND(fr->eva, fr->evb);
+            gUnknown_2026E4E = (fr->eva << 8) | fr->evb;
+            RunFullscreenArtFrame();
+            if (OpSkipPressed()) {
+                skipAt = t;
+                break;
+            }
+            /* Keep to the song: a frame that took longer than one GBA frame
+             * (many tiles to load) drops the scene frames it overran. */
+            next = t + 1;
+            due = ((s32)(gMPlayInfo_BGM.clock - clock0) * OP_FRAMES_PER_TICK_X256) >> 8;
+            if (due > next + 1 && due - next < 16)
+                next = due - 1;   /* (the clock's ticks are coarser than frames) */
+            t = next;
+        }
+        if (skipAt >= 0)
+            break;
+    }
+    if (skipAt >= 0) {
+        /* START: fade what is on screen out, as EoS does, then the title */
+        FadeOutBGM_(SKIP_FADE_LEN);
+        for (t = 1; t <= SKIP_FADE_LEN; t++) {
+            dim = 16 - t * 16 / SKIP_FADE_LEN;
+            if (fr != NULL) {
+                OpSetPalettes(&((const struct SkyOpPalSet *)((const u8 *)sc->blob + sc->bgSetsOff))[fr->bgPal], 0, fr->fadeA, fr->fadeB, dim);
+                OpSetPalettes(&((const struct SkyOpPalSet *)((const u8 *)sc->blob + sc->objSetsOff))[fr->objPal], 256, fr->fadeA, fr->fadeB, dim);
+                OpDrawObjs((const u8 *)sc->blob, sc, fr, t & 1);
+            }
+            RunFullscreenArtFrame();
+        }
+    }
+    gSkyOpeningBg4bpp = FALSE;
+    MemoryFree(sOpSlotIds);
+    sOpSlotIds = NULL;
+    return skipAt >= 0;
+}
 void SkyOpening_Play(void)
 {
     u16 savedBldCnt = gBldCnt;
     u16 savedBldAlpha = gBldAlpha;
     s16 savedWinAlpha = gUnknown_2026E4E;
     s32 t, r, loaded, end, fadeStart, fadeLen;
+    bool8 skipped = FALSE;
 
+    gSkyTitleFromWhite = FALSE;
+    gSkyOpeningScene = 1;
     for (r = 0; r < 240; r++)
         sSkyPal15[r] = RGB2(sSkyPal[r * 4] >> 3, sSkyPal[r * 4 + 1] >> 3, sSkyPal[r * 4 + 2] >> 3);
     LoadFullscreenArtBlank();
@@ -251,15 +613,16 @@ void SkyOpening_Play(void)
         s32 tile = (t & 1) * OBJ_BUF_TILES;
         s32 bright = 16, white = 0, obj;
 
-        if (fadeStart == T_FADE_OUT && t >= 1 && t < T_FADE_OUT
-            && (gRealInputs.pressed & (A_BUTTON | START_BUTTON))) {
-            fadeStart = t;
-            fadeLen = SKIP_FADE_LEN;
-            end = t + SKIP_FADE_LEN;
+        if (!skipped && t >= 1 && (gRealInputs.pressed & (A_BUTTON | START_BUTTON))) {
+            /* START: a 30-frame fade, then the title (the song fades too) */
+            skipped = TRUE;
+            if (t < fadeStart) {
+                fadeStart = t;
+                fadeLen = SKIP_FADE_LEN;
+                end = t + SKIP_FADE_LEN;
+            }
             FadeOutBGM_(SKIP_FADE_LEN);
         }
-        if (t == T_FADE_OUT && fadeStart == T_FADE_OUT)
-            FadeOutBGM_(FADE_OUT_LEN);
 
         if (t < T_FADE_IN)
             bright = t;
@@ -290,12 +653,24 @@ void SkyOpening_Play(void)
         RunFullscreenArtFrame();
     }
 
+    /* The song plays on (EoS: no fade at the end of the Shaymin scene) into
+     * the rest of the opening, then the title, which EoS fades in from
+     * white on the song's last signal. */
+    if (!skipped)
+        skipped = OpPlayScenes();
+    if (!skipped && !OpWaitTick(SKY_OP_TITLE_TICK))
+        gSkyTitleFromWhite = TRUE;
+    else if (!skipped)
+        FadeOutBGM_(SKIP_FADE_LEN);
+
     gBldCnt = savedBldCnt;
     gBldAlpha = savedBldAlpha;
     gUnknown_2026E4E = savedWinAlpha;
+    SetBG2RegOffsets(0, 0);
     SetBG3RegOffsets(0, 0);
     RunFullscreenArtFrame(); /* no sprites: clears the OAM */
     UnloadFullscreenArt();
+    gSkyOpeningScene = 0;
 }
 
 #endif /* SKY_STORY */

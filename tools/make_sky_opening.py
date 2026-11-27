@@ -65,6 +65,70 @@ OBJECTS = [
 # each frame lasts two.
 FLARE_BLANK = 14
 
+# The rest of EoS's opening (unionall.ssb DEMO_02, after t02a0201): the
+# scenes as DeSmuME frames from power-on (a cold boot, no input), first and
+# last frame on screen. EoS starts bgm0001 at about frame 700; scenes marked
+# `signal` start on the song's signal (WaitBgmSignal: SMDL event 0xF6 at that
+# tick), the others right after the previous scene.
+SCENES = [
+    dict(name="lapras", script="S13P03A/t02a0202", start=1196, end=1484),
+    dict(name="treasure", script="S13P04B/t02a0203", start=1583, end=1973),
+    dict(name="timegear", script="S13P05A/t02a0204", start=2031, end=2216),
+    dict(name="logo", script="S13P06A/t02a0205", start=2300, end=2668),
+    dict(name="bidoof", script="P15P01A/t02a0301", start=2716, end=2884),
+    dict(name="charms", script="P26P01A/t02a0302", start=2935, end=3089),
+    dict(name="sableye", script="P08P01A/t02a0303", start=3142, end=3312),
+    dict(name="island", script="V24P05A/t02a0308", start=3405, end=3542),
+    dict(name="crystal", script="V10P03C/t02a0309", start=3629, end=3823),
+    dict(name="dialga", script="V26P07A/t02a0310", start=3882, end=4021),
+    dict(name="forest", script="S13P08A/t02a0311", start=4112, end=4401),
+    dict(name="march", script="S13P06A/t02a0401", start=4510, end=4867),
+    dict(name="hills", script="S13P09A/t02a0402", start=4935, end=5179),
+]
+
+# The GBA scenes: which recording, its frame range (indices into the
+# recording), the two GBA BG layers (BG2 in front, BG3 behind), each one or
+# two DS map layers of the top screen, the bottom one or both (EoS's
+# continuous two-screen maps), with options: versions (the layer's content
+# changes: animated tiles, a growing glow), lock (the axis that does not
+# move; "rows": only vertical, from the rows' mean colours, for a sky and sea
+# whose bands slide sideways at their own speeds), cuts
+# (the camera jumps: each jump starts a new world), and
+# the GBA view: keyframes (index, x, y) in "canvas" pixels, the DS's top
+# screen (y 0-191) over its bottom one (y 192-383).
+GBA_SCENES = [
+    dict(name="lapras", rec="lapras",
+         bg=[("both", [2]), ("both", [3], dict(lock="rows"))],
+         view=[(0, 8, 70), (100, 8, 95), (200, 8, 165), (288, 8, 170)]),
+    dict(name="treasure", rec="treasure",
+         bg=[("both", [2]), ("both", [3])],
+         view=[(0, 8, 16), (60, 8, 16), (330, 8, 208), (390, 8, 208)]),
+    dict(name="timegear", rec="timegear",
+         bg=[("both", [2], dict(versions=4)), ("both", [3], dict(versions=10))],
+         view=[(0, 8, 100), (185, 8, 140)]),
+    dict(name="logo_top", rec="logo", frames=(0, 110),
+         bg=[("top", [2]), ("top", [3])],
+         view=[(0, 8, 16)]),
+    dict(name="logo_field", rec="logo", frames=(111, 368),
+         bg=[("bottom", [2]), ("bottom", [3])],
+         view=[(111, 8, 224)]),
+    dict(name="bidoof", rec="bidoof", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
+    dict(name="charms", rec="charms", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
+    dict(name="sableye", rec="sableye", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
+    # (EoS flashes the view through eight spots of the map in its first 16
+    # frames, during the fade-in; the GBA starts on the last one)
+    dict(name="island", rec="island", frames=(18, 137),
+         bg=[("bottom", [2], dict(cuts=True)), ("bottom", [3], dict(cuts=True))], view=[(18, 8, 208)]),
+    dict(name="crystal", rec="crystal",
+         bg=[("both", [2], dict(versions=6)), ("both", [3])],
+         view=[(0, 8, 60), (194, 8, 200)]),
+    dict(name="dialga", rec="dialga", bg=[None, ("both", [3], dict(lock="x"))], view=[(0, 8, 176)]),
+    dict(name="forest", rec="forest", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
+    dict(name="march", rec="march", bg=[("both", [2]), ("both", [3])], view=[(0, 8, 208)]),
+    dict(name="hills", rec="hills", bg=[("both", [2]), ("both", [3])],
+         view=[(0, 8, 212), (120, 8, 212), (200, 8, 20), (244, 8, 20)]),
+]
+
 SHAPES = {
     (8, 8): (0, 0), (16, 16): (0, 1), (32, 32): (0, 2), (64, 64): (0, 3),
     (16, 8): (1, 0), (32, 8): (1, 1), (32, 16): (1, 2), (64, 32): (1, 3),
@@ -161,10 +225,127 @@ def convert_object(rom, name: str, path: str):
     return frames, seqs, pal
 
 
+# EoS starts the song at about DeSmuME frame 700 (measured: every signal
+# scene fades in 1-2 frames after its signal tick, at 104 ticks a second:
+# 130 bpm x 48 a quarter). The GBA's m4a song counts 24 a quarter.
+SONG_START_FRAME = 700
+DS_FPS = 59.8261
+SCENES_H = ROOT / "src" / "data" / "sky_opening_scenes.h"
+SCENES_OUT = OUT / "scenes"
+TITLE_FRAME = 5283   # t02a0501 fades the title in from white (signal 7)
+
+
+def song_tick(ds_frame: int) -> int:
+    """The m4a clock (24 a quarter) at an EoS frame."""
+    return max(0, round((ds_frame - SONG_START_FRAME) * 104 / DS_FPS / 2))
+
+
+def write_scenes(rom_path: str, cache: Path, check) -> None:
+    import struct as st
+    import sky_opening_record as recmod
+    import sky_opening_scenes as so
+
+    recmod.record(rom_path, cache, SCENES)
+    SCENES_OUT.mkdir(parents=True, exist_ok=True)
+    rec_start = {s["name"]: s["start"] for s in SCENES}
+    lines = ["/* Generated by tools/make_sky_opening.py — do not edit. */",
+             "/* EoS's opening after the Shaymin scene, recorded from EoS (tools/sky_opening_record.py)",
+             " * and converted by tools/sky_opening_scenes.py. Blob: frames, OBJs, BG palette sets,",
+             " * OBJ palette sets, OBJ tiles, then per layer its tiles and each version's map. */", ""]
+    table = []
+    total = 0
+    synced = set()
+    for cfg in GBA_SCENES:
+        cv = so.convert_scene(cache, cfg)
+        name = cfg["name"]
+        blob = bytearray()
+
+        def align():
+            while len(blob) % 4:
+                blob.append(0)
+        off = {"frames": len(blob)}
+        for fr in cv["frames"]:
+            blob += st.pack("<4hHBBBBBbbBBB", fr["x"][0], fr["y"][0], fr["x"][1], fr["y"][1], fr["first"],
+                            fr["count"], fr["ver"][0], fr["ver"][1], fr["bgpal"], fr["objpal"],
+                            fr["fadeA"], fr["fadeB"], fr["eva"], fr["evb"], 0)
+        align()
+        off["objs"] = len(blob)
+        for (x, y, tile, attr) in cv["objs"]:
+            blob += st.pack("<hhHH", x, y, tile, attr)
+        off["bgsets"] = len(blob)
+        for cols, mask in cv["bg_sets"]:
+            blob += st.pack("<256HHH", *cols, mask, 0)
+        off["objsets"] = len(blob)
+        for cols, mask in cv["obj_sets"]:
+            blob += st.pack("<256HHH", *cols, mask, 0)
+        off["objtiles"] = len(blob)
+        blob += cv["obj_tiles"]
+        align()
+        vers, nver = [], []
+        for g in cv["layers"]:
+            if g is None:
+                nver.append(0)
+                continue
+            nver.append(len(g["versions"]))
+            to = len(blob)   # the layer's tiles, shared by its versions
+            blob += g["tiles"]
+            align()
+            for v in g["versions"]:
+                mo = len(blob)
+                blob += st.pack(f"<{len(v['map'])}I", *v["map"])
+                vers.append((v["w"], v["h"], int(v["wrapx"]) | (int(v["wrapy"]) << 1), mo, to))
+        (SCENES_OUT / f"{name}.bin").write_bytes(bytes(blob))
+        total += len(blob)
+        first = cv["start"] + rec_start[cfg["rec"]]
+        tick = -1 if cfg["rec"] in synced else song_tick(first)
+        synced.add(cfg["rec"])
+        lines.append(f'static const u32 sOpBlob_{name}[] = INCBIN_U32("graphics/custom/sky_opening/scenes/{name}.bin");')
+        lines.append(f"static const struct SkyOpVersion sOpVer_{name}[] = {{")
+        for (w, h, fl, mo, to) in vers or [(0, 0, 0, 0, 0)]:
+            lines.append(f"    {{ {w}, {h}, {fl}, 0, {mo}, {to} }},")
+        lines.append("};")
+        table.append(f"    {{ sOpBlob_{name}, sOpVer_{name}, {len(cv['frames'])}, {tick}, {{ {nver[0]}, {nver[1]} }}, 0, "
+                     f"{off['frames']}, {off['objs']}, {off['bgsets']}, {off['objsets']}, {off['objtiles']} }}, "
+                     f"/* {name}: EoS frames {first}-{first + len(cv['frames']) - 1} */")
+        print(f"{name}: {len(cv['frames'])} frames, {len(cv['objs'])} OBJs, {len(cv['obj_tiles'])} B OBJ tiles, "
+              f"{len(cv['bg_sets'])}+{len(cv['obj_sets'])} palette sets, {len(blob)} B, start tick {tick}, "
+              f"most OBJ tiles in a frame {cv['max_tiles']}", flush=True)
+        if check:
+            write_check(cv, check / f"opening_{name}.png", so)
+    lines.append("")
+    lines.append(f"#define SKY_OP_SCENE_COUNT {len(GBA_SCENES)}")
+    lines.append(f"#define SKY_OP_TITLE_TICK {song_tick(TITLE_FRAME)}")
+    lines.append("static const struct SkyOpScene sOpScenes[SKY_OP_SCENE_COUNT] = {")
+    lines += table
+    lines.append("};")
+    SCENES_H.write_text("\n".join(lines) + "\n")
+    print(f"scenes: {total} bytes")
+
+
+def write_check(cv, path: Path, so, step=24) -> None:
+    """EoS (the GBA view's 240x160 of the DS screens) beside the converted
+    data drawn the way src/sky_opening.c draws it."""
+    rows = []
+    for fi in range(0, len(cv["frames"]), step):
+        i = cv["start"] + fi
+        wx, wy = cv["views"][fi]
+        ds = so.rgb8(cv["rec"].layers["full"][i][wy:wy + 160, wx:wx + 240])
+        gba = so.rgb8(so.render_gba(cv, fi))
+        rows.append(np.concatenate([ds, np.full((160, 4, 3), 255, np.uint8), gba], 1))
+    cols = 3
+    while len(rows) % cols:
+        rows.append(np.zeros_like(rows[0]))
+    grid = np.concatenate([np.concatenate(rows[r:r + cols], 1) for r in range(0, len(rows), cols)], 0)
+    Image.fromarray(grid).save(path)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("rom")
-    ap.add_argument("--check", type=Path)
+    ap.add_argument("--check", type=Path, help="also write EoS vs GBA comparison sheets here")
+    ap.add_argument("--cache", type=Path, default=ROOT / "build" / "sky_opening_rec",
+                    help="where the DeSmuME recordings go (tools/sky_opening_record.py)")
+    ap.add_argument("--no-scenes", action="store_true", help="only the Shaymin scene")
     a = ap.parse_args()
     rom = ndspy.rom.NintendoDSRom.fromFile(a.rom)
     OUT.mkdir(parents=True, exist_ok=True)
@@ -198,6 +379,8 @@ def main() -> int:
         lines.append(f"#define SKY_OPENING_{N}_FRAMES {len(frames)}")
         lines.append("")
     GEN_H.write_text("\n".join(lines) + "\n")
+    if not a.no_scenes:
+        write_scenes(a.rom, a.cache, a.check)
     return 0
 
 

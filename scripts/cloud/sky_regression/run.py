@@ -40,7 +40,17 @@ ROMS = {
                   what="the scenes after the Pit (m01a0701, m01a0702)"),
     "sky": dict(vars=[], driver=drivers.jukebox, frames=16000,
                 what="the normal sky ROM: boot, the Sky Jukebox"),
+    # more runs of the plain ROM (`rom`: they play that test ROM's build)
+    "opening": dict(vars=[], rom="sky", driver=drivers.opening, frames=8400,
+                    what="the plain ROM: EoS's whole opening, the title, START"),
+    "skip": dict(vars=[], rom="sky", driver=drivers.opening_skip, frames=5000,
+                 what="the plain ROM: START in the middle of the opening"),
 }
+
+
+def rom_file(name):
+    """The test ROM a run plays (runs of the plain ROM share its build)."""
+    return ROMS[name].get("rom", name)
 
 COLOURS = {PASS: "32", XPASS: "32", FAIL: "31", ERROR: "31", XFAIL: "33", SKIP: "90"}
 
@@ -70,7 +80,8 @@ def play(name, check_names):
     """Worker: one emulator run of ROM `name` for the named checks."""
     cs = [c for c in REGISTRY if c.name in check_names]
     spec = ROMS[name]
-    run = Run(name, os.path.join(OUT, "roms", f"{name}.gba"), os.path.join(OUT, "roms", f"{name}.elf"),
+    rom = rom_file(name)
+    run = Run(name, os.path.join(OUT, "roms", f"{rom}.gba"), os.path.join(OUT, "roms", f"{rom}.elf"),
               spec["driver"], spec["frames"], cs, os.path.join(OUT, "shots"), TOOL)
     t0 = time.time()
     res = run.execute()
@@ -112,7 +123,7 @@ def main():
     shots = os.path.join(OUT, "shots")
     shutil.rmtree(shots, ignore_errors=True)
     env = dict(root=ROOT, out=OUT, logs=logs,
-               roms={n: os.path.join(OUT, "roms", f"{n}.gba") for n in ROMS})
+               roms={n: os.path.join(OUT, "roms", f"{rom_file(n)}.gba") for n in ROMS})
     results = {}
 
     print("== tools: make -C scripts/cloud")
@@ -130,7 +141,8 @@ def main():
         results[c.name] = run_task(c, shots, env)
         print(f"  done in {time.time() - t0:.0f}s")
 
-    needed = [n for n in ROMS if any(c.rom == n for c in sel if c.stage != "first")]
+    needed = [n for n in ROMS if "rom" not in ROMS[n]
+              and any(c.rom in ROMS and rom_file(c.rom) == n for c in sel if c.stage != "first")]
     broken = set()
     if not args.no_build and needed:
         print("== building test ROMs (logs in build/sky_tests/logs)")
@@ -144,7 +156,7 @@ def main():
             broken.add(n)
 
     for c in sel:
-        if c.stage != "first" and c.rom in broken:
+        if c.stage != "first" and c.rom in ROMS and rom_file(c.rom) in broken:
             results[c.name] = Result(c, ERROR, f"test ROM '{c.rom}' could not be built")
 
     tasks = [c for c in sel if c.stage != "first" and not c.is_frame_check and c.name not in results]

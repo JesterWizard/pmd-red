@@ -161,3 +161,71 @@ def jukebox(run):
         yield from d.press("RIGHT", 4, 10)
     d.post("jukebox_done", out)
     yield from d.idle(1)
+
+
+# gSkyOpeningScene: the Shaymin scene (1), then the 14 GBA scenes (EoS's 13,
+# the logo scene in two parts: tools/make_sky_opening.py GBA_SCENES)
+OPENING_SCENES = range(1, 16)
+SCENE_BIDOOF = 7
+SCENE_TITLE = 0xFE           # SKY_OPENING_SCENE_TITLE (include/sky_story.h)
+
+
+def _opening_sample(run, d, log):
+    """Every 30 frames: (frame, scene, BGM header, status, clock, rms, peak)."""
+    if d.n % 30 == 0:
+        _, rms, peak = run.emu.audio()
+        bgm = run.syms["gMPlayInfo_BGM"]
+        log.append((d.n, d.f.u8(run.syms["gSkyOpeningScene"]), d.f.u32(bgm), d.f.u32(bgm + 4),
+                    d.f.u32(bgm + 12), rms, peak))
+
+
+def opening(run):
+    """EoS's whole opening with no input after the health warning (START at
+    600), then START at the title. Posts "title" and "title_start"; stores
+    the scenes in order (run.data["opening_scenes"]: (scene, first frame))
+    and the music every 30 frames (run.data["opening_audio"])."""
+    d = D(run)
+    scene = run.syms["gSkyOpeningScene"]
+    log, seq = [], []
+    run.data["opening_audio"] = log
+    run.data["opening_scenes"] = seq
+    while True:
+        f = yield from d.step("START" if 600 <= d.n + 1 < 606 else 0)
+        _opening_sample(run, d, log)
+        s = f.u8(scene)
+        if not seq or seq[-1][0] != s:
+            seq.append((s, d.n))
+        if s == SCENE_TITLE:
+            break
+        if d.n > 9500:
+            d.post("no_title")
+            break
+    d.post("title")
+    for _ in range(150):
+        yield from d.step(0)
+        _opening_sample(run, d, log)
+    d.post("title_start")
+    yield from d.press("START", 6, 0)
+    yield from d.idle(400)
+    d.post("after_title")
+    yield from d.idle(1)
+
+
+def opening_skip(run):
+    """START in the middle of the opening (Bidoof's scene)."""
+    d = D(run)
+    scene = run.syms["gSkyOpeningScene"]
+    frame = run.syms["gSkyOpeningFrame"]
+    while True:
+        f = yield from d.step("START" if 600 <= d.n + 1 < 606 else 0)
+        if f.u8(scene) == SCENE_BIDOOF and f.u16(frame) >= 60:
+            break
+        if d.n > 6000:
+            d.post("no_scene")
+            yield from d.idle(1)
+            return
+    d.post("skip")
+    yield from d.press("START", 6, 0)
+    yield from d.idle(400)
+    d.post("after_skip")
+    yield from d.idle(1)

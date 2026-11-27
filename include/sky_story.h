@@ -164,6 +164,12 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames);
 void SkyCutaway_UpdateCover(void);
 void SkyCutaway_LoadScrollRow(const u8 *tiles, s32 row);
 void SkyOpening_Play(void);
+/* The opening's scenes use BG2/BG3 as 4bpp layers (src/reg_control.c), and
+ * the title fades in from white after the whole opening (as EoS's does). */
+extern bool8 gSkyOpeningBg4bpp;
+extern bool8 gSkyTitleFromWhite;
+#define SKY_OPENING_SCENE_TITLE 0xFE
+extern u8 gSkyOpeningScene;
 void SkyGroundSprite_DrawActors(s32 x, s32 y);
 extern bool8 gSkyCoverActive;
 

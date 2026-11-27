@@ -373,6 +373,31 @@ static void TitleFade(const SkyCutawayArt *art, bool8 in, bool8 shown)
     }
 }
 
+/* After the whole opening EoS fades its title in from white (t02a0501:
+ * screen2_FadeIn after the white-out), "Press START" coming with it. */
+#define TITLE_WHITE_FRAMES 15
+static void TitleFadeFromWhite(const SkyCutawayArt *art)
+{
+    const RGB_Struct *pal = (const RGB_Struct *)art->pal;
+    s32 f, i;
+
+    for (f = 0; f <= TITLE_WHITE_FRAMES; f++) {
+        s32 w = TITLE_WHITE_FRAMES - f;
+
+        for (i = 0; i < 240; i++) {
+            RGB_Struct c = pal[i];
+
+            c.r += (255 - c.r) * w / TITLE_WHITE_FRAMES;
+            c.g += (255 - c.g) * w / TITLE_WHITE_FRAMES;
+            c.b += (255 - c.b) * w / TITLE_WHITE_FRAMES;
+            SetBGPaletteBufferColorRGB(i, &c, FADE_STEPS, NULL);
+        }
+        SetPressStartBrightness(f * FADE_STEPS / TITLE_WHITE_FRAMES);
+        DrawPressStart();
+        RunFullscreenArtFrame();
+    }
+}
+
 /* EoS title: logo over the sky, "Press START" blinking. START or A (or the
  * time running out, like Red's title) goes on to the main menu. */
 static void ShowTitleScreen(s32 frames)
@@ -383,7 +408,12 @@ static void ShowTitleScreen(s32 frames)
 
     LoadFullscreenArt(card->at4px);
     CpuCopy((u8 *)OBJ_VRAM0 + PRESS_START_TILE * 32, gSkyPressStartGfx, gSkyPressStartPos[2] * 32 * 32);
-    TitleFade(card, TRUE, shown);
+    gSkyOpeningScene = SKY_OPENING_SCENE_TITLE;
+    if (gSkyTitleFromWhite)
+        TitleFadeFromWhite(card);
+    else
+        TitleFade(card, TRUE, shown);
+    gSkyTitleFromWhite = FALSE;
     for (i = 0; i < frames; i++) {
         if (i % 32 == 31)
             shown = !shown;
@@ -395,6 +425,7 @@ static void ShowTitleScreen(s32 frames)
     }
     TitleFade(card, FALSE, shown);
     UnloadFullscreenArt();
+    gSkyOpeningScene = 0;
 }
 
 void SkyStory_ShowCutaway_Async(s32 id, s32 frames)

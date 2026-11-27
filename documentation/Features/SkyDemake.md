@@ -54,10 +54,11 @@ file). This saves about 3.7 MB. The vanilla build keeps everything.
 
 ## What plays
 
-Boot: EoS's Nintendo logo and ESRB notice, Red's logo screens, the first
-scene of EoS's opening (Shaymin flying over the land, see
-[The opening](#the-opening-shaymin)), then the EoS title (EoS's English logo,
-blinking "Press START", EoS title theme). The top
+Boot: EoS's Nintendo logo and ESRB notice, Red's logo screens, EoS's whole
+opening (Shaymin flying over the land, then thirteen more scenes to the end of
+"Pokémon Exploration Team Theme", see [The opening](#the-opening)), then the
+EoS title (EoS's English logo, blinking "Press START", fading in from white
+as the song ends). The top
 menu has EoS's options and background and plays the EoS top-menu theme; the quiz uses EoS's intro wording and "Welcome to the World
 of Pokémon". The starter list adds Turtwig, Chimchar, Piplup, Munchlax and
 Riolu (with Vulpix, Meowth, Phanpy). Then:
@@ -1153,7 +1154,9 @@ writes `graphics/custom/sky_title/`:
   `graphics/custom/sky_title/emblem_src.png` is that sprite layer captured
   from the running game (DeSmuME, main-engine OBJ layer only; pure black is
   kept where the full frame is black too, so the outlines survive). The logo,
-  emblem get their own share of the 8bpp palette. The EoS title theme plays.
+  emblem get their own share of the 8bpp palette. As in EoS, the opening's
+  song ends under it and the title is then silent; after START in the
+  opening it is silent from the start.
 - "Press START" (`press_start.png`, EoS's banner font) is OBJ tiles with its
   own OBJ palette over the card, and blinks by being drawn or not (32 frames
   on, 32 off). It used to be a second full picture swapped in for the blink;
@@ -1208,7 +1211,7 @@ DS-only parts (wireless, Nintendo WFC) replaced by the GBA's link cable.
 
 ![EoS title card and top menu](images/sky_title_menu.png)
 
-### The opening (Shaymin)
+### The opening
 
 EoS boots into an opening movie (`unionall.ssb` coroutine `DEMO_02`) before
 its title. Its first scene, `SCRIPT/S13P02A/t02a0201.ssb`, is the one with
@@ -1217,9 +1220,7 @@ flash, then the camera pans down level **S13P02A** (the sky over a
 landscape, 256x576 across the two screens) while Shaymin (Sky Forme) flies in
 from far away towards the camera and up past it, trailing Gracidea petals,
 to "Pokémon Exploration Team Theme" (bgm0001). START skips it (a 30-frame
-fade). The rest of EoS's opening (Lapras with Wingull at sea, `S13P03A`;
-the treasure CG, `S13P04A/B`; the Time Gear, `S13P05A`; the logo over the
-hero and partner, `S13P06A`) is not in the demake.
+fade). Thirteen more scenes follow it ([below](#the-rest-of-the-opening)).
 
 [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py) converts it
 from the ROM into `graphics/custom/sky_opening/`:
@@ -1251,7 +1252,7 @@ fade-in, measured in DeSmuME frame by frame with the BG layers off:
 | 80-376 | `MovePosition(0.5)`: the camera moves down 148 px | from the sky, eased (smoothstep) down to the bottom screen's middle 160 lines by frame 200, then EoS's 0.5 px a frame |
 | 215-313 | Shaymin: WAN frames 1-99, one a frame, at level (176, 324) | the same |
 | 290-375 | the petals: frame 0 for 12 frames, then 1-74, at (180, 324) | the same |
-| 387-447 | `screen_FadeOut(1, 60)` | the same, and the music fades out |
+| 387-447 | `screen_FadeOut(1, 60)` | the same; the music plays on |
 
 The DS shows 256x384 at once; the GBA starts on the top screen's sky (the sun
 and the flare at level (180, 88)) and ends on the bottom screen, so Shaymin and
@@ -1260,6 +1261,130 @@ Shaymin frame lands on the same spot of the land). EoS draws the flare every
 other frame against an empty frame (its half transparency); the GBA blends it
 8/8 as a semi-transparent OBJ (`BLDALPHA`, set every frame as the rain does).
 Data: 127 KB of picture tiles, 35 KB of OBJ tiles, 15 KB of piece tables.
+
+#### The rest of the opening
+
+EoS's opening does not stop after Shaymin. `DEMO_02` runs thirteen more
+scripts, each on its own level, all to the one song, and only then shows the
+title (`DEMO_03`, `T02A0501`). The song is bgm0001 "Pokémon Exploration Team
+Theme": 130 bpm, 48 ticks a quarter (104 a second), 8160 ticks, no loop. It
+carries seven signals (SMDL event `0xF6` on track 1 at ticks 864, 1536, 2304,
+2784, 4704, 6624 and 7968). Seven scripts start with `WaitBgmSignal()`, so
+those scenes start exactly on the music. Measured in DeSmuME from a cold boot
+with no input (frames from power-on, EoS starts the song at about frame
+700):
+
+| # | Script | Level(s) (top / bottom) | What | EoS frames | Starts on |
+|---|---|---|---|---|---|
+| 1 | `t02a0201` | S13P02A (both screens) | Shaymin over the land (above) | 692–1137 | the song's start |
+| 2 | `t02a0202` | S13P03A | Lapras swims under Wingull; the sea scrolls, the camera moves | 1196–1484 | signal 1 |
+| 3 | `t02a0203` | S13P04A / S13P04B | the treasure CG: chest, letter, map, Wonder Orb, bag, both screens panning | 1583–1973 | signal 2 |
+| 4 | `t02a0204` | S13P05A | the Time Gear sinks into the forest, a green glow, white-out | 2031–2216 | signal 3 |
+| 5 | `t02a0205` | S13P01A / S13P06A | the logo (top) over the hero and partner walking (bottom), "EXPLORERS OF SKY" fades in | 2300–2668 | signal 4 |
+| 6 | `t02a0301` | P15P01A (bottom) | Bidoof and his family (the logo stays on top from here to 9) | 2716–2884 | |
+| 7 | `t02a0302` | P26P01A | Team Charm's pose | 2935–3089 | |
+| 8 | `t02a0303` | P08P01A | Grovyle and Dusknoir in a ring of Sableye | 3142–3312 | |
+| 9 | `t02a0308` | V24P05A | the hero and partner on Lapras under the floating island; white-out | 3405–3542 | signal 5 |
+| 10 | `t02a0309` | V10P03C (both) | Volbeat and Illumise dance at Crystal Lake | 3629–3823 | |
+| 11 | `t02a0310` | V26P07A (both) | Dialga; the camera flies up into the night sky | 3882–4021 | |
+| 12 | `t02a0311` | S13P07A / S13P08A | the hero and partner find the treasure box in the forest; light, white-out | 4112–4401 | |
+| 13 | `t02a0401` | S13P06A (both) | the guild marches across the field | 4510–4867 | signal 6 |
+| 14 | `t02a0402` | S13P09A (both) | everyone gathers on the hills; the camera rises to the sky and the flare; white-out | 4935–5179 | |
+| — | `t02a0501` | S13P01A / V03P07A | the title: logo, "EXPLORERS OF SKY", PRESS START, fading in from white | 5283– | signal 7 |
+
+The song ends at tick 8160, frame 5394, under the title; the title then
+stays silent (and after 2000 frames `t02a0501` fades to the top menu). START
+during the opening fades the song out (about 60 frames) and goes to the title,
+which is silent too (measured in DeSmuME: the song's sequence pointers stop).
+EoS never plays bgm0130 "Title Theme" here.
+
+The GBA plays all of it after the Shaymin scene, in EoS's order, with the song
+unbroken: `SkyOpening_Play` no longer fades the music at the end of the
+Shaymin scene, `DEMO_03` no longer switches to the title theme, and the title
+fades in from white (`gSkyTitleFromWhite`, `TitleFadeFromWhite` in
+[`src/sky_cutaways.c`](../../src/sky_cutaways.c)) when the opening ran to its
+end. START (or A) skips to the title at any point: a 30-frame fade of the
+picture and the song, then the silent title.
+
+**How it is converted.** Re-implementing EoS's ground engine for these
+scripts (actors, effects, camera moves, scrolling layers, palette and tile
+animation, OBJ blending) would be most of a game. Instead
+[`tools/sky_opening_record.py`](../../tools/sky_opening_record.py) plays the
+ROM in DeSmuME (py-desmume, a cold boot, deterministic) and records, frame by
+frame, both screens with one layer at a time (BG2, BG3, OBJ; EoS's ground
+mode uses no other BG layer here) and everything (for the fades), plus the
+state: each visible OAM entry with its tile data, the BG and OBJ palette RAM,
+the blend registers and the top engine's master brightness (DeSmuME's picture
+after a frame shows the state of the frame before, so they are paired one
+frame apart). [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py)
+turns that into GBA data, using only what EoS put on screen:
+
+- **Background**: each GBA layer is one DS map layer of the top screen, the
+  bottom one or both (EoS's continuous two-screen maps). Its frames are
+  registered against each other (integer offsets: the camera and the layer's
+  own back-scroll; colours compared as palette slots, so palette animation
+  does not disturb it) and stitched into a "world" on the DS's tile grid (the
+  phase where every tile fits one palette). Each world tile goes back to
+  EoS's 4bpp indices and palette, so palette animation plays as in EoS from
+  the recorded palette RAM. A layer whose content changes, not just moves
+  (Crystal Lake's flames, the Time Gear's glow), gets a world per state
+  ("version"); a layer that scrolls by itself is cut to one period and
+  wraps (Lapras's sea).
+- **Sprites**: every frame's OAM entries of both screens, piece for piece (the
+  DS and the GBA have the same OBJ shapes and sizes), with their tiles
+  deduplicated. The few 8bpp entries (EoS's extended palettes: shadows,
+  sparkles) become 4bpp with the colours seen on screen.
+- **Fades**: the top screen's master brightness is read; the bottom one's is
+  found by matching the shown colours against the palettes faded by every
+  level. On the GBA the palettes of each screen fade with that screen.
+- **View**: the GBA shows 240×160 of the DS's 256×384: per scene, keyframes
+  in `GBA_SCENES` (`tools/make_sky_opening.py`) for where the action is:
+  the bottom screen for the single-screen scenes 6–9 and 12, a pan or a
+  fixed window across both screens for the others. Scene 5 shows the logo
+  (top screen) for its first 111 frames, then cuts to the hero and partner
+  (bottom screen): the two screens' maps cannot both be on the GBA's two
+  layers.
+
+`python3 tools/make_sky_opening.py EOS.nds [--check DIR]` re-records (into
+`build/sky_opening_rec/`, about a minute on four cores) and rewrites
+`graphics/custom/sky_opening/scenes/*.bin` and
+[`src/data/sky_opening_scenes.h`](../../src/data/sky_opening_scenes.h);
+`--check` also writes, per scene, EoS's picture beside the converted data
+drawn the way the GBA draws it.
+
+**How it plays** ([`src/sky_opening.c`](../../src/sky_opening.c),
+`OpPlayScenes`). BG2 and BG3 are 4bpp layers while the scenes play
+(`gSkyOpeningBg4bpp`, [`src/reg_control.c`](../../src/reg_control.c)), each
+a 31×21-tile ring (BG3: char base 1, tiles 64–714; BG2: char base 2, tiles
+204–854) that streams the cells coming into view; a slot already holding a
+tile is not copied again (the versions of a layer share their tiles, so an
+animation reloads only what changes; the slot table is 2.6 KB of heap while
+the opening plays). Per frame: the view's place in each world, the palette set
+and each screen's fade (written only when they change), the OAM entries
+(tiles double-buffered in OBJ VRAM as in the Shaymin scene) and the OBJ blend.
+Each scene waits for the m4a clock to reach the tick EoS starts it at
+(`startTick`, from EoS's frames at 104 ticks a second); inside a scene a
+frame that took longer than a GBA frame drops the frames it overran, so the
+picture stays on the music (the busiest scenes, the Time Gear and Crystal
+Lake, drop about a quarter of their frames; most drop none or a few).
+The title waits for tick 3984 (signal 7) and fades in from white.
+
+Data: 1.29 MB (`graphics/custom/sky_opening/scenes/`: BG tiles and maps,
+OBJ tiles, OAM lists, palette sets, frames); EWRAM: about ten bytes (flags,
+the scene counters for the tests, the slot table's pointer).
+
+Not matched:
+
+- EoS's Lapras sea (`S13P03A`) scrolls in bands at different speeds
+  (line scroll); the GBA moves the sky-and-sea layer as one (its clouds stay
+  put) and the scrolling waves' top edge is jagged where the two screens meet.
+- `V24P05A` (scene 9) flashes the view through eight spots of the level in
+  its first 16 frames, during its fade-in; the GBA fades in on the last one.
+- The Time Gear's glow is ten states of its 80-frame growth, not every frame.
+- The DS clips sprites at the edge of their own screen; the GBA does not
+  (a sprite at the bottom of the top screen can reach into the bottom one).
+- Scene 5's logo and the walking hero and partner are shown one after the
+  other, not together.
 
 ### Continue: the Adventure Record
 
@@ -1415,6 +1540,8 @@ path is printed. The script exits 1 when a check fails. It builds the tools
 | `pit` | the same + `DEBUG_BOOT_FLOOR=5` | the story to the Pit; when Boss Battle! starts, tap R (rotate mode), B, mash A | 21000 |
 | `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702 | 9300 |
 | `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
+| `opening` | plain (plays `sky`'s build) | START at 600 (the health warning), then nothing: the whole opening to the title; START there | ~7700 |
+| `skip` | plain (plays `sky`'s build) | START at 600, then START 60 frames into Bidoof's scene | ~4500 |
 
 Runs are deterministic (`build/tools/mgba_rpc`, a clean boot with no save).
 The checks find their frames from game state, not from fixed frame numbers:
@@ -1466,6 +1593,10 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `jukebox_no_stop_bgm` | sky | no track in `src/data/sky_jukebox_data.h` is song 999 (STOP_BGM) |
 | `jukebox_tracks_play` | sky | each of the 141 tracks: the BGM player plays the track's song and the audio peak is ≥ 256 (track 68 "Dialga's Fight to the Finish!" included) |
 | `jukebox_window_top` | sky | the list window's top frame highlight is at y ≥ 3, with the fill under it |
+| `opening_scenes_in_order` | opening | `gSkyOpeningScene` goes 1 (Shaymin), 2–15 (the GBA scenes; the logo scene is two), then the title, each scene on screen ≥ 60 frames |
+| `opening_song_unbroken` | opening | every 30 frames of the opening: the BGM player plays the theme (67), its clock moves, rms ≥ 200; it still plays when the title comes |
+| `opening_title_start` | opening | START at the title leaves it; the top menu's CG is up (≥ 64 colours) |
+| `opening_start_skips` | skip | START in Bidoof's scene: the title within 90 frames, the theme stopped within 90 |
 
 The `xfail="reason"` mark tags a check for a known bug that is not fixed yet.
 Its failure is reported as `XFAIL` and does not fail the suite. When the bug
@@ -1536,7 +1667,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
 | Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
-| The opening's Shaymin scene | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py) |
+| EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`src/data/sky_opening_scenes.h`](../../src/data/sky_opening_scenes.h), [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py) |
 | Continue / Delete Save Data window (EoS's Adventure Record) | [`src/load_screen.c`](../../src/load_screen.c) |
 | Rain, bubbles, lightning, ambience | [`src/sky_bubbles.c`](../../src/sky_bubbles.c), [`src/sky_storm.c`](../../src/sky_storm.c), [`src/data/sky_storm_bolts.h`](../../src/data/sky_storm_bolts.h), `SkyAmbience_*` in [`src/music.c`](../../src/music.c), `tools/make_sky_storm_fx.py` (from the committed EoS captures) |
 | Story song and scene SE ids (`MUS_SKY_*`, `SE_SKY_*`), Red id → EoS SE map | [`include/sky_story.h`](../../include/sky_story.h), [`tools/eos_music/sky_red_se_map.py`](../../tools/eos_music/sky_red_se_map.py); quiz reveal SE in [`src/personality_test1.c`](../../src/personality_test1.c) |
