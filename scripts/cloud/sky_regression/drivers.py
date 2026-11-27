@@ -212,7 +212,8 @@ def opening(run):
 
 
 def opening_skip(run):
-    """START in the middle of the opening (Bidoof's scene)."""
+    """START in the middle of the opening (Bidoof's scene), then START at the
+    title. Posts "skip", "after_skip" and "skip_menu" (the top menu is up)."""
     d = D(run)
     scene = run.syms["gSkyOpeningScene"]
     frame = run.syms["gSkyOpeningFrame"]
@@ -228,4 +229,8 @@ def opening_skip(run):
     yield from d.press("START", 6, 0)
     yield from d.idle(400)
     d.post("after_skip")
+    # START at the title: the top menu
+    yield from d.press("START", 6, 0)
+    yield from d.idle(400)
+    d.post("skip_menu")
     yield from d.idle(1)

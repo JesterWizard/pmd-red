@@ -11,5 +11,8 @@ void SetBGPaletteBufferColorRGB(s32 index, const RGB_Struct *color, s32 brightne
 void SetBGPaletteBufferColor(s32 index, u16 *color);
 u16 GetBGPaletteBufferColor(s32 index);
 void TransferBGPaletteBuffer(void);
+#ifdef SKY_STORY
+u16 *SkyBGPaletteBufferRow(s32 row);
+#endif
 
 #endif // GUARD_BG_PALETTE_BUFFER_H
