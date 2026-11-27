@@ -36,6 +36,10 @@ SKY_RED_SPECIES = {  # folder: national dex
     "psyduck": 54, "machop": 66, "cubone": 104, "eevee": 133, "chikorita": 152,
     "cyndaquil": 155, "totodile": 158, "phanpy": 231, "treecko": 252, "torchic": 255,
     "mudkip": 258, "skitty": 300, "vulpix": 37, "zubat": 41, "koffing": 109,
+    # chapter 2's guild crew and Treasure Town folk (documentation/Features/SkyChapter2.md)
+    "wigglytuff": 40, "diglett": 50, "dugtrio": 51, "pidgey": 16, "ledyba": 165,
+    "sunflora": 192, "wurmple": 265, "swellow": 277, "seedot": 273, "loudred": 294,
+    "spoink": 325, "corphish": 341, "chimecho": 358,
 }
 GEN4_H = ROOT / "include" / "constants" / "sky_gen4.h"
 EMOTIONS = ["Normal", "Happy", "Pained", "Angry", "Worried", "Sad", "Crying",

@@ -13,6 +13,12 @@ extern const SiroArchive gAxTotempole1;
 extern const RGB_Struct gTotempole1Pal[];
 extern const SiroArchive gAxTotempole2;
 extern const RGB_Struct gTotempole2Pal[];
+extern const SiroArchive gAxGuildgate;
+extern const SiroArchive gAxTeamkit;
+extern const SiroArchive gAxDinner;
+extern const RGB_Struct gDinnerPal[];
+extern const SiroArchive gAxPearl;
+extern const RGB_Struct gPearlPal[];
 #endif
 extern const SiroArchive gAxFlag00;
 extern const RGB_Struct gFlag01Pal[];

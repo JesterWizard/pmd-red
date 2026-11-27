@@ -43,6 +43,8 @@ const char *const gUnknown_81178F4[] = {
 #ifdef SKY_STORY
     "totempole1c", /* 37: 0x125 */
     "totempole2c", /* 38: 0x126 */
+    "dinnerc",     /* 39: 0x127 */
+    "pearlc",      /* 40: 0x128 */
 #endif
     NULL
 };
@@ -126,6 +128,16 @@ const struct GroundObjectKind gGroundObjectKinds[] = {
      * two 16-tile units each, each on its own EoS palette (extend slots). */
     { 2, 0x125, "totempole1p" },
     { 2, 0x126, "totempole2p" },
+    /* Chapter 2 (documentation/Features/SkyChapter2.md). The guild's gate
+     * (GROUND/g01p01a3.wan, 32x32 + 32x16) shows beside both totem poles, so
+     * it shares totem pole 2's palette instead of taking a third extend slot. */
+    { 2, 0x126, "guildgatep" },
+    /* The Exploration Team Kit (GROUND/g01p05a1.wan): shared palette 4. */
+    { 1, 0x004, "teamkitp" },
+    /* The mess hall's dinner (GROUND/g01p06b1.wan) and the pearl at the end of
+     * Drenched Bluff (GROUND/d02p31a1.wan), each on its own EoS palette. */
+    { 1, 0x127, "dinnerp" },
+    { 1, 0x128, "pearlp" },
 #endif
     { -1, 0x000, NULL }
 };

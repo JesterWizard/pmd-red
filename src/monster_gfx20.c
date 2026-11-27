@@ -3,7 +3,9 @@
 #include "monster_gfx.h"
 
 #include "data/ax/sunkern.h"
+#ifndef SKY_STORY /* the sky build uses gAxSunflorasky (monster_gfx_sky.c) */
 #include "data/ax/sunflora.h"
+#endif
 #include "data/ax/yanma.h"
 #include "data/ax/wooper.h"
 #include "data/ax/quagsire.h"

@@ -20,7 +20,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_WEEDLE - 1] = { "ax013", &gAxWeedle,},
     [MONSTER_KAKUNA - 1] = { "ax014", &gAxKakuna,},
     [MONSTER_BEEDRILL - 1] = { "ax015", &gAxBeedrill,},
+#ifdef SKY_STORY
+    [MONSTER_PIDGEY - 1] = { "ax016", &gAxPidgeysky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_PIDGEY - 1] = { "ax016", &gAxPidgey,},
+#endif
     [MONSTER_PIDGEOTTO - 1] = { "ax017", &gAxPidgeotto,},
     [MONSTER_PIDGEOT - 1] = { "ax018", &gAxPidgeot,},
     [MONSTER_RATTATA - 1] = { "ax019", &gAxRattata,},
@@ -44,7 +48,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_VULPIX - 1] = { "ax037", &gAxVulpix,},
     [MONSTER_NINETALES - 1] = { "ax038", &gAxNinetales,},
     [MONSTER_JIGGLYPUFF - 1] = { "ax039", &gAxJigglypuff,},
+#ifdef SKY_STORY
+    [MONSTER_WIGGLYTUFF - 1] = { "ax040", &gAxWigglytuffsky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_WIGGLYTUFF - 1] = { "ax040", &gAxWigglytuff,},
+#endif
 #ifdef SKY_STORY
     [MONSTER_ZUBAT - 1] = { "ax041", &gAxZubatsky,}, /* EoS sprite + nod / "beaten" poses (groups 13, 15) */
 #else
@@ -58,8 +66,16 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_PARASECT - 1] = { "ax047", &gAxParasect,},
     [MONSTER_VENONAT - 1] = { "ax048", &gAxVenonat,},
     [MONSTER_VENOMOTH - 1] = { "ax049", &gAxVenomoth,},
+#ifdef SKY_STORY
+    [MONSTER_DIGLETT - 1] = { "ax050", &gAxDiglettsky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_DIGLETT - 1] = { "ax050", &gAxDiglett,},
+#endif
+#ifdef SKY_STORY
+    [MONSTER_DUGTRIO - 1] = { "ax051", &gAxDugtriosky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_DUGTRIO - 1] = { "ax051", &gAxDugtrio,},
+#endif
     [MONSTER_MEOWTH - 1] = { "ax052", &gAxMeowth,},
     [MONSTER_PERSIAN - 1] = { "ax053", &gAxPersian,},
     [MONSTER_PSYDUCK - 1] = { "ax054", &gAxPsyduck,},
@@ -177,7 +193,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_FURRET - 1] = { "ax162", &gAxFurret,},
     [MONSTER_HOOTHOOT - 1] = { "ax163", &gAxHoothoot,},
     [MONSTER_NOCTOWL - 1] = { "ax164", &gAxNoctowl,},
+#ifdef SKY_STORY
+    [MONSTER_LEDYBA - 1] = { "ax165", &gAxLedybasky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_LEDYBA - 1] = { "ax165", &gAxLedyba,},
+#endif
     [MONSTER_LEDIAN - 1] = { "ax166", &gAxLedian,},
     [MONSTER_SPINARAK - 1] = { "ax167", &gAxSpinarak,},
     [MONSTER_ARIADOS - 1] = { "ax168", &gAxAriados,},
@@ -204,7 +224,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_JUMPLUFF - 1] = { "ax189", &gAxJumpluff,},
     [MONSTER_AIPOM - 1] = { "ax190", &gAxAipom,},
     [MONSTER_SUNKERN - 1] = { "ax191", &gAxSunkern,},
+#ifdef SKY_STORY
+    [MONSTER_SUNFLORA - 1] = { "ax192", &gAxSunflorasky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_SUNFLORA - 1] = { "ax192", &gAxSunflora,},
+#endif
     [MONSTER_YANMA - 1] = { "ax193", &gAxYanma,},
     [MONSTER_WOOPER - 1] = { "ax194", &gAxWooper,},
     [MONSTER_QUAGSIRE - 1] = { "ax195", &gAxQuagsire,},
@@ -302,7 +326,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_MIGHTYENA - 1] = { "ax287", &gAxMightyena,},
     [MONSTER_ZIGZAGOON - 1] = { "ax288", &gAxZigzagoon,},
     [MONSTER_LINOONE - 1] = { "ax289", &gAxLinoone,},
+#ifdef SKY_STORY
+    [MONSTER_WURMPLE - 1] = { "ax290", &gAxWurmplesky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_WURMPLE - 1] = { "ax290", &gAxWurmple,},
+#endif
     [MONSTER_SILCOON - 1] = { "ax291", &gAxSilcoon,},
     [MONSTER_BEAUTIFLY - 1] = { "ax292", &gAxBeautifly,},
     [MONSTER_CASCOON - 1] = { "ax293", &gAxCascoon,},
@@ -310,11 +338,19 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_LOTAD - 1] = { "ax295", &gAxLotad,},
     [MONSTER_LOMBRE - 1] = { "ax296", &gAxLombre,},
     [MONSTER_LUDICOLO - 1] = { "ax297", &gAxLudicolo,},
+#ifdef SKY_STORY
+    [MONSTER_SEEDOT - 1] = { "ax298", &gAxSeedotsky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_SEEDOT - 1] = { "ax298", &gAxSeedot,},
+#endif
     [MONSTER_NUZLEAF - 1] = { "ax299", &gAxNuzleaf,},
     [MONSTER_SHIFTRY - 1] = { "ax300", &gAxShiftry,},
     [MONSTER_TAILLOW - 1] = { "ax301", &gAxTaillow,},
+#ifdef SKY_STORY
+    [MONSTER_SWELLOW - 1] = { "ax302", &gAxSwellowsky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_SWELLOW - 1] = { "ax302", &gAxSwellow,},
+#endif
     [MONSTER_WINGULL - 1] = { "ax303", &gAxWingull,},
     [MONSTER_PELIPPER - 1] = { "ax304", &gAxPelipper,},
     [MONSTER_RALTS - 1] = { "ax305", &gAxRalts,},
@@ -331,7 +367,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_NINJASK - 1] = { "ax316", &gAxNinjask,},
     [MONSTER_SHEDINJA - 1] = { "ax317", &gAxShedinja,},
     [MONSTER_WHISMUR - 1] = { "ax318", &gAxWhismur,},
+#ifdef SKY_STORY
+    [MONSTER_LOUDRED - 1] = { "ax319", &gAxLoudredsky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_LOUDRED - 1] = { "ax319", &gAxLoudred,},
+#endif
     [MONSTER_EXPLOUD - 1] = { "ax320", &gAxExploud,},
     [MONSTER_MAKUHITA - 1] = { "ax321", &gAxMakuhita,},
     [MONSTER_HARIYAMA - 1] = { "ax322", &gAxHariyama,},
@@ -362,7 +402,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_NUMEL - 1] = { "ax347", &gAxNumel,},
     [MONSTER_CAMERUPT - 1] = { "ax348", &gAxCamerupt,},
     [MONSTER_TORKOAL - 1] = { "ax349", &gAxTorkoal,},
+#ifdef SKY_STORY
+    [MONSTER_SPOINK - 1] = { "ax350", &gAxSpoinksky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_SPOINK - 1] = { "ax350", &gAxSpoink,},
+#endif
     [MONSTER_GRUMPIG - 1] = { "ax351", &gAxGrumpig,},
     [MONSTER_SPINDA - 1] = { "ax352", &gAxSpinda,},
     [MONSTER_TRAPINCH - 1] = { "ax353", &gAxTrapinch,},
@@ -378,7 +422,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_SOLROCK - 1] = { "ax363", &gAxSolrock,},
     [MONSTER_BARBOACH - 1] = { "ax364", &gAxBarboach,},
     [MONSTER_WHISCASH - 1] = { "ax365", &gAxWhiscash,},
+#ifdef SKY_STORY
+    [MONSTER_CORPHISH - 1] = { "ax366", &gAxCorphishsky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_CORPHISH - 1] = { "ax366", &gAxCorphish,},
+#endif
     [MONSTER_CRAWDAUNT - 1] = { "ax367", &gAxCrawdaunt,},
     [MONSTER_BALTOY - 1] = { "ax368", &gAxBaltoy,},
     [MONSTER_CLAYDOL - 1] = { "ax369", &gAxClaydol,},
@@ -398,7 +446,11 @@ const File gMonsterFiles[MONSTER_FILES_COUNT] = {
     [MONSTER_DUSKULL - 1] = { "ax383", &gAxDuskull,},
     [MONSTER_DUSCLOPS - 1] = { "ax384", &gAxDusclops,},
     [MONSTER_TROPIUS - 1] = { "ax385", &gAxTropius,},
+#ifdef SKY_STORY
+    [MONSTER_CHIMECHO - 1] = { "ax386", &gAxChimechosky,}, /* EoS sprite + ground groups */
+#else
     [MONSTER_CHIMECHO - 1] = { "ax386", &gAxChimecho,},
+#endif
     [MONSTER_ABSOL - 1] = { "ax387", &gAxAbsol,},
     [MONSTER_WYNAUT - 1] = { "ax388", &gAxWynaut,},
     [MONSTER_SNORUNT - 1] = { "ax389", &gAxSnorunt,},

@@ -10,6 +10,23 @@
  * 22 (0x100D, nod) and 24 (0x100F) show them, as in EoS. Red's own copies are left out of the sky build. */
 #include "data/ax/zubatsky.h"
 #include "data/ax/koffingsky.h"
+/* Chapter 2's guild crew and townsfolk (Red species): EoS sprites with every EoS
+ * ground-only group appended at its EoS index (convert ... --ground-groups all), so
+ * EoS's SetAnimation ids pick the same poses. Red's own copies are left out of the
+ * sky build. See documentation/Features/SkyChapter2.md. */
+#include "data/ax/pidgeysky.h"
+#include "data/ax/wigglytuffsky.h"
+#include "data/ax/diglettsky.h"
+#include "data/ax/dugtriosky.h"
+#include "data/ax/ledybasky.h"
+#include "data/ax/sunflorasky.h"
+#include "data/ax/wurmplesky.h"
+#include "data/ax/seedotsky.h"
+#include "data/ax/swellowsky.h"
+#include "data/ax/loudredsky.h"
+#include "data/ax/spoinksky.h"
+#include "data/ax/corphishsky.h"
+#include "data/ax/chimechosky.h"
 #include "data/ax/turtwig.h"
 #include "data/ax/grotle.h"
 #include "data/ax/torterra.h"

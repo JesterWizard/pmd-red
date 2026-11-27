@@ -16,13 +16,39 @@
  * the end of the vanilla gGroundObjectTypes table (see ground_object.c). */
 #define SKY_OBJ_TOTEM_POLE_1   70
 #define SKY_OBJ_TOTEM_POLE_2   71
+/* Chapter 2's objects (documentation/Features/SkyChapter2.md), also past the
+ * vanilla table. Their states are directions of group 0, as in EoS's WANs
+ * (SELECT_ANIMATION on an object: 1 = 0x800 loops direction 0, 4 = 0x1001
+ * plays direction 1 once and holds it, 7-14 = 0x800-0x807 loop direction
+ * 0-7): the gate and the Exploration Team Kit rest closed (0) and open (1);
+ * the dinner has EoS's five table settings (0-4); the pearl sparkles. */
+#define SKY_OBJ_GUILD_GATE      72 /* EoS GROUND/g01p01a3.wan: g01p01b's portcullis */
+#define SKY_OBJ_EXPLORATION_KIT 73 /* EoS GROUND/g01p05a1.wan */
+#define SKY_OBJ_DINNER          74 /* EoS GROUND/g01p06b1.wan: the mess hall's food */
+#define SKY_OBJ_PEARL           75 /* EoS GROUND/d02p31a1.wan: Spoink's pearl */
 
 #define SKY_LIVES_ZUBAT      147
 #define SKY_LIVES_KOFFING    148
 #define SKY_LIVES_WIGGLYTUFF 149
 #define SKY_LIVES_KRABBY     150
 #define SKY_LIVES_DIGLETT    151
-#define SKY_LIVES_KIND_COUNT 5
+/* Chapter 2 (documentation/Features/SkyChapter2.md): the guild crew and the
+ * Treasure Town folk, on EoS sprites with EoS's ground groups. */
+#define SKY_LIVES_CHATOT     152
+#define SKY_LIVES_LOUDRED    153
+#define SKY_LIVES_DUGTRIO    154
+#define SKY_LIVES_SUNFLORA   155
+#define SKY_LIVES_BIDOOF     156
+#define SKY_LIVES_CHIMECHO   157
+#define SKY_LIVES_CORPHISH   158
+#define SKY_LIVES_CROAGUNK   159
+#define SKY_LIVES_SPOINK     160
+#define SKY_LIVES_WURMPLE    161
+#define SKY_LIVES_SWELLOW    162
+#define SKY_LIVES_PIDGEY     163
+#define SKY_LIVES_LEDYBA     164
+#define SKY_LIVES_SEEDOT     165
+#define SKY_LIVES_KIND_COUNT 19
 
 #ifndef __ASSEMBLER__
 #include "global.h"

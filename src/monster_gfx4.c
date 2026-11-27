@@ -11,4 +11,6 @@
 #include "data/ax/vulpix.h"
 #include "data/ax/ninetales.h"
 #include "data/ax/jigglypuff.h"
+#ifndef SKY_STORY /* the sky build uses gAxWigglytuffsky (monster_gfx_sky.c) */
 #include "data/ax/wigglytuff.h"
+#endif

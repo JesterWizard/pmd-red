@@ -10,5 +10,7 @@
 #include "data/ax/ninjask.h"
 #include "data/ax/shedinja.h"
 #include "data/ax/whismur.h"
+#ifndef SKY_STORY /* the sky build uses gAxLoudredsky (monster_gfx_sky.c) */
 #include "data/ax/loudred.h"
+#endif
 #include "data/ax/exploud.h"

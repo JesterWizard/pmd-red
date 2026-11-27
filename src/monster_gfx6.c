@@ -2,7 +2,9 @@
 #include "globaldata.h"
 #include "monster_gfx.h"
 
+#ifndef SKY_STORY /* the sky build uses gAxDugtriosky (monster_gfx_sky.c) */
 #include "data/ax/dugtrio.h"
+#endif
 #include "data/ax/meowth.h"
 #include "data/ax/persian.h"
 #include "data/ax/psyduck.h"
