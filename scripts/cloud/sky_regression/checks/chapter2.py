@@ -199,6 +199,53 @@ def ch2_faint_path(t):
     return r + f"; back in Drenched Bluff at frame {t.events['dungeon_2']}"
 
 
+def first_box(t, after):
+    """The text of the first dialogue box that waits after event `after`."""
+    yield from t.wait_event(after)
+    f = yield from t.wait(lambda f: dialogue_ready(t.game, f), f"a dialogue box after '{after}'")
+    return f
+
+
+@check("ch2", "Continue from the good night's save (m02a0113): the next morning, Loudred's wake-up (m02a0201)")
+def ch2_continue_morning(t):
+    yield from t.wait_event("goodnight_saved")
+    f = yield from first_box(t, "goodnight_continued")
+    where = t.run.data.get("goodnight_continued")
+    expect(where == "MAP_SKY_GUILD_CREW_ROOM", f"Continue went to {where}, expected the crew room")
+    expect(any(s in f.text for s in ("HEY!", "RISE AND SHINE", "still ASLEEP")),
+           f"the first box after Continue is {f.text!r}, expected Loudred's wake-up")
+    main = t.game.script_var(f, "SCENARIO_MAIN")
+    expect(main == 3, f"SCENARIO_MAIN {main}")
+    return f"saved at frame {t.events['goodnight_saved']}; Continue: {where}, {f.text[:40]!r} at {f.n}"
+
+
+@check("ch2", "Continue from the morning's save after fainting (c00a0201): the address (c00a0101), then the bluff")
+def ch2_continue_faint(t):
+    yield from t.wait_event("faint_saved")
+    f = yield from first_box(t, "faint_continued")
+    where = t.run.data.get("faint_continued")
+    expect(where == "MAP_SKY_GUILD_B2F", f"Continue went to {where}, expected B2F (the morning address)")
+    expect("THREE" in f.text or "Pok" in f.text,
+           f"the first box after Continue is {f.text!r}, expected the morning address")
+    yield from t.wait_event("dungeon_2")
+    return f"saved at frame {t.events['faint_saved']}; Continue: {where}, {f.text[:40]!r}; the bluff at " \
+           f"{t.events['dungeon_2']}"
+
+
+@check("bluff", "Continue from the demo end's save: the demo end again (scenario (4, 0))")
+def bluff_continue_demo_end(t):
+    yield from t.wait_event("demo_end_continued_reset")
+    f = yield from t.wait(lambda f: "save your adventure" in f.text or
+                          (dialogue_ready(t.game, f) and t.game.map_id(f) is not None),
+                          "the save prompt after Continue")
+    expect("save your adventure" in f.text, f"the first box after Continue is {f.text!r}")
+    f = yield from t.wait(lambda f: dialogue_ready(t.game, f) and "demo ends here" in f.text,
+                          "'The demo ends here.' after Continue")
+    main = t.game.script_var(f, "SCENARIO_MAIN")
+    expect(main == 4, f"SCENARIO_MAIN {main}")
+    return f"Continue: the save prompt, 'The demo ends here.' at frame {f.n}"
+
+
 @check("bluff", "Drenched Bluff cleared: EVENT_M02_09_10's scenes in order (the pearl, the reward, dinner, good night)")
 def bluff_cleared_scenes(t):
     yield from t.wait_event("left_dungeon")
@@ -231,11 +278,13 @@ def bluff_demo_end(t):
     return f"'The demo ends here.' at frame {f.n}, scenario main {main}"
 
 
-@check("after", "Chapter 1's end asks to save, then chapter 2 starts (its card, the guild at dusk, scenario 3)")
+@check("after", "Chapter 1's end asks to save; Continue from that save starts chapter 2 (its card, the guild at dusk)")
 def after_into_chapter2(t):
     f = yield from t.wait(lambda f: "save your adventure" in f.text, "the save prompt after m01a0702")
     expect(t.game.script_var(f, "SCENARIO_MAIN") == 3, "SCENARIO_MAIN is not 3 at the save prompt")
+    yield from t.wait_event("ch1_saved")
+    yield from t.wait_event("ch1_continued_reset")
     pend = t.game.syms["sPendingChapter"]
-    f = yield from t.wait(lambda f: f.u8(pend) == 2, "chapter 2's card queued")
+    f = yield from t.wait(lambda f: f.u8(pend) == 2, "chapter 2's card queued after Continue")
     f = yield from t.wait(lambda f: t.game.map_name(f) == "MAP_SKY_GUILD_DUSK2", "m02a0101's map")
-    return f"save prompt, then the card and MAP_SKY_GUILD_DUSK2 at frame {f.n}"
+    return f"saved at frame {t.events['ch1_saved']}; Continue: the card and MAP_SKY_GUILD_DUSK2 at frame {f.n}"

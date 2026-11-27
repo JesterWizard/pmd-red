@@ -1,8 +1,10 @@
-# Sky demake: chapter 2 plan
+# Sky demake: chapter 2
 
 Explorers of Sky's chapter 2, "The New Guild Recruits", on the GBA, as close
-to EoS as a 240x160 screen allows. Work in progress; this file is the plan
-and the naming contract the pieces share. Chapter 1 is in
+to EoS as a 240x160 screen allows. It plays end to end: [What
+plays](#what-plays) has the flow, the scenes and how they differ from EoS.
+The rest of this file is how the pieces were made (the naming contract they
+shared, the maps, the translator, the sprites, the dungeon). Chapter 1 is in
 [SkyDemake.md](SkyDemake.md); scene files in [../EventEditor.md](../EventEditor.md).
 
 ## What EoS plays
@@ -22,6 +24,145 @@ From `SCRIPT/COMMON/unionall.ssb` (coroutines `EVENT_M02_*`) and the
 | stop | d02p31a | m02a0901 | "It's impossible to go any farther." |
 
 `m02d0112` (g01p01b) is the sentry's re-check when you come back.
+
+## What plays
+
+Chapter 2 plays end to end in the sky build: from chapter 1's last save
+prompt to Drenched Bluff, back to the guild, and "The demo ends here." after
+chapter 2's good night. Every EoS script of the table above but two
+(m02d0112, m02a0901: see the differences) is a group of **gs180**, the one
+station file of every chapter-2 map
+([`events/sky/scenes/sky_d02p01_scenes.scene`](../../events/sky/scenes/sky_d02p01_scenes.scene)),
+and EoS's coroutines are event scripts that run them with
+`EXECUTE_SUBSTATION(map, group, 0)`
+([`src/data/ground/sky/sky_ch2_events.h`](../../src/data/ground/sky/sky_ch2_events.h),
+included from `ground_event_data.h`'s sky-only block, so the vanilla build's
+line numbers do not move). The events live in Red's chapter-2 slots
+(`EVENT_M01E02A_*`), which the sky build never reached; their names are in
+[`include/sky_story.h`](../../include/sky_story.h).
+
+### Flow
+
+| EoS | GBA event (slot) | gs180 groups | What happens |
+|---|---|---|---|
+| chapter 1's end, `CORO_HANYOU_SAVE_FUNC`, EVENT_DIVIDE | `EVENT_M01E01A_L003` (chapter 1's last event) | — | m01a0701 / m01a0702 as before; scn[3, 0]; the save prompt; `JUMP_SCRIPT(EVENT_DIVIDE)` |
+| EVENT_DIVIDE, scn[3, 0] → scn[3, 1] | `EVENT_DIVIDE_FIRST` (Red's own) | — | (3, 0) becomes (3, 1), which queues the chapter card; (3, 1) → `SKY_CH2_EVENT`, (3, 3) → `SKY_CH2_FAINTED_PATH_EVENT` |
+| EVENT_M02_01_02 | `SKY_CH2_EVENT` (`L001`) | 1-11 | the card, the sentry, the guild, the team, the kit, the crew room; good night (save); the morning address |
+| station G01P04A (UM02) | B2F's `GROUND_ENTER` | 0 | free roam on B2F: Loudred and Diglett talk, Chatot waits by Wigglytuff's door, the two signs read; walking off the address's spot runs the next event |
+| EVENT_M02_03_04 | `SKY_CH2_JOB_EVENT` (`L001B`) | 12-14 | "Don't wander"; the board, Spoink's pearl; Drenched Bluff's entrance; `NEXT_DUNGEON` (scn[3, 3]) |
+| dungeon 3 | Thunderwave Cave's slot (`SCRIPT_DUNGEON_THUNDERWAVE_CAVE`) | — | Drenched Bluff B1F-B6F ([below](#drenched-bluff)) |
+| GETOUT_SCENARIO_DUNGEON, conquest | `GETOUT_M01E02A` → `SKY_DRENCHED_BLUFF_CLEARED_EVENT` (`L006`) | 15-19 | the pearl, the reward, dinner, good night (scn[4, 0]) |
+| EVENT_DIVIDE → chapter 3 | `SKY_DEMO_END_EVENT` (`L005`) | — | the save prompt, "The demo ends here. Look forward to updates!", the title |
+| EVENT_M02_05_07A | `GETOUT_M01E02A` → `SKY_DRENCHED_BLUFF_FAINTED_EVENT` (`L004`) | 20, 17, 18, then 21-23 (the first night after a faint, scn[3, 4]) or 24; 25 | scolded, dinner, the night, the morning (save) |
+| EVENT_M02_07B | the same event, from its label 3 | 26, 27 | the morning address; back to the bluff (`NEXT_DUNGEON`) |
+
+`GETOUT_M01E02A` sends a clear (`STARTMODE_DUNGEON_WON`) to the cleared event
+and every other result to the fainted one: EoS treats leaving early (an
+Escape Orb, Red's `STARTMODE_10`) as a failure too.
+
+**Continue** ([`src/ground_main.c`](../../src/ground_main.c)): a save from
+chapter 1's end goes on with chapter 2 (EVENT_DIVIDE at (3, 0)); one from
+chapter 2's first good night (`m02a0113` sets EoS's
+`$SCENARIO_MAIN_BIT_FLAG[8]`) starts at the next morning (m02a0201); one from
+the morning after a faint (`c00a0201` sets bit 7) goes on with EVENT_M02_07B;
+a finished save (scn[4, 0] or later) shows the demo end again.
+`$SCENARIO_MAIN_BIT_FLAG` is `SKY_SCENARIO_MAIN_BIT_FLAG`, Red's
+`EVENT_T01P01` (Pokémon Square's flags, unused in the sky build): no change
+to the save layout.
+
+### The scenes
+
+Group = gs180 group. Map = the GBA map the event script selects (each group
+selects its own maps after that).
+
+| Group | EoS script | GBA map | Differences from EoS, and why |
+|---|---|---|---|
+| 0 | G01P04A enter00, station UM02 | `MAP_SKY_GUILD_B2F` | made by hand: UM02's triggers, Loudred's and Diglett's lines (um0201, um0202), the signs (enter24, enter25). Chatot only stands (his EoS line is m02a0301's) |
+| 1 | m02a0101 | `MAP_SKY_GUILD_DUSK2` | the chapter card shows where EoS's `back_SetBanner2` is, on the map load, as chapter 1's; the gate (V01P08B) is a still CG (`SKY_CUTAWAY GUILD_GATE`), not a level: EoS only shows it. `MAP_SKY_GUILD_DUSK2` is `MAP_SKY_GUILD_DUSK`'s files with gs180 as its script file (`SELECT_MAP` also picks the station file, and the dusk map's is chapter 1's) |
+| 2 | m02a0104 | `MAP_SKY_SENTRY_POST` | V02P03A is a converted map (EoS plays it as a map, with Diglett and a camera move); the grate (V02P02A) is a still CG |
+| 3 | m02a0105 | `MAP_SKY_GUILD_ENTRANCE` | the gate is a ground object (`SKY_OBJ_G01P01A3`) |
+| 4 | m02a0106 | `MAP_SKY_GUILD_1F` | |
+| 5 | m02a0108 | `MAP_SKY_GUILD_B1F` | |
+| 6 | m02a0109 | `MAP_SKY_GUILD_B2F` (B2F_DOOR) | |
+| 7 | m02a0110 | `MAP_SKY_GUILD_WIGGLYTUFF`, `MAP_SKY_KIT_OPEN` | the team's name: Red's keyboard (`RENAME_TEAM`), `{TEAM_NAME}` after it; the kit (V02P08A) is a converted map, the treasure box an object. The bow depends on the quiz's colour (`$CONFIG_COLOR_KIND`), which Red's quiz does not ask: case 0's, Red's **Friend Bow**. The Defense Scarf and the Explorer Badge's lines are EoS's |
+| 8 | m02a0111 | `MAP_SKY_GUILD_CREW_ROOM` | |
+| 9 | m02a0113 | `MAP_SKY_GUILD_CREW_ROOM_NIGHT` | the save prompt as chapter 1's; EoS's Quick Tip about saving on the bed is left out (no bed to save on) |
+| 10 | m02a0201 | `MAP_SKY_GUILD_CREW_ROOM` | |
+| 11 | m02a0202 | `MAP_SKY_GUILD_B2F` | |
+| 12 | m02a0301 | `MAP_SKY_GUILD_B2F` | |
+| 13 | m02a0302 | `MAP_SKY_GUILD_B1F` | the view on the board sits 24 px lower than EoS's (the GBA's 160 lines: the team stands above the text box) |
+| 14 | m02a0401 | `MAP_SKY_DRENCHED_BLUFF_ENTRANCE` | |
+| 15 | m02a0801 | `MAP_SKY_DRENCHED_BLUFF_END` | the pearl is a ground object (`SKY_OBJ_D02P31A1`) |
+| 16 | m02a1001 | `MAP_SKY_GUILD_B1F` | Protein, Calcium, Iron (`SKY_GIVE_ITEM`) |
+| 17 | c00a0501 | `MAP_SKY_GUILD_B2F` | |
+| 18 | c00a0601 | `MAP_SKY_GUILD_MESS_HALL` | the eating effects (EoS `EFFECT_EATING`, the apple) have no GBA picture: none shown |
+| 19 | m02a1003 | `MAP_SKY_GUILD_CREW_ROOM_NIGHT` | sets scn[4, 0]; then the demo end instead of EVENT_DIVIDE into chapter 3 |
+| 20 | m02a0501 | `MAP_SKY_GUILD_B1F` | |
+| 21-23 | m02a0601-0603 | `MAP_SKY_GUILD_CREW_ROOM_NIGHT`, `_B2F_NIGHT`, `_WIGGLYTUFF_NIGHT` | Wigglytuff's gift: Reviver Seed, Oran Berry, Max Elixir |
+| 24 | c00a0301 | `MAP_SKY_GUILD_CREW_ROOM_NIGHT` | |
+| 25 | c00a0201 | `MAP_SKY_GUILD_CREW_ROOM` | the save prompt; EoS's per-chapter cards (3-6) stay `TODO eos` (no chapter 3 yet) |
+| 26 | c00a0101 | `MAP_SKY_GUILD_B2F` | EoS runs it with `sector()` 1; the translator takes the switch's first case, which shares case 1's body |
+| 27 | m02a0701 | `MAP_SKY_DRENCHED_BLUFF_ENTRANCE` | |
+
+Not played: **m02d0112** (the sentry's re-check when the team comes back to
+the gate: the demake never goes back up to the gate) and **m02a0901** ("It's
+impossible to go any farther", a later visit to the bluff's end: the demo
+ends before one).
+
+All over the chapter:
+
+- **Dialogue**: the partner's lines are the default `PARTNER_TALK_KIND`
+  variant of EoS's `message_SwitchTalk`, as chapter 1's. Speakers' name
+  colours come from the name slots each group binds (`UPDATE_NAME` at the
+  station's start; at most 10 a group).
+- **Portraits**: EoS's `message_FacePositionOffset` is left out: EoS's
+  offsets are in tiles of a 256x192 screen and pushed Red's faces off the
+  GBA's. `FACE_DIZZY` and `FACE_SIGH` show EoS's faces
+  ([Portraits](#portraits)); `FACE_STUNNED` (not used by chapter 2) would
+  show Normal.
+- **Poses**: EoS's `SetAnimation` ids are Red's ids that hold the same value
+  ([Animation ids](#animation-ids)); the hero and partner have EoS's
+  ground poses ([Hero and partner](#hero-and-partner)).
+- **Emotes** without a GBA picture: the two arrows (`EFFECT_TWO_ARROWS_*`)
+  show the "!" (`NOTICE`), eating and the apple none (marked
+  `# TODO emotion` in the scene file).
+- **Music**: EoS's songs as `MUS_SKY_*` (Wigglytuff's Guild, Guildmaster
+  Wigglytuff, Goodnight, the Guild remix, Drenched Bluff, Job Clear!, the
+  eating jingle), the scene SEs as `SE_SKY_*` (wing flaps, the dinner bell,
+  the gate, the kit, the cheer, the door, the reward...).
+- **Text**: EoS's lines word for word; `SkyWrapDialogueText` re-wraps them
+  for the GBA's box.
+- **Camera**: `SkyCamera_MoveBy` adds a move given while one is under way to
+  it (EoS's diagonal camera moves are a vertical and a horizontal one in a
+  row); before, the second cancelled the first.
+- `back_ChangeGround` (a new picture under the same actors) is
+  `SKY_CHANGE_GROUND` (SPECIAL_PROCESS 0x75): `SELECT_MAP` deletes the
+  actors.
+
+### Regenerating
+
+The station file is generated from the EoS ROM (never commit it):
+
+```bash
+python3 tools/event_editor/eos_import.py EOS.nds --chapter2 events/sky/draft/ch2
+python3 tools/event_editor/eos_import.py EOS.nds --chapter2-station events/sky/draft/ch2/sky_d02p01_scenes.scene
+python3 tools/event_editor/ch2/station.py   # group 0, the hand edits -> events/sky/scenes/sky_d02p01_scenes.scene
+```
+
+Tuning made in the emulator goes into the translator or `station.py`'s
+`HAND` list, not the generated file ([../EventEditor.md](../EventEditor.md#import-from-eos)).
+
+### Debug boot
+
+```bash
+make DEBUG_BOOT_EVENT=SKY_CH2_START            # chapter 2 from its card (New Game)
+make DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_LEVEL=8   # straight into the bluff
+```
+
+`SKY_CH2_START` sets scn[3, 0] and jumps to EVENT_DIVIDE, as chapter 1's
+end does: the card, then chapter 2 with the debug team (Red's starters at
+level 1). New Game runs it; Continue is the normal one. More: [Debug
+boot](#debug-boot-1) under Drenched Bluff.
 
 ## Naming contract
 
@@ -142,10 +283,9 @@ VRAM pool is 1023).
 Cave entrance, `src/data/ground/sky/ground_data_d02p01_station.h`, which the
 sky build did not use). Its scenes are
 [`events/sky/scenes/sky_d02p01_scenes.scene`](../../events/sky/scenes/sky_d02p01_scenes.scene):
-for now one placeholder group (group 0, an `ENTER_CONTROL` station that
-selects `MAP_SKY_GUILD_B2F`), so `SELECT_MAP` of any chapter-2 map works.
-The scenes piece replaces it. `MAP_THUNDERWAVE_CAVE_ENTRY` itself keeps no
-script in the sky build.
+group 0 is free roam on B2F (an `ENTER_CONTROL` station), groups 1-27 the
+scenes ([What plays](#what-plays)). `MAP_THUNDERWAVE_CAVE_ENTRY` itself keeps
+no script in the sky build.
 
 ### Objects EoS places (for the sprites piece)
 
@@ -253,8 +393,13 @@ SE ids, the top screen's still pictures left out at a scene's start,
 `SELECT_ENTITIES` for sector 0, walks worked out from the SSA tile without
 its half-tile offset.
 
-Chapter 2 (29 scripts, 13 files): 2492 commands translated, 88 `TODO eos`
-(96.6%). What is left, by kind: animations past Red's table (EoS ids
+Chapter 2 (29 scripts, 14 files): 2566 commands translated. The station
+file has 10 `TODO eos` marks left: the per-chapter cards of chapters 3-6 in
+c00a0201, two `sector()` switches whose first case is right, m02a0401's
+entry into dungeon 123 (EoS's demo version only), Croagunk's initial
+position and pose (set another way), and one command sent to an actor that
+its own coroutine never reaches. The first drafts had 88; what was left
+then, by kind: animations past Red's table (EoS ids
 62–76: lying, waking, eating; 23), emotes the GBA has no picture for (eating,
 the two arrows; 19), switches on what the GBA can't ask (`sector()`, the
 sub-scenario; 11, the first case is taken), portrait offsets (7), dungeon
@@ -277,7 +422,11 @@ actors (`SKY_LIVES_ADVENTURE_NPC1`...: they stand for the team's members).
 ### Engine gaps
 
 What chapter 2's scripts do that the GBA script engine (src/ground_script.c,
-include/data_script.h) could not, and what is done about each:
+include/data_script.h) could not, and what is done about each (the plan as
+written before the integration; what was done is in [What plays](#what-plays):
+the save prompts and Continue, the faint path, the flags in Red's
+`EVENT_T01P01`, the dungeon entry, the chapter card, the poses, the portrait
+offsets left out, the event scripts in place of the stations):
 
 | EoS | Status | GBA |
 |---|---|---|
@@ -303,14 +452,17 @@ include/data_script.h) could not, and what is done about each:
 
 ## Pieces
 
+All done.
+
 1. Maps and CGs.
-2. Sprites (ground actors and objects): done, see [Sprites](#sprites).
+2. Sprites (ground actors and objects): see [Sprites](#sprites).
 3. Drenched Bluff (dungeon, tileset, enemies, items, the pearl).
 4. Scenes: an ExplorerScript to `.scene` translator, then the chapter's scenes.
 5. Flow: the chapter-1 demo end becomes chapter 2's start; events, flags,
    team naming, the chapter card, free roam, the faint path; chapter 2 ends
-   with "The demo ends here."
-6. Tests in the regression suite.
+   with "The demo ends here." ([What plays](#what-plays)).
+6. Tests in the regression suite: the `ch2` run and the chapter-2 checks of
+   the `bluff` and `after` runs (SkyDemake.md, "Testing").
 
 ## Sprites
 
@@ -673,6 +825,10 @@ to be Spoink's pearl!"). m02a1001's rewards are `item_Set` Protein / Calcium
 
 ### The end: hook for the scenes
 
+(Done: [What plays](#what-plays). `mapID2` / `mapID3` are now
+`MAP_SKY_DRENCHED_BLUFF_END` / `MAP_SKY_GUILD_B1F` and the cleared event
+plays EVENT_M02_09_10.)
+
 EoS: after B6F, `GETOUT_SCENARIO_DUNGEON` (GROUND_START_MODE 8, conquest)
 jumps to `EVENT_M02_09_10`: m02a0801 at D02P31A (its banner is EoS's
 "Drenched Bluff / B7F", `back_SetDungeonBanner(3, 0)`; it sets
@@ -700,6 +856,8 @@ in a `.scene` file (as chapter 1's `dungeon=TINY_WOODS`), after
 `$SCENARIO_MAIN = scn[3, 3]` (`SCENARIO_CALC(SCENARIO_MAIN, 3, 3)`).
 
 ### Fainting: hook for the flow
+
+(Done: [What plays](#what-plays); `STARTMODE_10` goes to the fainted event.)
 
 EoS: EVENT_DIVIDE with scn[3, 3/4/5] → `EVENT_M02_05_07A` (m02a0501 at
 g01p03a, c00a0501, c00a0601, the night: m02a0601-0603 or c00a0301, then

@@ -161,6 +161,7 @@ The commands with friendly fields (the editor lists every other command of
 | `SELECT_LIVES` | `group= sector=` | Put a sector's actors on the map. |
 | `SELECT_OBJECTS` | `group= sector=` | Put a sector's objects on the map (the Relic Fragment...). |
 | `SELECT_MAP` | `map=` | Load a map. |
+| `SKY_CHANGE_GROUND` | `map=` | Show another map's picture under the actors and objects on the map (`SELECT_MAP` deletes them): EoS `back_ChangeGround`. |
 | `SET_PLACE_MODE` | `mode=` | 1 before a scene is set up, 4 when it starts. |
 | `NEXT_DUNGEON` | `frames= dungeon=` | Go to a dungeon. |
 | `SKY_SAVE_GAME` |  | Ask to save (the demo's end). |
@@ -238,6 +239,9 @@ python3 tools/event_editor/eos_import.py EOS.nds SCRIPT/G01P01B/m02a0101 m02a010
 python3 tools/event_editor/eos_import.py EOS.nds m02a0101 --dump DIR      # the .exps and .ssa.json
 python3 tools/event_editor/eos_import.py --exps x.exps --ssa x.ssa.json -o out.scene   # no ROM
 python3 tools/event_editor/eos_import.py EOS.nds --chapter2 events/sky/draft/ch2       # all of chapter 2
+python3 tools/event_editor/eos_import.py EOS.nds --chapter2-station \
+    events/sky/draft/ch2/sky_d02p01_scenes.scene     # chapter 2 as one file: gs180's groups, in play order
+python3 tools/event_editor/ch2/station.py            # ... into events/sky/scenes/sky_d02p01_scenes.scene
 python3 tools/event_editor/eos_import.py EOS.nds SCRIPT/G01P01B/m01a0104 \
     --compare events/sky/scenes/sky_d01p01_scenes.scene:g6 --detail       # against a hand-made group
 ```
@@ -278,6 +282,29 @@ a pan at the start or `SKY_CUTAWAY` in the middle, white-outs → `FLASH_*`,
 questions → `ASK2` + `CHOICE`, `if` / `switch` on scenario or variables →
 `JUMPIF_*`, the team name → `RENAME_TEAM`, the save prompt → `ASK2` +
 `SKY_SAVE_GAME`, an item given → `SKY_GIVE_ITEM`.
+
+Chapter 2's station file is generated: `--chapter2-station` writes the 27
+scripts EoS plays (SkyChapter2.md, "What plays") as groups 1-27 of one file,
+every speaker bound by name at the station's start, labels numbered from 0
+in each group (a label is a byte) and at most 10 coloured name slots a group.
+`tools/event_editor/ch2/station.py` then puts in group 0 (free roam,
+`ch2/free_roam.scene`) and the hand edits made in the emulator (its `HAND`
+list), formats the file and numbers its `DEBUGINFO`s. Tune chapter 2 there
+or in the translator, not in the generated file, so a rerun keeps it.
+
+What the translator does for chapter 2 beyond chapter 1's mappings:
+`back_ChangeGround` → `SKY_CHANGE_GROUND` (the actors stay; `SELECT_MAP`
+would delete them), `screen_FadeOutAll` / `message_Narration` with the text
+layer faded → `FADE2_IN` before the next text, a still CG
+(`back_SetGround` of a CG level) → `SKY_CUTAWAY`, the chapter-2 card's
+`back_SetBanner2` → the map load that shows the card, `switch (scn($SCENARIO_MAIN)[n])` →
+`CJUMP_SCENARIO_n` + `COND_EQUAL`, EoS's `SetAnimation` ids → the Red id that holds the
+same value (SkyChapter2.md, "Animation ids"; a `WaitAnimation` after a
+looping pose becomes a `WAIT`), objects' ids → their group's states,
+portrait offsets left out (EoS's tiles push Red's faces off screen), and
+`supervision_*` / `main_EnterDungeon` / `CORO_EVENT_END_MAPIN` as comments:
+the event scripts in `src/data/ground/sky/sky_ch2_events.h` chain the
+scenes and enter the dungeon.
 
 Anything else becomes `# TODO eos: <the EoS line>` and does nothing; nothing
 is dropped without a mark. The station's sense of time (walk lengths,

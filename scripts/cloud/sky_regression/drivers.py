@@ -35,6 +35,7 @@ class D:
         self.game = None
         self.f = None
         self.n = 0  # frames emulated so far
+        self.base = 0  # the frame of the last reset: the boot presses count from it
 
     def step(self, keys=0):
         f = yield keymask(keys)
@@ -56,13 +57,26 @@ class D:
     def mash_until(self, cond, limit=None):
         """The story presses (boot, then A every 60 frames) until cond(f)."""
         while True:
-            f = yield from self.step(story_keys(self.n + 1))
+            f = yield from self.step(story_keys(self.n + 1 - self.base))
             if cond(f):
                 return f
 
     def mash(self):
         while True:
-            yield from self.step(story_keys(self.n + 1))
+            yield from self.step(story_keys(self.n + 1 - self.base))
+
+    def reset_and_continue(self, name, cond=None):
+        """Reset the console (the save data stays) and boot again with the
+        boot presses: with a save, the top menu's first choice is Continue.
+        Posts name when cond(f) (default: the game is back on a sky map;
+        run.data: the map)."""
+        game = self.run.game
+        self.run.emu.reset()
+        self.base = self.n
+        self.post(f"{name}_reset")
+        f = yield from self.mash_until(cond or (lambda f: (game.map_name(f) or "").startswith("MAP_SKY")))
+        self.post(name, game.map_name(f) if game.map_id(f) is not None else None)
+        return f
 
     def wait_control(self, frames=20, limit=3000, nudge=None):
         """Idle until the dungeon has waited for the leader's input for
@@ -94,6 +108,19 @@ class D:
 def story(run):
     """Mash through the story (the after-Pit scenes)."""
     d = D(run)
+    yield from d.mash()
+
+
+def after(run):
+    """Chapter 1's last scenes (the story presses) to its save prompt (A:
+    save), then reset and Continue from that save; the story presses on.
+    Posts "ch1_saved", "ch1_continued_reset" and "ch1_continued"."""
+    d = D(run)
+    game = run.game
+    yield from d.mash_until(lambda f: game.print_state(f) in PRINT_WAITING and "adventure has been saved" in f.text)
+    d.post("ch1_saved")
+    yield from d.idle(30)
+    yield from d.reset_and_continue("ch1_continued")
     yield from d.mash()
 
 
@@ -282,6 +309,11 @@ def bluff(run):
             # blocked: facing a Pokémon (or the stairs menu is up): A
             yield from d.press("A", 4, 30)
     d.post("left_dungeon")
+    # the demo end (its save prompt: A saves), then Continue from that save
+    yield from d.mash_until(lambda f: game.print_state(f) in PRINT_WAITING and "demo ends here" in f.text)
+    yield from d.idle(60)
+    yield from d.reset_and_continue("demo_end_continued",
+                                    lambda f: "save your adventure" in f.text or "demo ends here" in f.text)
     yield from d.mash()
 
 
@@ -337,15 +369,23 @@ def ch2_story(d, stop):
 
 def ch2(run):
     """Chapter 2 from its start (DEBUG_BOOT_EVENT=SKY_CH2_START, the level-1
-    debug team): the boot presses, then the story (ch2_story) to Drenched
+    debug team): the boot presses, then the story (ch2_story); after the
+    good night's save, reset and Continue (the morning); on to Drenched
     Bluff, where the leader stands and attacks forward (A every 40 frames)
-    until the team faints; the faint path's scenes back to the bluff. Posts
-    "dungeon_1" / "dungeon_2" on entering the dungeon, "fainted" when the
-    first run is over."""
+    until the team faints; the faint path's scenes to the morning's save,
+    reset and Continue, back to the bluff. Posts "dungeon_1" / "dungeon_2" on
+    entering the dungeon, "fainted" when the first run is over,
+    "goodnight_continued" / "faint_continued" (run.data: the map) after the
+    resets."""
     d = D(run)
     game = run.game
+    saved = lambda f: game.print_state(f) in PRINT_WAITING and "adventure has been saved" in f.text  # noqa: E731
     yield from d.mash_until(lambda f: (game.map_name(f) or "").startswith("MAP_SKY_GUILD"))
     d.post("ch2_first_map")
+    yield from ch2_story(d, saved)
+    d.post("goodnight_saved")
+    yield from d.idle(30)
+    yield from d.reset_and_continue("goodnight_continued")
     yield from ch2_story(d, lambda f: game.in_dungeon(f))
     d.post("dungeon_1")
     start = d.n
@@ -355,6 +395,10 @@ def ch2(run):
         else:
             yield from d.press("A", 4, 36)
     d.post("fainted")
+    yield from ch2_story(d, saved)
+    d.post("faint_saved")
+    yield from d.idle(30)
+    yield from d.reset_and_continue("faint_continued")
     yield from ch2_story(d, lambda f: game.in_dungeon(f))
     d.post("dungeon_2")
     yield from d.idle(60)

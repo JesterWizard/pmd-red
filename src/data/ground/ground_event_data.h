@@ -4059,7 +4059,7 @@ static const struct ScriptCommand s_script_GETOUT_M01E02A[] = { /* 0x812aa14 */
 #else
     JUMPIF_EQUAL(START_MODE, STARTMODE_10, /* to label */ 2),
 #endif
-#line 4111
+#line 4030
     JUMP_SCRIPT(EVENT_M01E02A_L004),
   LABEL(4), /* = 0x04 */
     JUMP_SCRIPT(EVENT_M01E02A_L006),
