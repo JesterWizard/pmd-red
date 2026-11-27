@@ -789,8 +789,13 @@ static void sub_8014A88(void)
     sDialogueBoxWinTemplates.id[2].pos.x = 28 - r1;
     sDialogueBoxWinTemplates.id[2].pos.y = 14 - r2;
 #ifdef SKY_STORY
-    if (sSkyTextbox)
-        sDialogueBoxWinTemplates.id[2].pos.y = 12 - r2;
+    if (sSkyTextbox) {
+        /* its bottom frame row sits above the dialogue box's top frame row
+         * (row 11), not on it */
+        sDialogueBoxWinTemplates.id[2].pos.y = 10 - r2;
+        if (sDialogueBoxWinTemplates.id[2].pos.y < 1)
+            sDialogueBoxWinTemplates.id[2].pos.y = 1;
+    }
 #endif
     sDialogueBoxWinTemplates.id[0].flags = WINTEMPLATE_FLAG_x80;
     sDialogueBoxWinTemplates.id[1].flags = WINTEMPLATE_FLAG_x40 | WINTEMPLATE_FLAG_x80;
