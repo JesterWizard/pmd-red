@@ -249,10 +249,11 @@ ASM_SOURCES := $(wildcard asm/*.s data/*.s)
 C_ASM_SOURCES := $(wildcard src/*.s)
 SONG_SRCS := $(wildcard sound/songs/*.s)
 # The EoS jingles (sky_me_*), sound effects (sky_se_*) and the songs added after Red's ids
-# (seq_069: EoS Storm, seq_070: EoS Ocean1, seq_071: EoS Fire Crackling, seq_072: EoS Eating) are sky-only; leaving their (empty) objects out of the other links keeps
+# (seq_069: EoS Storm, seq_070: EoS Ocean1, seq_071: EoS Fire Crackling, seq_072: EoS Eating, seq_073: EoS Storm (Inside),
+# seq_074: EoS Earthquake1) are sky-only; leaving their (empty) objects out of the other links keeps
 # those builds byte-identical (a new object reorders the linker's long-call stubs).
 ifneq ($(GROUND_STORY_DIR),sky)
-  SONG_SRCS := $(filter-out sound/songs/sky_me_%.s sound/songs/sky_se_%.s sound/songs/seq_069.s sound/songs/seq_070.s sound/songs/seq_071.s sound/songs/seq_072.s,$(SONG_SRCS))
+  SONG_SRCS := $(filter-out sound/songs/sky_me_%.s sound/songs/sky_se_%.s sound/songs/seq_069.s sound/songs/seq_070.s sound/songs/seq_071.s sound/songs/seq_072.s sound/songs/seq_073.s sound/songs/seq_074.s,$(SONG_SRCS))
 endif
 # The sky build's song table plays EoS SEs for most of Red's SE ids
 # (sound/sky_red_se_table.inc); the Red SE sequences it no longer names are

@@ -146,6 +146,21 @@ LEVELS = {
 # chapter 2's scenes are on gs180 (SkyChapter2.md, station gs180): g01p01b2 (chapter 1's
 # MAP_SKY_GUILD_DUSK, gs178) is MAP_SKY_GUILD_DUSK2 there, the same files on gs180
 LEVELS_CH2 = {"G01P01B2": "SKY_GUILD_DUSK2"}
+# chapter 3 (SkyChapter3.md, "Maps and CGs"): its own maps, on gs181
+LEVELS.update({
+    "T01P01A": "SKY_TREASURE_TOWN_SQUARE", "T01P02A": "SKY_TREASURE_TOWN_WEST", "P01P01A": "SKY_CROSSROADS",
+    "P01P02A": "SKY_BEACH_PATH", "G01P01A": "SKY_GUILD_ENTRANCE_DAY", "D03P11A": "SKY_MT_BRISTLE_ENTRANCE",
+    "D03P41A": "SKY_MT_BRISTLE_PEAK", "P15P01A": "SKY_BIDOOF_HOME", "V03P03A": "SKY_DUGTRIO_TUNNEL",
+    "V03P05C": "SKY_STORM_CLOUDS", "V03P06A": "SKY_TIME_GEAR_FOREST", "V03P07A": "SKY_TIME_GEAR_LAKE",
+    "V03P08A": "SKY_TIME_GEAR_VOLCANO", "V03P09A": "SKY_TIME_FLOW", "V03P11A": "SKY_GROVYLE_RUN",
+    "V03P12A": "SKY_GROVYLE_CLOSEUP",
+})
+# chapter 3's scenes are on gs181 (SkyChapter3.md, "What plays"): SELECT_MAP also picks
+# the station file, so the guild's maps (gs180) are the same files under map ids of
+# their own that run gs181
+LEVELS_CH3 = {"G01P02A": "SKY_GUILD_1F_CH3", "G01P03A": "SKY_GUILD_B1F_CH3", "G01P04A": "SKY_GUILD_B2F_CH3",
+              "G01P05A": "SKY_GUILD_WIGGLYTUFF_CH3", "G01P07A": "SKY_GUILD_CREW_ROOM_CH3",
+              "G01P07C": "SKY_GUILD_CREW_ROOM_NIGHT_CH3"}
 
 # second-screen pictures (back2_SetGround, or a V level shown on the main
 # screen) -> story CG; (still CG, pan CG over the scene's map)
@@ -158,6 +173,9 @@ CGS = {
 PAN_VIEWS = {"GUILD_SKY_SCROLL": (118, 112), "SKY_DAY_SCROLL": (166, 88)}
 # chapter 2's (SkyChapter2.md, Story CGs; events/sky/cutaways.cfg)
 CGS.update({"V02P02A": ("SENTRY_GRATE", None), "V02P06A": ("NIGHT_SKY", None)})
+# chapter 3's (SkyChapter3.md, "Story CGs and the v03 levels")
+CGS.update({"V03P01A": ("OUTLAW_BOARD", None), "V03P02A": ("OUTLAW_BOARD_FLIPPED", None),
+            "V03P04A": ("DROWZEE_POSTER", None)})
 # main-screen levels with no actor and no text over them, shown as a CG
 # (back_SetGround ... screen_FadeOut: the waits in between are its frames)
 MAIN_CGS = {"V01P08B": "GUILD_GATE"}
@@ -168,12 +186,37 @@ MUSIC = {
     "BGM_ON_THE_BEACH_AT_DUSK": "SKY_ON_THE_BEACH_AT_DUSK", "BGM_BEACH_CAVE": "SKY_BEACH_CAVE",
     "BGM_BOSS_BATTLE": "SKY_BOSS_BATTLE", "BGM_IN_THE_DEPTHS_OF_THE_PIT": "SKY_IN_THE_DEPTHS_OF_THE_PIT",
 }
+# EoS songs the scenes play as a stand-in (no conversion of their own)
+MUSIC_SUBST = {}
 
 # EoS dungeons (main_EnterDungeon) -> script dungeon: Beach Cave is Red's Tiny
 # Woods, Drenched Bluff Red's Thunderwave Cave (SkyChapter2.md, Drenched Bluff);
 # -1 (EoS's $DUNGEON_ENTER) is chapter 2's dungeon
 DUNGEONS = {1: "TINY_WOODS", 3: "THUNDERWAVE_CAVE", -1: "THUNDERWAVE_CAVE"}
 DUNGEON_OPEN = {3: "RESCUE_DUNGEON_THUNDERWAVE_CAVE"}
+# chapter 3: the event scripts (sky_ch3_events.h) enter Mt. Bristle (Red's Mt. Steel run)
+# and its peak (SCRIPT_DUNGEON_3), SkyChapter3.md "Mt. Bristle": the scene ends there
+DUNGEONS_CH3 = {4: "MT_STEEL", 5: "3"}
+# EoS's job boards: no job lists in the demo
+BOARD_MENUS = {"MENU_JOB_BOARD": "{CENTER_ALIGN}Jobs on the Job Bulletin Board\\n{CENTER_ALIGN}are not in this demo.",
+               "MENU_OUTLAW_BOARD": "{CENTER_ALIGN}Jobs on the Outlaw Notice Board\\n{CENTER_ALIGN}are not in this demo."}
+# EoS's shop menus -> Red's shop, opened with SPECIAL_TEXT (src/textbox.c)
+SHOP_MENUS = {"MENU_KECLEON_SHOP": "SPECIAL_TEXT_GREEN_KECLEON_SHOP",
+              "MENU_KECLEON_WARES": "SPECIAL_TEXT_PURPLE_KECLEON_SHOP",
+              "MENU_DUSKULL_BANK": "SPECIAL_TEXT_BANK",
+              "MENU_KANGASKHAN_STORAGE": "SPECIAL_TEXT_STORAGE_WITH_DIALOG"}
+# EoS's story coroutines a free-roam script starts -> the event scripts that play them
+# (src/data/ground/sky/sky_ch3_events.h, names in include/sky_story.h)
+CH3_EVENTS = {"CORO_EVENT_M03_01B": "SKY_CH3_TOWN_EVENT", "CORO_EVENT_M03_02": "SKY_CH3_DETOUR_EVENT",
+              "CORO_EVENT_M03_03": "SKY_CH3_KECLEON_EVENT", "CORO_EVENT_M03_04": "SKY_CH3_VISION_EVENT",
+              "CORO_EVENT_M03_05_06": "SKY_CH3_OUTLAW_EVENT"}
+# chapter 3 scenes that go on from free roam with the hero and partner where the player
+# left them, which their SSA does not place: where they stand (layer, SSA actor)
+INJECT_CH3 = {
+    # talking to the Kecleon brothers (T01P02A enter11 / enter12): in front of the counter
+    "m03a0301": [(0, dict(name="PLAYER", dir="Up", x=41, y=22, yo=2)),
+                 (0, dict(name="ATTENDANT1", dir="Up", x=41, y=25))],
+}
 
 FACE_POS = {   # EoS FACE_POS_* -> PLACEMENT_* (chapter 1: STANDARD, BOTTOM_*_FACEINW, TOP_*_CENTER, TOP_LC_FACEOUTW)
     "STANDARD": "LEFT_BOTTOM_2",
@@ -228,7 +271,7 @@ EFFECTS = {   # EoS EFFECT_* -> (EMOTION_EFFECT_*, the common script that shows 
 }
 # EoS SetAnimation ids whose value (SETANIMATION_TABLE) is at another index of Red's
 # table (gUnknown_8117F64): SkyChapter2.md, Animation ids. 0-13 and 17-29 are the same.
-EOS_RED_ANIM = {15: 2, 16: 2, 30: 46, 31: 47, 32: 48, 34: 50, 42: 30, 43: 31, 44: 32, 45: 33, 46: 34, 47: 35,
+EOS_RED_ANIM = {14: 53, 15: 2, 16: 2, 30: 46, 31: 47, 32: 48, 34: 50, 42: 30, 43: 31, 44: 32, 45: 33, 46: 34, 47: 35,
                 48: 36, 49: 37, 53: 49, 55: 51, 56: 52, 63: 23, 64: 32, 65: 33, 66: 26, 67: 27, 68: 28,
                 69: 37, 70: 46, 71: 47, 72: 48, 74: 50, 75: 51, 76: 52}
 # objects: EoS SetAnimation -> Red SELECT_ANIMATION (SkyChapter2.md, Sprites: Objects)
@@ -257,7 +300,11 @@ COROS = {
 # build's (include/sky_story.h)
 VARS = {"CARRY_GOLD": "GOLD", "BANK_GOLD": "BANK_GOLD", "SCENARIO_MAIN_BIT_FLAG": "SKY_SCENARIO_MAIN_BIT_FLAG"}
 # EoS variables with nothing to do on the GBA: setting them does nothing
-VARS_DROPPED = {"PERFORMANCE_PROGRESS_LIST": "unlocks EoS menus", "COMPULSORY_SAVE_POINT": "EoS's bed save point"}
+VARS_DROPPED = {"PERFORMANCE_PROGRESS_LIST": "unlocks EoS menus", "COMPULSORY_SAVE_POINT": "EoS's bed save point",
+                # chapter 3
+                "REQUEST_CLEAR_COUNT": "EoS's count of jobs done (its job list)",
+                "SCENARIO_BALANCE_FLAG": "EoS's dungeon-balance stage", "SPECIAL_EPISODE_OPEN": "special episodes",
+                "SCENARIO_TALK_BIT_FLAG": "EoS's talked-to flags: the free roam's NPCs keep none"}
 # EoS variables the GBA can't ask: a switch on one takes this case
 VARS_FIXED = {"CONFIG_COLOR_KIND": (0, "the quiz's colour, which Red's quiz does not ask")}
 # EoS-only items -> the closest Red item (EoS item name pattern, Red item, its name)
@@ -272,7 +319,9 @@ SE_PREFER = {0x230B: 457}
 
 TEXT_TAGS = {"K": "{WAIT_PRESS}", "CN": "{CENTER_ALIGN}", "hero": "{NAME_0}", "partner": "{NAME_1}",
              "player": "{NAME_0}", "team:": "{TEAM_NAME}", "CR": "",
-             "MP": ",", "M:S0": " Poké", "W:30": ""}   # [MP] the thousands mark, [M:S0] the Poké sign
+             "MP": ",", "M:S0": " Poké", "W:30": "",   # [MP] the thousands mark, [M:S0] the Poké sign
+             # EoS's button glyphs in its help texts (chapter 3's free roam): the GBA's buttons
+             "M:B2": "A", "M:B4": "START", "M:B7": "A"}
 
 # The hero's and partner's EoS ground animations past Red's table (62-76: lying in
 # bed, waking, eating...) are in EOS_RED_ANIM, as for any actor: every hero /
@@ -281,7 +330,7 @@ TEXT_TAGS = {"K": "{WAIT_PRESS}", "CN": "{CENTER_ALIGN}", "hero": "{NAME_0}", "p
 # Red's sleep pose (6). Red ids whose value loops (0x800): WaitAnimation on them
 # would wait for ever, so it becomes a WAIT.
 HERO_SLEEP_ANIM = 30
-RED_ANIM_LOOPS = {1, 4, 5, 6, 9, 20, 21, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 49, 51, 52}
+RED_ANIM_LOOPS = {1, 4, 5, 6, 9, 20, 21, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 49, 51, 52, 53}
 
 
 def ival(e):
@@ -461,7 +510,9 @@ class Script:
 
 
 class Translator:
-    def __init__(self, text, ssa, group=0, rom=None, notes=None):
+    def __init__(self, text, ssa, group=0, rom=None, notes=None, chapter=None, sector=None):
+        self.chapter_n = chapter    # 3: chapter 3's station gs181 (its maps, card, dungeons)
+        self.sector_n = sector      # EoS's supervision_ExecuteActingSub(..., sector): switch (sector())
         self.mod = X.parse(text)
         self.ssa = ssa
         self.group = group
@@ -469,6 +520,12 @@ class Translator:
         self.level = ssa.get("level", "")
         self.name = ssa.get("script", "")
         self.notes = notes if notes is not None else []
+        if self.chapter_n == 3 and self.name in INJECT_CH3:
+            # actors EoS's scene finds on the map (the free roam's) and its SSA does not place
+            ssa = json.loads(json.dumps(ssa))
+            for li, a in INJECT_CH3[self.name]:
+                ssa["layers"][li]["actors"].append(dict(a, xo=a.get("xo", 0), yo=a.get("yo", 0), script=-1))
+            self.ssa = ssa
         self.slots = {}            # NPC define -> slot (shared by the file: see SceneFile)
         self.cue = 63
         self.station = Script(f"g{group}_s0_station")
@@ -482,6 +539,11 @@ class Translator:
                 row.append(Entity(self, li, i, o, True))
             self.layers.append(row)
             self.ents += row
+        # chapter 1's storm cloud (GROUND/v01p07b1.wan) is SKY_STORM_BOLT (src/sky_storm.c), not an object
+        self.storm_objs = {e.eos for e in self.ents if e.is_object and str(e.d.get("kind", "")).lower() == "v01p07b1"}
+        if self.storm_objs:
+            self.ents = [e for e in self.ents if e.eos not in self.storm_objs]
+            self.layers = [[e for e in row if e.eos not in self.storm_objs] for row in self.layers]
         self.perf_layers = [layer.get("performers", []) for layer in ssa["layers"]]
         # state of the main routine
         self.speaker = None        # NPC define or None
@@ -500,7 +562,8 @@ class Translator:
         self.after_label = False
         self.lock_users = set()    # Lock numbers some coroutine waits on
         self.used = set()          # names that may not exist yet (type, name)
-        self.chapter2 = self.name.startswith(("m02", "c00"))
+        self.chapter3 = self.chapter_n == 3
+        self.chapter2 = self.name.startswith(("m02", "c00")) and not self.chapter3
         self.main_cg = None        # [CG, frames, rows, index]: a main-screen level shown as a CG
         self.banner = False        # back_SetBanner2's fade in / wait / fade out follow
 
@@ -571,6 +634,8 @@ class Translator:
                 return TEXT_TAGS[t]
             if re.fullmatch(r"CS:.", t):
                 return ""        # colours: chapter 1 leaves them out
+            if re.fullmatch(r"W:\d+", t):
+                return ""        # a pause inside the line (EoS [W:n]): the GBA prints on
             mm = re.fullmatch(r"c_(kind|name):(.+)", t)
             if mm:
                 who = self.who(mm.group(2))
@@ -631,6 +696,9 @@ class Translator:
         lv = re.sub(r"^LEVEL_", "", level)
         if self.chapter2 and lv in LEVELS_CH2:
             return LEVELS_CH2[lv]
+        if self.chapter3 and lv in LEVELS_CH3:
+            self.use("map", "MAP_" + LEVELS_CH3[lv])
+            return LEVELS_CH3[lv]
         if lv in LEVELS:
             m = LEVELS[lv]
             if not lv.startswith(("V01", "D01", "G01P01B2")):
@@ -708,10 +776,38 @@ class Translator:
                 for e in self.ents:
                     if e.eos == re.sub(r"^(ACTOR_|OBJECT_)", "", str(r.target[1])):
                         e.has_own = True
+        # "hand-over" locks: an actor's own coroutine ends with `Lock(n); hold;` and the main
+        # routine waits for it there (WaitLockLives(n, X)) and never unlocks it, then gives it
+        # commands itself. The actor signals n (AWAIT_CUE_COND) and goes on to the station's
+        # commands; the station waits for n (AWAIT_CUE) and from then on dispatches as to any actor.
+        unlocked = {ival(s.args[0]) for s in walk(main.body) if s.kind == "call" and s.name == "Unlock"}
+        self.handover = set()
+        for r in self.mod.routines:
+            if r.id == "0":
+                continue
+            b = r.body
+            for i in range(len(b) - 1):
+                if (b[i].kind == "call" and b[i].name == "Lock" and b[i + 1].kind == "ctrl"
+                        and b[i + 1].name == "hold" and ival(b[i].args[0]) not in unlocked):
+                    self.handover.add(ival(b[i].args[0]))
         st = self.station.rows
         st += ["SET_PLACE_MODE 1", "FADE_OUT wait=TRUE frames=0"]
-        if self.layers and not any(t.kind == "call" and t.name in ("back_SetGround", "supervision_Acting")
-                                   for t in walk(main.body)):
+        if self.chapter3 and self.layers and not any(t.kind == "call" and t.name == "back_SetGround"
+                                                     for t in walk(main.body)):
+            # a scene that goes on on the map as it is (the free roam's or the last scene's): the GBA
+            # loads it again. Its layer 0 is who is there: shown at once, or by its supervision_Acting(0)
+            st.append(f"SELECT_MAP {self.map_of(self.level)}   # EoS: the scene goes on on the map as it is")
+            if any(t.kind == "call" and t.name == "supervision_Acting" and t.args and ival(t.args[0]) == 0
+                   for t in walk(main.body)):
+                self.pending_fade_in = True
+            else:
+                st.append("SELECT_ENTITIES group=-1 sector=0   # (its layer 0: who is there)")
+                for e in self.layers[0]:
+                    e.spawned = True
+                st += ["FADE_IN wait=TRUE frames=0", "SET_PLACE_MODE 4"]
+                self.faded_in, self.screen = True, "shown"
+        elif self.layers and not any(t.kind == "call" and t.name in ("back_SetGround", "supervision_Acting")
+                                     for t in walk(main.body)):
             # a scene that goes on on the map as it is (m02a0301): its layer 0 is what is there
             st += [f"SELECT_MAP {self.map_of(self.level)}   # EoS: the scene goes on on the map as it is",
                    "SELECT_ENTITIES group=-1 sector=0   # (its layer 0: who is there)"]
@@ -781,6 +877,8 @@ class Translator:
                 rows.append("RET")
             elif s.name in ("end", "return"):
                 rows.append("END_DELETE" if s.name == "end" else "RET")
+            elif s.name == "hold" and me is not None and getattr(me, "handed_over", False):
+                rows.append("# eos: hold (handed over to the station: its commands follow)")
             elif s.name == "hold":
                 rows.append("HALT")
             elif s.name in ("break", "continue"):
@@ -928,6 +1026,13 @@ class Translator:
             self.translated += 1
             return self.cases_code(s.cases, labs, end, me, rows)
         # a switch on a value: the first case (the variant EoS plays by default) if it can't be decided
+        if c[0] == "call" and c[1] == "sector" and self.sector_n is not None:
+            # the sector the flow runs this script with (supervision_ExecuteActingSub's third argument)
+            pick = next((i for i, (v, b) in enumerate(s.cases) if ("num", self.sector_n) in v), None)
+            if pick is None:
+                pick = next((i for i, (v, b) in enumerate(s.cases) if "default" in v), 0)
+            self.translated += 1
+            return self.chosen_case(s, me, rows, pick, f"# eos: {s.src.rstrip(' {')}: sector {self.sector_n}")
         if c[0] == "call" and c[1] == "sector":
             vals = None
         else:
@@ -1041,6 +1146,20 @@ class Translator:
         elif m == "MENU_SAVE_MENU":
             rows.append("SKY_SAVE_GAME   # EoS message_Menu(MENU_SAVE_MENU)")
             self.translated += 1
+        elif m == "MENU_GUILD_F_A_Q_BOARD":
+            # the guild's notice board: EoS lets the player pick a question; the GBA reads them in order
+            rows.append(f"# eos: {s.src.rstrip(' {}')} (every question and its answer, in order)")
+            self.translated += 1
+        elif m in BOARD_MENUS:
+            # the guild's boards: EoS's job lists, which the demo does not have
+            rows.append(f'MSG_INSTANT text="{BOARD_MENUS[m]}"   # EoS message_Menu({m})')
+            rows.append("TEXTBOX_CLEAR")
+            self.translated += 1
+        elif m in SHOP_MENUS:
+            # Treasure Town's shops: Red's own shop / storage / bank systems, re-skinned as EoS's
+            # (SkyChapter3.md, "Free roam"): SPECIAL_TEXT opens them
+            rows.append(f"SPECIAL_TEXT {SHOP_MENUS[m]} 0 0   # EoS message_Menu({m})")
+            self.translated += 1
         elif m in ("MENU_DUNGEON_INITIALIZE_TEAM", "MENU_DUNGEON_TEAM_RETURNS_FROM_MAP"):
             rows.append(f"# eos: {s.src.rstrip(' {}')} (EoS's team set-up before a dungeon: Red's own runs)")
             self.translated += 1
@@ -1101,6 +1220,15 @@ class Translator:
         m = re.match(r"dungeon_mode\((\d+)\) = DMODE_OPEN", s.src)
         if m and int(m.group(1)) in DUNGEON_OPEN:
             rows.append(f"CMD_UNK_AF {DUNGEON_OPEN[int(m.group(1))]} TRUE   # EoS {s.src}")
+            self.translated += 1
+            return
+        if m and self.chapter3 and int(m.group(1)) in (4, 5):
+            rows.append(f"CMD_UNK_AF RESCUE_DUNGEON_MT_STEEL TRUE   # EoS {s.src} (Mt. Bristle: Red's Mt. Steel)")
+            self.translated += 1
+            return
+        m = re.match(r"clear (\$\w+);", s.src)
+        if m and m.group(1).lstrip("$") in RED_VARS:
+            rows.append(f"UPDATE_VARINT CALC_SET {m.group(1).lstrip('$')} 0   # EoS {s.src}")
             self.translated += 1
             return
         if s.name == "=" and s.args and s.args[0] == ("var", "$SCENARIO_MAIN") and s.args[1][0] == "scnval":
@@ -1193,7 +1321,13 @@ class Translator:
         self.close_batches()
         self.wait_for(e, rows)
 
+    def storm(self, s):
+        return s.target is not None and re.sub(r"^OBJECT_", "", str(s.target[1])) in self.storm_objs
+
     def c_WaitExecuteObject(self, s, a, me, rows, nxt):
+        if re.sub(r"^OBJECT_", "", str(a[0][1])) in self.storm_objs:
+            rows.append(f"# eos: {s.src} (SKY_STORM_BOLT)")
+            return
         e = self.ent(a[0][1], "object")
         if e is None or me is not None:
             return False
@@ -1217,11 +1351,23 @@ class Translator:
             rows.append(f"# eos: {s.src} (the camera has arrived)")
 
     def c_WaitLockLives(self, s, a, me, rows, nxt):
+        n = ival(a[0])
+        e = self.ent(a[1][1]) if len(a) > 1 else None
+        if me is None and n in getattr(self, "handover", ()) and e is not None:
+            self.close_batches()
+            rows.append(f"AWAIT_CUE {n}   # EoS {s.src}: {e.eos} waits at Lock({n}), then takes the station's commands")
+            e.has_own = False          # from here its commands are dispatched as to any actor
+            e.idle = True
+            return
         rows.append(f"# eos: {s.src} (Unlock below waits for it)")
 
     def c_Lock(self, s, a, me, rows, nxt):
         if me is None:
             self.close_batches()
+        if me is not None and ival(a[0]) in getattr(self, "handover", ()):
+            me.handed_over = True
+            rows.append(f"AWAIT_CUE_COND {ival(a[0])} 0   # EoS Lock({ival(a[0])}); hold: the station takes over")
+            return
         rows.append(f"AWAIT_CUE {ival(a[0])}   # EoS Lock({ival(a[0])})")
 
     def c_Unlock(self, s, a, me, rows, nxt):
@@ -1233,6 +1379,10 @@ class Translator:
 
     def c_WaitEffect(self, s, a, me, rows, nxt):
         e = self.target(s, me)
+        if isinstance(e, tuple) and getattr(self, "vision_effect", False):
+            rows.append(f"# eos: {s.src} (SKY_VISION plays to its end)")
+            self.vision_effect = False
+            return
         if isinstance(e, Entity):
             # SetEffect + WaitEffect -> the common script that shows it and waits (chapter 1)
             rr = rows if me is e else (e.batches[-1].rows if e.batches and e.batches[-1].open else None)
@@ -1247,6 +1397,9 @@ class Translator:
         return False
 
     def c_WaitAnimation(self, s, a, me, rows, nxt):
+        if self.storm(s):
+            rows.append("WAIT 118   # EoS WaitAnimation: the storm cloud's lightning (118 frames)")
+            return
         e = self.target(s, me)
         if not isinstance(e, Entity):
             return False
@@ -1263,6 +1416,9 @@ class Translator:
 
     # ---- actors
     def c_SetAnimation(self, s, a, me, rows, nxt):
+        if self.storm(s):
+            rows.append(f"SKY_STORM_BOLT   # EoS {s.src} (chapter 1's lightning, src/sky_storm.c)")
+            return
         e = self.target(s, me)
         if not isinstance(e, Entity):
             return False
@@ -1369,8 +1525,29 @@ class Translator:
     def c_MovePositionLives(self, s, a, me, rows, nxt):
         return self.move(s, a, me, rows, False, "lives")
 
+    def c_SetPositionLives(self, s, a, me, rows, nxt):
+        # a performer (the camera's) put where an actor stands: SetPositionLives<performer N>(actor)
+        e = self.target(s, me)
+        if not isinstance(e, tuple):
+            return False
+        who = ival(a[0])
+        o = next((x for x in self.ents if not x.is_object and x.eos == ("PLAYER" if who == 0 else "ATTENDANT1")
+                  and x.spawned and not x.destroyed), None) if who in (0, 1) else None
+        if o is None:
+            return False
+        self.perf_pos[e[1]] = (o.px + 4, o.py + 4)
+        rows.append(f"# eos: {s.src} (the camera's performer at {o.eos})")
+
     def c_SetPositionMark(self, s, a, me, rows, nxt):
         e = self.target(s, me)
+        if isinstance(e, tuple):
+            p = a[0]
+            self.perf_pos[e[1]] = (int(p[2] * 8 + 4), int(p[3] * 8 + 4))
+            if self.camera == ("perf", e[1]):
+                rows.append(f"SKY_CAMERA_SET x={int(p[2] * 8) + 4 - 120} y={int(p[3] * 8) + 4 - 80}   # EoS {s.src}")
+            else:
+                rows.append(f"# eos: {s.src} (a performer the camera does not follow)")
+            return
         if not isinstance(e, Entity):
             return False
         p = a[0]
@@ -1412,6 +1589,13 @@ class Translator:
             return False
         self.emit(e, me, rows, f"SET_HEIGHT {ival(a[0])}")
 
+    def c_ResetHitAttribute(self, s, a, me, rows, nxt):
+        # an actor stops blocking the player (EoS's hit flags): the scene's actors are scripted
+        # and have no collision on the GBA (CLEAR_OBJ_FLAGS INTERACT_MASK)
+        rows.append(f"# eos: {s.src} (scripted actors have no collision on the GBA)")
+
+    c_SetHitAttribute = c_ResetHitAttribute
+
     def c_SetOutputAttribute(self, s, a, me, rows, nxt):
         e = self.target(s, me)
         if not isinstance(e, Entity):
@@ -1421,6 +1605,21 @@ class Translator:
     def c_SetEffect(self, s, a, me, rows, nxt):
         e = self.target(s, me)
         nm = re.sub(r"^EFFECT_", "", a[0][1]) if a and a[0][0] == "name" else None
+        if isinstance(e, tuple) and nm == "VERY_HEAVY_RAIN":
+            # the rain over the whole screen (chapter 1's storm: SKY_BUBBLES_RAIN)
+            rows.append(f"SKY_BUBBLES RAIN   # EoS {s.src}")
+            self.rain = True
+            return
+        if isinstance(e, tuple) and nm == "NONE":
+            rows.append(f"SKY_BUBBLES OFF   # EoS {s.src}" if getattr(self, "rain", False)
+                        else f"# eos: {s.src} (nothing on)")
+            self.rain = False
+            return
+        if isinstance(e, tuple) and ival(a[0]) in (621, 635) and self.chapter3:
+            # EoS's dizzy spell (c00a0701 / c00a1701): effects 621 and 635 over the black screen
+            rows.append(f"SKY_VISION {0 if ival(a[0]) == 621 else 1}   # EoS {s.src}: the dizzy spell")
+            self.vision_effect = True
+            return
         if isinstance(e, Entity) and nm in EFFECTS_NONE:
             self.emit(e, me, rows, f"# TODO emotion: EoS {s.src} (no GBA picture: none shown)")
             return
@@ -1465,6 +1664,18 @@ class Translator:
             return self.flow(s, a, me, rows, nxt)
         if coro == "CORO_FADE_OUT_ALL_AFTER":
             rows.append("# eos: CallCommon(CORO_FADE_OUT_ALL_AFTER) (the scene's end)")
+            return
+        if coro == "CORO_EVENT_END_FREE":
+            rows.append("# eos: CallCommon(CORO_EVENT_END_FREE) (back to free roam: the event scripts)")
+            return
+        if coro == "CORO_FADE_OUT_ALL_BEFORE":
+            # screen_FadeOutAll(1, 0); Wait(1); screen_FadeIn(1, 0): EoS hides its second screen
+            # and its text layer before a scene's fade in; the GBA has nothing to hide
+            rows.append("# eos: CallCommon(CORO_FADE_OUT_ALL_BEFORE) (EoS's top screen: nothing on the GBA)")
+            return
+        if coro == "CORO_BOSS_WIPE_FUNC":
+            rows.append("# eos: CallCommon(CORO_BOSS_WIPE_FUNC) (the peak's cutscene plays the boss "
+                        "transition: src/sky_boss_wipe.c)")
             return
         if me is not None:
             return self.c_ExecuteCommon(s, a, me, rows, nxt)
@@ -1815,7 +2026,8 @@ class Translator:
             self.main_cg = [MAIN_CGS[lv], 0, rows, len(rows) - 1]
             return
         if lv == "S04P01A":     # EoS's black level (voices in the dark): chapter 1's storm map, hidden
-            black = "SKY_GUILD_B1F" if self.chapter2 else "SKY_STORM_SEA"   # a map of the scene's station
+            black = ("SKY_GUILD_B1F" if self.chapter2 else "SKY_MT_BRISTLE_PEAK" if self.chapter3
+                     else "SKY_STORM_SEA")   # a map of the scene's station
             rows += [f"SELECT_MAP {black}   # EoS LEVEL_S04P01A: a black screen", "SKY_SHOW_MAP FALSE"]
             self.hidden_map = True
             return
@@ -1831,6 +2043,28 @@ class Translator:
                     e.destroyed = True
         rows.append(f"SELECT_MAP {self.map_of(lv)}")
 
+    def c_back_SetBackEffect(self, s, a, me, rows, nxt):
+        # EoS's background effects (SkyChapter3.md, "The visions"): 3 the lightning in the crew
+        # room at night (one run of g01p07c's palette animation), 1 back to the plain map, 2
+        # v03p09a's two layers blended; SKY_BACK_EFFECT plays them (src/sky_back_effect.c)
+        n = ival(a[0])
+        if n in (1, 2, 3):
+            rows.append(f"SKY_BACK_EFFECT {n}   # EoS {s.src}")
+            return
+        return False
+
+    def c_back_SetEffect(self, s, a, me, rows, nxt):
+        if tuple(ival(x) for x in a) == (5, 0):
+            rows.append(f"# eos: {s.src} (with back_SetBackEffect(2): SKY_BACK_EFFECT 2 blends the layers)")
+            return
+        return False
+
+    def c_back_SetBackScrollSpeed(self, s, a, me, rows, nxt):
+        rows.append(f"SKY_BACK_SCROLL dx={speed256(a[0][1])} dy={speed256(a[1][1])}   # EoS {s.src}")
+
+    def c_bgm2_ChangeVolume(self, s, a, me, rows, nxt):
+        rows.append(f"SKY_AMBIENCE_VOLUME frames={ival(a[0])} volume={ival(a[1])}   # EoS {s.src}")
+
     def c_back_ChangeGround(self, s, a, me, rows, nxt):
         lv = re.sub(r"^LEVEL_", "", a[0][1])
         rows.append(f"SKY_CHANGE_GROUND map={self.map_of(lv)}   # EoS {s.src.rstrip(';')}: the actors stay")
@@ -1844,6 +2078,16 @@ class Translator:
                         "SELECT_MAP (src/chapter_titles.c, queued by EVENT_DIVIDE)")
             rows.append(f"SELECT_MAP {self.map_of(self.level)}   # the chapter card, before the scene's pictures")
             self.banner = True
+            return
+        if self.chapter3 and title == "The Scream":
+            # chapter 3's card (src/chapter_titles.c): SKY_CHAPTER_CARD queues it, the next map load shows it
+            rows.append(f"SKY_CHAPTER_CARD 3   # EoS chapter card \"{title}\" ({s.src.split('{')[0].strip()})")
+            rows.append(f"SELECT_MAP {self.map_of(self.level)}   # the chapter card shows at this map load")
+            self.banner = True
+            return
+        if self.chapter3:
+            rows.append(f"# eos: a later chapter's card \"{title}\" ({s.src.split('{')[0].strip()}): "
+                        "not in the demo (chapter 3 is the last)")
             return
         rows.append(f"# TODO eos: chapter card \"{title}\" ({s.src.split('{')[0].strip()}): "
                     "sky_chapter_card / chapter_titles.h")
@@ -1872,6 +2116,11 @@ class Translator:
             rows.append(f"SELECT_OBJECTS group=-1 sector={n}   # EoS supervision_Acting({n})")
         else:
             rows.append(f"# eos: {s.src} (only the camera's performer)")
+        if n == 0 and getattr(self, "pending_fade_in", False) and me is None:
+            # the scene went on on the map as it was: it shows once its actors are back
+            rows += ["FADE_IN wait=TRUE frames=0   # (the map as it was)", "SET_PLACE_MODE 4"]
+            self.pending_fade_in = False
+            self.faded_in, self.screen = True, "shown"
 
     def c_supervision_RemoveActing(self, s, a, me, rows, nxt):
         n = ival(a[0])
@@ -1988,11 +2237,25 @@ class Translator:
         rows.append(f"# eos: {s.src.rstrip(';')}: the GBA's event scripts chain the scenes "
                     "(src/data/ground/sky/sky_ch2_events.h)")
 
+    def c_supervision_ExecuteCommon(self, s, a, me, rows, nxt):
+        # a free-roam script starts the next story coroutine (chapter 3: sky_ch3_events.h)
+        ev = CH3_EVENTS.get(a[0][1]) if self.chapter3 and a else None
+        if ev is None:
+            return False
+        rows.append(f"EXECUTE_FUNCTION {ev}   # EoS {s.src}")
+
     c_supervision_ExecuteStationCommon = c_supervision_LoadStation = c_supervision_ExecuteActing = flow
     c_main_SetGround = c_back_SetDungeonBanner = flow
 
     def c_main_EnterDungeon(self, s, a, me, rows, nxt):
         d = ival(a[0])
+        if self.chapter3:
+            if d == -1:      # EoS enters the dungeon set just before, after its team set-up menu
+                rows.append(f"# eos: {s.src} (the dungeon entered above)")
+                return
+            if d in DUNGEONS_CH3:
+                rows.append(f"NEXT_DUNGEON frames={ival(a[1]) or 30} dungeon={DUNGEONS_CH3[d]}   # EoS main_EnterDungeon({d})")
+                return
         if d not in DUNGEONS:
             return False
         name = DUNGEONS[d]
@@ -2069,7 +2332,9 @@ def entity_script(e: Entity) -> list:
     if e.own:
         out.append(f"    # EoS: its own coroutine (def ... for {'object' if e.is_object else 'actor'} {e.eos})")
         out += render_rows(e.own)
-        if e.batches:
+        if e.batches and getattr(e, "handed_over", False):
+            out.append("    # (then the station's commands, below)")
+        elif e.batches:
             out.append("    # TODO eos: the station also sends this one commands (below), which its own coroutine never reaches")
     if not e.batches:
         if not e.own:
@@ -2141,8 +2406,9 @@ def renumber_labels(model) -> dict:
 class SceneFile:
     """The scripts of one map: one group each."""
 
-    def __init__(self, level, rom=None, prefix=None, debug_file=None, first_group=0):
+    def __init__(self, level, rom=None, prefix=None, debug_file=None, first_group=0, chapter=None):
         self.level = level
+        self.chapter = chapter
         self.rom = rom
         self.prefix, self.debug_file, self.first_group = prefix, debug_file, first_group
         self.groups = []      # (Translator, eos script name)
@@ -2150,8 +2416,9 @@ class SceneFile:
         self.notes = []
         self.item_names, self.item_consts = {}, {}
 
-    def add(self, text, ssa):
-        tr = Translator(text, ssa, group=self.first_group + len(self.groups), rom=self.rom, notes=self.notes)
+    def add(self, text, ssa, sector=None):
+        tr = Translator(text, ssa, group=self.first_group + len(self.groups), rom=self.rom, notes=self.notes,
+                        chapter=self.chapter, sector=sector)
         tr.slots = self.slots
         tr.item_names, tr.item_consts = self.item_names, self.item_consts
         for e in tr.ents:
@@ -2494,6 +2761,64 @@ def chapter2_station(rom, out: Path) -> int:
     return 0
 
 
+# Chapter 3 in play order (SkyChapter3.md, "What plays"): (level, script, EoS sector), one
+# group each on chapter 3's station gs181 from CHAPTER3_FIRST_GROUP (the groups before it are
+# its free roam, made by hand). EoS's coroutines run some scripts with a sector
+# (supervision_ExecuteActingSub's third argument), which picks a `switch (sector())` case.
+# Not here: m03a1101 ("It's impossible to go any farther", a later visit to the peak) and
+# m03d0813 (after m03a0801's `hold`: never reached).
+CHAPTER3_FIRST_GROUP = 20
+CHAPTER3_STATION = [
+    # the morning after chapter 2: the card (EVENT_DIVIDE at (4, 0): EVENT_HA_KI), the address
+    ("G01P07A", "c00a0201", 0), ("G01P04A", "c00a0101", 2),
+    # EVENT_M03_01B
+    ("G01P04A", "m03a0101", 0), ("G01P03A", "m03a0102", 0), ("G01P04A", "m03a0105", 0),
+    ("G01P01A", "m03a0106", 0), ("P01P01A", "m00p1101", 0), ("T01P01A", "m03a0107", 0),
+    ("T01P02A", "m03a0108", 0), ("T01P01A", "m03a0109", 0),
+    # EVENT_M03_02, EVENT_M03_03
+    ("T01P01A", "m03a0201", 0),
+    ("T01P02A", "m03a0301", 0), ("S04P01A", "c00a0701", 0), ("T01P02A", "m03d0313", 0),
+    ("S04P01A", "c00a1701", 0), ("T01P02A", "m03d0314", 0),
+    # EVENT_M03_04 (m03d0812 in sector 1)
+    ("T01P01A", "m03a0401", 0), ("D03P41A", "m03d0812", 1), ("T01P01A", "m03a0403", 0),
+    # EVENT_M03_05_06 (m03a0501, Bidoof at B1F asking, is G01P03A's free roam: made by hand)
+    ("G01P03A", "m03a0502", 0), ("V03P03A", "m03a0505", 0),
+    ("G01P03A", "m03a0506", 0), ("P01P01A", "m03a0511", 0), ("D03P11A", "m03a0601", 0),
+    # EVENT_M03_08 and the re-fight
+    ("D03P41A", "m03a0801", 0), ("D03P41A", "m03a0901", 0),
+    # EVENT_M03_10_13 (c00a0501 / c00a0601: chapter 2's groups 17 and 18 on gs180)
+    ("D03P41A", "m03a1001", 0), ("D03P11A", "m03a1002", 0), ("G01P03A", "m03a1201", 0),
+    ("D03P41A", "m03d0812", 0), ("G01P03A", "m03a1203", 0),
+    ("V03P05C", "m03a1301", 0), ("G01P07C", "m03a1302", 0), ("V03P05C", "m03a1303", 0),
+    ("G01P07C", "m03a1304", 0), ("V03P06A", "m03a1305", 0), ("V03P07A", "m03a1306", 0),
+    ("V03P08A", "m03a1307", 0), ("V03P09A", "m03a1308", 0), ("V03P05C", "m03a1309", 0),
+    ("V03P11A", "m03a1310", 0), ("G01P07C", "m03a1311", 0), ("V03P11A", "m03a1312", 0),
+    ("V03P06A", "m03a1313", 0), ("V03P12A", "m03a1314", 0),
+    # EVENT_M03_07A / 07B: fainted on Mt. Bristle (c00a0201 again: the first group)
+    ("G01P03A", "m03a0701", 0), ("G01P04A", "m03a0702", 0),
+]
+
+
+def chapter3_station(rom, out: Path) -> int:
+    """All of chapter 3 as one draft of gs181's scene file (groups CHAPTER3_FIRST_GROUP.., in play order)."""
+    if rom is None:
+        raise SystemExit("--chapter3-station needs the EoS ROM")
+    sf = SceneFile("D02P02", rom, prefix="s_gs181_", debug_file="src/data/ground/sky/ground_data_d02p02_station.h",
+                   first_group=CHAPTER3_FIRST_GROUP, chapter=3)
+    load_items(rom, sf)
+    for level, name, sector in CHAPTER3_STATION:
+        sf.add(*rom.load(f"SCRIPT/{level}/{name}"), sector=sector)
+    out.write_text(sf.text(["Explorers of Sky chapter 3 on its station gs181 (SkyChapter3.md), in play order.",
+                            f"Draft: translated by tools/event_editor/eos_import.py --chapter3-station; groups 0-"
+                            f"{CHAPTER3_FIRST_GROUP - 1}",
+                            "(free roam) are hand-made. Hand-tune it; `TODO eos` marks what was not translated."]))
+    st = sf.stats()
+    print(f"{out}: {len(sf.groups)} groups, {st['translated']} commands translated, {st['todo']} TODO")
+    for n in sf.notes:
+        print(f"note: {n}", file=sys.stderr)
+    return 0
+
+
 NEEDS_KINDS = {"map": "Ground maps (MAP_*)", "lives": "Actors (SKY_LIVES_*)", "object": "Objects (SKY_OBJ_*)",
                "music": "Music (MUS_SKY_*)", "cg": "Story CGs (SKY_CUTAWAY_*)",
                "se": "Sound effects (SE_SKY_*: convert_eos_se.py)", "item": "Items (ITEM_*)",
@@ -2570,8 +2895,12 @@ def main(argv=None) -> int:
     ap.add_argument("--chapter2", metavar="DIR", help="translate all of chapter 2's scripts (CHAPTER2) into DIR")
     ap.add_argument("--chapter2-station", metavar="FILE",
                     help="all of chapter 2 in play order as one draft of gs180's scene file (CHAPTER2_STATION)")
+    ap.add_argument("--chapter3-station", metavar="FILE",
+                    help="all of chapter 3 in play order as one draft of gs181's scene file (CHAPTER3_STATION)")
     args = ap.parse_args(argv)
     rom = Rom(args.rom) if args.rom else None
+    if args.chapter3_station:
+        return chapter3_station(rom, Path(args.chapter3_station))
     if args.chapter2:
         return chapter2(rom, Path(args.chapter2))
     if args.chapter2_station:

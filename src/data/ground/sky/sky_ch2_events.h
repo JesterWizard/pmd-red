@@ -82,12 +82,13 @@ static const struct ScriptCommand s_script_SKY_CH2_START[] = {
     JUMP_SCRIPT(EVENT_DIVIDE),
 };
 
-/* The demo end, after chapter 2's good night (m02a1003 sets (4, 0)): save,
+/* The demo end, after chapter 3's last scene (m03a1314; EoS sets its
+ * $SCENARIO_MAIN_BIT_FLAG[10] and goes on with chapter 4): save,
  * "the demo ends here", back to the title. Also run on Continue from a save
  * made here (src/ground_main.c). */
 static const struct ScriptCommand s_script_SKY_DEMO_END[] = {
     DEBUGINFO_O(1889),
-    SCENARIO_CALC(SCENARIO_MAIN,  4,  0), /* chapter 2 done: Continue comes back here */
+    SET_ARRAYVAL(SKY_SCENARIO_MAIN_BIT_FLAG, SKY_CH3_FLAG_DONE, 1), /* chapter 3 done: Continue comes back here */
     SET_PLACE_MODE(1),
     BGM_STOP,
     FADE_OUT(TRUE, 0),
@@ -117,7 +118,7 @@ static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_DEBUG[] = {
 };
 
 /* EoS EVENT_M02_09_10: the pearl, the job done, dinner, good night; then the
- * demo end (EoS: EVENT_DIVIDE into chapter 3). */
+ * morning of chapter 3: EVENT_DIVIDE at (4, 0) (sky_ch3_events.h). */
 static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_CLEARED[] = {
     DEBUGINFO_O(1891),
     SET_RESCUE_CONQUERED(RESCUE_DUNGEON_THUNDERWAVE_CAVE),
@@ -127,7 +128,7 @@ static const struct ScriptCommand s_script_SKY_DRENCHED_BLUFF_CLEARED[] = {
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_B2F, 17, 0),               /* c00a0501: "Dinner's on!" */
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_MESS_HALL, 18, 0),         /* c00a0601: dinner */
     EXECUTE_SUBSTATION(MAP_SKY_GUILD_CREW_ROOM_NIGHT, 19, 0),   /* m02a1003 (4, 0): good night */
-    JUMP_SCRIPT(SKY_DEMO_END_EVENT),
+    JUMP_SCRIPT(EVENT_DIVIDE),                                   /* EoS EVENT_DIVIDE: chapter 3 */
 };
 
 /* EoS EVENT_M02_05_07A (fainted in Drenched Bluff, or EVENT_DIVIDE at (3, 3)):

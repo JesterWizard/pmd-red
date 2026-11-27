@@ -239,21 +239,21 @@ song sky_se_1412,  5,  5    @ 534: SE_NUM_EVENT_MOTION_CLAP_02_L
 song sky_se_2207,  5,  5    @ 535: SE_NUM_EVENT_MOTION_DOOR
 song sky_se_2209,  5,  5    @ 536: SE_NUM_DUN_MOTION_MONEY
 song sky_se_2312,  5,  5    @ 537: SE_NUM_EVENT_SIGN_NOTICE_05
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
+song sky_se_140c,  5,  5    @ 538: SE_NUM_EVENT_EFF_JIKUU_WIPE
+song sky_se_140d,  5,  5    @ 539: SE_NUM_EVENT_EFF_JIKUU_MEMAI
+song sky_se_1413,  5,  5    @ 540: SE_NUM_EVENT_EFF_JIKUU_WIPE_02
+song sky_se_190c,  5,  5    @ 541: SE_NUM_EVENT_MAIN03_RURIRI
+song sky_se_190d,  5,  5    @ 542: SE_NUM_EVENT_MAIN03_RINGO
+song sky_se_190e,  5,  5    @ 543: SE_NUM_EVENT_MAIN03_SLEEP_01
+song sky_se_190f,  5,  5    @ 544: SE_NUM_EVENT_MAIN03_SIREN
+song sky_se_1910,  5,  5    @ 545: SE_NUM_EVENT_MAIN03_KABE
+song sky_se_1911,  5,  5    @ 546: SE_NUM_EVENT_MAIN03_SLEEP_02
+song sky_se_1912,  5,  5    @ 547: SE_NUM_EVENT_MAIN03_JIBACOIL
+song sky_se_1914,  5,  5    @ 548: SE_NUM_EVENT_MAIN03_JUPUTORU_01_L
+song sky_se_1915,  5,  5    @ 549: SE_NUM_EVENT_MAIN03_JUPUTORU_02
+song sky_se_1918,  5,  5    @ 550: SE_NUM_EVENT_MAIN03_THUNDER_01
+song sky_se_2210,  5,  5    @ 551: SE_NUM_DUN_MOTION_HUNGRY
+song sky_se_2306,  5,  5    @ 552: SE_NUM_EVENT_SIGN_NOTICE_03
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0

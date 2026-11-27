@@ -176,6 +176,8 @@ extern u8 gSkyBossExp;
 #define MUS_SKY_OCEAN                       70 /* EoS BGM_OCEAN1 (bgm0100): the waves */
 #define MUS_SKY_FIRE_CRACKLING              71 /* EoS BGM_FIRE_CRACKLING_LOUDER (bgm0116): the guild's torches */
 #define MUS_SKY_EATING                      72 /* EoS BGM_EATING (bgm0126): dinner in the mess hall (c00a0601), a clip */
+#define MUS_SKY_STORM_INSIDE                73 /* EoS BGM_STORM_INSIDE (bgm0102): the storm heard from the crew room (chapter 3) */
+#define MUS_SKY_EARTHQUAKE1                 74 /* EoS BGM_EARTHQUAKE1 (bgm0103): the rumble at the outlaw board (chapter 3) */
 /* Sky Jukebox range (src/data/sky_jukebox_data.h, SKY_JUKEBOX_FIRST_SONG):
  * chapter 2's songs play the jukebox's conversion. */
 #define MUS_SKY_WIGGLYTUFFS_GUILD           940 /* EoS BGM_WIGGLYTUFFS_GUILD (bgm 7) */
@@ -185,6 +187,12 @@ extern u8 gSkyBossExp;
 #define MUS_SKY_DRENCHED_BLUFF              944 /* EoS BGM_DRENCHED_BLUFF (bgm 22, dungeon music 2) */
 #define MUS_SKY_MT_BRISTLE                  950 /* EoS BGM_MT_BRISTLE (bgm 23, dungeon music 3) */
 #define MUS_SKY_JOB_CLEAR                   945 /* EoS BGM_JOB_CLEAR (bgm 5) */
+/* chapter 3 (documentation/Features/SkyChapter3.md): Sky Jukebox songs */
+#define MUS_SKY_TREASURE_TOWN               946 /* EoS BGM_TREASURE_TOWN (bgm 9) */
+#define MUS_SKY_HEARTWARMING                947 /* EoS BGM_HEARTWARMING */
+#define MUS_SKY_GROWING_ANXIETY             948 /* EoS BGM_GROWING_ANXIETY */
+#define MUS_SKY_OH_NO                       949 /* EoS BGM_OH_NO */
+#define MUS_SKY_TIME_GEAR_REMIX             951 /* EoS BGM_TIME_GEAR_REMIX */
 
 /* EoS scene sound effects with no Red equivalent (song table slots that are
  * empty in Red; tools/eos_music/sky_red_se_map.py). */
@@ -208,6 +216,22 @@ extern u8 gSkyBossExp;
 #define SE_SKY_DOOR                         535 /* SE_NUM_EVENT_MOTION_DOOR (0x2207): Wigglytuff's door */
 #define SE_SKY_REWARD_MONEY                 536 /* SE_NUM_DUN_MOTION_MONEY (0x2209): the reward's Poké */
 #define SE_SKY_NOTICE_5                     537 /* SE_NUM_EVENT_SIGN_NOTICE_05 (0x2312) */
+/* chapter 3's scene SEs (tools/eos_music/sky_red_se_map.py, SkyChapter3.md) */
+#define SE_SKY_VISION_START                 538 /* SE_NUM_EVENT_EFF_JIKUU_WIPE (0x140C): the dizzy spell */
+#define SE_SKY_DIZZY                        539 /* SE_NUM_EVENT_EFF_JIKUU_MEMAI (0x140D) */
+#define SE_SKY_VISION_CUT                   540 /* SE_NUM_EVENT_EFF_JIKUU_WIPE_02 (0x1413): the scream, to white */
+#define SE_SKY_AZURILL                      541 /* SE_NUM_EVENT_MAIN03_RURIRI (0x190C): Azurill trips */
+#define SE_SKY_APPLE                        542 /* SE_NUM_EVENT_MAIN03_RINGO (0x190D) */
+#define SE_SKY_BUMP                         543 /* SE_NUM_EVENT_MAIN03_SLEEP_01 (0x190E): Drowzee bumps the hero */
+#define SE_SKY_SIREN                        544 /* SE_NUM_EVENT_MAIN03_SIREN (0x190F): the outlaw board alarm */
+#define SE_SKY_PANEL_TURN                   545 /* SE_NUM_EVENT_MAIN03_KABE (0x1910): the outlaw board */
+#define SE_SKY_DROWZEE_DOWN                 546 /* SE_NUM_EVENT_MAIN03_SLEEP_02 (0x1911): Drowzee beaten */
+#define SE_SKY_MAGNEZONE                    547 /* SE_NUM_EVENT_MAIN03_JIBACOIL (0x1912) */
+#define SE_SKY_GROVYLE_RUN                  548 /* SE_NUM_EVENT_MAIN03_JUPUTORU_01_L (0x1914), loops */
+#define SE_SKY_ROCK_CRUMBLE                 549 /* SE_NUM_EVENT_MAIN03_JUPUTORU_02 (0x1915) */
+#define SE_SKY_THUNDER                      550 /* SE_NUM_EVENT_MAIN03_THUNDER_01 (0x1918) */
+#define SE_SKY_STOMACH                      551 /* SE_NUM_DUN_MOTION_HUNGRY (0x2210) */
+#define SE_SKY_NOTICE_3                     552 /* SE_NUM_EVENT_SIGN_NOTICE_03 (0x2306) */
 
 #ifndef __ASSEMBLER__
 s32 SkyStory_GetDungeonBgm(s32 defaultSong);
@@ -353,6 +377,32 @@ void GroundMap_SkyRestartPaletteAnims(void);
 #define SKY_MT_BRISTLE_CLEARED_EVENT        EVENT_M01E02B_L005
 #define SKY_MT_BRISTLE_FAINTED_EVENT        EVENT_M01E02B_L006
 #define SKY_MT_BRISTLE_PEAK_CLEARED_EVENT   EVENT_M01E02B_L008
+/* Chapter 3 (documentation/Features/SkyChapter3.md, "What plays") runs in
+ * Red's chapter 4 event slots (EVENT_M01E03A_*), which the sky build never
+ * reaches; the events are in src/data/ground/sky/sky_ch3_events.h and play
+ * gs181's groups (events/sky/scenes/sky_d02p02_scenes.scene).
+ *   SKY_CH3_MORNING_EVENT: EVENT_DIVIDE at (4, 0) (chapter 2's good night):
+ *     EoS EVENT_HA_KI, c00a0201 (chapter 3's card, the morning, the save),
+ *     then free roam in the crew room.
+ *   SKY_CH3_ADDRESS_EVENT: leaving the crew room after a morning (EoS
+ *     $SCENARIO_MAIN_BIT_FLAG[1]): the morning address (c00a0101), then B2F at
+ *     (4, 0) (EoS EVENT_HA_CHO) or, after fainting, m03a0702 (EVENT_M03_07B).
+ *   SKY_CH3_TOWN_EVENT: EoS EVENT_M03_01B (B2F's triggers): Treasure Town.
+ *   SKY_CH3_DETOUR_EVENT: EVENT_M03_02 (the square's east edge at (4, 1)).
+ *   SKY_CH3_KECLEON_EVENT: EVENT_M03_03 (the Kecleon brothers at (4, 1)).
+ *   SKY_CH3_VISION_EVENT: EVENT_M03_04 (the square at (4, 2)): the vision.
+ *   SKY_CH3_OUTLAW_EVENT: EVENT_M03_05_06 (Bidoof at B1F, "Yes"): the outlaw
+ *     board, Drowzee's poster, Mt. Bristle.
+ *   SKY_CH3_START: make DEBUG_BOOT_EVENT=SKY_CH3_START (scenario (4, 0), then
+ *     EVENT_DIVIDE: the card and chapter 3). */
+#define SKY_CH3_MORNING_EVENT      EVENT_M01E03A_L000
+#define SKY_CH3_ADDRESS_EVENT      EVENT_M01E03A_L001
+#define SKY_CH3_TOWN_EVENT         EVENT_M01E03A_L002
+#define SKY_CH3_DETOUR_EVENT       EVENT_M01E03A_L003
+#define SKY_CH3_KECLEON_EVENT      EVENT_M01E03A_L004
+#define SKY_CH3_VISION_EVENT       EVENT_M01E03A_L005
+#define SKY_CH3_OUTLAW_EVENT       EVENT_M01E03A_L006
+#define SKY_CH3_START              EVENT_M01E03A_L007
 /* EoS's $SCENARIO_MAIN_BIT_FLAG (story flags kept in the save): Red's
  * EVENT_T01P01, Pokémon Square's flags, which the sky build has no use for
  * (no save-layout change). Bit 8 (EoS's): the good night of chapter 2 was
@@ -362,6 +412,14 @@ void GroundMap_SkyRestartPaletteAnims(void);
 /* Bit 7 (EoS's): the morning after fainting in Drenched Bluff was saved
  * (c00a0201); Continue goes on with EVENT_M02_07B. */
 #define SKY_CH2_FLAG_FAINTED_MORNING 7
+/* Chapter 3: bit 1 (EoS's): a morning was played (c00a0201), the morning
+ * address comes when the team leaves the crew room; bit 7 at scenario (4, 0):
+ * the morning was saved, Continue goes on in free roam (not the card again);
+ * bit 10 (EoS's, set after m03a1314): chapter 3 is done, Continue shows the
+ * demo end. */
+#define SKY_CH3_FLAG_ADDRESS       1
+#define SKY_CH3_FLAG_MORNING       7
+#define SKY_CH3_FLAG_DONE          10
 bool8 SkyStory_SaveGame(void);
 void SkyStory_DemoToTitle(void);
 void SkyBubbles_DrawCutaway(void);

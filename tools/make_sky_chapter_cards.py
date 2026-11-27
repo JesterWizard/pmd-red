@@ -32,7 +32,7 @@ GEN_C = ROOT / "src" / "chapter_cards_data.c"
 CHAPTERS = [
     "A Storm at Sea",
     "The New\nGuild Recruits",  # EoS m02a0101 (two lines)
-    "Into Sinister Woods",
+    "The Scream",  # EoS c00a0201 (scenario (4, 0))
     "Thunder on the Mountain",
     "The Hill of the Ancients",
     "The Ninetales Legend",
@@ -74,8 +74,9 @@ class Banner:
 # Chapter -> (EoS level shown behind the title, brightness, view centre):
 # EoS back_SetBanner2(LEVEL, 0, x, y, lines, text) shows the level around
 # (x, y): m01a0101 Sharpedo Bluff (V01P02A, 120, 96), m02a0101 the crew
-# room at night (G01P07C, 148, 168).
-BACKGROUNDS = {1: ("v01p02a", 0.44, (120, 96)), 2: ("g01p07c", 0.44, (148, 168))}
+# room at night (G01P07C, 148, 168), c00a0201 (chapter 3) S21P01A (128, 96).
+BACKGROUNDS = {1: ("v01p02a", 0.44, (120, 96)), 2: ("g01p07c", 0.44, (148, 168)),
+               3: ("s21p01a", 0.44, (128, 96))}  # c00a0201: back_SetBanner2(LEVEL_S21P01A, 0, 128, 96, 3)
 LINE_GAP = 22  # a two-line title's second line, under the first
 
 

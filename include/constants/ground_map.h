@@ -277,6 +277,17 @@ enum GroundMapID
     MAP_SKY_SENTRY_POST,     /* EoS v02p03a: the shaft under the grate, Diglett's post (m02a0104) */
     MAP_SKY_KIT_OPEN,        /* EoS v02p08a: the Exploration Team Kit, opened (m02a0110) */
     MAP_SKY_GUILD_DUSK2,     /* g01p01b2 (MAP_SKY_GUILD_DUSK's files) on gs180: m02a0101 */
+    /* chapter 3's scenes and free roam on the guild's (and the beach's) maps:
+     * the same files under map ids that run chapter 3's station gs181
+     * (SELECT_MAP also picks the station file) */
+    MAP_SKY_GUILD_1F_CH3,
+    MAP_SKY_GUILD_B1F_CH3,
+    MAP_SKY_GUILD_B2F_CH3,
+    MAP_SKY_GUILD_WIGGLYTUFF_CH3,
+    MAP_SKY_GUILD_MESS_HALL_CH3,
+    MAP_SKY_GUILD_CREW_ROOM_CH3,
+    MAP_SKY_GUILD_CREW_ROOM_NIGHT_CH3,
+    MAP_SKY_BEACH_DAY_CH3,
 #endif
     MAP_COUNT,
 };

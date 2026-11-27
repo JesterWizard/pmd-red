@@ -220,6 +220,25 @@
 /* EoS back_ChangeGround: show another map's picture under the actors and
  * objects on the map (SELECT_MAP deletes them); the camera stays. */
 #define SKY_CHANGE_GROUND(map)          SPECIAL_PROCESS(0x75, map)
+/* EoS back_SetBanner2: queue chapter n's card (src/chapter_titles.c); the next
+ * map load (SELECT_MAP) shows it, as EVENT_DIVIDE's (N, 0) -> (N, 1) does. */
+#define SKY_CHAPTER_CARD(n)             SPECIAL_PROCESS(0x76, n)
+/* EoS back_SetBackEffect (src/sky_back_effect.c): 3 the lightning in the crew
+ * room at night (one run of EoS's g01p07c palette animation), 1 the plain
+ * map again, 2 v03p09a's two layers blended (with back_SetEffect(5, 0)). */
+#define SKY_BACK_EFFECT(n)              SPECIAL_PROCESS(0x77, n)
+/* EoS back_SetBackScrollSpeed: scroll the map's background by (dx, dy)/256
+ * pixels a frame until it is set to (0, 0) or the map changes. */
+#define SKY_BACK_SCROLL(dx, dy)         SPECIAL_PROCESS_EX(0x78, dx, dy)
+/* EoS bgm2_ChangeVolume: the ambience's volume (0-255) over frames. */
+#define SKY_AMBIENCE_VOLUME(frames, volume) SPECIAL_PROCESS_EX(0x79, frames, volume)
+/* EoS's dizzy spell (c00a0701 / c00a1701, effects 621 / 635): 0 into the
+ * vision, 1 out of it; plays to its end. */
+#define SKY_VISION(n)                   SPECIAL_PROCESS(0x7A, n)
+/* Go to another ground map (CMD_BYTE_01, Red's "ground select": the walk off
+ * a map's edge): the map's enter script then runs with GROUND_ENTER = map,
+ * GROUND_GETOUT = the map left and GROUND_ENTER_LINK = link (the entry). */
+#define SKY_GOTO_MAP(map, link)         { CMD_BYTE_01, link, -1, map, 0, NULL }
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

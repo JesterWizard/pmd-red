@@ -864,5 +864,13 @@ const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_SKY_SENTRY_POST] = &gGroundScript_gs180,
     [MAP_SKY_KIT_OPEN] = &gGroundScript_gs180,
     [MAP_SKY_GUILD_DUSK2] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_1F_CH3] = &gGroundScript_gs181,
+    [MAP_SKY_GUILD_B1F_CH3] = &gGroundScript_gs181,
+    [MAP_SKY_GUILD_B2F_CH3] = &gGroundScript_gs181,
+    [MAP_SKY_GUILD_WIGGLYTUFF_CH3] = &gGroundScript_gs181,
+    [MAP_SKY_GUILD_MESS_HALL_CH3] = &gGroundScript_gs181,
+    [MAP_SKY_GUILD_CREW_ROOM_CH3] = &gGroundScript_gs181,
+    [MAP_SKY_GUILD_CREW_ROOM_NIGHT_CH3] = &gGroundScript_gs181,
+    [MAP_SKY_BEACH_DAY_CH3] = &gGroundScript_gs181,
 #endif
 };

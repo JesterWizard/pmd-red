@@ -73,8 +73,8 @@ song seq_069,  0,  0
 song seq_070,  0,  0
 song seq_071,  0,  0
 song seq_072,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
+song seq_073,  0,  0
+song seq_074,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0

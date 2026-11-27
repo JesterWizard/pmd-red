@@ -1939,5 +1939,77 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .unk6 = -1,
         .text = _("Wigglytuff's Guild"),
     },
+    [MAP_SKY_GUILD_1F_CH3] = {
+        /* MAP_SKY_GUILD_1F's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_1F,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_B1F_CH3] = {
+        /* MAP_SKY_GUILD_B1F's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_B1F,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_B2F_CH3] = {
+        /* MAP_SKY_GUILD_B2F's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_B2F,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_WIGGLYTUFF_CH3] = {
+        /* MAP_SKY_GUILD_WIGGLYTUFF's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_WIGGLYTUFF,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_MESS_HALL_CH3] = {
+        /* MAP_SKY_GUILD_MESS_HALL's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_MESS_HALL,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_CREW_ROOM_CH3] = {
+        /* MAP_SKY_GUILD_CREW_ROOM's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 1,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_CREW_ROOM,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_CREW_ROOM_NIGHT_CH3] = {
+        /* MAP_SKY_GUILD_CREW_ROOM_NIGHT's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 1,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_CREW_ROOM_NIGHT,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_BEACH_DAY_CH3] = {
+        /* MAP_SKY_BEACH_DAY's files; a map id of its own so that SELECT_MAP
+         * selects chapter 3's station (gs181) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_BEACH_DAY,
+        .unk6 = -1,
+        .text = _("Beach"),
+    },
 #endif
 };

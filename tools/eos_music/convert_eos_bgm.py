@@ -80,6 +80,12 @@ SONGS = [
     # EoS bgm0126 "Eating" (BGM_EATING): the crew eating dinner (c00a0601), a
     # clip that does not loop.
     (72, 126, "sky_eating"),
+    # EoS bgm0102 "Storm (Inside)" (BGM_STORM_INSIDE): the storm heard from the
+    # crew room at night (chapter 3: m03a1302, m03a1304, m03a1311).
+    (73, 102, "sky_storm_inside"),
+    # EoS bgm0103 "Earthquake1" (BGM_EARTHQUAKE1): the rumble under the outlaw
+    # board (chapter 3: m03a0502, m03a0506 on the second BGM player).
+    (74, 103, "sky_earthquake"),
 ]
 
 RENDER_SECONDS = 90

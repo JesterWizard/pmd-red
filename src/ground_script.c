@@ -1,6 +1,7 @@
 #include "global.h"
 #include "globaldata.h"
 #include "ground_script.h"
+#include "chapter_titles.h"
 #include "constants/dungeon.h"
 #include "constants/friend_area.h"
 #include "constants/item.h"
@@ -4308,6 +4309,10 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
             gUnknown_2039A34 = gUnknown_2039A32;
             SetScriptVarValue(NULL, GROUND_MAP, gCurrentMap);
             GroundMap_Select(gUnknown_2039A32);
+            return 0;
+        case 0x76:
+            /* SKY_CHAPTER_CARD(n): EoS back_SetBanner2 (c00a0201's chapter 3 card) */
+            ChapterTitles_QueueCard((s32)r2);
             return 0;
 #endif
         case 0x4B: {

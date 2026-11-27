@@ -51,7 +51,13 @@ static const ChapterTitle sChapterTitles[CHAPTER_TITLE_COUNT] = {
 #else
     {  3, FRIEND_AREA_MT_CLEFT,         _("Chapter 2"),  _("The Rescue Team Begins") },    /* Thunderwave Cave, Mt. Steel */
 #endif
+#ifdef SKY_STORY
+    /* EoS c00a0201: chapter 3's card shows on the morning at scenario (4, 0)
+     * (SKY_CHAPTER_CARD 3); no scenario change queues it (0: never). */
+    {  0, FRIEND_AREA_SECRETIVE_FOREST, _("Chapter 3"),  _("The Scream") },
+#else
     {  5, FRIEND_AREA_SECRETIVE_FOREST, _("Chapter 3"),  _("Into Sinister Woods") },       /* Sinister Woods */
+#endif
     {  6, FRIEND_AREA_THUNDER_MEADOW,   _("Chapter 4"),  _("Thunder on the Mountain") },   /* Silent Chasm, Mt. Thunder */
     {  8, FRIEND_AREA_RAINBOW_PEAK,     _("Chapter 5"),  _("The Hill of the Ancients") },  /* Great Canyon */
     { 10, FRIEND_AREA_MT_MOONVIEW,      _("Chapter 6"),  _("The Ninetales Legend") },
@@ -92,6 +98,14 @@ void ChapterTitles_NotifyScenarioMain(s32 oldMain, s32 oldSub, s32 newMain, s32 
         }
     }
 }
+
+#ifdef SKY_STORY
+void ChapterTitles_QueueCard(s32 chapter)
+{
+    if (chapter >= 1 && chapter <= CHAPTER_TITLE_COUNT)
+        sPendingChapter = chapter;
+}
+#endif
 
 /* Text (BG0) alpha-blends over the art (BG3): 0 = invisible, 16 = opaque.
  * ToggleWindowBgBuffer reloads BLDALPHA from gUnknown_2026E4E every frame. */

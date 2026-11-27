@@ -64,7 +64,7 @@ import m4a_render  # noqa: E402
 import sedl  # noqa: E402
 import sky_soundfont  # noqa: E402
 import swdl  # noqa: E402
-from sky_red_se_map import SCENE_SE_PLAYERS, SE_MAP  # noqa: E402
+from sky_red_se_map import SCENE_SE_LOOPS, SCENE_SE_PLAYERS, SE_MAP  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 SONG_DIR = ROOT / "sound" / "songs"
@@ -542,7 +542,8 @@ def main() -> int:
     for rid, (eid, _why) in SE_MAP.items():
         prio[eid] = max(prio.get(eid, 0), red_priority(red[rid][0]))
         red_src = SONG_DIR / f"{red[rid][0]}.s"
-        loops[eid] = loops.get(eid, False) or (red_src.exists() and "GOTO" in red_src.read_text())
+        loops[eid] = (loops.get(eid, False) or (red_src.exists() and "GOTO" in red_src.read_text())
+                     or rid in SCENE_SE_LOOPS)
     for old in SONG_DIR.glob("sky_se_*.s"):
         old.unlink()
     labels = {}

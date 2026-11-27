@@ -22,6 +22,10 @@ typedef struct ChapterCardAssets
 } ChapterCardAssets;
 
 extern const ChapterCardAssets gChapterCards[CHAPTER_TITLE_COUNT];
+
+/* SKY_CHAPTER_CARD(n) (EoS back_SetBanner2): queue chapter n (1-based) for
+ * the next map load. */
+void ChapterTitles_QueueCard(s32 chapter);
 #endif
 
 /* Called by ScenarioCalc for SCENARIO_MAIN changes. */

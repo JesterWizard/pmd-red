@@ -1319,6 +1319,21 @@ static const struct ScriptCommand s_script_EVENT_DIVIDE_FIRST[] = { /* 0x8122eb8
     JUMP_SCRIPT(EVENT_M01E02A_L001),
   LABEL(13), /* = 0x0d */
     JUMP_SCRIPT(EVENT_M01E02A_L001C),
+#ifdef SKY_STORY
+  LABEL(2), /* = 0x02 */
+    /* Explorers of Sky chapter 3 (src/data/ground/sky/sky_ch3_events.h): (4, 0),
+     * chapter 2's good night, is EoS's EVENT_HA_KI (the card, the morning), unless
+     * that morning was saved (Continue goes on where it was); any other (4, x) is
+     * a map of chapter 3's free roam (a map change, the end of an event, Continue). */
+    JUMPIF_SCENE_EQ(SCENARIO_MAIN, 4, 0, /* to label */ 14),
+    EXECUTE_MAP_VAR(GROUND_ENTER),
+  LABEL(14),
+    JUMPIF_ARRAY(SKY_SCENARIO_MAIN_BIT_FLAG, SKY_CH3_FLAG_MORNING, /* to label */ 15),
+    JUMP_SCRIPT(SKY_CH3_MORNING_EVENT),
+  LABEL(15),
+    EXECUTE_MAP_VAR(GROUND_ENTER),
+#else
+#line 1322
   LABEL(2), /* = 0x02 */
     CJUMP_SCENARIO_1(SCENARIO_MAIN),
     COND_EQUAL(0, /* to label */ 14),
@@ -1343,6 +1358,8 @@ static const struct ScriptCommand s_script_EVENT_DIVIDE_FIRST[] = { /* 0x8122eb8
     JUMP_SCRIPT(EVENT_M01E02B_L004),
     UPDATE_VARINT(CALC_SET, WARP_LOCK, 0),
     EXECUTE_MAP_VAR(GROUND_ENTER),
+#endif
+#line 1346
   LABEL(3), /* = 0x03 */
     CJUMP_SCENARIO_1(SCENARIO_MAIN),
     COND_EQUAL(0, /* to label */ 20),
@@ -1910,6 +1927,7 @@ static const struct ScriptCommand s_script_EVENT_M01E01A_L002[] = { /* 0x8125270
  * after m01a0702's interlude, T01P0801, which is left out), then EVENT_DIVIDE
  * takes scenario (3, 0) to chapter 2 (src/data/ground/sky/sky_ch2_events.h). */
 #include "sky/sky_ch2_events.h"
+#include "sky/sky_ch3_events.h"
 
 static const struct ScriptCommand s_script_EVENT_M01E01A_L003[] = {
     DEBUGINFO_O(1881),
@@ -4098,32 +4116,70 @@ static const struct ScriptCommand s_script_SKY_MT_BRISTLE_PEAK_DEBUG[] = {
     RET,
 };
 
-/* EoS: after 9F, m03a0801 at D03P41A (scn[4, 5]: Azurill and Drowzee; it
- * sets scn[4, 6]) or m03a0901 (scn[4, 6]: the re-fight), each ending with
- * Drowzee's closing speech, the boss transition and main_EnterDungeon(5, 30).
- * On the GBA the scene stops before Drowzee's closing speech: the peak's
- * cutscene plays it, then the transition. Placeholder: straight to the peak. */
+/* EoS EVENT_M03_08: after 9F, m03a0801 at D03P41A (scn[4, 5]: Azurill and
+ * Drowzee; it sets scn[4, 6]) or m03a0901 (scn[4, 6]: the re-fight), each
+ * ending with Drowzee's closing speech, the boss transition and
+ * main_EnterDungeon(5, 30). On the GBA the scene stops before Drowzee's
+ * closing speech (gs181 groups 44 / 45): the peak's cutscene plays it, then
+ * the transition (src/dungeon_cutscene_mt_bristle.c). */
 static const struct ScriptCommand s_script_SKY_MT_BRISTLE_CLEARED[] = {
     DEBUGINFO_O(4041),
+    SET_PLACE_MODE(1),
+    JUMPIF_SCENE_EQ(SCENARIO_MAIN, 4, 6, /* to label */ 1),
+    EXECUTE_SUBSTATION(MAP_SKY_MT_BRISTLE_PEAK, 44, 0),   /* m03a0801 (4, 6): Azurill, Drowzee */
+    JUMP_LABEL(2),
+  LABEL(1),
+    EXECUTE_SUBSTATION(MAP_SKY_MT_BRISTLE_PEAK, 45, 0),   /* m03a0901: the re-fight */
+  LABEL(2),
     SCENARIO_CALC(SCENARIO_MAIN,  4,  6),
     NEXT_DUNGEON(-1, SCRIPT_DUNGEON_3),
     HALT,
 };
 
-/* EoS EVENT_M03_10_13: m03a1001 (d03p41a, Azurill saved; scn[4, 7]),
- * m03a1002 (d03p11a, Magnezone), ... Placeholder: cleared, then the demo end. */
+/* EoS EVENT_M03_10_13 (Drowzee beaten): Azurill saved (scn[4, 7]), Officer
+ * Magnezone, the reward, dinner (chapter 2's c00a0501 and c00a0601 on gs180),
+ * the night: the storm, the dream (the Time Gears, Grovyle); then the demo end
+ * (EoS: $SCENARIO_MAIN_BIT_FLAG[10], EVENT_HA_KI, chapter 4). */
 static const struct ScriptCommand s_script_SKY_MT_BRISTLE_PEAK_CLEARED[] = {
     DEBUGINFO_O(4042),
     SET_RESCUE_CONQUERED(RESCUE_DUNGEON_MT_STEEL),
-    SCENARIO_CALC(SCENARIO_MAIN,  4,  7),
+    SET_PLACE_MODE(1),
+    EXECUTE_SUBSTATION(MAP_SKY_MT_BRISTLE_PEAK, 46, 0),           /* m03a1001 (4, 7): Azurill saved */
+    EXECUTE_SUBSTATION(MAP_SKY_MT_BRISTLE_ENTRANCE, 47, 0),       /* m03a1002: Officer Magnezone */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_B1F_CH3, 48, 0),             /* m03a1201: the reward */
+    EXECUTE_SUBSTATION(MAP_SKY_MT_BRISTLE_PEAK, 49, 0),           /* m03d0812 (sector 0): the vision again */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_B1F_CH3, 50, 0),             /* m03a1203 */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_B2F, 17, 0),                 /* c00a0501: "Dinner's on!" (gs180) */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_MESS_HALL, 18, 0),           /* c00a0601: dinner (gs180) */
+    EXECUTE_SUBSTATION(MAP_SKY_STORM_CLOUDS, 51, 0),              /* m03a1301: the storm */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_CREW_ROOM_NIGHT_CH3, 52, 0), /* m03a1302 */
+    EXECUTE_SUBSTATION(MAP_SKY_STORM_CLOUDS, 53, 0),              /* m03a1303 */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_CREW_ROOM_NIGHT_CH3, 54, 0), /* m03a1304: the Time Gears */
+    EXECUTE_SUBSTATION(MAP_SKY_TIME_GEAR_FOREST, 55, 0),          /* m03a1305 */
+    EXECUTE_SUBSTATION(MAP_SKY_TIME_GEAR_LAKE, 56, 0),            /* m03a1306 */
+    EXECUTE_SUBSTATION(MAP_SKY_TIME_GEAR_VOLCANO, 57, 0),         /* m03a1307 */
+    EXECUTE_SUBSTATION(MAP_SKY_TIME_FLOW, 58, 0),                 /* m03a1308 */
+    EXECUTE_SUBSTATION(MAP_SKY_STORM_CLOUDS, 59, 0),              /* m03a1309 */
+    EXECUTE_SUBSTATION(MAP_SKY_GROVYLE_RUN, 60, 0),               /* m03a1310: the dream */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_CREW_ROOM_NIGHT_CH3, 61, 0), /* m03a1311 */
+    EXECUTE_SUBSTATION(MAP_SKY_GROVYLE_RUN, 62, 0),               /* m03a1312 */
+    EXECUTE_SUBSTATION(MAP_SKY_TIME_GEAR_FOREST, 63, 0),          /* m03a1313: Grovyle takes the Time Gear */
+    EXECUTE_SUBSTATION(MAP_SKY_GROVYLE_CLOSEUP, 64, 0),           /* m03a1314 */
     JUMP_SCRIPT(SKY_DEMO_END_EVENT),
 };
 
-/* EoS EVENT_M03_07A: m03a0701 (g01p03a), m03a0702 (g01p04a); then
- * EVENT_M03_07B (back to Mt. Bristle). Placeholder: the demo end. */
+/* EoS EVENT_M03_07A (fainted, or left early, in Mt. Bristle or at the peak):
+ * m03a0701 ("That didn't end well..."), c00a0201 (the next morning, the save);
+ * then free roam in the crew room: leaving it runs EVENT_M03_07B
+ * (SKY_CH3_ADDRESS_EVENT: the address, m03a0702). */
 static const struct ScriptCommand s_script_SKY_MT_BRISTLE_FAINTED[] = {
     DEBUGINFO_O(4043),
-    JUMP_SCRIPT(SKY_DEMO_END_EVENT),
+    SET_PLACE_MODE(1),
+    UPDATE_VARINT(CALC_SET, GROUND_ENTER, MAP_SKY_GUILD_CREW_ROOM_CH3),
+    UPDATE_VARINT(CALC_SET, GROUND_ENTER_LINK, 2),
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_B1F_CH3, 65, 0),             /* m03a0701 */
+    EXECUTE_SUBSTATION(MAP_SKY_GUILD_CREW_ROOM_CH3, 20, 0),       /* c00a0201: the next morning (the save) */
+    SKY_CH3_FREE_ROAM(MAP_SKY_GUILD_CREW_ROOM_CH3, 2),
 };
 
 static const struct ScriptCommand s_script_GETOUT_M01E02B[] = {
@@ -5582,6 +5638,18 @@ const ScriptRef gFunctionScriptTable[NUM_SCRIPT_IDS] = {
     [EVENT_M01E02B_L008] =           { EVENT_M01E02B_L008,           SCRIPT_TYPE_10, _("EVENT_M01E02B_L008"),           s_script_EVENT_M01E02B_L008           },
 #endif
 #line 5434
+#ifdef SKY_STORY
+    /* Explorers of Sky chapter 3 (include/sky_story.h, src/data/ground/sky/sky_ch3_events.h) */
+    [EVENT_M01E03A_L000] =           { EVENT_M01E03A_L000,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L000"),           s_script_SKY_CH3_MORNING           },
+    [EVENT_M01E03A_L001] =           { EVENT_M01E03A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L001"),           s_script_SKY_CH3_ADDRESS           },
+    [EVENT_M01E03A_L002] =           { EVENT_M01E03A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L002"),           s_script_SKY_CH3_TOWN              },
+    [EVENT_M01E03A_L003] =           { EVENT_M01E03A_L003,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L003"),           s_script_SKY_CH3_DETOUR            },
+    [EVENT_M01E03A_L004] =           { EVENT_M01E03A_L004,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L004"),           s_script_SKY_CH3_KECLEON           },
+    [EVENT_M01E03A_L005] =           { EVENT_M01E03A_L005,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L005"),           s_script_SKY_CH3_VISION            },
+    [EVENT_M01E03A_L006] =           { EVENT_M01E03A_L006,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L006"),           s_script_SKY_CH3_OUTLAW            },
+    [EVENT_M01E03A_L007] =           { EVENT_M01E03A_L007,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L007"),           s_script_SKY_CH3_START             },
+#else
+#line 5434
     [EVENT_M01E03A_L000] =           { EVENT_M01E03A_L000,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L000"),           s_script_EVENT_M01E03A_L000           },
     [EVENT_M01E03A_L001] =           { EVENT_M01E03A_L001,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L001"),           s_script_EVENT_M01E03A_L001           },
     [EVENT_M01E03A_L002] =           { EVENT_M01E03A_L002,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L002"),           s_script_EVENT_M01E03A_L002           },
@@ -5590,6 +5658,8 @@ const ScriptRef gFunctionScriptTable[NUM_SCRIPT_IDS] = {
     [EVENT_M01E03A_L005] =           { EVENT_M01E03A_L005,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L005"),           s_script_EVENT_M01E03A_L005           },
     [EVENT_M01E03A_L006] =           { EVENT_M01E03A_L006,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L006"),           s_script_EVENT_M01E03A_L006           },
     [EVENT_M01E03A_L007] =           { EVENT_M01E03A_L007,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L007"),           s_script_EVENT_M01E03A_L007           },
+#endif
+#line 5442
     [EVENT_M01E03A_L008] =           { EVENT_M01E03A_L008,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L008"),           s_script_EVENT_M01E03A_L008           },
     [EVENT_M01E03A_L009] =           { EVENT_M01E03A_L009,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L009"),           s_script_EVENT_M01E03A_L009           },
     [EVENT_M01E03A_L010] =           { EVENT_M01E03A_L010,           SCRIPT_TYPE_10, _("EVENT_M01E03A_L010"),           s_script_EVENT_M01E03A_L010           },

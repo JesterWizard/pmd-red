@@ -106,6 +106,22 @@ SE_MAP = {
     535: (0x2207, "SE_NUM_EVENT_MOTION_DOOR: Wigglytuff's door opens for the morning address (EoS m02a0202 se_Play(8711) + back_ChangeGround)"),
     536: (0x2209, "SE_NUM_DUN_MOTION_MONEY: the reward's Poké (EoS m02a1001 se_Play(8713), WaitSe)"),
     537: (0x2312, "SE_NUM_EVENT_SIGN_NOTICE_05: a notice (EoS m02a0105, m02a0108, m02a0601, m02a0801, c00a0501 se_Play(8978))"),
+    # 538..552: chapter 3 scene SEs (documentation/Features/SkyChapter3.md), the same way.
+    538: (0x140C, "SE_NUM_EVENT_EFF_JIKUU_WIPE: the dizzy spell sets in (EoS c00a0701 se_Play(5132) + effect 621)"),
+    539: (0x140D, "SE_NUM_EVENT_EFF_JIKUU_MEMAI: the dizziness before a vision (EoS m03a0301, m03a0401 se_Play(5133))"),
+    540: (0x1413, "SE_NUM_EVENT_EFF_JIKUU_WIPE_02: the vision's scream cut to white (EoS m03d0313, m03d0812 se_Play(5139))"),
+    541: (0x190C, "SE_NUM_EVENT_MAIN03_RURIRI: Azurill trips (EoS m03a0301 se_Play(6412) + SetAnimation 22)"),
+    542: (0x190D, "SE_NUM_EVENT_MAIN03_RINGO: the apple rolls away (EoS m03a0301 se_Play(6413))"),
+    543: (0x190E, "SE_NUM_EVENT_MAIN03_SLEEP_01: Drowzee bumps the hero (EoS m03a0401 se_Play(6414))"),
+    544: (0x190F, "SE_NUM_EVENT_MAIN03_SIREN: the outlaw board's alarm (EoS m03a0502, m03a0506 se_Play(6415))"),
+    545: (0x1910, "SE_NUM_EVENT_MAIN03_KABE: the panel of the outlaw board turns (EoS m03a0502, m03a0505, m03a0506 se_Play(6416))"),
+    546: (0x1911, "SE_NUM_EVENT_MAIN03_SLEEP_02: Drowzee beaten (EoS m03a1001 se_Play(6417))"),
+    547: (0x1912, "SE_NUM_EVENT_MAIN03_JIBACOIL: Magnezone arrives (EoS m03a1002 se_Play(6418))"),
+    548: (0x1914, "SE_NUM_EVENT_MAIN03_JUPUTORU_01_L: Grovyle running through the rain, looped (EoS m03a1310, m03a1312 se_Play(6420), se_FadeOut)"),
+    549: (0x1915, "SE_NUM_EVENT_MAIN03_JUPUTORU_02: the rock crumbles under Grovyle (EoS m03a1312 se_Play(6421))"),
+    550: (0x1918, "SE_NUM_EVENT_MAIN03_THUNDER_01: thunder in the night (EoS m03a1302, m03a1303 se_Play(6424))"),
+    551: (0x2210, "SE_NUM_DUN_MOTION_HUNGRY: a stomach growls (EoS m03a1203 se_Play(8720))"),
+    552: (0x2306, "SE_NUM_EVENT_SIGN_NOTICE_03: a notice (EoS m03a0506 se_Play(8966))"),
     600: (0x101C, "SE_NUM_EFF_NIGHTMARE: effect animation #1 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
     601: (0x0705, "SE_NUM_EFF_DIVE: effect animation #2 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
     602: (0x0704, "SE_NUM_EFF_DIG: effect animation #3 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
@@ -439,4 +455,6 @@ SE_MAP = {
 # Music player (song table player fields) for the SEs put in slots that are
 # empty in Red (empty_song, player 0 = the BGM player): SE player 5, the one
 # Red's own ground-scene sounds (464, 466, 473, 482, ...) use.
-SCENE_SE_PLAYERS = {rid: 5 for rid in range(519, 538)}
+SCENE_SE_PLAYERS = {rid: 5 for rid in range(519, 553)}
+# Scene SEs in those slots that loop as EoS's do (the script stops them: se_FadeOut / se_Stop)
+SCENE_SE_LOOPS = {548}

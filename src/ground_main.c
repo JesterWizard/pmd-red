@@ -212,11 +212,16 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
                 break;
 #if defined(SKY_STORY) && !defined(DEBUG_BOOT_MAP)
             case STARTMODE_CONTINUE_GAME:
-                /* The demo ends after chapter 2: a finished save goes back to
+                /* The demo ends after chapter 3: a finished save (EoS's
+                 * $SCENARIO_MAIN_BIT_FLAG[10], set after m03a1314) goes back to
                  * the demo-end message. Earlier saves go on through
-                 * EVENT_DIVIDE (chapter 2's start, or its morning). */
-                if (!ScriptVarScenarioBefore(SCENARIO_MAIN, 4, 0))
-                    scriptID = SKY_DEMO_END_EVENT;
+                 * EVENT_DIVIDE: chapter 2's start or its morning; chapter 3's
+                 * morning (scenario (4, 0)) or its free roam (any other
+                 * (4, x): the map GROUND_ENTER, src/data/ground/sky/sky_ch3_events.h). */
+                if (!ScriptVarScenarioBefore(SCENARIO_MAIN, 4, 0)) {
+                    if (GetScriptVarArrayValue(NULL, SKY_SCENARIO_MAIN_BIT_FLAG, SKY_CH3_FLAG_DONE))
+                        scriptID = SKY_DEMO_END_EVENT;
+                }
                 /* Saved on the morning after fainting in Drenched Bluff
                  * (scenario (3, 3) to (3, 5)): back to the bluff from there
                  * (EVENT_DIVIDE would send (3, 4) and (3, 5) to the map). */
