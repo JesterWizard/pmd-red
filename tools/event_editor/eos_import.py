@@ -89,7 +89,7 @@ ACTORS = {
     "NPC_BIPPA_SIS": ("BIDOOF_SIS", "SKY_LIVES_BIDOOF"),
     "NPC_JIBAKOIRU": ("MAGNEZONE", "SKY_LIVES_MAGNEZONE"),
     "NPC_KOIRU": ("MAGNEMITE", "SKY_LIVES_MAGNEMITE"),
-    "NPC_KOIRU2": ("MAGNEMITE2", "SKY_LIVES_MAGNEMITE"),
+    "NPC_KOIRU2": ("MAGNEMITE2", "SKY_LIVES_MAGNEMITE2"),
     "NPC_JUPUTORU": ("GROVYLE", "SKY_LIVES_GROVYLE"),
     "NPC_YOMAWARU": ("DUSKULL", "SKY_LIVES_DUSKULL"),
     "NPC_GARUURA": ("KANGASKHAN", "SKY_LIVES_KANGASKHAN"),
@@ -278,6 +278,19 @@ EOS_RED_ANIM = {14: 53, 15: 2, 16: 2, 30: 46, 31: 47, 32: 48, 34: 50, 42: 30, 43
 OBJECT_ANIMS = {9: 1, 17: 4, 18: 4}
 OBJECT_ANIM_NOTES = {9: "closed (direction 0, held)", 17: "opens once and stays open (0x1001)",
                      18: "opens once and stays open (0x1001)"}
+# chapter 3's objects (SkyChapter3.md, Sprites: Objects, "States and the scripts' calls"):
+# EoS SetAnimation -> the object's Red SELECT_ANIMATION (1 loops sequence 0; 4 / 5 / 6 play
+# sequence 1 / 2 / 3 once and hold), read from what each scene shows
+OBJECT_ANIMS_KIND = {
+    # the outlaw board's revolving panel: 18 flips to the outlaw side, 11 holds it, 20 flips back, 9 rests
+    "SKY_OBJ_OUTLAW_BOARD_PANEL": {18: 4, 11: 5, 20: 6, 9: 1},
+    # the panel seen from behind (v03p03a): 9 at rest, 17 and 18 its two spins
+    "SKY_OBJ_BOARD_PANEL_BACK": {9: 1, 17: 4, 18: 5},
+    # the apple: 18 its last bounce, played once
+    "SKY_OBJ_APPLE": {18: 6},
+    # the Time Gear and its glow: 3 (0x300) holds the first frame
+    "SKY_OBJ_TIME_GEAR": {}, "SKY_OBJ_TIME_GEAR_GLOW": {},
+}
 EFFECTS_NO_PICTURE = {"TWO_ARROWS_AT_SIDE_LEFT", "TWO_ARROWS_AT_SIDE_RIGHT"}
 EFFECTS_NONE = {"EATING", "EATING_SLOW", "APPLE_ON_HEAD"}
 
@@ -1380,7 +1393,7 @@ class Translator:
     def c_WaitEffect(self, s, a, me, rows, nxt):
         e = self.target(s, me)
         if isinstance(e, tuple) and getattr(self, "vision_effect", False):
-            rows.append(f"# eos: {s.src} (SKY_VISION plays to its end)")
+            rows.append(f"# eos: {s.src} (the pulses above)")
             self.vision_effect = False
             return
         if isinstance(e, Entity):
@@ -1423,6 +1436,13 @@ class Translator:
         if not isinstance(e, Entity):
             return False
         n = ival(a[0])
+        if e.is_object and e.kind in OBJECT_ANIMS_KIND:   # chapter 3's objects: their own states
+            red = OBJECT_ANIMS_KIND[e.kind].get(n)
+            if red is None:
+                self.emit(e, me, rows, f"# eos: SetAnimation({n}) (held on its first frame: the GBA's default state)")
+            else:
+                self.emit(e, me, rows, f"SELECT_ANIMATION {red}   # EoS SetAnimation({n})")
+            return
         if e.is_object and n in OBJECT_ANIMS:     # an object's states are the directions of its group
             self.emit(e, me, rows, f"SELECT_ANIMATION {OBJECT_ANIMS[n]}   # EoS SetAnimation({n}): {OBJECT_ANIM_NOTES[n]}")
             return
@@ -1617,7 +1637,13 @@ class Translator:
             return
         if isinstance(e, tuple) and ival(a[0]) in (621, 635) and self.chapter3:
             # EoS's dizzy spell (c00a0701 / c00a1701): effects 621 and 635 over the black screen
-            rows.append(f"SKY_VISION {0 if ival(a[0]) == 621 else 1}   # EoS {s.src}: the dizzy spell")
+            # EoS's time-space swirl (an effect animation the GBA has no picture for): white pulses
+            # over the black screen, quickening into the vision (621) and slowing out of it (635)
+            rows.append(f"# eos: {s.src}: the dizzy spell's swirl, as white pulses")
+            pulses = (12, 8, 5, 3) if ival(a[0]) == 621 else (3, 5, 8, 12)
+            for k in pulses:
+                rows += [f"FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames={k} color=RGB_U32(0xFF, 0xFF, 0xFF)",
+                         f"FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames={k} color=RGB_U32(0xFF, 0xFF, 0xFF)"]
             self.vision_effect = True
             return
         if isinstance(e, Entity) and nm in EFFECTS_NONE:

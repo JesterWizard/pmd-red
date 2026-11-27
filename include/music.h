@@ -73,6 +73,7 @@ extern void SoundBiasSet(void);
 #ifdef SKY_STORY
 /* Explorers of Sky demake: EoS's second BGM player (src/music.c). */
 void SkyAmbience_Play(u16 songIndex, u16 frames);
+void SkyAmbience_SetVolume(u16 frames, u16 volume);
 void SkyAmbience_FadeOut(u16 frames);
 #endif
 

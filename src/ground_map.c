@@ -403,6 +403,37 @@ s16 GetAdjustedGroundMap(s32 mapId)
     return retMapId;
 }
 
+#ifdef SKY_STORY
+#include "sky_story.h"
+#include "bg_control.h"
+#include "code_8099360.h"
+#include "palette_fade_util.h"
+
+/* SKY_BACK_EFFECT 2: the blend in use, and the registers it replaced */
+static EWRAM_DATA bool8 sSkyBlend = FALSE;
+static EWRAM_DATA u16 sSkySavedBldCnt = 0;
+static EWRAM_DATA s16 sSkySavedWinAlpha = 0;
+
+static void GroundMap_SkyMapSelected(s32 mapId)
+{
+    if (sSkyBlend) {
+        gBldCnt = sSkySavedBldCnt;
+        gUnknown_2026E4E = sSkySavedWinAlpha;
+        sSkyBlend = FALSE;
+    }
+    switch (mapId) {
+        case MAP_SKY_GUILD_CREW_ROOM_NIGHT_CH3:
+            /* the lightning plays only when a script starts it (SKY_BACK_EFFECT 3) */
+            sub_80A3B80(gGroundMapDungeon_3001B70, 0, 0);
+            break;
+        case MAP_SKY_GROVYLE_RUN:
+            /* v03p11a: the lower layer loops, scrolled by SKY_BACK_SCROLL */
+            sub_80A3BB0(gGroundMapDungeon_3001B70, 4);
+            break;
+    }
+}
+#endif
+
 void GroundMap_Select(s32 mapId_)
 {
     const GroundConversionStruct *ptr;
@@ -512,6 +543,9 @@ void GroundMap_Select(s32 mapId_)
             sub_80A3B80(gGroundMapDungeon_3001B70,0,0);
             break;
     }
+#ifdef SKY_STORY
+    GroundMap_SkyMapSelected(gGroundMapAction->groundMapId);
+#endif
 
     if (ptr->unk6 != -1) {
         GroundWeather_Select(ptr->unk6);
@@ -1447,6 +1481,21 @@ void sub_80A59DC(void)
                 SetCameraPositionForLayer(gGroundMapDungeon_3001B70, 0, &pixPos2);
                 break;
             }
+#ifdef SKY_STORY
+            case MAP_SKY_GROVYLE_RUN: {
+                PixelPos pixPos2;
+
+                gGroundMapAction->unkF0 += gGroundMapAction->unkE8.x;
+                gGroundMapAction->unkF8.x += gGroundMapAction->unkF0 / 8;
+                gGroundMapAction->unkF0 %= 8;
+                sub_80A4580(gGroundMapDungeon_3001B70, 0, &gGroundMapAction->unkF8);
+                pixPos2 = (PixelPos) { pixPos.x + gGroundMapAction->unkF8.x, pixPos.y };
+                sub_80A4580(gGroundMapDungeon_3001B70, 0, &pixPos2);
+                SetCameraPositionForLayer(gGroundMapDungeon_3001B70, 0, &pixPos2);
+                SetCameraPositionForLayer(gGroundMapDungeon_3001B70, 1, &pixPos);
+                break;
+            }
+#endif
             case MAP_NIGHTMARE: {
                 PixelPos pixPos2;
 
@@ -1548,6 +1597,14 @@ void sub_80A59DC(void)
                 SetCameraPositionForLayer(gGroundMapDungeon_3001B70, 0, &pixPos);
                 break;
         }
+#ifdef SKY_STORY
+        if (sSkyBlend) {
+            /* the text and fade code rewrite the blend: keep it every frame
+             * (ToggleWindowBgBuffer reloads BLDALPHA from gUnknown_2026E4E) */
+            gBldCnt = BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ | BLDCNT_TGT2_BD;
+            gUnknown_2026E4E = 0x808;
+        }
+#endif
 
         sub_80A4764(gGroundMapDungeon_3001B70);
     }
@@ -1582,6 +1639,52 @@ void GroundMap_SkyRestartPaletteAnims(void)
             sub0Ptr->unk0 = 0;
             sub0Ptr->unk2 = 1;
         }
+    }
+}
+
+void GroundMap_SkyBackEffect(s32 effect)
+{
+    GroundBg *groundBg = gGroundMapDungeon_3001B70;
+
+    if (groundBg == NULL)
+        return;
+    switch (effect) {
+        case 3:
+            /* the palette animation, in a loop from its first frame */
+            sub_80A3B80(groundBg, 1, 1);
+            GroundMap_SkyRestartPaletteAnims();
+            break;
+        case 1:
+            /* stop it and put the base palettes back */
+            if (groundBg->animationSpecifications != NULL) {
+                const RGB_Array *base = (const RGB_Array *)((const u8 *)groundBg->animationSpecifications
+                                                            - groundBg->bplHeader.numPalettes * 60);
+                SubStruct_0 *sub0Ptr = groundBg->unk0;
+                u16 idx = groundBg->unk52C.unk0 * 16;
+                s32 i;
+
+                sub_80A3B80(groundBg, 0, 0);
+                for (i = 0; i < groundBg->bplHeader.numPalettes && i < groundBg->unk52C.unk2; i++, sub0Ptr++, idx += 16, base += 15) {
+                    RGB_Array empty = {0};
+
+                    sub0Ptr->unk0 = 0;
+                    sub0Ptr->unk2 = 0;
+                    sub0Ptr->unk8 = NULL;
+                    sub_8003810(idx, empty);
+                    sub_809971C(idx + 1, (RGB_Array *)base, 15);
+                }
+            }
+            break;
+        case 2:
+            /* the upper layer half over the lower one */
+            if (!sSkyBlend) {
+                sSkySavedBldCnt = gBldCnt;
+                sSkySavedWinAlpha = gUnknown_2026E4E;
+                sSkyBlend = TRUE;
+            }
+            break;
+        default:
+            break;
     }
 }
 #endif

@@ -4314,6 +4314,23 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
             /* SKY_CHAPTER_CARD(n): EoS back_SetBanner2 (c00a0201's chapter 3 card) */
             ChapterTitles_QueueCard((s32)r2);
             return 0;
+        case 0x77:
+            /* SKY_BACK_EFFECT(n): EoS back_SetBackEffect(n) */
+            GroundMap_SkyBackEffect((s32)r2);
+            return 0;
+        case 0x78: {
+            /* SKY_BACK_SCROLL(dx, dy): EoS back_SetBackScrollSpeed, in 1/256 px
+             * per frame; the map scroll speed (special 0x36) is in 1/8 px */
+            PixelPos speed;
+            speed.x = (s32)r2 / 32;
+            speed.y = (s32)r3 / 32;
+            sub_80A56F0(&speed);
+            return 0;
+        }
+        case 0x79:
+            /* SKY_AMBIENCE_VOLUME(frames, volume): EoS bgm2_ChangeVolume */
+            SkyAmbience_SetVolume((u16)r2, (u16)r3);
+            return 0;
 #endif
         case 0x4B: {
             static const u8 sTrieloName[] = _("Trielo");

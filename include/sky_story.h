@@ -73,7 +73,7 @@
 #define SKY_LIVES_KECLEON_PURPLE 170 /* NPC_KAKUREON2 */
 #define SKY_LIVES_BIBAREL        171 /* NPC_BIIDARU */
 #define SKY_LIVES_MAGNEZONE      172 /* NPC_JIBAKOIRU */
-#define SKY_LIVES_MAGNEMITE      173 /* NPC_KOIRU, NPC_KOIRU2 */
+#define SKY_LIVES_MAGNEMITE      173 /* NPC_KOIRU */
 #define SKY_LIVES_GROVYLE        174 /* NPC_JUPUTORU */
 #define SKY_LIVES_DUSKULL        175 /* NPC_YOMAWARU */
 #define SKY_LIVES_KANGASKHAN     176 /* NPC_GARUURA */
@@ -87,7 +87,10 @@
 #define SKY_LIVES_POLITOED       184 /* NPC_NYOROTONO */
 #define SKY_LIVES_POOCHYENA      185 /* NPC_POCHIENA_A, _B, _C */
 #define SKY_LIVES_SPINDA         186 /* NPC_PATCHIIRU */
-#define SKY_LIVES_KIND_COUNT 40
+/* a second kind: Red keeps one ground actor a kind (a second one takes the
+ * first one's place), and m03a1002 has both Magnemite on screen */
+#define SKY_LIVES_MAGNEMITE2     187 /* NPC_KOIRU2 */
+#define SKY_LIVES_KIND_COUNT 41
 
 #ifndef __ASSEMBLER__
 #include "global.h"
@@ -331,6 +334,11 @@ void SkyStorm_Stop(void);
 void SkyStorm_Draw(void);
 /* src/ground_map.c: restart the map's palette animations (SKY_MAP_PAL_RESTART). */
 void GroundMap_SkyRestartPaletteAnims(void);
+/* src/ground_map.c: EoS back_SetBackEffect(n) (SKY_BACK_EFFECT): 3 plays the
+ * map's palette animation in a loop (the crew room's lightning), 1 stops it and
+ * puts the base palettes back, 2 blends the upper layer over the lower one
+ * (v03p09a's time flow). Map changes end every effect. */
+void GroundMap_SkyBackEffect(s32 effect);
 
 /* Chapter 2 (documentation/Features/SkyChapter2.md) runs in Red's chapter 2
  * event slots (EVENT_M01E02A_*), which the sky build otherwise never reaches.

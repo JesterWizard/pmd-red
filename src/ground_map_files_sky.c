@@ -89,6 +89,9 @@ const u8 gFileEG0107A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0107A.bpl");
 const u8 gFileEG0107Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0107Ac.bpc");
 const u8 gFileEG0107Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EG0107Am.bma.lz");
 const u8 gFileEG0107C[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0107C.bpl");
+/* g01p07c's BPL with EoS's palette animation (the lightning: chapter 3's
+ * back_SetBackEffect(3), SKY_BACK_EFFECT; it plays only when a script starts it) */
+const u8 gFileEG0107CS[] ALIGNED(4) = INCBIN_U8("data/map_bg/EG0107CS.bpl");
 /* EoS p01p01a: the crossroads */
 const u8 gFileEP0101A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP0101A.bpl");
 const u8 gFileEP0101Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EP0101Ac.bpc");

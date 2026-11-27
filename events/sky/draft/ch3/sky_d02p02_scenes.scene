@@ -2433,7 +2433,7 @@ script g31_s2_obj0_p03p02a1   # EoS object P03P02A1_128, layer 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 76
     MOVE_RELATIVE speed=256 dx=-72 dy=4   # EoS SlidePositionMark to Position<'m11', 42, 24.5>
-    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
+    SELECT_ANIMATION 6   # EoS SetAnimation(18)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 77 0   # done: the station waits for this
     AWAIT_CUE 76
@@ -2471,8 +2471,16 @@ script g32_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     FADE_IN wait=TRUE frames=16
     SET_PLACE_MODE 4
     FANFARE_PLAY2 SE_SKY_VISION_START   # EoS se_Play(5132)
-    SKY_VISION 0   # EoS SetEffect<performer 3>(621, 3);: the dizzy spell
-    # eos: WaitEffect<performer 3>(); (SKY_VISION plays to its end)
+    # eos: SetEffect<performer 3>(621, 3);: the dizzy spell's swirl, as white pulses
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    # eos: WaitEffect<performer 3>(); (the pulses above)
     SKY_CAMERA_SET x=20 y=280   # EoS SetPositionMark<performer 0>(Position<'m0', 17, 44.5>);
     # eos: WaitExecutePerformer(3); (the camera has arrived)
     FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=16 color=RGB_U32(0xFF, 0xFF, 0xFF)
@@ -2514,8 +2522,16 @@ script g34_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SKY_CAMERA_SET x=20 y=280   # EoS camera_SetMyself<performer 0>
     FADE_IN wait=TRUE frames=16
     SET_PLACE_MODE 4
-    SKY_VISION 1   # EoS SetEffect<performer 3>(635, 3);: the dizzy spell
-    # eos: WaitEffect<performer 3>(); (SKY_VISION plays to its end)
+    # eos: SetEffect<performer 3>(635, 3);: the dizzy spell's swirl, as white pulses
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    # eos: WaitEffect<performer 3>(); (the pulses above)
     SKY_CAMERA_SET x=20 y=24   # EoS SetPositionMark<performer 0>(Position<'m0', 17, 12.5>);
     # eos: WaitExecutePerformer(3); (the camera has arrived)
     FADE_OUT wait=TRUE frames=16
@@ -3614,11 +3630,11 @@ script g39_s0_obj0_g01p03a1   # EoS object G01P03A1_100, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 70
-    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
+    SELECT_ANIMATION 4   # EoS SetAnimation(18)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 71 0   # done: the station waits for this
     AWAIT_CUE 70
-    SELECT_ANIMATION 11
+    SELECT_ANIMATION 5   # EoS SetAnimation(11)
     HALT
 end
 
@@ -3800,13 +3816,13 @@ script g40_s0_obj1_v03p03a1   # EoS object V03P03A1_193, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 1   # EoS SetAnimation(9): closed (direction 0, held)
+    SELECT_ANIMATION 1   # EoS SetAnimation(9)
     AWAIT_CUE 66
-    SELECT_ANIMATION 4   # EoS SetAnimation(17): opens once and stays open (0x1001)
+    SELECT_ANIMATION 4   # EoS SetAnimation(17)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     AWAIT_CUE 66
-    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
+    SELECT_ANIMATION 5   # EoS SetAnimation(18)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     HALT
@@ -4090,13 +4106,13 @@ script g41_s0_obj0_g01p03a1   # EoS object G01P03A1_100, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 11
+    SELECT_ANIMATION 5   # EoS SetAnimation(11)
     AWAIT_CUE 66
-    SELECT_ANIMATION 20
+    SELECT_ANIMATION 6   # EoS SetAnimation(20)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     AWAIT_CUE 66
-    SELECT_ANIMATION 1   # EoS SetAnimation(9): closed (direction 0, held)
+    SELECT_ANIMATION 1   # EoS SetAnimation(9)
     HALT
 end
 
@@ -5402,7 +5418,7 @@ actors g47_s0_lives
     actor kind=34 facing=NORTH x=32.5 y=29.5 script=g47_s0_partner   # EoS ATTENDANT1
     actor kind=SKY_LIVES_AZURILL facing=NORTH x=34.5 y=31.5 script=g47_s0_azurill   # EoS NPC_RURIRI
     actor kind=SKY_LIVES_MAGNEMITE facing=SOUTH x=36.5 y=23.5 script=g47_s0_magnemite   # EoS NPC_KOIRU
-    actor kind=SKY_LIVES_MAGNEMITE facing=SOUTH x=32.5 y=23.5 script=g47_s0_magnemite2   # EoS NPC_KOIRU2
+    actor kind=SKY_LIVES_MAGNEMITE2 facing=SOUTH x=32.5 y=23.5 script=g47_s0_magnemite2   # EoS NPC_KOIRU2
     actor kind=SKY_LIVES_DROWZEE facing=SOUTH x=34.5 y=23.5 script=g47_s0_drowzee   # EoS NPC_SURIIPU
     actor kind=SKY_LIVES_MAGNEZONE facing=SOUTH x=34.5 y=26.5 script=g47_s0_magnezone   # EoS NPC_JIBAKOIRU
 end
@@ -6111,7 +6127,7 @@ script g55_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -6119,7 +6135,7 @@ script g55_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -6157,7 +6173,7 @@ script g56_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -6165,7 +6181,7 @@ script g56_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -6203,7 +6219,7 @@ script g57_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -6211,7 +6227,7 @@ script g57_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -6539,7 +6555,7 @@ script g63_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -6547,7 +6563,7 @@ script g63_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 

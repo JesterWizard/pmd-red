@@ -841,6 +841,24 @@ void SkyAmbience_Play(u16 songIndex, u16 frames)
 }
 
 /* frames == 0 stops at once. */
+/* EoS bgm2_ChangeVolume(frames, volume): the second BGM's volume (0..255,
+ * 255 the song's own). Set at once: the GBA has no gradual volume change
+ * besides the fades. */
+void SkyAmbience_SetVolume(u16 frames, u16 volume)
+{
+    bool8 interruptFlag;
+
+    (void)frames;
+    if (!SkyAmbience_Playing())
+        return;
+    if (volume > 255)
+        volume = 255;
+    interruptFlag = DisableInterrupts();
+    m4aMPlayVolumeControl(&sSkyAmbienceInfo, 0xFFFF, (volume * 256) / 255);
+    if (interruptFlag)
+        EnableInterrupts();
+}
+
 void SkyAmbience_FadeOut(u16 frames)
 {
     bool8 interruptFlag;

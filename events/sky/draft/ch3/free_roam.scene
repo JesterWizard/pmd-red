@@ -30,6 +30,13 @@ script ch3_stand   # EoS's townsfolk stand where they are (EoS lets some wander:
     HALT
 end
 
+script ch3_stand_front   # a shopkeeper in a doorway: drawn over the map's front layer
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    SET_OBJ_FLAGS 0x80000
+    HALT
+end
+
 script g5_cross_exploration control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS P01P01A enter04
     DEBUGINFO
     JUMPIF_SCENE_LT SCENARIO_MAIN 4 5 0
@@ -382,20 +389,20 @@ script g1_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B
     SELECT_MAP SKY_GUILD_B2F_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 2   # morning
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 3   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 3   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 4   # fail
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 4   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 12   # morning
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 13   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 13   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 14   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 14   # fail
     JUMP_LABEL 1
-  LABEL 2
+  LABEL 12
     SELECT_LIVES group=-1 sector=2   # morning: who is there
     SELECT_EVENTS g=-1 s=2   # morning: the story's triggers
     JUMP_LABEL 1
-  LABEL 3
+  LABEL 13
     SELECT_LIVES group=-1 sector=3   # open: who is there
     JUMP_LABEL 1
-  LABEL 4
+  LABEL 14
     SELECT_LIVES group=-1 sector=4   # fail: who is there
     JUMP_LABEL 1
   LABEL 1
@@ -845,15 +852,15 @@ script g2_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B
     SELECT_MAP SKY_GUILD_B1F_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 2   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 2   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 3   # fail
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 3   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 12   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 12   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 13   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 13   # fail
     JUMP_LABEL 1
-  LABEL 2
+  LABEL 12
     SELECT_LIVES group=-1 sector=2   # open: who is there
     JUMP_LABEL 1
-  LABEL 3
+  LABEL 13
     SELECT_LIVES group=-1 sector=3   # fail: who is there
     JUMP_LABEL 1
   LABEL 1
@@ -1132,10 +1139,10 @@ script g5_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the crossroad
     SELECT_MAP SKY_CROSSROADS
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 2   # fail
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 2   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 12   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 12   # fail
     JUMP_LABEL 1
-  LABEL 2
+  LABEL 12
     SELECT_LIVES group=-1 sector=2   # fail: who is there
     JUMP_LABEL 1
   LABEL 1
@@ -1292,6 +1299,14 @@ script g8_talk_enter05   # EoS T01P01A enter05 (NPC_YOMAWARU)
     JUMP_SCRIPT END_TALK
 end
 
+script g8_counter_enter05   # EoS T01P01A enter05 (NPC_YOMAWARU)
+    DEBUGINFO
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_DUSKULL   # the shopkeeper behind the counter
+    WAIT 1
+    SPECIAL_TEXT SPECIAL_TEXT_BANK 0 0   # EoS message_Menu(MENU_DUSKULL_BANK)
+    JUMP_SCRIPT END_TALK
+end
+
 actors g8_s1_lives
     actor kind=SKY_LIVES_DUSKULL facing=SOUTH x=65 y=20.5 script=ch3_stand script2=g8_talk_enter05   # EoS NPC_YOMAWARU
 end
@@ -1302,6 +1317,7 @@ objects g8_s1_objs
     object kind=SKY_OBJ_TOTEM_POLE_2 w=2 h=1 x=73 y=35.5 script=g8_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_4 w=2 h=1 x=77 y=35.5 script=g8_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_3 w=2 h=1 x=81 y=35.5 script=g8_obj   # EoS enter.sse
+    object kind=15 w=2 h=1 x=65 y=22.5 script2=g8_counter_enter05   # NPC_YOMAWARU's counter
 end
 
 script g8_talk_um0306   # EoS T01P01A um0306 (NPC_KIMAWARI)
@@ -1731,25 +1747,25 @@ script g8_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town
     SELECT_MAP SKY_TREASURE_TOWN_SQUARE
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 2   # town1
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 3   # town2
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 4   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 4   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 5   # fail
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 5   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 12   # town1
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 13   # town2
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 14   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 14   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 15   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 15   # fail
     JUMP_LABEL 1
-  LABEL 2
+  LABEL 12
     SELECT_LIVES group=-1 sector=2   # town1: who is there
     SELECT_EVENTS g=-1 s=2   # town1: the story's triggers
     JUMP_LABEL 1
-  LABEL 3
+  LABEL 13
     SELECT_LIVES group=-1 sector=3   # town2: who is there
     SELECT_EVENTS g=-1 s=3   # town2: the story's triggers
     JUMP_LABEL 1
-  LABEL 4
+  LABEL 14
     SELECT_LIVES group=-1 sector=4   # open: who is there
     JUMP_LABEL 1
-  LABEL 5
+  LABEL 15
     SELECT_LIVES group=-1 sector=5   # fail: who is there
     JUMP_LABEL 1
   LABEL 1
@@ -1816,10 +1832,40 @@ script g9_talk_enter10   # EoS T01P02A enter10 (NPC_GARUURA)
     JUMP_SCRIPT END_TALK
 end
 
+script g9_counter_enter10   # EoS T01P02A enter10 (NPC_GARUURA)
+    DEBUGINFO
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_KANGASKHAN   # the shopkeeper behind the counter
+    WAIT 1
+    SPECIAL_TEXT SPECIAL_TEXT_STORAGE_WITH_DIALOG 0 0   # EoS message_Menu(MENU_KANGASKHAN_STORAGE)
+    JUMP_SCRIPT END_TALK
+end
+
 script g9_talk_enter11   # EoS T01P02A enter11 (NPC_KAKUREON2)
     DEBUGINFO
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
+    WAIT 1
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 901
+    JUMP_SCRIPT END_TALK
+  LABEL 900   # scenario (4, 0), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6)
+    SPECIAL_TEXT SPECIAL_TEXT_PURPLE_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_WARES)
+    JUMP_SCRIPT END_TALK
+  LABEL 901   # scenario (4, 1)
+    SPECIAL_TEXT SPECIAL_TEXT_PURPLE_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_WARES)
+    EXECUTE_FUNCTION SKY_CH3_KECLEON_EVENT   # EoS supervision_ExecuteCommon(CORO_EVENT_M03_03);
+    HALT   # the event takes over
+    JUMP_SCRIPT END_TALK
+end
+
+script g9_counter_enter11   # EoS T01P02A enter11 (NPC_KAKUREON2)
+    DEBUGINFO
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_KECLEON_PURPLE   # the shopkeeper behind the counter
     WAIT 1
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 900
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 900
@@ -1862,8 +1908,30 @@ script g9_talk_enter12   # EoS T01P02A enter12 (NPC_KAKUREON1)
     JUMP_SCRIPT END_TALK
 end
 
+script g9_counter_enter12   # EoS T01P02A enter12 (NPC_KAKUREON1)
+    DEBUGINFO
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_KECLEON   # the shopkeeper behind the counter
+    WAIT 1
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 900
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 901
+    JUMP_SCRIPT END_TALK
+  LABEL 900   # scenario (4, 0), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6)
+    SPECIAL_TEXT SPECIAL_TEXT_GREEN_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_SHOP)
+    JUMP_SCRIPT END_TALK
+  LABEL 901   # scenario (4, 1)
+    SPECIAL_TEXT SPECIAL_TEXT_GREEN_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_SHOP)
+    EXECUTE_FUNCTION SKY_CH3_KECLEON_EVENT   # EoS supervision_ExecuteCommon(CORO_EVENT_M03_03);
+    HALT   # the event takes over
+    JUMP_SCRIPT END_TALK
+end
+
 actors g9_s1_lives
-    actor kind=SKY_LIVES_KANGASKHAN facing=SOUTH x=22.5 y=20.5 script=ch3_stand script2=g9_talk_enter10   # EoS NPC_GARUURA
+    actor kind=SKY_LIVES_KANGASKHAN facing=SOUTH x=22.5 y=20.5 script=ch3_stand_front script2=g9_talk_enter10   # EoS NPC_GARUURA
     actor kind=SKY_LIVES_KECLEON_PURPLE facing=SOUTH x=43.5 y=20.5 script=ch3_stand script2=g9_talk_enter11   # EoS NPC_KAKUREON2
     actor kind=SKY_LIVES_KECLEON facing=SOUTH x=40.5 y=20.5 script=ch3_stand script2=g9_talk_enter12   # EoS NPC_KAKUREON1
 end
@@ -1874,6 +1942,9 @@ objects g9_s1_objs
     object kind=SKY_OBJ_TOTEM_POLE_2 w=2 h=1 x=3 y=35.5 script=g9_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_4 w=2 h=1 x=7 y=35.5 script=g9_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_3 w=2 h=1 x=11 y=35.5 script=g9_obj   # EoS enter.sse
+    object kind=15 w=2 h=1 x=22.5 y=22.5 script2=g9_counter_enter10   # NPC_GARUURA's counter
+    object kind=15 w=2 h=1 x=43.5 y=22.5 script2=g9_counter_enter11   # NPC_KAKUREON2's counter
+    object kind=15 w=2 h=1 x=40.5 y=22.5 script2=g9_counter_enter12   # NPC_KAKUREON1's counter
 end
 
 script g9_talk_um0301   # EoS T01P02A um0301 (NPC_YARUKIMONO)
@@ -2070,23 +2141,23 @@ script g9_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town
     SELECT_MAP SKY_TREASURE_TOWN_WEST
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 2   # town1
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 3   # town2
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 4   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 4   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 5   # fail
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 5   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 12   # town1
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 13   # town2
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 14   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 14   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 15   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 15   # fail
     JUMP_LABEL 1
-  LABEL 2
+  LABEL 12
     SELECT_LIVES group=-1 sector=2   # town1: who is there
     JUMP_LABEL 1
-  LABEL 3
+  LABEL 13
     SELECT_LIVES group=-1 sector=3   # town2: who is there
     JUMP_LABEL 1
-  LABEL 4
+  LABEL 14
     SELECT_LIVES group=-1 sector=4   # open: who is there
     JUMP_LABEL 1
-  LABEL 5
+  LABEL 15
     SELECT_LIVES group=-1 sector=5   # fail: who is there
     JUMP_LABEL 1
   LABEL 1
@@ -2187,15 +2258,15 @@ script g10_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Wigglytuff's
     DEBUGINFO
     SELECT_MAP SKY_GUILD_WIGGLYTUFF_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 2   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 2   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 3   # fail
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 3   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 12   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 12   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 13   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 13   # fail
     JUMP_LABEL 1
-  LABEL 2
+  LABEL 12
     SELECT_LIVES group=-1 sector=2   # open: who is there
     JUMP_LABEL 1
-  LABEL 3
+  LABEL 13
     SELECT_LIVES group=-1 sector=3   # fail: who is there
     JUMP_LABEL 1
   LABEL 1
@@ -2302,15 +2373,15 @@ script g11_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the mess hal
     SELECT_MAP SKY_GUILD_MESS_HALL_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 2   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 2   # open
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 3   # fail
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 3   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 12   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 12   # open
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 13   # fail
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 13   # fail
     JUMP_LABEL 1
-  LABEL 2
+  LABEL 12
     SELECT_LIVES group=-1 sector=2   # open: who is there
     JUMP_LABEL 1
-  LABEL 3
+  LABEL 13
     SELECT_LIVES group=-1 sector=3   # fail: who is there
     JUMP_LABEL 1
   LABEL 1
@@ -2334,7 +2405,16 @@ script g12_sign_enter07   # EoS G01P07A enter07
     JUMP_SCRIPT END_TALK
 end
 
-script g12_sign_enter04   # EoS G01P07A enter04
+objects g12_s1_objs
+    object kind=15 w=5 h=1 x=7.5 y=21.5 script2=g12_sign_enter07   # EoS G01P07A enter07
+end
+
+actors g12_s10_lives
+    actor kind=0 facing=EAST x=8 y=22.5 script=ch3_hero   # entry 1
+    actor kind=4 facing=EAST x=4 y=22.5 script=ch3_partner
+end
+
+script g12_ev_enter04 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS G01P07A enter04
     DEBUGINFO
     WAIT 1
     UPDATE_VARINT CALC_SET GROUND_ENTER_LINK 2   # Continue: the crew room, at the bed
@@ -2355,15 +2435,12 @@ script g12_sign_enter04   # EoS G01P07A enter04
     JUMP_SCRIPT END_TALK
 end
 
-objects g12_s1_objs
-    object kind=15 w=5 h=1 x=7.5 y=21.5 script2=g12_sign_enter07   # EoS G01P07A enter07
-    object kind=15 w=3 h=3 x=25 y=22 script2=g12_sign_enter04   # EoS G01P07A enter04
-end
-
-actors g12_s10_lives
-    actor kind=0 facing=EAST x=8 y=22.5 script=ch3_hero   # entry 1
-    actor kind=4 facing=EAST x=4 y=22.5 script=ch3_partner
-end
+```c
+/* EoS G01P07A enter.sse: the events at entry 1 */
+static const struct GroundEventData s_gs181_g12_s10_evts[] = {
+    { 3, 3, 0, 0, { 24, 21, 0, 0 }, &s_gs181_g12_ev_enter04_sref },
+};
+```
 
 actors g12_s11_lives
     actor kind=0 facing=SOUTH x=25.5 y=23 script=ch3_hero   # entry 2
@@ -2388,6 +2465,7 @@ script g12_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the crew roo
     JUMP_LABEL 101
   LABEL 101
     SELECT_LIVES group=-1 sector=10
+    SELECT_EVENTS g=-1 s=10
     JUMP_LABEL 2
   LABEL 102
     SELECT_LIVES group=-1 sector=11
@@ -2586,7 +2664,7 @@ sectors g12
     sector
     sector
     sector
-    sector actors=g12_s10_lives
+    sector events=g12_s10_evts actors=g12_s10_lives
     sector actors=g12_s11_lives
 end
 

@@ -133,8 +133,15 @@ script ch3_stand   # EoS's townsfolk stand where they are (EoS lets some wander:
     HALT
 end
 
-script g5_cross_exploration control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS P01P01A enter04
+script ch3_stand_front   # a shopkeeper in a doorway: drawn over the map's front layer
     DEBUGINFO line=137
+    SELECT_ANIMATION 2
+    SET_OBJ_FLAGS 0x80000
+    HALT
+end
+
+script g5_cross_exploration control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS P01P01A enter04
+    DEBUGINFO line=144
     JUMPIF_SCENE_LT SCENARIO_MAIN 4 5 2
     # from (4, 5) (EoS: its world map, "Where would you like to go?"): Mt. Bristle
     ASK2 flag=FALSE default=-1 who=-1 text="{CENTER_ALIGN}Where would you like to go?"
@@ -160,25 +167,25 @@ script g5_cross_exploration control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS P0
 end
 
 script g7_beach_cave control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS D01P11A enter02: Beach Cave
-    DEBUGINFO line=163
+    DEBUGINFO line=170
     MSG_INSTANT text="{CENTER_ALIGN}The Beach Cave is not in this demo."
     JUMP_SCRIPT END_TALK
 end
 
 script g8_square_dojo control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS T01P01A enter03: Marowak Dojo
-    DEBUGINFO line=169
+    DEBUGINFO line=176
     MSG_INSTANT text="{CENTER_ALIGN}Marowak Dojo is not in this demo."
     JUMP_SCRIPT END_TALK
 end
 
 script g9_west_sharpedo control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS T01P02A enter02: Sharpedo Bluff
-    DEBUGINFO line=175
+    DEBUGINFO line=182
     MSG_INSTANT text="{CENTER_ALIGN}Sharpedo Bluff is not in this demo."
     JUMP_SCRIPT END_TALK
 end
 
 script g12_crew_exit control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS G01P07A enter01
-    DEBUGINFO line=181
+    DEBUGINFO line=188
     # the morning (c00a0201 set EoS's $SCENARIO_MAIN_BIT_FLAG[1]): the morning address
     JUMPIF_ARRAY SKY_SCENARIO_MAIN_BIT_FLAG 1 0
     SKY_GOTO_MAP MAP_SKY_GUILD_B2F_CH3 2
@@ -189,7 +196,7 @@ script g12_crew_exit control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS G01P07A e
 end
 
 script g0_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # every chapter-3 map's enter: its group
-    DEBUGINFO line=192
+    DEBUGINFO line=199
     CJUMP_VAR GROUND_ENTER
     COND_EQUAL MAP_SKY_GUILD_B2F_CH3 0
     COND_EQUAL MAP_SKY_GUILD_B1F_CH3 1
@@ -231,45 +238,45 @@ script g0_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # every chapter
 end
 
 script g1_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_B1F_CH3 (entry 2)
-    DEBUGINFO line=234
+    DEBUGINFO line=241
     SKY_GOTO_MAP MAP_SKY_GUILD_B1F_CH3 2
     HALT
 end
 
 script g1_exit1 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_MESS_HALL_CH3 (entry 1)
-    DEBUGINFO line=240
+    DEBUGINFO line=247
     SKY_GOTO_MAP MAP_SKY_GUILD_MESS_HALL_CH3 1
     HALT
 end
 
 script g1_exit2 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_WIGGLYTUFF_CH3 (entry 1)
-    DEBUGINFO line=246
+    DEBUGINFO line=253
     SKY_GOTO_MAP MAP_SKY_GUILD_WIGGLYTUFF_CH3 1
     HALT
 end
 
 script g1_exit3 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_CREW_ROOM_CH3 (entry 1)
-    DEBUGINFO line=252
+    DEBUGINFO line=259
     SKY_GOTO_MAP MAP_SKY_GUILD_CREW_ROOM_CH3 1
     HALT
 end
 
 script g1_sign_enter24   # EoS G01P04A enter24
-    DEBUGINFO line=258
+    DEBUGINFO line=265
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}\n{CENTER_ALIGN}← Mess Hall"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
 script g1_sign_enter25   # EoS G01P04A enter25
-    DEBUGINFO line=265
+    DEBUGINFO line=272
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}\n{CENTER_ALIGN}Crew Rooms →"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
 script g1_talk_enter05   # EoS G01P04A enter05 (NPC_GUREGGURU)
-    DEBUGINFO line=272
+    DEBUGINFO line=279
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -294,7 +301,7 @@ actors g1_s2_lives
 end
 
 script g1_sky_ch3_town_event control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS: the coroutine starts
-    DEBUGINFO line=297
+    DEBUGINFO line=304
     EXECUTE_FUNCTION SKY_CH3_TOWN_EVENT
     HALT
 end
@@ -310,7 +317,7 @@ static const struct GroundEventData s_gs181_g1_s2_evts[] = {
 ```
 
 script g1_talk_um0306   # EoS G01P04A um0306 (NPC_DOGOOMU)
-    DEBUGINFO line=313
+    DEBUGINFO line=320
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -342,7 +349,7 @@ script g1_talk_um0306   # EoS G01P04A um0306 (NPC_DOGOOMU)
 end
 
 script g1_talk_um0307   # EoS G01P04A um0307 (NPC_PERAPPU)
-    DEBUGINFO line=345
+    DEBUGINFO line=352
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -378,7 +385,7 @@ actors g1_s3_lives
 end
 
 script g1_talk_um0308   # EoS G01P04A um0308 (NPC_DOGOOMU)
-    DEBUGINFO line=381
+    DEBUGINFO line=388
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -410,7 +417,7 @@ script g1_talk_um0308   # EoS G01P04A um0308 (NPC_DOGOOMU)
 end
 
 script g1_talk_um0309   # EoS G01P04A um0309 (NPC_PERAPPU)
-    DEBUGINFO line=413
+    DEBUGINFO line=420
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -481,7 +488,7 @@ static const struct GroundEventData s_gs181_g1_s0_evts[] = {
 ```
 
 script g1_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B2F (EoS G01P04A, station UM03)
-    DEBUGINFO line=484
+    DEBUGINFO line=491
     SELECT_MAP SKY_GUILD_B2F_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -511,20 +518,20 @@ script g1_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B
     JUMP_LABEL 4
   LABEL 4
     SELECT_LIVES group=-1 sector=10
-    JUMP_LABEL 0
+    JUMP_LABEL 9
   LABEL 5
     SELECT_LIVES group=-1 sector=11
-    JUMP_LABEL 0
+    JUMP_LABEL 9
   LABEL 6
     SELECT_LIVES group=-1 sector=12
-    JUMP_LABEL 0
+    JUMP_LABEL 9
   LABEL 7
     SELECT_LIVES group=-1 sector=13
-    JUMP_LABEL 0
+    JUMP_LABEL 9
   LABEL 8
     SELECT_LIVES group=-1 sector=14
-    JUMP_LABEL 0
-  LABEL 0
+    JUMP_LABEL 9
+  LABEL 9
     SELECT_EVENTS -1 0   # the exits
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
     FADE_IN wait=FALSE frames=-1
@@ -532,19 +539,19 @@ script g1_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B
 end
 
 script g2_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_1F_CH3 (entry 2)
-    DEBUGINFO line=535
+    DEBUGINFO line=542
     SKY_GOTO_MAP MAP_SKY_GUILD_1F_CH3 2
     HALT
 end
 
 script g2_exit1 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_B2F_CH3 (entry 1)
-    DEBUGINFO line=541
+    DEBUGINFO line=548
     SKY_GOTO_MAP MAP_SKY_GUILD_B2F_CH3 1
     HALT
 end
 
 script g2_sign_enter11   # EoS G01P03A enter11
-    DEBUGINFO line=547
+    DEBUGINFO line=554
     WAIT 1
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 0
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 0
@@ -574,7 +581,7 @@ script g2_sign_enter11   # EoS G01P03A enter11
 end
 
 script g2_sign_enter12   # EoS G01P03A enter12
-    DEBUGINFO line=577
+    DEBUGINFO line=584
     WAIT 1
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 0
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 0
@@ -601,7 +608,7 @@ script g2_sign_enter12   # EoS G01P03A enter12
 end
 
 script g2_sign_enter13   # EoS G01P03A enter13
-    DEBUGINFO line=604
+    DEBUGINFO line=611
     WAIT 1
     MSG_INSTANT text="\n{CENTER_ALIGN}All sorts of information is written here..."   # EoS message_Notice
     TEXTBOX_CLEAR
@@ -679,7 +686,7 @@ objects g2_s1_objs
 end
 
 script g2_talk_m03a0501   # EoS G01P03A m03a0501 (NPC_BIPPA)
-    DEBUGINFO line=682
+    DEBUGINFO line=689
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -699,7 +706,7 @@ script g2_talk_m03a0501   # EoS G01P03A m03a0501 (NPC_BIPPA)
 end
 
 script g2_talk_um0305   # EoS G01P03A um0305 (NPC_TOGEPII)
-    DEBUGINFO line=702
+    DEBUGINFO line=709
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -721,7 +728,7 @@ script g2_talk_um0305   # EoS G01P03A um0305 (NPC_TOGEPII)
 end
 
 script g2_talk_um0306   # EoS G01P03A um0306 (NPC_NYOROTONO)
-    DEBUGINFO line=724
+    DEBUGINFO line=731
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -743,7 +750,7 @@ script g2_talk_um0306   # EoS G01P03A um0306 (NPC_NYOROTONO)
 end
 
 script g2_talk_um0307   # EoS G01P03A um0307 (NPC_REDIBA)
-    DEBUGINFO line=746
+    DEBUGINFO line=753
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -773,7 +780,7 @@ actors g2_s2_lives
 end
 
 script g2_talk_um0308   # EoS G01P03A um0308 (NPC_KIMAWARI)
-    DEBUGINFO line=776
+    DEBUGINFO line=783
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -825,7 +832,7 @@ script g2_talk_um0308   # EoS G01P03A um0308 (NPC_KIMAWARI)
 end
 
 script g2_talk_um0310   # EoS G01P03A um0310 (NPC_BIPPA)
-    DEBUGINFO line=828
+    DEBUGINFO line=835
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -851,7 +858,7 @@ script g2_talk_um0310   # EoS G01P03A um0310 (NPC_BIPPA)
 end
 
 script g2_talk_um0312   # EoS G01P03A um0312 (NPC_TOGEPII)
-    DEBUGINFO line=854
+    DEBUGINFO line=861
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -873,7 +880,7 @@ script g2_talk_um0312   # EoS G01P03A um0312 (NPC_TOGEPII)
 end
 
 script g2_talk_um0313   # EoS G01P03A um0313 (NPC_NYOROTONO)
-    DEBUGINFO line=876
+    DEBUGINFO line=883
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -895,7 +902,7 @@ script g2_talk_um0313   # EoS G01P03A um0313 (NPC_NYOROTONO)
 end
 
 script g2_talk_um0314   # EoS G01P03A um0314 (NPC_REDIBA)
-    DEBUGINFO line=898
+    DEBUGINFO line=905
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -944,7 +951,7 @@ static const struct GroundEventData s_gs181_g2_s0_evts[] = {
 ```
 
 script g2_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B1F (EoS G01P03A, station UM03): Bidoof waits by the Outlaw Notice Board
-    DEBUGINFO line=947
+    DEBUGINFO line=954
     SELECT_MAP SKY_GUILD_B1F_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -966,11 +973,11 @@ script g2_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B
     JUMP_LABEL 3
   LABEL 3
     SELECT_LIVES group=-1 sector=10
-    JUMP_LABEL 0
+    JUMP_LABEL 5
   LABEL 4
     SELECT_LIVES group=-1 sector=11
-    JUMP_LABEL 0
-  LABEL 0
+    JUMP_LABEL 5
+  LABEL 5
     SELECT_EVENTS -1 0   # the exits
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
     FADE_IN wait=FALSE frames=-1
@@ -978,19 +985,19 @@ script g2_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's B
 end
 
 script g3_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_ENTRANCE_DAY (entry 1)
-    DEBUGINFO line=981
+    DEBUGINFO line=988
     SKY_GOTO_MAP MAP_SKY_GUILD_ENTRANCE_DAY 1
     HALT
 end
 
 script g3_exit1 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_B1F_CH3 (entry 1)
-    DEBUGINFO line=987
+    DEBUGINFO line=994
     SKY_GOTO_MAP MAP_SKY_GUILD_B1F_CH3 1
     HALT
 end
 
 script g3_sign_enter07   # EoS G01P02A enter07
-    DEBUGINFO line=993
+    DEBUGINFO line=1000
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}Wigglytuff's Guild\n{CENTER_ALIGN}Ten Rules for Exploration Teams"   # EoS message_Notice
     MSG_INSTANT text="{CENTER_ALIGN}One!{WAIT_PRESS}\n{CENTER_ALIGN}Don't shirk work!"   # EoS message_Notice
@@ -1007,7 +1014,7 @@ script g3_sign_enter07   # EoS G01P02A enter07
 end
 
 script g3_sign_enter08   # EoS G01P02A enter08
-    DEBUGINFO line=1010
+    DEBUGINFO line=1017
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}Welcome!\n{CENTER_ALIGN}Wigglytuff's Guild!"   # EoS message_Notice
     MSG_INSTANT text="{CENTER_ALIGN}No salespeople!\n{CENTER_ALIGN}No agents!\n{CENTER_ALIGN}No survey takers!"   # EoS message_Notice
@@ -1038,7 +1045,7 @@ static const struct GroundEventData s_gs181_g3_s0_evts[] = {
 ```
 
 script g3_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's 1F (EoS G01P02A)
-    DEBUGINFO line=1041
+    DEBUGINFO line=1048
     SELECT_MAP SKY_GUILD_1F_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -1060,19 +1067,19 @@ script g3_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's 1
 end
 
 script g4_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_1F_CH3 (entry 1)
-    DEBUGINFO line=1063
+    DEBUGINFO line=1070
     SKY_GOTO_MAP MAP_SKY_GUILD_1F_CH3 1
     HALT
 end
 
 script g4_exit1 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_CROSSROADS (entry 1)
-    DEBUGINFO line=1069
+    DEBUGINFO line=1076
     SKY_GOTO_MAP MAP_SKY_CROSSROADS 1
     HALT
 end
 
 script g4_obj
-    DEBUGINFO line=1075
+    DEBUGINFO line=1082
     HALT
 end
 
@@ -1100,7 +1107,7 @@ static const struct GroundEventData s_gs181_g4_s0_evts[] = {
 ```
 
 script g4_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's entrance by day (EoS G01P01A)
-    DEBUGINFO line=1103
+    DEBUGINFO line=1110
     SELECT_MAP SKY_GUILD_ENTRANCE_DAY
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -1122,32 +1129,32 @@ script g4_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the guild's e
 end
 
 script g5_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_ENTRANCE_DAY (entry 2)
-    DEBUGINFO line=1125
+    DEBUGINFO line=1132
     SKY_GOTO_MAP MAP_SKY_GUILD_ENTRANCE_DAY 2
     HALT
 end
 
 script g5_exit1 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_BEACH_PATH (entry 2)
-    DEBUGINFO line=1131
+    DEBUGINFO line=1138
     SKY_GOTO_MAP MAP_SKY_BEACH_PATH 2
     HALT
 end
 
 script g5_exit2 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_TREASURE_TOWN_SQUARE (entry 1)
-    DEBUGINFO line=1137
+    DEBUGINFO line=1144
     SKY_GOTO_MAP MAP_SKY_TREASURE_TOWN_SQUARE 1
     HALT
 end
 
 script g5_sign_enter24   # EoS P01P01A enter24
-    DEBUGINFO line=1143
+    DEBUGINFO line=1150
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}↑ Wigglytuff's Guild\n{CENTER_ALIGN}← Treasure Town                Exploration →\n{CENTER_ALIGN}↓ Beach"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
 script g5_sign_enter41   # EoS P01P01A enter41
-    DEBUGINFO line=1150
+    DEBUGINFO line=1157
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}- Spinda's Café -\n{CENTER_ALIGN}-Shop of Hopes & Dreams-\n{CENTER_ALIGN}Opening Soon! Win Big!"   # EoS message_Mail
     TEXTBOX_CLEAR
@@ -1160,7 +1167,7 @@ objects g5_s1_objs
 end
 
 script g5_talk_um0301   # EoS P01P01A um0301 (NPC_HEIGANI)
-    DEBUGINFO line=1163
+    DEBUGINFO line=1170
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1231,7 +1238,7 @@ static const struct GroundEventData s_gs181_g5_s0_evts[] = {
 ```
 
 script g5_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the crossroads (EoS P01P01A, station UM03)
-    DEBUGINFO line=1234
+    DEBUGINFO line=1241
     SELECT_MAP SKY_CROSSROADS
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -1250,17 +1257,17 @@ script g5_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the crossroad
     JUMP_LABEL 2
   LABEL 2
     SELECT_LIVES group=-1 sector=10
-    JUMP_LABEL 0
+    JUMP_LABEL 6
   LABEL 3
     SELECT_LIVES group=-1 sector=11
-    JUMP_LABEL 0
+    JUMP_LABEL 6
   LABEL 4
     SELECT_LIVES group=-1 sector=12
-    JUMP_LABEL 0
+    JUMP_LABEL 6
   LABEL 5
     SELECT_LIVES group=-1 sector=13
-    JUMP_LABEL 0
-  LABEL 0
+    JUMP_LABEL 6
+  LABEL 6
     SELECT_EVENTS -1 0   # the exits
     BGM_SWITCH SKY_TREASURE_TOWN
     FADE_IN wait=FALSE frames=-1
@@ -1268,13 +1275,13 @@ script g5_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the crossroad
 end
 
 script g6_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_BEACH_DAY_CH3 (entry 1)
-    DEBUGINFO line=1271
+    DEBUGINFO line=1278
     SKY_GOTO_MAP MAP_SKY_BEACH_DAY_CH3 1
     HALT
 end
 
 script g6_exit1 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_CROSSROADS (entry 2)
-    DEBUGINFO line=1277
+    DEBUGINFO line=1284
     SKY_GOTO_MAP MAP_SKY_CROSSROADS 2
     HALT
 end
@@ -1298,7 +1305,7 @@ static const struct GroundEventData s_gs181_g6_s0_evts[] = {
 ```
 
 script g6_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the path down to the beach (EoS P01P02A)
-    DEBUGINFO line=1301
+    DEBUGINFO line=1308
     SELECT_MAP SKY_BEACH_PATH
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     CJUMP_VAR GROUND_ENTER_LINK   # where the hero comes in
@@ -1319,7 +1326,7 @@ script g6_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the path down
 end
 
 script g7_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_BEACH_PATH (entry 1)
-    DEBUGINFO line=1322
+    DEBUGINFO line=1329
     SKY_GOTO_MAP MAP_SKY_BEACH_PATH 1
     HALT
 end
@@ -1338,7 +1345,7 @@ static const struct GroundEventData s_gs181_g7_s0_evts[] = {
 ```
 
 script g7_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the beach (EoS D01P11A: chapter 1's map)
-    DEBUGINFO line=1341
+    DEBUGINFO line=1348
     SELECT_MAP SKY_BEACH_DAY_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     CJUMP_VAR GROUND_ENTER_LINK   # where the hero comes in
@@ -1356,40 +1363,48 @@ script g7_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the beach (Eo
 end
 
 script g8_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_CROSSROADS (entry 3)
-    DEBUGINFO line=1359
+    DEBUGINFO line=1366
     SKY_GOTO_MAP MAP_SKY_CROSSROADS 3
     HALT
 end
 
 script g8_exit1 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_TREASURE_TOWN_WEST (entry 1)
-    DEBUGINFO line=1365
+    DEBUGINFO line=1372
     SKY_GOTO_MAP MAP_SKY_TREASURE_TOWN_WEST 1
     HALT
 end
 
 script g8_sign_enter19   # EoS T01P01A enter19
-    DEBUGINFO line=1371
+    DEBUGINFO line=1378
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}All Your Item Needs Fulfilled!\n{CENTER_ALIGN}← Kangaskhan Storage    Kecleon Market"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
 script g8_sign_enter20   # EoS T01P01A enter20
-    DEBUGINFO line=1378
+    DEBUGINFO line=1385
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}\n{CENTER_ALIGN}Crossroads →"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
 script g8_obj
-    DEBUGINFO line=1385
+    DEBUGINFO line=1392
     HALT
 end
 
 script g8_talk_enter05   # EoS T01P01A enter05 (NPC_YOMAWARU)
-    DEBUGINFO line=1390
+    DEBUGINFO line=1397
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
+    WAIT 1
+    SPECIAL_TEXT SPECIAL_TEXT_BANK 0 0   # EoS message_Menu(MENU_DUSKULL_BANK)
+    JUMP_SCRIPT END_TALK
+end
+
+script g8_counter_enter05   # EoS T01P01A enter05 (NPC_YOMAWARU)
+    DEBUGINFO line=1406
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_DUSKULL   # the shopkeeper behind the counter
     WAIT 1
     SPECIAL_TEXT SPECIAL_TEXT_BANK 0 0   # EoS message_Menu(MENU_DUSKULL_BANK)
     JUMP_SCRIPT END_TALK
@@ -1405,10 +1420,11 @@ objects g8_s1_objs
     object kind=SKY_OBJ_TOTEM_POLE_2 w=2 h=1 x=73 y=35.5 script=g8_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_4 w=2 h=1 x=77 y=35.5 script=g8_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_3 w=2 h=1 x=81 y=35.5 script=g8_obj   # EoS enter.sse
+    object kind=15 w=2 h=1 x=65 y=22.5 script2=g8_counter_enter05   # NPC_YOMAWARU's counter
 end
 
 script g8_talk_um0306   # EoS T01P01A um0306 (NPC_KIMAWARI)
-    DEBUGINFO line=1411
+    DEBUGINFO line=1427
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1460,7 +1476,7 @@ script g8_talk_um0306   # EoS T01P01A um0306 (NPC_KIMAWARI)
 end
 
 script g8_talk_um0308   # EoS T01P01A um0308 (NPC_HEIGANI)
-    DEBUGINFO line=1463
+    DEBUGINFO line=1479
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1497,7 +1513,7 @@ script g8_talk_um0308   # EoS T01P01A um0308 (NPC_HEIGANI)
 end
 
 script g8_talk_um0310   # EoS T01P01A um0310 (NPC_POPPO)
-    DEBUGINFO line=1500
+    DEBUGINFO line=1516
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1521,7 +1537,7 @@ script g8_talk_um0310   # EoS T01P01A um0310 (NPC_POPPO)
 end
 
 script g8_talk_um0311   # EoS T01P01A um0311 (NPC_TANEBOO)
-    DEBUGINFO line=1524
+    DEBUGINFO line=1540
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1544,7 +1560,7 @@ script g8_talk_um0311   # EoS T01P01A um0311 (NPC_TANEBOO)
 end
 
 script g8_talk_um0312   # EoS T01P01A um0312 (NPC_OOSUBAME)
-    DEBUGINFO line=1547
+    DEBUGINFO line=1563
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1568,7 +1584,7 @@ script g8_talk_um0312   # EoS T01P01A um0312 (NPC_OOSUBAME)
 end
 
 script g8_talk_um0313   # EoS T01P01A um0313 (NPC_KEMUSSO)
-    DEBUGINFO line=1571
+    DEBUGINFO line=1587
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1608,7 +1624,7 @@ actors g8_s2_lives
 end
 
 script g8_sky_ch3_detour_event control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS: the coroutine starts
-    DEBUGINFO line=1611
+    DEBUGINFO line=1627
     EXECUTE_FUNCTION SKY_CH3_DETOUR_EVENT
     HALT
 end
@@ -1633,7 +1649,7 @@ actors g8_s3_lives
 end
 
 script g8_sky_ch3_vision_event control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS: the coroutine starts
-    DEBUGINFO line=1636
+    DEBUGINFO line=1652
     EXECUTE_FUNCTION SKY_CH3_VISION_EVENT
     HALT
 end
@@ -1655,7 +1671,7 @@ actors g8_s4_lives
 end
 
 script g8_talk_um0314   # EoS T01P01A um0314 (NPC_BANEBUU)
-    DEBUGINFO line=1658
+    DEBUGINFO line=1674
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1686,7 +1702,7 @@ script g8_talk_um0314   # EoS T01P01A um0314 (NPC_BANEBUU)
 end
 
 script g8_talk_um0316   # EoS T01P01A um0316 (NPC_POPPO)
-    DEBUGINFO line=1689
+    DEBUGINFO line=1705
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1710,7 +1726,7 @@ script g8_talk_um0316   # EoS T01P01A um0316 (NPC_POPPO)
 end
 
 script g8_talk_um0317   # EoS T01P01A um0317 (NPC_TANEBOO)
-    DEBUGINFO line=1713
+    DEBUGINFO line=1729
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1733,7 +1749,7 @@ script g8_talk_um0317   # EoS T01P01A um0317 (NPC_TANEBOO)
 end
 
 script g8_talk_um0318   # EoS T01P01A um0318 (NPC_OOSUBAME)
-    DEBUGINFO line=1736
+    DEBUGINFO line=1752
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1757,7 +1773,7 @@ script g8_talk_um0318   # EoS T01P01A um0318 (NPC_OOSUBAME)
 end
 
 script g8_talk_um0319   # EoS T01P01A um0319 (NPC_KEMUSSO)
-    DEBUGINFO line=1760
+    DEBUGINFO line=1776
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1830,7 +1846,7 @@ static const struct GroundEventData s_gs181_g8_s0_evts[] = {
 ```
 
 script g8_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town, the square (EoS T01P01A, station UM03)
-    DEBUGINFO line=1833
+    DEBUGINFO line=1849
     SELECT_MAP SKY_TREASURE_TOWN_SQUARE
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -1865,20 +1881,20 @@ script g8_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town
     JUMP_LABEL 5
   LABEL 5
     SELECT_LIVES group=-1 sector=10
-    JUMP_LABEL 0
+    JUMP_LABEL 10
   LABEL 6
     SELECT_LIVES group=-1 sector=11
-    JUMP_LABEL 0
+    JUMP_LABEL 10
   LABEL 7
     SELECT_LIVES group=-1 sector=12
-    JUMP_LABEL 0
+    JUMP_LABEL 10
   LABEL 8
     SELECT_LIVES group=-1 sector=13
-    JUMP_LABEL 0
+    JUMP_LABEL 10
   LABEL 9
     SELECT_LIVES group=-1 sector=14
-    JUMP_LABEL 0
-  LABEL 0
+    JUMP_LABEL 10
+  LABEL 10
     SELECT_EVENTS -1 0   # the exits
     BGM_SWITCH SKY_TREASURE_TOWN
     FADE_IN wait=FALSE frames=-1
@@ -1886,32 +1902,32 @@ script g8_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town
 end
 
 script g9_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_TREASURE_TOWN_SQUARE (entry 2)
-    DEBUGINFO line=1889
+    DEBUGINFO line=1905
     SKY_GOTO_MAP MAP_SKY_TREASURE_TOWN_SQUARE 2
     HALT
 end
 
 script g9_sign_enter16   # EoS T01P02A enter16
-    DEBUGINFO line=1895
+    DEBUGINFO line=1911
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}\n{CENTER_ALIGN}← Sharpedo Bluff"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
 script g9_sign_enter17   # EoS T01P02A enter17
-    DEBUGINFO line=1902
+    DEBUGINFO line=1918
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}Move Linking and\n{CENTER_ALIGN}Banking Services This Way →\n{CENTER_ALIGN}Electivire Link Shop    Duskull Bank"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
 script g9_obj
-    DEBUGINFO line=1909
+    DEBUGINFO line=1925
     HALT
 end
 
 script g9_talk_enter10   # EoS T01P02A enter10 (NPC_GARUURA)
-    DEBUGINFO line=1914
+    DEBUGINFO line=1930
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1919,10 +1935,40 @@ script g9_talk_enter10   # EoS T01P02A enter10 (NPC_GARUURA)
     JUMP_SCRIPT END_TALK
 end
 
+script g9_counter_enter10   # EoS T01P02A enter10 (NPC_GARUURA)
+    DEBUGINFO line=1939
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_KANGASKHAN   # the shopkeeper behind the counter
+    WAIT 1
+    SPECIAL_TEXT SPECIAL_TEXT_STORAGE_WITH_DIALOG 0 0   # EoS message_Menu(MENU_KANGASKHAN_STORAGE)
+    JUMP_SCRIPT END_TALK
+end
+
 script g9_talk_enter11   # EoS T01P02A enter11 (NPC_KAKUREON2)
-    DEBUGINFO line=1923
+    DEBUGINFO line=1947
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
+    WAIT 1
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 1
+    JUMP_SCRIPT END_TALK
+  LABEL 0   # scenario (4, 0), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6)
+    SPECIAL_TEXT SPECIAL_TEXT_PURPLE_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_WARES)
+    JUMP_SCRIPT END_TALK
+  LABEL 1   # scenario (4, 1)
+    SPECIAL_TEXT SPECIAL_TEXT_PURPLE_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_WARES)
+    EXECUTE_FUNCTION SKY_CH3_KECLEON_EVENT   # EoS supervision_ExecuteCommon(CORO_EVENT_M03_03);
+    HALT   # the event takes over
+    JUMP_SCRIPT END_TALK
+end
+
+script g9_counter_enter11   # EoS T01P02A enter11 (NPC_KAKUREON2)
+    DEBUGINFO line=1970
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_KECLEON_PURPLE   # the shopkeeper behind the counter
     WAIT 1
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 0
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 0
@@ -1943,7 +1989,7 @@ script g9_talk_enter11   # EoS T01P02A enter11 (NPC_KAKUREON2)
 end
 
 script g9_talk_enter12   # EoS T01P02A enter12 (NPC_KAKUREON1)
-    DEBUGINFO line=1946
+    DEBUGINFO line=1992
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -1965,8 +2011,30 @@ script g9_talk_enter12   # EoS T01P02A enter12 (NPC_KAKUREON1)
     JUMP_SCRIPT END_TALK
 end
 
+script g9_counter_enter12   # EoS T01P02A enter12 (NPC_KAKUREON1)
+    DEBUGINFO line=2015
+    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id=SKY_LIVES_KECLEON   # the shopkeeper behind the counter
+    WAIT 1
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 0 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 2 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 4 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 5 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 6 0
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 4 1 1
+    JUMP_SCRIPT END_TALK
+  LABEL 0   # scenario (4, 0), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6)
+    SPECIAL_TEXT SPECIAL_TEXT_GREEN_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_SHOP)
+    JUMP_SCRIPT END_TALK
+  LABEL 1   # scenario (4, 1)
+    SPECIAL_TEXT SPECIAL_TEXT_GREEN_KECLEON_SHOP 0 0   # EoS message_Menu(MENU_KECLEON_SHOP)
+    EXECUTE_FUNCTION SKY_CH3_KECLEON_EVENT   # EoS supervision_ExecuteCommon(CORO_EVENT_M03_03);
+    HALT   # the event takes over
+    JUMP_SCRIPT END_TALK
+end
+
 actors g9_s1_lives
-    actor kind=SKY_LIVES_KANGASKHAN facing=SOUTH x=22.5 y=20.5 script=ch3_stand script2=g9_talk_enter10   # EoS NPC_GARUURA
+    actor kind=SKY_LIVES_KANGASKHAN facing=SOUTH x=22.5 y=20.5 script=ch3_stand_front script2=g9_talk_enter10   # EoS NPC_GARUURA
     actor kind=SKY_LIVES_KECLEON_PURPLE facing=SOUTH x=43.5 y=20.5 script=ch3_stand script2=g9_talk_enter11   # EoS NPC_KAKUREON2
     actor kind=SKY_LIVES_KECLEON facing=SOUTH x=40.5 y=20.5 script=ch3_stand script2=g9_talk_enter12   # EoS NPC_KAKUREON1
 end
@@ -1977,10 +2045,13 @@ objects g9_s1_objs
     object kind=SKY_OBJ_TOTEM_POLE_2 w=2 h=1 x=3 y=35.5 script=g9_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_4 w=2 h=1 x=7 y=35.5 script=g9_obj   # EoS enter.sse
     object kind=SKY_OBJ_TOTEM_POLE_3 w=2 h=1 x=11 y=35.5 script=g9_obj   # EoS enter.sse
+    object kind=15 w=2 h=1 x=22.5 y=22.5 script2=g9_counter_enter10   # NPC_GARUURA's counter
+    object kind=15 w=2 h=1 x=43.5 y=22.5 script2=g9_counter_enter11   # NPC_KAKUREON2's counter
+    object kind=15 w=2 h=1 x=40.5 y=22.5 script2=g9_counter_enter12   # NPC_KAKUREON1's counter
 end
 
 script g9_talk_um0301   # EoS T01P02A um0301 (NPC_YARUKIMONO)
-    DEBUGINFO line=1983
+    DEBUGINFO line=2054
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2004,7 +2075,7 @@ script g9_talk_um0301   # EoS T01P02A um0301 (NPC_YARUKIMONO)
 end
 
 script g9_talk_um0303   # EoS T01P02A um0303 (NPC_KAGEBOUZU)
-    DEBUGINFO line=2007
+    DEBUGINFO line=2078
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2026,7 +2097,7 @@ script g9_talk_um0303   # EoS T01P02A um0303 (NPC_KAGEBOUZU)
 end
 
 script g9_talk_um0304   # EoS T01P02A um0304 (NPC_YAMIKARASU)
-    DEBUGINFO line=2029
+    DEBUGINFO line=2100
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2069,7 +2140,7 @@ actors g9_s4_lives
 end
 
 script g9_talk_um0305   # EoS T01P02A um0305 (NPC_YARUKIMONO)
-    DEBUGINFO line=2072
+    DEBUGINFO line=2143
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2093,7 +2164,7 @@ script g9_talk_um0305   # EoS T01P02A um0305 (NPC_YARUKIMONO)
 end
 
 script g9_talk_um0307   # EoS T01P02A um0307 (NPC_KAGEBOUZU)
-    DEBUGINFO line=2096
+    DEBUGINFO line=2167
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2115,7 +2186,7 @@ script g9_talk_um0307   # EoS T01P02A um0307 (NPC_KAGEBOUZU)
 end
 
 script g9_talk_um0308   # EoS T01P02A um0308 (NPC_YAMIKARASU)
-    DEBUGINFO line=2118
+    DEBUGINFO line=2189
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2169,7 +2240,7 @@ static const struct GroundEventData s_gs181_g9_s0_evts[] = {
 ```
 
 script g9_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town, the west side (EoS T01P02A, station UM03): Kecleon Market, Kangaskhan Storage
-    DEBUGINFO line=2172
+    DEBUGINFO line=2243
     SELECT_MAP SKY_TREASURE_TOWN_WEST
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -2200,14 +2271,14 @@ script g9_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town
     JUMP_LABEL 5
   LABEL 5
     SELECT_LIVES group=-1 sector=10
-    JUMP_LABEL 0
+    JUMP_LABEL 8
   LABEL 6
     SELECT_LIVES group=-1 sector=11
-    JUMP_LABEL 0
+    JUMP_LABEL 8
   LABEL 7
     SELECT_LIVES group=-1 sector=12
-    JUMP_LABEL 0
-  LABEL 0
+    JUMP_LABEL 8
+  LABEL 8
     SELECT_EVENTS -1 0   # the exits
     BGM_SWITCH SKY_TREASURE_TOWN
     FADE_IN wait=FALSE frames=-1
@@ -2215,13 +2286,13 @@ script g9_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Treasure Town
 end
 
 script g10_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_B2F_CH3 (entry 3)
-    DEBUGINFO line=2218
+    DEBUGINFO line=2289
     SKY_GOTO_MAP MAP_SKY_GUILD_B2F_CH3 3
     HALT
 end
 
 script g10_talk_um0301   # EoS G01P05A um0301 (NPC_PUKURIN)
-    DEBUGINFO line=2224
+    DEBUGINFO line=2295
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2248,7 +2319,7 @@ actors g10_s2_lives
 end
 
 script g10_talk_um0302   # EoS G01P05A um0302 (NPC_PUKURIN)
-    DEBUGINFO line=2251
+    DEBUGINFO line=2322
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2287,7 +2358,7 @@ static const struct GroundEventData s_gs181_g10_s0_evts[] = {
 ```
 
 script g10_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Wigglytuff's room (EoS G01P05A, station UM03)
-    DEBUGINFO line=2290
+    DEBUGINFO line=2361
     SELECT_MAP SKY_GUILD_WIGGLYTUFF_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     JUMPIF_SCENE_EQ SCENARIO_MAIN 4 3 0   # open
@@ -2307,8 +2378,8 @@ script g10_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Wigglytuff's
     JUMP_LABEL 3
   LABEL 3
     SELECT_LIVES group=-1 sector=10
-    JUMP_LABEL 0
-  LABEL 0
+    JUMP_LABEL 4
+  LABEL 4
     SELECT_EVENTS -1 0   # the exits
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
     FADE_IN wait=FALSE frames=-1
@@ -2316,13 +2387,13 @@ script g10_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # Wigglytuff's
 end
 
 script g11_exit0 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # to SKY_GUILD_B2F_CH3 (entry 4)
-    DEBUGINFO line=2319
+    DEBUGINFO line=2390
     SKY_GOTO_MAP MAP_SKY_GUILD_B2F_CH3 4
     HALT
 end
 
 script g11_sign_enter04   # EoS G01P06A enter04
-    DEBUGINFO line=2325
+    DEBUGINFO line=2396
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}Please wash up before eating!\n{CENTER_ALIGN}                             -Chimecho"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
@@ -2333,7 +2404,7 @@ objects g11_s1_objs
 end
 
 script g11_talk_um0301   # EoS G01P06A um0301 (NPC_CHIRIIN)
-    DEBUGINFO line=2336
+    DEBUGINFO line=2407
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2361,7 +2432,7 @@ actors g11_s2_lives
 end
 
 script g11_talk_um0302   # EoS G01P06A um0302 (NPC_CHIRIIN)
-    DEBUGINFO line=2364
+    DEBUGINFO line=2435
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0
     WAIT 1
@@ -2401,7 +2472,7 @@ static const struct GroundEventData s_gs181_g11_s0_evts[] = {
 ```
 
 script g11_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the mess hall by day (EoS G01P06A, station UM03; shown on chapter 2's g01p06b)
-    DEBUGINFO line=2404
+    DEBUGINFO line=2475
     SELECT_MAP SKY_GUILD_MESS_HALL_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -2422,8 +2493,8 @@ script g11_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the mess hal
     JUMP_LABEL 3
   LABEL 3
     SELECT_LIVES group=-1 sector=10
-    JUMP_LABEL 0
-  LABEL 0
+    JUMP_LABEL 4
+  LABEL 4
     SELECT_EVENTS -1 0   # the exits
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
     FADE_IN wait=FALSE frames=-1
@@ -2431,14 +2502,23 @@ script g11_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the mess hal
 end
 
 script g12_sign_enter07   # EoS G01P07A enter07
-    DEBUGINFO line=2434
+    DEBUGINFO line=2505
     WAIT 1
     MSG_INSTANT text="{CENTER_ALIGN}GET UP ALREADY!\n{CENTER_ALIGN}         -Loudred"   # EoS message_Notice
     JUMP_SCRIPT END_TALK
 end
 
-script g12_sign_enter04   # EoS G01P07A enter04
-    DEBUGINFO line=2441
+objects g12_s1_objs
+    object kind=15 w=5 h=1 x=7.5 y=21.5 script2=g12_sign_enter07   # EoS G01P07A enter07
+end
+
+actors g12_s10_lives
+    actor kind=0 facing=EAST x=8 y=22.5 script=ch3_hero   # entry 1
+    actor kind=4 facing=EAST x=4 y=22.5 script=ch3_partner
+end
+
+script g12_ev_enter04 control=GETOUT_NORMAL type=SCRIPT_TYPE_02   # EoS G01P07A enter04
+    DEBUGINFO line=2521
     WAIT 1
     UPDATE_VARINT CALC_SET GROUND_ENTER_LINK 2   # Continue: the crew room, at the bed
     SET_ARRAYVAL SKY_SCENARIO_MAIN_BIT_FLAG 7 1   # EoS $SCENARIO_MAIN_BIT_FLAG[7] = 1;
@@ -2458,15 +2538,12 @@ script g12_sign_enter04   # EoS G01P07A enter04
     JUMP_SCRIPT END_TALK
 end
 
-objects g12_s1_objs
-    object kind=15 w=5 h=1 x=7.5 y=21.5 script2=g12_sign_enter07   # EoS G01P07A enter07
-    object kind=15 w=3 h=3 x=25 y=22 script2=g12_sign_enter04   # EoS G01P07A enter04
-end
-
-actors g12_s10_lives
-    actor kind=0 facing=EAST x=8 y=22.5 script=ch3_hero   # entry 1
-    actor kind=4 facing=EAST x=4 y=22.5 script=ch3_partner
-end
+```c
+/* EoS G01P07A enter.sse: the events at entry 1 */
+static const struct GroundEventData s_gs181_g12_s10_evts[] = {
+    { 3, 3, 0, 0, { 24, 21, 0, 0 }, &s_gs181_g12_ev_enter04_sref },
+};
+```
 
 actors g12_s11_lives
     actor kind=0 facing=SOUTH x=25.5 y=23 script=ch3_hero   # entry 2
@@ -2481,7 +2558,7 @@ static const struct GroundEventData s_gs181_g12_s0_evts[] = {
 ```
 
 script g12_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the crew room (EoS G01P07A): the morning starts here, the beds save
-    DEBUGINFO line=2484
+    DEBUGINFO line=2561
     SELECT_MAP SKY_GUILD_CREW_ROOM_CH3
     UPDATE_VARINT CALC_SET PARTNER1_KIND 2   # the partner (lives kind 4) follows the hero
     SELECT_ENTITIES group=-1 sector=1   # signs, objects, shopkeepers
@@ -2491,6 +2568,7 @@ script g12_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # the crew roo
     JUMP_LABEL 0
   LABEL 0
     SELECT_LIVES group=-1 sector=10
+    SELECT_EVENTS -1 10
     JUMP_LABEL 2
   LABEL 1
     SELECT_LIVES group=-1 sector=11
@@ -2531,43 +2609,43 @@ end
 
 
 script g13_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)
-    DEBUGINFO line=2534
+    DEBUGINFO line=2612
     SELECT_MAP SKY_GUILD_B2F
     JUMP_SCRIPT COMMON_ENTER
 end
 
 script g14_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)
-    DEBUGINFO line=2540
+    DEBUGINFO line=2618
     SELECT_MAP SKY_GUILD_B2F
     JUMP_SCRIPT COMMON_ENTER
 end
 
 script g15_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)
-    DEBUGINFO line=2546
+    DEBUGINFO line=2624
     SELECT_MAP SKY_GUILD_B2F
     JUMP_SCRIPT COMMON_ENTER
 end
 
 script g16_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)
-    DEBUGINFO line=2552
+    DEBUGINFO line=2630
     SELECT_MAP SKY_GUILD_B2F
     JUMP_SCRIPT COMMON_ENTER
 end
 
 script g17_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)
-    DEBUGINFO line=2558
+    DEBUGINFO line=2636
     SELECT_MAP SKY_GUILD_B2F
     JUMP_SCRIPT COMMON_ENTER
 end
 
 script g18_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)
-    DEBUGINFO line=2564
+    DEBUGINFO line=2642
     SELECT_MAP SKY_GUILD_B2F
     JUMP_SCRIPT COMMON_ENTER
 end
 
 script g19_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)
-    DEBUGINFO line=2570
+    DEBUGINFO line=2648
     SELECT_MAP SKY_GUILD_B2F
     JUMP_SCRIPT COMMON_ENTER
 end
@@ -2577,7 +2655,7 @@ end
 # ------------------------------------------------------------------------
 
 script g20_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=2580
+    DEBUGINFO line=2658
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -2702,7 +2780,7 @@ script g20_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g20_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=2705
+    DEBUGINFO line=2783
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -2742,7 +2820,7 @@ script g20_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g20_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=2745
+    DEBUGINFO line=2823
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -2786,7 +2864,7 @@ script g20_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g20_s0_loudred   # EoS actor NPC_DOGOOMU, layer 0
-    DEBUGINFO line=2789
+    DEBUGINFO line=2867
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -2824,7 +2902,7 @@ end
 # ------------------------------------------------------------------------
 
 script g21_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=2827
+    DEBUGINFO line=2905
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
@@ -2926,7 +3004,7 @@ script g21_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g21_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=2929
+    DEBUGINFO line=3007
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 84
@@ -2939,7 +3017,7 @@ script g21_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g21_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=2942
+    DEBUGINFO line=3020
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 78
@@ -2959,7 +3037,7 @@ script g21_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g21_s1_wigglytuff   # EoS actor NPC_PUKURIN, layer 1
-    DEBUGINFO line=2962
+    DEBUGINFO line=3040
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 86
@@ -2969,7 +3047,7 @@ script g21_s1_wigglytuff   # EoS actor NPC_PUKURIN, layer 1
 end
 
 script g21_s1_loudred   # EoS actor NPC_DOGOOMU, layer 1
-    DEBUGINFO line=2972
+    DEBUGINFO line=3050
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -2991,7 +3069,7 @@ script g21_s1_loudred   # EoS actor NPC_DOGOOMU, layer 1
 end
 
 script g21_s1_bidoof   # EoS actor NPC_BIPPA, layer 1
-    DEBUGINFO line=2994
+    DEBUGINFO line=3072
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 70
@@ -3007,7 +3085,7 @@ script g21_s1_bidoof   # EoS actor NPC_BIPPA, layer 1
 end
 
 script g21_s1_chimecho   # EoS actor NPC_CHIRIIN, layer 1
-    DEBUGINFO line=3010
+    DEBUGINFO line=3088
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 74
@@ -3028,7 +3106,7 @@ script g21_s1_chimecho   # EoS actor NPC_CHIRIIN, layer 1
 end
 
 script g21_s1_corphish   # EoS actor NPC_HEIGANI, layer 1
-    DEBUGINFO line=3031
+    DEBUGINFO line=3109
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 80
@@ -3042,7 +3120,7 @@ script g21_s1_corphish   # EoS actor NPC_HEIGANI, layer 1
 end
 
 script g21_s1_sunflora   # EoS actor NPC_KIMAWARI, layer 1
-    DEBUGINFO line=3045
+    DEBUGINFO line=3123
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 76
@@ -3063,7 +3141,7 @@ script g21_s1_sunflora   # EoS actor NPC_KIMAWARI, layer 1
 end
 
 script g21_s1_diglett   # EoS actor NPC_DIGUDA, layer 1
-    DEBUGINFO line=3066
+    DEBUGINFO line=3144
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 82
@@ -3077,7 +3155,7 @@ script g21_s1_diglett   # EoS actor NPC_DIGUDA, layer 1
 end
 
 script g21_s1_dugtrio   # EoS actor NPC_DAGUTORIO, layer 1
-    DEBUGINFO line=3080
+    DEBUGINFO line=3158
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 72
@@ -3099,7 +3177,7 @@ script g21_s1_dugtrio   # EoS actor NPC_DAGUTORIO, layer 1
 end
 
 script g21_s1_croagunk   # EoS actor NPC_GUREGGURU, layer 1
-    DEBUGINFO line=3102
+    DEBUGINFO line=3180
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -3115,7 +3193,7 @@ script g21_s1_croagunk   # EoS actor NPC_GUREGGURU, layer 1
 end
 
 script g21_s2_chatot   # EoS actor NPC_PERAPPU, layer 2
-    DEBUGINFO line=3118
+    DEBUGINFO line=3196
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -3150,7 +3228,7 @@ end
 # ------------------------------------------------------------------------
 
 script g22_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=3153
+    DEBUGINFO line=3231
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
@@ -3192,7 +3270,7 @@ script g22_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g22_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=3195
+    DEBUGINFO line=3273
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -3210,7 +3288,7 @@ script g22_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g22_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=3213
+    DEBUGINFO line=3291
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -3227,7 +3305,7 @@ script g22_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g22_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
-    DEBUGINFO line=3230
+    DEBUGINFO line=3308
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -3258,7 +3336,7 @@ end
 # ------------------------------------------------------------------------
 
 script g23_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=3261
+    DEBUGINFO line=3339
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -3485,7 +3563,7 @@ script g23_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g23_s1_chatot   # EoS actor NPC_PERAPPU, layer 1
-    DEBUGINFO line=3488
+    DEBUGINFO line=3566
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -3536,7 +3614,7 @@ script g23_s1_chatot   # EoS actor NPC_PERAPPU, layer 1
 end
 
 script g23_s2_player   # EoS actor PLAYER, layer 2
-    DEBUGINFO line=3539
+    DEBUGINFO line=3617
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -3564,7 +3642,7 @@ script g23_s2_player   # EoS actor PLAYER, layer 2
 end
 
 script g23_s3_partner   # EoS actor ATTENDANT1, layer 3
-    DEBUGINFO line=3567
+    DEBUGINFO line=3645
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -3609,7 +3687,7 @@ script g23_s3_partner   # EoS actor ATTENDANT1, layer 3
 end
 
 script g23_s4_bidoof   # EoS actor NPC_BIPPA, layer 4
-    DEBUGINFO line=3612
+    DEBUGINFO line=3690
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -3673,7 +3751,7 @@ end
 # ------------------------------------------------------------------------
 
 script g24_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=3676
+    DEBUGINFO line=3754
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=BIDOOF id=SKY_LIVES_BIDOOF   # the text names it
@@ -3756,7 +3834,7 @@ script g24_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g24_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=3759
+    DEBUGINFO line=3837
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -3778,7 +3856,7 @@ script g24_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g24_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=3781
+    DEBUGINFO line=3859
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -3800,7 +3878,7 @@ script g24_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g24_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
-    DEBUGINFO line=3803
+    DEBUGINFO line=3881
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -3839,7 +3917,7 @@ end
 # ------------------------------------------------------------------------
 
 script g25_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=3842
+    DEBUGINFO line=3920
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD_REMIX
@@ -3865,7 +3943,7 @@ script g25_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g25_s1_bidoof   # EoS actor NPC_BIPPA, layer 1
-    DEBUGINFO line=3868
+    DEBUGINFO line=3946
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -3874,7 +3952,7 @@ script g25_s1_bidoof   # EoS actor NPC_BIPPA, layer 1
 end
 
 script g25_s2_player   # EoS actor PLAYER, layer 2
-    DEBUGINFO line=3877
+    DEBUGINFO line=3955
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -3883,7 +3961,7 @@ script g25_s2_player   # EoS actor PLAYER, layer 2
 end
 
 script g25_s3_partner   # EoS actor ATTENDANT1, layer 3
-    DEBUGINFO line=3886
+    DEBUGINFO line=3964
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -3908,7 +3986,7 @@ end
 # ------------------------------------------------------------------------
 
 script g26_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=3911
+    DEBUGINFO line=3989
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=BIDOOF id=SKY_LIVES_BIDOOF   # the text names it
@@ -3960,7 +4038,7 @@ script g26_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g26_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=3963
+    DEBUGINFO line=4041
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -3975,7 +4053,7 @@ script g26_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g26_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=3978
+    DEBUGINFO line=4056
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -3996,7 +4074,7 @@ script g26_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g26_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
-    DEBUGINFO line=3999
+    DEBUGINFO line=4077
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4023,7 +4101,7 @@ end
 # ------------------------------------------------------------------------
 
 script g27_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4026
+    DEBUGINFO line=4104
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -4094,7 +4172,7 @@ script g27_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g27_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=4097
+    DEBUGINFO line=4175
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -4108,7 +4186,7 @@ script g27_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g27_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=4111
+    DEBUGINFO line=4189
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4123,7 +4201,7 @@ script g27_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g27_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
-    DEBUGINFO line=4126
+    DEBUGINFO line=4204
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4150,7 +4228,7 @@ end
 # ------------------------------------------------------------------------
 
 script g28_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4153
+    DEBUGINFO line=4231
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -4191,7 +4269,7 @@ end
 # ------------------------------------------------------------------------
 
 script g29_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4194
+    DEBUGINFO line=4272
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -4254,7 +4332,7 @@ script g29_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g29_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=4257
+    DEBUGINFO line=4335
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -4265,7 +4343,7 @@ script g29_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g29_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=4268
+    DEBUGINFO line=4346
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4278,7 +4356,7 @@ script g29_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g29_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
-    DEBUGINFO line=4281
+    DEBUGINFO line=4359
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4309,7 +4387,7 @@ end
 # ------------------------------------------------------------------------
 
 script g30_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4312
+    DEBUGINFO line=4390
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -4337,7 +4415,7 @@ script g30_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g30_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=4340
+    DEBUGINFO line=4418
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4350,7 +4428,7 @@ script g30_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g30_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=4353
+    DEBUGINFO line=4431
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4374,7 +4452,7 @@ end
 # ------------------------------------------------------------------------
 
 script g31_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4377
+    DEBUGINFO line=4455
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -4590,7 +4668,7 @@ script g31_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g31_s0_kecleon   # EoS actor NPC_KAKUREON1, layer 0
-    DEBUGINFO line=4593
+    DEBUGINFO line=4671
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=KECLEON id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4621,7 +4699,7 @@ script g31_s0_kecleon   # EoS actor NPC_KAKUREON1, layer 0
 end
 
 script g31_s0_kecleon_purple   # EoS actor NPC_KAKUREON2, layer 0
-    DEBUGINFO line=4624
+    DEBUGINFO line=4702
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -4653,7 +4731,7 @@ script g31_s0_kecleon_purple   # EoS actor NPC_KAKUREON2, layer 0
 end
 
 script g31_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=4656
+    DEBUGINFO line=4734
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4680,7 +4758,7 @@ script g31_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g31_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=4683
+    DEBUGINFO line=4761
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -4704,7 +4782,7 @@ script g31_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g31_s1_marill   # EoS actor NPC_MARIRU, layer 1
-    DEBUGINFO line=4707
+    DEBUGINFO line=4785
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=MARILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4733,7 +4811,7 @@ script g31_s1_marill   # EoS actor NPC_MARIRU, layer 1
 end
 
 script g31_s1_azurill   # EoS actor NPC_RURIRI, layer 1
-    DEBUGINFO line=4736
+    DEBUGINFO line=4814
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -4789,11 +4867,11 @@ script g31_s1_azurill   # EoS actor NPC_RURIRI, layer 1
 end
 
 script g31_s2_obj0_p03p02a1   # EoS object P03P02A1_128, layer 2
-    DEBUGINFO line=4792
+    DEBUGINFO line=4870
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 76
     MOVE_RELATIVE speed=256 dx=-72 dy=4   # EoS SlidePositionMark to Position<'m11', 42, 24.5>
-    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
+    SELECT_ANIMATION 6   # EoS SetAnimation(18)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 77 0   # done: the station waits for this
     AWAIT_CUE 76
@@ -4821,7 +4899,7 @@ end
 # ------------------------------------------------------------------------
 
 script g32_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4824
+    DEBUGINFO line=4902
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     SELECT_MAP SKY_MT_BRISTLE_PEAK   # EoS LEVEL_S04P01A: a black screen
@@ -4831,8 +4909,16 @@ script g32_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     FADE_IN wait=TRUE frames=16
     SET_PLACE_MODE 4
     FANFARE_PLAY2 SE_SKY_VISION_START   # EoS se_Play(5132)
-    SKY_VISION 0   # EoS SetEffect<performer 3>(621, 3);: the dizzy spell
-    # eos: WaitEffect<performer 3>(); (SKY_VISION plays to its end)
+    # eos: SetEffect<performer 3>(621, 3);: the dizzy spell's swirl, as white pulses
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    # eos: WaitEffect<performer 3>(); (the pulses above)
     SKY_CAMERA_SET x=20 y=280   # EoS SetPositionMark<performer 0>(Position<'m0', 17, 44.5>);
     # eos: WaitExecutePerformer(3); (the camera has arrived)
     FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=16 color=RGB_U32(0xFF, 0xFF, 0xFF)
@@ -4844,7 +4930,7 @@ end
 # ------------------------------------------------------------------------
 
 script g33_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4847
+    DEBUGINFO line=4933
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     SELECT_MAP SKY_MT_BRISTLE_PEAK   # EoS LEVEL_S04P01A: a black screen
@@ -4865,7 +4951,7 @@ end
 # ------------------------------------------------------------------------
 
 script g34_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4868
+    DEBUGINFO line=4954
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     SELECT_MAP SKY_MT_BRISTLE_PEAK   # EoS LEVEL_S04P01A: a black screen
@@ -4874,8 +4960,16 @@ script g34_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SKY_CAMERA_SET x=20 y=280   # EoS camera_SetMyself<performer 0>
     FADE_IN wait=TRUE frames=16
     SET_PLACE_MODE 4
-    SKY_VISION 1   # EoS SetEffect<performer 3>(635, 3);: the dizzy spell
-    # eos: WaitEffect<performer 3>(); (SKY_VISION plays to its end)
+    # eos: SetEffect<performer 3>(635, 3);: the dizzy spell's swirl, as white pulses
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=3 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=5 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=8 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_TO wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    FLASH_FROM wait=TRUE kind=PALUTIL_KIND_01 frames=12 color=RGB_U32(0xFF, 0xFF, 0xFF)
+    # eos: WaitEffect<performer 3>(); (the pulses above)
     SKY_CAMERA_SET x=20 y=24   # EoS SetPositionMark<performer 0>(Position<'m0', 17, 12.5>);
     # eos: WaitExecutePerformer(3); (the camera has arrived)
     FADE_OUT wait=TRUE frames=16
@@ -4887,7 +4981,7 @@ end
 # ------------------------------------------------------------------------
 
 script g35_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=4890
+    DEBUGINFO line=4984
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -5067,7 +5161,7 @@ script g35_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g35_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=5070
+    DEBUGINFO line=5164
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5095,7 +5189,7 @@ script g35_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g35_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=5098
+    DEBUGINFO line=5192
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5132,7 +5226,7 @@ script g35_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g35_s0_kecleon_purple   # EoS actor NPC_KAKUREON2, layer 0
-    DEBUGINFO line=5135
+    DEBUGINFO line=5229
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=KECLEON_PURPLE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5152,7 +5246,7 @@ script g35_s0_kecleon_purple   # EoS actor NPC_KAKUREON2, layer 0
 end
 
 script g35_s0_kecleon   # EoS actor NPC_KAKUREON1, layer 0
-    DEBUGINFO line=5155
+    DEBUGINFO line=5249
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=KECLEON id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5168,7 +5262,7 @@ script g35_s0_kecleon   # EoS actor NPC_KAKUREON1, layer 0
 end
 
 script g35_s0_marill   # EoS actor NPC_MARIRU, layer 0
-    DEBUGINFO line=5171
+    DEBUGINFO line=5265
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=MARILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5182,7 +5276,7 @@ script g35_s0_marill   # EoS actor NPC_MARIRU, layer 0
 end
 
 script g35_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=5185
+    DEBUGINFO line=5279
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5223,7 +5317,7 @@ end
 # ------------------------------------------------------------------------
 
 script g36_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=5226
+    DEBUGINFO line=5320
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -5390,7 +5484,7 @@ script g36_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g36_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=5393
+    DEBUGINFO line=5487
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5412,7 +5506,7 @@ script g36_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g36_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=5415
+    DEBUGINFO line=5509
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5432,7 +5526,7 @@ script g36_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g36_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=5435
+    DEBUGINFO line=5529
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5465,7 +5559,7 @@ script g36_s0_azurill   # EoS actor NPC_RURIRI, layer 0
 end
 
 script g36_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
-    DEBUGINFO line=5468
+    DEBUGINFO line=5562
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=DROWZEE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5485,7 +5579,7 @@ script g36_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
 end
 
 script g36_s0_marill   # EoS actor NPC_MARIRU, layer 0
-    DEBUGINFO line=5488
+    DEBUGINFO line=5582
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=MARILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5522,7 +5616,7 @@ end
 # ------------------------------------------------------------------------
 
 script g37_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=5525
+    DEBUGINFO line=5619
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=DROWZEE id=SKY_LIVES_DROWZEE   # the text names it
@@ -5569,7 +5663,7 @@ script g37_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g37_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
-    DEBUGINFO line=5572
+    DEBUGINFO line=5666
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=DROWZEE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5577,7 +5671,7 @@ script g37_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
 end
 
 script g37_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=5580
+    DEBUGINFO line=5674
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5600,7 +5694,7 @@ end
 # ------------------------------------------------------------------------
 
 script g38_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=5603
+    DEBUGINFO line=5697
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -5697,7 +5791,7 @@ script g38_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g38_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=5700
+    DEBUGINFO line=5794
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5721,7 +5815,7 @@ script g38_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g38_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=5724
+    DEBUGINFO line=5818
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5751,7 +5845,7 @@ end
 # ------------------------------------------------------------------------
 
 script g39_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=5754
+    DEBUGINFO line=5848
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -5883,7 +5977,7 @@ script g39_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g39_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=5886
+    DEBUGINFO line=5980
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -5912,7 +6006,7 @@ script g39_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g39_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=5915
+    DEBUGINFO line=6009
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5948,7 +6042,7 @@ script g39_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g39_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
-    DEBUGINFO line=5951
+    DEBUGINFO line=6045
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -5971,14 +6065,14 @@ script g39_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
 end
 
 script g39_s0_obj0_g01p03a1   # EoS object G01P03A1_100, layer 0
-    DEBUGINFO line=5974
+    DEBUGINFO line=6068
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 70
-    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
+    SELECT_ANIMATION 4   # EoS SetAnimation(18)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 71 0   # done: the station waits for this
     AWAIT_CUE 70
-    SELECT_ANIMATION 11
+    SELECT_ANIMATION 5   # EoS SetAnimation(11)
     HALT
 end
 
@@ -5997,7 +6091,7 @@ end
 # ------------------------------------------------------------------------
 
 script g40_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=6000
+    DEBUGINFO line=6094
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=BIDOOF id=SKY_LIVES_BIDOOF   # the text names it
@@ -6069,7 +6163,7 @@ script g40_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g40_s0_dugtrio   # EoS actor NPC_DAGUTORIO, layer 0
-    DEBUGINFO line=6072
+    DEBUGINFO line=6166
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -6100,7 +6194,7 @@ script g40_s0_dugtrio   # EoS actor NPC_DAGUTORIO, layer 0
 end
 
 script g40_s0_swellow   # EoS actor NPC_OOSUBAME, layer 0
-    DEBUGINFO line=6103
+    DEBUGINFO line=6197
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 70
@@ -6124,7 +6218,7 @@ script g40_s0_swellow   # EoS actor NPC_OOSUBAME, layer 0
 end
 
 script g40_s0_wurmple   # EoS actor NPC_KEMUSSO, layer 0
-    DEBUGINFO line=6127
+    DEBUGINFO line=6221
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 72
@@ -6149,7 +6243,7 @@ script g40_s0_wurmple   # EoS actor NPC_KEMUSSO, layer 0
 end
 
 script g40_s0_obj0_v03p03a2   # EoS object V03P03A2_195, layer 0
-    DEBUGINFO line=6152
+    DEBUGINFO line=6246
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
     SET_OBJ_FLAGS 0x80000   # EoS SetOutputAttribute(8): drawn over the map's front layer
@@ -6157,16 +6251,16 @@ script g40_s0_obj0_v03p03a2   # EoS object V03P03A2_195, layer 0
 end
 
 script g40_s0_obj1_v03p03a1   # EoS object V03P03A1_193, layer 0
-    DEBUGINFO line=6160
+    DEBUGINFO line=6254
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 1   # EoS SetAnimation(9): closed (direction 0, held)
+    SELECT_ANIMATION 1   # EoS SetAnimation(9)
     AWAIT_CUE 66
-    SELECT_ANIMATION 4   # EoS SetAnimation(17): opens once and stays open (0x1001)
+    SELECT_ANIMATION 4   # EoS SetAnimation(17)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     AWAIT_CUE 66
-    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
+    SELECT_ANIMATION 5   # EoS SetAnimation(18)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     HALT
@@ -6188,7 +6282,7 @@ end
 # ------------------------------------------------------------------------
 
 script g41_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=6191
+    DEBUGINFO line=6285
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -6337,7 +6431,7 @@ script g41_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g41_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=6340
+    DEBUGINFO line=6434
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6365,7 +6459,7 @@ script g41_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g41_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=6368
+    DEBUGINFO line=6462
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6414,7 +6508,7 @@ script g41_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g41_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
-    DEBUGINFO line=6417
+    DEBUGINFO line=6511
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6447,16 +6541,16 @@ script g41_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
 end
 
 script g41_s0_obj0_g01p03a1   # EoS object G01P03A1_100, layer 0
-    DEBUGINFO line=6450
+    DEBUGINFO line=6544
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 11
+    SELECT_ANIMATION 5   # EoS SetAnimation(11)
     AWAIT_CUE 66
-    SELECT_ANIMATION 20
+    SELECT_ANIMATION 6   # EoS SetAnimation(20)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     AWAIT_CUE 66
-    SELECT_ANIMATION 1   # EoS SetAnimation(9): closed (direction 0, held)
+    SELECT_ANIMATION 1   # EoS SetAnimation(9)
     HALT
 end
 
@@ -6475,7 +6569,7 @@ end
 # ------------------------------------------------------------------------
 
 script g42_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=6478
+    DEBUGINFO line=6572
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -6545,7 +6639,7 @@ script g42_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g42_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=6548
+    DEBUGINFO line=6642
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -6564,7 +6658,7 @@ script g42_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g42_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=6567
+    DEBUGINFO line=6661
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6587,7 +6681,7 @@ script g42_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g42_s0_marill   # EoS actor NPC_MARIRU, layer 0
-    DEBUGINFO line=6590
+    DEBUGINFO line=6684
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=MARILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6622,7 +6716,7 @@ end
 # ------------------------------------------------------------------------
 
 script g43_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=6625
+    DEBUGINFO line=6719
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -6684,7 +6778,7 @@ script g43_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g43_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=6687
+    DEBUGINFO line=6781
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6711,7 +6805,7 @@ script g43_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g43_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=6714
+    DEBUGINFO line=6808
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6736,7 +6830,7 @@ script g43_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g43_s0_marill   # EoS actor NPC_MARIRU, layer 0
-    DEBUGINFO line=6739
+    DEBUGINFO line=6833
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=MARILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -6759,7 +6853,7 @@ end
 # ------------------------------------------------------------------------
 
 script g44_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=6762
+    DEBUGINFO line=6856
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -6971,7 +7065,7 @@ script g44_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g44_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=6974
+    DEBUGINFO line=7068
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7029,7 +7123,7 @@ script g44_s0_azurill   # EoS actor NPC_RURIRI, layer 0
 end
 
 script g44_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
-    DEBUGINFO line=7032
+    DEBUGINFO line=7126
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=DROWZEE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7072,7 +7166,7 @@ script g44_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
 end
 
 script g44_s1_player   # EoS actor PLAYER, layer 1
-    DEBUGINFO line=7075
+    DEBUGINFO line=7169
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -7085,7 +7179,7 @@ script g44_s1_player   # EoS actor PLAYER, layer 1
 end
 
 script g44_s1_partner   # EoS actor ATTENDANT1, layer 1
-    DEBUGINFO line=7088
+    DEBUGINFO line=7182
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7139,7 +7233,7 @@ end
 # ------------------------------------------------------------------------
 
 script g45_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=7142
+    DEBUGINFO line=7236
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -7180,7 +7274,7 @@ script g45_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g45_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=7183
+    DEBUGINFO line=7277
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -7190,7 +7284,7 @@ script g45_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g45_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=7193
+    DEBUGINFO line=7287
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7201,7 +7295,7 @@ script g45_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g45_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
-    DEBUGINFO line=7204
+    DEBUGINFO line=7298
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=DROWZEE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7212,7 +7306,7 @@ script g45_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
 end
 
 script g45_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=7215
+    DEBUGINFO line=7309
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -7235,7 +7329,7 @@ end
 # ------------------------------------------------------------------------
 
 script g46_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=7238
+    DEBUGINFO line=7332
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -7290,7 +7384,7 @@ script g46_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g46_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=7293
+    DEBUGINFO line=7387
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -7299,7 +7393,7 @@ script g46_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g46_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=7302
+    DEBUGINFO line=7396
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7310,7 +7404,7 @@ script g46_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g46_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=7313
+    DEBUGINFO line=7407
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7326,7 +7420,7 @@ script g46_s0_azurill   # EoS actor NPC_RURIRI, layer 0
 end
 
 script g46_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
-    DEBUGINFO line=7329
+    DEBUGINFO line=7423
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=DROWZEE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7351,7 +7445,7 @@ end
 # ------------------------------------------------------------------------
 
 script g47_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=7354
+    DEBUGINFO line=7448
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -7516,7 +7610,7 @@ script g47_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g47_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=7519
+    DEBUGINFO line=7613
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7533,7 +7627,7 @@ script g47_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g47_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=7536
+    DEBUGINFO line=7630
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7549,7 +7643,7 @@ script g47_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g47_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=7552
+    DEBUGINFO line=7646
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7593,7 +7687,7 @@ script g47_s0_azurill   # EoS actor NPC_RURIRI, layer 0
 end
 
 script g47_s0_magnemite   # EoS actor NPC_KOIRU, layer 0
-    DEBUGINFO line=7596
+    DEBUGINFO line=7690
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -7608,7 +7702,7 @@ script g47_s0_magnemite   # EoS actor NPC_KOIRU, layer 0
 end
 
 script g47_s0_magnemite2   # EoS actor NPC_KOIRU2, layer 0
-    DEBUGINFO line=7611
+    DEBUGINFO line=7705
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
@@ -7625,7 +7719,7 @@ script g47_s0_magnemite2   # EoS actor NPC_KOIRU2, layer 0
 end
 
 script g47_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
-    DEBUGINFO line=7628
+    DEBUGINFO line=7722
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=DROWZEE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7643,7 +7737,7 @@ script g47_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
 end
 
 script g47_s0_magnezone   # EoS actor NPC_JIBAKOIRU, layer 0
-    DEBUGINFO line=7646
+    DEBUGINFO line=7740
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=MAGNEZONE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7663,7 +7757,7 @@ script g47_s0_magnezone   # EoS actor NPC_JIBAKOIRU, layer 0
 end
 
 script g47_s1_marill   # EoS actor NPC_MARIRU, layer 1
-    DEBUGINFO line=7666
+    DEBUGINFO line=7760
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=MARILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7689,28 +7783,28 @@ script g47_s1_marill   # EoS actor NPC_MARIRU, layer 1
 end
 
 script g47_s10_bidoof   # EoS actor NPC_BIPPA, layer 10
-    DEBUGINFO line=7692
+    DEBUGINFO line=7786
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end
 
 script g47_s10_bibarel   # EoS actor NPC_BIIDARU, layer 10
-    DEBUGINFO line=7699
+    DEBUGINFO line=7793
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end
 
 script g47_s10_bidoof_bro   # EoS actor NPC_BIPPA_BRO, layer 10
-    DEBUGINFO line=7706
+    DEBUGINFO line=7800
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end
 
 script g47_s10_bidoof_sis   # EoS actor NPC_BIPPA_SIS, layer 10
-    DEBUGINFO line=7713
+    DEBUGINFO line=7807
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
@@ -7721,7 +7815,7 @@ actors g47_s0_lives
     actor kind=34 facing=NORTH x=32.5 y=29.5 script=g47_s0_partner   # EoS ATTENDANT1
     actor kind=SKY_LIVES_AZURILL facing=NORTH x=34.5 y=31.5 script=g47_s0_azurill   # EoS NPC_RURIRI
     actor kind=SKY_LIVES_MAGNEMITE facing=SOUTH x=36.5 y=23.5 script=g47_s0_magnemite   # EoS NPC_KOIRU
-    actor kind=SKY_LIVES_MAGNEMITE facing=SOUTH x=32.5 y=23.5 script=g47_s0_magnemite2   # EoS NPC_KOIRU2
+    actor kind=SKY_LIVES_MAGNEMITE2 facing=SOUTH x=32.5 y=23.5 script=g47_s0_magnemite2   # EoS NPC_KOIRU2
     actor kind=SKY_LIVES_DROWZEE facing=SOUTH x=34.5 y=23.5 script=g47_s0_drowzee   # EoS NPC_SURIIPU
     actor kind=SKY_LIVES_MAGNEZONE facing=SOUTH x=34.5 y=26.5 script=g47_s0_magnezone   # EoS NPC_JIBAKOIRU
 end
@@ -7742,7 +7836,7 @@ end
 # ------------------------------------------------------------------------
 
 script g48_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=7745
+    DEBUGINFO line=7839
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -7842,7 +7936,7 @@ script g48_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g48_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=7845
+    DEBUGINFO line=7939
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7858,7 +7952,7 @@ script g48_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g48_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=7861
+    DEBUGINFO line=7955
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7880,7 +7974,7 @@ script g48_s0_partner   # EoS actor ATTENDANT1, layer 0
 end
 
 script g48_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
-    DEBUGINFO line=7883
+    DEBUGINFO line=7977
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7905,7 +7999,7 @@ end
 # ------------------------------------------------------------------------
 
 script g49_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=7908
+    DEBUGINFO line=8002
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=DROWZEE id=SKY_LIVES_DROWZEE   # the text names it
@@ -7952,7 +8046,7 @@ script g49_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g49_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
-    DEBUGINFO line=7955
+    DEBUGINFO line=8049
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=DROWZEE id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7960,7 +8054,7 @@ script g49_s0_drowzee   # EoS actor NPC_SURIIPU, layer 0
 end
 
 script g49_s0_azurill   # EoS actor NPC_RURIRI, layer 0
-    DEBUGINFO line=7963
+    DEBUGINFO line=8057
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=AZURILL id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -7983,7 +8077,7 @@ end
 # ------------------------------------------------------------------------
 
 script g50_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=7986
+    DEBUGINFO line=8080
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -8059,7 +8153,7 @@ script g50_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g50_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=8062
+    DEBUGINFO line=8156
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8084,7 +8178,7 @@ script g50_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g50_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=8087
+    DEBUGINFO line=8181
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8125,7 +8219,7 @@ end
 # ------------------------------------------------------------------------
 
 script g51_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8128
+    DEBUGINFO line=8222
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     BGM_STOP
@@ -8155,7 +8249,7 @@ end
 # ------------------------------------------------------------------------
 
 script g52_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8158
+    DEBUGINFO line=8252
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -8221,7 +8315,7 @@ script g52_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g52_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=8224
+    DEBUGINFO line=8318
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8232,7 +8326,7 @@ script g52_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g52_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=8235
+    DEBUGINFO line=8329
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8264,7 +8358,7 @@ end
 # ------------------------------------------------------------------------
 
 script g53_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8267
+    DEBUGINFO line=8361
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     BGM_STOP
@@ -8297,7 +8391,7 @@ end
 # ------------------------------------------------------------------------
 
 script g54_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8300
+    DEBUGINFO line=8394
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
@@ -8375,7 +8469,7 @@ script g54_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g54_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=8378
+    DEBUGINFO line=8472
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8386,7 +8480,7 @@ script g54_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g54_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=8389
+    DEBUGINFO line=8483
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8406,7 +8500,7 @@ end
 # ------------------------------------------------------------------------
 
 script g55_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8409
+    DEBUGINFO line=8503
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8427,18 +8521,18 @@ script g55_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g55_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
-    DEBUGINFO line=8430
+    DEBUGINFO line=8524
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
 script g55_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
-    DEBUGINFO line=8438
+    DEBUGINFO line=8532
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -8452,7 +8546,7 @@ end
 # ------------------------------------------------------------------------
 
 script g56_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8455
+    DEBUGINFO line=8549
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8473,18 +8567,18 @@ script g56_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g56_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
-    DEBUGINFO line=8476
+    DEBUGINFO line=8570
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
 script g56_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
-    DEBUGINFO line=8484
+    DEBUGINFO line=8578
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -8498,7 +8592,7 @@ end
 # ------------------------------------------------------------------------
 
 script g57_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8501
+    DEBUGINFO line=8595
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8519,18 +8613,18 @@ script g57_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g57_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
-    DEBUGINFO line=8522
+    DEBUGINFO line=8616
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
 script g57_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
-    DEBUGINFO line=8530
+    DEBUGINFO line=8624
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -8544,7 +8638,7 @@ end
 # ------------------------------------------------------------------------
 
 script g58_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8547
+    DEBUGINFO line=8641
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8578,7 +8672,7 @@ end
 # ------------------------------------------------------------------------
 
 script g59_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8581
+    DEBUGINFO line=8675
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     BGM_SWITCH SKY_TIME_GEAR_REMIX
@@ -8605,7 +8699,7 @@ end
 # ------------------------------------------------------------------------
 
 script g60_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8608
+    DEBUGINFO line=8702
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     SKY_AMBIENCE song=SKY_STORM frames=0
@@ -8638,7 +8732,7 @@ script g60_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g60_s0_grovyle   # EoS actor NPC_JUPUTORU, layer 0
-    DEBUGINFO line=8641
+    DEBUGINFO line=8735
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -8658,7 +8752,7 @@ end
 # ------------------------------------------------------------------------
 
 script g61_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8661
+    DEBUGINFO line=8755
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8680,7 +8774,7 @@ script g61_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g61_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=8683
+    DEBUGINFO line=8777
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -8690,7 +8784,7 @@ script g61_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g61_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=8693
+    DEBUGINFO line=8787
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8710,7 +8804,7 @@ end
 # ------------------------------------------------------------------------
 
 script g62_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8713
+    DEBUGINFO line=8807
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8742,7 +8836,7 @@ script g62_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g62_s0_grovyle   # EoS actor NPC_JUPUTORU, layer 0
-    DEBUGINFO line=8745
+    DEBUGINFO line=8839
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -8757,7 +8851,7 @@ script g62_s0_grovyle   # EoS actor NPC_JUPUTORU, layer 0
 end
 
 script g62_s1_obj0_v03p11a1   # EoS object V03P11A1_204, layer 1
-    DEBUGINFO line=8760
+    DEBUGINFO line=8854
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end
@@ -8775,7 +8869,7 @@ end
 # ------------------------------------------------------------------------
 
 script g63_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8778
+    DEBUGINFO line=8872
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8833,7 +8927,7 @@ script g63_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g63_s0_grovyle   # EoS actor NPC_JUPUTORU, layer 0
-    DEBUGINFO line=8836
+    DEBUGINFO line=8930
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
@@ -8855,18 +8949,18 @@ script g63_s0_grovyle   # EoS actor NPC_JUPUTORU, layer 0
 end
 
 script g63_s0_obj0_v03p06a2   # EoS object V03P06A2_200, layer 0
-    DEBUGINFO line=8858
+    DEBUGINFO line=8952
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
 script g63_s0_obj1_v03p06a1   # EoS object V03P06A1_196, layer 0
-    DEBUGINFO line=8866
+    DEBUGINFO line=8960
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
-    SELECT_ANIMATION 3
+    # eos: SetAnimation(3) (held on its first frame: the GBA's default state)
     HALT
 end
 
@@ -8884,7 +8978,7 @@ end
 # ------------------------------------------------------------------------
 
 script g64_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8887
+    DEBUGINFO line=8981
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     BGM_SWITCH SKY_TIME_GEAR_REMIX
@@ -8939,7 +9033,7 @@ end
 # ------------------------------------------------------------------------
 
 script g65_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8942
+    DEBUGINFO line=9036
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -8962,14 +9056,14 @@ script g65_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g65_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=8965
+    DEBUGINFO line=9059
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end
 
 script g65_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=8972
+    DEBUGINFO line=9066
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -8986,7 +9080,7 @@ end
 # ------------------------------------------------------------------------
 
 script g66_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
-    DEBUGINFO line=8989
+    DEBUGINFO line=9083
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
@@ -9006,7 +9100,7 @@ script g66_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
 end
 
 script g66_s0_player   # EoS actor PLAYER, layer 0
-    DEBUGINFO line=9009
+    DEBUGINFO line=9103
     SELECT_ANIMATION 2
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
@@ -9015,7 +9109,7 @@ script g66_s0_player   # EoS actor PLAYER, layer 0
 end
 
 script g66_s0_partner   # EoS actor ATTENDANT1, layer 0
-    DEBUGINFO line=9018
+    DEBUGINFO line=9112
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
@@ -9299,7 +9393,7 @@ sectors g12
     sector
     sector
     sector
-    sector actors=g12_s10_lives
+    sector actors=g12_s10_lives events=g12_s10_evts
     sector actors=g12_s11_lives
 end
 

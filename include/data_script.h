@@ -232,9 +232,6 @@
 #define SKY_BACK_SCROLL(dx, dy)         SPECIAL_PROCESS_EX(0x78, dx, dy)
 /* EoS bgm2_ChangeVolume: the ambience's volume (0-255) over frames. */
 #define SKY_AMBIENCE_VOLUME(frames, volume) SPECIAL_PROCESS_EX(0x79, frames, volume)
-/* EoS's dizzy spell (c00a0701 / c00a1701, effects 621 / 635): 0 into the
- * vision, 1 out of it; plays to its end. */
-#define SKY_VISION(n)                   SPECIAL_PROCESS(0x7A, n)
 /* Go to another ground map (CMD_BYTE_01, Red's "ground select": the walk off
  * a map's edge): the map's enter script then runs with GROUND_ENTER = map,
  * GROUND_GETOUT = the map left and GROUND_ENTER_LINK = link (the entry). */

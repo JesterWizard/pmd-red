@@ -160,7 +160,10 @@ MAPS = [
          what="the crew room (EoS G01P07A): the morning starts here, the beds save",
          links={1: ((8, 22.5, "EAST"), (4, 22.5)), 2: ((25.5, 23, "SOUTH"), (19.5, 23))},
          exits=[(0, 19, 2, 7, "crew_exit")],
-         signs=[(7.5, 21.5, 5, 1, "G01P07A", "enter07"), (25, 22, 3, 3, "G01P07A", "enter04")]),
+         signs=[(7.5, 21.5, 5, 1, "G01P07A", "enter07")],
+         # EoS enter.sse layer 5: stepping onto the beds saves (enter04); not when the morning
+         # starts on them (entry 2)
+         link_events={1: [(24, 21, 3, 3, "G01P07A", "enter04")]}),
 ]
 # Treasure Town's townsfolk at (4, 1)-(4, 4) (EoS T01P01A / T01P02A UM03 sector 10)
 FOLK = {
@@ -177,6 +180,13 @@ FOLK = {
 # (4, 2): Azurill, Drowzee and Marill in the square (EoS T01P01A UM03 sector 3: no talk)
 TOWN2_EXTRA = [("NPC_RURIRI", 47, 17.5, "WEST", None), ("NPC_SURIIPU", 43, 18.5, "EAST", None),
                ("NPC_MARIRU", 47, 20.5, "WEST", None)]
+
+# shopkeepers who stand inside their building's doorway, which the map's front layer
+# (EoS's upper layer) draws over: drawn over it (EoS shows them)
+FRONT = {"NPC_GARUURA"}
+
+# shopkeepers behind a counter: (rows down to the counter's front, its width in tiles)
+COUNTERS = {"NPC_KAKUREON1": (2, 2), "NPC_KAKUREON2": (2, 2), "NPC_GARUURA": (2, 2), "NPC_YOMAWARU": (2, 2)}
 
 # the scripts the exits run that are not a plain map change
 SPECIAL_EXITS = {
@@ -320,8 +330,9 @@ class Talk:
             self.cache[key] = ssb.to_explorerscript()[0]
         return self.cache[key]
 
-    def script(self, sname, level, name, npc):
-        """A free-roam talk script (`script2` of an actor or object) from EoS's level/name."""
+    def script(self, sname, level, name, npc, counter=False):
+        """A free-roam talk script (`script2` of an actor or object) from EoS's level/name.
+        counter: the script of the counter in front of shopkeeper npc (an invisible object)."""
         text = self.load(level, name)
         mod = X.parse(text)
         r0 = mod.routine("0")
@@ -331,7 +342,10 @@ class Talk:
             key = "\n".join(s.src for s in body)
             bodies.setdefault(key, (body, []))[1].append(sc)
         out = [f"script {sname}   # EoS {level} {name}" + (f" ({npc})" if npc else ""), "    DEBUGINFO"]
-        if npc:
+        if npc and counter:
+            kind = E.ACTORS.get(npc, (None, f"SKY_LIVES_{npc}"))[1]
+            out.append(f"    UPDATE_NAME kind=ACTOR_TYPE who=TALK_A id={kind}   # the shopkeeper behind the counter")
+        elif npc:
             out += ["    SELECT_ANIMATION 2", "    UPDATE_NAME kind=ACTOR_SELF who=TALK_A id=0x0"]
         out.append("    WAIT 1")
         if (level, name) == ("G01P07A", "enter04"):
@@ -472,6 +486,13 @@ def build(rom) -> str:
         acts = []
         for i, (eos, x, y, f, src) in enumerate(m.get("always", [])):
             acts.append(actor_row(talk, out, g, f"a{i}", eos, x, y, f, src))
+            if eos in COUNTERS and src:
+                # EoS talks to a shopkeeper across the counter; the GBA's talk reaches the next
+                # tile only: an invisible object on the counter takes the talk
+                dy, w = COUNTERS[eos]
+                sn = f"g{g}_counter_{src[1]}"
+                out += talk.script(sn, src[0], src[1], eos, counter=True) + [""]
+                objs.append(f"    object kind=15 w={w} h=1 x={x} y={y + dy} script2={sn}   # {eos}'s counter")
         s1 = "    sector"
         if acts:
             out += [f"actors g{g}_s1_lives"] + acts + ["end", ""]
@@ -514,7 +535,21 @@ def build(rom) -> str:
                     f"    actor kind=0 facing={hf} x={hx} y={hy} script=ch3_hero   # entry {link}",
                     f"    actor kind=4 facing={hf} x={px} y={py} script=ch3_partner",
                     "end", ""]
-            secs.append((sec, f"    sector actors=g{g}_s{sec}_lives"))
+            evs = m.get("link_events", {}).get(link, [])
+            if evs:
+                for x, y, w, h, lv, sc in evs:
+                    out += [ln.replace(f"script g{g}_ev_{sc}   #", f"script g{g}_ev_{sc} control=GETOUT_NORMAL type=SCRIPT_TYPE_02   #")
+                            for ln in talk.script(f"g{g}_ev_{sc}", lv, sc, None)] + [""]
+                out.append("```c")
+                out.append(f"/* EoS {m['level']} enter.sse: the events at entry {link} */")
+                out.append(f"static const struct GroundEventData s_gs181_g{g}_s{sec}_evts[] = {{")
+                for x, y, w, h, lv, sc in evs:
+                    out.append(f"    {{ {w}, {h}, 0, 0, {{ {x}, {y}, 0, 0 }}, &s_gs181_g{g}_ev_{sc}_sref }},")
+                out += ["};", "```", ""]
+                secs.append((sec, f"    sector events=g{g}_s{sec}_evts actors=g{g}_s{sec}_lives"))
+            else:
+                secs.append((sec, f"    sector actors=g{g}_s{sec}_lives"))
+            m.setdefault("_linkev", {})[link] = bool(evs)
         # the exits
         out.append("```c")
         out.append(f"/* EoS {m['level']} enter.sse: the exits */")
@@ -532,11 +567,11 @@ def build(rom) -> str:
             for sc in SCN:
                 s = SET_OF[sc]
                 if s in setsec:
-                    st.append(f"    JUMPIF_SCENE_EQ SCENARIO_MAIN {sc[0]} {sc[1]} {setsec[s]}   # {s}")
+                    st.append(f"    JUMPIF_SCENE_EQ SCENARIO_MAIN {sc[0]} {sc[1]} {10 + setsec[s]}   # {s}")
             st.append("    JUMP_LABEL 1")
             for s, sec in setsec.items():
                 spec = m["sets"][s]
-                st.append(f"  LABEL {sec}")
+                st.append(f"  LABEL {10 + sec}")
                 if spec.get("npcs"):
                     st.append(f"    SELECT_LIVES group=-1 sector={sec}   # {s}: who is there")
                 if spec.get("triggers"):
@@ -549,7 +584,10 @@ def build(rom) -> str:
         first = min(linksec)
         st.append(f"    JUMP_LABEL {100 + first}")
         for link, sec in linksec.items():
-            st += [f"  LABEL {100 + link}", f"    SELECT_LIVES group=-1 sector={sec}", "    JUMP_LABEL 2"]
+            st += [f"  LABEL {100 + link}", f"    SELECT_LIVES group=-1 sector={sec}"]
+            if m["_linkev"].get(link):
+                st.append(f"    SELECT_EVENTS g=-1 s={sec}")
+            st.append("    JUMP_LABEL 2")
         st += ["  LABEL 2", "    SELECT_EVENTS g=-1 s=0   # the exits"]
         if m["bgm"]:
             st.append(f"    BGM_SWITCH {m['bgm']}")
@@ -579,7 +617,8 @@ def actor_row(talk, out, g, tag, eos, x, y, facing, src):
         if not any(l.startswith(f"script {sn} ") for l in out):
             out += talk.script(sn, lv, sc, eos) + [""]
         talk_s = f" script2={sn}"
-    return f"    actor kind={kind} facing={facing} x={x} y={y} script=ch3_stand{talk_s}   # EoS {eos}"
+    stand = "ch3_stand_front" if eos in FRONT else "ch3_stand"
+    return f"    actor kind={kind} facing={facing} x={x} y={y} script={stand}{talk_s}   # EoS {eos}"
 
 
 SPECIAL_SCRIPTS = '''script ch3_hero
@@ -599,6 +638,13 @@ end
 script ch3_stand   # EoS's townsfolk stand where they are (EoS lets some wander: CORO_MOVE_TYPE1)
     DEBUGINFO
     SELECT_ANIMATION 2
+    HALT
+end
+
+script ch3_stand_front   # a shopkeeper in a doorway: drawn over the map's front layer
+    DEBUGINFO
+    SELECT_ANIMATION 2
+    SET_OBJ_FLAGS 0x80000
     HALT
 end
 

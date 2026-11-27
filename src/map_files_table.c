@@ -1607,6 +1607,14 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bmaFileName = "EG0107Am",
         .bpaFileNames = {NULL, NULL, NULL, NULL},
     },
+    [MAP_FILE_ID_SKY_GUILD_CREW_ROOM_STORM] = {
+        /* g01p07c with EoS's palette animation (the lightning, chapter 3's
+         * storm: SKY_BACK_EFFECT 3 plays it, 1 stops it) */
+        .bplFileName = "EG0107CS",
+        .bpcFileName = "EG0107Ac",
+        .bmaFileName = "EG0107Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
     [MAP_FILE_ID_SKY_DRENCHED_BLUFF_ENTRANCE] = {
         /* d02p11a */
         .bplFileName = "ED0211A",

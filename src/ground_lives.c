@@ -157,6 +157,7 @@ static const struct GroundLiveTypeData sSkyLivesTypeData[SKY_LIVES_KIND_COUNT] =
     [SKY_LIVES_POLITOED - SKY_LIVES_KIND_FIRST]   = { 5, MONSTER_POLITOED,   "", 2, 1 },
     [SKY_LIVES_POOCHYENA - SKY_LIVES_KIND_FIRST]  = { 5, MONSTER_POOCHYENA,  "", 2, 1 },
     [SKY_LIVES_SPINDA - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_SPINDA,     "", 2, 1 },
+    [SKY_LIVES_MAGNEMITE2 - SKY_LIVES_KIND_FIRST] = { 5, MONSTER_MAGNEMITE,  "", 2, 1 },
 };
 
 static inline const struct GroundLiveTypeData *GetLivesTypeData(s32 kind)
