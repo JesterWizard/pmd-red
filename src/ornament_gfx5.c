@@ -17,4 +17,9 @@
 #include "data/ornament/relicfragment.h"
 #include "data/ornament/totempole1.h"
 #include "data/ornament/totempole2.h"
+/* Chapter 2's objects (documentation/Features/SkyChapter2.md). */
+#include "data/ornament/guildgate.h"
+#include "data/ornament/teamkit.h"
+#include "data/ornament/dinner.h"
+#include "data/ornament/pearl.h"
 #endif

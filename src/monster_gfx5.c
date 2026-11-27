@@ -13,4 +13,6 @@
 #include "data/ax/parasect.h"
 #include "data/ax/venonat.h"
 #include "data/ax/venomoth.h"
+#ifndef SKY_STORY /* the sky build uses gAxDiglettsky (monster_gfx_sky.c) */
 #include "data/ax/diglett.h"
+#endif

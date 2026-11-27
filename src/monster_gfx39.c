@@ -7,7 +7,9 @@
 #include "data/ax/duskull.h"
 #include "data/ax/dusclops.h"
 #include "data/ax/tropius.h"
+#ifndef SKY_STORY /* the sky build uses gAxChimechosky (monster_gfx_sky.c) */
 #include "data/ax/chimecho.h"
+#endif
 #include "data/ax/absol.h"
 #include "data/ax/wynaut.h"
 #include "data/ax/snorunt.h"

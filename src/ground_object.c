@@ -124,6 +124,10 @@ static const struct ScriptCommand gUnknown_8118350[] = {
 static const struct GroundObjectTypeData sSkyGroundObjectTypes[] = {
     [SKY_OBJ_TOTEM_POLE_1 - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
     [SKY_OBJ_TOTEM_POLE_2 - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_GUILD_GATE - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_EXPLORATION_KIT - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_DINNER - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_PEARL - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
 };
 #endif
 

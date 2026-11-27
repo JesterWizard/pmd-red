@@ -500,10 +500,11 @@ closed under `SKY_STORY` (the vanilla code is unchanged):
   Bulletin Jobs and Expanded Job Slots are not listed.
 - **Team-base flags**: only Red's team-base scripts (not in the sky build)
   place flag objects or load flag palettes; the sky scripts place only the
-  totem poles and the Relic Fragment and use no `SPAWN_OBJECT`. The palette
-  name table `gUnknown_81178F4` keeps the flag names, so palette slots 37 /
-  38 (the totem poles) do not move; `ORNAMENT_SKIPPED_FLAG_FILES` keeps
-  `gOrnamentFiles` sorted for `OpenFile`'s binary search.
+  totem poles, the Relic Fragment and chapter 2's objects, and use no
+  `SPAWN_OBJECT`. The palette name table `gUnknown_81178F4` keeps the flag
+  names, so palette slots 37 / 38 (the totem poles) and 39 / 40 (the dinner,
+  the pearl) do not move. The sky build's `gOrnamentFiles` is its
+  own list without them, sorted by name for `OpenFile`'s binary search.
 
 How it was checked: a symbol graph of the objects (`arm-none-eabi-nm`) gave
 every reference from a kept object into the removed set, and each one is
@@ -1789,7 +1790,9 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   → `graphics/portraits/<species>/`, built by `convert_custom_portraits.py`
   into the custom portrait archive under `SKY_STORY`).
   The same tool exports EoS's faces for every Red hero / partner choice and
-  for Zubat and Koffing into `graphics/portraits_sky/<species>/`; in the sky
+  for Zubat, Koffing and chapter 2's Red species (see
+  [SkyChapter2.md](SkyChapter2.md#portraits)) into
+  `graphics/portraits_sky/<species>/`; in the sky
   build they replace those species' Red faces (Red's Charmander "Determined"
   grins, EoS's frowns), the vanilla build keeps Red's.
 - **Sprites**: EoS's WAN sprites converted to Red's AX format by
@@ -1821,6 +1824,15 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   (what `AxResInit` would pick anyway). `--max-tiles 0` keeps Koffing's
   24-tile attack frames whole (gold gas puffs), as Red's own Koffing has them.
   Both match Red's overworld palettes (7 and 2) exactly.
+- **Chapter 2's ground actors** (Chatot, Loudred, Dugtrio, Sunflora, Bidoof,
+  Chimecho, Corphish, Croagunk, Spoink, Wurmple, Swellow, Pidgey, Ledyba,
+  Seedot, and chapter 1's Wigglytuff and Diglett kinds) are EoS's sprites in
+  the same way, with every EoS ground group (`--ground-groups all`): kinds
+  `SKY_LIVES_CHATOT` (152) to `SKY_LIVES_SEEDOT` (165). Some EoS
+  `SetAnimation` ids sit at a different index in Red's table (42-44 are Red's
+  30-32). The full id translation, the guild gate / Exploration Team Kit /
+  dinner / pearl objects (`SKY_OBJ_*` 72-75) and their portraits are in
+  [SkyChapter2.md](SkyChapter2.md#sprites).
 
 ![Turtwig and Piplup on the beach, the Relic Fragment in Beach Cave Pit, Shellos using Mud Bomb, the fragment after the theft](images/sky_demake_gen4.png)
 
@@ -2048,7 +2060,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Split screens: every chapter-1 moment where EoS uses both screens, as top/bottom PNG pairs with a transparent strip to paint the gap (export only; the build does not read them) | [`graphics/custom/split_screens/`](../../graphics/custom/split_screens) ([README](../../graphics/custom/split_screens/README.md)), made by [`tools/export_split_screens.py`](../../tools/export_split_screens.py) `EOS.nds` |
 | Event editor (scene compiler, CG and opening settings, the web page) | [`tools/event_editor/`](../../tools/event_editor), [`events/sky/`](../../events/sky), [EventEditor.md](../EventEditor.md) |
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
-| Ground actors, Relic Fragment object | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
+| Ground actors and objects (chapter 2's: [SkyChapter2.md](SkyChapter2.md#sprites)) | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_object.c`](../../src/ground_object.c), [`src/monster_files_table.c`](../../src/monster_files_table.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`events/sky/cutaways.cfg`](../../events/sky/cutaways.cfg), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
 | EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`events/sky/opening.cfg`](../../events/sky/opening.cfg), `graphics/custom/sky_opening/scenes/baked.json`, [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py), [`tools/sky_opening_map.py`](../../tools/sky_opening_map.py) |
 | Continue / Delete Save Data window (EoS's Adventure Record) | [`src/load_screen.c`](../../src/load_screen.c) |

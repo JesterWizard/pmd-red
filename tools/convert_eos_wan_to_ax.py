@@ -25,24 +25,35 @@ so the conversion is mostly a re-encode. The differences handled here:
     MONSTER/m_attack.bin (attacks); missing groups fall back (see GROUP_FALLBACK).
   * VRAM: Red gives a monster 16 tiles per body-size unit. The tool reports
     the largest pose in tiles and the body size it needs.
-  * Ground-only groups: EoS's ground set (m_ground.bin) has 16 groups; 13-15
-    are cutscene poses (Zubat / Koffing: 13 nod, 15 "beaten"; script
-    animations 22 -> 0x100D and 24 -> 0x100F, the same in Red's table).
-    `--ground-groups 13,15` appends them at their EoS index, so the script
-    animation ids stay EoS's; a gap below gets the group AxResInit falls
-    back to anyway (13 -> Sleep, others -> Idle). Off by default.
+  * Ground-only groups: EoS's ground set (m_ground.bin) has 13 to 26 groups
+    per species; 13+ are cutscene poses (Zubat / Koffing: 13 nod, 15
+    "beaten"; script animations 22 -> 0x100D and 24 -> 0x100F, the same in
+    Red's table). `--ground-groups 13,15` appends them at their EoS index, so
+    the script animation ids stay EoS's; a gap below gets the group AxResInit
+    falls back to anyway (13 -> Sleep, others -> Idle). `--ground-groups all`
+    takes every one the species has (chapter 2's actors). Off by default.
 
 Usage:
-    tools/convert_eos_wan_to_ax.py convert EOS.nds <eos_md_id|dexN> <name> [--palette N] [--ground-groups 13,15]
+    tools/convert_eos_wan_to_ax.py convert EOS.nds <eos_md_id|dexN> <name> [--palette N] [--ground-groups 13,15|all]
     tools/convert_eos_wan_to_ax.py batch   EOS.nds [--gen4 | dexA-dexB ...]
     tools/convert_eos_wan_to_ax.py check   EOS.nds <eos_md_id|dexN> <name> OUTDIR
     tools/convert_eos_wan_to_ax.py render-ax <name> OUT.png [--palette N]
     tools/convert_eos_wan_to_ax.py list-ground EOS.nds OUTDIR [filter]
-    tools/convert_eos_wan_to_ax.py ornament EOS.nds GROUND/<file>.wan <name> [--palette N | --own-palette] [--check OUTDIR]
+    tools/convert_eos_wan_to_ax.py ornament EOS.nds GROUND/<file>.wan <name> [--palette N | --own-palette |
+                                   --share-palette ORNAMENT] [--rest-first] [--check OUTDIR]
     tools/convert_eos_wan_to_ax.py render-wan EOS.nds <eos_md_id|dexN> OUT.png
 
 `ornament` writes src/data/ornament/<name>.h + graphics/ornament/<Name>/sprite_N.png
 (plain .4bpp, like the other ornaments). The Relic Fragment is GROUND/d01p11a1.wan.
+An object's states are the sequences of its WAN group, picked like directions:
+Red's object animations (gUnknown_81183A0, ground_object.c) carry group * 8 +
+direction in their low byte, so 0x1001 plays sequence 1 once and holds its last
+frame, as EoS does (the Exploration Team Kit: 0 closed, 1 opening). Fewer than 8
+sequences repeat (direction d shows sequence d % n). `--rest-first` puts the
+first frame, held, in front as sequence 0 (the guild gate: 0 closed, 1 opening;
+Red spawns objects on 0x800, sequence 0 looping).
+`--share-palette totempole2` maps the colours onto another ornament's extend
+palette (an object shown beside both totem poles has no extend slot of its own).
 
 `convert` writes graphics/ax/mon/<name>/sprite_N.png and src/data/ax/<name>.h
 (symbol gAx<Name>). The build turns the PNGs into .4bpp.lz (compress_ax_tiles.py)
@@ -200,7 +211,11 @@ def lz77_decompress(data: bytes) -> bytes:
 # --------------------------------------------------------------------------
 
 def load_red_palette(idx: int) -> list:
-    lines = (PAL_DIR / f"{idx}.pal").read_text().split("\n")
+    return load_red_palette_file(PAL_DIR / f"{idx}.pal")
+
+
+def load_red_palette_file(path: Path) -> list:
+    lines = path.read_text().split("\n")
     return [tuple(int(v) for v in l.split()) for l in lines[3:19]]
 
 
@@ -967,17 +982,27 @@ def parse_ground_groups(text):
     return gg
 
 
+def resolve_ground_groups(rom, md, text):
+    """--ground-groups: a list, or "all" = every non-empty ground group past Red's 13."""
+    if text.strip() == "all":
+        wans = rom.monster_wans(md)
+        g = wans.get("ground")
+        return tuple(i for i in range(NUM_RED_GROUPS, len(g.animGroupData) if g else 0)
+                     if group_seqs(g, i))
+    return parse_ground_groups(text)
+
+
 def cmd_convert(a):
     rom = EosRom(a.rom)
     md = rom.resolve_id(a.id)
     convert_monster(rom, md, a.name, a.palette, a.max_tiles,
-                    ground_groups=parse_ground_groups(a.ground_groups))
+                    ground_groups=resolve_ground_groups(rom, md, a.ground_groups))
 
 
 def cmd_check(a):
     rom = EosRom(a.rom)
     md = rom.resolve_id(a.id)
-    gg = parse_ground_groups(a.ground_groups)
+    gg = resolve_ground_groups(rom, md, a.ground_groups)
     info, model, wans = convert_monster(rom, md, a.name, a.palette, a.max_tiles, ground_groups=gg)
     out = Path(a.outdir)
     groups = [int(g) for g in a.groups.split(",")]
@@ -998,7 +1023,8 @@ def cmd_check(a):
 def cmd_render_wan(a):
     rom = EosRom(a.rom)
     md = rom.resolve_id(a.id)
-    ref, mapping = wan_model_unquantised(rom.monster_wans(md))
+    ref, mapping = wan_model_unquantised(rom.monster_wans(md),
+                                         resolve_ground_groups(rom, md, a.ground_groups))
     groups = [int(g) for g in a.groups.split(",")]
     render_sheet(ref, groups, Path(a.out), title=f"EoS md {md}")
     print(f"wrote {a.out}; group sources {mapping}")
@@ -1129,6 +1155,22 @@ def _eight(seqs):
     return seqs[:NUM_DIRS] if len(seqs) >= NUM_DIRS else [seqs[d % len(seqs)] for d in range(NUM_DIRS)]
 
 
+def ornament_groups(groups, rest_first=False):
+    """Red anim groups (8 directions each) for an object WAN's groups.
+
+    One Red group per non-empty WAN group, its sequences spread over the 8
+    directions (Red's object animation ids pick group * 8 + direction).
+    `rest_first`: the first frame of the first sequence, held, becomes
+    sequence 0 of group 0 and the WAN's sequences follow, so the object rests
+    on it (Red spawns objects on 0x800) until a script plays direction 1.
+    """
+    seqs_by_group = [list(seqs) for _, seqs in groups if seqs]
+    if rest_first and seqs_by_group:
+        f = seqs_by_group[0][0][0]
+        seqs_by_group[0].insert(0, [Frame(1, f.flag, f.pose, f.ox, f.oy, f.sx, f.sy)])
+    return [_eight(seqs) for seqs in seqs_by_group]
+
+
 def cmd_list_ground(a):
     rom = EosRom(a.rom)
     out = Path(a.outdir)
@@ -1153,7 +1195,7 @@ def cmd_ornament(a):
     rom = EosRom(a.rom)
     model, groups, counts = object_wan_model(rom.raw_wan(a.wan))
     kept = [g for g, seqs in groups if seqs]
-    model.anims = [_eight(seqs) for _, seqs in groups if seqs]
+    model.anims = ornament_groups(groups, a.rest_first)
     src_pal = model.palette
     N = c_name(a.name)
     gfx_dir = ROOT / "graphics" / "ornament" / N
@@ -1168,6 +1210,17 @@ def cmd_ornament(a):
         model.palette = snapped
         note = f"EoS {a.wan} -> ornament with its own palette graphics/ornament/pal/{a.name}.pal"
         pal_num = 0
+    elif a.share_palette:
+        # Another ornament's extend palette (graphics/ornament/pal/<name>.pal), for an
+        # object that shows with it while both extend slots are taken.
+        pidx = None
+        shared = load_red_palette_file(ROOT / "graphics" / "ornament" / "pal" / f"{a.share_palette}.pal")
+        err, mp = best_mapping(src_pal, counts, shared)
+        model.sprites = [remap_4bpp(s_, mp) for s_ in model.sprites]
+        model.palette = shared
+        note = (f"EoS {a.wan} -> ornament on {a.share_palette}'s palette "
+                f"(err {err / (sum(counts[1:]) or 1):.1f})")
+        pal_num = 0
     else:
         (err, pidx, mp), _ = choose_palette(src_pal, counts, a.palette)
         model.sprites = [remap_4bpp(s_, mp) for s_ in model.sprites]
@@ -1180,17 +1233,19 @@ def cmd_ornament(a):
             f.write(f'\nconst RGB_Struct g{N}Pal[] = {{ INCBIN_RGB("graphics/ornament/pal/{a.name}.pmdpal") }};\n')
     max_t = max(pose_tiles(p_) for p_ in model.poses)
     size = estimate_size(model)
-    print(f"{a.name}: EoS groups {kept}, palette {'own' if pidx is None else pidx}, "
+    pal_label = a.share_palette or ("own" if pidx is None else pidx)
+    print(f"{a.name}: EoS groups {kept}, palette {pal_label}, "
           f"{len(model.poses)} poses, {len(model.sprites)} sprites, max {max_t} tiles, "
           f"tiles {size['tiles_raw']} B uncompressed, ~{(size['tiles_raw'] + size['tables']) / 1024:.1f} KB")
     if a.check:
         out = Path(a.check)
         ref, groups2, _ = object_wan_model(rom.raw_wan(a.wan))
-        ref.anims = [_eight(seqs) for _, seqs in groups2 if seqs]
-        render_sheet(ref, [0], out / f"{a.name}_eos.png", cell=64, title=a.wan)
+        ref.anims = ornament_groups(groups2, a.rest_first)
+        shown = list(range(len(ref.anims)))
+        render_sheet(ref, shown, out / f"{a.name}_eos.png", cell=64, title=a.wan)
         red = read_ax_header(hdr, pal_num)
         red.palette = model.palette
-        render_sheet(red, [0], out / f"{a.name}_ax.png", cell=64, title=f"{a.name}.h re-read")
+        render_sheet(red, shown, out / f"{a.name}_ax.png", cell=64, title=f"{a.name}.h re-read")
         print(f"wrote {out}/{a.name}_eos.png and {a.name}_ax.png")
 
 
@@ -1207,7 +1262,8 @@ def main(argv=None):
     def monster_opts(p):
         common(p)
         p.add_argument("--ground-groups", default="",
-                       help="EoS ground-set groups past Red's 13 to append at their own index, e.g. 13,15")
+                       help="EoS ground-set groups past Red's 13 to append at their own index, "
+                            "e.g. 13,15, or 'all'")
 
     p = sub.add_parser("convert")
     p.add_argument("rom")
@@ -1237,6 +1293,7 @@ def main(argv=None):
     p.add_argument("id")
     p.add_argument("out")
     p.add_argument("--groups", default="7,0")
+    p.add_argument("--ground-groups", default="", help="as for convert, e.g. all")
     p.set_defaults(fn=cmd_render_wan)
 
     p = sub.add_parser("batch")
@@ -1260,7 +1317,11 @@ def main(argv=None):
     p.add_argument("name")
     p.add_argument("--own-palette", action="store_true",
                    help="keep the EoS colours in graphics/ornament/pal/<name>.pal (needs an extend palette slot)")
+    p.add_argument("--share-palette", metavar="ORNAMENT",
+                   help="map onto another ornament's own palette (graphics/ornament/pal/<ORNAMENT>.pal)")
     p.add_argument("--check", metavar="OUTDIR", help="also write EoS/AX comparison sheets here")
+    p.add_argument("--rest-first", action="store_true",
+                   help="sequence 0 = the first frame held (the object rests until direction 1 plays)")
     common(p)
     p.set_defaults(fn=cmd_ornament)
 

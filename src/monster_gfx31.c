@@ -3,7 +3,9 @@
 #include "monster_gfx.h"
 
 #include "data/ax/taillow.h"
+#ifndef SKY_STORY /* the sky build uses gAxSwellowsky (monster_gfx_sky.c) */
 #include "data/ax/swellow.h"
+#endif
 #include "data/ax/wingull.h"
 #include "data/ax/pelipper.h"
 #include "data/ax/ralts.h"

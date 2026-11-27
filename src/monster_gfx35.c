@@ -11,4 +11,6 @@
 #include "data/ax/numel.h"
 #include "data/ax/camerupt.h"
 #include "data/ax/torkoal.h"
+#ifndef SKY_STORY /* the sky build uses gAxSpoinksky (monster_gfx_sky.c) */
 #include "data/ax/spoink.h"
+#endif

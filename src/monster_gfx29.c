@@ -11,4 +11,6 @@
 #include "data/ax/mightyena.h"
 #include "data/ax/zigzagoon.h"
 #include "data/ax/linoone.h"
+#ifndef SKY_STORY /* the sky build uses gAxWurmplesky (monster_gfx_sky.c) */
 #include "data/ax/wurmple.h"
+#endif
