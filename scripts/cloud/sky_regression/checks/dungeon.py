@@ -9,6 +9,8 @@ from harness import check, expect, fail
 from probes import FILL_X1, TEXT_Y0, TEXT_Y1, WHITE, count_color, dialogue_ready
 from checks.scenes import VANILLA_OBJ_PAL15
 
+MUS_BOSS = 63  # Boss Battle! (checks/audio.py)
+
 WINDOW_BLEND = (10, 16 - 10)  # EoS: 60% window fill over 40% dungeon (BLDALPHA 10/6)
 
 
@@ -145,26 +147,28 @@ def pit_no_black_tiles(t):
 
 @check("pit", "Rotate mode (tap R) in the Pit draws the grid, no garbage tiles")
 def pit_rotate_grid(t):
+    """Rotate mode redraws BG2's map (screen block 14) with the grid chunks.
+    In the Pit those must use the grid tiles SkyStory_RelocateGridTiles copied
+    after the Pit's 925 tiles, not tile slots the Pit art has taken over
+    (which drew garbage). Pixels are not compared: the water's palette
+    animation changes them too."""
     a = yield from t.wait_event("rotate_before")
-    fa, oa = a.fb.astype(int), a.oam()
+    ma = np.frombuffer(a.read(0x06007000, 2048), "<u2")
     b = yield from t.wait_event("rotate_shown")
-    fb, ob = b.fb.astype(int), b.oam()
-    mask = np.ones((160, 240), bool)
-    mask[:16] = False  # the status line
-    for o in oa + ob:  # sprites move between the two frames
-        mask[max(o["y"], 0):max(o["y"] + o["h"], 0), max(o["x"], 0):max(o["x"] + o["w"], 0)] = False
-    diff = np.any(fa != fb, axis=2) & mask
-    cols = Counter(map(tuple, fb[diff].tolist()))
+    mb = np.frombuffer(b.read(0x06007000, 2048), "<u2")
+    changed = mb[ma != mb]
+    tiles = sorted({int(e) & 0x3FF for e in changed})
     errs = []
-    if diff.sum() < 500:
-        errs.append(f"only {int(diff.sum())} pixels changed: no grid")
-    if len(cols) > 6:
-        errs.append(f"{len(cols)} colours where the grid is drawn (garbage tiles?): {cols.most_common(8)}")
+    if len(changed) < 40:
+        errs.append(f"only {len(changed)} BG2 map entries changed: no grid")
+    bad = [x for x in tiles if x < 925 and x != 0]
+    if bad:
+        errs.append(f"grid entries use tiles {bad[:12]} inside the Pit art (garbage)")
     if errs:
         t.snap(a, "before")
         t.snap(b, "rotate")
     expect(not errs, "; ".join(errs))
-    return f"{int(diff.sum())} grid pixels in {len(cols)} colours {[c for c, _ in cols.most_common(3)]}"
+    return f"{len(changed)} BG2 entries changed, grid tiles {tiles[:6]}{'...' if len(tiles) > 6 else ''}"
 
 
 # EoS's fixed-floor boss stats (overlay 10 spawn stats 1 and 2), as set by
@@ -203,3 +207,31 @@ def boss_stats(t):
             ok.append(f"{name} L{lvl} {hp} HP {atk}/{df}")
     expect(not errs, "; ".join(errs))
     return ", ".join(ok) + "; Boss EXP off"
+
+
+@check("pit", "Boss battle transition (EoS CORO_BOSS_WIPE_FUNC): two white flashes, streaks, white-out before the fight")
+def boss_transition(t):
+    """src/sky_boss_wipe.c: flashes and the white-out use BLDY brightness
+    (BLDCNT effect 'brighten'); the streaks are BG1/BG2 blended with BLDALPHA."""
+    yield from t.wait(lambda f: t.game.in_dungeon(f) and "Um...#W Hey!" in f.text,
+                      "the partner's 'Um... Hey!' in the Pit")
+    flashes, white, streaks, prev = 0, 0, 0, False
+    while True:
+        f = yield from t.next()
+        if t.game.playing(f, "bgm", MUS_BOSS):
+            break
+        cnt = f.io(0x50)
+        bright = (cnt >> 6) & 3 == 2 and (f.io(0x54) & 0x1F) >= 8
+        if bright and not prev:
+            flashes += 1
+        prev = bright
+        if (cnt >> 6) & 3 == 2 and (f.io(0x54) & 0x1F) >= 16:
+            white += 1
+        # the streaks: alpha blend with BG1/BG2 on top, between the second
+        # flash and the white-out (dungeon windows use the same blend mode)
+        if flashes == 2 and not bright and (cnt >> 6) & 3 == 1 and cnt & 0x6:
+            streaks += 1
+    expect(flashes >= 3, f"{flashes} brighten events before 'Boss Battle!' (expected 2 flashes + the white-out)")
+    expect(white >= 30, f"white held for {white} frames")
+    expect(streaks >= 30, f"streak blend on {streaks} frames")
+    return f"{flashes} brighten events, white {white} frames, streak blend {streaks} frames"

@@ -1446,6 +1446,7 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `guild_gate_and_totems` | divide | at the guild's first view (118, 112): ≥ 100 portcullis bar pixels in the gate; ground objects 70/71 and four totem OBJ pieces |
 | `stormy_sea` | divide | `MAP_SKY_STORM_WAVES`: ≥ 10 semi-transparent rain OBJs and BLDALPHA 16/8 on ≥ 90% of frames; lightning OBJs on ≥ 20 frames; the Storm BGM |
 | `obj_palette15_restored` | divide | OBJ palette 15 is vanilla's UI palette at the guild and in Beach Cave (the bolt borrows it) |
+| `emote_tiles_restored` | divide | OBJ tiles 0x100–0x292 (the ground emotes) are identical before the storm bolt and at the guild |
 | `text_arrow_white` | divide | the text arrow (tile 0x3F0) uses the UI palette; its brightest colour is white |
 | `hero_named_ground` | divide | "So you're named ...?" has a name (debug boot: the species name) |
 | `music_per_scene` | divide | storm (69) at the storm and the stormy sea; Ocean1 (70) on the beach by day; Fire Crackling (71) at the guild; ambience 70 + On the Beach at Dusk (61) for the Krabby and sunset beach; 70 on the main player after "chicken"; Beach Cave (62). Each must play for 120 frames in a row in its scene |
@@ -1457,7 +1458,8 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `hero_named_in_log` | divide | team names in the dungeon log (`#c\x0e...#r` in gDungeon) are not empty and include Charmander |
 | `dungeon_talk_opaque` | pit | a speaker's box in the Pit cutscene: BLDALPHA 16/0, one fill colour |
 | `pit_no_black_tiles` | pit | no all-black 8×8 square during the fight |
-| `pit_rotate_grid` | pit | after an R tap, the changed pixels outside sprites (≥ 500) are in ≤ 6 colours (grid, not Pit art) |
+| `pit_rotate_grid` | pit | after an R tap, every BG2 map entry that changes uses the relocated grid tiles (≥ 925), none inside the Pit art |
+| `boss_transition` | pit | before "Boss Battle!": two flashes and the white-out (BLDY brighten), and the streaks (BG1/BG2 alpha blend) between them |
 | `boss_stats` | pit | Zubat L3 15 HP 15/11 and Koffing L6 27 HP 20/8 (EntityInfo in gDungeon); `gSkyBossExp` off |
 | `thieves_beaten_pose` | after | Zubat's and Koffing's actors are in animation 0x100F at "Owowow..." |
 | `relic_fragment_on_beach` | after | ground object 69 on every frame of m01a0702 from "Here's what they stole." |
