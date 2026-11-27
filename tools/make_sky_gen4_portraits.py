@@ -55,7 +55,7 @@ GEN4_H = ROOT / "include" / "constants" / "sky_gen4.h"
 EMOTIONS = ["Normal", "Happy", "Pained", "Angry", "Worried", "Sad", "Crying",
             "Shouting", "TearyEye", "Determined", "Joyous", "Inspired", "Surprised"]
 # EoS emotion number -> file name (EMOTION_DIZZY / EMOTION_SIGH in emotions.h)
-EXTRA_EMOTIONS = {13: "Dizzy", 16: "Sigh"}
+EXTRA_EMOTIONS = {13: "Dizzy", 16: "Sigh", 17: "Stunned"}  # Stunned: chapter 3 (Chatot)
 ALL_EMOTIONS = list(enumerate(EMOTIONS)) + sorted(EXTRA_EMOTIONS.items())
 
 

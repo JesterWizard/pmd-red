@@ -501,10 +501,11 @@ closed under `SKY_STORY` (the vanilla code is unchanged):
   Bulletin Jobs and Expanded Job Slots are not listed.
 - **Team-base flags**: only Red's team-base scripts (not in the sky build)
   place flag objects or load flag palettes; the sky scripts place only the
-  totem poles, the Relic Fragment and chapter 2's objects, and use no
+  totem poles, the Relic Fragment and chapter 2's and 3's objects, and use no
   `SPAWN_OBJECT`. The palette name table `gUnknown_81178F4` keeps the flag
-  names, so palette slots 37 / 38 (the totem poles) and 39 / 40 (the dinner,
-  the pearl) do not move. The sky build's `gOrnamentFiles` is its
+  names, so palette slots 37 / 38 (the totem poles), 39 / 40 (the dinner,
+  the pearl) and 41-44 (chapter 3's totem poles 3 / 4, the dojo warp, the
+  Time Gear, the crumbling rock) do not move. The sky build's `gOrnamentFiles` is its
   own list without them, sorted by name for `OpenFile`'s binary search.
 
 How it was checked: a symbol graph of the objects (`arm-none-eabi-nm`) gave
@@ -1879,6 +1880,16 @@ moves, from [`tools/make_sky_gen4_data.py`](../../tools/make_sky_gen4_data.py)
   30-32). The full id translation, the guild gate / Exploration Team Kit /
   dinner / pearl objects (`SKY_OBJ_*` 72-75) and their portraits are in
   [SkyChapter2.md](SkyChapter2.md#sprites).
+- **Chapter 3's ground actors** (Marill, Azurill, Drowzee, the Kecleon
+  brothers, Bibarel, Magnezone, Magnemite, Grovyle, and the Treasure Town,
+  guild and crossroads folk of its free roam) the same way: kinds
+  `SKY_LIVES_MARILL` (166) to `SKY_LIVES_SPINDA` (186). The purple Kecleon is
+  Kecleon's sprite on Red's purple-Kecleon palette 10 (as Red's kind 71);
+  Grovyle is on palette 8 in the sky build. EoS's `SetAnimation(14)` is Red
+  id 53 (sky only). Objects `SKY_OBJ_*` 76-85 (the outlaw board's panel, the
+  apple, the town's totem poles 3 and 4 on one merged extend palette, the
+  dojo warp, the visions' objects) and the portraits (now with Stunned): see
+  [SkyChapter3.md](SkyChapter3.md#sprites).
 
 ![Turtwig and Piplup on the beach, the Relic Fragment in Beach Cave Pit, Shellos using Mud Bomb, the fragment after the theft](images/sky_demake_gen4.png)
 
@@ -2121,7 +2132,7 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Split screens: every chapter-1 moment where EoS uses both screens, as top/bottom PNG pairs with a transparent strip to paint the gap (export only; the build does not read them) | [`graphics/custom/split_screens/`](../../graphics/custom/split_screens) ([README](../../graphics/custom/split_screens/README.md)), made by [`tools/export_split_screens.py`](../../tools/export_split_screens.py) `EOS.nds` |
 | Event editor (scene compiler, CG and opening settings, the web page) | [`tools/event_editor/`](../../tools/event_editor), [`events/sky/`](../../events/sky), [EventEditor.md](../EventEditor.md) |
 | Scene order, boot/title demos | [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h) |
-| Ground actors and objects (chapter 2's: [SkyChapter2.md](SkyChapter2.md#sprites)) | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_object.c`](../../src/ground_object.c), [`src/monster_files_table.c`](../../src/monster_files_table.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
+| Ground actors and objects (chapter 2's: [SkyChapter2.md](SkyChapter2.md#sprites); chapter 3's: [SkyChapter3.md](SkyChapter3.md#sprites)) | [`src/ground_lives.c`](../../src/ground_lives.c), [`src/ground_sprite_monster.c`](../../src/ground_sprite_monster.c), [`src/ground_object.c`](../../src/ground_object.c), [`src/monster_files_table.c`](../../src/monster_files_table.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/ground_sprite_data.c`](../../src/ground_sprite_data.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c), [`include/sky_story.h`](../../include/sky_story.h) |
 | Cutaways, boot and title screens | [`src/sky_cutaways.c`](../../src/sky_cutaways.c), [`src/sky_cutaways_data.c`](../../src/sky_cutaways_data.c), [`events/sky/cutaways.cfg`](../../events/sky/cutaways.cfg), [`src/sky_title_data.c`](../../src/sky_title_data.c), [`src/custom_title_backgrounds.c`](../../src/custom_title_backgrounds.c) |
 | EoS's opening (Shaymin, then the 13 recorded scenes) | [`src/sky_opening.c`](../../src/sky_opening.c), [`src/data/sky_opening.h`](../../src/data/sky_opening.h), [`events/sky/opening.cfg`](../../events/sky/opening.cfg), `graphics/custom/sky_opening/scenes/baked.json`, [`tools/make_sky_opening.py`](../../tools/make_sky_opening.py), [`tools/sky_opening_record.py`](../../tools/sky_opening_record.py), [`tools/sky_opening_scenes.py`](../../tools/sky_opening_scenes.py), [`tools/sky_opening_map.py`](../../tools/sky_opening_map.py) |
 | Continue / Delete Save Data window (EoS's Adventure Record) | [`src/load_screen.c`](../../src/load_screen.c) |

@@ -75,6 +75,7 @@ EMOTIONS: list[tuple[str, str]] = [
 SKY_EXTRA_EMOTIONS: list[tuple[int, str]] = [
     (13, "Dizzy"),
     (16, "Sigh"),
+    (17, "Stunned"),  # chapter 3: Chatot (G01P04A free roam)
 ]
 SKY_EMOTION_NAMES = [name for name, _ in EMOTIONS] + [name for _, name in SKY_EXTRA_EMOTIONS]
 

@@ -545,9 +545,10 @@ sky build (`SKY_STORY`):
 The vanilla build is unchanged (4 bits, `u16` masks, 13 slots). Scenes name
 the faces `emotion=DIZZY` and `emotion=SIGH` ([EventEditor.md](../EventEditor.md#emotions)).
 Chapter 1's partner says "Whew..." at the guild with its Sigh face (m01a0104;
-check `guild_whew_sigh`). EoS also has Stunned (17) faces, which no chapter 1
-or 2 script uses; adding one is a word in `EXTRA_EMOTIONS`
-(make_sky_gen4_portraits.py) and `SKY_EXTRA_EMOTIONS` (convert_custom_portraits.py).
+check `guild_whew_sigh`). EoS's Stunned (17) faces, which no chapter 1 or 2
+script uses, are exported too since chapter 3 (Chatot; a word in
+`EXTRA_EMOTIONS` (make_sky_gen4_portraits.py) and `SKY_EXTRA_EMOTIONS`
+(convert_custom_portraits.py), see [SkyChapter3.md](SkyChapter3.md#portraits)).
 
 ### How it was checked
 
