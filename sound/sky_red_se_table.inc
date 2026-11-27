@@ -230,15 +230,15 @@ song sky_se_2206,  5,  5    @ 525: SE_NUM_EVENT_MOTION_ITEM
 song sky_se_1417,  5,  5    @ 526: SE_NUM_EVENT_EFF_FLASH_HEAVY
 song sky_se_1410,  5,  5    @ 527: SE_NUM_EVENT_EFF_WIPE_01
 song sky_se_2c02,  5,  5    @ 528: SE_NUM_ETC01_HADO_02
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
-song empty_song,  0,  0
+song sky_se_1402,  5,  5    @ 529: SE_NUM_EVENT_MOTION_WING_01
+song sky_se_1403,  5,  5    @ 530: SE_NUM_EVENT_EFF_BELL_01
+song sky_se_1404,  5,  5    @ 531: SE_NUM_EVENT_MOTION_TALE_01
+song sky_se_1908,  5,  5    @ 532: SE_NUM_EVENT_MAIN02_DOOROPEN
+song sky_se_190b,  5,  5    @ 533: SE_NUM_EVENT_MAIN02_HAKO_02
+song sky_se_1412,  5,  5    @ 534: SE_NUM_EVENT_MOTION_CLAP_02_L
+song sky_se_2207,  5,  5    @ 535: SE_NUM_EVENT_MOTION_DOOR
+song sky_se_2209,  5,  5    @ 536: SE_NUM_DUN_MOTION_MONEY
+song sky_se_2312,  5,  5    @ 537: SE_NUM_EVENT_SIGN_NOTICE_05
 song empty_song,  0,  0
 song empty_song,  0,  0
 song empty_song,  0,  0

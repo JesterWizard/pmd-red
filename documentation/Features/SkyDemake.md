@@ -36,11 +36,16 @@ is never committed). The choreography and text follow the EoS scene scripts
 ![Chapter 1 in the GBA engine](images/sky_demake.png)
 
 It is the default story of the modern build on this branch (`STORY=sky`).
-The game is a demo of chapter 1: after the beach epilogue ("And so...") it
-asks whether to save, shows "The demo ends here. Look forward to updates!"
-and returns to the title screen. Continuing a finished save shows the same
-ending again (`s_script_SKY_DEMO_END` in
-[`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h),
+The game is a demo of chapters 1 and 2: after chapter 1's beach epilogue
+("And so...") it asks whether to save and goes on with chapter 2, "The New
+Guild Recruits" (Wigglytuff's Guild, the team's name, Drenched Bluff:
+[SkyChapter2.md](SkyChapter2.md#what-plays)). After chapter 2's good night
+it asks whether to save, shows "The demo ends here. Look forward to
+updates!" and returns to the title screen. Continuing a finished save shows
+the same ending again; a save made earlier (chapter 1's end, chapter 2's
+good night, the morning after fainting in Drenched Bluff) goes on from
+there (`s_script_SKY_DEMO_END` in
+[`src/data/ground/sky/sky_ch2_events.h`](../../src/data/ground/sky/sky_ch2_events.h),
 `SKY_SAVE_GAME` / `SKY_DEMO_TO_TITLE` in [`src/sky_story.c`](../../src/sky_story.c),
 the Continue check in [`src/ground_main.c`](../../src/ground_main.c)).
 
@@ -81,6 +86,8 @@ Riolu (with Vulpix, Meowth, Phanpy). Then:
 | 8 | m01a0401 | Beach Cave Pit (B5F) | The EoS Pit room and background, "In the Depths of the Pit", pre-fight dialogue, then the Zubat & Koffing fight ("Boss Battle") |
 | 9 | m01a0701 | `d01p41a` Beach Cave Pit | The thieves give the fragment back and flee |
 | 10 | m01a0702 | `d01p11b` beach (sunset) | The Relic Fragment; "Form a team / Say no"; "And so..." |
+| 11 | — | — | The save prompt; chapter 2 (card, the guild, Drenched Bluff, the faint path): [SkyChapter2.md](SkyChapter2.md#what-plays) |
+| 12 | m02a1003, then the demo end | `g01p07c` crew room (night) | After chapter 2's good night: the save prompt, "The demo ends here. Look forward to updates!", the title |
 
 The Relic Fragment is a ground object (EoS `GROUND/g01p01a1.wan`, ornament
 `relicfragmentp`, object kind `SKY_OBJ_RELIC_FRAGMENT`): at the guild grate
@@ -1954,8 +1961,8 @@ Old saves need a new game. Following the save-layout checklist
 ### Regression suite
 
 ```bash
-scripts/cloud/sky_regression.sh               # everything: about 2.5 minutes
-scripts/cloud/sky_regression.sh --no-vanilla  # skip the vanilla sha1 rebuild (about 40 s)
+scripts/cloud/sky_regression.sh               # everything: about 5 minutes
+scripts/cloud/sky_regression.sh --no-vanilla  # skip the vanilla sha1 rebuild (about 3 minutes)
 scripts/cloud/sky_regression.sh --no-build -k portrait -k music   # rerun checks on built ROMs
 scripts/cloud/sky_regression.sh --list        # the checks, their ROM and what they test
 ```
@@ -1978,16 +1985,18 @@ path is printed. The script exits 1 when a check fails. It builds the tools
 |---|---|---|---|
 | `divide` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE` | the story presses (A every 60 frames) from the storm to Beach Cave B1F; once the leader waits for input, open and close the main menu, then mash A | 21000 |
 | `pit` | the same + `DEBUG_BOOT_FLOOR=5` | the story to the Pit; when Boss Battle! starts, tap R (rotate mode), B, mash A | 21000 |
-| `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702 | 9300 |
+| `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702; A at the save prompt (Save); reset, Continue; the story presses into chapter 2 | 15000 |
 | `perf` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_SEED=7` | the story to Beach Cave B1F (always the same floor); stand 120 frames, walk 60 tiles towards the farthest tile, dash 60 tiles (B held), with CPU load measured | ~22500 |
-| `bluff` | `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=8` | boot into Drenched Bluff B1F; on each floor walk to the stairs (a Pokémon in the way is attacked, a hint box gets A) and take them; after B6F the story presses | ~17000 |
+| `bluff` | `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=8` | boot into Drenched Bluff B1F; on each floor walk to the stairs (a Pokémon in the way is attacked, a hint box gets A) and take them; after B6F the story presses to the demo end (Save); reset, Continue | ~26600 |
 | `bristle` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT DEBUG_BOOT_SEED=7 DEBUG_BOOT_LEVEL=15` | as `bluff` through Mt. Bristle 1F-9F; the cleared placeholder enters the peak: the story presses through the cutscene, then walk to Drowzee and attack (a floor without stairs: the nearest wild Pokémon) until the dungeon ends | ~21500 |
 | `peak` | `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_PEAK_DEBUG_EVENT DEBUG_BOOT_SEED=7` | the peak fight from its debug boot with a level-1 team, as `bristle`'s peak (the team faints) | ~3700 |
+| `ch2` | `DEBUG_BOOT_EVENT=SKY_CH2_START DEBUG_BOOT_SEED=7` | chapter 2 from its card: A 20 frames into each box, A every 60 frames when none is up (the save prompts: Save); the team's name (START, A, Up, A); free roam: Up off the address's spot; after the good night's save, reset and Continue; in Drenched Bluff (the level-1 team) A every 40 frames until it faints; the faint path to the morning's save, reset and Continue, back into the bluff | ~44400 |
 | `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
 | `opening` | plain (plays `sky`'s build) | START at 600 (the health warning), then nothing: the whole opening to the title; START there | ~7700 |
 | `skip` | plain (plays `sky`'s build) | START at 600, then START 60 frames into Bidoof's scene, then START at the title | ~4500 |
 
-Runs are deterministic (`build/tools/mgba_rpc`, a clean boot with no save).
+Runs are deterministic (`build/tools/mgba_rpc`, a clean boot with no save;
+its `reset` keeps the save data the game wrote, for the Continue checks).
 The checks find their frames from game state, not from fixed frame numbers:
 
 - **Dialogue boxes**: the print state (`sPrintStringState`) waiting for a
@@ -2069,6 +2078,21 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `peak_transition` | bristle | In the Depths of the Pit on the peak, Drowzee's last line, then before Boss Battle! two flashes and the white-out (BLDY brighten) and the streaks (BG1/BG2 alpha blend) |
 | `peak_won` | bristle | Drowzee down ends the peak: `STARTMODE_DUNGEON_WON`, `DUNGEON_ENTER` 3, `SCENARIO_MAIN` 4 at the end of the run (GETOUT_M01E02B's peak branch), then the cleared event shows a message on the ground |
 | `peak_fainted` | peak | the fight starts at the peak (`DUNGEON_ENTER` 3); the level-1 team faints: `STARTMODE_DUNGEON_LOST`, `SCENARIO_MAIN` 4, then the fainted event shows a message on the ground |
+| `bluff_cleared_scenes` | bluff | after the clear: EVENT_M02_09_10's maps in order (the bluff's end, B1F, B2F, the mess hall, the crew room at night) up to "The demo ends here." |
+| `bluff_cleared_music` | bluff | In the Depths of the Pit (64) for the pearl, Job Clear! (945) on B1F, the eating jingle (72) in the mess hall, Goodnight (942) in the crew room: each 120 frames in a row |
+| `bluff_demo_end` | bluff | the partner's good night (m02a1003), the save prompt, "The demo ends here." with `SCENARIO_MAIN` 4 |
+| `bluff_continue_demo_end` | bluff | reset, Continue from the demo end's save: the save prompt and "The demo ends here." again, `SCENARIO_MAIN` 4 |
+| `after_into_chapter2` | after | chapter 1's save prompt at `SCENARIO_MAIN` 3; reset, Continue: chapter 2's card queued (`sPendingChapter` 2) and m02a0101's map (`MAP_SKY_GUILD_DUSK2`) |
+| `ch2_chapter_card` | ch2 | chapter 2's card is queued and a frame like `graphics/custom/chapter_cards/chapter2.png` (mean difference < 14) is on screen before the first box; nothing queued at the first box |
+| `ch2_scenes_in_order` | ch2 | EVENT_M02_01_02 and 03_04: the 16 maps of m02a0101 .. m02a0401 in play order, to Drenched Bluff |
+| `ch2_speakers` | ch2 | seven lines' speakers: the hero / partner's name yellow, Diglett's, Chatot's, Wigglytuff's, Loudred's light blue |
+| `ch2_music` | ch2 | Fire Crackling (71) at the gate, Wigglytuff's Guild (940) on B1F and at the morning address, Guildmaster Wigglytuff (941), Goodnight (942), Drenched Bluff (944): each 120 frames in a row on its map |
+| `ch2_team_name` | ch2 | the name typed into `RENAME_TEAM` is the team's (`gRescueTeamInfoRef`), and the partner's and Wigglytuff's lines print it (`{TEAM_NAME}`) |
+| `ch2_free_roam` | ch2 | free roam is on B2F; walking off the address's spot runs m02a0301 ("wandering around") at `SCENARIO_MAIN` 3 |
+| `ch2_continue_morning` | ch2 | reset after the good night's save (m02a0113), Continue: the crew room, Loudred's wake-up first, `SCENARIO_MAIN` 3 |
+| `ch2_bluff_entered` | ch2 | m02a0401 enters Drenched Bluff (dungeon 1, Thunderwave Cave's slot) with its music and `DUNGEON_ENTER` 1 |
+| `ch2_faint_path` | ch2 | after the team faints: m02a0501, c00a0501, c00a0601, c00a0301, c00a0201, c00a0101, m02a0701's maps in order, then the bluff again |
+| `ch2_continue_faint` | ch2 | reset after the morning's save (c00a0201), Continue: B2F, the morning address (c00a0101) first, then the bluff |
 | `jukebox_no_stop_bgm` | sky | no track in `src/data/sky_jukebox_data.h` is song 999 (STOP_BGM) |
 | `jukebox_tracks_play` | sky | each of the 141 tracks: the BGM player plays the track's song and the audio peak is ≥ 256 (track 68 "Dialga's Fight to the Finish!" included) |
 | `jukebox_window_top` | sky | the list window's top frame highlight is at y ≥ 3, with the fill under it |
@@ -2147,9 +2171,12 @@ make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
   almost any code change. Works in the vanilla build too.
 - `DEBUG_BOOT_LEVEL=<n>` (with `DEBUG_BOOT_EVENT`): the team starts at level
   n, with the stat gains and moves of each level on the way.
+- `DEBUG_BOOT_EVENT=SKY_CH2_START`: chapter 2 from its start (scenario
+  (3,0), EVENT_DIVIDE: the card, then the guild), as after chapter 1's save
+  ([SkyChapter2.md](SkyChapter2.md#debug-boot)).
 - `DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT`: straight into chapter 2's
   Drenched Bluff at scenario (3,3) (see
-  [SkyChapter2.md](SkyChapter2.md#debug-boot)); with `DEBUG_BOOT_LEVEL=8` the
+  [SkyChapter2.md](SkyChapter2.md#debug-boot-1)); with `DEBUG_BOOT_LEVEL=8` the
   team survives it, with `DEBUG_BOOT_FLOOR=6` it starts on the last floor.
 - `DEBUG_BOOT_EVENT=SKY_MT_BRISTLE_DEBUG_EVENT` / `SKY_MT_BRISTLE_PEAK_DEBUG_EVENT`:
   straight into chapter 3's Mt. Bristle at scenario (4,5), or into the peak's
@@ -2194,6 +2221,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Beach Cave overrides | [`src/sky_story.c`](../../src/sky_story.c), [`src/dungeon_floor_spawns.c`](../../src/dungeon_floor_spawns.c), [`src/dungeon_generation.c`](../../src/dungeon_generation.c), [`src/dungeon_generation_fixed.c`](../../src/dungeon_generation_fixed.c), [`src/dungeon_info.c`](../../src/dungeon_info.c) |
 | Mt. Bristle and its peak (chapter 3: floors, the boss room, Drowzee, the peak's cutscene, end and faint events) | [`src/sky_story.c`](../../src/sky_story.c), [`src/data/sky_mt_bristle_floors.h`](../../src/data/sky_mt_bristle_floors.h), [`src/data/sky_mt_bristle_peak_floors.h`](../../src/data/sky_mt_bristle_peak_floors.h) ([`tools/make_sky_dungeon_floors.py`](../../tools/make_sky_dungeon_floors.py)), [`src/dungeon_cutscene_mt_bristle.c`](../../src/dungeon_cutscene_mt_bristle.c), [`src/code_80A26CC.c`](../../src/code_80A26CC.c) (`SCRIPT_DUNGEON_3` runs a dungeon), the `SKY_MT_BRISTLE_*` scripts and the sky `GETOUT_M01E02B` in [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h); [SkyChapter3.md](SkyChapter3.md#mt-bristle) |
 | Drenched Bluff (chapter 2: floors, spawns, traps, items, music, end and faint events) | [`src/sky_story.c`](../../src/sky_story.c), [`src/data/sky_drenched_bluff_floors.h`](../../src/data/sky_drenched_bluff_floors.h) ([`tools/make_sky_dungeon_floors.py`](../../tools/make_sky_dungeon_floors.py)), [`src/dungeon_items.c`](../../src/dungeon_items.c) (guaranteed items), the `SKY_DRENCHED_BLUFF_*` scripts in [`src/data/ground/ground_event_data.h`](../../src/data/ground/ground_event_data.h); [SkyChapter2.md](SkyChapter2.md#drenched-bluff) |
+| Drenched Bluff (chapter 2: floors, spawns, traps, items, music, end and faint events) | [`src/sky_story.c`](../../src/sky_story.c), [`src/data/sky_drenched_bluff_floors.h`](../../src/data/sky_drenched_bluff_floors.h) ([`tools/make_sky_dungeon_floors.py`](../../tools/make_sky_dungeon_floors.py)), [`src/dungeon_items.c`](../../src/dungeon_items.c) (guaranteed items), the `SKY_DRENCHED_BLUFF_*` scripts in [`src/data/ground/sky/sky_ch2_events.h`](../../src/data/ground/sky/sky_ch2_events.h); [SkyChapter2.md](SkyChapter2.md#drenched-bluff) |
+| Chapter 2 (flow, scenes, Continue) | [`src/data/ground/sky/sky_ch2_events.h`](../../src/data/ground/sky/sky_ch2_events.h) (the events), [`events/sky/scenes/sky_d02p01_scenes.scene`](../../events/sky/scenes/sky_d02p01_scenes.scene) (the scenes, generated by [`tools/event_editor/ch2/station.py`](../../tools/event_editor/ch2/station.py)), [`src/ground_main.c`](../../src/ground_main.c) (Continue); [SkyChapter2.md](SkyChapter2.md#what-plays) |
 | Dungeon tilesets | [`src/sky_dungeon_tileset.c`](../../src/sky_dungeon_tileset.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c), [`src/unk_dungeon_load_maybe.c`](../../src/unk_dungeon_load_maybe.c) |
 | Sky dungeon archive (no Red tilesets / talk files) | [`tools/make_sky_dungeon_archive.py`](../../tools/make_sky_dungeon_archive.py) (run by the [`Makefile`](../../Makefile) for `STORY=sky`) |
 | Dungeon talk (EoS lines and rules) | [`src/sky_dungeon_talk.c`](../../src/sky_dungeon_talk.c), [`src/data/sky_dungeon_talk.h`](../../src/data/sky_dungeon_talk.h), [`src/dungeon_action_handler.c`](../../src/dungeon_action_handler.c), [`src/dungeon_leveling.c`](../../src/dungeon_leveling.c) |

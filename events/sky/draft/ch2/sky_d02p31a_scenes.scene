@@ -15,12 +15,12 @@ debug_file src/data/ground/sky/sky_d02p31a_scenes.h
 ```c
 #define NPC_PLAYER 0
 #define NPC_PARTNER 1
+#define NPC_ADVENTURE_NPC1 2
+#define NPC_ADVENTURE_NPC2 2
+#define NPC_ADVENTURE_NPC3 2
+#define NPC_PLAYER_APPOINT 2
 #define NPC_UNIT_NPC1 2
-#define NPC_UNIT_NPC2 3
-#define NPC_PLAYER_APPOINT 4
-#define NPC_ADVENTURE_NPC1 5
-#define NPC_ADVENTURE_NPC2 6
-#define NPC_ADVENTURE_NPC3 7
+#define NPC_UNIT_NPC2 2
 ```
 
 # ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
@@ -37,19 +37,21 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
     BGM_STOP
     # eos: if ( variation ): never in the story (EoS's variation run)
-    # TODO eos: back_SetDungeonBanner(3, 0);
+    # eos: back_SetDungeonBanner(3, 0): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
     FADE_IN wait=TRUE frames=16
     SET_PLACE_MODE 4
     WAIT 60
     FADE_OUT wait=TRUE frames=16
     WAIT 15
-    # TODO eos: switch ( scn($SCENARIO_MAIN)[1] ) { (the first case is taken)
-    JUMP_LABEL 1004
-  LABEL 1004
+    CJUMP_SCENARIO_1 SCENARIO_MAIN   # EoS switch ( scn($SCENARIO_MAIN)[1] )
+    COND_EQUAL 3 0
+    JUMP_LABEL 2
+  LABEL 0
     SCENARIO_CALC SCENARIO_MAIN 3 6   # EoS scenario numbers
-  LABEL 3
+  LABEL 1
     SELECT_MAP SKY_DRENCHED_BLUFF_END
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SKY_CAMERA_SET x=124 y=216   # EoS camera_SetMyself<performer 0>
@@ -60,7 +62,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     FADE_IN wait=TRUE frames=30
     AWAIT_CUE 65   # <- PLAYER done
     AWAIT_CUE 67   # <- PARTNER done
-    FANFARE_PLAY2 SE_SKY_EVENT_SIGN_NOTICE_05   # EoS se_Play(8978) = SE_NUM_EVENT_SIGN_NOTICE_05: not converted yet
+    FANFARE_PLAY2 SE_SKY_NOTICE_5   # EoS se_Play(8978)
     AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
     AWAIT_CUE 67   # <- PARTNER done
     PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
@@ -90,57 +92,56 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     BGM_FADEOUT 120
     FADE_OUT wait=TRUE frames=60
     WAIT_BGM MUS_SKY_IN_THE_DEPTHS_OF_THE_PIT
-    # TODO eos: switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    # eos: switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) (EoS's team set-up before a dungeon: Red's own runs)
     RET
-  LABEL 1005
   LABEL 2
+  LABEL 3
     SCENARIO_CALC SCENARIO_MAIN 3 7   # EoS scenario numbers
-    JUMP_LABEL 3
-  LABEL 1003
-    JUMP_LABEL 1001
-  LABEL 1002
-  LABEL 0
-    # TODO eos: switch ( ProcessSpecial(53, -1, 0) ) { }   (ProcessSpecial: see SkyChapter2.md, engine gaps)
+    JUMP_LABEL 1
+  LABEL 4
+    JUMP_LABEL 7
+  LABEL 5
+  LABEL 6
+    # eos: switch ( ProcessSpecial(53, -1, 0) ) (EoS's demo version only)
     TEXTBOX_AUTO_PRESS 300 300   # EoS message_SetWaitMode
     MSG_NPC who=-1 text="{CENTER_ALIGN}Thanks for playing!\n{CENTER_ALIGN}We hope you enjoyed\n{CENTER_ALIGN}the demo!"   # EoS message_Explanation
     # eos: message_KeyWait(); (the line above waits for a button)
     SKY_DEMO_TO_TITLE   # EoS ProcessSpecial(PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN)
     RET
-    JUMP_LABEL 1001
-  LABEL 1001
+    JUMP_LABEL 7
+  LABEL 7
     RET
 end
 
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 64
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    COND_EQUAL 3 3003
-    COND_EQUAL 4 3004
-    COND_EQUAL 5 3005
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    COND_EQUAL 3 3
+    COND_EQUAL 4 4
+    COND_EQUAL 5 5
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-60   # EoS MovePositionMark to Position<'m0', 32, 35.5>
     AWAIT_CUE_COND 65 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     WALK_RELATIVE speed=256 dx=0 dy=-80   # EoS MovePositionMark to Position<'m3', 32, 25.5>
     AWAIT_CUE_COND 65 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3003
+    JUMP_LABEL 0
+  LABEL 3
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHWEST
-    JUMP_LABEL 3000
-  LABEL 3004
+    JUMP_LABEL 0
+  LABEL 4
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
-    JUMP_LABEL 3000
-  LABEL 3005
+    JUMP_LABEL 0
+  LABEL 5
     WALK_RELATIVE speed=204 dx=-16 dy=-16
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
@@ -148,39 +149,39 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 66
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    COND_EQUAL 3 3003
-    COND_EQUAL 4 3004
-    COND_EQUAL 5 3005
-    COND_EQUAL 6 3006
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    COND_EQUAL 3 3
+    COND_EQUAL 4 4
+    COND_EQUAL 5 5
+    COND_EQUAL 6 6
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-68   # EoS MovePositionMark to Position<'m1', 28, 35.5>
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT NOTICE_FUNC
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3003
+    JUMP_LABEL 0
+  LABEL 3
     WALK_RELATIVE speed=256 dx=0 dy=-80   # EoS MovePositionMark to Position<'m4', 28, 25.5>
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3004
+    JUMP_LABEL 0
+  LABEL 4
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHEAST
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3005
+    JUMP_LABEL 0
+  LABEL 5
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3006
+    JUMP_LABEL 0
+  LABEL 6
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHEAST
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g0_s0_obj0_d02p31a1   # EoS object D02P31A1_17, layer 0
@@ -195,7 +196,7 @@ actors g0_s0_lives
 end
 
 objects g0_s0_objs
-    object kind=SKY_OBJ_D02P31A1 w=2 h=1 x=30 y=23 script=g0_s0_obj0_d02p31a1   # EoS D02P31A1_17
+    object kind=SKY_OBJ_PEARL w=2 h=1 x=30 y=23 script=g0_s0_obj0_d02p31a1   # EoS D02P31A1_17
 end
 
 # ------------------------------------------------------------------------
@@ -206,15 +207,16 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
     BGM_STOP
-    # TODO eos: back_SetDungeonBanner(3, 0);
+    # eos: back_SetDungeonBanner(3, 0): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
     FADE_IN wait=TRUE frames=16
     SET_PLACE_MODE 4
     WAIT 60
     FADE_OUT wait=TRUE frames=16
     WAIT 15
     SELECT_MAP SKY_DRENCHED_BLUFF_END
-    JUMPIF_ARRAY PERFORMANCE_PROGRESS_LIST 7 1002
+    JUMPIF_ARRAY PERFORMANCE_PROGRESS_LIST 7 0
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SKY_CAMERA_SET x=124 y=120   # EoS camera_SetMyself<performer 0>
     FADE_IN wait=TRUE frames=30
@@ -234,10 +236,10 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 70 2   # -> UNIT_NPC2: batch 2
     AWAIT_CUE 67   # <- PLAYER done
     WAIT 15
-    JUMP_LABEL 1
-    JUMP_LABEL 1001
-  LABEL 1002
+    JUMP_LABEL 2
+    JUMP_LABEL 3
   LABEL 0
+  LABEL 1
     SELECT_LIVES group=-1 sector=1   # EoS supervision_Acting(1)
     SKY_CAMERA_SET x=124 y=120   # EoS camera_SetMyself<performer 0>
     FADE_IN wait=TRUE frames=30
@@ -257,7 +259,7 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 78 2   # -> ADVENTURE_NPC3: batch 2
     AWAIT_CUE 73   # <- PLAYER_APPOINT done
     WAIT 15
-  LABEL 1
+  LABEL 2
     MSG_INSTANT text="{CENTER_ALIGN}This appears to be the end of the dungeon."   # EoS message_Mail
     MSG_INSTANT text="{CENTER_ALIGN}It's impossible to go any farther.{WAIT_PRESS}\n{CENTER_ALIGN}It's time to go back."   # EoS message_Mail
     TEXTBOX_CLEAR
@@ -267,8 +269,8 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     MSG_NPC who=-1 text="{CENTER_ALIGN}{NAME_0} cleared Drenched Bluff!\n{CENTER_ALIGN}Very impressive!"   # EoS message_Explanation
     TEXTBOX_CLEAR
     RET
-    JUMP_LABEL 1001
-  LABEL 1001
+    JUMP_LABEL 3
+  LABEL 3
     RET
 end
 
@@ -277,147 +279,140 @@ script g1_s0_player   # EoS actor PLAYER, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 66
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-132   # EoS MovePositionMark to Position<'m1', 32, 23.5>
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_LEFT_FUNC   # EoS CORO_LOOK_AROUND_LEFT_FUNC_SERIES
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g1_s0_partner   # EoS actor ATTENDANT1, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 64
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-140   # EoS MovePositionMark to Position<'m0', 28, 23.5>
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_FUNC   # EoS CORO_LOOK_AROUND_FUNC_SERIES
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g1_s0_unit_npc1   # EoS actor UNIT_NPC1, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=UNIT_NPC1 id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 68
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-140   # EoS MovePositionMark to Position<'m2', 30, 27.5>
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_DOWN_FUNC   # EoS CORO_LOOK_AROUND_DOWN_FUNC_SERIES
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g1_s0_unit_npc2   # EoS actor UNIT_NPC2, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=UNIT_NPC2 id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 70
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-132   # EoS MovePositionMark to Position<'m3', 33, 26.5>
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_RIGHT_FUNC   # EoS CORO_LOOK_AROUND_RIGHT_FUNC_SERIES
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g1_s1_player_appoint   # EoS actor PLAYER_APPOINT, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER_APPOINT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 72
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-148   # EoS MovePositionMark to Position<'m4', 30, 23.5>
     AWAIT_CUE_COND 73 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_FUNC   # EoS CORO_LOOK_AROUND_FUNC_SERIES
     AWAIT_CUE_COND 73 0   # done: the station waits for this
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g1_s1_adventure_npc1   # EoS actor ADVENTURE_NPC1, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=ADVENTURE_NPC1 id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 74
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-148   # EoS MovePositionMark to Position<'m5', 33, 25.5>
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_LEFT_FUNC   # EoS CORO_LOOK_AROUND_LEFT_FUNC_SERIES
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g1_s1_adventure_npc2   # EoS actor ADVENTURE_NPC2, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=ADVENTURE_NPC2 id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 76
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-148   # EoS MovePositionMark to Position<'m6', 27, 25.5>
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_DOWN_FUNC   # EoS CORO_LOOK_AROUND_DOWN_FUNC_SERIES
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g1_s1_adventure_npc3   # EoS actor ADVENTURE_NPC3, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=ADVENTURE_NPC3 id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 78
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-148   # EoS MovePositionMark to Position<'m7', 30, 27.5>
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT LOOK_AROUND_RIGHT_FUNC   # EoS CORO_LOOK_AROUND_RIGHT_FUNC_SERIES
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 actors g1_s0_lives

@@ -3154,6 +3154,15 @@ sky_wav_707_5:
 	.incbin	"sound/direct_sound_samples/sky/eos_707.bin"
 
 	.align	2
+	.global	sky_wav_800_0
+sky_wav_800_0:
+	.hword	0x0000, 0x0000
+	.word	11290268 @ 11025.65 Hz at key 60
+	.word	0 @ loop start
+	.word	1935 @ size
+	.incbin	"sound/direct_sound_samples/sky/eos_800.bin"
+
+	.align	2
 	.global	sky_wav_900_0
 sky_wav_900_0:
 	.hword	0x0000, 0x4000

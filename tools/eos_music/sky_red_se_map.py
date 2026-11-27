@@ -96,6 +96,16 @@ SE_MAP = {
     526: (0x1417, "SE_NUM_EVENT_EFF_FLASH_HEAVY: the two white flashes before the Pit fight (EoS m01a0401 / m01a0501 se_Play(5143) x2)"),
     527: (0x1410, "SE_NUM_EVENT_EFF_WIPE_01: the boss wipe into the fight (EoS CORO_BOSS_WIPE_FUNC se_Play(5136))"),
     528: (0x2C02, "SE_NUM_ETC01_HADO_02: the personality quiz reveals the hero's Pokémon (EoS m00a01a se_Play(11266) after supervision_Acting(2..17))"),
+    # 529..537: chapter 2 scene SEs (documentation/Features/SkyChapter2.md), the same way.
+    529: (0x1402, "SE_NUM_EVENT_MOTION_WING_01: Chatot flaps his wings (EoS m02a0202 / m02a0302 se_Play(5122) + SetAnimation 18 / 26)"),
+    530: (0x1403, "SE_NUM_EVENT_EFF_BELL_01: Chimecho's dinner bell (EoS c00a0501 se_Play(5123), WaitSe)"),
+    531: (0x1404, "SE_NUM_EVENT_MOTION_TALE_01: Chatot's tail feathers (EoS m02a0302 se_Play(5124), at the bulletin board)"),
+    532: (0x1908, "SE_NUM_EVENT_MAIN02_DOOROPEN: the guild's gate opens (EoS m02a0105 se_Play(6408))"),
+    533: (0x190B, "SE_NUM_EVENT_MAIN02_HAKO_02: the Exploration Team Kit's box opens (EoS m02a0110 se_Play(6411))"),
+    534: (0x1412, "SE_NUM_EVENT_MOTION_CLAP_02_L: the crew cheers for dinner (EoS c00a0501 se_Play(5138))"),
+    535: (0x2207, "SE_NUM_EVENT_MOTION_DOOR: Wigglytuff's door opens for the morning address (EoS m02a0202 se_Play(8711) + back_ChangeGround)"),
+    536: (0x2209, "SE_NUM_DUN_MOTION_MONEY: the reward's Poké (EoS m02a1001 se_Play(8713), WaitSe)"),
+    537: (0x2312, "SE_NUM_EVENT_SIGN_NOTICE_05: a notice (EoS m02a0105, m02a0108, m02a0601, m02a0801, c00a0501 se_Play(8978))"),
     600: (0x101C, "SE_NUM_EFF_NIGHTMARE: effect animation #1 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
     601: (0x0705, "SE_NUM_EFF_DIVE: effect animation #2 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
     602: (0x0704, "SE_NUM_EFF_DIG: effect animation #3 (Red gUnknown_80B9CC4 / EoS EFFECT_ANIMATION_INFO, same row)"),
@@ -429,4 +439,4 @@ SE_MAP = {
 # Music player (song table player fields) for the SEs put in slots that are
 # empty in Red (empty_song, player 0 = the BGM player): SE player 5, the one
 # Red's own ground-scene sounds (464, 466, 473, 482, ...) use.
-SCENE_SE_PLAYERS = {rid: 5 for rid in range(519, 529)}
+SCENE_SE_PLAYERS = {rid: 5 for rid in range(519, 538)}

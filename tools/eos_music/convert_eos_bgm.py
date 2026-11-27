@@ -77,6 +77,9 @@ SONGS = [
     # EoS bgm0116 "Fire Crackling (louder)" (BGM_FIRE_CRACKLING_LOUDER): the
     # guild's torches at dusk (m01a0104).
     (71, 116, "sky_fire_crackling"),
+    # EoS bgm0126 "Eating" (BGM_EATING): the crew eating dinner (c00a0601), a
+    # clip that does not loop.
+    (72, 126, "sky_eating"),
 ]
 
 RENDER_SECONDS = 90

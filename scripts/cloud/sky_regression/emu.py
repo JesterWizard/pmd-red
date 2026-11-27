@@ -100,6 +100,10 @@ class Emu:
         self._cmd(f"load {path}")
         self.frame = int(self._cmd(f"setframe {frame}"))
 
+    def reset(self):
+        """The console's reset: the game boots again, keeping its save data."""
+        self.frame = int(self._cmd("reset"))
+
     def close(self):
         try:
             self.p.stdin.write(b"quit\n")

@@ -169,4 +169,12 @@ const u8 gFileEV0311Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0311Am.bma.lz"
 const u8 gFileEV0312A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0312A.bpl");
 const u8 gFileEV0312Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0312Ac.bpc");
 const u8 gFileEV0312Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0312Am.bma.lz");
+/* v02p03a: the sentry post under the grate (m02a0104), streamed */
+const u8 gFileEV0203A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0203A.bpl");
+const u8 gFileEV0203Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0203Ac.bpc");
+const u8 gFileEV0203Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0203Am.bma.lz");
+/* v02p08a: the Exploration Team Kit, opened (m02a0110) */
+const u8 gFileEV0208A[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0208A.bpl");
+const u8 gFileEV0208Ac[] ALIGNED(4) = INCBIN_U8("data/map_bg/EV0208Ac.bpc");
+const u8 gFileEV0208Am[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/EV0208Am.bma.lz");
 #endif

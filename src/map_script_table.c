@@ -861,5 +861,8 @@ const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_SKY_TIME_FLOW] = &gGroundScript_gs181,
     [MAP_SKY_GROVYLE_RUN] = &gGroundScript_gs181,
     [MAP_SKY_GROVYLE_CLOSEUP] = &gGroundScript_gs181,
+    [MAP_SKY_SENTRY_POST] = &gGroundScript_gs180,
+    [MAP_SKY_KIT_OPEN] = &gGroundScript_gs180,
+    [MAP_SKY_GUILD_DUSK2] = &gGroundScript_gs180,
 #endif
 };

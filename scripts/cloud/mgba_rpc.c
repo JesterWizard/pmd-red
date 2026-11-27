@@ -19,6 +19,9 @@
  *   load PATH        load a save state from PATH    -> "ok FRAME"
  *   frame            the number of frames run      -> "ok FRAME"
  *   setframe N       set that frame counter (after a load)
+ *   reset            the console's reset: the game boots again with the
+ *                    save data it has written (the frame counter goes on)
+ *                                                 -> "ok FRAME"
  *   audio            audio output since the last "audio" (or the start), at
  *                    32768 Hz stereo, then resets: -> "ok SAMPLES SUMSQ PEAK"
  *                    (SUMSQ over both channels, PEAK = max |sample|)
@@ -355,6 +358,9 @@ int main(int argc, char** argv) {
 				reply("err usage: setframe N");
 				continue;
 			}
+			reply("ok %llu", frame);
+		} else if (strcmp(cmd, "reset") == 0) {
+			core->reset(core);
 			reply("ok %llu", frame);
 		} else if (strcmp(cmd, "quit") == 0) {
 			break;

@@ -4299,6 +4299,16 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                 FillInventoryGaps();
             }
             return 0;
+        case 0x75:
+            /* SKY_CHANGE_GROUND(map): EoS back_ChangeGround: another map's
+             * picture under the actors and objects on the map (SELECT_MAP
+             * would delete them): B2F's door opening. The camera stays. */
+            gCurrentMap = (s16)r2;
+            gUnknown_2039A32 = GetAdjustedGroundMap((s16)r2);
+            gUnknown_2039A34 = gUnknown_2039A32;
+            SetScriptVarValue(NULL, GROUND_MAP, gCurrentMap);
+            GroundMap_Select(gUnknown_2039A32);
+            return 0;
 #endif
         case 0x4B: {
             static const u8 sTrieloName[] = _("Trielo");

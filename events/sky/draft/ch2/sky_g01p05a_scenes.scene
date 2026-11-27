@@ -32,6 +32,10 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=WIGGLYTUFF id=SKY_LIVES_WIGGLYTUFF   # the text names it
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_STOP
     SELECT_MAP SKY_GUILD_WIGGLYTUFF
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
@@ -44,7 +48,6 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     TEXTBOX_CLEAR
     WAIT 60
     FANFARE_PLAY2 465   # EoS se_Play(8964)
-    # TODO eos: SetEffect<actor ACTOR_NPC_PERAPPU>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
     AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
     WAIT 30
     MSG_NPC who=CHATOT text=" Guildmaster...{WAIT_PRESS}um...{WAIT_PRESS}Guildmaster?"
@@ -78,7 +81,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     MSG_NPC who=PARTNER text=" So what do you think would be a\ngood name for us, {NAME_0}?"
     TEXTBOX_CLEAR
     RENAME_TEAM   # EoS message_Menu(MENU_TEAM_NAME)
-    SET_ARRAYVAL PERFORMANCE_PROGRESS_LIST 1 1   # EoS $PERFORMANCE_PROGRESS_LIST[1] = 1;
+    # eos: $PERFORMANCE_PROGRESS_LIST[1] = 1; (unlocks EoS menus: nothing on the GBA)
     FANFARE_PLAY2 464   # EoS se_Play(8965)
     ALERT_CUE 70   # -> PARTNER
     MSG_NPC who=PARTNER text=" ...{TEAM_NAME}?!{WAIT_PRESS}\nTeam {TEAM_NAME}!"
@@ -122,7 +125,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
     FANFARE_PLAY2 SE_SKY_RELIC_FRAGMENT   # EoS se_Play(6410)
     SELECT_OBJECTS group=-1 sector=1   # EoS supervision_Acting(1)
-    SET_ARRAYVAL PERFORMANCE_PROGRESS_LIST 2 1   # EoS $PERFORMANCE_PROGRESS_LIST[2] = 1;
+    # eos: $PERFORMANCE_PROGRESS_LIST[2] = 1; (unlocks EoS menus: nothing on the GBA)
     WAIT 30
     MSG_INSTANT text="{CENTER_ALIGN}Wigglytuff set down\n{CENTER_ALIGN}a Pokémon Exploration Team Kit!"   # EoS message_Mail
     TEXTBOX_CLEAR
@@ -147,7 +150,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     ALERT_CUE 68   # -> PLAYER
     AWAIT_CUE 69   # <- PLAYER done
     WAIT 15
-    FANFARE_PLAY2 SE_SKY_EVENT_MAIN02_HAKO_02   # EoS se_Play(6411) = SE_NUM_EVENT_MAIN02_HAKO_02: not converted yet
+    FANFARE_PLAY2 SE_SKY_KIT_OPEN   # EoS se_Play(6411)
     AWAIT_CUE_COND 72 0   # -> G01P05A1_106 (waits until it is ready)
     AWAIT_CUE 73   # <- G01P05A1_106 done
     WAIT 30
@@ -155,11 +158,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     TEXTBOX_CLEAR
     FADE_OUT wait=TRUE frames=30
     WAIT 10
-    SELECT_MAP SKY_V02P08A
-    ALERT_CUE 68   # -> PLAYER
-    AWAIT_CUE_COND 70 0   # -> PARTNER (waits until it is ready)
-    AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
-    AWAIT_CUE_COND 66 0   # -> WIGGLYTUFF (waits until it is ready)
+    SELECT_MAP SKY_KIT_OPEN
     # eos: supervision_RemoveActing(0);
     # eos: supervision_Acting(2); (only the camera's performer)
     SKY_CAMERA_SET x=12 y=32   # EoS camera_SetMyself<performer 0>
@@ -200,43 +199,28 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     MSG_INSTANT text="{CENTER_ALIGN}{NAME_1} peered into\n{CENTER_ALIGN}the Treasure Bag."   # EoS message_Mail
     # eos: message_KeyWait(); (the line above waits for a button)
     # eos: switch ( ProcessSpecial(PROCESS_SPECIAL_GET_HERO_KIND, 0, 0) ) { (the story's hero: case 0)
-    JUMP_LABEL 1002
-  LABEL 1002
+    JUMP_LABEL 0
   LABEL 0
+  LABEL 1
     # eos: item_Set(0, 37, 0); (item slot 0: Def. Scarf)
     SKY_GIVE_ITEM item=ITEM_DEF_SCARF   # EoS item_Set(0, 37); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-  LABEL 21
+  LABEL 2
     FANFARE_PLAY 203   # EoS me_Play(4)
     MSG_INSTANT text="{CENTER_ALIGN}The Def. Scarf\n{CENTER_ALIGN}was inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     # eos: message_KeyWait(); (the line above waits for a button)
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 0 1024
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 1 1025
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 2 1026
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 3 1027
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 4 1028
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 5 1029
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 6 1030
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 7 1031
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 8 1032
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 9 1033
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 10 1034
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 11 1035
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 12 1036
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 13 1037
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 14 1038
-    JUMPIF_EQUAL CONFIG_COLOR_KIND 15 1039
-    JUMP_LABEL 1024
-  LABEL 1024
+    # eos: switch ( $CONFIG_COLOR_KIND ) {: case 0 (the quiz's colour, which Red's quiz does not ask)
+    JUMP_LABEL 3
+  LABEL 3
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Silver Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 428, 0); (item slot 0: Silver Bow)
-    SKY_GIVE_ITEM item=ITEM_SILVER_BOW   # EoS item_Set(0, 428); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 428); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-  LABEL 38
+  LABEL 4
     WAIT 20
     PORTRAIT place=MIDLEFT_TOP who=WIGGLYTUFF emotion=NORMAL
     MSG_NPC who=WIGGLYTUFF text=" Those two items are special."
@@ -280,244 +264,244 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     FADE_OUT wait=TRUE frames=60
     WAIT_BGM MUS_SKY_WIGGLYTUFFS_GUILD
     RET
-  LABEL 1025
+  LABEL 5
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Brown Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 429, 0); (item slot 0: Brown Bow)
-    SKY_GIVE_ITEM item=ITEM_BROWN_BOW   # EoS item_Set(0, 429); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 429); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1026
+    JUMP_LABEL 4
+  LABEL 6
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Red Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 430, 0); (item slot 0: Red Bow)
-    SKY_GIVE_ITEM item=ITEM_RED_BOW   # EoS item_Set(0, 430); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 430); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1027
+    JUMP_LABEL 4
+  LABEL 7
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Pink Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 431, 0); (item slot 0: Pink Bow)
-    SKY_GIVE_ITEM item=ITEM_PINK_BOW   # EoS item_Set(0, 431); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 431); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1028
+    JUMP_LABEL 4
+  LABEL 8
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}An Orange Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}An Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 432, 0); (item slot 0: Orange Bow)
-    SKY_GIVE_ITEM item=ITEM_ORANGE_BOW   # EoS item_Set(0, 432); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 432); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1029
+    JUMP_LABEL 4
+  LABEL 9
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Yellow Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 433, 0); (item slot 0: Yellow Bow)
-    SKY_GIVE_ITEM item=ITEM_YELLOW_BOW   # EoS item_Set(0, 433); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 433); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1030
+    JUMP_LABEL 4
+  LABEL 10
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Lime Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 434, 0); (item slot 0: Lime Bow)
-    SKY_GIVE_ITEM item=ITEM_LIME_BOW   # EoS item_Set(0, 434); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 434); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1031
+    JUMP_LABEL 4
+  LABEL 11
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Green Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 435, 0); (item slot 0: Green Bow)
-    SKY_GIVE_ITEM item=ITEM_GREEN_BOW   # EoS item_Set(0, 435); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 435); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1032
+    JUMP_LABEL 4
+  LABEL 12
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Viridian Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 436, 0); (item slot 0: Viridian Bow)
-    SKY_GIVE_ITEM item=ITEM_VIRIDIAN_BOW   # EoS item_Set(0, 436); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 436); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1033
+    JUMP_LABEL 4
+  LABEL 13
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Minty Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 437, 0); (item slot 0: Minty Bow)
-    SKY_GIVE_ITEM item=ITEM_MINTY_BOW   # EoS item_Set(0, 437); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 437); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1034
+    JUMP_LABEL 4
+  LABEL 14
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Sky Blue Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 438, 0); (item slot 0: Sky Blue Bow)
-    SKY_GIVE_ITEM item=ITEM_SKY_BLUE_BOW   # EoS item_Set(0, 438); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 438); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1035
+    JUMP_LABEL 4
+  LABEL 15
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Blue Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 439, 0); (item slot 0: Blue Bow)
-    SKY_GIVE_ITEM item=ITEM_BLUE_BOW   # EoS item_Set(0, 439); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 439); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1036
+    JUMP_LABEL 4
+  LABEL 16
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Cobalt Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 440, 0); (item slot 0: Cobalt Bow)
-    SKY_GIVE_ITEM item=ITEM_COBALT_BOW   # EoS item_Set(0, 440); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 440); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1037
+    JUMP_LABEL 4
+  LABEL 17
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Purple Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 441, 0); (item slot 0: Purple Bow)
-    SKY_GIVE_ITEM item=ITEM_PURPLE_BOW   # EoS item_Set(0, 441); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 441); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1038
+    JUMP_LABEL 4
+  LABEL 18
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Violet Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 442, 0); (item slot 0: Violet Bow)
-    SKY_GIVE_ITEM item=ITEM_VIOLET_BOW   # EoS item_Set(0, 442); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 442); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1039
+    JUMP_LABEL 4
+  LABEL 19
     FANFARE_PLAY 203   # EoS me_Play(4)
-    MSG_INSTANT text="\n{CENTER_ALIGN}A Fuchsia Bow was also inside!"   # EoS message_Mail
+    MSG_INSTANT text="\n{CENTER_ALIGN}A Friend Bow was also inside!"   # EoS message_Mail
     WAIT_FANFARE1 203
     TEXTBOX_CLEAR
     # eos: item_Set(0, 443, 0); (item slot 0: Fuchsia Bow)
-    SKY_GIVE_ITEM item=ITEM_FUCHSIA_BOW   # EoS item_Set(0, 443); message_Menu(MENU_GIVE_ITEM)
+    SKY_GIVE_ITEM item=ITEM_FRIEND_BOW   # EoS item_Set(0, 443); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 38
-  LABEL 1023
-    JUMP_LABEL 1001
-  LABEL 1003
+    JUMP_LABEL 4
+  LABEL 20
+    JUMP_LABEL 41
+  LABEL 21
     # eos: item_Set(0, 40, 0); (item slot 0: Special Band)
     SKY_GIVE_ITEM item=ITEM_SPECIAL_BAND   # EoS item_Set(0, 40); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1004
+    JUMP_LABEL 2
+  LABEL 22
     # eos: item_Set(0, 41, 0); (item slot 0: Zinc Band)
     SKY_GIVE_ITEM item=ITEM_ZINC_BAND   # EoS item_Set(0, 41); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1005
+    JUMP_LABEL 2
+  LABEL 23
     # eos: item_Set(0, 23, 0); (item slot 0: Joy Ribbon)
     SKY_GIVE_ITEM item=ITEM_JOY_RIBBON   # EoS item_Set(0, 23); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1006
+    JUMP_LABEL 2
+  LABEL 24
     # eos: item_Set(0, 23, 0); (item slot 0: Joy Ribbon)
     SKY_GIVE_ITEM item=ITEM_JOY_RIBBON   # EoS item_Set(0, 23); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1007
+    JUMP_LABEL 2
+  LABEL 25
     # eos: item_Set(0, 37, 0); (item slot 0: Def. Scarf)
     SKY_GIVE_ITEM item=ITEM_DEF_SCARF   # EoS item_Set(0, 37); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1008
+    JUMP_LABEL 2
+  LABEL 26
     # eos: item_Set(0, 37, 0); (item slot 0: Def. Scarf)
     SKY_GIVE_ITEM item=ITEM_DEF_SCARF   # EoS item_Set(0, 37); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1009
+    JUMP_LABEL 2
+  LABEL 27
     # eos: item_Set(0, 40, 0); (item slot 0: Special Band)
     SKY_GIVE_ITEM item=ITEM_SPECIAL_BAND   # EoS item_Set(0, 40); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1010
+    JUMP_LABEL 2
+  LABEL 28
     # eos: item_Set(0, 41, 0); (item slot 0: Zinc Band)
     SKY_GIVE_ITEM item=ITEM_ZINC_BAND   # EoS item_Set(0, 41); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1011
+    JUMP_LABEL 2
+  LABEL 29
     # eos: item_Set(0, 26, 0); (item slot 0: Power Band)
     SKY_GIVE_ITEM item=ITEM_POWER_BAND   # EoS item_Set(0, 26); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1012
+    JUMP_LABEL 2
+  LABEL 30
     # eos: item_Set(0, 40, 0); (item slot 0: Special Band)
     SKY_GIVE_ITEM item=ITEM_SPECIAL_BAND   # EoS item_Set(0, 40); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1013
+    JUMP_LABEL 2
+  LABEL 31
     # eos: item_Set(0, 26, 0); (item slot 0: Power Band)
     SKY_GIVE_ITEM item=ITEM_POWER_BAND   # EoS item_Set(0, 26); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1014
+    JUMP_LABEL 2
+  LABEL 32
     # eos: item_Set(0, 41, 0); (item slot 0: Zinc Band)
     SKY_GIVE_ITEM item=ITEM_ZINC_BAND   # EoS item_Set(0, 41); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1015
+    JUMP_LABEL 2
+  LABEL 33
     # eos: item_Set(0, 26, 0); (item slot 0: Power Band)
     SKY_GIVE_ITEM item=ITEM_POWER_BAND   # EoS item_Set(0, 26); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1016
+    JUMP_LABEL 2
+  LABEL 34
     # eos: item_Set(0, 23, 0); (item slot 0: Joy Ribbon)
     SKY_GIVE_ITEM item=ITEM_JOY_RIBBON   # EoS item_Set(0, 23); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1017
+    JUMP_LABEL 2
+  LABEL 35
     # eos: item_Set(0, 40, 0); (item slot 0: Special Band)
     SKY_GIVE_ITEM item=ITEM_SPECIAL_BAND   # EoS item_Set(0, 40); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1018
+    JUMP_LABEL 2
+  LABEL 36
     # eos: item_Set(0, 40, 0); (item slot 0: Special Band)
     SKY_GIVE_ITEM item=ITEM_SPECIAL_BAND   # EoS item_Set(0, 40); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1019
+    JUMP_LABEL 2
+  LABEL 37
     # eos: item_Set(0, 41, 0); (item slot 0: Zinc Band)
     SKY_GIVE_ITEM item=ITEM_ZINC_BAND   # EoS item_Set(0, 41); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1020
+    JUMP_LABEL 2
+  LABEL 38
     # eos: item_Set(0, 26, 0); (item slot 0: Power Band)
     SKY_GIVE_ITEM item=ITEM_POWER_BAND   # EoS item_Set(0, 26); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1021
+    JUMP_LABEL 2
+  LABEL 39
     # eos: item_Set(0, 41, 0); (item slot 0: Zinc Band)
     SKY_GIVE_ITEM item=ITEM_ZINC_BAND   # EoS item_Set(0, 41); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1022
+    JUMP_LABEL 2
+  LABEL 40
     # eos: item_Set(0, 37, 0); (item slot 0: Def. Scarf)
     SKY_GIVE_ITEM item=ITEM_DEF_SCARF   # EoS item_Set(0, 37); message_Menu(MENU_GIVE_ITEM)
     WAIT 10
-    JUMP_LABEL 21
-  LABEL 1001
+    JUMP_LABEL 2
+  LABEL 41
     RET
 end
 
@@ -538,8 +522,7 @@ script g0_s0_player   # EoS actor PLAYER, layer 0
     AWAIT_CUE 68
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHWEST
     AWAIT_CUE_COND 69 0   # done: the station waits for this
-    AWAIT_CUE 68
-    END_DELETE   # EoS supervision_RemoveActing(0)
+    HALT
 end
 
 script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
@@ -557,11 +540,11 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     AWAIT_CUE 70
     CALL_SCRIPT NOTICE_FUNC
     AWAIT_CUE 70
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(71); (no such Red animation id)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 71 0   # done: the station waits for this
     AWAIT_CUE 70
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(71); (no such Red animation id)
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 71 0   # done: the station waits for this
     AWAIT_CUE 70
@@ -575,8 +558,7 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     AWAIT_CUE_COND 71 0   # done: the station waits for this
     AWAIT_CUE 70
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHEAST
-    AWAIT_CUE 70
-    END_DELETE   # EoS supervision_RemoveActing(0)
+    HALT
 end
 
 script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
@@ -585,15 +567,14 @@ script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
     UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    WAIT_EFFECT
+    CALL_SCRIPT NOTICE_FUNC
     AWAIT_CUE 64
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHWEST
     AWAIT_CUE 64
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTHWEST
     AWAIT_CUE 64
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
-    AWAIT_CUE 64
-    END_DELETE   # EoS supervision_RemoveActing(0)
+    HALT
 end
 
 script g0_s0_wigglytuff   # EoS actor NPC_PUKURIN, layer 0
@@ -619,15 +600,14 @@ script g0_s0_wigglytuff   # EoS actor NPC_PUKURIN, layer 0
     AWAIT_CUE_COND 67 0   # done: the station waits for this
     AWAIT_CUE 66
     SELECT_ANIMATION 2
-    AWAIT_CUE 66
-    END_DELETE   # EoS supervision_RemoveActing(0)
+    HALT
 end
 
 script g0_s1_obj0_g01p05a1   # EoS object G01P05A1_106, layer 1
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 72
-    SELECT_ANIMATION 18
+    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 73 0   # done: the station waits for this
     HALT
@@ -638,44 +618,44 @@ script g0_s3_player   # EoS actor PLAYER, layer 3
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 78
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    COND_EQUAL 3 3003
-    COND_EQUAL 4 3004
-    COND_EQUAL 5 3005
-    COND_EQUAL 6 3006
-    COND_EQUAL 7 3007
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    COND_EQUAL 3 3
+    COND_EQUAL 4 4
+    COND_EQUAL 5 5
+    COND_EQUAL 6 6
+    COND_EQUAL 7 7
+    JUMP_LABEL 0
+  LABEL 1
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
     AWAIT_CUE_COND 79 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
-    JUMP_LABEL 3000
-  LABEL 3003
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(71); (no such Red animation id)
+    JUMP_LABEL 0
+  LABEL 3
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 79 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3004
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(71); (no such Red animation id)
+    JUMP_LABEL 0
+  LABEL 4
+    SELECT_ANIMATION 47   # EoS SetAnimation(71)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 79 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3005
+    JUMP_LABEL 0
+  LABEL 5
     SELECT_ANIMATION 2
-    JUMP_LABEL 3000
-  LABEL 3006
+    JUMP_LABEL 0
+  LABEL 6
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
     AWAIT_CUE_COND 79 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3007
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(66); (no such Red animation id)
+    JUMP_LABEL 0
+  LABEL 7
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g0_s3_partner   # EoS actor ATTENDANT1, layer 3
@@ -683,39 +663,39 @@ script g0_s3_partner   # EoS actor ATTENDANT1, layer 3
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 76
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    COND_EQUAL 3 3003
-    COND_EQUAL 4 3004
-    COND_EQUAL 5 3005
-    COND_EQUAL 6 3006
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    COND_EQUAL 3 3
+    COND_EQUAL 4 4
+    COND_EQUAL 5 5
+    COND_EQUAL 6 6
+    JUMP_LABEL 0
+  LABEL 1
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
     AWAIT_CUE_COND 77 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     CALL_SCRIPT JUMP_ANGRY_FUNC   # EoS CORO_JUMP_ANGRY_FUNC_SERIES
     AWAIT_CUE_COND 77 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3003
+    JUMP_LABEL 0
+  LABEL 3
     CALL_SCRIPT JUMP_HAPPY_FUNC   # EoS CORO_JUMP_HAPPY_FUNC_SERIES
     AWAIT_CUE_COND 77 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3004
+    JUMP_LABEL 0
+  LABEL 4
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
     AWAIT_CUE_COND 77 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3005
+    JUMP_LABEL 0
+  LABEL 5
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTH
     AWAIT_CUE_COND 77 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3006
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(66); (no such Red animation id)
+    JUMP_LABEL 0
+  LABEL 6
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g0_s3_chatot   # EoS actor NPC_PERAPPU, layer 3
@@ -738,7 +718,7 @@ script g0_s3_obj0_g01p05a1   # EoS object G01P05A1_106, layer 3
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 74
-    SELECT_ANIMATION 18
+    SELECT_ANIMATION 4   # EoS SetAnimation(18): opens once and stays open (0x1001)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 75 0   # done: the station waits for this
     HALT
@@ -752,7 +732,7 @@ actors g0_s0_lives
 end
 
 objects g0_s1_objs
-    object kind=SKY_OBJ_G01P05A1 w=2 h=1 x=25.5 y=27.5 script=g0_s1_obj0_g01p05a1   # EoS G01P05A1_106
+    object kind=SKY_OBJ_EXPLORATION_KIT w=2 h=1 x=25.5 y=27.5 script=g0_s1_obj0_g01p05a1   # EoS G01P05A1_106
 end
 
 actors g0_s3_lives
@@ -763,7 +743,7 @@ actors g0_s3_lives
 end
 
 objects g0_s3_objs
-    object kind=SKY_OBJ_G01P05A1 w=2 h=1 x=25.5 y=27.5 script=g0_s3_obj0_g01p05a1   # EoS G01P05A1_106
+    object kind=SKY_OBJ_EXPLORATION_KIT w=2 h=1 x=25.5 y=27.5 script=g0_s3_obj0_g01p05a1   # EoS G01P05A1_106
 end
 
 stations

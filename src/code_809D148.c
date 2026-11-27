@@ -302,9 +302,13 @@ void nullsub_120(void)
  * camera performer). */
 void SkyCamera_MoveBy(s32 dx, s32 dy, s32 speed)
 {
+    /* A move given while one is under way adds to it (a diagonal move is a
+     * SKY_CAMERA_MOVE and a SKY_CAMERA_MOVE_X in a row). */
+    PixelPos from = sUnknown_20399E8.unk8 == 1 ? sUnknown_20399E8.unk1C : sUnknown_20399E8.unk14;
+
     sUnknown_20399E8.unk0 = 0;
-    sUnknown_20399E8.unk1C.x = sUnknown_20399E8.unk14.x + dx * 256;
-    sUnknown_20399E8.unk1C.y = sUnknown_20399E8.unk14.y + dy * 256;
+    sUnknown_20399E8.unk1C.x = from.x + dx * 256;
+    sUnknown_20399E8.unk1C.y = from.y + dy * 256;
     sUnknown_20399E8.unkC = speed;
     sUnknown_20399E8.unk8 = 1;
 }

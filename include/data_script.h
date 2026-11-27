@@ -217,6 +217,9 @@
 /* Give an item (ITEM_*): into the bag, or the storage when the bag is full
  * (EoS item_Set + message_Menu(MENU_GIVE_ITEM): the Exploration Team kit). */
 #define SKY_GIVE_ITEM(item)             SPECIAL_PROCESS(0x74, item)
+/* EoS back_ChangeGround: show another map's picture under the actors and
+ * objects on the map (SELECT_MAP deletes them); the camera stays. */
+#define SKY_CHANGE_GROUND(map)          SPECIAL_PROCESS(0x75, map)
 
 /* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
 

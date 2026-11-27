@@ -18,16 +18,16 @@ debug_file src/data/ground/sky/sky_g01p04a_scenes.h
 ```c
 #define NPC_PLAYER 0
 #define NPC_PARTNER 1
+#define NPC_BIDOOF 2
 #define NPC_CHATOT 2
-#define NPC_BIDOOF 3
-#define NPC_CHIMECHO 4
-#define NPC_CORPHISH 5
-#define NPC_SUNFLORA 6
-#define NPC_DUGTRIO 7
-#define NPC_CROAGUNK 8
-#define NPC_WIGGLYTUFF 9
-#define NPC_LOUDRED 10
-#define NPC_DIGLETT 11
+#define NPC_CHIMECHO 2
+#define NPC_CORPHISH 2
+#define NPC_CROAGUNK 2
+#define NPC_DIGLETT 2
+#define NPC_DUGTRIO 2
+#define NPC_SUNFLORA 2
+#define NPC_LOUDRED 3
+#define NPC_WIGGLYTUFF 4
 ```
 
 # ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
@@ -44,9 +44,11 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
     SELECT_MAP SKY_GUILD_B2F_DOOR
-    # TODO eos: supervision_LoadStation(LEVEL_G01P04A, 'UM02');
+    # eos: supervision_LoadStation(LEVEL_G01P04A, 'UM02'): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
     # eos: supervision_StationCommon(0); (the map's own NPCs: none in a scene)
     # eos: supervision_StationCommon(99); (the map's own NPCs: none in a scene)
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
@@ -127,7 +129,6 @@ end
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
     WALK_RELATIVE speed=256 dx=48 dy=16   # EoS MovePositionMark to Position<'m2', 48, 25>
@@ -207,9 +208,12 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=WIGGLYTUFF id=SKY_LIVES_WIGGLYTUFF   # the text names it
+    UPDATE_NAME kind=ACTOR_TYPE who=LOUDRED id=SKY_LIVES_LOUDRED   # the text names it
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_STOP
     SELECT_MAP SKY_GUILD_B2F_DOOR
-    # TODO eos: supervision_LoadStation(LEVEL_G01P04A, 'UM02');
+    # eos: supervision_LoadStation(LEVEL_G01P04A, 'UM02'): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
     # eos: supervision_Station(0); (the map's own NPCs: none in a scene)
     # eos: supervision_StationCommon(0); (the map's own NPCs: none in a scene)
     # eos: supervision_StationCommon(99); (the map's own NPCs: none in a scene)
@@ -303,8 +307,8 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     TEXTBOX_CLEAR
     BGM_FADEOUT 120
     WAIT_BGM MUS_SKY_WIGGLYTUFFS_GUILD
-    FANFARE_PLAY2 SE_SKY_EVENT_MOTION_DOOR   # EoS se_Play(8711) = SE_NUM_EVENT_MOTION_DOOR: not converted yet
-    SELECT_MAP SKY_GUILD_B2F
+    FANFARE_PLAY2 SE_SKY_DOOR   # EoS se_Play(8711)
+    SKY_CHANGE_GROUND map=SKY_GUILD_B2F   # EoS back_ChangeGround(LEVEL_G01P04A): the actors stay
     WAIT 30
     SELECT_LIVES group=-1 sector=2   # EoS supervision_Acting(2)
     AWAIT_CUE_COND 74 0   # -> PLAYER (waits until it is ready)
@@ -342,7 +346,7 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     BGM_FADEOUT 60
     AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
     AWAIT_CUE 65   # <- CHATOT done
-    FANFARE_PLAY2 SE_SKY_EVENT_MOTION_WING_01   # EoS se_Play(5122) = SE_NUM_EVENT_MOTION_WING_01: not converted yet
+    FANFARE_PLAY2 SE_SKY_WING_FLAP   # EoS se_Play(5122)
     ALERT_CUE 64   # -> CHATOT
     AWAIT_CUE 65   # <- CHATOT done
     ALERT_CUE 64   # -> CHATOT
@@ -422,7 +426,6 @@ end
 script g1_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 78
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
@@ -444,7 +447,6 @@ end
 script g1_s0_chimecho   # EoS actor NPC_CHIRIIN, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CHIMECHO id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 80
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
@@ -478,7 +480,6 @@ end
 script g1_s0_corphish   # EoS actor NPC_HEIGANI, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CORPHISH id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 76
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
@@ -500,7 +501,6 @@ end
 script g1_s0_sunflora   # EoS actor NPC_KIMAWARI, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=SUNFLORA id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 82
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
@@ -536,7 +536,6 @@ end
 script g1_s0_dugtrio   # EoS actor NPC_DAGUTORIO, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=DUGTRIO id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 84
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
@@ -571,7 +570,6 @@ end
 script g1_s0_croagunk   # EoS actor NPC_GUREGGURU, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CROAGUNK id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 70
     SELECT_ANIMATION 2
@@ -594,7 +592,6 @@ end
 script g1_s1_player   # EoS actor PLAYER, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 74
     WALK_RELATIVE speed=384 dx=-88 dy=4   # EoS MovePositionMark to Position<'m1', 64, 34.5>
@@ -618,7 +615,6 @@ end
 script g1_s1_partner   # EoS actor ATTENDANT1, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 72
     WALK_RELATIVE speed=384 dx=-64 dy=-4   # EoS MovePositionMark to Position<'m0', 62, 35.5>
@@ -740,7 +736,6 @@ end
 script g1_s4_diglett   # EoS actor NPC_DIGUDA, layer 4
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=DIGLETT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
     SELECT_ANIMATION 2
@@ -794,35 +789,39 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
+    SELECT_MAP SKY_GUILD_B2F   # EoS: the scene goes on on the map as it is
+    SELECT_ENTITIES group=-1 sector=0   # (its layer 0: who is there)
+    FADE_IN wait=TRUE frames=0
+    SET_PLACE_MODE 4
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
     SCENARIO_CALC SCENARIO_MAIN 3 2   # EoS scenario numbers
-    # eos: PLAYER is not on the map here: SELECT_ANIMATION 2
-    # eos: ATTENDANT1 is not on the map here: SELECT_ANIMATION 2
-    # eos: NPC_PERAPPU is not on the map here: SELECT_ANIMATION 2
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE_COND 68 0   # -> CHATOT (waits until it is ready)
     SKY_CAMERA_SET x=364 y=172   # EoS camera_SetMyPosition<actor ACTOR_PLAYER>();
-    # eos: WaitExecuteLives(PLAYER): nothing to wait for
-    # eos: NPC_PERAPPU is not on the map here: ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
-    # eos: PLAYER is not on the map here: ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
-    # eos: ATTENDANT1 is not on the map here: ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
-    # eos: NPC_PERAPPU is not on the map here: EMOTION_EFFECT SMILE
+    AWAIT_CUE 65   # <- PLAYER done
+    AWAIT_CUE_COND 68 0   # -> CHATOT (waits until it is ready)
+    ALERT_CUE 64   # -> PLAYER
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
     PORTRAIT place=LEFT_BOTTOM_2 who=CHATOT emotion=NORMAL
     MSG_NPC who=CHATOT text=" Hey, you shouldn't just be\nwandering around there."
-    # eos: NPC_PERAPPU is not on the map here: EMOTION_EFFECT NONE
+    AWAIT_CUE_COND 68 0   # -> CHATOT (waits until it is ready)
     MSG_NPC who=CHATOT text=" You two come here. ♪"
     TEXTBOX_CLEAR
-    # eos: NPC_PERAPPU is not on the map here: WALK_RELATIVE speed=384 dx=-136 dy=4   # EoS Move2PositionMark to Position<'m0', 40, 27.5>
-    # eos: PLAYER is not on the map here: ROTATE_TO speed=24 turn=DIR_TRANS_10 direction=NORTHWEST
-    # eos: ATTENDANT1 is not on the map here: ROTATE_TO speed=24 turn=DIR_TRANS_10 direction=NORTHWEST
-    # eos: WaitExecuteLives(NPC_PERAPPU): nothing to wait for
-    # eos: NPC_PERAPPU is not on the map here: WALK_RELATIVE speed=384 dx=4 dy=-88   # EoS Move2PositionMark to Position<'m1', 40.5, 16.5>
-    # eos: WaitExecuteLives(NPC_PERAPPU): nothing to wait for
-    # eos: NPC_PERAPPU is not on the map here: END_DELETE
-    # eos: PLAYER is not on the map here: ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
-    # eos: ATTENDANT1 is not on the map here: ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE_COND 68 0   # -> CHATOT (waits until it is ready)
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 69   # <- CHATOT done
+    ALERT_CUE 68   # -> CHATOT
+    AWAIT_CUE 69   # <- CHATOT done
+    ALERT_CUE 68   # -> CHATOT
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
     WAIT 60
-    # eos: PLAYER is not on the map here: WALK_RELATIVE speed=256 dx=-160 dy=-28   # EoS Move2PositionMark to Position<'m2', 40, 27.5>
+    AWAIT_CUE_COND 64 0   # -> PLAYER (waits until it is ready)
     WAIT 10
-    # eos: ATTENDANT1 is not on the map here: WALK_RELATIVE speed=256 dx=-160 dy=-52   # EoS Move2PositionMark to Position<'m3', 40, 27.5>
+    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
     WAIT 20
     BGM_FADEOUT 60
     FADE_OUT wait=TRUE frames=30
@@ -833,16 +832,35 @@ end
 script g2_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 64
+    SELECT_ANIMATION 2
+    AWAIT_CUE_COND 65 0   # done: the station waits for this
+    AWAIT_CUE 64
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
+    AWAIT_CUE 64
+    ROTATE_TO speed=24 turn=DIR_TRANS_10 direction=NORTHWEST
+    AWAIT_CUE 64
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
+    AWAIT_CUE 64
+    WALK_RELATIVE speed=256 dx=-160 dy=-28   # EoS Move2PositionMark to Position<'m2', 40, 27.5>
     HALT
 end
 
 script g2_s0_partner   # EoS actor ATTENDANT1, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    SELECT_ANIMATION 2
+    AWAIT_CUE 66
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=SKY_LIVES_CHATOT
+    AWAIT_CUE 66
+    ROTATE_TO speed=24 turn=DIR_TRANS_10 direction=NORTHWEST
+    AWAIT_CUE 66
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    AWAIT_CUE 66
+    WALK_RELATIVE speed=256 dx=-160 dy=-52   # EoS Move2PositionMark to Position<'m3', 40, 27.5>
     HALT
 end
 
@@ -851,7 +869,21 @@ script g2_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-    HALT
+    AWAIT_CUE 68
+    SELECT_ANIMATION 2
+    AWAIT_CUE 68
+    ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
+    EMOTION_EFFECT SMILE
+    AWAIT_CUE 68
+    EMOTION_EFFECT NONE
+    AWAIT_CUE 68
+    WALK_RELATIVE speed=384 dx=-136 dy=4   # EoS Move2PositionMark to Position<'m0', 40, 27.5>
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    WALK_RELATIVE speed=384 dx=4 dy=-88   # EoS Move2PositionMark to Position<'m1', 40.5, 16.5>
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
+    END_DELETE
 end
 
 actors g2_s0_lives
@@ -868,8 +900,9 @@ script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_SWITCH SKY_WIGGLYTUFFS_GUILD
-    SET_ARRAYVAL SCENARIO_MAIN_BIT_FLAG 1 0   # EoS $SCENARIO_MAIN_BIT_FLAG[1] = 0;
+    SET_ARRAYVAL SKY_SCENARIO_MAIN_BIT_FLAG 1 0   # EoS $SCENARIO_MAIN_BIT_FLAG[1] = 0;
     # eos: debug_Print('CHOUREI');
     SELECT_MAP SKY_GUILD_B2F
     # eos: supervision_StationCommon(0); (the map's own NPCs: none in a scene)
@@ -947,32 +980,31 @@ script g3_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     # eos: supervision_RemoveActing(1);
     TEXTBOX_CLEAR
     # TODO eos: switch ( sector() ) { (the first case is taken)
-    JUMP_LABEL 1002
-  LABEL 1002
+    JUMP_LABEL 0
   LABEL 0
+  LABEL 1
     BGM_FADEOUT 120
     FADE_OUT wait=TRUE frames=60
     WAIT_BGM MUS_SKY_WIGGLYTUFFS_GUILD
     RET
-  LABEL 1003
+  LABEL 2
     RET
-  LABEL 1004
-    # TODO eos: CallCommon(CORO_EVENT_END_MAPIN);
-    # TODO eos: main_SetGround(LEVEL_G01P04A);
-    # TODO eos: supervision_ExecuteStationCommon(LEVEL_G01P04A, 1);
+  LABEL 3
+    # eos: CallCommon(CORO_EVENT_END_MAPIN): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
+    # eos: main_SetGround(LEVEL_G01P04A): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
+    # eos: supervision_ExecuteStationCommon(LEVEL_G01P04A, 1): the GBA's event scripts chain the scenes (src/data/ground/sky/sky_ch2_events.h)
     RET
-  LABEL 1001
+  LABEL 4
     RET
 end
 
 script g3_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 84
     SET_DIR_WAIT DIRECTION_NORTH 0
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(66); (no such Red animation id)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     AWAIT_CUE 84
     SELECT_ANIMATION 2
     ROTATE_TO speed=8 turn=DIR_TRANS_10 direction=WEST
@@ -982,7 +1014,6 @@ end
 script g3_s0_partner   # EoS actor ATTENDANT1, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 78
     EMOTION_EFFECT SMILE
@@ -992,7 +1023,7 @@ script g3_s0_partner   # EoS actor ATTENDANT1, layer 0
     EMOTION_EFFECT SMILE
     AWAIT_CUE 78
     SET_DIR_WAIT DIRECTION_NORTH 0
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(66); (no such Red animation id)
+    SELECT_ANIMATION 26   # EoS SetAnimation(66)
     AWAIT_CUE 78
     SELECT_ANIMATION 2
     EMOTION_EFFECT NONE
@@ -1003,7 +1034,6 @@ end
 script g3_s1_wigglytuff   # EoS actor NPC_PUKURIN, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=WIGGLYTUFF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 86
     WALK_RELATIVE speed=256 dx=4 dy=-28   # EoS MovePositionMark to Position<'m0', 52.5, 22.5>
@@ -1014,7 +1044,6 @@ end
 script g3_s1_loudred   # EoS actor NPC_DOGOOMU, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
     SELECT_ANIMATION 2
@@ -1037,7 +1066,6 @@ end
 script g3_s1_bidoof   # EoS actor NPC_BIPPA, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 70
     SELECT_ANIMATION 2
@@ -1054,7 +1082,6 @@ end
 script g3_s1_chimecho   # EoS actor NPC_CHIRIIN, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CHIMECHO id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 74
     EMOTION_EFFECT SMILE
@@ -1076,7 +1103,6 @@ end
 script g3_s1_corphish   # EoS actor NPC_HEIGANI, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CORPHISH id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 80
     SELECT_ANIMATION 23
@@ -1091,7 +1117,6 @@ end
 script g3_s1_sunflora   # EoS actor NPC_KIMAWARI, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=SUNFLORA id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 76
     EMOTION_EFFECT SMILE
@@ -1113,7 +1138,6 @@ end
 script g3_s1_diglett   # EoS actor NPC_DIGUDA, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=DIGLETT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 82
     SELECT_ANIMATION 25   # EoS animation 25: check the sprite has it
@@ -1128,7 +1152,6 @@ end
 script g3_s1_dugtrio   # EoS actor NPC_DAGUTORIO, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=DUGTRIO id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 72
     EMOTION_EFFECT SMILE
@@ -1151,7 +1174,6 @@ end
 script g3_s1_croagunk   # EoS actor NPC_GUREGGURU, layer 1
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CROAGUNK id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
     SELECT_ANIMATION 2
@@ -1204,16 +1226,17 @@ script g4_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=CHIMECHO id=SKY_LIVES_CHIMECHO   # the text names it
     BGM_STOP
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 0 0 1002   # EoS scenario numbers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 3 1002   # EoS scenario numbers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 6 1002   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 0 0 0   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 3 0   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 6 0   # EoS scenario numbers
     RET
-    JUMP_LABEL 1001
-  LABEL 1002
+    JUMP_LABEL 2
   LABEL 0
-    FANFARE_PLAY2 SE_SKY_EVENT_EFF_BELL_01   # EoS se_Play(5123) = SE_NUM_EVENT_EFF_BELL_01: not converted yet
-    WAIT_FANFARE2 SE_SKY_EVENT_EFF_BELL_01
+  LABEL 1
+    FANFARE_PLAY2 SE_SKY_DINNER_BELL   # EoS se_Play(5123)
+    WAIT_FANFARE2 SE_SKY_DINNER_BELL
     PORTRAIT place=LEFT_BOTTOM_2 who=CHIMECHO emotion=NORMAL
     MSG_NPC who=CHIMECHO text=" Everyone!{WAIT_PRESS} Thanks for\nwaiting! ♪"
     TEXTBOX_CLEAR
@@ -1226,8 +1249,8 @@ script g4_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SET_PLACE_MODE 4
     AWAIT_CUE_COND 64 1   # -> CHIMECHO: batch 1
     WAIT 40
-    FANFARE_PLAY2 SE_SKY_EVENT_SIGN_NOTICE_05   # EoS se_Play(8978) = SE_NUM_EVENT_SIGN_NOTICE_05: not converted yet
-    # TODO eos: SetEffect<actor ACTOR_NPC_DIGUDA>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    FANFARE_PLAY2 SE_SKY_NOTICE_5   # EoS se_Play(8978)
+    AWAIT_CUE_COND 66 1   # -> DIGLETT: batch 1
     WAIT 10
     AWAIT_CUE_COND 5 0   # EoS Unlock(5): once it is waiting
     WAIT 5
@@ -1235,51 +1258,49 @@ script g4_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 10
     AWAIT_CUE_COND 9 0   # EoS Unlock(9): once it is waiting
     WAIT 10
-    AWAIT_CUE_COND 66 1   # -> PLAYER: batch 1
+    AWAIT_CUE_COND 68 1   # -> PLAYER: batch 1
     AWAIT_CUE 65   # <- CHIMECHO done
     MSG_NPC who=CHIMECHO text=" I finished making dinner! ♪"
     MSG_NPC who=CHIMECHO text=" Come on! Dinner's on! ♪"
     TEXTBOX_CLEAR
-    FANFARE_PLAY2 SE_SKY_EVENT_MOTION_CLAP_02_L   # EoS se_Play(5138) = SE_NUM_EVENT_MOTION_CLAP_02_L: not converted yet
-    AWAIT_CUE_COND 68 1   # -> DIGLETT: batch 1
-    AWAIT_CUE_COND 66 2   # -> PLAYER: batch 2
+    FANFARE_PLAY2 SE_SKY_CHEER   # EoS se_Play(5138)
+    AWAIT_CUE_COND 66 2   # -> DIGLETT: batch 2
+    AWAIT_CUE_COND 68 2   # -> PLAYER: batch 2
     AWAIT_CUE_COND 6 0   # EoS Unlock(6): once it is waiting
     AWAIT_CUE_COND 8 0   # EoS Unlock(8): once it is waiting
     AWAIT_CUE_COND 10 0   # EoS Unlock(10): once it is waiting
     # eos: message_EmptyActor(); (no speaker)
     MSG_NPC who=-1 text="Everyone: YEAH!"
     TEXTBOX_CLEAR
-    FANFARE_FADEOUT2 30 SE_SKY_EVENT_MOTION_CLAP_02_L
+    FANFARE_FADEOUT2 30 SE_SKY_CHEER
     FADE_OUT wait=TRUE frames=30
     RET
-    JUMP_LABEL 1001
-  LABEL 1001
+    JUMP_LABEL 2
+  LABEL 2
     RET
 end
 
 script g4_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
-    AWAIT_CUE 66
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
+  LABEL 0
+    AWAIT_CUE 68
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
     EMOTION_EFFECT NOTICE
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHWEST
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     EMOTION_EFFECT SMILE
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g4_s0_partner   # EoS actor ATTENDANT1, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     # EoS: its own coroutine (def ... for actor ATTENDANT1)
     SELECT_ANIMATION 2
@@ -1287,8 +1308,8 @@ script g4_s0_partner   # EoS actor ATTENDANT1, layer 0
     EMOTION_EFFECT NOTICE
     ROTATE_TO speed=1 turn=DIR_TRANS_10 direction=WEST
     AWAIT_CUE 10   # EoS Lock(10)
-  LABEL 3
-  LABEL 2001
+  LABEL 0
+  LABEL 1
     SELECT_ANIMATION 3
     HEIGHT_TO 512 10
     WAIT 1
@@ -1300,34 +1321,32 @@ script g4_s0_partner   # EoS actor ATTENDANT1, layer 0
     WAIT 15
     SELECT_ANIMATION 2
     WAIT 1   # (a forever loop)
-    JUMP_LABEL 2001
-  LABEL 2002
+    JUMP_LABEL 1
+  LABEL 2
 end
 
 script g4_s0_croagunk   # EoS actor NPC_GUREGGURU, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CROAGUNK id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     # EoS: its own coroutine (def ... for actor NPC_GUREGGURU)
     SELECT_ANIMATION 2
     AWAIT_CUE 5   # EoS Lock(5)
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=SOUTHWEST
     AWAIT_CUE 6   # EoS Lock(6)
+  LABEL 0
   LABEL 1
-  LABEL 2001
     SELECT_ANIMATION 17
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     SELECT_ANIMATION 2
     WAIT 1   # (a forever loop)
-    JUMP_LABEL 2001
-  LABEL 2002
+    JUMP_LABEL 1
+  LABEL 2
 end
 
 script g4_s0_loudred   # EoS actor NPC_DOGOOMU, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     # EoS: its own coroutine (def ... for actor NPC_DOGOOMU)
     SELECT_ANIMATION 2
@@ -1336,34 +1355,36 @@ script g4_s0_loudred   # EoS actor NPC_DOGOOMU, layer 0
     ROTATE_TO speed=1 turn=DIR_TRANS_10 direction=WEST
     AWAIT_CUE 8   # EoS Lock(8)
     EMOTION_EFFECT SMILE
-  LABEL 2
-  LABEL 2001
+  LABEL 0
+  LABEL 1
     SELECT_ANIMATION 19
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     SELECT_ANIMATION 2
     WAIT 1   # (a forever loop)
-    JUMP_LABEL 2001
-  LABEL 2002
+    JUMP_LABEL 1
+  LABEL 2
 end
 
 script g4_s0_diglett   # EoS actor NPC_DIGUDA, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=DIGLETT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
-    AWAIT_CUE 68
-    COND_EQUAL 1 3001
-    JUMP_LABEL 3000
-  LABEL 3001
+  LABEL 0
+    AWAIT_CUE 66
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    EMOTION_EFFECT NOTICE   # TODO emotion: EoS EFFECT_TWO_ARROWS_AT_SIDE_LEFT has no GBA picture: the closest
+    JUMP_LABEL 0
+  LABEL 2
     EMOTION_EFFECT SMILE
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g4_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end
@@ -1373,14 +1394,14 @@ script g4_s0_chimecho   # EoS actor NPC_CHIRIIN, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=CHIMECHO id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 64
-    COND_EQUAL 1 3001
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=136 dy=4   # EoS MovePositionMark to Position<'m0', 22, 35.5>
     AWAIT_CUE_COND 65 0   # done: the station waits for this
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 actors g4_s0_lives

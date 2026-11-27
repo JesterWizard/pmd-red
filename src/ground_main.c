@@ -212,10 +212,16 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
                 break;
 #if defined(SKY_STORY) && !defined(DEBUG_BOOT_MAP)
             case STARTMODE_CONTINUE_GAME:
-                /* The demo ends after chapter 1: a finished save goes back to
-                 * the demo-end message. */
-                if (!ScriptVarScenarioBefore(SCENARIO_MAIN, 3, 0))
+                /* The demo ends after chapter 2: a finished save goes back to
+                 * the demo-end message. Earlier saves go on through
+                 * EVENT_DIVIDE (chapter 2's start, or its morning). */
+                if (!ScriptVarScenarioBefore(SCENARIO_MAIN, 4, 0))
                     scriptID = SKY_DEMO_END_EVENT;
+                /* Saved on the morning after fainting in Drenched Bluff
+                 * (scenario (3, 3) to (3, 5)): back to the bluff from there
+                 * (EVENT_DIVIDE would send (3, 4) and (3, 5) to the map). */
+                else if (!ScriptVarScenarioBefore(SCENARIO_MAIN, 3, 3))
+                    scriptID = SKY_CH2_FAINTED_PATH_EVENT;
                 break;
 #endif
             case STARTMODE_GROUND:

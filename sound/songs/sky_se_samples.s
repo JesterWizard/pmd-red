@@ -230,6 +230,15 @@ sky_se024_wav_000_0:
 	.incbin	"sound/direct_sound_samples/sky/se024_000.bin"
 
 	.align	2
+	.global	sky_se025_wav_000_0
+sky_se025_wav_000_0:
+	.hword	0x0000, 0x0000
+	.word	18593868 @ 18158.07 Hz at key 60
+	.word	0 @ loop start
+	.word	7078 @ size
+	.incbin	"sound/direct_sound_samples/sky/se025_000.bin"
+
+	.align	2
 	.global	sky_se026_wav_000_0
 sky_se026_wav_000_0:
 	.hword	0x0000, 0x0000
@@ -579,6 +588,33 @@ sky_se069_wav_000_0:
 	.word	24 @ loop start
 	.word	4024 @ size
 	.incbin	"sound/direct_sound_samples/sky/se069_000.bin"
+
+	.align	2
+	.global	sky_se073_wav_000_0
+sky_se073_wav_000_0:
+	.hword	0x0000, 0x4000
+	.word	18592234 @ 18156.48 Hz at key 60
+	.word	944 @ loop start
+	.word	7045 @ size
+	.incbin	"sound/direct_sound_samples/sky/se073_000.bin"
+
+	.align	2
+	.global	sky_se077_wav_000_0
+sky_se077_wav_000_0:
+	.hword	0x0000, 0x0000
+	.word	18591478 @ 18155.74 Hz at key 60
+	.word	0 @ loop start
+	.word	4028 @ size
+	.incbin	"sound/direct_sound_samples/sky/se077_000.bin"
+
+	.align	2
+	.global	sky_se123_wav_000_0
+sky_se123_wav_000_0:
+	.hword	0x0000, 0x4000
+	.word	19495831 @ 19038.90 Hz at key 60
+	.word	0 @ loop start
+	.word	5392 @ size
+	.incbin	"sound/direct_sound_samples/sky/se123_000.bin"
 
 	.align	2
 	.global	sky_se124_wav_000_0

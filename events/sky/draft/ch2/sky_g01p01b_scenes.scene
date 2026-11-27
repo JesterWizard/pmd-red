@@ -33,38 +33,42 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
+    UPDATE_NAME kind=ACTOR_TYPE who=DIGLETT id=SKY_LIVES_DIGLETT   # the text names it
     BGM_STOP
-    # TODO eos: chapter card "The New Guild Recruits" (back_SetBanner2(LEVEL_G01P07C, 0, 148, 168, 2,): sky_chapter_card / chapter_titles.h
-    FADE_IN wait=TRUE frames=45
-    SET_PLACE_MODE 4
-    WAIT 160
-    FADE_OUT wait=TRUE frames=45
-    WAIT 15
+    # eos: chapter card "The New Guild Recruits" (back_SetBanner2(LEVEL_G01P07C, 0, 148, 168, 2,): shown at the next SELECT_MAP (src/chapter_titles.c, queued by EVENT_DIVIDE)
+    SELECT_MAP SKY_GUILD_ENTRANCE   # the chapter card, before the scene's pictures
+    # eos: screen_FadeIn(1, 45); (the chapter card's)
+    # eos: Wait(160); (the chapter card's)
+    # eos: screen_FadeOut(1, 45); (the chapter card's)
+    # eos: Wait(15); (the chapter card's)
     SCENARIO_CALC SCENARIO_MAIN 3 1   # EoS scenario numbers
     # eos: back2_SetMode(5); (the top screen)
-    SELECT_MAP SKY_V01P08B
+    SKY_CUTAWAY cg=GUILD_GATE frames=244   # EoS: the main screen's picture (and its waits)
     # eos: supervision_Acting(1); (only the camera's performer)
-    SKY_CAMERA_SET x=12 y=256   # EoS camera_SetMyself<performer 0>
-    SKY_CAMERA_MOVE dy=-32 speed=128   # EoS MovePositionOffset<performer 0>(0.5, 0, -32);
+    # eos: camera_SetMyself<performer 0>(); (the CG's view, as cropped)
+    # eos: MovePositionOffset<performer 0>(0.5, 0, -32); (the CG's view, as cropped)
     BGM_FADEIN frames=60 song=SKY_FIRE_CRACKLING
     # eos: screen2_FadeIn(0, 30); (the top screen)
-    FADE_IN wait=TRUE frames=30
-    WAIT 64   # EoS WaitExecutePerformer(0): the rest of the camera's move
-    WAIT 180
+    # eos: screen_FadeIn(1, 30); (the CG fades in itself)
+    # eos: WaitExecutePerformer(0); (the CG is up)
+    # eos: Wait(180); (the CG is up)
     # eos: screen2_FadeOut(0, 30); (the top screen)
-    FADE_OUT wait=TRUE frames=30
+    # eos: screen_FadeOut(1, 30); (the CG fades out itself)
     # eos: back2_SetMode(0); (the top screen)
     # eos: supervision_RemoveActing(1);
     WAIT 30
     # eos: back2_SetMode(4); (the top screen)
-    SELECT_MAP SKY_GUILD_DUSK
+    SELECT_MAP SKY_GUILD_DUSK2
     # eos: supervision_StationCommon(0); (the map's own NPCs: none in a scene)
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
-    SKY_CAMERA_SET x=124 y=120   # EoS camera_SetMyself<performer 0>
+    SKY_CAMERA_SET x=118 y=112   # the pan's last view (EoS's centre: (124, 120))
     # eos: screen2_FadeIn(0, 30); (the top screen)
     WAIT 1   # the actors take their poses; the pan draws them
     SKY_CUTAWAY cg=GUILD_SKY_SCROLL frames=90   # EoS: the top screen's picture over the map: pan down to it
     FADE_IN wait=TRUE frames=0   # the pan ends on this exact view
+    SET_PLACE_MODE 4
     WAIT 30
     PORTRAIT place=LEFT_BOTTOM_2 who=PARTNER emotion=NORMAL
     MSG_NPC who=PARTNER text=" This is Wigglytuff's Guild."
@@ -155,7 +159,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE 67   # <- PLAYER done
     # eos: screen2_FadeOut(1, 15); (the top screen)
     FADE_OUT wait=TRUE frames=20   # fade the scene out and back in around the CG
-    SKY_CUTAWAY cg=V02P02A frames=90   # EoS: the top screen's picture
+    SKY_CUTAWAY cg=SENTRY_GRATE frames=90   # EoS: the top screen's picture
     FADE_IN wait=TRUE frames=20
     # eos: camera2_SetPositionMark(Position<'m2', 19.5, 17.5>); (the top screen's view)
     # eos: screen2_FadeIn(1, 15); (the top screen)
@@ -300,6 +304,8 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
     BGM_STOP
     # eos: back2_SetMode(4); (the top screen)
     SELECT_MAP SKY_GUILD_ENTRANCE
@@ -307,7 +313,7 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SELECT_LIVES group=-1 sector=1   # EoS supervision_Acting(1)
     SELECT_OBJECTS group=-1 sector=2   # EoS supervision_Acting(2)
-    SKY_CAMERA_SET x=124 y=120   # EoS camera_SetPositionMark(Position<'m0', 30, 24.5>);
+    SKY_CAMERA_SET x=118 y=112   # the pan's last view (EoS's centre: (124, 120))
     AWAIT_CUE_COND 64 0   # -> G01P01A3_95 (waits until it is ready)
     BGM_FADEIN frames=120 song=SKY_FIRE_CRACKLING
     # eos: screen2_FadeIn(0, 30); (the top screen)
@@ -330,9 +336,8 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     # eos: message_ResetActor(); (no speaker)
     MSG_NPC who=-1 text=" ...Sorry to make you WAIT."
     TEXTBOX_CLEAR
-    FANFARE_PLAY2 SE_SKY_EVENT_SIGN_NOTICE_05   # EoS se_Play(8978) = SE_NUM_EVENT_SIGN_NOTICE_05: not converted yet
-    # TODO eos: SetEffect<actor ACTOR_PLAYER>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
-    # TODO eos: SetEffect<actor ACTOR_ATTENDANT1>(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+    FANFARE_PLAY2 SE_SKY_NOTICE_5   # EoS se_Play(8978)
+    AWAIT_CUE_COND 66 0   # -> PLAYER (waits until it is ready)
     ALERT_CUE 68   # -> PARTNER
     AWAIT_CUE 69   # <- PARTNER done
     ALERT_CUE 68   # -> PARTNER
@@ -342,7 +347,7 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     MSG_NPC who=-1 text=" But you don't SEEM to be bad..."
     MSG_NPC who=-1 text=" OK, good enough!{WAIT_PRESS} ENTER!"
     TEXTBOX_CLEAR
-    FANFARE_PLAY2 SE_SKY_EVENT_MAIN02_DOOROPEN   # EoS se_Play(6408) = SE_NUM_EVENT_MAIN02_DOOROPEN: not converted yet
+    FANFARE_PLAY2 SE_SKY_GATE_OPEN   # EoS se_Play(6408)
     CAMERA_SHAKE mode=CUSTOM amp=1 period=1   # EoS camera_SetEffect(2, 1, 1.0);
     ALERT_CUE 68   # -> PARTNER
     AWAIT_CUE_COND 64 0   # -> G01P01A3_95 (waits until it is ready)
@@ -391,6 +396,8 @@ script g1_s0_player   # EoS actor PLAYER, layer 0
     AWAIT_CUE 66
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
     AWAIT_CUE 66
+    EMOTION_EFFECT NOTICE   # TODO emotion: EoS EFFECT_TWO_ARROWS_AT_SIDE_LEFT has no GBA picture: the closest
+    AWAIT_CUE 66
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=NORTH
     AWAIT_CUE 66
     EMOTION_EFFECT SHOCK
@@ -414,7 +421,7 @@ script g1_s1_partner   # EoS actor ATTENDANT1, layer 1
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
     AWAIT_CUE_COND 69 0   # done: the station waits for this
     AWAIT_CUE 68
-    WAIT_EFFECT
+    CALL_SCRIPT NOTICE_FUNC
     AWAIT_CUE_COND 69 0   # done: the station waits for this
     AWAIT_CUE 68
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=EAST
@@ -442,9 +449,9 @@ script g1_s2_obj0_g01p01a3   # EoS object G01P01A3_95, layer 2
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    SELECT_ANIMATION 9
+    SELECT_ANIMATION 1   # EoS SetAnimation(9): closed (direction 0, held)
     AWAIT_CUE 64
-    SELECT_ANIMATION 17
+    SELECT_ANIMATION 4   # EoS SetAnimation(17): opens once and stays open (0x1001)
     STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
     AWAIT_CUE_COND 65 0   # done: the station waits for this
     HALT
@@ -459,7 +466,7 @@ actors g1_s1_lives
 end
 
 objects g1_s2_objs
-    object kind=SKY_OBJ_G01P01A3 w=2 h=1 x=30 y=18 script=g1_s2_obj0_g01p01a3   # EoS G01P01A3_95
+    object kind=SKY_OBJ_GUILD_GATE w=2 h=1 x=30 y=18 script=g1_s2_obj0_g01p01a3   # EoS G01P01A3_95
 end
 
 # ------------------------------------------------------------------------
@@ -470,11 +477,12 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=PARTNER id=0x22
     # eos: back2_SetMode(4); (the top screen)
-    SELECT_MAP SKY_GUILD_DUSK
+    SELECT_MAP SKY_GUILD_DUSK2
     # eos: supervision_StationCommon(0); (the map's own NPCs: none in a scene)
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
-    SKY_CAMERA_SET x=124 y=120   # EoS camera_SetMyself<performer 0>
+    SKY_CAMERA_SET x=118 y=112   # the pan's last view (EoS's centre: (124, 120))
     # eos: screen2_FlushOut(1, 0, 8, 0, 0, 0); (the top screen)
     FLASH_TO wait=TRUE kind=PALUTIL_KIND_05 frames=8 color=RGB_U32(0x00, 0x00, 0x00)
     # eos: screen2_FadeIn(0, 30); (the top screen)
@@ -505,7 +513,6 @@ end
 script g2_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end

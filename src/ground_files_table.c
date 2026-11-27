@@ -681,6 +681,12 @@ extern const u8 gFileEV0311Am[];
 extern const u8 gFileEV0312A[];
 extern const u8 gFileEV0312Ac[];
 extern const u8 gFileEV0312Am[];
+extern const u8 gFileEV0203A[];
+extern const u8 gFileEV0203Ac[];
+extern const u8 gFileEV0203Am[];
+extern const u8 gFileEV0208A[];
+extern const u8 gFileEV0208Ac[];
+extern const u8 gFileEV0208Am[];
 #endif
 
 const File gGroundFiles[GROUND_FILES_COUNT] = {
@@ -2611,30 +2617,36 @@ const File gGroundFiles[GROUND_FILES_COUNT] = {
     [483] = { "EV0107B", &gFileEV0107B, },
     [484] = { "EV0107Bc", &gFileEV0107Bc, },
     [485] = { "EV0107Bm", &gFileEV0107Bm, },
-    [486] = { "EV0303A", &gFileEV0303A, },
-    [487] = { "EV0303Ac", &gFileEV0303Ac, },
-    [488] = { "EV0303Am", &gFileEV0303Am, },
-    [489] = { "EV0305C", &gFileEV0305C, },
-    [490] = { "EV0305Cc", &gFileEV0305Cc, },
-    [491] = { "EV0305Cm", &gFileEV0305Cm, },
-    [492] = { "EV0306A", &gFileEV0306A, },
-    [493] = { "EV0306Ac", &gFileEV0306Ac, },
-    [494] = { "EV0306Am", &gFileEV0306Am, },
-    [495] = { "EV0307A", &gFileEV0307A, },
-    [496] = { "EV0307Ac", &gFileEV0307Ac, },
-    [497] = { "EV0307Am", &gFileEV0307Am, },
-    [498] = { "EV0308A", &gFileEV0308A, },
-    [499] = { "EV0308Ac", &gFileEV0308Ac, },
-    [500] = { "EV0308Am", &gFileEV0308Am, },
-    [501] = { "EV0309A", &gFileEV0309A, },
-    [502] = { "EV0309Ac", &gFileEV0309Ac, },
-    [503] = { "EV0309Am", &gFileEV0309Am, },
-    [504] = { "EV0311A", &gFileEV0311A, },
-    [505] = { "EV0311Ac", &gFileEV0311Ac, },
-    [506] = { "EV0311Am", &gFileEV0311Am, },
-    [507] = { "EV0312A", &gFileEV0312A, },
-    [508] = { "EV0312Ac", &gFileEV0312Ac, },
-    [509] = { "EV0312Am", &gFileEV0312Am, },
+    [486] = { "EV0203A", &gFileEV0203A, },
+    [487] = { "EV0203Ac", &gFileEV0203Ac, },
+    [488] = { "EV0203Am", &gFileEV0203Am, },
+    [489] = { "EV0208A", &gFileEV0208A, },
+    [490] = { "EV0208Ac", &gFileEV0208Ac, },
+    [491] = { "EV0208Am", &gFileEV0208Am, },
+    [492] = { "EV0303A", &gFileEV0303A, },
+    [493] = { "EV0303Ac", &gFileEV0303Ac, },
+    [494] = { "EV0303Am", &gFileEV0303Am, },
+    [495] = { "EV0305C", &gFileEV0305C, },
+    [496] = { "EV0305Cc", &gFileEV0305Cc, },
+    [497] = { "EV0305Cm", &gFileEV0305Cm, },
+    [498] = { "EV0306A", &gFileEV0306A, },
+    [499] = { "EV0306Ac", &gFileEV0306Ac, },
+    [500] = { "EV0306Am", &gFileEV0306Am, },
+    [501] = { "EV0307A", &gFileEV0307A, },
+    [502] = { "EV0307Ac", &gFileEV0307Ac, },
+    [503] = { "EV0307Am", &gFileEV0307Am, },
+    [504] = { "EV0308A", &gFileEV0308A, },
+    [505] = { "EV0308Ac", &gFileEV0308Ac, },
+    [506] = { "EV0308Am", &gFileEV0308Am, },
+    [507] = { "EV0309A", &gFileEV0309A, },
+    [508] = { "EV0309Ac", &gFileEV0309Ac, },
+    [509] = { "EV0309Am", &gFileEV0309Am, },
+    [510] = { "EV0311A", &gFileEV0311A, },
+    [511] = { "EV0311Ac", &gFileEV0311Ac, },
+    [512] = { "EV0311Am", &gFileEV0311Am, },
+    [513] = { "EV0312A", &gFileEV0312A, },
+    [514] = { "EV0312Ac", &gFileEV0312Ac, },
+    [515] = { "EV0312Am", &gFileEV0312Am, },
 #endif
 #ifdef SKY_STORY
     [396 + SKY_GROUND_FILES] = { "H01P01", &gFileED0111A, }, /* sky: Red story file not linked */

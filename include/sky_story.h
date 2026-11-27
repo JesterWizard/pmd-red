@@ -175,9 +175,16 @@ extern u8 gSkyBossExp;
 #define MUS_SKY_STORM                       69 /* EoS BGM_STORM (bgm0101) */
 #define MUS_SKY_OCEAN                       70 /* EoS BGM_OCEAN1 (bgm0100): the waves */
 #define MUS_SKY_FIRE_CRACKLING              71 /* EoS BGM_FIRE_CRACKLING_LOUDER (bgm0116): the guild's torches */
-/* Sky Jukebox range (src/data/sky_jukebox_data.h, SKY_JUKEBOX_FIRST_SONG). */
+#define MUS_SKY_EATING                      72 /* EoS BGM_EATING (bgm0126): dinner in the mess hall (c00a0601), a clip */
+/* Sky Jukebox range (src/data/sky_jukebox_data.h, SKY_JUKEBOX_FIRST_SONG):
+ * chapter 2's songs play the jukebox's conversion. */
+#define MUS_SKY_WIGGLYTUFFS_GUILD           940 /* EoS BGM_WIGGLYTUFFS_GUILD (bgm 7) */
+#define MUS_SKY_GUILDMASTER_WIGGLYTUFF      941 /* EoS BGM_GUILDMASTER_WIGGLYTUFF (bgm 73) */
+#define MUS_SKY_GOODNIGHT                   942 /* EoS BGM_GOODNIGHT (bgm 70) */
+#define MUS_SKY_WIGGLYTUFFS_GUILD_REMIX     943 /* EoS BGM_WIGGLYTUFFS_GUILD_REMIX (bgm 8) */
 #define MUS_SKY_DRENCHED_BLUFF              944 /* EoS BGM_DRENCHED_BLUFF (bgm 22, dungeon music 2) */
 #define MUS_SKY_MT_BRISTLE                  950 /* EoS BGM_MT_BRISTLE (bgm 23, dungeon music 3) */
+#define MUS_SKY_JOB_CLEAR                   945 /* EoS BGM_JOB_CLEAR (bgm 5) */
 
 /* EoS scene sound effects with no Red equivalent (song table slots that are
  * empty in Red; tools/eos_music/sky_red_se_map.py). */
@@ -191,6 +198,16 @@ extern u8 gSkyBossExp;
 #define SE_SKY_FLASH_HEAVY                  526 /* SE_NUM_EVENT_EFF_FLASH_HEAVY (0x1417) */
 #define SE_SKY_BOSS_WIPE                    527 /* SE_NUM_EVENT_EFF_WIPE_01 (0x1410) */
 #define SE_SKY_QUIZ_REVEAL                  528 /* SE_NUM_ETC01_HADO_02 (0x2C02) */
+/* chapter 2 (documentation/Features/SkyChapter2.md) */
+#define SE_SKY_WING_FLAP                    529 /* SE_NUM_EVENT_MOTION_WING_01 (0x1402): Chatot's wings */
+#define SE_SKY_DINNER_BELL                  530 /* SE_NUM_EVENT_EFF_BELL_01 (0x1403): Chimecho rings for dinner */
+#define SE_SKY_TAIL_FEATHERS                531 /* SE_NUM_EVENT_MOTION_TALE_01 (0x1404): Chatot at the board */
+#define SE_SKY_GATE_OPEN                    532 /* SE_NUM_EVENT_MAIN02_DOOROPEN (0x1908): the guild's gate */
+#define SE_SKY_KIT_OPEN                     533 /* SE_NUM_EVENT_MAIN02_HAKO_02 (0x190B): the Exploration Team Kit */
+#define SE_SKY_CHEER                        534 /* SE_NUM_EVENT_MOTION_CLAP_02_L (0x1412): the crew cheers */
+#define SE_SKY_DOOR                         535 /* SE_NUM_EVENT_MOTION_DOOR (0x2207): Wigglytuff's door */
+#define SE_SKY_REWARD_MONEY                 536 /* SE_NUM_DUN_MOTION_MONEY (0x2209): the reward's Poké */
+#define SE_SKY_NOTICE_5                     537 /* SE_NUM_EVENT_SIGN_NOTICE_05 (0x2312) */
 
 #ifndef __ASSEMBLER__
 s32 SkyStory_GetDungeonBgm(s32 defaultSong);
@@ -291,15 +308,33 @@ void SkyStorm_Draw(void);
 /* src/ground_map.c: restart the map's palette animations (SKY_MAP_PAL_RESTART). */
 void GroundMap_SkyRestartPaletteAnims(void);
 
-/* Demo end after chapter 1 (SKY_SAVE_GAME / SKY_DEMO_TO_TITLE). The demo-end
- * event reuses Red's chapter 2 start slot, which the sky build never reaches. */
-#define SKY_DEMO_END_EVENT EVENT_M01E02A_L001
-/* Chapter 2, Drenched Bluff (Red's Thunderwave Cave slots, see
- * documentation/Features/SkyChapter2.md, "Drenched Bluff"): after the
- * dungeon, GETOUT_M01E02A runs the cleared event (STARTMODE_DUNGEON_WON) or
- * the fainted event (any other result but STARTMODE_10, which goes to
- * EVENT_DIVIDE). SKY_DRENCHED_BLUFF_DEBUG_EVENT enters the dungeon at
- * scenario (3,3), as m02a0401: make DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT. */
+/* Chapter 2 (documentation/Features/SkyChapter2.md) runs in Red's chapter 2
+ * event slots (EVENT_M01E02A_*), which the sky build otherwise never reaches.
+ * EVENT_DIVIDE (EVENT_DIVIDE_FIRST) sends scenario (3,0) to (3,1) and
+ * SKY_CH2_EVENT, (3,1) to SKY_CH2_EVENT and (3,3) to SKY_CH2_FAINTED_PATH_EVENT,
+ * as Red sends them to its own chapter 2's events.
+ *   SKY_CH2_EVENT: EoS EVENT_M02_01_02 (m02a0101 .. m02a0202), then free roam
+ *     in the guild (gs180 group 0); with SKY_CH2_FLAG_MORNING (a save at the
+ *     good night) it starts at the next morning.
+ *   SKY_CH2_JOB_EVENT: EoS EVENT_M02_03_04 (leaving B2F in free roam): the
+ *     bulletin board, Drenched Bluff's entrance, into the dungeon.
+ *   SKY_CH2_START: make DEBUG_BOOT_EVENT=SKY_CH2_START (scenario (3,0), then
+ *     EVENT_DIVIDE: the chapter card and chapter 2).
+ *   SKY_DEMO_END_EVENT: the save prompt and "The demo ends here" after
+ *     chapter 2's good night; Continue from a finished save (scenario (4,0)
+ *     or later) shows it again (src/ground_main.c). */
+#define SKY_CH2_EVENT              EVENT_M01E02A_L001
+#define SKY_CH2_FAINTED_PATH_EVENT EVENT_M01E02A_L001C
+#define SKY_CH2_START              EVENT_M01E02A_L003
+#define SKY_CH2_JOB_EVENT          EVENT_M01E02A_L001B
+#define SKY_DEMO_END_EVENT         EVENT_M01E02A_L005
+/* Drenched Bluff (Red's Thunderwave Cave slots, SkyChapter2.md "Drenched
+ * Bluff"): after the dungeon, GETOUT_M01E02A runs the cleared event
+ * (STARTMODE_DUNGEON_WON: EoS EVENT_M02_09_10) or the fainted event (any
+ * other result, leaving early included: EoS EVENT_M02_05_07A, then
+ * EVENT_M02_07B back to the bluff). SKY_DRENCHED_BLUFF_DEBUG_EVENT enters
+ * the dungeon at scenario (3,3), as m02a0401:
+ * make DEBUG_BOOT_EVENT=SKY_DRENCHED_BLUFF_DEBUG_EVENT. */
 #define SKY_DRENCHED_BLUFF_DEBUG_EVENT   EVENT_M01E02A_L002
 #define SKY_DRENCHED_BLUFF_FAINTED_EVENT EVENT_M01E02A_L004
 #define SKY_DRENCHED_BLUFF_CLEARED_EVENT EVENT_M01E02A_L006
@@ -318,6 +353,15 @@ void GroundMap_SkyRestartPaletteAnims(void);
 #define SKY_MT_BRISTLE_CLEARED_EVENT        EVENT_M01E02B_L005
 #define SKY_MT_BRISTLE_FAINTED_EVENT        EVENT_M01E02B_L006
 #define SKY_MT_BRISTLE_PEAK_CLEARED_EVENT   EVENT_M01E02B_L008
+/* EoS's $SCENARIO_MAIN_BIT_FLAG (story flags kept in the save): Red's
+ * EVENT_T01P01, Pokémon Square's flags, which the sky build has no use for
+ * (no save-layout change). Bit 8 (EoS's): the good night of chapter 2 was
+ * saved, chapter 2 goes on from the next morning. */
+#define SKY_SCENARIO_MAIN_BIT_FLAG EVENT_T01P01
+#define SKY_CH2_FLAG_MORNING       8
+/* Bit 7 (EoS's): the morning after fainting in Drenched Bluff was saved
+ * (c00a0201); Continue goes on with EVENT_M02_07B. */
+#define SKY_CH2_FLAG_FAINTED_MORNING 7
 bool8 SkyStory_SaveGame(void);
 void SkyStory_DemoToTitle(void);
 void SkyBubbles_DrawCutaway(void);

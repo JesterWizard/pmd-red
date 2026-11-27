@@ -14,8 +14,8 @@ debug_file src/data/ground/sky/sky_g01p05c_scenes.h
 ```c
 #define NPC_PLAYER 0
 #define NPC_PARTNER 1
-#define NPC_WIGGLYTUFF 2
-#define NPC_CHATOT 3
+#define NPC_CHATOT 2
+#define NPC_WIGGLYTUFF 3
 ```
 
 # ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
@@ -32,6 +32,8 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     DEBUGINFO
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
+    UPDATE_NAME kind=ACTOR_TYPE who=WIGGLYTUFF id=SKY_LIVES_WIGGLYTUFF   # the text names it
+    UPDATE_NAME kind=ACTOR_TYPE who=CHATOT id=SKY_LIVES_CHATOT   # the text names it
     BGM_STOP
     SELECT_MAP SKY_GUILD_WIGGLYTUFF_NIGHT
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
@@ -44,7 +46,6 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     TEXTBOX_CLEAR
     WAIT 60
     FANFARE_PLAY2 465   # EoS se_Play(8964)
-    # TODO eos: SetEffect<actor ACTOR_NPC_PERAPPU>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
     AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
     AWAIT_CUE 65   # <- CHATOT done
     MSG_NPC who=CHATOT text=" Guildmaster...{WAIT_PRESS} Guildmaster?\n"
@@ -95,7 +96,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 10
     WAIT 20
     PORTRAIT place=CENTERLEFT_CENTER who=WIGGLYTUFF emotion=NORMAL
-    # TODO eos: message_FacePositionOffset(2, -1);
+    # eos: message_FacePositionOffset(2, -1); (the face stays at its place on the GBA)
     MSG_NPC who=WIGGLYTUFF text=" Those items I gave you are all\nvery useful in dungeons."
     MSG_NPC who=WIGGLYTUFF text=" Please give it your best effort\nagain tomorrow!"
     TEXTBOX_CLEAR
@@ -125,7 +126,6 @@ end
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 68
     EMOTION_EFFECT NOTICE
@@ -135,7 +135,6 @@ end
 script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 70
     CALL_SCRIPT JUMP_SURPRISE_FUNC   # EoS CORO_JUMP_SURPRISE_FUNC_SERIES
@@ -151,7 +150,7 @@ script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
     UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
-    WAIT_EFFECT
+    CALL_SCRIPT NOTICE_FUNC
     AWAIT_CUE_COND 65 0   # done: the station waits for this
     AWAIT_CUE 64
     EMOTION_EFFECT SHOCK

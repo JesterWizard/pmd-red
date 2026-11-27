@@ -123,6 +123,11 @@ OBJECTS = {
     "v03p06a1": "SKY_OBJ_TIME_GEAR",
     "v03p06a2": "SKY_OBJ_TIME_GEAR_GLOW",
     "v03p11a1": "SKY_OBJ_CRUMBLING_ROCK",
+    # chapter 2 (SkyChapter2.md, Sprites: Objects)
+    "g01p01a3": "SKY_OBJ_GUILD_GATE",
+    "g01p05a1": "SKY_OBJ_EXPLORATION_KIT",
+    "g01p06b1": "SKY_OBJ_DINNER",
+    "d02p31a1": "SKY_OBJ_PEARL",
 }
 
 # EoS level -> GBA map id (chapter 1's maps; chapter 2's from the naming contract)
@@ -135,7 +140,12 @@ LEVELS = {
     "G01P05A": "SKY_GUILD_WIGGLYTUFF", "G01P05C": "SKY_GUILD_WIGGLYTUFF_NIGHT",
     "G01P06B": "SKY_GUILD_MESS_HALL", "G01P07A": "SKY_GUILD_CREW_ROOM", "G01P07C": "SKY_GUILD_CREW_ROOM_NIGHT",
     "D02P11A": "SKY_DRENCHED_BLUFF_ENTRANCE", "D02P31A": "SKY_DRENCHED_BLUFF_END",
+    # main-screen pictures EoS plays as maps, with actors or text over them
+    "V02P03A": "SKY_SENTRY_POST", "V02P08A": "SKY_KIT_OPEN",
 }
+# chapter 2's scenes are on gs180 (SkyChapter2.md, station gs180): g01p01b2 (chapter 1's
+# MAP_SKY_GUILD_DUSK, gs178) is MAP_SKY_GUILD_DUSK2 there, the same files on gs180
+LEVELS_CH2 = {"G01P01B2": "SKY_GUILD_DUSK2"}
 
 # second-screen pictures (back2_SetGround, or a V level shown on the main
 # screen) -> story CG; (still CG, pan CG over the scene's map)
@@ -144,8 +154,13 @@ CGS = {
     "V02P01A": ("GUILD_SKY", "GUILD_SKY_SCROLL"), "V01P06B": ("RELIC_FRAGMENT", None),
     "V26P06A": ("SUNSET_SKY", None),
 }
-# chapter 2's (SkyChapter2.md): named after their EoS level until they are made
-CH2_CGS = ("V01P08B", "V02P02A", "V02P03A", "V02P06A", "V02P08A")
+# the view each pan ends on (src/data/sky_scrolls.h, SKY_SCROLL_*_CAM_X/Y): a scene after it starts there
+PAN_VIEWS = {"GUILD_SKY_SCROLL": (118, 112), "SKY_DAY_SCROLL": (166, 88)}
+# chapter 2's (SkyChapter2.md, Story CGs; events/sky/cutaways.cfg)
+CGS.update({"V02P02A": ("SENTRY_GRATE", None), "V02P06A": ("NIGHT_SKY", None)})
+# main-screen levels with no actor and no text over them, shown as a CG
+# (back_SetGround ... screen_FadeOut: the waits in between are its frames)
+MAIN_CGS = {"V01P08B": "GUILD_GATE"}
 
 # EoS song -> music id (MUS_SKY_*; chapter 2's from the naming contract)
 MUSIC = {
@@ -154,8 +169,11 @@ MUSIC = {
     "BGM_BOSS_BATTLE": "SKY_BOSS_BATTLE", "BGM_IN_THE_DEPTHS_OF_THE_PIT": "SKY_IN_THE_DEPTHS_OF_THE_PIT",
 }
 
-# EoS dungeons (main_EnterDungeon) -> script dungeon (chapter 2: piece 3)
-DUNGEONS = {1: "TINY_WOODS", 3: "SKY_DRENCHED_BLUFF"}
+# EoS dungeons (main_EnterDungeon) -> script dungeon: Beach Cave is Red's Tiny
+# Woods, Drenched Bluff Red's Thunderwave Cave (SkyChapter2.md, Drenched Bluff);
+# -1 (EoS's $DUNGEON_ENTER) is chapter 2's dungeon
+DUNGEONS = {1: "TINY_WOODS", 3: "THUNDERWAVE_CAVE", -1: "THUNDERWAVE_CAVE"}
+DUNGEON_OPEN = {3: "RESCUE_DUNGEON_THUNDERWAVE_CAVE"}
 
 FACE_POS = {   # EoS FACE_POS_* -> PLACEMENT_* (chapter 1: STANDARD, BOTTOM_*_FACEINW, TOP_*_CENTER, TOP_LC_FACEOUTW)
     "STANDARD": "LEFT_BOTTOM_2",
@@ -179,6 +197,11 @@ FACES = {   # EoS FACE_* -> EMOTION_*
     "DIZZY": "DIZZY", "SIGH": "SIGH", "STUNNED": "STUNNED",
 }
 
+# EoS faces with no exported picture yet: the emotion is kept (Normal shows) and
+# marked. DIZZY (13) and SIGH (16) show EoS's face in the sky build
+# (EventEditor.md, "Emotions").
+FACES_MISSING = {"STUNNED"}
+
 DIRS = {   # EoS DIR_* / SSA direction -> DIRECTION_*
     "DIR_DOWN": "SOUTH", "DIR_DOWNRIGHT": "SOUTHEAST", "DIR_RIGHT": "EAST", "DIR_UPRIGHT": "NORTHEAST",
     "DIR_UP": "NORTH", "DIR_UPLEFT": "NORTHWEST", "DIR_LEFT": "WEST", "DIR_DOWNLEFT": "SOUTHWEST",
@@ -200,7 +223,20 @@ EFFECTS = {   # EoS EFFECT_* -> (EMOTION_EFFECT_*, the common script that shows 
     "SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM": ("SWEAT", "SWEAT_FUNC"),
     "ANGRY": ("ANGRY", None), "ANGRY_MIRRORED": ("ANGRY", None),
     "JOYOUS": ("SMILE", None), "LAUGHING": ("SMILE", None),
+    # no GBA picture: the closest emote (marked `# TODO emotion`), or none
+    "TWO_ARROWS_AT_SIDE_LEFT": ("NOTICE", None), "TWO_ARROWS_AT_SIDE_RIGHT": ("NOTICE", None),
 }
+# EoS SetAnimation ids whose value (SETANIMATION_TABLE) is at another index of Red's
+# table (gUnknown_8117F64): SkyChapter2.md, Animation ids. 0-13 and 17-29 are the same.
+EOS_RED_ANIM = {15: 2, 16: 2, 30: 46, 31: 47, 32: 48, 34: 50, 42: 30, 43: 31, 44: 32, 45: 33, 46: 34, 47: 35,
+                48: 36, 49: 37, 53: 49, 55: 51, 56: 52, 63: 23, 64: 32, 65: 33, 66: 26, 67: 27, 68: 28,
+                69: 37, 70: 46, 71: 47, 72: 48, 74: 50, 75: 51, 76: 52}
+# objects: EoS SetAnimation -> Red SELECT_ANIMATION (SkyChapter2.md, Sprites: Objects)
+OBJECT_ANIMS = {9: 1, 17: 4, 18: 4}
+OBJECT_ANIM_NOTES = {9: "closed (direction 0, held)", 17: "opens once and stays open (0x1001)",
+                     18: "opens once and stays open (0x1001)"}
+EFFECTS_NO_PICTURE = {"TWO_ARROWS_AT_SIDE_LEFT", "TWO_ARROWS_AT_SIDE_RIGHT"}
+EFFECTS_NONE = {"EATING", "EATING_SLOW", "APPLE_ON_HEAD"}
 
 # EoS common coroutines (ExecuteCommon / CallCommon) -> Red common script, or a
 # list of commands (EoS's own definition in SCRIPT/COMMON/unionall.ssb)
@@ -217,8 +253,15 @@ COROS = {
                               "WAIT 15", "ROTATE_RELATIVE 1 1 DIR_TRANS_FLIP", "WAIT 5", "ROTATE_RELATIVE 1 2 DIR_TRANS_SPINLEFT2"],
 }
 
-# EoS script variables -> Red's (include/constants/event_flag.h)
-VARS = {"CARRY_GOLD": "GOLD", "BANK_GOLD": "BANK_GOLD"}
+# EoS script variables -> Red's (include/constants/event_flag.h) or the sky
+# build's (include/sky_story.h)
+VARS = {"CARRY_GOLD": "GOLD", "BANK_GOLD": "BANK_GOLD", "SCENARIO_MAIN_BIT_FLAG": "SKY_SCENARIO_MAIN_BIT_FLAG"}
+# EoS variables with nothing to do on the GBA: setting them does nothing
+VARS_DROPPED = {"PERFORMANCE_PROGRESS_LIST": "unlocks EoS menus", "COMPULSORY_SAVE_POINT": "EoS's bed save point"}
+# EoS variables the GBA can't ask: a switch on one takes this case
+VARS_FIXED = {"CONFIG_COLOR_KIND": (0, "the quiz's colour, which Red's quiz does not ask")}
+# EoS-only items -> the closest Red item (EoS item name pattern, Red item, its name)
+ITEM_SUBST = [(r" Bow$", "ITEM_FRIEND_BOW", "Friend Bow")]
 RED_VARS = set(re.findall(r"^\s*/\* 0x[0-9a-f]+ \*/ ([A-Z][A-Z0-9_]+)",
                           (ROOT / "include" / "constants" / "event_flag.h").read_text(), re.M))
 
@@ -228,7 +271,17 @@ ME = {1: 200, 2: 201, 3: 202, 4: 203, 5: 204, 6: 205, 7: 207, 8: 210, 9: 212, 10
 SE_PREFER = {0x230B: 457}
 
 TEXT_TAGS = {"K": "{WAIT_PRESS}", "CN": "{CENTER_ALIGN}", "hero": "{NAME_0}", "partner": "{NAME_1}",
-             "player": "{NAME_0}", "team:": "{TEAM_NAME}", "CR": ""}
+             "player": "{NAME_0}", "team:": "{TEAM_NAME}", "CR": "",
+             "MP": ",", "M:S0": " Poké", "W:30": ""}   # [MP] the thousands mark, [M:S0] the Poké sign
+
+# The hero's and partner's EoS ground animations past Red's table (62-76: lying in
+# bed, waking, eating...) are in EOS_RED_ANIM, as for any actor: every hero /
+# partner choice carries EoS's ground groups 13-27 (SkyChapter2.md, "Hero and
+# partner"). 62 (lying asleep) is Red's id 30 for them; anyone else sleeps with
+# Red's sleep pose (6). Red ids whose value loops (0x800): WaitAnimation on them
+# would wait for ever, so it becomes a WAIT.
+HERO_SLEEP_ANIM = 30
+RED_ANIM_LOOPS = {1, 4, 5, 6, 9, 20, 21, 30, 31, 32, 33, 34, 35, 36, 37, 38, 43, 49, 51, 52}
 
 
 def ival(e):
@@ -447,6 +500,9 @@ class Translator:
         self.after_label = False
         self.lock_users = set()    # Lock numbers some coroutine waits on
         self.used = set()          # names that may not exist yet (type, name)
+        self.chapter2 = self.name.startswith(("m02", "c00"))
+        self.main_cg = None        # [CG, frames, rows, index]: a main-screen level shown as a CG
+        self.banner = False        # back_SetBanner2's fade in / wait / fade out follow
 
     # -- small helpers
     def new_cue(self):
@@ -522,7 +578,7 @@ class Translator:
                     unknown.append(t)
                     return ""
                 self.need_name(who)
-                return "{" + ("POKEMON_" if mm.group(1) == "kind" else "NAME_") + str(self.slots[who]) + "}"
+                return "{" + ("POKEMON_" if mm.group(1) == "kind" else "NAME_") + f"@{who}@" + "}"
             mm = re.fullmatch(r"s_item:(\d+)", t)
             if mm:
                 item = self.items.get(int(mm.group(1)))
@@ -530,6 +586,10 @@ class Translator:
             unknown.append(t)
             return ""
         out = re.sub(r"\[([^\]]*)\]", tag, s)
+        for nm in getattr(self, "item_names", {}).values():   # EoS-only items: the Red item's name
+            for pat, _, red_name in ITEM_SUBST:
+                if nm and re.search(pat, nm) and nm in out:
+                    out = out.replace(nm, red_name)
         out = re.sub(r"\{ITEM:(\w+)\}", lambda m: self.item_name(m.group(1)), out)
         out = out.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
         if unknown and rows is not None:
@@ -569,6 +629,8 @@ class Translator:
 
     def map_of(self, level):
         lv = re.sub(r"^LEVEL_", "", level)
+        if self.chapter2 and lv in LEVELS_CH2:
+            return LEVELS_CH2[lv]
         if lv in LEVELS:
             m = LEVELS[lv]
             if not lv.startswith(("V01", "D01", "G01P01B2")):
@@ -648,6 +710,15 @@ class Translator:
                         e.has_own = True
         st = self.station.rows
         st += ["SET_PLACE_MODE 1", "FADE_OUT wait=TRUE frames=0"]
+        if self.layers and not any(t.kind == "call" and t.name in ("back_SetGround", "supervision_Acting")
+                                   for t in walk(main.body)):
+            # a scene that goes on on the map as it is (m02a0301): its layer 0 is what is there
+            st += [f"SELECT_MAP {self.map_of(self.level)}   # EoS: the scene goes on on the map as it is",
+                   "SELECT_ENTITIES group=-1 sector=0   # (its layer 0: who is there)"]
+            for e in self.layers[0]:
+                e.spawned = True
+            st += ["FADE_IN wait=TRUE frames=0", "SET_PLACE_MODE 4"]
+            self.faded_in, self.screen = True, "shown"
         self.block(main.body, None, st)
         self.close_batches()
         self.flush_cg(st)
@@ -683,6 +754,11 @@ class Translator:
 
     def stmt(self, s, me, rows, nxt):
         k = s.kind
+        if self.banner and me is None:
+            if k == "call" and s.name in ("screen_FadeIn", "screen_FadeOut", "Wait"):
+                rows.append(f"# eos: {s.src} (the chapter card's)")
+                return
+            self.banner = False
         if k == "label":
             n = int(re.sub(r"\D", "", s.name) or 0)
             if me is None:
@@ -700,6 +776,8 @@ class Translator:
             if s.name in ("end", "return") and me is None:
                 self.close_batches()
                 self.flush_cg(rows)
+                if getattr(self, "text_faded", False):
+                    rows.append("FADE2_IN wait=TRUE frames=0   # the text layer back for the next scene")
                 rows.append("RET")
             elif s.name in ("end", "return"):
                 rows.append("END_DELETE" if s.name == "end" else "RET")
@@ -781,6 +859,8 @@ class Translator:
     def var(self, v):
         n = v.lstrip("$")
         if n in VARS:
+            if VARS[n].startswith("SKY_"):
+                self.use("var", VARS[n])
             return VARS[n]
         if n not in RED_VARS:
             self.use("var", n)
@@ -826,6 +906,27 @@ class Translator:
             return self.ask(s, me, rows)
         if c[0] == "call" and c[1] == "ProcessSpecial":
             return self.special(s, c, me, rows)
+        if c[0] == "var" and c[1].lstrip("$") in VARS_FIXED:
+            val, why = VARS_FIXED[c[1].lstrip("$")]
+            pick = next((i for i, (v, b) in enumerate(s.cases) if ("num", val) in v), 0)
+            self.translated += 1
+            return self.chosen_case(s, me, rows, pick, f"# eos: {s.src}: case {val} ({why})")
+        if c[0] == "index" and c[1][0] == "scn" and ival(c[2]) in (0, 1):
+            if me is None:
+                self.freeze()
+            end = self.label_for(me)
+            labs = [self.label_for(me) for _ in s.cases]
+            rows.append(f"CJUMP_SCENARIO_{ival(c[2])} {c[1][1][1].lstrip('$')}   # EoS {s.src.rstrip(' {')}")
+            dflt = end
+            for (values, body), lab in zip(s.cases, labs):
+                for v in values:
+                    if v == "default":
+                        dflt = lab
+                    elif ival(v) is not None:
+                        rows.append(f"COND_EQUAL {ival(v)} {lab}")
+            rows.append(f"JUMP_LABEL {dflt}")
+            self.translated += 1
+            return self.cases_code(s.cases, labs, end, me, rows)
         # a switch on a value: the first case (the variant EoS plays by default) if it can't be decided
         if c[0] == "call" and c[1] == "sector":
             vals = None
@@ -940,6 +1041,9 @@ class Translator:
         elif m == "MENU_SAVE_MENU":
             rows.append("SKY_SAVE_GAME   # EoS message_Menu(MENU_SAVE_MENU)")
             self.translated += 1
+        elif m in ("MENU_DUNGEON_INITIALIZE_TEAM", "MENU_DUNGEON_TEAM_RETURNS_FROM_MAP"):
+            rows.append(f"# eos: {s.src.rstrip(' {}')} (EoS's team set-up before a dungeon: Red's own runs)")
+            self.translated += 1
         elif m == "MENU_GIVE_ITEM":
             item = self.items.get(0)
             if item is None:
@@ -954,8 +1058,11 @@ class Translator:
 
     def item_const(self, item):
         name = getattr(self, "item_consts", {}).get(int(item))
+        nm = getattr(self, "item_names", {}).get(int(item))
+        for pat, red, _ in ITEM_SUBST:
+            if name is None and nm and re.search(pat, nm):
+                return red
         if name is None:     # an EoS-only item: named after it (the items piece adds it)
-            nm = getattr(self, "item_names", {}).get(int(item))
             name = "ITEM_" + (re.sub(r"[^A-Z0-9]+", "_", nm.upper()).strip("_") if nm else f"SKY_EOS_{item}")
             self.use("item", name)
         return name
@@ -969,6 +1076,12 @@ class Translator:
             self.chosen_case(s, me, rows, pick, f"# eos: {s.src} (the story's hero: case 0)")
             self.translated += 1
             return
+        if kn == 53:      # only in EoS's variation run (the demo version): never in the story
+            rows.append(f"# eos: {s.src.rstrip(' {}')} (EoS's demo version only)")
+            self.translated += 1
+            if s.cases:
+                self.cases_code(s.cases, [self.label_for(me) for _ in s.cases], self.label_for(me), me, rows)
+            return
         if kn == "PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN":
             rows.append("SKY_DEMO_TO_TITLE   # EoS ProcessSpecial(PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN)")
             self.translated += 1
@@ -978,6 +1091,18 @@ class Translator:
             self.chosen_case(s, me, rows, 0, "# (its first case is taken)")
 
     def assign(self, s, rows):
+        lhs0 = s.args[0] if s.args else None
+        nm = (lhs0[1] if lhs0 and lhs0[0] == "var" else lhs0[1][1] if lhs0 and lhs0[0] == "index"
+              and lhs0[1][0] == "var" else "").lstrip("$")
+        if nm in VARS_DROPPED:
+            rows.append(f"# eos: {s.src} ({VARS_DROPPED[nm]}: nothing on the GBA)")
+            self.translated += 1
+            return
+        m = re.match(r"dungeon_mode\((\d+)\) = DMODE_OPEN", s.src)
+        if m and int(m.group(1)) in DUNGEON_OPEN:
+            rows.append(f"CMD_UNK_AF {DUNGEON_OPEN[int(m.group(1))]} TRUE   # EoS {s.src}")
+            self.translated += 1
+            return
         if s.name == "=" and s.args and s.args[0] == ("var", "$SCENARIO_MAIN") and s.args[1][0] == "scnval":
             a, b = (ival(x) for x in s.args[1][1][1])
             rows.append(f"SCENARIO_CALC SCENARIO_MAIN {a} {b}   # EoS scenario numbers")
@@ -1037,6 +1162,10 @@ class Translator:
 
     # ---- timing
     def c_Wait(self, s, a, me, rows, nxt):
+        if me is None and self.main_cg:
+            self.main_cg[1] += ival(a[0]) or 0
+            rows.append(f"# eos: {s.src} (the CG is up)")
+            return
         if me is None:
             self.close_batches()
             self.clock(ival(a[0]))
@@ -1074,6 +1203,11 @@ class Translator:
     def c_WaitExecutePerformer(self, s, a, me, rows, nxt):
         if me is None:
             self.close_batches()
+        if self.main_cg and self.perf_move:
+            self.main_cg[1] += max(0, self.perf_move[1] - self.now)
+            rows.append(f"# eos: {s.src} (the CG is up)")
+            self.perf_move = None
+            return
         if self.perf_move and self.perf_move[1] > self.now:
             left = self.perf_move[1] - self.now
             rows.append(f"WAIT {left}   # EoS WaitExecutePerformer({ival(a[0])}): the rest of the camera's move")
@@ -1116,6 +1250,12 @@ class Translator:
         e = self.target(s, me)
         if not isinstance(e, Entity):
             return False
+        rr = rows if me is e else (e.batches[-1].rows if e.batches and e.batches[-1].open else [])
+        m = re.match(r"SELECT_ANIMATION (\d+)", rr[-1]) if rr and isinstance(rr[-1], str) else None
+        if m and not e.is_object and int(m.group(1)) in RED_ANIM_LOOPS:
+            # a looping pose never ends: STOP_ANIMATION_ON_CURRENT_FRAME would wait for ever
+            self.emit(e, me, rows, "WAIT 30   # EoS WaitAnimation (the pose loops)")
+            return
         self.emit(e, me, rows, "STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation")
 
     def c_WaitScreenFade(self, s, a, me, rows, nxt):
@@ -1127,8 +1267,18 @@ class Translator:
         if not isinstance(e, Entity):
             return False
         n = ival(a[0])
-        if n == 62:          # EoS's lying asleep (INIT_SLEEP_FUNC): Red's sleep pose
-            self.emit(e, me, rows, "SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep")
+        if e.is_object and n in OBJECT_ANIMS:     # an object's states are the directions of its group
+            self.emit(e, me, rows, f"SELECT_ANIMATION {OBJECT_ANIMS[n]}   # EoS SetAnimation({n}): {OBJECT_ANIM_NOTES[n]}")
+            return
+        if n == 62:          # EoS's lying asleep (INIT_SLEEP_FUNC)
+            if e.npc in ("PLAYER", "PARTNER"):
+                self.emit(e, me, rows, f"SELECT_ANIMATION {HERO_SLEEP_ANIM}   # EoS SetAnimation(62): asleep")
+            else:
+                self.emit(e, me, rows, "SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep (Red's sleep pose)")
+            return
+        if n in EOS_RED_ANIM and not e.is_object:   # the Red id that holds EoS's value
+            red = EOS_RED_ANIM[n]
+            self.emit(e, me, rows, f"SELECT_ANIMATION {red}   # EoS SetAnimation({n})")
             return
         if 51 < n < 0x100:   # past Red's ground animation table (gUnknown_8117F64)
             self.todo += 1
@@ -1271,9 +1421,13 @@ class Translator:
     def c_SetEffect(self, s, a, me, rows, nxt):
         e = self.target(s, me)
         nm = re.sub(r"^EFFECT_", "", a[0][1]) if a and a[0][0] == "name" else None
+        if isinstance(e, Entity) and nm in EFFECTS_NONE:
+            self.emit(e, me, rows, f"# TODO emotion: EoS {s.src} (no GBA picture: none shown)")
+            return
         if not isinstance(e, Entity) or nm not in EFFECTS:
             return False
-        self.emit(e, me, rows, f"EMOTION_EFFECT {EFFECTS[nm][0]}")
+        note = f"   # TODO emotion: EoS EFFECT_{nm} has no GBA picture: the closest" if nm in EFFECTS_NO_PICTURE else ""
+        self.emit(e, me, rows, f"EMOTION_EFFECT {EFFECTS[nm][0]}{note}")
 
     def c_Destroy(self, s, a, me, rows, nxt):
         e = self.target(s, me)
@@ -1307,6 +1461,8 @@ class Translator:
             return self.close(s, me, rows, nxt)
         if coro == "CORO_HANYOU_SAVE_FUNC":
             return self.save_prompt(me, rows)
+        if coro == "CORO_EVENT_END_MAPIN":
+            return self.flow(s, a, me, rows, nxt)
         if coro == "CORO_FADE_OUT_ALL_AFTER":
             rows.append("# eos: CallCommon(CORO_FADE_OUT_ALL_AFTER) (the scene's end)")
             return
@@ -1343,12 +1499,25 @@ class Translator:
             return       # the same face again: chapter 1 leaves it out
         p = "KEEP" if (self.placed.get(who) or (None,))[0] == place else place
         self.placed[who] = (place, emo)
+        if emo in FACES_MISSING:
+            # Red's portraits have 13 faces (PortraitGfx.sprites[13], the emotion masked to 4 bits)
+            rows.append(f"PORTRAIT place={p} who={who if who else -1} emotion={emo}   "
+                        f"# TODO emotion: no FACE_{emo} picture exported yet (Normal shows)")
+            return
         rows.append(f"PORTRAIT place={p} who={who if who else -1} emotion={emo}")
 
     def c_message_SetFace(self, s, a, me, rows, nxt):
         who = self.who(a[0][1])
         self.speaker = who
+        if who:
+            self.need_name(who)
         return self.portrait(who, a[1][1], a[2][1], rows)
+
+    def c_message_FacePositionOffset(self, s, a, me, rows, nxt):
+        # EoS nudges a face by (dx, dy) from its place; the GBA's places are laid out for its
+        # narrower screen (checked in the emulator: Chatot's TOP_C_FACEL + (2, 2) in m02a1001 ends
+        # up past the right edge), so each face stays at its place's own position.
+        rows.append(f"# eos: {s.src} (the face stays at its place on the GBA)")
 
     def c_message_SetFaceOnly(self, s, a, me, rows, nxt):
         return self.c_message_SetFace(s, a, me, rows, nxt)
@@ -1359,6 +1528,8 @@ class Translator:
 
     def c_message_SetActor(self, s, a, me, rows, nxt):
         self.speaker = self.who(a[0][1])
+        if self.speaker:
+            self.need_name(self.speaker)
         rows.append(f"# eos: {s.src}")
 
     def c_message_ResetActor(self, s, a, me, rows, nxt):
@@ -1394,6 +1565,10 @@ class Translator:
             rows.append(f'MSG_OVERHEARD text="{text}"   # EoS message_ImitationSound')
         elif n == "message_Narration":
             frames = ival(s.args[0]) if len(s.args) > 1 else 30
+            if not getattr(self, "narrating", False):
+                # on-black text fades the text layer: out before, back in after (chapter 1, Red)
+                rows.append("FADE2_OUT wait=TRUE frames=0   # the text on black (message_Narration)")
+                self.narrating = True
             rows.append(f'MSG_ON_BG_AUTO frames={frames} text="{text}"')
         else:
             return False
@@ -1418,6 +1593,9 @@ class Translator:
                 continue
             break
         rows.append("TEXTBOX_CLEAR")
+        if getattr(self, "narrating", False):
+            rows += ["WAIT 1", "FADE2_IN wait=TRUE frames=0   # the text layer back after the text on black"]
+            self.narrating = False
 
     def c_message_Close(self, s, a, me, rows, nxt):
         return self.close(s, me, rows, nxt)
@@ -1499,6 +1677,9 @@ class Translator:
 
     # ---- screen
     def c_screen_FadeIn(self, s, a, me, rows, nxt):
+        if self.main_cg and me is None:
+            rows.append(f"# eos: {s.src} (the CG fades in itself)")
+            return
         w, f = ival(a[0]), ival(a[1])
         if me is None and w:
             self.close_batches()
@@ -1509,22 +1690,51 @@ class Translator:
         else:
             pan = getattr(self, "pending_pan", None)
             if pan:
+                view = PAN_VIEWS.get(pan)
+                for j in range(len(rows) - 1, -1, -1):
+                    m = re.match(r"SKY_CAMERA_SET x=(-?\d+) y=(-?\d+)", rows[j]) if isinstance(rows[j], str) else None
+                    if m and view and max(abs(int(m.group(1)) - view[0]), abs(int(m.group(2)) - view[1])) <= 16:
+                        # the pan ends on its own view (src/data/sky_scrolls.h): the scene starts there
+                        rows[j] = (f"SKY_CAMERA_SET x={view[0]} y={view[1]}   # the pan's last view "
+                                   f"(EoS's centre: ({m.group(1)}, {m.group(2)}))")
+                        break
+                    if m:
+                        break
                 rows.append("WAIT 1   # the actors take their poses; the pan draws them")
                 rows.append(f"SKY_CUTAWAY cg={pan} frames=90   # EoS: the top screen's picture over the map: pan down to it")
                 rows.append("FADE_IN wait=TRUE frames=0   # the pan ends on this exact view")
                 self.pending_pan = None
             else:
                 rows.append(f"FADE_IN wait={'TRUE' if w else 'FALSE'} frames={f}")
+        if getattr(self, "text_faded", False):
+            rows.append("FADE2_IN wait=TRUE frames=0   # the text layer (screen_FadeOutAll faded it)")
+            self.text_faded = False
         self.screen = "shown"
         if not self.faded_in:
             self.faded_in = True
             rows.append("SET_PLACE_MODE 4")
+
+    def c_screen_FadeChange(self, s, a, me, rows, nxt):
+        # screen_FadeChange(wait, frames, from, to): a fade between two brightness levels (EoS's
+        # nights: 0 -> 192). The GBA fades in to full brightness: the night maps are dark already.
+        w, f = ival(a[0]), ival(a[1])
+        if ival(a[2]) == 0:
+            self.c_screen_FadeIn(s, [("num", w), ("num", f)], me, rows, nxt)
+            rows[-2 if rows[-1] == "SET_PLACE_MODE 4" else -1] += f"   # EoS {s.src} (to full brightness)"
+            return
+        return False
 
     def c_screen_FadeInAll(self, s, a, me, rows, nxt):
         self.c_screen_FadeIn(s, a, me, rows, nxt)
         rows.append("FADE2_IN wait=TRUE frames=0")
 
     def c_screen_FadeOut(self, s, a, me, rows, nxt):
+        if self.main_cg and me is None:
+            cg, frames, rr, idx = self.main_cg
+            rr[idx] = f"SKY_CUTAWAY cg={cg} frames={max(60, frames)}   # EoS: the main screen's picture (and its waits)"
+            rows.append(f"# eos: {s.src} (the CG fades out itself)")
+            self.main_cg = None
+            return
         self.flush_cg(rows)
         w, f = ival(a[0]), ival(a[1])
         if me is None and w:
@@ -1535,6 +1745,7 @@ class Translator:
     def c_screen_FadeOutAll(self, s, a, me, rows, nxt):
         self.c_screen_FadeOut(s, a, me, rows, nxt)
         rows.append("FADE2_OUT wait=TRUE frames=0")
+        self.text_faded = True
 
     def white(self, s, a, me, rows, kind):
         w, f = ival(a[0]), ival(a[1])
@@ -1599,20 +1810,41 @@ class Translator:
 
     def c_back_SetGround(self, s, a, me, rows, nxt):
         lv = re.sub(r"^LEVEL_", "", a[0][1])
+        if lv in MAIN_CGS:
+            rows.append(None)      # the SKY_CUTAWAY, once its frames are known (screen_FadeOut)
+            self.main_cg = [MAIN_CGS[lv], 0, rows, len(rows) - 1]
+            return
         if lv == "S04P01A":     # EoS's black level (voices in the dark): chapter 1's storm map, hidden
-            rows += ["SELECT_MAP SKY_STORM_SEA   # EoS LEVEL_S04P01A: a black screen", "SKY_SHOW_MAP FALSE"]
+            black = "SKY_GUILD_B1F" if self.chapter2 else "SKY_STORM_SEA"   # a map of the scene's station
+            rows += [f"SELECT_MAP {black}   # EoS LEVEL_S04P01A: a black screen", "SKY_SHOW_MAP FALSE"]
             self.hidden_map = True
             return
         if getattr(self, "hidden_map", False):
             rows.append("SKY_SHOW_MAP TRUE")
             self.hidden_map = False
+        if me is None:
+            # SELECT_MAP deletes every actor and object: what is on the map is gone
+            # (supervision_RemoveActing after it has nothing to remove)
+            self.close_batches()
+            for e in self.ents:
+                if e.spawned and not e.destroyed:
+                    e.destroyed = True
         rows.append(f"SELECT_MAP {self.map_of(lv)}")
 
     def c_back_ChangeGround(self, s, a, me, rows, nxt):
-        return self.c_back_SetGround(s, a, me, rows, nxt)
+        lv = re.sub(r"^LEVEL_", "", a[0][1])
+        rows.append(f"SKY_CHANGE_GROUND map={self.map_of(lv)}   # EoS {s.src.rstrip(';')}: the actors stay")
 
     def c_back_SetBanner2(self, s, a, me, rows, nxt):
         title = self.text(a[-1]).replace("\\n", " ")
+        if self.chapter2 and "New Guild" in title:
+            # chapter 2's card (src/chapter_titles.c): EVENT_DIVIDE queues it as the scenario goes
+            # from (3, 0) to (3, 1) and it shows at the next SELECT_MAP, as chapter 1's does
+            rows.append(f"# eos: chapter card \"{title}\" ({s.src.split('{')[0].strip()}): shown at the next "
+                        "SELECT_MAP (src/chapter_titles.c, queued by EVENT_DIVIDE)")
+            rows.append(f"SELECT_MAP {self.map_of(self.level)}   # the chapter card, before the scene's pictures")
+            self.banner = True
+            return
         rows.append(f"# TODO eos: chapter card \"{title}\" ({s.src.split('{')[0].strip()}): "
                     "sky_chapter_card / chapter_titles.h")
         self.todo += 1
@@ -1681,6 +1913,9 @@ class Translator:
             if pos is None:
                 return False
             self.camera = ("perf", t[1])
+            if self.main_cg:
+                rows.append(f"# eos: {s.src} (the CG's view, as cropped)")
+                return
             rows.append(f"SKY_CAMERA_SET x={pos[0] + 4 - 120} y={pos[1] + 4 - 80}   # EoS camera_SetMyself<performer {t[1]}>")
             return
         if isinstance(t, Entity):
@@ -1722,6 +1957,11 @@ class Translator:
             p = a[1]
             dx, dy = int(p[2] * 8 + 4) - pos[0], int(p[3] * 8 + 4) - pos[1]
         self.perf_pos[idx] = (pos[0] + dx, pos[1] + dy)
+        if self.main_cg:
+            frames = int(math.ceil(math.hypot(dx, dy) / spd)) if spd else 0
+            self.perf_move = (idx, self.now + frames)
+            rows.append(f"# eos: {s.src} (the CG's view, as cropped)")
+            return
         if self.camera != ("perf", idx):
             rows.append(f"# eos: {s.src} (the camera's performer, not followed now)")
             return
@@ -1743,6 +1983,13 @@ class Translator:
     def c_item_Set(self, s, a, me, rows, nxt):
         self.items[ival(a[0])] = ival(a[1])
         rows.append(f"# eos: {s.src} (item slot {ival(a[0])}: {self.item_name(ival(a[1]))})")
+
+    def flow(self, s, a, me, rows, nxt):
+        rows.append(f"# eos: {s.src.rstrip(';')}: the GBA's event scripts chain the scenes "
+                    "(src/data/ground/sky/sky_ch2_events.h)")
+
+    c_supervision_ExecuteStationCommon = c_supervision_LoadStation = c_supervision_ExecuteActing = flow
+    c_main_SetGround = c_back_SetDungeonBanner = flow
 
     def c_main_EnterDungeon(self, s, a, me, rows, nxt):
         d = ival(a[0])
@@ -1859,19 +2106,52 @@ def entity_script(e: Entity) -> list:
     return out
 
 
+# the label argument of each command that jumps (a label is the argByte: under 256)
+LABEL_ARGS = {"LABEL": "label", "JUMP_LABEL": "label", "CHOICE": "label", "COND": "t", "COND_EQUAL": "t",
+              "COND_VAR": "t", "CJUMP_DIR_TO_LINK": "l"}
+
+
+def renumber_labels(model) -> dict:
+    """Each script's labels as 0, 1, 2... in the order they appear: the translator's (EoS's
+    label numbers, its own from 1000) do not fit the byte a label is."""
+    known = scenes.cmds.all_commands()
+    for b in model["blocks"]:
+        if b["type"] != "script":
+            continue
+        rows = [r for r in b["rows"] if r.get("type") == "cmd"]
+        new = {}
+
+        def arg(r):
+            op = r["op"]
+            name = LABEL_ARGS.get(op) or ("l" if op.startswith("JUMPIF") else None)
+            names = [a["name"] for a in known[op]["args"]]
+            return names.index(name) if name in names else None
+        for r in rows:
+            if r["op"] == "LABEL" and r["args"][0] not in new:
+                new[r["args"][0]] = str(len(new))
+        for r in rows:
+            j = arg(r)
+            if j is not None and re.fullmatch(r"\d+", r["args"][j]):
+                if r["args"][j] not in new:
+                    new[r["args"][j]] = str(len(new))
+                r["args"][j] = new[r["args"][j]]
+    return model
+
+
 class SceneFile:
     """The scripts of one map: one group each."""
 
-    def __init__(self, level, rom=None):
+    def __init__(self, level, rom=None, prefix=None, debug_file=None, first_group=0):
         self.level = level
         self.rom = rom
+        self.prefix, self.debug_file, self.first_group = prefix, debug_file, first_group
         self.groups = []      # (Translator, eos script name)
         self.slots = {"PLAYER": 0, "PARTNER": 1}
         self.notes = []
         self.item_names, self.item_consts = {}, {}
 
     def add(self, text, ssa):
-        tr = Translator(text, ssa, group=len(self.groups), rom=self.rom, notes=self.notes)
+        tr = Translator(text, ssa, group=self.first_group + len(self.groups), rom=self.rom, notes=self.notes)
         tr.slots = self.slots
         tr.item_names, tr.item_consts = self.item_names, self.item_consts
         for e in tr.ents:
@@ -1883,38 +2163,58 @@ class SceneFile:
 
     def text(self, header=()) -> str:
         lvl = self.level.lower()
-        out = [f"prefix s_sky_{lvl}_", f"debug_file src/data/ground/sky/sky_{lvl}_scenes.h", ""]
+        out = [f"prefix {self.prefix or f's_sky_{lvl}_'}",
+               f"debug_file {self.debug_file or f'src/data/ground/sky/sky_{lvl}_scenes.h'}", ""]
         out += [f"# {h}" if h else "#" for h in header]
         out.append("#")
         for tr in self.groups:
             out.append(f"#   group {tr.group}  {tr.name}  (EoS SCRIPT/{tr.level}/{tr.name}.ssb)")
-        out += ["", "```c", '#include "sky_story.h"', "```", "", "```c"]
-        for npc, slot in sorted(self.slots.items(), key=lambda x: x[1]):
-            out.append(f"#define NPC_{npc} {slot}")
-        out += ["```", "", "# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.", "```c",
+        out += ["", "```c", '#include "sky_story.h"', "```", ""]
+        defines_at = len(out)
+        out += ["", "# ROTATE_TO_LIVES takes a lives kind, not an NPC slot.", "```c",
                 "#define LIVES_KIND_PLAYER 0", "#define LIVES_KIND_PARTNER 34", "```"]
+        refs = []             # per group: the NPC names its text, portraits and speakers use
         stations, sectors = [], []
+        for g in range(self.first_group):    # groups made by hand (gs180's free roam): a placeholder
+            out += ["", f"script g{g}_s0_station control=ENTER_CONTROL type=SCRIPT_TYPE_01   # placeholder (made by hand)",
+                    "    DEBUGINFO", "    SELECT_MAP SKY_GUILD_B2F", "    JUMP_SCRIPT COMMON_ENTER", "end"]
+            stations.append(f"g{g}_s0_station")
+            sectors.append((g, [f"    sector station={g}"]))
         for tr in self.groups:
             out += ["", "# " + "-" * 72, f"# group {tr.group}: EoS {tr.name} ({tr.level})", "# " + "-" * 72, ""]
             st = tr.station
-            named = [n for n in sorted(getattr(tr, "named", set())) if not any(
-                e.npc == n for e in tr.ents)]
+            # every name the group's text uses or speaks with, bound at the start: an actor may
+            # speak before its layer is on the map (off screen, in the dark)
+            named = sorted(getattr(tr, "named", set()))
             rows = list(st.rows)
             # names the text uses for actors not on the map (chapter 1's g3 station)
             for n in named:
                 if n in ("PLAYER", "PARTNER"):
                     rows.insert(2, f"UPDATE_NAME kind=ACTOR_TYPE who={n} id={'0x21' if n == 'PLAYER' else '0x22'}")
                 else:
-                    tr.todo += 1
-                    rows.insert(2, f"# TODO eos: the text names {n}, who is not on the map")
-            out.append(f"script {st.name} control=EVENT_CONTROL type=SCRIPT_TYPE_07")
-            out.append("    DEBUGINFO")
-            out += render_rows(rows)
-            out.append("end")
+                    kind = next((k for _, (npc, k) in ACTORS.items() if npc == n), f"SKY_LIVES_{n}")
+                    rows.insert(2, f"UPDATE_NAME kind=ACTOR_TYPE who={n} id={kind}   # the text names it")
+            gl = [f"script {st.name} control=EVENT_CONTROL type=SCRIPT_TYPE_07", "    DEBUGINFO"]
+            gl += render_rows(rows)
+            gl.append("end")
             stations.append(st.name)
+            ents = []
             for e in tr.ents:
-                out.append("")
-                out += entity_script(e)
+                ents.append(entity_script(e))
+            used = set()
+            for ln in gl + [x for el in ents for x in el]:
+                if ln.lstrip().startswith("UPDATE_NAME kind=ACTOR_SELF"):
+                    continue
+                used.update(re.findall(r"\bwho=([A-Z]\w*)", ln))
+                used.update(re.findall(r"@([A-Z]\w*)@", ln))
+                used.update(re.findall(r"^\s*PORTRAIT_POS NPC_([A-Z]\w*)", ln))
+            refs.append(used)
+            for el in ents:        # an actor nobody names or shows needs no name slot (there are 10)
+                npc = re.search(r"UPDATE_NAME kind=ACTOR_SELF who=(\w+)", "\n".join(el))
+                if npc and npc.group(1) not in used:
+                    el[:] = [x for x in el if not x.lstrip().startswith("UPDATE_NAME kind=ACTOR_SELF")]
+                gl += [""] + el
+            out += gl
             secs = []
             for li, layer in enumerate(tr.layers):
                 acts = [e for e in layer if not e.is_object]
@@ -1944,13 +2244,29 @@ class SceneFile:
             if not secs:
                 secs.append(f"    sector station={tr.group}")
             sectors.append((tr.group, secs))
+        # name slots: the hero 0, the partner 1, the others 2..9 so that no two names one
+        # group uses share a slot (the GBA has 10: gFormatBuffer_Names, MAX_TEXTBOX_PORTRAITS)
+        slot = {"PLAYER": 0, "PARTNER": 1}
+        names = sorted({n for u in refs for n in u} | set(self.slots), key=lambda n: (
+            -sum(n in u for u in refs), n))
+        for n in names:
+            if n in slot:
+                continue
+            taken = {slot[m] for u in refs if n in u for m in u if m in slot}
+            free = [k for k in range(2, 10) if k not in taken]
+            if not free:
+                raise SystemExit(f"{n}: no name slot left (a group names more than 10 actors)")
+            slot[n] = free[0]
+        out[defines_at:defines_at] = ["```c"] + [f"#define NPC_{n} {k}" for n, k in sorted(
+            slot.items(), key=lambda x: (x[1], x[0]))] + ["```"]
+        out = [re.sub(r"@([A-Z]\w*)@", lambda m: str(slot.get(m.group(1), 0)), ln) for ln in out]
         out += ["", "stations"] + [f"    {s}" for s in stations] + ["end"]
         for g, secs in sectors:
             out += ["", f"sectors g{g}"] + secs + ["end"]
         out += ["", "groups"] + [f"    g{g}" for g, _ in sectors] + ["end"]
         text = "\n".join(out) + "\n"
         # the canonical layout (and a check that it reads back)
-        return scenes.serialize(scenes.parse(text))
+        return scenes.serialize(renumber_labels(scenes.parse(text)))
 
     def unknown(self) -> dict:
         """Identifiers the file uses that do not exist yet, by kind."""
@@ -2142,6 +2458,42 @@ CHAPTER2 = {
     "D02P31A": ["m02a0801", "m02a0901"],
 }
 
+# Chapter 2 in play order (SkyChapter2.md, What plays): one group each on chapter 2's
+# station gs180 (group 0 is its free roam on B2F, which no EoS acting script is).
+# Not here: m02d0112 (the sentry's re-check when coming back from town) and m02a0901
+# ("It's impossible to go any farther", at the bluff's end after the story): neither
+# is on the story's path in the demo.
+CHAPTER2_STATION = [
+    ("G01P01B", "m02a0101"), ("V02P03A", "m02a0104"), ("G01P01B", "m02a0105"), ("G01P02A", "m02a0106"),
+    ("G01P03A", "m02a0108"), ("G01P04A", "m02a0109"), ("G01P05A", "m02a0110"), ("G01P07A", "m02a0111"),
+    ("G01P07C", "m02a0113"), ("G01P07A", "m02a0201"), ("G01P04A", "m02a0202"),
+    ("G01P04A", "m02a0301"), ("G01P03A", "m02a0302"), ("D02P11A", "m02a0401"),
+    ("D02P31A", "m02a0801"), ("G01P03A", "m02a1001"), ("G01P04A", "c00a0501"), ("G01P06B", "c00a0601"),
+    ("G01P07C", "m02a1003"),
+    ("G01P03A", "m02a0501"), ("G01P07C", "m02a0601"), ("G01P04C", "m02a0602"), ("G01P05C", "m02a0603"),
+    ("G01P07C", "c00a0301"), ("G01P07A", "c00a0201"), ("G01P04A", "c00a0101"), ("D02P11A", "m02a0701"),
+]
+
+
+def chapter2_station(rom, out: Path) -> int:
+    """All of chapter 2 as one draft of gs180's scene file (groups 1.., in play order)."""
+    if rom is None:
+        raise SystemExit("--chapter2-station needs the EoS ROM")
+    sf = SceneFile("D02P01", rom, prefix="s_gs180_", debug_file="src/data/ground/sky/ground_data_d02p01_station.h",
+                   first_group=1)
+    load_items(rom, sf)
+    for level, name in CHAPTER2_STATION:
+        sf.add(*rom.load(f"SCRIPT/{level}/{name}"))
+    out.write_text(sf.text(["Explorers of Sky chapter 2 on its station gs180 (SkyChapter2.md), in play order.",
+                            "Draft: translated by tools/event_editor/eos_import.py --chapter2-station; group 0",
+                            "(free roam) is hand-made. Hand-tune it; `TODO eos` marks what was not translated."]))
+    st = sf.stats()
+    print(f"{out}: {len(sf.groups)} groups, {st['translated']} commands translated, {st['todo']} TODO")
+    for n in sf.notes:
+        print(f"note: {n}", file=sys.stderr)
+    return 0
+
+
 NEEDS_KINDS = {"map": "Ground maps (MAP_*)", "lives": "Actors (SKY_LIVES_*)", "object": "Objects (SKY_OBJ_*)",
                "music": "Music (MUS_SKY_*)", "cg": "Story CGs (SKY_CUTAWAY_*)",
                "se": "Sound effects (SE_SKY_*: convert_eos_se.py)", "item": "Items (ITEM_*)",
@@ -2168,8 +2520,9 @@ def chapter2(rom, out: Path) -> int:
         totals[0] += st["translated"]
         totals[1] += st["todo"]
         lines.append(f"{path.name}: {', '.join(names)}: {st['translated']} commands translated, {st['todo']} TODO")
+        defined = scenes.known_names() | set(scenes.cg_extra_names().get("cg", []))
         for k, v in sf.unknown().items():
-            needs.setdefault(k, set()).update(v)
+            needs.setdefault(k, set()).update(n for n in v if n not in defined)
         model = scenes.parse(path.read_text(), str(path))
         for _, w in scenes.unknown_names(model, scenes.cg_extra_names()):
             needs.setdefault("name", set()).add(w)
@@ -2215,10 +2568,14 @@ def main(argv=None) -> int:
     ap.add_argument("--compare", metavar="SCENE:gN[,gM]", help="compare the translation with hand-made groups")
     ap.add_argument("--detail", action="store_true", help="with --compare: list what differs")
     ap.add_argument("--chapter2", metavar="DIR", help="translate all of chapter 2's scripts (CHAPTER2) into DIR")
+    ap.add_argument("--chapter2-station", metavar="FILE",
+                    help="all of chapter 2 in play order as one draft of gs180's scene file (CHAPTER2_STATION)")
     args = ap.parse_args(argv)
     rom = Rom(args.rom) if args.rom else None
     if args.chapter2:
         return chapter2(rom, Path(args.chapter2))
+    if args.chapter2_station:
+        return chapter2_station(rom, Path(args.chapter2_station))
     inputs = []
     for name in args.scripts:
         text, ssa = rom.load(name)
