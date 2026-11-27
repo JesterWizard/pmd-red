@@ -404,8 +404,64 @@ sequences have EoS's frame counts and timings:
 | Spoink, Wurmple, Ledyba | none (they stand) |
 
 The hero and partner (ACTOR_PLAYER and ATTENDANT1) use 62→30, 63→23, 64→32,
-66→26, 68→28, 71→47 and 76→52 (groups 13, 14, 15, 17, 19, 22 and 27). The
-starters' sprites have no ground groups yet, so these fall back to Idle.
+66→26, 68→28, 71→47 and 76→52 (groups 13, 14, 15, 17, 19, 22 and 27). Every
+hero / partner choice has them (next section).
+
+### Hero and partner
+
+Every species the sky build lets the player be or pick as partner (Red's 16
+starters, `gPmd2CastingStarters`: Vulpix, Meowth, Phanpy, Turtwig, Chimchar,
+Piplup, Munchlax, Riolu) carries EoS's ground groups at their EoS index, so
+EoS's `SetAnimation` ids show EoS's cutscene poses (table above):
+
+| Species | Sprite | Groups | Groups 0-12 |
+|---|---|---|---|
+| Bulbasaur, Charmander, Squirtle, Pikachu, Meowth, Eevee, Chikorita, Cyndaquil, Totodile, Treecko, Torchic, Mudkip, Skitty | `gAx<Name>sky` (new) | 35: EoS's 13-34 replace Red's own 13-27 | Red's own, unchanged |
+| Vulpix, Phanpy | `gAxVulpixsky`, `gAxPhanpysky` (new) | 35 (was 13) | Red's own, unchanged |
+| Turtwig, Chimchar, Piplup, Riolu | `gAxTurtwig` ... (regenerated in place) | 35 (was 13) | as before (EoS's, cropped as the Gen 4 batch) |
+| Munchlax | `gAxMunchlaxsky` (regenerated in place) | 35 (was 13) | as before |
+| Psyduck, Machop, Cubone | Red's, unchanged | 28 | — |
+
+EoS's ground set has 22 groups past the dungeon 13 (13-34) for its starters.
+Psyduck, Machop and Cubone are not EoS starters: their EoS ground set is Red's
+28 groups, frame for frame (checked: every group's masks and timing are
+Red's), so Red's sprites already have them.
+
+Red species are converted with
+
+```bash
+tools/convert_eos_wan_to_ax.py convert EOS.nds dex4 charmandersky --colours-from charmander \
+    --keep-red --ground-groups all --max-tiles 0 --ground-max-tiles 16
+# Gen 4 / Munchlax: in place, colours and cropping as before
+tools/convert_eos_wan_to_ax.py convert EOS.nds dex387 turtwig --palette 8 --ground-groups all
+```
+
+- `--keep-red` keeps the Red sprite's own 13 dungeon groups (poses, tiles,
+  timing, body points) and appends EoS's groups from 13 on. EoS's dungeon
+  frames of the Red starters are mostly Red's, but Pikachu's are redrawn and
+  several others have other shading (Chikorita, Meowth, Totodile, Treecko,
+  Skitty, Phanpy), so taking EoS's dungeon groups would have changed the
+  dungeon. Checked: every frame of groups 0-12 of all 15 new headers renders
+  pixel for pixel as Red's, with the same timing and body points.
+- `--colours-from` maps each EoS colour to the Red index EoS's copied frames
+  show it as (a vote over the frames whose shape is Red's), so the cutscene
+  poses use Red's colours: nearest-colour matching made Cyndaquil's back white
+  instead of Red's yellow.
+- `--ground-max-tiles 16`: a ground actor has 16 OBJ tiles per body-size unit
+  (`sub_80A62F0`, 22 slots). One frame of group 18 (a shake with "!" lines)
+  is 24-32 tiles in EoS for all but Turtwig, Torchic, Chikorita and
+  Cyndaquil; its effect lines are cropped. No group chapter 2 uses is cropped.
+  Red's 13 groups are not cropped (`--max-tiles 0`): Red's own attack frames
+  are up to 40 tiles.
+
+Chapter 1 shows two of these groups: `INIT_SLEEP_FUNC` and `WAKEUP_FUNC`
+(Red ids 38 and 39, groups 13 and 14) on the beach. Red's 16 starters showed
+Red's own versions of these poses, which EoS redrew with the same frames and
+timing; Vulpix, Phanpy and the Gen 4 choices fell back to Sleep / Idle and now
+lie down and get up as in EoS.
+
+ROM: about 250 KB more (35 groups for 20 species; the 15 Red species' own
+sprites are left out of the sky build, as Zubat's are). EWRAM is unchanged.
 
 ### Objects
 
@@ -449,32 +505,49 @@ show over the map's top layer.
 
 ### Portraits
 
-EoS's faces (FONT/kaomado.kao) for Red's 13 emotions, exported by
-[`tools/make_sky_gen4_portraits.py`](../../tools/make_sky_gen4_portraits.py).
-The Red species' faces go into `graphics/portraits_sky/<species>/` and replace
-Red's faces in the sky build. Chatot's, Bidoof's and Croagunk's faces were
-already in `graphics/portraits/`, exported with the Gen 4 species.
+EoS's faces (FONT/kaomado.kao), exported by
+[`tools/make_sky_gen4_portraits.py`](../../tools/make_sky_gen4_portraits.py):
+Red's 13 emotions and the two past them that the chapter 1 and 2 scripts use,
+**Dizzy** (EoS emotion 13) and **Sigh** (16). The Red species' faces go into
+`graphics/portraits_sky/<species>/` and replace Red's faces in the sky build.
+Chatot's, Bidoof's and Croagunk's faces were already in `graphics/portraits/`,
+exported with the Gen 4 species.
 
 | Species | EoS faces exported | Chapter 2 uses (`message_SetFace`) |
 |---|---|---|
-| Chatot | Normal, Happy, Pained, Angry, Worried, Joyous, Surprised | Normal, Happy, Angry, Joyous, Pain, Surprised, Worried: all there |
-| Wigglytuff | Normal, Happy, Worried, Sad, Crying, Shouting, Teary-Eyed, Surprised | Normal; **Sigh** (see below) |
-| Loudred | Normal, Happy, Pained, Angry, Joyous, Surprised | Normal, Angry: all there |
+| Chatot | Normal, Happy, Pained, Angry, Worried, Joyous, Surprised, Dizzy, Sigh | Normal, Happy, Angry, Joyous, Pain, Surprised, Worried: all there |
+| Wigglytuff | Normal, Happy, Worried, Sad, Crying, Shouting, Teary-Eyed, Surprised, Sigh | Normal, Sigh: all there |
+| Loudred | Normal, Happy, Pained, Angry, Joyous, Surprised, Sigh | Normal, Angry: all there |
 | Diglett | Normal, Pained, Teary-Eyed | Normal, Pain: all there |
 | Chimecho | Normal, Happy, Surprised | Normal |
 | Spoink | Normal | Normal |
-| Sunflora | Normal, Happy, Pained, Angry, Worried, Teary-Eyed, Determined, Joyous, Surprised | — |
-| Bidoof | Normal, Happy, Pained, Sad, Teary-Eyed, Determined, Surprised | — |
+| Sunflora | Normal, Happy, Pained, Angry, Worried, Teary-Eyed, Determined, Joyous, Surprised, Sigh | — |
+| Bidoof | Normal, Happy, Pained, Sad, Teary-Eyed, Determined, Surprised, Dizzy, Sigh | — |
 | Corphish | Normal, Worried, Sad | — |
 | Dugtrio, Croagunk, Wurmple, Swellow, Pidgey, Ledyba, Seedot | Normal | — |
+| Every hero / partner choice but Psyduck, Machop and Cubone | all 13, Dizzy, Sigh | the hero's and partner's Dizzy (5 times) |
 
-Missing: Wigglytuff's **Sigh** (EoS emotion 16, in c00a0601). EoS has it
-(kaomado slot 32), but the portrait archive holds only Red's 13 emotions
-(`PortraitGfx.sprites[13]`, with the emotion masked to 4 bits). So
-`FACE_SIGH` shows Normal, as the partner's Sigh does in chapter 1. The hero's
-and partner's **Dizzy** (EoS 13, used 5 times) has the same problem. EoS also
-has Sigh, Stunned and Dizzy faces for Chatot, Loudred, Bidoof and Sunflora,
-which chapter 2 does not use.
+**Emotions past Red's 13.** Red's portrait archive holds 13 emotions
+(`PortraitGfx.sprites[13]`) and masks a portrait's emotion to 4 bits. In the
+sky build (`SKY_STORY`):
+
+- `PORTRAIT_EMOTION()` (`include/structs/str_mon_portrait.h`) keeps 5 bits, so
+  `EMOTION_DIZZY` (13) and `EMOTION_SIGH` (16) reach the portrait code with
+  EoS's numbers ([`src/textbox.c`](../../src/textbox.c),
+  [`src/pokemon.c`](../../src/pokemon.c)).
+- A custom portrait with such a face is a `PortraitGfxSky` (20 slots, the same
+  layout; `convert_custom_portraits.py` writes it only for species that have
+  one), and its bit in `gCustomPortraitMasks`, now a `u32`
+  (`CustomPortraitMask`), says so.
+- A species without the face (Psyduck, Machop, Cubone, most townsfolk) shows
+  Normal (`ScriptSetPortraitInfo`): Red's kao files stop at 13.
+
+The vanilla build is unchanged (4 bits, `u16` masks, 13 slots). Scenes name
+the faces `emotion=DIZZY` and `emotion=SIGH` ([EventEditor.md](../EventEditor.md#emotions)).
+Chapter 1's partner says "Whew..." at the guild with its Sigh face (m01a0104;
+check `guild_whew_sigh`). EoS also has Stunned (17) faces, which no chapter 1
+or 2 script uses; adding one is a word in `EXTRA_EMOTIONS`
+(make_sky_gen4_portraits.py) and `SKY_EXTRA_EMOTIONS` (convert_custom_portraits.py).
 
 ### How it was checked
 
@@ -487,6 +560,22 @@ which chapter 2 does not use.
 - Against EoS: EoS's WAN frames (`render-wan ... --ground-groups all`) and
   the converted sprites (`render-ax`) were compared group by group, with the
   same poses, frame counts and timings.
+- The hero / partner sprites: in a throwaway build of chapter 1's sunset
+  beach (`DEBUG_BOOT_EVENT=EVENT_DIVIDE`, after "Where...where am I...?"),
+  the hero played Red ids 30, 23, 32, 26, 28, 47 and 52 for 100 frames each,
+  as Charmander, Vulpix, Riolu, Pikachu and Chimchar
+  (`DEBUG_BOOT_STARTER`). Every second frame's sprite was matched against
+  every pose of the converted header: 933 of 953 sampled frames show a pose
+  of the requested group pixel for pixel, all 7 groups in all 5 runs (the
+  20 others are the first frames of the next animation). The converted
+  groups 13-34 have EoS's frame counts, timings and shapes in all 8
+  directions (group 18 but for its cropped frame), and groups 0-12 of the 15
+  new Red-species headers render exactly as Red's own sprites.
+- The faces: the same build showed the hero's and partner's Dizzy, the
+  partner's Sigh and Wigglytuff's Sigh (`UPDATE_NAME kind=SPECIES_TYPE`) for
+  Charmander / Squirtle, Vulpix / Turtwig, Riolu / Munchlax, Pikachu / Piplup
+  and Chimchar / Chikorita; each face on screen is EoS's PNG pixel for pixel.
+
 
 ## Drenched Bluff
 

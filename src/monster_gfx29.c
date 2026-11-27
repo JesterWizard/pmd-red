@@ -4,7 +4,9 @@
 
 #include "data/ax/combusken.h"
 #include "data/ax/blaziken.h"
+#ifndef SKY_STORY /* the sky build uses gAxMudkipsky (monster_gfx_sky.c) */
 #include "data/ax/mudkip.h"
+#endif
 #include "data/ax/marshtomp.h"
 #include "data/ax/swampert.h"
 #include "data/ax/poochyena.h"

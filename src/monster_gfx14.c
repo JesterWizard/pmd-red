@@ -4,7 +4,9 @@
 
 #include "data/ax/lapras.h"
 #include "data/ax/ditto.h"
+#ifndef SKY_STORY /* the sky build uses gAxEeveesky (monster_gfx_sky.c) */
 #include "data/ax/eevee.h"
+#endif
 #include "data/ax/vaporeon.h"
 #include "data/ax/jolteon.h"
 #include "data/ax/flareon.h"

@@ -619,7 +619,7 @@ bool8 sub_809AC18(s32 a0_, s32 a1_)
  */
 static s32 GetSpecialPortraitFaceId(TextboxPortrait *portraitPtr, s32 spriteId, bool8 *preMirrored)
 {
-    s32 emotion = spriteId & 0xF;
+    s32 emotion = PORTRAIT_EMOTION(spriteId);
     s32 offset;
 
     *preMirrored = FALSE;
@@ -682,7 +682,16 @@ bool8 ScriptSetPortraitInfo(s32 portraitId_, s32 spriteId_, s32 placementId_)
 
         if (portraitPtr->showPortrait) {
             bool8 preMirrored;
-            s32 faceId = GetSpecialPortraitFaceId(portraitPtr, spriteId, &preMirrored);
+            s32 faceId;
+
+#ifdef SKY_STORY
+            // EoS's emotions past Red's 13 exist only as custom faces; a species
+            // without one shows Normal (Red's kao files stop at 13).
+            if (PORTRAIT_EMOTION(spriteId) >= NUM_RED_PORTRAIT_EMOTIONS
+                && !CustomPortraitHasEmotion(portraitPtr->speciesID, spriteId))
+                spriteId = EMOTION_NORMAL;
+#endif
+            faceId = GetSpecialPortraitFaceId(portraitPtr, spriteId, &preMirrored);
 
             portraitPtr->faceFile = OpenPokemonDialogueSpriteFile(portraitPtr->speciesID, faceId);
             if (portraitPtr->faceFile != NULL) {
@@ -694,7 +703,7 @@ bool8 ScriptSetPortraitInfo(s32 portraitId_, s32 spriteId_, s32 placementId_)
                 spriteId = faceId;
 
                 portraitPtr->monPortrait.faceData = (void *) portraitPtr->faceFile->data;
-                portraitPtr->monPortrait.spriteId = spriteId & 0xF;
+                portraitPtr->monPortrait.spriteId = PORTRAIT_EMOTION(spriteId);
             }
             else {
                 portraitPtr->monPortrait.faceFile = NULL;
