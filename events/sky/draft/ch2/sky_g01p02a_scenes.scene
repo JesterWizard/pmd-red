@@ -57,7 +57,6 @@ end
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 66
     WALK_RELATIVE speed=256 dx=-12 dy=-36   # EoS MovePositionMark to Position<'m1', 25.5, 20.5>

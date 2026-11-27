@@ -109,7 +109,7 @@ MAP = {
     127: ("Friend Area: Healing Forest", "Mystifying Forest"),
     128: ("Monster House", "Monster House!"),
 }
-SKY_STORY_IDS = range(61, 72)   # the converted EoS story songs keep their ids
+SKY_STORY_IDS = range(61, 73)   # the converted EoS story songs keep their ids
 
 
 def main() -> None:

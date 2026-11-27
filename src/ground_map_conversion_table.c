@@ -1786,5 +1786,30 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .unk6 = -1,
         .text = _("Drenched Bluff"),
     },
+    [MAP_SKY_SENTRY_POST] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_SENTRY_POST,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_KIT_OPEN] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_KIT_OPEN,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_GUILD_DUSK2] = {
+        /* MAP_SKY_GUILD_DUSK's files; a map id of its own so that SELECT_MAP
+         * selects chapter 2's station (gs180) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_DUSK,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
 #endif
 };

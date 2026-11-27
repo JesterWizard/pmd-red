@@ -35,9 +35,9 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SET_PLACE_MODE 1
     FADE_OUT wait=TRUE frames=0
     BGM_STOP
-    JUMPIF_ARRAY SCENARIO_MAIN_BIT_FLAG 8 1002
+    JUMPIF_ARRAY SKY_SCENARIO_MAIN_BIT_FLAG 8 3
     # eos: back2_SetMode(4); (the top screen)
-    # eos: back2_SetGround(LEVEL_V02P06A); (the top screen's picture: V02P06A; left out as in chapter 1)
+    # eos: back2_SetGround(LEVEL_V02P06A); (the top screen's picture: NIGHT_SKY; left out as in chapter 1)
     # eos: camera2_SetPositionMark(Position<'m0', 19.5, 15.5>); (the top screen's view)
     # eos: screen2_FadeIn(1, 60); (the top screen)
     WAIT 150
@@ -48,7 +48,8 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
     AWAIT_CUE_COND 64 1   # -> PLAYER: batch 1
     AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
-    # TODO eos: screen_FadeChange(1, 60, 0, 192);
+    FADE_IN wait=TRUE frames=60   # EoS screen_FadeChange(1, 60, 0, 192); (to full brightness)
+    SET_PLACE_MODE 4
     BGM_SWITCH SKY_GOODNIGHT
     WAIT 30
     # eos: message_SetActor(ACTOR_ATTENDANT1);
@@ -88,29 +89,28 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 120
     FADE_OUT wait=TRUE frames=120
     WAIT 60
-    SET_ARRAYVAL SCENARIO_MAIN_BIT_FLAG 8 1   # EoS $SCENARIO_MAIN_BIT_FLAG[8] = 1;
-    UPDATE_VARINT CALC_SET COMPULSORY_SAVE_POINT 1   # EoS $COMPULSORY_SAVE_POINT = 1;
+    SET_ARRAYVAL SKY_SCENARIO_MAIN_BIT_FLAG 8 1   # EoS $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    # eos: $COMPULSORY_SAVE_POINT = 1; (EoS's bed save point: nothing on the GBA)
     ASK2 flag=FALSE default=-1 who=-1 text="{CENTER_ALIGN}Would you like to save your adventure?"
-    CHOICE label=1003 text="Save"
-    CHOICE label=1004 text="Don't save"
-  LABEL 1003
+    CHOICE label=0 text="Save"
+    CHOICE label=2 text="Don't save"
+  LABEL 0
     TEXTBOX_CLEAR
     SKY_SAVE_GAME   # EoS CORO_HANYOU_SAVE_FUNC
-    COND_EQUAL 0 1005
+    COND_EQUAL 0 1
     MSG_INSTANT text="{CENTER_ALIGN}Your adventure has been saved."
-    JUMP_LABEL 1004
-  LABEL 1005
+    JUMP_LABEL 2
+  LABEL 1
     MSG_INSTANT text="{CENTER_ALIGN}The data could not be saved."
-  LABEL 1004
+  LABEL 2
     TEXTBOX_CLEAR
-    JUMP_LABEL 0
-    JUMP_LABEL 1001
-  LABEL 1002
-  LABEL 0
-    SET_ARRAYVAL SCENARIO_MAIN_BIT_FLAG 8 0   # EoS $SCENARIO_MAIN_BIT_FLAG[8] = 0;
+    JUMP_LABEL 4
+    JUMP_LABEL 5
+  LABEL 3
+  LABEL 4
+    SET_ARRAYVAL SKY_SCENARIO_MAIN_BIT_FLAG 8 0   # EoS $SCENARIO_MAIN_BIT_FLAG[8] = 0;
     WAIT 30
     FANFARE_PLAY 207   # EoS me_Play(7)
-    # TODO eos: text tags left out: [W:30]
     MSG_NPC who=-1 text="{CENTER_ALIGN}Exploration Team\n{CENTER_ALIGN}Quick Tip"   # EoS message_Explanation
     # eos: CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC); (the next line follows)
     MSG_NPC who=-1 text="{CENTER_ALIGN}You can save a record of your progress\n{CENTER_ALIGN}by climbing onto your bed from now on."   # EoS message_Explanation
@@ -118,27 +118,26 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     TEXTBOX_CLEAR
     WAIT 60
     RET
-    JUMP_LABEL 1001
-  LABEL 1001
+    JUMP_LABEL 5
+  LABEL 5
     RET
 end
 
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 64
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(76); (no such Red animation id)
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    JUMP_LABEL 0
+  LABEL 2
     SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
@@ -146,17 +145,17 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 66
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(76); (no such Red animation id)
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    JUMP_LABEL 0
+  LABEL 2
     SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 actors g0_s0_lives
@@ -186,16 +185,16 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 1
     AWAIT_CUE_COND 64 0   # -> CHATOT (waits until it is ready)
     WAIT 20
-    FANFARE_PLAY2 SE_SKY_EVENT_SIGN_NOTICE_05   # EoS se_Play(8978) = SE_NUM_EVENT_SIGN_NOTICE_05: not converted yet
-    # TODO eos: SetEffect<actor ACTOR_PLAYER>(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    FANFARE_PLAY2 SE_SKY_NOTICE_5   # EoS se_Play(8978)
+    AWAIT_CUE_COND 66 0   # -> PLAYER (waits until it is ready)
     AWAIT_CUE 65   # <- CHATOT done
     PORTRAIT place=LEFT_MIDTOP who=CHATOT emotion=NORMAL
     MSG_NPC who=CHATOT text=" Hey, beginners!"
     TEXTBOX_CLEAR
     FANFARE_PLAY2 465   # EoS se_Play(8964)
-    AWAIT_CUE_COND 66 0   # -> PARTNER (waits until it is ready)
-    AWAIT_CUE 67   # <- PARTNER done
-    ALERT_CUE 66   # -> PARTNER
+    AWAIT_CUE_COND 68 0   # -> PARTNER (waits until it is ready)
+    AWAIT_CUE 69   # <- PARTNER done
+    ALERT_CUE 68   # -> PARTNER
     MSG_NPC who=CHATOT text=" Before you go to bed, our\nGuildmaster wants to speak with you."
     TEXTBOX_CLEAR
     FADE_OUT wait=TRUE frames=30
@@ -205,8 +204,9 @@ end
 script g1_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
+    AWAIT_CUE 66
+    EMOTION_EFFECT NOTICE   # TODO emotion: EoS EFFECT_TWO_ARROWS_AT_SIDE_LEFT has no GBA picture: the closest
     HALT
 end
 
@@ -215,10 +215,10 @@ script g1_s0_partner   # EoS actor ATTENDANT1, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-    AWAIT_CUE 66
+    AWAIT_CUE 68
     CALL_SCRIPT NOTICE_FUNC
-    AWAIT_CUE_COND 67 0   # done: the station waits for this
-    AWAIT_CUE 66
+    AWAIT_CUE_COND 69 0   # done: the station waits for this
+    AWAIT_CUE 68
     ROTATE_TO speed=4 turn=DIR_TRANS_10 direction=WEST
     HALT
 end
@@ -254,7 +254,7 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     BGM_STOP
     # eos: if ( variation ): never in the story (EoS's variation run)
     # eos: back2_SetMode(4); (the top screen)
-    # eos: back2_SetGround(LEVEL_V02P06A); (the top screen's picture: V02P06A; left out as in chapter 1)
+    # eos: back2_SetGround(LEVEL_V02P06A); (the top screen's picture: NIGHT_SKY; left out as in chapter 1)
     # eos: camera2_SetPositionMark(Position<'m0', 19.5, 15.5>); (the top screen's view)
     # eos: screen2_FadeIn(1, 60); (the top screen)
     WAIT 150
@@ -265,7 +265,8 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     SKY_CAMERA_SET x=64 y=108   # EoS camera_SetMyself<performer 0>
     AWAIT_CUE_COND 64 1   # -> PLAYER: batch 1
     AWAIT_CUE_COND 66 1   # -> PARTNER: batch 1
-    # TODO eos: screen_FadeChange(1, 60, 0, 192);
+    FADE_IN wait=TRUE frames=60   # EoS screen_FadeChange(1, 60, 0, 192); (to full brightness)
+    SET_PLACE_MODE 4
     BGM_SWITCH SKY_GOODNIGHT
     WAIT 30
     # eos: message_SetActor(ACTOR_ATTENDANT1);
@@ -293,41 +294,40 @@ script g2_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     # eos: if ( variation ): never in the story (EoS's variation run)
     SCENARIO_CALC SCENARIO_MAIN 4 0   # EoS scenario numbers
     RET
-    JUMP_LABEL 1003
-  LABEL 1004
-    JUMP_LABEL 0
-    JUMP_LABEL 1003
-  LABEL 1003
-    JUMP_LABEL 1001
-  LABEL 1002
+    JUMP_LABEL 1
   LABEL 0
-    # TODO eos: switch ( ProcessSpecial(53, -1, 0) ) { }   (ProcessSpecial: see SkyChapter2.md, engine gaps)
+    JUMP_LABEL 3
+    JUMP_LABEL 1
+  LABEL 1
+    JUMP_LABEL 4
+  LABEL 2
+  LABEL 3
+    # eos: switch ( ProcessSpecial(53, -1, 0) ) (EoS's demo version only)
     TEXTBOX_AUTO_PRESS 300 300   # EoS message_SetWaitMode
     MSG_NPC who=-1 text="{CENTER_ALIGN}Thanks for playing!\n{CENTER_ALIGN}We hope you enjoyed\n{CENTER_ALIGN}the demo!"   # EoS message_Explanation
     # eos: message_KeyWait(); (the line above waits for a button)
     SKY_DEMO_TO_TITLE   # EoS ProcessSpecial(PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN)
     RET
-    JUMP_LABEL 1001
-  LABEL 1001
+    JUMP_LABEL 4
+  LABEL 4
     RET
 end
 
 script g2_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 64
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(76); (no such Red animation id)
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    JUMP_LABEL 0
+  LABEL 2
     SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g2_s0_partner   # EoS actor ATTENDANT1, layer 0
@@ -335,17 +335,17 @@ script g2_s0_partner   # EoS actor ATTENDANT1, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 66
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(76); (no such Red animation id)
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 6   # TODO anim: EoS SetAnimation(76) is SELECT_ANIMATION 52 once the hero and partner have EoS ground groups (ch2-heroanims)
+    JUMP_LABEL 0
+  LABEL 2
     SELECT_ANIMATION 6   # EoS SetAnimation(62): asleep
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 actors g2_s0_lives
@@ -383,7 +383,6 @@ end
 script g3_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     HALT
 end

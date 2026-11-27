@@ -14,16 +14,16 @@ debug_file src/data/ground/sky/sky_g01p06b_scenes.h
 ```c
 #define NPC_PLAYER 0
 #define NPC_PARTNER 1
+#define NPC_BIDOOF 2
+#define NPC_CHATOT 2
+#define NPC_CHIMECHO 2
+#define NPC_CORPHISH 2
+#define NPC_CROAGUNK 2
+#define NPC_DIGLETT 2
+#define NPC_DUGTRIO 2
 #define NPC_LOUDRED 2
-#define NPC_BIDOOF 3
-#define NPC_CORPHISH 4
-#define NPC_CHIMECHO 5
-#define NPC_CHATOT 6
-#define NPC_DIGLETT 7
-#define NPC_DUGTRIO 8
-#define NPC_CROAGUNK 9
-#define NPC_SUNFLORA 10
-#define NPC_WIGGLYTUFF 11
+#define NPC_SUNFLORA 2
+#define NPC_WIGGLYTUFF 2
 ```
 
 # ROTATE_TO_LIVES takes a lives kind, not an NPC slot.
@@ -57,23 +57,12 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     AWAIT_CUE_COND 80 1   # -> BIDOOF: batch 1
     AWAIT_CUE_COND 82 1   # -> CROAGUNK: batch 1
     AWAIT_CUE_COND 84 1   # -> CHIMECHO: batch 1
-    # TODO eos: SetEffect<actor ACTOR_NPC_PERAPPU>(EFFECT_EATING, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_CHIRIIN>(EFFECT_EATING, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_HEIGANI>(EFFECT_EATING, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_BIPPA>(EFFECT_EATING, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_DOGOOMU>(EFFECT_EATING, 3);
-    # TODO eos: SetEffect<actor ACTOR_PLAYER>(EFFECT_EATING, 3);
-    # TODO eos: SetEffect<actor ACTOR_ATTENDANT1>(EFFECT_EATING, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_DIGUDA>(EFFECT_EATING_SLOW, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_DAGUTORIO>(EFFECT_EATING_SLOW, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_GUREGGURU>(EFFECT_EATING_SLOW, 3);
-    # TODO eos: SetEffect<actor ACTOR_NPC_KIMAWARI>(EFFECT_EATING_SLOW, 3);
     # TODO eos: switch ( sector() ) { (the first case is taken)
-    JUMP_LABEL 1002
-  LABEL 1002
+    JUMP_LABEL 0
   LABEL 0
-    ALERT_CUE 86   # -> WIGGLYTUFF
   LABEL 1
+    ALERT_CUE 86   # -> WIGGLYTUFF
+  LABEL 2
     BGM_FADEIN frames=60 song=SKY_EATING
     FADE_IN wait=TRUE frames=30
     SET_PLACE_MODE 4
@@ -88,11 +77,11 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     FADE_OUT wait=TRUE frames=30
     WAIT_BGM MUS_SKY_EATING
     WAIT 30
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 3 1005   # EoS scenario numbers
-    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 6 1005   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 3 3   # EoS scenario numbers
+    JUMPIF_SCENE_EQ SCENARIO_MAIN 3 6 3   # EoS scenario numbers
     RET
-    JUMP_LABEL 1004
-  LABEL 1005
+    JUMP_LABEL 4
+  LABEL 3
     AWAIT_CUE_COND 66 2   # -> PARTNER: batch 2
     AWAIT_CUE_COND 64 2   # -> PLAYER: batch 2
     AWAIT_CUE_COND 70 2   # -> LOUDRED: batch 2
@@ -117,222 +106,221 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     TEXTBOX_CLEAR
     WAIT 30
     RET
-    JUMP_LABEL 1004
-  LABEL 1004
-    JUMP_LABEL 1001
-  LABEL 1003
+    JUMP_LABEL 4
+  LABEL 4
+    JUMP_LABEL 6
+  LABEL 5
     # eos: WaitLockLives(5, ACTOR_NPC_PUKURIN); (Unlock below waits for it)
     AWAIT_CUE_COND 5 0   # EoS Unlock(5): once it is waiting
-    JUMP_LABEL 1
-  LABEL 1001
+    JUMP_LABEL 2
+  LABEL 6
     RET
 end
 
 script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 66
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(64); (no such Red animation id)
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(64) is SELECT_ANIMATION 32 once the hero and partner have EoS ground groups (ch2-heroanims)
+    # TODO emotion: EoS SetEffect<actor ACTOR_ATTENDANT1>(EFFECT_EATING, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 64
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(64); (no such Red animation id)
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(64) is SELECT_ANIMATION 32 once the hero and partner have EoS ground groups (ch2-heroanims)
+    # TODO emotion: EoS SetEffect<actor ACTOR_PLAYER>(EFFECT_EATING, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_loudred   # EoS actor NPC_DOGOOMU, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=LOUDRED id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 70
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_DOGOOMU>(EFFECT_EATING, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_bidoof   # EoS actor NPC_BIPPA, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=BIDOOF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 80
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_BIPPA>(EFFECT_EATING, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_corphish   # EoS actor NPC_HEIGANI, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CORPHISH id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 78
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_HEIGANI>(EFFECT_EATING, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_chimecho   # EoS actor NPC_CHIRIIN, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CHIMECHO id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 84
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_CHIRIIN>(EFFECT_EATING, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_chatot   # EoS actor NPC_PERAPPU, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CHATOT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 68
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 43   # EoS animation 43: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 31   # EoS SetAnimation(43)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_PERAPPU>(EFFECT_EATING, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_diglett   # EoS actor NPC_DIGUDA, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=DIGLETT id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 72
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_DIGUDA>(EFFECT_EATING_SLOW, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_dugtrio   # EoS actor NPC_DAGUTORIO, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=DUGTRIO id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 74
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_DAGUTORIO>(EFFECT_EATING_SLOW, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_croagunk   # EoS actor NPC_GUREGGURU, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=CROAGUNK id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 82
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_GUREGGURU>(EFFECT_EATING_SLOW, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_sunflora   # EoS actor NPC_KIMAWARI, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=SUNFLORA id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 76
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    JUMP_LABEL 3000
-  LABEL 3001
-    SELECT_ANIMATION 42   # EoS animation 42: check the sprite has it
-    JUMP_LABEL 3000
-  LABEL 3002
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    JUMP_LABEL 0
+  LABEL 1
+    SELECT_ANIMATION 30   # EoS SetAnimation(42)
+    # TODO emotion: EoS SetEffect<actor ACTOR_NPC_KIMAWARI>(EFFECT_EATING_SLOW, 3); (no GBA picture: none shown)
+    JUMP_LABEL 0
+  LABEL 2
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
 script g0_s0_wigglytuff   # EoS actor NPC_PUKURIN, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=WIGGLYTUFF id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     # EoS: its own coroutine (def ... for actor NPC_PUKURIN)
     SELECT_ANIMATION 5
-    # TODO eos: SetEffect(EFFECT_APPLE_ON_HEAD, 3);
+    # TODO emotion: EoS SetEffect(EFFECT_APPLE_ON_HEAD, 3); (no GBA picture: none shown)
     AWAIT_CUE 5   # EoS Lock(5)
-  LABEL 3
-  LABEL 2001
+  LABEL 0
+  LABEL 1
     ROTATE_TO speed=8 turn=SPINRIGHT1 direction=NORTH
     WAIT 20
     ROTATE_TO speed=8 turn=SPINRIGHT1 direction=SOUTH
     WAIT 20
     WAIT 1   # (a forever loop)
-    JUMP_LABEL 2001
-  LABEL 2002
+    JUMP_LABEL 1
+  LABEL 2
     # TODO eos: the station also sends this one commands (below), which its own coroutine never reaches
     AWAIT_CUE 86
     END_DELETE
@@ -341,11 +329,11 @@ end
 script g0_s0_obj0_g01p06b1   # EoS object G01P06B1_107, layer 0
     DEBUGINFO
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 88
-    COND_EQUAL 1 3001
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    JUMP_LABEL 0
+  LABEL 1
     END_DELETE   # EoS supervision_RemoveActing(0)
 end
 
@@ -365,7 +353,7 @@ actors g0_s0_lives
 end
 
 objects g0_s0_objs
-    object kind=SKY_OBJ_G01P06B1 w=2 h=1 x=32 y=26.5 script=g0_s0_obj0_g01p06b1   # EoS G01P06B1_107
+    object kind=SKY_OBJ_DINNER w=2 h=1 x=32 y=26.5 script=g0_s0_obj0_g01p06b1   # EoS G01P06B1_107
 end
 
 stations

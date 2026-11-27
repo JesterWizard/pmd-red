@@ -34,7 +34,7 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     UPDATE_NAME kind=ACTOR_TYPE who=PLAYER id=0x21
     BGM_STOP
     # eos: back2_SetMode(5); (the top screen)
-    SELECT_MAP SKY_V02P03A
+    SELECT_MAP SKY_SENTRY_POST
     SELECT_ENTITIES group=-1 sector=0   # EoS supervision_Acting(0)
     SKY_CAMERA_SET x=12 y=224   # EoS camera_SetMyself<performer 0>
     # eos: screen2_FadeIn(0, 30); (the top screen)

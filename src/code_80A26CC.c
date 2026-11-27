@@ -20,11 +20,23 @@ static const DungeonInfo sScriptDungeonData[SCRIPT_DUNGEON_COUNT] = {
         .unk11 = TRUE,
     },
     [SCRIPT_DUNGEON_THUNDERWAVE_CAVE] = {
+#ifdef SKY_STORY
+        /* Drenched Bluff (documentation/Features/SkyChapter2.md): back at the
+         * bluff's end when cleared, at the guild when fainted; the story
+         * enters it with NEXT_DUNGEON (no entry scripts: the EVENT_M01E02A_*
+         * slots are chapter 2's events in the sky build). */
+        .mapID1 = MAP_SKY_DRENCHED_BLUFF_ENTRANCE,
+        .mapID2 = MAP_SKY_DRENCHED_BLUFF_END,
+        .mapID3 = MAP_SKY_GUILD_B1F,
+        .scriptID1 = -1,
+        .scriptID2 = -1,
+#else
         .mapID1 = MAP_TEAM_BASE,
         .mapID2 = MAP_TEAM_BASE_INSIDE,
         .mapID3 = MAP_TEAM_BASE_INSIDE,
         .scriptID1 = EVENT_M01E02A_L003,
         .scriptID2 = EVENT_M01E02A_L005,
+#endif
         .scriptID3 = GETOUT_M01E02A,
         .dungeonID = DUNGEON_THUNDERWAVE_CAVE,
         .rescueDungeonID = RESCUE_DUNGEON_THUNDERWAVE_CAVE,

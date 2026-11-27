@@ -257,6 +257,9 @@ enum GroundMapID
     MAP_SKY_GUILD_CREW_ROOM_NIGHT,
     MAP_SKY_DRENCHED_BLUFF_ENTRANCE,
     MAP_SKY_DRENCHED_BLUFF_END,
+    MAP_SKY_SENTRY_POST,     /* EoS v02p03a: the shaft under the grate, Diglett's post (m02a0104) */
+    MAP_SKY_KIT_OPEN,        /* EoS v02p08a: the Exploration Team Kit, opened (m02a0110) */
+    MAP_SKY_GUILD_DUSK2,     /* g01p01b2 (MAP_SKY_GUILD_DUSK's files) on gs180: m02a0101 */
 #endif
     MAP_COUNT,
 };

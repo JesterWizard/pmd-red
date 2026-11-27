@@ -65,13 +65,13 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     WAIT 20
     FADE_OUT wait=TRUE frames=30
     SCENARIO_CALC SCENARIO_MAIN 3 3   # EoS scenario numbers
-    NEXT_DUNGEON frames=30 dungeon=SKY_DRENCHED_BLUFF   # EoS main_EnterDungeon(3)
-    # TODO eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-    # TODO eos: main_EnterDungeon(-1, 0);
+    NEXT_DUNGEON frames=30 dungeon=THUNDERWAVE_CAVE   # EoS main_EnterDungeon(3)
+    # eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) (EoS's team set-up before a dungeon: Red's own runs)
+    NEXT_DUNGEON frames=30 dungeon=THUNDERWAVE_CAVE   # EoS main_EnterDungeon(-1)
     HALT
-    JUMP_LABEL 1001
-  LABEL 1002
+    JUMP_LABEL 2
   LABEL 0
+  LABEL 1
     BGM_STOP
     MSG_NPC who=-1 text="You wake up one day, only to realize that\nyou've been turned into a Pokémon and are\nnow in a world inhabited only by Pokémon!"   # EoS message_Explanation
     MSG_NPC who=-1 text="It's up to you to form an exploration team\nand embark on the adventure of a lifetime!"   # EoS message_Explanation
@@ -79,45 +79,44 @@ script g0_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     FADE_OUT wait=TRUE frames=30
     SCENARIO_CALC SCENARIO_MAIN 3 3   # EoS scenario numbers
     # TODO eos: main_EnterDungeon(123, 0);
-    # TODO eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-    # TODO eos: main_EnterDungeon(-1, 0);
+    # eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) (EoS's team set-up before a dungeon: Red's own runs)
+    NEXT_DUNGEON frames=30 dungeon=THUNDERWAVE_CAVE   # EoS main_EnterDungeon(-1)
     HALT
     RET
-    JUMP_LABEL 1001
-  LABEL 1001
+    JUMP_LABEL 2
+  LABEL 2
     RET
 end
 
 script g0_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 64
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    COND_EQUAL 3 3003
-    COND_EQUAL 4 3004
-    COND_EQUAL 5 3005
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    COND_EQUAL 3 3
+    COND_EQUAL 4 4
+    COND_EQUAL 5 5
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=4 dy=-108   # EoS MovePositionMark to Position<'m0', 34.5, 19.5>
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PARTNER
-    JUMP_LABEL 3000
-  LABEL 3003
-    # TODO eos: SetAnimation<actor ACTOR_PLAYER>(71); (no such Red animation id)
-    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    JUMP_LABEL 0
+  LABEL 3
+    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
+    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
     AWAIT_CUE_COND 65 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3004
+    JUMP_LABEL 0
+  LABEL 4
     SELECT_ANIMATION 2
-    JUMP_LABEL 3000
-  LABEL 3005
+    JUMP_LABEL 0
+  LABEL 5
     WALK_RELATIVE speed=256 dx=-12 dy=-64   # EoS MovePositionMark to Position<'m2', 33, 11.5>
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
@@ -125,33 +124,33 @@ script g0_s0_partner   # EoS actor ATTENDANT1, layer 0
     SELECT_ANIMATION 2
     UPDATE_NAME kind=ACTOR_SELF who=PARTNER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
-  LABEL 3000
+  LABEL 0
     AWAIT_CUE 66
-    COND_EQUAL 1 3001
-    COND_EQUAL 2 3002
-    COND_EQUAL 3 3003
-    COND_EQUAL 4 3004
-    COND_EQUAL 5 3005
-    JUMP_LABEL 3000
-  LABEL 3001
+    COND_EQUAL 1 1
+    COND_EQUAL 2 2
+    COND_EQUAL 3 3
+    COND_EQUAL 4 4
+    COND_EQUAL 5 5
+    JUMP_LABEL 0
+  LABEL 1
     WALK_RELATIVE speed=256 dx=0 dy=-92   # EoS MovePositionMark to Position<'m1', 31, 19.5>
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3002
+    JUMP_LABEL 0
+  LABEL 2
     ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3003
-    # TODO eos: SetAnimation<actor ACTOR_ATTENDANT1>(71); (no such Red animation id)
-    STOP_ANIMATION_ON_CURRENT_FRAME   # EoS WaitAnimation
+    JUMP_LABEL 0
+  LABEL 3
+    SELECT_ANIMATION 2   # TODO anim: EoS SetAnimation(71) is SELECT_ANIMATION 47 once the hero and partner have EoS ground groups (ch2-heroanims)
+    WAIT 30   # TODO anim: EoS WaitAnimation (STOP_ANIMATION_ON_CURRENT_FRAME once the animation is there)
     AWAIT_CUE_COND 67 0   # done: the station waits for this
-    JUMP_LABEL 3000
-  LABEL 3004
+    JUMP_LABEL 0
+  LABEL 4
     SELECT_ANIMATION 2
-    JUMP_LABEL 3000
-  LABEL 3005
+    JUMP_LABEL 0
+  LABEL 5
     WALK_RELATIVE speed=256 dx=16 dy=-64   # EoS MovePositionMark to Position<'m3', 33, 11.5>
-    JUMP_LABEL 3000
+    JUMP_LABEL 0
 end
 
 actors g0_s0_lives
@@ -190,30 +189,31 @@ script g1_s0_station control=EVENT_CONTROL type=SCRIPT_TYPE_07
     ALERT_CUE 66   # -> PARTNER
     WAIT 20
     FADE_OUT wait=TRUE frames=30
-    # TODO eos: switch ( scn($SCENARIO_MAIN)[1] ) { (the first case is taken)
-    JUMP_LABEL 1002
-  LABEL 1002
+    CJUMP_SCENARIO_1 SCENARIO_MAIN   # EoS switch ( scn($SCENARIO_MAIN)[1] )
+    COND_EQUAL 3 0
+    COND_EQUAL 4 3
+    JUMP_LABEL 4
   LABEL 0
+  LABEL 1
     SCENARIO_CALC SCENARIO_MAIN 3 4   # EoS scenario numbers
   LABEL 2
-    NEXT_DUNGEON frames=30 dungeon=SKY_DRENCHED_BLUFF   # EoS main_EnterDungeon(3)
-    # TODO eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-    # TODO eos: main_EnterDungeon(-1, 0);
+    NEXT_DUNGEON frames=30 dungeon=THUNDERWAVE_CAVE   # EoS main_EnterDungeon(3)
+    # eos: switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) (EoS's team set-up before a dungeon: Red's own runs)
+    NEXT_DUNGEON frames=30 dungeon=THUNDERWAVE_CAVE   # EoS main_EnterDungeon(-1)
     HALT
     RET
-  LABEL 1003
+  LABEL 3
     SCENARIO_CALC SCENARIO_MAIN 3 5   # EoS scenario numbers
     JUMP_LABEL 2
-  LABEL 1004
+  LABEL 4
     JUMP_LABEL 2
-  LABEL 1001
+  LABEL 5
     RET
 end
 
 script g1_s0_player   # EoS actor PLAYER, layer 0
     DEBUGINFO
     SELECT_ANIMATION 2
-    UPDATE_NAME kind=ACTOR_SELF who=PLAYER id=0x0
     CLEAR_OBJ_FLAGS INTERACT_MASK   # scripted: no collision
     AWAIT_CUE 64
     WALK_RELATIVE speed=256 dx=4 dy=-108   # EoS MovePositionMark to Position<'m0', 34.5, 19.5>
