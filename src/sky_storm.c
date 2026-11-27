@@ -29,6 +29,7 @@
 #include "globaldata.h"
 #include "code_809D148.h"
 #include "cpu.h"
+#include "memory.h"
 #include "palette_fade_util.h"
 #include "sky_story.h"
 #include "sprite.h"
@@ -117,8 +118,20 @@ static void LoadBoltPalette(void)
     }
 }
 
+/* The bolt's OBJ tiles hold the ground emotes (anger mark etc.) in other
+ * scenes: keep them in a heap buffer during the bolt and put them back. */
+#define BOLT_VRAM ((void *)(OBJ_VRAM0 + BOLT_TILE_NUM * 32))
+#define BOLT_VRAM_SIZE (2 * SKY_BOLT_FRAME_TILES_MAX * 32)
+static EWRAM_DATA u32 *sSavedObjTiles = NULL;
+
 void SkyStorm_StartBolt(void)
 {
+    if (sSavedObjTiles == NULL) {
+        sSavedObjTiles = MemoryAlloc(BOLT_VRAM_SIZE, MEMALLOC_GROUP_0);
+        if (sSavedObjTiles == NULL)
+            return; /* no room to keep the emotes: no bolt */
+        CpuFastCopy(BOLT_VRAM, sSavedObjTiles, BOLT_VRAM_SIZE);
+    }
     sBoltActive = TRUE;
     sBoltArmed = TRUE;
     sBoltStep = 0;
@@ -132,6 +145,11 @@ void SkyStorm_Stop(void)
 
     if (sBoltActive && sBoltFrame != 0)
         SetCloudsLit(FALSE);
+    if (sSavedObjTiles != NULL) {
+        CpuFastCopy(sSavedObjTiles, BOLT_VRAM, BOLT_VRAM_SIZE);
+        MemoryFree(sSavedObjTiles);
+        sSavedObjTiles = NULL;
+    }
     if (sObjPalSaved) {
         for (i = 0; i < 16; i++)
             sub_8003810(BOLT_PAL_BASE + i, sSavedObjPal[i]);

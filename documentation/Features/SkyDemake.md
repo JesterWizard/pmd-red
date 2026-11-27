@@ -309,7 +309,9 @@ frame's tiles (up to 201) are uploaded into whichever of two VRAM slots
 (OBJ tiles 0x100–0x292) the displayed OAM does not use; OBJ palette 15. OBJ
 palette 15 is the text arrow's, the emotes' and the dungeon map dot's in
 other scenes, so `sky_storm.c` saves it before the bolt and puts it back when
-the bolt ends. The
+the bolt ends. The same goes for OBJ tiles 0x100–0x292, which hold the
+ground emotes (the anger mark etc.): they are kept in a heap buffer during
+the bolt (no bolt if the heap has no room) and restored after it. The
 bolt's foot is behind the waves (OBJ priority 3 below map row 160), as in
 EoS. `SKY_MAP_PAL_RESTART` restarts the map's palette animation at F−7 so
 the GBA's sky flashes on the same frames as EoS's; measured on the GBA, the

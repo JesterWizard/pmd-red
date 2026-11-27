@@ -144,3 +144,19 @@ def hero_named_ground(t):
     name = tail.split("?")[0].strip()
     expect(name, f"empty name: '{f.text[:60]}'")
     return f"'So you're named {name}?'"
+
+
+@check("divide", "Ground emote tiles survive the storm bolt (OBJ tiles 0x100.. restored, anger mark clean)")
+def emote_tiles_restored(t):
+    """The stormy sea's bolt streams its frames into OBJ tiles 0x100..0x292,
+    where the ground emotes (anger mark, ...) live; src/sky_storm.c keeps
+    them in a heap buffer and puts them back when the bolt ends."""
+    base, size = 0x06010000 + 0x100 * 32, 2 * 201 * 32
+    f = yield from t.wait(lambda f: t.game.map_name(f) == "MAP_SKY_STORM_WAVES", "the stormy sea")
+    before = f.read(base, size)
+    f = yield from t.wait(lambda f: t.game.map_name(f) == "MAP_SKY_GUILD_DUSK"
+                          and dialogue_ready(t.game, f), "the first guild dialogue")
+    after = f.read(base, size)
+    diff = sum(1 for a, b in zip(before, after) if a != b)
+    expect(diff == 0, f"{diff} bytes of OBJ tiles 0x100..0x292 differ after the storm (bolt frames left behind)")
+    return "OBJ tiles 0x100..0x292 identical before and after the storm"
