@@ -260,6 +260,11 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
         gDungeon->unk0 = 0;
         if (!r6) {
             gDungeon->unk644.unk3C = GenerateDungeonRNGSeed();
+#ifdef DEBUG_BOOT_SEED
+            /* Test hook (make DEBUG_BOOT_SEED=n): every floor is generated
+             * from this seed, so a test ROM always gets the same layout. */
+            gDungeon->unk644.unk3C = DEBUG_BOOT_SEED;
+#endif
             gDungeon->unk644.unk24 = 10;
             InitDungeonRNG(gDungeon->unk644.unk3C);
         }

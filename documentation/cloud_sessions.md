@@ -192,6 +192,12 @@ through the window you want to measure. The window runs from trace frame
 FROM to trace frame TO, which is TO − FROM emulated frames. The `w0` value
 on the FROM line is the baseline. Lag frames = (TO − FROM) − (w0 at TO − w0 at FROM).
 
+For CPU load and a profile (which functions the cycles go to), use
+`build/tools/mgba_rpc`'s `prof` and `profdump` commands; see "Profiling" in
+[`documentation/Features/SkyDemake.md`](Features/SkyDemake.md#testing). `make
+DEBUG_BOOT_SEED=<n>` fixes the dungeon floor, so two builds can be compared on
+the same layout.
+
 ## Reaching a map directly (DEBUG_BOOT_MAP)
 
 `make DEBUG_BOOT_MAP=MAP_xxx` builds a test ROM for one map. It is a hook in

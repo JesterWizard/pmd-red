@@ -17,6 +17,10 @@ void CopyDungeonMapToVram(void);
 void FlashLeaderIcon(void);
 void ResetMapPlayerDotFrames(void);
 void UpdateMinimap(void);
+#ifdef SKY_STORY
+void UpdateMinimapSoon(void);
+void UpdateMinimapStep(void);
+#endif
 void UpdateBgTilemapForDungeonMap(bool8 a0);
 void TryResetDungeonMapTilesScheduledForCopy(void);
 

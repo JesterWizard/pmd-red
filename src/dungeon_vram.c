@@ -171,6 +171,9 @@ static void sub_803E490(u32 unused)
 {
     sUnknown_202EDD4++;
     xxx_draw_string_80524F0();
+#ifdef SKY_STORY
+    UpdateMinimapStep();
+#endif
     sub_8085F78();
     UpdateCamera(1);
 
@@ -639,7 +642,11 @@ void sub_803EAF0(u32 kind, u8 *name)
             sub_803EC94();
             ShowWindows(NULL, TRUE, TRUE);
             if (gUnknown_203B40C != 0) {
+#ifdef SKY_STORY
+                UpdateMinimapSoon(); // over the next frames: no freeze
+#else
                 UpdateMinimap();
+#endif
                 UpdateBgTilemapForDungeonMap(FALSE);
             }
             break;

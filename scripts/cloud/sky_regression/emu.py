@@ -16,6 +16,8 @@ KEYS = {
     "UP": 64, "DOWN": 128, "R": 256, "L": 512,
 }
 
+FRAME_CYCLES = 280896  # CPU cycles in one video frame
+
 IO = 0x04000000
 PAL = 0x05000000
 VRAM = 0x06000000
@@ -68,6 +70,17 @@ class Emu:
         self.frame = int(self._cmd(f"run {n} {keymask(keys)}"))
         return self.frame
 
+    def prof(self, n=1, keys=0):
+        """run(), measuring CPU load: returns the cycles the CPU was busy (a
+        frame is FRAME_CYCLES) and adds them to mgba_rpc's profile."""
+        frame, busy, _, _ = (int(v) for v in self._cmd(f"prof {n} {keymask(keys)}").split())
+        self.frame = frame
+        return busy
+
+    def profdump(self, path):
+        """Write the profile since the last dump (ADDR CYCLES lines) and clear it."""
+        self._cmd(f"profdump {path}")
+
     def read(self, addr, n):
         return self._data(f"read {addr:#x} {n}")
 
@@ -109,6 +122,7 @@ class Frame:
         self.syms = syms
         self.game = game  # GameInfo: decoders shared by the checks
         self.n = n
+        self.busy = None  # CPU cycles this frame was busy, when the run measures load (Run.profile)
         self._cache = {}
 
     # Raw memory --------------------------------------------------------------
