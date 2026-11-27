@@ -12,6 +12,7 @@
 #include "text_1.h"
 #ifdef SKY_STORY
 #include "sky_story.h"
+#include "sky_boss_wipe.h"
 #endif
 
 extern void (gUnknown_202DBB8)(void);
@@ -477,4 +478,9 @@ static void UpdateBGControlRegisters(void)
         REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(15) | BGCNT_CHARBASE(2) | BGCNT_WRAP;
     }
     REG_BLDCNT = gBldCnt;
+#ifdef SKY_STORY
+    /* EoS's boss-battle transition (src/sky_boss_wipe.c). */
+    if (gSkyBossWipeActive)
+        SkyBossWipe_UpdateRegs();
+#endif
 }

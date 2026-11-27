@@ -515,8 +515,9 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
   `CUTSCENE_BEACH_CAVE_PIT`
   ([`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c)):
   m01a0401 (first visit) or m01a0501 (re-fight) dialogue and sounds, the
-  camera shows the thieves, EoS's two white flashes and boss wipe
-  (`PitBossWipe`), boss music, and the dungeon ends once both are down. No cutscene
+  camera shows the thieves, EoS's boss-battle transition (two white flashes,
+  the speed streaks, a white-out; see [Boss battle transition](#boss-battle-transition)),
+  boss music, and the dungeon ends once both are down. No cutscene
   flags are touched, so Sinister Woods is unaffected.
 - Later visits to Beach Cave have no Pit.
 - Bosses grant no EXP, as in EoS: `gSkyBossExp` (src/sky_story.c, default
@@ -542,6 +543,91 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
   not Red's 45).
 - The sky build mixes 8 DirectSound channels instead of 12 (`src/m4a.c`),
   which cuts the frames the dungeon falls behind in Beach Cave by about a third.
+
+### Boss battle transition
+
+EoS starts every boss fight with the same transition: 71 scripts call
+`CallCommon(CORO_BOSS_WIPE_FUNC)` (Beach Cave Pit to the postgame, plus two
+debug scripts), and none run its effect any other way. m01a0401 / m01a0501 run:
+
+```
+message_Close(); bgm_Stop();
+se_Play(5143); screen_WhiteOut(1, 2); Wait(2); screen_FadeIn(1, 2); Wait(10);
+se_Play(5143); screen_WhiteOut(1, 2); Wait(2); screen_FadeIn(1, 2); WaitSe(5143);
+CallCommon(CORO_BOSS_WIPE_FUNC);   // unionall.ssb:
+    se_Play(5136); supervision_SpecialActing(13, 0, 0); Wait(60);
+    screen_WhiteOutAll(1, 30); supervision_SpecialActing(3, 0, 0);
+main_EnterDungeon(2, 30);          // Beach Cave Pit's fight
+```
+
+`SpecialActing(13)` draws blue-white speed streaks with the 3D engine (main
+BG0, over the sprites; DeSmuME with every other layer off shows them alone):
+six 256×64 strips of 4-pixel-tall pills (16, 33, 48, 80 and 110 pixels long,
+white core, blue rim, 15 colours), repeated every 256 pixels, centred on
+rows 28, 36, 92, 100, 156 and 164 of the 256×192 screen. The strips at 28 /
+92 / 156 draw over the ones at 36 / 100 / 164. From EoS's RAM (the strip
+structs at 0x020F4DE4, 40 bytes each, x and y in 20.12): every strip moves
+4 px per frame (28, 100, 156 left; 36, 92, 164 right); after 32 (y 100), 36
+(36, 164), 40 (92, 156) or 44 (28) frames it gains 1/4 px per frame up to
+9 px per frame. Each strip opens vertically out of its centre line over the
+32 frames before that (one-pixel lines that thicken and spread), and all of
+them fade in together, polygon alpha +1/31 per frame. The flashes and the
+white-out are master brightness.
+
+Measured frame by frame in DeSmuME (s = frames from the first `se_Play(5143)`;
+the GBA matches every step):
+
+| s | EoS |
+|---|---|
+| −3 | dialogue box gone (`message_Close`), `bgm_Stop` |
+| 0 | `se_Play(5143)` |
+| 1, 2–4, 5, 6 | brightness 8/16, 16/16, 8/16, normal |
+| 16 | `se_Play(5143)`; 17–21 the same flash |
+| 49 | `se_Play(5136)` |
+| 60 | `SpecialActing(13)`'s first frame (strips closed, alpha 0) |
+| 62 | streaks visible, alpha 1/31; full at 92 |
+| 92, 96, 100, 104 | strips 100, 36 / 164, 92 / 156, 28 fully open; then they speed up |
+| 123–152 | white-out: brightness 1,1,2,2,3,3,…,7,8,8,9,…,15,16,16 |
+| 151–289 | white (EoS loads the dungeon); Boss Battle! starts at 286 |
+| 290–305 | fade-in on the fight, brightness 15 → 0 |
+
+The GBA ([`src/sky_boss_wipe.c`](../../src/sky_boss_wipe.c), called by
+`PitBossWipe` in
+[`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c)
+for the first fight and the re-fight) runs the same timeline in the dungeon
+frame loop:
+
+- Flashes, white-out, white hold and fade-in are `BLDY` brightness on every
+  layer (`BLDCNT` lighten), with EoS's levels frame for frame. SEs 526 / 527
+  play at s = 0, 16 and 49. The camera returns to the leader behind the white.
+- The streaks are BG1 (strips 28 / 92 / 156) and BG2 (36 / 100 / 164), both
+  priority 0 over the sprites, sharing one map. EoS's textures, cropped to
+  the rows the GBA shows, are packed into 100 unique 256-pixel rows (279
+  tiles, BG palette 12). An HBlank DMA (DMA3) writes BG1 / BG2 HOFS and VOFS
+  each line: HOFS is the strip's x, VOFS picks the texture row for that line,
+  which is how the strips open from their centre lines. The strips move with
+  EoS's own steps (4 px, +1/4 px per frame, 9 px cap). The fade-in is
+  `BLDALPHA` (EVA = alpha × 16 / 31).
+- The GBA shows the middle 240×160 of EoS's 256×192 screen (rows 16–175,
+  columns 8–247).
+- The streak tiles and map borrow the dungeon's text-window tiles at VRAM
+  0x2000–0x4DFF (blank once the dialogue box closes; BG0 is hidden while they
+  hold streaks); the two HBlank tables sit after them and in BG2's empty map
+  at 0x7000 (the dungeon heap has no room for them, and EWRAM has 3.7 KB
+  left). All of it is cleared again behind the white. If that VRAM is not
+  blank, the transition runs without the streaks.
+- `VBlank_CB` ([`src/cpu.c`](../../src/cpu.c)) and
+  `UpdateBGControlRegisters` ([`src/reg_control.c`](../../src/reg_control.c))
+  hand the blend, window and BG1 / BG2 registers to the transition while
+  `gSkyBossWipeActive` is set.
+- The pills are rebuilt from a DeSmuME capture by
+  [`tools/make_sky_boss_wipe.py`](../../tools/make_sky_boss_wipe.py)
+  (`capture` from a savestate before the fight, then `build`) into
+  [`src/data/sky_boss_wipe.h`](../../src/data/sky_boss_wipe.h) (12 KB of
+  ROM).
+
+Against the capture, once the strips are open, 95–97% of the streak pixels
+overlap EoS's frame for frame.
 
 ---
 
@@ -914,7 +1000,7 @@ SkyTemple; `CallCommon` / `ExecuteCommon` coroutines checked in
 | | partner flinches ("Urk!"): no sound | 464 | effect only |
 | | 8971 with the angry jump between "Give me back..." and "That's my personal treasure!" | none | 457 (line split) |
 | | 8968 + shock "Whaaaat?!" | 464 | 463 |
-| | `bgm_Stop`, 5143 ×2 with white flashes, `CORO_BOSS_WIPE_FUNC` (5136) | music switched straight to Boss Battle | music stops, 526 ×2 with flashes, 527 and a white-out (`PitBossWipe`) |
+| | `bgm_Stop`, 5143 ×2 with white flashes, `CORO_BOSS_WIPE_FUNC` (5136) | music switched straight to Boss Battle | music stops, 526 ×2 with flashes, 527 with EoS's speed streaks and white-out ([Boss battle transition](#boss-battle-transition)) |
 | m01a0501 (re-fight) | 8962 `HATENA_02` "Oh... What?" | 464 | 469 |
 | | 8964 on both thieves | none | 465 + "!" (line split) |
 | | 8972 Koffing sweats | none | 470 |
@@ -1458,10 +1544,11 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 | Sky dungeon archive (no Red tilesets / talk files) | [`tools/make_sky_dungeon_archive.py`](../../tools/make_sky_dungeon_archive.py) (run by the [`Makefile`](../../Makefile) for `STORY=sky`) |
 | Dungeon talk (EoS lines and rules) | [`src/sky_dungeon_talk.c`](../../src/sky_dungeon_talk.c), [`src/data/sky_dungeon_talk.h`](../../src/data/sky_dungeon_talk.h), [`src/dungeon_action_handler.c`](../../src/dungeon_action_handler.c), [`src/dungeon_leveling.c`](../../src/dungeon_leveling.c) |
 | Boss cutscene | [`src/dungeon_cutscene_beach_cave.c`](../../src/dungeon_cutscene_beach_cave.c), [`src/dungeon_cutscene.c`](../../src/dungeon_cutscene.c) |
+| Boss battle transition | [`src/sky_boss_wipe.c`](../../src/sky_boss_wipe.c), [`src/data/sky_boss_wipe.h`](../../src/data/sky_boss_wipe.h), hooks in [`src/cpu.c`](../../src/cpu.c) and [`src/reg_control.c`](../../src/reg_control.c) |
 | Gen 4 data / moves / sprites | [`src/data/sky_gen4_data.c`](../../src/data/sky_gen4_data.c), [`src/sky_gen4_moves.c`](../../src/sky_gen4_moves.c), [`src/monster_gfx_sky.c`](../../src/monster_gfx_sky.c), [`src/sprite.c`](../../src/sprite.c) (animation fallback) |
 | Dialogue box layout, word wrap (`SkyWrapDialogueText`) | [`src/string_format.c`](../../src/string_format.c), [`src/text_2.c`](../../src/text_2.c) |
 | Dungeon menus (main menu, Items, Team, Moves, Others, Rest), frame and cursor | [`src/dungeon_main.c`](../../src/dungeon_main.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/dungeon_menu_items.c`](../../src/dungeon_menu_items.c), [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c), [`src/dungeon_menu_moves.c`](../../src/dungeon_menu_moves.c), [`src/dungeon_menu_others.c`](../../src/dungeon_menu_others.c), [`src/dungeon_submenu.c`](../../src/dungeon_submenu.c), [`src/ui_style.c`](../../src/ui_style.c), [`src/menu_input.c`](../../src/menu_input.c) |
-| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py` |
+| Converters (need an EoS ROM) | `tools/convert_eos_ground_map.py`, `tools/make_sky_storm_waves_map.py`, `tools/make_sky_cutaways.py`, `tools/make_sky_cutaway_scrolls.py`, `tools/make_sky_chapter_cards.py`, `tools/make_sky_title_screens.py`, `tools/eos_music/convert_eos_bgm.py`, `tools/eos_music/convert_eos_se.py`, `tools/convert_eos_dungeon_tileset.py`, `tools/make_sky_dungeon_talk.py`, `tools/make_sky_gen4_data.py`, `tools/make_sky_gen4_portraits.py`, `tools/convert_eos_wan_to_ax.py`, `tools/make_sky_boss_wipe.py` (DeSmuME) |
 
 ---
 
@@ -1496,6 +1583,14 @@ Winning the boss fight by mashing A needs a strong team; for that test set
   the first line of Red's long description, not EoS's short one; EoS's
   Others > Window and Map have no screens of their own.
 - Old saves need a new game in the sky build.
+- Boss transition: the GBA shows the middle 240×160 of EoS's screen; the
+  strips' x can differ by a pixel from EoS's (the DS rasteriser rounds their
+  fractional x differently); while they open, EoS thickens and spreads the
+  pills a little differently from the GBA's plain vertical scale (65–80%
+  pixel overlap as the last strips open, 95–97% once open); where streaks of
+  the two layers overlap during the fade-in, the top one is opaque. Red's
+  dialogue box closes about 18 frames before the first flash (EoS: 3), from
+  the dialogue's own tail.
 - Test hooks: `DEBUG_BOOT_STARTER=<id> DEBUG_BOOT_PARTNER=<id>` pick the team
   `DEBUG_BOOT_EVENT` creates.
 - To save ROM space, the sky build leaves out Red-only art EoS has no use

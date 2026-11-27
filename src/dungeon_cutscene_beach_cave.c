@@ -45,6 +45,7 @@
 #include "constants/fixed_rooms.h"
 #include "dungeon_cutscene.h"
 #include "sky_story.h"
+#include "sky_boss_wipe.h"
 #include "weather.h"
 #include "event_flag.h"
 #include "constants/event_flag.h"
@@ -188,7 +189,7 @@ static EWRAM_DATA bool8 sBeachCavePitRefight = FALSE;
 
 static void SetUpBeachCavePit(void);
 static void PitEmote(Entity *entity, u16 soundEffect);
-static void PitBossWipe(void);
+static void PitBossWipe(Entity *leaderEntity);
 
 /* Called from sub_80847D4 before the fixed-room cutscene lookup. */
 bool8 SkyStory_TrySetBeachCavePitCutscene(void)
@@ -264,10 +265,7 @@ static void BeachCavePitRefightDialogue(Entity *leaderEntity, Entity *partnerEnt
     DisplayDungeonDialogue_Async(&sRe4);
     DisplayDungeonDialogue_Async(&sRe5);
     DisplayDungeonDialogue_Async(&sRe6);
-    DungeonWaitFrames_Async(10, 0x46);
-    PitBossWipe();
-    DungeonStartNewBGM(MUS_SKY_BOSS_BATTLE);
-    ShiftCameraToPosition(&leaderEntity->pixelPos, 0x10);
+    PitBossWipe(leaderEntity);
 }
 
 void SkyStory_BeachCavePitPreFightDialogue(void)
@@ -320,10 +318,7 @@ void SkyStory_BeachCavePitPreFightDialogue(void)
     DisplayDungeonDialogue_Async(&sPit7);
     DungeonWaitFrames_Async(10, 0x46);
     DisplayDungeonDialogue_Async(&sPit8);
-    DungeonWaitFrames_Async(10, 0x46);
-    PitBossWipe();
-    DungeonStartNewBGM(MUS_SKY_BOSS_BATTLE);
-    ShiftCameraToPosition(&leaderEntity->pixelPos, 0x10);
+    PitBossWipe(leaderEntity);
 }
 
 /* The "!" over a cutscene actor (SpriteShockEffect's effect) with an EoS
@@ -336,36 +331,20 @@ static void PitEmote(Entity *entity, u16 soundEffect)
         sub_80861F8(323, entity, FALSE);
 }
 
-static void PitWhite(s32 level)
+/* EoS m01a0401 / m01a0501 before the fight: bgm_Stop(), two white flashes with
+ * se_Play(5143), CORO_BOSS_WIPE_FUNC (se_Play(5136), the speed streaks, a
+ * 30-frame white-out; src/sky_boss_wipe.c), then main_EnterDungeon: the
+ * screen stays white for 136 frames, Boss Battle! starts 4 frames before
+ * the 16-frame fade-in on the fight. The camera goes back to the leader
+ * behind the white. */
+static void PitBossWipe(Entity *leaderEntity)
 {
-    SetDungeonBGColorRGB(level, level, level, TRUE, FALSE);
-    DungeonRunFrameActions(0x46);
-}
-
-/* EoS m01a0401 / m01a0501 before the fight: bgm_Stop(); two white flashes with
- * se_Play(5143) (SE_NUM_EVENT_EFF_FLASH_HEAVY), WaitSe; then
- * CORO_BOSS_WIPE_FUNC: se_Play(5136) (SE_NUM_EVENT_EFF_WIPE_01), 60 frames,
- * a 30-frame white-out; the fight fades in from it. */
-static void PitBossWipe(void)
-{
-    s32 i, n;
-
-    DungeonStopBGM();
-    for (n = 0; n < 2; n++) {
-        PlaySoundEffect(SE_SKY_FLASH_HEAVY);
-        PitWhite(255);
-        DungeonWaitFrames_Async(2, 0x46);
-        PitWhite(128);
-        PitWhite(0);
-        DungeonWaitFrames_Async(10, 0x46);
-    }
-    DungeonWaitFrames_Async(30, 0x46); /* WaitSe(5143) */
-    PlaySoundEffect(SE_SKY_BOSS_WIPE);
-    DungeonWaitFrames_Async(60, 0x46);
-    for (i = 0; i <= 30; i++)
-        PitWhite(i * 255 / 30);
-    for (i = 30; i >= 0; i--)
-        PitWhite(i * 255 / 30);
+    SkyBossWipe_Start();
+    ShiftCameraToPosition(&leaderEntity->pixelPos, 0x10); /* 17 frames */
+    SkyBossWipe_HoldWhite(136 - 17 - 4);
+    DungeonStartNewBGM(MUS_SKY_BOSS_BATTLE);
+    SkyBossWipe_HoldWhite(4);
+    SkyBossWipe_FadeIn();
 }
 
 /* The fight ends when both thieves are down. */

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "sky_story.h"
+#include "sky_boss_wipe.h"
 #include "bg_control.h"
 #include "window_buffer.h"
 #include "cpu.h"
@@ -104,4 +105,9 @@ void VBlank_CB(void)
         REG_WIN0V = 0;
         REG_WIN1V = 0;
     }
+#ifdef SKY_STORY
+    /* EoS's boss-battle transition (src/sky_boss_wipe.c). */
+    if (gSkyBossWipeActive)
+        SkyBossWipe_VBlank();
+#endif
 }
