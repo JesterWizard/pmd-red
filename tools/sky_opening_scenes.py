@@ -127,16 +127,30 @@ class Scene:
             self.capfade[key] = best_fade(obs, chan(pal))[:2]
         return self.capfade[key]
 
-    def unfade(self, img, i, eng, y0, y1):
-        """The capture rows y0..y1 of frame i without the fade (unknown -> 0)."""
+    def blend_of(self, i, eng, layer):
+        """(eva, evb) when EoS alpha-blends this BG layer over what is behind
+        it at frame i (BLDCNT: first target, alpha mode), else None."""
+        cnt, alpha, _ = self.rec.states[i][eng]["bld"]
+        if (cnt >> 6) & 3 == 1 and cnt >> layer & 1:
+            return min(16, alpha & 31), min(16, (alpha >> 8) & 31)
+        return None
+
+    def unfade(self, img, i, eng, y0, y1, layer=None):
+        """The capture rows y0..y1 of frame i without the fade (unknown -> 0).
+        A blended layer, captured alone, comes out as colour * EVA / 16 over
+        the black backdrop: that is undone the same way."""
         mode, k = self.capture_fade(i, eng, y0, y1)
+        bl = self.blend_of(i, eng, layer) if layer is not None else None
+        blended = k == 0 and bl is not None and bl[0] < 16
+        if blended:
+            k = 16 - bl[0]
         if k == 0:
             return img.copy()
         if k == 16:
             return np.zeros_like(img)
-        pal = np.unique(self.rec.pals(i, eng))
+        pal = np.unique(self.rec.pals(i, eng)[:256] if blended else self.rec.pals(i, eng))
         pal = pal[pal != 0]
-        faded = join(fade(chan(pal), mode, k))
+        faded = join((chan(pal) * bl[0]) >> 4) if blended else join(fade(chan(pal), mode, k))
         lut = {}
         for f, o in zip(faded.tolist(), pal.tolist()):
             lut.setdefault(f, o)
@@ -151,7 +165,7 @@ class Scene:
         for eng, a, b in screens(region):
             part = np.zeros((b - a, 256), dtype=np.uint16)
             for p in sorted(layers, key=lambda l: l == 3):  # BG2 in front of BG3
-                img = self.unfade(self.rec.layers[f"bg{p}"][i, a:b], i, eng, a, b)
+                img = self.unfade(self.rec.layers[f"bg{p}"][i, a:b], i, eng, a, b, layer=p)
                 part = np.where(part == 0, img, part)
             out[a - y0:b - y0] = part
         return out
@@ -311,7 +325,7 @@ def stitch(scene: Scene, images, cams, region, faded, frames):
         s = src[Y:Y + rows, X:X + 256]
         cv = covered[Y:Y + rows, X:X + 256]
         put = (w == 0) & (img != 0)
-        if faded[i]:
+        if faded[i] >= 100:
             put &= ~cv
         w[put] = img[put]
         s[put] = i
@@ -504,12 +518,42 @@ def build_layer(scene: Scene, layers, region, max_versions=1, thresh=0.03, lock=
     n = scene.rec.n
     images = [scene.layer_image(i, layers, region) for i in range(n)]
     idx = [scene.index_image(i, im, region) for i, im in enumerate(images)]
+    # 0: the capture shows the palette's colours; else how much worse it is
+    # (stitch pastes the best frames first): a blended layer comes darkened
+    # by its EVA, several colours falling on one; a fade says nothing sure
     faded = []
     for i in range(n):
-        f = False
+        f = 0
         for eng, a, b in screens(region):
-            f |= scene.capture_fade(i, eng, a, b)[1] != 0
+            if scene.capture_fade(i, eng, a, b)[1] != 0:
+                f = 100
+            for p in layers:
+                bl = scene.blend_of(i, eng, p)
+                if bl and bl[0] < 16:
+                    f = max(f, 17 - bl[0])
         faded.append(f)
+    if max_versions == "frames":
+        # a still layer whose picture changes (light rays growing): a world
+        # per different picture (at most 24, evenly picked); a frame whose
+        # picture cannot be read (a white-out over it) keeps the one before
+        seen, order, version, v = {}, [], [], 0
+        y0, y1 = REGION[region]
+        for i in range(n):
+            # (a capture with no transparent pixel left is the white-out)
+            whited = all(scene.rec.layers[f"bg{p}"][i, y0:y1].all() for p in layers)
+            if images[i].any() and not whited:
+                key = images[i].tobytes()
+                if key not in seen:
+                    seen[key] = len(order)
+                    order.append(i)
+                v = seen[key]
+            version.append(v)
+        step = (len(order) + 23) // 24 if order else 1
+        kept = order[::step] or [0]
+        version = [min(v // step, len(kept) - 1) for v in version]
+        cams = [(0, 0)] * n
+        worlds = [stitch(scene, images, cams, region, faded, [i]) for i in kept]
+        return Layer(worlds, version, cams, region), images
     cuts = []
     if lock == "rows":
         cams = register_rows(images, skip=[i for i in range(n) if faded[i]])
@@ -581,11 +625,11 @@ def _period(get, n, m, tol=0.1):
     return best
 
 
-def reduce_period(world: World):
+def reduce_period(world: World, axes="xy"):
     """A layer that scrolls by itself (EoS's back-scroll) repeats: keep one
-    period. Returns (world, wrap_x, wrap_y)."""
+    period, along the axes given. Returns (world, wrap_x, wrap_y)."""
     wrap_x = wrap_y = False
-    if world.w > 40:
+    if world.w > 40 and "x" in axes:
         p = _period(lambda i, j: world.tiles[j][i], world.w, world.h)
         if p:
             for y in range(world.h):
@@ -605,7 +649,7 @@ def reduce_period(world: World):
                     if col[y] is None:
                         j = min(known, key=lambda k: abs(k - y))
                         world.tiles[y][x] = col[j]
-    if world.h > 40:
+    if world.h > 40 and "y" in axes:
         p = _period(lambda i, j: world.tiles[i][j], world.h, world.w)
         if p:
             world.tiles = [[next((world.tiles[y2][x] for y2 in range(y, world.h, p) if world.tiles[y2][x] is not None), None)
@@ -703,23 +747,42 @@ def obj_canvas(eng, a0, a1):
     return x, y + (192 if eng == "A" else 0)
 
 
-def ext_colours(rec: Rec, i, eng, a0, a1, data, table):
-    """The colours of an 8bpp (extended palette) entry, from the OBJ picture:
-    table[value] = 15-bit colour."""
+def ext_votes(rec: Rec, i, eng, a0, a1, data, votes):
+    """Counts, per value of an 8bpp (extended palette) entry, the colours the
+    OBJ picture shows at its pixels: votes[value][15-bit colour] += 1."""
     w, h = OBJ_W[a0 >> 14][a1 >> 14], OBJ_H[a0 >> 14][a1 >> 14]
     x, y = obj_canvas(eng, a0, a1)
     pic = rec.layers["obj"][i]
     hf, vf = (a1 >> 12) & 1, (a1 >> 13) & 1
+    y_lo, y_hi = (192, 384) if eng == "A" else (0, 192)
     for ty in range(h):
+        Y = y + ty
+        if not y_lo <= Y < y_hi:
+            continue
         for tx in range(w):
-            sx, sy = (w - 1 - tx if hf else tx), (h - 1 - ty if vf else ty)
-            tile = (sy // 8) * (w // 8) + sx // 8
-            v = data[tile * 64 + (sy % 8) * 8 + sx % 8]
-            if v == 0 or v in table:
+            X = x + tx
+            if not 0 <= X < 256:
                 continue
-            X, Y = x + tx, y + ty
-            if 0 <= X < 256 and 0 <= Y < 384 and pic[Y, X]:
-                table[v] = int(pic[Y, X])
+            sx, sy = (w - 1 - tx if hf else tx), (h - 1 - ty if vf else ty)
+            v = data[((sy // 8) * (w // 8) + sx // 8) * 64 + (sy % 8) * 8 + sx % 8]
+            if v:
+                c = votes.setdefault(v, {})
+                k = int(pic[Y, X])
+                c[k] = c.get(k, 0) + 1
+
+
+def ext_tables_of(rec: Rec, frames):
+    """(engine, palette) -> {value: colour} for the scene's 8bpp entries: the
+    colour most of a value's pixels show over the whole scene. (One frame is
+    not enough: where another sprite stands on a shadow the picture shows
+    that sprite, and a black shadow looks like nothing at all.)"""
+    votes = {}
+    for i in frames:
+        for eng in "AB":
+            for (oi, a0, a1, a2, bk) in rec.states[i][eng]["ents"]:
+                if a0 & 0x2000:
+                    ext_votes(rec, i, eng, a0, a1, rec.blobs[bk], votes.setdefault((eng, a2 >> 12), {}))
+    return {k: {v: max(c, key=c.get) for v, c in tab.items()} for k, tab in votes.items()}
 
 
 def to_4bpp(data, w, h, mapping):
@@ -765,9 +828,19 @@ def convert_scene(cache: Path, cfg):
             continue
         region, dsl = spec[0], spec[1]
         opts = spec[2] if len(spec) > 2 else {}
-        lay, _ = build_layer(sc, dsl, region, max_versions=opts.get("versions", 1),
-                             thresh=opts.get("thresh", 0.03), lock=opts.get("lock"),
-                             find_cuts=opts.get("cuts", False))
+        lay, imgs = build_layer(sc, dsl, region, max_versions=opts.get("versions", 1),
+                                thresh=opts.get("thresh", 0.03), lock=opts.get("lock"),
+                                find_cuts=opts.get("cuts", False))
+        lay.images, lay.ds_layers = imgs, dsl
+        if opts.get("top"):
+            # the layer's picture starts at an edge EoS clips it at (the sea
+            # under Lapras): what scrolls in from above that edge later (out
+            # of the GBA's view) must not show above it earlier
+            i0 = next(i for i in range(rec.n) if imgs[i].any())
+            edge = int(np.nonzero(imgs[i0].any(1))[0][0])
+            for w in lay.worlds:
+                for ty in range(max(0, min(w.h, (lay.cams[i0][1] + edge - w.oy) // 8))):
+                    w.tiles[ty] = [None] * w.w
         opts_of[id(lay)] = opts
         layers.append(lay)
     # BG palette slots: every (engine, palette) the tiles use; DS palette p
@@ -811,7 +884,7 @@ def convert_scene(cache: Path, cfg):
         vers = []
         bank, index = [], {}
         for v in sorted({lay.version[i] for i in range(a, b + 1)}):
-            w, wrap_x, wrap_y = reduce_period(lay.worlds[v]) if opts_of[id(lay)].get("wrap", True) else (lay.worlds[v], False, False)
+            w, wrap_x, wrap_y = reduce_period(lay.worlds[v], opts_of[id(lay)].get("wrap", "xy"))
             mp = world_to_gba(w, slot_of, bank, index)
             vers.append(dict(w=w.w, h=w.h, wrapx=wrap_x, wrapy=wrap_y, map=mp, src=v))
         tiles = b"".join(bank)
@@ -821,16 +894,37 @@ def convert_scene(cache: Path, cfg):
     frames, objs, obj_bank, obj_index = [], [], [], {}
     bg_sets, obj_sets = [], []
     alloc = SlotAlloc()
-    ext_tables = {}
+    # an extra picture over the scene (the logo): OBJs in every frame, first
+    # in the list (in front, and their tiles keep their place in OBJ VRAM)
+    over = cfg.get("overlay")
+    if over:
+        obj_bank.append(over["tiles"])
+    shifts = cfg.get("obj_shift", ())
+    ext_tables = {("X",) + k: tab for k, tab in ext_tables_of(rec, range(a, b + 1)).items()}
     prev_list = None
     max_tiles = 0
     for fi in range(n):
         i = a + fi
         wx, wy = views[fi]
-        fr = dict(x=[0, 0], y=[0, 0], ver=[0, 0])
+        fr = dict(x=[0, 0], y=[0, 0], ver=[0, 0], flags=0, bgblend=None)
+        eng_view = "A" if wy + 80 >= 192 else "B"
         for li, g in enumerate(gl):
             if g is None:
                 continue
+            lay = g["layer"]
+            # EoS shows nothing of this layer in the view (a flash that is
+            # over, light that has not come yet): the stitched world would
+            # show it, so the layer is hidden for this frame
+            part = np.concatenate([rec.layers[f"bg{p}"][i][max(wy, REGION[lay.region][0]):min(wy + GBA_H, REGION[lay.region][1]),
+                                                           wx:wx + GBA_W] for p in lay.ds_layers])
+            if not part.any():
+                fr["flags"] |= 2 << li
+            # EoS blends BG2 over the rest (light rays, haze)
+            if li == 0 and len(lay.ds_layers) == 1:
+                bl = sc.blend_of(i, eng_view, lay.ds_layers[0])
+                if bl and bl != (16, 0):
+                    fr["flags"] |= 1
+                    fr["bgblend"] = bl
             v, x, y = g["layer"].view(i, wx, wy)
             fr["ver"][li] = g["vindex"][v]
             w = g["versions"][fr["ver"][li]]
@@ -855,11 +949,18 @@ def convert_scene(cache: Path, cfg):
             bg_sets.append(key)
         fr["bgpal"] = bg_sets.index(key)
         ents = []
+        if over:
+            for (px, py, tile, pal) in over["pieces"]:
+                ents.append(dict(x=over["x"] + px, y=over["y"] + py, tile=tile, shape=0, size=1, hf=0, vf=0,
+                                 semi=0, prio=0, pk=("L", pal), eng="A", ntiles=4))
         for eng in "AB":
             for (oi, a0, a1, a2, bk) in rec.states[i][eng]["ents"]:
                 x, y = obj_canvas(eng, a0, a1)
                 w, h = OBJ_W[a0 >> 14][a1 >> 14], OBJ_H[a0 >> 14][a1 >> 14]
                 gx, gy = x - wx, y - wy
+                for (x0, y0, x1, y1, dx, dy) in shifts:   # canvas box -> moved on the GBA
+                    if x0 <= x < x1 and y0 <= y < y1:
+                        gx, gy = gx + dx, gy + dy
                 if gx >= GBA_W or gx + w <= 0 or gy >= GBA_H or gy + h <= 0:
                     continue
                 if (eng == "B" and y >= 192) or (eng == "A" and y + h <= 192):
@@ -867,7 +968,6 @@ def convert_scene(cache: Path, cfg):
                 data = rec.blobs[bk]
                 if a0 & 0x2000:
                     pk = ("X", eng, a2 >> 12)
-                    ext_colours(rec, i, eng, a0, a1, data, ext_tables.setdefault(pk, {}))
                     mapping = ext_tables.setdefault(pk + ("map",), {})
                     for v in sorted(set(data) - {0}):
                         if v not in mapping and len(mapping) < 15:
@@ -894,8 +994,10 @@ def convert_scene(cache: Path, cfg):
         for s, pk in enumerate(alloc.slots):
             if pk is None:
                 continue
-            if pk[0] == "X":
-                tab, mapping = ext_tables[pk], ext_tables[pk + ("map",)]
+            if pk[0] == "L":
+                pal, eng = over["pals"][pk[1]], "A"
+            elif pk[0] == "X":
+                tab, mapping = ext_tables.get(pk, {}), ext_tables[pk + ("map",)]
                 pal = [0] * 16
                 for v, ix in mapping.items():
                     pal[ix] = tab.get(v, 0)
@@ -923,7 +1025,9 @@ def convert_scene(cache: Path, cfg):
         fr["count"] = len(lst)
         fr["fadeA"], fr["fadeB"] = display_fade(rec, i, "A"), display_fade(rec, i, "B")
         semi = next((e for e in kept if e["semi"]), None)
-        if semi:
+        if fr["bgblend"]:
+            fr["eva"], fr["evb"] = fr["bgblend"]
+        elif semi:
             ba = rec.states[i][semi["eng"]]["bld"][1]
             fr["eva"], fr["evb"] = min(16, ba & 31), min(16, (ba >> 8) & 31)
         else:
@@ -961,8 +1065,9 @@ def render_gba(conv, fi):
     prio = np.full((GBA_H, GBA_W), 4, dtype=np.int32)
     for li in (1, 0):   # BG3 then BG2
         g = conv["layers"][li]
-        if g is None:
+        if g is None or fr["flags"] & (2 << li):
             continue
+        blend = li == 0 and fr["flags"] & 1
         v = g["versions"][fr["ver"][li]]
         X, Y = fr["x"][li], fr["y"][li]
         for ty in range(GBA_H // 8 + 1):
@@ -994,7 +1099,11 @@ def render_gba(conv, fi):
                     for xx in range(8):
                         sx = px0 + xx
                         if 0 <= sx < GBA_W and pix[yy, xx]:
-                            out[sy, sx] = col[yy, xx]
+                            if blend:
+                                a, b2 = chan(int(col[yy, xx])), chan(int(out[sy, sx]))
+                                out[sy, sx] = int(join(np.minimum(31, (a * fr["eva"] + b2 * fr["evb"]) // 16)))
+                            else:
+                                out[sy, sx] = col[yy, xx]
                             prio[sy, sx] = 2 if li == 0 else 3
     objt = conv["obj_tiles"]
     for (x, y, tile, attr) in reversed(conv["objs"][fr["first"]:fr["first"] + fr["count"]]):

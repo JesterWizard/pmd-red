@@ -1846,7 +1846,7 @@ static const struct ScriptCommand s_script_DEMO_03[] = { /* 0x8125110 */
 #ifdef SKY_STORY
     /* EoS's opening (all of it) and title instead of Red's intro and logo (same line count: #line). */
     SKY_CUTAWAY(SKY_CUTAWAY_OPENING, 0), /* EoS's song plays on; its title has no other */
-    SKY_CUTAWAY(SKY_CUTAWAY_TITLE_SCREEN, 3600),
+    SKY_CUTAWAY(SKY_CUTAWAY_TITLE_SCREEN, 2000),
     UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1), /* as Red's title (gs224 g3): no DEMO_04 */
     BGM_FADEOUT(30),
 #else
@@ -1863,7 +1863,7 @@ static const struct ScriptCommand s_script_DEMO_04[] = { /* 0x8125180 */
     DEBUGINFO_O(1851),
 #ifdef SKY_STORY
     BGM_SWITCH(MUS_SKY_TITLE_THEME),
-    SKY_CUTAWAY(SKY_CUTAWAY_TITLE_SCREEN, 3600),
+    SKY_CUTAWAY(SKY_CUTAWAY_TITLE_SCREEN, 2000),
     BGM_FADEOUT(30),
 #else
     EXECUTE_SUBSTATION(224, 4, 0),

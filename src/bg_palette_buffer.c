@@ -60,6 +60,16 @@ void SetBGPaletteBufferColor(s32 index, u16 *color)
     sBGPaletteBuffer[index] = *color;
 }
 
+#ifdef SKY_STORY
+/* A row of 16 colours to write (0-15 BG, 16-31 OBJ): for whole palette
+ * sets every frame (src/sky_opening.c). */
+u16 *SkyBGPaletteBufferRow(s32 row)
+{
+    sBGPaletteRowDirty[row] = TRUE;
+    return &sBGPaletteBuffer[row * BG_PALETTE_ROW_SIZE];
+}
+#endif
+
 u16 GetBGPaletteBufferColor(s32 index)
 {
     return sBGPaletteBuffer[index];

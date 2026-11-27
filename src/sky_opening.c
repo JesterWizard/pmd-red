@@ -40,6 +40,7 @@
 
 #include "bg_control.h"
 #include "bg_palette_buffer.h"
+#include "code_800C9CC.h"
 #include "cpu.h"
 #include "fullscreen_art.h"
 #include "graphics_memory.h"
@@ -51,6 +52,8 @@
 #include "sprite.h"
 #include "structs/sprite_oam.h"
 #include "text_1.h"
+#include "text_2.h"
+#include "text_3.h"
 #include "window_buffer.h"
 
 struct SkyOpeningPiece
@@ -244,8 +247,16 @@ static void DrawObject(s32 obj, s32 frameId, s32 camY, s32 *tile)
  * signals), so they keep in time with the music.
  *
  * VRAM (gTitleBg8bpp's maps: BG2 at screen base 8, BG3 at 31):
- *   BG3: char base 1, ring tiles 64-714 (0x4800-0x995F), blank tile 715
- *   BG2: char base 2, ring tiles 204-854 (0x9980-0xEADF), blank tile 855
+ *   BG3: char base 1, ring tiles 64-767 (0x4800-0x9FFF)
+ *   BG2: char base 2, ring tiles 256-959 (0xA000-0xF7FF)
+ * The rings take the font and window-frame sheet (0x4F00-0x5FFF, tiles
+ * 0x278-0x2FF of char base 0): ReloadFontSheet puts it back at the end.
+ *
+ * Nothing on screen is written while it is being drawn. A ring is 32x22
+ * cells, one more each way than the 31x21 a view can show, so the cells
+ * coming into view take slots that are off screen; a cell whose slot is on
+ * screen (an animated tile changing in place, a jump of two tiles) is
+ * queued and copied in the vertical blank with the tilemap that uses it.
  */
 struct SkyOpFrame
 {
@@ -255,8 +266,8 @@ struct SkyOpFrame
     u8 ver[2];
     u8 bgPal, objPal;
     s8 fadeA, fadeB;   /* bottom / top screen: -16 (black) .. 16 (white) */
-    u8 eva, evb;       /* semi-transparent OBJs */
-    u8 pad;
+    u8 eva, evb;       /* semi-transparent OBJs, or BG2 when it blends */
+    u8 flags;          /* bit 0: BG2 blends over what is behind it (eva / evb); bit 1 / 2: BG2 / BG3 hidden */
 };
 
 struct SkyOpObj
@@ -293,8 +304,10 @@ struct SkyOpScene
 
 #include "data/sky_opening_scenes.h"
 
-#define OP_RING_W 31
-#define OP_RING_H 21
+#define OP_RING_W 32
+#define OP_RING_H 22
+#define OP_VIEW_W 31        /* cells a 240x160 view can touch */
+#define OP_VIEW_H 21
 #define OP_WAIT_LIMIT 600   /* frames: if the song does not play, do not wait for it */
 /* bgm0001 at 130 bpm: m4a's clock (24 a quarter) moves 130/150 a frame */
 #define OP_FRAMES_PER_TICK_X256 (150 * 256 / 130)
@@ -306,16 +319,38 @@ EWRAM_DATA bool8 gSkyTitleFromWhite = FALSE;
 EWRAM_DATA u8 gSkyOpeningScene = 0;
 EWRAM_DATA u16 gSkyOpeningFrame = 0;   /* the frame within the scene */
 
-static const u16 sOpRingBase[2] = { 204, 64 };
+static const u16 sOpRingBase[2] = { 256, 64 };
 #define OP_RING_SLOTS (OP_RING_W * OP_RING_H)
-/* per ring slot, the tile it holds + 1 (0: unknown); heap, while playing */
-static EWRAM_DATA u16 *sOpSlotIds = NULL;
-static const u16 sOpBlank[2] = { 855, 715 };
+#define OP_HELD_BLANK 0xFFFF
+#define OP_DEFER_MAX 400    /* tiles copied in one vertical blank at most */
+#define OP_OBJ_MAX 128
+
+struct OpDefer
+{
+    u32 *dst;
+    const u32 *src;    /* NULL: a transparent tile */
+};
+
+/* The work memory, on the heap while the scenes play (EWRAM is nearly full). */
+struct OpWork
+{
+    /* per ring slot, the tile it holds + 1 (0: unknown, OP_HELD_BLANK: transparent) */
+    u16 held[2][OP_RING_SLOTS];
+    /* tiles for slots that are on screen: copied in the vertical blank */
+    struct OpDefer defer[OP_DEFER_MAX];
+    s32 numDefer;
+    /* per OBJ buffer half and OAM position, the tile data already there
+     * (source tile + 1, then its place): unchanged sprites are not copied again */
+    u16 objSrc[2][OP_OBJ_MAX];
+    u16 objDst[2][OP_OBJ_MAX];
+    u8 hide, hidden;   /* BG layers to hide (SetBGOBJEnableFlags) from the next frame / hidden now */
+};
+static EWRAM_DATA struct OpWork *sOp = NULL;
 
 struct OpRing
 {
     s16 cx, cy;
-    s16 ver;
+    s16 ver;           /* -1: nothing of this layer is on screen yet */
 };
 
 static s32 OpMod(s32 a, s32 n)
@@ -329,47 +364,99 @@ static u8 *OpChar(s32 l)
     return (u8 *)VRAM + (l == 0 ? 0x8000 : 0x4000);
 }
 
+static inline void OpCopyTile(u32 *dst, const u32 *src)
+{
+    if (src != NULL) {
+        dst[0] = src[0]; dst[1] = src[1]; dst[2] = src[2]; dst[3] = src[3];
+        dst[4] = src[4]; dst[5] = src[5]; dst[6] = src[6]; dst[7] = src[7];
+    }
+    else {
+        dst[0] = 0; dst[1] = 0; dst[2] = 0; dst[3] = 0;
+        dst[4] = 0; dst[5] = 0; dst[6] = 0; dst[7] = 0;
+    }
+}
+
+/* In the vertical blank: the tiles whose slots were on screen. */
+static void OpFlushDeferred(void)
+{
+    const struct OpDefer *d = sOp->defer;
+    s32 n;
+
+    for (n = sOp->numDefer; n > 0; n--, d++)
+        OpCopyTile(d->dst, d->src);
+    sOp->numDefer = 0;
+}
+
+/* RunFullscreenArtFrame, with the queued tiles copied first thing in the
+ * vertical blank (before the tilemaps and the scroll registers). */
+static void OpFrame(void)
+{
+    CopyWindowBgBuffer(NULL, COPY_WINDOW_BG_BUFFER_WIN0);
+    nullsub_8(FALSE);
+    sub_8005180();
+    ToggleWindowBgBuffer();
+    UpdateSoundEffectCounters();
+    WaitForNextFrameAndAdvanceRNG();
+    if (sOp != NULL) {
+        OpFlushDeferred();
+        if (sOp->hide != sOp->hidden) {
+            sOp->hidden = sOp->hide;
+            SetBGOBJEnableFlags(sOp->hidden);
+        }
+    }
+    LoadBufferedInputs();
+    CopySpritesToOam();
+    sub_8005304();
+    TransferBGPaletteBuffer();
+    xxx_call_update_bg_vram();
+    DoScheduledMemCopies();
+    xxx_call_update_bg_sound_input();
+    ResetSprites(FALSE);
+}
+
 /* Loads cells c0..c1-1 of ring row cy: tile data into the ring's slots,
- * tilemap entries (EoS's flips and palette) pointing at them. */
-static void OpLoadCells(const u8 *blob, const struct SkyOpVersion *v, s32 l, s32 cy, s32 c0, s32 c1)
+ * tilemap entries (EoS's flips and palette) pointing at them. `shown` is
+ * the view on screen now (NULL: none of this layer). */
+static void OpLoadCells(const u8 *blob, const struct SkyOpVersion *v, s32 l, s32 cy, s32 c0, s32 c1, const struct OpRing *shown)
 {
     u16 *tmRow = gBgTilemaps[l == 0 ? 2 : 3][cy & 31];
     u32 *chr = (u32 *)OpChar(l);
     const u32 *map = (const u32 *)(blob + v->mapOff);
     const u32 *tiles = (const u32 *)(blob + v->tilesOff);
-    s32 slotRow = sOpRingBase[l] + OpMod(cy, OP_RING_H) * OP_RING_W;
-    s32 col = OpMod(c0, OP_RING_W);
+    s32 slotRow = OpMod(cy, OP_RING_H) * OP_RING_W;
+    u16 *heldRow = &sOp->held[l][slotRow];
     s32 y = (v->flags & 2) ? OpMod(cy, v->h) : cy;
     s32 x = (v->flags & 1) ? OpMod(c0, v->w) : c0;
     bool8 rowIn = y >= 0 && y < v->h;
+    bool8 rowShown = shown != NULL && OpMod(cy - shown->cy, OP_RING_H) < OP_VIEW_H;
     s32 cx;
 
+    slotRow += sOpRingBase[l];
     for (cx = c0; cx < c1; cx++) {
         u32 e = 0xFFFFFFFF;
+        s32 col = cx & (OP_RING_W - 1);
+        u32 id;
 
         if (rowIn && x >= 0 && x < v->w)
             e = map[y * v->w + x];
-        if (e == 0xFFFFFFFF) {
-            tmRow[cx & 31] = sOpBlank[l];
-        }
-        else {
-            s32 slot = slotRow + col;
-            u16 *held = &sOpSlotIds[l * OP_RING_SLOTS + slot - sOpRingBase[l]];
+        id = e == 0xFFFFFFFF ? OP_HELD_BLANK : (e >> 16) + 1;
+        /* the slot may hold this tile already (the layer's versions share
+         * their tiles: an animation reloads only what changes) */
+        if (heldRow[col] != id) {
+            u32 *dst = chr + (slotRow + col) * 8;
+            const u32 *src = e == 0xFFFFFFFF ? NULL : tiles + (e >> 16) * 8;
 
-            /* the slot may hold this tile already (the layer's versions share
-             * their tiles: an animation reloads only what changes) */
-            if (*held != (e >> 16) + 1) {
-                const u32 *src = tiles + (e >> 16) * 8;
-                u32 *dst = chr + slot * 8;
-
-                dst[0] = src[0]; dst[1] = src[1]; dst[2] = src[2]; dst[3] = src[3];
-                dst[4] = src[4]; dst[5] = src[5]; dst[6] = src[6]; dst[7] = src[7];
-                *held = (e >> 16) + 1;
+            heldRow[col] = id;
+            if (rowShown && ((cx - shown->cx) & (OP_RING_W - 1)) < OP_VIEW_W && sOp->numDefer < OP_DEFER_MAX) {
+                sOp->defer[sOp->numDefer].dst = dst;
+                sOp->defer[sOp->numDefer].src = src;
+                sOp->numDefer++;
             }
-            tmRow[cx & 31] = slot | (e & 0xFC00);
+            else {
+                OpCopyTile(dst, src);
+            }
         }
-        if (++col == OP_RING_W)
-            col = 0;
+        tmRow[col] = (slotRow + col) | (e == 0xFFFFFFFF ? 0 : (e & 0xFC00));
         if (++x == v->w && (v->flags & 1))
             x = 0;
     }
@@ -381,23 +468,25 @@ static void OpUpdateLayer(const struct SkyOpScene *sc, s32 l, s32 ver, s32 x, s3
     const u8 *blob = (const u8 *)sc->blob;
     const struct SkyOpVersion *v = &sc->ver[(l == 1 ? sc->numVer[0] : 0) + ver];
     s32 nx = x >> 3, ny = y >> 3, cy;
-    bool8 all = r->ver != ver || nx - r->cx >= OP_RING_W || r->cx - nx >= OP_RING_W
-             || ny - r->cy >= OP_RING_H || r->cy - ny >= OP_RING_H;
+    bool8 all = r->ver != ver || nx - r->cx >= OP_VIEW_W || r->cx - nx >= OP_VIEW_W
+             || ny - r->cy >= OP_VIEW_H || r->cy - ny >= OP_VIEW_H;
 
     if (all || nx != r->cx || ny != r->cy) {
-        for (cy = ny; cy < ny + OP_RING_H; cy++) {
-            bool8 rowNew = all || cy < r->cy || cy >= r->cy + OP_RING_H;
+        const struct OpRing *shown = r->ver >= 0 ? r : NULL;
+
+        for (cy = ny; cy < ny + OP_VIEW_H; cy++) {
+            bool8 rowNew = all || cy < r->cy || cy >= r->cy + OP_VIEW_H;
             /* the columns that came into view (a whole row if the row did) */
-            s32 c0 = nx, c1 = nx + OP_RING_W;
+            s32 c0 = nx, c1 = nx + OP_VIEW_W;
 
             if (!rowNew) {
                 if (nx > r->cx)
-                    c0 = r->cx + OP_RING_W;
+                    c0 = r->cx + OP_VIEW_W;
                 else
                     c1 = r->cx;
             }
             if (c0 < c1)
-                OpLoadCells(blob, v, l, cy, c0, c1);
+                OpLoadCells(blob, v, l, cy, c0, c1, shown);
         }
         r->cx = nx;
         r->cy = ny;
@@ -410,60 +499,81 @@ static void OpUpdateLayer(const struct SkyOpScene *sc, s32 l, s32 ver, s32 x, s3
         SetBG3RegOffsets(x & 0xFF, y & 0xFF);
 }
 
+/* A scene without this layer: one transparent tile everywhere. */
 static void OpClearLayer(s32 l)
 {
     s32 i, j;
 
+    OpCopyTile((u32 *)OpChar(l) + sOpRingBase[l] * 8, NULL);
+    sOp->held[l][0] = OP_HELD_BLANK;
     for (i = 0; i < 32; i++)
         for (j = 0; j < 32; j++)
-            gBgTilemaps[l == 0 ? 2 : 3][i][j] = sOpBlank[l];
+            gBgTilemaps[l == 0 ? 2 : 3][i][j] = sOpRingBase[l];
     ScheduleBgTilemapCopy(l == 0 ? 2 : 3);
 }
 
 /* level: -16 (black) .. 16 (white); dim: 16 .. 0 (the START fade on top) */
-static u16 OpFade(u16 c, s32 level, s32 dim)
-{
-    s32 r = c & 0x1F, g = (c >> 5) & 0x1F, b = (c >> 10) & 0x1F;
-
-    if (level < 0) {
-        r = r * (16 + level) / 16;
-        g = g * (16 + level) / 16;
-        b = b * (16 + level) / 16;
-    }
-    else if (level > 0) {
-        r += (31 - r) * level / 16;
-        g += (31 - g) * level / 16;
-        b += (31 - b) * level / 16;
-    }
-    return RGB2(r * dim / 16, g * dim / 16, b * dim / 16);
-}
-
-static void OpSetPalettes(const struct SkyOpPalSet *set, s32 base, s32 fadeA, s32 fadeB, s32 dim)
+static void OpFadeRow(u16 *dst, const u16 *src, s32 level, u32 dim)
 {
     s32 i;
 
-    for (i = 0; i < 256; i++) {
-        s32 level = (set->engA >> (i >> 4)) & 1 ? fadeA : fadeB;
-        u16 c = (level == 0 && dim == 16) ? set->cols[i] : OpFade(set->cols[i], level, dim);
-        SetBGPaletteBufferColor(base + i, &c);
+    if (level == 0 && dim == 16) {
+        for (i = 0; i < 16; i++)
+            dst[i] = src[i];
+        return;
+    }
+    for (i = 0; i < 16; i++) {
+        u32 c = src[i];
+        u32 r = c & 0x1F, g = (c >> 5) & 0x1F, b = (c >> 10) & 0x1F;
+
+        if (level < 0) {
+            u32 k = 16 + level;
+
+            r = (r * k) >> 4;
+            g = (g * k) >> 4;
+            b = (b * k) >> 4;
+        }
+        else if (level > 0) {
+            r += ((31 - r) * level) >> 4;
+            g += ((31 - g) * level) >> 4;
+            b += ((31 - b) * level) >> 4;
+        }
+        dst[i] = RGB2((r * dim) >> 4, (g * dim) >> 4, (b * dim) >> 4);
     }
 }
 
+/* base: 0 the BG palettes, 16 the OBJ ones (rows of the palette buffer) */
+static void OpSetPalettes(const struct SkyOpPalSet *set, s32 base, s32 fadeA, s32 fadeB, s32 dim)
+{
+    s32 p;
+
+    for (p = 0; p < 16; p++)
+        OpFadeRow(SkyBGPaletteBufferRow(base + p), &set->cols[p * 16], (set->engA >> p) & 1 ? fadeA : fadeB, dim);
+}
+
+/* The frame's OBJs: OAM entries, and their tiles into the OBJ buffer half
+ * not on screen (tiles 0-511 / 512-1007: the font's OBJ tiles follow). */
 static void OpDrawObjs(const u8 *blob, const struct SkyOpScene *sc, const struct SkyOpFrame *fr, s32 half)
 {
     const struct SkyOpObj *objs = (const struct SkyOpObj *)(blob + sc->objsOff);
     const u8 *gfx = blob + sc->objTilesOff;
-    s32 tile = half * OBJ_BUF_TILES, k;
+    s32 first = half * OBJ_BUF_TILES, tile = first, k;
+    s32 limit = first + (half ? OBJ_BUF_TILES - 16 : OBJ_BUF_TILES);
+    u16 *src = sOp->objSrc[half], *dst = sOp->objDst[half];
 
-    for (k = 0; k < fr->numObj; k++) {
+    for (k = 0; k < fr->numObj && k < OP_OBJ_MAX; k++) {
         const struct SkyOpObj *o = &objs[fr->firstObj + k];
         s32 shape = o->attr & 3, size = (o->attr >> 2) & 3;
         s32 n = (sObjW[shape][size] / 8) * (sObjH[shape][size] / 8);
         SpriteOAM sprite;
 
-        if ((tile & (OBJ_BUF_TILES - 1)) + n > OBJ_BUF_TILES)
+        if (tile + n > limit)
             break;
-        CpuCopy((u8 *)OBJ_VRAM0 + tile * 32, gfx + o->tile * 32, n * 32);
+        if (src[k] != o->tile + 1 || dst[k] != tile) {
+            CpuCopy((u8 *)OBJ_VRAM0 + tile * 32, gfx + o->tile * 32, n * 32);
+            src[k] = o->tile + 1;
+            dst[k] = tile;
+        }
         sprite.attrib1 = 0;
         sprite.attrib2 = 0;
         sprite.attrib3 = 0;
@@ -481,6 +591,8 @@ static void OpDrawObjs(const u8 *blob, const struct SkyOpScene *sc, const struct
         AddSprite(&sprite, 4, NULL, NULL);
         tile += n;
     }
+    for (; k < OP_OBJ_MAX && src[k] != 0; k++)
+        src[k] = 0;   /* (a later, longer list starts from other tiles) */
 }
 
 static bool8 OpSkipPressed(void)
@@ -494,43 +606,48 @@ static bool8 OpWaitTick(s32 tick)
     s32 n;
 
     for (n = 0; (s32)gMPlayInfo_BGM.clock < tick && n < OP_WAIT_LIMIT; n++) {
-        RunFullscreenArtFrame();
+        OpFrame();
         if (OpSkipPressed())
             return TRUE;
     }
     return FALSE;
 }
 
-/* Plays the scenes. Returns TRUE when START (or A) skipped, after fading out. */
+/* Plays the scenes. Returns TRUE when START (or A) skipped, after fading
+ * out. The screen is left one colour (black, or the last scene's white);
+ * OpEnd gives the VRAM back. */
 static bool8 OpPlayScenes(void)
 {
-    s32 s, t, l, dim = 16, skipAt = -1;
+    s32 s, t, l, dim = 16, half = 0;
     u32 key, lastKey = 0, lastObjKey = 0, clock0;
+    bool8 skip = FALSE;
+    /* what is on screen (START fades that out) */
     const struct SkyOpScene *sc = NULL;
     const struct SkyOpFrame *fr = NULL;
 
     gSkyOpeningBg4bpp = TRUE;
-    sOpSlotIds = MemoryAlloc(2 * OP_RING_SLOTS * sizeof(u16), MEMALLOC_GROUP_0);
-    CpuFill32(0, (u8 *)VRAM + 0x4000 + 715 * 32, 32);
-    CpuFill32(0, (u8 *)VRAM + 0x8000 + 855 * 32, 32);
-    for (s = 0; s < SKY_OP_SCENE_COUNT; s++) {
+    sOp = MemoryAlloc(sizeof(struct OpWork), MEMALLOC_GROUP_0);
+    sOp->numDefer = 0;
+    sOp->hide = sOp->hidden = 0;
+    for (s = 0; s < SKY_OP_SCENE_COUNT && !skip; s++) {
         struct OpRing ring[2] = { { 0, 0, -1 }, { 0, 0, -1 } };
-        const u8 *blob;
+        const struct SkyOpScene *next = &sOpScenes[s];
+        const u8 *blob = (const u8 *)next->blob;
 
-        sc = &sOpScenes[s];
-        blob = (const u8 *)sc->blob;
         gSkyOpeningScene = s + 2;
-        CpuFill16(0, sOpSlotIds, 2 * OP_RING_SLOTS * sizeof(u16));
-        if (sc->startTick >= 0 && OpWaitTick(sc->startTick)) {
-            skipAt = 0;
+        if (next->startTick >= 0 && OpWaitTick(next->startTick)) {
+            skip = TRUE;
             break;
         }
+        sc = next;
+        CpuFill16(0, sOp->held, sizeof(sOp->held));
+        CpuFill16(0, sOp->objSrc, sizeof(sOp->objSrc));
         for (l = 0; l < 2; l++)
             if (sc->numVer[l] == 0)
                 OpClearLayer(l);
         clock0 = gMPlayInfo_BGM.clock;
         for (t = 0; t < sc->numFrames; ) {
-            s32 next, due;
+            s32 nextT, due;
 
             fr = &((const struct SkyOpFrame *)(blob + sc->framesOff))[t];
             gSkyOpeningFrame = t;
@@ -544,47 +661,80 @@ static bool8 OpPlayScenes(void)
             lastKey = key;
             key = (fr->objPal << 16) | ((u8)fr->fadeA << 8) | (u8)fr->fadeB;
             if (t == 0 || key != lastObjKey)
-                OpSetPalettes(&((const struct SkyOpPalSet *)(blob + sc->objSetsOff))[fr->objPal], 256, fr->fadeA, fr->fadeB, 16);
+                OpSetPalettes(&((const struct SkyOpPalSet *)(blob + sc->objSetsOff))[fr->objPal], 16, fr->fadeA, fr->fadeB, 16);
             lastObjKey = key;
-            OpDrawObjs(blob, sc, fr, t & 1);
+            /* (not t & 1: a dropped frame would draw into the half on screen) */
+            half ^= 1;
+            OpDrawObjs(blob, sc, fr, half);
+            /* semi-transparent OBJs, and BG2 when EoS blends it (light, haze) */
             gBldCnt = (gBldCnt & ~(BLDCNT_TGT1_ALL | BLDCNT_EFFECT_MASK)) | BLDCNT_EFFECT_BLEND
+                    | ((fr->flags & 1) ? BLDCNT_TGT1_BG2 | BLDCNT_TGT2_OBJ : 0)
                     | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_BD;
             gBldAlpha = BLDALPHA_BLEND(fr->eva, fr->evb);
             gUnknown_2026E4E = (fr->eva << 8) | fr->evb;
-            RunFullscreenArtFrame();
+            sOp->hide = (fr->flags & 6) << 1;   /* BG2 / BG3 */
+            OpFrame();
             if (OpSkipPressed()) {
-                skipAt = t;
+                skip = TRUE;
                 break;
             }
             /* Keep to the song: a frame that took longer than one GBA frame
              * (many tiles to load) drops the scene frames it overran. */
-            next = t + 1;
+            nextT = t + 1;
             due = ((s32)(gMPlayInfo_BGM.clock - clock0) * OP_FRAMES_PER_TICK_X256) >> 8;
-            if (due > next + 1 && due - next < 16)
-                next = due - 1;   /* (the clock's ticks are coarser than frames) */
-            t = next;
+            if (due > nextT + 1 && due - nextT < 16)
+                nextT = due - 1;   /* (the clock's ticks are coarser than frames) */
+            t = nextT;
         }
-        if (skipAt >= 0)
-            break;
     }
-    if (skipAt >= 0) {
+    if (skip) {
         /* START: fade what is on screen out, as EoS does, then the title */
         FadeOutBGM_(SKIP_FADE_LEN);
         for (t = 1; t <= SKIP_FADE_LEN; t++) {
             dim = 16 - t * 16 / SKIP_FADE_LEN;
             if (fr != NULL) {
                 OpSetPalettes(&((const struct SkyOpPalSet *)((const u8 *)sc->blob + sc->bgSetsOff))[fr->bgPal], 0, fr->fadeA, fr->fadeB, dim);
-                OpSetPalettes(&((const struct SkyOpPalSet *)((const u8 *)sc->blob + sc->objSetsOff))[fr->objPal], 256, fr->fadeA, fr->fadeB, dim);
-                OpDrawObjs((const u8 *)sc->blob, sc, fr, t & 1);
+                OpSetPalettes(&((const struct SkyOpPalSet *)((const u8 *)sc->blob + sc->objSetsOff))[fr->objPal], 16, fr->fadeA, fr->fadeB, dim);
+                half ^= 1;
+                OpDrawObjs((const u8 *)sc->blob, sc, fr, half);
             }
-            RunFullscreenArtFrame();
+            OpFrame();
         }
     }
-    gSkyOpeningBg4bpp = FALSE;
-    MemoryFree(sOpSlotIds);
-    sOpSlotIds = NULL;
-    return skipAt >= 0;
+    return skip;
 }
+
+/* After the scenes, the screen all but one colour: empties the two layers, goes
+ * back to the 8bpp set-up and restores what the rings overwrote: the font
+ * and window-frame sheet (every window's frame is drawn from it). */
+static void OpEnd(bool8 white)
+{
+    s32 i, j;
+
+    /* exactly one colour (a scene's last fade step may be a shade off) */
+    for (i = 0; i < 32; i++) {
+        u16 *row = SkyBGPaletteBufferRow(i);
+
+        for (j = 0; j < 16; j++)
+            row[j] = white ? RGB_WHITE : RGB_BLACK;
+    }
+    for (i = 0; i < 32; i++) {
+        for (j = 0; j < 32; j++) {
+            gBgTilemaps[2][i][j] = 0;
+            gBgTilemaps[3][i][j] = 0;
+        }
+    }
+    ScheduleBgTilemapCopy(2);
+    ScheduleBgTilemapCopy(3);
+    sOp->numDefer = 0;
+    sOp->hide = 0;
+    OpFrame(); /* no sprites: clears the OAM */
+    gSkyOpeningBg4bpp = FALSE;
+    MemoryFree(sOp);
+    sOp = NULL;
+    ReloadFontSheet();
+}
+
 void SkyOpening_Play(void)
 {
     u16 savedBldCnt = gBldCnt;
@@ -656,12 +806,14 @@ void SkyOpening_Play(void)
     /* The song plays on (EoS: no fade at the end of the Shaymin scene) into
      * the rest of the opening, then the title, which EoS fades in from
      * white on the song's last signal. */
-    if (!skipped)
+    if (!skipped) {
         skipped = OpPlayScenes();
-    if (!skipped && !OpWaitTick(SKY_OP_TITLE_TICK))
-        gSkyTitleFromWhite = TRUE;
-    else if (!skipped)
-        FadeOutBGM_(SKIP_FADE_LEN);
+        if (!skipped && !OpWaitTick(SKY_OP_TITLE_TICK))
+            gSkyTitleFromWhite = TRUE;
+        else if (!skipped)
+            FadeOutBGM_(SKIP_FADE_LEN);
+        OpEnd(gSkyTitleFromWhite);
+    }
 
     gBldCnt = savedBldCnt;
     gBldAlpha = savedBldAlpha;

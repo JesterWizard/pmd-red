@@ -1212,7 +1212,8 @@ writes `graphics/custom/sky_title/`:
   kept where the full frame is black too, so the outlines survive). The logo,
   emblem get their own share of the 8bpp palette. As in EoS, the opening's
   song ends under it and the title is then silent; after START in the
-  opening it is silent from the start.
+  opening it is silent from the start. Left alone for 2000 frames (33 s,
+  EoS's wait) it fades to the top menu, where the menu's own theme starts.
 - "Press START" (`press_start.png`, EoS's banner font) is OBJ tiles with its
   own OBJ palette over the card, and blinks by being drawn or not (32 frames
   on, 32 off). It used to be a second full picture swapped in for the blink;
@@ -1348,11 +1349,21 @@ with no input (frames from power-on, EoS starts the song at about frame
 | 14 | `t02a0402` | S13P09A (both) | everyone gathers on the hills; the camera rises to the sky and the flare; white-out | 4935–5179 | |
 | — | `t02a0501` | S13P01A / V03P07A | the title: logo, "EXPLORERS OF SKY", PRESS START, fading in from white | 5283– | signal 7 |
 
-The song ends at tick 8160, frame 5394, under the title; the title then
-stays silent (and after 2000 frames `t02a0501` fades to the top menu). START
-during the opening fades the song out (about 60 frames) and goes to the title,
-which is silent too (measured in DeSmuME: the song's sequence pointers stop).
-EoS never plays bgm0130 "Title Theme" here.
+The song ends at tick 8160, frame 5394, under the title, about 110 frames
+after the title appears; the title then stays silent. After 2000 frames
+`t02a0501` fades to the top menu (the fade starts near frame 7400), and the
+top menu's song (`B_SYS_MENU`) starts there, at about frame 7600. START
+during a scene of the opening fades the song out (about 60 frames) and goes
+to the title, which is silent from the start (measured in DeSmuME: the song's
+sequence pointers stop; START at frame 1000 or 1500, the title up by 1200 /
+1700). Between two scenes START does nothing. EoS never plays bgm0130
+"Title Theme" here.
+
+The GBA does the same: the song rings out about 250 frames into the title
+(the converted song ends with its last notes' release), then
+silence until START or the 2000 frames are up (`SKY_CUTAWAY_TITLE_SCREEN,
+2000` in `DEMO_03`; it was 3600, a minute of silence), then the top menu and
+its theme.
 
 The GBA plays all of it after the Shaymin scene, in EoS's order, with the song
 unbroken: `SkyOpening_Play` no longer fades the music at the end of the
@@ -1398,8 +1409,30 @@ turns that into GBA data, using only what EoS put on screen:
   the bottom screen for the single-screen scenes 6–9 and 12, a pan or a
   fixed window across both screens for the others. Scene 5 shows the logo
   (top screen) for its first 111 frames, then cuts to the hero and partner
-  (bottom screen): the two screens' maps cannot both be on the GBA's two
-  layers.
+  (bottom screen) with the logo over them: the "Pokémon Mystery Dungeon"
+  logo, scaled to 152 px, as 44 16×16 OBJs with four 15-colour palettes
+  picked per piece ([`tools/sky_opening_logo.py`](../../tools/sky_opening_logo.py)),
+  at the top of the screen, and EoS's "EXPLORERS OF SKY" OBJs moved down 42
+  lines to sit right under it, the title card's arrangement (`logo` and
+  `obj_shift` in `GBA_SCENES`). The logo fades with the scene. Scenes 6–8
+  (Bidoof, Team Charm, Sableye), where EoS keeps the logo on its top screen,
+  do not have it: on one 240×160 screen it would cover Team Charm and the
+  top of the ring of Sableye.
+  ![The logo over the field](images/sky_opening_logo.png)
+- **What EoS does not show**: a layer that is empty in the GBA's view in
+  EoS (the island's white flash once it is over, the forest's light before
+  it comes) is hidden for those frames; the stitched world would show it.
+  A layer EoS blends (`BLDCNT`: the forest's light rays, BG2 over the scene
+  with EVA 4–9) is blended on the GBA with EoS's weights, and its captures,
+  darkened by the blend, are read back through the palette. The forest's
+  rays grow: that layer has a world per different picture
+  (`versions="frames"`). Lapras's sea is clipped at its top edge (`top`),
+  and repeats sideways only (`wrap="x"`): it used to be drawn 24 lines too
+  high, over Lapras, for the scene's first second.
+- **Shadows** (EoS's 8bpp OBJs): each value's colour is the one most of its
+  pixels show over the whole scene. Taken from the first frame, a shadow
+  under a sprite got that sprite's colour (green under Grovyle, orange under
+  the partner).
 
 `python3 tools/make_sky_opening.py EOS.nds [--check DIR]` re-records (into
 `build/sky_opening_rec/`, about a minute on four cores) and rewrites
@@ -1411,36 +1444,61 @@ drawn the way the GBA draws it.
 **How it plays** ([`src/sky_opening.c`](../../src/sky_opening.c),
 `OpPlayScenes`). BG2 and BG3 are 4bpp layers while the scenes play
 (`gSkyOpeningBg4bpp`, [`src/reg_control.c`](../../src/reg_control.c)), each
-a 31×21-tile ring (BG3: char base 1, tiles 64–714; BG2: char base 2, tiles
-204–854) that streams the cells coming into view; a slot already holding a
-tile is not copied again (the versions of a layer share their tiles, so an
-animation reloads only what changes; the slot table is 2.6 KB of heap while
-the opening plays). Per frame: the view's place in each world, the palette set
+a 32×22-tile ring (BG3: char base 1, tiles 64–767; BG2: char base 2, tiles
+256–959: all of VRAM 0x4800–0xF7FF) that streams the cells coming into view;
+a slot already holding a tile is not copied again (the versions of a layer
+share their tiles, so an animation reloads only what changes). Nothing on
+screen is written while it is drawn: the ring is one cell larger each way
+than the 31×21 cells a view can touch, so a cell coming into view takes a
+slot that is off screen, and a tile whose slot is on screen (an animated
+tile changing in place, a jump of two tiles) is queued and copied in the
+vertical blank, before the tilemap that uses it (up to 400 a frame). With
+31×21-cell rings written straight away, the row or column leaving the screen
+was overwritten while it was still shown (a band of wrong tiles at the
+trailing edge of every pan), and an animated layer showed new tiles under the
+old tilemap for a frame. The work memory (slot tables, the queue, the OBJ
+cache) is 7 KB of heap while the scenes play. Per frame: the view's place in each world, the palette set
 and each screen's fade (written only when they change), the OAM entries
-(tiles double-buffered in OBJ VRAM as in the Shaymin scene) and the OBJ blend.
+(tiles double-buffered in OBJ VRAM as in the Shaymin scene; a sprite whose
+tiles are already in its place is not copied again, and the two halves
+alternate by frames shown, not by scene frame: after a dropped frame the
+tiles used to go to the half on screen, a frame of garbled sprites), the
+blend (semi-transparent OBJs, or BG2) and the layers to hide.
+
+The rings lie over the font and window-frame sheet (VRAM 0x4F00–0x5FFF:
+tiles 0x278–0x2FF of char base 0, the corners and edges of every window).
+`OpEnd` empties the two layers, sets the screen to one colour and calls
+`ReloadFontSheet`. Without that every window after the opening (the top
+menu, the quiz, the dialogue boxes) had noise for its frame, whether the
+opening ran to its end or START skipped it after the Shaymin scene. START
+during the Shaymin scene never reached the rings, which is why the suite's
+other runs (A at frame 1800) did not show it.
 Each scene waits for the m4a clock to reach the tick EoS starts it at
 (`startTick`, from EoS's frames at 104 ticks a second); inside a scene a
 frame that took longer than a GBA frame drops the frames it overran, so the
-picture stays on the music (the busiest scenes, the Time Gear and Crystal
-Lake, drop about a quarter of their frames; most drop none or a few).
+picture stays on the music (mostly during the fades at a scene's start and
+end, where every palette changes every frame; the fade is computed a
+palette row at a time straight into the palette buffer).
 The title waits for tick 3984 (signal 7) and fades in from white.
 
-Data: 1.29 MB (`graphics/custom/sky_opening/scenes/`: BG tiles and maps,
+Data: 1.34 MB (`graphics/custom/sky_opening/scenes/`: BG tiles and maps,
 OBJ tiles, OAM lists, palette sets, frames); EWRAM: about ten bytes (flags,
-the scene counters for the tests, the slot table's pointer).
+the scene counters for the tests, the work memory's pointer).
 
 Not matched:
 
 - EoS's Lapras sea (`S13P03A`) scrolls in bands at different speeds
   (line scroll); the GBA moves the sky-and-sea layer as one (its clouds stay
-  put) and the scrolling waves' top edge is jagged where the two screens meet.
+  put). While Lapras crosses from the top screen to the bottom one EoS draws
+  only the part on the top screen (the gap between the DS's screens hides
+  it); the GBA shows that as Lapras's head alone for about 40 frames.
 - `V24P05A` (scene 9) flashes the view through eight spots of the level in
   its first 16 frames, during its fade-in; the GBA fades in on the last one.
 - The Time Gear's glow is ten states of its 80-frame growth, not every frame.
 - The DS clips sprites at the edge of their own screen; the GBA does not
   (a sprite at the bottom of the top screen can reach into the bottom one).
-- Scene 5's logo and the walking hero and partner are shown one after the
-  other, not together.
+- Scene 5 first shows the logo screen on its own, then the field with the
+  small logo; scenes 6–8 have no logo.
 
 ### Continue: the Adventure Record
 
@@ -1597,7 +1655,7 @@ path is printed. The script exits 1 when a check fails. It builds the tools
 | `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702 | 9300 |
 | `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
 | `opening` | plain (plays `sky`'s build) | START at 600 (the health warning), then nothing: the whole opening to the title; START there | ~7700 |
-| `skip` | plain (plays `sky`'s build) | START at 600, then START 60 frames into Bidoof's scene | ~4500 |
+| `skip` | plain (plays `sky`'s build) | START at 600, then START 60 frames into Bidoof's scene, then START at the title | ~4500 |
 
 Runs are deterministic (`build/tools/mgba_rpc`, a clean boot with no save).
 The checks find their frames from game state, not from fixed frame numbers:
@@ -1654,6 +1712,8 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `opening_song_unbroken` | opening | every 30 frames of the opening: the BGM player plays the theme (67), its clock moves, rms ≥ 200; it still plays when the title comes |
 | `opening_title_start` | opening | START at the title leaves it; the top menu's CG is up (≥ 64 colours) |
 | `opening_start_skips` | skip | START in Bidoof's scene: the title within 90 frames, the theme stopped within 90 |
+| `opening_window_frames`, `opening_skip_window_frames` | opening, skip | at the top menu after the whole opening / after START in Bidoof's scene: the font and window-frame tiles (VRAM 0x4F00–0x5FFF), the cursor's OBJ tiles and OBJ palette 15 are what they were before the opening, and the description window's frame is EoS's green (top rows, left columns, fill) |
+| `opening_logo_over_field` | opening | in the field part of the logo scene: the logo's 44 OBJs at the top (y 2–82), "EXPLORERS OF SKY" under them (its OBJs' tops at y ≥ 70), every frame |
 
 The `xfail="reason"` mark tags a check for a known bug that is not fixed yet.
 Its failure is reported as `XFAIL` and does not fail the suite. When the bug

@@ -90,15 +90,19 @@ SCENES = [
 # recording), the two GBA BG layers (BG2 in front, BG3 behind), each one or
 # two DS map layers of the top screen, the bottom one or both (EoS's
 # continuous two-screen maps), with options: versions (the layer's content
-# changes: animated tiles, a growing glow), lock (the axis that does not
+# changes: animated tiles, a growing glow; "frames": a still layer, a version
+# per different picture), lock (the axis that does not
 # move; "rows": only vertical, from the rows' mean colours, for a sky and sea
-# whose bands slide sideways at their own speeds), cuts
+# whose bands slide sideways at their own speeds), wrap (the axes along which
+# a layer that repeats is cut to one period: "x" for a sea that scrolls
+# sideways but has a top edge), top (nothing of the layer above the top edge
+# of its first picture), cuts
 # (the camera jumps: each jump starts a new world), and
 # the GBA view: keyframes (index, x, y) in "canvas" pixels, the DS's top
 # screen (y 0-191) over its bottom one (y 192-383).
 GBA_SCENES = [
     dict(name="lapras", rec="lapras",
-         bg=[("both", [2]), ("both", [3], dict(lock="rows"))],
+         bg=[("both", [2], dict(wrap="x", top=True)), ("both", [3], dict(lock="rows"))],
          view=[(0, 8, 70), (100, 8, 95), (200, 8, 165), (288, 8, 170)]),
     dict(name="treasure", rec="treasure",
          bg=[("both", [2]), ("both", [3])],
@@ -109,9 +113,13 @@ GBA_SCENES = [
     dict(name="logo_top", rec="logo", frames=(0, 110),
          bg=[("top", [2]), ("top", [3])],
          view=[(0, 8, 16)]),
+    # The logo (EoS: on the top screen all through the scene) goes over the
+    # field as OBJs, 152 px wide, and "EXPLORERS OF SKY" (OBJs at bottom
+    # screen lines 64-90) moves down 42 lines to sit under it, as on the title.
     dict(name="logo_field", rec="logo", frames=(111, 368),
          bg=[("bottom", [2]), ("bottom", [3])],
-         view=[(111, 8, 224)]),
+         view=[(111, 8, 224)],
+         logo=dict(width=152, y=2), obj_shift=[(0, 192 + 40, 256, 192 + 110, 0, 42)]),
     dict(name="bidoof", rec="bidoof", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
     dict(name="charms", rec="charms", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
     dict(name="sableye", rec="sableye", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
@@ -123,7 +131,8 @@ GBA_SCENES = [
          bg=[("both", [2], dict(versions=6)), ("both", [3])],
          view=[(0, 8, 60), (194, 8, 200)]),
     dict(name="dialga", rec="dialga", bg=[None, ("both", [3], dict(lock="x"))], view=[(0, 8, 176)]),
-    dict(name="forest", rec="forest", bg=[("bottom", [2]), ("bottom", [3])], view=[(0, 8, 208)]),
+    # (BG2: the light from the box, rays that grow, blended over the scene)
+    dict(name="forest", rec="forest", bg=[("bottom", [2], dict(versions="frames")), ("bottom", [3])], view=[(0, 8, 208)]),
     dict(name="march", rec="march", bg=[("both", [2]), ("both", [3])], view=[(0, 8, 208)]),
     dict(name="hills", rec="hills", bg=[("both", [2]), ("both", [3])],
          view=[(0, 8, 212), (120, 8, 212), (200, 8, 20), (244, 8, 20)]),
@@ -256,6 +265,11 @@ def write_scenes(rom_path: str, cache: Path, check) -> None:
     total = 0
     synced = set()
     for cfg in GBA_SCENES:
+        if "logo" in cfg:
+            import sky_opening_logo
+            lg = sky_opening_logo.logo_objs(ndspy.rom.NintendoDSRom.fromFile(rom_path), cfg["logo"]["width"])
+            # centred on the 16-px grid's picture, not the padded pieces
+            cfg = dict(cfg, overlay=dict(lg, x=(240 - lg["w"]) // 2, y=cfg["logo"]["y"]))
         cv = so.convert_scene(cache, cfg)
         name = cfg["name"]
         blob = bytearray()
@@ -267,7 +281,7 @@ def write_scenes(rom_path: str, cache: Path, check) -> None:
         for fr in cv["frames"]:
             blob += st.pack("<4hHBBBBBbbBBB", fr["x"][0], fr["y"][0], fr["x"][1], fr["y"][1], fr["first"],
                             fr["count"], fr["ver"][0], fr["ver"][1], fr["bgpal"], fr["objpal"],
-                            fr["fadeA"], fr["fadeB"], fr["eva"], fr["evb"], 0)
+                            fr["fadeA"], fr["fadeB"], fr["eva"], fr["evb"], fr["flags"])
         align()
         off["objs"] = len(blob)
         for (x, y, tile, attr) in cv["objs"]:
