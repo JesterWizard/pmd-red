@@ -416,8 +416,13 @@ class EosImport(unittest.TestCase):
         self.assertIn("ROTATE_TO_LIVES speed=4 turn=DIR_TRANS_11 kind=LIVES_KIND_PLAYER", chatot)
         # the names chapter 2 still has to add
         unk = {w for _, w in scenes.unknown_names(model)}
-        self.assertTrue({"MAP_SKY_GUILD_B2F", "MUS_SKY_WIGGLYTUFFS_GUILD", "SKY_LIVES_CHATOT",
-                         "SKY_LIVES_CROAGUNK"} <= unk, unk)
+        # (which of the chapter-2 names are still missing changes as the
+        # pieces land: only the made-up item must be reported, and nothing
+        # the build defines)
+        self.assertIn("ITEM_SKY_EOS_70", unk)
+        known = {w for w in ("MAP_SKY_GUILD_B2F", "MUS_SKY_WIGGLYTUFFS_GUILD", "SKY_LIVES_CHATOT",
+                             "SKY_LIVES_CROAGUNK") if w in scenes.known_names()}
+        self.assertFalse(known & unk, unk)
         self.assertNotIn("PLAYER", unk)
 
     def test_chapter1_names_are_defined(self):
