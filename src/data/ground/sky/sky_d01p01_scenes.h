@@ -302,6 +302,7 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     TEXTBOX_CLEAR,
     WALK_RELATIVE(128, 0, -8),
     FANFARE_PLAY2(SE_SKY_RELIC_FRAGMENT), /* EoS se_Play(6410): the treasure comes out */
+    SELECT_OBJECTS(-1, 2), /* EoS supervision_Acting(2): the Relic Fragment at (30, 23) */
     WAIT(15),
     SELECT_ANIMATION(5),
     MOVE_RELATIVE(128, 0, 8),
@@ -313,6 +314,7 @@ static const struct ScriptCommand s_gs178_g6_s0_lives0_dlg0[] = {
     MSG_NPC(NPC_PARTNER, _(" I thought that holding on to my\npersonal treasure would inspire\nme...")),
     TEXTBOX_CLEAR,
     WALK_RELATIVE(128, 0, -8),
+    ALERT_CUE(9), /* EoS supervision_RemoveActing(2): the partner picks it up */
     WAIT(15),
     SELECT_ANIMATION(5),
     MOVE_RELATIVE(128, 0, 8),
@@ -1227,6 +1229,14 @@ static const struct GroundObjectData s_gs178_g1_s2_objs[] = {
     } },
 };
 
+/* g6: the Relic Fragment the partner holds out at the grate (EoS m01a0104
+ * layer 2: g01p01a1 at (30,23)), until the partner takes it back (cue 9). */
+static const struct GroundObjectData s_gs178_g6_s2_objs[] = {
+    /*  0 */ { SKY_OBJ_RELIC_FRAGMENT, 0, 1, 1, {  30,  23, 0, CPOS_HALFTILE }, {
+        [0] = s_gs178_relic_fragment_dlg0,
+    } },
+};
+
 static const struct GroundLivesData s_gs178_g1_s1_lives[] = {
     /*  0 */ { SKY_LIVES_ZUBAT,   6,   0,   0, {  58,  21, 0, CPOS_HALFTILE }, {
         [0] = s_gs178_g1_s1_lives0_dlg0,
@@ -1312,6 +1322,7 @@ static const struct GroundScriptSector s_gs178_g5_sectors[] = {
 static const struct GroundScriptSector s_gs178_g6_sectors[] = {
     { LPARRAY(s_gs178_g6_s0_lives), LPARRAY(s_gs178_g6_s0_objs), 0,NULL, 0,NULL, 1,&sStationScripts[6], },
     { LPARRAY(s_gs178_g6_s1_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { 0,NULL, LPARRAY(s_gs178_g6_s2_objs), 0,NULL, 0,NULL, 0,NULL, },
 };
 
 static const struct GroundScriptSector s_gs178_g7_sectors[] = {

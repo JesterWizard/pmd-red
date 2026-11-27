@@ -230,8 +230,27 @@ def song_to_midi(song: smdl.Song, tones: dict, sf: sky_soundfont.SoundFont):
             ev.append((tick, 1, bytes([0xB0 | c, 7, x])))
         for tick, pan in t.pans:
             ev.append((tick, 1, bytes([0xB0 | c, 10, min(pan, 127)])))
-        for tick, b in t.bends:
-            m = max(0, min(16383, b + 8192))
+        # 0xD4 pitch sweeps (semitones) need a wider bend range than the
+        # D7 bends' 2 semitones: BENDR 12 (MIDI CC 20 -> mid2agb BENDR)
+        brange = 12 if t.pitch_sweeps else 2
+        if t.pitch_sweeps:
+            ev.append((0, 0, bytes([0xB0 | c, 20, brange])))
+        bends = [(tick, b * 2 / brange) for tick, b in t.bends]
+        semis = 0.0
+        for k, (tick, dur, target) in enumerate(t.pitch_sweeps):
+            stop = t.pitch_sweeps[k + 1][0] if k + 1 < len(t.pitch_sweeps) else None
+            start = semis
+            steps = [(tick, float(target))] if dur <= 0 else [
+                (tick + min(st, dur), start + (target - start) * min(st, dur) / dur)
+                for st in range(smdl.SWEEP_STEP, dur + smdl.SWEEP_STEP, smdl.SWEEP_STEP)]
+            for at, v in steps:
+                if stop is not None and at > stop:
+                    break
+                semis = v
+                bends.append((at, v / brange * 8192))
+        bends.sort(key=lambda x: x[0])
+        for tick, b in bends:
+            m = max(0, min(16383, round(b) + 8192))
             ev.append((tick, 1, bytes([0xE0 | c, m & 0x7F, m >> 7])))
         for n, key, prog, tone, raw in notes:
             dur = max(1, n.dur)

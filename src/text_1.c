@@ -158,7 +158,7 @@ void LoadCharmaps(void)
 
     for (i = 0; i < 20; i++) {
         /* Title / café 8bpp: transparent left gutter (fade tile aliases badly). */
-        if (gTitleBg8bpp || gGroundMap8bpp) {
+        if (TEXT_LEFT_GUTTER_OFF || gTitleBg8bpp || gGroundMap8bpp) {
             gBgTilemaps[0][i][0] = 0;
             gBgTilemaps[1][i][0] = 0;
         }

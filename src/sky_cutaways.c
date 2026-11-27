@@ -706,7 +706,7 @@ void SkyStory_ShowCutaway_Async(s32 id, s32 frames)
         Fade(&gSkyCutaways[SKY_CUTAWAY_SUNSET_SEA0 + ((i - 1) % 8)], FALSE);
     }
     else {
-        if (id < 0 || id >= SKY_CUTAWAY_COUNT)
+        if (id < 0 || id >= SKY_CUTAWAY_COUNT || gSkyCutaways[id].at4px == NULL)
             return;
         first = &gSkyCutaways[id];
         LoadFullscreenArt(first->at4px);

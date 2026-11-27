@@ -104,7 +104,9 @@ s32 SkyStory_GetDungeonBgm(s32 defaultSong);
 enum {
     SKY_CUTAWAY_SKY_DAY,
     SKY_CUTAWAY_SKY_DUSK,
-    SKY_CUTAWAY_GUILD_SKY,
+    /* 2, 3: the storm cliff CGs (now src/sky_storm.c). Ids stay as they
+     * were: an object built with the old enum still names the same picture. */
+    SKY_CUTAWAY_GUILD_SKY = 4,
     SKY_CUTAWAY_RELIC_FRAGMENT,
     SKY_CUTAWAY_SUNSET_SKY,
     SKY_CUTAWAY_SUNSET_SEA0,

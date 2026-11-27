@@ -94,10 +94,308 @@ seq_069_3_B1:
 	.byte	W24
 	.byte	W01
 	.byte		TIE   , Dn2 
-	.byte	W56
-	.byte	W03
+	.byte	W01
+	.byte		VOL   , 109*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        108*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        106*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        105*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        104*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        103*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        103*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        102*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        101*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        99*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        98*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        98*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        97*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        96*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        95*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        93*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        92*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        91*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        90*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        89*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        88*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        88*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        86*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        85*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        84*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        84*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        83*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        82*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        80*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        79*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        79*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        78*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        77*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        76*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        75*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        73*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        72*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        71*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        70*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        69*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        69*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
 @ 001   ----------------------------------------
-	.byte	W96
+	.byte		        67*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        66*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        65*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        65*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        64*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        63*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        62*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        60*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        60*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        59*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        58*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        57*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        56*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        54*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        53*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        52*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        51*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        50*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        50*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        48*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        47*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        46*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        45*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        45*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        44*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        43*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        41*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        41*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        40*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        39*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        38*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        37*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        35*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        34*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        33*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        32*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        31*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        31*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        30*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        28*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        27*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        26*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        26*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        25*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        24*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        22*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        22*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        21*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        20*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        19*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        18*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        17*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        15*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        14*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        13*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        12*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        12*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        11*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        9*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        8*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        7*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        7*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        6*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        5*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        4*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        2*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        1*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        0*seq_069_mvl/mxv
+	.byte	W05
 @ 002   ----------------------------------------
 	.byte	W20
 	.byte		EOT   
@@ -114,10 +412,259 @@ seq_069_3_B1:
 	.byte	W32
 	.byte	W02
 	.byte		TIE   
-	.byte	W60
-	.byte	W02
+	.byte	W01
+	.byte		VOL   , 109*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        108*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        106*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        105*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        104*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        103*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        102*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        101*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        99*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        98*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        97*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        96*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        95*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        93*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        92*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        91*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        90*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        89*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        88*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        86*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        85*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        84*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        83*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        80*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        79*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        78*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        77*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        76*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        75*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        73*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        72*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        71*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        70*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        69*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        67*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        66*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        65*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        64*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        63*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        62*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        60*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        59*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        58*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        57*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        56*seq_069_mvl/mxv
+	.byte	W01
 @ 004   ----------------------------------------
-	.byte	W96
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        54*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        53*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        52*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        51*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        50*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        48*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        47*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        46*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        45*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        44*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        43*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        41*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        40*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        39*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        38*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        37*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        35*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        34*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        33*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        32*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        31*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        30*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        27*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        26*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        25*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        24*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        22*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        21*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        20*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        19*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        18*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        17*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        15*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        14*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        13*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        12*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        11*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        9*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        8*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        7*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        6*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        5*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        4*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        2*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        1*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        0*seq_069_mvl/mxv
+	.byte	W32
+	.byte	W01
 @ 005   ----------------------------------------
 	.byte	W92
 	.byte		EOT   
@@ -131,10 +678,258 @@ seq_069_3_B1:
 	.byte	W24
 	.byte	W01
 	.byte		TIE   , As1 
-	.byte	W48
-	.byte	W02
+	.byte	W01
+	.byte		VOL   , 109*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        108*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        106*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        105*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        104*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        103*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        102*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        101*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        99*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        98*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        97*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        96*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        95*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        93*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        92*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        91*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        90*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        89*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        88*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        86*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        85*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        84*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        83*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        80*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        79*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        78*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        77*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        76*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        75*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        73*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        72*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        71*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        70*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        69*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        67*seq_069_mvl/mxv
+	.byte	W01
 @ 007   ----------------------------------------
-	.byte	W96
+	.byte		        66*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        65*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        64*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        63*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        62*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        60*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        59*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        58*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        57*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        56*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        54*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        53*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        52*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        51*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        50*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        48*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        47*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        46*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        45*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        44*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        43*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        41*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        40*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        39*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        38*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        37*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        35*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        34*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        33*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        32*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        31*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        30*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        27*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        26*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        25*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        24*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        22*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        21*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        20*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        19*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        18*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        17*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        15*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        14*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        13*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        12*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        11*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        9*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        8*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        7*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        6*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        5*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        4*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        2*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        1*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        0*seq_069_mvl/mxv
+	.byte	W21
 @ 008   ----------------------------------------
 	.byte	W96
 @ 009   ----------------------------------------
@@ -160,9 +955,259 @@ seq_069_3_B1:
 @ 015   ----------------------------------------
 	.byte	W20
 	.byte		TIE   , Fs1 
-	.byte	W76
+	.byte	W01
+	.byte		VOL   , 109*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        108*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        107*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        106*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        105*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        104*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        103*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        102*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        101*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        100*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        99*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        98*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        97*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        96*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        95*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        94*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        93*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        92*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        91*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        90*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        89*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        88*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        87*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        86*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        85*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        84*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        83*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        81*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        80*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        79*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        78*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        77*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        76*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        75*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        74*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        73*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        72*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        71*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        70*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        69*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        68*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        67*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        66*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        65*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        64*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        63*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        62*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        61*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        60*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        59*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        58*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        57*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        56*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        55*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        54*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        53*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        52*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        51*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        50*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        49*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        48*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        47*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        46*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        45*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        44*seq_069_mvl/mxv
+	.byte	W01
 @ 016   ----------------------------------------
-	.byte	W96
+	.byte		        43*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        42*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        41*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        40*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        39*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        38*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        37*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        36*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        35*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        34*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        33*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        32*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        31*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        30*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        29*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        27*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        26*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        25*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        24*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        23*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        22*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        21*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        20*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        19*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        18*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        17*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        16*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        15*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        14*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        13*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        12*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        11*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        10*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        9*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        8*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        7*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        6*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        5*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        4*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        3*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        2*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        1*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        0*seq_069_mvl/mxv
+	.byte	W44
+	.byte	W03
 @ 017   ----------------------------------------
 	.byte	W78
 	.byte		EOT   
@@ -177,6 +1222,7 @@ seq_069_4:
 	.byte	KEYSH , seq_069_key+0
 @ 000   ----------------------------------------
 	.byte		VOICE , 2
+	.byte		BENDR , 12
 	.byte		VOL   , 110*seq_069_mvl/mxv
 	.byte		        74*seq_069_mvl/mxv
 	.byte		PAN   , c_v+0
@@ -184,23 +1230,749 @@ seq_069_4:
 	.byte	W42
 seq_069_4_B1:
 	.byte		N42   , Cn3 , v104
-	.byte	W42
 	.byte	W01
+	.byte		VOL   , 72*seq_069_mvl/mxv
+	.byte		PAN   , c_v-1
+	.byte		BEND  , c_v-2
+	.byte	W01
+	.byte		VOL   , 71*seq_069_mvl/mxv
+	.byte		PAN   , c_v-1
+	.byte		BEND  , c_v-3
+	.byte	W01
+	.byte		VOL   , 69*seq_069_mvl/mxv
+	.byte		PAN   , c_v-2
+	.byte		BEND  , c_v-4
+	.byte	W01
+	.byte		VOL   , 68*seq_069_mvl/mxv
+	.byte		PAN   , c_v-2
+	.byte		BEND  , c_v-6
+	.byte	W01
+	.byte		VOL   , 67*seq_069_mvl/mxv
+	.byte		PAN   , c_v-3
+	.byte		BEND  , c_v-7
+	.byte	W01
+	.byte		VOL   , 65*seq_069_mvl/mxv
+	.byte		PAN   , c_v-4
+	.byte		BEND  , c_v-8
+	.byte	W01
+	.byte		VOL   , 63*seq_069_mvl/mxv
+	.byte		PAN   , c_v-4
+	.byte		BEND  , c_v-10
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v-5
+	.byte		BEND  , c_v-11
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v-6
+	.byte		BEND  , c_v-12
+	.byte	W01
+	.byte		VOL   , 59*seq_069_mvl/mxv
+	.byte		PAN   , c_v-6
+	.byte		BEND  , c_v-14
+	.byte	W01
+	.byte		VOL   , 57*seq_069_mvl/mxv
+	.byte		PAN   , c_v-7
+	.byte		BEND  , c_v-15
+	.byte	W01
+	.byte		VOL   , 56*seq_069_mvl/mxv
+	.byte		PAN   , c_v-7
+	.byte		BEND  , c_v-16
+	.byte	W01
+	.byte		VOL   , 55*seq_069_mvl/mxv
+	.byte		PAN   , c_v-8
+	.byte		BEND  , c_v-18
+	.byte	W01
+	.byte		VOL   , 53*seq_069_mvl/mxv
+	.byte		PAN   , c_v-9
+	.byte		BEND  , c_v-19
+	.byte	W01
+	.byte		VOL   , 52*seq_069_mvl/mxv
+	.byte		PAN   , c_v-9
+	.byte		BEND  , c_v-20
+	.byte	W01
+	.byte		VOL   , 50*seq_069_mvl/mxv
+	.byte		PAN   , c_v-10
+	.byte		BEND  , c_v-22
+	.byte	W01
+	.byte		VOL   , 49*seq_069_mvl/mxv
+	.byte		PAN   , c_v-10
+	.byte		BEND  , c_v-23
+	.byte	W01
+	.byte		VOL   , 48*seq_069_mvl/mxv
+	.byte		PAN   , c_v-11
+	.byte		BEND  , c_v-24
+	.byte	W01
+	.byte		VOL   , 46*seq_069_mvl/mxv
+	.byte		PAN   , c_v-12
+	.byte		BEND  , c_v-25
+	.byte	W01
+	.byte		VOL   , 44*seq_069_mvl/mxv
+	.byte		PAN   , c_v-12
+	.byte		BEND  , c_v-27
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v-13
+	.byte		BEND  , c_v-28
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v-14
+	.byte		BEND  , c_v-29
+	.byte	W01
+	.byte		VOL   , 40*seq_069_mvl/mxv
+	.byte		PAN   , c_v-14
+	.byte		BEND  , c_v-31
+	.byte	W01
+	.byte		VOL   , 38*seq_069_mvl/mxv
+	.byte		PAN   , c_v-15
+	.byte		BEND  , c_v-32
+	.byte	W01
+	.byte		VOL   , 37*seq_069_mvl/mxv
+	.byte		PAN   , c_v-15
+	.byte		BEND  , c_v-33
+	.byte	W01
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		PAN   , c_v-16
+	.byte		BEND  , c_v-35
+	.byte	W01
+	.byte		VOL   , 34*seq_069_mvl/mxv
+	.byte		PAN   , c_v-17
+	.byte		BEND  , c_v-36
+	.byte	W01
+	.byte		VOL   , 33*seq_069_mvl/mxv
+	.byte		PAN   , c_v-17
+	.byte		BEND  , c_v-37
+	.byte	W01
+	.byte		VOL   , 31*seq_069_mvl/mxv
+	.byte		PAN   , c_v-18
+	.byte		BEND  , c_v-39
+	.byte	W01
+	.byte		VOL   , 29*seq_069_mvl/mxv
+	.byte		PAN   , c_v-18
+	.byte		BEND  , c_v-40
+	.byte	W01
+	.byte		VOL   , 29*seq_069_mvl/mxv
+	.byte		PAN   , c_v-19
+	.byte		BEND  , c_v-41
+	.byte	W01
+	.byte		VOL   , 27*seq_069_mvl/mxv
+	.byte		PAN   , c_v-20
+	.byte		BEND  , c_v-43
+	.byte	W01
+	.byte		VOL   , 26*seq_069_mvl/mxv
+	.byte		PAN   , c_v-20
+	.byte		BEND  , c_v-43
+	.byte	W10
 	.byte		N44   , Cn3 , v104, gtp3
-	.byte	W11
+	.byte	W01
+	.byte		VOL   , 27*seq_069_mvl/mxv
+	.byte		PAN   , c_v-19
+	.byte		BEND  , c_v-42
+	.byte	W01
+	.byte		VOL   , 28*seq_069_mvl/mxv
+	.byte		PAN   , c_v-17
+	.byte		BEND  , c_v-40
+	.byte	W01
+	.byte		VOL   , 29*seq_069_mvl/mxv
+	.byte		PAN   , c_v-16
+	.byte		BEND  , c_v-39
+	.byte	W01
+	.byte		VOL   , 29*seq_069_mvl/mxv
+	.byte		PAN   , c_v-14
+	.byte		BEND  , c_v-37
+	.byte	W01
+	.byte		VOL   , 30*seq_069_mvl/mxv
+	.byte		PAN   , c_v-13
+	.byte		BEND  , c_v-36
+	.byte	W01
+	.byte		VOL   , 31*seq_069_mvl/mxv
+	.byte		PAN   , c_v-12
+	.byte		BEND  , c_v-34
+	.byte	W01
+	.byte		VOL   , 32*seq_069_mvl/mxv
+	.byte		PAN   , c_v-10
+	.byte		BEND  , c_v-33
+	.byte	W01
+	.byte		VOL   , 33*seq_069_mvl/mxv
+	.byte		PAN   , c_v-9
+	.byte		BEND  , c_v-31
+	.byte	W01
+	.byte		VOL   , 35*seq_069_mvl/mxv
+	.byte		PAN   , c_v-7
+	.byte		BEND  , c_v-30
+	.byte	W01
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		PAN   , c_v-6
+	.byte		BEND  , c_v-28
+	.byte	W01
 @ 001   ----------------------------------------
-	.byte	W36
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		PAN   , c_v-4
+	.byte		BEND  , c_v-27
+	.byte	W01
+	.byte		VOL   , 37*seq_069_mvl/mxv
+	.byte		PAN   , c_v-3
+	.byte		BEND  , c_v-25
+	.byte	W01
+	.byte		VOL   , 38*seq_069_mvl/mxv
+	.byte		PAN   , c_v-2
+	.byte		BEND  , c_v-24
+	.byte	W01
+	.byte		VOL   , 39*seq_069_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		BEND  , c_v-22
+	.byte	W01
+	.byte		VOL   , 40*seq_069_mvl/mxv
+	.byte		PAN   , c_v+1
+	.byte		BEND  , c_v-21
+	.byte	W01
+	.byte		VOL   , 41*seq_069_mvl/mxv
+	.byte		PAN   , c_v+3
+	.byte		BEND  , c_v-19
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v+4
+	.byte		BEND  , c_v-18
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v+5
+	.byte		BEND  , c_v-16
+	.byte	W01
+	.byte		VOL   , 43*seq_069_mvl/mxv
+	.byte		PAN   , c_v+7
+	.byte		BEND  , c_v-15
+	.byte	W01
+	.byte		VOL   , 44*seq_069_mvl/mxv
+	.byte		PAN   , c_v+8
+	.byte		BEND  , c_v-13
+	.byte	W01
+	.byte		VOL   , 45*seq_069_mvl/mxv
+	.byte		PAN   , c_v+10
+	.byte		BEND  , c_v-12
+	.byte	W01
+	.byte		VOL   , 46*seq_069_mvl/mxv
+	.byte		PAN   , c_v+11
+	.byte		BEND  , c_v-10
+	.byte	W01
+	.byte		VOL   , 47*seq_069_mvl/mxv
+	.byte		PAN   , c_v+12
+	.byte		BEND  , c_v-9
+	.byte	W01
+	.byte		VOL   , 48*seq_069_mvl/mxv
+	.byte		PAN   , c_v+14
+	.byte		BEND  , c_v-7
+	.byte	W01
+	.byte		VOL   , 49*seq_069_mvl/mxv
+	.byte		PAN   , c_v+15
+	.byte		BEND  , c_v-6
+	.byte	W01
+	.byte		VOL   , 50*seq_069_mvl/mxv
+	.byte		PAN   , c_v+17
+	.byte		BEND  , c_v-4
+	.byte	W01
+	.byte		VOL   , 51*seq_069_mvl/mxv
+	.byte		PAN   , c_v+18
+	.byte		BEND  , c_v-3
+	.byte	W01
+	.byte		VOL   , 52*seq_069_mvl/mxv
+	.byte		PAN   , c_v+20
+	.byte		BEND  , c_v-1
+	.byte	W01
+	.byte		VOL   , 53*seq_069_mvl/mxv
+	.byte		PAN   , c_v+21
+	.byte		BEND  , c_v+1
+	.byte	W01
+	.byte		VOL   , 54*seq_069_mvl/mxv
+	.byte		PAN   , c_v+22
+	.byte		BEND  , c_v+2
+	.byte	W01
+	.byte		VOL   , 55*seq_069_mvl/mxv
+	.byte		PAN   , c_v+24
+	.byte		BEND  , c_v+4
+	.byte	W01
+	.byte		VOL   , 55*seq_069_mvl/mxv
+	.byte		PAN   , c_v+25
+	.byte		BEND  , c_v+5
+	.byte	W01
+	.byte		VOL   , 56*seq_069_mvl/mxv
+	.byte		PAN   , c_v+27
+	.byte		BEND  , c_v+7
+	.byte	W01
+	.byte		VOL   , 57*seq_069_mvl/mxv
+	.byte		PAN   , c_v+28
+	.byte		BEND  , c_v+8
+	.byte	W01
+	.byte		VOL   , 58*seq_069_mvl/mxv
+	.byte		PAN   , c_v+29
+	.byte		BEND  , c_v+10
+	.byte	W01
+	.byte		VOL   , 59*seq_069_mvl/mxv
+	.byte		PAN   , c_v+31
+	.byte		BEND  , c_v+11
+	.byte	W01
+	.byte		VOL   , 60*seq_069_mvl/mxv
+	.byte		PAN   , c_v+32
+	.byte		BEND  , c_v+13
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v+34
+	.byte		BEND  , c_v+14
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v+35
+	.byte		BEND  , c_v+16
+	.byte	W01
+	.byte		VOL   , 62*seq_069_mvl/mxv
+	.byte		PAN   , c_v+36
+	.byte		BEND  , c_v+17
+	.byte	W01
+	.byte		VOL   , 63*seq_069_mvl/mxv
+	.byte		PAN   , c_v+38
+	.byte		BEND  , c_v+19
+	.byte	W01
+	.byte		VOL   , 64*seq_069_mvl/mxv
+	.byte		PAN   , c_v+39
+	.byte		VOL   , 65*seq_069_mvl/mxv
+	.byte		PAN   , c_v+40
+	.byte		BEND  , c_v+20
+	.byte		        c_v+21
+	.byte	W05
 	.byte		N52   
-	.byte	W52
 	.byte	W01
-	.byte		N32   
-	.byte	W07
-@ 002   ----------------------------------------
-	.byte	W24
+	.byte		VOL   , 64*seq_069_mvl/mxv
+	.byte		PAN   , c_v+39
+	.byte		BEND  , c_v+21
 	.byte	W01
-	.byte		        Cn3 , v104, gtp3
-	.byte	W32
+	.byte		VOL   , 63*seq_069_mvl/mxv
+	.byte		PAN   , c_v+38
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 63*seq_069_mvl/mxv
+	.byte		PAN   , c_v+37
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 62*seq_069_mvl/mxv
+	.byte		PAN   , c_v+36
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v+35
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v+34
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 60*seq_069_mvl/mxv
+	.byte		PAN   , c_v+33
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 60*seq_069_mvl/mxv
+	.byte		PAN   , c_v+32
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 59*seq_069_mvl/mxv
+	.byte		PAN   , c_v+32
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 58*seq_069_mvl/mxv
+	.byte		PAN   , c_v+31
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 57*seq_069_mvl/mxv
+	.byte		PAN   , c_v+30
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 56*seq_069_mvl/mxv
+	.byte		PAN   , c_v+29
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 56*seq_069_mvl/mxv
+	.byte		PAN   , c_v+28
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 55*seq_069_mvl/mxv
+	.byte		PAN   , c_v+27
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 55*seq_069_mvl/mxv
+	.byte		PAN   , c_v+26
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 54*seq_069_mvl/mxv
+	.byte		PAN   , c_v+25
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 53*seq_069_mvl/mxv
+	.byte		PAN   , c_v+24
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 53*seq_069_mvl/mxv
+	.byte		PAN   , c_v+23
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 52*seq_069_mvl/mxv
+	.byte		PAN   , c_v+22
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 51*seq_069_mvl/mxv
+	.byte		PAN   , c_v+21
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 50*seq_069_mvl/mxv
+	.byte		PAN   , c_v+20
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 49*seq_069_mvl/mxv
+	.byte		PAN   , c_v+19
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 49*seq_069_mvl/mxv
+	.byte		PAN   , c_v+18
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 49*seq_069_mvl/mxv
+	.byte		PAN   , c_v+17
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 48*seq_069_mvl/mxv
+	.byte		PAN   , c_v+16
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 47*seq_069_mvl/mxv
+	.byte		PAN   , c_v+16
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 46*seq_069_mvl/mxv
+	.byte		PAN   , c_v+15
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 46*seq_069_mvl/mxv
+	.byte		PAN   , c_v+14
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 45*seq_069_mvl/mxv
+	.byte		PAN   , c_v+13
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 44*seq_069_mvl/mxv
+	.byte		PAN   , c_v+12
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 43*seq_069_mvl/mxv
+	.byte		PAN   , c_v+11
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v+10
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v+9
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v+8
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 41*seq_069_mvl/mxv
+	.byte		PAN   , c_v+7
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 40*seq_069_mvl/mxv
+	.byte		PAN   , c_v+6
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 39*seq_069_mvl/mxv
+	.byte		PAN   , c_v+5
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 39*seq_069_mvl/mxv
+	.byte		PAN   , c_v+4
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 38*seq_069_mvl/mxv
+	.byte		PAN   , c_v+3
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 37*seq_069_mvl/mxv
+	.byte		PAN   , c_v+2
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		PAN   , c_v+1
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		PAN   , c_v+0
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		VOL   , 35*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        34*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        33*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        32*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        32*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        31*seq_069_mvl/mxv
+	.byte	W01
+	.byte		        30*seq_069_mvl/mxv
 	.byte	W03
+	.byte		N32   
+	.byte	W01
+	.byte		VOL   , 32*seq_069_mvl/mxv
+	.byte		PAN   , c_v+1
+	.byte		BEND  , c_v+19
+	.byte	W01
+	.byte		VOL   , 34*seq_069_mvl/mxv
+	.byte		PAN   , c_v+1
+	.byte		BEND  , c_v+18
+	.byte	W01
+	.byte		VOL   , 35*seq_069_mvl/mxv
+	.byte		PAN   , c_v+2
+	.byte		BEND  , c_v+17
+	.byte	W01
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		PAN   , c_v+3
+	.byte		BEND  , c_v+15
+	.byte	W01
+	.byte		VOL   , 38*seq_069_mvl/mxv
+	.byte		PAN   , c_v+4
+	.byte		BEND  , c_v+14
+	.byte	W01
+	.byte		VOL   , 40*seq_069_mvl/mxv
+	.byte		PAN   , c_v+4
+	.byte		BEND  , c_v+13
+	.byte	W01
+@ 002   ----------------------------------------
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v+5
+	.byte		BEND  , c_v+11
+	.byte	W01
+	.byte		VOL   , 43*seq_069_mvl/mxv
+	.byte		PAN   , c_v+6
+	.byte		BEND  , c_v+10
+	.byte	W01
+	.byte		VOL   , 44*seq_069_mvl/mxv
+	.byte		PAN   , c_v+7
+	.byte		BEND  , c_v+9
+	.byte	W01
+	.byte		VOL   , 46*seq_069_mvl/mxv
+	.byte		PAN   , c_v+7
+	.byte		BEND  , c_v+7
+	.byte	W01
+	.byte		VOL   , 48*seq_069_mvl/mxv
+	.byte		PAN   , c_v+8
+	.byte		BEND  , c_v+6
+	.byte	W01
+	.byte		VOL   , 49*seq_069_mvl/mxv
+	.byte		PAN   , c_v+9
+	.byte		BEND  , c_v+5
+	.byte	W01
+	.byte		VOL   , 51*seq_069_mvl/mxv
+	.byte		PAN   , c_v+9
+	.byte		BEND  , c_v+3
+	.byte	W01
+	.byte		VOL   , 52*seq_069_mvl/mxv
+	.byte		PAN   , c_v+10
+	.byte		BEND  , c_v+2
+	.byte	W01
+	.byte		VOL   , 54*seq_069_mvl/mxv
+	.byte		PAN   , c_v+11
+	.byte		BEND  , c_v+0
+	.byte	W01
+	.byte		VOL   , 55*seq_069_mvl/mxv
+	.byte		PAN   , c_v+12
+	.byte		BEND  , c_v-1
+	.byte	W01
+	.byte		VOL   , 57*seq_069_mvl/mxv
+	.byte		PAN   , c_v+12
+	.byte		BEND  , c_v-2
+	.byte	W01
+	.byte		VOL   , 59*seq_069_mvl/mxv
+	.byte		PAN   , c_v+13
+	.byte		BEND  , c_v-4
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v+14
+	.byte		BEND  , c_v-5
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v+15
+	.byte		BEND  , c_v-6
+	.byte	W01
+	.byte		VOL   , 63*seq_069_mvl/mxv
+	.byte		PAN   , c_v+15
+	.byte		BEND  , c_v-8
+	.byte	W01
+	.byte		VOL   , 65*seq_069_mvl/mxv
+	.byte		PAN   , c_v+16
+	.byte		BEND  , c_v-9
+	.byte	W01
+	.byte		VOL   , 67*seq_069_mvl/mxv
+	.byte		PAN   , c_v+17
+	.byte		BEND  , c_v-10
+	.byte	W01
+	.byte		VOL   , 68*seq_069_mvl/mxv
+	.byte		PAN   , c_v+17
+	.byte		BEND  , c_v-12
+	.byte	W01
+	.byte		VOL   , 69*seq_069_mvl/mxv
+	.byte		PAN   , c_v+18
+	.byte		BEND  , c_v-13
+	.byte	W01
+	.byte		VOL   , 71*seq_069_mvl/mxv
+	.byte		PAN   , c_v+19
+	.byte		BEND  , c_v-14
+	.byte	W01
+	.byte		VOL   , 73*seq_069_mvl/mxv
+	.byte		PAN   , c_v+20
+	.byte		VOL   , 74*seq_069_mvl/mxv
+	.byte		PAN   , c_v+20
+	.byte		BEND  , c_v-16
+	.byte		        c_v-16
+	.byte	W05
+	.byte		N32   , Cn3 , v104, gtp3
+	.byte	W01
+	.byte		VOL   , 72*seq_069_mvl/mxv
+	.byte		PAN   , c_v+18
+	.byte		BEND  , c_v-16
+	.byte	W01
+	.byte		VOL   , 70*seq_069_mvl/mxv
+	.byte		PAN   , c_v+17
+	.byte		BEND  , c_v-15
+	.byte	W01
+	.byte		VOL   , 68*seq_069_mvl/mxv
+	.byte		PAN   , c_v+15
+	.byte		BEND  , c_v-14
+	.byte	W01
+	.byte		VOL   , 68*seq_069_mvl/mxv
+	.byte		PAN   , c_v+14
+	.byte		BEND  , c_v-13
+	.byte	W01
+	.byte		VOL   , 66*seq_069_mvl/mxv
+	.byte		PAN   , c_v+12
+	.byte		BEND  , c_v-12
+	.byte	W01
+	.byte		VOL   , 64*seq_069_mvl/mxv
+	.byte		PAN   , c_v+11
+	.byte		BEND  , c_v-11
+	.byte	W01
+	.byte		VOL   , 62*seq_069_mvl/mxv
+	.byte		PAN   , c_v+9
+	.byte		BEND  , c_v-10
+	.byte	W01
+	.byte		VOL   , 61*seq_069_mvl/mxv
+	.byte		PAN   , c_v+8
+	.byte		BEND  , c_v-9
+	.byte	W01
+	.byte		VOL   , 59*seq_069_mvl/mxv
+	.byte		PAN   , c_v+6
+	.byte		BEND  , c_v-8
+	.byte	W01
+	.byte		VOL   , 58*seq_069_mvl/mxv
+	.byte		PAN   , c_v+5
+	.byte		BEND  , c_v-7
+	.byte	W01
+	.byte		VOL   , 56*seq_069_mvl/mxv
+	.byte		PAN   , c_v+3
+	.byte		BEND  , c_v-6
+	.byte	W01
+	.byte		VOL   , 55*seq_069_mvl/mxv
+	.byte		PAN   , c_v+2
+	.byte		BEND  , c_v-5
+	.byte	W01
+	.byte		VOL   , 53*seq_069_mvl/mxv
+	.byte		PAN   , c_v+0
+	.byte		BEND  , c_v-4
+	.byte	W01
+	.byte		VOL   , 51*seq_069_mvl/mxv
+	.byte		PAN   , c_v-2
+	.byte		BEND  , c_v-3
+	.byte	W01
+	.byte		VOL   , 49*seq_069_mvl/mxv
+	.byte		PAN   , c_v-3
+	.byte		BEND  , c_v-2
+	.byte	W01
+	.byte		VOL   , 48*seq_069_mvl/mxv
+	.byte		PAN   , c_v-5
+	.byte		BEND  , c_v-1
+	.byte	W01
+	.byte		VOL   , 47*seq_069_mvl/mxv
+	.byte		PAN   , c_v-6
+	.byte		BEND  , c_v+0
+	.byte	W01
+	.byte		VOL   , 45*seq_069_mvl/mxv
+	.byte		PAN   , c_v-8
+	.byte		BEND  , c_v+1
+	.byte	W01
+	.byte		VOL   , 43*seq_069_mvl/mxv
+	.byte		PAN   , c_v-9
+	.byte		BEND  , c_v+2
+	.byte	W01
+	.byte		VOL   , 42*seq_069_mvl/mxv
+	.byte		PAN   , c_v-11
+	.byte		BEND  , c_v+3
+	.byte	W01
+	.byte		VOL   , 40*seq_069_mvl/mxv
+	.byte		PAN   , c_v-12
+	.byte		BEND  , c_v+4
+	.byte	W01
+	.byte		VOL   , 38*seq_069_mvl/mxv
+	.byte		PAN   , c_v-14
+	.byte		BEND  , c_v+5
+	.byte	W01
+	.byte		VOL   , 37*seq_069_mvl/mxv
+	.byte		PAN   , c_v-15
+	.byte		BEND  , c_v+6
+	.byte	W01
+	.byte		VOL   , 36*seq_069_mvl/mxv
+	.byte		PAN   , c_v-17
+	.byte		BEND  , c_v+7
+	.byte	W01
+	.byte		VOL   , 34*seq_069_mvl/mxv
+	.byte		PAN   , c_v-18
+	.byte		BEND  , c_v+8
+	.byte	W01
+	.byte		VOL   , 32*seq_069_mvl/mxv
+	.byte		PAN   , c_v-20
+	.byte		BEND  , c_v+9
+	.byte	W01
+	.byte		VOL   , 30*seq_069_mvl/mxv
+	.byte		PAN   , c_v-22
+	.byte		BEND  , c_v+10
+	.byte	W01
+	.byte		VOL   , 29*seq_069_mvl/mxv
+	.byte		PAN   , c_v-23
+	.byte		BEND  , c_v+11
+	.byte	W01
+	.byte		VOL   , 27*seq_069_mvl/mxv
+	.byte		PAN   , c_v-25
+	.byte		BEND  , c_v+12
+	.byte	W01
+	.byte		VOL   , 26*seq_069_mvl/mxv
+	.byte		PAN   , c_v-26
+	.byte		BEND  , c_v+13
+	.byte	W01
+	.byte		VOL   , 24*seq_069_mvl/mxv
+	.byte		PAN   , c_v-28
+	.byte		BEND  , c_v+14
+	.byte	W01
+	.byte		VOL   , 23*seq_069_mvl/mxv
+	.byte		PAN   , c_v-29
+	.byte		BEND  , c_v+15
+	.byte	W01
+	.byte		VOL   , 22*seq_069_mvl/mxv
+	.byte		PAN   , c_v-30
+	.byte		BEND  , c_v+16
+	.byte	W02
 	.byte	GOTO
 	 .word	seq_069_4_B1
 seq_069_4_B2:
@@ -212,21 +1984,292 @@ seq_069_5:
 	.byte	KEYSH , seq_069_key+0
 @ 000   ----------------------------------------
 	.byte		VOICE , 2
+	.byte		BENDR , 12
 	.byte		VOL   , 110*seq_069_mvl/mxv
 	.byte		        48*seq_069_mvl/mxv
-	.byte		PAN   , c_v+0
-	.byte		        c_v-64
+	.byte		PAN   , c_v-64
+	.byte		        c_v+0
 	.byte		N12   , Ds2 , v104
 	.byte	W12
 seq_069_5_B1:
 	.byte		N48   , Ds2 , v104, gtp2
-	.byte	W48
+	.byte	W01
+	.byte		PAN   , c_v-1
+	.byte		BEND  , c_v+0
+	.byte	W01
+	.byte		PAN   , c_v-3
+	.byte		BEND  , c_v+0
+	.byte	W01
+	.byte		PAN   , c_v-4
+	.byte		BEND  , c_v+1
+	.byte	W01
+	.byte		PAN   , c_v-5
+	.byte		BEND  , c_v+1
+	.byte	W01
+	.byte		PAN   , c_v-7
+	.byte		BEND  , c_v+2
+	.byte	W01
+	.byte		PAN   , c_v-8
+	.byte		BEND  , c_v+2
+	.byte	W01
+	.byte		PAN   , c_v-9
+	.byte		BEND  , c_v+3
+	.byte	W01
+	.byte		PAN   , c_v-11
+	.byte		BEND  , c_v+3
+	.byte	W01
+	.byte		PAN   , c_v-12
+	.byte		BEND  , c_v+4
+	.byte	W01
+	.byte		PAN   , c_v-13
+	.byte		BEND  , c_v+4
+	.byte	W01
+	.byte		PAN   , c_v-15
+	.byte		BEND  , c_v+4
+	.byte	W01
+	.byte		PAN   , c_v-16
+	.byte		BEND  , c_v+5
+	.byte	W01
+	.byte		PAN   , c_v-18
+	.byte		BEND  , c_v+5
+	.byte	W01
+	.byte		PAN   , c_v-19
+	.byte		BEND  , c_v+6
+	.byte	W01
+	.byte		PAN   , c_v-20
+	.byte		BEND  , c_v+6
+	.byte	W01
+	.byte		PAN   , c_v-22
+	.byte		BEND  , c_v+7
+	.byte	W01
+	.byte		PAN   , c_v-23
+	.byte		BEND  , c_v+7
+	.byte	W01
+	.byte		PAN   , c_v-24
+	.byte		BEND  , c_v+8
+	.byte	W01
+	.byte		PAN   , c_v-26
+	.byte		BEND  , c_v+8
+	.byte	W01
+	.byte		PAN   , c_v-27
+	.byte		BEND  , c_v+8
+	.byte	W01
+	.byte		PAN   , c_v-28
+	.byte		BEND  , c_v+9
+	.byte	W01
+	.byte		PAN   , c_v-30
+	.byte		BEND  , c_v+9
+	.byte	W01
+	.byte		PAN   , c_v-31
+	.byte		BEND  , c_v+10
+	.byte	W01
+	.byte		PAN   , c_v-32
+	.byte		BEND  , c_v+10
+	.byte	W01
+	.byte		PAN   , c_v-34
+	.byte		BEND  , c_v+11
+	.byte	W01
+	.byte		PAN   , c_v-35
+	.byte		BEND  , c_v+11
+	.byte	W01
+	.byte		PAN   , c_v-36
+	.byte		BEND  , c_v+12
+	.byte	W01
+	.byte		PAN   , c_v-38
+	.byte		BEND  , c_v+12
+	.byte	W01
+	.byte		PAN   , c_v-39
+	.byte		BEND  , c_v+13
+	.byte	W01
+	.byte		PAN   , c_v-40
+	.byte		BEND  , c_v+13
+	.byte	W01
+	.byte		PAN   , c_v-42
+	.byte		BEND  , c_v+13
+	.byte	W01
+	.byte		PAN   , c_v-43
+	.byte		BEND  , c_v+14
+	.byte	W01
+	.byte		PAN   , c_v-44
+	.byte		BEND  , c_v+14
+	.byte	W01
+	.byte		PAN   , c_v-46
+	.byte		BEND  , c_v+15
+	.byte	W01
+	.byte		PAN   , c_v-47
+	.byte		BEND  , c_v+15
+	.byte	W01
+	.byte		PAN   , c_v-49
+	.byte		BEND  , c_v+16
+	.byte	W01
+	.byte		PAN   , c_v-50
+	.byte		BEND  , c_v+16
+	.byte	W01
+	.byte		PAN   , c_v-51
+	.byte		BEND  , c_v+17
+	.byte	W01
+	.byte		PAN   , c_v-53
+	.byte		BEND  , c_v+17
+	.byte	W01
+	.byte		PAN   , c_v-54
+	.byte		BEND  , c_v+17
+	.byte	W01
+	.byte		PAN   , c_v-55
+	.byte		BEND  , c_v+18
+	.byte	W01
+	.byte		PAN   , c_v-57
+	.byte		BEND  , c_v+18
+	.byte	W01
+	.byte		PAN   , c_v-58
+	.byte		BEND  , c_v+19
+	.byte	W01
+	.byte		PAN   , c_v-59
+	.byte		BEND  , c_v+19
+	.byte	W01
+	.byte		PAN   , c_v-61
+	.byte		BEND  , c_v+20
+	.byte	W01
+	.byte		PAN   , c_v-62
+	.byte		BEND  , c_v+20
+	.byte	W01
+	.byte		PAN   , c_v-63
+	.byte		BEND  , c_v+21
+	.byte	W01
+	.byte		PAN   , c_v-64
+	.byte		BEND  , c_v+21
 	.byte	W02
-	.byte		        Ds2 , v104, gtp2
-	.byte	W32
-	.byte	W02
+	.byte		N48   , Ds2 , v104, gtp2
+	.byte	W01
+	.byte		PAN   , c_v-61
+	.byte		BEND  , c_v+20
+	.byte	W01
+	.byte		PAN   , c_v-58
+	.byte		BEND  , c_v+19
+	.byte	W01
+	.byte		PAN   , c_v-55
+	.byte		BEND  , c_v+18
+	.byte	W01
+	.byte		PAN   , c_v-52
+	.byte		BEND  , c_v+17
+	.byte	W01
+	.byte		PAN   , c_v-49
+	.byte		BEND  , c_v+16
+	.byte	W01
+	.byte		PAN   , c_v-46
+	.byte		BEND  , c_v+15
+	.byte	W01
+	.byte		PAN   , c_v-43
+	.byte		BEND  , c_v+14
+	.byte	W01
+	.byte		PAN   , c_v-40
+	.byte		BEND  , c_v+13
+	.byte	W01
+	.byte		PAN   , c_v-37
+	.byte		BEND  , c_v+12
+	.byte	W01
+	.byte		PAN   , c_v-34
+	.byte		BEND  , c_v+11
+	.byte	W01
+	.byte		PAN   , c_v-31
+	.byte		BEND  , c_v+10
+	.byte	W01
+	.byte		PAN   , c_v-28
+	.byte		BEND  , c_v+9
+	.byte	W01
+	.byte		PAN   , c_v-25
+	.byte		BEND  , c_v+8
+	.byte	W01
+	.byte		PAN   , c_v-22
+	.byte		BEND  , c_v+7
+	.byte	W01
+	.byte		PAN   , c_v-19
+	.byte		BEND  , c_v+6
+	.byte	W01
+	.byte		PAN   , c_v-16
+	.byte		BEND  , c_v+5
+	.byte	W01
+	.byte		PAN   , c_v-13
+	.byte		BEND  , c_v+4
+	.byte	W01
+	.byte		PAN   , c_v-10
+	.byte		BEND  , c_v+3
+	.byte	W01
+	.byte		PAN   , c_v-7
+	.byte		BEND  , c_v+2
+	.byte	W01
+	.byte		PAN   , c_v-4
+	.byte		BEND  , c_v+1
+	.byte	W01
+	.byte		PAN   , c_v-1
+	.byte		BEND  , c_v+0
+	.byte	W01
+	.byte		PAN   , c_v+2
+	.byte		BEND  , c_v-1
+	.byte	W01
+	.byte		PAN   , c_v+5
+	.byte		BEND  , c_v-2
+	.byte	W01
+	.byte		PAN   , c_v+8
+	.byte		BEND  , c_v-3
+	.byte	W01
+	.byte		PAN   , c_v+11
+	.byte		BEND  , c_v-4
+	.byte	W01
+	.byte		PAN   , c_v+14
+	.byte		BEND  , c_v-5
+	.byte	W01
+	.byte		PAN   , c_v+17
+	.byte		BEND  , c_v-6
+	.byte	W01
+	.byte		PAN   , c_v+20
+	.byte		BEND  , c_v-7
+	.byte	W01
+	.byte		PAN   , c_v+23
+	.byte		BEND  , c_v-8
+	.byte	W01
+	.byte		PAN   , c_v+26
+	.byte		BEND  , c_v-9
+	.byte	W01
+	.byte		PAN   , c_v+29
+	.byte		BEND  , c_v-10
+	.byte	W01
+	.byte		PAN   , c_v+32
+	.byte		BEND  , c_v-11
+	.byte	W01
+	.byte		PAN   , c_v+35
+	.byte		BEND  , c_v-12
+	.byte	W01
 @ 001   ----------------------------------------
-	.byte	W16
+	.byte		PAN   , c_v+38
+	.byte		BEND  , c_v-13
+	.byte	W01
+	.byte		PAN   , c_v+41
+	.byte		BEND  , c_v-14
+	.byte	W01
+	.byte		PAN   , c_v+44
+	.byte		BEND  , c_v-15
+	.byte	W01
+	.byte		PAN   , c_v+47
+	.byte		BEND  , c_v-16
+	.byte	W01
+	.byte		PAN   , c_v+50
+	.byte		BEND  , c_v-17
+	.byte	W01
+	.byte		PAN   , c_v+53
+	.byte		BEND  , c_v-18
+	.byte	W01
+	.byte		PAN   , c_v+56
+	.byte		BEND  , c_v-19
+	.byte	W01
+	.byte		PAN   , c_v+59
+	.byte		BEND  , c_v-20
+	.byte	W01
+	.byte		PAN   , c_v+62
+	.byte		BEND  , c_v-21
+	.byte	W01
+	.byte		PAN   , c_v+63
+	.byte		BEND  , c_v-22
+	.byte	W07
 	.byte	GOTO
 	 .word	seq_069_5_B1
 seq_069_5_B2:

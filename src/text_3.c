@@ -391,7 +391,7 @@ static const u8 *HandleCharFormatInternal(Window *windows, const u8 *str, UnkDra
 void sub_8009388(void)
 {
     s32 i, j;
-    u16 left0 = (gTitleBg8bpp || gGroundMap8bpp) ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279));
+    u16 left0 = (TEXT_LEFT_GUTTER_OFF || gTitleBg8bpp || gGroundMap8bpp) ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279));
     u16 left1 = (gTitleBg8bpp || gGroundMap8bpp) ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A));
 
     gBgTilemaps[0][0][0] = left0;
@@ -414,7 +414,7 @@ void sub_8009388(void)
 void sub_8009408(s32 from, s32 to)
 {
     s32 i, j;
-    u16 left0 = (gTitleBg8bpp || gGroundMap8bpp) ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279));
+    u16 left0 = (TEXT_LEFT_GUTTER_OFF || gTitleBg8bpp || gGroundMap8bpp) ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279));
     u16 left1 = (gTitleBg8bpp || gGroundMap8bpp) ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A));
 
     gBgTilemaps[0][0][0] = left0;

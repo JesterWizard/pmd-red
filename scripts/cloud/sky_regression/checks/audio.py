@@ -1,7 +1,7 @@
 """Music and sound per scene, read from the m4a players (songHeader of
 gMPlayInfo_BGM / _SE1..6 and the sky ambience player sSkyAmbienceInfo)."""
 
-from harness import check, expect
+from harness import check, expect, fail
 
 MUS = dict(storm=69, ocean=70, fire=71, beach_dusk=61, beach_cave=62, boss=63, pit=64)
 SE_TACKLE = 519  # SE_SKY_TACKLE (EoS 0x1401)
@@ -94,3 +94,24 @@ def music_aftermath(t):
         ("beach (m01a0702): music", on_map("MAP_SKY_BEACH_DUSK"), "bgm", MUS["beach_dusk"]),
     ]
     return (yield from scene_songs(t, table))
+
+
+@check("sky", "Ocean1 (seq_070) keeps EoS's volume sweeps: each wave track swells and fades (not flat hiss)")
+def ocean_waves_swell(t):
+    """EoS shapes Ocean1's waves with track-volume sweeps (SMDL 0xE2) on
+    looping noise; without them the GBA played a flat hiss. The converter
+    (tools/eos_music/smdl.py, sweep_steps) turns each sweep into VOL steps."""
+    import os
+    import re
+    text = open(os.path.join(t.env["root"], "sound/songs/seq_070.s")).read()
+    tracks = re.split(r"^@\*+ Track \d+", text, flags=re.M)[1:] or [text]
+    counts = []
+    for tr in tracks:
+        # VOL values (mid2agb drops the repeated VOL byte: running status)
+        vols = [int(v) for v in re.findall(r"(\d+)\*seq_070_mvl/mxv", tr)]
+        counts.append((len(vols), min(vols, default=0), max(vols, default=0)))
+    swelling = [c for c in counts if c[0] >= 50 and c[2] - c[1] >= 40]
+    if len(swelling) < 3:
+        fail(f"VOL steps per track (count, min, max): {counts}; expected 3+ tracks with 50+ steps "
+             f"over a range of 40+ (EoS's 0xE2 sweeps)")
+    return f"{len(swelling)} of {len(counts)} tracks swell: {counts}"

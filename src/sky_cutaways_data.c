@@ -31,18 +31,18 @@ static const u8 sSunsetSea7Gfx[] = INCBIN_U8("graphics/custom/sky_cutaways/sunse
 static const u8 sSunsetSea7Pal[] = INCBIN_U8("graphics/custom/sky_cutaways/sunset_sea7.pal");
 
 const SkyCutawayArt gSkyCutaways[SKY_CUTAWAY_COUNT] = {
-    { sSkyDayGfx, sSkyDayPal },
-    { sSkyDuskGfx, sSkyDuskPal },
-    { sGuildSkyGfx, sGuildSkyPal },
-    { sRelicFragmentGfx, sRelicFragmentPal },
-    { sSunsetSkyGfx, sSunsetSkyPal },
-    { sSunsetSea0Gfx, sSunsetSea0Pal },
-    { sSunsetSea1Gfx, sSunsetSea1Pal },
-    { sSunsetSea2Gfx, sSunsetSea2Pal },
-    { sSunsetSea3Gfx, sSunsetSea3Pal },
-    { sSunsetSea4Gfx, sSunsetSea4Pal },
-    { sSunsetSea5Gfx, sSunsetSea5Pal },
-    { sSunsetSea6Gfx, sSunsetSea6Pal },
-    { sSunsetSea7Gfx, sSunsetSea7Pal },
+    [SKY_CUTAWAY_SKY_DAY] = { sSkyDayGfx, sSkyDayPal },
+    [SKY_CUTAWAY_SKY_DUSK] = { sSkyDuskGfx, sSkyDuskPal },
+    [SKY_CUTAWAY_GUILD_SKY] = { sGuildSkyGfx, sGuildSkyPal },
+    [SKY_CUTAWAY_RELIC_FRAGMENT] = { sRelicFragmentGfx, sRelicFragmentPal },
+    [SKY_CUTAWAY_SUNSET_SKY] = { sSunsetSkyGfx, sSunsetSkyPal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 0] = { sSunsetSea0Gfx, sSunsetSea0Pal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 1] = { sSunsetSea1Gfx, sSunsetSea1Pal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 2] = { sSunsetSea2Gfx, sSunsetSea2Pal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 3] = { sSunsetSea3Gfx, sSunsetSea3Pal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 4] = { sSunsetSea4Gfx, sSunsetSea4Pal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 5] = { sSunsetSea5Gfx, sSunsetSea5Pal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 6] = { sSunsetSea6Gfx, sSunsetSea6Pal },
+    [SKY_CUTAWAY_SUNSET_SEA0 + 7] = { sSunsetSea7Gfx, sSunsetSea7Pal },
 };
 #endif

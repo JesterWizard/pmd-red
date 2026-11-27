@@ -251,3 +251,62 @@ def storm_cliff_lightning(t):
     expect(rain >= 0.95 * CLIFF_FRAMES, f"rain on {rain}/{CLIFF_FRAMES} frames")
     return (f"{CLIFF_FRAMES} frames from f{start} match EoS: flashes at "
             f"{[x[1] for x in CLIFF_FLASHES]}, thunder at {thunder}, rain on {rain} frames")
+
+
+SKY_OBJ_RELIC_FRAGMENT = 69
+
+
+@check("divide", "Guild grate: the Relic Fragment object comes out (EoS Acting(2)) and its CG is the fragment")
+def guild_relic_fragment(t):
+    import numpy as np
+    from PIL import Image
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[4]
+    cg = np.asarray(Image.open(root / "graphics/custom/sky_cutaways/relic_fragment.png").convert("RGB"), dtype=np.int32)
+    on_guild = on_map(t, "MAP_SKY_GUILD_DUSK")
+    f = yield from t.wait(lambda f: on_guild(f) and SKY_OBJ_RELIC_FRAGMENT in t.game.ground_object_kinds(f),
+                          "the Relic Fragment object at the guild grate")
+    obj_frame = f.n
+    best, best_f = None, None
+    while not (dialogue_ready(t.game, f) and "personal treasure" in f.text):
+        diff = float(np.abs(f.fb.astype(np.int32) - cg).mean())
+        if best is None or diff < best:
+            best, best_f = diff, f
+        f = yield from t.next("'...personal treasure would inspire me'")
+    # the GBA shows the CG in 15-bit colour from a quantised palette: the
+    # nearest of all the cutaway pictures must be the Relic Fragment
+    others = {}
+    for png in sorted((root / "graphics/custom/sky_cutaways").glob("*.png")):
+        pic = np.asarray(Image.open(png).convert("RGB"), dtype=np.int32)
+        others[png.stem] = float(np.abs(best_f.fb.astype(np.int32) - pic).mean())
+    nearest = min(others, key=others.get)
+    if nearest != "relic_fragment" or best > 20:
+        t.snap(best_f, "cg")
+        fail(f"the CG shown is nearest to {nearest}.png ({others[nearest]:.1f} per channel; "
+             f"relic_fragment.png {others['relic_fragment']:.1f})")
+    gone = None
+    for _ in range(600):
+        f = yield from t.next()
+        if SKY_OBJ_RELIC_FRAGMENT not in t.game.ground_object_kinds(f):
+            gone = f.n
+            break
+    expect(gone is not None, "the Relic Fragment object is still out 600 frames after the CG")
+    second = sorted(others.values())[1]
+    return (f"object out from frame {obj_frame}; CG relic_fragment (diff {best:.1f}, next picture "
+            f"{second:.1f}); taken back at frame {gone}")
+
+
+@check("divide", "No black line down the left edge: screen column 0 shows the map like column 1 (guild)")
+def no_left_edge_line(t):
+    import numpy as np
+    on_guild = on_map(t, "MAP_SKY_GUILD_DUSK")
+    f = yield from t.wait(lambda f: on_guild(f) and dialogue_ready(t.game, f), "a guild dialogue box")
+    col0 = f.fb[:, 0].astype(int)
+    col1 = f.fb[:, 1].astype(int)
+    black = int((col0.sum(1) == 0).sum())
+    diff = float(np.abs(col0 - col1).mean())
+    if black > 20 or diff > 40:
+        t.snap(f, "edge")
+        fail(f"column 0 has {black} black pixels and differs from column 1 by {diff:.1f} "
+             f"(the text layer's 1-px gutter tile 0x279?)")
+    return f"column 0: {black} black pixels, mean diff to column 1 {diff:.1f}"

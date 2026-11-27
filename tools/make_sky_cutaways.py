@@ -13,6 +13,7 @@ src/sky_cutaways_data.c.
 """
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -125,7 +126,11 @@ def main() -> int:
     lines.append("const SkyCutawayArt gSkyCutaways[SKY_CUTAWAY_COUNT] = {")
     for slug, *_ in CUTAWAYS:
         ident = "".join(p.capitalize() for p in slug.split("_"))
-        lines.append(f"    {{ s{ident}Gfx, s{ident}Pal }},")
+        # by the enum's ids (sky_story.h keeps them stable: a gap where
+        # removed CGs were, so an id never names a different picture)
+        m = re.fullmatch(r"sunset_sea(\d)", slug)
+        idx = f"SKY_CUTAWAY_SUNSET_SEA0 + {m.group(1)}" if m else f"SKY_CUTAWAY_{slug.upper()}"
+        lines.append(f"    [{idx}] = {{ s{ident}Gfx, s{ident}Pal }},")
     lines.append("};")
     lines.append("#endif")
     GEN_C.write_text("\n".join(lines) + "\n")

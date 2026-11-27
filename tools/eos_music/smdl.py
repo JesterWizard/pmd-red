@@ -43,6 +43,9 @@ class Track:
     pans: list = field(default_factory=list)       # (tick, pan 0..127)
     bends: list = field(default_factory=list)      # (tick, signed 16)
     tempos: list = field(default_factory=list)     # (tick, bpm)
+    # 0xD4 pitch sweeps: (tick, duration in ticks, target in semitones); a
+    # duration of 0 sets the pitch at once (EoS resets it with D4 00 00 00)
+    pitch_sweeps: list = field(default_factory=list)
     loop_tick: int | None = None
     end_tick: int = 0
 
@@ -75,6 +78,7 @@ def parse(data: bytes) -> Song:
 
 def parse_track(body: bytes) -> Track:
     t = Track(index=body[0], channel=body[1])
+    sweeps = []
     i = 4
     tick = 0
     octave = 4
@@ -142,6 +146,19 @@ def parse_track(body: bytes) -> Track:
         elif ev == 0xE0:
             t.volumes.append((tick, body[i]))
             i += 1
+        elif ev in (0xE2, 0xEA):
+            # sweeps: u16 duration (ticks), then the target volume / pan,
+            # reached linearly from the current value (Ocean1's waves, the
+            # storm's wind; ppmdu: Unk_0xE2 / Unk_0xEA, 3 bytes). Expanded into
+            # steps after the track is read (sweep_steps).
+            sweeps.append((tick, ev, struct.unpack_from("<H", body, i)[0], body[i + 2]))
+            i += 3
+        elif ev == 0xD4:
+            # pitch sweep: u16 duration (ticks; the same as the volume sweep
+            # it comes with), s8 target in semitones (ppmdu: Unk_0xD4)
+            t.pitch_sweeps.append((tick, struct.unpack_from("<H", body, i)[0],
+                                   struct.unpack_from("b", body, i + 2)[0]))
+            i += 3
         elif ev == 0xE3:
             t.expressions.append((tick, body[i]))
             i += 1
@@ -156,4 +173,33 @@ def parse_track(body: bytes) -> Track:
         else:
             raise ValueError(f"unknown SMDL event 0x{ev:02X} at {i - 1}")
     t.end_tick = tick
+    if sweeps:
+        t.volumes = sweep_steps(t.volumes, [(a, d, x) for a, e, d, x in sweeps if e == 0xE2], 127)
+        t.pans = sweep_steps(t.pans, [(a, d, x) for a, e, d, x in sweeps if e == 0xEA], 64)
     return t
+
+
+SWEEP_STEP = 2  # ticks between the steps of a volume / pan sweep
+
+
+def sweep_steps(sets: list, sweeps: list, default: int) -> list:
+    """Merge set events (tick, value) and sweeps (tick, duration, target)
+    into set events: a sweep goes linearly from the value at its start to
+    its target; a later set or sweep cuts it short."""
+    marks = sorted([(tk, 0, v, 0) for tk, v in sets] + [(tk, 1, x, d) for tk, d, x in sweeps])
+    out = []
+    cur = default
+    for k, (tk, kind, x, d) in enumerate(marks):
+        stop = marks[k + 1][0] if k + 1 < len(marks) else None
+        if kind == 0 or d <= 0:
+            out.append((tk, x))
+            cur = x
+            continue
+        start = cur
+        for step in range(SWEEP_STEP, d + SWEEP_STEP, SWEEP_STEP):
+            at = tk + min(step, d)
+            if stop is not None and at > stop:
+                break
+            cur = round(start + (x - start) * min(step, d) / d)
+            out.append((at, cur))
+    return out

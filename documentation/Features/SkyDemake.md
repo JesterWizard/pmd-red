@@ -77,9 +77,20 @@ Riolu (with Vulpix, Meowth, Phanpy). Then:
 | 10 | m01a0702 | `d01p11b` beach (sunset) | The Relic Fragment; "Form a team / Say no"; "And so..." |
 
 The Relic Fragment is a ground object (EoS `GROUND/g01p01a1.wan`, ornament
-`relicfragmentp`, object kind `SKY_OBJ_RELIC_FRAGMENT`): it falls on the sand
-when Zubat rams the partner and is gone when Zubat grabs it (m01a0208), and it
-lands in front of the heroes when Zubat throws it back in the Pit (m01a0701).
+`relicfragmentp`, object kind `SKY_OBJ_RELIC_FRAGMENT`): at the guild grate
+the partner sets it down at (30, 23) with the treasure sound and picks it up
+again after the close-up (m01a0104: `supervision_Acting(2)` /
+`supervision_RemoveActing(2)`; gs178 group 6, sector 2, removed on cue 9); it
+falls on the sand when Zubat rams the partner and is gone when Zubat grabs it
+(m01a0208), and it lands in front of the heroes when Zubat throws it back in
+the Pit (m01a0701).
+
+The `SKY_CUTAWAY_*` picture ids are fixed numbers (`include/sky_story.h`):
+when the storm cliff's two CGs were removed, ids 2 and 3 were left empty
+instead of moving the later pictures down, so scene data built against the
+old list (a partly rebuilt ROM) still names the same picture. Id 5 had
+become the sunset sea, which a stale object showed in place of the Relic
+Fragment close-up.
 
 The two totem poles beside the guild entrance are ground objects too, not part
 of the map: EoS places them from the level's `SCRIPT/G01P01B/enter.sse`
@@ -120,6 +131,13 @@ dungeon, measured on DeSmuME as 60% / 40%; `ToggleWindowBgBuffer` in
 [`src/window_buffer.c`](../../src/window_buffer.c)); ground windows stay opaque (`LOG_*` in [`src/dungeon_message.c`](../../src/dungeon_message.c),
 `sub_803EAF0` kind 3 in [`src/dungeon_vram.c`](../../src/dungeon_vram.c),
 `UpdateBgTilemapForDungeonMap`).
+
+Red puts a "gutter" tile in column 0 of the two text layers (BG0 tile 0x279,
+whose first pixel column is palette 15 colour 3, black), so a 1-px black line
+ran down the left edge of every screen with the text layer on. EoS has no
+such line: the sky build leaves the column empty (`TEXT_LEFT_GUTTER_OFF` in
+[`include/bg_control.h`](../../include/bg_control.h), used by `src/text_1.c`
+and `src/text_3.c`). Check `no_left_edge_line`.
 
 ### Dungeon menus
 
@@ -859,8 +877,22 @@ Instruments come from EoS's DSE sound banks
   of Red's 5, and the BGM player has 16 tracks instead of 12 (`src/m4a.c`,
   `sound/music_player_table.inc`). The vanilla build is unchanged.
 
-Not ported: LFOs (vibrato), key groups, and layered splits (the first split
-wins).
+- **Sweeps**: SMDL events `0xE2` (track volume), `0xEA` (pan) and `0xD4`
+  (pitch) ramp linearly from the current value to a target over a number of
+  ticks (u16 duration, then the target: volume / pan 0-127, pitch in signed
+  semitones; ppmdu lists them only as `Unk_0xE2` / `Unk_0xEA` / `Unk_0xD4`, and
+  the layout is read off the songs, where the three come together with the same
+  durations). `smdl.py` (`sweep_steps`) turns a sweep into a VOL / PAN step
+  every 2 ticks, cut short by the next set or sweep; pitch sweeps become bends
+  with a 12-semitone bend range (`BENDR`, MIDI CC 20). Only Ocean1 and Storm
+  use them in the converted songs. Ocean1 is nothing but looping wave noise
+  shaped by these sweeps: without them each wave track played at one flat
+  level, which sounded like static. In mGBA its 10-frame loudness on the beach
+  by day now goes from ~0 to ~1600 (the swells), where it sat at 1100-1600
+  before. Check `ocean_waves_swell`.
+
+Not ported: LFOs (vibrato), key groups, layered splits (the first split wins),
+and the `0xD2` tune events (Fire Crackling's random crackle pitches).
 
 | Id | EoS | Used for |
 |---|---|---|
@@ -1883,6 +1915,9 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `emote_tiles_restored` | divide | OBJ tiles 0x100–0x292 (the ground emotes) are identical before the storm bolt and at the guild |
 | `text_arrow_white` | divide | the text arrow (tile 0x3F0) uses the UI palette; its brightest colour is white |
 | `hero_named_ground` | divide | "So you're named ...?" has a name (debug boot: the species name) |
+| `guild_relic_fragment` | divide | at the guild grate the Relic Fragment object (69) comes out, the close-up shown is nearest to `relic_fragment.png` of all the cutaway pictures, and the object is gone within 600 frames after it |
+| `no_left_edge_line` | divide | at a guild dialogue, screen column 0 has no black line (≤ 20 black pixels, mean difference to column 1 ≤ 40) |
+| `ocean_waves_swell` | sky | `sound/songs/seq_070.s` (Ocean1): at least 3 tracks have 50+ volume steps over a range of 40+ (EoS's `0xE2` sweeps) |
 | `music_per_scene` | divide | storm (69) at the storm and the stormy sea; Ocean1 (70) on the beach by day; Fire Crackling (71) at the guild; ambience 70 + On the Beach at Dusk (61) for the Krabby and sunset beach; 70 on the main player after "chicken"; Beach Cave (62). Each must play for 120 frames in a row in its scene |
 | `zubat_tackle_se` | divide | SE 519 plays on the sunset beach after the waves stop, before "Yowch!" |
 | `music_pit`, `music_aftermath` | pit, after | In the Depths of the Pit (64) in the cutscene and m01a0701, Boss Battle! (63) in the fight; waves + 61 in m01a0702 |
@@ -1896,7 +1931,7 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `boss_transition` | pit | before "Boss Battle!": two flashes and the white-out (BLDY brighten), and the streaks (BG1/BG2 alpha blend) between them |
 | `boss_stats` | pit | Zubat L3 15 HP 15/11 and Koffing L6 27 HP 20/8 (EntityInfo in gDungeon); `gSkyBossExp` off |
 | `dungeon_walk_pace` | perf | tiles walked with no other Pokémon on screen: median 25 frames, mean ≤ 25.6 (25.14; 25.97 before the speed fixes), dropped frames ≤ 6.2% (4.5%; 7.6%) |
-| `dungeon_dash_pace` | perf | corridor tiles dashed with nobody on screen: mean ≤ 2.8 frames (2.63; 2.96) |
+| `dungeon_dash_pace` | perf | corridor tiles dashed with nobody on screen: mean ≤ 3.0 frames, EoS's pace (2.63-2.87 depending on the route the run takes; 2.96 before the fixes) |
 | `dungeon_no_freeze` | perf | no more than 5 dropped frames in a row in the walk and the dash (3; 13: the minimap redraw when the log closed) |
 | `dungeon_cpu_load` | perf | CPU load ≤ 62% of a frame standing still (60.7%; 63.4%) and ≤ 65% over the walk (62.4%; 67.5%) |
 | `thieves_beaten_pose` | after | Zubat's and Koffing's actors are in animation 0x100F at "Owowow..." |

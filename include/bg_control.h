@@ -40,6 +40,13 @@ extern bool8 gTitleBg8bpp;
 /* Spinda Café (and any ground map with 8bpp BPL marker): BG2+BG3 256-color,
  * CHARBASE1 @ 0x4000, screenbases 0/1. Mutually exclusive with gTitleBg8bpp. */
 extern bool8 gGroundMap8bpp;
+/* Text layers' left-column "gutter" tiles (BG0 0x279: a 1-px black column at
+ * x 0; BG1 0x27A). The Sky build leaves the column clear: EoS has no such line. */
+#ifdef SKY_STORY
+#define TEXT_LEFT_GUTTER_OFF TRUE
+#else
+#define TEXT_LEFT_GUTTER_OFF FALSE
+#endif
 /* Café menu overflow: park art maps at SB 30/31, load window tiles from tile 2
  * in low VRAM; blank art only under menu rects. UI maps stay at SB 6/7. */
 extern bool8 gGroundMap8bppWideUi;
