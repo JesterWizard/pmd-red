@@ -9,6 +9,8 @@
 #include "data/ax/hooh.h"
 #include "data/ax/celebi.h"
 #include "data/ax/treecko.h"
+#ifndef SKY_STORY /* the sky build uses gAxGrovylesky (monster_gfx_sky.c) */
 #include "data/ax/grovyle.h"
+#endif
 #include "data/ax/sceptile.h"
 #include "data/ax/torchic.h"

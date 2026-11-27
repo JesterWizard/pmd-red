@@ -11,4 +11,6 @@
 #include "data/ax/castformsnowy.h"
 #include "data/ax/castformsunny.h"
 #include "data/ax/castformrainy.h"
+#ifndef SKY_STORY /* the sky build uses gAxKecleonsky (monster_gfx_sky.c) */
 #include "data/ax/kecleon.h"
+#endif

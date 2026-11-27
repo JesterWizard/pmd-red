@@ -7,7 +7,7 @@
  * totem poles and gate, the Exploration Team Kit, the dinner, the pearl) are
  * added in name order. */
 #ifdef SKY_STORY
-#define ORNAMENT_FILES_COUNT 26
+#define ORNAMENT_FILES_COUNT 40
 #else
 #define ORNAMENT_FILES_COUNT 79
 #endif

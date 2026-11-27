@@ -4,7 +4,9 @@
 
 #include "data/ax/makuhita.h"
 #include "data/ax/hariyama.h"
+#ifndef SKY_STORY /* the sky build uses gAxAzurillsky (monster_gfx_sky.c) */
 #include "data/ax/azurill.h"
+#endif
 #include "data/ax/nosepass.h"
 #include "data/ax/skitty.h"
 #include "data/ax/delcatty.h"

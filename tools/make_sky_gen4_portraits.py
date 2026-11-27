@@ -40,6 +40,11 @@ SKY_RED_SPECIES = {  # folder: national dex
     "wigglytuff": 40, "diglett": 50, "dugtrio": 51, "pidgey": 16, "ledyba": 165,
     "sunflora": 192, "wurmple": 265, "swellow": 277, "seedot": 273, "loudred": 294,
     "spoink": 325, "corphish": 341, "chimecho": 358,
+    # chapter 3's actors and free-roam folk (documentation/Features/SkyChapter3.md)
+    "marill": 183, "azurill": 298, "drowzee": 96, "kecleon": 352, "magnemite": 81,
+    "grovyle": 253, "duskull": 355, "kangaskhan": 115, "marowak": 105, "ursaring": 217,
+    "teddiursa": 216, "vigoroth": 288, "shuppet": 353, "murkrow": 198, "togepi": 175,
+    "politoed": 186, "poochyena": 261, "spinda": 327,
 }
 GEN4_H = ROOT / "include" / "constants" / "sky_gen4.h"
 EMOTIONS = ["Normal", "Happy", "Pained", "Angry", "Worried", "Sad", "Crying",

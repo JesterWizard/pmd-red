@@ -6,6 +6,9 @@
 #include "ground_sprite.h"
 #include "sprite.h"
 #include "pokemon.h"
+#ifdef SKY_STORY
+#include "sky_story.h"
+#endif
 
 extern s32 sub_800E700(s32);
 
@@ -27,7 +30,12 @@ void sub_80A7428(struct UnkGroundSpriteStruct *ptr, s32 a1_, s32 monsterId_, s32
         spStruct.unk2 = 0x122;
     }
     else {
+#ifdef SKY_STORY
+        /* EoS's purple Kecleon brother: Red's purple-Kecleon palette, as kind 71. */
+        bool32 kecleonShop = (a1 == 71 || a1 == SKY_LIVES_KECLEON_PURPLE);
+#else
         bool32 kecleonShop = (a1 == 71);
+#endif
         spStruct.unk2 = GetPokemonOverworldPalette(monsterId, kecleonShop);
     }
     spStruct.axmain = (axmain *) file->data;

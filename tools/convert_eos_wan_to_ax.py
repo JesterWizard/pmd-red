@@ -1150,6 +1150,35 @@ def object_wan_model(raw: bytes):
     return model, groups, counts
 
 
+def merge_palettes(pals_counts):
+    """15 colours (+ transparent index 0) for several objects' palettes.
+
+    Every used colour starts as a candidate weighted by its pixel count; the
+    candidate that costs least to fold into its nearest neighbour (distance x
+    pixels) is dropped until 15 are left. Heavily used colours stay exact.
+    """
+    cand = []
+    for pal, counts in pals_counts:
+        for i in range(1, 16):
+            if counts[i]:
+                cand.append([tuple(pal[i]), counts[i]])
+    while len(cand) > 15:
+        best = None
+        for i, (ci, wi) in enumerate(cand):
+            for j, (cj, _) in enumerate(cand):
+                if i != j:
+                    d = colour_dist(ci, cj) * wi
+                    if best is None or d < best[0]:
+                        best = (d, i, j)
+        _, i, j = best
+        cand[j][1] += cand[i][1]
+        del cand[i]
+    # dark to light, as EoS's own palettes run
+    cols = sorted((c for c, _ in cand), key=lambda c: rgb_to_lab(c)[0])
+    cols += [(0, 0, 0)] * (15 - len(cols))
+    return [tuple(pals_counts[0][0][0])] + cols
+
+
 def _eight(seqs):
     """Red picks anims by (group, direction): give every group 8 slots."""
     return seqs[:NUM_DIRS] if len(seqs) >= NUM_DIRS else [seqs[d % len(seqs)] for d in range(NUM_DIRS)]
@@ -1200,6 +1229,18 @@ def cmd_ornament(a):
     N = c_name(a.name)
     gfx_dir = ROOT / "graphics" / "ornament" / N
     hdr = ROOT / "src" / "data" / "ornament" / f"{a.name}.h"
+    if a.merge_palette:
+        # One extend palette for two objects that show together while the other
+        # extend slot is taken (Treasure Town's totem poles 3 and 4 beside pole 2).
+        other, _, other_counts = object_wan_model(rom.raw_wan(a.merge_palette))
+        merged = merge_palettes([(src_pal, counts), (other.palette, other_counts)])
+        err, mp = best_mapping(src_pal, counts, merged)
+        oerr, _ = best_mapping(other.palette, other_counts, merged)
+        model.sprites = [remap_4bpp(s_, mp) for s_ in model.sprites]
+        src_pal = merged
+        a.own_palette = True
+        print(f"merged palette with {a.merge_palette}: err {err / (sum(counts[1:]) or 1):.1f} here, "
+              f"{oerr / (sum(other_counts[1:]) or 1):.1f} there")
     if a.own_palette:
         pidx = None
         pal_path = ROOT / "graphics" / "ornament" / "pal" / f"{a.name}.pal"
@@ -1209,6 +1250,8 @@ def cmd_ornament(a):
                             "".join(f"{r} {g} {b}\r\n" for r, g, b in snapped))
         model.palette = snapped
         note = f"EoS {a.wan} -> ornament with its own palette graphics/ornament/pal/{a.name}.pal"
+        if a.merge_palette:
+            note += f" (shared with {a.merge_palette})"
         pal_num = 0
     elif a.share_palette:
         # Another ornament's extend palette (graphics/ornament/pal/<name>.pal), for an
@@ -1319,6 +1362,9 @@ def main(argv=None):
                    help="keep the EoS colours in graphics/ornament/pal/<name>.pal (needs an extend palette slot)")
     p.add_argument("--share-palette", metavar="ORNAMENT",
                    help="map onto another ornament's own palette (graphics/ornament/pal/<ORNAMENT>.pal)")
+    p.add_argument("--merge-palette", metavar="WAN",
+                   help="own palette (graphics/ornament/pal/<name>.pal) of 15 colours that fits this "
+                        "object and another one (GROUND/xxx.wan), which then uses --share-palette <name>")
     p.add_argument("--check", metavar="OUTDIR", help="also write EoS/AX comparison sheets here")
     p.add_argument("--rest-first", action="store_true",
                    help="sequence 0 = the first frame held (the object rests until direction 1 plays)")

@@ -45,6 +45,10 @@ const char *const gUnknown_81178F4[] = {
     "totempole2c", /* 38: 0x126 */
     "dinnerc",     /* 39: 0x127 */
     "pearlc",      /* 40: 0x128 */
+    "totempole3c", /* 41: 0x129 */
+    "dojowarpc",   /* 42: 0x12A */
+    "timegearc",   /* 43: 0x12B */
+    "crumblingrockc", /* 44: 0x12C */
 #endif
     NULL
 };
@@ -138,6 +142,28 @@ const struct GroundObjectKind gGroundObjectKinds[] = {
      * Drenched Bluff (GROUND/d02p31a1.wan), each on its own EoS palette. */
     { 1, 0x127, "dinnerp" },
     { 1, 0x128, "pearlp" },
+    /* Chapter 3 (documentation/Features/SkyChapter3.md). The Outlaw Notice
+     * Board's flipping panel (GROUND/g01p03a1.wan, 20 tiles): shared palette 6. */
+    { 2, 0x006, "outlawpanelp" },
+    /* Azurill's apple (GROUND/p03p02a1.wan): shared palette 8. */
+    { 1, 0x008, "applep" },
+    /* Treasure Town's other two totem poles (GROUND/t01p01a2.wan, t01p01a4.wan)
+     * show beside totem pole 2 (t01p01a3), so they share one extend palette
+     * made for both (convert ... --merge-palette). */
+    { 2, 0x129, "totempole3p" },
+    { 3, 0x129, "totempole4p" },
+    /* Marowak Dojo's warp (GROUND/t01p04a1.wan, 72 tiles), its own EoS palette. */
+    { 5, 0x12A, "dojowarpp" },
+    /* The visions: the Outlaw Notice Board's panel seen from behind and
+     * Dugtrio's hole (GROUND/v03p03a1.wan, v03p03a2.wan: shared palettes 4, 1),
+     * the Time Gear and its glow (v03p06a1.wan on its own palette, v03p06a2.wan
+     * on shared palette 10, 120 tiles) and the crumbling rock
+     * (v03p11a1.wan, its own palette). */
+    { 3, 0x004, "boardbackp" },
+    { 2, 0x001, "dugtrioholep" },
+    { 1, 0x12B, "timegearp" },
+    { 8, 0x00A, "timegearglowp" },
+    { 2, 0x12C, "crumblingrockp" },
 #endif
     { -1, 0x000, NULL }
 };

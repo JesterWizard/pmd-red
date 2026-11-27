@@ -4,7 +4,9 @@
 
 #include "data/ax/breloom.h"
 #include "data/ax/slakoth.h"
+#ifndef SKY_STORY /* the sky build uses gAxVigorothsky (monster_gfx_sky.c) */
 #include "data/ax/vigoroth.h"
+#endif
 #include "data/ax/slaking.h"
 #include "data/ax/nincada.h"
 #include "data/ax/ninjask.h"

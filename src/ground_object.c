@@ -128,6 +128,16 @@ static const struct GroundObjectTypeData sSkyGroundObjectTypes[] = {
     [SKY_OBJ_EXPLORATION_KIT - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
     [SKY_OBJ_DINNER - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
     [SKY_OBJ_PEARL - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_OUTLAW_BOARD_PANEL - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_APPLE - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_TOTEM_POLE_3 - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_TOTEM_POLE_4 - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_DOJO_WARP - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_BOARD_PANEL_BACK - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_DUGTRIO_HOLE - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_TIME_GEAR - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_TIME_GEAR_GLOW - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
+    [SKY_OBJ_CRUMBLING_ROCK - SKY_OBJ_TOTEM_POLE_1] = { 1, 0, 0 },
 };
 #endif
 

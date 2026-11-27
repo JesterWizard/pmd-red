@@ -7388,7 +7388,7 @@ const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {
     },
     {
         .species = (u8 *)MonsterNameGrovyle, .category = (u8 *)MonsterCategoryWoodGecko,
-        .overworldPalette = 12, .bodySize = 1,
+        .overworldPalette = 8, .bodySize = 1,
         .movementSpeed = 1, .dialogueSprites = 0,
         .unk12 = 0,
         .types = { TYPE_GRASS, TYPE_NONE }, .movementType = 0,

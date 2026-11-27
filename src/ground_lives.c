@@ -135,6 +135,28 @@ static const struct GroundLiveTypeData sSkyLivesTypeData[SKY_LIVES_KIND_COUNT] =
     [SKY_LIVES_PIDGEY - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_PIDGEY,     "", 2, 1 },
     [SKY_LIVES_LEDYBA - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_LEDYBA,     "", 2, 1 },
     [SKY_LIVES_SEEDOT - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_SEEDOT,     "", 2, 1 },
+    [SKY_LIVES_MARILL - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_MARILL,     "", 2, 1 },
+    [SKY_LIVES_AZURILL - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_AZURILL,    "", 2, 1 },
+    [SKY_LIVES_DROWZEE - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_DROWZEE,    "", 2, 1 },
+    [SKY_LIVES_KECLEON - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_KECLEON,    "", 2, 1 },
+    /* palette 10 (sub_80A7428, as for Red's kind 71) */
+    [SKY_LIVES_KECLEON_PURPLE - SKY_LIVES_KIND_FIRST] = { 5, MONSTER_KECLEON, "", 2, 1 },
+    [SKY_LIVES_BIBAREL - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_BIBAREL,    "", 2, 1 },
+    [SKY_LIVES_MAGNEZONE - SKY_LIVES_KIND_FIRST]  = { 5, MONSTER_MAGNEZONE,  "", 2, 1 },
+    [SKY_LIVES_MAGNEMITE - SKY_LIVES_KIND_FIRST]  = { 5, MONSTER_MAGNEMITE,  "", 2, 1 },
+    [SKY_LIVES_GROVYLE - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_GROVYLE,    "", 2, 1 },
+    [SKY_LIVES_DUSKULL - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_DUSKULL,    "", 2, 1 },
+    [SKY_LIVES_KANGASKHAN - SKY_LIVES_KIND_FIRST] = { 5, MONSTER_KANGASKHAN, "", 2, 1 },
+    [SKY_LIVES_MAROWAK - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_MAROWAK,    "", 2, 1 },
+    [SKY_LIVES_URSARING - SKY_LIVES_KIND_FIRST]   = { 5, MONSTER_URSARING,   "", 2, 1 },
+    [SKY_LIVES_TEDDIURSA - SKY_LIVES_KIND_FIRST]  = { 5, MONSTER_TEDDIURSA,  "", 2, 1 },
+    [SKY_LIVES_VIGOROTH - SKY_LIVES_KIND_FIRST]   = { 5, MONSTER_VIGOROTH,   "", 2, 1 },
+    [SKY_LIVES_SHUPPET - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_SHUPPET,    "", 2, 1 },
+    [SKY_LIVES_MURKROW - SKY_LIVES_KIND_FIRST]    = { 5, MONSTER_MURKROW,    "", 2, 1 },
+    [SKY_LIVES_TOGEPI - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_TOGEPI,     "", 2, 1 },
+    [SKY_LIVES_POLITOED - SKY_LIVES_KIND_FIRST]   = { 5, MONSTER_POLITOED,   "", 2, 1 },
+    [SKY_LIVES_POOCHYENA - SKY_LIVES_KIND_FIRST]  = { 5, MONSTER_POOCHYENA,  "", 2, 1 },
+    [SKY_LIVES_SPINDA - SKY_LIVES_KIND_FIRST]     = { 5, MONSTER_SPINDA,     "", 2, 1 },
 };
 
 static inline const struct GroundLiveTypeData *GetLivesTypeData(s32 kind)
@@ -209,7 +231,12 @@ static const s16 gUnknown_8117F64[] = {
     0x100D, 0x100E, 0x100F, 0x1010, 0x1011, 0x1012, 0x1013,
     0x1014, 0x80D, 0x80E, 0x80F, 0x810, 0x811, 0x812, 0x813,
     0x814, 0x80D, 0x100E, 0x100F, 0x1010, 0x1011, 0x812,
-    0x1013, 0x1014, 0x1015, 0x1016, 0x1017, 0x818, 0x1019, 0x81A, 0x81B
+    0x1013, 0x1014, 0x1015, 0x1016, 0x1017, 0x818, 0x1019, 0x81A, 0x81B,
+#ifdef SKY_STORY
+    /* 53: EoS SetAnimation(14), which Red's table lacks: group 6 (Hurt)
+     * looping (chapter 3: Drowzee beaten at Mt. Bristle's peak). */
+    0x806,
+#endif
 };
 
 static const s16 sStarterMons[] = {

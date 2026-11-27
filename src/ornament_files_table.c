@@ -89,14 +89,22 @@ const File gOrnamentFiles[ORNAMENT_FILES_COUNT] = {
     /* Explorers of Sky demake. Red's 64 team-base flag files (flag##c /
      * flag##p) are left out: only Red's team base places a flag object or
      * loads a flag palette. The EoS ground objects are added in name order. */
+    { "applep", &gAxApple, },
+    { "boardbackp", &gAxBoardback, },
+    { "crumblingrockc", &gCrumblingrockPal, },
+    { "crumblingrockp", &gAxCrumblingrock, },
     { "dinnerc", &gDinnerPal, },
     { "dinnerp", &gAxDinner, },
+    { "dojowarpc", &gDojowarpPal, },
+    { "dojowarpp", &gAxDojowarp, },
+    { "dugtrioholep", &gAxDugtriohole, },
     { "guildgatep", &gAxGuildgate, },
     { "item01p", &gAxItem01, },
     { "npc01p", &gAxNpc01, },
     { "npc02p", &gAxNpc02, },
     { "npc03p", &gAxNpc03, },
     { "npc04p", &gAxNpc04, },
+    { "outlawpanelp", &gAxOutlawpanel, },
     { "pearlc", &gPearlPal, },
     { "pearlp", &gAxPearl, },
     { "relicfragmentp", &gAxRelicfragment, },
@@ -106,6 +114,9 @@ const File gOrnamentFiles[ORNAMENT_FILES_COUNT] = {
     { "stairs01p", &gAxStairs01, },
     { "stoneimc", &gStoneimPal, },
     { "teamkitp", &gAxTeamkit, },
+    { "timegearc", &gTimegearPal, },
+    { "timegearglowp", &gAxTimegearglow, },
+    { "timegearp", &gAxTimegear, },
     { "titlebg1", &gAxTitlebg1, },
     { "titlebgc", &gTitlebgPal, },
     { "titleop1", &gAxTitleop1, },
@@ -115,5 +126,8 @@ const File gOrnamentFiles[ORNAMENT_FILES_COUNT] = {
     { "totempole1p", &gAxTotempole1, },
     { "totempole2c", &gTotempole2Pal, },
     { "totempole2p", &gAxTotempole2, },
+    { "totempole3c", &gTotempole3Pal, },
+    { "totempole3p", &gAxTotempole3, },
+    { "totempole4p", &gAxTotempole4, },
 #endif
 };

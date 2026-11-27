@@ -7,7 +7,9 @@
 #include "data/ax/mudkip.h"
 #include "data/ax/marshtomp.h"
 #include "data/ax/swampert.h"
+#ifndef SKY_STORY /* the sky build uses gAxPoochyenasky (monster_gfx_sky.c) */
 #include "data/ax/poochyena.h"
+#endif
 #include "data/ax/mightyena.h"
 #include "data/ax/zigzagoon.h"
 #include "data/ax/linoone.h"

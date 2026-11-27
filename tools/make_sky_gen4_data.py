@@ -484,7 +484,15 @@ def main() -> int:
     c.append("const MonsterDataEntry gSkyMonsterData[MONSTER_MAX] = {")
     for sid, e in enumerate(red_mons):
         e = dict(e)
-        mdi_red = eos_by_name.get(mon_key(red_names.get(e["name"], ""))) if 0 < sid < RED_MONSTER_COUNT and sid != RED_MUNCHLAX else None
+        # A Red species the sky build draws with an EoS sprite (src/data/ax/
+        # <name>sky.h) takes the palette that sprite was converted to. They are
+        # converted onto the species' Red palette where it fits; EoS's green
+        # Grovyle does not fit Red's grey-green palette 12 (chapter 3).
+        if 0 < sid < RED_MONSTER_COUNT and sid != RED_MUNCHLAX:
+            sky_h = ROOT / "src" / "data" / "ax" / f"{ident(red_names.get(e['name'], '')).lower()}sky.h"
+            if sky_h.exists():
+                e["overworldPalette"] = sprite_palette(f"{red_names[e['name']]}sky")
+        mdi_red =eos_by_name.get(mon_key(red_names.get(e["name"], ""))) if 0 < sid < RED_MONSTER_COUNT and sid != RED_MUNCHLAX else None
         if mdi_red is not None:
             em = eos.md.entries[mdi_red]
             e["baseHP"] = em.base_hp

@@ -26,6 +26,20 @@
 #define SKY_OBJ_EXPLORATION_KIT 73 /* EoS GROUND/g01p05a1.wan */
 #define SKY_OBJ_DINNER          74 /* EoS GROUND/g01p06b1.wan: the mess hall's food */
 #define SKY_OBJ_PEARL           75 /* EoS GROUND/d02p31a1.wan: Spoink's pearl */
+/* Chapter 3's objects (documentation/Features/SkyChapter3.md, "Sprites"), the
+ * same way. The panel: 0 job side, 1 flips to the outlaw side, 2 outlaw side,
+ * 3 flips back. The apple: 0-3 EoS's four bounces. The panel seen from behind:
+ * 0 at rest, 1 and 2 its two spins. The rest have one state. */
+#define SKY_OBJ_OUTLAW_BOARD_PANEL 76 /* EoS GROUND/g01p03a1.wan: g01p03a's flipping panel */
+#define SKY_OBJ_APPLE           77 /* EoS GROUND/p03p02a1.wan: Azurill's apple */
+#define SKY_OBJ_TOTEM_POLE_3    78 /* EoS GROUND/t01p01a2.wan: Treasure Town's poles */
+#define SKY_OBJ_TOTEM_POLE_4    79 /* EoS GROUND/t01p01a4.wan */
+#define SKY_OBJ_DOJO_WARP       80 /* EoS GROUND/t01p04a1.wan: Marowak Dojo's warp */
+#define SKY_OBJ_BOARD_PANEL_BACK 81 /* EoS GROUND/v03p03a1.wan: the panel from behind */
+#define SKY_OBJ_DUGTRIO_HOLE    82 /* EoS GROUND/v03p03a2.wan */
+#define SKY_OBJ_TIME_GEAR       83 /* EoS GROUND/v03p06a1.wan */
+#define SKY_OBJ_TIME_GEAR_GLOW  84 /* EoS GROUND/v03p06a2.wan */
+#define SKY_OBJ_CRUMBLING_ROCK  85 /* EoS GROUND/v03p11a1.wan */
 
 #define SKY_LIVES_ZUBAT      147
 #define SKY_LIVES_KOFFING    148
@@ -48,7 +62,32 @@
 #define SKY_LIVES_PIDGEY     163
 #define SKY_LIVES_LEDYBA     164
 #define SKY_LIVES_SEEDOT     165
-#define SKY_LIVES_KIND_COUNT 19
+/* Chapter 3 (documentation/Features/SkyChapter3.md): the story's actors, then the
+ * Treasure Town, guild and crossroads folk of its free roam. Bidoof's brother and
+ * sister (NPC_BIPPA_BRO / _SIS) are SKY_LIVES_BIDOOF. The purple Kecleon brother is
+ * Kecleon's sprite on Red's purple-Kecleon palette (10), as Red's kind 71 is. */
+#define SKY_LIVES_MARILL         166 /* NPC_MARIRU */
+#define SKY_LIVES_AZURILL        167 /* NPC_RURIRI */
+#define SKY_LIVES_DROWZEE        168 /* NPC_SURIIPU */
+#define SKY_LIVES_KECLEON        169 /* NPC_KAKUREON1 (green) */
+#define SKY_LIVES_KECLEON_PURPLE 170 /* NPC_KAKUREON2 */
+#define SKY_LIVES_BIBAREL        171 /* NPC_BIIDARU */
+#define SKY_LIVES_MAGNEZONE      172 /* NPC_JIBAKOIRU */
+#define SKY_LIVES_MAGNEMITE      173 /* NPC_KOIRU, NPC_KOIRU2 */
+#define SKY_LIVES_GROVYLE        174 /* NPC_JUPUTORU */
+#define SKY_LIVES_DUSKULL        175 /* NPC_YOMAWARU */
+#define SKY_LIVES_KANGASKHAN     176 /* NPC_GARUURA */
+#define SKY_LIVES_MAROWAK        177 /* NPC_GARAGARA */
+#define SKY_LIVES_URSARING       178 /* NPC_RINGUMA */
+#define SKY_LIVES_TEDDIURSA      179 /* NPC_HIMEGUMA */
+#define SKY_LIVES_VIGOROTH       180 /* NPC_YARUKIMONO */
+#define SKY_LIVES_SHUPPET        181 /* NPC_KAGEBOUZU */
+#define SKY_LIVES_MURKROW        182 /* NPC_YAMIKARASU */
+#define SKY_LIVES_TOGEPI         183 /* NPC_TOGEPII */
+#define SKY_LIVES_POLITOED       184 /* NPC_NYOROTONO */
+#define SKY_LIVES_POOCHYENA      185 /* NPC_POCHIENA_A, _B, _C */
+#define SKY_LIVES_SPINDA         186 /* NPC_PATCHIIRU */
+#define SKY_LIVES_KIND_COUNT 40
 
 #ifndef __ASSEMBLER__
 #include "global.h"

@@ -2,7 +2,9 @@
 #include "globaldata.h"
 #include "monster_gfx.h"
 
+#ifndef SKY_STORY /* the sky build uses gAxMagnemitesky (monster_gfx_sky.c) */
 #include "data/ax/magnemite.h"
+#endif
 #include "data/ax/magneton.h"
 #include "data/ax/farfetchd.h"
 #include "data/ax/doduo.h"

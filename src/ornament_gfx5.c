@@ -22,4 +22,15 @@
 #include "data/ornament/teamkit.h"
 #include "data/ornament/dinner.h"
 #include "data/ornament/pearl.h"
+/* Chapter 3's objects (documentation/Features/SkyChapter3.md). */
+#include "data/ornament/outlawpanel.h"
+#include "data/ornament/apple.h"
+#include "data/ornament/totempole3.h"
+#include "data/ornament/totempole4.h"
+#include "data/ornament/dojowarp.h"
+#include "data/ornament/boardback.h"
+#include "data/ornament/dugtriohole.h"
+#include "data/ornament/timegear.h"
+#include "data/ornament/timegearglow.h"
+#include "data/ornament/crumblingrock.h"
 #endif
