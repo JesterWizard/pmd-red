@@ -37,6 +37,25 @@ RENDER_SHA1 = {
     "MAP_SKY_GUILD_CREW_ROOM_NIGHT": "76e98d5357a793f5c84c9cc145c16c5ed71f6d12",
     "MAP_SKY_DRENCHED_BLUFF_ENTRANCE": "2ff6668319ac58c612295d2d1045d7e23d6c86e6",
     "MAP_SKY_DRENCHED_BLUFF_END": "b63620ed6e777696e6ab571d20ae28172498cec4",
+    # chapter 3 (documentation/Features/SkyChapter3.md). EP1501A and EV0309A
+    # are cropped (--crop-chunks 0 0 19 12, 1 2 11 8); their render is the
+    # same crop of EoS's.
+    "MAP_SKY_TREASURE_TOWN_SQUARE": "fa5d27ae13a7c5874652021403e0fe7b63997839",
+    "MAP_SKY_TREASURE_TOWN_WEST": "81af7d918c8e50932d55ec39108b37d91c6d2bc8",
+    "MAP_SKY_CROSSROADS": "da304da2ab7aa2612d5dd7cbc57ab576a87dec26",
+    "MAP_SKY_BEACH_PATH": "a78257510d9289d85d4977e403d2c5bc48520c57",
+    "MAP_SKY_GUILD_ENTRANCE_DAY": "a151dc60957ebd7ba9e657310acd78b296880141",
+    "MAP_SKY_MT_BRISTLE_ENTRANCE": "6724c81329e7bb9b542356dbc5c1c207ccb2ab10",
+    "MAP_SKY_MT_BRISTLE_PEAK": "097954be6f699df81c779ca7831cce3c448250ea",
+    "MAP_SKY_BIDOOF_HOME": "2463c8aef2520143e94fa134ba92237388491985",
+    "MAP_SKY_DUGTRIO_TUNNEL": "69a8ed3c9f104fc6f6e2f067a4ba2bb3684b9e41",
+    "MAP_SKY_STORM_CLOUDS": "4677a64b721a000aa19b9eaeb18304901f3b6eff",
+    "MAP_SKY_TIME_GEAR_FOREST": "3d64c5ffaf2c41973f23fc8c1c0d6033c5302584",
+    "MAP_SKY_TIME_GEAR_LAKE": "6bf2f338c22708e2ff1c9ab0d599e98167ceee7c",
+    "MAP_SKY_TIME_GEAR_VOLCANO": "1790ae8a780602bcb894aafae350d4d65b17affb",
+    "MAP_SKY_TIME_FLOW": "603a05db6248ae0e445aae2a297440421dfe85bc",
+    "MAP_SKY_GROVYLE_RUN": "68230ea12d2fac24c676f6f16a570f0a3ef8f15b",
+    "MAP_SKY_GROVYLE_CLOSEUP": "47d2d5fd95bbe941ffbb3a22b1e26cbedee874bc",
 }
 
 STREAM_MAX_TILES = 4096  # GROUND_STREAM_MAX_SOURCE_TILES (sky build), 12-bit ids
@@ -106,12 +125,13 @@ def sky_map_files(t):
     scripts = (root / "src" / "map_script_table.c").read_text()
     problems, notes = [], []
     for name, (unk0, bpl, bpc, bma, bpas) in maps.items():
+        before = len(problems)
         if not re.search(rf"\[{name}\] = &gGroundScript_gs\d+,", scripts):
             problems.append(f"{name}: no gMapScriptTable entry")
         for f in [bpl, bpc, bma] + bpas:
             if f not in linked or f not in in_table:
                 problems.append(f"{name}: {f} not linked (ground_map_files_sky.c) or not in gGroundFiles")
-        if problems:
+        if len(problems) > before:
             continue
         hdr = struct.unpack_from("<8h", (root / "data" / "map_bg" / f"{bpc}.bpc").read_bytes(), 0)
         n_tiles, anim = hdr[2], sum(hdr[3:7])

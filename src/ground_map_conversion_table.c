@@ -1786,5 +1786,133 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .unk6 = -1,
         .text = _("Drenched Bluff"),
     },
+    [MAP_SKY_TREASURE_TOWN_SQUARE] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_TREASURE_TOWN_SQUARE,
+        .unk6 = -1,
+        .text = _("Treasure Town"),
+    },
+    [MAP_SKY_TREASURE_TOWN_WEST] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_TREASURE_TOWN_WEST,
+        .unk6 = -1,
+        .text = _("Treasure Town"),
+    },
+    [MAP_SKY_CROSSROADS] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_CROSSROADS,
+        .unk6 = -1,
+        .text = _("Crossroads"),
+    },
+    [MAP_SKY_BEACH_PATH] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_BEACH_PATH,
+        .unk6 = -1,
+        .text = _("Beach Path"),
+    },
+    [MAP_SKY_GUILD_ENTRANCE_DAY] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GUILD_ENTRANCE_DAY,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_MT_BRISTLE_ENTRANCE] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_MT_BRISTLE_ENTRANCE,
+        .unk6 = -1,
+        .text = _("Mt. Bristle"),
+    },
+    [MAP_SKY_MT_BRISTLE_PEAK] = {
+        /* unk0 1: single BG layer */
+        .unk0 = 1,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_MT_BRISTLE_PEAK,
+        .unk6 = -1,
+        .text = _("Mt. Bristle Peak"),
+    },
+    [MAP_SKY_BIDOOF_HOME] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_BIDOOF_HOME,
+        .unk6 = -1,
+        .text = _("Bidoof's Home"),
+    },
+    [MAP_SKY_DUGTRIO_TUNNEL] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_DUGTRIO_TUNNEL,
+        .unk6 = -1,
+        .text = _("Wigglytuff's Guild"),
+    },
+    [MAP_SKY_STORM_CLOUDS] = {
+        /* unk0 1: single BG layer */
+        .unk0 = 1,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_STORM_CLOUDS,
+        .unk6 = -1,
+        .text = _("Stormy Sea"),
+    },
+    [MAP_SKY_TIME_GEAR_FOREST] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_TIME_GEAR_FOREST,
+        .unk6 = -1,
+        .text = _("Time Gear"),
+    },
+    [MAP_SKY_TIME_GEAR_LAKE] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_TIME_GEAR_LAKE,
+        .unk6 = -1,
+        .text = _("Time Gear"),
+    },
+    [MAP_SKY_TIME_GEAR_VOLCANO] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_TIME_GEAR_VOLCANO,
+        .unk6 = -1,
+        .text = _("Time Gear"),
+    },
+    [MAP_SKY_TIME_FLOW] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_TIME_FLOW,
+        .unk6 = -1,
+        .text = _("Time Gear"),
+    },
+    [MAP_SKY_GROVYLE_RUN] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GROVYLE_RUN,
+        .unk6 = -1,
+        .text = _("Forest"),
+    },
+    [MAP_SKY_GROVYLE_CLOSEUP] = {
+        /* unk0 6: dual BG layers (EoS upper layer in front of sprites) */
+        .unk0 = 6,
+        .groundPlaceId = GROUND_PLACE_SCENE,
+        .mapFileTableId = MAP_FILE_ID_SKY_GROVYLE_CLOSEUP,
+        .unk6 = -1,
+        .text = _("Time Gear"),
+    },
 #endif
 };

@@ -3,7 +3,7 @@
 
 /* Explorers of Sky demake: the EoS ground map files in src/ground_map_files_sky.c. */
 #ifdef SKY_STORY
-#define SKY_GROUND_FILES 61
+#define SKY_GROUND_FILES 114
 #else
 #define SKY_GROUND_FILES 0
 #endif

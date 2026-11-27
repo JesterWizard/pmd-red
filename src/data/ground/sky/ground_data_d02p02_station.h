@@ -1,128 +1,18 @@
+/*
+ * Explorers of Sky demake, chapter 3: the station of every chapter-3 map
+ * (gMapScriptTable points them all at gs181, the slot of Red's Thunderwave
+ * Cave end, which the sky build does not use). See
+ * documentation/Features/SkyChapter3.md.
+ *
+ * The scene scripts, actors and sectors are in
+ * events/sky/scenes/sky_d02p02_scenes.scene; the build compiles them into
+ * sky_d02p02_scenes.h (tools/event_editor/scenes.py, documentation/EventEditor.md).
+ * As yet a placeholder: group 0, the enter script.
+ */
+#include "sky_d02p02_scenes.h"
 
-
-
-
-
-
-
-
-
-
-
-
-static const struct ScriptCommand s_gs181_g0_s0_station_sref_script[] = { /* 0x8231c70 */
-    DEBUGINFO_O(14),
-    SELECT_MAP(181),
-    BGM_STOP,
-    JUMP_SCRIPT(COMMON_ENTER),
+static const struct GroundLink s_gs181_links[] = {
+    /* link   0 */ { { /*x*/   0, /*y*/   0, /*flags*/ 0, 0 }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* placeholder */
 };
 
-static const ScriptRef s_gs181_g0_s0_station_sref = { ENTER_CONTROL, SCRIPT_TYPE_01, NULL, s_gs181_g0_s0_station_sref_script }; /* 0x8231cdc */
-
-static const struct ScriptCommand s_gs181_g1_s0_station_sref_script[] = { /* 0x8231ce8 */
-    DEBUGINFO_O(23),
-    SELECT_MAP(181),
-    SELECT_ENTITIES(-1, 0),
-    BGM_SWITCH(MUS_IN_THE_DEPTHS_OF_THE_PIT),
-    FADE_IN(1, 0x1E),
-    AWAIT_CUE(3),
-    BGM_FADEOUT(120),
-    FLASH_TO(TRUE, PALUTIL_KIND_01, 60, RGB_U32(0xFF, 0xFF, 0xFF)),
-    RET,
-};
-
-static const ScriptRef s_gs181_g1_s0_station_sref = { EVENT_CONTROL, SCRIPT_TYPE_07, NULL, s_gs181_g1_s0_station_sref_script }; /* 0x8231d78 */
-
-static const struct ScriptCommand s_gs181_g1_s0_lives0_dlg0[] = { /* 0x8231d84 */
-    DEBUGINFO_O(37),
-    SELECT_ANIMATION(2),
-    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x0, 0x0),
-    WAIT_FADE,
-    ALERT_CUE(6),
-    WALK_GRID(256, 0),
-    WAIT(15),
-    PORTRAIT(PLACEMENT_RIGHT_BOTTOM_FLIP, 0x0001, 0x00000000),
-    MSG_VAR(2, PARTNER_TALK_KIND, 1),
-    VARIANT(/* == */  1, _(" Oh, hey, there they are.\nLet's get them out.")),
-    VARIANT_DEFAULT(_(" Oh, there they are!\nLet's get them out safely.")),
-    TEXTBOX_CLEAR,
-    ALERT_CUE(6),
-    ALERT_CUE(3),
-    WAIT(1),
-    WALK_GRID(204, 1),
-    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHEAST),
-    HALT,
-};
-
-
-static const struct ScriptCommand s_gs181_g1_s0_lives1_dlg0[] = { /* 0x8231f0c */
-    DEBUGINFO_O(59),
-    SELECT_ANIMATION(2),
-    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x1, 0x0),
-    AWAIT_CUE(6),
-    WALK_GRID(256, 2),
-    AWAIT_CUE(6),
-    WALK_GRID(204, 3),
-    ROTATE_TO(4, DIR_TRANS_10, DIRECTION_NORTHWEST),
-    HALT,
-};
-
-static const struct ScriptCommand s_gs181_g1_s0_lives2_dlg0[] = { /* 0x8231f9c */
-    DEBUGINFO_O(71),
-    SELECT_ANIMATION(2),
-    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x2, 0x0),
-    HALT,
-};
-
-static const struct ScriptCommand s_gs181_g1_s0_lives3_dlg0[] = { /* 0x8231fdc */
-    DEBUGINFO_O(78),
-    SELECT_ANIMATION(2),
-    UPDATE_NAME(UPDATE_NAME_ACTOR_SELF, 0x3, 0x0),
-    HALT,
-};
-
-static const struct GroundLivesData s_gs181_g1_s0_lives[] = { /* 0x823201c */
-    /*  0 */ {   0,   4,   0,   0, {  20,  34, CPOS_HALFTILE, CPOS_HALFTILE }, {
-        [0] = s_gs181_g1_s0_lives0_dlg0,
-    } },
-    /*  1 */ {  34,   4,   0,   0, {  24,  34, CPOS_HALFTILE, CPOS_HALFTILE }, {
-        [0] = s_gs181_g1_s0_lives1_dlg0,
-    } },
-    /*  2 */ {  61,   7,   0,   0, {  22,  17, 0, CPOS_HALFTILE }, {
-        [0] = s_gs181_g1_s0_lives2_dlg0,
-    } },
-    /*  3 */ {  62,   1,   0,   0, {  23,  17, 0, CPOS_HALFTILE }, {
-        [0] = s_gs181_g1_s0_lives3_dlg0,
-    } },
-};
-
-static const struct GroundEffectData s_gs181_g1_s0_effs[] = { /* 0x823207c */
-    /*  0 */ {   0,   0,   1,   1, {  22,  20, CPOS_HALFTILE, CPOS_HALFTILE }, NULL },
-};
-
-static const ScriptRef * const (sStationScripts[]) = { /* 0x8232088 */
-    &s_gs181_g0_s0_station_sref,
-    &s_gs181_g1_s0_station_sref,
-};
-
-static const struct GroundScriptSector s_gs181_g0_sectors[] = { /* 0x8232090 */
-    { 0,NULL, 0,NULL, 0,NULL, 0,NULL, 1,&sStationScripts[0], },
-};
-
-static const struct GroundScriptSector s_gs181_g1_sectors[] = { /* 0x82320b8 */
-    { LPARRAY(s_gs181_g1_s0_lives), 0,NULL, LPARRAY(s_gs181_g1_s0_effs), 0,NULL, 1,&sStationScripts[1], },
-};
-
-static const struct GroundScriptGroup s_gs181_groups[] = { /* 0x82320e0 */
-    { LPARRAY(s_gs181_g0_sectors) },
-    { LPARRAY(s_gs181_g1_sectors) },
-};
-
-static const struct GroundLink s_gs181_links[] = { /* 0x82320f0 */
-    /* link   0 */ { { /*x*/  20, /*y*/  23, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
-    /* link   1 */ { { /*x*/  20, /*y*/  19, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
-    /* link   2 */ { { /*x*/  24, /*y*/  23, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
-    /* link   3 */ { { /*x*/  24, /*y*/  19, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 },
-};
-
-const GroundScriptHeader gGroundScript_gs181 = { LPARRAY(s_gs181_groups), s_gs181_links }; /* 0x8232110 */
+const GroundScriptHeader gGroundScript_gs181 = { LPARRAY(s_gs181_groups), s_gs181_links };

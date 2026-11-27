@@ -1621,5 +1621,119 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bmaFileName = "ED0231Am",
         .bpaFileNames = {NULL, NULL, NULL, NULL},
     },
+    /* chapter 3 (documentation/Features/SkyChapter3.md) */
+    [MAP_FILE_ID_SKY_TREASURE_TOWN_SQUARE] = {
+        /* t01p01a: the main square (east): Duskull Bank, Electivire,
+         * Chansey, the Dojo; streamed, its river BPA's frame 0 baked */
+        .bplFileName = "ET0101A",
+        .bpcFileName = "ET0101Ac",
+        .bmaFileName = "ET0101Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_TREASURE_TOWN_WEST] = {
+        /* t01p02a: the west: Kecleon Market, Kangaskhan Storage, Xatu */
+        .bplFileName = "ET0102A",
+        .bpcFileName = "ET0102Ac",
+        .bmaFileName = "ET0102Am",
+        .bpaFileNames = {"ET0102A1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_CROSSROADS] = {
+        /* p01p01a: the crossroads */
+        .bplFileName = "EP0101A",
+        .bpcFileName = "EP0101Ac",
+        .bmaFileName = "EP0101Am",
+        .bpaFileNames = {"EP0101A1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_BEACH_PATH] = {
+        /* p01p02a: the path from the crossroads to the beach */
+        .bplFileName = "EP0102A",
+        .bpcFileName = "EP0102Ac",
+        .bmaFileName = "EP0102Am",
+        .bpaFileNames = {"EP0102A1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GUILD_ENTRANCE_DAY] = {
+        /* g01p01a: Wigglytuff's Guild by day */
+        .bplFileName = "EG0101A",
+        .bpcFileName = "EG0101Ac",
+        .bmaFileName = "EG0101Am",
+        .bpaFileNames = {"EG0101A1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_MT_BRISTLE_ENTRANCE] = {
+        /* d03p11a: Mt. Bristle's entrance */
+        .bplFileName = "ED0311A",
+        .bpcFileName = "ED0311Ac",
+        .bmaFileName = "ED0311Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_MT_BRISTLE_PEAK] = {
+        /* d03p41a: Mt. Bristle's peak (one layer) */
+        .bplFileName = "ED0341A",
+        .bpcFileName = "ED0341Ac",
+        .bmaFileName = "ED0341Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_BIDOOF_HOME] = {
+        /* p15p01a: Bidoof's family's lodge (its top-left 19x12 chunks; EoS's BMA is 60x40) */
+        .bplFileName = "EP1501A",
+        .bpcFileName = "EP1501Ac",
+        .bmaFileName = "EP1501Am",
+        .bpaFileNames = {"EP1501A1", NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_DUGTRIO_TUNNEL] = {
+        /* v03p03a: behind the boards: Dugtrio's tunnel (m03a0505) */
+        .bplFileName = "EV0303A",
+        .bpcFileName = "EV0303Ac",
+        .bmaFileName = "EV0303Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_STORM_CLOUDS] = {
+        /* v03p05c: storm clouds (one layer, streamed) */
+        .bplFileName = "EV0305C",
+        .bpcFileName = "EV0305Cc",
+        .bmaFileName = "EV0305Cm",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_TIME_GEAR_FOREST] = {
+        /* v03p06a: a Time Gear in a forest (streamed) */
+        .bplFileName = "EV0306A",
+        .bpcFileName = "EV0306Ac",
+        .bmaFileName = "EV0306Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_TIME_GEAR_LAKE] = {
+        /* v03p07a: a Time Gear at an underground lake */
+        .bplFileName = "EV0307A",
+        .bpcFileName = "EV0307Ac",
+        .bmaFileName = "EV0307Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_TIME_GEAR_VOLCANO] = {
+        /* v03p08a: a Time Gear in a volcano */
+        .bplFileName = "EV0308A",
+        .bpcFileName = "EV0308Ac",
+        .bmaFileName = "EV0308Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_TIME_FLOW] = {
+        /* v03p09a: time flowing (palette animation; streamed) */
+        .bplFileName = "EV0309A",
+        .bpcFileName = "EV0309Ac",
+        .bmaFileName = "EV0309Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GROVYLE_RUN] = {
+        /* v03p11a: the dream: Grovyle running through the rain (streamed) */
+        .bplFileName = "EV0311A",
+        .bpcFileName = "EV0311Ac",
+        .bmaFileName = "EV0311Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
+    [MAP_FILE_ID_SKY_GROVYLE_CLOSEUP] = {
+        /* v03p12a: the dream: Grovyle close up, his silhouette (streamed) */
+        .bplFileName = "EV0312A",
+        .bpcFileName = "EV0312Ac",
+        .bmaFileName = "EV0312Am",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
 #endif
 };
