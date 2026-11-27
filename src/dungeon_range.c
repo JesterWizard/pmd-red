@@ -252,7 +252,14 @@ bool8 sub_8083660(DungeonPos *posDst)
 
             for (yLoop = 0; yLoop < DUNGEON_MAX_SIZE_Y; yLoop++) {
                 bool8 setPosition = FALSE;
+#ifdef SKY_STORY
+                /* x and y are always inside the map here: no GetTile call
+                 * (this loop looks at every tile, up to three times, each
+                 * time a wild Pokémon may spawn) */
+                const Tile *tile = gDungeon->tilePointers[y][x];
+#else
                 const Tile *tile = GetTile(x, y);
+#endif
                 if (count >= DUNGEON_MAX_NUM_TILES)
                     break;
                 if (i == 0) {

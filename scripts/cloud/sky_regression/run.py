@@ -29,6 +29,10 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(ROOT, "build", "sky_tests")
 TOOL = os.path.join(ROOT, "build", "tools", "mgba_rpc")
 
+# Every dungeon floor of the perf ROM comes from this seed, so Beach Cave B1F
+# is the same floor in every run (the perf checks' limits are for this floor).
+PERF_SEED = 7
+
 # Test ROMs: make variables, the input driver and how many frames to play.
 # "sky" (the plain build) is built last so pmd_red.gba is the normal ROM again.
 ROMS = {
@@ -36,6 +40,8 @@ ROMS = {
                    what="chapter 1 from the storm to Beach Cave B1F"),
     "pit": dict(vars=["DEBUG_BOOT_EVENT=EVENT_DIVIDE", "DEBUG_BOOT_FLOOR=5"], driver=drivers.pit,
                 frames=21000, what="chapter 1, then Beach Cave Pit (B5F) and the boss fight"),
+    "perf": dict(vars=["DEBUG_BOOT_EVENT=EVENT_DIVIDE", f"DEBUG_BOOT_SEED={PERF_SEED}"], driver=drivers.perf,
+                 frames=40000, what="Beach Cave B1F on a fixed floor: walking and dashing, CPU load measured"),
     "after": dict(vars=["DEBUG_BOOT_EVENT=EVENT_M01E01A_L003"], driver=drivers.story, frames=9300,
                   what="the scenes after the Pit (m01a0701, m01a0702)"),
     "sky": dict(vars=[], driver=drivers.jukebox, frames=16000,

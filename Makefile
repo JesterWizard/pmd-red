@@ -40,6 +40,8 @@ DEBUG_BOOT_MAP ?=
 DEBUG_BOOT_EVENT ?=
 # Test hook: make DEBUG_BOOT_FLOOR=3 → every dungeon run starts on that floor.
 DEBUG_BOOT_FLOOR ?=
+# Test hook: make DEBUG_BOOT_SEED=12345 → every dungeon floor is generated from that seed (same layout every run).
+DEBUG_BOOT_SEED ?=
 
 PREFIX := arm-none-eabi-
 OBJCOPY := $(PREFIX)objcopy
@@ -158,6 +160,9 @@ endif
 endif
 ifneq ($(DEBUG_BOOT_FLOOR),)
 CPPFLAGS += -DDEBUG_BOOT_FLOOR=$(DEBUG_BOOT_FLOOR)
+endif
+ifneq ($(DEBUG_BOOT_SEED),)
+CPPFLAGS += -DDEBUG_BOOT_SEED=$(DEBUG_BOOT_SEED)
 endif
 
 #### Files ####
@@ -288,7 +293,7 @@ GROUND_STORY_STAMP := $(BUILD_DIR)/.ground_story_$(GROUND_STORY_DIR)
 # Songs and asm (song table, sky-only seq_*/sky_bgm_* songs) test SKY_STORY too.
 SKY_STORY_OBJECTS := $(C_OBJECTS) $(SONG_OBJS) $(ASM_OBJECTS)
 $(if $(wildcard $(GROUND_STORY_STAMP)),,$(shell mkdir -p $(BUILD_DIR) && rm -f $(BUILD_DIR)/.ground_story_* && touch $(GROUND_STORY_STAMP)))
-DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)_$(if $(DEBUG_BOOT_EVENT),$(DEBUG_BOOT_EVENT),none)_$(if $(DEBUG_BOOT_FLOOR),$(DEBUG_BOOT_FLOOR),none)_$(DEBUG_BOOT_STARTER)_$(DEBUG_BOOT_PARTNER)
+DEBUG_BOOT_STAMP := $(BUILD_DIR)/.debug_boot_$(if $(DEBUG_BOOT_MAP),$(DEBUG_BOOT_MAP),none)_$(if $(DEBUG_BOOT_EVENT),$(DEBUG_BOOT_EVENT),none)_$(if $(DEBUG_BOOT_FLOOR),$(DEBUG_BOOT_FLOOR),none)_$(DEBUG_BOOT_STARTER)_$(DEBUG_BOOT_PARTNER)$(if $(DEBUG_BOOT_SEED),_seed$(DEBUG_BOOT_SEED))
 # GNU make skips a missing prerequisite that has a recipe when the target already
 # exists (the .SECONDARY: above), so the rule below would never run after a flip.
 # Create a missing stamp at parse time instead; the new mtime forces main_loops.o.

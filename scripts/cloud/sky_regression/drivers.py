@@ -117,6 +117,85 @@ def pit(run):
     yield from d.mash()
 
 
+WALK = {(0, -1): "UP", (0, 1): "DOWN", (-1, 0): "LEFT", (1, 0): "RIGHT"}
+PERF_TILES = 60       # tiles per tour (walking, then dashing)
+PERF_STEP_LIMIT = 300  # frames to wait for one tile (a fight on the way)
+
+
+def _routes(m, start):
+    """Breadth-first over the floor from `start`: {tile: previous tile}, and
+    the farthest tile. Stairs, items, traps and other Pokémon block."""
+    prev = {start: None}
+    order = [start]
+    for c in order:
+        for d in WALK:
+            n = (c[0] + d[0], c[1] + d[1])
+            if n not in prev and m[n[1]][n[0]] in ".,PL":
+                prev[n] = c
+                order.append(n)
+    return prev, order[-1]
+
+
+def _tour(d, dash, tiles, out):
+    """Walk towards the farthest reachable tile, one tile at a time, holding
+    the direction (and B to dash). Appends a dict per tile to out["tiles"]
+    and each frame's busy cycles to out["busy"]."""
+    game = d.game
+    target = None
+    while len(out["tiles"]) < tiles:
+        f = d.f
+        m = game.dungeon_map(f)
+        p = tuple(game.leader_pos(f))
+        prev, far = _routes(m, p)
+        if target is None or target not in prev or target == p:
+            target = far
+            if target == p:
+                return
+        c = target
+        while prev[c] != p:
+            c = prev[c]
+        keys = WALK[(c[0] - p[0], c[1] - p[1])] + ("+B" if dash else "")
+        near = sum(row[max(0, p[0] - 5):p[0] + 6].count("m") for row in m[max(0, p[1] - 4):p[1] + 5])
+        corridor = "," in (m[p[1]][p[0]], m[c[1]][c[0]])
+        loops0 = game.loops(f)
+        n = freeze = longest = 0
+        last = loops0
+        while tuple(game.leader_pos(d.f)) == p and n < PERF_STEP_LIMIT:
+            # a dash that stopped starts again when the direction is pressed anew
+            f = yield from d.step("B" if dash and n % 16 == 15 else keys)
+            n += 1
+            out["busy"].append(f.busy)
+            now = game.loops(f)
+            freeze = freeze + 1 if now == last else 0
+            longest = max(longest, freeze)
+            last = now
+        out["tiles"].append(dict(frames=n, dropped=n - (last - loops0), quiet=near == 0,
+                                 corridor=corridor, freeze=longest, pos=p))
+
+
+def perf(run):
+    """Beach Cave B1F (the seeded floor): stand, walk PERF_TILES tiles, dash
+    PERF_TILES tiles, with CPU load measured (run.profile). Posts
+    "perf_done" with {"idle": [busy], "walk": tour, "dash": tour}
+    (run.data["perf_done"]; a tour is _tour's out)."""
+    d = D(run)
+    yield from d.mash_until(lambda f: d.game.in_dungeon(f) and d.game.input_waits(f) > 0)
+    yield from d.wait_control()
+    run.profile = True
+    yield from d.idle(1)
+    d.post("perf_start")
+    data = dict(idle=[], walk=dict(tiles=[], busy=[]), dash=dict(tiles=[], busy=[]))
+    for _ in range(120):
+        f = yield from d.step(0)
+        data["idle"].append(f.busy)
+    yield from _tour(d, False, PERF_TILES, data["walk"])
+    yield from d.wait_control(8)
+    yield from _tour(d, True, PERF_TILES, data["dash"])
+    run.profile = False
+    d.post("perf_done", data)
+    yield from d.idle(2)
+
+
 JUKEBOX_PER_PAGE = 6
 
 

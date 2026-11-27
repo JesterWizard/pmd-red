@@ -48,6 +48,53 @@ UNUSED static bool8 sub_800CDE0(void)
     return TRUE;
 }
 
+#ifdef SKY_STORY
+/* DMA 3 moves a word from EWRAM to VRAM in 9 cycles; the BIOS's CpuSet takes
+ * 15. The dungeon copies about 5 KB a frame through these (BG tilemaps 0 and
+ * 1, the HP bar's tiles, animated tiles): 6.9% of a frame with CpuSet, 4.0%
+ * with DMA. A DMA holds the CPU (and interrupts) until it is done, so long
+ * copies go in blocks of DMA_BLOCK bytes (under a scanline each). The
+ * boss-battle transition owns DMA 3 while it runs (src/sky_boss_wipe.c);
+ * copies use CpuSet then. */
+#define DMA_BLOCK 0x200
+#define DMA_MIN 64
+
+void CpuCopy(void *dest, const void *src, s32 size)
+{
+    if (size >= DMA_MIN && !gSkyBossWipeActive && (((u32)dest | (u32)src) & 3) == 0) {
+        while (size >= 4) {
+            s32 n = size > DMA_BLOCK ? DMA_BLOCK : (size & ~3);
+
+            DmaCopy32(3, src, dest, n);
+            src = (const u8 *)src + n;
+            dest = (u8 *)dest + n;
+            size -= n;
+        }
+        return;
+    }
+    CpuCopy32(src, dest, size);
+}
+
+void CpuFill(void *dest, void *value, s32 size)
+{
+    if (size >= DMA_MIN && !gSkyBossWipeActive && ((u32)dest & 3) == 0) {
+        while (size >= 4) {
+            s32 n = size > DMA_BLOCK ? DMA_BLOCK : (size & ~3);
+
+            DmaFill32(3, value, dest, n);
+            dest = (u8 *)dest + n;
+            size -= n;
+        }
+        return;
+    }
+    CpuFill32(value, dest, size);
+}
+
+void CpuClear(void *dest, s32 size)
+{
+    CpuFill(dest, NULL, size);
+}
+#else
 // In NDS, this func is copied to 01FF9FC4
 void CpuCopy(void *dest, const void *src, s32 size)
 {
@@ -64,6 +111,7 @@ void CpuFill(void *dest, void *value, s32 size)
 {
     CpuFill32(value, dest, size);
 }
+#endif
 
 void VBlank_CB(void)
 {

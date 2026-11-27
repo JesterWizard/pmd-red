@@ -66,6 +66,33 @@ EWRAM_DATA static OpenedFile *sDungeonMapGfxFile = NULL;
 EWRAM_DATA static void *sDungeonMapVramDst = NULL;
 EWRAM_INIT DungeonPos gPlayerDotMapPosition = {100, 100};
 
+#ifdef SKY_STORY
+/* What DrawMinimapTile needs that is the same for every tile of one redraw:
+ * read once per redraw, not once per tile. */
+struct MinimapState
+{
+    bool8 off;          // nothing to draw: no gfx, map hidden, or a move effect owns the tiles
+    bool8 mapSurveyor;
+    bool8 floorNormal;
+    bool8 showMiniMap;
+    bool8 hallucinating;
+    bool8 blinded;
+    bool8 showHiddenTraps;
+    bool8 showItems;
+    bool8 allTilesRevealed;
+    s16 gfxAdd;         // tile set: 0 opaque, 64 transparent, 128 top map
+};
+
+#define MINIMAP_DRAW_ALL (-1)
+
+#define MINIMAP_REFRESH_NONE 0xFF
+#define MINIMAP_REFRESH_ROWS 2 // one row of map pictures (UpdateMinimapStep)
+/* Next row of the redraw UpdateMinimapSoon started. */
+EWRAM_INIT static u8 sMinimapRefreshRow = MINIMAP_REFRESH_NONE;
+
+static void DrawMinimapTileWith(s32 x, s32 y, const struct MinimapState *st, s32 skipGfx);
+#endif
+
 // All traps look the same on Map, except for the Wonder Tile.
 static const u8 sTrapToMapGfxId[NUM_TRAPS] =
 {
@@ -117,6 +144,9 @@ void InitDungeonMap(bool8 a0)
         gPlayerDotMapPosition.y = 100;
     }
 
+#ifdef SKY_STORY
+    sMinimapRefreshRow = MINIMAP_REFRESH_NONE;
+#endif
     gDungeon->dungeonMap.scheduledVramCopiesCount = 0;
     gDungeon->dungeonMap.copyToVram = TRUE;
     gDungeon->dungeonMap.resetTilesScheduledForCopy = FALSE;
@@ -159,7 +189,50 @@ void LoadDungeonMapPalette(void)
     }
 }
 
+#ifdef SKY_STORY
+static void GetMinimapState(struct MinimapState *st)
+{
+    Entity *target;
+
+    st->off = sDungeonMapGfxFile == NULL || !gShowDungeonMap || sub_800EC74();
+    if (st->off)
+        return;
+    target = gDungeon->unk181e8.cameraTarget;
+    st->mapSurveyor = target != NULL && EntityIsValid(target) && IqSkillIsEnabled(target, IQ_MAP_SURVEYOR);
+    st->floorNormal = GetFloorType() == FLOOR_TYPE_NORMAL;
+    st->hallucinating = gDungeon->unk181e8.hallucinating;
+    st->blinded = gDungeon->unk181e8.blinded;
+    st->showHiddenTraps = gDungeon->unk181e8.showInvisibleTrapsMonsters;
+    st->showItems = gDungeon->unk181e8.showAllFloorItems;
+    st->allTilesRevealed = gDungeon->unk181e8.allTilesRevealed;
+    st->showMiniMap = GameOptions_ShowMiniMap() && !gDungeon->unk1356C;
+    if (gGameOptionsRef->mapOption == TOP_MAP_AND_TEAM_NO_BOTTOM)
+        st->gfxAdd = 128;
+    else if (GameOptions_IsTransparentMiniMap() == TRUE)
+        st->gfxAdd = 64;
+    else
+        st->gfxAdd = 0;
+}
+
 void DrawMinimapTile(s32 x, s32 y)
+{
+    struct MinimapState st;
+
+    GetMinimapState(&st);
+    DrawMinimapTileWith(x, y, &st, MINIMAP_DRAW_ALL);
+}
+
+/* In DrawMinimapTileWith the tiles are in range (checked on entry, and for
+ * each neighbour), and the floor type comes from the state. */
+#define GetTile(x, y) ((const Tile *)gDungeon->tilePointers[y][x])
+#define GetFloorType() (st->floorNormal ? FLOOR_TYPE_NORMAL : FLOOR_TYPE_NORMAL + 1)
+
+/* skipGfx: a tile whose picture is this one is left as it is (UpdateMinimap
+ * clears the map first and skips the empty picture), or MINIMAP_DRAW_ALL. */
+static void DrawMinimapTileWith(s32 x, s32 y, const struct MinimapState *st, s32 skipGfx)
+#else
+void DrawMinimapTile(s32 x, s32 y)
+#endif
 {
     s32 yAdd = 0;
     const Tile *tile;
@@ -183,12 +256,17 @@ void DrawMinimapTile(s32 x, s32 y)
     dungeon = gDungeon;
     lookForMapObject = TRUE;
 
+#ifdef SKY_STORY
+    if (st->off)
+        return;
+#else
     if (sDungeonMapGfxFile == NULL)
         return;
     if (!gShowDungeonMap)
         return;
     if (sub_800EC74())
         return;
+#endif
     if (GAME_VERSION == VERSION_BLUE) {
         if (gGameOptionsRef->mapOption == TOP_MAP_AND_TEAM_NO_BOTTOM) {
             if (x < 0 || y < 1 || x >= DUNGEON_MAX_SIZE_X || y >= DUNGEON_MAX_SIZE_Y)
@@ -209,6 +287,14 @@ void DrawMinimapTile(s32 x, s32 y)
 
     tile = GetTile(x, y);
     terrainType = GetTerrainType(tile);
+#ifdef SKY_STORY
+    hallucinating = st->hallucinating;
+    blinded = st->blinded;
+    showHiddenTraps = st->showHiddenTraps;
+    showItems = st->showItems;
+    allTilesRevealed = st->allTilesRevealed;
+    mapSurveyor = st->mapSurveyor;
+#else
     hallucinating = gDungeon->unk181e8.hallucinating;
     blinded = gDungeon->unk181e8.blinded;
     showHiddenTraps = gDungeon->unk181e8.showInvisibleTrapsMonsters;
@@ -221,6 +307,7 @@ void DrawMinimapTile(s32 x, s32 y)
     {
         mapSurveyor = TRUE;
     }
+#endif
     if (blinded) {
         tileKnown = tile->spawnOrVisibilityFlags.visibility & VISIBILITY_FLAG_REVEALED;
         layoutKnown = tileKnown;
@@ -243,7 +330,11 @@ void DrawMinimapTile(s32 x, s32 y)
         }
     }
 
+#ifdef SKY_STORY
+    if (st->showMiniMap) {
+#else
     if (GameOptions_ShowMiniMap() && !gDungeon->unk1356C) {
+#endif
         mapGfxType = MAP_GFX_NOTHING;
         if (!blinded) {
             Entity *entity = tile->monster;
@@ -387,6 +478,9 @@ void DrawMinimapTile(s32 x, s32 y)
             }
         }
 
+#ifdef SKY_STORY
+        mapGfxType = (s16) (mapGfxType + st->gfxAdd);
+#else
         // Not possible on GBA.
         if (gGameOptionsRef->mapOption == TOP_MAP_AND_TEAM_NO_BOTTOM) {
             mapGfxType = (s16) (mapGfxType + 128);
@@ -394,12 +488,17 @@ void DrawMinimapTile(s32 x, s32 y)
         else if (GameOptions_IsTransparentMiniMap() == TRUE) {
             mapGfxType = (s16) (mapGfxType + 64);
         }
+#endif
     }
     else {
         mapGfxType = 1;
         gPlayerDotMapPosition.x = 100;
     }
 
+#ifdef SKY_STORY
+    if (mapGfxType == skipGfx)
+        return;
+#endif
     xDiv2 = x / 2;
     yMinus = (y - 2) + yAdd;
     yDiv2 = (yMinus / 2);
@@ -436,6 +535,10 @@ void DrawMinimapTile(s32 x, s32 y)
         }
     }
 }
+#ifdef SKY_STORY
+#undef GetTile
+#undef GetFloorType
+#endif
 
 void CopyDungeonMapToVram(void)
 {
@@ -529,9 +632,65 @@ void ResetMapPlayerDotFrames(void)
     sPlayerDotFrames = 0;
 }
 
+#ifdef SKY_STORY
+/* True when the picture of an unknown tile (MAP_GFX_UNK1 of the tile set in
+ * use) has no pixels: then clearing the map draws every such tile at once. */
+static bool8 MinimapEmptyGfxIsBlank(s32 gfx)
+{
+    struct DungeonMapGfx *ptr = ((struct DungeonMapGfx *)(&sDungeonMapGfxFile->data));
+    s32 quarter, i;
+
+    for (quarter = 0; quarter < 4; quarter++) {
+        const u32 *src = ptr->gfx->unk0[gfx * 4 + quarter];
+        for (i = 0; i < 8; i++) {
+            if (src[i * 2 + 1] != 0)
+                return FALSE;
+        }
+    }
+    return TRUE;
+}
+
+/* A wall or water tile with nothing on it has the empty picture whether it
+ * is known or not (DrawMinimapTileWith: no dot, no stairs, and the terrain
+ * lines are for normal floor only). */
+static inline bool8 MinimapTileIsEmpty(const Tile *tile)
+{
+    return GetTerrainType(tile) != TERRAIN_TYPE_NORMAL
+        && !(tile->terrainFlags & TERRAIN_TYPE_STAIRS)
+        && tile->monster == NULL && tile->object == NULL;
+}
+#endif
+
 void UpdateMinimap(void)
 {
     s32 x, y;
+#ifdef SKY_STORY
+    /* A whole redraw drew 1792 tiles one by one: 5.7 frames of work, a
+     * freeze of 10-13 frames (music keeps playing) each time the camera
+     * went to another Pokémon (a level-up, the team menu) or the map was
+     * toggled. Most tiles have the empty picture, so clear the map and draw
+     * only the others: about 1 frame of work. */
+    struct MinimapState st;
+    s32 skipGfx = MINIMAP_DRAW_ALL;
+
+    GetMinimapState(&st);
+    sMinimapRefreshRow = MINIMAP_REFRESH_NONE;
+    gDungeon->dungeonMap.copyAllAtOnce = TRUE;
+    if (st.off)
+        return;
+    skipGfx = st.showMiniMap ? MAP_GFX_UNK1 + st.gfxAdd : MAP_GFX_UNK1;
+    if (MinimapEmptyGfxIsBlank(skipGfx))
+        CpuClear(gDungeon->dungeonMap.perTile, sizeof(gDungeon->dungeonMap.perTile));
+    else
+        skipGfx = MINIMAP_DRAW_ALL;
+    for (y = 0; y < DUNGEON_MAX_SIZE_Y; y++) {
+        for (x = 0; x < DUNGEON_MAX_SIZE_X; x++) {
+            if (skipGfx != MINIMAP_DRAW_ALL && MinimapTileIsEmpty(gDungeon->tilePointers[y][x]))
+                continue;
+            DrawMinimapTileWith(x, y, &st, skipGfx);
+        }
+    }
+#else
 
     gDungeon->dungeonMap.copyAllAtOnce = TRUE;
 
@@ -540,7 +699,63 @@ void UpdateMinimap(void)
             DrawMinimapTile(x, y);
         }
     }
+#endif
 }
+
+#ifdef SKY_STORY
+/* UpdateMinimap for callers that do not need the redraw this frame (the
+ * message log closing): the tiles go to VRAM again now, as they are, and the
+ * map is redrawn MINIMAP_REFRESH_ROWS rows a frame (16 frames, 4-16% of a
+ * frame each) by UpdateMinimapStep. In one go the redraw froze the game for
+ * 12 frames each time the log closed. */
+void UpdateMinimapSoon(void)
+{
+    gDungeon->dungeonMap.copyAllAtOnce = TRUE;
+    sMinimapRefreshRow = 0;
+}
+
+void UpdateMinimapStep(void)
+{
+    struct MinimapState st;
+    s32 x, y, i;
+    bool8 emptyIsBlank;
+
+    if (sMinimapRefreshRow == MINIMAP_REFRESH_NONE)
+        return;
+    GetMinimapState(&st);
+    if (st.off)
+        return; // as UpdateMinimap would draw nothing now, wait
+    /* Two rows of tiles are one row of 8x8 map pictures (4 tiles each; the
+     * map starts at row 2). A picture whose tiles are all empty and whose
+     * pixels are all clear already needs no drawing: most of the floor's
+     * walls. The others are drawn tile by tile. */
+    y = sMinimapRefreshRow;
+    emptyIsBlank = GAME_VERSION == VERSION_RED && y >= 2
+        && MinimapEmptyGfxIsBlank(st.showMiniMap ? MAP_GFX_UNK1 + st.gfxAdd : MAP_GFX_UNK1);
+    for (x = 0; x < DUNGEON_MAX_SIZE_X; x += 2) {
+        if (emptyIsBlank
+            && MinimapTileIsEmpty(gDungeon->tilePointers[y][x])
+            && MinimapTileIsEmpty(gDungeon->tilePointers[y][x + 1])
+            && (y + 1 >= DUNGEON_MAX_SIZE_Y - 1 // the last row is not on the map
+                || (MinimapTileIsEmpty(gDungeon->tilePointers[y + 1][x])
+                    && MinimapTileIsEmpty(gDungeon->tilePointers[y + 1][x + 1]))))
+        {
+            const u32 *px = gDungeon->dungeonMap.perTile[(y - 2) / 2][x / 2].arr;
+
+            for (i = 0; i < 8 && px[i] == 0; i++)
+                ;
+            if (i == 8)
+                continue;
+        }
+        DrawMinimapTileWith(x, y, &st, MINIMAP_DRAW_ALL);
+        DrawMinimapTileWith(x + 1, y, &st, MINIMAP_DRAW_ALL);
+        DrawMinimapTileWith(x, y + 1, &st, MINIMAP_DRAW_ALL);
+        DrawMinimapTileWith(x + 1, y + 1, &st, MINIMAP_DRAW_ALL);
+    }
+    y += MINIMAP_REFRESH_ROWS;
+    sMinimapRefreshRow = y < DUNGEON_MAX_SIZE_Y ? y : MINIMAP_REFRESH_NONE;
+}
+#endif
 
 void UpdateBgTilemapForDungeonMap(bool8 a0)
 {

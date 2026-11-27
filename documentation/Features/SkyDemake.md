@@ -601,6 +601,108 @@ Tiny Woods plays Beach Cave ([`src/sky_story.c`](../../src/sky_story.c)):
 - The sky build mixes 8 DirectSound channels instead of 12 (`src/m4a.c`),
   which cuts the frames the dungeon falls behind in Beach Cave by about a third.
 
+### Dungeon speed
+
+How fast the dungeon plays was measured in mGBA (`build/tools/mgba_rpc`,
+its `prof` command) on one fixed floor (`DEBUG_BOOT_SEED=7`, Beach Cave B1F;
+Tiny Woods B1F for the vanilla build), and in DeSmuME for EoS. A *dropped
+frame* is a video frame in which the main loop did not finish
+(`gUnknown_203B0B8` did not move).
+
+**Pacing is the same in all three games.** Nothing in the sky build waits
+longer than Red or EoS:
+
+| Action | Sky before | Sky now | Vanilla (Red) | EoS |
+|---|---|---|---|---|
+| Walk one tile, nobody else on screen; the partner follows in the same turn (frames) | 25.97 (25, or 26 on 1 turn in 3) | 25.14 (26 on 1 turn in 7) | 25.31 | 25.3 (25 or 26) |
+| Dash one tile, B held, corridor (frames) | 2.96 (3, some 4) | 2.63 (2 or 3) | 3.21 (3, some 4) | 3 |
+| Attack with nothing in front (A to A, frames) | 31–33 | 29–32 | 31–33 | 33–36 |
+| Walk one tile with a wild Pokémon on screen that does not act (frames) | 25 or 26 | 25 or 26 | 25 | — |
+| Dropped frames while walking | 7.6% | 4.5% | 5.2% | — |
+| Longest freeze in the test walk and dash (frames) | 13 | 3 | 8 | — |
+| CPU load standing still (% of a frame) | 63.4 | 60.7 | 38.7 | — |
+| CPU load over the test walk | 67.5 | 62.4 | 50.8 | — |
+
+A tile is 24 frames of walking at 1 px a frame, plus the turn. A turn (24
+fractional turns, every Pokémon's AI, the minimap) is 0.8 to 1.4 frames of
+CPU work in Red's engine, so every turn drops a frame in the sky and the
+vanilla build alike (EoS's 25 or 26 frames a tile look the same). That is
+where "25" comes from, and why a dashed tile takes 2 or 3 frames, not one.
+
+Messages do not hold the game up in either build: a log line is drawn in one
+frame (9% of a frame's CPU), the box stays 240 frames after the last line,
+and a full box scrolls a line up while the game goes on (13 frames in the Sky
+box, which holds 3 lines; 11 in Red's, which holds 4). Fights were not timed
+against EoS (the floors have different Pokémon and moves); the sky build has
+no wait of its own in them.
+
+**What made the sky build slower than that**, in order of what a player
+would notice:
+
+1. **Freezes of 12–13 frames** (0.2 s; the music kept playing) each time the
+   whole minimap was redrawn: `UpdateMinimap` drew all 1792 tiles through
+   `DrawMinimapTile`, 5.7 frames of work. It runs when the message log
+   closes (4 s after the last message), when a menu closes, and when the
+   camera goes to another Pokémon and back (every level-up). Red has the
+   same freeze, 8–13 frames long. While the main loop is late the mixer
+   still runs every frame (from the VBlank interrupt), so a third of each
+   of those frames goes to sound.
+2. **A second dropped frame on a third of the turns** (26 frames a tile
+   instead of 25, and 4 instead of 3 when dashing). The turn's work is the
+   same as Red's, but the frame it starts in is 63% full, not 39%.
+3. **The message log's scroll** (`SkyLogScrollUp`): 16% of a frame, every
+   frame of the 13-frame scroll, because each pixel row's index was computed
+   with a shift, a multiply and a mask. Frames were 83% full during a scroll.
+
+**The fixes** (all `#ifdef SKY_STORY`):
+
+- `UpdateMinimap` ([`src/dungeon_map.c`](../../src/dungeon_map.c)) reads
+  what is the same for every tile once (`struct MinimapState`), clears the
+  map and draws only the tiles that are not the empty picture (walls, water
+  and unknown tiles are): 1.1 frames of work instead of 5.7.
+- When the log closes, the redraw is spread over 16 frames
+  (`UpdateMinimapSoon` / `UpdateMinimapStep`, 2 rows a frame, 4–16% of a
+  frame each; a map picture whose 4 tiles are empty and whose pixels are
+  already clear is skipped). The map's tiles are copied back to VRAM at
+  once, so nothing is missing meanwhile.
+- A corridor step redrew the 5×5 tiles around the leader; 20 of them were
+  drawn on the step before. `DiscoverMinimap`
+  ([`src/dungeon_map_access.c`](../../src/dungeon_map_access.c)) skips a
+  seen tile with no Pokémon on it (a tile costs about 850 cycles to draw,
+  so 25 of them were 7% of a frame on every corridor turn).
+- `CpuCopy` / `CpuFill` / `CpuClear` ([`src/cpu.c`](../../src/cpu.c)) use
+  DMA 3 instead of the BIOS's `CpuSet` (9 cycles a word from EWRAM to VRAM
+  instead of 15), in blocks of 512 bytes (under a scanline each, so
+  interrupts are not held up). The dungeon copies 5 KB a frame through them
+  (BG tilemaps 0 and 1, the HP bar): 6.9% of a frame before, 4.0% now. The
+  boss transition owns DMA 3 while it runs; copies use `CpuSet` then.
+- `SkyLogScrollUp` ([`src/dungeon_message.c`](../../src/dungeon_message.c))
+  walks whole tiles with pointers: 5% of a frame (frames 67% full).
+- The spawn-position search (`sub_8083660`,
+  [`src/dungeon_range.c`](../../src/dungeon_range.c)) reads the tile
+  pointers directly (it looks at every tile each time a wild Pokémon may
+  spawn: 0.85 frames, now 0.5).
+
+The minimap's tiles in VRAM and the window tiles (the log) were compared
+with the old build's after each of 80 tiles of the same walk, with the menu
+and the map toggled on the way: identical. Nothing changes in the sound.
+
+**What is left.** The mixer is still the largest fixed cost: 8 channels at
+18157 Hz are 35% of every frame (4.4% a channel; Red's songs keep 2–3 of
+its 5 channels busy, 14–25%). The alternatives were measured and not taken,
+because each can be heard and the gain is small once the freezes are gone:
+
+| Change | Mixer | Walk (frames a tile) | Dash | Cost |
+|---|---|---|---|---|
+| 5 channels (built and measured) | 35% → 22% | 25.2 → 25.05 | mostly 2 | EoS songs use 7 voices on average, all 8 in half the frames; 2–3 would be cut |
+| 13379 Hz (computed: the cost follows the rate) | 35% → 26% | — | — | nothing above 6.7 kHz; the samples are stored for 9 kHz |
+
+The turn itself (0.8–1.4 frames) is Red's engine and was left alone, so the
+one dropped frame a turn stays, as in Red and EoS.
+
+`scripts/cloud/sky_regression.sh --rom perf` measures all of this again
+(see [Testing](#testing)).
+
 ### Boss battle transition
 
 EoS starts every boss fight with the same transition: 71 scripts call
@@ -1711,7 +1813,7 @@ Old saves need a new game. Following the save-layout checklist
 ### Regression suite
 
 ```bash
-scripts/cloud/sky_regression.sh               # everything: about 2 minutes
+scripts/cloud/sky_regression.sh               # everything: about 2.5 minutes
 scripts/cloud/sky_regression.sh --no-vanilla  # skip the vanilla sha1 rebuild (about 40 s)
 scripts/cloud/sky_regression.sh --no-build -k portrait -k music   # rerun checks on built ROMs
 scripts/cloud/sky_regression.sh --list        # the checks, their ROM and what they test
@@ -1736,6 +1838,7 @@ path is printed. The script exits 1 when a check fails. It builds the tools
 | `divide` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE` | the story presses (A every 60 frames) from the storm to Beach Cave B1F; once the leader waits for input, open and close the main menu, then mash A | 21000 |
 | `pit` | the same + `DEBUG_BOOT_FLOOR=5` | the story to the Pit; when Boss Battle! starts, tap R (rotate mode), B, mash A | 21000 |
 | `after` | `DEBUG_BOOT_EVENT=EVENT_M01E01A_L003` | the story presses through m01a0701 and m01a0702 | 9300 |
+| `perf` | `DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_SEED=7` | the story to Beach Cave B1F (always the same floor); stand 120 frames, walk 60 tiles towards the farthest tile, dash 60 tiles (B held), with CPU load measured | ~22500 |
 | `sky` | plain | the smoke test; Other > Sky Jukebox, then A on every track for 50 frames (Down per row, Right per page) | ~14700 |
 | `opening` | plain (plays `sky`'s build) | START at 600 (the health warning), then nothing: the whole opening to the title; START there | ~7700 |
 | `skip` | plain (plays `sky`'s build) | START at 600, then START 60 frames into Bidoof's scene, then START at the title | ~4500 |
@@ -1751,6 +1854,12 @@ The checks find their frames from game state, not from fixed frame numbers:
 - **Music and sound**: the song header on each m4a player, compared with
   `gSongTable`.
 - **Dungeon input**: `sArrowsFrames` counts up while the leader waits for input.
+- **Dungeon floor**: the leader's tile and the map (walls, rooms, corridors,
+  stairs, items, Pokémon) from `gDungeon` (`game.py`: `leader_pos`,
+  `dungeon_map`); the `perf` driver plans its walk on it.
+- **Speed**: `gUnknown_203B0B8` counts main-loop iterations (frames minus its
+  increase = dropped frames); `Frame.busy` is the CPU cycles a frame was not
+  halted, when the driver sets `run.profile` (mgba_rpc's `prof`).
 - **Video**: registers, palettes and OAM.
 
 They prefer state and register probes. Pixel probes are colours at fixed
@@ -1786,6 +1895,10 @@ spots or colour counts in a region. No check compares whole-screen hashes.
 | `pit_rotate_grid` | pit | after an R tap, every BG2 map entry that changes uses the relocated grid tiles (≥ 925), none inside the Pit art |
 | `boss_transition` | pit | before "Boss Battle!": two flashes and the white-out (BLDY brighten), and the streaks (BG1/BG2 alpha blend) between them |
 | `boss_stats` | pit | Zubat L3 15 HP 15/11 and Koffing L6 27 HP 20/8 (EntityInfo in gDungeon); `gSkyBossExp` off |
+| `dungeon_walk_pace` | perf | tiles walked with no other Pokémon on screen: median 25 frames, mean ≤ 25.6 (25.14; 25.97 before the speed fixes), dropped frames ≤ 6.2% (4.5%; 7.6%) |
+| `dungeon_dash_pace` | perf | corridor tiles dashed with nobody on screen: mean ≤ 2.8 frames (2.63; 2.96) |
+| `dungeon_no_freeze` | perf | no more than 5 dropped frames in a row in the walk and the dash (3; 13: the minimap redraw when the log closed) |
+| `dungeon_cpu_load` | perf | CPU load ≤ 62% of a frame standing still (60.7%; 63.4%) and ≤ 65% over the walk (62.4%; 67.5%) |
 | `thieves_beaten_pose` | after | Zubat's and Koffing's actors are in animation 0x100F at "Owowow..." |
 | `relic_fragment_on_beach` | after | ground object 69 on every frame of m01a0702 from "Here's what they stole." |
 | `jukebox_no_stop_bgm` | sky | no track in `src/data/sky_jukebox_data.h` is song 999 (STOP_BGM) |
@@ -1829,9 +1942,26 @@ is the emulator the suite drives over a pipe. It can step frames, read
 memory, return the frame buffer, report audio levels and save and load
 states, so it can also be scripted by hand.
 
+**Profiling.** `prof N KEYS` runs frames like `run` and returns the cycles
+the CPU was busy (a frame is 280896); `profdump PATH` writes where they went,
+one `ADDR CYCLES` line per program counter value (`bios ADDR CYCLES` for
+time in a BIOS call, by its caller). Add the lines up per function with the
+ELF's symbols (`arm-none-eabi-nm -n`). That is how the numbers in
+[Dungeon speed](#dungeon-speed) were measured:
+
+```python
+import sys; sys.path.insert(0, "scripts/cloud/sky_regression")
+from emu import Emu, FRAME_CYCLES
+e = Emu("build/tools/mgba_rpc", "build/sky_tests/roms/perf.gba")
+e.run(19100)                      # to Beach Cave B1F (story presses: drivers.py)
+busy = e.prof(120)                # 120 frames standing still
+print(100 * busy / 120 / FRAME_CYCLES, "% of a frame")
+e.profdump("build/idle.prof")
+```
+
 ### Debug boot hooks
 
-Two test-only Makefile hooks (normal builds are unaffected):
+Three test-only Makefile hooks (normal builds are unaffected):
 
 ```bash
 make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
@@ -1843,6 +1973,10 @@ make DEBUG_BOOT_EVENT=EVENT_DIVIDE DEBUG_BOOT_FLOOR=5
   skipped (a nameless Pokémon takes its species name).
 - `DEBUG_BOOT_FLOOR=<n>`: every dungeon run starts on floor n (5 = Beach Cave
   Pit).
+- `DEBUG_BOOT_SEED=<n>`: every floor is generated from seed n, so the layout
+  and the Pokémon on it are the same in every run. Without it the floor
+  depends on how many frames the story before it took, which changes with
+  almost any code change. Works in the vanilla build too.
 
 Then drive it with `mgba_shot` (A every 60 frames reaches the dungeon at about
 frame 15000):
@@ -1863,7 +1997,8 @@ Winning the boss fight by mashing A needs a strong team; for that test set
 
 | Piece | Path |
 |-------|------|
-| Story pack select, test hooks | [`Makefile`](../../Makefile) (`STORY`, `DEBUG_BOOT_EVENT`, `DEBUG_BOOT_FLOOR`) |
+| Story pack select, test hooks | [`Makefile`](../../Makefile) (`STORY`, `DEBUG_BOOT_EVENT`, `DEBUG_BOOT_FLOOR`, `DEBUG_BOOT_SEED`) |
+| Dungeon speed (minimap redraw, DMA copies, log scroll) | [`src/dungeon_map.c`](../../src/dungeon_map.c), [`src/dungeon_map_access.c`](../../src/dungeon_map_access.c), [`src/dungeon_vram.c`](../../src/dungeon_vram.c), [`src/cpu.c`](../../src/cpu.c), [`src/dungeon_message.c`](../../src/dungeon_message.c), [`src/dungeon_range.c`](../../src/dungeon_range.c); measured by [`scripts/cloud/sky_regression/checks/perf.py`](../../scripts/cloud/sky_regression/checks/perf.py) |
 | Red-only systems left out (Wonder Mail, friend rescue, Friend Areas, team-base flags) | [`Makefile`](../../Makefile) (`NON_SKY_C_SOURCES`), the `SKY_STORY` guards in [`src/textbox.c`](../../src/textbox.c), [`src/main_menu1.c`](../../src/main_menu1.c), [`src/code_801D014.c`](../../src/code_801D014.c), [`src/code_80958E8.c`](../../src/code_80958E8.c), [`src/main_loops.c`](../../src/main_loops.c), [`src/ground_script.c`](../../src/ground_script.c), [`src/ornament_files_table.c`](../../src/ornament_files_table.c) |
 | Opening scenes (gs178 groups 1–8) | [`src/data/ground/sky/sky_d01p01_scenes.h`](../../src/data/ground/sky/sky_d01p01_scenes.h) |
 | Beach Cave Pit aftermath (gs179 group 1) | [`src/data/ground/sky/ground_data_d01p02_station.h`](../../src/data/ground/sky/ground_data_d01p02_station.h) |

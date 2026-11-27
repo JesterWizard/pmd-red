@@ -171,6 +171,7 @@ class Run:
         self.events = {}
         self.data = {}
         self.frame = 0
+        self.profile = False  # a driver sets this to measure CPU load (Frame.busy; slower)
 
     def execute(self):
         results = []
@@ -193,8 +194,14 @@ class Run:
             keys = next(driver)
             last = None
             while active and self.frame < self.max_frames:
-                self.frame = self.emu.run(1, keys)
+                busy = None
+                if self.profile:
+                    busy = self.emu.prof(1, keys)
+                    self.frame = self.emu.frame
+                else:
+                    self.frame = self.emu.run(1, keys)
                 f = Frame(self.emu, self.syms, self.game, self.frame)
+                f.busy = busy
                 last = f
                 try:
                     keys = driver.send(f)

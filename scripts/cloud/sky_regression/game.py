@@ -208,6 +208,75 @@ class GameInfo:
         raw = f.read(ptr, 0x20000)
         return [m.group(1).decode("latin-1") for m in re.finditer(rb"#c\x0e([^#\x00]*)#r", raw)]
 
+    def loops(self, f):
+        """gUnknown_203B0B8 (src/code_800C9CC.c): main-loop iterations. Over a
+        window, frames minus its increase = dropped frames (a loop iteration
+        that did not finish before the next VBlank)."""
+        return f.u32(self.syms["gUnknown_203B0B8"])
+
+    def _dungeon_offsets(self, f):
+        """(teamPokemon, tilePointers) offsets in Dungeon. The struct differs
+        between builds, so they are found by shape: four pointers to
+        consecutive Entity structs (0x74 bytes), and a row of pointers to
+        consecutive Tile structs (0x18 bytes)."""
+        if getattr(self, "_dng_off", None) is None:
+            base = f.u32(self.syms["gDungeon"])
+            raw = f.read(base, 0x14000)
+            words = struct.unpack("<%dI" % (len(raw) // 4), raw)
+            team = tiles = None
+            for i in range(len(words) - 60):
+                w = words[i]
+                if not base < w < base + 0x20000:
+                    continue
+                if tiles is None and all(words[i + k + 1] - words[i + k] == 0x18 for k in range(55)):
+                    tiles = 4 * i
+                if team is None and i >= 0x13000 // 4 and words[i + 1] - w == 0x74 \
+                        and words[i + 2] - words[i + 1] == 0x74:
+                    team = 4 * i
+                if team is not None and tiles is not None:
+                    break
+            self._dng_off = (team, tiles)
+        return self._dng_off
+
+    def leader_pos(self, f):
+        """The leader's tile (Entity.pos of gDungeon->teamPokemon[0])."""
+        base = f.u32(self.syms["gDungeon"])
+        ent = f.u32(base + self._dungeon_offsets(f)[0])
+        return struct.unpack("<hh", f.read(ent + 4, 4))
+
+    def dungeon_map(self, f):
+        """The floor as 32 strings of 56: '#' wall, '.' room, ',' corridor,
+        '~' water, 'S' stairs, 'o' item or trap, 'L' leader, 'P' partner,
+        'm' another Pokémon (Tile: terrainFlags at 0, room at 9, monster at
+        0x10, object at 0x14; include/structs/map.h)."""
+        base = f.u32(self.syms["gDungeon"])
+        team, tiles = self._dungeon_offsets(f)
+        raw = f.read(base, 0x14000)
+        ptrs = struct.unpack_from("<%dI" % (32 * 56), raw, tiles)
+        lead, part = struct.unpack_from("<II", raw, team)
+        rows = []
+        for y in range(32):
+            row = []
+            for x in range(56):
+                t = ptrs[y * 56 + x] - base
+                terr, = struct.unpack_from("<H", raw, t)
+                mon, obj = struct.unpack_from("<II", raw, t + 0x10)
+                kind = terr & 3
+                c = "#" if kind == 0 else "~" if kind == 2 else "." if raw[t + 9] != 0xFF else ","
+                if terr & 0x200:
+                    c = "S"
+                elif obj and c in ".,":
+                    c = "o"
+                if mon == lead:
+                    c = "L"
+                elif mon == part:
+                    c = "P"
+                elif mon:
+                    c = "m"
+                row.append(c)
+            rows.append("".join(row))
+        return rows
+
     def input_waits(self, f):
         """sArrowsFrames (src/dungeon_main.c): counts frames while the dungeon
         waits for the leader's input."""

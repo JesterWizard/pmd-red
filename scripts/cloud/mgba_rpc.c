@@ -22,6 +22,16 @@
  *   audio            audio output since the last "audio" (or the start), at
  *                    32768 Hz stereo, then resets: -> "ok SAMPLES SUMSQ PEAK"
  *                    (SUMSQ over both channels, PEAK = max |sample|)
+ *   prof N KEYS      like "run", but steps instruction by instruction and
+ *                    measures CPU load: -> "ok FRAME BUSY MAXBUSY OVER".
+ *                    BUSY = cycles the CPU was not halted (a frame is 280896),
+ *                    MAXBUSY = the busiest frame's, OVER = frames with no
+ *                    idle time at all (the game missed a VBlank). The cycles
+ *                    are also added to a profile. About 3x slower than "run".
+ *   profdump PATH    write the profile and clear it: "ADDR CYCLES" per
+ *                    program counter value (pc / 2 * 2) and "bios ADDR CYCLES"
+ *                    for time in the BIOS, by the caller of the syscall stub
+ *                    (its lr; for an interrupt, whatever lr was). -> "ok"
  *   quit             exit 0
  * Errors answer "err MESSAGE" and the server keeps going.
  *
@@ -48,6 +58,40 @@
 #include <mgba/core/serialize.h>
 #include <mgba-util/vfs.h>
 #include <mgba/core/blip_buf.h>
+#include <mgba/core/timing.h>
+#include <mgba/internal/arm/arm.h>
+#include <mgba/internal/gba/gba.h>
+
+#define FRAME_CYCLES 280896
+/* Profile buckets: ROM (32 MiB), EWRAM (256 KiB), IWRAM (32 KiB) by pc / 2,
+ * and one for everything else (the BIOS). */
+#define PROF_ROM 0
+#define PROF_EWRAM (PROF_ROM + (1u << 24))
+#define PROF_IWRAM (PROF_EWRAM + (1u << 17))
+#define PROF_OTHER (PROF_IWRAM + (1u << 14))
+#define PROF_SIZE (PROF_OTHER + 1)
+
+static uint32_t prof_bucket(uint32_t pc) {
+	switch (pc >> 24) {
+	case 0x08: case 0x09:
+		return PROF_ROM + ((pc & 0x1FFFFFF) >> 1);
+	case 0x02:
+		return PROF_EWRAM + ((pc & 0x3FFFF) >> 1);
+	case 0x03:
+		return PROF_IWRAM + ((pc & 0x7FFF) >> 1);
+	}
+	return PROF_OTHER;
+}
+
+static uint32_t prof_addr(uint32_t b) {
+	if (b >= PROF_OTHER)
+		return 0;
+	if (b >= PROF_IWRAM)
+		return 0x03000000 + 2 * (b - PROF_IWRAM);
+	if (b >= PROF_EWRAM)
+		return 0x02000000 + 2 * (b - PROF_EWRAM);
+	return 0x08000000 + 2 * b;
+}
 
 _Static_assert(BYTES_PER_PIXEL == 4, "mgba_rpc expects 32-bit color_t");
 
@@ -83,6 +127,31 @@ static void reply(const char* fmt, ...) {
 	va_end(ap);
 	fputc('\n', stdout);
 	fflush(stdout);
+}
+
+static int cmp_u32(const void* a, const void* b) {
+	uint32_t x = *(const uint32_t*)a, y = *(const uint32_t*)b;
+	return x < y ? -1 : x > y;
+}
+
+/* Take the frame's audio out of the core and add it to the level counters. */
+static void drain_audio(struct blip_t* bl, struct blip_t* br, unsigned long long* samples,
+			unsigned long long* sumsq, int* peak) {
+	static short sbuf[0x8000 * 2];
+	int av = blip_samples_avail(bl);
+	if (av > 0x8000)
+		av = 0x8000;
+	blip_read_samples(bl, sbuf, av, 1);
+	blip_read_samples(br, sbuf + 1, av, 1);
+	for (int k = 0; k < 2 * av; ++k) {
+		int v = sbuf[k];
+		*sumsq += (unsigned long long)((long long)v * v);
+		if (v < 0)
+			v = -v;
+		if (v > *peak)
+			*peak = v;
+	}
+	*samples += (unsigned long long)av;
 }
 
 int main(int argc, char** argv) {
@@ -124,11 +193,14 @@ int main(int argc, char** argv) {
 	core->setAudioBufferSize(core, 0x8000);
 	blip_set_rates(bl, core->frequency(core), 32768);
 	blip_set_rates(br, core->frequency(core), 32768);
-	static short sbuf[0x8000 * 2];
 	unsigned long long a_samples = 0, a_sumsq = 0;
 	int a_peak = 0;
 
 	unsigned long long frame = 0;
+	uint32_t* hist = NULL; /* profile: cycles per bucket, then BIOS cycles per caller */
+	uint32_t caller = PROF_OTHER;
+	uint32_t* used = NULL; /* the buckets that are not zero */
+	size_t n_used = 0, cap_used = 0;
 	char line[4096];
 	while (fgets(line, sizeof(line), stdin)) {
 		char* save = NULL;
@@ -148,22 +220,85 @@ int main(int argc, char** argv) {
 			for (unsigned long long i = 0; i < n; ++i) {
 				core->runFrame(core);
 				++frame;
-				int av = blip_samples_avail(bl);
-				if (av > 0x8000)
-					av = 0x8000;
-				blip_read_samples(bl, sbuf, av, 1);
-				blip_read_samples(br, sbuf + 1, av, 1);
-				for (int k = 0; k < 2 * av; ++k) {
-					int v = sbuf[k];
-					a_sumsq += (unsigned long long)((long long)v * v);
-					if (v < 0)
-						v = -v;
-					if (v > a_peak)
-						a_peak = v;
-				}
-				a_samples += (unsigned long long)av;
+				drain_audio(bl, br, &a_samples, &a_sumsq, &a_peak);
 			}
 			reply("ok %llu", frame);
+		} else if (strcmp(cmd, "prof") == 0) {
+			if (!parse_num(a1, &n) || !parse_num(a2 ? a2 : "0", &v) || v > 0x3FF) {
+				reply("err usage: prof N KEYS");
+				continue;
+			}
+			if (!hist) {
+				hist = calloc(2 * PROF_SIZE, sizeof(*hist));
+				if (!hist) {
+					reply("err out of memory");
+					continue;
+				}
+			}
+			struct GBA* gba = core->board;
+			struct ARMCore* cpu = core->cpu;
+			unsigned long long busy = 0, maxbusy = 0, over = 0;
+			core->setKeys(core, (uint32_t)v);
+			for (unsigned long long i = 0; i < n; ++i) {
+				uint32_t fc = core->frameCounter(core);
+				unsigned long long fbusy = 0;
+				while (core->frameCounter(core) == fc) {
+					bool halted = cpu->halted;
+					uint32_t pc = cpu->gprs[ARM_PC];
+					uint32_t lr = cpu->gprs[ARM_LR];
+					int32_t t0 = mTimingCurrentTime(&gba->timing);
+					core->step(core);
+					uint32_t dt = (uint32_t)(mTimingCurrentTime(&gba->timing) - t0);
+					if (halted)
+						continue;
+					fbusy += dt;
+					uint32_t b = prof_bucket(pc);
+					if (b == PROF_OTHER) {
+						/* BIOS time goes to the code that called it */
+						b = PROF_SIZE + caller;
+					} else {
+						/* a syscall stub is "swi; bx lr": its lr
+						 * is the code to blame */
+						caller = prof_bucket(lr);
+					}
+					if (!hist[b]) {
+						if (n_used == cap_used) {
+							cap_used = cap_used ? 2 * cap_used : 4096;
+							used = realloc(used, cap_used * sizeof(*used));
+							if (!used) {
+								fputs("mgba_rpc: out of memory\n", stderr);
+								return 1;
+							}
+						}
+						used[n_used++] = b;
+					}
+					hist[b] += dt;
+				}
+				++frame;
+				drain_audio(bl, br, &a_samples, &a_sumsq, &a_peak);
+				busy += fbusy;
+				if (fbusy > maxbusy)
+					maxbusy = fbusy;
+				if (fbusy >= FRAME_CYCLES - 64)
+					++over;
+			}
+			reply("ok %llu %llu %llu %llu", frame, busy, maxbusy, over);
+		} else if (strcmp(cmd, "profdump") == 0) {
+			FILE* pf = a1 ? fopen(a1, "w") : NULL;
+			if (!pf) {
+				reply("err usage: profdump PATH");
+				continue;
+			}
+			qsort(used, n_used, sizeof(*used), cmp_u32);
+			for (size_t k = 0; k < n_used; ++k) {
+				uint32_t b = used[k];
+				fprintf(pf, "%s%08x %" PRIu32 "\n", b < PROF_SIZE ? "" : "bios ",
+					prof_addr(b % PROF_SIZE), hist[b]);
+				hist[b] = 0;
+			}
+			n_used = 0;
+			fclose(pf);
+			reply("ok");
 		} else if (strcmp(cmd, "read") == 0) {
 			if (!parse_num(a1, &v) || !parse_num(a2, &n) || n > MAX_READ || v > 0xFFFFFFFFull) {
 				reply("err usage: read ADDR LEN (LEN <= %u)", MAX_READ);
@@ -193,7 +328,7 @@ int main(int argc, char** argv) {
 				reply("err usage: %s PATH", cmd);
 				continue;
 			}
-			struct VFile* sf = VFileOpen(a1, saving ? O_CREAT | O_TRUNC | O_WRONLY : O_RDONLY);
+			struct VFile* sf = VFileOpen(a1, saving ? O_CREAT | O_TRUNC | O_RDWR : O_RDONLY);
 			if (!sf) {
 				reply("err cannot open %s: %s", a1, strerror(errno));
 				continue;
